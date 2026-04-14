@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.9.1"
+version: "3.10.0"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -74,6 +74,8 @@ Regla editorial: este documento solo reexpone una regla heredada cuando es impre
 | Objeto transiente | Objeto de vida corta creado y consumido inmediatamente entre dos procesos, sin papel observacional independiente. |
 | Fuerza semántica | Criterio operativo para decidir qué enlace prevalece durante recomposición o colisión de roles; la jerarquía formal vive en `opm-visual-es`. |
 | Asistente agnóstico de construcción del SD | Protocolo ordenado de interacción para cerrar las decisiones mínimas del SD sin depender de una herramienta o interfaz concreta. |
+| Contenedor | Cosa refinada que aparece agrandada en el OPD hijo para contener sus refinadores. Sinónimo operativo de "refinable en contexto de OPD hijo" (cfr. `opm-visual-es` V-79). |
+| Proceso inflado | Elipse del proceso agrandada para contener subprocesos en una descomposición. Es la realización visual del contenedor cuando la cosa refinada es un proceso. |
 
 ## 4 Principio metodológico rector
 
@@ -205,11 +207,11 @@ Cuando el proceso transforma múltiples transformados, solo el objeto proveedor 
 
 El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
 
-Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la regla de colisión de roles (§4.4): si el beneficiario es transformado, el enlace de efecto prevalece; la figura humana preserva la identidad humana.
+Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la precedencia semántica del corpus: si el beneficiario es transformado, el enlace transformador prevalece sobre el habilitador; la identidad humana puede mantenerse en la figura y en la denominación, pero no mediante un segundo rol procedimental simultáneo para el mismo proceso.
 
 OPL-ES: `**Agente** maneja *Proceso Principal*.`
 
-**Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del §4.4, que aplica al mismo proceso.
+**Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del mismo proceso, donde prevalece el rol transformador.
 
 ## 6b Completación y Verificación del SD
 
@@ -217,11 +219,11 @@ OPL-ES: `**Agente** maneja *Proceso Principal*.`
 
 El nombre por defecto DEBERÍA ser el nombre del proceso + "Sistema". El modelador PUEDE usar un nombre aceptado en su lugar.
 
-El proceso principal DEBE modelarse como operación del sistema via exhibición-caracterización.
+El proceso principal DEBE modelarse como operación del sistema vía exhibición-caracterización.
 
 ### 6.7 Paso 7: Identificación de Instrumentos
 
-El modelador DEBE identificar habilitadores no humanos requeridos durante toda la duración del proceso. Cada instrumento DEBE conectarse via enlace de instrumento (círculo blanco vacío).
+El modelador DEBE identificar habilitadores no humanos requeridos durante toda la duración del proceso. Cada instrumento DEBE conectarse vía enlace de instrumento (círculo blanco vacío).
 
 **Reclasificación por desgaste:** Cuando el desgaste, degradación o amortización de un instrumento es relevante al alcance del sistema, el modelador DEBE reclasificarlo como afectado, agregando un atributo (ej: Amortization Level) que el proceso cambia. Se DEBE modelar un proceso de mantenimiento separado.
 
@@ -231,7 +233,7 @@ El modelador DEBE identificar habilitadores no humanos requeridos durante toda l
 
 ### 6.8 Paso 8: Objetos de Entrada/Salida
 
-Cada objeto consumido DEBE conectarse via enlace de consumo. Cada objeto creado DEBE conectarse via enlace de resultado. Si un objeto es afectado (no consumido), DEBE conectarse via par entrada-salida especificando la transición de estados.
+Cada objeto consumido DEBE conectarse vía enlace de consumo. Cada objeto creado DEBE conectarse vía enlace de resultado. Si un objeto es afectado (no consumido), DEBE conectarse vía par entrada-salida especificando la transición de estados.
 
 ### 6.9 Paso 9: Objetos Ambientales
 
@@ -330,7 +332,7 @@ Aplica cuando los subprocesos son independientes y PUEDEN ocurrir en cualquier o
 
 ### 7.3 Refinamiento de Objetos
 
-Los objetos se refinan vía descomposición (composición espacial/estructural) y despliegue (taxonomías, rasgos, instancias). La descomposición de objetos expone partes y operaciones (§7.1); el despliegue expone refinadores vía las cuatro relaciones estructurales (§7.2). La posición espacial de constituyentes en una descomposición de objeto PUEDE tener significado semántico (disposición física, orden lógico).
+Los objetos se refinan vía descomposición (composición espacial/estructural) y despliegue (taxonomías, rasgos, instancias). La descomposición de objetos expone partes y operaciones siguiendo el mecanismo formal de §7.1; el despliegue expone refinadores mediante las cuatro relaciones estructurales de §7.2. La posición espacial de constituyentes en una descomposición de objeto PUEDE tener significado semántico (disposición física, orden lógico).
 
 **Proceso ambiental (patrón de ciclo de vida):** Cuando un proceso opera sobre el sistema pero no es parte de su función primaria — típicamente procesos de ciclo de vida como diseño, fabricación, mantenimiento, venta o instalación — el modelador DEBERÍA modelarlo como **proceso ambiental** (contorno discontinuo). Ejemplo canónico: el proceso de gestión del ciclo de vida de un electrodoméstico (conceptualizar, diseñar, fabricar, vender, instalar) es ambiental porque gestiona el ciclo de vida del sistema pero no entrega valor funcional directo al beneficiario. **Regla de decisión:** si el proceso no entrega valor funcional directo al beneficiario del sistema, es candidato a proceso ambiental.
 
@@ -340,12 +342,14 @@ Los objetos se refinan vía descomposición (composición espacial/estructural) 
 
 ### 7.4 Distribución y Migración de Enlaces
 
+La especificación formal completa de distribución de enlaces vive en `opm-visual-es` §11. Esta subsección extrae solo el resumen operativo necesario para la decisión metodológica:
+
 | Tipo de enlace | Contorno exterior | Migración por defecto |
 |-------------|---------------|-------------------|
 | Enlace de agente | PERMITIDO (distribuye a todos) | — |
 | Enlace de instrumento | PERMITIDO (distribuye a todos) | — |
-| Enlace de consumo | PROHIBIDO | Migra al primer subproceso; reasignar |
-| Enlace de resultado | PROHIBIDO | Migra al primer subproceso; reasignar |
+| Enlace de consumo | PROHIBIDO | Migra al primer subproceso (V-103); reasignar |
+| Enlace de resultado | PROHIBIDO | Migra al último subproceso (V-103); reasignar |
 | Enlace de evento sistémico | PROHIBIDO | — |
 
 **Procedimiento de migración de enlaces** (al hacer descomposición):
@@ -399,7 +403,7 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 | Mecanismo | Refinamiento | Abstracción | Uso principal |
 |-----------|-------------|-------------|---------------|
 | Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos sincrónicos; objetos con partes espaciales |
-| Despliegue / Plegado | Expone refinadores via relación estructural | Oculta refinadores | Procesos asincrónicos; taxonomías; rasgos |
+| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asincrónicos; taxonomías; rasgos |
 | Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual |
 | Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales |
 
@@ -522,13 +526,13 @@ Las heurísticas de esta sección integran prácticas del libro de referencia de
 
 ### 9.1 Proceso Persistente → Enlace Estructural Etiquetado
 
-Cuando un proceso mantiene un objeto en su estado actual sin transformarlo (*Sostener*, *Mantener*, *Almacenar*, *Contener*, *Conectar*), el modelador DEBERÍA reemplazarlo con un enlace estructural etiquetado.
+Cuando un proceso mantiene un objeto en su estado actual sin introducir un cambio neto relevante para el propósito del modelo (*Sostener*, *Mantener*, *Almacenar*, *Contener*, *Conectar*), el modelador DEBERÍA considerar reemplazarlo por un enlace estructural etiquetado.
 
-**Justificación:** Los procesos que preservan estado violan la definición fundamental de proceso como "cosa que transforma un objeto". El enlace estructural etiquetado es más compacto y expresa la naturaleza invariante en el tiempo de la relación.
+**Justificación:** En muchos casos, un proceso de mantenimiento de estado aporta menos claridad que una relación estructural etiquetada. El enlace estructural etiquetado es más compacto y expresa mejor una relación estable cuando la temporalidad sostenida no es semánticamente central.
 
 **Correcto:** `Foundation supports House.` (enlace estructural etiquetado, una sentencia OPL)
 
-**Incorrecto:** Supporting como proceso explícito con Foundation como instrumento y House como afectado (múltiples enlaces, OPL más complejo, contradice definición de proceso)
+**Incorrecto:** Supporting como proceso explícito con Foundation como instrumento y House como afectado cuando no se quiere modelar esfuerzo sostenido, duración o condición mantenida (múltiples enlaces y OPL más complejo sin ganancia semántica)
 
 **Excepcion:** Si mantener el estado requiere esfuerzo no trivial (ej: helicopter hovering requiere propulsión activa), el modelador DEBE modelar el proceso explícitamente.
 
@@ -607,7 +611,7 @@ Cuando un objeto tiene un solo atributo relevante, el modelador PUEDE simplifica
 
 Cuando múltiples objetos específicos del SD1 compartirían el mismo tipo de relación con el proceso principal en el SD, el modelador DEBERÍA crear un objeto general que los englobe y agregar solo ese objeto al SD, manteniendo los específicos en SD1.
 
-**Correcto:** Road Danger Representation (general) en SD; Vehicle-in-Front Representation, Pedestrian-in-Front Representation, Lane Set Representation (específicos) en SD1 conectados via generalización-especialización.
+**Correcto:** Road Danger Representation (general) en SD; Vehicle-in-Front Representation, Pedestrian-in-Front Representation, Lane Set Representation (específicos) en SD1 conectados vía generalización-especialización.
 
 **Incorrecto:** Las tres representaciones específicas en SD (sobrecarga del diagrama de nivel superior).
 
@@ -617,7 +621,7 @@ Al modelar sistemas a partir de texto (estándares, regulaciones, especificacion
 
 ### 9.15 Detección de Sinónimos/Homónimos mediante Modelamiento Formal
 
-OPM fuerza una correspondencia 1:1 entre cosas y nombres. El modelador DEBE usar este formalismo para detectar: (a) **sinónimos** — múltiples palabras para el mismo concepto (ej: "propósito" vs "propósito declarado" en ISO 15288), y (b) **homónimos** — misma palabra para conceptos distintos (ej: "entorno" vs "entorno operacional"). Cada sinónimo detectado DEBE resolverse eligiendo un término canónico. Cada homónimo DEBE resolverse creando cosas separadas con nombres distintos.
+OPM exige una correspondencia 1:1 entre cosas y **nombres canónicos** dentro del modelo. El modelador DEBE usar este formalismo para detectar: (a) **sinónimos** — múltiples palabras para el mismo concepto (ej: "propósito" vs "propósito declarado" en ISO 15288), y (b) **homónimos** — misma palabra para conceptos distintos (ej: "entorno" vs "entorno operacional"). Cada sinónimo detectado DEBE resolverse eligiendo un término canónico. Las variantes de superficie admitidas por OPL-ES pueden coexistir editorialmente, pero DEBEN mapear al mismo nombre canónico interno. Cada homónimo DEBE resolverse creando cosas separadas con nombres distintos.
 
 ### 9.16 Detección de Inconsistencias Texto-Diagrama
 
@@ -651,7 +655,7 @@ Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato com
 
 **Tipos válidos:** integer, float, string, character, boolean. El tipo restringe los valores admisibles del atributo y permite validación de rangos.
 
-**Rangos:** El modelador DEBERÍA asignar rangos a atributos con dominio acotado: `[0..100]` (cerrado), `{0..*}` (abierto). Múltiples rangos disjuntos se expresan como unión: `[1..10],[20..30]`.
+**Rangos:** El modelador DEBERÍA asignar rangos a atributos con dominio acotado. Convención canónica del corpus: intervalos con `..` y delimitadores de inclusión/exclusión, por ejemplo `[0..100]`, `(0..*)`, `[1..10], [20..30]`.
 
 ## 10 Control de Flujo Avanzado
 
@@ -787,28 +791,28 @@ Cuando se implemente el modelo en OPCloud, el modelador DEBE seguir este patrón
 
 1. **Definir objetos** con atributos computacionales (tipo: integer, float, string, character, boolean)
 2. **Asignar alias** a cada atributo computacional (ej: "x1", "y1") para uso en fórmulas
-3. **Crear proceso de calculo** — representado con braces `{}` en el OPD, indicando naturaleza computacional
-4. **Definir formula** usando los aliases (ej: `slope = (y2-y1)/(x2-x1)`)
+3. **Crear proceso de cálculo** — representado con braces `{}` en el OPD, indicando naturaleza computacional
+4. **Definir fórmula** usando los aliases (ej: `slope = (y2-y1)/(x2-x1)`)
 5. **Conectar proceso** a objetos vía enlace de consumo/efecto para flujo de datos
 
 **Estereotipos en OPCloud:** Plantillas de parámetros reutilizables para patrones computacionales comunes. La herramienta distingue niveles Global y Organizacional. Al remover un estereotipo de una cosa, el modelador DEBE elegir entre desenlazar (conservar componentes) o desenlazar y eliminar (eliminar componentes agregados).
 
 ### 12.5 Validación de Rangos
 
-El modelador DEBERÍA asignar rangos a atributos computacionales para validación durante simulación. Sintaxis: `[inclusive`, `(exclusive`. Multiples rangos: `[1,10][20,30]`. El sistema válida automáticamente que los valores permanezcan en rangos validos.
+El modelador DEBERÍA asignar rangos a atributos computacionales para validación durante simulación. Sintaxis canónica: `[incluido..incluido]`, `(exclusivo..exclusivo)` y combinaciones mixtas cuando corresponda. Múltiples rangos: `[1..10], [20..30]`. El sistema valida automáticamente que los valores permanezcan en rangos válidos.
 
 ### 12.6 Flujo de Simulación con Entrada de Usuario
 
 Para simulación con entrada de usuario en OPCloud, el modelador DEBE seguir estos 6 pasos:
 
 1. Crear usuario como objeto físico
-2. Conectar usuario al proceso via **enlace de agente**
+2. Conectar usuario al proceso vía **enlace de agente**
 3. Marcar proceso para recibir entrada de usuario durante simulación
 4. Crear objeto de entrada computacional para recibir valores
 5. Conectar proceso al objeto de entrada vía **enlace de efecto** (requerido para actualizar objetos computacionales con valores de usuario)
 6. En la computación, usar función **Entrada de Usuario** de la API predefinida
 
-Sin los pasos 5-6, el objeto entrada no recibira valores durante simulación.
+Sin los pasos 5-6, el objeto entrada no recibirá valores durante simulación.
 
 ### 12.7 Semántica Operacional en Contextos Descompuestos
 
@@ -919,7 +923,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Enlace de instrumentos solo conectan a no humanos | manual | ISO |
 | Todo habilitador persiste sin cambio neto tras el proceso | manual | ISO |
 | Objetos ambientales tienen contorno discontinuo | lint | ISO |
-| Sistema exhibe proceso principal via exhibición-caracterización | manual | ISO |
+| Sistema exhibe proceso principal vía exhibición-caracterización | manual | ISO |
 | Enlace de consumo/resultado NO en contorno exterior de proceso descompuesto | lint | ISO |
 | Todo subproceso conectado a al menos un transformado | lint | ISO |
 | Modelo bimodal: todo OPD tiene párrafo OPL equivalente | schema | ISO |
@@ -935,7 +939,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Minimizar número de enlaces y cruces de enlaces en cada OPD | manual | Dori |
 | Si se usan requirements en OPCloud, la trazabilidad usa enlaces estructurales y la convención "satisfies" | manual | OPCloud |
 | En OPCloud, procesos computacionales se distinguen visualmente con `{}` en el OPD | lint | OPCloud |
-| Sinónimos resueltos: una cosa = un nombre canónico | manual | Dori |
+| Sinónimos de superficie resueltos a un nombre canónico por cosa | manual | Dori |
 | Refinamiento no trivial: descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | lint | Ext |
 | Proceso que no entrega valor funcional directo al beneficiario DEBERÍA ser ambiental | manual | Ext |
 | Interfaz de sub-modelo congelada tras creación: sin nuevas cosas compartidas, sin renombrar, sin agregar estados | manual | Ext |

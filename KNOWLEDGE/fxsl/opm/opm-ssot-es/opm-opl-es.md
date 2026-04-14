@@ -3,9 +3,9 @@ _manifest:
   urn: "urn:fxsl:kb:opm-opl-es"
   provenance:
     created_by: "kora/curator"
-    created_at: "2026-03-22"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-opl-es.md"
-version: "1.5.1"
+    created_at: "2026-04-14"
+    source: "synthesis:opm-iso-19450-es,ISO/PAS-19450:2015(Annex-A)"
+version: "1.6.0"
 status: published
 tags: [opm, opl, spanish, es, grammar, i18n, iso-19450, bimodal, localization]
 lang: es
@@ -16,7 +16,7 @@ extensions:
       - "urn:fxsl:kb:opm-iso-19450-es"
 ---
 
-# OPL-ES — Object-Process Language en Español
+# OPL-ES — Lenguaje Objeto-Proceso en Español
 
 Especificación completa de la gramática OPL en español, complementaria a la gramática OPL en inglés definida en ISO/PAS 19450 Annex A. Diseñada para que herramientas de modelado OPM generen y parseen sentencias OPL indistintamente en inglés o español, manteniendo equivalencia semántica total.
 
@@ -67,11 +67,11 @@ Ejemplos válidos: "Procesar Datos", "Preparar Empanadas", "Ampliación de Cober
 | adj verb-ing | Automatic Responding | Infinitivo adverbio o nominalización | Responder Automáticamente / Respuesta Automática |
 | adj noun verb-ing | Automatic Crash Responding | Infinitivo complejo o nominalización encabezada por `-ción` | Responder a Colisión Automática / Atención de Colisión Automática |
 
-Máximo 4 palabras. Se capitalizan las palabras lexicas; articulos y preposiciones breves PUEDEN permanecer en minuscula cuando mejora la naturalidad del espanol.
+Preferentemente entre 2 y 4 palabras. Se aceptan nombres más largos cuando el dominio lo exige y no introducen ambigüedad. Se capitalizan las palabras léxicas; artículos y preposiciones breves PUEDEN permanecer en minúscula cuando mejora la naturalidad del español.
 
 ### 1.2 Denominación de Objetos
 
-Sin cambio respecto a OPL-EN: sustantivo singular, con capitalizacion en las palabras lexicas del nombre.
+Sin cambio respecto a OPL-EN: sustantivo singular, con capitalización en las palabras léxicas del nombre.
 
 Plurales: sufijo "Conjunto" para inanimados (EN: "Set"), "Grupo" para humanos (EN: "Group").
 
@@ -220,6 +220,10 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 | D8 | State s of Object is final. | Estado `s` de **Objeto** es final. |
 | D9 | State s of Object is default. | Estado `s` de **Objeto** es por defecto. |
 | D10 | State s of Object is initial and final. | Estado `s` de **Objeto** es inicial y final. |
+
+### 3.4 Nota sobre procesos persistentes
+
+ISO/PAS 19450 reconoce procesos que mantienen un estado o condición sin introducir cambio neto observable (cfr. `opm-iso-19450-es` §7.2.1 NOTE 2, `opm-visual-es` V-115). Ejemplos: *Existir*, *Sostener*, *Mantener*, *Conservar*. Estos procesos no generan oración transformadora estándar (T1/T2/T3) porque no consumen, generan ni afectan un objeto. En OPL-ES, un proceso persistente PUEDE expresarse mediante una oración descriptiva de propiedad genérica (D1-D4) combinada con un enlace habilitador (H2), o mediante un enlace estructural etiquetado si la temporalidad sostenida no es semántica central (cfr. `metodologia-opm-es` §9.1). OPL-ES no define una plantilla transformadora específica para procesos persistentes; esta es una limitación conocida de la superficie textual.
 
 ---
 
@@ -721,7 +725,7 @@ frase de cambio entrada-salida = identificador de objeto, " de ", estado entrada
 
 ### 17.5 Estructura de Producción
 
-Las reglas de producción (no terminales) no cambian. Solo se sustituyen los terminales léxicos. Esto garantiza que ambas gramáticas generan sentencias semánticamente equivalentes.
+Las reglas de producción de alto nivel no cambian. En OPL-ES se sustituyen los terminales léxicos y se introducen alias de no terminales auxiliares para mantener claridad en español. El criterio normativo es que la gramática quede cerrada y semánticamente equivalente, no que replique literalmente todos los identificadores internos del anexo inglés.
 
 ---
 
@@ -749,11 +753,23 @@ entero_positivo = digito_no_cero, {digito_decimal} ;
 nombre = letra, {caracter_de_cadena} ;
 palabra_capitalizada = letra_mayuscula, {caracter_de_cadena} ;
 palabra_no_capitalizada = letra_minuscula, {caracter_de_cadena} ;
+frase_no_capitalizada = palabra_no_capitalizada, { " ", palabra_no_capitalizada } ;
+letra = letra_mayuscula | letra_minuscula ;
+letra_mayuscula = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' ;
+letra_minuscula = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' ;
+caracter_de_cadena = letra | digito_decimal | '-' | '_' ;
 identificador_de_tipo = "boolean" | "string" | tipo_numerico | "enumerated" ;
 tipo_numerico = [prefijo], "integer" | "float" | "double" | "short" | "long" ;
 restriccion_de_participacion = singular_inferior | singular_superior | plural_inferior | plural_superior
  | ( "0" | limite_de_participacion, [ " a ", limite_de_participacion ] ) ;
 singular_inferior = "un" | "una" | "un opcional" | "una opcional" | "al menos un" | "al menos una" ;
+singular_superior = "exactamente un" | "exactamente una" ;
+plural_inferior = "al menos dos" ;
+plural_superior = "dos o más" ;
+limite_de_participacion = entero_positivo | nombre ;
+prefijo = "unsigned " | "signed " ;
+unidad_de_medida = nombre ;
+nombre_de_valor = nombre | entero_positivo ;
 clausula_de_rango = " es ", nombre_de_valor | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
 ```
 
@@ -765,6 +781,42 @@ identificador_de_proceso = nombre_singular_de_proceso | nombre_singular_de_proce
 identificador_de_cosa = identificador_de_objeto | identificador_de_proceso ;
 identificador_de_estado = palabra_no_capitalizada ;
 expresion_de_etiqueta = frase_no_capitalizada ;
+nombre_singular_de_objeto = palabra_capitalizada, { " ", palabra_capitalizada | palabra_no_capitalizada } ;
+nombre_singular_de_proceso = palabra_capitalizada, { " ", palabra_capitalizada | palabra_no_capitalizada } ;
+estado_de_entrada = identificador_de_estado ;
+estado_de_salida = identificador_de_estado ;
+objeto_con_opcion_de_estado = identificador_de_objeto, [ " en ", identificador_de_estado ] ;
+objeto_con_opcion = identificador_de_objeto ;
+proceso_con_opcion = identificador_de_proceso ;
+objeto_origen = identificador_de_objeto ;
+objeto_destino = identificador_de_objeto ;
+proceso_origen = identificador_de_proceso ;
+proceso_destino = identificador_de_proceso ;
+objeto_todo = identificador_de_objeto ;
+proceso_todo = identificador_de_proceso ;
+objeto_general = identificador_de_objeto ;
+proceso_general = identificador_de_proceso ;
+clase_de_objeto = identificador_de_objeto ;
+clase_de_proceso = identificador_de_proceso ;
+objeto_especial = identificador_de_objeto ;
+objeto_con_estado = identificador_de_objeto, " en ", identificador_de_estado ;
+opd_padre = nombre ;
+opd_hijo = nombre ;
+identificador_de_proceso_activo = identificador_de_proceso ;
+max_duracion_unidades_tiempo = nombre_de_valor, " unidades-tiempo" ;
+min_duracion_unidades_tiempo = nombre_de_valor, " unidades-tiempo" ;
+lista_de_estados = identificador_de_estado, { ", ", identificador_de_estado }, [ " o ", identificador_de_estado ] ;
+lista_de_objetos = identificador_de_objeto, { ", ", identificador_de_objeto }, [ " y ", identificador_de_objeto ] ;
+lista_de_procesos = identificador_de_proceso, { ", ", identificador_de_proceso }, [ " y ", identificador_de_proceso ] ;
+lista_de_atributos = identificador_de_objeto, { ", ", identificador_de_objeto }, [ " y ", identificador_de_objeto ] ;
+lista_de_operadores = identificador_de_proceso, { ", ", identificador_de_proceso }, [ " y ", identificador_de_proceso ] ;
+lista_de_objetos_especiales = lista_de_objetos ;
+lista_de_procesos_especiales = lista_de_procesos ;
+lista_de_objetos_instancia = lista_de_objetos ;
+lista_de_procesos_instancia = lista_de_procesos ;
+lista_de_objetos_con_estado = objeto_con_estado, { ", ", objeto_con_estado }, [ " y ", objeto_con_estado ] ;
+etiqueta_directa = expresion_de_etiqueta ;
+etiqueta_nula_definida_por_usuario = expresion_de_etiqueta ;
 ```
 
 Convenciones:
@@ -777,11 +829,20 @@ Convenciones:
 ### A.4 Oraciones de descripción de cosas
 
 ```ebnf
+oracion_de_descripcion_de_cosa = oracion_de_propiedad_generica
+ | oracion_de_enumeracion_de_estados
+ | oracion_de_estados_iniciales
+ | oracion_de_estados_finales
+ | oracion_de_estado_por_defecto ;
+
 oracion_de_propiedad_generica = identificador_de_cosa, " es ", [esencia], [afiliacion], [perseverancia] ;
 oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados | "..., y otros estados" ;
 oracion_de_estados_iniciales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es inicial" ;
 oracion_de_estados_finales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es final" ;
 oracion_de_estado_por_defecto = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es por defecto" ;
+esencia = "física" | "informacional" ;
+afiliacion = "ambiental" | "sistémica" ;
+perseverancia = "persistente" | "transitoria" ;
 ```
 
 Esencia: `Física` o `Informacional`. Afiliación: `Sistémica` o `Ambiental`. Perseverancia: `Persistente` o `Transitoria`.
@@ -801,12 +862,17 @@ oracion_de_cambio = oracion_de_cambio_entrada_salida | oracion_de_cambio_solo_en
 frase_de_cambio_entrada_salida = identificador_de_objeto, " de ", estado_de_entrada, " a ", estado_de_salida ;
 frase_de_cambio_solo_entrada = identificador_de_objeto, " de ", estado_de_entrada ;
 frase_de_cambio_solo_salida = identificador_de_objeto, " a ", estado_de_salida ;
+oracion_de_cambio_entrada_salida = identificador_de_proceso, " cambia ", frase_de_cambio_entrada_salida ;
+oracion_de_cambio_solo_entrada = identificador_de_proceso, " cambia ", frase_de_cambio_solo_entrada ;
+oracion_de_cambio_solo_salida = identificador_de_proceso, " cambia ", frase_de_cambio_solo_salida ;
 
 oracion_habilitadora = oracion_de_agente | oracion_de_instrumento ;
 oracion_de_agente = objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso ;
 oracion_de_instrumento = identificador_de_proceso, " requiere ", objeto_con_opcion_de_estado ;
 
 oracion_de_control = oracion_de_evento | oracion_de_condicion | oracion_de_invocacion | oracion_de_excepcion ;
+oracion_de_evento = oracion_de_evento_de_consumo | oracion_de_evento_de_efecto
+ | oracion_de_evento_de_agente | oracion_de_evento_de_instrumento ;
 oracion_de_evento_de_consumo = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
  ", que consume ", identificador_de_objeto ;
 oracion_de_evento_de_efecto = identificador_de_objeto, " inicia ", identificador_de_proceso,
@@ -821,6 +887,7 @@ oracion_de_excepcion_por_sobretiempo = identificador_de_proceso_activo,
  " ocurre si duración de ", identificador_de_proceso, " excede ", max_duracion_unidades_tiempo ;
 oracion_de_excepcion_por_subtiempo = identificador_de_proceso_activo,
  " ocurre si duración de ", identificador_de_proceso, " es menor que ", min_duracion_unidades_tiempo ;
+oracion_de_excepcion = oracion_de_excepcion_por_sobretiempo | oracion_de_excepcion_por_subtiempo ;
 ```
 
 Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
@@ -873,14 +940,14 @@ oracion_habilitadora_condicional = oracion_de_agente_condicional
  | oracion_de_instrumento_condicional ;
 
 oracion_de_agente_condicional = ( objeto_con_opcion_de_estado, " maneja ",
- identificador_de_proceso, " si ", identificador_de_objeto, " existe; de lo contrario ",
+ identificador_de_proceso, " si ", identificador_de_objeto, " existe, de lo contrario ",
  identificador_de_proceso, " se omite" )
  | ( objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso, " si ",
  identificador_de_objeto, " está en ", identificador_de_estado, ", de lo contrario ",
  identificador_de_proceso, " se omite" ) ;
 
 oracion_de_instrumento_condicional = ( identificador_de_proceso, " ocurre si ",
- identificador_de_objeto, " existe; de lo contrario ", identificador_de_proceso, " se omite" )
+ identificador_de_objeto, " existe, de lo contrario ", identificador_de_proceso, " se omite" )
  | ( identificador_de_proceso, " ocurre si ", identificador_de_objeto, " está en ",
  identificador_de_estado, ", de lo contrario ", identificador_de_proceso, " se omite" ) ;
 ```
@@ -948,15 +1015,15 @@ oracion_etiquetado_unidireccional_simple =
  | oracion_etiquetado_nonNullTag_objeto
  | oracion_etiquetado_nonNullTag_proceso ;
 
-oracion_etiquetado_nullTag_objeto = [restriccion_participacion, " "],
- objeto_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], objeto_destino ;
-oracion_etiquetado_nullTag_proceso = [restriccion_participacion, " "],
- proceso_origen, etiqueta_nula_unidireccional, [restriccion_participacion, " "], proceso_destino ;
-oracion_etiquetado_nonNullTag_objeto = [restriccion_participacion, " "],
- objeto_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], objeto_destino,
+oracion_etiquetado_nullTag_objeto = [restriccion_de_participacion, " "],
+ objeto_origen, etiqueta_nula_unidireccional, [restriccion_de_participacion, " "], objeto_destino ;
+oracion_etiquetado_nullTag_proceso = [restriccion_de_participacion, " "],
+ proceso_origen, etiqueta_nula_unidireccional, [restriccion_de_participacion, " "], proceso_destino ;
+oracion_etiquetado_nonNullTag_objeto = [restriccion_de_participacion, " "],
+ objeto_origen, " ", etiqueta_directa, " ", [restriccion_de_participacion, " "], objeto_destino,
  [", ", restriccion_de_expresion] ;
-oracion_etiquetado_nonNullTag_proceso = [restriccion_participacion, " "],
- proceso_origen, " ", etiqueta_directa, " ", [restriccion_participacion, " "], proceso_destino ;
+oracion_etiquetado_nonNullTag_proceso = [restriccion_de_participacion, " "],
+ proceso_origen, " ", etiqueta_directa, " ", [restriccion_de_participacion, " "], proceso_destino ;
 
 etiqueta_nula_unidireccional = " se relaciona con "
  | etiqueta_nula_definida_por_usuario ;
@@ -967,19 +1034,16 @@ oracion_etiquetado_bifurcada = oracion_bifurcada_nullTag_objeto
  | oracion_bifurcada_nonNullTag_objeto
  | oracion_bifurcada_nonNullTag_proceso ;
 
-oracion_bifurcada_nullTag_objeto = [restriccion_participacion, " "], objeto_origen,
+oracion_bifurcada_nullTag_objeto = [restriccion_de_participacion, " "], objeto_origen,
  etiqueta_nula_unidireccional, conjunto_de_cosas_objeto ;
-oracion_bifurcada_nullTag_proceso = [restriccion_participacion, " "], proceso_origen,
+oracion_bifurcada_nullTag_proceso = [restriccion_de_participacion, " "], proceso_origen,
  etiqueta_nula_unidireccional, conjunto_de_cosas_proceso ;
-oracion_bifurcada_nonNullTag_objeto = [restriccion_participacion, " "], objeto_origen,
+oracion_bifurcada_nonNullTag_objeto = [restriccion_de_participacion, " "], objeto_origen,
  " ", etiqueta_directa, " ", conjunto_de_cosas_objeto ;
-oracion_bifurcada_nonNullTag_proceso = [restriccion_participacion, " "], proceso_origen,
+oracion_bifurcada_nonNullTag_proceso = [restriccion_de_participacion, " "], proceso_origen,
  " ", etiqueta_directa, " ", conjunto_de_cosas_proceso ;
 
-conjunto_de_cosas_objeto = objeto_con_opcion, [ { ", ", objeto_con_opcion } ], " y ", ( objeto_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
-conjunto_de_cosas_proceso = proceso_con_opcion, [ { ", ", proceso_con_opcion } ], " y ", ( proceso_con_opcion | "más" ),
- [ ( ", ordenados por ", criterio_de_orden ) | ( ", en esa secuencia" ) ] ;
+(* conjunto_de_cosas_objeto y conjunto_de_cosas_proceso ya definidos en A.7 — no redefinir aquí *)
 
 (* Variantes bidireccionales *)
 oracion_etiquetado_bidireccional = oracion_bidireccional_asimetrica_objeto
@@ -987,15 +1051,24 @@ oracion_etiquetado_bidireccional = oracion_bidireccional_asimetrica_objeto
  | oracion_bidireccional_simetrica_objeto
  | oracion_bidireccional_simetrica_proceso ;
 
-oracion_bidireccional_asimetrica_objeto = ( [restriccion_participacion, " "],
- objeto_origen, etiqueta_directa_bidireccional, [restriccion_participacion, " "], objeto_destino,
+oracion_bidireccional_asimetrica_objeto = ( [restriccion_de_participacion, " "],
+ objeto_origen, etiqueta_directa_bidireccional, [restriccion_de_participacion, " "], objeto_destino,
  [", ", restriccion_de_expresion] )
- | ( [restriccion_participacion, " "], objeto_destino, etiqueta_inversa_bidireccional,
- [restriccion_participacion, " "], objeto_origen, [", ", restriccion_de_expresion] ) ;
-oracion_bidireccional_simetrica_objeto = ( [restriccion_participacion, " "],
- objeto_origen, " y ", [restriccion_participacion, " "], objeto_destino, " son ", etiqueta_simetrica )
- | ( [restriccion_participacion, " "], objeto_origen, " y ", [restriccion_participacion, " "],
+ | ( [restriccion_de_participacion, " "], objeto_destino, etiqueta_inversa_bidireccional,
+ [restriccion_de_participacion, " "], objeto_origen, [", ", restriccion_de_expresion] ) ;
+oracion_bidireccional_simetrica_objeto = ( [restriccion_de_participacion, " "],
+ objeto_origen, " y ", [restriccion_de_participacion, " "], objeto_destino, " son ", etiqueta_simetrica )
+ | ( [restriccion_de_participacion, " "], objeto_origen, " y ", [restriccion_de_participacion, " "],
  objeto_destino, " se relacionan" ) ;
+
+oracion_bidireccional_asimetrica_proceso = ( [restriccion_de_participacion, " "],
+ proceso_origen, etiqueta_directa_bidireccional, [restriccion_de_participacion, " "], proceso_destino )
+ | ( [restriccion_de_participacion, " "], proceso_destino, etiqueta_inversa_bidireccional,
+ [restriccion_de_participacion, " "], proceso_origen ) ;
+oracion_bidireccional_simetrica_proceso = ( [restriccion_de_participacion, " "],
+ proceso_origen, " y ", [restriccion_de_participacion, " "], proceso_destino, " son ", etiqueta_simetrica )
+ | ( [restriccion_de_participacion, " "], proceso_origen, " y ", [restriccion_de_participacion, " "],
+ proceso_destino, " se relacionan" ) ;
 
 etiqueta_simetrica = expresion_de_etiqueta ;
 etiqueta_directa_bidireccional = expresion_de_etiqueta ;
@@ -1010,8 +1083,8 @@ oracion_de_agregacion_objeto = objeto_todo, " consta de ", lista_de_partes_objet
 oracion_de_agregacion_proceso = proceso_todo, " consta de ", lista_de_partes_proceso ;
 lista_de_partes_objeto = parte_objeto, [ { ", ", parte_objeto } ], " y ", ( parte_objeto | "al menos otra parte" ) ;
 lista_de_partes_proceso = parte_proceso, [ { ", ", parte_proceso } ], " y ", ( parte_proceso | "al menos otra parte" ) ;
-parte_objeto = [restriccion_participacion, " "], identificador_de_objeto ;
-parte_proceso = [restriccion_participacion, " "], identificador_de_proceso ;
+parte_objeto = [restriccion_de_participacion, " "], identificador_de_objeto ;
+parte_proceso = [restriccion_de_participacion, " "], identificador_de_proceso ;
 
 oracion_de_caracterizacion = oracion_de_caract_objeto | oracion_de_caract_proceso ;
 oracion_de_caract_objeto = identificador_de_objeto, " exhibe ",
@@ -1021,8 +1094,7 @@ oracion_de_caract_proceso = identificador_de_proceso, " exhibe ",
  ( lista_de_operadores | lista_de_atributos
  | lista_de_operadores, ", así como ", lista_de_atributos ) ;
 
-oracion_de_exhibicion = rasgo, " de ", identificador_de_objeto, ( clausula_de_rango | " es ", ",",
- ( ( lista_de_atributos | lista_de_operadores ) | ( lista_de_atributos, ", así como ", lista_de_operadores ) ) ) ;
+oracion_de_exhibicion = oracion_de_caract_objeto | oracion_de_caract_proceso ;
 
 oracion_de_especializacion = oracion_de_especializacion_objeto | oracion_de_especializacion_proceso
  | oracion_de_especializacion_estado ;
@@ -1158,7 +1230,7 @@ Una herramienta OPM bilingüe debería:
 
 OPCloud ya soporta múltiples idiomas OPL (chino, francés, alemán, coreano). OPL-ES seguiría el mismo mecanismo de localización, agregando español como idioma disponible en: User Settings > OPL Language.
 
-A nivel de superficie textual, una implementación operativa DEBERIA además permitir:
+A nivel de superficie textual, una implementación operativa DEBERÍA además permitir:
 
 1. Elegir idioma OPL a nivel de usuario/modelo sin alterar el OPD subyacente
 2. Mostrar todas las sentencias o solo las de esencia no-default
@@ -1171,13 +1243,13 @@ OPL-ES no modifica la semántica OPM. Un modelo creado con OPL-ES es semánticam
 
 ### 18.4 Roundtrip
 
-Toda sentencia OPL-EN en forma canonica tiene al menos una sentencia OPL-ES semánticamente equivalente y viceversa. El roundtrip EN→ES→EN DEBE preservar la semántica original, aunque la superficie española pueda realizarse con infinitivo o con nominalización encabezada por `-ción` (y, cuando aplique, `-miento`). La herramienta DEBERIA respetar la forma elegida por el modelo o normalizarla al registro configurado, pero NO forzar exclusivamente infinitivo.
+Toda sentencia OPL-EN en forma canónica tiene al menos una sentencia OPL-ES semánticamente equivalente y viceversa. El roundtrip EN→ES→EN DEBE preservar la semántica original, aunque la superficie española pueda realizarse con infinitivo o con nominalización encabezada por `-ción` (y, cuando aplique, `-miento`). La herramienta DEBERÍA respetar la forma elegida por el modelo o normalizarla al registro configurado, pero NO forzar exclusivamente infinitivo.
 
-**Nota normativa sobre roundtrip y superficie:** preservar roundtrip NO significa imponer una unica forma superficial en espanol. Significa preservar el mismo hecho del modelo. Por lo tanto, si dos nombres de proceso en OPL-ES son semanticamente equivalentes y validos en el dominio, ambos PUEDEN mapear al mismo proceso interno. Ejemplo: `Verificar Identidad` y `Verificación de Identidad` PUEDEN representar el mismo proceso. Al volver de ES a EN, la herramienta DEBE recuperar un nombre ingles semanticamente equivalente, aunque la superficie espanola original no haya sido la unica posible. La normalizacion de superficie, si existe, DEBERIA ser configurable por politica editorial del modelo, no una imposicion semantica fija del lenguaje.
+**Nota normativa sobre roundtrip y superficie:** preservar roundtrip NO significa imponer una única forma superficial en español. Significa preservar el mismo hecho del modelo. Por lo tanto, si dos nombres de proceso en OPL-ES son semánticamente equivalentes y válidos en el dominio, ambos PUEDEN mapear al mismo proceso interno, siempre que el modelo conserve un nombre canónico interno por cosa. Ejemplo: `Verificar Identidad` y `Verificación de Identidad` PUEDEN representar el mismo proceso. Al volver de ES a EN, la herramienta DEBE recuperar un nombre inglés semánticamente equivalente, aunque la superficie española original no haya sido la única posible. La normalización de superficie, si existe, DEBERÍA ser configurable por política editorial del modelo, no una imposición semántica fija del lenguaje.
 
 ### 18.5 Politica de Modelos Mixtos
 
-Un modelo con prosa de apoyo en español y OPL canónica en inglés es aceptable como artefacto editorial, pero una herramienta bilingüe NO DEBERIA mezclar OPL-EN y OPL-ES dentro del mismo párrafo generado salvo habilitación explícita del usuario. La política recomendada es:
+Un modelo con prosa de apoyo en español y OPL canónica en inglés es aceptable como artefacto editorial, pero una herramienta bilingüe NO DEBERÍA mezclar OPL-EN y OPL-ES dentro del mismo párrafo generado salvo habilitación explícita del usuario. La política recomendada es:
 
 1. Un idioma OPL canónico por modelo activo
 2. Cambio de idioma mediante re-generación completa, no edición parcial

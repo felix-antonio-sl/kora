@@ -22,4 +22,10 @@ Regla editorial:
 
 - una regla debe vivir una sola vez en su capa propietaria;
 - los demás documentos pueden referenciarla, pero no duplicarla ni reformularla como si fuera propia;
-- OPCloud y demás herramientas pueden añadir operación, pero no redefinir la semántica del corpus.
+- cuando una regla visual re-expone semántica ISO, la regla V-* lleva una marca `[Semántica heredada de ...]` que indica la fuente canónica;
+- OPCloud y demás herramientas pueden añadir operación, pero no redefinir la semántica del corpus;
+- las extensiones no-ISO llevan marca explícita `[Extensión OPCloud]` o `[Extensión no-ISO]`.
+
+Nota sobre URN de la metodología:
+
+- El URN canónico de la metodología es `urn:fxsl:kb:metodologia-modelamiento-opm` (sin sufijo `-es`). Esto difiere de la convención de los otros tres documentos (`*-es`). Se conserva por estabilidad de cross-references. El idioma se indica en el campo `lang: es` del manifest.

@@ -1639,7 +1639,7 @@ Catalog:
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md
     status: published
   - urn: urn:fxsl:kb:opm-opl-es
-    title: OPL-ES — Object-Process Language en Español
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español
     file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md
     status: published
   - urn: urn:fxsl:kb:opm-readme
