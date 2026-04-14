@@ -1,14 +1,8 @@
 {
   "meta": {
-<<<<<<< Updated upstream
-    "scanned_files": 2365,
-    "node_count": 774,
-    "edge_count": 3662
-=======
     "scanned_files": 1246,
     "node_count": 774,
-    "edge_count": 3644
->>>>>>> Stashed changes
+    "edge_count": 3642
   },
   "node_kind_counts": {
     "artifact": 130,
@@ -27,11 +21,7 @@
     "InvokesSkill": 180,
     "RoutesToAgent": 13,
     "TracesTo": 48,
-<<<<<<< Updated upstream
-    "XRef": 2514
-=======
-    "XRef": 2496
->>>>>>> Stashed changes
+    "XRef": 2494
   },
   "nodes": [
     {
@@ -20079,6 +20069,13 @@
       "kind": "XRef",
       "source": "urn:fxsl:kb:opm-visual-es",
       "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-visual-es",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
     },

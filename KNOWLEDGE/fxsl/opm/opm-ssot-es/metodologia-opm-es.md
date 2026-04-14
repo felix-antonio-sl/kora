@@ -214,6 +214,7 @@ OPL-ES: `**Agente** maneja *Proceso Principal*.` (cfr. opm-opl-es H1)
 **Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del mismo proceso, donde prevalece el rol transformador.
 
 ## 6b Completación y Verificación del SD
+<!-- 6b agrupa pasos 6–8 de verificación del SD; la numeración preserva continuidad con §6a -->
 
 ### 6.6 Paso 6: Nombre del Sistema y Exhibición
 
@@ -346,8 +347,9 @@ La especificación formal completa de distribución de enlaces vive en `opm-visu
 
 | Tipo de enlace | Contorno exterior | Migración por defecto |
 |-------------|---------------|-------------------|
-| Enlace de agente | PERMITIDO (distribuye a todos) (V-36) | — |
-| Enlace de instrumento | PERMITIDO (distribuye a todos) (V-36) | — |
+| Enlace de agente | PERMITIDO (distribuye a todos) (V-36, V-104) | — |
+| Enlace de instrumento | PERMITIDO (distribuye a todos) (V-36, V-104) | — |
+| Enlace de efecto | PERMITIDO (distribuye a todos) (V-104) | — |
 | Enlace de consumo | PROHIBIDO (V-103) | Migra al primer subproceso (V-103); reasignar |
 | Enlace de resultado | PROHIBIDO (V-103) | Migra al último subproceso (V-103); reasignar |
 | Enlace de evento sistémico | PROHIBIDO (V-38) | PROHIBIDO para sistémicos; los eventos de objetos **ambientales** sí pueden cruzar el límite (ISO §14.2.2.4.2) |
@@ -731,6 +733,8 @@ Un **objeto booleano** es un objeto informacional de doble estado generado por u
 Un **escenario** (hilo de ejecución) es una ruta específica a través de la jerarquía de procesos del sistema, trazada siguiendo el estado de cada objeto. En cada punto de ramificación (objeto booleano, enlaces de condición, abanico XOR), exactamente una ruta se materializa. El conjunto completo de escenarios constituye el **repertorio de comportamiento** del sistema — la totalidad de comportamientos posibles.
 
 ### 10.12 Enlaces Transformadores Condicionales (Taxonomía Completa)
+
+[Compilación operativa — fuente canónica: opm-opl-es §7]
 
 | Enlace | Semántica | OPL-ES |
 |--------|-----------|--------|

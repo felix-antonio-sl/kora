@@ -1098,7 +1098,7 @@ oracion_bidireccional_asimetrica_objeto = ( [restriccion_de_participacion, " "],
 oracion_bidireccional_simetrica_objeto = ( [restriccion_de_participacion, " "],
  objeto_origen, " y ", [restriccion_de_participacion, " "], objeto_destino, " son ", etiqueta_simetrica )
  | ( [restriccion_de_participacion, " "], objeto_origen, " y ", [restriccion_de_participacion, " "],
- objeto_destino, " se relacionan" ) ;
+ objeto_destino, etiqueta_nula_bidireccional ) ;
 
 oracion_bidireccional_asimetrica_proceso = ( [restriccion_de_participacion, " "],
  proceso_origen, etiqueta_directa_bidireccional, [restriccion_de_participacion, " "], proceso_destino )
@@ -1107,7 +1107,7 @@ oracion_bidireccional_asimetrica_proceso = ( [restriccion_de_participacion, " "]
 oracion_bidireccional_simetrica_proceso = ( [restriccion_de_participacion, " "],
  proceso_origen, " y ", [restriccion_de_participacion, " "], proceso_destino, " son ", etiqueta_simetrica )
  | ( [restriccion_de_participacion, " "], proceso_origen, " y ", [restriccion_de_participacion, " "],
- proceso_destino, " se relacionan" ) ;
+ proceso_destino, etiqueta_nula_bidireccional ) ;
 
 etiqueta_simetrica = expresion_de_etiqueta ;
 etiqueta_directa_bidireccional = expresion_de_etiqueta ;
