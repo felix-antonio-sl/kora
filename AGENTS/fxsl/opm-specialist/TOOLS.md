@@ -25,4 +25,4 @@ _manifest:
 | Topic | URN |
 |-------|-----|
 | OPM ISO 19450, entidades, enlaces, OPL, OPD, estados, procesos, objetos, transformacion, habilitacion, refinamiento, SD, metodologia, OPCloud, herramienta, tutorial, wizard, simulacion, interfaz, navegacion, diagramas | urn:fxsl:kb:opm-iso-19450 |
-| OPL español, OPL-ES, gramatica española, traduccion OPL, bilingue, localizacion, verbos OPL, plantillas OPL español | urn:fxsl:kb:opm-opl-es |
+| OPL español, OPL-ES, gramatica española, traduccion OPL, bilingue, localizacion, verbos OPL, plantillas OPL español | urn:fxsl:kb:opl-es |

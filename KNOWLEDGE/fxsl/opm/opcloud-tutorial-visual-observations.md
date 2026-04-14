@@ -13,7 +13,7 @@ extensions:
   kora:
     family: observation
     depends_on:
-      - "urn:fxsl:kb:opm-visual-es"
+      - "urn:fxsl:kb:opd-es"
 ---
 
 # Observaciones visuales de los tutoriales OPCloud

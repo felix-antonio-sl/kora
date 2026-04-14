@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KORA Agentfile Frontmatter Schema",
+  "description": "Validates the YAML frontmatter of an AGENT.md file per agentfile-spec v1.0.0",
+  "type": "object",
+  "required": ["_manifest", "version", "name", "status", "tags", "lang", "extensions", "agent"],
+  "properties": {
+    "_manifest": {
+      "type": "object",
+      "required": ["urn", "provenance"],
+      "properties": {
+        "urn": {
+          "type": "string",
+          "pattern": "^urn:[a-z][a-z0-9]*:agent:[a-z][a-z0-9-]*$"
+        },
+        "provenance": {
+          "type": "object",
+          "required": ["created_by", "created_at"],
+          "properties": {
+            "created_by": { "type": "string", "minLength": 1 },
+            "created_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "source": { "type": "string" }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "status": {
+      "enum": ["draft", "active", "deprecated", "retired"]
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "deprecated_by": { "type": "string" },
+    "retirement_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "lang": {
+      "type": "string",
+      "pattern": "^[a-z]{2}$"
+    },
+    "extensions": { "type": "object" },
+
+    "agent": {
+      "type": "object",
+      "required": ["coalgebra", "plan"],
+      "properties": {
+
+        "coalgebra": {
+          "type": "object",
+          "required": ["description", "domain"],
+          "properties": {
+            "description": { "type": "string", "minLength": 10 },
+            "domain": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "triggers": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "outputs": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "invariants": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+
+        "plan": {
+          "type": "object",
+          "required": ["initial_state", "terminal_state", "states"],
+          "properties": {
+            "initial_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+            "terminal_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+            "states": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["id", "act"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+                  "act": { "type": "string", "minLength": 1 },
+                  "transitions": {
+                    "oneOf": [
+                      { "const": "terminal" },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["condition", "target", "priority"],
+                          "properties": {
+                            "condition": { "type": "string" },
+                            "target": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+                            "priority": { "type": "integer", "minimum": 1 }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+
+        "interface": {
+          "type": "object",
+          "properties": {
+            "tools": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "description", "parameters", "when_to_use", "when_not_to_use"],
+                "properties": {
+                  "name": { "type": "string", "minLength": 1 },
+                  "description": { "type": "string" },
+                  "parameters": { "type": "string" },
+                  "when_to_use": { "type": "string" },
+                  "when_not_to_use": { "type": "string" }
+                }
+              }
+            },
+            "permissions": {
+              "type": "object",
+              "required": ["allow"],
+              "properties": {
+                "allow": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "deny": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+
+        "fibers": {
+          "type": "object",
+          "properties": {
+            "identity": {
+              "type": "object",
+              "required": ["paradigm", "tone"],
+              "properties": {
+                "paradigm": { "type": "string", "minLength": 1 },
+                "tone": { "type": "string", "minLength": 1 },
+                "voice": { "type": "string" }
+              }
+            },
+            "operator": {
+              "type": "object",
+              "required": ["role", "context"],
+              "properties": {
+                "role": { "type": "string" },
+                "context": { "type": "string" }
+              }
+            },
+            "memory": {
+              "type": "object",
+              "required": ["mode"],
+              "properties": {
+                "mode": { "enum": ["stateless", "session", "persistent"] },
+                "storage": { "type": "string" }
+              }
+            },
+            "runtime": {
+              "type": "object",
+              "required": ["sandbox"],
+              "properties": {
+                "model": { "type": "string" },
+                "model_routing": { "type": "object" },
+                "sandbox": { "enum": ["strict", "permissive", "isolated", "off"] },
+                "limits": { "type": "object" }
+              }
+            },
+            "knowledge": {
+              "type": "object",
+              "required": ["allowed_kb"],
+              "properties": {
+                "allowed_kb": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "kb_routes": { "type": "object" }
+              }
+            }
+          }
+        },
+
+        "composition": {
+          "type": "object",
+          "properties": {
+            "type": { "enum": ["root", "sub-agent", "peer"] },
+            "sub_agents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["urn", "role"],
+                "properties": {
+                  "urn": { "type": "string" },
+                  "role": { "type": "string" },
+                  "max_concurrent": { "type": "integer", "minimum": 1 }
+                }
+              }
+            },
+            "delegation": {
+              "type": "object",
+              "properties": {
+                "max_depth": { "type": "integer", "minimum": 0 },
+                "dissipation": {
+                  "type": "object",
+                  "properties": {
+                    "propagate": { "type": "array", "items": { "type": "string" } },
+                    "dissipate": { "type": "array", "items": { "type": "string" } }
+                  }
+                }
+              }
+            }
+          }
+        },
+
+        "safety": {
+          "type": "object",
+          "required": ["hard_rules", "co_induction"],
+          "properties": {
+            "hard_rules": {
+              "type": "object",
+              "required": ["scope"],
+              "properties": {
+                "scope": {
+                  "type": "object",
+                  "required": ["allowed", "forbidden", "rejection"],
+                  "properties": {
+                    "allowed": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                    "forbidden": { "type": "array", "items": { "type": "string" } },
+                    "rejection": { "type": "string", "minLength": 1 }
+                  }
+                },
+                "constraints": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            },
+            "co_induction": {
+              "type": "object",
+              "required": ["pre_output_checks"],
+              "properties": {
+                "pre_output_checks": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {
+                    "type": "object",
+                    "required": ["id", "description", "on_fail"],
+                    "properties": {
+                      "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+                      "description": { "type": "string" },
+                      "on_fail": { "type": "string" }
+                    }
+                  }
+                },
+                "custom_checks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["id", "description", "on_fail"],
+                    "properties": {
+                      "id": { "type": "string" },
+                      "description": { "type": "string" },
+                      "on_fail": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            },
+            "guardrails": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "alignment": {
+              "type": "object",
+              "properties": {
+                "principal": { "type": "string" },
+                "contract": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^CM-[A-Z][A-Z0-9-]*$" },
+          "required": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

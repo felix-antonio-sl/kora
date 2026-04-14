@@ -1,0 +1,19 @@
+{
+  channels: {
+    telegram: {
+      dmPolicy: "allowlist",           // pairing | allowlist | open | disabled
+      allowFrom: ["123456789"],        // IDs numericos
+      groupPolicy: "allowlist",        // open | allowlist | disabled
+      groupAllowFrom: [],
+      replyToMode: "first",            // off | first | all
+      chunkMode: "length",             // length | newline
+      textChunkLimit: 4000,
+      streaming: "partial",            // off | partial | block | progress
+      silentErrorReplies: true,
+      linkPreview: false,
+      // defaultAccount: "default",
+      // accounts: { ... },
+      // groups: { ... },
+    },
+  },
+}

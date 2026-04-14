@@ -15,7 +15,7 @@ extensions:
     depends_on:
       - "urn:fxsl:kb:opm-iso-19450"
       - "urn:fxsl:kb:metodologia-modelamiento-opm"
-      - "urn:fxsl:kb:opm-opl-es"
+      - "urn:fxsl:kb:opl-es"
 ---
 
 # README — Corpus OPM

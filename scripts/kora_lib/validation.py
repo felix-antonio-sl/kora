@@ -1117,9 +1117,45 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
     active_workspaces = iter_agent_workspaces(cohort=cohort)
     deprecated_excluded = len(all_workspaces) - len(active_workspaces)
 
+    # Load agentfile schema if available
+    agentfile_schema = None
+    agentfile_schema_path = KORA_ROOT / "schemas" / "kora-agentfile-schema.json"
+    if agentfile_schema_path.exists():
+        try:
+            agentfile_schema, _ = load_yaml_safe(agentfile_schema_path)
+        except Exception:
+            pass
+
     for workspace_dir in active_workspaces:
         rel_workspace = workspace_dir.relative_to(KORA_ROOT)
         workspace_ok = True
+
+        # Check if workspace uses new AGENT.md format
+        agentfile_path = workspace_dir / "AGENT.md"
+        if agentfile_path.exists():
+            # New format: validate AGENT.md against agentfile schema
+            agentfile_data, agentfile_err = load_yaml_safe(agentfile_path)
+            if not agentfile_data:
+                report_issue(agentfile_path.relative_to(KORA_ROOT), "agentfile_parse",
+                             f"Could not parse AGENT.md YAML: {agentfile_err}", workspace=rel_workspace)
+                issue_counts["agentfile_parse"] += 1
+                workspace_ok = False
+            elif agentfile_schema is not None:
+                try:
+                    jsonschema.validate(instance=agentfile_data, schema=agentfile_schema)
+                    bootstrap_validated += 1
+                except jsonschema.exceptions.ValidationError as exc:
+                    report_issue(agentfile_path.relative_to(KORA_ROOT), "agentfile_schema",
+                                 exc.message, workspace=rel_workspace)
+                    issue_counts["agentfile_schema"] += 1
+                    workspace_ok = False
+
+            if workspace_ok:
+                workspace_valid += 1
+            else:
+                workspace_invalid += 1
+            continue  # Skip legacy validation for AGENT.md workspaces
+
         missing_files = get_workspace_missing_files(workspace_dir, AGENT_REQUIRED_FILES)
         if missing_files:
             report_issue(rel_workspace, "missing_files", f"missing required files: {', '.join(missing_files)}", workspace=rel_workspace)

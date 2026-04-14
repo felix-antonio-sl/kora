@@ -14,7 +14,7 @@ extensions:
     family: textbook
     depends_on:
       - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opm-opl-es"
+      - "urn:fxsl:kb:opl-es"
     book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
     chapters: [2, 11]
 ---
@@ -23,7 +23,7 @@ extensions:
 
 ## Resumen
 
-Object-Process Language (OPL) is the textual modality of OPM, a formal subset of English that expresses the same model facts as Object-Process Diagrams (OPDs). OPM's bimodal representation exploits the dual-channel cognitive assumption: graphics and text reinforce comprehension through parallel visual and verbal processing. OPL serves dual purpose: human communication (stakeholder validation, error detection) and machine generation (code synthesis, simulation, schema generation). OPL syntax is defined by ~400 EBNF production rules in ISO 19450 Annex A. For formal OPL specification, see [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). For Spanish localization, see [OPL ES](urn:fxsl:kb:opm-opl-es).
+Object-Process Language (OPL) is the textual modality of OPM, a formal subset of English that expresses the same model facts as Object-Process Diagrams (OPDs). OPM's bimodal representation exploits the dual-channel cognitive assumption: graphics and text reinforce comprehension through parallel visual and verbal processing. OPL serves dual purpose: human communication (stakeholder validation, error detection) and machine generation (code synthesis, simulation, schema generation). OPL syntax is defined by ~400 EBNF production rules in ISO 19450 Annex A. For formal OPL specification, see [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). For Spanish localization, see [OPL ES](urn:fxsl:kb:opl-es).
 
 ## OPL Definition and Nature
 

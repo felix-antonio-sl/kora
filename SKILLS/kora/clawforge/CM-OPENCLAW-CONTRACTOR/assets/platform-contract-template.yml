@@ -1,0 +1,27 @@
+platform_contract:
+  config_projection:
+    gateway: {}
+    sandbox: {}
+    tools: {}
+    agents:
+      defaults: {}
+      list: []
+    channels: {}
+  managed_installs:
+    workspace_skills: []
+    skills: []
+    plugins: []
+    bundles: []
+  deployment_hints:
+    topology:
+      recommended: "single-gateway-multi-agent"
+      gateway_count: 1
+    bind_mounts: []
+    kb_mounts: []
+    manual_inputs_required: []
+    validation_checks: []
+  provenance: {}
+  runtime_exclusions:
+    - "auth-profiles.json"
+    - "sessions/"
+    - "credentials/"

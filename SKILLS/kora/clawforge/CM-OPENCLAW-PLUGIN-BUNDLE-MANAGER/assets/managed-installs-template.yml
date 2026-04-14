@@ -1,0 +1,16 @@
+managed_installs:
+  workspace_skills: []
+  skills:
+    - slug: "<skill-slug>"
+      version: "<version>"
+      source: "clawhub"
+  plugins:
+    - locator: "clawhub:<plugin-id>"
+      version: "<version>"
+      source: "clawhub"
+      enable_after_install: true
+      trust_required: false
+  bundles:
+    - locator: "<plugin>@<marketplace>"
+      source: "marketplace"
+      capabilities: []

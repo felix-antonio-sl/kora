@@ -14,14 +14,14 @@ extensions:
     family: specification
     depends_on:
       - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opm-opl-es"
+      - "urn:fxsl:kb:opl-es"
 ---
 
 # Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas
 
 ## 1 Definicion
 
-Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas normativas desde [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450) y [OPL-ES](urn:fxsl:kb:opm-opl-es), e incorpora directamente la guia operativa de tool usage previamente dispersa en artefactos hoy deprecados. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para la realizacion textual en espanol, ver [OPL-ES](urn:fxsl:kb:opm-opl-es).
+Esta especificacion define la metodologia para construir modelos conceptuales de sistemas usando Object-Process Methodology (OPM). Consolida reglas normativas desde [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450) y [OPL-ES](urn:fxsl:kb:opl-es), e incorpora directamente la guia operativa de tool usage previamente dispersa en artefactos hoy deprecados. Para la especificacion formal del lenguaje OPM, ver [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450). Para la realizacion textual en espanol, ver [OPL-ES](urn:fxsl:kb:opl-es).
 
 ### 1.1 Alcance y Precedencia del Corpus
 
@@ -209,7 +209,7 @@ Una herramienta PUEDE dividir o fusionar etapas por conveniencia UX, pero NO DEB
 La forma del nombre depende del idioma de realizacion:
 
 - En artefactos y modelos en **ingles**, el nombre del proceso DEBE terminar con verbo en forma gerundio (sufijo "-ing"), conforme a [OPM ISO 19450](urn:fxsl:kb:opm-iso-19450).
-- En artefactos y modelos en **espanol**, el nombre del proceso DEBE encabezarse con infinitivo (-ar, -er, -ir) o con una nominalizacion verbal cuya primera palabra termine en `-ción`, conforme a [OPL-ES](urn:fxsl:kb:opm-opl-es) §1.1. La forma en `-miento` TAMBIEN PUEDE aceptarse cuando el dominio la exija.
+- En artefactos y modelos en **espanol**, el nombre del proceso DEBE encabezarse con infinitivo (-ar, -er, -ir) o con una nominalizacion verbal cuya primera palabra termine en `-ción`, conforme a [OPL-ES](urn:fxsl:kb:opl-es) §1.1. La forma en `-miento` TAMBIEN PUEDE aceptarse cuando el dominio la exija.
 
 **Correcto:** `Battery Charging`, `Airplane Flying`
 

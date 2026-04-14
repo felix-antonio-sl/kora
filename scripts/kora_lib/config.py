@@ -11,8 +11,10 @@ CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
 GENERATED_DOCS_DIR = KORA_ROOT / "docs" / "generated"
 BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
 CONFIG_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-config-schema.json"
+AGENTFILE_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agentfile-schema.json"
 AGENT_BOOTSTRAP_FILES = ("AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md")
 AGENT_REQUIRED_FILES = AGENT_BOOTSTRAP_FILES + ("config.json",)
+AGENTFILE_NAME = "AGENT.md"
 BOOTSTRAP_MANIFEST_TYPES = {
     "AGENTS.md": "bootstrap_agents",
     "SOUL.md": "bootstrap_soul",

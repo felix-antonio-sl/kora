@@ -5,7 +5,7 @@
   },
   "allowed_kb": [
     "urn:fxsl:kb:opm-iso-19450",
-    "urn:fxsl:kb:opm-opl-es"
+    "urn:fxsl:kb:opl-es"
   ],
   "sandbox": {
     "mode": "strict"
