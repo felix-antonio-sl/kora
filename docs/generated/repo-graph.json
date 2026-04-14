@@ -1,27 +1,27 @@
 {
   "meta": {
-    "scanned_files": 1466,
-    "node_count": 795,
-    "edge_count": 3857
+    "scanned_files": 2421,
+    "node_count": 791,
+    "edge_count": 3778
   },
   "node_kind_counts": {
-    "artifact": 140,
-    "knowledge": 353,
-    "skill": 201,
+    "artifact": 138,
+    "knowledge": 355,
+    "skill": 190,
     "spec": 8,
-    "tool": 66,
-    "workspace": 27
+    "tool": 70,
+    "workspace": 30
   },
   "edge_kind_counts": {
-    "AllowsKB": 379,
-    "AllowsTool": 128,
-    "ContainsArtifact": 138,
-    "ContainsSkill": 197,
-    "DeclaresTool": 129,
-    "InvokesSkill": 192,
+    "AllowsKB": 360,
+    "AllowsTool": 127,
+    "ContainsArtifact": 128,
+    "ContainsSkill": 186,
+    "DeclaresTool": 135,
+    "InvokesSkill": 189,
     "RoutesToAgent": 13,
-    "TracesTo": 50,
-    "XRef": 2631
+    "TracesTo": 48,
+    "XRef": 2592
   },
   "nodes": [
     {
@@ -79,6 +79,21 @@
       "namespace": "dev"
     },
     {
+      "id": "urn:dev:kb:agentic-engineering-praxis",
+      "kind": "artifact",
+      "urn": "urn:dev:kb:agentic-engineering-praxis"
+    },
+    {
+      "id": "urn:dev:kb:agentic-tooling-inventory",
+      "kind": "artifact",
+      "urn": "urn:dev:kb:agentic-tooling-inventory"
+    },
+    {
+      "id": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual",
+      "kind": "artifact",
+      "urn": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual"
+    },
+    {
       "id": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "kind": "artifact",
       "category": "Agents",
@@ -121,51 +136,6 @@
       "urn": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0",
       "title": "USER.md",
       "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/USER.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "title": "AGENTS.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "title": "config.json",
-      "path": "AGENTS/fxsl/arquitecto-categorico/config.json",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
-      "title": "SOUL.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "title": "TOOLS.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
-      "title": "USER.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/USER.md",
       "namespace": "fxsl"
     },
     {
@@ -392,6 +362,31 @@
       "title": "USER.md",
       "path": "AGENTS/fxsl/opm-specialist/USER.md",
       "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opcloud-tutorial-videos"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-applied-system-modeling",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-applied-system-modeling"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-canonical-example",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-canonical-example"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-canonical-example.",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-canonical-example."
+    },
+    {
+      "id": "urn:fxsl:kb:opm-sd-wizard",
+      "kind": "artifact",
+      "urn": "urn:fxsl:kb:opm-sd-wizard"
     },
     {
       "id": "urn:gn:agent-bootstrap:ar-virtual-agents:2.1.0",
@@ -1038,6 +1033,15 @@
       "namespace": "korvo"
     },
     {
+      "id": "urn:omega:openclaw-agent-spec:salubrista:1.0.0",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:omega:openclaw-agent-spec:salubrista:1.0.0",
+      "title": "Especificacion Integral del Agente OpenClaw `salubrista`",
+      "path": "AGENTS/OMEGA/salubrista-openclaw-especificacion-integral.md",
+      "namespace": "omega"
+    },
+    {
       "id": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "kind": "artifact",
       "category": "Agents",
@@ -1081,51 +1085,6 @@
       "title": "USER.md",
       "path": "AGENTS/ops/clawstack/USER.md",
       "namespace": "ops"
-    },
-    {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "title": "AGENTS.md",
-      "path": "AGENTS/pro/estratega-comunicacional/AGENTS.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
-      "title": "config.json",
-      "path": "AGENTS/pro/estratega-comunicacional/config.json",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
-      "title": "SOUL.md",
-      "path": "AGENTS/pro/estratega-comunicacional/SOUL.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0",
-      "title": "TOOLS.md",
-      "path": "AGENTS/pro/estratega-comunicacional/TOOLS.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0",
-      "kind": "artifact",
-      "category": "Agents",
-      "urn": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0",
-      "title": "USER.md",
-      "path": "AGENTS/pro/estratega-comunicacional/USER.md",
-      "namespace": "pro"
     },
     {
       "id": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
@@ -1269,15 +1228,6 @@
       "urn": "urn:salud:agent-bootstrap:salubrista-user:1.0.0",
       "title": "USER.md",
       "path": "AGENTS/salud/salubrista/USER.md",
-      "namespace": "salud"
-    },
-    {
-      "id": "urn:salud:medico-urgencias:user-stories:1.0.0",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:salud:medico-urgencias:user-stories:1.0.0",
-      "title": "Historias de Usuario — Medico Urgencia + Asistente Inteligente",
-      "path": "KNOWLEDGE/salud/medico-urgencias-user-stories.md",
       "namespace": "salud"
     },
     {
@@ -1515,30 +1465,21 @@
       "namespace": "agengai"
     },
     {
-      "id": "urn:agengai:kb:manual-ciclo-vida-agentes-openclaw",
+      "id": "urn:agengai:kb:forjador-especialista-openclaw",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:agengai:kb:manual-ciclo-vida-agentes-openclaw",
-      "title": "Manual de ciclo de vida de agentes OpenClaw",
-      "path": "KNOWLEDGE/agengai/openclaw/manual-ciclo-vida-agentes-openclaw.md",
+      "urn": "urn:agengai:kb:forjador-especialista-openclaw",
+      "title": "FORJADOR ESPECIALISTA — Despliegue, Configuración y Mantención de Agentes OpenClaw en Ubuntu Host",
+      "path": "AGENTS/OMEGA/forjador-especialista-openclaw.md",
       "namespace": "agengai"
     },
     {
-      "id": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
+      "id": "urn:agengai:kb:forjador-openclaw",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
-      "title": "Manual de operacion OpenClaw para agentes AI",
-      "path": "KNOWLEDGE/agengai/openclaw/manual-openclaw-para-agentes-ai.md",
-      "namespace": "agengai"
-    },
-    {
-      "id": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
-      "title": "Manual de skills OpenClaw para agentes AI",
-      "path": "KNOWLEDGE/agengai/openclaw/manual-skills-openclaw-para-agentes-ai.md",
+      "urn": "urn:agengai:kb:forjador-openclaw",
+      "title": "FORJADOR — Agente Forjador de Agentes OpenClaw",
+      "path": "AGENTS/OMEGA/forjador-openclaw.md",
       "namespace": "agengai"
     },
     {
@@ -1548,6 +1489,24 @@
       "urn": "urn:agengai:kb:openclaw-integration",
       "title": "OpenClaw Integration Guide",
       "path": "KNOWLEDGE/agengai/openclaw-integration.md",
+      "namespace": "agengai"
+    },
+    {
+      "id": "urn:agengai:kb:openclaw-manual-integral",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:agengai:kb:openclaw-manual-integral",
+      "title": "Manual Integral — Agentes OpenClaw: Creacion, Operacion y Evolucion",
+      "path": "KNOWLEDGE/OMEGA/openclaw-manual-integral.md",
+      "namespace": "agengai"
+    },
+    {
+      "id": "urn:agengai:kb:openclaw-skills-manual",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:agengai:kb:openclaw-skills-manual",
+      "title": "Manual Integral de Skills en OpenClaw",
+      "path": "KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md",
       "namespace": "agengai"
     },
     {
@@ -1569,30 +1528,12 @@
       "namespace": "agengai"
     },
     {
-      "id": "urn:dev:kb:agentic-engineering-praxis",
+      "id": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:dev:kb:agentic-engineering-praxis",
-      "title": "Ingenieria Agéntica: Praxis de Peter Steinberger",
-      "path": "KNOWLEDGE/dev/agentic-engineering-praxis.md",
-      "namespace": "dev"
-    },
-    {
-      "id": "urn:dev:kb:agentic-tooling-inventory",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:dev:kb:agentic-tooling-inventory",
-      "title": "Claude Code detecta automáticamente",
-      "path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md",
-      "namespace": "dev"
-    },
-    {
-      "id": "urn:dev:kb:claude-code-mastery",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:dev:kb:claude-code-mastery",
-      "title": "Agent SDK, Headless Mode y Automatización",
-      "path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md",
+      "urn": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
+      "title": "Peter Steinberger: canon operativo de ingenieria agentica",
+      "path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md",
       "namespace": "dev"
     },
     {
@@ -1620,6 +1561,24 @@
       "urn": "urn:fxsl:kb:algebraic-model-management",
       "title": "Algebraic Model Management",
       "path": "KNOWLEDGE/fxsl/cat/algebraic-model-management.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "title": "Allan Kelly: gemelo digital intelectual",
+      "path": "KNOWLEDGE/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "title": "Allan Kelly nativo de la era de la ingenieria agentica",
+      "path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md",
       "namespace": "fxsl"
     },
     {
@@ -1834,8 +1793,8 @@
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "title": "Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas",
-      "path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md",
+      "title": "Metodología de Modelamiento OPM — Protocolo de Modelamiento Conceptual de Sistemas",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md",
       "namespace": "fxsl"
     },
     {
@@ -1848,39 +1807,12 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "id": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "title": "OPCloud Tutorial Videos",
-      "path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:openclaw-agent-lifecycle-manual",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:openclaw-agent-lifecycle-manual",
-      "title": "Manual para Agentes AI Basados en LLM: Crear, Mantener, Administrar y Evolucionar Agentes OpenClaw",
-      "path": "KNOWLEDGE/fxsl/openclaw-agent-lifecycle-manual.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-applied-system-modeling",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-applied-system-modeling",
-      "title": "OPM Applied System Modeling — System Categories, SD Method, and Worked Examples",
-      "path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:kb:opm-canonical-example",
-      "kind": "knowledge",
-      "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-canonical-example",
-      "title": "OPM Canonical Example — Autonomous Electric Vehicle Manufacturing & Operation",
-      "path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "urn": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
+      "title": "Observaciones visuales de los tutoriales OPCloud",
+      "path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md",
       "namespace": "fxsl"
     },
     {
@@ -1907,7 +1839,16 @@
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:opm-iso-19450",
       "title": "OPM ISO/PAS 19450 — Object-Process Methodology",
-      "path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-iso-19450-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-iso-19450-es",
+      "title": "OPM ISO/PAS 19450 — Metodología Objeto‑Proceso",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md",
       "namespace": "fxsl"
     },
     {
@@ -1943,16 +1884,16 @@
       "category": "Knowledge",
       "urn": "urn:fxsl:kb:opm-opl-es",
       "title": "OPL-ES — Object-Process Language en Español",
-      "path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-opl-es.md",
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:kb:opm-sd-wizard",
+      "id": "urn:fxsl:kb:opm-readme",
       "kind": "knowledge",
       "category": "Knowledge",
-      "urn": "urn:fxsl:kb:opm-sd-wizard",
-      "title": "OPM SD Wizard — System Diagram Construction Protocol",
-      "path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
+      "urn": "urn:fxsl:kb:opm-readme",
+      "title": "README — Corpus OPM",
+      "path": "KNOWLEDGE/fxsl/opm/README.md",
       "namespace": "fxsl"
     },
     {
@@ -1962,6 +1903,15 @@
       "urn": "urn:fxsl:kb:opm-structural-relations",
       "title": "OPM Structural Relations — Fundamental Relations, States, and Hierarchies",
       "path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md",
+      "namespace": "fxsl"
+    },
+    {
+      "id": "urn:fxsl:kb:opm-visual-es",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:fxsl:kb:opm-visual-es",
+      "title": "Especificación formal de la gramática visual OPM",
+      "path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md",
       "namespace": "fxsl"
     },
     {
@@ -3216,6 +3166,15 @@
       "namespace": "ops"
     },
     {
+      "id": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "title": "Tres generaciones del ecosistema de agentes KORA",
+      "path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md",
+      "namespace": "ops"
+    },
+    {
       "id": "urn:ops:kb:ux-telegram-openclaw",
       "kind": "knowledge",
       "category": "Knowledge",
@@ -3223,6 +3182,15 @@
       "title": "Configuración de comportamiento de agentes OpenClaw",
       "path": "KNOWLEDGE/ops/ux-telegram-openclaw.md",
       "namespace": "ops"
+    },
+    {
+      "id": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
+      "title": "David Allen integral definitivo - septiembre 2026",
+      "path": "AGENTS/_perfiles/david-allen-integral-definitivo-septiembre-2026.md",
+      "namespace": "pro"
     },
     {
       "id": "urn:pro:kb:mba-personal-kaufman",
@@ -4584,78 +4552,6 @@
       "namespace": "fxsl"
     },
     {
-      "id": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "title": "CM-ARTIFACT-GENERATOR.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-ARTIFACT-GENERATOR.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "title": "CM-AUDIT-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-AUDIT-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "title": "CM-BEHAVIOR-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-BEHAVIOR-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "title": "CM-DAL-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-DAL-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "title": "CM-INTEGRATION-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-INTEGRATION-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "title": "CM-MIGRATION-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-MIGRATION-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "title": "CM-STRUCTURE-ENGINE.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-STRUCTURE-ENGINE.md",
-      "namespace": "fxsl"
-    },
-    {
-      "id": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
-      "title": "CM-TENSION-EXPLORER.md",
-      "path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-TENSION-EXPLORER.md",
-      "namespace": "fxsl"
-    },
-    {
       "id": "urn:fxsl:skill:arquitecto-sistemas-informacion-data-architect:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -5412,6 +5308,15 @@
       "namespace": "kora"
     },
     {
+      "id": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0",
+      "title": "CM-OPENCLAW-LIFECYCLE-MANAGER",
+      "path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-LIFECYCLE-MANAGER/SKILL.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -6033,42 +5938,6 @@
       "namespace": "ops"
     },
     {
-      "id": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "title": "CM-ARQUITECTURA-MENSAJES.md",
-      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-ARQUITECTURA-MENSAJES.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "title": "CM-DIAGNOSTICO-ESTRATEGICO.md",
-      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-DIAGNOSTICO-ESTRATEGICO.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "title": "CM-DISENO-NARRATIVA.md",
-      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-DISENO-NARRATIVA.md",
-      "namespace": "pro"
-    },
-    {
-      "id": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
-      "kind": "skill",
-      "category": "Skills",
-      "urn": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
-      "title": "CM-PRODUCCION-TACTICA.md",
-      "path": "AGENTS/pro/estratega-comunicacional/skills/CM-PRODUCCION-TACTICA.md",
-      "namespace": "pro"
-    },
-    {
       "id": "urn:salud:skill:medico-urgencias-context-manager:2.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -6339,6 +6208,11 @@
       "namespace": "kora"
     },
     {
+      "id": "tool:Disciplina",
+      "kind": "tool",
+      "name": "Disciplina"
+    },
+    {
       "id": "tool:Examples",
       "kind": "tool",
       "name": "Examples"
@@ -6489,6 +6363,11 @@
       "name": "estado"
     },
     {
+      "id": "tool:exec",
+      "kind": "tool",
+      "name": "exec"
+    },
+    {
       "id": "tool:file_write",
       "kind": "tool",
       "name": "file_write"
@@ -6537,6 +6416,11 @@
       "id": "tool:load_neo_protocol",
       "kind": "tool",
       "name": "load_neo_protocol"
+    },
+    {
+      "id": "tool:message",
+      "kind": "tool",
+      "name": "message"
     },
     {
       "id": "tool:monitor_workers",
@@ -6654,6 +6538,11 @@
       "name": "urn_resolve"
     },
     {
+      "id": "tool:web_fetch",
+      "kind": "tool",
+      "name": "web_fetch"
+    },
+    {
       "id": "tool:web_search",
       "kind": "tool",
       "name": "web_search"
@@ -6669,6 +6558,41 @@
       "name": "workspace_write"
     },
     {
+      "id": "workspace:OMEGA/clawforge-host-native",
+      "kind": "workspace",
+      "workspace": "OMEGA/clawforge-host-native",
+      "namespace": "OMEGA",
+      "path": "AGENTS/OMEGA/clawforge-host-native"
+    },
+    {
+      "id": "workspace:OMEGA/mente-omega-host-native",
+      "kind": "workspace",
+      "workspace": "OMEGA/mente-omega-host-native",
+      "namespace": "OMEGA",
+      "path": "AGENTS/OMEGA/mente-omega-host-native"
+    },
+    {
+      "id": "workspace:OMEGA/salubrista-hah",
+      "kind": "workspace",
+      "workspace": "OMEGA/salubrista-hah",
+      "namespace": "OMEGA",
+      "path": "AGENTS/OMEGA/salubrista-hah"
+    },
+    {
+      "id": "workspace:OMEGA/salubrista-host-native",
+      "kind": "workspace",
+      "workspace": "OMEGA/salubrista-host-native",
+      "namespace": "OMEGA",
+      "path": "AGENTS/OMEGA/salubrista-host-native"
+    },
+    {
+      "id": "workspace:OMEGA/steipete-host-native",
+      "kind": "workspace",
+      "workspace": "OMEGA/steipete-host-native",
+      "namespace": "OMEGA",
+      "path": "AGENTS/OMEGA/steipete-host-native"
+    },
+    {
       "id": "workspace:dev/steipete",
       "kind": "workspace",
       "workspace": "dev/steipete",
@@ -6681,13 +6605,6 @@
       "workspace": "fxsl/arquitecto-automatizacion-organizacional",
       "namespace": "fxsl",
       "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional"
-    },
-    {
-      "id": "workspace:fxsl/arquitecto-categorico",
-      "kind": "workspace",
-      "workspace": "fxsl/arquitecto-categorico",
-      "namespace": "fxsl",
-      "path": "AGENTS/fxsl/arquitecto-categorico"
     },
     {
       "id": "workspace:fxsl/arquitecto-sistemas-informacion",
@@ -6830,13 +6747,6 @@
       "path": "AGENTS/ops/clawstack"
     },
     {
-      "id": "workspace:pro/estratega-comunicacional",
-      "kind": "workspace",
-      "workspace": "pro/estratega-comunicacional",
-      "namespace": "pro",
-      "path": "AGENTS/pro/estratega-comunicacional"
-    },
-    {
       "id": "workspace:salud/medico-urgencias",
       "kind": "workspace",
       "workspace": "salud/medico-urgencias",
@@ -6870,198 +6780,6 @@
       "source": "workspace:dev/steipete",
       "target": "urn:dev:kb:agentic-tooling-inventory",
       "source_path": "AGENTS/dev/steipete/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:action-primary-key",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:algebraic-databases",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:algebraic-model-management",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:audit-patterns",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:categorical-data-structures",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:categorical-systems-theory",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:coalgebras",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:cognitive-toolkit",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:constraint-logic",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:cql-data-integration",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:data-access-layers",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:data-lakes-ct",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:formal-framework-data-lakes-ct",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:formal-framework-multimodel-data-transformations",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:kb-category",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:mathematical-modelling",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:mbse-consistency",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:schema-evolution",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:seven-sketches",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:unified-multimodel",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:kb:unified-representation-transformation-multimodel",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-audit-invariants",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-foundations",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsKB",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
     },
     {
       "kind": "AllowsKB",
@@ -9015,6 +8733,84 @@
     },
     {
       "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-general",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-herramientas",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-indice",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-salud-mental",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-unidades",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:gestion-redes-urgencias",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:references/core",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsKB",
       "source": "workspace:salud/salubrista",
       "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
       "source_path": "AGENTS/salud/salubrista/config.json"
@@ -9210,18 +9006,6 @@
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
       "target": "tool:web_search",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "AllowsTool",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
     },
     {
       "kind": "AllowsTool",
@@ -9837,15 +9621,21 @@
     },
     {
       "kind": "AllowsTool",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/pro/estratega-comunicacional/config.json"
+      "source": "workspace:references/core",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "AllowsTool",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/pro/estratega-comunicacional/config.json"
+      "source": "workspace:references/core",
+      "target": "tool:knowledge_retrieval",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:references/core",
+      "target": "tool:web_search",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "AllowsTool",
@@ -9955,31 +9745,6 @@
       "kind": "ContainsArtifact",
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
       "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0"
     },
     {
       "kind": "ContainsArtifact",
@@ -10488,31 +10253,6 @@
     },
     {
       "kind": "ContainsArtifact",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0"
-    },
-    {
-      "kind": "ContainsArtifact",
       "source": "workspace:salud/medico-urgencias",
       "target": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0"
     },
@@ -10660,46 +10400,6 @@
       "kind": "ContainsSkill",
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0"
     },
     {
       "kind": "ContainsSkill",
@@ -11104,6 +10804,11 @@
     {
       "kind": "ContainsSkill",
       "source": "workspace:kora/clawforge",
+      "target": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0"
+    },
+    {
+      "kind": "ContainsSkill",
+      "source": "workspace:kora/clawforge",
       "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0"
     },
     {
@@ -11448,26 +11153,6 @@
     },
     {
       "kind": "ContainsSkill",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0"
-    },
-    {
-      "kind": "ContainsSkill",
       "source": "workspace:salud/medico-urgencias",
       "target": "urn:salud:skill:medico-urgencias-context-manager:2.0.0"
     },
@@ -11578,6 +11263,24 @@
     },
     {
       "kind": "DeclaresTool",
+      "source": "workspace:clawforge-host-native/workspace",
+      "target": "tool:exec",
+      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:clawforge-host-native/workspace",
+      "target": "tool:message",
+      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:clawforge-host-native/workspace",
+      "target": "tool:web_fetch",
+      "source_path": "AGENTS/OMEGA/clawforge-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
       "source": "workspace:dev/steipete",
       "target": "tool:cancel_worker",
       "source_path": "AGENTS/dev/steipete/TOOLS.md"
@@ -11653,18 +11356,6 @@
       "source": "workspace:fxsl/arquitecto-automatizacion-organizacional",
       "target": "tool:web_search",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:fxsl/arquitecto-categorico",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -12280,21 +11971,51 @@
     },
     {
       "kind": "DeclaresTool",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "tool:catalog_resolve",
-      "source_path": "AGENTS/pro/estratega-comunicacional/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
-      "source": "workspace:pro/estratega-comunicacional",
-      "target": "tool:kb_route",
-      "source_path": "AGENTS/pro/estratega-comunicacional/TOOLS.md"
-    },
-    {
-      "kind": "DeclaresTool",
       "source": "workspace:reference/templates",
       "target": "tool:Examples",
       "source_path": "KNOWLEDGE/agengai/openclaw/documentacion-oficial/reference/templates/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:references/core",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:references/core",
+      "target": "tool:knowledge_retrieval",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:references/core",
+      "target": "tool:web_search",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salubrista-host-native/workspace",
+      "target": "tool:Disciplina",
+      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salubrista-host-native/workspace",
+      "target": "tool:kb_route",
+      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salubrista-host-native/workspace",
+      "target": "tool:knowledge_retrieval",
+      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salubrista-host-native/workspace",
+      "target": "tool:web_search",
+      "source_path": "AGENTS/OMEGA/salubrista-host-native/workspace/TOOLS.md"
     },
     {
       "kind": "DeclaresTool",
@@ -12433,54 +12154,6 @@
       "source": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-agents:1.1.0",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0",
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -13348,30 +13021,6 @@
     },
     {
       "kind": "InvokesSkill",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
-      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
-    },
-    {
-      "kind": "InvokesSkill",
       "source": "urn:salud:agent-bootstrap:medico-urgencias-agents:2.1.0",
       "target": "urn:salud:skill:medico-urgencias-context-manager:2.0.0",
       "source_path": "AGENTS/salud/medico-urgencias/AGENTS.md"
@@ -13447,6 +13096,60 @@
       "source": "urn:salud:agent-bootstrap:salubrista-agents:1.1.0",
       "target": "urn:salud:skill:salubrista-report-builder:1.0.0",
       "source_path": "AGENTS/salud/salubrista/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-CLARIFIER",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-EPI-VIGILANCE",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-HAH-SPECIALIST",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-HOSPITAL-SYSTEM-ANALYST",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-IMPLEMENTATION-PLANNER",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-INTENT-HOSPITALIZATION",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-PRODUCT-BUILDER",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-QUALITY-AUDITOR",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "InvokesSkill",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "missing-skill:core/CM-REPORT-BUILDER",
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
     },
     {
       "kind": "InvokesSkill",
@@ -13593,20 +13296,6 @@
       "target": "urn:kora:kb:cat-governance-lattice",
       "fragment": null,
       "source_path": "specs/openclaw-runtime-extension.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
     },
     {
       "kind": "TracesTo",
@@ -13932,10 +13621,353 @@
     },
     {
       "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/allan-kelly-agentic-org-architect-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md",
+      "target": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/david-allen-integral-openclaw-especificacion-futuro-agente.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-canonical-example",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-canonical-example.",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/checklist-auditoria.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/opl-plantillas-es.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/mente-omega-host-native/workspace/skills/opm-modeler/references/opl-plantillas-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/salubrista-hah/SKILL.md",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md",
+      "target": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/steipete-agentic-engineer-openclaw-spec.md"
+    },
+    {
+      "kind": "XRef",
       "source": "file:AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/assets/docker-compose-template.yml",
       "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "fragment": null,
       "source_path": "AGENTS/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/assets/docker-compose-template.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
+      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
+      "target": "urn:fxsl:kb:opm-applied-system-modeling",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "target": "urn:fxsl:kb:opm-canonical-example",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-canonical-example.md",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:KNOWLEDGE/fxsl/opm/opm-sd-wizard.md",
+      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
     },
     {
       "kind": "XRef",
@@ -14122,21 +14154,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:agengai:kb:manual-ciclo-vida-agentes-openclaw",
+      "target": "urn:agengai:kb:forjador-especialista-openclaw",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
+      "target": "urn:agengai:kb:forjador-openclaw",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14150,7 +14175,21 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:agengai:kb:openclaw-runtime-extension",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14213,154 +14252,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-engineering-praxis",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:dev:kb:claude-code-mastery",
+      "target": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14466,41 +14358,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14703,6 +14560,20 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:audit-patterns",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14871,6 +14742,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -14878,28 +14756,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:openclaw-agent-lifecycle-manual",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-canonical-example",
+      "target": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14921,6 +14778,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14955,7 +14819,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
+      "target": "urn:fxsl:kb:opm-readme",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -14963,6 +14827,13 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:kb:opm-structural-relations",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:fxsl:kb:opm-visual-es",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -15054,62 +14925,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -16838,6 +16653,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -17608,6 +17430,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:omega:openclaw-agent-spec:salubrista:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -17671,6 +17500,13 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:ops:kb:ux-telegram-openclaw",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -17692,35 +17528,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0",
+      "target": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17728,34 +17536,6 @@
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:pro:kb:mba-personal-kaufman",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17818,7 +17598,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -17839,7 +17640,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18007,7 +17829,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18028,6 +17871,20 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -18042,7 +17899,7 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18105,7 +17962,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18126,7 +18004,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -18147,7 +18046,28 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -19168,31 +19088,17 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:agengai:kb:manual-ciclo-vida-agentes-openclaw",
-      "target": "urn:agengai:kb:manual-ciclo-vida-agentes-openclaw",
+      "source": "urn:agengai:kb:forjador-especialista-openclaw",
+      "target": "urn:agengai:kb:forjador-especialista-openclaw",
       "fragment": null,
-      "source_path": "KNOWLEDGE/agengai/openclaw/manual-ciclo-vida-agentes-openclaw.md"
+      "source_path": "AGENTS/OMEGA/forjador-especialista-openclaw.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
-      "target": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
+      "source": "urn:agengai:kb:forjador-openclaw",
+      "target": "urn:agengai:kb:forjador-openclaw",
       "fragment": null,
-      "source_path": "KNOWLEDGE/agengai/openclaw/manual-openclaw-para-agentes-ai.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:agengai:kb:manual-openclaw-para-agentes-ai",
-      "target": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/agengai/openclaw/manual-openclaw-para-agentes-ai.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
-      "target": "urn:agengai:kb:manual-skills-openclaw-para-agentes-ai",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/agengai/openclaw/manual-skills-openclaw-para-agentes-ai.md"
+      "source_path": "AGENTS/OMEGA/forjador-openclaw.md"
     },
     {
       "kind": "XRef",
@@ -19200,6 +19106,27 @@
       "target": "urn:agengai:kb:openclaw-integration",
       "fragment": null,
       "source_path": "KNOWLEDGE/agengai/openclaw-integration.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-manual-integral",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/openclaw-manual-integral.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-manual-integral",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/openclaw-manual-integral.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-manual-integral",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/openclaw-manual-integral.md"
     },
     {
       "kind": "XRef",
@@ -19214,6 +19141,34 @@
       "target": "urn:kora:kb:runtime-spec-md",
       "fragment": null,
       "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-skills-manual",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-skills-manual",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-skills-manual",
+      "target": "urn:agengai:kb:openclaw-manual-integral",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-skills-manual",
+      "target": "urn:agengai:kb:openclaw-skills-manual",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md"
     },
     {
       "kind": "XRef",
@@ -19308,311 +19263,24 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:kb:agentic-engineering-praxis",
+      "source": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
       "target": "urn:dev:kb:agentic-engineering-praxis",
       "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-engineering-praxis.md"
+      "source_path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "source": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
+      "target": "urn:dev:kb:peter-steinberger-gemelo-digital-intelectual",
       "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_index.md"
+      "source_path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
+      "source": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
+      "target": "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio",
       "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_selection-matrix.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/_selection-matrix.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/codex-cli.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/codex-cli.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/gemini-cli.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/gemini-cli.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/opencode.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/opencode.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/anthropic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/anthropic.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/deepseek.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/deepseek.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/glm.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/glm.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/google.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/google.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/kimi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/kimi.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/meta.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/meta.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/minimax.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/minimax.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/mistral.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/mistral.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/openai.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/openai.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/qwen.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/models/qwen.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/routers/openrouter.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:agentic-tooling-inventory",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:agentic-tooling-inventory",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/configuracion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/configuracion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/extensibilidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/extensibilidad.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/index.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:dev:kb:claude-code-mastery",
-      "target": "urn:dev:kb:claude-code-mastery",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/dev/claude-code-mastery/sdk-y-automatizacion.md"
+      "source_path": "AGENTS/_perfiles/peter-steinberger-ingeniero-agentico-prodigio.md"
     },
     {
       "kind": "XRef",
@@ -19718,566 +19386,6 @@
       "target": "urn:fxsl:agent-bootstrap:arquitecto-automatizacion-organizacional-user:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/USER.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-agents:3.2.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:action-primary-key",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:algebraic-databases",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:algebraic-model-management",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:audit-patterns",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:categorical-data-structures",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:categorical-systems-theory",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:coalgebras",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:cognitive-toolkit",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:constraint-logic",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:cql-data-integration",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:data-access-layers",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:data-lakes-ct",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:formal-framework-data-lakes-ct",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:formal-framework-multimodel-data-transformations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:kb-category",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:mathematical-modelling",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:mbse-consistency",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:schema-evolution",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:seven-sketches",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:unified-multimodel",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:fxsl:kb:unified-representation-transformation-multimodel",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-audit-invariants",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-config:3.1.0",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-soul:3.2.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:action-primary-key",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:action-primary-key",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:algebraic-databases",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:algebraic-model-management",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:algebraic-model-management",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:audit-patterns",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:categorical-data-structures",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:categorical-systems-theory",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:coalgebras",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:cognitive-toolkit",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:constraint-logic",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:cql-data-integration",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:data-access-layers",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:data-lakes-ct",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:formal-framework-data-lakes-ct",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:formal-framework-multimodel-data-transformations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:kb-category",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:mathematical-modelling",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:mbse-consistency",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:multicategory-multimodel-query-processing",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:schema-evolution",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:seven-sketches",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:unified-multimodel",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:fxsl:kb:unified-representation-transformation-multimodel",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-audit-invariants",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-audit-invariants",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-audit-invariants",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-fxsl-bridge",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-tools:3.1.0",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
-      "target": "urn:fxsl:agent-bootstrap:arquitecto-categorico-user:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/USER.md"
     },
     {
       "kind": "XRef",
@@ -20799,6 +19907,48 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "fragment": null,
+      "source_path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "fragment": null,
+      "source_path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "target": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "fragment": null,
+      "source_path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "target": "urn:fxsl:kb:swarm-ops-metodologia",
+      "fragment": null,
+      "source_path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual-era-agentica",
+      "target": "urn:fxsl:kb:xanpan-agents-metodologia",
+      "fragment": null,
+      "source_path": "AGENTS/_perfiles/allan-kelly-gemelo-digital-intelectual-era-agentica.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:fxsl:kb:audit-patterns",
       "target": "urn:fxsl:kb:audit-patterns",
       "fragment": null,
@@ -21040,77 +20190,126 @@
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/metodologia-modelamiento-opm.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "target": "urn:fxsl:kb:opm-opl-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/metodologia-opm-es.md"
     },
     {
       "kind": "XRef",
@@ -21121,276 +20320,143 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "source": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
+      "target": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
+      "target": "urn:fxsl:kb:opm-visual-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-complexity-management",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-complexity-management",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-dynamic-behavior",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-iso-19450",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-dynamic-behavior",
+      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-iso-19450",
       "target": "urn:fxsl:kb:opcloud-tutorial-videos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "source": "urn:fxsl:kb:opm-iso-19450",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "target": "urn:fxsl:kb:opm-iso-19450",
+      "source": "urn:fxsl:kb:opm-iso-19450-es",
+      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "target": "urn:fxsl:kb:opm-iso-19450",
+      "source": "urn:fxsl:kb:opm-iso-19450-es",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "source": "urn:fxsl:kb:opm-iso-19450-es",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opcloud-tutorial-videos.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:openclaw-agent-lifecycle-manual",
-      "target": "urn:fxsl:kb:openclaw-agent-lifecycle-manual",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/openclaw-agent-lifecycle-manual.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-complexity-management",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-dynamic-behavior",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-applied-system-modeling",
-      "target": "urn:fxsl:kb:opm-structural-relations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-applied-system-modeling.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-canonical-example",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-complexity-management",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-dynamic-behavior",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-canonical-example",
-      "target": "urn:fxsl:kb:opm-structural-relations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-canonical-example.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-complexity-management",
-      "target": "urn:fxsl:kb:opm-complexity-management",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-complexity-management",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-complexity-management",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-complexity-management",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-complexity-management",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-dynamic-behavior",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-dynamic-behavior",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450",
-      "target": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-iso-19450",
-      "target": "urn:fxsl:kb:opm-iso-19450",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-iso-19450.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md"
     },
     {
       "kind": "XRef",
@@ -21551,84 +20617,49 @@
       "source": "urn:fxsl:kb:opm-opl-es",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-opl-es.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:opm-opl-es",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-opl-es.md"
     },
     {
       "kind": "XRef",
       "source": "urn:fxsl:kb:opm-opl-es",
       "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-opl-es.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot/opm-opl-es.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "source": "urn:fxsl:kb:opm-readme",
       "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/README.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:opm-applied-system-modeling",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
+      "source": "urn:fxsl:kb:opm-readme",
       "target": "urn:fxsl:kb:opm-iso-19450",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/README.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:opm-iso-19450",
+      "source": "urn:fxsl:kb:opm-readme",
+      "target": "urn:fxsl:kb:opm-opl-es",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/README.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:opm-mbse-foundations",
+      "source": "urn:fxsl:kb:opm-readme",
+      "target": "urn:fxsl:kb:opm-readme",
       "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:kb:opm-sd-wizard",
-      "target": "urn:fxsl:kb:opm-sd-wizard",
-      "fragment": null,
-      "source_path": "KNOWLEDGE/fxsl/opm/opm-sd-wizard.md"
+      "source_path": "KNOWLEDGE/fxsl/opm/README.md"
     },
     {
       "kind": "XRef",
@@ -21657,6 +20688,27 @@
       "target": "urn:fxsl:kb:opm-structural-relations",
       "fragment": null,
       "source_path": "KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-visual-es",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-visual-es",
+      "target": "urn:fxsl:kb:opm-iso-19450-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:fxsl:kb:opm-visual-es",
+      "target": "urn:fxsl:kb:opm-visual-es",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-visual-es.md"
     },
     {
       "kind": "XRef",
@@ -21839,62 +20891,6 @@
       "target": "urn:fxsl:skill:arquitecto-automatizacion-organizacional-systems-lens:1.0.0",
       "fragment": null,
       "source_path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-SYSTEMS-LENS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-artifact-generator:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-ARTIFACT-GENERATOR.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-audit-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-AUDIT-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-behavior-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-BEHAVIOR-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-dal-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-DAL-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-integration-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-INTEGRATION-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-migration-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-MIGRATION-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-structure-engine:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-STRUCTURE-ENGINE.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
-      "target": "urn:fxsl:skill:arquitecto-categorico-tension-explorer:3.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/fxsl/arquitecto-categorico/skills/CM-TENSION-EXPLORER.md"
     },
     {
       "kind": "XRef",
@@ -28660,6 +27656,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0",
+      "target": "urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/kora/clawforge/skills/CM-OPENCLAW-LIFECYCLE-MANAGER/SKILL.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
       "target": "urn:kora:skill:clawforge-openclaw-operator:1.0.0",
       "fragment": null,
@@ -29619,6 +28622,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:omega:openclaw-agent-spec:salubrista:1.0.0",
+      "target": "urn:omega:openclaw-agent-spec:salubrista:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-openclaw-especificacion-integral.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "target": "urn:ops:agent-bootstrap:clawstack-agents:1.2.0",
       "fragment": null,
@@ -29808,6 +28818,55 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:arquitectura-stack-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:deploy-agente-kora-en-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:federacion-kora-v2",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:principios-transmutacion-kora-openclaw",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "target": "urn:ops:kb:tres-generaciones-agentes-kora",
+      "fragment": null,
+      "source_path": "KNOWLEDGE/ops/tres-generaciones-agentes-kora.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:ops:kb:ux-telegram-openclaw",
       "target": "urn:ops:kb:arquitectura-stack-kora",
       "fragment": null,
@@ -29857,38 +28916,10 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-agents:1.1.0",
+      "source": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
+      "target": "urn:pro:kb:david-allen-integral-definitivo-septiembre-2026",
       "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/AGENTS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-config:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/config.json"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-soul:1.1.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/SOUL.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-tools:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/TOOLS.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0",
-      "target": "urn:pro:agent-bootstrap:estratega-comunicacional-user:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/USER.md"
+      "source_path": "AGENTS/_perfiles/david-allen-integral-definitivo-septiembre-2026.md"
     },
     {
       "kind": "XRef",
@@ -29896,34 +28927,6 @@
       "target": "urn:pro:kb:mba-personal-kaufman",
       "fragment": null,
       "source_path": "KNOWLEDGE/pro/mba-personal-kaufman.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "target": "urn:pro:skill:estratega-arquitectura-mensajes:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-ARQUITECTURA-MENSAJES.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "target": "urn:pro:skill:estratega-diagnostico-estrategico:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-DIAGNOSTICO-ESTRATEGICO.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "target": "urn:pro:skill:estratega-diseno-narrativa:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-DISENO-NARRATIVA.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
-      "target": "urn:pro:skill:estratega-produccion-tactica:1.0.0",
-      "fragment": null,
-      "source_path": "AGENTS/pro/estratega-comunicacional/skills/CM-PRODUCCION-TACTICA.md"
     },
     {
       "kind": "XRef",
@@ -30028,7 +29031,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-agents:1.1.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/AGENTS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30042,7 +29059,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-general",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30056,7 +29087,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-herramientas",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-herramientas",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-indice",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30070,7 +29115,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-salud-mental",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-salud-mental",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-unidades",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30084,7 +29143,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:gestion-redes-urgencias",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-urgencias",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30098,7 +29171,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-direccion-tecnica",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30112,6 +29199,13 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-norma-tecnica-2024",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
     },
     {
@@ -30119,7 +29213,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/config.json"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-config:1.0.0",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/config.json"
     },
     {
       "kind": "XRef",
@@ -30133,7 +29241,21 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/IDENTITY.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-identity:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/IDENTITY.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-soul:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/SOUL.md"
     },
     {
       "kind": "XRef",
@@ -30147,7 +29269,28 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
     },
     {
       "kind": "XRef",
@@ -30168,6 +29311,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-general",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-general",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-general",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30182,6 +29339,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-herramientas",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-herramientas",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-herramientas",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30196,6 +29367,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-indice",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-indice",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-indice",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30210,6 +29395,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-salud-mental",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-salud-mental",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-salud-mental",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30224,6 +29423,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-unidades",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-unidades",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-unidades",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30238,6 +29451,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:gestion-redes-urgencias",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-urgencias",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:gestion-redes-urgencias",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30252,6 +29479,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30266,6 +29507,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-direccion-tecnica",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30280,6 +29535,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30294,6 +29563,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-norma-tecnica-2024",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30308,6 +29591,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30322,6 +29619,20 @@
       "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-tools:1.0.0",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
     },
     {
@@ -30330,6 +29641,13 @@
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/TOOLS.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0",
+      "target": "urn:salud:agent-bootstrap:salubrista-hah-user:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/core/USER.md"
     },
     {
       "kind": "XRef",
@@ -30854,7 +30172,21 @@
       "source": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "target": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:hodom-direccion-tecnica",
+      "target": "urn:salud:kb:hodom-direccion-tecnica",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/01-manual-direccion-tecnica.md"
     },
     {
       "kind": "XRef",
@@ -30868,7 +30200,21 @@
       "source": "urn:salud:kb:hodom-manual-alta-complejidad",
       "target": "urn:salud:kb:hodom-manual-alta-complejidad",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/02-manual-alta-complejidad.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "target": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "target": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/03-norma-tecnica-hodom-2024.md"
     },
     {
       "kind": "XRef",
@@ -30882,6 +30228,13 @@
       "source": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/normativa/01-reglamento-hodom-ds1-2022.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "target": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "fragment": null,
       "source_path": "KNOWLEDGE/salud/hodom/normativa/01-reglamento-hodom-ds1-2022.md"
     },
     {
@@ -30889,14 +30242,14 @@
       "source": "urn:salud:kb:hodom-situacion-chile-2026",
       "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
-      "source_path": "KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md"
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/knowledge/hodom/director/03-situacion-chile-2026.md"
     },
     {
       "kind": "XRef",
-      "source": "urn:salud:medico-urgencias:user-stories:1.0.0",
-      "target": "urn:salud:medico-urgencias:user-stories:1.0.0",
+      "source": "urn:salud:kb:hodom-situacion-chile-2026",
+      "target": "urn:salud:kb:hodom-situacion-chile-2026",
       "fragment": null,
-      "source_path": "KNOWLEDGE/salud/medico-urgencias-user-stories.md"
+      "source_path": "KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md"
     },
     {
       "kind": "XRef",
@@ -30952,7 +30305,21 @@
       "source": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-CLARIFIER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-clarifier:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-CLARIFIER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-epi-vigilance:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-EPI-VIGILANCE.md"
     },
     {
       "kind": "XRef",
@@ -30966,7 +30333,21 @@
       "source": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-HAH-SPECIALIST.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-hah-specialist:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-HAH-SPECIALIST.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-hospital-system-analyst:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-HOSPITAL-SYSTEM-ANALYST.md"
     },
     {
       "kind": "XRef",
@@ -30980,7 +30361,21 @@
       "source": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-IMPLEMENTATION-PLANNER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-implementation-planner:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-IMPLEMENTATION-PLANNER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-intent-hospitalization:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-INTENT-HOSPITALIZATION.md"
     },
     {
       "kind": "XRef",
@@ -30994,6 +30389,13 @@
       "source": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-PRODUCT-BUILDER.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-product-builder:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-PRODUCT-BUILDER.md"
     },
     {
@@ -31001,7 +30403,21 @@
       "source": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
       "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
       "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-QUALITY-AUDITOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-quality-auditor:1.0.0",
+      "fragment": null,
       "source_path": "AGENTS/salud/salubrista-hah/skills/CM-QUALITY-AUDITOR.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
+      "target": "urn:salud:skill:salubrista-hah-report-builder:1.0.0",
+      "fragment": null,
+      "source_path": "AGENTS/OMEGA/salubrista-hah/references/workflows/CM-REPORT-BUILDER.md"
     },
     {
       "kind": "XRef",

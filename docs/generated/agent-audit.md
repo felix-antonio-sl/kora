@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-03-26
+- Fecha: 2026-04-14
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 5
 - Reglas aun no institucionalizadas: 5
@@ -14,7 +14,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Precedencia de transiciones no declarada | P1 | 58 | fxsl/arquitecto-automatizacion-organizacional, fxsl/arquitecto-sistemas-informacion, fxsl/ingeniero-sistemas-composicional, fxsl/ontologista-gist, gn/ar-virtual, gn/asesor-juridico | agent_fix |
-| Destino de control no declarado | P1 | 7 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
+| Destino de control no declarado | P1 | 6 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, salud/medico-urgencias | agent_fix |
 | Skill compone otro skill operativamente | P2 | 1 | korvo/korax | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 1 | ops/clawstack | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 1 | fxsl/neriomath | agent_fix |
@@ -24,7 +24,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
 | Precedencia de transiciones no declarada | P1 | 58 | fxsl/arquitecto-automatizacion-organizacional, fxsl/arquitecto-sistemas-informacion, fxsl/ingeniero-sistemas-composicional, fxsl/ontologista-gist, gn/ar-virtual, gn/asesor-juridico | agent_fix |
-| Destino de control no declarado | P1 | 7 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, pro/estratega-comunicacional, salud/medico-urgencias | agent_fix |
+| Destino de control no declarado | P1 | 6 | gn/dgi-virtual, gn/gestor-ipr-360, gn/goreologo, salud/medico-urgencias | agent_fix |
 | Skill compone otro skill operativamente | P2 | 1 | korvo/korax | agent_fix |
 | Skill degenerado recibe o emite estado FSM | P1 | 1 | ops/clawstack | agent_fix |
 | Skill degenerado clasifica transiciones o continuidad FSM | P1 | 1 | fxsl/neriomath | agent_fix |
@@ -82,10 +82,10 @@ Hallazgos repetidos:
 
 ## Cohorte domains
 
-- Workspaces auditados: 20
+- Workspaces auditados: 18
 - `validate --profile strict` verde: si
-- Hallazgos manuales: 67
-- P1: 66 | P2: 1 | P3: 0
+- Hallazgos manuales: 66
+- P1: 65 | P2: 1 | P3: 0
 
 ### Subgrupo gn
 
@@ -131,18 +131,18 @@ Hallazgos repetidos:
 
 ### Subgrupo pro
 
-- Workspaces: 1
-- Hallazgos: 1
+- Workspaces: 0
+- Hallazgos: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |
 |-----------|-------|-----|-----------|------------|--------|
-| pro/estratega-comunicacional | Destino de control no declarado | P1 | AGENTS/pro/estratega-comunicacional/AGENTS.md:63 | Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo. | agent_fix |
+| - | Sin hallazgos manuales nuevos | - | - | - | - |
 
 Hallazgos repetidos:
 
 | Regla | Sev | Casos | Workspaces | Cierre |
 |-------|-----|-------|------------|--------|
-| Destino de control no declarado | P1 | 1 | pro/estratega-comunicacional | agent_fix |
+| - | - | 0 | - | - |
 
 ### Subgrupo salud
 
@@ -169,7 +169,7 @@ Hallazgos repetidos:
 
 ### Subgrupo fxsl
 
-- Workspaces: 7
+- Workspaces: 6
 - Hallazgos: 30
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |

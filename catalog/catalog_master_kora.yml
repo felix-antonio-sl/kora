@@ -1606,6 +1606,10 @@ Catalog:
     title: 'MultiCategory: Multi-Model Query Processing'
     file: KNOWLEDGE/fxsl/cat/multicategory-multimodel-query-processing.md
     status: published
+  - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations
+    title: Observaciones visuales de los tutoriales OPCloud
+    file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md
+    status: published
   - urn: urn:fxsl:kb:opm-complexity-management
     title: OPM Complexity Management — Refinement and Abstraction
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md

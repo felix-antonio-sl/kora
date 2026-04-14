@@ -5,7 +5,7 @@ _manifest:
     created_by: "kora/curator"
     created_at: "2026-04-14"
     source: "synthesis:opm-iso-19450-es,opm-opl-es,opcloud-tutorial-videos,opm-applied-system-modeling,opm-canonical-example"
-version: "3.7.0"
+version: "3.8.0"
 status: published
 tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling, opcloud]
 lang: es
@@ -244,6 +244,8 @@ OPL-ES: `**Agente** maneja *Proceso Principal*.`
 
 **Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del §4.4, que aplica al mismo proceso.
 
+## 6b Completación y Verificación del SD
+
 ### 6.6 Paso 6: Nombre del Sistema y Exhibición
 
 El nombre por defecto DEBERÍA ser el nombre del proceso + "Sistema". El modelador PUEDE usar un nombre aceptado en su lugar.
@@ -313,6 +315,18 @@ Aplica cuando los subprocesos tienen un orden fijo y predefinido.
 
 **Identidad semántica de la descomposición:** Cuando un proceso se descompone, sus subprocesos = partes (agregación-participación + ordenabilidad positiva), y los objetos que el proceso exhibe (vía exhibición-caracterización) = atributos del proceso. Objetos que ingresan al contexto por migración de enlaces mantienen su identidad independiente y NO son atributos del proceso. Simétricamente, cuando un objeto se descompone: objetos internos = partes, procesos internos = operaciones del objeto.
 
+**Refinamiento no trivial:** Un proceso descompuesto DEBE contener al menos 2 subprocesos. Un despliegue DEBE revelar al menos 2 refinadores. Un refinamiento con un solo elemento hijo no agrega información al modelo y DEBERÍA eliminarse o postergarse hasta que se identifiquen más elementos.
+
+**Elaboración progresiva de SD1:** La construcción del OPD hijo DEBERÍA seguir esta secuencia:
+
+1. Inflar el proceso principal (contorno grueso en padre e hijo)
+2. Agregar subprocesos (mínimo 2) en posición vertical según línea de tiempo
+3. Renombrar subprocesos con nombres de dominio significativos (reemplazando los nombres placeholder genéricos)
+4. Traer elementos externos conectados al proceso padre (objetos que participan en links del nivel superior)
+5. Crear objetos internos necesarios (operandos locales del proceso)
+6. Agregar estados a los objetos que participan en transformaciones
+7. Crear enlaces internos entre subprocesos y objetos
+
 **Paralelismo implícito:** Cuando dos o más subprocesos tienen el borde superior de sus elipses a la misma altura, DEBEN interpretarse como ejecutándose en paralelo. El siguiente subproceso inicia cuando el último de los paralelos termina. OPL usa la palabra clave `en paralelo` para expresar concurrencia.
 
 **Correcto:** Subprocesos de arriba hacia abajo; paralelos a la misma altura.
@@ -351,7 +365,11 @@ Aplica cuando los subprocesos son independientes y PUEDEN ocurrir en cualquier o
 
 Los objetos se refinan vía descomposición (composición espacial/estructural) y despliegue (taxonomías, rasgos, instancias). La descomposición de objetos expone partes y operaciones (§7.1); el despliegue expone refinadores vía las cuatro relaciones estructurales (§7.2). La posición espacial de constituyentes en una descomposición de objeto PUEDE tener significado semántico (disposición física, orden lógico).
 
+**Proceso ambiental (patrón de ciclo de vida):** Cuando un proceso opera sobre el sistema pero no es parte de su función primaria — típicamente procesos de ciclo de vida como diseño, fabricación, mantenimiento, venta o instalación — el modelador DEBERÍA modelarlo como **proceso ambiental** (contorno discontinuo). Ejemplo canónico: el proceso de gestión del ciclo de vida de un electrodoméstico (conceptualizar, diseñar, fabricar, vender, instalar) es ambiental porque gestiona el ciclo de vida del sistema pero no entrega valor funcional directo al beneficiario. **Regla de decisión:** si el proceso no entrega valor funcional directo al beneficiario del sistema, es candidato a proceso ambiental.
+
 **Alcance de objeto interior vs exterior:** Un objeto creado dentro de un proceso descompuesto (objeto interior) existe solo en el alcance de ese proceso y se elimina si el proceso padre se elimina. Un objeto creado a nivel SD (objeto exterior) existe independientemente y es referenciable entre múltiples OPDs. El modelador DEBE decidir el alcance basándose en si la existencia del objeto depende del proceso (interior) o es independiente (exterior). Mover un objeto exterior dentro de un proceso inflado NO lo convierte en interior — el objeto retorna a su alcance original al reposicionarlo (envolvimiento visual, no semántico).
+
+## 7b Distribución de Enlaces y Verificación de SD1
 
 ### 7.4 Distribución y Migración de Enlaces
 
@@ -422,7 +440,11 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 
 **Plegado en puertos:** Especialización de plegado donde la operación (proceso rasgo) se desplaza al contorno del exhibidor (objeto). Útil cuando el modelador quiere que los rectángulos de objetos representen disposición física y tamaños relativos. OPL: palabra clave "as ports" al final de la sentencia de exhibición. El plegado en puertos también aplica a atributos de procesos.
 
-**Semi-Plegado:** Técnica intermedia entre plegado completo y despliegue completo. Muestra nombres de partes dentro del contenedor del objeto sin crear un OPD hijo. Un indicador numérico ("2 more") señala partes ocultas. El modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs.
+**Semi-Plegado:** Técnica intermedia entre plegado completo y despliegue completo. Muestra nombres de partes dentro del contenedor del objeto sin crear un OPD hijo. Un indicador numérico ("2 more") señala cuántas partes permanecen ocultas (no el total). El modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs. El semi-fold DEBE omitir componentes que ya están expresados como entidades independientes en el mismo OPD (sin duplicación). Los enlaces procedimentales PUEDEN conectarse directamente a componentes semi-folded dentro del rectángulo del todo, sin necesidad de extraerlos primero.
+
+**Refinamiento dual (ramas hermanas):** Un SD PUEDE tener ramas hermanas de distinto tipo de refinamiento. Ejemplo: SD1 como descomposición del proceso principal (in-zoom) y SD2 como despliegue del objeto sistema (unfold). Ambos son refinamientos del mismo SD pero exploran dimensiones ortogonales: comportamiento (SD1) y estructura (SD2). El modelador DEBERÍA usar refinamiento dual cuando necesita exponer simultáneamente la estructura interna del sistema y el comportamiento de su función principal.
+
+**Heurística de profundidad:** Si un OPD de nivel N no agrega transformados, estados ni enlaces nuevos al modelo respecto de su padre, la refinación es probablemente innecesaria. El modelador DEBERÍA detenerse cuando el nivel de detalle ya no revela información relevante para el propósito del modelo. Modelos pedagógicos alcanzan hasta 6 niveles; modelos reales rara vez necesitan más de 4-5 niveles.
 
 Reglas adicionales:
 
@@ -448,6 +470,13 @@ Convención de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistem
 | Especificación de modelo OPM | Presentación lado a lado: cada OPD con su párrafo OPL a la derecha |
 
 **Sub-modelos para trabajo concurrente:** Cuando múltiples modeladores trabajan en subsistemas simultáneamente, el modelador DEBERÍA separar subsistemas en sub-modelos. Las conexiones entre el modelo principal y los sub-modelos DEBEN mantenerse mínimas para reducir acoplamiento y conflictos de edición concurrente.
+
+**Contrato de interfaz de sub-modelo:** La creación de un sub-modelo requiere un mínimo de: un objeto + un proceso conectados por exhibición-caracterización y enlace de instrumento, con un solo proceso por sub-modelo, y las cosas compartidas DEBEN estar sin refinar. Una vez creado el sub-modelo:
+
+- Las cosas compartidas en el modelo principal NO PUEDEN recibir nuevos enlaces de refinamiento ni nuevas conexiones (la interfaz se congela).
+- Las cosas compartidas en el sub-modelo NO PUEDEN renombrarse, recibir nuevos estados ni eliminarse (el sub-modelo respeta el contrato del padre).
+- NO PUEDEN agregarse nuevas cosas compartidas después de la creación del sub-modelo; si la interfaz es incorrecta, DEBE destruirse y recrearse.
+- Los sub-modelos PUEDEN anidarse recursivamente (sub-sub-modelos), aplicando las mismas reglas de contrato en cada nivel.
 
 ### 8.3 Creación de Vistas
 
@@ -479,6 +508,8 @@ Tipos: árbol de procesos, árbol de objetos, vista de asignación, vista motiva
 12. instrumento > instrumento condición
 
 **Precedencia secundaria** (dentro de cada tipo): evento > sin control > condición. Los enlaces de evento llevan semántica del enlace sin modificador + iniciación de proceso. Los modificadores de condición debilitan criterios de satisfacción de precondición. Enlaces con estado especificado tienen precedencia sobre enlaces básicos del mismo tipo.
+
+## 8b Práctica de Modelamiento y Gobernanza
 
 ### 8.5 Práctica Desde el Nivel Medio y Simplificación
 
@@ -600,6 +631,8 @@ Cuando las especializaciones se distinguen por un valor de atributo, el modelado
 
 Cada especialización DEBE heredar del general: (1) todas las partes (agregación-participación), (2) todos los rasgos (exhibición), (3) todos los enlaces estructurales etiquetados, (4) todos los enlaces procedimentales. Los estados también se heredan. Una especialización PUEDE sobreescribir estados heredados especificando estados propios.
 
+## 9b Heurísticas de Clasificación, Detección y Patrones Avanzados
+
 ### 9.10 Relatividad de Instancia e Instancias Visuales vs Lógicas
 
 "Instancia" es relativo al sistema de discurso. Lo que es instancia en un sistema (ej: "Taurus 2015" en comparación de autos) PUEDE ser clase con especializaciones en otro sistema (ej: autos individuales con VIN en un concesionario).
@@ -643,6 +676,32 @@ El modelamiento OPM de un documento existente produce como subproducto la detecc
 ### 9.17 Etiquetado de OPD por Cláusula de Referencia
 
 Al modelar documentos normativos, el modelador DEBERÍA etiquetar los OPDs con las cláusulas del documento fuente (ej: `[5.2.2] System`, `[6.1] Acquisition`). Esto permite trazabilidad directa entre el modelo y el texto fuente, facilita revisión por pares, y soporta validación de cobertura.
+
+### 9.18 Co-Agentes
+
+Cuando un proceso requiere la participación simultánea de dos o más agentes humanos, el modelador PUEDE conectar múltiples enlaces de agente al mismo proceso. La semántica es AND implícito: todos los agentes deben estar presentes para que el proceso se habilite.
+
+**Correcto:** `Driver and OnStar Advisor handle Call Handling.` (dos enlaces de agente al mismo proceso)
+
+**Incorrecto:** Crear un objeto general "Agent Group" para agrupar agentes distintos — esto pierde la identidad individual de cada agente.
+
+**Regla de decisión:** Usar co-agentes cuando los agentes participan en la misma actividad simultáneamente. Si participan en momentos distintos del proceso, el modelador DEBERÍA descomponer el proceso en subprocesos y asignar un agente a cada uno.
+
+### 9.19 Estado Cíclico (Inicial y Final Simultáneo)
+
+Un estado PUEDE ser simultáneamente inicial y final, modelando objetos que retornan a su estado original tras un ciclo completo de vida. No es un error — es el patrón correcto para ciclos cerrados.
+
+**Correcto:** Dishwasher con estado `empty` marcado como inicial Y final (empty → loaded → running → empty). El ciclo cerrado confirma que el objeto retorna a su condición original.
+
+**Incorrecto:** Duplicar estados (`empty_start`, `empty_end`) para evitar la coexistencia de marcadores — esto introduce un sinónimo falso y rompe la coherencia semántica del estado.
+
+### 9.20 Atributos Cuantitativos con Unidad y Tipo
+
+Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato como parte de su especificación, independientemente de si el modelo se simula. La convención es: nombre del atributo seguido de unidad entre corchetes y alias entre llaves: `Pressure [kPa] {p}`, `Height [in] {h}`, `Cost [$] {c}`.
+
+**Tipos válidos:** integer, float, string, character, boolean. El tipo restringe los valores admisibles del atributo y permite validación de rangos.
+
+**Rangos:** El modelador DEBERÍA asignar rangos a atributos con dominio acotado: `[0..100]` (cerrado), `{0..*}` (abierto). Múltiples rangos disjuntos se expresan como unión: `[1..10],[20..30]`.
 
 ## 10 Control de Flujo Avanzado
 
@@ -705,9 +764,11 @@ Esta semántica temporal es crítica para simulación y para entender la disponi
 
 ### 10.10 Objetos Booleanos y Ramificación
 
-Un **objeto booleano** es un objeto informacional de doble estado generado por un proceso de decisión. Sus estados forman un par booleano (sí/no, verdadero/falso, aprobado/denegado, `≥x`/`<x`). Cada estado se conecta vía enlaces de condición a procesos alternativos subsiguientes, implementando control si-entonces-sino.
+Un **objeto booleano** es un objeto informacional de doble estado generado por un proceso de decisión. Sus estados forman un par booleano (sí/no, verdadero/falso, aprobado/denegado, `≥x`/`‹x`). Cada estado se conecta vía enlaces de condición a procesos alternativos subsiguientes, implementando control si-entonces-sino.
 
 **Generalización:** Cualquier objeto con n estados funciona como una selección de casos — cada estado PUEDE servir como origen de un enlace de condición o de instrumento para un proceso subsiguiente distinto.
+
+**No-determinismo por defecto:** Cuando un proceso produce un objeto con n estados y no se especifica qué estado asignar (sin enlace de resultado con estado especificado), cada estado tiene probabilidad 1/n por defecto. Para forzar determinismo, el modelador DEBE conectar el enlace de resultado a un estado específico. Para asignar probabilidades distintas, el modelador DEBE usar un abanico XOR con anotaciones de probabilidad.
 
 ### 10.11 Escenarios y Repertorio de Comportamiento
 
@@ -925,6 +986,11 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Si se usan requirements en OPCloud, la trazabilidad usa enlaces estructurales y la convención "satisfies" | manual | OPCloud |
 | En OPCloud, procesos computacionales se distinguen visualmente con `{}` en el OPD | lint | OPCloud |
 | Sinónimos resueltos: una cosa = un nombre canónico | manual | Dori |
+| Refinamiento no trivial: descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | lint | Ext |
+| Proceso que no entrega valor funcional directo al beneficiario DEBERÍA ser ambiental | manual | Ext |
+| Interfaz de sub-modelo congelada tras creación: sin nuevas cosas compartidas, sin renombrar, sin agregar estados | manual | Ext |
+| Estado cíclico (initial+final simultáneo) es válido para objetos con ciclos cerrados | manual | Ext |
+| Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | ISO |
 
 ## 16 Lista de verificación de Validación
 
@@ -960,6 +1026,10 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | Global | Informatividad del modelo | Clasificación ejecutada; sin enlaces de precedencia faltantes críticos | MEDIA | OPCloud |
 | Global | Mapa del sistema | Generado para modelos con >10 OPDs | MEDIA | Dori |
 | Global | Constructos de especificación | OPD + OPL + OPM spec completos en orden en anchura | MEDIA | ISO |
+| Global | Refinamiento no trivial | Descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | ALTA | Ext |
+| Global | Profundidad justificada | Cada nivel de refinamiento agrega ≥ 1 transformado/estado/enlace nuevo | MEDIA | Ext |
+| Global | Procesos ambientales | Procesos de ciclo de vida sin valor funcional directo son ambientales | MEDIA | Ext |
+| Global | Contrato de sub-modelo | Interfaz congelada; sin adiciones post-creación | ALTA | Ext |
 | Global | Plegado en puertos | Usado donde disposición física de componentes es relevante | BAJA | OPCloud |
 | Global | Objetos implícitos | Objetos implícitos en texto fuente identificados y modelados explícitamente | ALTA | Dori |
 | Req | Trazabilidad estructural | Si se usan requirements en OPCloud, se ocupan enlaces estructurales y convención "satisfies" | MEDIA | OPCloud |
