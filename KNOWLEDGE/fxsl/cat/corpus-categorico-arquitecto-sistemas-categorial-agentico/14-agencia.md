@@ -112,6 +112,20 @@ Jha et al. cierran el circulo con un resultado que me parece profundamente pract
 
 Los experimentos con el dining philosophers problem son ilustrativos. Los LLMs mas capaces generan en una sola iteracion el codigo C, el modelo SMV, y el funtor asociativo que permite verificar propiedades temporales del codigo a traves del modelo. Modelos menos capaces requieren multiples iteraciones o no convergen sin intervencion humana significativa. El funtor es el puente que falta en la verificacion formal tradicional: no solo genero codigo y especificacion por separado, sino que genero la garantia estructural de que ambos dicen lo mismo.
 
+## Acción como clave primaria
+
+Hay una inversión conceptual que complementa la dualidad free/cofree y que cambia cómo modelo los sistemas episódicos -- aquellos donde lo que importa no son los estados sino las transiciones: logs, workflows, event sourcing, trazas de ejecución de agentes.
+
+Fukada formaliza esta inversión: en un sistema episódico, **la acción (el morfismo) es la clave primaria**, no el estado (el objeto). El mundo forma una categoría C donde los objetos son estados o contextos, pero la estructura reside en los morfismos -- las acciones que transforman un contexto en otro. Un episodio no se indexa por "en qué estado estaba" sino por "qué acción ejecutó."
+
+Formalmente, dada una categoría de episodios E y una categoría de acciones A, el **funtor indexante** Idx : E → A mapea cada episodio a su acción canónica. La composicionalidad episódica dice: si el episodio E₁ termina en un estado que inicia E₂, la composición E₁ ; E₂ existe y se indexa por la composición de acciones Idx(E₁) ; Idx(E₂). Los episodios compuestos -- historias, procesos, trazas completas -- se construyen componiendo episodios atómicos, preservando la estructura categórica.
+
+La jerarquía DIK se reinterpreta. Los **datos** son observaciones crudas -- valores atómicos registrados en cada acción. La **información** es la estructura relacional -- el esquema S más la Grothendieck construction ∫I que "pega" los datos según la estructura del esquema: Info ≅ ∫I →^π S. El **conocimiento** es la lógica interna de la categoría -- las inferencias que surgen de componer morfismos y verificar que los diagramas de constraints conmutan.
+
+Esta perspectiva es dual a la coalgebraica. La coalgebra mira desde el estado hacia afuera: "dado el estado actual, ¿qué observo?" El funtor indexante mira desde la acción hacia afuera: "dada esta acción, ¿qué episodio produjo?" Son dos maneras de determinar la identidad de un sistema por Yoneda: un sistema ES sus observaciones (coalgebra, Hom(s, -)) tanto como ES sus acciones (funtor indexante, Hom(-, a)). La primera es covariante; la segunda, contravariante. Ambas capturan toda la información por el embedding de Yoneda, sin perder nada.
+
+En la práctica, event sourcing es action-primary-key. Cada evento en el log es un morfismo, no un estado. El estado actual se reconstruye componiendo todos los morfismos desde el estado inicial -- es un fold (catamorfismo) sobre la secuencia de acciones. El append-only log es la categoría libre sobre el grafo de eventos, y la reconstrucción del estado es el único homomorfismo desde esa categoría libre al álgebra de estados. Cuando diseño un sistema con event sourcing, estoy eligiendo la perspectiva action-primary; cuando diseño con CRUD, estoy eligiendo la perspectiva state-primary (coalgebraica). Ambas son válidas; la elección depende de qué dimensión del sistema necesito que sea composicional.
+
 ## Tool use como morfismo externo
 
 Cuando un agente usa una herramienta, compone un morfismo en su propia categoria con un morfismo en la categoria de la herramienta. Pero esta composicion no ocurre dentro de ninguna de las dos categorias -- ocurre en una estructura que las conecta: un profunctor P : Agent^op x Tool -> Set.

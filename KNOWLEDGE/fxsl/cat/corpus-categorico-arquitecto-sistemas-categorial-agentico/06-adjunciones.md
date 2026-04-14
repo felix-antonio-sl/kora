@@ -83,7 +83,7 @@ foldMap f = mconcat . map f
 
 En la práctica, el patrón free/forgetful aparece en todas partes:
 
-- **ORM ⊣ SQL**: el ORM construye "libremente" objetos con relaciones; la ejecución SQL olvida la estructura de objetos y trabaja con tablas y filas.
+- **ORM ⊣ SQL**: el ORM construye "libremente" objetos con relaciones; la ejecución SQL olvida la estructura de objetos y trabaja con tablas y filas. Pero la adjunción rara vez es perfecta: la composición R ∘ L (ir al dominio, volver a SQL, volver al dominio) introduce un **ORM drift** -- un mismatch semántico donde el viaje redondo pierde relaciones que el modelo de dominio expresaba. Lazy loading que genera N+1 queries, inheritance mappings que aplastan jerarquías, y campos calculados que no sobreviven la serialización son síntomas del drift. Categóricamente, el drift es la distancia entre R ∘ L y la identidad -- la no-trivialidad de la unit η de la adjunción.
 - **AST ⊣ Source**: el parser construye un AST libre a partir del código fuente; el pretty-printer olvida la estructura arbórea y produce texto.
 - **Docker image ⊣ Dockerfile**: la imagen es la construcción libre; el Dockerfile es la especificación que genera libremente la imagen.
 
@@ -131,6 +131,8 @@ El paper de Spivak lo ilustra con un ejemplo concreto. Si tengo un esquema C con
 - Σ_F(I) toma la unión de T1 y T2 en una sola tabla, inventando variables Skolem para los campos que faltan (T1 no tiene Salary, T2 no tiene SSN).
 - Π_F(I) hace el join de T1 y T2, quedándose solo con los registros que matchean en First y Last.
 
+Una sutileza de Σ_F que merece atención: las variables Skolem que introduce no son los NULLs de SQL. Un NULL de SQL es ambiguo -- puede significar "no existe," "no lo sé," o "no aplica" -- y dos NULLs no son iguales entre sí (NULL ≠ NULL). Los **labelled nulls** de CQL son diferentes: cada uno es un valor fresco, tipado y distinguible (sk_1, sk_2, ...) que se comporta como una variable libre. Si más tarde aparece la información faltante, el labelled null puede unificarse con el valor real. La diferencia es operacional: los NULLs de SQL destruyen joins (NULL ≠ NULL rompe el equi-join); los labelled nulls los preservan (sk_1 = sk_1 funciona). La categoría distingue entre "no lo sé" y "no existe" con la precisión que SQL no tiene.
+
 Brown, Spivak y Wisnesky implementan esto en CQL (Categorical Query Language), donde un script real de migración se ve así:
 
 ```
@@ -152,6 +154,60 @@ mapping F = literal : S -> T { ... }
 ```
 
 Lo que me impresionó del CQL paper es que la garantía de corrección no es ad hoc: viene del hecho de que Σ, Δ y Π son adjuntos. Las "round-trip properties" (Σ_F Δ_F y Δ_F Π_F se comportan bien) son consecuencias directas de las identidades triangulares. La categoría hace el trabajo pesado.
+
+## Qué preserva cada adjunto
+
+La triple adjunción no solo migra datos -- transporta (o destruye) las constraints del esquema fuente. Y saber qué preserva cada operador antes de elegirlo es la diferencia entre una migración segura y una que introduce deuda técnica silenciosa.
+
+Una constraint en el esquema fuente puede ser una path equation (dos caminos producen el mismo resultado), un monomorfismo (inyectividad, como UNIQUE), un epimorfismo (surjectividad, como NOT NULL con cobertura total), o una constraint de existencia (el pullback existe, como un FOREIGN KEY). La pregunta es: si la constraint vale en el esquema fuente, ¿sigue valiendo después de migrar con Δ, Σ o Π?
+
+| Constraint | Δ_F (pullback) | Σ_F (pushforward izq.) | Π_F (pushforward der.) |
+|---|:---:|:---:|:---:|
+| Path equations | **Siempre** | No siempre | **Siempre** |
+| Monomorfismos (UNIQUE) | **Siempre** | No siempre | **Siempre** |
+| Epimorfismos (surjección) | No siempre | No siempre | **Siempre** |
+| Existencia (FK, pullback) | **Siempre** | No siempre | **Siempre** |
+
+Las razones son estructurales. Δ_F es precomposición -- no transforma datos, solo los reindexiza -- así que preserva todas las ecuaciones y propiedades locales. Π_F usa límites para construir los datos migrados, y los límites preservan monomorfismos, ecuaciones y existencia por construcción universal. Σ_F usa colímites, y los colímites pueden "colapsar" distinciones: dos elementos que eran distintos en el esquema fuente pueden identificarse en el target, destruyendo inyectividad; dos paths que eran iguales pueden divergir después del coend que computa la unión.
+
+La regla de decisión que uso: **si necesito garantías fuertes de integridad, Δ o Π. Si acepto pérdida controlada a cambio de generalización, Σ -- pero documento exactamente qué constraints se pierden y por qué.** Cada constraint perdida en una migración Σ es deuda técnica categórica: invisible en el momento, explosiva cuando alguien asume que la constraint sigue vigente.
+
+## La doble categoría de los datos
+
+La triple adjunción Σ ⊣ Δ ⊣ Π ya es poderosa. Pero hay una estructura más rica que contiene a los tres operadores como casos particulares, y que además integra las queries como ciudadanos de primera clase: la **doble categoría Data**.
+
+Schultz, Spivak, Vasilakopoulou y Wisnesky demuestran que schemas, mappings y queries forman no una categoría sino una doble categoría -- una estructura con dos dimensiones de composición:
+
+- **Objetos**: esquemas de bases de datos (categorías finitamente presentadas, posiblemente con teorías algebraicas).
+- **Morfismos verticales**: mappings entre esquemas (funtores F : S → T). Son los que inducen la triple adjunción.
+- **Morfismos horizontales**: bimodules (profuntores) M : S ⇸ T. Son las queries.
+- **2-celdas**: transformaciones entre queries respetando los mappings.
+
+La composición vertical es composición de funtores -- como siempre. Pero la composición horizontal es composición de profuntores vía coend:
+
+```
+(M ⊗ N)(s, t) = ∫^{r ∈ R} M(s, r) × N(r, t)
+```
+
+Esto dice: para componer dos queries M : S ⇸ R y N : R ⇸ T, integro sobre todos los objetos intermedios r de R, tomando los pares compatibles de M y N. Es el análogo categórico del JOIN transitivo -- si M selecciona empleados por departamento y N selecciona departamentos por región, M ⊗ N selecciona empleados por región, componiendo las relaciones.
+
+La evaluación de una query M : R ⇸ S sobre una instancia I : S → Set es:
+
+```
+Γ_M(I) = ∫^{s ∈ S} M(-, s) × I(s)
+```
+
+Otro coend. Lo que conecta directamente con la maquinaria del documento 10 sobre ends y coends -- la evaluación de queries ES un coend, no por analogía sino por identidad. Cada uber-query (bimodule general que puede retornar múltiples tablas y referenciar otras queries) se evalúa con la misma fórmula.
+
+El marco se llama **proarrow equipment** (o framed bicategory): Data es una doble categoría donde el funtor frame (L, R) : Data_1 → Data_0 × Data_0 es una fibración. Esto significa que cada mapping de esquemas F : S → T determina un bimodule canónico U_F : S ⇸ T (la unidad del equipment), y la composición de bimodules es compatible con la composición de mappings.
+
+¿Por qué me importa esto como arquitecto? Porque el proarrow equipment unifica tres cosas que en la práctica manejo por separado:
+
+1. **Migraciones** (funtores verticales) → transformaciones de esquema.
+2. **Queries** (bimodules horizontales) → consultas composicionales.
+3. **Vistas** (2-celdas) → queries parametrizadas por mappings.
+
+En el mundo SQL, las migraciones se escriben en DDL, las queries en DQL, y las vistas como wrappers. Son tres lenguajes con tres semánticas. En Data, las tres son dimensiones de la misma estructura doble-categorial, y la composición es coherente entre dimensiones. Puedo migrar un esquema y automáticamente saber cómo se transforman las queries -- porque la doble categoría garantiza que las dimensiones vertical y horizontal interactúan según leyes precisas.
 
 ## Adjunciones en la práctica cotidiana
 

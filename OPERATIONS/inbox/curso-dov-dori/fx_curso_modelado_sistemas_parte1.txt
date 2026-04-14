@@ -1,0 +1,541 @@
+## Parte 1
+
+### 01 Prologue
+Welcome to the course Model-based systems Engineering with Object Process Methodology.
+My name is Dov. And we are at the Technion, Israel Institute of Technology.
+In a minute,
+You
+Yes, You! are going to have a remote interview, for a successful startup company called StoreDot.
+Come with me.
+We will help you become an expert in Model Based System Engineering so you can get the job!
+Along our journey, we will learn together how to create models of systems simply and easily, using state-of-the art methodologies and tools.
+So good luck in the interview!
+Hi, we are StoreDot.
+Our company develops and manufactures fast charging cells for smartphones and for electric vehicles.
+We want everything that we do in the company to adhere to the standards of the international organization for standardization- ISO.
+Without this, it will be difficult for us to work with leading, global companies.
+We follow MBSE - Model-Based Systems Engineering - work philosophy, so another thing that's important to us is that all of the different departments in the company speak the same language and understand each other.
+This will help us prevent mistakes and misunderstandings, and facilitate good communication.
+We need to plan our systems in such a way that all our stakeholders, including suppliers, customers, and investors, will be able to understand them.
+Having adopted MBSE, it's important for us that you learn how to use OPM - Object-Process-Methodology.
+It's the most advanced, and best way to create conceptual models of systems.
+Equally importantly, it is recognized as ISO 19450.
+You seem like a very serious candidate.
+We want to continue talking with you. Can you hop on a plane and get here soon?
+Are you interested? We will pay for your flight.
+Yes, say Yes!
+I can tell you are a bit concerned, so please allow me as a professor of systems and software engineering, and as the inventor of OPM, to be your personal mentor for your new job.
+Here's my first piece of advice:
+Say 'yes' and get on that flight!
+Why? Because every one of you can quickly become knowledgeable, and even an expert, in model-based system engineering using OPM.
+Great! I'm glad you've given us a positive answer.
+Please order your flight, we'll be right here.
+Excellent, you made the right decision!
+I give you my word: very soon you will become an expert in modeling systems using OPM.
+I will be there with you and for you all the way to your new job!
+Next time we meet, we will talk about the importance of modelling systems we wish to develop.
+See you soon!
+
+### 02 Introduction
+Hello again!
+While we pack for our trip, here is a fundamental question: why is it even important to create a model of the system we are interested in developing?
+Why not just start developing your system without any model to guide you?
+Why create a model
+The answer is that complex socio-technical systems in any domain of our lives, such as transportation, communication, education, and defense, contain many components interacting in multiple ways, different people with various domains of expertise must collaborate to meet requirements, design, test, deliver, and maintain these complex systems.
+For example, let's take this smartphone.
+It was developed by tens of thousands of people in hundreds of companies.
+Underlying it is a complex model, which represents the smartphone's functions, such as talking, filming, and navigating, and the instrument's structure and behavior, which together deliver these functions.
+If the model isn't good, the product will not be good either.
+If the model is messy, incomplete, or unclear, the final product will have many problems.
+Therefore, creating a model is an early necessary step in developing any complex system.
+How do you create a good model?
+It's a little like packing a suitcase.
+A system model is full of different parts.
+Every part in the model represents something in the real world.
+There are methods for modeling that use many different types of diagrams and symbols to represent things in the system.
+Such methods are hard to learn and implement.
+It is like a bursting suitcase that is packed with many redundant items, making it too heavy to carry and load on an airplane.
+I like to travel light!
+If I have to schlep all this baggage, we will never make it to our interview on time.
+So let's toss away all the excess stuff and stick to the bare necessities!
+Like our suitcase now, OPM also has the bare minimal number of elements in it: two kinds of things - objects and processes, and links to connect them!
+We don't need more than that!
+What is OPM
+Indeed, small is beautiful, and this is the secret power of OPM -
+Just as we are travelling light, OPM is a lightweight, yet highly effective, modeling language and methodology!
+So what is OPM, and why should you care?
+OPM is a methodology and language for conceptual modeling of systems, recognized by ISO as ISO 19450.
+Our teams at the Technion and MIT are working with leading companies and organizations worldwide to create system models in OPM.
+These OPM models are used by different companies for various purposes.
+For example, Whirlpool Corporation, which has endorsed this course uses OPM for creative and innovative design of the next generation of home appliances, such as your refrigerator and dishwasher.
+Large aircraft manufacturers use it for modeling commercial aircraft systems, knowledge management and business processes.
+Other companies use OPM for end-to-end vehicle control in the car industry, robotic arm design and operation for the International Space Shuttle, designing new insurance products, and even research in molecular biology!
+And now we have another potential customer - a startup company that wants you to work for them as a systems engineer, provided that you understand how to model their systems.
+Oh, and by the way, ever since OPM has been recognized by ISO, increasingly, companies seek candidates with knowledge of conceptual modeling in OPM!
+Conceptual modeling will serve you in many fields.
+It looks like we are finally ready for our flight and the job interview.
+Meet Hopcut
+But before we take off, I would like to introduce you to a close friend, who will accompany us on our journey: meet HopCat.
+Hi, HopCat!
+HopCat is a concepts expert, so throughout the course, it will be our go-to pet for definitions of new concepts.
+Hopcat, what is MBSE? what is OPM? Spit it out!
+MBSE - Model-based Systems Engineering is the modern approach, in which formal conceptual models provide authoritative reference to engineering of complex systems, products and services.
+OPM - Object-Process Methodology - is the conceptual modeling methodology and language for model-based systems engineering, recognized by ISO as ISO-19450.
+So let's get on our way - you, me and HopCat.
+Let me assure you that by the end of our journey, you will know how to model any system.
+We will meet at the airport in the next video.
+Don't forget your passport and suitcase, and have a pleasant flight!
+
+### 03 Objects
+
+When modeling a system, the first thing we think about are objects. But, what are objects?
+Imagine landing at an airport after a long flight, and finding out that your luggage has not arrived.
+This can be especially annoying if you have an important job interview the next day, and your laptop, as well as the clothes you prepared for the interview, are in your suitcase!
+Being a good systems engineer, you begin to think about possible solutions to your problem.
+You start by looking around you, and you see many inanimate objects: service counters, conveyer belts, and the slip you received when you handed your luggage at your departure airport.
+You also see suitcases of all kinds, except for yours, of course!
+These are all called 'objects' in OPM, but this is the last of your concerns.
+Aside from inanimate objects, you can also see people
+- a lot of them! Some are security guards, others are passengers like yourself, and others are airline crew members and service people.
+In OPM, people are also classified as objects. Along with inanimate objects and people, you can see many kinds of information items around you: information about flights on display screens, and directions to various airport destinations on big signs.
+Information items, which are of course not physical, are also classified as OPM objects.
+Luggage management systems are complex.
+You can model complex systems such as these using OPM.
+In OPM, objects are represented by rectangles with green borders.
+Here is what an object looks like in OPM.
+As we have said, the people in the airport, and people in general, are also objects, so we will also represent them using green rectangles.
+Information items, such as those displayed in the arriving flights information screen, are also represented by green rectangles.
+However, unlike physical objects, informatical objects in OPM are not shaded, indicating that they are logical, and therefore they do not occupy any physical space.
+Let's recap: this is what a physical object looks like in OPM, and this is the look of an informatical OPM object.
+For example, the suitcase is physical, so we will represent it as a shaded rectangle.
+The weight of the suitcase, however, is informatical, and will therefore be represented as a flat rectangle without shading.
+Equipped with knowledge of how physical and informatical objects are represented in OPM, we can get back to looking for our lost luggage!
+As we have seen, we are surrounded by objects. Moreover, we, people, are objects too!
+A good model depicts different kinds of objects - any object that is relevant to the system being modeled.
+The airplane, passengers, and crew are all physical objects, while the temperature, wind direction, and flight destination are all informatical objects.
+What is an Object? Let's call HopCat our helping cat.
+An object is a thing that exists or might exist physically or informatically.
+Thanks HopCat.
+Identifying the various objects around us will help us locate our suitcase and pass the job interview with flying colors.
+How can we do this? We will discuss this in the next video.
+
+### 04 Proccess
+
+### 05 Object States
+
+Hi again!
+In the previous section, we found our lost suitcase, and now we continue on our way to your dream job interview for an engineer position at StoreDot - the fast-charging company.
+We found our lost suitcase, which means it has changed its state - from lost to found.
+Having explained what objects and processes are, the last piece of the puzzle for OPM is:
+States!
+So states is what we'll talk about now.
+Right now our goal is for you to get this wonderful job.
+This means your state will change from candidate to that of an employee.
+To understand this better, let's go back to the flight journey - the system we modeled previously.
+The passenger can be in a pre-ticketed state, or in a ticketed state.
+The passenger can be with a boarding pass; on board; and finally, at the destination airport.
+In each one of these cases, the passenger is at a different state.
+Watch the airplane landing.
+The airplane is an object, undergoing a process of landing.
+What are the states of airplane before and after landing?
+First, it was in the air - airborne, and now it has landed and it is on the ground.
+The landing process changes the state of the airplane from airborne to landed.
+In OPM states are represented as “roundtangles”- rounded corner rectangles.
+Here is how it looks like.
+Note that since a state belongs to an object, graphically it can exist only within the object box.
+It has no meaning outside of this box.
+Your suitcase also changed states: first it was lost, and now it's found!
+And I promise you, if you continue to learn conceptual modeling, you will soon make the state transition from candidate to employee.
+As we said previously, a state of an object is a specific situation of position that the object is in at some point in time.
+For example, an engineer in a company can be junior, senior, or R&D manager - these are all states.
+Every object in your system model can have any number of states - or even no states at all.
+Whether the object is stateful, that is it has states or stateless depends on what it is you want to model.
+For example, in the system where you are the object passenger and your flight is a process Flying, it made perfect sense to model your different situations such as onground and airborne as states.
+However, when modeling the airport's air-conditioning system; we do not need to add the states to passenger because they are not relevant to the problem at hand.
+However, the states hot, warm and cold of the terminal's indoor air, now become relevant.
+So we model them as states of the object Indoor Air.
+The last thing we need to know about states is that if we modeled an object as stateful, then in any point in time it must be in at most one state.
+We say "at most" because if a process is currently transforming this object, then the object is in transition between two states.
+The "Input state" - the state it has left when the process started, and the "Output state" - the state it is going to enter once the process is over.
+For example, an airplane can be either airborne - up in the air, or landed - on the ground.
+The Landing process changes the state of the airplane from 'airborne' to 'landed' but this is not instantaneous.
+It normally does take a few seconds.
+During that short time, the airplane is no longer airborne but it has not yet landed.
+It is in transition between these two states.
+If we wish to focus on what happens during this short period of time, we can model this situation as a new, additional state, called touchdown, which takes place between the states "airborne" and "landed".
+Hold on!
+While you're thinking about airplanes, be aware that your job interview is taking place in the next video.
+So, you need to change your location from the airport to the train station!
+This change in your location is also a transition of states.
+And it's time for changing your employment status from candidate to having a great job in a wonderful company!
+And change your bank account balance too.
+Engineers who know how to model systems make more money.
+Hopcat.. psss...Hopcat..
+A state is a possible situation or position at which an object can be for some amount of time.
+
+### 06 Relations between Things
+
+Hi, the big day has arrived!
+You're about to be interviewed for the job of your dreams.
+Being and engineer in StoreDot.
+You allready know about objects, processes, states, the basiscs of OPM.
+And it's now time to show them what you know!
+Good luck!
+Hello! It's good to see you and thank you for comming.
+We want to give you some feedback on the work that you have done.
+We reviewed your answers to the question on the processes, objects, and states, and it seems like you understand very well the basics of OPM.
+As we told you in the first interview, we use OPM to model our systems.
+Since OPM isrecognized as ISO 19450,
+OPM allows us to work with global companies.
+That's right. Also, it's very important for us that everyone in the company communicates well with all the others.
+That's why we model company procedures using OPM - it helps us to communicate and to identify issues for improvement.
+Your assignment is to create three initial models in OPM: the first is of our battery, the second - of an electric car, and the third - a model of driving an electric car.
+OPM has its own dedicated cloud software, called OPCloud.
+We use it to collaborate on construction of system models, for research and development, and for manufacturing.
+We ask that you learn how to use OPCloud so you can use it to create the models we ask you to prepare.
+This helps because OPM with it's OPCloud implementation is not only graphical, it is also textual.
+OK! the interview went very well! Let's go over the assignment you've just received.
+It's really not complicated.
+What we need now is to put together the pieces of the puzzle, and learn about relations in OPM.
+In OPM, we model systems using Things, and links between Things.
+Things can be processes or objects, and as we learned, objects can have states.
+Relations in OPM can be between an object and one or more objects, a process and one or more processes, or between objects and processes.
+The battery you were asked to model is, of course, an object.
+Let's watch together a video, which describes the electric cell and its structure.
+This is StoreDot's cell - it is shaped like a pouch that fits into a smartphone.
+Many cells comprise the electric car's battery.
+A cell is composed of various advanced materials, which enable it to be charged in record speed.
+Each cell is one of many that comprise the battery inside the charging module.
+A pile made-up of many charging modules is laid inside of the car chassis, and together they provide the car with the energy to move...
+The relation we have here is between the whole and its parts: the car chassis contains the pile of charging modules; each pile is made-up of many charging modules; each charging module is composed of many pouch cells, or batteries; and each battery consists of different materials.
+So, in the video we just saw, the car chassis can be called the whole, with the rest of the objects we listed its parts.
+Processes can also have a whole-part relationship.
+For example, the process of operating the electric car is composed of sub-process such as car starting, car driving and car charging.
+OPM has its own dedicated cloud software, called OPCloud.
+We use it to collaborate on construction of system models, for research and development, and for manufacturing.
+We ask that you learn how to use OPCloud so you can use it to create the models we ask you to prepare.
+This is what OPCloud looks like.
+Here's the canvas, and here's where you can select what Thing to add to the canvas
+- an object or a process.
+Let's model the video we just saw. First, we'll add the objects to the canvas:
+Car Chassis; Charging Module Pile; Charging Module; and Pouch Cell.
+Of course, all these objects are physical, so they are shaded.
+This is the time to learn about a simple kind of link between objects, the aggregation-participation link.
+The name of this link describes what it does: it connects between one object, which is the aggregate - or the whole, and other objects, which are the participants, or parts of the whole.
+An aggregation-participation link doesn't not link objects with processes.
+This means that in OPM, an object cannot be composed of processes,
+Similarly, processes cannot be composed of objects.
+Now, let's start connecting the objects: first, let's connect Car Chassis to Charging Module Pile.
+An aggregation-participation link is represented by a line with a black triangle along it.
+Great! Car Chassis is now connected to Charging Module Pile with an aggregation-participation link.
+Let's connect the rest of the objects.
+We have a hierarchical structure of objects representing a whole-part relationship.
+Notice the sentences formed at the bottom of the screen:
+"Car Chassis consists of Charging Module Pile."
+"Charging Module Pile consists of Charging Module."
+And so on...
+We will expand on the verbal part of OPM in the future.
+Excellent! As we mentioned, processes can also have a whole-part relationship.
+Here too, we can represent the relation between a process which is the whole and processes that are its parts using an aggregation-participation link.
+Let's start a fresh, new model.
+We'll add to the canvas the processes we mentioned before:
+Car Operating, Car Starting, Car Driving and Car Charging.
+Notice we added to each process name its related object - car.
+This makes the names of the processes in our model clearer.
+These are all physical processes, so like the objects they are shaded.
+Let's connect the Car Operating process to the other processes.
+Here, we also received a hierarchical structure, but unlike the model we created for objects, here the hierarchy is not complex; it is simply one process composed of three parts below it.
+Notice the sentence formed at the bottom of the screen:
+"Car Operating consists of Car Starting, Car Driving and Car Charging."
+Come, Hopcat!
+Please summarize for our friends the important things we have learned...
+Aggregation-participation, also known as “whole-part”, is a structural relation, in which the whole aggregates one or more parts.
+
+### 07 Object creation and consumption
+
+Introduction
+Hi,
+So, you were given an assignment to create an initial model of an electric car.
+To help you do this, allow me to invite you to coffee.
+What will you have? I think you will enjoy my Latte!
+I promise you that by the time you're done drinking, you will know how to connect things in OPM.
+Physical objects
+The process is clear: it is Coffee Making.
+This process is physical, which is why it is shaded.
+The physical objects involved are also obvious: Coffee Machine, Coffee Capsules, Water and Milk.
+Informatical objects in our system include Water Temperature, and the Serial Number of the coffee machine, and being informatical, they are not shaded.
+So, how do we connect the objects to the process?
+At this stage, we will learn about transforming links.
+Transformation
+These links are central to OPM and to conceptual modeling of any system.
+Transformation is what a process does to an object.
+There are three types of transformation: consumption, creation, and change.
+Let's start by explaining about the consumption and creation of objects.
+Let's fill up the water tank of this machine because it's gonna be consumed.
+Ok, enough water. Close it back.
+We don't forget the cup.
+Coffee Making process consumes water.
+We'll put a Coffee capsule inside, close the lid, and press the button!
+What does the coffee making process create? Coffee Drink!
+How can we model creation and consumption in OPCloud?
+First, let's add a process to the canvas.
+Connection
+We'll call this process Coffee Making.
+This process is physical, and therefore it is shaded.
+Now we'll add our objects: Water, Milk, and the Coffee Capsule.
+Of course, they are physical too!
+There are other objects worth modeling in our system, such as the Coffee Cup, and the operator of the coffee machine - me!
+But let's focus at the objects we have added.
+Let's first connect the object Water to the Coffee Making process.
+We drag an imaginary line from Water to Coffee Making, and a table pops up.
+In the table, we see several options from which to choose.
+Reading the expected outcome for each choice, we select the consumption link, since it says:
+"Coffee making consumes Water."
+We are now connected! Notice the sentence that just appeared at the bottom of the screen:
+"Coffee Making consumes Water." That's exactly what we wanted to say!
+Next, we will connect the Coffee Making process to the Coffee Drink object.
+This time, we will select the result link.
+A new sentence just appeared at the bottom of the screen, reading:
+"Coffee Making yields Coffee Drink."
+Which is true for coffee making, and what is true for cofee making, is also true for coffee growing, marketing, distributing, ordering, and any other system we choose to model.
+Other systems we have seen also have consumption and result relations.
+For example, an electric car consumes electricity, and creates mechanical energy - which enables the car to move.
+So, we already know how to connect objects with processes.
+That will helps us model the electric car and get the job you interviewed for.
+Now we need to add the milk, before the coffee gets cold!
+Next, we will learn how to add the milk and I think our friend the cat will like to drink some milk too...
+Transformation is what a process does to an object, which can be one of three things: creating a new object, consumption of an existing object, or change in the state of an existing object.
+A consumption link is a unidirectional transformation link depicted as an arrow from the consumed object (or “consumee”) to the process that consumes it.
+A result link is a unidirectional transformation link depicted as an arrow from a creating process to the resulting object (or “resultee”), which this process creates.
+An effect link is a bidirectional transformation link depicted as two opposing arrows, which connect the affecting process to the affected object (or “affectee”).
+The effect is a change in the state of that object.
+
+### 08 State transition
+
+Hi, again!
+Do you take your coffee with milk? Come, I'll make you one.
+Ok, remember , we need the milk because it's consumed in the cofee making process.
+That will be enough.
+We're going to use the milk to make the Latte.
+Put it back in the machine.
+And we're ready to go, just press the button.
+Meanwhile, let's continue modeling our Coffee Making system.
+After we have learned about
+Ok, I think that would be enough.
+After we have learned about two types of transformation - consumption and creation - we'll learn about the remaining third type: change, or state transition.
+The milk was still cold.
+Before pouring it to the coffee, we want it to change from cold to hot.
+To model this, we introduce the concept of STATE:
+A state is a situation or position the object is... at some point in time.
+Our milk is currently at state cold,
+We wish to change the state from cold to hot.
+To model this, we are now adding to Milk these two states.
+The Heating process, which we are adding now to our model, will change the Milk object from its input state: "cold" to the output state: "hot".
+To model this, we drag an imaginary line from the input state cold to the transforming process - Heating
+In the table that just popped up in OPCloud, we select the option in which the sentence will be:
+"Heating changes Milk from cold to hot."
+Exactly what we want to model!
+Indeed, this sentence is what we get now in our OPL window:
+"Heating changes Milk from cold to hot".
+The Milk object is connected to the Heating process with an input-output link pair
+- a pair of links comprised of an input link from the input state cold to the Heating process, and an output link from this process to the output state "hot" of Milk.
+Now we can add the hot milk into your coffee.
+The little milk we have left will go to HopCat - our little smart cat.
+The capsule, here, also underwent state change - from new to punctured
+This was done by the Puncturing process inside the machine.
+Looking back at our flight journey system, we see state transitions there too.
+Let's follow your journey through the airport. Before Flight Ticket Purchasing ends,
+Passenger (you) is in a state of being pre-ticketed.
+Once this process ends, the Passenger's state changes to ticketed.
+Following Boarding, Passenger state changes from ticketed to having a Boarding Card.
+Actually going on the airplane, which is also called Boarding, is physical, as it changes the state of Passenger from outside the airplane to boarded.
+Landing changes the Passenger's state from airborne to landed.
+At this time, you thought you would have your suitcase in the Carousel, so the Suitcase would be at state found.
+Not retrieving it means losing it, changing its state from found to lost.
+Finding does the inverse, and changes the state of Suitcase from lost back to found.
+Back to your coffee, it is now ready!
+Not less importantly, you now have the initial tools required to conceptually model any system!
+With this knowledge, you already know how to create an initial model of an electric car, and how to present this model to the company you are interviewing for - StoreDot.
+The company develops ultra-fast charging batteries.
+While driving, the electric car consumes electricity.
+Here is the OPM model of this:
+Following charging, each Cell inside the car's Battery changes from depleted to charged.
+This means that the charging process changes the state of the cell from depleted to charged.
+More critically, your application process to StoreDot changes your state from candidate to employee.
+The learning process you have gone through so far is changing the state of your knowledge, and through the Learning process you are gradually becoming an OPM expert.
+You can use this knowledge in every company, product, or system you are involved with.
+Input-output link pair is a pair of links from an input state to a process, and from that process to the output state.
+
+### 09 System aspects
+
+Intro
+Hello again!
+We are in Store-Dot, getting ready for your interview, as an engineer you'd like to get so much.
+In order to make sure this is going to be the case,
+I would like to discuss the three major aspects of any system: structure, behavior, and function.
+Let's take the electric car as an example.
+The system's structure pertains to: "what" the system is:
+What are the parts of or components of the system, and what the static, time-independent relations among them are?
+In our coffee making system example, the coffee making system is the coffee machine.
+Its main parts are the water tank, milk frother, water heater, capsule compartment, cup holder, and operating button.
+An example of a structural relation is the connection between the coffee machine and the capsule compartment.
+This relation is time-independent: It is persistent over time and does not change.
+The system's behavior pertains to "how" the system operates:
+What are the processes and sub-processes that happen in the system?
+And, what the dynamic, time-dependent relations among them and the objects they transform are.
+In our coffee making system example, coffee making is the main process.
+It consumes water, milk, and an intact capsule, and yields a coffee drink in a cup.
+The main sub-processes are water heating, milk frothing, coffee brewing, and milk adding.
+These sub-processes are related to each other by time; some happen sequentially while others in parallel.
+Obviously, the behavioral aspect of the system is dynamic and time-dependent.
+Finally, the function of an artificial, human-made system, pertains to "what for" or "why" the system operates the way it does:
+What was the underlying motivation for developing the system?
+Who are the system beneficiaries?
+What value does each beneficiary get from the system's operation?
+System structure
+In our coffee making system example, the beneficiaries include the coffee drinker, the coffee maker, and the machine manufacturer, who benefits from selling those machines.
+The simplest aspect of the system to understand is its structure.
+This is the ''what'' of the system: what the system consists of, and what the fixed relations between its parts are.
+Our system consists of an electric car, which, in turn, is comprised of a chassis, steering wheel, an electric battery, and a computer network for internal and external communication.
+Of course, there are other parts - and all of them are physical.
+Additionally, the car also includes informatical objects - such as , the various software modules installed on the car's computer network, which control its operations, and communicate with its environment.
+These objects are connected with an aggregation-participation link.
+Electric Car is the whole object – it aggregates all the other objects.
+Here's what the structure of the car operating system looks like in OPM.
+System behavior
+The second aspect of every system is its behavior.
+This is the ''how'' of the system: how it operates, and how it, and its various parts, change over time.
+We called the main process Electric Car Operating, and it consists of Car Charging, Car Starting, and Car Driving.
+These processes are connected with aggregation-participation links.
+Electric Car Operating consists of other processes.
+This is what the system's behavior looks like in OPM:
+System function
+So, what is the system's function? It is the ''why'' of the system. what is the operation of the system – its main process, and on what main object does it operate?
+The combination of the system's structure with its behavior is the function of the system.
+This structure-behavior combination determines what we call the ''system architecture''.
+Back to the Electric Car Operating system, we can say that its main function is to transition the state of Electric Car from "stopped" to ''in movement''.
+Of course, the car has other states in addition to these two - for example, "charged'' or ''parked'', but for now, we are trying to keep the model as simple as possible.
+The main function of the system is a combination of its main object with its main process, with both connected using a transformation link.
+So in our system, the electric car has two states: ''stopped'' and ''in movement''.
+Please get in the car, and let's drive to our next destination, we have one more lesson before the interview!
+Come on, HopCat, hop in! We're in a hurry!
+An OPM model is a conceptual model that uses objects, processes, and relations among them, to represent the structure, behavior, and function of a system at various levels of detail in a unified model expressed in both graphics and text.
+The Structure of a system is its form—the assembly of its physical and informatical components along with the long-lasting relations among them.
+Main object - The operand of the system, the object which is transformed.
+The Behavior of a system is its dynamics—the way the system changes over time by transforming objects.
+Main process - The process which transforms the main object or the operand of the system.
+Main function of a system is the combination of the main object and main process of the system.
+In a human-made system, the function is what provides the benefit to the system's beneficiary.
+
+### 10 Object-Process Language
+
+Hi!
+Most of what we are learning in this course has both visual and verbal aspects, ways of expression, or modalities. It is true that ''A picture is worth a thousand words''.
+Indeed, an image often contains much more information than the text which expresses what the image shows.
+But it is also true that more abstract diagrams and text that explains their meaning can generalize and say more than many pictures together.
+A complex concept can be summarized using a diagram, which helps us understand and remember that concept.
+OPM works this way!
+Every OPM element - Thing or link - has a symbol with a specific, defined meaning or semantics.
+However, sometimes words can express more clearly what we mean, while an image may be unclear or confusing.
+Studies have shown that humans process verbal and visual information separately, and then combine the two.
+In order to understand this, try to read out loud the following words, which will appear in sequence:
+I suppose that was somewhat confusing...
+Have you noticed how you processed the visual modality separately from the verbal one?
+Let's continue with another experiment.
+Try and keep in your memory the following sequence of words:
+Now, try to repeat all those words in sequence.
+Did you manage to remember all the words?
+Did you manage to remember them in sequence?
+Not simple, is it?
+Each one of the information processing channels - the visual and the verbal - has limited capacity.
+Each channel can hold only so much information at any given time.
+If we try to condense too much information into one image or piece of text, our short memory will be overloaded with information and will not be able to retain or process it.
+Have you ever noticed that different people have different preferences for how they absorb information?
+Some prefer to learn verbally, and others - visually.
+Yet, others like a combination of the two, such as reading a chapter in a book and then watching a lecture video about the same chapter.
+For all these reasons, it is important to use both the visual and verbal channels when we wish to teach, learn, or explain complex concepts, such as systems.
+This is why in OPM we use two modalities: the visual, which we have learned thus far, and the verbal, or textual, which is the collection of sentences automatically created by OPCloud as we construct the diagrams.
+In order to demonstrate this, let's look at the Electric Car Driving system.
+The diagram is called Object-Process Diagram, or OPD,
+While the language in which the sentences underneath are written is called Object-Process Language, or OPL.
+The main function of the system is expressed by the following OPL sentence:
+“Electric Car Driving changes Electric Car from stopped to in movement.”
+We can see that in the same way that a process is represented by a blue contour in the OPD, it is represented by blue text in the OPL.
+Similarly, since an object is represented by a green contour in the OPD, it is represented by green text in the OPL.
+As for states - their color is gold-brown in both the OPD and the OPL.
+In fact, we could read just the OPL sentences on their own, or look just at the OPD's.
+And, in both cases we shuold be able to understand what the model is expressing.
+Indeed, there is a complete equivalence between the graphics and the text.
+Everything that is expressed in an OPD is also expressed in a corresponding OPL sentence and vice versa.
+Doesn't it seem as if there is redundancy here?
+Couldn't we just use either the graphics or the text?
+This may be true in terms of the information content, but, as we have discussed, this redundancy is beneficial from a cognitive viewpoint.
+Some of your future employers and colleagues prefer looking at diagrams, while others prefer reading text.
+You need to make sure everyone understands what's going on inside your head!
+Now, it's time to see whether you will get the job of your dreams. Even HopCat is excited!
+Good luck!
+Good! That's exactelly the model we where looking for!
+Well done! Congratulations!
+You are now a junior engineer in StoreDot.
+You can start helping people solve problems using OPM!
+That's it for today!
+You deserve to go out and celebrate!
+- you worked hard and got what you were after!
+We will meet again soon, because there is still much to learn and do.
+HopCat wants to join in the celebrations too!
+The First multimedia learning assumption:
+People have two separate channels for processing information: visual and verbal.
+The Second multimedia assumption:
+Each channel has a limited capacity for processing information.
+The Graphics-Text Equivalence OPM Principle:
+Any model fact expressed graphically in an OPD is also expressed textually in the corresponding OPL paragraph.
+
+### 11 Section summary
+
+Hello! Let's put together everything we have learned so far.
+The focus of this course is model-based systems engineering, or MBSE for short.
+MBSE is a methodology for designing systems based on conceptual models.
+Such models represent the system at various levels of complexity and evolve during the system's lifecycle stages.
+Using this conceptual model, we, the developers, as well as various other stakeholders of the system, are able to have an in-depth understanding of the system, and communicate with each other clearly and efficiently.
+The model is like the blueprint of the system or product it represents.
+It is the source of authority that enables all the parties involved to be on the same page at all times.
+This way, we can progress with developing the system along its lifecycle.
+When we say lifecycle, we mean the stages that the system undergoes as it progresses from problem recognition and definition, needs and requirements elicitation and modeling, concept evaluation, architecting, detailed design, all the way to implementation, use, service and retirement.
+For now, we just note that the model, when used properly, can prevent misunderstandings and future problems with system development.
+Object-Process Methodology, or OPM, is a methodology and language for conceptual modeling of systems. It has several advantages:
+First, OPM is recognized as ISO 19450.
+Therefore, an increasing number of Fortune 500 companies use OPM to model their systems.
+Second, OPM has only one kind of diagram:
+Object-Process Diagram, or OPD.
+Additionally, OPM makes use of Object-Process Language, or OPL, which is a subset of natural English.
+It is therefore straightforward, and the basics are easy to learn.
+A third advantage of OPM is that it is domain-independent, or domain-agnostic.
+This means that we can use OPM to model systems from any domain or from multiple domains.
+For all these reasons, OPM facilitates communication and shared understanding among all the system stakeholders: customers, engineers from different disciplines, and other various stakeholders, such as public organizations and regulatory bodies.
+The elements of OPM are Things and links between things.
+A Thing can be either a process, or an object, which may have states.
+Things can be physical - real, or informatical - virtual.
+The links we have learned so far were
+Aggregation-Participation and Transforming links.
+Aggregation-participation allows us to represent the whole and its parts, be it an object or a process.
+Transforming links connect processes to objects, and allow us to represent relations of consumption, creation, or change in state.
+Every system has three aspects: structure, behavior and function.
+The combination of system structure and behavior makes its function possible.
+The system structure is its 'what' - the collection of system objects and how they relate to each other.
+The system behavior is the 'how' of the system
+- the collection of system processes and how they are connected to the objects and transform them.
+System function is the 'why' -
+Why do the system processes transform objects?
+What is the cause and what is the effect of the transformations?
+In the case of artificial human-made systems, we can also add to the system’s function the utility aspect: What was the system built to do, and for whom?
+What is the value of this transformation, and who benefits from it?
+Every model in OPM has two ways, or modalities, of expression: visual and verbal, or more specifically, graphical and textual.
+The graphical modality is called OPD, and the textual modality is called OPL.
+An object in OPM is represented by a rectangle with a green contour, a process by an ellipse with a blue contour, and states by a “rountangle”, rounded-corner rectangle with a gold-brown contour.
+The reason OPM makes use of both modalities is that humans process information in separate channels, and preferences between the two modalities vary.
+In order not to overload the viewer of the system model with information, one should limit the number of items in any given OPD and OPL.
+OPCloud is a collaborative Cloud-based environment for constructing OPM system models easily and efficiently.
+That's it for now! We will meet again soon, where we will travel to some exciting places!
+
+
+

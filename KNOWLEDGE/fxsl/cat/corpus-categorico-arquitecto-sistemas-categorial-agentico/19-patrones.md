@@ -66,6 +66,12 @@ La adjuncion L ⊣ R dice: formalizar una heuristica y luego relajar la formaliz
 
 Las heuristicas son morfismos aproximados: no hay garantia de que la composicion de dos heuristicas produzca una heuristica valida. Si la heuristica "usa cache para mejorar performance" y la heuristica "invalida cache cuando cambian los datos" se componen ingenuamente, el resultado puede ser incoherente. Los metodos formales son morfismos exactos: la composicion esta garantizada por construccion. Si formalizo ambas como invariantes de un sistema de tipos, la composicion se verifica en compile time.
 
+## Wrapper functors: integración multi-modelo
+
+Un patrón de integración que combina varias de estas ideas es el **wrapper functor** para entornos multi-modelo. Cuando una arquitectura combina PostgreSQL, MongoDB y Neo4j, cada base de datos tiene su propio "idioma" categorial: tablas y foreign keys, documentos y embedding, nodos y aristas. El patrón consiste en definir un **Schema Category global** cuyos objetos son tipos lógicos unificados y cuyos morfismos son relaciones semánticas, y construir un wrapper functor W_db : DB_specific → SchemaCategory para cada base de datos. W_postgres mapea tablas a tipos, foreign keys a morfismos. W_mongo mapea collections a tipos, nested refs a morfismos. W_neo4j mapea node labels a tipos, edge types a morfismos.
+
+Cada wrapper es un funtor -- debe preservar composición e identidad. La composición de queries en el Schema Category global se traduce automáticamente a queries concretas en cada base vía los wrappers. Y una query multi-modelo es un bimodule sobre el Schema Category global (como los que describí en el documento 06) cuya evaluación se descompone a través de los wrappers. La inversión de control es total: el Schema Category global define la semántica; los wrappers solo implementan la traducción. Si agrego una nueva base de datos, agrego un wrapper; el Schema Category y las queries no cambian.
+
 ## Co-design como lattice de problemas de diseno
 
 La monotone co-design theory de Censi, formalizada en el ACT4E de Fong y Spivak, ofrece un marco donde los problemas de diseno forman una estructura de lattice. Un Design Problem with Implementation (DPI) es una tupla (F, R, I, prov, req) donde F es un poset de funcionalidades, R es un poset de recursos, I es un espacio de implementaciones, prov : I -> F mapea cada implementacion a la funcionalidad que provee, y req : I -> R mapea cada implementacion a los recursos que requiere.

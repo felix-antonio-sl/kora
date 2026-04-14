@@ -103,6 +103,20 @@ Mas especificamente, GAIA distingue dos familias de modelos. Los modelos basados
 
 La Kan extension aparece porque el aprendizaje por transferencia -- tomar un modelo entrenado en un dominio y adaptarlo a otro -- es literalmente una extension a lo largo de un funtor de traduccion entre dominios. El fine-tuning es un ajuste de la Kan extension puntual.
 
+## Kan lifts: el problema inverso
+
+Las Kan extensions resuelven el problema de extender un funtor a lo largo de otro: dado F : A → C y K : A → B, encontrar la mejor extensión Lan_K F : B → C o Ran_K F : B → C. Pero hay un problema dual que aparece constantemente en la integración multi-modelo: dado F : A → C y G : B → C, **encontrar H : A → B tal que G ∘ H ≈ F**. Este es el problema del **Kan lift**.
+
+Formalmente, el **right Kan lift** de F a través de G es un par (Rift_G F : A → B, ε : G ∘ Rift_G F ⇒ F) con la propiedad universal: para cualquier otro par (H : A → B, η : G ∘ H ⇒ F), existe un único γ : H ⇒ Rift_G F tal que ε ∘ (G ∘ γ) = η.
+
+La intuición es: si la Kan extension extiende "hacia adelante" a lo largo de un funtor, el Kan lift levanta "hacia atrás" a través de un funtor. La extension pregunta "¿cómo llevo mi construcción a un dominio más grande?" El lift pregunta "¿cómo factorizo mi construcción a través de un intermediario?"
+
+En la práctica de integración multi-modelo, esto aparece así. Tengo datos en un esquema relacional (instancia I₁ : C₁ → Set) y quiero transformarlos a un esquema de grafo (instancia I₂ : C₂ → Set). Ambos viven sobre la categoría Set. El Kan lift busca el funtor de esquema H : C₁ → C₂ que mejor traduce la estructura relacional a la estructura de grafo, en el sentido de que al componer I₂ con H, recupero una aproximación óptima de I₁.
+
+El framework de Kouprianov y colaboradores formaliza esto para transformaciones entre modelos relacionales, de grafo y jerárquicos. Los árboles se representan como functores T : T_cal → Set donde T_cal tiene un solo objeto y un morfismo "parent" con T(parent)(root) = root. Los grafos se representan como functores G : G_cal → Set donde G_cal tiene dos objetos (vértices y aristas) y dos morfismos (src, tgt). Las transformaciones entre estos modelos se caracterizan como Kan lifts cuando el funtor H tiene las propiedades universales adecuadas.
+
+La distinción con la Kan extension es operacionalmente crucial: la extension me dice "cómo expandir," el lift me dice "cómo comprimir" o "cómo factorizar." Cuando migro de un esquema rico a uno más pobre (de relacional normalizado a documento desnormalizado), necesito un lift, no una extension. El lift calcula la mejor factorización de mis datos a través del esquema target -- la que pierde menos información, por la propiedad universal. Y para que el lift preserve la semántica de la transformación, el funtor G debe ser fully faithful -- las distinciones del dominio target deben ser genuinas, no artefactos.
+
 ## El patron unificador
 
 Ends, coends, y Kan extensions son el "calculo integral" de la teoria de categorias. Los ends son productos parametricos (para todo c, naturalmente). Los coends son coproductos parametricos (existe c, identificando naturalmente). Las Kan extensions son la manera universal de extender funtores a lo largo de otros funtores.

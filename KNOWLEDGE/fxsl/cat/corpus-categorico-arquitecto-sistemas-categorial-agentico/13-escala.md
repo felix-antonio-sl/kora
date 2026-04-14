@@ -176,6 +176,12 @@ Un Virtual SoS es una yuxtaposicion sin coordinacion explicita. Categoricamente,
 
 El comportamiento emergente en un SoS es un colimite 2-categorico que no existe en ninguna categoria constituyente individual. La capacidad de un enjambre de drones de cubrir un area, la resiliencia de una red de microservicios ante fallos parciales, la inteligencia colectiva de un debate multi-agente -- son propiedades del colimite, no de los constituyentes. Si el colimite no existe (los constituyentes no son compatibles), la emergencia no ocurre. Si existe, la propiedad universal del colimite garantiza que es la propiedad mas general que surge de la composicion.
 
+## Megamodelos: el modelo de los modelos
+
+Un System of Systems tiene una estructura que va más allá de la composición: tiene un **megamodelo** -- un modelo cuyos elementos son otros modelos. Schultz et al. formalizan esta idea en el Algebraic Model Management: un megamodelo es un grafo donde los nodos son modelos (objetos de información) y las aristas son relaciones semánticas entre ellos -- instanciación, transformación, traza, conformidad. En la jerarquía DIK, el megamodelo vive en el nivel de **Knowledge**: no es un modelo del sistema sino un modelo de los modelos del sistema. Es la conciencia del SoS sobre su propia estructura.
+
+Los operadores de gestión de modelos -- Match, Merge, Diff, Split, Compose -- son construcciones categóricas sobre el megamodelo. Merge es un pushout: dados dos modelos que comparten una base común, el merge los pega respetando lo compartido. Diff es el complemento algebraico. Match es la identificación del pullback -- la subestructura común máxima. Y las Coupled Transformations son funtores que migran modelos en respuesta a cambios en el metamodelo -- la co-evolución. Cuando un cambio en el meta-modelo SysML propaga actualizaciones a todos los modelos que lo instancian, lo que está ocurriendo es una transformación natural a lo largo de un funtor de instanciación.
+
 ## Composicion a escala: la perspectiva unificada
 
 Lo que une las operads, las double categories, los structured cospans y el metodo CMD es una misma intuicion: componer a escala requiere ser explicito sobre las interfaces. En una categoria ordinaria, los morfismos son la unica dimension de estructura. Pero los sistemas reales tienen jerarquia (operads), tienen multiples dimensiones de relacion (double categories), y tienen interfaces compartidas que deben coordinarse (structured cospans y pushouts).

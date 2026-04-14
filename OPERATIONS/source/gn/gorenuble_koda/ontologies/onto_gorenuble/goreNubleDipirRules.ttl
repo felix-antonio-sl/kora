@@ -1,0 +1,124 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://gorenuble.gob.cl/ontology/goreNubleDipirRules>
+    a owl:Ontology ;
+    owl:versionIRI <https://gorenuble.gob.cl/ontology/goreNubleDipirRules/1.0.0> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:definition "Extensión de reglas de negocio DIPIR (Exenciones, Umbrales) alineada 100% con Gist v14 (Zero Custom Properties)."@es ;
+    skos:prefLabel "DIPIR Rules Extension"@en , "Extensión de Reglas DIPIR"@es ;
+    .
+
+# ═══════════════════════════════════════════════════════════════════
+# CLASES (Mínimas extensiones necesarias)
+# ═══════════════════════════════════════════════════════════════════
+
+gnub:ExemptionRule
+    a owl:Class ;
+    rdfs:subClassOf gist:Specification ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirRules> ;
+    skos:definition "Especificación que define condiciones bajo las cuales un requisito o trámite administrativo no aplica (ej. Exención de Toma de Razón)."@es ;
+    skos:scopeNote """Patrón de uso:
+    - gist:governs -> El Tipo de Documento o Trámite exento.
+    - gist:hasMagnitude -> El umbral cuantitativo (si aplica).
+    - gist:isBasedOn -> El artículo legal que fundamenta la exención.
+    - gist:isCategorizedBy -> Operadores de comparación.
+    
+    La vigencia de la regla se gestiona mediante gist:TemporalRelation."""@es ;
+    .
+
+gnub:ComparisonOperator
+    a owl:Class ;
+    rdfs:subClassOf gist:Category ;
+    rdfs:isDefinedBy <https://gorenuble.gob.cl/ontology/goreNubleDipirRules> ;
+    skos:definition "Operador de comparación (matemático o lógico) utilizado en reglas cuantitativas."@es ;
+    skos:prefLabel "Operador de Comparación"@es ;
+    .
+
+# ═══════════════════════════════════════════════════════════════════
+# ASPECTOS (Para Magnitudes)
+# ═══════════════════════════════════════════════════════════════════
+
+gnub:AspectExemptionThreshold
+    a gist:Aspect ;
+    skos:definition "Aspecto que representa el valor límite (umbral) monetario o cuantitativo para una exención."@es ;
+    skos:prefLabel "Umbral de Exención"@es ;
+    .
+
+# ═══════════════════════════════════════════════════════════════════
+# REFERENCE DATA (Instancias)
+# ═══════════════════════════════════════════════════════════════════
+
+# Operadores
+gnubd:_ComparisonOperator_lessThan
+    a gnub:ComparisonOperator ;
+    skos:prefLabel "Menor que (<)"@es ;
+    skos:altLabel "lt"@en ;
+    .
+
+gnubd:_ComparisonOperator_lessThanOrEqual
+    a gnub:ComparisonOperator ;
+    skos:prefLabel "Menor o igual que (<=)"@es ;
+    skos:altLabel "lte"@en ;
+    .
+
+gnubd:_ComparisonOperator_greaterThan
+    a gnub:ComparisonOperator ;
+    skos:prefLabel "Mayor que (>)"@es ;
+    skos:altLabel "gt"@en ;
+    .
+
+gnubd:_ComparisonOperator_greaterThanOrEqual
+    a gnub:ComparisonOperator ;
+    skos:prefLabel "Mayor o igual que (>=)"@es ;
+    skos:altLabel "gte"@en ;
+    .
+
+gnubd:_ComparisonOperator_equal
+    a gnub:ComparisonOperator ;
+    skos:prefLabel "Igual a (=)"@es ;
+    skos:altLabel "eq"@en ;
+    .
+
+# ═══════════════════════════════════════════════════════════════════
+# EJEMPLO DE IMPLEMENTACIÓN (Reference Value)
+# ═══════════════════════════════════════════════════════════════════
+# REGLA: Resolución Exenta de Toma de Razón si Monto < 7000 UTM
+# Fuente: Resolución 7/2019 CGR
+
+gnubd:_ExemptionRule_TomaRazon_7000UTM
+    a gnub:ExemptionRule ;
+    skos:prefLabel "Exención Toma de Razón (Monto < 5.000-7.000 UTM)"@es ;
+    skos:definition "Regla que exime de Toma de Razón a resoluciones afectas cuyo monto sea inferior al umbral fijado por CGR."@es ;
+    
+    # ¿Qué gobierna? (El tipo de documento que se exime)
+    gist:governs gnubd:_DocType_Resolution ;
+    
+    # Umbral (Magnitude)
+    gist:hasMagnitude [
+        a gist:Magnitude ;
+        gist:hasAspect gnub:AspectExemptionThreshold ;
+        gist:numericValue "5000"^^xsd:decimal ; # Valor ejemplo (varía por región/año)
+        gist:hasUnitOfMeasure gnubd:_Unit_UTM ;
+    ] ;
+    
+    # Operador
+    gist:isCategorizedBy gnubd:_ComparisonOperator_lessThan ;
+    
+    # Fundamento (enlace placeholder por ahora)
+    # gist:isBasedOn gnubd:_LegalArticle_ResolucionCGR_... ; 
+    .
+
+# Vigencia Temporal (Reifificación)
+# La regla está vigente durante el periodo definido por la CGR
+gnubd:_Applicability_ExemptionRule_TR_2024
+    a gist:TemporalRelation ;
+    gist:hasParticipant gnubd:_ExemptionRule_TomaRazon_7000UTM ;
+    gist:hasParticipant gnubd:_Org_GORE_Nuble ;
+    gist:actualStartDateTime "2019-03-26T00:00:00"^^xsd:dateTime ; # Fecha Res 7
+    .

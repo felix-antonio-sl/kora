@@ -1,0 +1,129 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix tde: <https://datos.gob.cl/ns/ontology/tde/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# Alineamiento GNUB-TDE v1.0 - Puentes Semánticos Formales
+# =============================================================================
+# Autor: Ontologista Gist
+# Fecha: 2026-01-05
+# Propósito: Módulo de alineamiento entre ontologías GNUB y TDE bajo Gist 14.0
+#
+# USO EN PROTÉGÉ:
+# 1. Primero abrir goreNubleOntology.ttl (ya importa TDE)
+# 2. Luego File > Merge ontology... > seleccionar este archivo
+# 
+# O usar goreNubleBundle.ttl que importa todo automáticamente
+# =============================================================================
+
+<https://gorenuble.gob.cl/ontology/alignmentGnubTde>
+    a owl:Ontology ;
+    owl:versionIRI <https://gorenuble.gob.cl/ontology/alignmentGnubTde/1.0.0> ;
+    skos:definition "Módulo de alineamiento formal entre las ontologías GNUB (GORE Ñuble) y TDE (Transformación Digital del Estado). Define jerarquías, equivalencias y mappings semánticos. NOTA: Cargar después de goreNubleOntology.ttl."@es ;
+    skos:prefLabel "Alineamiento GNUB-TDE"@es ;
+    rdfs:comment """Para usar este módulo:
+1. Abrir goreNubleOntology.ttl primero (ya importa gistCore y tdeCore)
+2. Hacer merge con este archivo desde Protégé
+3. O usar goreNubleBundle.ttl que importa todo"""@es ;
+    .
+
+# =============================================================================
+# ALINEAMIENTOS JERÁRQUICOS (rdfs:subClassOf)
+# Organizaciones GNUB especializan OrganoAdministracionEstado de TDE
+# =============================================================================
+
+gnub:Division
+    rdfs:subClassOf tde:OrganoAdministracionEstado ;
+    skos:scopeNote "División GORE Ñuble es un tipo específico de OAE."@es ;
+    .
+
+gnub:Department
+    rdfs:subClassOf tde:OrganoAdministracionEstado ;
+    skos:scopeNote "Departamento GORE Ñuble es un tipo específico de OAE."@es ;
+    .
+
+gnub:Unit
+    rdfs:subClassOf tde:OrganoAdministracionEstado ;
+    skos:scopeNote "Unidad GORE Ñuble es un tipo específico de OAE."@es ;
+    .
+
+gnub:StaffUnit
+    rdfs:subClassOf tde:OrganoAdministracionEstado ;
+    skos:scopeNote "Unidad de Staff GORE Ñuble es un tipo específico de OAE."@es ;
+    .
+
+gnub:AdvisoryBody
+    skos:relatedMatch tde:OrganoAdministracionEstado ;
+    skos:scopeNote "Órganos asesores (COSOC, comités) colaboran con OAEs pero no son OAEs según Ley 18.575."@es ;
+    .
+
+# =============================================================================
+# EQUIVALENCIAS FORMALES (owl:equivalentClass)
+# Conceptos semánticamente idénticos entre dominios
+# =============================================================================
+
+gnub:PositionType
+    owl:equivalentClass tde:Cargo ;
+    skos:scopeNote "Tipo de Cargo en GNUB es equivalente a Cargo en TDE."@es ;
+    .
+
+# =============================================================================
+# MAPPINGS SEMÁNTICOS (skos:broadMatch, skos:closeMatch, skos:relatedMatch)
+# Relaciones semánticas no formales para navegación y descubrimiento
+# =============================================================================
+
+# Estados y Transiciones
+gnub:RenditionState
+    skos:relatedMatch tde:EstadoTramite ;
+    skos:scopeNote "Estados de rendición son análogos pero no subtipos de estados de trámite TDE."@es ;
+    .
+
+gnub:AgreementState
+    skos:relatedMatch tde:EstadoTramite ;
+    skos:scopeNote "Estados de convenio son análogos pero no subtipos de estados de trámite TDE."@es ;
+    .
+
+gnub:ApprovalFlowStage
+    skos:relatedMatch tde:EstadoTramite ;
+    skos:scopeNote "Etapas de flujo de aprobación GNUB se relacionan con estados de trámite TDE."@es ;
+    .
+
+# Roles
+gnub:RenditionRole
+    skos:broadMatch tde:RolProcedimiento ;
+    skos:scopeNote "Roles en rendición GNUB son tipos específicos de roles en procedimiento TDE."@es ;
+    .
+
+# Documentos - Remediación v2.2
+# La clase gnub:Resolution ahora es gist:Agreement (Acto), 
+# los tipos de documento se alinean via gnub:AdministrativeDocumentType
+gnub:AdministrativeDocumentType
+    skos:broadMatch tde:TipoDocumentoElectronico ;
+    skos:scopeNote "Tipos de documento administrativo GNUB son subconjunto de tipos TDE."@es ;
+    .
+
+# =============================================================================
+# P3-GIST: Estados de Convenio → Estados de Expediente
+# =============================================================================
+
+gnub:AgreementState
+    skos:relatedMatch tde:EstadoExpediente ;
+    skos:scopeNote "Estados de convenio GNUB se relacionan con estados de expediente TDE. No son idénticos pero comparten semántica de ciclo de vida."@es ;
+    .
+
+# Mappings de instancias Reference Data (exactMatch)
+<https://gorenuble.gob.cl/ns/data/_DocType_Resolution>
+    skos:exactMatch <https://datos.gob.cl/ns/data/tde/_TipoDocumentoElectronico_resolucion> ;
+    .
+
+<https://gorenuble.gob.cl/ns/data/_DocType_Decree>
+    skos:relatedMatch <https://datos.gob.cl/ns/data/tde/_TipoNorma_decreto_supremo> ;
+    .
+
+# =============================================================================
+# FIN DEL MÓDULO DE ALINEAMIENTO
+# =============================================================================

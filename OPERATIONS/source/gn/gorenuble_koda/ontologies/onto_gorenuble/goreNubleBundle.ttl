@@ -1,0 +1,19 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://gorenuble.gob.cl/ontology/goreNubleBundle>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/alignmentGnubTde> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleDipirOntology> ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleDipirRules> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleReferenceData> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleOrgData> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleIPRData> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleLegalData> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleRenditionData> ;
+    owl:imports <https://gorenuble.gob.cl/data/goreNubleApprovalData> ;
+    owl:imports <https://gorenuble.gob.cl/shapes/goreNubleShapes> ;
+    skos:prefLabel "Ontología Integrada GORE Ñuble"@es ;
+    skos:definition "Punto de entrada unificado que importa el TBox estructural, módulo de alineamiento TDE, 6 módulos de datos y SHACL shapes para el Grafo de Conocimiento institucional completo."@es .
+

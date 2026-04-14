@@ -3,11 +3,6 @@
 *.tar.bz2
 __pycache__/
 *.pyc
-/inbox/
-/source/
-/drafts/
-/build/
-/OPERATIONS/
 
 # Agentes deprecados (2026-03-23)
 /AGENTS/dev/coder/

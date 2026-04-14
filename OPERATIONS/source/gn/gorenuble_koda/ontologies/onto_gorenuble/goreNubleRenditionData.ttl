@@ -1,0 +1,113 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# DATOS DE DOMINIO: RENDICIONES DE CUENTAS
+# Fuente: kb_gn_020_gestion_rendiciones_koda.yml
+# =============================================================================
+
+<https://gorenuble.gob.cl/data/goreNubleRenditionData>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:definition "Instancias (ABox) del dominio de Rendiciones de Cuentas del GORE Ñuble."@es ;
+    skos:prefLabel "GORE Ñuble - Datos de Rendiciones"@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ESTADOS DE RENDICIÓN (gnub:RenditionState)
+# Fuente: kb_gn_020_gestion_rendiciones_koda.yml - Flujo SISREC
+# =============================================================================
+
+gnubd:RenditionState_Pendiente
+    a gnub:RenditionState ;
+    skos:prefLabel "Pendiente"@es ;
+    skos:definition "Rendición aún no presentada por la entidad ejecutora."@es ;
+    gist:sequence 1 ;
+    .
+
+gnubd:RenditionState_EnRevision
+    a gnub:RenditionState ;
+    skos:prefLabel "En Revisión"@es ;
+    skos:altLabel "En Revisión Técnica-Financiera"@es ;
+    skos:definition "Rendición recibida y en proceso de revisión por el RTF/Analista Otorgante."@es ;
+    gist:sequence 2 ;
+    .
+
+gnubd:RenditionState_Observada
+    a gnub:RenditionState ;
+    skos:prefLabel "Observada"@es ;
+    skos:definition "Rendición devuelta a la entidad ejecutora para subsanación de observaciones."@es ;
+    gist:sequence 3 ;
+    .
+
+gnubd:RenditionState_AprobadaParcial
+    a gnub:RenditionState ;
+    skos:prefLabel "Aprobada Parcialmente"@es ;
+    skos:definition "Rendición aprobada con algunas transacciones observadas que requieren regularización."@es ;
+    gist:sequence 4 ;
+    .
+
+gnubd:RenditionState_AprobadaTotal
+    a gnub:RenditionState ;
+    skos:prefLabel "Aprobada Totalmente"@es ;
+    skos:definition "Rendición aprobada en su totalidad y firmada con FEA por el Encargado Otorgante."@es ;
+    gist:sequence 5 ;
+    .
+
+gnubd:RenditionState_Contabilizada
+    a gnub:RenditionState ;
+    skos:prefLabel "Contabilizada"@es ;
+    skos:definition "Rendición registrada en SIGFE y archivada por la U.C.R./DAF."@es ;
+    gist:sequence 6 ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ROLES EN RENDICIÓN (gnub:RenditionRole)
+# Fuente: kb_gn_020_gestion_rendiciones_koda.yml - Actores SISREC
+# =============================================================================
+
+gnubd:RenditionRole_AnalistaEjecutor
+    a gnub:RenditionRole ;
+    skos:prefLabel "Analista Ejecutor"@es ;
+    skos:definition "Funcionario de la entidad ejecutora que crea y registra transacciones en SISREC."@es ;
+    skos:scopeNote "Entidad: Ejecutora. Sistema: SISREC."@es ;
+    .
+
+gnubd:RenditionRole_MinistroDeFe
+    a gnub:RenditionRole ;
+    skos:prefLabel "Ministro de Fe"@es ;
+    skos:definition "Funcionario de la entidad ejecutora que certifica la autenticidad de documentos digitalizados."@es ;
+    skos:scopeNote "Entidad: Ejecutora. Sistema: SISREC."@es ;
+    .
+
+gnubd:RenditionRole_EncargadoEjecutor
+    a gnub:RenditionRole ;
+    skos:prefLabel "Encargado Ejecutor"@es ;
+    skos:definition "Representante legal o funcionario autorizado que firma la rendición con FEA y la envía al GORE."@es ;
+    skos:scopeNote "Entidad: Ejecutora. Sistema: SISREC. Firma: FEA."@es ;
+    .
+
+gnubd:RenditionRole_AnalistaOtorgante
+    a gnub:RenditionRole ;
+    skos:prefLabel "Analista Otorgante (RTF)"@es ;
+    skos:altLabel "Referente Técnico-Financiero"@es ;
+    skos:definition "Funcionario del GORE que revisa y aprueba/observa transacciones en SISREC."@es ;
+    skos:scopeNote "Entidad: GORE (Otorgante). Sistema: SISREC."@es ;
+    .
+
+gnubd:RenditionRole_EncargadoOtorgante
+    a gnub:RenditionRole ;
+    skos:prefLabel "Encargado Otorgante (Jefe DAF)"@es ;
+    skos:definition "Jefatura DAF que firma el Informe de Aprobación con FEA."@es ;
+    skos:scopeNote "Entidad: GORE (Otorgante). Sistema: SISREC. Firma: FEA."@es ;
+    .
+
+# =============================================================================
+# FIN DEL DOCUMENTO ABOX
+# =============================================================================

@@ -97,19 +97,19 @@ Veintiun documentos disponibles para consulta profunda, organizados como un arco
 - **03-comparacion** -- Transformaciones naturales, polimorfismo como naturalidad, equivalencia de categorias, 2-categorias.
 - **04-identidad-es-relacion** -- Hom-funtores, representabilidad, lema de Yoneda, embedding, presheaves.
 - **05-universales** -- Productos, coproductos, pullbacks, pushouts, limites, colimites, sketches.
-- **06-adjunciones** -- Unit/counit, Galois, free/forgetful, triple adjuncion Sigma-Delta-Pi, currying.
+- **06-adjunciones** -- Unit/counit, Galois, free/forgetful, triple adjuncion Sigma-Delta-Pi, preservacion de constraints, doble categoria Data, labelled nulls, ORM drift, currying.
 - **07-composicion-con-estructura** -- Categorias monoidales, string diagrams, simetria, CCC, Curry-Howard-Lambek.
 - **08-enriquecimiento** -- Bool-categories, Cost-categories, espacios metricos de Lawvere, QoS, cambio de base, profunctors.
-- **09-efectos** -- Monadas, Kleisli, Eilenberg-Moore, comonadas, coalgebras, bisimulacion, leyes distributivas.
-- **10-extension** -- Ends, coends, Kan extensions, Grothendieck construction, fibrations, attention como Kan extension.
+- **09-efectos** -- Monadas, Kleisli, Eilenberg-Moore, comonadas, coalgebras, bisimulacion, leyes distributivas, catamorfismo como query.
+- **10-extension** -- Ends, coends, Kan extensions, Kan lifts, Grothendieck construction, fibrations, attention como Kan extension.
 - **11-interaccion** -- Polynomial functors, lentes dependientes, tres productos monoidales, sistemas dinamicos, comonoids como categorias.
 - **12-topoi** -- Presheaves, sheaves, clasificador de subobjetos, logica intuicionista, geometric morphisms, multi-tenancy.
 - **12b-safety-alignment** -- Alineamiento, seguridad ICAR, verificacion formal vs empirica, Goodhart, coherencia.
-- **13-escala** -- Operads, wiring diagrams, double categories, structured cospans, metodo CMD, verificacion composicional, trazabilidad, simulacion, SoS.
-- **14-agencia** -- Free monad (plan), cofree comonad (sustrato), ley de interaccion, operads dinamicas, contextads, emergencia, tool use, P-D-A, memoria.
+- **13-escala** -- Operads, wiring diagrams, double categories, structured cospans, metodo CMD, verificacion composicional, trazabilidad, simulacion, SoS, megamodelos.
+- **14-agencia** -- Free monad (plan), cofree comonad (sustrato), ley de interaccion, accion como primary key, dualidad estado/accion, operads dinamicas, contextads, emergencia, tool use, P-D-A, memoria.
 - **15-tiempo** -- Behavior types como sheaves, invariancia traslacional, modalidades temporales, hybrid sheaves, delays, contratos composicionales.
-- **16-lifecycle** -- Lifecycle como recursion composicional, V-model, DevOps, drift.
+- **16-lifecycle** -- Lifecycle como recursion composicional, V-model, DevOps, drift, categoria de versiones, deuda tecnica categorial.
 - **17-procesos** -- Requirements, design, testing, maintenance como procesos categoricos.
 - **18-calidad-riesgo** -- Quality attributes, RAM, riesgo, resiliencia, garantias.
-- **19-patrones** -- Patrones arquitectonicos/diseno/agenticos, anti-patrones.
+- **19-patrones** -- Patrones arquitectonicos/diseno/agenticos, wrapper functors multi-modelo, anti-patrones.
 - **20-infraestructura-autonoma** -- Tool use, self-improvement, distributed systems, SoS, infra autonoma.

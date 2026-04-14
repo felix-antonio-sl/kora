@@ -75,6 +75,25 @@ Git branching es una fibracion sobre este esquema. El repositorio es un funtor d
 
 Las database migrations forman una cadena functorial. Cada migracion M_k : Schema_k -> Schema_{k+1} es un funtor que transforma el schema. La composicion M_n . ... . M_2 . M_1 produce la migracion total de Schema_1 a Schema_{n+1}. La asociatividad de la composicion garantiza que puedo aplicar las migraciones en bloques sin alterar el resultado. Un rollback es un intento de inverso: M_k^{-1} que deshace la migracion k. Si el inverso existe, la migracion es reversible; si no, el cambio es irreversible --- un DROP COLUMN no se puede deshacer. La secuencia de migraciones forma un path en la categoria finitamente presentada del schema, exactamente cada migracion es un morfismo, y la composicion de migraciones debe satisfacer las path equivalences del dominio. Bakirtzis formaliza esta estructura de composicion vertical -- la integracion de artefactos de distintas fases -- y composicion horizontal -- la coordinacion de disciplinas dentro de una fase -- como un algebra de wiring diagrams que el documento 17 desarrolla en detalle.
 
+## La categoría de versiones
+
+Las database migrations que acabo de describir no son morfismos aislados. Forman una categoría propia: **Ver**, la categoría de versiones.
+
+Los objetos de Ver son las versiones del esquema: v1.0.0, v1.1.0, v2.0.0. Los morfismos son las migraciones: upgrade_{n,n+1} : v_n → v_{n+1}. La identidad es la migración nula (no-op). La composición es la aplicación secuencial de migraciones: upgrade_{n,n+2} = upgrade_{n+1,n+2} . upgrade_{n,n+1}. Ver es típicamente un preorder -- hay a lo sumo un camino canónico entre dos versiones.
+
+Lo que convierte esto en una estructura rica es el funtor de esquema **F : Ver → Cat** que asigna a cada versión su esquema como categoría. F(v1.0.0) = S₁ con {Employee, Department}; F(v1.1.0) = S₂ con {Employee, Department, Project}; F(upgrade) = un funtor de migración F_{1,2} : S₁ → S₂. Cada versión tiene su propia categoría de instancias Inst(F(v)), y cada migración induce los tres funtores adjuntos Δ/Σ/Π entre categorías de instancias.
+
+```
+Inst(S₁) --Σ_F--> Inst(S₂)
+    |                   |
+    v                   v
+ v1.0.0 --upgrade--> v1.1.0
+```
+
+La composición de migraciones a lo largo de la cadena v₁ → v₂ → ... → vₙ tiene una propiedad que la ingeniería de datos raramente hace explícita: la pérdida de constraints es acumulativa. Si la migración m₁ pierde la constraint de UNIQUE en el campo email (porque usa Σ), y la migración m₃ pierde la constraint de NOT NULL en department_id (porque otra Σ colapsa departamentos), la composición m₅ . ... . m₁ ha perdido ambas constraints. Pero nadie lo sabe, porque cada migración individual fue "correcta" en su contexto.
+
+Esto es **deuda técnica categórica**: la diferencia entre las constraints de la teoría T₁ del esquema original y las constraints de la teoría Tₙ del esquema actual que son todavía satisfechas después de la cadena de migraciones. La deuda se acumula silenciosamente con cada Σ que colapsa distinciones y cada migración ad hoc que no es genuinamente un funtor (no preserva composición o identidad). La detección requiere cargar las constraints de v₁, aplicar la cadena completa m_n . ... . m_1, y verificar cuáles sobreviven en vₙ. La diferencia es la deuda. Cada constraint perdida es una invariante que el código asume pero el esquema ya no garantiza -- y el punto de falla será donde esa asunción invisible choque con la realidad.
+
 ## Cambio de doctrina
 
 Myers formaliza algo que va mas alla de la evolucion dentro de un lifecycle: el cambio de doctrina. Una doctrine of dynamical systems, en su terminologia, es una forma particular de responder las preguntas fundamentales sobre que significa ser un sistema: que son los estados, como cambian, que significa componer sistemas, como se comportan los compuestos. Cambiar de una doctrina a otra --- por ejemplo, pasar de sistemas deterministas a sistemas probabilisticos, o de ecuaciones diferenciales a automatas discretos --- es un 2-funtor entre doubly indexed categories de teorias.
