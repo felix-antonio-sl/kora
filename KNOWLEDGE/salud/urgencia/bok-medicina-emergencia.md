@@ -1,7 +1,7 @@
 ---
 _manifest:
   urn: "urn:salud:kb:bok-medicina-emergencia"
-  version: "1.0.0"
+  version: "2.0.0"
   kind: "knowledge_artifact"
   title: "Body of Knowledge diferencial de Medicina de Emergencia"
   description: "BOK poblado a nivel de uso estratégico por especialista, organizado en 14 secciones (0-13), derivado exclusivamente de fuentes MUE U. Andes, App Med UC y Oxford Handbook of Emergency Medicine (5th ed, 2020)."
@@ -1315,3 +1315,1331 @@ Las fuentes cubren dos dimensiones de educacion. Educacion de pacientes: instruc
 | Todo paciente (autocuidado del clinico) | Pausas regulares, hidratacion, alimentacion; pedir ayuda si no se puede manejar la carga | Oxford |
 
 **Fuentes**: Columna "Fuente" indica la procedencia de cada item. Esta matriz integra reglas de seguridad explicitadas en las fuentes originales.
+
+---
+
+## Expansión I: contenido inyectado desde fuentes no cubiertas en primera pasada
+
+> Bloques generados en segunda pasada de inyección, extrayendo contenido de las fuentes originales que no fue capturado por los agentes de la primera ronda.
+
+### 4.2.10bis. Complicaciones del dano hepatico cronico en urgencia
+
+El paciente cirrotico que consulta en urgencia presenta complicaciones agudas de alta mortalidad que requieren reconocimiento y manejo inmediato. La cirrosis tiene una prevalencia del 5,2% en Chile (ENS), siendo el consumo de alcohol (11,2% de consumo riesgoso segun ENS 2017) y las hepatitis virales B/C las etiologias predominantes (MUE Andes, Unidad 3).
+
+**Encefalopatia hepatica.** Continuo de disfunciones neuropsiquiatricas reversibles, con frecuencias del 20-80% en cirroticos. Clasificacion por grados: Grado 0 -- normal, sin hallazgos neurologicos (valorar encefalopatia hepatica minima); Grado 1 -- confusion leve, cambio de humor, irritabilidad, alteracion del ciclo sueno/vigilia, temblor o asterixis leve; Grado 2 -- letargia, desorientacion temporal, asterixis manifiesta, dificultad para hablar; Grado 3 -- estupor, amnesia, habla ininteligible, agitacion psicomotriz, rigidez muscular, clonus, hiperreflexia; Grado 4 -- coma, postura de descerebracion (Cortes L, Cordoba J). Factores desencadenantes: incremento de carga nitrogenada (sangrado gastrointestinal, exceso proteico, constipacion), disbalance electrolitico (hiponatremia, hipokalemia, trastorno acidobasico, hipoxia, deshidratacion) y farmacos sedantes. Descartar siempre infecciones del SNC y sangrado intracerebral como diagnosticos diferenciales. Tratamiento: (1) corregir causa desencadenante -- antibioticos si foco infeccioso, replecion de volumen si hemorragia, suspender diureticos si falla renal, corregir electrolitos; (2) lactulosa 25 ml cada 1-2 horas hasta deposiciones blandas; (3) rifaximina 400 mg 3 veces al dia (neomicina como alternativa); (3) ante agitacion, haloperidol es la mejor alternativa -- evitar benzodiazepinas por riesgo de recirculacion y metabolismo hepatico, con aumento del riesgo de depresion respiratoria (Vilstrup H., 2014). Disposicion: Grado I puede ser dado de alta si causa corregida; Grado II manejo en sala de cuidados basicos; Grado III-IV manejo en UTI (MUE Andes, Unidad 3).
+
+**Peritonitis bacteriana espontanea (PBE).** Sospechar en todo cirrotico con ascitis que presente fiebre, dolor abdominal, encefalopatia, diarrea o deterioro del estado general. Signos mas sensibles: dolor abdominal (94,1%) y alteracion mental (95,3%); mas especifico: fiebre (90,1%). Diagnostico: paracentesis con >250 neutrofilos/mm3, >1000 leucocitos/mm3 o cultivos positivos (criterios de Runyon). Glucosa baja (<50 mg/dL), proteinas totales >1 g/dL, LDH >225 mU/mL, o antigeno carcinoembrionario/fosfatasa alcalina elevados en liquido ascitico sugieren peritonitis bacteriana secundaria -- solicitar TC de abdomen y agregar metronidazol 500 mg IV cada 8 horas. Tratamiento PBE: ceftriaxona 2 g IV cada 24 horas o cefotaxima 2 g IV cada 8 horas. Si conteo <250 neutrofilos/mm3 pero con signos clinicos de infeccion, tratar igual hasta obtener cultivos. Disposicion: hospitalizacion (MUE Andes, Unidad 3).
+
+**Sindrome hepatorrenal (SHR).** Deterioro de funcion renal en dano hepatico avanzado, presente en ~40% de cirroticos en los primeros 5 anos. Es diagnostico de exclusion, secundario a vasodilatacion esplacnica con caida de flujo renal. Tipo 1: aumento de creatinina >2 veces el basal en <2 semanas; Tipo 2: deterioro mas lento. Criterios diagnosticos: dano hepatico cronico con cirrosis, creatinina >1,5 mg/dL, sin mejoria tras 48 horas de expansion con albumina y suspension de diureticos, ausencia de shock, sin nefrotoxicos, sin proteinuria/hematuria ni anomalia anatomica renal. Tratamiento: terlipresina 1 mg IV cada 6 horas (primera linea); si no disponible, octreotide 50 mcg/h IV durante las primeras 24 horas; noradrenalina 0,5 mg/h si inestabilidad hemodinamica; albumina 1 g/kg cada 12 horas (la no mejoria con albumina es criterio diagnostico). Esta terapia combinada logra mejoria en ~60% de los casos; en el resto, hemodialisis como puente a trasplante hepatico. Disposicion: hospitalizacion, considerar UCI (MUE Andes, Unidad 3).
+
+**Hemorragia digestiva en el cirrotico.** El sangrado variceal representa 50-90% de los episodios, con mortalidad del 20-70%. Manejo en reanimador: doble acceso venoso (N14-16), cristaloides 500 ml inicial (evitar sobrecarga -- los cirroticos toleran presiones arteriales bajas), meta de hemoglobina ~7 g/dL. Si compromiso circulatorio: acido tranexamico 1 g en 200 ml en 20 minutos; hemoderivados 1:1:1 (GR:plasma:plaquetas); omeprazol 80 mg IV bolo, luego 40 mg IV cada 6 horas; ceftriaxona 2 g IV cada 24 horas (profilaxis infecciosa precoz); vasopresores esplacnicos ante sospecha variceal -- octreotide 50 mcg bolo + 50 mcg/h u octreotida, o terlipresina 2 mg IV cada 4 horas (sin diferencia entre ambos). Intubacion orotraqueal dificil en este contexto: usar sedantes con poco impacto hemodinamico (etomidato, ketamina a dosis bajas), relajantes musculares a dosis altas, cabeza a 45 grados, aspiracion disponible. Ante agitacion, ketamina puede facilitar oxigenacion e instalacion de sonda nasogastrica. Endoscopia emergente apenas estabilizado. Si falla endoscopica (hasta 10%), balon de Sengstaken-Blakemore como puente. Disposicion: siempre intrahospitalario (MUE Andes, Unidad 3).
+
+### 4.13.1bis. Manejo farmacologico y protocolar del paciente agitado
+
+La agitacion psicomotora es un sindrome clinico definido como aumento excesivo de la actividad motora, asociado a tension interna, con actividad repetitiva y no productiva (DSM-5). Se estima un 5-10% de riesgo de agitacion entre consultantes de urgencia; un estudio de >40.000 atenciones mostro prevalencia de 2,6%, y un 10% de estos presentan compromiso cuali-cuantitativo de conciencia (Miner et al, 2018). La agitacion NO es sinonimo de patologia psiquiatrica: es una urgencia medica que obliga a descartar causas organicas potencialmente letales. El fenomeno del "oscurecimiento diagnostico" ocurre cuando sintomas fisicos son erroneamente atribuidos a patologia psiquiatrica en pacientes que coincidentemente la padecen (MUE Andes, Unidad 7).
+
+**Escala RASS (Richmond Agitation-Sedation Scale).** 10 niveles: +4 combativo (peligro inmediato); +3 muy agitado (se retira tubos, agresivo); +2 agitado (movimientos frecuentes no intencionados); +1 inquieto (ansioso sin movimientos agresivos); 0 alerta y calmado; -1 somnoliento (despierto >10s con contacto visual a la voz); -2 sedacion ligera (<10s contacto visual al llamado); -3 sedacion moderada (movimiento sin contacto visual al llamado); -4 sedacion profunda (movimiento solo a estimulacion fisica); -5 no despierta (sin respuesta a voz ni estimulacion fisica). Aplicacion en 3 pasos: observar, llamar por nombre, estimular fisicamente (Rojas-Gambasica et al, Rev Col Anestesiologia 2016).
+
+**Escala CAM (Confusion Assessment Method).** 4 criterios: (1) comienzo agudo y curso fluctuante, (2) inatencion, (3) pensamiento desorganizado, (4) alteracion de conciencia. Diagnostico de delirium requiere criterios 1+2 + (3 o 4). Sensibilidad 94-100%, especificidad 90-95%. Los pacientes con agitacion en contexto de delirium presentan 6 veces mas intubaciones, 2 veces mas hipotension, 2 veces mas hospitalizaciones, y mortalidad hasta 16,5% (Miner et al, 2018) (MUE Andes, Unidad 7).
+
+**Diagnostico diferencial por sistemas (Tabla 1, adaptada de Psychiatr Clin North Am 2017).** Neurologico: AVE, AIT, hemorragias intracraneanas, delirium, tumor, infecciones SNC, demencias. Cardiaco: SCA, ICC, miocardiopatia, arritmia, pericarditis/endocarditis. Vascular: diseccion aortica, aneurisma aortico abdominal, isquemia mesenterica. Pulmonar: neumonia, TEP, derrame pleural, neumo/hemotorax. Gastrointestinal: hemorragia digestiva, neumoperitoneo, diverticulitis, apendicitis. Genitourinario: ITU, pielonefritis, urolitiasis. Toxicologico: intoxicacion por OH/cocaina/estimulantes/drogas quimicas, sobredosis, efectos adversos de medicamentos (anticolinergicos). Endocrinologico: tormenta tiroidea, mixedema, crisis addisoniana, crisis miastenica. Electrolitos: hipo/hipernatremia, hipo/hipercalcemia. Infeccioso: sepsis por cualquier foco. Ambiental: hipo/hipertermia, deshidratacion. Psiquiatrico: psicosis, abstinencia de sustancias, trastorno de personalidad (MUE Andes, Unidad 7).
+
+**Farmacologia (Tabla 2, adaptada de New et al, 2017).** Principio general: menor dosis efectiva, preferir via oral si el paciente colabora (eficacia comparable a via parenteral). Adultos mayores pueden requerir hasta 50% de las dosis habituales. Antipsicoticos de 1a generacion: haloperidol VO 5-10 mg / IM 2,5-5 mg / EV 2,5-5 mg (EA: extrapiramidales 6-55%, distonias agudas hasta 17%; asociar lorazepam reduce dramaticamente estos efectos); clorpromazina VO 100 mg / IM 25-50 mg (EA: agranulocitosis, hipotension); loxapina inhalada 10 mg (EA: convulsiones, agranulocitosis, hipotension -- alternativa poco invasiva disponible en Chile). Antipsicoticos de 2a generacion: olanzapina VO 2,5-5 mg (sublingual disponible) / IM 2,5-10 mg (EA: hipotension ortostatica, sindrome metabolico -- buena opcion en adultos mayores por bajo riesgo de extrapiramidales; 66% reporta calma en 15-20 min); risperidona VO 2-3 mg (EA: similar a 1a generacion; segura en embarazo, primer trimestre); ziprasidona VO 40-160 mg (EA: similar a 1a generacion). Benzodiazepinas: lorazepam VO 1-2 mg (sublingual) / IM 2-4 mg / EV 2-4 mg; diazepam VO 5-10 mg / IM 2-10 mg / EV 2-10 mg; clonazepam VO 0,25-2 mg (sublingual). EA principal: depresion respiratoria, hipotension. Respuesta sintomatica en 78% en 15-20 min (Bak et al, 2019). Midazolam: efecto rapido, alto riesgo de compromiso respiratorio -- restringir a urgencias de alta complejidad. Ketamina: respuesta en 4-5 minutos, indicada en delirium hiperactivo; el Colegio Americano de Medicos de Urgencias la recomienda en pacientes con patologia psiquiatrica de base; riesgo: mayor requerimiento de intubacion vs haloperidol, puede exacerbar psicosis cronica (MUE Andes, Unidad 7).
+
+**Protocolos por diagnostico.** Psicosis aguda: antipsicoticos como primera opcion; combinacion con benzodiazepinas puede acelerar control. Intoxicacion alcoholica: considerar antipsicoticos, evitando excesiva sedacion por sinergia con alcohol y benzodiazepinas. Abstinencia de alcohol: uso rapido de benzodiazepinas (riesgo de delirium tremens). Intoxicacion por estimulantes (cocaina, anfetaminas, simpaticomiméticos): benzodiazepinas rapido, a veces con requerimientos mayores que los habituales. Delirium hiperactivo: ketamina por su efectividad y rapida accion; pacientes violentos, desorientados, inattentos, con escasa respuesta a intervencion verbal. Paciente agitado no violento sin respuesta a contencion verbal: intentar farmacos VO; olanzapina sublingual es alternativa segura y efectiva (MUE Andes, Unidad 7).
+
+**Contencion fisica.** Medida extrema: 55% de pacientes contenidos la percibe como "agresion del equipo de salud"; 94% cree que pudo haberse evitado (Rose et al, 2017). Eventos adversos: lesiones en extremidades, asfixia, aspiracion, acidosis lactica, rabdomiolisis, cardiomiopatia por estres, ulceras por presion, tromboembolismos (TVP, TEP). Se desaconseja realizarla con 1-2 operadores o en decubito prono (riesgo de asfixia y muerte). Protocolo recomendado: minimo 6 operadores, uno coordina; medidas mecanicas adecuadas (una por extremidad); control de signos vitales y confort del paciente en todo momento; acompanar siempre de optimizacion del manejo farmacologico para minimizar duracion de la contencion (MUE Andes, Unidad 7).
+
+### 4.13.2bis. Evaluacion estructurada del riesgo suicida en urgencia
+
+Se estima que entre un 5,7-8% de los pacientes que consultan en un servicio de urgencias general presenta ideacion o conductas suicidas, independientemente de su motivo de consulta; la mayoria no lo reportara espontaneamente, y solo en el 25% de los casos queda registro en la ficha clinica (Ronquillo et al, 2012). Hasta el 82% de una muestra de personas que fallecieron por suicidio habia consultado con un medico en los 6 meses previos; un 20% habia visitado a un medico en las 24 horas previas a su muerte. Preguntar sobre ideacion suicida NO aumenta el riesgo de conductas suicidas (Luoama et al, 2002) -- por el contrario, abre una ventana de busqueda de ayuda (MUE Andes, Unidad 8).
+
+**Definiciones.** Ideacion suicida: ideas de "no vivir o no estar" sin planificacion (EMSM: 3,4% adultos globalmente; Chile: 3,4% en 12 meses). Planificacion suicida: forma concreta definida -- la letalidad del plan es predictor clave de riesgo de muerte (EMSM: 2,4%; Chile: 2,4%). Intento suicida: acto ya realizado (EMSM: 1,2%; concordante con Chile). Definicion MINSAL 2013: "Todo acto por el que un individuo se causa a si mismo una lesion o un dano, con un grado variable en la intencion de morir" (MUE Andes, Unidad 8).
+
+**Preguntas de Sheehan (1998).** En el ultimo mes: (1) Ha pensado que estaria mejor muerto o ha deseado estar muerto? (2) Ha querido hacerse dano? (3) Ha pensado en suicidarse? (4) Ha planeado como suicidarse? (5) Ha intentado suicidarse? Alguna vez en su vida: (6) Ha intentado suicidarse? Respuestas positivas en preguntas 1-3 orientan ideacion; pregunta 4 orienta planificacion; preguntas 5-6 orientan intentos previos, que aumentan dramaticamente el riesgo de muerte (MUE Andes, Unidad 8).
+
+**Modelo de 6 dominios SPRC (Suicide Prevention Resource Center, 2015).** Evaluar: (1) Plan -- recientemente ha pensado en morir y en como hacerlo? (2) Intentos -- ha tenido algun intento de suicidio? (3) Intento pasado -- ha tenido algun intento de suicidio en su vida? (4) Historia de salud mental -- ha tenido tratamiento psiquiatrico, tiene actualmente algun problema de salud mental que afecte su funcionamiento cotidiano? (5) Uso de drogas -- ha bebido alcohol o usado drogas de manera que haya sido un problema para usted o su familia? (6) Irritabilidad/agitacion/agresion -- se ha sentido ansioso o agitado, ha tenido peleas, esta irritable/agitado/agresivo? Si cualquiera tiene respuesta afirmativa, se requiere evaluacion mas exhaustiva (MUE Andes, Unidad 8).
+
+**Factores de riesgo cronicos vs agudos (adaptado de Weber, 2017).** Cronicos: intentos previos, hospitalizacion reciente, vivir solo, historia familiar de suicidio, pertenecer a comunidad LGBTQI, eventos vitales adversos en la infancia, eventos vitales estresantes, enfermedades psiquiatricas, enfermedad fisica, desempleo, edad avanzada. Agudos: ideacion suicida activa, apropositividad vital, **insomnio**, **ansiedad/angustia/agitacion**, sensacion de estar atrapado, mala adherencia a cuidados profesionales, duelo, rabia/ira/deseos de venganza, conducta imprudente o temeraria, cambios de animo o personalidad, **uso de sustancias**, **desesperanza**. Los factores en negritas son potencialmente modificables en una consulta de urgencia (MUE Andes, Unidad 8).
+
+**Factores protectores (Weber, 2017).** No modificables: genero femenino, matrimonio, hijos, embarazo, religion/espiritualidad. Modificables: apoyo interpersonal, habilidades personales frente a la crisis, satisfaccion con la propia vida. Se pueden explorar con preguntas tipo: Que es lo que te impulsa a seguir adelante? Cuales son tus razones para vivir? Que te ha mantenido a salvo de esos pensamientos? En quien puedes confiar en momentos como este? (MUE Andes, Unidad 8).
+
+**Epidemiologia Chile.** Tasa de suicidio descendio de 12,36/100.000 hab (2008) a 9,32/100.000 hab (2014), relacionado con mejora en accesibilidad de atencion de salud mental en red publica y mayor conciencia poblacional. Sin embargo, en adolescentes 10-14 anos la tasa aumento de 0,96 (2000) a 2,15 (2008) y en el grupo 15-19 anos de 8,6 (2000) a 12,9 (2008). El 90% de las personas que fallecen por suicidio padecia una enfermedad mental (casi la mitad, depresion). Factores relevantes: las experiencias traumaticas en la infancia (especialmente abuso sexual) tienen clara asociacion con mayor riesgo; las personas con antecedentes familiares de suicidio tienen riesgo 4 veces mayor; por cada adulto que se suicida, al menos 20 otros lo intentaron. Mas de 1/3 de las personas que fallecen por suicidio habian consumido alcohol antes de su muerte (MUE Andes, Unidad 8).
+
+**Disposicion por nivel de riesgo.** Riesgo bajo (preguntas de Sheehan negativas, sin antecedentes, sin factores de riesgo activos, con red de apoyo, factores protectores presentes): alta con supervision de terceros, adulto responsable 24 horas, derivacion ambulatoria a salud mental, informacion sobre Salud Responde. Riesgo moderado (ideacion sin planificacion activa, factores de riesgo presentes pero con red de apoyo): evaluacion por psiquiatria en urgencia, considerar hospitalizacion breve en unidad de observacion. Riesgo alto (planificacion activa, intentos recientes, alta letalidad del plan, sin red de apoyo, factores agudos multiples): hospitalizacion, incluyendo hospitalizacion involuntaria si la ideacion y planificacion suicida son inminentes. No permitir que el paciente abandone el servicio hasta completar la evaluacion; asegurar ambiente sin acceso a elementos peligrosos (cinturones, cordones, objetos cortopunzantes, equipo medico). Pacientes intoxicados que manifiestan ideas de muerte deben ser evaluados exhaustivamente una vez recobrada la sobriedad, dada la fuerte asociacion suicidio-consumo de sustancias. En Chile, Salud Responde provee informacion sobre redes disponibles por territorio (MUE Andes, Unidad 8).
+
+# Inyeccion quirurgica — BOK Medicina de Emergencia 4.2 / 4.3 / 4.14
+
+Fuente: Wyatt JP, Taylor RG, de Wit K, Hotton EJ. *Oxford Handbook of Emergency Medicine*. 5th ed. Oxford University Press; 2020. Cap. 10: Surgery, pp. 519-548.
+
+---
+
+### 4.2.13. Perspectiva quirurgica del abdomen agudo
+
+El dolor abdominal en urgencia requiere primero identificar al paciente que necesita reanimacion o tratamiento urgente, incluyendo shock hipovolemico o septico sin signos clinicos evidentes (especialmente aneurisma aortico abdominal roto). La historia debe precisar sitio, severidad, irradiacion, caracter, cronologia, factores precipitantes y aliviadores. Al examen: signos vitales, distension, cicatrices, orificios herniarios, rebote (la sensibilidad a la percusion es evidencia simple de peritonitis sin necesidad de provocar rebote). Investigaciones clave: hemograma, PCR, amilasa, lactato, coagulacion, cross-match; ECG en >55 anos (un IAM puede presentarse como dolor abdominal); Rx torax erecta (neumoperitoneo en ~75% de ulcera perforada); ecografia (colelitiasis, liquido libre, aneurisma); TC cuando la sospecha clinica es alta sin confirmacion radiologica simple. **Pitfalls**: esteroides y AINEs enmascaran signos fisicos; ancianos y peritoneales con poca musculatura abdominal pueden no mostrar defensa; beta-bloqueadores ocultan taquicardia; fiebre ausente no excluye infeccion en inmunodeprimidos; el dolor severo desproporcionado respecto al examen sugiere isquemia mesenterica, diseccion aortica o pancreatitis. **Cuando referir al cirujano**: ante duda sobre la necesidad de admision, siempre derivar; peritonismo difuso; obstruccion mecanica confirmada; sospecha de isquemia mesenterica; masa pulsatil; inestabilidad hemodinamica sin causa clara (Oxford, pp. 520-522).
+
+### 4.2.14. Apendicitis aguda y masa apendicular
+
+Presentacion clasica: dolor colico periumbilical central, seguido de vomito, luego migracion a fosa iliaca derecha. Las presentaciones atipicas son frecuentes y dependen de la posicion del apendice: retrocecal (74%), pelvica (21%), paracecal (2%), otras (3%). Sintomas atipicos incluyen alteracion del habito intestinal, frecuencia urinaria, diarrea. En estadios tempranos el examen puede ser casi normal; en estadios tardios hay sepsis franca y peritonitis generalizada. El signo de Rovsing (dolor en FID al presionar FII) y la defensa a la palpacion profunda en FID son hallazgos clasicos. El score de Alvarado y similares se han desarrollado pero no son fiables de forma aislada; radiologia simple no esta indicada en apendicitis no complicada; ecografia o TC pueden ayudar en casos dudosos. El diagnostico diferencial es muy amplio: incluir causas urinarias, ginecologicas y toracicas. Tratamiento: acceso IV, reanimacion si es necesario, analgesia IV (morfina), antiemetico, antibioticos preoperatorios si se planea apendicectomia (amoxicilina + gentamicina + metronidazol). **Masa apendicular**: la apendicitis no tratada puede evolucionar a perforacion con peritonitis generalizada o "walled off" formando una masa inflamatoria en FID. Otras causas de masa en FID incluyen carcinoma cecal, enfermedad de Crohn, TB ileocecal, absceso de psoas. Derivar al cirujano para manejo definitivo (Oxford, pp. 523).
+
+### 4.2.15. Patologia biliar urgente
+
+**Colecistitis aguda**: impactacion de calculo con inflamacion aguda de vesicula. Se presenta con dolor en hipocondrio derecho irradiado a espalda, con vomito. Fiebre frecuente, sensibilidad en hipocondrio derecho (especialmente en inspiracion — signo de Murphy), posible masa palpable o mucocele. En cuadros avanzados con empiema: fiebre alta, dolor extremo, shock septico. La ecografia confirma el diagnostico (sensibilidad al presionar con el transductor sobre la vesicula engrosada reproduce el signo de Murphy ecografico). Manejo: analgesia IV, antiemetico, hemograma (leucocitosis frecuente), enzimas hepaticas, amilasa, ECG (descartar presentacion atipica de IAM), antibioticos (cefotaxima 1g IV), derivar al cirujano.
+
+**Colangitis ascendente**: la estasis biliar por litiasis coledociana predispone a infeccion, caracterizada por la triada de Charcot (dolor abdominal, ictericia y fiebre). El paciente puede estar gravemente enfermo con shock septico. Requiere reanimacion agresiva y antibioticos IV de amplio espectro (amoxicilina, gentamicina y metronidazol), con derivacion urgente para descompresion biliar.
+
+**Ictericia obstructiva**: la obstruccion biliar produce ictericia con coluria y acolia. Hepatitis aguda y colangiocarcinoma/cancer pancreatico pueden presentarse de forma similar. Una vesicula palpable con ictericia hace mas probable carcinoma pancreatico que litiasis (ley de Courvoisier) (Oxford, pp. 526).
+
+### 4.2.16. Obstruccion intestinal y pseudo-obstruccion
+
+**Obstruccion mecanica**: las causas mas frecuentes son adherencias postquirurgicas (primera causa), hernias obstruidas (inguinal, femoral, paraumbilical, incisional; la hernia femoral se pasa facilmente por alto), tumores (gastrico, cecal, sigmoideo), enfermedad ulcerosa peptica, volvulo e ileo biliar. Clinica: dolor abdominal colico, distension, vomito y constipacion. La naturaleza del vomito orienta al nivel: vomito bilioso precoz sugiere obstruccion alta; vomito fecaloide tardio sugiere obstruccion baja. Una historia de dolor severo con estrangulacion sugiere asa cerrada con isquemia. Al examen: distension, revisar cicatrices y orificios herniarios (la hernia femoral obstruida se omite con facilidad), timpanismo, ruidos metalicos o ausentes. Rx abdominal: niveles hidroaereos multiples en supino y erecta; el ileo biliar muestra gas en via biliar con sombra en Y en hipocondrio derecho. TC si la Rx simple no es convincente. Manejo: via IV con SF 0.9%, reanimacion agresiva si hay shock, SNG, analgesia IV (morfina), antiemetico, sonda vesical, y **derivacion al equipo quirurgico** para manejo continuo.
+
+**Pseudo-obstruccion (ileo paralitico)**: infrecuente en urgencia aisladamente. Causas: ileo postoperatorio, alteraciones electroliticas (hipokalemia), farmacos anticolinergicos, antidepresivos triciclicos. Tipicamente se presenta con distension colonica. La Rx puede mostrar gas hasta el recto (a diferencia de la obstruccion mecanica donde hay punto de corte). En pseudo-obstruccion aguda del colon (sindrome de Ogilvie), el ciego puede dilatarse lo suficiente para perforarse. Tratamiento: descompresion colonoscopica (Oxford, pp. 528-529).
+
+### 4.2.17. Emergencias colorrectales
+
+**Volvulo sigmoideo**: predomina en ancianos, con dolor abdominal bajo tipo colico intermitente, distension progresiva y alivio espontaneo con paso de flatos. Algunos progresan a obstruccion completa; la progresion a fiebre y peritonismo indica estrangulacion. La Rx abdominal muestra un asa sigmoide dilatada unica en forma de "tubo interno doblado" con ambos extremos apuntando a la pelvis. Manejo: sigmoidoscopia con insercion de tubo de flatos (si no hay estrangulacion) o cirugia si hay signos de estrangulacion.
+
+**Volvulo cecal**: mas frecuente entre 25 y 35 anos. Sintomas de obstruccion aguda de intestino delgado. La Rx muestra un segmento dilatado unico del colon con asas de intestino delgado distendidas vacias distalmente. Derivar al equipo quirurgico.
+
+**Diverticulitis aguda**: comun en ancianos, afecta predominantemente el colon sigmoideo. Sin complicaciones significativas puede haber cambio de habito intestinal con paso de moco. La inflamacion puede progresar a perforacion de un diverticulo con peritonitis localizada (absceso pericolicol) o generalizada (peritonitis fecal). Clinica: dolor continuo sordo en cuadrante inferior izquierdo, fiebre baja, posible masa. Los ancianos e inmunodeprimidos pueden no manifestar los signos esperados. Investigaciones: hemograma, PCR, hemocultivos; Rx abdomen puede mostrar cambios inespecificos; CXR erecta puede mostrar gas subdiafragmatico; TC es la mejor investigacion. Tratamiento: analgesia, fluidos IV, ayuno, antibioticos de amplio espectro (cefuroxima + metronidazol). Complicaciones: perforacion con absceso o peritonitis generalizada, obstruccion intestinal, hemorragia rectal masiva, fistulas a vejiga/vagina/intestino delgado, estenosis postinflamatoria.
+
+**Colitis ulcerosa y megacolon toxico**: colitis ulcerosa severa se define por >6 deposiciones sanguinolentas/dia con signos sistemicos (taquicardia, fiebre, hipoalbuminemia). Riesgo de hemorragia, perforacion y megacolon toxico. Sospechar megacolon toxico si el diametro colonico es >5.5 cm en Rx abdominal (75% de riesgo de requerir colectomia). Reanimacion con fluidos IV, hidrocortisona IV 100-200 mg, derivacion a gastroenterologia con revision conjunta medico-quirurgica.
+
+**Apendicitis epiploica**: inflamacion primaria de un apendice epiploico en el borde antimesenterico del colon. Simula diverticulitis aguda o apendicitis. Temperatura y leucocitos normales. Diagnostico frecuentemente en TC o laparotomia. Permite manejo conservador con analgesia IV (Oxford, pp. 532-533).
+
+### 4.2.18. Patologia anorrectal urgente
+
+**Hemorroides**: las hemorroides internas sangrantes causan rectorragia rojo brillante indolora, no mezclada con las deposiciones. Hemorroides internas prolapsadas son agudamente dolorosas — manejo conservador con analgesia y ablandadores de deposiciones. La pila externa trombosada (ruptura de tributaria de vena hemorroidal inferior) produce nodulos azul-oscuros dolorosos cubiertos de epitelio escamoso; derivar al cirujano para decidir entre incision/drenaje bajo anestesia local o manejo conservador. Todo sangrado rectal requiere seguimiento para excluir malignidad.
+
+**Fisura anal**: dolor severo con la defecacion que dura 1-2 horas despues. Localizacion posterior en linea media, asociada a deposiciones duras. El tacto rectal es imposible por dolor. La mayoria sanan espontaneamente con analgesia y ablandadores. La presencia de ulceracion significativa, tejido hipertrofico, skin tag, o fisuras multiples/fuera de linea media sugiere cronicidad o patologia subyacente (enfermedad inflamatoria intestinal, cancer anorrectal) y requiere seguimiento quirurgico.
+
+**Abscesos anorrectales**: la mayoria originados en infeccion de cripta anal. Cuatro tipos segun localizacion anatomica: (A) perianal (el mas comun, superficial, junto al ano), (B) isquiorrectal (profundo, dolor difuso con induraracion), (C) submucoso, (D) pelvirrectal (el mas profundo, con sintomas sistemicos). Los abscesos perianales producen tumefaccion fluctuante dolorosa localizada cerca del ano. Los isquiorrectales son mas difusos — el examen rectal puede revelar masa o area de induracion. Tratamiento: analgesia y derivacion al equipo quirurgico para incision y drenaje bajo anestesia general. El 20% se asocia a enfermedad inflamatoria intestinal, cancer rectal o fisura anal como factor predisponente.
+
+**Cuerpos extranos rectales**: la Rx puede demostrar posicion y forma. Buscar especialmente aire libre (perforacion de recto o colon es la complicacion mas frecuente y grave). Si hay perforacion: antibioticos IV (cefalosporina + metronidazol). Derivar al equipo quirurgico para extraccion (Oxford, pp. 534-535).
+
+### 4.2.19. Complicaciones postoperatorias en urgencia
+
+Todo paciente que consulta a urgencia dentro de dias de una cirugia debe evaluarse considerando complicacion quirurgica como causa. Intentar establecer exactamente que operacion se realizo. Involucrar al equipo quirurgico precozmente.
+
+**Hemorragia**: puede ser externa (herida cutanea sangrante) o interna (dificil de identificar, mantener alto indice de sospecha). Hemorragias profundas de heridas pueden producir hematomas significativos. La hemorragia relacionada a cirugia plastica reciente (ej. facelift) puede comprometer el resultado y requerir intervencion quirurgica urgente.
+
+**Infeccion de herida**: dolor localizado, eritema, sensibilidad, con fiebre. Infeccion profunda puede presentarse de forma atipica — con fiebre y sin signos locales claros. Verificar temperatura, leucocitos, PCR. Considerar coleccion intraabdominal en postoperatorios de laparotomia/laparoscopia.
+
+**Dehiscencia de herida**: puede ser superficial o profunda, frecuentemente asociada a infeccion. Cubrir viscera expuesta con gasas con SF tibio y derivar al equipo quirurgico.
+
+**Fuga anastomotica**: complicacion grave del postoperatorio de cirugia GI. Puede presentarse con fiebre, taquicardia, dolor abdominal difuso, ileo persistente o deterioro general sin causa aparente. Requiere evaluacion quirurgica urgente con imagenes (TC con contraste).
+
+**Ileo postoperatorio**: distension abdominal, nauseas, ausencia de flatos. Generalmente autolimitado pero puede enmascarar obstruccion mecanica temprana o fuga anastomotica.
+
+**Gastrostomia desplazada**: la remocion inadvertida de PEG requiere reemplazo lo antes posible (el tracto se cierra rapidamente). Una sonda urinaria lubricada puede servir como puente temporal. Derivar al equipo quirurgico/radiologo intervencionista (Oxford, pp. 548).
+
+---
+
+### 4.14.8. Parafimosis, priapismo y trauma peniano
+
+**Parafimosis**: el prepucio retraido no puede reposicionarse, causando edema progresivo del glande. Puede ocurrir tras cateterizacion uretral. No tratada, puede progresar a necrosis tisular. **Tecnica de reduccion**: descompresion manual (presion digital sostenida para reducir edema del glande, luego reposicionar el prepucio), con analgesia mediante Entonox, sedacion IV o anestesia local (bloqueo con lidocaina 1-2% alrededor de la base o gel de lidocaina topica 10 mL). Si fracasa la reduccion manual, derivar al equipo quirurgico para reduccion bajo anestesia general o hendidura dorsal del prepucio seguida de circuncision diferida.
+
+**Priapismo**: ereccion persistente dolorosa. Causas: iatrogenica (inyeccion intracavernosa de papaverina, alprostadil, polipeptido intestinal vasoactivo, fentolamina); leucemia, mieloma, drepanocitosis, enfermedad medular, farmacos (sildenafil, fenotiazinas, cannabis, cocaina, dialisis renal). Es una emergencia urologica — derivar urgentemente al urologo. Tratamiento inicial de ereccion artificial prolongada (>6 horas): **aspirar 50 mL de sangre de cada cuerpo cavernoso** con aguja mariposa 19G insertada a traves del surco coronal, utilizando una jeringa de 50 mL con cierre Luer-lock.
+
+**Trauma peniano**: desgarros superficiales del frenillo (la causa mas comun) responden a presion local; si no es exitoso, considerar pegamento tisular o derivar al equipo quirurgico. La **fractura de pene** (ruptura de tunica albuginea del pene erecto) es infrecuente pero se presenta con dolor y edema peniano; derivar al urologo para exploracion quirurgica urgente, evacuacion de hematoma y reparacion (Oxford, pp. 543).
+
+---
+
+### 4.3.11. Aneurisma aortico abdominal roto — perspectiva quirurgica
+
+La ruptura de aneurisma aortico abdominal (AAA) causa un gran numero de muertes, muchas extrahospitalarias. Incluso alcanzando el hospital, la mortalidad es significativa. La mejor oportunidad de supervivencia depende de diagnostico precoz, reanimacion inmediata y traslado rapido a quirofano. La mayoria son aneurismas saculares e infrarrenales; la ruptura es habitualmente al retroperitoneo (contenida inicialmente).
+
+**Presentacion variable**: desde paro cardiaco (AESP) hasta colapso subito de origen oscuro, pasando por dolor lumbar/abdominal clasico central y/o dorsal en un paciente con aneurisma conocido. El dolor abdominal y/o dorsal es tipicamente de inicio subito y severo. El paciente gravemente enfermo se presenta palido, sudoroso, taquicardico, hipotenso, con piel moteada y una masa abdominal dolorosa pulsatil. Pulsos femorales pueden estar presentes o ausentes. El AAA roto se confunde frecuentemente con colico ureteral — **mantener umbral bajo de sospecha en todo paciente de edad media/avanzado con dolor dorsal, dolor abdominal o colapso**; en la duda, asumir AAA roto.
+
+**Manejo — permissive hypotension**: acceso venoso con dos vias gruesas, O2 alto flujo, cross-match urgente, analgesia IV. **Evitar reposicion excesiva de fluidos**: tratar hipovolemia mayor pero aceptar grados moderados de hipotension (PAS >90 mmHg). Los pacientes conscientes que estan pasando orina requieren minimo de fluidos hasta el quirofano. Asegurar disponibilidad de sangre O-negativa. Llamar precozmente al equipo vascular para considerar reparacion abierta o endovascular. Notificar a UCI, anestesia y quirofano.
+
+**Complicaciones de graft previo**: el paciente con dolor abdominal e historia de reparacion previa de AAA debe ser evaluado por complicaciones del graft: infeccion (dificil diagnostico, sepsis con PCR elevada, TC + involucrar cirujano vascular), fuga anastomotica (puede producir pseudoaneurisma o hemorragia catastrofica — TC urgente), endoleak (tras reparacion endovascular, flujo de sangre fuera del graft pero dentro del saco — riesgo de ruptura externa), fistula aortoenterica/aortocava (hemorragia GI masiva asociada a infeccion de graft) (Oxford, pp. 536-537).
+
+### 4.3.12. Isquemia aguda de extremidades
+
+Las manifestaciones cardinales se resumen en las **6 Ps**: Pain (dolor), Pallor (palidez), Pulselessness (ausencia de pulsos), Paraesthesiae (parestesias — signo tardio), Paralysis (paralisis — dano muscular), Perishing cold (frialdad extrema). La oclusión arterial aguda en una extremidad previamente normal produce isquemia severa por ausencia de circulacion colateral desarrollada (a diferencia del paciente con enfermedad arterial cronica que tiene red colateral).
+
+**Embolismo vs trombosis**: fuentes embolicas (>80%) incluyen FA, post-IAM, valvulas protesicas, mixoma auricular, vegetaciones, enfermedad reumatica. Los eventos embolicos afectan mas frecuentemente piernas que brazos (bifurcaciones arteriales). Al examen: una demarcacion clara entre piel normal e isquemica sugiere embolo; la presencia de pulsos normales en la extremidad contralateral apoya embolia, mientras que la ausencia bilateral de pulsos sugiere trombosis sobre ateroma preexistente. Buscar signos de fuente embolica: pulso irregular, soplos cardiacos, valvulas clicks. La extremidad contralateral puede mostrar insuficiencia vascular cronica preexistente (atrofia muscular, perdida de vello, ulceracion). Si se sospecha trombosis in situ, puede haber historia de claudicacion intermitente.
+
+**Ventana de 6 horas**: la revascularizacion debe completarse dentro de 6 horas para evitar necrosis muscular permanente y sus consecuencias metabolicas (rabdomiolisis, falla renal, sindrome compartimental). Si la causa es embolica, la angiografia definira el sitio y se realizara embolectomia. Si la causa es trombotica, la angiografia guiara la decision entre trombolisis y cirugia reconstructiva. Manejo inicial: analgesia IV (opioide), corregir hipovolemia, enviar hemograma/bioquimica/coagulacion/grupo y reserva/ECG/CXR/analisis de orina (mioglobinuria). **Derivar urgentemente al equipo vascular** (Oxford, pp. 538).
+
+### 4.10.7. Fracturas y luxaciones de mano
+
+Las falanges distales se tratan con analgesia y elevacion; las fracturas abiertas (por aplastamiento o martillo) requieren exploracion meticulosa, toilette y antibioticos. La deformidad en mallet (avulsion del tendon extensor en IFD) se trata con ferula plastica 6 semanas si el fragmento es <1/3 de la superficie articular; fragmentos mayores o subluxacion requieren fijacion con agujas K. Las fracturas de falanges proximales y medias anguladas se reducen bajo bloqueo digital o de muneca y se inmovilizan con ferula volar de aluminio mas buddy strapping. En metacarpianos (MC) del indice, medio y anular, verificar deformidad rotacional y desplazamiento; si hay angulacion significativa de la diafisis, referir para RAFI. La fractura del cuello del 5to MC (fractura del boxeador) tolera hasta 40 grados de angulacion palmar; se aplica buddy strapping y controles. Las luxaciones de IFP se reducen con traccion bajo bloqueo digital, se confirman con Rx post-reduccion y se inmovilizan con buddy strapping; evaluar integridad de colaterales. Las luxaciones de MCPF del pulgar se reducen bajo bloqueo combinado mediano-radial y se inmovilizan en POP escafoideo. La fractura-luxacion de Bennett (base del 1er MC, intraarticular con subluxacion radial) es inestable y requiere derivacion para MUA/RAFI con agujas K; la fractura de Rolando (variante Y conminuta de Bennett) tiene tratamiento aun mas complejo (Oxford 5e, cap. 9, pp. 444-447).
+
+### 4.10.8. Fracturas y luxaciones de muneca
+
+La fractura de escafoides es la lesion carpal mas frecuente; se sospecha ante dolor en tabaquera anatomica, dolor a compresion axial del pulgar y dolor sobre tuberculo escafoideo. Solicitar Rx en 4 proyecciones (AP, lateral, oblicuas derecha e izquierda); si Rx inicial es normal pero la sospecha clinica persiste, inmovilizar con ferula/POP tipo escafoideo y reevaluar en 10-14 dias con Rx, RM o TC. Complicaciones: pseudoartrosis y necrosis avascular (irrigacion retrograda). La luxacion de semilunar (rara, frecuentemente omitida) se presenta con dolor, tumefaccion y parestesias del mediano; la Rx lateral muestra rotacion del semilunar con la concavidad mirando hacia palmar; requiere admision urgente para MUA. La luxacion perilunar es mas compleja y frecuentemente incluye fracturas de la fila proximal (trans-escafo-perilunar); derivar a traumatologia. La fractura de Colles (radio distal con fragmento dorsal, deformidad en tenedor) es la mas comun del miembro superior; verificar siempre sensibilidad del escafoides y pulsos distales; inmovilizar en backslab POP con cabestrillo; MUA indicada si hay desplazamiento significativo o perdida de inclinacion volar. La fractura de Smith (Colles invertida, fragmento volar) es inestable; inmovilizar en POP volar y referir para MUA u ORIF. Las fracturas de Barton (dorsal y volar) son intraarticulares del radio distal, inherentemente inestables, y generalmente requieren ORIF con placa (Oxford 5e, cap. 9, pp. 450-458).
+
+### 4.10.9. Fracturas y luxaciones de codo y antebrazo
+
+En todo codo lesionado evaluar: derrame articular (tumefaccion fluctuante entre epicondilo lateral y olecranon), relacion triangular olecranon-epicondilos, y rango de movimiento. El signo de la almohadilla grasa en Rx lateral (elevacion de la almohadilla grasa anterior, visualizacion de la posterior) implica fractura oculta, generalmente del cuello/cabeza radial; tratar con cabestrillo, collar y analgesicos. Las fracturas de cabeza radial (caida sobre mano extendida) limitan extension y flexion; las no desplazadas se manejan con cabestrillo y movilizacion temprana; las desplazadas o conminutas pueden requerir cirugia. La fractura de olecranon (caida sobre la punta del codo) se inmoviliza en POP por encima del codo a 90 grados si es no desplazada; las desplazadas requieren ORIF por traccion del triceps. La luxacion de codo (posterolateral es la mas comun) se reduce bajo sedacion IV: flexion a 60 grados con contratraccion en brazo, traccion del antebrazo pronado; confirmar reduccion con Rx y buscar fracturas asociadas (coronoides, cabeza radial). Las fracturas de ambas diafisis de radio y cubito en adultos requieren analgesia IV, backslab POP y derivacion para ORIF. La fractura-luxacion de Monteggia (fractura de cubito proximal con luxacion de cabeza radial) se omite frecuentemente; solicitar siempre Rx de codo y muneca en toda fractura de antebrazo. La fractura-luxacion de Galeazzi (fractura de diafisis radial con luxacion de articulacion radio-cubital distal) requiere ORIF (Oxford 5e, cap. 9, pp. 460-465).
+
+### 4.10.10. Fracturas y luxaciones de hombro
+
+La luxacion anterior de hombro (la mas frecuente) se presenta con deformidad en charretera, cabeza humeral palpable anteroinferiormente y perdida de contorno deltoideo. Evaluar pulsos distales y sensibilidad del nervio axilar (area de insignia regimental). Rx previas a la reduccion para descartar fracturas asociadas. Tecnicas de reduccion: rotacion externa (paciente reclinado a 45 grados, rotacion lenta a 90 grados), Kocher modificado (flexion de codo a 90 grados, rotacion externa, aduccion cruzando torax, rotacion interna), Milch (abduccion a 110 grados con traccion suave), manipulacion escapular (decubito prono). Post-reduccion: verificar pulsos, nervios, Rx control; inmovilizar con vendaje tipo collar y cuff o webbing. La luxacion posterior (facil de omitir; buscar signo de light bulb en Rx AP y perdida de congruencia glenohumeral) ocurre en convulsiones y electrocucion; solicitar Rx axial o translateral; reducir bajo sedacion con traccion y rotacion externa. La luxatio erecta (luxacion inferior, brazo en hiperabduccion sobre la cabeza) tiene 60% de dano axilar; reducir con traccion cefalica. Las fracturas del cuello humeral (clasificacion de Neer: 2, 3 o 4 partes segun fragmentos) se tratan con collar y cuff si no desplazadas; desplazadas o anguladas requieren MUA/ORIF. Fractura de clavicula: cabestrillo ancho, manejo conservador en la mayoria; las significativamente desplazadas, rara vez, requieren RAFI. Lesion de la articulacion AC: grados I-II con cabestrillo; grado III (rotura de ligamentos conoide y trapezoide) con fijacion ocasional (Oxford 5e, cap. 9, pp. 468-474).
+
+### 4.10.11. Fracturas y luxaciones de pelvis y cadera
+
+Las fracturas pelvicas mayores resultan de trauma de alta energia con mortalidad >50% en las expuestas; la hemorragia masiva retroperitoneal es la amenaza principal. Clasificacion Tile: tipo A (estable, avulsiones o ramas aisladas), tipo B (rotacionalmente inestable, verticalmente estable; B1 open-book, B2-B3 compresion lateral), tipo C (rotacional y verticalmente inestable, rotura completa del anillo pelvico, con perdida sanguinea masiva). Manejo inicial: resucitacion como trauma mayor, fijador pelvico o binder, no intentar maniobras de estabilidad manual. Fracturas de ramas pubianas aisladas son frecuentes en ancianos con osteoporosis; excluir siempre fractura de cuello femoral concomitante. Las fracturas acetabulares generalmente acompanan luxaciones de cadera; TC superior a Rx para definir patron. La luxacion posterior de cadera (rodilla contra dashboard) muestra miembro acortado, rotado internamente y aducido; complicaciones: lesion de nervio ciatico, necrosis avascular (riesgo aumenta con tiempo de luxacion); reducir urgente bajo AG con tecnica de Allis (paciente supino, flexion de cadera/rodilla a 90 grados, traccion cefalica). La luxacion anterior de cadera (menos comun; miembro abducido y rotado externamente) requiere reduccion bajo AG. Las fracturas intracapsulares de cuello femoral se clasifican por Garden (I-IV); I-II generalmente se fijan con tornillos; III-IV frecuentemente requieren protesis. Las fracturas intertrocantericas tienen manejo similar con fijacion intramedular (Oxford 5e, cap. 9, pp. 480-487).
+
+### 4.10.12. Fracturas y luxaciones de rodilla y pierna
+
+En toda rodilla lesionada evaluar: mecanismo (valgo/varo, torsion, hiperextension), derrame (hemartrosis aguda sugiere lesion de ligamento cruzado anterior, rotura meniscal o fractura de platillo tibial), estabilidad ligamentaria (colaterales con estres en varo/valgo a 0 y 30 grados de flexion; cruzados con Lachman a 10 grados y cajon anterior/posterior), e integridad de cuadriceps/tendon rotuliano (elevacion de pierna extendida). Rx segun reglas de Ottawa para rodilla: edad <18 o >55, sensibilidad aislada de rotula, sensibilidad de cabeza fibular, incapacidad de flexionar a 90 grados, incapacidad de deambular 4 pasos. La fractura de rotula: las verticales se inmovilizan con POP largo sin carga; las transversas desplazadas (por traccion del cuadriceps) requieren ORIF. La luxacion de rotula (lateral, tipicamente medial stress) se reduce con extension progresiva de rodilla empujando la rotula medialmente; post-reduccion solicitar RM para evaluar retinaculos. La fractura de platillo tibial (impacto en valgo/varo) frecuentemente requiere TC para definir extension; las deprimidas >2 mm u asociadas a inestabilidad ligamentaria requieren ORIF con injerto oseo. La luxacion de rodilla (lesion multiligamentaria grave) es una emergencia vascular: evaluar pulsos distales y considerar arteriografia/angioTC, ya que la arteria poplitea se lesiona hasta en 40% de los casos. Las fracturas de diafisis tibial/fibular se inmovilizan en POP largo; las desplazadas requieren RAFI o enclavado intramedular; vigilar sindrome compartimental. La fractura de Maisonneuve (fractura proximal de fibula con lesion de sindesmosis distal) se diagnostica palpando la fibula proximal en toda lesion de tobillo (Oxford 5e, cap. 9, pp. 488-494).
+
+### 4.10.13. Fracturas y luxaciones de tobillo y pie
+
+Aplicar reglas de Ottawa para tobillo: Rx si incapacidad de deambular 4 pasos o sensibilidad osea en los 6 cm distales del borde posterior del maleolo lateral/medial. Clasificacion de Weber para fracturas del maleolo lateral: A (bajo sindesmosis, estable), B (a nivel de sindesmosis, puede ser estable o inestable), C (sobre sindesmosis, inestable). El tratamiento depende de la combinacion hallazgos clinicos/radiologicos: avulsiones pequenas con bota y carga progresiva; fracturas maleolares no desplazadas con BKPOP/bota acolchada y seguimiento ortopedico; fracturas desplazadas y bimaleolares/trimaleolares requieren ORIF; buscar siempre desplazamiento talar. La luxacion de tobillo es una emergencia: reduccion cerrada inmediata incluso antes de Rx si hay compromiso cutaneo o vascular. La fractura de calcaneo (caida de altura; buscar lesiones asociadas de columna lumbar) se evalua con angulo de Bohler (normal 35-45 grados; aplanado indica colapso); solicitar TC; la mayoria requiere admision para elevacion, analgesia y ORIF. Las luxaciones peritalar y mediotarsiana requieren reduccion bajo AG. Las fracturas-luxaciones tarsometatarsianas (Lisfranc) se omiten frecuentemente; en Rx AP verificar alineacion del borde medial del 2do MT con el cuneiforme intermedio; derivar para ORIF. La fractura de Jones (base del 5to MT, transversa distal a articulacion interMT) tiene riesgo de pseudoartrosis; distinguir de avulsion de la base (mas proximal, buen pronostico). Las fracturas por estres metatarsianas (march fracture, tipicamente 2do MT) muestran Rx normal inicial; Rx de control a 2-3 semanas muestra callo periostico (Oxford 5e, cap. 9, pp. 498-507).
+
+### 4.10.14. Dolor lumbar atraumatico y artritis aguda en urgencia
+
+El dolor lumbar es la causa mas comun de dias laborales perdidos. El enfoque en urgencia es identificar: dolor mecanico simple (sin investigaciones ni derivacion), dolor radicular (derivacion si sintomas persistentes o progresivos), patologia espinal seria (derivacion e investigacion urgente), y compresion de cauda equina (emergencia neuroquirurgica). Red flags para cauda equina: dolor irradiado bilateral a piernas, dificultad miccional o incontinencia, debilidad en ambas extremidades inferiores, anestesia perianal/perineal, perdida de tono anal, impotencia; solicitar RM urgente y consulta neuroquirurgica. Examen: elevacion de pierna recta (irritacion radicular), elevacion de pierna recta cruzada (altamente sugestiva de hernia discal con atrapamiento radicular); L4 cubre sensibilidad medial de pierna y fuerza de cuadriceps; L5 cubre dorso de pie y extensor hallucis; S1 cubre lateral de pie y reflejo aquiliano. Tratamiento del dolor mecanico: analgesia regular (NSAID mas paracetamol), evitar opioides de rutina, diazepam 2-5 mg puede ser util, fomentar actividad normal, evitar reposo en cama; recuperacion esperable en 4-6 semanas. La artritis aguda requiere siempre descartar artritis septica: artrocentesis con tincion de Gram, cultivo, cristales y recuento celular (liquido infeccioso: turbio/purulento, >10.000 celulas/mm3, neutrofilos predominantes, cultivo +). La gota aguda afecta tipicamente 1a MTPF; aspirado muestra cristales de urato con birrefringencia negativa; tratar con NSAID, colchicina o corticoides si NSAID contraindicado. La pseudogota afecta rodillas, munecas y caderas; cristales de pirofosfato calcico con birrefringencia positiva debil; calcificacion de cartilago en Rx (condrocalcinosis). La artritis septica requiere antibioticos IV (flucloxacilina + gentamicina) y derivacion urgente a traumatologia para lavado articular (Oxford 5e, cap. 9, pp. 508-513).
+
+### 4.10.15. Sistema de descripcion de fracturas, clasificaciones y catalogo eponimo
+
+Sistema de descripcion: edad y mecanismo; abierta (clasificacion de Gustilo: I <1 cm, II >1 cm sin dano extenso, IIIA/B/C con dano progresivo de tejidos blandos/vascular) o cerrada; hueso y lado; localizacion (diafisis, metafisis, epifisis, supracondilar, intracondilar); tipo (simple/transversa, oblicua, espiral, conminuta, por impaccion/aplastamiento, en cuna/wedge, por estallido/burst, impactada, avulsion, en tallo verde, en rodete/torus, hairline); compromiso articular; desplazamiento (traslacion, angulacion en grados y direccion del fragmento distal, rotacion); grado segun clasificacion especifica (p. ej., Garden I-IV para cuello femoral); complicaciones y lesiones asociadas. Clasificaciones principales: Gustilo (fracturas abiertas I-IIIC), Garden (cuello femoral I-IV), Weber (maleolo lateral A/B/C), Tile (pelvis A/B/C), Neer (humero proximal, por partes), Mason (cabeza radial). Catalogo eponimo esencial para urgencia: Bennett y Rolando (base 1er MC); Colles, Smith y Barton (radio distal); Monteggia (cubito + luxacion cabeza radial) y Galeazzi (radio + luxacion RCD); Essex-Lopresti (cabeza radial conminuta + diastasis RCD); Maisonneuve (fibula proximal + sindesmosis); Jones y avulsion de 5to MT; Lisfranc (tarsometatarsiana); Chance (vertebra lumbar por cinturon); Hill-Sachs (impactacion humeral por luxacion anterior); Bankart (avulsion labrum glenoideo); luxatio erecta (luxacion inferior glenohumeral); Dupuytren (fibula distal + sindesmosis + talar); Pilon (tibial distal intraarticular); Tillaux (avulsion tibial distal anterolateral); Pott (aplicado a cualquier fractura de tobillo uni/bi/trimaleolar). Cada eponimo codifica un patron complejo de lesion que orienta el manejo y la derivacion (Oxford 5e, cap. 9, pp. 426-428, 514-518).
+
+### 4.10.16. Profilaxis de TEV en inmovilizados
+
+Todo paciente con inmovilizacion en yeso o bota que no logra carga completa tiene riesgo de TVP. Aplicar escala de riesgo de TEV (ejemplo: adaptada de Derriford Hospital) sumando factores: obesidad IMC >30 (2 puntos), rotura tendon de Aquiles o reparacion (3), TVP/EP previo (3), embarazo o <6 semanas postparto (3), cirugia compleja de pierna/pelvis reciente (3), cancer activo (3), familiar 1er grado con TVP/EP (2), incapacidad de deambular previo a lesion (2), edad >60 (1), cirugia abdominal reciente (1), varices gruesas (1), anticonceptivos orales o TRH (1), enfermedad inflamatoria intestinal (1). Puntuacion 0-2: sin profilaxis; 3 o mas: HBPM diaria hasta retiro de inmovilizacion y recuperacion de carga completa, salvo contraindicaciones. Regimenes tipicos: si eGFR >30 mL/min, dalteparina 5000 UI SC od; si eGFR <30, enoxaparina 20 mg SC od. Contraindicaciones a HBPM: anticoagulacion concurrente (warfarina, rivaroxaban), trastorno hemorragico hereditario/adquirido, trombocitopenia (<75x10^9), hipertension no controlada (>230/120), sangrado activo de cualquier fuente. El riesgo es particularmente relevante en fracturas de tobillo/pierna, rotura de tendon de Aquiles y post-cirugia de pie que requieran inmovilizacion prolongada (Oxford 5e, cap. 9, p. 503).
+
+### 4.10.17. Mordeduras, profilaxis de tetanos y lesion por aguja
+
+Las mordeduras generan heridas contaminadas con alto riesgo de infeccion bacteriana: Pasteurella multocida (gatos/perros), Eikenella corrodens (humanos), estreptococos, estafilococos, Clostridium tetani. Mordeduras humanas (fight bites sobre MCPF): sospechar siempre lesion articular y tendinosa; explorar bajo anestesia, irrigar copiosamente, no cerrar primariamente, antibioticos profilacticos (co-amoxiclav; si alergia: doxiciclina + metronidazol), evaluar riesgo de hepatitis B/C y VIH. Mordeduras de animales: limpiar bajo anestesia con suero y debridar; cierre primario solo en cara (por riesgo cosmetico > riesgo infeccioso); profilaxis antibiotica si hay mordedura punzante, en mano/muneca/genitales, cierre primario, inmunodeprimidos, mordedura de gato o humano, o protesis articular. Mordedura de vibora (Vipera berus en Europa): dos marcas de puncion, edema progresivo; tratamiento de soporte, observar 24h, antidoto indicado si signos sistemicos (hipotension >10 min, leucocitosis >20x10^9, acidosis, edema significativo). Profilaxis antitetanica: las heridas tetanogenicas (contaminadas con tierra/estiercol, punzantes, con tejido desvitalizado, quemaduras, fracturas abiertas) de alto riesgo requieren refuerzo de toxoide + inmunoglobulina antitetanica humana (TIG) 250-500 UI si la inmunizacion primaria es incompleta o desconocida. En pacientes con esquema completo y refuerzo <10 anos: no se requiere vacuna; si >10 anos: solo refuerzo de toxoide. Lesion por aguja (needlestick): riesgo principal es hepatitis B (2-40%) y VIH (0.3% percutaneo); lavar con agua y jabon, cubrir, no exprimir; si fuente VIH+ o sospechosa, iniciar profilaxis postexposicion (PEP) con combinacion ARV (tenofovir/emtricitabina + raltegravir) idealmente dentro de 1 hora, maximo 72 horas; inmunoglobulina anti-hepatitis B si no inmunizado; notificar a salud ocupacional (Oxford 5e, cap. 9, pp. 420-425).
+
+# Inyeccion BOK Urgencia -- Secciones Renal (4.14), Neurologico (4.11) y Metabolico (4.5)
+
+> Fuentes:
+> - **MUE-Andes-U6**: Garrido M. *Paciente con insuficiencia renal*. Consultas frecuentes en el Servicio de Urgencia, Unidad 6. Universidad de los Andes / eClass.
+> - **Oxford-EM-2020**: Wyatt JP, Taylor RG, de Wit K, Hotton EJ. *Oxford Handbook of Emergency Medicine*. 5th ed. Oxford University Press; 2020. Cap. 3 (Medicine).
+
+---
+
+## 4.14 Renal
+
+### 4.14.1bis. Clasificaciones de IRA: RIFLE, AKIN y biomarcadores emergentes
+
+La falta historica de una definicion uniforme de IRA dificulto la comparacion entre estudios. Tres sistemas de clasificacion surgieron para estandarizar el diagnostico y estadificacion:
+
+- **RIFLE** (2004, Acute Dialysis Quality Initiative): clasifica en 5 categorias segun creatinina, TFG y diuresis. R (risk): Cr x1.5 o descenso TFG >25%, diuresis <0.5 mL/kg/h por 6h. I (injury): Cr x2 o descenso TFG >50%, diuresis <0.5 mL/kg/h por 12h. F (failure): Cr x3 o Cr >=4 mg/dL con aumento >=0.5 mg/dL, o descenso TFG >75%, diuresis <0.3 mL/kg/h por 24h o anuria 12h. L (loss): perdida de funcion renal >4 semanas. E (ESKD): falla renal terminal >3 meses. (MUE-Andes-U6, pp. 18-19)
+- **AKIN** (2005, Acute Kidney Injury Network): define IRA como aumento absoluto de Cr >=0.3 mg/dL o >=50% del basal, o diuresis <0.5 mL/kg/h por >=6h, dentro de 48 horas. Estadio I: Cr x1.5 o deltaCr >=0.3 mg/dL. Estadio II: Cr x2. Estadio III: Cr x3 o Cr >=4 mg/dL con aumento >=0.5 mg/dL, o paciente en TRS. Ha demostrado predecir estadia hospitalaria, mortalidad intrahospitalaria y necesidad de dialisis en paciente critico. (MUE-Andes-U6, p. 19)
+- **Clasificacion cinetica (CK)**: basada en cambios absolutos de creatinina (Waikar y Bonventre), detecta cualquier cambio en TFG, especialmente en pacientes con IRC. Estadio 1: deltaCr 0.3 mg/dL en 24h o 0.5 mg/dL en 48h. Estadio 2: 0.5/1.0. Estadio 3: 1.0/1.5. (MUE-Andes-U6, p. 20)
+
+**Biomarcadores emergentes**: aun en investigacion, no disponibles ampliamente en clinica. Cistatina C (marcador de filtracion glomerular, util en pacientes septicos). NGAL (neutrophil gelatinase-associated lipocalin): inflamacion tubular, se correlaciona con cambios en Cr serica. IL-18 urinaria: inflamacion tubular renal, predictor de mortalidad en necrosis tubular aguda. KIM-1 urinaria (kidney injury molecule): dano del tubulo proximal isquemico, distingue NTA de otros tipos de dano. (MUE-Andes-U6, p. 10)
+
+### 4.14.8. Paciente en dialisis y trasplantado renal en urgencia
+
+**Pacientes en dialisis** (peritoneo o hemodialisis) tienen mayor riesgo de infecciones, sangrado, complicaciones de volumen y alteraciones electroliticas, especialmente cuando no han cumplido su esquema dialitico. Las infecciones son la segunda causa de muerte en IRC terminal; frecuentemente se asocian al cateter de dialisis, con mortalidad por sepsis hasta 100 veces mayor que la poblacion general. (MUE-Andes-U6, p. 13)
+
+Problemas especificos del paciente en hemodialisis (Oxford-EM-2020, pp. 166-167):
+- **Edema pulmonar pre-dialisis**: por sobrecarga de volumen y no adherencia a restriccion hidrica. Pacientes practicamente anuricos; diureticos inefectivos. Administrar O2, SL o IV nitratos mientras se organiza dialisis de urgencia.
+- **Hiperpotasemia pre-dialisis**: sintomas neuromusculares (calambres, parestesias, debilidad), arritmias y paro cardiaco. Tratar con calcio IV, insulina + glucosa y salbutamol nebulizado mientras se gestiona dialisis urgente.
+- **Acceso vascular**: fistulas arteriovenosas son linea vital del paciente; no ocluir con manguitos de PA ni torniquetes. Trombosis aguda de shunt (perdida de thrill palpable, dolor local) es emergencia vascular. Infecciones de fistula y lineas centrales son frecuentes (estafilococos), a menudo sin signos externos evidentes.
+
+**Dialisis peritoneal ambulatoria continua** (Oxford-EM-2020, p. 167):
+- Peritonitis bacteriana: cada 12-18 meses. Liquido turbio, dolor abdominal, peritonismo. Sepsis sistemica generalmente leve. Gram negativos o anaerobios sugieren causa quirurgica.
+- Hiperglicemia: pacientes diabeticos pueden desarrollar hiperglicemia cetosica aguda por concentraciones altas de glucosa del dializado (80-140 mmol/L).
+- Hernias: por aumento de presion intraabdominal.
+
+**Pacientes trasplantados renales** (Oxford-EM-2020, p. 167; MUE-Andes-U6, p. 13):
+- Contactar al equipo de trasplante siempre que un trasplantado consulte a urgencia.
+- El empeoramiento de funcion renal puede deberse a cualquier causa de IRA o a rechazo del injerto. Son pacientes con un solo rinon; la identificacion precoz es critica.
+- **Rechazo agudo**: dolor, sensibilidad y tumefaccion sobre el injerto, disminucion de diuresis, fiebre, malestar general y deterioro bioquimico. A menudo indistinguible de infeccion bacteriana; tratar para ambas hasta obtener resultados de biopsia renal.
+- **Infecciones**: pueden ser oportunistas; las infecciones convencionales cursan con severidad inusual por la inmunosupresion con esteroides. La respuesta inflamatoria esta modulada.
+- Necrosis avascular, mala cicatrizacion y fracturas patologicas por uso cronico de esteroides.
+
+### 4.14.9. IRC: etapas y criterios de derivacion
+
+La IRC se define como dano persistente o mantenido por mas de 3 meses que resulta en TFG <60 mL/min/1.73m2. En Chile, la prevalencia en poblacion general es 2.7%, con incremento de pacientes en hemodialisis cronica de 12.7 PMP (1980) a 903 PMP (2010). Las causas mas frecuentes son diabetes e hipertension arterial (>75% de los casos). (MUE-Andes-U6, pp. 12-13)
+
+**Etapas de la IRC** (Rev. med. Chile vol.137 no.1, 2009; citado en MUE-Andes-U6, pp. 13-14):
+
+| Etapa | VFG (mL/min/1.73m2) | Descripcion |
+|-------|----------------------|-------------|
+| Riesgo | >60 | Sin dano renal |
+| 1 | >90 | Con dano renal (proteinuria, hematuria, alteracion imagenologica) |
+| 2 | 60-89 | Con dano renal |
+| 3 | 30-59 | Disminucion moderada de funcion |
+| 4 | 15-29 | Disminucion severa |
+| 5 | <15 | Falla renal (o dialisis) |
+
+**Criterios de derivacion a nefrologo** (MUE-Andes-U6, pp. 15-16):
+
+- **Etapa 4-5 (VFG <30)**: derivacion urgente o de rutina segun clinica. Preparar acceso vascular, inmunizar hepatitis B, evaluar dieta, corregir acidosis, optimizar Ca/P/PTH, discutir opciones de TRS.
+- **Etapa 3 (VFG 30-59)**: derivar si hay declinacion progresiva, cociente proteina/creatinina >500-1000 mg/g, microhematuria, anemia inexplicada (Hb <11 g/dL), anormalidades de K/Ca/P, sospecha de enfermedad sistemica, hipertension refractaria.
+- **Etapa 2 (VFG 60-89)**: derivacion no requerida salvo sindrome nefrotico, asociacion de proteinuria y microhematuria, o hematuria macroscopica sin explicacion urologica.
+
+**Manejo en urgencia del paciente con IRC** (Oxford-EM-2020, p. 166; MUE-Andes-U6, p. 13): el rol del medico de urgencia no es diagnosticar IRC sino reconocer el antecedente para no aumentar el dano renal: evitar AINEs y nefrotoxicos, ajustar dosis de farmacos, considerar que troponina basal esta elevada, y evaluar contraste con precaucion. Los pacientes con CKD avanzada (VFG <40, especialmente <10 mL/min) son propensos a fracturas patologicas, osteodistrofia, hiperparatiroidismo secundario, pseudogota por hipocalcemia, hiperpotasemia, hipertension severa, pericarditis uremica, disfuncion neurologica y sangrado por disfuncion plaquetaria.
+
+---
+
+## 4.11 Neurologico
+
+### 4.11.1bis. Protocolo de trombolisis y trombectomia en ACV
+
+**Trombolisis IV con alteplasa** (Oxford-EM-2020, pp. 152-153):
+- Indicacion: pacientes >18 anos con ACV isquemico significativo, dentro de 3 horas del inicio de sintomas (y hasta 4.5h para pacientes 18-80 anos), con TC cerebral sin sangrado y sin contraindicaciones.
+- **Contraindicaciones**: sintomas/hora de inicio desconocidos, convulsion al inicio, presentacion sugerente de HSA, diatesisis hemorragica conocida o plaquetas <100x10^9/L, puncion arterial en sitio no compresible o PL en ultimos 7 dias, cirugia/trauma GI o urinario en ultimas 3 semanas, HTA severa (sistolica >185 o diastolica >110 mmHg tras intervencion; considerar trombolisis si PA reduce a <180/105), antecedente de hemorragia intracraneal, tumor cerebral, MAV o aneurisma, ACV o TEC en ultimos 3 meses.
+- **Procedimiento**: alteplasa 0.9 mg/kg IV (maximo 90 mg), administrando el primer 10% en bolo lento en 1-2 min, y el resto en infusion IV durante 1 hora. No administrar aspirina. Monitorizar estrechamente; suspender si aparecen signos de hemorragia intracraneal (cefalea nueva, disminucion de GCS, convulsion, vomito) y solicitar TC de urgencia.
+- Post-trombolisis: no administrar anticoagulantes ni antiagregantes. TC de control a las 24h; si no muestra sangrado, iniciar antiagregante/anticoagulante segun indicacion.
+
+**Trombectomia mecanica** (Oxford-EM-2020, p. 153):
+- Evidencia creciente para extraccion intra-arterial del trombo. Seguir protocolos locales.
+- Considerar trombectomia mecanica si hay oclusion de gran vaso proximal intracraneal con deficit neurologico discapacitante (NIHSS >=6) y Rankin modificado pre-ACV <=3, en las siguientes ventanas:
+  - Dentro de 6h del inicio de sintomas (junto con trombolisis IV si no contraindicada y dentro de ventana autorizada), con oclusion confirmada de circulacion anterior proximal por angio-TC o angio-RM.
+  - Entre 6 y 24h si ultima vez visto bien, con ACV isquemico agudo y oclusion confirmada de circulacion anterior/posterior proximal, y la imagen confirma tejido cerebral rescatable.
+- NICE (2019) define situaciones donde la trombectomia puede ofrecerse lo antes posible incluso como tratamiento unico si trombolisis esta contraindicada.
+
+### 4.11.2bis. Cefaleas: diagnostico diferencial expandido
+
+Las cefaleas de origen no traumatico representan <0.5% de las consultas de urgencia, pero 10-15% tienen patologia seria subyacente. Tres patrones de alarma: cefalea severa subita (primera o peor), cefalea con signos neurologicos/fiebre/alteracion de conciencia, y cefalea severa cronica refractaria a tratamiento. (Oxford-EM-2020, p. 132)
+
+**Cefaleas primarias**:
+- **Migrana**: con o sin aura. Prodromos 5-30 min (escotomas centelleantes, vision borrosa). Cefalea pulsatil, unilateral, 4-72h, con fotofobia, fonofobia, nausea. Formas raras: hemiplejica, basilar (vertigo, disartria, diplopia), oftalmoplejica, acefalgica. Tratamiento agudo: paracetamol/AINEs + triptan; derivar si signos neurologicos o cambio de patron. (Oxford-EM-2020, p. 136)
+- **Cluster**: predominio masculino, nocturna. Unilateral periocular, 15-180 min, en racimos. Sintomas autonomicos ipsilaterales: inyeccion conjuntival, lagrimeo, congestion nasal, rinorrea, ptosis, miosis. Tratamiento: O2 alto flujo (12 L/min via mascara reservorio por 15 min). (Oxford-EM-2020, p. 138)
+- **Tension**: banda bilateral, no pulsatil, sin nausea ni fotofobia, no empeora con actividad. Tratamiento: analgesia simple; reasegurar si examen normal. (Oxford-EM-2020, p. 139)
+
+**Cefaleas secundarias** (Oxford-EM-2020, pp. 132-139):
+- HSA: cefalea subita "la peor de mi vida", nuca rigida, nausea, perdida de conciencia; aplicar regla de Ottawa para descarte.
+- Arteritis de celulas gigantes: >50 anos, cefalea nueva o cambio de patron, claudicacion mandibular, perdida visual. PCR/VHS elevada. Iniciar prednisona 200 mg IV (o prednisolona 40 mg PO) de inmediato ante sospecha; confirmar con biopsia de arteria temporal.
+- Trombosis venosa cerebral: cefalea subita tipo HSA/subdural, asociada a infecciones sinusales, embarazo, puerperio. Puede no verse en TC simple; diagnosticar con TC/RM con contraste. Tratar con heparinizacion.
+- Hipertension intracraneal idiopatica: mujeres con IMC alto, cefalea, alteracion visual, papiledema, paralisis de nervios craneales. Diagnostico: TC normal + presion de apertura elevada en PL.
+- Lesiones ocupantes de espacio: cefaleas sordas, empeoran al inclinarse o con Valsalva. Pueden asociar convulsiones, cambio de personalidad, signos focales. TC con contraste.
+- Cefalea analgesica: por uso cronico de analgesicos simples, simpaticomiméticos, ergotamina o cocaina. Suspender droga causal.
+
+### 4.11.6bis. Debilidad generalizada aguda: Guillain-Barre, miastenia, botulismo
+
+La debilidad generalizada aguda requiere distinguir entre lesion de motoneurona superior (tono aumentado, reflejos vivos, Babinski positivo, sin fasciculaciones ni atrofia) e inferior (tono disminuido, reflejos abolidos, fasciculaciones, atrofia). (Oxford-EM-2020, p. 148)
+
+**Sindrome de Guillain-Barre** (Oxford-EM-2020, p. 148):
+- Polineuropatia desmielinizante inflamatoria aguda tras infeccion respiratoria o GI.
+- Debilidad simetrica progresiva ascendente desde musculos distales a proximales.
+- Signos: dolor muscular, lumbalgia, perdida de reflejos, sintomas sensitivos (parestesias de dedos), disfuncion autonomica (hiper/hipotension, taqui/bradicardia, atonia vesical).
+- Riesgo vital: falla respiratoria rapida. Monitorizar capacidad vital serial.
+- Derivar a equipo medico/UCI. Tratamiento: inmunoglobulina IV o plasmaferesis.
+
+**Miastenia gravis** (Oxford-EM-2020, p. 149):
+- Enfermedad autoinmune por anticuerpos contra receptores de acetilcolina nicotinicos.
+- Debilidad indolora, fatigable, con reflejos y pupilas normales. Predominio en nervios craneales: ptosis, diplopia, vision borrosa. Distribucion asimetrica.
+- Crisis miastenica: debilidad severa con compromiso respiratorio; puede requerir IOT de emergencia con RSI usando rocuronio. Tratamiento UCI incluye plasmaferesis.
+- En urgencia: test diagnostico con bolsa de hielo sobre el parpado (mejora ptosis). La piridostigmina es el tratamiento de base.
+- Crisis colinergica (por sobretratamiento) o reaccion adversa a farmacos no relacionados pueden precipitar debilidad aguda.
+
+**Botulismo** (Oxford-EM-2020, p. 149):
+- Resurgimiento en comunidad de usuarios de drogas IV (wound botulism).
+- Toxina botulinica inhibe liberacion de acetilcolina en uniones neuromusculares y sinapsis simpaticas y parasimpaticas.
+- Infeccion por *Clostridium botulinum*: diplopia, vision borrosa, ptosis, debilidad cervical.
+- Progresion a falla respiratoria.
+- Tratamiento: antitoxina, benzilpenicilina, metronidazol, soporte respiratorio.
+
+**Otros diagnosticos diferenciales de debilidad generalizada aguda**: compresion medular, tetanos, miopatia alcoholica, difterismo, intoxicacion por plomo, paralisis periodica (asociada a fluctuaciones de K+ serico, tratamiento con suplementacion oral de K+ para formas hipocalemicas). (Oxford-EM-2020, pp. 148-149)
+
+### 4.11.9. Amnesia global transitoria
+
+Condicion mas comun de lo apreciado, frecuentemente subdiagnosticada. Se caracteriza por perdida subita e inexplicada de memoria en paciente de edad media o mayor, sin otros deficits neurologicos ni hallazgos anormales acompanantes (a diferencia de ACV/AIT). (Oxford-EM-2020, p. 141)
+
+- El paciente puede seguir instrucciones simples pero aparece desorientado y angustiado, con incapacidad para formar nuevos recuerdos (memoria a corto plazo) y pobre memoria reciente.
+- Los familiares pueden estar muy preocupados.
+- Las investigaciones complementarias no revelan anormalidad.
+- A menudo confundido con ACV/AIT; se distingue porque la afectacion de memoria es desproporcionadamente dramatica, sin otros signos neurologicos.
+- Recuperacion espontanea dentro de 24 horas es la regla.
+- No es un predictor particularmente alto de ACV o evento vascular futuro.
+- Manejo: reasegurar, seguimiento por medico de atencion primaria.
+
+---
+
+## 4.5 Metabolico / Endocrino
+
+### 4.5.9. Porfiria en urgencia
+
+Las porfirias son trastornos de la biosintesis del hemo por deficiencias enzimaticas que causan acumulacion de porfirinas y sus precursores. La mayoria son hereditarias; el metabolismo anormal puede desarrollarse tambien por deficit de hierro, alcohol y plomo. Las porfirias agudas (porfiria intermitente aguda, porfiria variegata, coproporfiria hereditaria) afectan ~1 en 10,000 personas. Las no agudas (porfiria cutanea tarda) causan fotosensibilidad sin crisis agudas. (Oxford-EM-2020, p. 173)
+
+**Desencadenantes de crisis aguda**: farmacos (barbituricos, estrogenos, progesteronas, sulfonamidas, metildopa, carbamazepina, fenitoina, sulfonilúreas, cloranfenicol, tetraciciclinas, danazol, antihistaminicos), alcohol, dieta, infeccion, estres fisico/emocional, embarazo, abuso de sustancias. (Oxford-EM-2020, p. 173)
+
+**Clinica de porfiria aguda** (Oxford-EM-2020, p. 173):
+- Dolor abdominal comun y severo, con nausea, vomitos y constipacion. Examen abdominal puede ser normal o con sensibilidad difusa leve.
+- Neuropatia periferica, predominantemente motora, que puede progresar a paralisis y falla respiratoria.
+- Taquicardia, hipertension y hipotension postural.
+- Manifestaciones psiquiatricas: agitacion, depresion, mania, alucinaciones.
+- Hiponatremia por secrecion inapropiada de ADH, pudiendo causar convulsiones o coma.
+
+**Manejo en urgencia** (Oxford-EM-2020, p. 173):
+- Buscar brazalete MedicAlert. Revisar antecedentes medicos.
+- Si se sospecha crisis aguda, enviar muestra de orina fresca (protegida de luz) para acido aminolevulinico y porfobilinogeno. En crisis, la orina se oscurece a rojo-marron al exponerse a la luz (polimerizacion del porfobilinogeno).
+- Tratamiento de soporte (en UCI si necesario). Mantener ingesta de carbohidratos (PO o IV).
+- Dolor moderado/severo: morfina +/- antiemetico (paracetamol y aspirina son seguros).
+- Agitacion: considerar clorpromazina. Hipertension severa: propranolol.
+- Convulsiones: el manejo del status epileptico es dificil ya que muchos anticonvulsivantes estan contraindicados; preferir diazepam IV como primera linea.
+- Hemarginato (hemin arginate) ayuda en crisis agudas (consultar especialista).
+- **Farmacos seguros en porfiria**: ibuprofeno, penicilina, ciprofloxacino, bupivacaina (consultar BNF y www.porphyria.org.uk).
+
+### 4.5.10. Sindrome de realimentacion
+
+Condicion rara pero potencialmente mortal, frecuentemente no reconocida precozmente. Cualquier paciente que no haya comido por >=5 dias esta en riesgo. Pacientes con IMC bajo, anorexia nerviosa y alcoholicos tienen riesgo particular. (Oxford-EM-2020, p. 129)
+
+- La reintroduccion de alimento desencadena hipofosfatemia, hipomagnesemia e hipopotasemia, que pueden ocurrir y empeorar a medida que se reestablece la nutricion.
+- **Antes de iniciar alimentacion**: verificar glicemia basal, solicitar ELP completo incluyendo fosfato y magnesio.
+- En pacientes de riesgo: administrar tiamina oral y vitamina B IV, y rehidratar para corregir anomalias electroliticas antes de comenzar a alimentar.
+- **Iniciar la alimentacion muy lentamente**, con monitoreo regular de electrolitos.
+- Si se detectan alteraciones electroliticas, corregirlas antes de aumentar el aporte calorico.
+- La hipofosfatemia severa puede causar rabdomiolisis, insuficiencia respiratoria, arritmias y falla cardiaca.
+- Solicitar asesoramiento de nutricion experta.
+
+### 6.12. Fichas farmacologicas operativas
+
+> Complementan secciones 6.1-6.11. Prevalece MUE Andes/Oxford si hay discrepancia.
+> Fuente: App Med (fichas de preparacion y dosificacion hospitalaria).
+
+---
+
+#### 6.12.1. Opioides
+
+> Regla general de rotacion: al rotar opioides reducir 30-50% la dosis equianalgesia calculada.
+
+##### Tramadol
+
+| Campo | Detalle |
+|-------|---------|
+| **Via** | Oral, SC, EV |
+| **Dosis maxima** | 400 mg/dia. Falla hepatica o ClCr < 30: 200 mg/dia. Adulto mayor: 100 mg/dia |
+| **Oral vs EV** | Absorcion oral 60% |
+| **Preparacion BIC** | 100-200 mg en 250 ml SF |
+| **Comprimidos** | 50, 100, 150, 200 mg (liberacion prolongada) |
+| **Equivalencias** | Tramadol 200 mg = Morfina oral 30 mg = Morfina EV 10 mg |
+| **Precauciones** | Umbral convulsivo (no asociar con ISRS/IRSN en dosis altas) |
+
+*(App Med)*
+
+##### Fentanilo
+
+| Campo | Detalle |
+|-------|---------|
+| **Via** | EV, parche transdermico |
+| **Ampollas** | 100 ug/2 ml o 500 ug/10 ml |
+| **Parches** | Durogesic 25 ug/hr, 50 ug/hr. Duracion 3,5 dias (2/semana). Latencia inicio: 12 hrs |
+| **Dosis maxima** | Sin techo |
+| **Dosis inicio BIC** | 12,5-25 ug/hr |
+| **Bolos** | 25-50 ug (duracion 45-60 min) |
+| **Preparacion BIC** | 1000 ug en 100 cc SF |
+| **Falla renal** | Se puede usar |
+| **Equivalencias** | 1 ug/hr Fentanilo EV = 1 mg Morfina EV/dia. Ej: BIC 25 ug/hr = 25 mg Morfina EV/dia |
+| **EV vs Parche** | Equivalentes |
+
+*(App Med)*
+
+##### Morfina
+
+| Campo | Detalle |
+|-------|---------|
+| **Via** | VO, SC, EV |
+| **Ampollas** | 10 mg o 20 mg en 1 ml |
+| **Relacion EV:SC:VO** | 1 : 2 : 3 |
+| **Dosis maxima** | Sin techo |
+| **Dosis inicio** | Bolos EV 2 mg c/4 hrs (12 mg/dia) + rescates 10% dosis total dia; BIC EV 0,5 mg/hr; Oral 5 mg c/4 hrs |
+| **Preparacion BIC** | 100 mg en 100 ml SF |
+| **Titulacion BIC** | Subir 30% si >= 3 rescates/dia |
+| **Falla renal** | EVITAR (riesgo de convulsion por metabolito M6G) |
+
+*(App Med)*
+
+##### Metadona
+
+| Campo | Detalle |
+|-------|---------|
+| **Via** | VO, SC, EV |
+| **Ampollas** | 10 mg/2 ml |
+| **Dosis maxima** | Sin techo |
+| **Dosis inicio** | 2 mg c/8 hrs |
+| **EV vs SC vs VO** | Equivalentes 1:1:1 |
+| **BIC** | Por lo general no se usa en BIC |
+| **Falla renal** | Se puede usar |
+| **Equivalencias** | Si < 500 mg morfina oral/dia: 1 mg Metadona (EV/VO/SC) = 5 mg Morfina VO; 1 mg Metadona EV = 2 mg Morfina EV (aprox) |
+| **Precauciones** | Se acumula en grasa; al 4to-5to dia puede producir sedacion (efecto retardado). Vigilar QTc |
+
+*(App Med)*
+
+##### Buprenorfina
+
+| Campo | Detalle |
+|-------|---------|
+| **Via** | Transdermica |
+| **Parches** | Transtec 20 mg (35 mcg/hr); Norspan 5 mg (5 mcg/hr), 10 mg (10 mcg/hr), 20 mg (20 mcg/hr) |
+| **Dosis maxima** | Sin techo |
+| **Inicio accion** | Retardo 12 hrs desde 1er parche |
+| **Dosis inicio** | 1/4 a 1/2 de parche. Habitualmente se inicia tras titular con otro opiaceo |
+| **Cambio parche** | Transtec c/3,5 dias; Norspan c/7 dias |
+| **Falla renal** | Se puede usar |
+| **Aplicacion** | Piel no irritada, superficie lisa sin vello (espalda alta o bajo clavicula). Cortar vello con tijera, no afeitar |
+| **Equivalencias** | Transtec 35 mcg/hr = 60 mg morfina oral/dia; Norspan 20 mcg/hr = 34 mg; 10 mcg/hr = 17 mg; 5 mcg/hr = 8 mg morfina oral/dia |
+
+*(App Med)*
+
+##### Tabla resumen de equianalgesia opioide
+
+| Farmaco | Dosis | Equivale a Morfina oral | Equivale a Morfina EV |
+|---------|-------|------------------------|----------------------|
+| Tramadol | 200 mg VO | 30 mg | 10 mg |
+| Fentanilo BIC | 1 ug/hr (24 hrs) | -- | 1 mg/dia |
+| Metadona | 1 mg (cualquier via) | 5 mg | 2 mg (aprox) |
+| Buprenorfina parche | 35 mcg/hr (Transtec) | 60 mg/dia | 20 mg/dia |
+| Buprenorfina parche | 10 mcg/hr (Norspan) | 17 mg/dia | ~5,7 mg/dia |
+| Morfina | 30 mg VO | 30 mg (ref) | 10 mg |
+
+---
+
+#### 6.12.2. Vasoactivos e inotropicos
+
+##### Noradrenalina (Levophed)
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 4 mg (4000 ug) |
+| **Dilucion** | 250 ml SG 5%. Periferico: 4 mg/250 cc. Central: 4-8-16-32 mg/250 cc |
+| **Via** | CVC (periferico SOLO como puente a CVC) |
+| **Dosis inicio** | 0,02-0,05 ug/kg/min |
+| **Dosis baja** | Hasta 0,1 ug/kg/min |
+| **Dosis alta** | Desde 0,3 ug/kg/min |
+| **Inicio accion** | 1-2 min |
+| **Duracion** | 1-2 min |
+| **Precauciones** | Asegurar intravascular. Precaucion en anemia severa y cardiopatia coronaria. Monitorizar con linea arterial siempre que se pueda |
+
+*(App Med)*
+
+##### Dobutamina
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 250 mg/5 ml |
+| **Dilucion** | CVC: 2 amp en 250 cc SG 5%. Periferico (via gruesa): 2 amp en 500 cc o 1 amp en 250 cc SG 5% |
+| **Via** | CVC preferido; periferico en venas grandes. Solo en BIC |
+| **Dosis inicio BIC** | 1-2 ug/kg/min |
+| **Dosis habituales** | 1-5 ug/kg/min |
+| **Inicio accion** | 1-10 min |
+| **Efecto peak** | 10-20 min |
+| **Vida media** | 2 min |
+| **Precauciones** | Arritmias dosis-dependiente (monitorizar). En hipotensos: iniciar noradrenalina primero, luego agregar o traslapar a dobutamina |
+| **Contraindicacion** | Miocardiopatia hipertrofica con obstruccion al tracto de salida |
+
+*(App Med)*
+
+##### Milrinona
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 10 mg/10 ml |
+| **Dilucion** | CVC: 2 amp en 100 cc SG 5%. Periferico: 1 amp en 100 cc SG 5% |
+| **Via** | CVC preferido; periferico en venas grandes. Solo en BIC |
+| **Dosis inicio BIC** | 0,1-0,25 ug/kg/min |
+| **Dosis habituales** | 0,1-0,35 ug/kg/min |
+| **Inicio accion** | 5-15 min |
+| **Vida media** | 2,4 hrs (prolongada en falla renal) |
+| **Falla renal** | Considerar reduccion de dosis; cambio de inotropo si ClCr < 5-10 ml/min |
+| **Precauciones** | Arritmias dosis-dependiente incluso post-suspension (por vida media larga). En hipotensos: iniciar noradrenalina primero |
+| **Contraindicacion** | Miocardiopatia hipertrofica con obstruccion al tracto de salida |
+
+*(App Med)*
+
+##### Nitroprusiato de sodio
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 50 mg/2 ml |
+| **Dilucion** | 50 mg en 250 cc SG 5% (200 ug/ml) o 100 mg en 250 cc SG 5% (400 ug/ml) |
+| **Via** | Periferica o central; SOLO POR BIC. **REQUIERE LINEA ARTERIAL** |
+| **Dosis inicio** | HTA aguda: 0,3-0,5 ug/kg/min (subir 0,5 ug/kg/min c/5 min). ICC descompensada: 5-10 ug/min (subir c/5 min) |
+| **Inicio accion** | < 2 min |
+| **Vida media** | 2 min |
+| **Dosis maxima** | 10 ug/kg/min |
+| **Ajuste renal** | eGFR < 30: dosis < 3 ug/kg/min. Anuria: hasta 1 ug/kg/min. Algunos autores contraindican si ClCr < 30 |
+| **Precauciones** | Acumulacion de tiocianato (acidosis metabolica, desaturacion, bradicardia, compromiso conciencia). Precaucion en falla renal, insuficiencia hepatica, malnutricion, hipotermia terapeutica |
+
+*(App Med)*
+
+---
+
+#### 6.12.3. Antiarritmicos
+
+##### Adenosina
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 6 mg |
+| **Dilucion** | Sin dilucion |
+| **Via** | Periferica proximal (brazos/antebrazos, NO en pies) |
+| **Dosis inicio** | 6 mg en bolo rapido |
+| **Escala** | 6 mg --> no responde --> 12 mg --> no responde --> 12 mg |
+| **Post-dosis** | Toda dosis seguida de 20 ml SF en bolo (flush) |
+| **Aviso al paciente** | Advertir que sentira dolor toracico transitorio |
+| **Contraindicaciones** | Obstruccion bronquial (asma/EPOC) -- preferir verapamilo. Enfermedad nodo sinusal. Trastorno conduccion AV |
+
+*(App Med)*
+
+##### Amiodarona
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 150 mg |
+| **Via** | CVC o via periferica gruesa |
+
+| Indicacion | Dosis | Dilucion |
+|------------|-------|----------|
+| **Paro cardiorrespiratorio** | 300 mg bolo | Sin dilucion, seguida de flush SF 0,9% |
+| **FA rapida** | 150 mg en 10 min | 150 mg en 100 cc SF 0,9% |
+| **BIC carga** | 600 mg (mujer) a 900 mg (hombre) en 24 hrs | En 500 cc SF 0,9% o SG 5% |
+
+| **Contraindicacion** | Alergia al yodo |
+| **Precaucion** | Hipotension |
+
+*(App Med)*
+
+##### Lanatosido C (Cedilanid)
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 0,4 mg/2 ml |
+| **Dilucion** | Sin dilucion |
+| **Via** | Periferica, lento en 5 min |
+| **Dosis inicio** | 0,4 mg |
+| **Inicio accion** | ~15 min |
+| **Maximo efecto** | 30-45 min |
+| **Dosis maxima diaria** | 1,2 mg (3 ampollas) |
+| **Precaucion** | Insuficiencia renal aumenta vida media. **NO REPETIR DOSIS ANTES DE 30-45 MIN** |
+| **Contraindicaciones** | Bloqueo AV, pausa sinusal, fibrilacion ventricular |
+
+*(App Med)*
+
+---
+
+#### 6.12.4. Antihipertensivos EV
+
+##### Labetalol
+
+| Campo | Detalle |
+|-------|---------|
+| **Ampollas** | 100 mg/20 ml |
+| **Dilucion** | 100 mg en 100 cc o 200 mg en 200 cc de SG 5% |
+| **Via** | Periferica o central |
+| **Dosis inicio (bolos)** | 20 mg en 2 min, luego 40-80 mg c/10 min segun meta |
+| **Dosis BIC (post-bolo)** | Iniciar a 20-30 mg/hr. Dosis hasta 6-8 mg/min se han usado por corto tiempo |
+| **Inicio accion** | 2,5 min |
+| **Maximo efecto** | 15 min |
+| **Dosis maxima diaria** | 300 mg |
+| **Monitorizacion** | FC y PA |
+| **Contraindicaciones** | Bradicardia severa, bloqueo AV 2do grado o mayor, shock cardiogenico, ICC descompensada, obstruccion bronquial/asma |
+
+*(App Med)*
+
+##### Nitroglicerina
+
+| Campo | Detalle |
+|-------|---------|
+| **Frasco** | 50 mg/250 cc SG 5% (solucion preparada) |
+| **Dilucion** | No requiere |
+| **Via** | Periferica o CVC |
+| **Dosis** | 10-200 ug/min. Aumentar 10 ug/min c/5 min hasta reduccion PAM 15% |
+| **Dosis inicio** | 10 ug/min (3 cc/hr) |
+| **Bolos (EPA)** | 3 mg c/5 min (15 cc). Indicado si PAS > 210 o PAD > 120 |
+| **Regla conversion** | 1 cc/hr = 3,3 ug/min |
+| **Contraindicaciones** | Hipotension (PAS < 100), taponamiento cardiaco, hipertension intracraneal, glaucoma angulo cerrado |
+| **Precauciones** | IAM ventriculo derecho, uso de sildenafil/inh FD5, HTP severa, estenosis aortica severa |
+| **RAM** | Cefalea, nauseas, vomitos |
+| **Recordar** | Taquifilaxis tras 48-72 hrs de uso continuo |
+
+*(App Med)*
+
+---
+
+#### 6.12.5. Reversores de anticoagulacion
+
+##### Protamina
+
+| Campo | Detalle |
+|-------|---------|
+| **Presentacion** | Vial 50 mg/5 ml (10 mg/ml) |
+| **Administracion** | Directa, sin dilucion. Lento, max 5 mg/min (50 mg en 10 min) |
+| **Dosis maxima** | 50 mg por dosis |
+| **Indicacion** | Revertir anticoagulacion con heparina ante sangrado serio. Efectividad: HNF 100%, HBPM 50-60% |
+
+**Dosis para HNF** (suspender infusion primero):
+
+| Tiempo desde suspension BIC | Dosis protamina |
+|-----------------------------|-----------------|
+| Inmediata | 1 mg por c/100 U de HNF en ultimas 2-2,5 hrs |
+| 30-60 min atras | 0,5-0,75 mg por c/100 U |
+| > 2 hrs atras | 0,25-0,375 mg por c/100 U |
+
+> Ej: BIC 8 ml/hr = 800 U x 2 hrs = 1600 U --> 16 mg de protamina.
+> Controlar TTPK a los 5-15 min; si aun prolongado con sangrado, nueva dosis mas baja.
+
+**Dosis para HBPM:**
+
+| Farmaco | < 8 hrs desde ultima dosis | > 8 hrs desde ultima dosis |
+|---------|---------------------------|---------------------------|
+| Enoxaparina (Clexane) | 1 mg por cada mg de enoxaparina (max 50 mg) | 0,5 mg por cada mg (max 50 mg) |
+| Dalteparina (Fragmin) | 1 mg por cada 100 U (max 50 mg) | -- |
+
+| **Precauciones** | Sangrado por rebote de heparina 8-9 hrs post protamina. Hipotension y bradicardia (por velocidad de infusion) |
+
+*(App Med)*
+
+##### Idarucizumab (Praxbind)
+
+| Campo | Detalle |
+|-------|---------|
+| **Descripcion** | Fragmento humanizado de anticuerpo monoclonal que se une especificamente a dabigatran |
+| **Presentacion** | Cada vial 2,5 g en 50 ml. Caja contiene 2 viales |
+| **Preparacion** | No requiere dilucion |
+| **Administracion** | Infusion consecutiva de los 2 viales en 5-10 min c/u o como 2 inyecciones en bolo |
+| **Dosis** | **5 g** (2 viales de 2,5 g) -- dosis unica |
+| **Inicio accion** | Rapido (minutos). Tiempo medio cese sangrado: 2,5 hrs (NEJM 2017;377:431-441) |
+| **Duracion efecto** | Usualmente 24 hrs |
+| **Indicaciones** | Sangrado con riesgo vital o procedimientos urgentes en usuarios de dabigatran. Administrada hasta media de 18 hrs post ultima dosis de dabigatran |
+| **Ajuste renal/hepatico** | No requiere |
+| **Precauciones** | NO revierte otros NACOs. La reversion expone al riesgo tromboembolico de base. Dabigatran puede reiniciarse a las 24 hrs. Si disponible, solicitar tiempo de trombina. Dabigatran sin accion luego de 2,5-3,5 dias |
+
+*(App Med)*
+
+##### Octaplex (Concentrado protrombinico 4 factores)
+
+| Campo | Detalle |
+|-------|---------|
+| **Contenido** | Factores II, VII, IX, X inactivos + Proteina C y S |
+| **Presentacion** | 500 U polvo liofilizado (U medidas segun Factor IX) |
+| **Preparacion** | Disolver liofilizado en diluyente incluido (20 ml) |
+| **Velocidad infusion** | 1 ml/min x 5 min, luego 2-3 ml/min |
+| **Via** | Directa, periferica o CVC |
+| **Inicio accion** | Rapido; descenso importante de INR en 10 min |
+| **Duracion efecto** | 6-8 hrs |
+| **Objetivo** | INR <= 1,2 en 1 hr |
+
+**Tabla de dosificacion por INR:**
+
+| INR basal | Dosis (UI/kg) | Volumen (ml/kg) |
+|-----------|--------------|-----------------|
+| 2 - 2,5 | 22,5 - 32,5 | 0,9 - 1,3 |
+| 2,5 - 3 | 32,5 - 40 | 1,3 - 1,6 |
+| 3 - 3,5 | 40 - 47,5 | 1,6 - 1,9 |
+| > 3,5 | > 47,5 | > 1,9 |
+| **Dosis maxima** | **3000 UI** | **120 ml** |
+
+> Estudios recientes: dosis fijas de 1500-2000 U son equivalentes a dosis ajustadas por INR.
+
+| **Contraindicaciones** | Hipersensibilidad al producto, alergia a heparina o HIT tipo 2 (contiene heparina), deficit de IgA con anticuerpo anti-IgA |
+| **No recomendada** | Coagulopatia por dano hepatico cronico (no estudiado). Precaucion en CID |
+| **Recordar** | **NO OLVIDAR ADMINISTRAR VITAMINA K concomitante** |
+
+*(App Med)*
+
+---
+
+#### 6.12.6. Correccion acido-base
+
+##### Bicarbonato de sodio (NaHCO3)
+
+**Preparacion de soluciones:**
+
+| Solucion | Preparacion | Osmolaridad | HCO3 | Na | Via |
+|----------|-------------|-------------|------|----|----|
+| **1/6 M** | 1 lt agua bidestilada - 250 cc + 250 cc NaHCO3 2/3M | 333 mosm/lt (similar a SF 0,9%) | 166,7 meq/lt (0,16 meq/ml) | 166,7 meq/lt | Periferica (sin restriccion) |
+| **2/3 M** | Usar solucion NaHCO3 2/3M directa | 1333 mosm/lt | 666,7 meq/lt (0,66 meq/ml) | 666,7 meq/lt | Central (CVC) |
+
+**Indicacion:** pH < 7,1 con HCO3 < 6-10 (sobre todo si acidosis metabolica hiperclorermica aguda).
+
+**Protocolo de correccion:**
+
+| Paso | Detalle |
+|------|---------|
+| Calculo | Deficit de HCO3 (usar como estimacion). Objetivo: pH 7,2 |
+| Reposicion | 50% del deficit en 4 hrs (< 1-2 meq/kg); resto en 24-48 hrs |
+| Paro cardiorrespiratorio | 1 meq/kg y recontrolar |
+| Sol 1/6 M | Administracion sin restriccion. Ojo con sobrecarga de volumen |
+| Sol 2/3 M | Velocidad segun natremia (no mas de 0,5 meq/lt/hr de ascenso de Na) |
+| Monitorizacion | pH, PaCO2, Na, K, Ca ionico |
+
+**Cetoacidosis diabetica (si pH < 6,9):**
+
+| Campo | Detalle |
+|-------|---------|
+| Preparacion | 150 ml HCO3 2/3M o 100 ml HCO3 8,4% diluidos en 400 ml agua bidestilada |
+| Potasio | Agregar 20 meq de K si K < 5,3 meq/lt (2 amp KCl = 26 meq o 2 amp monofosfato K = 22 meq) |
+| Infusion | En 2 hrs |
+| Repetir | Si persiste pH < 6,9 |
+
+*(App Med)*
+
+<!-- inject-hemo-proto.md — Hemoterapia operativa y protocolos complementarios -->
+<!-- Fuente: App Med (capturas operativas internas). Complementa sin contradecir MUE Andes/Oxford. -->
+
+---
+
+### 4.7.6. Hemoterapia operativa
+
+> **Fuente:** App Med -- fichas Plaquetas, PFC, Crioprecipitado, Filtrados, Irradiados.
+
+#### A. Concentrado de plaquetas
+
+| Parametro | Valor |
+|-----------|-------|
+| Volumen por unidad | 50-70 cc |
+| Velocidad de infusion | 4-6 U en 30 min |
+| Tiempo maximo de infusion | 4 hrs desde banco de sangre |
+| Via | Periferica o CVC |
+| Rendimiento | 1 unidad sube recuento plaquetario en 5.000/mm3 |
+| **Dosis** | **1 U cada 10 kg de peso** |
+
+**Indicaciones de transfusion:**
+
+| Contexto clinico | Umbral plaquetario |
+|------------------|--------------------|
+| **Profilacticas** | |
+| Cirugia neuroquirurgica | < 100.000/mm3 |
+| Cirugia oftalmologica | < 100.000/mm3 |
+| Cirugia electiva | < 50.000/mm3 |
+| Puncion lumbar | < 50.000/mm3 |
+| Oncologicos + fiebre y/o infeccion | < 20.000/mm3 |
+| Oncologicos (sin fiebre/infeccion) | < 10.000/mm3 |
+| **Ante sangrado activo** | |
+| Sangrado general | < 50.000/mm3 |
+| Sangrado SNC | < 100.000/mm3 |
+| Sangrado retineal | < 100.000/mm3 |
+| Transfusion masiva | Ratio 1:1:1 (1 U GR : 1 U PFC : 1 U plaquetas) |
+
+*(App Med -- Plaquetas)*
+
+---
+
+#### B. Plasma fresco congelado (PFC)
+
+| Parametro | Valor |
+|-----------|-------|
+| Volumen por unidad | 250 ml (extraccion simple) |
+| **Dosis** | **10-15 ml/kg** |
+| Velocidad de infusion | 1 a 3 ml/kg/hr |
+
+**Indicaciones:**
+
+- Revertir INR alterado en pacientes con sangrado serio (principalmente por TACO).
+- Plasmaferesis en PTT / SHU por complemento (atipico).
+
+**No usar:**
+
+- En INR < 1,6-1,8 (no util).
+- Para revertir heparina (el PFC contiene antitrombina III).
+- En pacientes sin sangrado serio.
+
+**Precaucion:** Hipocalcemia en transfusion masiva o plasmaferesis (quelacion con citrato).
+
+**Recordatorio:** No olvidar administrar vitamina K 10 mg ev concomitante.
+
+*(App Med -- PFC)*
+
+---
+
+#### C. Crioprecipitado
+
+| Parametro | Valor |
+|-----------|-------|
+| Volumen por unidad | 5-20 ml |
+| Velocidad de infusion | 1 a 2 ml/min |
+| Tiempo maximo de infusion | 4 hrs desde banco de sangre |
+| Via | Periferica o CVC |
+| **Dosis** | **1 U cada 5-10 kg de peso** |
+
+**Contenido por unidad:**
+
+| Componente | Cantidad |
+|------------|----------|
+| Fibrinogeno | 150 mg (150-200 mg = 40-50% del plasma). 1 U sube 5-10 mg/dl el fibrinogeno |
+| Factor VIII | 80-110 unidades (50% del plasma) |
+| Factor XIII | 50-75 unidades |
+| Factor von Willebrand | 100-150 unidades |
+
+**Indicaciones de transfusion:**
+
+1. **Fibrinogeno < 100 mg/dl:** pacientes con sangrado serio o alto riesgo de sangrado.
+   - Si alteracion concomitante de INR y TTPa, considerar agregar PFC.
+2. **Fibrinogeno < 150 mg/dl:** en CID asociada a leucemia promielocitica.
+3. **Independiente de fibrinogeno:** hemofilia A, enfermedad de von Willebrand congenita o adquirida, en **ausencia** de concentrado de factor.
+
+*(App Med -- Crioprecipitado)*
+
+---
+
+#### D. Hemocomponentes filtrados (leucodepletados)
+
+**Definicion:** Filtro aplicado sobre hemocomponentes celulares (globulos rojos y plaquetas). Evita el paso de leucocitos (98-99%), restos leucocitarios y citoquinas generadas por ellos. Previene aloinmunizacion HLA, reacciones febriles no hemoliticas mediadas por leucocitos y riesgo de transmision de CMV.
+
+**Indicaciones:**
+
+- Pacientes cronicamente transfundidos.
+- Pacientes sometidos a cirugia cardiaca.
+- Todos los potenciales receptores de organos solidos o celulas hematopoyeticas.
+- Pacientes trasplantados de organos solidos o celulas hematopoyeticas.
+- Paciente con antecedente de reaccion febril no hemolitica.
+- Pacientes de riesgo seronegativos para CMV.
+- Pacientes embarazadas.
+
+*(App Med -- Filtrados)*
+
+---
+
+#### E. Hemocomponentes irradiados
+
+**Definicion:** Irradiacion sobre hemocomponentes celulares (globulos rojos y plaquetas). Evita la reaccion injerto contra huesped transfusional (TA-GvHD) al inactivar los linfocitos T del donante, impidiendo su potencial proliferativo.
+
+**Importante:** La irradiacion NO reemplaza a la filtracion.
+
+**Indicaciones:**
+
+- Receptores de trasplante alogenico de celulas madre hematopoyeticas durante condicionamiento y mientras duren las profilaxis post-trasplante para enfermedad injerto contra huesped.
+- Pacientes con trasplante autologo de medula osea desde el condicionamiento hasta 3 meses post-trasplante.
+- Pacientes con enfermedades hematopoyeticas que recibiran inminentemente trasplante de medula osea.
+- Linfoma de Hodgkin.
+- Deficit congenito de inmunidad celular.
+- Pacientes con anemia aplastica tratados con globulina antitimocito.
+- Pacientes tratados con analogos de purinas (fludarabina, cladribine, deoxycobormicina).
+- Receptores de transfusiones de familiares directos (1er y 2do grado).
+- Receptores de donantes HLA compatibles.
+- Canceres hematologicos distintos a linfoma de Hodgkin (indicacion debil).
+
+**Nota:** En pacientes con trasplante de organo solido NO esta recomendada de rutina la irradiacion.
+
+*(App Med -- Irradiados)*
+
+---
+
+### 4.7.7. Sangrado en hemofilia: protocolo 5 pasos
+
+> **Fuente:** App Med -- Sangrado en Hemofilia.
+
+#### Paso 1. Establecer gravedad del sangrado
+
+| Sangrado SEVERO (objetivo: factor a 100 UI/dl = 100%) | Sangrado MODERADO (objetivo: factor a 50-60 UI/dl = 50-60%) |
+|-------------------------------------------------------|--------------------------------------------------------------|
+| Sangrado SNC y ocular | Hemartrosis (no cadera) |
+| Hemartrosis de cadera | Hematoma muscular de extremidades |
+| Sangrado intraabdominal | Gastrointestinal |
+| Sangrado con riesgo en via aerea | Heridas abiertas |
+| Sangrado que requiere transfusion | Fracturas no quirurgicas |
+| Sangrado prolongado | Hematuria persistente (2-3 dias) |
+| Sangrado en iliopsoas | |
+| Lesiones por accidentes graves | |
+
+#### Paso 2. Clasificar tipo y severidad de hemofilia
+
+- **Hemofilia A:** deficit de factor VIII.
+- **Hemofilia B:** deficit de factor IX.
+
+| Severidad | Factor basal VIII o IX |
+|-----------|------------------------|
+| Leve | 5-40% (5-40 UI/dl) |
+| Moderada | 1-5% (1-5 UI/dl) |
+| Severa | < 1% (< 1 UI/dl) |
+
+Si disponible, solicitar FVIII o FIX pre-terapia, pero **no retrasar el tratamiento**. Si no se conoce la severidad, considerar hemofilia severa.
+
+#### Paso 3. Antecedente de inhibidor
+
+- **No:** continuar al paso 4.
+- **Si:** usar pauta del paciente o consultar a hematologia.
+
+#### Paso 4. Calcular requerimiento de factor
+
+**Hemofilia A (FVIII):** por cada 1 UI/kg administrada, el factor aumenta 2 UI/dl en plasma.
+
+```
+Requerimiento (UI) = Peso (kg) x (Objetivo - Basal) / 2
+```
+
+**Hemofilia B (FIX):** por cada 1 UI/kg administrada, el factor aumenta 1 UI/dl en plasma.
+
+```
+Requerimiento (UI) = Peso (kg) x (Objetivo - Basal)
+```
+
+#### Paso 5. Paciente recibio factor en domicilio
+
+- **No:** administrar factor segun requerimiento calculado.
+- **Si:** evaluar si la dosis recibida fue la correcta (igual al requerimiento).
+  - Si fue correcta: no requiere dosis adicional (evaluar clinicamente).
+  - Si fue insuficiente: **completar dosis** (requerimiento - dosis en domicilio).
+
+**Presentacion y administracion:**
+
+| Parametro | FVIII | FIX |
+|-----------|-------|-----|
+| Presentacion | Liofilizado, frascos 500-1000 UI | Liofilizado, frascos 250-500-1000 UI |
+| Velocidad infusion | 2-3 ml/min | 2-3 ml/min |
+| Preparacion | Reconstituir concentrado y disolvente | Reconstituir concentrado y disolvente |
+
+*(App Med -- Sangrado en Hemofilia)*
+
+---
+
+### 4.5.1bis. Protocolo CAD/SHH: flowchart 3 ramas
+
+> **Fuente:** App Med -- CAD/SHH (flowchart y criterios de resolucion).
+
+**Evaluacion inicial:** Solicitar ELP y GSV cada 2-4 hrs hasta lograr estabilidad. Considerar acceso venoso central.
+
+**1a medida:** SF 0,9% 1-2 lt a 1000 cc/hr.
+
+#### Rama 1 -- Suero (fluidos)
+
+1. Evaluar Na corregido: Na + (1,6 x c/100 mg/dl de HGT > 100).
+2. Segun resultado:
+   - **Na normal o alto:** NaCl 0,45% a 250-500 ml/hr segun hidratacion.
+   - **Na bajo:** NaCl 0,9% a 250-500 ml/hr segun hidratacion.
+3. Cuando HGT < 200 mg/dl (CAD) o < 300 mg/dl (SHH): disminuir infusion de SS 0,9%/0,45% a 100 ml/hr y agregar SG 5% a 100 ml/hr.
+
+#### Rama 2 -- Insulina cristalina
+
+1. Bolo 0,1 U/kg ev.
+2. Iniciar BIC de insulina a 0,1 U/kg/hr (preparacion: 100 U en 100 ml). HGT cada hora.
+3. Ajustar dosis para reducir glicemia en 50-75 mg/dl por hora (**Protocolo 1**).
+4. Transicion a **Protocolo 2:**
+   - **CAD:** Cuando HGT < 200 mg/dl, iniciar SG 5% y mantener glicemia 150-200 mg/dl hasta cumplir criterios de resolucion.
+   - **SHH:** Cuando HGT < 300 mg/dl, iniciar SG 5% y mantener glicemia 250-300 mg/dl hasta cumplir criterios de resolucion.
+
+**Nota:** No dar insulina hasta K >= 3,3 mEq/l.
+
+#### Rama 3 -- Potasio
+
+Confirmar buena funcion renal (diuresis >= 50 ml/h).
+
+| Kalemia | Conducta |
+|---------|----------|
+| K < 3,3 mEq/l | No dar insulina cristalina. Carga de K 20-30 mEq/hr hasta K > 3,3 mEq/l |
+| K 3,3-5,2 mEq/l | Aportar segundo SF 0,45% con K 50-60 mEq/l a 100-150 ml/hr para mantener kalemia 4-5 |
+| K > 5,2 mEq/l | No dar K. Chequear cada 2 hrs |
+
+**Bicarbonato:** Solo si pH < 6,9: 100 mmol en 2 h (mas 20 mEq K); repetir si pH < 7.
+
+#### Criterios de resolucion CAD
+
+Glicemia < 200 mg/dl con al menos 2 de 3 criterios (idealmente los 3), siendo obligatorio pH > 7,3 y el 3er criterio en rango aceptable:
+
+- pH > 7,3
+- Bicarbonato > 15 mEq/l
+- Anion gap < 12
+
+Mediciones sucesivas para asegurar resolucion.
+
+#### Transicion post-resolucion CAD/SHH
+
+Tras resolucion, definir viabilidad de ingesta oral:
+
+**Posibilidad de comer (+):**
+
+1. Iniciar regimen 200 g de hidratos de carbono con esquema basal-prandial subcutaneo.
+2. Calculo de insulina total diaria (alternativas):
+   - Insulina en las ultimas 6 hrs de BIC x 4.
+   - Dosis por kg de peso: 0,5-0,6 U/kg.
+3. 50% como insulina basal; 50% como insulina prandial dividida en 3 comidas (HGT c/8 hrs).
+4. Suspender BIC 2 hrs despues de iniciar insulina subcutanea (traslapar).
+
+**Imposibilidad de comer (-):**
+
+1. Iniciar SG 5% 500 ml c/6 hrs con insulina cristalina en el suero (ev).
+2. Dividir insulina total diaria en 4 y agregar en cada SG 5%. Cambio de suero e insulina c/6 hrs segun HGT.
+3. Suspender BIC simultaneo al inicio del SG con insulina cristalina.
+
+*(App Med -- CAD/SHH, Criterios de resolucion CAD, Transicion insulina)*
+
+---
+
+### 4.5.3bis. Protocolo hipoglicemia
+
+> **Fuente:** App Med -- Hipoglicemia.
+
+**Definicion operativa:** Glicemia < 70 mg/dl en pacientes diabeticos.
+
+#### Algoritmo segun estado de conciencia
+
+```
+Hipoglicemia (< 70 mg/dl)
+        |
+   +---------+-----------+
+   |                     |
+Consciente          Inconsciente
+   |                     |
+   +------+              |
+   |      |           Severo
+  Leve   <40 mg/dl       |
+   |    o sin via oral    |
+   |         |            |
+Colacion  SG 30%:      SG 30%:
+15-20 g   3-4 amp ev   3-4 amp ev
+HdeC
+```
+
+1. **Consciente, leve:** administrar colacion de 15-20 g de hidratos de carbono.
+2. **Glicemia < 40 mg/dl o sin via oral:** administrar SG 30%, 3-4 ampollas ev.
+3. **Inconsciente (severo):** administrar SG 30%, 3-4 ampollas ev.
+
+#### Seguimiento
+
+- Control HGT cada 15 min hasta recuperacion, luego cada 1 hr hasta 2 valores > 70 mg/dl.
+- Si estado de conciencia deficiente: mantener SG 5% a 80 ml/hr o SG 10% a 40 ml/hr. Titular segun HGT.
+- Si estado de conciencia recuperado y NPH fue administrada recientemente: considerar colacion de 15-20 g HdeC.
+
+#### Buscar la causa
+
+- Exceso de insulina o baja ingesta.
+- Falla renal.
+- Sepsis o resolucion de sepsis.
+- Falla hepatica.
+
+**Accion:** Modificar esquema de insulina o dosis de hipoglicemiantes.
+
+*(App Med -- Hipoglicemia)*
+
+---
+
+### 4.3.9bis. Protocolo crisis hipertensiva
+
+> **Fuente:** App Med -- Crisis HTA. Nota: el PDF fuente (Sin titulo 43.pdf) no contiene contenido de crisis hipertensiva; corresponde a otra ficha. Seccion reservada para completar con fuente correcta.
+
+**Nota editorial:** La ficha "Sin titulo 43.pdf" referenciada como "Crisis HTA" en el encargo no contiene protocolo de crisis hipertensiva en las paginas disponibles. Se reserva esta seccion para inyeccion posterior cuando se identifique la fuente correcta.
+
+---
+
+### 4.5.5bis. Fichas infusiones electroliticas
+
+> **Fuente:** App Med -- Infusion de Calcio, Infusion de Soluciones Salinas.
+
+#### A. Infusion de calcio (gluconato de calcio 10%)
+
+**Preparacion:**
+
+| Via | Dilucion | Volumen final | Concentracion resultante |
+|-----|----------|---------------|--------------------------|
+| **Periferica** | 11 ampollas de gluconato de Ca 10% (110 cc) en 1 lt SG 5% o SF 0,9% (extraer 110 cc del litro) | 1 lt | 990 mg Ca elemental (1 mg/ml) |
+| **Central (CVC)** | 11 ampollas de gluconato de Ca 10% (110 cc) en 500 cc SG 5% o SF 0,9% (extraer 110 cc) | 500 cc | 990 mg Ca elemental (2 mg/ml) |
+
+Referencia: 1 g gluconato de Ca = 90 mg Ca elemental.
+
+**Infusion en hipocalcemia:**
+
+1. Iniciar infusion a **0,5 mg/kg/hr** de Ca elemental:
+   - 0,5 ml/kg/hr si dilucion en 1 lt (1 mg/ml).
+   - 0,25 ml/kg/hr si dilucion en 500 cc (2 mg/ml).
+2. Controlar calcemia o calcio ionico cada 4-6 hrs.
+3. Ascender dosis hasta 2 mg/kg/hr segun necesidad.
+
+**Bolo:** 2 ampollas en 100 cc SG 5% en 5-10 min. Requiere monitorizacion.
+
+*(App Med -- Infusion de Calcio)*
+
+---
+
+#### B. Infusion de NaCl hipertonico (soluciones salinas concentradas)
+
+**Preparacion:**
+
+| Via | Insumos | Volumen final | Concentracion resultante |
+|-----|---------|---------------|--------------------------|
+| **Periferica** (NaCl 1,5%) | 7,5 ampollas de NaCl 10% (150 cc) en 1 lt agua bidestilada (extraer 150 cc) | 1 lt | 255 mEq Na/lt; Osm 510 mosm/lt |
+| **Central (CVC)** (NaCl 3%) | 15 ampollas de NaCl 10% (300 cc) en 1 lt agua bidestilada (extraer 300 cc) | 1 lt | 510 mEq Na/lt; Osm 1020 mosm/lt |
+
+**Infusion en hiponatremia:**
+
+1. Calcular mEq necesarios: (Na objetivo - Na medido) x ACT.
+   - ACT = peso x factor: 0,6 (hombre mediana edad), 0,5 (mujer mediana edad u hombre edad avanzada), 0,45 (mujer edad avanzada).
+2. En SIADH: elegir infusion que supere la osmolaridad urinaria del paciente.
+3. Calcular cc necesarios segun mEq/lt de la solucion elegida; infundir en 24 h.
+4. Control Na plasmatico cada 4-6 hrs (las formulas son imprecisas).
+
+**Bolo:** 150 cc de NaCl 3% en 20 min. Hasta 3 veces. Controlar Na(p) 20 min post bolo. Por via periferica si CVC no disponible.
+
+**Limites de correccion:** Meta = 4-6 mEq/dia. Limite maximo = 10 mEq/dia.
+
+*(App Med -- Infusion de Soluciones Salinas)*
+
+---
+
+### 4.9.9. Fiebre nosocomial post-48h
+
+> **Fuente:** App Med -- Fiebre nosocomial.
+
+**Definicion:** Temperatura > 38 C que aparece despues de 48 hrs de ingreso hospitalario, en paciente no neutropenico.
+
+#### Evaluacion inicial
+
+Anamnesis y examen fisico dirigido a:
+- Flebitis
+- Neumonia
+- ITU (sonda Foley?)
+- Diarrea
+- CVC
+- Artritis
+
+**Regla:** No asumir fiebre por drogas o fiebre tumoral durante el turno.
+
+#### Sin foco identificado
+
+Solicitar:
+- PCR
+- Recuento celular
+- Rx torax
+- Examen de orina
+- Urocultivo (si usuario previo de sonda Foley: urocultivo tras cambio de sonda)
+- Hemocultivos (si CVC: hemocultivos de arrastre + periferico I y II)
+
+**Conducta segun estabilidad:**
+
+| Estable | Inestable |
+|---------|-----------|
+| Inicio de ATB puede retrasarse hasta establecer foco | Iniciar ATB de amplio espectro |
+
+#### Con foco identificado
+
+Solicitar segun sospecha establecida:
+- **Sintomas urinarios:** orina completa + urocultivo.
+- **Dolor abdominal:** ecografia o TAC abdomen-pelvis.
+- **Diarrea:** PCR o toxina Clostridioides difficile.
+- **Sintomas respiratorios:** Rx torax, panel viral, gram y cultivo de expectoracion.
+- **Hemocultivos** en todos los casos.
+
+**Conducta:** ATB segun sospecha clinica.
+
+#### Cobertura empirica en paciente inestable
+
+- **Gram (+):** Vancomicina.
+- **Gram (-):** Carbapenemicos / Piperacilina-tazobactam / Amikacina.
+
+*(App Med -- Fiebre nosocomial)*
+
+---
+
+### 10.10. Protocolo caida intrahospitalaria
+
+> **Fuente:** App Med -- Caida.
+
+#### Evaluacion del mecanismo de caida
+
+| Mecanismo | Accion inmediata |
+|-----------|------------------|
+| **Sincope** | ECG |
+| **Delirium** | Elevar barandas. Considerar uso de antipsicoticos. Buscar causa |
+| **Mareo (ortostatismo)** | Reponer perdidas. Titulacion de antihipertensivos de ser necesario |
+| **Deficit neurologico** | Avisar a neurologo de turno |
+| **Tropiezo** | Evaluar causa (falta de anteojos, calzado vs. problema hospitalario) |
+
+#### Evaluacion segun sitio de golpe
+
+**Golpe en la cabeza -- considerar TAC cerebro sin contraste en:**
+
+- Pacientes anticoagulados o antiagregados
+- Otras coagulopatias (DHC, plaquetopenia)
+- Mayor de 65 anios
+- Vomitos
+- Deficit focal
+- Convulsion
+- Amnesia
+- GCS < 15
+- Perdida de conciencia
+- Herida
+
+**Golpe en otro sitio:**
+
+| Considerar Rx cadera en: | Considerar Rx lumbar en: |
+|--------------------------|--------------------------|
+| Acortamiento de extremidad | Deficit focal |
+| Dolor a rotacion de cadera | Deformidad |
+| Dolor a extension de cadera | Dolor o sensibilidad importante |
+| Osteoporosis | Osteoporosis |
+
+Considerar otras Rx segun area comprometida.
+
+#### Registro y seguimiento
+
+1. **Registrar** evento en ficha clinica y hoja de incidente.
+2. **Control frecuente** segun evaluacion inicial: cada 30 min hasta cada 2 hrs.
+3. Si GCS alterado: c/30 min x 2 hrs, luego cada 1 hr x 4 hrs, luego c/2 hrs.
+4. **Avisar al equipo tratante.**
+
+*(App Med -- Caida)*
+
+### 5.1bis. RSI: protocolo completo
+
+La induccion de secuencia rapida (RSI) combina un sedante y un bloqueador neuromuscular administrados simultaneamente para lograr intubacion traqueal rapida. Esta indicada cuando existe riesgo alto de aspiracion de contenido gastrico (trauma, estomago lleno, embarazo). El protocolo incluye: (1) llamar a senior ED/anestesia/UCI; (2) verificar equipo con checklist estandarizado (aspiracion, bolsa-valvula-mascarilla, laringoscopio con hoja grande, bougie, tubos traqueales con cuff x2, dispositivo supraglotico de rescate, monitoreo end-tidal CO2); (3) preoxigenar con O2 al 100% por 3 min via mascarilla ajustada; (4) aplicar presion cricoidea (maniobra de Sellick); (5) administrar farmacos de induccion; (6) intubar, confirmar posicion (auscultacion bilateral + capnografia); (7) liberar cricoides solo tras confirmar ventilacion satisfactoria. Siempre verbalizar plan de via aerea dificil antes de iniciar. La RSI solo debe ser realizada por personal con entrenamiento especifico.
+**Fuente:** Oxford Handbook of Emergency Medicine 5ed, pp. 322-323.
+
+### 5.7bis. Anestesia local y bloqueos regionales
+
+La anestesia local (AL) esta indicada para canulacion venosa, obtencion de GSA, limpieza/sutura de heridas, analgesia de fracturas y procedimientos menores. La lidocaina es el AL mas usado: accion en minutos, duracion 30-60 min (plain) o hasta 90 min (con adrenalina). Dosis maxima: 200 mg (3 mg/kg) plain, 500 mg (7 mg/kg) con adrenalina. Bupivacaina: accion 3-8 h, util en bloqueos nerviosos, dosis maxima 150 mg (2 mg/kg). Bloqueos principales en urgencia: (a) digital -- lidocaina 1% sin adrenalina, 1-2 mL por lado en base del dedo; (b) femoral -- mezcla lidocaina 1% 5 mL + bupivacaina 0.5% 5 mL, 1 cm lateral a arteria femoral bajo ligamento inguinal; (c) fascia iliaca -- levobupivacaina 0.25% 30-40 mL, tecnica ciega con dos "pops"; (d) intercostal -- util en fracturas costales, riesgo de neumotorax; (e) infraorbitario/mentoniano -- para heridas faciales. Nunca usar adrenalina en dedos, nariz, orejas ni pene. Vigilar signos de toxicidad: hormigueo perioral, acufenos, confusion, convulsiones; tratamiento con Intralipid 20% IV.
+**Fuente:** Oxford Handbook of Emergency Medicine 5ed, pp. 292-314.
+
+### 6.3bis. Farmacos de RSI
+
+Una RSI equilibrada requiere un agente de induccion y un bloqueador neuromuscular. Combinacion ampliamente usada: fentanilo 3 mcg/kg (pre-induccion, para atenuar respuesta simpatica a laringoscopia) seguido de ketamina 2 mg/kg IV (induccion, mantiene estabilidad hemodinamica, util en trauma) y rocuronio 1 mg/kg IV (relajante no despolarizante, inicio rapido, menos "wake-ups" no deseados que suxametonio). Alternativas de induccion: propofol 1.5-2.5 mg/kg (rapido pero causa hipotension), tiopental 3-5 mg/kg (status epileptico). La ketamina es de eleccion en trauma por preservar perfusion cerebral; no esta contraindicada en PIC elevada. Rocuronio es el relajante estandar actual; suxametonio (1-1.5 mg/kg) es alternativa de inicio ultrarrapido pero con riesgo de hiperpotasemia. Sedacion post-intubacion: midazolam 2 mg IV inicial + incrementos de 0.5-1 mg; fentanilo para analgesia continua.
+**Fuente:** Oxford Handbook of Emergency Medicine 5ed, pp. 318, 322-323, 326-327.
+
+### 4.12.8. Cambios fisiologicos del embarazo
+
+La gestante presenta cambios multiorganicos relevantes para urgencias. Cardiovascular: volumen plasmatico aumenta 45-50% hacia semana 32; gasto cardiaco sube hasta 6 L/min; PA disminuye ~10% por vasodilatacion de progesterona (nadir a las 28 sem); FC aumenta 15-20 lpm. ECG: eje desviado a izquierda, inversion de ondas P y T en DIII. Respiratorio: edema de mucosas convierte la via aerea en dificil; aumento del diametro AP del torax y elevacion diafragmatica hasta 5 cm; volumen corriente sube (450-600 mL); alcalosis respiratoria compensada (CO2 27-34 mmHg, pH 7.4-7.46, HCO3 18-21 mEq/L). Renal: aumento del 50% de filtracion glomerular, disminucion de BUN y creatinina; dilatacion pieloureteral (mayor a derecha). Hematologico: anemia dilucional; leucocitosis fisiologica; plaquetas disminuyen levemente con mayor agregabilidad (estado protrombotico). Gastrointestinal: tono del esfinter esofagico inferior disminuido (riesgo de aspiracion); desplazamiento del apendice hacia arriba y lateral.
+**Fuente:** MUE UANDES Unidad 4 Obstetricia, pp. 3-6.
+
+### 4.12.9. Aborto: tipos y misoprostol
+
+Aborto espontaneo: expulsion de feto <500 g (aproximadamente <22 semanas). Es la complicacion mas comun del primer trimestre (incidencia 10-30%). Clasificacion clinica: (a) amenaza de aborto -- sangrado con cuello cerrado y feto viable en ecografia; (b) aborto inevitable -- sangrado + dilatacion cervical, producto palpable; (c) aborto incompleto -- expulsion parcial con restos en cervix, hemorragia marcada; (d) aborto completo -- expulsion total, sangrado y dolor que disminuyen post-expulsion; (e) aborto retenido -- retencion de embrion/feto muerto sin sintomas agudos, diagnostico por ecografia. Manejo farmacologico con misoprostol: aborto retenido 800 mcg via vaginal o 600 mcg sublingual cada 3 horas (maximo 2 dosis); aborto incompleto 400 mcg sublingual o 600 mcg oral dosis unica; feto muerto in utero 13-17 sem 200 mcg via vaginal cada 6 horas. Las tres opciones terapeuticas (aspiracion uterina, medicacion, expectante) tienen eficacia similar. Signos de alarma: sangrado profuso, dolor intenso, signos de shock.
+**Fuente:** MUE UANDES Unidad 4 Obstetricia, pp. 11-13.
+
+### 4.12.10. Placenta previa y desprendimiento
+
+**Placenta previa:** implantacion placentaria sobre el orificio cervical interno. Clasificacion: Grado I (lateral, >2 cm del OCI), Grado II (marginal, borde llega al OCI sin cubrirlo), Grado III (parcial, cubre parcialmente el OCI), Grado IV (central total, cubre completamente el OCI). Clinica: sangrado genital subito, indoloro, sin antecedente de trauma, en 90% de los casos. Un tercio sangra antes de semana 30. Diagnostico por ecografia transvaginal (no antes de semana 20 por migracion placentaria). Manejo: reposo absoluto, monitorizacion hemodinamica materna y fetal; si hemodinamia normal y feto inmaduro: conducta expectante; si sangrado abundante con inestabilidad: cesarea de emergencia.
+**Desprendimiento prematuro de placenta (DPPNI):** separacion de placenta normoinserta >20 semanas. Principal causa de hemorragia anteparto (30-35%). Incidencia 0.4-1.3%. Clasificacion por grado: I (10-30% desprendimiento, madre y feto estables), II (30-50%, estado fetal insatisfactorio), III (>50%, hipertonia uterina, hipovolemia, feto muerto; IIIA con CID, IIIB sin CID). Clinica: sangrado genital abrupto (80%), dolor abdominal moderado-severo, hipertonia uterina, polisistolia. Factores de riesgo: HTA, abruptios previos, edad >45 anos, trauma, drogas.
+**Fuente:** MUE UANDES Unidad 4 Obstetricia, pp. 14-17.
+
+### 4.3.9bis. HTA: evaluacion por escenarios
+
+La HTA se define como PAS >=140 y/o PAD >=90 mmHg. Afecta al 27% de mayores de 15 anos en Chile. Evaluacion en urgencia por escenarios: (1) **Asintomatico con PA <180/110 sin diagnostico previo:** no requiere tratamiento en urgencia; buscar causas agudas (dolor, ansiedad); control en APS en 1 semana a 1 mes. (2) **Asintomatico con PA >180/110 y antecedente de HTA en tratamiento:** reiniciar medicamentos omitidos; asegurar adherencia; derivar a control ambulatorio; no bajar PA de forma aguda en urgencia si no hay dano de organo blanco. (3) **Asintomatico con PA >180/110 sin antecedente:** iniciar antihipertensivo oral y derivar a APS al dia siguiente. (4) **Sintomatico o con dano de organo blanco (cualquier cifra):** constituye emergencia hipertensiva; las formas mas comunes son ACV (77% cursan con HTA), edema pulmonar agudo, encefalopatia hipertensiva, ICC aguda y diseccion aortica. Diagnostico diferencial obligatorio: ictus, diseccion aortica, intoxicacion, preeclampsia, feocromocitoma, abstinencia. Laboratorio: creatinina, ELP, orina completa, ECG; radiografia de torax si sospecha de edema pulmonar.
+**Fuente:** MUE UANDES Unidad 5 HTA, pp. 2-17.
+
+### 4.6.7. ORL detallado
+
+**Otalgia:** examen sistematico: zona periauricular (descartar mastoiditis: fiebre + dolor retroauricular, TAC + ATB EV ceftriaxona/vancomicina), otitis externa necrotizante maligna (diabeticos/inmunosuprimidos, dolor intenso + otorrea + granulacion en CAE por Pseudomonas, ATB EV con actividad antipseudomonica), pericondritis (infeccion post-trauma que puede destruir cartilago, ciprofloxacino 750 mg c/12h), sindrome de Ramsay Hunt (vesiculas + paresia facial, prednisona 1 mg/kg/dia + valaciclovir 1000 mg c/12h x 7 dias). Otoscopia: otitis externa (dolor al trago, secrecion en CAE, gotas de ciprofloxacino/dexametasona); OMA (otalgia + timpano eritematoso/opaco, amoxicilina 875 mg c/12h x 7 dias, segunda linea amoxi/clav).
+**Odinofagia:** diferenciar viral vs bacteriana con criterios de Centor modificados (fiebre, exudado amigdalino, ausencia de tos, adenopatias cervicales dolorosas, edad). Score 4-5: ATB directo (penicilina benzatina 1.200.000 UI IM dosis unica o amoxicilina 1g c/12h x 7 dias). Signos de alarma de complicacion: trismus, desviacion uvular, abombamiento del pilar anterior (sospechar absceso periamigdalino/parafaringeo/retrofaringeo; TAC cuello con contraste + ATB EV).
+**Rinorrea/sinusitis:** rinofaringitis es autolimitada (AINES + descongestionantes). Sinusitis aguda: cefalea frontal/maxilar que empeora al agacharse + rinorrea purulenta; ATB con amoxicilina si sospecha bacteriana. Complicaciones graves: celulitis orbitaria, trombosis del seno cavernoso, meningitis.
+**Epistaxis:** compresion vestibular 10-15 min; si falla: anterior visible cauterizar con nitrato de plata; anterior no visible taponamiento con Merocel + ATB oral (riesgo S. aureus); posterior con sonda Foley. Evaluar repercusion hemodinamica.
+**Fuente:** MUE UANDES Unidad IRA-OTL (documento completo).
+
+## Secciones inyectadas -- Respiratorio detallado, TEP/TVP, GI y Gastroenteritis infecciosa
+
+### 4.15.2bis. Asma near-fatal y paro en asma
+
+El asma near-fatal se define por pCO2 elevada y/o necesidad de ventilacion mecanica con presiones de inflacion aumentadas. Representa la fase inmediatamente previa al paro respiratorio. El ritmo de paro en asma es tipicamente actividad electrica sin pulso (AESP), causado por hipoxia prolongada y severa secundaria a broncoespasmo extremo, tapones mucosos o neumotorax a tension (puede ser bilateral). Se debe seguir el protocolo ALS estandar y tratar neumotorax a tension si esta presente. La intubacion traqueal debe realizarse precozmente dado que las presiones de inflacion pulmonar requeridas son superiores a las normales y existe riesgo de distension gastrica sin tubo endotraqueal. Post-intubacion, usar volumenes tidales bajos (6-8 mL/kg) a FR baja (7-8/min) y ratio I:E de 1:4 para minimizar atrapamiento aereo, barotrauma y volutrauma. La hiperinflacion dinamica y el breath stacking pueden causar neumotorax y compromiso hemodinamico. Considerar MgSO4 IV (1.2-2 g en 20 min) y aminofilina IV solo tras consulta con senior. (Fuente: Oxford Handbook of Emergency Medicine, pp. 108-111.)
+
+### 4.15.7bis. NIV: presiones y titulacion
+
+La ventilacion mecanica no invasiva (NIV) es tratamiento estandar de primera linea en la exacerbacion de EPOC con fallo ventilatorio hipercapnico. Indicaciones GOLD: acidosis respiratoria (PaCO2 >=45 mmHg y pH <=7.35), disnea severa con uso de musculatura accesoria o movimiento paradojico abdominal, e hipoxemia persistente pese a oxigenoterapia. Se dispone de dos modalidades: CPAP y BiPAP. Iniciar BiPAP con IPAP 10 cmH2O / EPAP 5 cmH2O y titular al alza. Para hipercapnia persistente, aumentar IPAP en 2 cmH2O por vez. Para hipoxemia persistente, aumentar IPAP y EPAP en 2 cmH2O por vez. Presion maxima IPAP/EPAP: 25/15 cmH2O. Para CPAP aislado, iniciar en 5-8 cmH2O. Contraindicaciones absolutas: paro respiratorio, inestabilidad hemodinamica (PAS <90 mmHg pese a fluidos/DVA), Glasgow <9, convulsiones, secreciones no manejables, cirugias recientes oral/esofagica/gastrica (<15 dias), HDA activa, trauma/deformidad facial. Verificar RxTx antes de iniciar para descartar neumotorax. El paciente debe estar alerta y colaborador. (Fuente: Oxford Handbook of Emergency Medicine, pp. 113; MUE Andes, Infecciones respiratorias bajas, seccion NIV y criterios GOLD.)
+
+### 4.15.3bis. Tecnica Seldinger para neumotorax
+
+La tecnica Seldinger se utiliza para insercion de drenaje pleural en neumotorax cuando la aspiracion con aguja fracasa o como alternativa primaria en neumotorax espontaneo secundario (SSP) sintomatico. Procedimiento: (1) confirmar el lado del neumotorax; asegurar analgesia adecuada (puede requerir morfina 1 mg IV incremental) y evitar sedacion; (2) paciente sentado erguido, manos detras de la cabeza; (3) infiltrar 10 mL de lidocaina 1% en la linea axilar anterior a nivel del 5to espacio intercostal; (4) aspirar pequena cantidad de aire pleural durante la infiltracion para confirmar profundidad del espacio pleural; (5) localizar el espacio pleural con la aguja introductora (aspirar mientras se avanza por la pared toracica); (6) retirar la aguja, avanzar la guia metalica a traves de ella; (7) realizar pequena incision cutanea y pasar el dilatador sobre la guia con movimiento rotatorio sin sobrepasar >1 cm del espacio pleural; (8) pasar el drenaje toracico (10-12 Fr) sobre la guia hasta 10-12 cm de profundidad; (9) retirar guia, conectar a sello de agua subacuatico, suturar y fijar; (10) verificar burbujeo y oscilacion, solicitar RxTx de control. No repetir aspiracion con aguja si falla; proceder directamente al Seldinger. (Fuente: Oxford Handbook of Emergency Medicine, p. 119.)
+
+### 4.15.2ter. Intubacion retardada en EPOC
+
+La secuencia de intubacion retardada (delayed sequence intubation, DSI) es una alternativa a la SRI en el paciente EPOC con exacerbacion severa que ingresa con hipoxemia critica y saturaciones bajas, donde el exito de la intubacion depende de una preoxigenacion optima que el paciente no tolera de forma convencional. Se administra ketamina en dosis de sedacion disociativa (1-1.5 mg/kg IV) para mantener el drive respiratorio y aprovechar su efecto broncodilatador, permitiendo preoxigenar al paciente con NIV o alto flujo durante 3-5 minutos antes de completar la relajacion neuromuscular y proceder a la laringoscopia. La ketamina preserva los reflejos de via aerea y la ventilacion espontanea. Parametros ventilatorios post-intubacion: modo volumen control, VT 6-8 mL/kg de peso ideal (calculado por talla, no peso real), FR 16-20/min, relacion I:E 1:2, PEEP 5 cmH2O, FiO2 inicial 100% con descenso rapido segun gasometria. Ajustar parametros para evitar atrapamiento aereo (auto-PEEP) y minimizar barotrauma/volutrauma. (Fuente: MUE Andes, Infecciones respiratorias bajas, seccion VMI en EPOC; Oxford Handbook of Emergency Medicine, p. 112.)
+
+### 4.3.8bis. TEP: scores, anticoagulantes y trombolisis
+
+Mortalidad del TEP diagnosticado y tratado: 7%. Score de Wells modificado para TEP: signos de TVP (3.0), diagnostico alternativo menos probable (3.0), uso de drogas IV (3.0), FC >100 (1.5), TEP/TVP previo (1.5), cirugia/inmovilizacion reciente (1.5), cancer activo (1.0), hemoptisis (1.0). Score <=4.0: TEP improbable, solicitar dimero-D (si normal, descarta TEP); score >=4.5: TEP probable, requiere angio-TC pulmonar (CTPA). Anticoagulacion en urgencias (tabla Oxford): rivaroxaban 15 mg c/12h por 21 dias, luego 20 mg/dia; apixaban 10 mg c/12h por 7 dias, luego 5 mg/dia; enoxaparina 1 mg/kg SC c/12h; dalteparina 200 UI/kg SC/dia; tinzaparina 175 UI/kg SC/dia; heparina no fraccionada para pacientes con clearance <20 mL/min (solicitar ingreso para warfarinizacion). TEP masivo con compromiso cardiovascular: no demorar trombolisis. Administrar alteplasa (rtPA) 10 mg IV lento en 1-2 min, seguido de 90 mg IV en 2 horas (dosis maxima 1.5 mg/kg si peso <65 kg). Si trombolisis esta contraindicada o falla, considerar embolectomia quirurgica o trombolisis dirigida por cateter. Post-trombolisis iniciar heparina no fraccionada IV ajustada a peso. (Fuente: Oxford Handbook of Emergency Medicine, pp. 124-125.)
+
+### 4.3.8ter. TVP: diagnostico y manejo
+
+TVP y TEP son manifestaciones del mismo proceso trombotico venoso. TVP no tratada tiene 1% de mortalidad por TEP; 50% desarrolla sindrome post-trombotico con dolor y edema cronico de la extremidad. Factores de riesgo: cirugia reciente (especialmente ortopedica/abdominal/espinal/obstetrica), hospitalizacion, neoplasia activa, inmovilizacion, embarazo/puerperio, drogas IV, TVP/TEP previo, trombofilia familiar. Clinica: dolor, edema, calor y sensibilidad en extremidad inferior con venas superficiales dilatadas; signos pueden ser inespecificos o ausentes. Diagnostico diferencial: rotura muscular, quiste de Baker roto, celulitis. Estudio: Score de Wells para TVP (>=2 = probable, <2 = improbable). Si improbable y dimero-D normal: se descarta TVP. Si probable o dimero-D elevado: ecografia Doppler de EEII (femoral, poplitea, pantorrilla). Tratamiento: HBPM (enoxaparina 1 mg/kg c/12h o dalteparina) o ACOD (rivaroxaban/apixaban); TVP de pantorrilla o muslo proximal se tratan igual. Alta con suministro suficiente de anticoagulante y control ambulatorio. Instruir sobre signos de alarma de TEP (disnea subita, dolor toracico, hemoptisis) para retorno inmediato. TVP de extremidad superior: USS de axilar/subclavia/yugular o angio-TC; tratar como TVP de EEII. (Fuente: Oxford Handbook of Emergency Medicine, pp. 122-123.)
+
+### 4.2.10ter. HDA: Glasgow-Blatchford y balon Sengstaken
+
+Causas frecuentes de HDA: ulcera peptica, varices esofagicas, Mallory-Weiss, gastritis/esofagitis erosiva, neoplasia gastrica, coagulopatias. La escala Glasgow-Blatchford estratifica el riesgo de resangrado y muerte: urea (6.5-8 = 2, 8-10 = 3, 10-25 = 4, >25 = 6 puntos), Hb hombres (120-129 = 1, 100-119 = 3, <100 = 6), Hb mujeres (100-119 = 1, <100 = 6), PAS (100-109 = 1, 90-99 = 2, <90 = 3), FC >=100 = 1, melena = 1, sincope = 2, hepatopatia = 2, ICC = 2. Score 0 sin melena ni anemizacion: considerar alta con seguimiento. Score >0 requiere endoscopia urgente. Manejo hemorragia moderada/severa: via aerea, O2, 2 vias IV gruesas (14G), reposicion volemica con SF 0.9% o Ringer, omeprazol IV 40 mg (si ulcera peptica conocida), hemoderivados para Hb >70 g/L, corregir coagulopatia (vitamina K, complejo protrombinico, idarucizumab). Sospecha de varices: terlipresina 2 mg IV cada 4-6 h, INR, antibiotico profilactico (ciprofloxacino/ceftriaxona). Balon de Sengstaken-Blakemore: procedimiento de rescate ante hemorragia variceal masiva refractaria con riesgo de muerte. Tecnica: insertar sonda de 4 lumen, inflar balon gastrico (250-300 mL aire), confirmar posicion con RxTx, traccionar, inflar balon esofagico a 30-40 mmHg, aspirar ambos puertos. Es puente a endoscopia/TIPS definitiva, no tratamiento final. (Fuente: Oxford Handbook of Emergency Medicine, pp. 126-127.)
+
+### 4.2.20. Gastrostomia y sindrome de realimentacion
+
+Las sondas de gastrostomia percutanea endoscopica (PEG) se usan para nutricion enteral y administracion de medicamentos en pacientes con disfagia o incapacidad de ingesta oral. Problemas frecuentes en urgencia: (a) desplazamiento/caida del tubo -- si reciente, el estoma puede cerrarse en horas; intentar recolocar gentilmente una sonda Foley lubricada (de calibre igual o menor) como medida temporal para mantener el tracto permeable y contactar gastroenterologia; (b) obstruccion -- irrigar con agua tibia con jeringa de 20 mL; (c) infeccion periostomia, sangrado o fuga gastrica -- derivar a equipo especialista. Sindrome de realimentacion: complicacion potencialmente letal en pacientes con ayuno prolongado (>=5 dias), bajo IMC, anorexia nerviosa o alcoholismo. Al reintroducir alimentacion se produce un shift intracelular de fosfato, magnesio y potasio, causando hipofosfatemia severa, hipomagnesemia e hipokalemia. Clinicamente se manifiesta con arritmias, insuficiencia cardiaca, rabdomiolisis, convulsiones y muerte. Prevencion: solicitar electrolitos basales (incluyendo fosfato y magnesio) antes de iniciar alimentacion; administrar tiamina 200-300 mg IV y vitamina B oral; rehidratar y corregir electrolitos previo a alimentar; iniciar aporte calorico muy lentamente (10-20 kcal/kg/dia) con monitorizacion frecuente de electrolitos. (Fuente: Oxford Handbook of Emergency Medicine, p. 129.)
+
+### 4.9.10. Gastroenteritis aguda infecciosa
+
+Inflamacion del tubo digestivo causada por virus, bacterias o parasitos, con diarrea (>=3 deposiciones liquidas/dia, OMS), vomitos y dolor abdominal. Etiologia segun epidemiologia: viaje reciente (E. coli enterotoxigenica, Vibrios, Rotavirus), agua no tratada (Giardia, Cryptosporidium), antibioticos recientes u hospitalizacion (C. difficile), mariscos crudos (Vibrio, Norovirus), aves (Campylobacter, Salmonella). Periodo de incubacion: <6 h = toxina preformada (S. aureus, B. cereus); 6-24 h = B. cereus/C. perfringens; 16-72 h = Norovirus, Salmonella, Shigella, Campylobacter. Evaluacion: clasificar deshidratacion en leve (alerta, pulso normal, mucosas humedas), moderada (debil, taquicardia, mucosas secas, ortostatismo) o severa (obnubilado, taquicardia, hipotension, ojos hundidos, turgor pobre). Descartar abdomen quirurgico (irritacion peritoneal, distension). Examenes: estudio microbiologico (panel molecular/film array GI preferido sobre coprocultivo) en deshidratacion severa, fiebre alta, diarrea sanguinolenta, inmunosupresion, ATB recientes, >65 anos. Hemograma, funcion renal, electrolitos, hemocultivos si sepsis. Tratamiento: rehidratacion oral (SRO) en deshidratacion leve; SF 0.9% o Ringer lactato IV en moderada-severa. Antiemesis: ondansetron 8 mg (oral/sublingual/IV; precaucion QT largo) o domperidona 10 mg. Antidiarreicos: loperamida 4 mg carga + 2 mg por episodio (max 16 mg/48 h); contraindicada en disenteria. Alternativa: racecadotrilo (menor constipacion post-diarreica). Probioticos: seguros, reducen duracion en 25 h. Antibioticos empiricos: NO de rutina; indicar en sepsis/deshidratacion severa. Tratamiento especifico: Shigella (ciprofloxacino 500 mg c/12h x 3 dias o azitromicina 500 mg/dia x 3 dias), Campylobacter (azitromicina 500 mg/dia x 3 dias), Giardia (metronidazol 250 mg c/8h x 5 dias), C. difficile leve-moderado (metronidazol 500 mg c/8h x 10-14 dias), C. difficile grave (vancomicina 125 mg c/6h VO x 10 dias). Notificacion obligatoria: brotes ETA, V. parahaemolyticus, colera. (Fuente: MUE Andes, Infecciones gastrointestinales -- Unidad 4.)
