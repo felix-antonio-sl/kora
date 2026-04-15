@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-escala
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- operad
+- double-category
+- systems-of-systems
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-escala
+---
+
 # Escala
 
 ## El problema de componer a lo grande
@@ -21,7 +45,7 @@ La diferencia con una categoria es que en una categoria, la composicion es binar
 
 ```
 cluster(namespace_1(svc_a(pod_x, pod_y), svc_b(pod_z)),
-        namespace_2(svc_c(pod_w)))
+ namespace_2(svc_c(pod_w)))
 ```
 
 Cada nivel de anidamiento es una operacion operadica. El cluster es una operacion de aridad 2 (dos namespaces). Cada namespace es una operacion de aridad variable (servicios). Cada servicio es una operacion sobre pods. La composicion total produce un unico sistema.
@@ -36,9 +60,9 @@ Esto es exactamente el patron de un pipeline de CI/CD modelado correctamente:
 
 ```
 pipeline(
-  build(checkout, compile, test_unit),
-  validate(lint, security_scan, test_integration),
-  deploy(provision, rollout, healthcheck)
+ build(checkout, compile, test_unit),
+ validate(lint, security_scan, test_integration),
+ deploy(provision, rollout, healthcheck)
 )
 ```
 
@@ -106,11 +130,11 @@ En el ejemplo del Battery Electric Vehicle que Engel detalla, la categoria base 
 Lo que la estructura categorica revela es que las especializaciones (BatteryElectricVehicle, BatteryPowerSystem, ElectricalEnergy) estan conectadas por isomorfismos y composiciones que derivan automaticamente:
 
 ```
-BEV  --is-->  Vehicle  --has-->  PowerSystem  --uses-->  Energy
-                                      |                     |
-                                    canBe                 canBe
-                                      |                     |
-                              BatteryPowerSystem  --uses--> ElectricalEnergy
+BEV --is--> Vehicle --has--> PowerSystem --uses--> Energy
+ | |
+ canBe canBe
+ | |
+ BatteryPowerSystem --uses--> ElectricalEnergy
 ```
 
 La composicion *is;has;uses;canBe* se simplifica a *uses''* : BEV -> ElectricalEnergy. Y las design rules de la Expert Knowledge Base -- "todo PowerSystem debe tener Lifespan >= 15 anos y OpHrs >= 12000" -- se propagan automaticamente a BatteryPowerSystem por la functorialidad del mapeo de EKB a EM.
@@ -132,10 +156,10 @@ Este es un principio general que aplico constantemente: las propiedades no se su
 Kovalyov cierra el circulo con una aplicacion que conecta directamente con las construcciones universales del documento 05. En la manufactura model-based, un producto ensamblado de partes P y S con un pegamento G es literalmente un pushout:
 
 ```
-    P <--f-- G --g--> S
-    |                  |
-    v                  v
-    R = pushout(f, g)
+ P <--f-- G --g--> S
+ | |
+ v v
+ R = pushout(f, g)
 ```
 
 El modelo del producto R es el colimite del diagrama. La propiedad universal dice: R es el modelo mas pequeno que contiene tanto P como S y respeta las relaciones de ensamblaje definidas por G. Si el pushout no existe -- si las piezas no encajan -- no hay modelo consistente del producto ensamblado.

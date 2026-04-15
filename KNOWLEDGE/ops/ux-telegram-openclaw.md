@@ -1,16 +1,40 @@
 ---
 _manifest:
-  urn: "urn:ops:kb:ux-telegram-openclaw"
+  urn: urn:ops:kb:ux-telegram-openclaw
   provenance:
-    created_by: "ops/clawstack + kora/curator"
-    created_at: "2026-03-23"
-    source: "Pruebas empiricas con 3 bots Telegram OpenClaw v2026.3.22 + documentacion oficial"
-    updated_at: "2026-03-23"
-version: "1.1.0"
+    created_by: ops/clawstack + kora/curator
+    created_at: '2026-03-23'
+    source: Pruebas empiricas con 3 bots Telegram OpenClaw v2026.3.22 + documentacion
+      oficial
+    updated_at: '2026-03-23'
+version: 1.1.0
 status: published
-tags: [telegram, ux, configuracion, openclaw, streaming, tablas, chunking, modelo, browser, compaction, memoria]
+tags:
+- telegram
+- ux
+- configuracion
+- openclaw
+- streaming
+- tablas
+- chunking
+- modelo
+- browser
+- compaction
+- memoria
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:ops:kb:ux-telegram-openclaw
+relations:
+  cites:
+  - urn:ops:kb:arquitectura-stack-kora
+  - urn:ops:kb:deploy-agente-kora-en-openclaw
+  - urn:ops:kb:federacion-kora-v2
+  - urn:ops:kb:principios-transmutacion-kora-openclaw
 ---
+
 
 # Configuración de comportamiento de agentes OpenClaw
 
@@ -22,15 +46,15 @@ Configuraciones verificadas empíricamente para OpenClaw v2026.3.22+: canal Tele
 
 ```json5
 channels: {
-  telegram: {
-    chunkMode: "length",
-    markdown: { tables: "bullets" },
-    replyToMode: "first",
-    silentErrorReplies: true,
-    textChunkLimit: 4000,
-    linkPreview: false,
-    reactionLevel: "minimal",
-  },
+ telegram: {
+ chunkMode: "length",
+ markdown: { tables: "bullets" },
+ replyToMode: "first",
+ silentErrorReplies: true,
+ textChunkLimit: 4000,
+ linkPreview: false,
+ reactionLevel: "minimal",
+ },
 }
 ```
 
@@ -132,10 +156,10 @@ Genera warning en logs: `tools.allow contains unknown entries (group:memory)`. N
 
 ```json5
 session: {
-  maintenance: {
-    pruneAfter: "30d",
-    maxEntries: 500,
-  },
+ maintenance: {
+ pruneAfter: "30d",
+ maxEntries: 500,
+ },
 }
 ```
 
@@ -161,9 +185,9 @@ Formato: `{ primary: "provider/model" }`. NO string directo (`model: "anthropic/
 
 ```json5
 models: {
-  "anthropic/claude-opus-4-6": {
-    params: { cacheRetention: "long" },
-  },
+ "anthropic/claude-opus-4-6": {
+ params: { cacheRetention: "long" },
+ },
 },
 ```
 
@@ -183,9 +207,9 @@ models: {
 
 ```json5
 browser: {
-  headless: true,
-  noSandbox: true,
-  defaultProfile: "openclaw",
+ headless: true,
+ noSandbox: true,
+ defaultProfile: "openclaw",
 },
 ```
 
@@ -205,16 +229,16 @@ Compaction reduce el contexto cuando la sesión crece cerca del límite de la ve
 
 ```json5
 agents: {
-  defaults: {
-    compaction: {
-      mode: "default",
-      reserveTokensFloor: 24000,
-      memoryFlush: {
-        enabled: true,
-        softThresholdTokens: 6000,
-      },
-    },
-  },
+ defaults: {
+ compaction: {
+ mode: "default",
+ reserveTokensFloor: 24000,
+ memoryFlush: {
+ enabled: true,
+ softThresholdTokens: 6000,
+ },
+ },
+ },
 },
 ```
 
@@ -235,8 +259,8 @@ Especialmente importante para agentes con sesiones largas (steipete coordinando 
 
 ```json5
 memorySearch: {
-  enabled: true,
-  provider: "gemini",
+ enabled: true,
+ provider: "gemini",
 },
 ```
 
@@ -251,15 +275,15 @@ Requiere `GEMINI_API_KEY` en `.env` cuando `provider: "gemini"`.
 
 ```json5
 memorySearch: {
-  query: {
-    hybrid: {
-      enabled: true,
-      vectorWeight: 0.7,
-      textWeight: 0.3,
-      mmr: { enabled: true, lambda: 0.7 },
-      // temporalDecay: REMOVIDO en 2026.3.x — no usar, campo inválido
-    },
-  },
+ query: {
+ hybrid: {
+ enabled: true,
+ vectorWeight: 0.7,
+ textWeight: 0.3,
+ mmr: { enabled: true, lambda: 0.7 },
+ // temporalDecay: REMOVIDO en 2026.3.x — no usar, campo inválido
+ },
+ },
 },
 ```
 
@@ -273,55 +297,55 @@ Base para cualquier nuevo agente OpenClaw sobre Telegram:
 
 ```json5
 {
-  agents: {
-    defaults: {
-      model: { primary: "anthropic/claude-opus-4-6" },
-      models: {
-        "anthropic/claude-opus-4-6": {
-          params: { cacheRetention: "long" },
-        },
-      },
-      memorySearch: { enabled: true, provider: "gemini" },
-      thinkingDefault: "adaptive",
-    },
-    list: [
-      {
-        id: "{agent-id}",
-        default: true,
-        identity: { name: "{Name}", emoji: "{emoji}", theme: "{theme}" },
-      },
-    ],
-  },
-  browser: { headless: true, noSandbox: true },
-  session: {
-    scope: "per-sender",
-    reset: { mode: "idle", idleMinutes: 120 },
-  },
-  hooks: { enabled: true, token: "{hooks-token}" },
-  gateway: {
-    mode: "local",
-    port: "{port}",
-    bind: "lan",
-    controlUi: { enabled: true, basePath: "/openclaw" },
-    auth: { mode: "token" },
-  },
-  channels: {
-    telegram: {
-      enabled: true,
-      dmPolicy: "allowlist",
-      allowFrom: ["{telegram-user-id}"],
-      groupPolicy: "disabled",
-      streaming: "partial",
-      chunkMode: "length",
-      markdown: { tables: "bullets" },
-      replyToMode: "first",
-      silentErrorReplies: true,
-      ackReaction: "{emoji}",
-      reactionLevel: "minimal",
-      linkPreview: false,
-      textChunkLimit: 4000,
-    },
-  },
+ agents: {
+ defaults: {
+ model: { primary: "anthropic/claude-opus-4-6" },
+ models: {
+ "anthropic/claude-opus-4-6": {
+ params: { cacheRetention: "long" },
+ },
+ },
+ memorySearch: { enabled: true, provider: "gemini" },
+ thinkingDefault: "adaptive",
+ },
+ list: [
+ {
+ id: "{agent-id}",
+ default: true,
+ identity: { name: "{Name}", emoji: "{emoji}", theme: "{theme}" },
+ },
+ ],
+ },
+ browser: { headless: true, noSandbox: true },
+ session: {
+ scope: "per-sender",
+ reset: { mode: "idle", idleMinutes: 120 },
+ },
+ hooks: { enabled: true, token: "{hooks-token}" },
+ gateway: {
+ mode: "local",
+ port: "{port}",
+ bind: "lan",
+ controlUi: { enabled: true, basePath: "/openclaw" },
+ auth: { mode: "token" },
+ },
+ channels: {
+ telegram: {
+ enabled: true,
+ dmPolicy: "allowlist",
+ allowFrom: ["{telegram-user-id}"],
+ groupPolicy: "disabled",
+ streaming: "partial",
+ chunkMode: "length",
+ markdown: { tables: "bullets" },
+ replyToMode: "first",
+ silentErrorReplies: true,
+ ackReaction: "{emoji}",
+ reactionLevel: "minimal",
+ linkPreview: false,
+ textChunkLimit: 4000,
+ },
+ },
 }
 ```
 

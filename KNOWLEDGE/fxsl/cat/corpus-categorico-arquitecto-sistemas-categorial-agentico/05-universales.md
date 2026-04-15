@@ -1,3 +1,29 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-universales
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- limite
+- colimite
+- pullback
+- pushout
+- construccion-universal
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-universales
+---
+
 # Construcciones universales
 
 ## La mejor respuesta posible
@@ -14,11 +40,11 @@ El patrón más simple posible es un solo objeto, sin estructura adicional. ¿Cu
 
 El **objeto inicial** es aquel que tiene exactamente un morfismo hacia cada objeto de la categoría. En Set, es el conjunto vacío: existe exactamente una función del vacío a cualquier conjunto (la función `absurd`). En Haskell, corresponde al tipo `Void`.
 
-El **objeto terminal** es el dual: tiene exactamente un morfismo desde cada objeto hacia él. En Set, es cualquier singleton. En Haskell, es el tipo `()`:
+El **objeto terminal** es el dual: tiene exactamente un morfismo desde cada objeto hacia él. En Set, es cualquier singleton. En Haskell, es el tipo ``:
 
 ```haskell
-unit :: a -> ()
-unit _ = ()
+unit :: a -> 
+unit _ = 
 ```
 
 En la práctica, un objeto terminal se parece a un endpoint que todo servicio puede alcanzar de una sola manera. Un health-check `/ready` que siempre devuelve 200 da una buena intuición de ese papel en una categoría de endpoints, aunque no conviene identificarlo literalmente sin fijar muy bien la categoría.
@@ -38,8 +64,8 @@ En TypeScript, un producto es una interfaz con todos los campos:
 
 ```typescript
 interface UserProfile {
-  name: string;      // proyección 1
-  email: string;     // proyección 2
+ name: string; // proyección 1
+ email: string; // proyección 2
 }
 ```
 
@@ -51,7 +77,7 @@ En Haskell:
 data Either a b = Left a | Right b
 
 factorizer :: (a -> c) -> (b -> c) -> Either a b -> c
-factorizer i j (Left a)  = i a
+factorizer i j (Left a) = i a
 factorizer i j (Right b) = j b
 ```
 
@@ -59,8 +85,8 @@ En TypeScript, un coproducto es un discriminated union:
 
 ```typescript
 type Response =
-  | { kind: "success"; data: Payload }
-  | { kind: "error"; message: string };
+ | { kind: "success"; data: Payload }
+ | { kind: "error"; message: string };
 ```
 
 En GraphQL, es un union type: `union SearchResult = User | Post | Comment`.

@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-extension
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- kan-extension
+- grothendieck
+- fibracion
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-extension
+---
+
 # Extension
 
 ## El calculo integral de la teoria de categorias
@@ -58,8 +82,8 @@ Dualmente, la left Kan extension Lan_K D es un funtor F : A -> C junto con una t
 
 Las formulas pointwise, cuando C tiene powers y copowers indexados por conjuntos (en particular cuando C = Set), se escriben en terminos de ends y coends como:
 
-Ran_K D (a) = integral_i D(i)^(A(a, K i))       -- right Kan extension
-Lan_K D (a) = integral^i A(K i, a) · D(i)       -- left Kan extension
+Ran_K D (a) = integral_i D(i)^(A(a, K i)) -- right Kan extension
+Lan_K D (a) = integral^i A(K i, a) · D(i) -- left Kan extension
 
 Aqui `X^S` denota el power de `X` por el conjunto `S`, y `S · X` el copower correspondiente. Si trabajo en `Set`, estas formulas se reducen a las versiones mas familiares `Set(A(a, K i), D(i))` y `A(K i, a) × D(i)`. La right Kan extension evalua D en todos los puntos de I conectados a a, pesando por los morfismos de a a K i. Es un "promedio ponderado" universal. La left Kan extension hace lo mismo pero con coproductos -- es una "coleccion" universal.
 

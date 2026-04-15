@@ -15,7 +15,19 @@ tags:
 - coalgebras
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:schema-evolution
+relations:
+  cites:
+  - urn:fxsl:kb:coalgebras
+  - urn:fxsl:kb:constraint-logic
+  - urn:fxsl:kb:cql-data-integration
+  - urn:fxsl:kb:seven-sketches
 ---
+
 
 # Schema Evolution and Behavioral Audit
 
@@ -44,8 +56,8 @@ Example: F(v1.0.0) = S₁ with {Employee, Department}; F(v1.1.0) = S₂ with {Em
 
 ```
 Inst(S₁) --Σ_F--> Inst(S₂)
-    |                   |
-    v                   v
+ | |
+ v v
  v1.0.0 --upgrade--> v1.1.0
 ```
 

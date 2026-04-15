@@ -14,7 +14,27 @@ tags:
 - knowledge
 - legal
 lang: es
+relations:
+  cites:
+  - urn:legal:kb:acoso-laboral
+  - urn:legal:kb:confianza-legitima
+  - urn:legal:kb:contratacion-publica
+  - urn:legal:kb:deberes-prohibiciones
+  - urn:legal:kb:derechos-especiales
+  - urn:legal:kb:feriados-permisos
+  - urn:legal:kb:formacion-especialistas
+  - urn:legal:kb:ingreso-carrera
+  - urn:legal:kb:intro-estatutos
+  - urn:legal:kb:jornada-calificaciones
+  - urn:legal:kb:ley-15076
+  - urn:legal:kb:ley-19664
+  - urn:legal:kb:ley-21643
+  - urn:legal:kb:maternidad
+  - urn:legal:kb:remuneraciones
+  - urn:legal:kb:responsabilidad-admin
+  - urn:legal:kb:terminacion
 ---
+
 
 # Índice Global - Legislación Trabajo Médico Chile
 

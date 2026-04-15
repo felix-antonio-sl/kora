@@ -14,7 +14,19 @@ tags:
 - sys
 - hub
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:hub-agentes
+relations:
+  cites:
+  - urn:kora:kb:workflow-wikiguias
+  - urn:tde:kb:decreto-7-norma-seguridad-informacion
+  - urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025
+  - urn:tde:kb:guia-tecnica-marco-gestion-datos
 ---
+
 
 # Hub de Agentes TDE
 
@@ -67,7 +79,7 @@ Métricas TDE_AUDITOR_KB:
 
 ## Gestión de Archivos y Catálogos (ID: TDE_HUB_AGENTES_FS_001)
 
-- Árbol YAML: `knowledge/core` y `knowledge/domains`.
+- Árbol YAML: ` y `
 - Req: Modificaciones solo mediante herramientas controladas; nunca escritura directa sin registro.
 - Req: Actualizar `_manifest.provenance` y `Metadata_Original` cuando cambien fuentes o URNs.
 - Req: TDE_INDEXADOR actualiza índices y catálogos ante altas/bajas/modificaciones.

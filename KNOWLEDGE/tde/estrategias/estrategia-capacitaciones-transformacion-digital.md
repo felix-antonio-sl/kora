@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:estrategia-capacitaciones-transformacion-digital"
-  provenance: "https://wikiguias.digital.gob.cl/Estrategias/estrategia-de-capacitaciones"
+  urn: urn:tde:kb:estrategia-capacitaciones-transformacion-digital
+  provenance: https://wikiguias.digital.gob.cl/Estrategias/estrategia-de-capacitaciones
 version: 1.0.0
 status: published
-tags: [tde, estrategia, transformación digital, capacitaciones, talento digital, gobierno digital]
+tags:
+- tde
+- estrategia
+- transformación digital
+- capacitaciones
+- talento digital
+- gobierno digital
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:estrategia-capacitaciones-transformacion-digital
 ---
 
 # Estrategia de Capacitaciones para la Transformación Digital del Estado
@@ -67,13 +78,13 @@ Impulsar la transformación digital del Estado para generar valor público a tra
 
 1. **Lineamientos teóricos y metodológicos:** definir un marco conceptual y metodológico para el programa de formación, coherente con la Ley de Transformación Digital y la Estrategia de Gobierno Digital.
 2. **Segmentación de perfiles y trayectorias formativas:** clasificar funcionarios según roles, competencias y necesidades; diseñar rutas de aprendizaje diferenciadas mediante una malla de formación. Perfiles iniciales considerados:
-   1. Cargos directivos y de jefaturas
-   2. Coordinador/a de transformación digital de cada institución
-   3. Encargado/a y equipo de seguridad de la información y ciberseguridad
-   4. Encargado/a y equipo de tecnologías de la información y comunicaciones
-   5. Encargado/a y equipo de la Oficina de partes
-   6. Encargado/a y equipo de asuntos legales
-   7. Encargado/a y equipo de gestión documental
+ 1. Cargos directivos y de jefaturas
+ 2. Coordinador/a de transformación digital de cada institución
+ 3. Encargado/a y equipo de seguridad de la información y ciberseguridad
+ 4. Encargado/a y equipo de tecnologías de la información y comunicaciones
+ 5. Encargado/a y equipo de la Oficina de partes
+ 6. Encargado/a y equipo de asuntos legales
+ 7. Encargado/a y equipo de gestión documental
 3. **Fortalecimiento de la cultura institucional y gestión del cambio:** promover cultura de aprendizaje continuo y reducir la resistencia al cambio.
 4. **Desarrollo y optimización de canales de capacitación:** estrategia multicanal — plataformas digitales, instancias presenciales y metodologías innovadoras — que garantice acceso equitativo.
 

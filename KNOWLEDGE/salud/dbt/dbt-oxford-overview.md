@@ -1,18 +1,38 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-overview"
+  urn: urn:salud:kb:dbt-oxford-overview
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
 status: draft
-tags: [dbt, dialectical-behaviour-therapy, clinical-psychology, handbook, oxford, overview, corpus-index]
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- clinical-psychology
+- handbook
+- oxford
+- overview
+- corpus-index
 lang: en
 extensions:
   kora:
     family: reference
+relations:
+  cites:
+  - urn:salud:kb:dbt-oxford-adaptations-a
+  - urn:salud:kb:dbt-oxford-adaptations-b
+  - urn:salud:kb:dbt-oxford-clinical-a
+  - urn:salud:kb:dbt-oxford-clinical-b
+  - urn:salud:kb:dbt-oxford-evidence
+  - urn:salud:kb:dbt-oxford-implementation
+  - urn:salud:kb:dbt-oxford-introduction
+  - urn:salud:kb:dbt-oxford-structure
+  - urn:salud:kb:dbt-oxford-theoretical
+  - urn:salud:kb:dbt-oxford-training
 ---
+
 
 # The Oxford Handbook of Dialectical Behaviour Therapy — Overview
 

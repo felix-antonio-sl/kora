@@ -13,6 +13,11 @@ tags:
 - '00'
 - toc
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:00-toc
 ---
 
 # Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
@@ -21,8 +26,7 @@ lang: es
 
 - ───
 
-
-### Parte I — Fundamentos Arquitectónicos
+## Parte I — Fundamentos Arquitectónicos
 
 1. Arquitectura del Gateway
 
@@ -78,8 +82,7 @@ lang: es
 
 - ───
 
-
-### Parte II — Multi-Agente
+## Parte II — Multi-Agente
 
 6. Multi-Agent Routing
 
@@ -110,8 +113,7 @@ lang: es
 
 - ───
 
-
-### Parte III — Orquestación de Sub-Agentes
+## Parte III — Orquestación de Sub-Agentes
 
 9. Sub-Agentes (sessions_spawn)
 
@@ -142,8 +144,7 @@ lang: es
 
 - ───
 
-
-### Parte IV — Automatización
+## Parte IV — Automatización
 
 12. Heartbeats
 
@@ -209,8 +210,7 @@ lang: es
 
 - ───
 
-
-### Parte V — Seguridad y Operaciones
+## Parte V — Seguridad y Operaciones
 
 18. Modelo de Seguridad
 
@@ -233,8 +233,7 @@ lang: es
 
 - ───
 
-
-### Parte VI — Patrones de Diseño y Decisiones Arquitectónicas
+## Parte VI — Patrones de Diseño y Decisiones Arquitectónicas
 
 20. Patrones de Diseño para Agentes OpenClaw
 
@@ -259,8 +258,7 @@ lang: es
 
 - ───
 
-
-### Parte VII — Arquitectura Avanzada
+## Parte VII — Arquitectura Avanzada
 
 - **22.
 - Multi-Gateway Dockerizado:
@@ -278,7 +276,7 @@ lang: es
 - 22.10 Operaciones: startup/shutdown, health checks, monitoring, backup, rolling updates
 - 22.11 Scaling: de 3 a N gateways, límites prácticos de recursos
 
-### Apéndices
+## Apéndices
 
 - A.
 - Referencia rápida de configuración (campos clave con ejemplos mínimos) B.

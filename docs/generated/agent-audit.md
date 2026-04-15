@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-04-14
+- Fecha: 2026-04-15
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 5
 - Reglas aun no institucionalizadas: 5
@@ -82,7 +82,7 @@ Hallazgos repetidos:
 
 ## Cohorte domains
 
-- Workspaces auditados: 18
+- Workspaces auditados: 19
 - `validate --profile strict` verde: si
 - Hallazgos manuales: 66
 - P1: 65 | P2: 1 | P3: 0
@@ -146,7 +146,7 @@ Hallazgos repetidos:
 
 ### Subgrupo salud
 
-- Workspaces: 3
+- Workspaces: 4
 - Hallazgos: 8
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |

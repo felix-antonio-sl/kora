@@ -1,17 +1,25 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:hodom-norma-tecnica-2024"
+  urn: urn:salud:kb:hodom-norma-tecnica-2024
   provenance:
-    created_by: "Codex"
-    created_at: "2026-03-13"
-    source: "source/pro/hodom/normativa-hodom/NORMA-TECNICA-DECRETO-EXENTO-N°-31-SRA-2024.md"
-version: "1.0.1"
+    created_by: Codex
+    created_at: '2026-03-13'
+    source: source/pro/hodom/normativa-hodom/NORMA-TECNICA-DECRETO-EXENTO-N°-31-SRA-2024.md
+version: 1.0.1
 status: published
-tags: [hodom, norma-técnica, minsal, hospitalización-domiciliaria, requisitos]
+tags:
+- hodom
+- norma-técnica
+- minsal
+- hospitalización-domiciliaria
+- requisitos
 lang: es
 extensions:
   kora:
     family: normative
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:hodom-norma-tecnica-2024
 ---
 
 # Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria
@@ -20,23 +28,23 @@ extensions:
 
 - La norma técnica se dicta conforme al art. `18` del `DS N° 1/2022`, Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria.
 - Finalidad:
-  - fijar directrices y requisitos mínimos para servicios o unidades de prestadores públicos y privados que presten hospitalización domiciliaria a pacientes agudos o crónicos reagudizados
-  - asegurar tratamiento, cuidados y seguimiento seguros y de calidad
+ - fijar directrices y requisitos mínimos para servicios o unidades de prestadores públicos y privados que presten hospitalización domiciliaria a pacientes agudos o crónicos reagudizados
+ - asegurar tratamiento, cuidados y seguimiento seguros y de calidad
 - Obligación transversal:
-  - los servicios o unidades de hospitalización domiciliaria deben garantizar continuidad de la atención cumpliendo normativa vigente y asegurando atención segura y de calidad
+ - los servicios o unidades de hospitalización domiciliaria deben garantizar continuidad de la atención cumpliendo normativa vigente y asegurando atención segura y de calidad
 - Ámbito de aplicación:
-  - regula a unidades o servicios de establecimientos de salud o prestadores en convenio, públicos y privados, que otorguen hospitalización domiciliaria a pacientes agudos o crónicos reagudizados
-  - materias reguladas:
-    - personal
-    - infraestructura
-    - equipamiento
-    - registros
-    - procedimientos técnicos
-    - protocolos u otros
-    - requisitos y condiciones de traslado del equipamiento médico y del personal desde y hacia el domicilio
-    - medidas de seguridad correspondientes
+ - regula a unidades o servicios de establecimientos de salud o prestadores en convenio, públicos y privados, que otorguen hospitalización domiciliaria a pacientes agudos o crónicos reagudizados
+ - materias reguladas:
+ - personal
+ - infraestructura
+ - equipamiento
+ - registros
+ - procedimientos técnicos
+ - protocolos u otros
+ - requisitos y condiciones de traslado del equipamiento médico y del personal desde y hacia el domicilio
+ - medidas de seguridad correspondientes
 - Convenios permitidos:
-  - los prestadores públicos y privados pueden celebrar convenios con terceros, incluidas instituciones de salud previsional u organismos administradores de la `Ley N° 16.744`, para garantizar continuidad de las atenciones en el domicilio según el seguro de salud
+ - los prestadores públicos y privados pueden celebrar convenios con terceros, incluidas instituciones de salud previsional u organismos administradores de la `Ley N° 16.744`, para garantizar continuidad de las atenciones en el domicilio según el seguro de salud
 
 ## Definiciones y marco legal citado
 
@@ -69,19 +77,19 @@ extensions:
 ## Habilitación del personal y requisitos por cargo
 
 - Regla transversal:
-  - todo funcionario o trabajador, profesional, técnico o auxiliar de la salud, debe estar habilitado para el ejercicio profesional en Chile conforme a normativa vigente
-  - los auxiliares deben contar con certificación de `SEREMI` según `DS N° 90/2017`
+ - todo funcionario o trabajador, profesional, técnico o auxiliar de la salud, debe estar habilitado para el ejercicio profesional en Chile conforme a normativa vigente
+ - los auxiliares deben contar con certificación de `SEREMI` según `DS N° 90/2017`
 - Especialidades exigidas:
-  - si se declaran prestaciones de HD pediátricas o psiquiátricas, debe existir médico cirujano con la especialidad correspondiente o con experiencia demostrable de al menos `2` años en esos servicios
+ - si se declaran prestaciones de HD pediátricas o psiquiátricas, debe existir médico cirujano con la especialidad correspondiente o con experiencia demostrable de al menos `2` años en esos servicios
 - Dirección Técnica:
-  - médico cirujano
-  - formación de postítulo o postgrado en gestión en salud
-  - curso de prevención de `IAAS`
-  - permanencia mínima: `22` horas semanales
+ - médico cirujano
+ - formación de postítulo o postgrado en gestión en salud
+ - curso de prevención de `IAAS`
+ - permanencia mínima: `22` horas semanales
 - Coordinación:
-  - profesional de la salud, preferentemente enfermera/o
-  - formación en gestión en salud
-  - la fuente presenta conflicto entre exigencia de `IAAS` de `80` horas en el texto general y `RCP` de `3` horas en la tabla resumida
+ - profesional de la salud, preferentemente enfermera/o
+ - formación en gestión en salud
+ - la fuente presenta conflicto entre exigencia de `IAAS` de `80` horas en el texto general y `RCP` de `3` horas en la tabla resumida
 
 ### Requisitos resumidos por cargo
 
@@ -98,91 +106,91 @@ extensions:
 ### Inconsistencia interna de la fuente sobre Coordinación
 
 - La fuente no es internamente consistente:
-  - en el texto general exige que Coordinación cuente con formación en gestión en salud, curso de `IAAS` de al menos `80` horas y perfil profesional preferente de enfermera/o
-  - en la tabla resumida por cargo asigna a Coordinación `RCP` de `3` horas
+ - en el texto general exige que Coordinación cuente con formación en gestión en salud, curso de `IAAS` de al menos `80` horas y perfil profesional preferente de enfermera/o
+ - en la tabla resumida por cargo asigna a Coordinación `RCP` de `3` horas
 - Estado de la inconsistencia:
-  - no resuelta en la fuente
-  - debe tratarse como tensión normativa hasta verificar texto oficial o fe de erratas
+ - no resuelta en la fuente
+ - debe tratarse como tensión normativa hasta verificar texto oficial o fe de erratas
 
 ### Inducción y certificación
 
 - El personal profesional y técnico que realiza atención clínica debe contar con:
-  - curso de soporte vital básico
-  - curso `IAAS`
-  - certificación de uso de desfibrilador
+ - curso de soporte vital básico
+ - curso `IAAS`
+ - certificación de uso de desfibrilador
 - Al ingreso:
-  - inducción obligatoria de al menos `44` horas
-  - carácter teórico-práctico
-  - registro obligatorio en hoja de vida
+ - inducción obligatoria de al menos `44` horas
+ - carácter teórico-práctico
+ - registro obligatorio en hoja de vida
 
 ## Infraestructura, equipamiento y abastecimiento
 
 ### Infraestructura mínima
 
 - Toda unidad o servicio de HD debe contar con:
-  - dependencias administrativas con:
-    - sistema de comunicación telefónica o radial permanente
-    - sistema de grabación o registro manual de llamadas para trazabilidad, con fecha, hora, emisor, receptor y derivación
-    - soporte informático e internet
-    - respaldo de energía eléctrica autorizado o plan de contingencia
-    - sector seguro para resguardo de fichas clínicas y protocolos
-  - dependencia para residuos destinada a disposición transitoria, si corresponde
-  - dependencia específica para servicios de aseo
-  - bodegas para almacenamiento de insumos con control de temperatura según especificaciones del fabricante
-  - farmacia o botiquín autorizado, o convenios que aseguren abastecimiento y cadena de frío en domicilio
+ - dependencias administrativas con:
+ - sistema de comunicación telefónica o radial permanente
+ - sistema de grabación o registro manual de llamadas para trazabilidad, con fecha, hora, emisor, receptor y derivación
+ - soporte informático e internet
+ - respaldo de energía eléctrica autorizado o plan de contingencia
+ - sector seguro para resguardo de fichas clínicas y protocolos
+ - dependencia para residuos destinada a disposición transitoria, si corresponde
+ - dependencia específica para servicios de aseo
+ - bodegas para almacenamiento de insumos con control de temperatura según especificaciones del fabricante
+ - farmacia o botiquín autorizado, o convenios que aseguren abastecimiento y cadena de frío en domicilio
 
 ### Equipamiento y dispositivos de uso médico
 
 - Equipamiento mínimo obligatorio:
-  - equipos para monitorizar signos vitales:
-    - presión arterial
-    - frecuencia cardíaca
-    - frecuencia respiratoria
-    - saturación de oxígeno
-  - instrumentos adicionales según cartera de prestaciones ofrecida
-  - vehículos de transporte con acceso a estacionamiento o lugar de detención transitoria
+ - equipos para monitorizar signos vitales:
+ - presión arterial
+ - frecuencia cardíaca
+ - frecuencia respiratoria
+ - saturación de oxígeno
+ - instrumentos adicionales según cartera de prestaciones ofrecida
+ - vehículos de transporte con acceso a estacionamiento o lugar de detención transitoria
 
 ## Registros, protocolos y plan de capacitación anual
 
 ### Registros obligatorios
 
 - **Ficha clínica**
-  - puede ser física o electrónica
-  - debe cumplir `DS N° 41` sobre fichas clínicas
+ - puede ser física o electrónica
+ - debe cumplir `DS N° 41` sobre fichas clínicas
 - **Consentimiento informado**
-  - documento firmado
-  - acredita entrega de la carta de Derechos y Deberes
+ - documento firmado
+ - acredita entrega de la carta de Derechos y Deberes
 - **Resumen clínico en domicilio**
-  - debe contener diagnósticos, tratamientos y cuidados
-  - sirve para consulta en emergencias por equipos externos
+ - debe contener diagnósticos, tratamientos y cuidados
+ - sirve para consulta en emergencias por equipos externos
 
 ### Protocolos y manuales obligatorios
 
 - Documentos que deben mantenerse actualizados y aprobados por Dirección Técnica:
-  - **Manual de Organización Interna**
-    - organigrama
-    - roles
-    - horarios
-    - reglamento de higiene
-  - **Protocolos clínicos**
-    - evaluación e ingreso de pacientes
-    - programación de rutas y visitas domiciliarias
-    - categorización y egreso de pacientes, incluidas altas y fallecidos
-    - gestión de recetas, interconsultas y evolución en ficha
-    - actuación ante emergencias y agresiones al equipo de salud
-  - **Manual de procedimientos**
-    - manejo de vías venosas periféricas y centrales
-    - catéteres urinarios
-    - traqueostomías
-    - toma de muestras
-    - precauciones de aislamiento
-  - **Manejo de residuos**
-    - procedimiento ajustado al `DS N° 6/2009` para retiro y eliminación de residuos especiales
-  - **Plan de Capacitación Anual (PAC)**
-    - `IAAS`
-    - `RCP` básica
-    - inducción
-    - cursos de humanización del cuidado
+ - **Manual de Organización Interna**
+ - organigrama
+ - roles
+ - horarios
+ - reglamento de higiene
+ - **Protocolos clínicos**
+ - evaluación e ingreso de pacientes
+ - programación de rutas y visitas domiciliarias
+ - categorización y egreso de pacientes, incluidas altas y fallecidos
+ - gestión de recetas, interconsultas y evolución en ficha
+ - actuación ante emergencias y agresiones al equipo de salud
+ - **Manual de procedimientos**
+ - manejo de vías venosas periféricas y centrales
+ - catéteres urinarios
+ - traqueostomías
+ - toma de muestras
+ - precauciones de aislamiento
+ - **Manejo de residuos**
+ - procedimiento ajustado al `DS N° 6/2009` para retiro y eliminación de residuos especiales
+ - **Plan de Capacitación Anual (PAC)**
+ - `IAAS`
+ - `RCP` básica
+ - inducción
+ - cursos de humanización del cuidado
 
 ## Bibliografía citada por la norma
 

@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ley-presupuestos-2026-glosas-gore"
+  urn: urn:gn:kb:ley-presupuestos-2026-glosas-gore
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: kb_gn_211_ley_presupuestos_2026_glosas_gores_2026_koda.yml
+version: 1.0.0
 status: published
-tags: [presupuesto, ley-presupuestos-2026, glosas, gobiernos-regionales, requerimientos-informacion]
+tags:
+- presupuesto
+- ley-presupuestos-2026
+- glosas
+- gobiernos-regionales
+- requerimientos-informacion
 lang: es
 extensions:
   gn:
     family: normative
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ley-presupuestos-2026-glosas-gore
 ---
 
 # Ley de Presupuestos 2026 — Glosas Gobiernos Regionales
@@ -34,9 +43,7 @@ Unidad: Miles de $
 | 24 | Transferencias Corrientes | 128.872.343 |
 | 33 | Transferencias de Capital | 1.771.175.160 |
 
-## Glosas Generales
-
-### Glosa 01 — Aplicable a Funcionamiento Regional
+## Glosa 01 — Aplicable a Funcionamiento Regional
 
 **Subtítulo 21 — Gasto en Personal:**
 
@@ -52,7 +59,7 @@ Unidad: Miles de $
 - Los cometidos al extranjero de consejeros regionales no podrán superar el **10%** del gasto del Subtítulo 24, debiendo incorporarse en las glosas de la resolución de distribución inicial.
 - La dotación de vehículos del GORE podrá utilizarse en el traslado de consejeros regionales en cumplimiento de funciones encomendadas por el Consejo Regional.
 
-### Glosa 02 — Tabla de Distribución de Inversión Regional
+## Glosa 02 — Tabla de Distribución de Inversión Regional
 
 Unidad: Miles de $
 
@@ -76,18 +83,18 @@ Unidad: Miles de $
 | Ñuble | 41.562.476 | 18.790.488 | 6.353.223 | 12.829.611 | 3.091.230 | 881.003 | 0 | 299.326 | 0 | 682.846 | 0 | 1.262.128 | **85.752.331** |
 | **Total** | **726.681.770** | **333.727.188** | **190.192.191** | **227.859.438** | **54.901.571** | **17.827.479** | **11.690.896** | **64.223.530** | **254.274** | **23.430.569** | **6.143.429** | **33.623.892** | **1.690.556.227** |
 
-### Glosa 03 — Restricciones de Financiamiento
+## Glosa 03 — Restricciones de Financiamiento
 
 Prohibiciones:
 - Los recursos de inversión regional no pueden financiar préstamos, gastos en personal, ni bienes y servicios de consumo de las entidades receptoras.
 - No pueden destinarse a constituir, efectuar aportes o comprar sociedades o empresas.
 
-### Glosa 04 — Traspaso de Recursos
+## Glosa 04 — Traspaso de Recursos
 
 - Se pueden traspasar recursos desde cualquier Subtítulo e Ítem del presupuesto de inversión a los Subtítulos 24, 26, 29, 31, 32.06, 33 y 34.07.
 - Los GORE pueden realizar convenios de mandato con municipios (art. 16, Ley N°18.091) para financiar estudios del Subtítulo 22 ítem 11 (D. Hacienda N°854/2004).
 
-### Glosa 05 — Transferencias a Universidades
+## Glosa 05 — Transferencias a Universidades
 
 Las transferencias a universidades del art. 3° del D.F.L. N°2 (CRUCH) y adscritras según art. 6° Ley N°21.091:
 - Solo pueden ejecutarse para fines dentro del ámbito de competencia del establecimiento adjudicado.
@@ -95,7 +102,7 @@ Las transferencias a universidades del art. 3° del D.F.L. N°2 (CRUCH) y adscri
 - Deberán ser ejecutadas de manera íntegra por la propia universidad.
 - Pueden exceptuarse del mecanismo de concursabilidad.
 
-### Glosa 06 — Oferta Programática e Inversión Regional (Subtítulo 24)
+## Glosa 06 — Oferta Programática e Inversión Regional (Subtítulo 24)
 
 **Evaluación:** La oferta programática ejecutada directamente por los GORE está sujeta al Sistema de Evaluación y Monitoreo del Ministerio de Desarrollo Social y Familia y DIPRES.
 
@@ -152,7 +159,7 @@ Las transferencias a universidades del art. 3° del D.F.L. N°2 (CRUCH) y adscri
 
 *Asistencia Técnica:* Financiamiento de asistencia técnica a municipalidades para fortalecer cartera de proyectos.
 
-### Glosa 07 — Concurso Vinculación con la Comunidad 8%
+## Glosa 07 — Concurso Vinculación con la Comunidad 8%
 
 Los GORE pueden destinar hasta el **8%** del total del presupuesto de inversión regional para subvencionar:
 - a) Actividades deportivas y Programa Elige Vivir Sano
@@ -170,7 +177,7 @@ Los ejecutores pueden ser municipalidades, entidades públicas, instituciones pr
 
 Hasta el **10%** de los recursos del Concurso 8% puede asignarse mediante asignaciones directas para casos emblemáticos, excepcionales o emergentes, previo acuerdo del Consejo Regional, conforme a la Resolución N°72/08.01.2025 de DIPRES.
 
-### Glosa 08 — Información sobre Corporaciones
+## Glosa 08 — Información sobre Corporaciones
 
 Los GORE informarán a DIPRES y publicarán en la web de la corporación y del GORE, **a más tardar al término del primer trimestre:**
 - Nombre, misión, objetivos estratégicos y productos
@@ -190,7 +197,7 @@ Los GORE informarán a DIPRES y publicarán en la web de la corporación y del G
 - Mantener estados financieros publicados en su web y en la del GORE
 - Regirse por la Ley N°20.285 sobre acceso a la información pública
 
-### Glosa 09 — Subtítulo 29 (Activos No Financieros)
+## Glosa 09 — Subtítulo 29 (Activos No Financieros)
 
 Los GORE pueden:
 - Financiar la adquisición de activos no financieros de reposición al Gobierno Central y otras instituciones públicas
@@ -201,7 +208,7 @@ Los GORE pueden:
 
 Las compras para Fuerzas de Orden y Seguridad Pública requieren certificado de pertinencia del Ministerio de Seguridad Pública.
 
-### Glosa 10 — Subtítulo 31 (Iniciativas de Inversión)
+## Glosa 10 — Subtítulo 31 (Iniciativas de Inversión)
 
 La inversión pública se rige por el D.F.L. N°1-19.175. Adicionalmente se autorizan:
 
@@ -216,7 +223,7 @@ La inversión pública se rige por el D.F.L. N°1-19.175. Adicionalmente se auto
 
 La inversión está sujeta al Sistema Nacional de Inversiones. Las identificaciones presupuestarias de iniciativas contratadas en años anteriores no requieren nueva aprobación del Consejo Regional si los montos son iguales o menores al **10%** de los costos aprobados (reajustados). El personal a honorarios tendrá calidad de agente público.
 
-### Glosa 11 — Subtítulo 33 (Transferencias de Capital)
+## Glosa 11 — Subtítulo 33 (Transferencias de Capital)
 
 Las transferencias de capital se rigen por el D.F.L N°1-19.175. Iniciativas adicionales autorizadas:
 
@@ -263,7 +270,7 @@ Las entidades receptoras deben rendir cuenta al GORE y a la Contraloría General
 
 Las identificaciones presupuestarias de iniciativas contratadas en años anteriores no requieren nueva aprobación del Consejo Regional si los montos son iguales o menores al **10%** de los costos aprobados (reajustados). El personal a honorarios tendrá calidad de agente público.
 
-### Glosas 12 a 16
+## Glosas 12 a 16
 
 Las Glosas 12 (FRIL), 13 (FRPD), 14 (Emergencia), 15 (Cementerios Indígenas) y 16 (Requerimientos de Información) están contenidas en el texto completo de la Glosa 11 anterior para el Subtítulo 33, y en la sección de Requerimientos de Información que sigue.
 

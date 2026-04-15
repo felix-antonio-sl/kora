@@ -1,20 +1,33 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:guia-programas-directos-gore"
+  urn: urn:gn:kb:guia-programas-directos-gore
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "kb_gn_025_guia_programas_sts.md"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: kb_gn_025_guia_programas_sts.md
+version: 1.0.0
 status: published
-tags: [programas-ppr, gore-nuble, evaluacion-exante, marco-logico, glosa-06, fndr, dipres, ses]
+tags:
+- programas-ppr
+- gore-nuble
+- evaluacion-exante
+- marco-logico
+- glosa-06
+- fndr
+- dipres
+- ses
 lang: es
 extensions:
   gn:
     family: guide
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:gn:kb:guia-programas-directos-gore
 ---
 
 # Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución Directa GORE – Glosa 06
+
 
 ## Resumen
 
@@ -120,13 +133,11 @@ Un programa debe entrar a evaluación ex ante si cumple simultáneamente:
 | Coherencia interna | ¿La lógica del programa es sólida y articulada? | Cadena causal MML; estrategia y modelo de gestión claros; enfoques transversales. |
 | Consistencia | ¿La propuesta es operativamente viable y monitoreable? | Indicadores SMART; sistemas de información adecuados; presupuesto coherente con metas. |
 
-## Metodología de Marco Lógico (MML)
-
-### Diagnóstico
+## Diagnóstico
 
 **Principio crítico:** un diagnóstico robusto y basado en evidencia es la base del diseño de todo PPR. Un diagnóstico débil puede invalidar la propuesta aunque el problema sea real.
 
-#### Definición del Problema Público
+### Definición del Problema Público
 
 Situación negativa, concreta y verificable que afecta a una población regional definida y cuya solución corresponde al interés colectivo y al ámbito de competencias del GORE.
 
@@ -139,7 +150,7 @@ Situación negativa, concreta y verificable que afecta a una población regional
 
 Correcto: "Bajos niveles de empleabilidad juvenil en la comuna X." / Incorrecto: "Falta de programas para jóvenes."
 
-#### Árbol de Problemas
+### Árbol de Problemas
 
 - Identificar causas directas e indirectas preguntando "¿por qué ocurre este problema?".
 - Identificar efectos directos e indirectos preguntando "¿qué consecuencias genera este problema?".
@@ -147,7 +158,7 @@ Correcto: "Bajos niveles de empleabilidad juvenil en la comuna X." / Incorrecto:
 - Cada causa abordada debe ser atendida por al menos un componente.
 - Las causas deben respaldarse con datos o análisis técnico.
 
-#### Tipos de Población
+### Tipos de Población
 
 | Tipo | Definición |
 |---|---|
@@ -157,7 +168,7 @@ Correcto: "Bajos niveles de empleabilidad juvenil en la comuna X." / Incorrecto:
 
 **Errores comunes:** definir población objetivo que no es subconjunto de la potencial; no cuantificar con fuentes confiables; confundir criterios de focalización con descripción general.
 
-#### Justificación de la Intervención Regional
+### Justificación de la Intervención Regional
 
 - Atingencia con ERD y prioridades regionales (citar explícitamente ejes, lineamientos y objetivos).
 - Pertinencia regional: valor agregado del GORE (cubre brechas, adapta a especificidades territoriales, pilota innovación).
@@ -166,9 +177,7 @@ Correcto: "Bajos niveles de empleabilidad juvenil en la comuna X." / Incorrecto:
 
 Una baja alineación con la ERD y los planes regionales reduce la atingencia y la probabilidad de obtener RF.
 
-### Diseño: Lógica de Intervención
-
-#### Propósito
+## Diseño: Lógica de Intervención
 
 Cambio específico esperado en la población objetivo; debe ser la reversión positiva del problema central.
 
@@ -178,7 +187,7 @@ Estructura recomendada: `[Población objetivo] + [Verbo de cambio] + [Variable a
 - Orientado a la población objetivo, no a actividades internas del GORE.
 - Realista, alcanzable y medible.
 
-#### Componentes
+### Componentes
 
 Productos (bienes) o resultados directos (servicios) entregados a la población objetivo para alcanzar el propósito.
 
@@ -188,22 +197,22 @@ Productos (bienes) o resultados directos (servicios) entregados a la población 
 
 **Datos obligatorios por componente:** nombre; tipo de beneficio y beneficio específico según catálogos oficiales; causa del problema que atiende; descripción del bien/servicio; población destinataria; forma de producción/entrega; unidad de medida y producción estimada; gasto asociado.
 
-#### Estrategia de Intervención y Modelo de Gestión
+### Estrategia de Intervención y Modelo de Gestión
 
 - Articulación y secuencia de componentes (simultáneos, consecutivos, por cohortes).
 - Flujo del beneficiario: ingreso, ruta de atención, egreso.
 - Modalidad de ejecución principal: ejecución directa GORE (obligatoria para aplicación de Glosa 06).
 - Cuando la ejecución se transfiere a otra entidad pública, el régimen normativo y de evaluación cambia; se rige por la guía de transferencias PPR.
 
-#### Supuestos y Riesgos
+### Supuestos y Riesgos
 
 - Supuestos críticos: condiciones externas necesarias para que la cadena Actividades → Componentes → Propósito → Fin funcione.
 - Análisis de riesgos: identificar eventos inciertos con impacto negativo (externos, de gestión, de participación).
 - Estrategias de mitigación: medidas preventivas o correctivas integradas en el diseño y modelo de gestión.
 
-### Monitoreo, Indicadores y Presupuesto
+## Monitoreo, Indicadores y Presupuesto
 
-#### Indicadores de Desempeño
+### Indicadores de Desempeño
 
 Indicadores SMART (Específicos, Medibles, Alcanzables, Relevantes, Acotados en el tiempo).
 
@@ -213,23 +222,23 @@ Indicadores SMART (Específicos, Medibles, Alcanzables, Relevantes, Acotados en 
 
 **Datos requeridos por indicador:** nombre claro; fórmula y descripción de variables; unidad de medida y sentido (ascendente/descendente); medios de verificación y fuentes; línea base y metas cuantificables.
 
-#### Línea Base y Metas
+### Línea Base y Metas
 
 - Línea base: valor del indicador antes de la intervención.
 - Metas: valores esperados del indicador en puntos específicos del tiempo, fundamentados en comportamiento histórico, benchmarks y resultados de programas similares.
 
-#### Fuentes y Medios de Verificación
+### Fuentes y Medios de Verificación
 
 - Primarias: datos recolectados por el propio programa (listas de asistencia, registros de sistemas, encuestas, evaluaciones).
 - Secundarias: registros administrativos (RSH, bases sectoriales), estadísticas oficiales.
 
-#### Sistemas de Información
+### Sistemas de Información
 
 - Todo programa debe contar con un sistema de registro y monitoreo proporcional a su escala.
 - Funcionalidades: registro de beneficiarios y seguimiento de atenciones/beneficios; cálculo y seguimiento de indicadores; reportes para gestión interna y rendición de cuentas.
 - Cumplir Ley N°19.628 de Protección de Datos Personales.
 
-#### Presupuesto
+### Presupuesto
 
 **Principios:** integralidad, coherencia, eficiencia y transparencia.
 
@@ -239,7 +248,7 @@ Indicadores SMART (Específicos, Medibles, Alcanzables, Relevantes, Acotados en 
 
 **Metodología:** costos unitarios × cantidades (ej. valor hora relator × N° horas); respaldados con cotizaciones, precios de Mercado Público o convenios marco; clasificados según Clasificador Presupuestario (Subt. 21, 22, 24, 29, etc.).
 
-### Enfoques Transversales
+## Enfoques Transversales
 
 - Perspectiva de género: diagnóstico diferenciado por sexo/género; acciones afirmativas o transformadoras; indicadores desagregados.
 - Enfoque de Derechos Humanos: considerar particularidades de NNA, personas con discapacidad, pueblos indígenas, migrantes y otros grupos.
@@ -286,76 +295,3 @@ Documenta en detalle el diseño del programa para evaluación de fondo (Fase 2).
 **Advertencias:**
 - Indicadores de simple cobertura, planificación o satisfacción usuaria no son suficientes para medir logro del propósito.
 - Un diseño débil en diagnóstico, indicadores o presupuesto reduce significativamente las probabilidades de obtener RF.
-
-## Checklists y Herramientas
-
-### Checklist – Perfil
-
-- Nombre de la iniciativa claro y representativo.
-- Contraparte única designada con datos de contacto.
-- Modalidad de ejecución definida y coherente con Glosa 06 (ejecución directa GORE).
-- Competencia principal correctamente seleccionada.
-- Uso o no de FRPD claramente indicado.
-- Justificación de valor agregado y no duplicidad.
-- Problema definido como situación negativa, concreta y con población afectada.
-- Población descrita y cuantificada preliminarmente.
-- Resultado esperado como reversión positiva del problema, medible.
-- Componentes coherentes con problema y resultado.
-- Idea plausible de cómo se medirá el éxito.
-
-### Checklist – Diseño
-
-**Problema público central:** definido como situación negativa concreta y verificable; específico y no múltiple; no formulado como ausencia de solución; población afectada clara y respaldada por evidencia reciente.
-
-**Análisis causal y de efectos:** causas directas/indirectas relevantes e incidibles; efectos principales identificados.
-
-**Población y justificación:** potencial/objetivo/beneficiaria bien definidas y cuantificadas con fuentes; análisis de oferta existente y valor agregado del GORE.
-
-**Propósito y componentes:** propósito es reversión del problema, único, claro y medible; componentes son bienes/servicios principales y no tareas internas; cada componente vinculado a una causa relevante.
-
-**Estrategia, enfoques y riesgos:** estrategia de intervención y flujo del beneficiario descritos; enfoques transversales con medidas concretas; supuestos y riesgos críticos identificados con estrategias de mitigación.
-
-**Indicadores, sistemas y presupuesto:** indicadores de propósito y componente de calidad (SMART); medios de verificación y fuentes definidos; línea base y metas justificadas; sistema de información planificado; presupuesto completo, coherente y compatible con límites normativos (incluyendo tope a gastos administrativos).
-
-### Sistemas de Información Social (MDSF)
-
-| Sistema | Utilidad para PPR |
-|---|---|
-| RSH (Registro Social de Hogares) | Cuantificación y caracterización de población; focalización mediante Calificación Socioeconómica. Acceso vía SES y RIS. |
-| BPC (Base de Personas Cuidadoras) | Identificar y focalizar programas de cuidados y dependencia. |
-| SIVUST | Diagnóstico territorial; focalización y justificación de pertinencia regional. |
-| BIDAT, ADIS, Observatorio Social | Datos adicionales MDSF (CASEN, otros estudios). |
-
-### Catálogo de Beneficios (categorías ejemplo)
-
-- Apoyo psicosocial (N° sesiones, N° personas atendidas).
-- Monetario – bonos, subsidios, becas (N° beneficios, monto transferido).
-- Capacitaciones/cursos (N° personas certificadas, N° cursos ejecutados).
-- Servicios generales – alimentación, transporte, residencial (N° raciones, cupos).
-- Financiamiento de proyectos – fomento productivo, capital semilla (N° proyectos, monto).
-- Asesorías técnicas (N° personas/empresas asesoradas, horas de asistencia).
-- Materiales y campañas (material distribuido, alcance).
-
-### Contactos
-
-- DIPRES: www.dipres.gob.cl
-- SES/MDSF: www.desarrollosocialyfamilia.gob.cl
-- Correo evaluación ex ante GORE: evaluacionexantegore@desarrollosocial.gob.cl
-- Correo asistencia técnica: asistenciatecnicadps@desarrollosocial.gob.cl
-- BIPS: https://bips.ministeriodesarrollosocial.gob.cl
-- CGR: www.contraloria.cl (rendición de cuentas, dictámenes, SISREC)
-- SUBDERE: www.subdere.gov.cl
-- BCN/Ley Chile: www.bcn.cl/leychile
-
-## Recomendaciones para Formulación Exitosa
-
-- Invertir tiempo significativo en un diagnóstico robusto con evidencia suficiente.
-- Utilizar siempre los instrumentos oficiales específicos para PPR GORE y versiones vigentes.
-- Coordinar tempranamente con SES/DIPRES para resolver dudas metodológicas.
-- Usar checklists antes de enviar los formularios para minimizar observaciones.
-- Alinear el programa con la ERD y planes sectoriales regionales para fortalecer atingencia.
-
-**Advertencias:**
-- Un diagnóstico débil o sin evidencia invalida la propuesta, incluso si el problema es real.
-- El uso incorrecto de instrumentos del sistema central (no adaptados a GORE) puede llevar al rechazo.
-- Subestimar el tiempo requerido para ajustar observaciones retrasa la obtención de RF y el acceso a financiamiento.

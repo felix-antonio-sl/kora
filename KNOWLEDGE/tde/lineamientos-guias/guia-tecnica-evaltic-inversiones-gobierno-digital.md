@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital"
-  provenance: "https://wikiguias.digital.gob.cl/guias/guias/guia_evaltic"
+  urn: urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital
+  provenance: https://wikiguias.digital.gob.cl/guias/guias/guia_evaltic
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, evaltic, guia-tecnica, inversiones-tic, gobierno-digital]
+tags:
+- tde
+- lineamientos-guias
+- evaltic
+- guia-tecnica
+- inversiones-tic
+- gobierno-digital
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital
 ---
 
 # Guía Técnica: Marco para las Inversiones y el Gasto en Gobierno Digital (EVALTIC)
@@ -294,11 +305,11 @@ Las OAE con proyectos sujetos a monitoreo reciben un oficio de la Subsecretaría
 
 **Etapa 2: Seguimiento del avance**
 1. Completar periódicamente Acta de monitoreo ([Anexo 4](https://docs.google.com/document/d/1RsIxo_JRE-2UhUVvWFHUIdVrrmpVP7UX5TcF0QpNMrI/edit?tab=t.0)) con:
-   - Avances en planificación (hitos)
-   - Avances en ejecución de gastos (SIGFE y fuera de SIGFE)
-   - Cambios en alcance del proyecto
-   - Estado de mitigación de riesgos y nuevos riesgos
-   - Alineación con Ley N°21.180
+ - Avances en planificación (hitos)
+ - Avances en ejecución de gastos (SIGFE y fuera de SIGFE)
+ - Cambios en alcance del proyecto
+ - Estado de mitigación de riesgos y nuevos riesgos
+ - Alineación con Ley N°21.180
 2. Reuniones periódicas según lo acordado
 
 **Etapa 3: Cierre del proceso de monitoreo**

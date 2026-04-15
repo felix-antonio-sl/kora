@@ -15,6 +15,11 @@ tags:
 - satisfaction
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:constraint-logic
 ---
 
 # Unified Constraint Logic
@@ -45,10 +50,10 @@ Unified constraint language for all KB artifacts. Fragment of regular logic expr
 
 **Satisfaction procedure:**
 1. For each φ ∈ Σ:
-   a) If φ is path₁=path₂: verify I(path₁)=I(path₂).
-   b) If φ is ∃-formula: verify existence of required object.
-   c) If φ is ↪ (mono): verify injectivity of I(f).
-   d) If φ is ↠ (epi): verify surjectivity of I(f).
+ a) If φ is path₁=path₂: verify I(path₁)=I(path₂).
+ b) If φ is ∃-formula: verify existence of required object.
+ c) If φ is ↪ (mono): verify injectivity of I(f).
+ d) If φ is ↠ (epi): verify surjectivity of I(f).
 2. If all pass → I ⊨ T.
 3. If any fails → I ⊭ T, report violated formula.
 
@@ -115,12 +120,12 @@ Example: `FOREIGN KEY (dept_id) REFERENCES Department(id)` → WorksIn: Employee
 2. Extract target theory T_target = (T, Σ_T).
 3. Identify migration functor F: S → T.
 4. For each φ ∈ Σ_S:
-   a) Compute F(φ) (image of constraint).
-   b) Verify if F(φ) ∈ Σ_T or derivable from Σ_T.
-   c) If not → WARN: constraint may be lost.
+ a) Compute F(φ) (image of constraint).
+ b) Verify if F(φ) ∈ Σ_T or derivable from Σ_T.
+ c) If not → WARN: constraint may be lost.
 5. For each ψ ∈ Σ_T not coming from Σ_S:
-   a) Verify if migration can satisfy ψ.
-   b) If not → ERROR: migration violates target constraints.
+ a) Verify if migration can satisfy ψ.
+ b) If not → ERROR: migration violates target constraints.
 6. Generate preservation report.
 
 ## Theory Audit

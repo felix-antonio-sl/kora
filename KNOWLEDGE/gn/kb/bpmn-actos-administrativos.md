@@ -1,17 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:bpmn-actos-administrativos"
+  urn: urn:gn:kb:bpmn-actos-administrativos
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "BPMN D01 Tramitación Actos Administrativos GORE Ñuble, reconciliado con ssot-actos-admin v1.1.1"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: BPMN D01 Tramitación Actos Administrativos GORE Ñuble, reconciliado con
+      ssot-actos-admin v1.1.1
+version: 1.0.0
 status: published
-tags: [actos-administrativos, resoluciones, convenios, gore-nuble, tramitacion]
+tags:
+- actos-administrativos
+- resoluciones
+- convenios
+- gore-nuble
+- tramitacion
 lang: es
 extensions:
   gn:
     family: guide
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:bpmn-actos-administrativos
 ---
 
 # Tramitación de Actos Administrativos — GORE Ñuble
@@ -46,22 +56,22 @@ Umbral Toma de Razón CGR para GORE Ñuble: **2.500 UTM** (base legal: Res. 7/20
 
 ```mermaid
 flowchart LR
-    subgraph PROCESOS["Procesos de Actos Administrativos"]
-        P1["P1: Resoluciones<br/>y Decretos"]
-        P2["P2: Convenios y<br/>Transferencias"]
-    end
+ subgraph PROCESOS["Procesos de Actos Administrativos"]
+ P1["P1: Resoluciones; y Decretos"]
+ P2["P2: Convenios y; Transferencias"]
+ end
 
-    subgraph TRANSVERSAL["Elementos Transversales"]
-        T1["Expediente<br/>Electrónico"]
-        T2["Firma Electrónica<br/>Avanzada"]
-        T3["Toma de Razón<br/>(cuando aplica)"]
-    end
+ subgraph TRANSVERSAL["Elementos Transversales"]
+ T1["Expediente; Electrónico"]
+ T2["Firma Electrónica; Avanzada"]
+ T3["Toma de Razón; (cuando aplica)"]
+ end
 
-    P1 --> T1 & T2
-    P2 --> T1 & T2 & T3
+ P1 --> T1 & T2
+ P2 --> T1 & T2 & T3
 
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#4CAF50,color:#fff
+ style P1 fill:#2196F3,color:#fff
+ style P2 fill:#4CAF50,color:#fff
 ```
 
 ## Etapas de aprobación (8 canónicas)
@@ -85,63 +95,63 @@ Resoluciones Exentas (monto < 2.500 UTM): omiten etapa 7 (TdR); pasan directamen
 
 ```mermaid
 flowchart TD
-    subgraph FASE1["1. Elaboracion"]
-        A["Unidad competente:<br/>Elaborar borrador"]
-        B["Adjuntar antecedentes"]
-        C["Ingresar al SGD"]
-    end
+ subgraph FASE1["1. Elaboracion"]
+ A["Unidad competente:; Elaborar borrador"]
+ B["Adjuntar antecedentes"]
+ C["Ingresar al SGD"]
+ end
 
-    subgraph FASE2["2. VB Juridico"]
-        D["Asesoria Juridica<br/>recibe expediente"]
-        E["Verificar legalidad<br/>y forma"]
-        F{"OK?"}
-        G["VB Juridico"]
-        H["Observar"]
-    end
+ subgraph FASE2["2. VB Juridico"]
+ D["Asesoria Juridica; recibe expediente"]
+ E["Verificar legalidad; y forma"]
+ F{"OK?"}
+ G["VB Juridico"]
+ H["Observar"]
+ end
 
-    subgraph FASE3["3. VB Control"]
-        K["Unidad Control:<br/>Verificar procedencia"]
-        L{"Conforme?"}
-        M["VB Control"]
-        N["Reparar"]
-    end
+ subgraph FASE3["3. VB Control"]
+ K["Unidad Control:; Verificar procedencia"]
+ L{"Conforme?"}
+ M["VB Control"]
+ N["Reparar"]
+ end
 
-    subgraph FASE4["4. VB Jefatura Division"]
-        I["Jefe/a Division:<br/>Revisar y visar"]
-    end
+ subgraph FASE4["4. VB Jefatura Division"]
+ I["Jefe/a Division:; Revisar y visar"]
+ end
 
-    subgraph FASE5["5. VB Administrador/a"]
-        O["Administrador/a Regional:<br/>Revisar y visar"]
-    end
+ subgraph FASE5["5. VB Administrador/a"]
+ O["Administrador/a Regional:; Revisar y visar"]
+ end
 
-    subgraph FASE6["6. Firma"]
-        P["Gobernador/a:<br/>Firma con FEA"]
-    end
+ subgraph FASE6["6. Firma"]
+ P["Gobernador/a:; Firma con FEA"]
+ end
 
-    subgraph FASE7["7. Toma de Razon"]
-        P2{"Tipo acto"}
-        TDR["CGR: Toma de Razon"]
-        EX["Exenta: omitir TdR"]
-    end
+ subgraph FASE7["7. Toma de Razon"]
+ P2{"Tipo acto"}
+ TDR["CGR: Toma de Razon"]
+ EX["Exenta: omitir TdR"]
+ end
 
-    subgraph FASE8["8. Notificacion y Archivo"]
-        Q["Oficina Partes:<br/>Numerar y fechar"]
-        R["Notificar a<br/>interesados"]
-        S["Publicar si<br/>corresponde"]
-        T["Archivar expediente"]
-    end
+ subgraph FASE8["8. Notificacion y Archivo"]
+ Q["Oficina Partes:; Numerar y fechar"]
+ R["Notificar a; interesados"]
+ S["Publicar si; corresponde"]
+ T["Archivar expediente"]
+ end
 
-    A --> B --> C --> D --> E --> F
-    F -->|"Si"| G --> K --> L
-    F -->|"No"| H --> A
-    L -->|"Si"| M --> I --> O --> P --> P2
-    L -->|"No"| N --> A
-    P2 -->|"Afecta/Decreto"| TDR --> Q
-    P2 -->|"Exenta"| EX --> Q
-    Q --> R --> S --> T
+ A --> B --> C --> D --> E --> F
+ F -->|"Si"| G --> K --> L
+ F -->|"No"| H --> A
+ L -->|"Si"| M --> I --> O --> P --> P2
+ L -->|"No"| N --> A
+ P2 -->|"Afecta/Decreto"| TDR --> Q
+ P2 -->|"Exenta"| EX --> Q
+ Q --> R --> S --> T
 
-    style P fill:#4CAF50,color:#fff
-    style T fill:#607D8B,color:#fff
+ style P fill:#4CAF50,color:#fff
+ style T fill:#607D8B,color:#fff
 ```
 
 ## Convenios y Transferencias
@@ -152,14 +162,14 @@ Proceso para la tramitación de convenios y transferencias asociadas a actos adm
 
 ```mermaid
 flowchart TD
-    A["Area requirente<br/>propone convenio"] --> B["Elaborar borrador<br/>de convenio"]
-    B --> C["Revision Juridica"]
-    C --> D{"Ajustes?"}
-    D -->|"Si"| B
-    D -->|"No"| E["Resolucion que<br/>aprueba convenio"]
-    E --> F["Toma de Razon<br/>si corresponde"]
-    F --> G["Firma de partes"]
-    G --> H["Ejecucion y<br/>seguimiento"]
+ A["Area requirente; propone convenio"] --> B["Elaborar borrador; de convenio"]
+ B --> C["Revision Juridica"]
+ C --> D{"Ajustes?"}
+ D -->|"Si"| B
+ D -->|"No"| E["Resolucion que; aprueba convenio"]
+ E --> F["Toma de Razon; si corresponde"]
+ F --> G["Firma de partes"]
+ G --> H["Ejecucion y; seguimiento"]
 ```
 
 ### Contenido Mínimo del Convenio
@@ -181,37 +191,35 @@ Resolución aprobatoria del convenio se somete a TdR CGR cuando el monto supera 
 
 ```mermaid
 flowchart TD
-    A["Convenio<br/>firmado"] --> B{"Monto >= 2.500 UTM?"}
-    B -->|"Si"| C["Requiere<br/>Toma de Razon"]
-    B -->|"No"| D["Exento"]
-    C --> E["CGR revisa<br/>legalidad"]
-    E --> F{"Resultado"}
-    F -->|"Tomado Razon"| G["Acto vigente"]
-    F -->|"Observado"| H["Subsanar y<br/>reenviar"]
+ A["Convenio; firmado"] --> B{"Monto >= 2.500 UTM?"}
+ B -->|"Si"| C["Requiere; Toma de Razon"]
+ B -->|"No"| D["Exento"]
+ C --> E["CGR revisa; legalidad"]
+ E --> F{"Resultado"}
+ F -->|"Tomado Razon"| G["Acto vigente"]
+ F -->|"Observado"| H["Subsanar y; reenviar"]
 
-    style C fill:#f44336,color:#fff
-    style D fill:#4CAF50,color:#fff
-    style G fill:#4CAF50,color:#fff
+ style C fill:#f44336,color:#fff
+ style D fill:#4CAF50,color:#fff
+ style G fill:#4CAF50,color:#fff
 ```
 
 ## Expediente Electrónico
 
 Estructura del expediente electrónico conforme a Ley 21.180 de Transformación Digital del Estado.
 
-### Estructura
-
 ```mermaid
 flowchart TD
-    subgraph EXPEDIENTE["Expediente Electronico"]
-        A["Metadatos:<br/>- ID unico<br/>- Fecha creacion<br/>- Tipo acto"]
-        B["Documentos:<br/>- Borrador<br/>- Antecedentes<br/>- Visaciones"]
-        C["Firmas:<br/>- FEA funcionarios<br/>- FEA autoridad"]
-        D["Trazabilidad:<br/>- Log de acciones<br/>- Fechas/horas"]
-    end
+ subgraph EXPEDIENTE["Expediente Electronico"]
+ A["Metadatos:; - ID unico; - Fecha creacion; - Tipo acto"]
+ B["Documentos:; - Borrador; - Antecedentes; - Visaciones"]
+ C["Firmas:; - FEA funcionarios; - FEA autoridad"]
+ D["Trazabilidad:; - Log de acciones; - Fechas/horas"]
+ end
 
-    A --> B --> C --> D
+ A --> B --> C --> D
 
-    style C fill:#2196F3,color:#fff
+ style C fill:#2196F3,color:#fff
 ```
 
 ### Principios TDE Aplicables

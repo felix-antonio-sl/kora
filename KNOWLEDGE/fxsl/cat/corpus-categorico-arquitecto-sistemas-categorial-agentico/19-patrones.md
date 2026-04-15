@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-patrones
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- patron
+- construccion-universal
+- anti-patron
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-patrones
+---
+
 # Patrones
 
 ## La intuicion que ya tenia nombre
@@ -18,7 +42,7 @@ El patron Strategy se deja modelar con parametros y producto monoidal. Una famil
 
 El patron Decorator tiene una lectura monadica natural. Un Decorator envuelve un objeto, le agrega funcionalidad, y puede envolverse a su vez. La unit eta : A -> T(A) envuelve el objeto base. La multiplicacion mu : T(T(A)) -> T(A) aplana decoradores anidados -- un `BufferedStream(BufferedStream(file))` se simplifica a `BufferedStream(file)`. Las leyes de monada (asociatividad y unitalidad, documento 09) capturan bien por que ciertos decoradores componen limpiamente.
 
-El patron Composite es un algebra inicial -- un tipo recursivo. Un arbol de componentes donde cada nodo es un componente individual o un grupo de componentes es el punto fijo inicial del funtor F(X) = Leaf + Node(X, X). La propiedad de inicialidad garantiza que existe un unico morfismo (catamorfismo) desde el composite a cualquier otro algebra -- que es exactamente el fold que recorre el arbol evaluando cada nodo. Cada vez que implemento un `render()` recursivo sobre un arbol de componentes UI, estoy ejecutando el catamorfismo unico desde el algebra inicial.
+El patron Composite es un algebra inicial -- un tipo recursivo. Un arbol de componentes donde cada nodo es un componente individual o un grupo de componentes es el punto fijo inicial del funtor F(X) = Leaf + Node(X, X). La propiedad de inicialidad garantiza que existe un unico morfismo (catamorfismo) desde el composite a cualquier otro algebra -- que es exactamente el fold que recorre el arbol evaluando cada nodo. Cada vez que implemento un `render` recursivo sobre un arbol de componentes UI, estoy ejecutando el catamorfismo unico desde el algebra inicial.
 
 ## Patrones arquitectonicos categoricamente
 

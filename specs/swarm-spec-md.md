@@ -77,7 +77,7 @@ Todo golden path **DEBE** declarar:
 4. criterio de abort
 5. criterio de exito
 
-Traces to: formal/02 §6.1 (Sequential Composition)
+Traces to: formal/01 §6 (The Wiring Diagram W)
 
 ### 4.1 Reglas
 

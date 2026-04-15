@@ -5,14 +5,14 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "KORA categorical-foundations 00-07, formal restoration of governed extended skills, RFC 2119"
-version: "3.5.0"
+version: "4.0.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
 extensions: {}
 ---
 
-# KORA/Gobernanza v3.5.0
+# KORA/Gobernanza v4.0.0
 
 ## 1. Definicion
 
@@ -58,7 +58,7 @@ La ubicacion fisica de un artefacto **NO DEBE** alterar su capa de precedencia. 
 
 ## 4. Identidad
 
-KORA reconoce dos clases de artefacto.
+KORA reconoce tres clases de artefacto.
 
 ### 4.1 Artefactos conceptuales
 
@@ -68,26 +68,37 @@ KORA reconoce dos clases de artefacto.
 
 Estos artefactos describen conocimiento, reglas o referencias estables. Su URN identifica el concepto, no el snapshot.
 
-### 4.2 Artefactos ejecutables
+### 4.2 Artefactos ejecutables (legacy)
 
 - Regimen: `urn:{namespace}:{type}:{id}:{version}`
 - Tipos: `agent-bootstrap`, `skill`
 
-Estos artefactos participan en ejecucion, deployment o composicion operacional. Su URN identifica un snapshot ejecutable.
+Estos artefactos participan en ejecucion, deployment o composicion operacional. Su URN identifica un snapshot ejecutable. Este regimen aplica a los componentes bootstrap del formato legacy de 5 archivos y a Skills.
 
-### 4.3 Reglas
+### 4.3 Artefactos agente (Agentfile)
 
-1. Un componente bootstrap de agente **DEBE** usar `agent-bootstrap`.
-2. Un Skill, degenerado o extendido, **DEBE** usar `skill`.
-3. Un CM degenerado **ES** un Skill; **NO DEBE** usar identidad `agent-bootstrap`.
-4. Ninguna especificacion subordinada **PUEDE** definir un tercer regimen de identidad sin cambiar este documento.
+- Regimen: `urn:{namespace}:agent:{id}`
+- Version: en el campo raiz `version`
+- Tipo unico: `agent`
 
-### 4.4 Manifest kind
+Estos artefactos describen un agente completo en formato `AGENT.md` (agentfile-spec). Su URN identifica al agente conceptualmente; la version esta fuera del URN (igual que artefactos conceptuales). Un `AGENT.md` subsume los 5 componentes legacy (`agent-bootstrap`) en un archivo unico.
+
+Cuando un workspace tiene tanto `AGENT.md` como archivos legacy, `AGENT.md` es autoritativo.
+
+### 4.4 Reglas
+
+1. Un componente bootstrap de agente legacy **DEBE** usar `agent-bootstrap`.
+2. Un agente en formato Agentfile **DEBE** usar `agent`.
+3. Un Skill, degenerado o extendido, **DEBE** usar `skill`.
+4. Un CM degenerado **ES** un Skill; **NO DEBE** usar identidad `agent-bootstrap` ni `agent`.
+5. Ninguna especificacion subordinada **PUEDE** definir un cuarto regimen de identidad sin cambiar este documento.
+
+### 4.5 Manifest kind
 
 La identidad URN y `_manifest.type` son ortogonales.
 
-1. La URN gobierna el regimen identitario (`agent-bootstrap` o `skill`).
-2. `_manifest.type` gobierna el kind estructural del artefacto ejecutable.
+1. La URN gobierna el regimen identitario (`agent-bootstrap`, `agent` o `skill`).
+2. `_manifest.type` gobierna el kind estructural del artefacto ejecutable o agente.
 3. Para bootstraps de agente, los kinds permitidos son `bootstrap_agents`, `bootstrap_soul`, `bootstrap_user`, `bootstrap_tools`, `bootstrap_config`.
 4. Para todo Skill, degenerado (`skills/CM-*.md`) o extendido (`skills/CM-*/SKILL.md`), el kind permitido del entrypoint es `lazy_load_endofunctor`.
 5. Los directorios adjuntos `scripts/`, `references/` y `assets/` de un Skill extendido son fibras del mismo Skill y **NO** introducen kind ni identidad propios.
@@ -95,7 +106,7 @@ La identidad URN y `_manifest.type` son ortogonales.
 
 Traces to: formal/01 §5.2 (Substitutability) ; formal/05 §1.3 (Domain Disjointness)
 
-### 4.5 Migracion de identidad
+### 4.6 Migracion de identidad
 
 Cuando un artefacto cambia de namespace (e.g., `gnub` -> `gn`, `kora` -> `tde`), la operacion **DEBE** ejecutarse como migracion atomica:
 
@@ -187,7 +198,7 @@ Los checks `schema` y `lint` de las tablas de validacion de cada spec **DEBEN** 
 | Check                   | Criterio                                                      | Enforcement | Accion si falla                          |
 | ----------------------- | ------------------------------------------------------------- | ----------- | ---------------------------------------- |
 | Precedencia consistente | Ninguna spec subordinada contradice una capa superior         | manual      | Reescribir regla o actualizar gobernanza |
-| Identidad consistente   | Solo existen los dos regimenes de identidad definidos en §4   | lint        | Migrar URNs                              |
+| Identidad consistente   | Solo existen los tres regimenes de identidad definidos en §4  | lint        | Migrar URNs                              |
 | Kind de Skill consistente | Todo entrypoint de Skill usa `lazy_load_endofunctor` y las fibras adjuntas no crean kinds nuevos | lint/manual | Corregir entrypoint o bundle             |
 | Traces oficiales        | Toda linea `Traces to:` apunta a la Formal Layer oficial      | lint        | Corregir o degradar a `Rationale:`       |
 | Extensiones acotadas    | No hay metadata ad hoc fuera de `extensions.{namespace}`      | schema      | Reubicar extension                       |
@@ -258,5 +269,18 @@ Esta seccion se establece a partir de v3.4.0. Los breaking changes de major bump
 - Extensiones solo aditivas, nunca relajantes (§6).
 - Cinco niveles de enforcement con binding a toolchain (§7).
 - Protocolo de auditoria con severidades CRITICAL/HIGH/MEDIUM/LOW (§10).
+
+### Transicion v3 -> v4
+
+**Que cambio:**
+- §4 pasa de 2 a 3 regimenes de identidad: se agrega `agent` para AGENT.md (§4.3).
+- §4.4 (Reglas) renumerada a §4.4, §4.5 (Manifest kind) renumerada a §4.5, §4.6 (Migracion) renumerada a §4.6.
+
+**Que migrar:**
+- Los AGENT.md ya existentes usan `urn:{ns}:agent:{id}` — esta transicion formaliza lo que ya se estaba usando.
+- Ningun cambio operativo necesario; solo se registra el regimen que ya estaba activo.
+
+**Que se depreca:**
+- Nada. Los componentes legacy (`agent-bootstrap`) siguen validos para workspaces que no migren a AGENT.md.
 
 Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

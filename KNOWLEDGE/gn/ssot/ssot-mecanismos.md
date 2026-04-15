@@ -1,21 +1,41 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-mecanismos"
+  urn: urn:gn:kb:ssot-mecanismos
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl, GORE_OS/CLAUDE.md"
-version: "1.1.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl, GORE_OS/CLAUDE.md
+version: 1.1.1
 status: published
-tags: [ssot, mecanismos, tracks, fril, frpd, subv8, c33, ppr, sni, evaluacion]
+tags:
+- ssot
+- mecanismos
+- tracks
+- fril
+- frpd
+- subv8
+- c33
+- ppr
+- sni
+- evaluacion
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:gn:kb:ssot-mecanismos
+relations:
+  cites:
+  - urn:gn:kb:ssot-ipr-lifecycle
+  - urn:gn:kb:ssot-legal
 ---
 
+
 # SSOT — Reglas operativas por mecanismo de financiamiento
+
 
 ## Resumen
 
@@ -121,7 +141,7 @@ RS válido por 3 años presupuestarios consecutivos (año obtención + 2 siguien
 
 8 tipos: RIS-PROYINV, RIS-PROGINV, RIS-EDPUB, RIS-EB-PMDT, RIS-EMPUB, RIS-ARTCULT, RIS-DEPORTES, RIS-PATRIMONIO. Determinan documentación requerida según tipo de iniciativa.
 
-[impl: `_check_sni_proporcionalidad()` gate F1→F2. `_check_evaluation_type_match()` F2→F3. CLAUDE.md §Rule 38]
+[impl: `_check_sni_proporcionalidad` gate F1→F2. `_check_evaluation_type_match` F2→F3. CLAUDE.md §Rule 38]
 
 ## Track B — Circular 33
 
@@ -145,7 +165,7 @@ RS válido por 3 años presupuestarios consecutivos (año obtención + 2 siguien
 
 10 documentos × 5 categorías. Documentos: Oficio Conductor, Ficha IDI, Ficha C33 Anexo 1, TDR, EETT+Presupuesto, 3 Cotizaciones/Tasaciones, Decreto Emergencia, Evaluación Económica, Cert. Mal Estado, Cert. Conservación 30%.
 
-[impl: `_check_c33_conservation()` gate F1→F2 (informational). `categoria_c33` scheme. CLAUDE.md §Rule 42]
+[impl: `_check_c33_conservation` gate F1→F2 (informational). `categoria_c33` scheme. CLAUDE.md §Rule 42]
 
 ## Track C — FRIL
 
@@ -178,7 +198,7 @@ RS válido por 3 años presupuestarios consecutivos (año obtención + 2 siguien
 | ANF sin proyecto asociado | Solo complemento de obras |
 | Multiubicación sin objetivo común | Deben compartir objetivo y licitarse juntas |
 
-[impl: `_check_fril_max_per_comuna()` F0→F1. `_check_fril_fraccionamiento()` F1→F2 (±90d). `_check_fril_tender_deadline()` F3→F4. CLAUDE.md §Rule 38]
+[impl: `_check_fril_max_per_comuna` F0→F1. `_check_fril_fraccionamiento` F1→F2 (±90d). `_check_fril_tender_deadline` F3→F4. CLAUDE.md §Rule 38]
 
 ## Track D1 — Glosa 06 (Ejecución Directa PPR)
 
@@ -241,7 +261,7 @@ Admisibilidad Documental (DAE) → Pertinencia Estratégica (Comité) → Evalua
 - Rendición SISREC obligatoria
 - Prohibiciones: préstamos, instrumentos financieros, constituir sociedades
 
-[impl: Track Transfer en `core.financing_track`. `check_glosa07_transfer_limits()`. CLAUDE.md §Rule 38]
+[impl: Track Transfer en `core.financing_track`. `check_glosa07_transfer_limits`. CLAUDE.md §Rule 38]
 
 ## Track E1 — Subvención 8%
 
@@ -266,7 +286,7 @@ Oficio Conductor, RUT Institución, Cédula Rep. Legal, Directorio Vigente (<60 
 
 Inadmisibilidad inmediata si monto formulario ≠ carta ≠ presupuesto.
 
-[impl: `_check_pagare_notarial()` F2→F3. `_check_directorio_certificate()` F2→F3. `_check_morosos_sisrec()` F3→F4+F4→F5. `_check_ranking_persistence()` F2→F3. CLAUDE.md §Rule 38]
+[impl: `_check_pagare_notarial` F2→F3. `_check_directorio_certificate` F2→F3. `_check_morosos_sisrec` F3→F4+F4→F5. `_check_ranking_persistence` F2→F3. CLAUDE.md §Rule 38]
 
 ## Track E2 — FRPD (Royalty Minero)
 
@@ -328,27 +348,3 @@ Lógica simplificada de routing:
 7. FRPD: routing especial post-selección (ver bifurcación arriba)
 
 [impl: `GET /api/admin/financing-tracks/routing?ipr_id=X`. CLAUDE.md §Rule 45]
-
-## Restricciones operativas cruzadas
-
-| Mecanismo | Restricción | Consecuencia |
-|-----------|------------|--------------|
-| FRIL | Fraccionamiento prohibido | Rechazo postulación |
-| FRIL | Plazo licitación 90 días | Caducidad asignación |
-| Glosa 06 | Admin GORE max 5% | Rechazo DIPRES |
-| Transfer | Honorarios max 5% | Ajuste o rechazo |
-| Subv8 | Rendiciones pendientes | Inhabilidad total (bloqueo) |
-| C33 | Cofinanciamiento ANF 20% ([ver legal](urn:gn:kb:ssot-legal)) | Requisito habilitante |
-| FRPD | Garantía >1.000 UTM | 5% total + 90d post-término |
-
-## Catálogo unificado de mecanismos
-
-| Track | Costo típico | Ejecutor | Plazo ejecución |
-|-------|-------------|----------|----------------|
-| A — SNI | >15K UTM | GORE/Terceros | 12-36 meses |
-| B — C33 | Variable | GORE | Variable |
-| C — FRIL | <4.545 UTM | Municipalidad | 12-18 meses |
-| D1 — Glosa 06 | Variable | GORE (directo) | 8-12 meses |
-| D2 — Transfer | <$15M típico | Entidad pública | 8-12 meses |
-| E1 — Subv8 | <$8M | OSC/Municipio | 8-9 meses |
-| E2 — FRPD | Variable | Inst. habilitada | ≤30 meses |

@@ -15,14 +15,21 @@ tags:
 - adjunctions
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:seven-sketches
+relations:
+  cites:
+  - urn:fxsl:kb:algebraic-databases
 ---
+
 
 # Functorial Data Model (FDM)
 
-## Source
-
 Authors: Brendan Fong, David I. Spivak — *Seven Sketches in Compositionality*, Ch. 3.
-Src: `sources/cat/7sk_bbdd.md`
+Src: `
 
 ## What Is a Database
 

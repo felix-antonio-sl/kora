@@ -15,13 +15,21 @@ tags:
 - coupled-models
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:mathematical-modelling
+relations:
+  cites:
+  - urn:fxsl:kb:mbse-consistency
+  - urn:fxsl:kb:seven-sketches
 ---
+
 
 # Mathematical Modelling via Category Theory
 
-## Source
-
-Src: `sources/cat/Mathematical modelling by help of cate.md`
+Src: ` modelling by help of cate.md`
 XRef: `urn:fxsl:kb:mbse-consistency#MBSE-INJECTION-POSET`, `urn:fxsl:kb:seven-sketches#FDM-FUNCTOR-CATEGORY`
 
 Notes: Model Poset = instance of injection order in MBSE; category of models analogous to instance category [C, Set] of FDM; model coupling uses products/coproducts as limits/colimits.

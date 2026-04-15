@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Barbosa (Coalgebra for Working SE), Spivak (Categorical Systems Theory), KORA agent-spec-md v6.0.0"
+    source: Barbosa (Coalgebra for Working SE), Spivak (Categorical Systems Theory),
+      KORA agent-spec-md v6.0.0
 version: 1.0.0
 status: published
 tags:
@@ -14,6 +15,14 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:cat-agent-coalgebra
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
 ---
 
 # The Agent as F-Coalgebra
@@ -91,7 +100,7 @@ U = U_phen × U_ctx × U_epi × U_sta
 **Theorem (Fiber Independence).** Let π_i: U → U_i be the projection onto fiber i. For any morphism f: U_phen → U_phen that modifies the phenomenological fiber, the transition morphism c satisfies:
 
 ```
-π_c(f(u)) = π_c(u)    for all projections π onto non-phenomenological fibers
+π_c(f(u)) = π_c(u) for all projections π onto non-phenomenological fibers
 ```
 
 *Meaning:* Changing the personality does not change the behavior (transition logic). Two agents that differ only in U_phen are bisimilar.
@@ -103,8 +112,8 @@ U = U_phen × U_ctx × U_epi × U_sta
 **Theorem (Dissipation).** When an agent A instantiates a sub-agent A' via adjunction, the fibers dissipate asymmetrically:
 
 ```
-Sub-agent state: U' = U_c × U_F    (inherits control + interface)
-                     without U_phen × U_ctx    (personality + operator context dissipated)
+Sub-agent state: U' = U_c × U_F (inherits control + interface)
+ without U_phen × U_ctx (personality + operator context dissipated)
 ```
 
 *Proof sketch:* The left adjoint L: Agent → Sub-Agent applies Forget to the non-essential fibers. The right adjoint R: Sub-Agent → Agent reconstructs with default fibers. The counit ε: L(R(A')) → A' is the identity on the control/interface components.
@@ -121,8 +130,8 @@ The transition morphism c: U → F(U) factors through **S**:
 
 ```
 c = eval ∘ classify
-    classify: U → Ob(S)        (determine current state from U)
-    eval: Ob(S) × In → M(Out × U)    (evaluate transition in current state)
+ classify: U → Ob(S) (determine current state from U)
+ eval: Ob(S) × In → M(Out × U) (evaluate transition in current state)
 ```
 
 ### 3.2 Determinism in M
@@ -135,8 +144,8 @@ c = eval ∘ classify
 
 ```
 c(u)(i) = verify(output) >>= λ o.
-           if valid(o) then return (o, u_final)
-           else c(u_corrected)(i)    -- retry with corrected state
+ if valid(o) then return (o, u_final)
+ else c(u_corrected)(i) -- retry with corrected state
 ```
 
 where >>= is Kleisli bind in M and verify is a predicate on outputs.

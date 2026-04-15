@@ -21,12 +21,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 4
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices
 ---
 
 # Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII
-
 
 ## ¿Cómo se puede obtener el número de Rol de una propiedad a través de Internet ?
 

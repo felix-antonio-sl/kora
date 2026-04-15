@@ -1,16 +1,31 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:agentfile-spec"
+  urn: urn:kora:kb:agentfile-spec
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-14"
-    source: "KORA categorical-foundations 01, 02, 04, 05, 07; agent-spec-md v8.9.0; skill-spec-md v4.3.0; agentskills.io spec; polymath analysis"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-14'
+    source: KORA categorical-foundations 01, 02, 04, 05, 07; agent-spec-md v8.9.0;
+      skill-spec-md v4.3.0; agentskills.io spec; polymath analysis
+version: 1.0.0
 status: published
-tags: [spec, agente, agentfile, coalgebra, transmutacion]
+tags:
+- spec
+- agente
+- agentfile
+- coalgebra
+- transmutacion
 lang: es
+relations:
+  depends:
+  - urn:kora:kb:agent-spec-md
+  - urn:kora:kb:skill-spec-md
+  - urn:kora:kb:gobernanza
+  cites:
+  - urn:kora:kb:md-spec
+  - urn:kora:kb:spec-md
 extensions: {}
 ---
+
 
 # KORA/Agentfile-Spec v1.0.0
 

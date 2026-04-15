@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Mac Lane (CWM, Ch. IV Adjunctions), Awodey (Category Theory, Ch. 10 Monads), KORA skill-spec-md v1.0.0"
+    source: Mac Lane (CWM, Ch. IV Adjunctions), Awodey (Category Theory, Ch. 10 Monads),
+      KORA skill-spec-md v1.0.0
 version: 1.0.0
 status: published
 tags:
@@ -15,9 +16,19 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:kora:kb:cat-skill-algebra
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-agent-coalgebra"
 ---
 
 # Skills as Free Algebra: The Adjunction Free ⊣ Forget
+
 
 ## Purpose
 
@@ -60,11 +71,11 @@ Each section is a structured text block. The 4-tuple is ordered and complete.
 Skill = (CMCore, Scripts, References, Assets, Metadata)
 
 where:
-  CMCore     = (Purpose, IO, Procedure, SignatureOutput)    — mandatory
-  Scripts    ∈ P(File)                                       — optional (powerset of files)
-  References ∈ P(File)                                       — optional
-  Assets     ∈ P(File)                                       — optional
-  Metadata   = (name, description, version, allowed-tools, requires)  — extended frontmatter
+ CMCore = (Purpose, IO, Procedure, SignatureOutput) — mandatory
+ Scripts ∈ P(File) — optional (powerset of files)
+ References ∈ P(File) — optional
+ Assets ∈ P(File) — optional
+ Metadata = (name, description, version, allowed-tools, requires) — extended frontmatter
 ```
 
 **Morphisms:** Skill transformations σ: Skill₁ → Skill₂ that:
@@ -88,8 +99,8 @@ where:
 
 ```
 Forget(Skill) = Forget(CMCore, Scripts, References, Assets, Metadata)
-              = CMCore
-              = (Purpose, IO, Procedure, SignatureOutput)
+ = CMCore
+ = (Purpose, IO, Procedure, SignatureOutput)
 ```
 
 On morphisms: Forget(σ) = σ|_{CMCore} (restrict the skill transformation to the CM Core component).
@@ -105,14 +116,14 @@ On morphisms: Forget(σ) = σ|_{CMCore} (restrict the skill transformation to th
 
 ```
 Free(CM) = Free(Purpose, IO, Procedure, SignatureOutput)
-         = (CM, ∅, ∅, ∅, Metadata_default)
+ = (CM, ∅, ∅, ∅, Metadata_default)
 
 where:
-  CMCore     = CM                           — preserved exactly
-  Scripts    = ∅                            — empty directory
-  References = ∅                            — empty directory
-  Assets     = ∅                            — empty directory
-  Metadata   = derived from CM frontmatter  — minimal metadata
+ CMCore = CM — preserved exactly
+ Scripts = ∅ — empty directory
+ References = ∅ — empty directory
+ Assets = ∅ — empty directory
+ Metadata = derived from CM frontmatter — minimal metadata
 ```
 
 On morphisms: Free(τ) applies τ to the CMCore and identity to the empty directories.
@@ -128,9 +139,9 @@ On morphisms: Free(τ) applies τ to the CMCore and identity to the empty direct
 
 ```
 η_CM: CM → Forget(Free(CM))
-     = CM → Forget(CM, ∅, ∅, ∅, Metadata_default)
-     = CM → CM
-     = id_CM
+ = CM → Forget(CM, ∅, ∅, ∅, Metadata_default)
+ = CM → CM
+ = id_CM
 ```
 
 **Theorem (η is isomorphism).** For every CM, η_CM is the identity — hence an isomorphism.
@@ -147,8 +158,8 @@ On morphisms: Free(τ) applies τ to the CMCore and identity to the empty direct
 
 ```
 ε_Skill: Free(Forget(Skill)) → Skill
-       = Free(CMCore) → (CMCore, Scripts, References, Assets, Metadata)
-       = (CMCore, ∅, ∅, ∅, Metadata_default) → (CMCore, Scripts, References, Assets, Metadata)
+ = Free(CMCore) → (CMCore, Scripts, References, Assets, Metadata)
+ = (CMCore, ∅, ∅, ∅, Metadata_default) → (CMCore, Scripts, References, Assets, Metadata)
 ```
 
 ε maps the free skill (with empty directories) to the original skill by:
@@ -162,7 +173,7 @@ On morphisms: Free(τ) applies τ to the CMCore and identity to the empty direct
 
 ```
 ε is surjective: im(ε) = Skill
-ε is NOT iso:    ker(ε) = {Scripts, References, Assets} ≠ ∅ (in general)
+ε is NOT iso: ker(ε) = {Scripts, References, Assets} ≠ ∅ (in general)
 ```
 
 *Meaning:* Taking a Skill, forgetting its scripts/assets (Forget), and then re-wrapping it (Free) produces a Skill that is a "stripped" version of the original. **The scripts are lost in the round-trip.** This is the fundamental asymmetry: CMs are losslessly embeddable in Skills, but Skills lose their executable content when projected down to CMs.
@@ -175,7 +186,7 @@ On morphisms: Free(τ) applies τ to the CMCore and identity to the empty direct
 
 ```
 Forget(Skill) --η--> Forget(Free(Forget(Skill))) --Forget(ε)--> Forget(Skill)
-     CM       --id-->          CM                  --id-->          CM
+ CM --id--> CM --id--> CM
 ```
 
 Both are identity because η is identity on CMs and Forget(ε) is identity on CMCore.
@@ -184,7 +195,7 @@ Both are identity because η is identity on CMs and Forget(ε) is identity on CM
 
 ```
 Free(CM) --Free(η)--> Free(Forget(Free(CM))) --ε--> Free(CM)
-(CM,∅,∅,∅) --id-->    (CM,∅,∅,∅)            --id--> (CM,∅,∅,∅)
+(CM,∅,∅,∅) --id--> (CM,∅,∅,∅) --id--> (CM,∅,∅,∅)
 ```
 
 Both are identity because Free(η) = Free(id) = id and ε on a free skill is identity (nothing to lose).
@@ -208,9 +219,9 @@ The progressive disclosure lifecycle maps directly to categorical operations:
 **Definition (Progressive Disclosure Functor).** PD is not a single functor but a sequence of projections with increasing information:
 
 ```
-PD₁ = π_meta ∘ Forget:  Skill_Cat → Set         (discover: just metadata)
-PD₂ = Forget:           Skill_Cat → CM_Cat       (activate: CM Core)
-PD₃ = Id:               Skill_Cat → Skill_Cat    (execute: everything)
+PD₁ = π_meta ∘ Forget: Skill_Cat → Set (discover: just metadata)
+PD₂ = Forget: Skill_Cat → CM_Cat (activate: CM Core)
+PD₃ = Id: Skill_Cat → Skill_Cat (execute: everything)
 ```
 
 with natural transformations:
@@ -263,7 +274,7 @@ where Scripts ∪ References ∪ Assets ≠ ∅
 **Theorem (Extension is Information Gain).** For any extended Skill s:
 
 ```
-Free(Forget(s)) ≠ s    (strict inequality — information is lost)
+Free(Forget(s)) ≠ s (strict inequality — information is lost)
 ```
 
 The difference d(s) = s \ Free(Forget(s)) = (Scripts, References, Assets) is the **executable content** that the adjunction cannot recover.
@@ -280,7 +291,7 @@ Promote(CM, ∅, ∅, ∅, M_min) = (CM, Scripts_new, Refs_new, Assets_new, M_fu
 **Theorem.** Promotion preserves the CM Core:
 
 ```
-Forget(Promote(s)) = Forget(s)    for all degenerate Skills s
+Forget(Promote(s)) = Forget(s) for all degenerate Skills s
 ```
 
 *Meaning:* You can add scripts/assets to a Skill without changing its cognitive content. The CM Core is invariant under promotion.
@@ -292,19 +303,19 @@ Forget(Promote(s)) = Forget(s)    for all degenerate Skills s
 **Connection to 01-agent-coalgebra.** A CM is an endofunctor on the state space U:
 
 ```
-CM: U → U    (transforms the agent's state)
+CM: U → U (transforms the agent's state)
 ```
 
 A Skill extends this with executable side-effects:
 
 ```
-Skill: U → M(U)    (transforms the agent's state with effects)
+Skill: U → M(U) (transforms the agent's state with effects)
 ```
 
 The Forget functor projects Skill back to the pure CM:
 
 ```
-Forget(Skill): U → U    (the pure cognitive transformation, without scripts)
+Forget(Skill): U → U (the pure cognitive transformation, without scripts)
 ```
 
 ### 5.2 Lazy Evaluation = Forget + Inject
@@ -336,39 +347,3 @@ requires(s) ⊆ capabilities(M)
 ```
 
 The dependencies a Skill declares must be satisfiable by the agent's monad. If M = strict sandbox with no Bash access, a Skill requiring Bash is incompatible.
-
-## 6. The Algebra of Skill Composition
-
-### 6.1 Sequential Composition
-
-**Definition.** Given Skills s₁: U → M(U) and s₂: U → M(U), their sequential composition is Kleisli composition:
-
-```
-s₂ >=> s₁: U → M(U)
-(s₂ >=> s₁)(u) = s₁(u) >>= s₂
-```
-
-*Meaning:* Execute s₁, feed its result to s₂. The monad M handles effects between steps.
-
-### 6.2 Parallel Composition
-
-**Definition.** Given Skills s₁: U₁ → M(U₁) and s₂: U₂ → M(U₂) operating on independent fibers:
-
-```
-s₁ ⊗ s₂: U₁ × U₂ → M(U₁ × U₂)
-(s₁ ⊗ s₂)(u₁, u₂) = do { u₁' ← s₁(u₁); u₂' ← s₂(u₂); return (u₁', u₂') }
-```
-
-**Theorem.** Parallel composition preserves the adjunction:
-
-```
-Forget(s₁ ⊗ s₂) = Forget(s₁) ⊗ Forget(s₂)
-```
-
-Forgetting a parallel composition = parallel composition of forgotten Skills.
-
-## Sources
-
-- Mac Lane, S. "Categories for the Working Mathematician" — Chapter IV (Adjunctions)
-- Awodey, S. "Category Theory" — Chapter 10 (Monads and Algebras)
-- Barr & Wells. "Category Theory for Computing Science" — Chapter 3 (Free constructions)

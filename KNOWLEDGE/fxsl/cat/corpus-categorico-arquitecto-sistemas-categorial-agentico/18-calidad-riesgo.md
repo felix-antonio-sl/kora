@@ -1,3 +1,17 @@
+---
+_manifest:
+  urn: "urn:fxsl:kb:icas-calidad-riesgo"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-14"
+    source: "ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl"
+version: "1.0.0"
+status: published
+tags: [quality-attributes, riesgo, metricas-enriched, ICAS-BoK, teoria-categorias, corpus-categorico]
+lang: es
+extensions: {}
+---
+
 # Calidad y riesgo
 
 ## Las propiedades que no se ven en el diagrama de arquitectura

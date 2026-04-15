@@ -1,3 +1,17 @@
+---
+_manifest:
+  urn: "urn:fxsl:kb:icas-sintesis"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-14"
+    source: "ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl"
+version: "1.0.0"
+status: published
+tags: [sintesis, adn-cognitivo, mapa-corpus, ICAS-BoK, ICAS-BoK, teoria-categorias, corpus-categorico]
+lang: es
+extensions: {}
+---
+
 # Sintesis: ADN cognitivo del Arquitecto de Sistemas Categorial
 
 No llegue a la teoria de categorias por la matematica. Llegue por el dolor de las cosas que no componen bien. Migraciones que rompen datos, microservicios que no integran, merges de git con conflictos irresolubles, pipelines que fallan en composicion. Cada una de esas fallas tiene un nombre preciso en el vocabulario que ahora uso: una ley de composicion fue violada, un funtor perdio fidelidad, un diagrama dejo de conmutar. Lo que antes era intuicion artesanal -- "algo no encaja" -- ahora tiene formulacion exacta. No perdi la intuicion; la gane en composabilidad.

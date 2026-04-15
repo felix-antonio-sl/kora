@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:vision-desarrollo-nuble"
+  urn: urn:gn:kb:vision-desarrollo-nuble
   provenance:
-    created_by: "KODA-TRANSFORMER"
-    created_at: "2026-03-15"
-    source: "source/gn/gorenuble_koda/domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml"
-version: "1.0.0"
+    created_by: KODA-TRANSFORMER
+    created_at: '2026-03-15'
+    source: source/gn/gorenuble_koda/domains/gn/01_fundamentos/intro/kb_gn_013_vision_desarrollo_nuble_koda.yml
+version: 1.0.0
 status: published
-tags: [gore-nuble, vision-estrategica, propuesta-programatica, nuble-inteligente, ejes-estrategicos]
+tags:
+- gore-nuble
+- vision-estrategica
+- propuesta-programatica
+- nuble-inteligente
+- ejes-estrategicos
 lang: es
 extensions:
   gn:
     family: normative
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:vision-desarrollo-nuble
 ---
 
 # Visión de Desarrollo GORE Ñuble
@@ -53,7 +62,7 @@ Meta: consolidar Ñuble como referente de crecimiento equilibrado y sustentable.
 
 7 ejes para desarrollo sostenible, equitativo y tecnológicamente avanzado.
 
-### Eje 1: Infraestructura, conectividad y transformación digital
+## Eje 1: Infraestructura, conectividad y transformación digital
 
 Objetivo: modernizar y expandir infraestructura de transporte y telecomunicaciones; mejorar conectividad; promover desarrollo sostenible; fomentar innovación.
 
@@ -81,7 +90,7 @@ Objetivo: modernizar y expandir infraestructura de transporte y telecomunicacion
 - Digitalización de servicios públicos: plataformas digitales y agentes inteligentes.
 - App Ñuble: aplicación móvil que concentra servicios públicos regionales; incluye función Ñuble Seguro para reporte de incidentes de seguridad.
 
-### Eje 2: Economía, innovación y capital humano
+## Eje 2: Economía, innovación y capital humano
 
 Objetivo: diversificar y fortalecer la economía; impulsar sectores emergentes; promover innovación; mejorar competencias del capital humano.
 
@@ -108,7 +117,7 @@ Objetivo: diversificar y fortalecer la economía; impulsar sectores emergentes; 
 - Programas de pasantía en sectores clave para retención de talento.
 - Incentivos para retención de talento: becas, inserción laboral, condiciones atractivas.
 
-### Eje 3: Desarrollo social inclusivo
+## Eje 3: Desarrollo social inclusivo
 
 Objetivo: mejorar condiciones de vida; reducir pobreza; asegurar acceso equitativo a servicios; promover inclusión.
 
@@ -133,7 +142,7 @@ Objetivo: mejorar condiciones de vida; reducir pobreza; asegurar acceso equitati
 - Creación de Centros Integrales de la Mujer: apoyo legal, psicológico y social.
 - Mejora de accesibilidad de servicios para grupos vulnerables mediante tecnologías.
 
-### Eje 4: Medio ambiente y sostenibilidad
+## Eje 4: Medio ambiente y sostenibilidad
 
 Objetivo: promover sostenibilidad ambiental; conservar recursos naturales; fomentar energías renovables; impulsar gestión de residuos.
 
@@ -158,7 +167,7 @@ Objetivo: promover sostenibilidad ambiental; conservar recursos naturales; fomen
 - Desarrollo de parques recreativos y áreas verdes.
 - Programas y eventos de vida sana y deporte.
 
-### Eje 5: Institucionalidad y gobernanza regional
+## Eje 5: Institucionalidad y gobernanza regional
 
 Objetivo: fortalecer la gestión pública regional; promover modernización, transparencia y participación.
 
@@ -178,7 +187,7 @@ Objetivo: fortalecer la gestión pública regional; promover modernización, tra
 - Capacitación en tecnologías emergentes para funcionarios.
 - Estrategias para atraer profesionales digitales especializados.
 
-### Eje 6: Gestión del riesgo de desastres y seguridad pública
+## Eje 6: Gestión del riesgo de desastres y seguridad pública
 
 Objetivo: garantizar la seguridad ciudadana y la resiliencia ante desastres.
 
@@ -196,7 +205,7 @@ Objetivo: garantizar la seguridad ciudadana y la resiliencia ante desastres.
 - Adquisición de carros bombas y vehículos de rescate.
 - Centro de Entrenamiento Regional de formación para bomberos.
 
-### Eje 7: Patrimonio, cultura e identidad
+## Eje 7: Patrimonio, cultura e identidad
 
 Objetivo: preservar y promover el patrimonio cultural; fortalecer la identidad; fomentar el acceso a la cultura.
 

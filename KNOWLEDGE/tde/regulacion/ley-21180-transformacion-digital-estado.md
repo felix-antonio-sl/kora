@@ -1,11 +1,23 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:ley-21180-transformacion-digital-estado"
-  provenance: "https://wikiguias.digital.gob.cl/Leyes/Ley21180"
+  urn: urn:tde:kb:ley-21180-transformacion-digital-estado
+  provenance: https://wikiguias.digital.gob.cl/Leyes/Ley21180
 version: 1.0.0
 status: published
-tags: [tde, regulacion, ley, transformacion-digital, documentos-electronicos, procedimiento-administrativo-electronico, gestion-documental-electronica]
+tags:
+- tde
+- regulacion
+- ley
+- transformacion-digital
+- documentos-electronicos
+- procedimiento-administrativo-electronico
+- gestion-documental-electronica
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:ley-21180-transformacion-digital-estado
 ---
 
 # Ley N° 21.180 — Transformación Digital del Estado
@@ -173,8 +185,6 @@ La toma de razón y el registro electrónico de la Contraloría General de la Re
 Se deroga el inciso final del artículo 5° de la Ley N° 18.483 (régimen legal para la industria automotriz).
 
 ---
-
-## ARTÍCULOS TRANSITORIOS
 
 ## Artículo primero transitorio — Facultad reglamentaria al Presidente de la República
 

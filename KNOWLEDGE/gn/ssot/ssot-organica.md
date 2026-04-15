@@ -1,18 +1,28 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-organica"
+  urn: urn:gn:kb:ssot-organica
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "Organigrama GORE 2026, goreNubleOrgData.ttl, omega_gore_nuble_mermaid.md v2.6.0"
-version: "1.3.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: Organigrama GORE 2026, goreNubleOrgData.ttl, omega_gore_nuble_mermaid.md
+      v2.6.0
+version: 1.3.1
 status: published
-tags: [ssot, organica, divisiones, estructura-gore, jerarquia]
+tags:
+- ssot
+- organica
+- divisiones
+- estructura-gore
+- jerarquia
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-organica
 ---
 
 # SSOT — Estructura orgánica GORE Ñuble
@@ -161,48 +171,48 @@ Periodicidad: mínimo 2 sesiones ordinarias por mes (≥24 anuales). Sesiones ex
 ```
 GORE Ñuble
 ├── Gobernador/a Regional
-│   ├── Gabinete y Participación Social (Staff)
-│   ├── Depto. Comunicaciones (Staff)
-│   └── Control (Staff)
+│ ├── Gabinete y Participación Social (Staff)
+│ ├── Depto. Comunicaciones (Staff)
+│ └── Control (Staff)
 ├── Administrador/a Regional
-│   ├── Depto. Jurídico (Staff)
-│   ├── Auditoría Interna (Staff)
-│   ├── Depto. Gestión Institucional/DGI (Staff) → OIRS (Unit)
-│   ├── Depto. Ñuble 250 (Staff)
-│   ├── URAI/Asuntos Institucionales (Staff)
-│   └── Corporación Regional (Staff)
+│ ├── Depto. Jurídico (Staff)
+│ ├── Auditoría Interna (Staff)
+│ ├── Depto. Gestión Institucional/DGI (Staff) → OIRS (Unit)
+│ ├── Depto. Ñuble 250 (Staff)
+│ ├── URAI/Asuntos Institucionales (Staff)
+│ └── Corporación Regional (Staff)
 ├── CORE → Secretaría Ejecutiva (Staff)
 ├── DIPLADE (División)
-│   ├── Depto. Planificación Estratégica y Ordenamiento Territorial
-│   ├── Depto. Desarrollo Proyectos Estratégicos
-│   ├── Depto. Zonas en Desarrollo
-│   └── Comité de Pertinencia (Unidad)
+│ ├── Depto. Planificación Estratégica y Ordenamiento Territorial
+│ ├── Depto. Desarrollo Proyectos Estratégicos
+│ ├── Depto. Zonas en Desarrollo
+│ └── Comité de Pertinencia (Unidad)
 ├── DIPIR (División)
-│   ├── Depto. Análisis y Evaluación
-│   │   ├── Unidad Municipalidades y Conservaciones
-│   │   └── Unidad Proyectos y Programas
-│   └── Depto. Presupuesto
+│ ├── Depto. Análisis y Evaluación
+│ │ ├── Unidad Municipalidades y Conservaciones
+│ │ └── Unidad Proyectos y Programas
+│ └── Depto. Presupuesto
 ├── DIDESO (División)
-│   ├── Depto. Fondos Concursables y Programas Sociales
-│   └── Depto. Gestión Territorial
+│ ├── Depto. Fondos Concursables y Programas Sociales
+│ └── Depto. Gestión Territorial
 ├── DIFOI (División)
-│   ├── Depto. Fomento y Desarrollo Productivo
-│   └── Depto. CTI
+│ ├── Depto. Fomento y Desarrollo Productivo
+│ └── Depto. CTI
 ├── DIT (División Infraestructura y Transportes)
-│   ├── Depto. Infraestructura y Conectividad
-│   └── Depto. Ejecución y Supervisión
+│ ├── Depto. Infraestructura y Conectividad
+│ └── Depto. Ejecución y Supervisión
 ├── DAF (División)
-│   ├── Oficina de Partes (Unidad)
-│   ├── Depto. Gestión y Desarrollo de Personas
-│   └── Depto. Finanzas
-│       ├── Tesorería (Unidad)
-│       ├── Contabilidad y Finanzas (Unidad)
-│       ├── UCR (Unidad)
-│       ├── Adquisiciones (Unidad)
-│       └── Operaciones/TIC (Unidad)
+│ ├── Oficina de Partes (Unidad)
+│ ├── Depto. Gestión y Desarrollo de Personas
+│ └── Depto. Finanzas
+│ ├── Tesorería (Unidad)
+│ ├── Contabilidad y Finanzas (Unidad)
+│ ├── UCR (Unidad)
+│ ├── Adquisiciones (Unidad)
+│ └── Operaciones/TIC (Unidad)
 ├── Depto. CIES (Staff, Órganos Especiales)
 └── Cuerpos Asesores
-    ├── COSOC
-    ├── Comité CTCI
-    └── CDR
+ ├── COSOC
+ ├── Comité CTCI
+ └── CDR
 ```

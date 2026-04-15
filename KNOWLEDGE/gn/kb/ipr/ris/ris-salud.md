@@ -4,31 +4,35 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - salud
-  - cesfam
-  - hospital
-  - posta-rural
-  - cosam
+- ris
+- sni
+- inversion
+- gn
+- salud
+- cesfam
+- hospital
+- posta-rural
+- cosam
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ris-salud
 ---
 
 # Requisitos de Información SNI — Infraestructura de Salud
 
 ## Proyectos de Posta de Salud Rural
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Posta_de_Salud_Rural.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Posta_de_Salud_Rural.pdf
 
 Establecer requisitos para proyectos de inversión en Postas de Salud Rural. Emisor: MDSF, 2023.
-
-### Alcance
 
 Identificar iniciativas del sector salud por objetivo y complejidad.
 
@@ -39,20 +43,20 @@ Identificar iniciativas del sector salud por objetivo y complejidad.
 ### Orientaciones Sectoriales
 
 - **Población:**
-  - Beneficiaria: Definida por Ley 18.469.
-  - Per cápita: Inscritos en plan de salud familiar (datos FONASA).
-  - Infantil (<6 años): Registro de controles regulares.
-  - Usuaria: Personas que usan activamente las instalaciones.
+ - Beneficiaria: Definida por Ley 18.469.
+ - Per cápita: Inscritos en plan de salud familiar (datos FONASA).
+ - Infantil (<6 años): Registro de controles regulares.
+ - Usuaria: Personas que usan activamente las instalaciones.
 - **Establecimientos de Atención Ambulatoria:**
-  - CESFAM: 5.000–30.000 inscritos.
-  - CECOSF: 2.000–5.000 inscritos (complementario a CESFAM).
-  - SAPU: Urgencia adosada (horario extendido).
-  - SAR: Urgencia vespertino-nocturna y no hábiles.
-  - Hospital Comunitario: Oferta mínima, camas básicas, sin especialidades.
+ - CESFAM: 5.000–30.000 inscritos.
+ - CECOSF: 2.000–5.000 inscritos (complementario a CESFAM).
+ - SAPU: Urgencia adosada (horario extendido).
+ - SAR: Urgencia vespertino-nocturna y no hábiles.
+ - Hospital Comunitario: Oferta mínima, camas básicas, sin especialidades.
 - **Equipamiento Vehicular:**
-  - Móvil Básico: Ambulancia simple (transporte).
-  - Móvil Avanzado: Ambulancia alta complejidad (riesgo vital).
-  - Vehículos de Transporte: Para derivar pacientes y transportar insumos.
+ - Móvil Básico: Ambulancia simple (transporte).
+ - Móvil Avanzado: Ambulancia alta complejidad (riesgo vital).
+ - Vehículos de Transporte: Para derivar pacientes y transportar insumos.
 
 ### Postulación para Etapa de Diseño
 
@@ -88,11 +92,9 @@ Identificar iniciativas del sector salud por objetivo y complejidad.
 
 ## Proyectos CESFAM, CESCOF y SAR
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_CESFAM%2C_CESCOF_y_SAR.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_CESFAM%2C_CESCOF_y_SAR.pdf
 
 Establecer requisitos para proyectos de inversión de CESFAM, CESCOF y SAR. Emisor: MDSF, 2024.
-
-### Alcance
 
 Aplicación: Iniciativas de inversión del sector salud en SNI. Resolución de dudas: Adenda por Jefatura de la División.
 
@@ -100,10 +102,10 @@ Aplicación: Iniciativas de inversión del sector salud en SNI. Resolución de d
 
 - **Identificación de iniciativas:** Clasificar por objetivo y complejidad (baja).
 - **Estrategias y principios:**
-  - **Planificación en red:** Integrar áreas, complementariedad público-privada.
-  - **Prestaciones adecuadas:** Ajustar a complejidad, priorizar enfermedades alto impacto.
-  - **Optimización de recursos:** Uso eficiente RRHH, físicos, financieros. Reconversión camas, externalización.
-  - **Evaluación tecnológica:** Incluir alternativas costo/efectividad (telemedicina).
+ - **Planificación en red:** Integrar áreas, complementariedad público-privada.
+ - **Prestaciones adecuadas:** Ajustar a complejidad, priorizar enfermedades alto impacto.
+ - **Optimización de recursos:** Uso eficiente RRHH, físicos, financieros. Reconversión camas, externalización.
+ - **Evaluación tecnológica:** Incluir alternativas costo/efectividad (telemedicina).
 - **Evaluación de proyectos:** Considerar estudios de red aprobados (MINSAL). Articular APS con redes asistenciales.
 
 ### Clasificación y Definiciones
@@ -111,9 +113,9 @@ Aplicación: Iniciativas de inversión del sector salud en SNI. Resolución de d
 - **Sistema de Atención Abierta:** CESFAM, Consultorio General.
 - **Baja Complejidad:** S.A.P.U., SAR, CECOSF.
 - **Definiciones sectoriales:**
-  - Población: Beneficiaria, Per Cápita, Infantil, Usuaria.
-  - Establecimientos: CESFAM, CECOSF, SAPU, SAR, Hospital Comunitario.
-  - Equipamiento Vehicular: Móvil Básico, Móvil Avanzado, Transporte de Personas y Carga.
+ - Población: Beneficiaria, Per Cápita, Infantil, Usuaria.
+ - Establecimientos: CESFAM, CECOSF, SAPU, SAR, Hospital Comunitario.
+ - Equipamiento Vehicular: Móvil Básico, Móvil Avanzado, Transporte de Personas y Carga.
 
 ### Postulación — Etapa de Diseño (CESFAM)
 
@@ -135,11 +137,9 @@ Aplicación: Iniciativas de inversión del sector salud en SNI. Resolución de d
 
 ## Proyectos de COSAM
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_COSAM.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_COSAM.pdf
 
 Regular el proceso de incorporación de iniciativas de inversión en Centros Comunitarios de Salud Mental (COSAM). Emisor: MDSF, 2024.
-
-### Alcance
 
 Regula proceso de incorporación de iniciativas de inversión del sector salud. Resolución de dudas: Adenda por Jefatura de la División.
 
@@ -147,10 +147,10 @@ Regula proceso de incorporación de iniciativas de inversión del sector salud. 
 
 - **Clasificación de iniciativas:** Alta, Mediana, Baja Complejidad.
 - **Directrices de preinversión:**
-  - **Planificación:** Articular en Red de Atención.
-  - **Prestaciones:** Adecuadas a complejidad, focalizadas en enfermedades de alto impacto.
-  - **Optimización de recursos:** Uso eficiente RRHH, físicos, financieros.
-  - **Evaluación tecnológica:** Incluir alternativas (telemedicina).
+ - **Planificación:** Articular en Red de Atención.
+ - **Prestaciones:** Adecuadas a complejidad, focalizadas en enfermedades de alto impacto.
+ - **Optimización de recursos:** Uso eficiente RRHH, físicos, financieros.
+ - **Evaluación tecnológica:** Incluir alternativas (telemedicina).
 - **Articulación de redes:** Coordinación entre APS y redes asistenciales, basada en estudios de red aprobados.
 
 ### Definiciones Sectoriales
@@ -162,32 +162,32 @@ Regula proceso de incorporación de iniciativas de inversión del sector salud. 
 ### Postulación para Etapa de Diseño
 
 - **Requisitos generales:**
-  - **Estudio pre inversional:** Elaborado según metodología COSAM.
-  - **Visación sectorial:** MINSAL (si hay modif. PMA) o Servicio de Salud.
-  - **Obras complementarias:** Informe detallado y valorizado; plan contingencia.
-  - **Situación legal inmueble:** Acreditación aptitud terreno.
-  - **Antecedentes técnicos:** Documentación complementaria, catastro equipamiento, análisis RRHH.
-  - **Documentación complementaria:** TDR diseño, presupuesto, cronograma, Ficha IDI/Carpeta Digital.
+ - **Estudio pre inversional:** Elaborado según metodología COSAM.
+ - **Visación sectorial:** MINSAL (si hay modif. PMA) o Servicio de Salud.
+ - **Obras complementarias:** Informe detallado y valorizado; plan contingencia.
+ - **Situación legal inmueble:** Acreditación aptitud terreno.
+ - **Antecedentes técnicos:** Documentación complementaria, catastro equipamiento, análisis RRHH.
+ - **Documentación complementaria:** TDR diseño, presupuesto, cronograma, Ficha IDI/Carpeta Digital.
 - Considerar implicancias socioeconómicas, culturales, ambientales, género.
 
 ### Postulación a Etapa de Ejecución
 
 - **Requisitos específicos:**
-  - **Estudio pre inversional actualizado:** Resumen ejecutivo actualizando diagnóstico, población, indicadores.
-  - **Visación sectorial:** Certificado No Objeción al Diseño (MINSAL).
-  - Acreditación legal inmueble.
-  - **Documentación técnica diseño:** Carpeta técnica completa (planos, PMA comparado).
-  - **Equipamiento y presupuesto:** Listado final de requerimientos, presupuesto oficial desglosado.
-  - **Cronograma y flujo de caja:** Detallado por componentes.
-  - **Indicadores de ejecución:** Cálculo CAE, Costo Equivalente por Atención.
-  - **Compromiso financiero:** Carta Compromiso, análisis sostenibilidad.
-  - **Consolidación documental:** Ficha IDI y carpeta digital final.
+ - **Estudio pre inversional actualizado:** Resumen ejecutivo actualizando diagnóstico, población, indicadores.
+ - **Visación sectorial:** Certificado No Objeción al Diseño (MINSAL).
+ - Acreditación legal inmueble.
+ - **Documentación técnica diseño:** Carpeta técnica completa (planos, PMA comparado).
+ - **Equipamiento y presupuesto:** Listado final de requerimientos, presupuesto oficial desglosado.
+ - **Cronograma y flujo de caja:** Detallado por componentes.
+ - **Indicadores de ejecución:** Cálculo CAE, Costo Equivalente por Atención.
+ - **Compromiso financiero:** Carta Compromiso, análisis sostenibilidad.
+ - **Consolidación documental:** Ficha IDI y carpeta digital final.
 
 ---
 
 ## Proyectos de Hospitales
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Hospitales.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Hospitales.pdf
 
 Establecer requisitos para proyectos de inversión en Hospitales. Emisor: MDSF, 2024.
 
@@ -207,9 +207,9 @@ Ingresar iniciativas de inversión en SNI por objetivo y nivel de complejidad. C
 
 - **Niveles de complejidad:** Baja (acercamiento), Mediana (intermedios: CESFAM, CAE), Alta (referencia: CRS, COSAM, CDT).
 - **Equipamiento vehicular:**
-  - Ambulancia básica: Transporte sin riesgo vital.
-  - Ambulancia avanzada: Pacientes con riesgo vital grave.
-  - Otros vehículos: Transporte personas/carga.
+ - Ambulancia básica: Transporte sin riesgo vital.
+ - Ambulancia avanzada: Pacientes con riesgo vital grave.
+ - Otros vehículos: Transporte personas/carga.
 - **Población:** Beneficiaria (Ley 18.469), Per Cápita (datos FONASA).
 - **Establecimientos ambulatorios:** CRS (mediana complejidad), CDT (alta complejidad).
 - **Establecimientos hospitalarios:** Alta, Mediana, Baja complejidad (según función y referencia).

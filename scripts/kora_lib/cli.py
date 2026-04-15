@@ -2,9 +2,13 @@ import argparse
 
 from .audit import cmd_health
 from .catalog import cmd_index, cmd_resolve
+from .checks import run_checks, run_fixes, all_checks, CheckResult
 from .commands import cmd_migrate, cmd_stats_json, cmd_sync_docs
 from .graph import cmd_graph
 from .intake import cmd_intake
+from .kb_graph import cmd_kb_graph
+from .promote import cmd_promote
+from .transmute import cmd_transmute
 from .validation import cmd_lint_md, cmd_validate
 
 
@@ -74,6 +78,34 @@ def main():
     p_graph.add_argument("--json", action="store_true", help="Emit graph as JSON")
     subparsers.add_parser("intake", help="Show status of source files vs knowledge artifacts")
 
+    p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from KNOWLEDGE/ artifacts")
+    p_kb_graph.add_argument("--json", action="store_true", help="Write graph as JSON to docs/generated/")
+    p_kb_graph.add_argument("--check-cycles", action="store_true", help="Exit non-zero if cycles exist in depends graph")
+
+    p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from drafts/ to KNOWLEDGE/")
+    p_promote.add_argument("path", help="Path to the draft artifact to promote")
+
+    p_transmute = subparsers.add_parser("transmute", help="Prepare transmutation workspace for an agent to a target platform")
+    p_transmute.add_argument("--target", required=True, choices=("claude-code", "openclaw"),
+                             help="Target platform (e.g., claude-code, openclaw)")
+    p_transmute.add_argument("--agent", required=True,
+                             help="Agent reference as namespace/name (e.g., kora/curator)")
+    p_transmute.add_argument("--dry-run", action="store_true",
+                             help="Show what would be done without writing files")
+
+    p_check = subparsers.add_parser("check", help="Run unified maintenance checks (composable check algebra)")
+    p_check.add_argument("--scope", choices=("artifact", "workspace", "repo"), default=None,
+                         help="Filter checks by scope")
+    p_check.add_argument("--severity", choices=("critical", "high", "medium", "low"), default=None,
+                         help="Minimum severity to report")
+    p_check.add_argument("--phase", choices=("index", "verify", "lint", "graph"), default=None,
+                         help="Filter checks by phase")
+    p_check.add_argument("--path", default=None, help="Restrict to a subtree (relative to repo root)")
+    p_check.add_argument("--fix", action="store_true", help="Auto-apply canonical fixes where available")
+    p_check.add_argument("--list", action="store_true", dest="list_checks",
+                         help="List all registered checks without running them")
+    p_check.add_argument("--strict", action="store_true", help="Exit non-zero if any check fails")
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -96,5 +128,41 @@ def main():
         cmd_graph(json_output=args.json)
     elif args.command == "intake":
         cmd_intake()
+    elif args.command == "kb-graph":
+        cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles)
+    elif args.command == "promote":
+        cmd_promote(args.path)
+    elif args.command == "transmute":
+        cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
+    elif args.command == "check":
+        if args.list_checks:
+            checks = all_checks()
+            print(f"=== KORA Check Registry ({len(checks)} checks) ===\n")
+            for c in sorted(checks, key=lambda x: (x.phase, x.severity, x.id)):
+                deps = f" (depends: {', '.join(c.depends)})" if c.depends else ""
+                print(f"  [{c.severity.upper():8s}] {c.id:24s} scope={c.scope:10s} phase={c.phase:6s} — {c.description}{deps}")
+        else:
+            print("=== KORA Maintenance Check Pipeline ===\n")
+            result = run_checks(
+                scope_filter=args.scope,
+                severity_min=args.severity,
+                phase_filter=args.phase,
+                path_filter=args.path,
+                emit=True,
+            )
+            if args.fix and result.diagnostics:
+                print(f"\n--- Applying fixes ---")
+                fixed = run_fixes(result.diagnostics, emit=True)
+                print(f"Fixed {fixed} issue(s)")
+            print(f"\n=== Summary ===")
+            print(f"  Checks run: {result.checks_run}")
+            print(f"  Passed: {result.checks_passed}")
+            print(f"  Failed: {result.checks_failed}")
+            if result.by_severity:
+                print(f"  By severity: {result.by_severity}")
+            if result.diagnostics:
+                print(f"  Total diagnostics: {len(result.diagnostics)}")
+            if args.strict and not result.ok:
+                raise SystemExit(1)
     else:
         parser.print_help()

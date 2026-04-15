@@ -1,17 +1,25 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:hodom-decreto-exento-31-2024"
+  urn: urn:salud:kb:hodom-decreto-exento-31-2024
   provenance:
-    created_by: "Codex"
-    created_at: "2026-03-13"
-    source: "source/pro/hodom/normativa-hodom/DECRETO-EXENTO-N°-31-SRA-2024.md"
-version: "1.0.1"
+    created_by: Codex
+    created_at: '2026-03-13'
+    source: source/pro/hodom/normativa-hodom/DECRETO-EXENTO-N°-31-SRA-2024.md
+version: 1.0.1
 status: published
-tags: [hodom, decreto-exento, norma-técnica, minsal, hospitalización-domiciliaria]
+tags:
+- hodom
+- decreto-exento
+- norma-técnica
+- minsal
+- hospitalización-domiciliaria
 lang: es
 extensions:
   kora:
     family: normative
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:hodom-decreto-exento-31-2024
 ---
 
 # Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización Domiciliaria
@@ -22,25 +30,25 @@ extensions:
 - Fecha: `05 Jun 2024`, Santiago.
 - Órgano emisor: Ministerio de Salud.
 - Autoridad suscriptora:
-  - `Ximena Aguilera Sanhueza`
-  - Ministra de Salud
+ - `Ximena Aguilera Sanhueza`
+ - Ministra de Salud
 - Fórmula de cierre: `ANÓTESE Y COMUNÍQUESE`.
 
 ## Fundamentos documentales y jurídicos invocados
 
 - Memorándums citados:
-  - `C37/N° 93/2023`, Jefe de División de Gestión de la Red Asistencial
-  - `C37/N° 81/2023`, Jefe de División de Gestión de la Red Asistencial
-  - `B35/N° 669/2023`, Jefa de División Políticas Públicas Saludables y Promoción
-  - `N° 35/2023`, Jefe de Gabinete de la Subsecretaría de Redes Asistenciales
+ - `C37/N° 93/2023`, Jefe de División de Gestión de la Red Asistencial
+ - `C37/N° 81/2023`, Jefe de División de Gestión de la Red Asistencial
+ - `B35/N° 669/2023`, Jefa de División Políticas Públicas Saludables y Promoción
+ - `N° 35/2023`, Jefe de Gabinete de la Subsecretaría de Redes Asistenciales
 - Base jurídica citada:
-  - `DFL N° 1/2005` del Ministerio de Salud, que fija texto refundido, coordinado y sistematizado del `DL N° 2.763/1979` y de las leyes `N° 18.933` y `N° 18.469`
-  - `Ley N° 19.880`
-  - `DS N° 1/2022` del Ministerio de Salud, Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria
-  - `Decreto N° 136/2004` del Ministerio de Salud, Reglamento Orgánico del Ministerio de Salud
-  - `Decreto N° 140/2004` del Ministerio de Salud, Reglamento Orgánico de los Servicios de Salud
-  - `DS N° 28/2009` del Ministerio de Salud
-  - `Resolución N° 7/2019` de la Contraloría General de la República
+ - `DFL N° 1/2005` del Ministerio de Salud, que fija texto refundido, coordinado y sistematizado del `DL N° 2.763/1979` y de las leyes `N° 18.933` y `N° 18.469`
+ - `Ley N° 19.880`
+ - `DS N° 1/2022` del Ministerio de Salud, Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria
+ - `Decreto N° 136/2004` del Ministerio de Salud, Reglamento Orgánico del Ministerio de Salud
+ - `Decreto N° 140/2004` del Ministerio de Salud, Reglamento Orgánico de los Servicios de Salud
+ - `DS N° 28/2009` del Ministerio de Salud
+ - `Resolución N° 7/2019` de la Contraloría General de la República
 
 ## Fundamentos materiales del decreto
 
@@ -59,7 +67,7 @@ extensions:
 - Se aprueba la **Norma Técnica para Establecimientos que otorgan prestaciones de Hospitalización Domiciliaria**.
 - La norma aprobada consta en un documento adjunto de `16` páginas, que forma parte integrante del decreto.
 - Publicación ordenada:
-  - la División de Gestión de la Red Asistencial de la Subsecretaría de Redes Asistenciales debe publicar el texto íntegro del decreto y de la norma aprobada en [MINSAL](https://www.minsal.cl)
-  - la publicación debe realizarse desde el total trámite del acto exento
+ - la División de Gestión de la Red Asistencial de la Subsecretaría de Redes Asistenciales debe publicar el texto íntegro del decreto y de la norma aprobada en [MINSAL](https://www.minsal.cl)
+ - la publicación debe realizarse desde el total trámite del acto exento
 - Distribución operativa:
-  - debe remitirse un ejemplar del acto administrativo a los Servicios de Salud del país
+ - debe remitirse un ejemplar del acto administrativo a los Servicios de Salud del país

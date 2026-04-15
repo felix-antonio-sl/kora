@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-adjunciones
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- adjuncion
+- sigma-delta-pi
+- free-forgetful
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-adjunciones
+---
+
 # Adjunciones
 
 ## El mecanismo óptimo de traducción
@@ -11,8 +35,8 @@ Esa coordinación se llama **adjunción**, y es posiblemente el concepto más ub
 Dados dos funtores L : D → C y R : C → D, digo que L es **left adjoint** de R (notado L ⊣ R) cuando existen dos transformaciones naturales:
 
 ```
-η : Id_D → R ∘ L       (unit)
-ε : L ∘ R → Id_C       (counit)
+η : Id_D → R ∘ L (unit)
+ε : L ∘ R → Id_C (counit)
 ```
 
 que satisfacen las **identidades triangulares**:
@@ -47,7 +71,7 @@ La conexión entre las dos definiciones es directa. De la isomorfía de hom-sets
 La forma más elemental de adjunción ocurre entre preórdenes. Una **conexión de Galois** entre posets P y Q es un par de funciones monótonas f : P → Q y g : Q → P tales que:
 
 ```
-f(p) ≤ q   si y solo si   p ≤ g(q)
+f(p) ≤ q si y solo si p ≤ g(q)
 ```
 
 Esto es exactamente la definición de adjunción con hom-sets reemplazados por la relación de orden (en un poset, el hom-set tiene a lo sumo un elemento). Fong y Spivak lo desarrollan en detalle: f es el left adjoint, g el right adjoint, y la composición g ∘ f : P → P es un **operador clausura** -- idempotente y extensivo.
@@ -55,7 +79,7 @@ Esto es exactamente la definición de adjunción con hom-sets reemplazados por l
 Un ejemplo concreto: la función techo ⌈·⌉ : R → Z y la inclusión i : Z → R forman una conexión de Galois:
 
 ```
-⌈x⌉ ≤ n   si y solo si   x ≤ i(n) = n
+⌈x⌉ ≤ n si y solo si x ≤ i(n) = n
 ```
 
 El left adjoint (techo) es la mejor aproximación entera por arriba compatible con el orden. El right adjoint (inclusión) preserva la estructura exacta. Dualmente, la inclusión es left adjoint de la función piso. Este patrón aparece en cada par de niveles de abstracción que manejo: un lado aproxima, el otro retiene estructura.
@@ -105,8 +129,8 @@ Y hay otro resultado que anticipo aquí para el documento 09. Dada una adjunció
 
 ```
 T = R ∘ L : D → D
-η : Id → T           (unit de la monad)
-μ = R ε L : T² → T   (multiplication)
+η : Id → T (unit de la monad)
+μ = R ε L : T² → T (multiplication)
 ```
 
 La monad codifica el "efecto" del viaje de ida y vuelta. Si L traduce "hacia abajo" y R traduce "de vuelta," T es la huella que deja el viaje redondo en el mundo original. No profundizo más aquí, pero esto explica por qué las monads aparecen en tantos lugares: cada adjunción genera una, y las adjunciones son ubicuas.
@@ -137,13 +161,13 @@ Brown, Spivak y Wisnesky implementan esto en CQL (Categorical Query Language), d
 
 ```
 schema S = literal : empty {
-  entities
-    Employee Department
-  foreign_keys
-    worksIn : Employee -> Department
-  attributes
-    name : Employee -> Varchar
-    dept_name : Department -> Varchar
+ entities
+ Employee Department
+ foreign_keys
+ worksIn : Employee -> Department
+ attributes
+ name : Employee -> Varchar
+ dept_name : Department -> Varchar
 }
 
 mapping F = literal : S -> T { ... }
@@ -230,7 +254,7 @@ C(A × B, C) ≅ C(A, C^B)
 El funtor − × B (tomar producto con B) es left adjoint del funtor (−)^B (exponencial, o función desde B). Dar una función de dos argumentos es lo mismo que dar una función de un argumento que devuelve otra función. Esto es `curry`/`uncurry` en Haskell:
 
 ```haskell
-curry   :: ((a, b) -> c) -> a -> b -> c
+curry :: ((a, b) -> c) -> a -> b -> c
 uncurry :: (a -> b -> c) -> (a, b) -> c
 ```
 

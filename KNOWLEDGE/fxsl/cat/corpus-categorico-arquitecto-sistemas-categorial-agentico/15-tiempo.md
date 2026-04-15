@@ -1,3 +1,17 @@
+---
+_manifest:
+  urn: "urn:fxsl:kb:icas-tiempo"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-14"
+    source: "ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl"
+version: "1.0.0"
+status: published
+tags: [sheaf-temporal, event-sourcing, consistencia-temporal, ICAS-BoK, teoria-categorias, corpus-categorico]
+lang: es
+extensions: {}
+---
+
 # Tiempo
 
 ## Cuando el tiempo importa

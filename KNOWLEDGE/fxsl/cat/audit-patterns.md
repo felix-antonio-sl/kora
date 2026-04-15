@@ -15,6 +15,11 @@ tags:
 - consistency
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:audit-patterns
 ---
 
 # Categorical Audit Patterns
@@ -136,14 +141,14 @@ c) Generate proposals with categorical justification.
 - URN: [urn if applicable]
 
 ### 2. Diagnostic Summary
-| Dimension      | Status | Issues       |
+| Dimension | Status | Issues |
 |----------------|--------|--------------|
-| Structural     | ✓/✗   | n CRITICAL   |
-| Referential    | ✓/✗   | n HIGH       |
-| Completeness   | ✓/✗   | n MEDIUM     |
-| Quality        | ✓/✗   | n LOW        |
-| Migrations     | ✓/✗/NA| ...          |
-| Behavior       | ✓/✗/NA| ...          |
+| Structural | ✓/✗ | n CRITICAL |
+| Referential | ✓/✗ | n HIGH |
+| Completeness | ✓/✗ | n MEDIUM |
+| Quality | ✓/✗ | n LOW |
+| Migrations | ✓/✗/NA| ... |
+| Behavior | ✓/✗/NA| ... |
 
 ### 3. Detected Issues
 | # | Severity | Dimension | Description | Location |

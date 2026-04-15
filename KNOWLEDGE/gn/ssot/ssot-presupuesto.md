@@ -1,19 +1,34 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-presupuesto"
+  urn: urn:gn:kb:ssot-presupuesto
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleLegalData.ttl, goreNubleIPRData.ttl, omega_gore_nuble_mermaid.md v2.6.0"
-version: "1.4.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleLegalData.ttl, goreNubleIPRData.ttl, omega_gore_nuble_mermaid.md
+      v2.6.0
+version: 1.4.1
 status: published
-tags: [ssot, presupuesto, clasificador, subtitulos, umbrales, ciclo]
+tags:
+- ssot
+- presupuesto
+- clasificador
+- subtitulos
+- umbrales
+- ciclo
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-presupuesto
+relations:
+  cites:
+  - urn:gn:kb:ssot-legal
 ---
+
 
 # SSOT — Presupuesto GORE Ñuble
 
@@ -71,7 +86,7 @@ Inicial → Vigente → Comprometido → Devengado → Pagado
 
 Operador: `<` (menor que) per DipirRules.ttl. Omega es inconsistente internamente (usa "<=" en tabla y "<" en árbol de decisión). Canónico: `<` per ontología.
 
-[impl: `core.financial_threshold` (10 filas: 4 UTM + 5 glosa% + UTM_VALUE). `_get_utm_value()`, `_check_utm_threshold()`. CLAUDE.md §Rules 34-35]
+[impl: `core.financial_threshold` (10 filas: 4 UTM + 5 glosa% + UTM_VALUE). `_get_utm_value`, `_check_utm_threshold`. CLAUDE.md §Rules 34-35]
 
 ## Ciclo presupuestario
 
@@ -151,7 +166,6 @@ Fuente: OrgData.ttl, 4 instancias `gist:UnitOfMeasure`. M$ (ThousandsCLP) tiene 
 Aumentos ≤ 10% del costo aprobado NO requieren nueva aprobación CORE (Glosa 10/11).
 
 Traspaso permitido entre subtítulos de inversión, excepto hacia S22 (IPRData.ttl, Glosa 04).
-
 
 ## Cadena transaccional presupuestaria
 

@@ -1,18 +1,24 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:guia-voz-y-tono"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/Voz_Tono"
+  urn: urn:tde:kb:guia-voz-y-tono
+  provenance: https://wikiguias.digital.gob.cl/Manuales/Voz_Tono
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, experiencia-usuaria, como-usar, voz-y-tono]
+tags:
+- tde
+- plataformas-manuales
+- experiencia-usuaria
+- como-usar
+- voz-y-tono
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:guia-voz-y-tono
 ---
 
 # Guía de Voz y Tono — Wiki de Plataformas
-
-## Propósito
-
-Orientar la escritura de documentos publicados en esta Wiki. Estilo: conciso, claro, consistente. Reutilizar secciones que ya tienen conceptos establecidos.
 
 ## Voz y tono
 
@@ -110,7 +116,7 @@ Usar listas para evitar bloques extensos de texto.
 ## Textos alternativos (imágenes)
 
 - **Imágenes informativas:** describir en no más de dos líneas el objetivo de la ilustración o foto.
-  - Ejemplo: "Ilustración relacionada al proceso de elecciones, una mano, un voto y una urna."
+ - Ejemplo: "Ilustración relacionada al proceso de elecciones, una mano, un voto y una urna."
 - **Imágenes decorativas:** dejar el campo `alt` como `null` o vacío (responsabilidad del desarrollador).
 
 ## Recurso adicional

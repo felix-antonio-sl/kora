@@ -1,22 +1,38 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-complexity-management"
+  urn: urn:fxsl:kb:opm-complexity-management
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-complexity-management.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-complexity-management.md
+version: 1.0.0
 status: published
-tags: [opm, complexity-management, refinement, abstraction, in-zooming, unfolding, opd-tree, system-map]
+tags:
+- opm
+- complexity-management
+- refinement
+- abstraction
+- in-zooming
+- unfolding
+- opd-tree
+- system-map
 lang: en
 extensions:
   kora:
     family: textbook
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: [5, 8, 21]
+    - urn:fxsl:kb:opm-iso-19450
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - 5
+    - 8
+    - 21
+relations:
+  cites:
+  - urn:fxsl:kb:opm-iso-19450
 ---
+
 
 # OPM Complexity Management — Refinement and Abstraction
 

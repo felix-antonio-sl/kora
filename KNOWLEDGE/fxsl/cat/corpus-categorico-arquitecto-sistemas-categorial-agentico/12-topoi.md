@@ -1,3 +1,17 @@
+---
+_manifest:
+  urn: "urn:fxsl:kb:icas-topoi"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-14"
+    source: "ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl"
+version: "1.0.0"
+status: published
+tags: [topos, logica-interna, sheaf, consistencia, ICAS-BoK, teoria-categorias, corpus-categorico]
+lang: es
+extensions: {}
+---
+
 # Topoi
 
 ## Cuando "verdadero o falso" no alcanza

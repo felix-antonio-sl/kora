@@ -59,7 +59,26 @@ CANONICAL_AGENT_SECTION_PATTERNS = (
     ("## 5. Wiring", re.compile(r"^5\.\s+wiring(?:\b|[\s(])")),
 )
 TRUNCATED_HEADING_PATTERN = re.compile(r"\.\.\.$|…$")
-HTML_TAG_PATTERN = re.compile(r"<[A-Za-z][^>]*>")
+_HTML_ELEMENTS = {
+    "a", "abbr", "address", "area", "article", "aside", "audio",
+    "b", "base", "bdi", "bdo", "blockquote", "body", "br", "button",
+    "canvas", "caption", "cite", "code", "col", "colgroup",
+    "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl", "dt",
+    "em", "embed", "fieldset", "figcaption", "figure", "footer", "form",
+    "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html",
+    "i", "iframe", "img", "input", "ins", "kbd",
+    "label", "legend", "li", "link", "main", "map", "mark", "math", "menu", "meta", "meter",
+    "nav", "noscript", "object", "ol", "optgroup", "option", "output",
+    "p", "param", "picture", "pre", "progress", "q",
+    "rp", "rt", "ruby", "s", "samp", "script", "search", "section", "select", "slot", "small",
+    "source", "span", "strong", "style", "sub", "summary", "sup", "svg",
+    "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track",
+    "u", "ul", "var", "video", "wbr",
+}
+HTML_TAG_PATTERN = re.compile(
+    r"<(?:" + "|".join(sorted(_HTML_ELEMENTS)) + r")(?:\s[^>]*)?>",
+    re.IGNORECASE,
+)
 ANGLE_URL_PATTERN = re.compile(r"<((?:https?://|www\.)[^>\s]+)>")
 OPAQUE_INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([A-Z0-9-]{8,})\]\(#([^)]+)\)")
 UNVERIFIABLE_REFERENCE_PATTERNS = (
@@ -207,8 +226,18 @@ def find_field_like_markdown_headings(text, banned_titles):
     ]
 
 
+def _strip_code_blocks(text):
+    """Remove fenced code blocks and inline code to avoid false positives."""
+    # Remove fenced code blocks (``` ... ```)
+    stripped = re.sub(r"```[^\n]*\n.*?```", "", text, flags=re.DOTALL)
+    # Remove inline code (`...`)
+    stripped = re.sub(r"`[^`\n]+`", "", stripped)
+    return stripped
+
+
 def find_html_fragments(text):
-    return [match.group(0) for match in HTML_TAG_PATTERN.finditer(text)]
+    cleaned = _strip_code_blocks(text)
+    return [match.group(0) for match in HTML_TAG_PATTERN.finditer(cleaned)]
 
 
 def find_opaque_internal_refs(text):
@@ -1428,7 +1457,7 @@ def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
         if fixed_body != body:
             from .artifacts import dump_yaml_frontmatter_and_body
 
-            dump_yaml_frontmatter_and_body(path, frontmatter, fixed_body)
+            dump_yaml_frontmatter_and_body(path, frontmatter, fixed_body, lint_guard=False)
             changed.append(path)
             if emit:
                 rel_path = path.relative_to(KORA_ROOT) if KORA_ROOT in path.parents or path == KORA_ROOT else path

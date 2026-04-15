@@ -15,14 +15,24 @@ tags:
 - polystores
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:formal-framework-multimodel-data-transformations
+relations:
+  cites:
+  - urn:fxsl:kb:algebraic-databases
+  - urn:fxsl:kb:unified-representation-transformation-multimodel
 ---
+
 
 # Multi-Model Data Transformations via Kan Lifts
 
 ## Abstract
 
 Ctx: Category-theoretic framework for relational/graph/hierarchical data and schema transformations using functorial instances and Kan lifts (universal properties).
-Src: `sources/cat/A Formal Category Theoretical Framewor.md`
+Src: ` Formal Category Theoretical Framewor.md`
 XRef: `urn:fxsl:kb:algebraic-databases#KAN-LIFT`, `urn:fxsl:kb:unified-representation-transformation-multimodel#Categorical_Representation_of_Multi_Model_Data`
 
 Polystores and multi-model databases require rigorous mathematical framework for data and schema transformations. Data instances represented as functors; transformations formalized as Kan lifts with universal properties.

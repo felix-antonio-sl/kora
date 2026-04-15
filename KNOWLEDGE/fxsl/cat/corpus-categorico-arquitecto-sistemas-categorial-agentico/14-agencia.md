@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-agencia
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- free-monad
+- cofree-comonad
+- agente
+- delegacion
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-agencia
+---
+
 # Agencia
 
 ## El patron corre sobre la materia
@@ -19,7 +44,7 @@ La construccion es por induccion transfinita. Defino una cadena de polinomios:
 El free monad es m_p := p_(kappa) para un cardinal kappa suficientemente grande. Y satisface el isomorfismo clave:
 
 ```
-m_p  ~=  y + p triangleleft m_p
+m_p ~= y + p triangleleft m_p
 ```
 
 Esto dice exactamente lo que espero: un arbol de decision con forma p es, o bien una hoja (resultado inmediato), o bien una decision p seguida de un subarbol para cada posible respuesta. Es la misma estructura recursiva de un arbol de ejecucion de tareas, de una evaluacion lazy, de un pipeline con branching condicional.
@@ -41,7 +66,7 @@ En reinforcement learning, el agente que aprende tiene exactamente esta estructu
 El resultado central de Libkind-Spivak es que m_p es un modulo sobre c_p. La ley de interaccion es una transformacion natural:
 
 ```
-Xi_{p,q} : m_p tensor c_q  ->  m_{p tensor q}
+Xi_{p,q} : m_p tensor c_q -> m_{p tensor q}
 ```
 
 Dado un patron (un arbol de decision en m_p) y materia (un arbol de comportamiento en c_q), la interaccion produce un arbol de decision en m_{p tensor q}. El patron consume la materia: en cada nodo de decision del patron, el patron consulta a la materia, la materia responde con una direccion, y el patron usa esa respuesta para elegir su siguiente rama. El arbol resultante tiene la forma combinada de patron y materia.
@@ -65,7 +90,7 @@ El prediction market es el ejemplo canonico. Cada participante tiene una interfa
 Libkind y Spivak extienden esta maquinaria al problema de la delegacion dinamica de tareas. El operad Org^#_m tiene como objetos polinomios (interfaces de agentes) y como morfismos:
 
 ```
-Org^#_m(p_1, ..., p_n; q)  =  c_{[p_1 V ... V p_n, m_q]}
+Org^#_m(p_1, ..., p_n; q) = c_{[p_1 V ... V p_n, m_q]}
 ```
 
 donde V es el producto monoidal definido como p V q := p + (p tensor q) + q. Un morfismo en este operad es un behavior tree infinito (cofree comonad c) que, dado el internal hom [p_1 V ... V p_n, m_q], produce estrategias dinamicas de delegacion. En cada paso, el manager recibe una tarea q, construye un arbol de decision (free monad m_q) que puede consultar a los subordinados p_1, ..., p_n cero, una o multiples veces, en cualquier orden, dependiendo de los resultados parciales.

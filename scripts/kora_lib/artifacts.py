@@ -5,7 +5,7 @@ from copy import deepcopy
 import yaml
 
 
-def dump_yaml_frontmatter_and_body(path, frontmatter, body):
+def dump_yaml_frontmatter_and_body(path, frontmatter, body, lint_guard=True):
     urn = frontmatter.get("_manifest", {}).get("urn", "") if isinstance(frontmatter, dict) else ""
     write_report = {
         "autofix": {"applied": False},
@@ -43,10 +43,11 @@ def dump_yaml_frontmatter_and_body(path, frontmatter, body):
                 kora_ext["shard_count"] = len(shard_bodies)
                 kora_ext["shard_root_urn"] = urn
 
-            failures = lint_kora_markdown_parts(shard_frontmatter, shard_body)
-            if failures:
-                joined = "; ".join(failures[:8])
-                raise ValueError(f"KORA/MD blocked by lint: {joined}")
+            if lint_guard:
+                failures = lint_kora_markdown_parts(shard_frontmatter, shard_body)
+                if failures:
+                    joined = "; ".join(failures[:8])
+                    raise ValueError(f"KORA/MD blocked by lint: {joined}")
 
             content = "---\n"
             content += yaml.safe_dump(shard_frontmatter, sort_keys=False, allow_unicode=True).strip()

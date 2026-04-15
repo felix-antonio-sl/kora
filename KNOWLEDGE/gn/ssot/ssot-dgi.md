@@ -1,19 +1,34 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-dgi"
+  urn: urn:gn:kb:ssot-dgi
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleOrgData.ttl (posición orgánica), GORE_OS/CLAUDE.md (contenido funcional)"
-version: "1.1.0"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleOrgData.ttl (posición orgánica), GORE_OS/CLAUDE.md (contenido
+      funcional)
+version: 1.1.0
 status: published
-tags: [ssot, dgi, indicadores, iniciativas, reportes, senales]
+tags:
+- ssot
+- dgi
+- indicadores
+- iniciativas
+- reportes
+- senales
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-dgi
+relations:
+  cites:
+  - urn:gn:kb:ssot-organica
 ---
+
 
 # SSOT — DGI (Gestión Institucional)
 
@@ -94,7 +109,7 @@ Vista unificada de todas las IPR con datos agregados + señal de salud:
 | AMARILLO | Requiere atención |
 | ROJO | Crítico |
 
-Calculada por `_compute_health_signal()`.
+Calculada por `_compute_health_signal`.
 
 3 endpoints: `GET /dgi/cartera` (paginada, post-filter), `GET /dgi/cartera/resumen`, `GET /dgi/cartera/cuotas-vencidas`.
 

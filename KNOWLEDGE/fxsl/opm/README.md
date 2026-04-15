@@ -1,21 +1,30 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-readme"
+  urn: urn:fxsl:kb:opm-readme
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-30"
-    source: "synthesis:opm-corpus"
-version: "1.1.0"
+    created_by: kora/curator
+    created_at: '2026-03-30'
+    source: synthesis:opm-corpus
+version: 1.1.0
 status: published
-tags: [opm, readme, corpus, index, navigation, precedence]
+tags:
+- opm
+- readme
+- corpus
+- index
+- navigation
+- precedence
 lang: es
 extensions:
   kora:
     family: readme
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:metodologia-modelamiento-opm"
-      - "urn:fxsl:kb:opl-es"
+    - urn:fxsl:kb:opm-iso-19450
+    - urn:fxsl:kb:metodologia-modelamiento-opm
+    - urn:fxsl:kb:opl-es
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:opm-readme
 ---
 
 # README — Corpus OPM
@@ -29,14 +38,6 @@ Desde `2026-03-30`, el corpus canónico queda concentrado en **tres artefactos**
 3. [metodologia-modelamiento-opm.md](metodologia-modelamiento-opm.md)
 
 Los demás artefactos OPM del directorio quedan como material deprecado o de migración, sin conocimiento único que deba consultarse para gobernar el ciclo de vida de modelos OPM.
-
-## Alcance
-
-- Dominio: modelamiento conceptual de sistemas con OPM.
-- Ontologia: objetos, procesos, estados, relaciones estructurales y links procedurales.
-- Modalidades: OPD grafico, OPL textual, realizacion en ingles canonico y OPL-ES.
-- Tooling: OPCloud como implementacion operativa principal.
-- Extension relacionada: comparacion con SysML en el subcorpus `model-based-systems-engineering-opm/`.
 
 ## Orden de precedencia
 
@@ -55,7 +56,7 @@ Los artefactos deprecados no participan en precedencia. Solo preservan routing d
 - [opm-iso-19450.md](opm-iso-19450.md): especificacion formal compacta de OPM, notacion visual, OPL, metamodelo, dinamica y ejemplos normativos.
 - [opm-opl-es.md](opm-opl-es.md): especificacion OPL-ES, plantillas de sentencias, reglas EN→ES y notas de roundtrip.
 - [metodologia-modelamiento-opm.md](metodologia-modelamiento-opm.md): protocolo de modelamiento, construccion del SD, refinamiento, complejidad, simulacion, requirements e invariantes.
-  Incluye el wizard agnóstico del SD como protocolo canónico, independiente de herramienta.
+ Incluye el wizard agnóstico del SD como protocolo canónico, independiente de herramienta.
 
 ### Artefactos Deprecados o de Migracion
 

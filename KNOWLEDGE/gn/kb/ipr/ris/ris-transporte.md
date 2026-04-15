@@ -4,27 +4,33 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - aeropuertos
-  - aerodromos
-  - ferroviario
-  - portuario
-  - infraestructura-conexion
+- ris
+- sni
+- inversion
+- gn
+- aeropuertos
+- aerodromos
+- ferroviario
+- portuario
+- infraestructura-conexion
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ris-transporte
 ---
 
 # Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario y Conexión
 
 ## Red Aeroportuaria Primaria
 
-Establece requisitos para proyectos de inversión en la Red Aeroportuaria Primaria. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Red_Aeroportuaria_Primaria_2024.pdf>
+Establece requisitos para proyectos de inversión en la Red Aeroportuaria Primaria. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Red_Aeroportuaria_Primaria_2024.pdf
 
 ### Contexto y Alcance
 
@@ -70,9 +76,7 @@ Resolución de dudas mediante adenda por Jefatura de la División.
 
 ## Red Aeroportuaria Secundaria
 
-Establece requisitos para proyectos de inversión en la Red Aeroportuaria Secundaria. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Red_Aeroportuaria_Secundaria_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de inversión en la Red Aeroportuaria Secundaria. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Red_Aeroportuaria_Secundaria_2024.pdf
 
 Resolución de dudas mediante adenda por Jefatura de la División.
 
@@ -103,7 +107,7 @@ Consideraciones generales:
 
 ## Aeródromos
 
-Establece requisitos para proyectos de inversión en la Red de Pequeños Aeródromos. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Aerodromos_2024.pdf>
+Establece requisitos para proyectos de inversión en la Red de Pequeños Aeródromos. Sector/Subsector: Transporte / Transporte Aéreo. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Aerodromos_2024.pdf
 
 ### Contexto y Alcance
 
@@ -134,9 +138,7 @@ Tipologías: NORMALIZACIÓN, AMPLIACIÓN, CONSERVACIÓN, REPOSICIÓN, MEJORAMIEN
 
 ## Infraestructura de Conexión
 
-Establece requisitos para proyectos de infraestructura portuaria de conexión para zonas aisladas. Subsector: "Infraestructura Portuaria de Conexión". Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Infraestructura_de_Conexion_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de infraestructura portuaria de conexión para zonas aisladas. Subsector: "Infraestructura Portuaria de Conexión". Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Infraestructura_de_Conexion_2024.pdf
 
 Propósito: Mejorar conectividad de zonas aisladas con infraestructura portuaria complementaria. Resolución de dudas mediante adenda por Jefatura de la División.
 
@@ -168,9 +170,7 @@ Propósito: Mejorar conectividad de zonas aisladas con infraestructura portuaria
 
 ## Transporte Ferroviario
 
-Establece requisitos de información para proyectos ferroviarios. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Transporte_Ferroviario.pdf>
-
-### Alcance
+Establece requisitos de información para proyectos ferroviarios. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Proyectos_de_Transporte_Ferroviario.pdf
 
 Resolución de dudas mediante adenda por Jefatura de la División.
 
@@ -185,7 +185,7 @@ Resolución de dudas mediante adenda por Jefatura de la División.
 
 - **Nivel Local/Regional:** Postulación ante SEREMI correspondiente.
 - **Nivel Nacional/Multirregional:** Análisis en nivel central (DESI del MDSF).
-  - Casos: Proyectos con cambio de capacidad/estándar; todas las iniciativas de Metro.
+ - Casos: Proyectos con cambio de capacidad/estándar; todas las iniciativas de Metro.
 - Resolución de controversias: Jefatura de la División.
 
 ### Disposiciones Generales
@@ -226,9 +226,7 @@ Documentación obligatoria en todas las etapas: Informe justificación, planilla
 
 ## Empresas Portuarias Estatales
 
-Alinea proyectos de inversión de Empresas Portuarias Estatales al SNI. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Empresas_Portuarias_Estatales.pdf>
-
-### Alcance
+Alinea proyectos de inversión de Empresas Portuarias Estatales al SNI. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Empresas_Portuarias_Estatales.pdf
 
 Propósito: Alinear proyectos de Empresas Portuarias Estatales al SNI. Adaptar evaluación a particularidades del proyecto. Resolución de dudas mediante adenda por Jefatura de la División.
 

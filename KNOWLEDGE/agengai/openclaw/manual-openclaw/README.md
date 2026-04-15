@@ -12,6 +12,11 @@ tags:
 - manual-openclaw
 - readme
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:readme
 ---
 
 # Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
@@ -21,7 +26,6 @@ lang: es
 > al estado local `b5b589d` del 2026-03-14.
 
 - ---
-
 
 ## Parte I — Fundamentos Arquitectónicos
 

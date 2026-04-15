@@ -1,22 +1,38 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:sysml-foundations-diagrams"
+  urn: urn:fxsl:kb:sysml-foundations-diagrams
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-sysml.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-sysml.md
+version: 1.0.0
 status: published
-tags: [sysml, uml, diagrams, systems-modeling, block-definition, activity, sequence, requirements, parametric]
+tags:
+- sysml
+- uml
+- diagrams
+- systems-modeling
+- block-definition
+- activity
+- sequence
+- requirements
+- parametric
 lang: en
 extensions:
   kora:
     family: textbook
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: [4, 12]
+    - urn:fxsl:kb:opm-iso-19450
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - 4
+    - 12
+relations:
+  cites:
+  - urn:fxsl:kb:opm-iso-19450
 ---
+
 
 # SysML Foundations and Diagrams — Systems Modeling Language Overview
 

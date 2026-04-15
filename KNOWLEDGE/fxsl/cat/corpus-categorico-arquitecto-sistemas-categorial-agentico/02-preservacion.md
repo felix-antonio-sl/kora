@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-preservacion
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- funtor
+- faithfulness
+- fullness
+- traduccion
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-preservacion
+---
+
 # Preservacion
 
 Si la composicion es lo que veo primero, la preservacion es lo segundo: que se mantiene cuando paso de un mundo a otro. Cuando migro un schema de base de datos, cuando compilo codigo a bytecode, cuando serializo un objeto a JSON, cuando construyo una vista SQL sobre tablas base --- en cada caso estoy mapeando de un mundo a otro. La pregunta que me obsesiona es: que se preservo en la traduccion? Que se perdio? Y lo que se perdio, se perdio intencionalmente o por accidente?
@@ -23,11 +48,11 @@ En Haskell, esta idea se materializa en la typeclass `Functor`:
 
 ```haskell
 class Functor f where
-  fmap :: (a -> b) -> f a -> f b
+ fmap :: (a -> b) -> f a -> f b
 
 -- Las leyes del functor:
--- fmap id      == id                 -- preserva identidad
--- fmap (g . f) == fmap g . fmap f    -- preserva composicion
+-- fmap id == id -- preserva identidad
+-- fmap (g . f) == fmap g . fmap f -- preserva composicion
 ```
 
 El `fmap` ES la accion del functor sobre los morfismos. Dado un type constructor `f` (la accion sobre objetos) y un `fmap` (la accion sobre morfismos) que satisfaga las dos leyes, tengo un functor. El compilador de Haskell no verifica las leyes --- esa es responsabilidad del programador. Pero las leyes estan ahi como garantia: si `fmap` las cumple, puedo razonar ecuacionalmente sobre mi codigo con total confianza.
@@ -36,8 +61,8 @@ El ejemplo mas claro es `Maybe`:
 
 ```haskell
 instance Functor Maybe where
-  fmap _ Nothing  = Nothing
-  fmap f (Just x) = Just (f x)
+ fmap _ Nothing = Nothing
+ fmap f (Just x) = Just (f x)
 ```
 
 Si tengo una funcion `f :: a -> b`, `fmap f` la levanta al mundo de los valores opcionales: `Maybe a -> Maybe b`. Si el valor existe, aplico `f`; si no existe, propago la ausencia. Las leyes se verifican por razonamiento ecuacional --- Milewski lo demuestra caso por caso, y la prueba es casi trivial, lo cual es la senal de que la abstraccion es correcta.
@@ -46,8 +71,8 @@ La lista es otro functor:
 
 ```haskell
 instance Functor [] where
-  fmap _ []     = []
-  fmap f (x:xs) = f x : fmap f xs
+ fmap _ [] = []
+ fmap f (x:xs) = f x : fmap f xs
 ```
 
 Aplicar `fmap f` a una lista aplica `f` a cada elemento. La composicion se preserva: aplicar `fmap (g . f)` es lo mismo que aplicar `fmap f` y luego `fmap g`. Esto no es un accidente --- es la ley del functor actuando.
@@ -66,7 +91,7 @@ newtype Producer a = Producer (IO a)
 -- Si tengo f :: a -> b, puedo mapear: Producer a -> Producer b
 
 -- Functor contravariante: consume valores de tipo a
-newtype Consumer a = Consumer (a -> IO ())
+newtype Consumer a = Consumer (a -> IO )
 -- Si tengo f :: a -> b, mapeo al reves: Consumer b -> Consumer a
 ```
 
@@ -98,7 +123,7 @@ Dos patrones aparecen una y otra vez en mi practica:
 -- Functor de olvido: Employee tiene (id, name, email, dept_id, salary)
 -- La vista olvida salary y email
 CREATE VIEW employee_directory AS
-  SELECT id, name, dept_id FROM employee;
+ SELECT id, name, dept_id FROM employee;
 ```
 
 La vista preserva la composicion de foreign keys (puedo seguir haciendo JOINs a traves de dept_id) pero olvido informacion. Es un functor honesto: cumple las leyes.
@@ -133,16 +158,16 @@ Consideremos un schema concreto:
 
 ```sql
 CREATE TABLE department (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL
+ id SERIAL PRIMARY KEY,
+ name TEXT NOT NULL
 );
 
 CREATE TABLE employee (
-  id SERIAL PRIMARY KEY,
-  first_name TEXT,
-  last_name TEXT,
-  dept_id INTEGER REFERENCES department(id),
-  manager_id INTEGER REFERENCES employee(id)
+ id SERIAL PRIMARY KEY,
+ first_name TEXT,
+ last_name TEXT,
+ dept_id INTEGER REFERENCES department(id),
+ manager_id INTEGER REFERENCES employee(id)
 );
 ```
 
@@ -152,14 +177,14 @@ En Julia/Catlab, el schema se declara como una categoria presentada:
 
 ```julia
 @present CompanySchema(FreeSchema) begin
-  Employee::Ob
-  Department::Ob
+ Employee::Ob
+ Department::Ob
 
-  dept::Hom(Employee, Department)
-  manager::Hom(Employee, Employee)
-  name::Hom(Department, StringType)
+ dept::Hom(Employee, Department)
+ manager::Hom(Employee, Employee)
+ name::Hom(Department, StringType)
 
-  compose(manager, dept) == dept  -- path equivalence
+ compose(manager, dept) == dept -- path equivalence
 end
 ```
 
@@ -177,7 +202,7 @@ La belleza de esto es que los tres functores de migracion son *determinados* por
 
 ## Functores en la ingenieria cotidiana
 
-**ORMs como functores.** Un ORM mapea el schema relacional (una categoria) a clases y metodos en un lenguaje orientado a objetos (otra categoria). Las tablas se mapean a clases. Las foreign keys se mapean a propiedades de navegacion. La composicion se preserva: si `employee.department.company` es un camino en el schema, el ORM produce `employee.getDepartment().getCompany()` en el mundo de objetos. Cuando un ORM "pierde" informacion (no expone ciertas relaciones, o introduce N+1 queries), es porque el functor no es faithful o porque la implementacion viola las leyes.
+**ORMs como functores.** Un ORM mapea el schema relacional (una categoria) a clases y metodos en un lenguaje orientado a objetos (otra categoria). Las tablas se mapean a clases. Las foreign keys se mapean a propiedades de navegacion. La composicion se preserva: si `employee.department.company` es un camino en el schema, el ORM produce `employee.getDepartment.getCompany` en el mundo de objetos. Cuando un ORM "pierde" informacion (no expone ciertas relaciones, o introduce N+1 queries), es porque el functor no es faithful o porque la implementacion viola las leyes.
 
 **Compiladores como functores.** Un compilador mapea la categoria de tipos y funciones del lenguaje fuente a la categoria de tipos y operaciones del bytecode. La composicion debe preservarse: compilar `g . f` debe producir lo mismo que compilar `f`, compilar `g`, y componer los resultados. La preservacion de identidad asegura que las funciones identidad se compilan a no-ops. Un compilador que viola estas leyes genera codigo incorrecto.
 
@@ -189,14 +214,14 @@ La belleza de esto es que los tres functores de migracion son *determinados* por
 
 ```haskell
 -- Levantar una funcion pura al mundo de IO
-fmap (+1) (readLn :: IO Int)  -- lee un entero y le suma 1
+fmap (+1) (readLn :: IO Int) -- lee un entero y le suma 1
 
 -- Levantar al mundo de listas
-fmap (*2) [1,2,3]  -- [2,4,6]
+fmap (*2) [1,2,3] -- [2,4,6]
 
 -- Levantar al mundo de Maybe
-fmap show (Just 42)  -- Just "42"
-fmap show Nothing    -- Nothing
+fmap show (Just 42) -- Just "42"
+fmap show Nothing -- Nothing
 ```
 
 Cada una de estas lineas es la misma idea: un functor que preserva composicion e identidad, aplicado a un contexto particular.

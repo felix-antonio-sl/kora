@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:bpmn-cies-sitia"
+  urn: urn:gn:kb:bpmn-cies-sitia
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "BPMN D09 Gestión Operativa CIES/SITIA GORE Ñuble"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: BPMN D09 Gestión Operativa CIES/SITIA GORE Ñuble
+version: 1.0.0
 status: published
-tags: [seguridad-publica, cies, sitia, videovigilancia, gore-nuble]
+tags:
+- seguridad-publica
+- cies
+- sitia
+- videovigilancia
+- gore-nuble
 lang: es
 extensions:
   gn:
     family: guide
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:bpmn-cies-sitia
 ---
 
 # Gestion Operativa CIES/SITIA -- GORE Nuble
@@ -29,27 +38,27 @@ El Centro Integrado de Emergencias y Seguridad (CIES) de GORE Nuble opera con cr
 
 ```mermaid
 flowchart LR
-    subgraph CIES["Centro CIES-NUBLE"]
-        P1["P1: Monitoreo y<br/>Deteccion"]
-        P2["P2: Coordinacion<br/>Interinstitucional"]
-        P3["P3: Gestion de<br/>Evidencias"]
-    end
+ subgraph CIES["Centro CIES-NUBLE"]
+ P1["P1: Monitoreo y; Deteccion"]
+ P2["P2: Coordinacion; Interinstitucional"]
+ P3["P3: Gestion de; Evidencias"]
+ end
 
-    subgraph SITIA["Integracion SITIA"]
-        S1["SITIA-Patentes"]
-        S2["SITIA-Armas"]
-        S3["SITIA-Evidencia"]
-        S4["SITIA-Unificacion"]
-    end
+ subgraph SITIA["Integracion SITIA"]
+ S1["SITIA-Patentes"]
+ S2["SITIA-Armas"]
+ S3["SITIA-Evidencia"]
+ S4["SITIA-Unificacion"]
+ end
 
-    P1 --> P2
-    P1 --> P3
-    P1 <--> S1 & S2 & S4
-    P3 <--> S3
+ P1 --> P2
+ P1 --> P3
+ P1 <--> S1 & S2 & S4
+ P3 <--> S3
 
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#FF9800,color:#fff
-    style P3 fill:#9C27B0,color:#fff
+ style P1 fill:#2196F3,color:#fff
+ style P2 fill:#FF9800,color:#fff
+ style P3 fill:#9C27B0,color:#fff
 ```
 
 ## Monitoreo, Deteccion y Escalamiento
@@ -60,32 +69,32 @@ Proceso P1. Sistema principal: HikCentral VMS. Operadores CIES monitorean camara
 
 ```mermaid
 flowchart TD
-    subgraph MONITOREO["Monitoreo Continuo"]
-        A["Operador CIES<br/>monitorea camaras"]
-        B["Sistemas SITIA<br/>detectan automaticamente:<br/>- Patentes alertadas<br/>- Armas visibles"]
-    end
+ subgraph MONITOREO["Monitoreo Continuo"]
+ A["Operador CIES; monitorea camaras"]
+ B["Sistemas SITIA; detectan automaticamente:; - Patentes alertadas; - Armas visibles"]
+ end
 
-    subgraph DETECCION["Deteccion"]
-        C["Identificar evento/<br/>incidente"]
-        D{"Clasificar<br/>prioridad"}
-        D -->|"Alta"| E["Alarma inmediata"]
-        D -->|"Media"| F["Registro y seguimiento"]
-        D -->|"Baja"| G["Solo registro"]
-    end
+ subgraph DETECCION["Deteccion"]
+ C["Identificar evento/; incidente"]
+ D{"Clasificar; prioridad"}
+ D -->|"Alta"| E["Alarma inmediata"]
+ D -->|"Media"| F["Registro y seguimiento"]
+ D -->|"Baja"| G["Solo registro"]
+ end
 
-    subgraph ESCALAMIENTO["Escalamiento"]
-        E --> H["Supervisor CIES<br/>evalua"]
-        H --> I["Activar protocolo<br/>segun tipo"]
-        I --> J["Coordinar con:<br/>- Carabineros<br/>- PDI<br/>- Bomberos<br/>- SAMU"]
-    end
+ subgraph ESCALAMIENTO["Escalamiento"]
+ E --> H["Supervisor CIES; evalua"]
+ H --> I["Activar protocolo; segun tipo"]
+ I --> J["Coordinar con:; - Carabineros; - PDI; - Bomberos; - SAMU"]
+ end
 
-    A --> C
-    B --> C
-    C --> D
-    F --> H
+ A --> C
+ B --> C
+ C --> D
+ F --> H
 
-    style E fill:#f44336,color:#fff
-    style J fill:#4CAF50,color:#fff
+ style E fill:#f44336,color:#fff
+ style J fill:#4CAF50,color:#fff
 ```
 
 ### Clasificacion de Incidentes
@@ -104,20 +113,20 @@ Proceso P2. Entidades coordinadas: Carabineros, PDI, Bomberos, SAMU, Municipios.
 
 ```mermaid
 flowchart TD
-    A["Incidente<br/>clasificado"] --> B["Enlace CIES<br/>activa canal"]
-    B --> C{"Tipo de<br/>emergencia"}
+ A["Incidente; clasificado"] --> B["Enlace CIES; activa canal"]
+ B --> C{"Tipo de; emergencia"}
 
-    C -->|"Seguridad"| D["Carabineros<br/>133"]
-    C -->|"Investigacion"| E["PDI<br/>134"]
-    C -->|"Incendio"| F["Bomberos<br/>132"]
-    C -->|"Salud"| G["SAMU<br/>131"]
+ C -->|"Seguridad"| D["Carabineros; 133"]
+ C -->|"Investigacion"| E["PDI; 134"]
+ C -->|"Incendio"| F["Bomberos; 132"]
+ C -->|"Salud"| G["SAMU; 131"]
 
-    D & E & F & G --> H["Confirmar recepcion<br/>y unidades"]
-    H --> I["Seguimiento<br/>en tiempo real"]
-    I --> J["Registro de<br/>respuesta"]
-    J --> K["Cierre de<br/>incidente"]
+ D & E & F & G --> H["Confirmar recepcion; y unidades"]
+ H --> I["Seguimiento; en tiempo real"]
+ I --> J["Registro de; respuesta"]
+ J --> K["Cierre de; incidente"]
 
-    style K fill:#4CAF50,color:#fff
+ style K fill:#4CAF50,color:#fff
 ```
 
 ### Protocolos de Comunicacion
@@ -137,29 +146,29 @@ Proceso P3. Plataforma: SITIA-Evidencia (Genetec Clearance). La solicitud de evi
 
 ```mermaid
 flowchart TD
-    subgraph SOLICITUD["Solicitud"]
-        A["Fiscalia/Tribunal<br/>solicita evidencia"]
-        B["Recepcion oficio<br/>en GORE"]
-        C["Verificar:<br/>- Orden judicial<br/>- Requerimiento MP"]
-    end
+ subgraph SOLICITUD["Solicitud"]
+ A["Fiscalia/Tribunal; solicita evidencia"]
+ B["Recepcion oficio; en GORE"]
+ C["Verificar:; - Orden judicial; - Requerimiento MP"]
+ end
 
-    subgraph EXTRACCION["Extraccion"]
-        D["Supervisor CIES<br/>autoriza"]
-        E["Localizar grabacion<br/>en HikCentral"]
-        F["Exportar clip<br/>seguro"]
-        G["Subir a<br/>SITIA-Evidencia"]
-    end
+ subgraph EXTRACCION["Extraccion"]
+ D["Supervisor CIES; autoriza"]
+ E["Localizar grabacion; en HikCentral"]
+ F["Exportar clip; seguro"]
+ G["Subir a; SITIA-Evidencia"]
+ end
 
-    subgraph ENTREGA["Entrega"]
-        H["Generar cadena<br/>de custodia"]
-        I["Entrega por medio<br/>controlado"]
-        J["Acta de entrega"]
-        K["Registro para<br/>trazabilidad"]
-    end
+ subgraph ENTREGA["Entrega"]
+ H["Generar cadena; de custodia"]
+ I["Entrega por medio; controlado"]
+ J["Acta de entrega"]
+ K["Registro para; trazabilidad"]
+ end
 
-    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K
+ A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K
 
-    style J fill:#4CAF50,color:#fff
+ style J fill:#4CAF50,color:#fff
 ```
 
 ### Cadena de Custodia Digital
@@ -179,13 +188,13 @@ Red de porticos publicos y privados con lectura automatica de placas. El sistema
 
 ```mermaid
 flowchart LR
-    A["Red de porticos<br/>publicos/privados"] --> B["Lectura automatica<br/>de placas"]
-    B --> C["Contraste en<br/>tiempo real"]
-    C --> D{"Encargo de<br/>busqueda?"}
-    D -->|"Si"| E["Alerta a CIES<br/>y policias"]
-    D -->|"No"| F["Registro historico"]
+ A["Red de porticos; publicos/privados"] --> B["Lectura automatica; de placas"]
+ B --> C["Contraste en; tiempo real"]
+ C --> D{"Encargo de; busqueda?"}
+ D -->|"Si"| E["Alerta a CIES; y policias"]
+ D -->|"No"| F["Registro historico"]
 
-    style E fill:#f44336,color:#fff
+ style E fill:#f44336,color:#fff
 ```
 
 ### SITIA-Armas
@@ -194,14 +203,14 @@ Camaras CIES alimentan modelo de IA (YOLOv11) para deteccion automatica de armas
 
 ```mermaid
 flowchart LR
-    A["Camaras CIES"] --> B["Modelo IA<br/>(YOLOv11)"]
-    B --> C{"Arma<br/>detectada?"}
-    C -->|"Si"| D["Alerta automatica"]
-    C -->|"No"| E["Continuar monitoreo"]
-    D --> F["Operador verifica"]
-    F --> G["Escalar si confirma"]
+ A["Camaras CIES"] --> B["Modelo IA; (YOLOv11)"]
+ B --> C{"Arma; detectada?"}
+ C -->|"Si"| D["Alerta automatica"]
+ C -->|"No"| E["Continuar monitoreo"]
+ D --> F["Operador verifica"]
+ F --> G["Escalar si confirma"]
 
-    style D fill:#f44336,color:#fff
+ style D fill:#f44336,color:#fff
 ```
 
 ## Privacidad y Retencion
@@ -220,14 +229,14 @@ Las grabaciones se almacenan por 30 dias. Ante solicitud de cautela ciudadana, l
 
 ```mermaid
 flowchart TD
-    A["Grabacion<br/>generada"] --> B["Almacenar<br/>30 dias"]
-    B --> C{"Solicitud de<br/>cautela?"}
-    C -->|"Si"| D["Extender retencion<br/>hasta 6 meses"]
-    C -->|"No"| E["Eliminar<br/>automaticamente"]
-    D --> F["Revisar al<br/>vencimiento"]
-    F --> E
+ A["Grabacion; generada"] --> B["Almacenar; 30 dias"]
+ B --> C{"Solicitud de; cautela?"}
+ C -->|"Si"| D["Extender retencion; hasta 6 meses"]
+ C -->|"No"| E["Eliminar; automaticamente"]
+ D --> F["Revisar al; vencimiento"]
+ F --> E
 
-    style E fill:#607D8B,color:#fff
+ style E fill:#607D8B,color:#fff
 ```
 
 ## Sostenibilidad Operativa
@@ -246,11 +255,11 @@ Ciclo trimestral: revision de equipos, actualizaciones de software y reporte de 
 
 ```mermaid
 flowchart LR
-    A["Mantencion<br/>preventiva"] -->|"Trimestral"| B["Revision equipos"]
-    B --> C["Actualizaciones<br/>software"]
-    C --> D["Reporte estado"]
+ A["Mantencion; preventiva"] -->|"Trimestral"| B["Revision equipos"]
+ B --> C["Actualizaciones; software"]
+ C --> D["Reporte estado"]
 
-    style D fill:#4CAF50,color:#fff
+ style D fill:#4CAF50,color:#fff
 ```
 
 ## Normativa Aplicable

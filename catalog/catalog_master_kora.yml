@@ -621,6 +621,10 @@ Catalog:
     title: AGENT.md
     file: AGENTS/salud/salubrista-hah/AGENT.md
     status: active
+  - urn: urn:salud:agent:urgenciologo
+    title: Urgenciologo — Copiloto clinico de medicina de emergencia
+    file: AGENTS/salud/urgenciologo/AGENT.md
+    status: active
   Skills:
   - urn: urn:dev:skill:blast-radius:1.0.1
     title: CM-BLAST-RADIUS.md
@@ -1854,6 +1858,14 @@ Catalog:
     title: CM-SPEC-GUARD
     file: SKILLS/kora/guardian/CM-SPEC-GUARD/SKILL.md
     status: published
+  - urn: urn:kora:skill:transmute-claude-code:1.0.0
+    title: CM-TRANSMUTE-CLAUDE-CODE
+    file: SKILLS/kora/transmute-claude-code/SKILL.md
+    status: published
+  - urn: urn:kora:skill:transmute-openclaw:1.0.0
+    title: CM-TRANSMUTE-OPENCLAW
+    file: SKILLS/kora/transmute-openclaw/SKILL.md
+    status: published
   - urn: urn:korvo:skill:cm-bancarrota:2.1.0
     title: CM-BANCARROTA.md
     file: AGENTS/korvo/korax/skills/CM-BANCARROTA.md
@@ -2247,14 +2259,18 @@ Catalog:
     title: OpenClaw — Cheatsheet Definitivo
     file: KNOWLEDGE/agengai/openclaw/manual-openclaw/CHEATSHEET.md
     status: published
+  - urn: urn:agengai:kb:cheatsheet-p02
+    title: OpenClaw — Cheatsheet Definitivo - Parte 02
+    file: KNOWLEDGE/agengai/openclaw/manual-openclaw/CHEATSHEET--p02.md
+    status: published
   - urn: urn:agengai:kb:forjador-especialista-openclaw
     title: FORJADOR ESPECIALISTA — Despliegue, Configuración y Mantención de Agentes
       OpenClaw en Ubuntu Host
-    file: KNOWLEDGE/OMEGA/forjador-especialista-openclaw.md
+    file: KNOWLEDGE/agengai/openclaw/specs-legacy/forjador-especialista-openclaw.md
     status: published
   - urn: urn:agengai:kb:forjador-openclaw
     title: FORJADOR — Agente Forjador de Agentes OpenClaw
-    file: KNOWLEDGE/OMEGA/forjador-openclaw.md
+    file: KNOWLEDGE/agengai/openclaw/specs-legacy/forjador-openclaw.md
     status: published
   - urn: urn:agengai:kb:openclaw-integration
     title: OpenClaw Integration Guide
@@ -2262,7 +2278,7 @@ Catalog:
     status: published
   - urn: urn:agengai:kb:openclaw-manual-integral
     title: 'Manual Integral — Agentes OpenClaw: Creacion, Operacion y Evolucion'
-    file: KNOWLEDGE/OMEGA/openclaw-manual-integral.md
+    file: KNOWLEDGE/agengai/openclaw/specs-legacy/openclaw-manual-integral.md
     status: published
   - urn: urn:agengai:kb:openclaw-runtime-extension
     title: AGENGAI/OpenClaw-Runtime-Extension v1.0.0
@@ -2270,11 +2286,15 @@ Catalog:
     status: published
   - urn: urn:agengai:kb:openclaw-skills-manual
     title: Manual Integral de Skills en OpenClaw
-    file: KNOWLEDGE/OMEGA/manual-integral-skills-openclaw.md
+    file: KNOWLEDGE/agengai/openclaw/specs-legacy/manual-integral-skills-openclaw.md
     status: draft
   - urn: urn:agengai:kb:readme
     title: Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
     file: KNOWLEDGE/agengai/openclaw/manual-openclaw/README.md
+    status: published
+  - urn: urn:agengai:kb:salubrista-openclaw-spec
+    title: Especificacion Integral del Agente OpenClaw `salubrista`
+    file: KNOWLEDGE/agengai/openclaw/specs-legacy/salubrista-openclaw-especificacion-integral.md
     status: published
   - urn: urn:agengai:kb:skills-anthropic
     title: The Complete Guide to Building Skills for Claude
@@ -2320,6 +2340,10 @@ Catalog:
     title: 'CHAPTER 0: EL OPERADOR SOLITARIO'
     file: KNOWLEDGE/fxsl/xanpan/chapter0-operador-solitario.md
     status: published
+  - urn: urn:fxsl:kb:chapter0-operador-solitario-p02
+    title: 'CHAPTER 0: EL OPERADOR SOLITARIO - Parte 02'
+    file: KNOWLEDGE/fxsl/xanpan/chapter0-operador-solitario--p02.md
+    status: published
   - urn: urn:fxsl:kb:coalgebras
     title: Coalgebras for Software Engineering
     file: KNOWLEDGE/fxsl/cat/coalgebras.md
@@ -2364,6 +2388,10 @@ Catalog:
     title: Protocolo de Auditoría Ontológica 360° (Gist)
     file: KNOWLEDGE/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.md
     status: published
+  - urn: urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol-p02
+    title: Protocolo de Auditoría Ontológica 360° (Gist) - Parte 02
+    file: KNOWLEDGE/fxsl/gist/fx-guide-onto-gist-001-audit-protocol--p02.md
+    status: published
   - urn: urn:fxsl:kb:fx-namespace
     title: The Ontology Namespace vs the Ontology IRI
     file: KNOWLEDGE/fxsl/gist/fx-namespace.md
@@ -2383,6 +2411,198 @@ Catalog:
   - urn: urn:fxsl:kb:fx-uom-model
     title: New Magnitudes and Units of Measure in gist 13
     file: KNOWLEDGE/fxsl/gist/fx-uom-model.md
+    status: published
+  - urn: urn:fxsl:kb:icas-adjunciones
+    title: Adjunciones
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/06-adjunciones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-adjunciones
+    title: Adjunciones
+    file: SKILLS/arquitecto-categorico/references/06-adjunciones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-agencia
+    title: Agencia
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/14-agencia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-agencia
+    title: Agencia
+    file: SKILLS/arquitecto-categorico/references/14-agencia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-calidad-riesgo
+    title: Calidad y riesgo
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/18-calidad-riesgo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-calidad-riesgo
+    title: Calidad y riesgo
+    file: SKILLS/arquitecto-categorico/references/18-calidad-riesgo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-comparacion
+    title: Comparación y equivalencia
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/03-comparacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-comparacion
+    title: Comparación y equivalencia
+    file: SKILLS/arquitecto-categorico/references/03-comparacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion
+    title: Composicion
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/01-composicion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion
+    title: Composicion
+    file: SKILLS/arquitecto-categorico/references/01-composicion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion-estructura
+    title: Composicion con estructura
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/07-composicion-con-estructura.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion-estructura
+    title: Composicion con estructura
+    file: SKILLS/arquitecto-categorico/references/07-composicion-con-estructura.md
+    status: published
+  - urn: urn:fxsl:kb:icas-efectos
+    title: Efectos
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/09-efectos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-efectos
+    title: Efectos
+    file: SKILLS/arquitecto-categorico/references/09-efectos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-enriquecimiento
+    title: Enriquecimiento
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08-enriquecimiento.md
+    status: published
+  - urn: urn:fxsl:kb:icas-enriquecimiento
+    title: Enriquecimiento
+    file: SKILLS/arquitecto-categorico/references/08-enriquecimiento.md
+    status: published
+  - urn: urn:fxsl:kb:icas-escala
+    title: Escala
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/13-escala.md
+    status: published
+  - urn: urn:fxsl:kb:icas-escala
+    title: Escala
+    file: SKILLS/arquitecto-categorico/references/13-escala.md
+    status: published
+  - urn: urn:fxsl:kb:icas-extension
+    title: Extension
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/10-extension.md
+    status: published
+  - urn: urn:fxsl:kb:icas-extension
+    title: Extension
+    file: SKILLS/arquitecto-categorico/references/10-extension.md
+    status: published
+  - urn: urn:fxsl:kb:icas-higher-categories
+    title: Categorias superiores
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08b-higher-categories.md
+    status: published
+  - urn: urn:fxsl:kb:icas-higher-categories
+    title: Categorias superiores
+    file: SKILLS/arquitecto-categorico/references/08b-higher-categories.md
+    status: published
+  - urn: urn:fxsl:kb:icas-identidad-relacion
+    title: Identidad es relación
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/04-identidad-es-relacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-identidad-relacion
+    title: Identidad es relación
+    file: SKILLS/arquitecto-categorico/references/04-identidad-es-relacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-infraestructura
+    title: Infraestructura autonoma
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/20-infraestructura-autonoma.md
+    status: published
+  - urn: urn:fxsl:kb:icas-infraestructura
+    title: Infraestructura autonoma
+    file: SKILLS/arquitecto-categorico/references/20-infraestructura-autonoma.md
+    status: published
+  - urn: urn:fxsl:kb:icas-interaccion
+    title: Interaccion
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/11-interaccion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-interaccion
+    title: Interaccion
+    file: SKILLS/arquitecto-categorico/references/11-interaccion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-lifecycle
+    title: Lifecycle
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/16-lifecycle.md
+    status: published
+  - urn: urn:fxsl:kb:icas-lifecycle
+    title: Lifecycle
+    file: SKILLS/arquitecto-categorico/references/16-lifecycle.md
+    status: published
+  - urn: urn:fxsl:kb:icas-patrones
+    title: Patrones
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/19-patrones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-patrones
+    title: Patrones
+    file: SKILLS/arquitecto-categorico/references/19-patrones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-preservacion
+    title: Preservacion
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/02-preservacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-preservacion
+    title: Preservacion
+    file: SKILLS/arquitecto-categorico/references/02-preservacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-procesos
+    title: Procesos
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/17-procesos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-procesos
+    title: Procesos
+    file: SKILLS/arquitecto-categorico/references/17-procesos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-protocolos
+    title: Protocolos y coreografia
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/14b-protocolos-coreografia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-protocolos
+    title: Protocolos y coreografia
+    file: SKILLS/arquitecto-categorico/references/14b-protocolos-coreografia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-safety-alignment
+    title: Safety y alignment
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12b-safety-alignment.md
+    status: published
+  - urn: urn:fxsl:kb:icas-safety-alignment
+    title: Safety y alignment
+    file: SKILLS/arquitecto-categorico/references/12b-safety-alignment.md
+    status: published
+  - urn: urn:fxsl:kb:icas-sintesis
+    title: 'Sintesis: ADN cognitivo del Arquitecto de Sistemas Categorial'
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/00-sintesis.md
+    status: published
+  - urn: urn:fxsl:kb:icas-sintesis
+    title: 'Sintesis: ADN cognitivo del Arquitecto de Sistemas Categorial'
+    file: SKILLS/arquitecto-categorico/references/00-sintesis.md
+    status: published
+  - urn: urn:fxsl:kb:icas-tiempo
+    title: Tiempo
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/15-tiempo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-tiempo
+    title: Tiempo
+    file: SKILLS/arquitecto-categorico/references/15-tiempo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-topoi
+    title: Topoi
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12-topoi.md
+    status: published
+  - urn: urn:fxsl:kb:icas-topoi
+    title: Topoi
+    file: SKILLS/arquitecto-categorico/references/12-topoi.md
+    status: published
+  - urn: urn:fxsl:kb:icas-universales
+    title: Construcciones universales
+    file: KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/05-universales.md
+    status: published
+  - urn: urn:fxsl:kb:icas-universales
+    title: Construcciones universales
+    file: SKILLS/arquitecto-categorico/references/05-universales.md
     status: published
   - urn: urn:fxsl:kb:kb-category
     title: Knowledge Base as Category
@@ -2405,6 +2625,21 @@ Catalog:
       de Sistemas
     file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md
     status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p02
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 02
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p02.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p03
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 03
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p03.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p04
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 04
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p04.md
+    status: published
   - urn: urn:fxsl:kb:multicategory-multimodel-query-processing
     title: 'MultiCategory: Multi-Model Query Processing'
     file: KNOWLEDGE/fxsl/cat/multicategory-multimodel-query-processing.md
@@ -2412,6 +2647,10 @@ Catalog:
   - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations
     title: Observaciones visuales de los tutoriales OPCloud
     file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations.md
+    status: published
+  - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations-p02
+    title: Observaciones visuales de los tutoriales OPCloud - Parte 02
+    file: KNOWLEDGE/fxsl/opm/opcloud-tutorial-visual-observations--p02.md
     status: published
   - urn: urn:fxsl:kb:opd-es
     title: OPD — Gramática visual de OPM
@@ -2421,6 +2660,22 @@ Catalog:
     title: OPL-ES — Lenguaje Objeto-Proceso en Español
     file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es.md
     status: published
+  - urn: urn:fxsl:kb:opl-es-p02
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español - Parte 02
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opl-es-p03
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español - Parte 03
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es--p03.md
+    status: published
+  - urn: urn:fxsl:kb:opl-es-p04
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español - Parte 04
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es--p04.md
+    status: published
+  - urn: urn:fxsl:kb:opl-es-p05
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español - Parte 05
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-opl-es--p05.md
+    status: published
   - urn: urn:fxsl:kb:opm-complexity-management
     title: OPM Complexity Management — Refinement and Abstraction
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md
@@ -2429,13 +2684,55 @@ Catalog:
     title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
     file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md
     status: published
+  - urn: urn:fxsl:kb:opm-dynamic-behavior-p02
+    title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
+      - Parte 02
+    file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opm-dynamic-behavior-p03
+    title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
+      - Parte 03
+    file: KNOWLEDGE/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior--p03.md
+    status: published
   - urn: urn:fxsl:kb:opm-es
     title: OPM — Núcleo conceptual
     file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md
     status: published
+  - urn: urn:fxsl:kb:opm-es-p02
+    title: OPM — Núcleo conceptual - Parte 02
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opm-es-p03
+    title: OPM — Núcleo conceptual - Parte 03
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es--p03.md
+    status: published
+  - urn: urn:fxsl:kb:opm-es-p04
+    title: OPM — Núcleo conceptual - Parte 04
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es--p04.md
+    status: published
+  - urn: urn:fxsl:kb:opm-es-p05
+    title: OPM — Núcleo conceptual - Parte 05
+    file: KNOWLEDGE/fxsl/opm/opm-ssot-es/opm-iso-19450-es--p05.md
+    status: published
   - urn: urn:fxsl:kb:opm-iso-19450
     title: OPM ISO/PAS 19450 — Object-Process Methodology
     file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p02
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 02
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p03
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 03
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450--p03.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p04
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 04
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450--p04.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p05
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 05
+    file: KNOWLEDGE/fxsl/opm/opm-ssot/opm-iso-19450--p05.md
     status: published
   - urn: urn:fxsl:kb:opm-mbse-acr-tutorial
     title: ACR Tutorial — OPM History and Modeling the Automatic Crash Response System
@@ -2461,6 +2758,10 @@ Catalog:
     title: Procrastination — Sirois (2022)
     file: KNOWLEDGE/fxsl/procrastination-sirois.md
     status: published
+  - urn: urn:fxsl:kb:procrastination-sirois-p02
+    title: Procrastination — Sirois (2022) - Parte 02
+    file: KNOWLEDGE/fxsl/procrastination-sirois--p02.md
+    status: published
   - urn: urn:fxsl:kb:schema-evolution
     title: Schema Evolution and Behavioral Audit
     file: KNOWLEDGE/fxsl/cat/schema-evolution.md
@@ -2472,6 +2773,10 @@ Catalog:
   - urn: urn:fxsl:kb:stack-llm-arquitectura
     title: STACK::LLM v1.0
     file: KNOWLEDGE/fxsl/xanpan/stack-llm-arquitectura.md
+    status: published
+  - urn: urn:fxsl:kb:stack-llm-arquitectura-p02
+    title: STACK::LLM v1.0 - Parte 02
+    file: KNOWLEDGE/fxsl/xanpan/stack-llm-arquitectura--p02.md
     status: published
   - urn: urn:fxsl:kb:swarm-ops-metodologia
     title: SWARM::OPS v1.0
@@ -2533,6 +2838,10 @@ Catalog:
     title: Estrategia y Gestión del Gobierno Regional en Chile
     file: KNOWLEDGE/gn/kb/kb_gn_035_estrategia_gestion.md
     status: published
+  - urn: urn:gn:kb:estrategia-gestion-p02
+    title: Estrategia y Gestión del Gobierno Regional en Chile - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_035_estrategia_gestion--p02.md
+    status: published
   - urn: urn:gn:kb:estructura-estado-chile
     title: Estructura del Estado de Chile
     file: KNOWLEDGE/gn/kb/kb_gn_007_estructura_estado_chile.md
@@ -2545,13 +2854,47 @@ Catalog:
     title: Gestión Operacional de Intervenciones Públicas Regionales (IPR)
     file: KNOWLEDGE/gn/kb/ipr/kb_gn_019_gestion_ipr.md
     status: published
+  - urn: urn:gn:kb:gestion-ipr-p02
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      02
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_019_gestion_ipr--p02.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr-p03
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      03
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_019_gestion_ipr--p03.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr-p04
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      04
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_019_gestion_ipr--p04.md
+    status: published
   - urn: urn:gn:kb:gestion-prpto
     title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026
     file: KNOWLEDGE/gn/kb/kb_gn_018_gestion_prpto_2026.md
     status: published
+  - urn: urn:gn:kb:gestion-prpto-p02
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      02
+    file: KNOWLEDGE/gn/kb/kb_gn_018_gestion_prpto_2026--p02.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto-p03
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      03
+    file: KNOWLEDGE/gn/kb/kb_gn_018_gestion_prpto_2026--p03.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto-p04
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      04
+    file: KNOWLEDGE/gn/kb/kb_gn_018_gestion_prpto_2026--p04.md
+    status: published
   - urn: urn:gn:kb:gestion-rendiciones
     title: Gestión de Rendiciones de Cuentas — GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_020_gestion_rendiciones.md
+    status: published
+  - urn: urn:gn:kb:gestion-rendiciones-p02
+    title: Gestión de Rendiciones de Cuentas — GORE Ñuble - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_020_gestion_rendiciones--p02.md
     status: published
   - urn: urn:gn:kb:gore-ideal
     title: 'GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional'
@@ -2583,13 +2926,75 @@ Catalog:
       Directa GORE – Glosa 06
     file: KNOWLEDGE/gn/kb/ipr/kb_gn_025_guia_programas.md
     status: published
+  - urn: urn:gn:kb:guia-programas-directos-gore-p02
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE – Glosa 06 - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_025_guia_programas--p02.md
+    status: published
   - urn: urn:gn:kb:indicadores-nuble
     title: Indicadores Regionales y Comunales — Región de Ñuble
     file: KNOWLEDGE/gn/kb/indicadores-nuble.md
     status: published
+  - urn: urn:gn:kb:indicadores-nuble-p02
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 02
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p02.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p03
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 03
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p03.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p04
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 04
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p04.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p05
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 05
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p05.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p06
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 06
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p06.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p07
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 07
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p07.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p08
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 08
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p08.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p09
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 09
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p09.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p10
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 10
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p10.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p11
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 11
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p11.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p12
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 12
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p12.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p13
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 13
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p13.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p14
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 14
+    file: KNOWLEDGE/gn/kb/indicadores-nuble--p14.md
+    status: published
   - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
     title: Instructivo Concurso Vinculación con la Comunidad 8% 2025 – Región de Ñuble
     file: KNOWLEDGE/gn/kb/ipr/kb_gn_028_instructivo_subvencion_8.md
+    status: published
+  - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts-p02
+    title: Instructivo Concurso Vinculación con la Comunidad 8% 2025 – Región de Ñuble
+      - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/kb_gn_028_instructivo_subvencion_8--p02.md
     status: published
   - urn: urn:gn:kb:intro-gores-nuble
     title: Introducción al Gobierno Regional de Ñuble
@@ -2599,6 +3004,10 @@ Catalog:
     title: 'Lean Six Sigma: Core Methods and Tools'
     file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_lean6_core.md
     status: published
+  - urn: urn:gn:kb:lean6-gestion-core-p02
+    title: 'Lean Six Sigma: Core Methods and Tools - Parte 02'
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_lean6_core--p02.md
+    status: published
   - urn: urn:gn:kb:ley-presupuestos-2026-glosas-gore
     title: Ley de Presupuestos 2026 — Glosas Gobiernos Regionales
     file: KNOWLEDGE/gn/kb/kb_gn_211_ley_presupuestos_2026_glosas.md
@@ -2606,6 +3015,18 @@ Catalog:
   - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble
     title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p02
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p02.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p03
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 03
+    file: KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p03.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p04
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 04
+    file: KNOWLEDGE/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p04.md
     status: published
   - urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
     title: Ley N° 21.796 — Normas Generales Ley de Presupuestos 2026
@@ -2615,13 +3036,41 @@ Catalog:
     title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales'
     file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31.md
     status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p02
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 02'
+    file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p02.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p03
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 03'
+    file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p03.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p04
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 04'
+    file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p04.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p05
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 05'
+    file: KNOWLEDGE/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p05.md
+    status: published
   - urn: urn:gn:kb:loc-gore
     title: LOC sobre Gobierno y Administración Regional (DFL 1-19.175)
     file: KNOWLEDGE/gn/kb/kb_gn_031_loc_gore.md
     status: published
+  - urn: urn:gn:kb:loc-gore-p02
+    title: LOC sobre Gobierno y Administración Regional (DFL 1-19.175) - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_031_loc_gore--p02.md
+    status: published
   - urn: urn:gn:kb:manual-compras-contrataciones
     title: Gestión de Compras y Contrataciones — GORE Ñuble
     file: KNOWLEDGE/gn/kb/manual-compras-contrataciones.md
+    status: published
+  - urn: urn:gn:kb:manual-compras-contrataciones-p02
+    title: Gestión de Compras y Contrataciones — GORE Ñuble - Parte 02
+    file: KNOWLEDGE/gn/kb/manual-compras-contrataciones--p02.md
     status: published
   - urn: urn:gn:kb:manual-contabilidad
     title: Contabilidad Gubernamental y Cierre Financiero — GORE Ñuble
@@ -2631,9 +3080,21 @@ Catalog:
     title: Gestion de Flota Vehicular y Servicios Generales — GORE Nuble
     file: KNOWLEDGE/gn/kb/manual-flota-servicios-generales.md
     status: published
+  - urn: urn:gn:kb:manual-flota-servicios-generales-p02
+    title: Gestion de Flota Vehicular y Servicios Generales — GORE Nuble - Parte 02
+    file: KNOWLEDGE/gn/kb/manual-flota-servicios-generales--p02.md
+    status: published
   - urn: urn:gn:kb:manual-gestion-personas
     title: Gestion de Personas — GORE Nuble
     file: KNOWLEDGE/gn/kb/manual-gestion-personas.md
+    status: published
+  - urn: urn:gn:kb:manual-gestion-personas-p02
+    title: Gestion de Personas — GORE Nuble - Parte 02
+    file: KNOWLEDGE/gn/kb/manual-gestion-personas--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-gestion-personas-p03
+    title: Gestion de Personas — GORE Nuble - Parte 03
+    file: KNOWLEDGE/gn/kb/manual-gestion-personas--p03.md
     status: published
   - urn: urn:gn:kb:manual-induccion-gore-nuble-2026
     title: Manual de Inducción del Gobierno Regional de Ñuble 2026
@@ -2642,6 +3103,14 @@ Catalog:
   - urn: urn:gn:kb:manual-inventarios-activo-fijo
     title: Gestion de Inventarios y Activo Fijo — GORE Nuble
     file: KNOWLEDGE/gn/kb/manual-inventarios-activo-fijo.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-activo-fijo-p02
+    title: Gestion de Inventarios y Activo Fijo — GORE Nuble - Parte 02
+    file: KNOWLEDGE/gn/kb/manual-inventarios-activo-fijo--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-activo-fijo-p03
+    title: Gestion de Inventarios y Activo Fijo — GORE Nuble - Parte 03
+    file: KNOWLEDGE/gn/kb/manual-inventarios-activo-fijo--p03.md
     status: published
   - urn: urn:gn:kb:manual-operacional-dgi
     title: Manual Operacional del Departamento de Gestión Institucional
@@ -2655,6 +3124,14 @@ Catalog:
     title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico
     file: KNOWLEDGE/gn/kb/kb_gn_200_marco_legal_gores.md
     status: published
+  - urn: urn:gn:kb:marco-legal-gores-p02
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_200_marco_legal_gores--p02.md
+    status: published
+  - urn: urn:gn:kb:marco-legal-gores-p03
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico - Parte 03
+    file: KNOWLEDGE/gn/kb/kb_gn_200_marco_legal_gores--p03.md
+    status: published
   - urn: urn:gn:kb:mecanismos-matriz-decision
     title: Matriz Unificada de Mecanismos de Financiamiento — GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_mecanismos_matriz_decision.md
@@ -2662,6 +3139,10 @@ Catalog:
   - urn: urn:gn:kb:meyer-estructura-organizacional
     title: Principle-based Organizational Structure
     file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_meyer_org_structure.md
+    status: published
+  - urn: urn:gn:kb:meyer-estructura-organizacional-p02
+    title: Principle-based Organizational Structure - Parte 02
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_meyer_org_structure--p02.md
     status: published
   - urn: urn:gn:kb:modelos-actos-juridicos
     title: Modelos de Actos Jurídicos GORE Ñuble
@@ -2671,6 +3152,14 @@ Catalog:
     title: Introducción a la Gestión Pública (Waissbluth)
     file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_mw_waissbluth.md
     status: published
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth-p02
+    title: Introducción a la Gestión Pública (Waissbluth) - Parte 02
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_mw_waissbluth--p02.md
+    status: published
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth-p03
+    title: Introducción a la Gestión Pública (Waissbluth) - Parte 03
+    file: KNOWLEDGE/gn/kb/core/gestion/kb_gn_mw_waissbluth--p03.md
+    status: published
   - urn: urn:gn:kb:nuble-250
     title: Agenda Estratégica Ñuble 250
     file: KNOWLEDGE/gn/kb/kb_gn_056_nuble250.md
@@ -2678,6 +3167,10 @@ Catalog:
   - urn: urn:gn:kb:organigrama
     title: Organigrama Institucional GORE Ñuble 2026
     file: KNOWLEDGE/gn/kb/kb_gn_002_organigrama.md
+    status: published
+  - urn: urn:gn:kb:organigrama-p02
+    title: Organigrama Institucional GORE Ñuble 2026 - Parte 02
+    file: KNOWLEDGE/gn/kb/kb_gn_002_organigrama--p02.md
     status: published
   - urn: urn:gn:kb:plan-potenciamiento-dgi
     title: Plan de Potenciamiento DGI
@@ -2687,13 +3180,27 @@ Catalog:
     title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-agua-saneamiento.md
     status: published
+  - urn: urn:gn:kb:ris-agua-saneamiento-p02
+    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos - Parte
+      02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-agua-saneamiento--p02.md
+    status: published
   - urn: urn:gn:kb:ris-cultura-deporte-turismo
     title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-cultura-deporte-turismo.md
     status: published
+  - urn: urn:gn:kb:ris-cultura-deporte-turismo-p02
+    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+      - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-cultura-deporte-turismo--p02.md
+    status: published
   - urn: urn:gn:kb:ris-educacion
     title: Requisitos de Información SNI — Infraestructura Educacional
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-educacion.md
+    status: published
+  - urn: urn:gn:kb:ris-educacion-p02
+    title: Requisitos de Información SNI — Infraestructura Educacional - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-educacion--p02.md
     status: published
   - urn: urn:gn:kb:ris-energia-comunicaciones
     title: Requisitos de Información SNI — Energía, Electrificación y Comunicaciones
@@ -2708,6 +3215,11 @@ Catalog:
       Empresas Públicas)
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-genericos.md
     status: published
+  - urn: urn:gn:kb:ris-genericos-p02
+    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
+      Empresas Públicas) - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-genericos--p02.md
+    status: published
   - urn: urn:gn:kb:ris-salud
     title: Requisitos de Información SNI — Infraestructura de Salud
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-salud.md
@@ -2715,6 +3227,11 @@ Catalog:
   - urn: urn:gn:kb:ris-seguridad-justicia
     title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-seguridad-justicia.md
+    status: published
+  - urn: urn:gn:kb:ris-seguridad-justicia-p02
+    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
+      - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-seguridad-justicia--p02.md
     status: published
   - urn: urn:gn:kb:ris-transporte
     title: 'Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario
@@ -2725,9 +3242,19 @@ Catalog:
     title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-vialidad.md
     status: published
+  - urn: urn:gn:kb:ris-vialidad-p02
+    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal - Parte
+      02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-vialidad--p02.md
+    status: published
   - urn: urn:gn:kb:ris-vivienda-urbanismo
     title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
     file: KNOWLEDGE/gn/kb/ipr/ris/ris-vivienda-urbanismo.md
+    status: published
+  - urn: urn:gn:kb:ris-vivienda-urbanismo-p02
+    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
+      - Parte 02
+    file: KNOWLEDGE/gn/kb/ipr/ris/ris-vivienda-urbanismo--p02.md
     status: published
   - urn: urn:gn:kb:selector-ipr
     title: Selector de Vías de Financiamiento para Iniciativas Públicas Regionales
@@ -2766,6 +3293,10 @@ Catalog:
     title: SSOT — Reglas operativas por mecanismo de financiamiento
     file: KNOWLEDGE/gn/ssot/ssot-mecanismos.md
     status: published
+  - urn: urn:gn:kb:ssot-mecanismos-p02
+    title: SSOT — Reglas operativas por mecanismo de financiamiento - Parte 02
+    file: KNOWLEDGE/gn/ssot/ssot-mecanismos--p02.md
+    status: published
   - urn: urn:gn:kb:ssot-operaciones
     title: SSOT — Procesos operativos GORE Ñuble
     file: KNOWLEDGE/gn/ssot/ssot-operaciones.md
@@ -2781,6 +3312,10 @@ Catalog:
   - urn: urn:gn:kb:ssot-relaciones-dominio
     title: SSOT — Relaciones de dominio
     file: KNOWLEDGE/gn/ssot/ssot-relaciones-dominio.md
+    status: published
+  - urn: urn:gn:kb:ssot-relaciones-dominio-p02
+    title: SSOT — Relaciones de dominio - Parte 02
+    file: KNOWLEDGE/gn/ssot/ssot-relaciones-dominio--p02.md
     status: published
   - urn: urn:gn:kb:ssot-rendiciones
     title: SSOT — Rendiciones SISREC
@@ -2842,17 +3377,30 @@ Catalog:
     title: 'Governance as Lattice: Precedence, Transformation, and Spec Hierarchy'
     file: KNOWLEDGE/kora/categorical-foundations/05-governance-lattice.md
     status: published
+  - urn: urn:kora:kb:cat-governance-lattice-p02
+    title: 'Governance as Lattice: Precedence, Transformation, and Spec Hierarchy
+      - Parte 02'
+    file: KNOWLEDGE/kora/categorical-foundations/05-governance-lattice--p02.md
+    status: published
   - urn: urn:kora:kb:cat-skill-algebra
     title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget'
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra.md
     status: published
+  - urn: urn:kora:kb:cat-skill-algebra-p02
+    title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget - Parte 02'
+    file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra--p02.md
+    status: published
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v3.5.0
+    title: KORA/Gobernanza v4.0.0
     file: specs/gobernanza.md
     status: published
   - urn: urn:kora:kb:hub-agentes
     title: Hub de Agentes TDE
     file: KNOWLEDGE/kora/sys/hub_agentes.md
+    status: published
+  - urn: urn:kora:kb:knowledge-spec
+    title: KORA/Knowledge-Spec v1.0.0
+    file: specs/knowledge-spec.md
     status: published
   - urn: urn:kora:kb:md-spec
     title: KORA/MD v6.3.0
@@ -2898,9 +3446,25 @@ Catalog:
     title: 'Creator Philosophy: Dan Koe — Synthesized Corpus'
     file: KNOWLEDGE/korvo/dan-koe-filosofia-creador.md
     status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p02
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 02'
+    file: KNOWLEDGE/korvo/dan-koe-filosofia-creador--p02.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p03
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 03'
+    file: KNOWLEDGE/korvo/dan-koe-filosofia-creador--p03.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p04
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 04'
+    file: KNOWLEDGE/korvo/dan-koe-filosofia-creador--p04.md
+    status: published
   - urn: urn:korvo:kb:manual-de-vida
     title: Manual de Vida
     file: KNOWLEDGE/korvo/manual-de-vida.md
+    status: published
+  - urn: urn:korvo:kb:manual-de-vida-p02
+    title: Manual de Vida - Parte 02
+    file: KNOWLEDGE/korvo/manual-de-vida--p02.md
     status: published
   - urn: urn:legal:kb:acoso-laboral
     title: Acoso Laboral y Sexual en el Ámbito Médico
@@ -3053,6 +3617,18 @@ Catalog:
     title: 'Tutorial: Desplegar un agente KORA en OpenClaw'
     file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw.md
     status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p02
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 02'
+    file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw--p02.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p03
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 03'
+    file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw--p03.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p04
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 04'
+    file: KNOWLEDGE/ops/deploy-agente-kora-en-openclaw--p04.md
+    status: published
   - urn: urn:ops:kb:federacion-kora-v2
     title: Federación KORA v2 — Comunicación cross-gateway y storage compartido
     file: KNOWLEDGE/ops/federacion-kora-v2.md
@@ -3060,6 +3636,10 @@ Catalog:
   - urn: urn:ops:kb:principios-transmutacion-kora-openclaw
     title: Principios de transmutacion KORA → OpenClaw
     file: KNOWLEDGE/ops/principios-transmutacion-kora-openclaw.md
+    status: published
+  - urn: urn:ops:kb:principios-transmutacion-kora-openclaw-p02
+    title: Principios de transmutacion KORA → OpenClaw - Parte 02
+    file: KNOWLEDGE/ops/principios-transmutacion-kora-openclaw--p02.md
     status: published
   - urn: urn:ops:kb:tres-generaciones-agentes-kora
     title: Tres generaciones del ecosistema de agentes KORA
@@ -3076,6 +3656,18 @@ Catalog:
   - urn: urn:pro:kb:mba-personal-kaufman
     title: MBA Personal — Modelos Mentales de Negocios
     file: KNOWLEDGE/pro/mba-personal-kaufman.md
+    status: published
+  - urn: urn:pro:kb:mba-personal-kaufman-p02
+    title: MBA Personal — Modelos Mentales de Negocios - Parte 02
+    file: KNOWLEDGE/pro/mba-personal-kaufman--p02.md
+    status: published
+  - urn: urn:pro:kb:mba-personal-kaufman-p03
+    title: MBA Personal — Modelos Mentales de Negocios - Parte 03
+    file: KNOWLEDGE/pro/mba-personal-kaufman--p03.md
+    status: published
+  - urn: urn:salud:kb:bok-medicina-emergencia
+    title: Body of Knowledge diferencial de Medicina de Emergencia
+    file: KNOWLEDGE/salud/urgencia/bok-medicina-emergencia.md
     status: published
   - urn: urn:salud:kb:dbt-oxford-adaptations-a
     title: The Oxford Handbook of DBT — Adaptations (Part A)
@@ -3129,9 +3721,49 @@ Catalog:
     title: Gestión de Redes Asistenciales — Marco General
     file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general.md
     status: published
+  - urn: urn:salud:kb:gestion-redes-general-p02
+    title: Gestión de Redes Asistenciales — Marco General - Parte 02
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p03
+    title: Gestión de Redes Asistenciales — Marco General - Parte 03
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p04
+    title: Gestión de Redes Asistenciales — Marco General - Parte 04
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p05
+    title: Gestión de Redes Asistenciales — Marco General - Parte 05
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p06
+    title: Gestión de Redes Asistenciales — Marco General - Parte 06
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p06.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p07
+    title: Gestión de Redes Asistenciales — Marco General - Parte 07
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p07.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p08
+    title: Gestión de Redes Asistenciales — Marco General - Parte 08
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p08.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p09
+    title: Gestión de Redes Asistenciales — Marco General - Parte 09
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/01-gestion-redes-general--p09.md
+    status: published
   - urn: urn:salud:kb:gestion-redes-herramientas
     title: Gestión de Redes Asistenciales — Herramientas y Anexos
     file: KNOWLEDGE/salud/salubrista/gestion-redes/05-herramientas-anexos.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-herramientas-p02
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos - Parte 02
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/05-herramientas-anexos--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-herramientas-p03
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos - Parte 03
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/05-herramientas-anexos--p03.md
     status: published
   - urn: urn:salud:kb:gestion-redes-indice
     title: Gestión de Redes Asistenciales — Índice General
@@ -3141,13 +3773,65 @@ Catalog:
     title: Gestión de Redes — Salud Mental y Adicciones
     file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental.md
     status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p02
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 02
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p03
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 03
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p04
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 04
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p05
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 05
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p06
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 06
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/04-salud-mental--p06.md
+    status: published
   - urn: urn:salud:kb:gestion-redes-unidades
     title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad
     file: KNOWLEDGE/salud/salubrista/gestion-redes/02-unidades-asistenciales.md
     status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p02
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 02
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/02-unidades-asistenciales--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p03
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 03
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/02-unidades-asistenciales--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p04
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 04
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/02-unidades-asistenciales--p04.md
+    status: published
   - urn: urn:salud:kb:gestion-redes-urgencias
     title: Gestión de Redes Asistenciales — Red de Urgencias
     file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p02
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 02
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p03
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 03
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p04
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 04
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p05
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 05
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p06
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 06
+    file: KNOWLEDGE/salud/salubrista/gestion-redes/03-urgencias--p06.md
     status: published
   - urn: urn:salud:kb:hodom-decreto-exento-31-2024
     title: Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización
@@ -3158,9 +3842,29 @@ Catalog:
     title: Direccion Tecnica en Hospitalizacion Domiciliaria
     file: KNOWLEDGE/salud/hodom/director/01-manual-direccion-tecnica.md
     status: published
+  - urn: urn:salud:kb:hodom-direccion-tecnica-p02
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria - Parte 02
+    file: KNOWLEDGE/salud/hodom/director/01-manual-direccion-tecnica--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-direccion-tecnica-p03
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria - Parte 03
+    file: KNOWLEDGE/salud/hodom/director/01-manual-direccion-tecnica--p03.md
+    status: published
   - urn: urn:salud:kb:hodom-manual-alta-complejidad
     title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
     file: KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p02
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 02
+    file: KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p03
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 03
+    file: KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad--p03.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p04
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 04
+    file: KNOWLEDGE/salud/hodom/director/02-manual-alta-complejidad--p04.md
     status: published
   - urn: urn:salud:kb:hodom-norma-tecnica-2024
     title: Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización
@@ -3176,6 +3880,171 @@ Catalog:
     title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
     file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026.md
     status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p02
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      02
+    file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p03
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      03
+    file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026--p03.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p04
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      04
+    file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026--p04.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p05
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      05
+    file: KNOWLEDGE/salud/hodom/director/03-situacion-chile-2026--p05.md
+    status: published
+  - urn: urn:salud:kb:me-cefalea-convulsiones
+    title: Cefalea y Convulsiones
+    file: KNOWLEDGE/salud/med-emergencia/cefalea-convulsiones.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia
+    title: Compromiso de Conciencia
+    file: KNOWLEDGE/salud/med-emergencia/compromiso-conciencia.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia-p02
+    title: Compromiso de Conciencia - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/compromiso-conciencia--p02.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia-p03
+    title: Compromiso de Conciencia - Parte 03
+    file: KNOWLEDGE/salud/med-emergencia/compromiso-conciencia--p03.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico
+    title: Déficit Neurológico
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p02
+    title: Déficit Neurológico - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico--p02.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p03
+    title: Déficit Neurológico - Parte 03
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico--p03.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p04
+    title: Déficit Neurológico - Parte 04
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico--p04.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p05
+    title: Déficit Neurológico - Parte 05
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico--p05.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p06
+    title: Déficit Neurológico - Parte 06
+    file: KNOWLEDGE/salud/med-emergencia/deficit-neurologico--p06.md
+    status: published
+  - urn: urn:salud:kb:me-disnea
+    title: Disnea Aguda
+    file: KNOWLEDGE/salud/med-emergencia/disnea.md
+    status: published
+  - urn: urn:salud:kb:me-disnea-p02
+    title: Disnea Aguda - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/disnea--p02.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-abdominal
+    title: Dolor Abdominal en Urgencia
+    file: KNOWLEDGE/salud/med-emergencia/dolor-abdominal.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-abdominal-p02
+    title: Dolor Abdominal en Urgencia - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/dolor-abdominal--p02.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-toracico
+    title: Dolor Torácico No Traumático
+    file: KNOWLEDGE/salud/med-emergencia/dolor-toracico.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-toracico-p02
+    title: Dolor Torácico No Traumático - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/dolor-toracico--p02.md
+    status: published
+  - urn: urn:salud:kb:me-evaluacion-primaria
+    title: INTRODUCCIÓN
+    file: KNOWLEDGE/salud/med-emergencia/evaluacion-primaria.md
+    status: published
+  - urn: urn:salud:kb:me-fiebre-sin-foco
+    title: Unidad 3 "Fiebre sin foco evidente"
+    file: KNOWLEDGE/salud/med-emergencia/fiebre-sin-foco.md
+    status: published
+  - urn: urn:salud:kb:me-fiebre-sin-foco-p02
+    title: Unidad 3 "Fiebre sin foco evidente" - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/fiebre-sin-foco--p02.md
+    status: published
+  - urn: urn:salud:kb:me-hemorragia-digestiva
+    title: Hemorragia digestiva
+    file: KNOWLEDGE/salud/med-emergencia/hemorragia-digestiva.md
+    status: published
+  - urn: urn:salud:kb:me-hemorragia-digestiva-p02
+    title: Hemorragia digestiva - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/hemorragia-digestiva--p02.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-gastrointestinales
+    title: Unidad 4 "Infecciones gastrointestinales"
+    file: KNOWLEDGE/salud/med-emergencia/infecciones-gastrointestinales.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-altas
+    title: Unidad "Infecciones Respiratorias Altas y afecciones otorrinolaringológicas"
+    file: KNOWLEDGE/salud/med-emergencia/infecciones-respiratorias-altas.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-altas-p02
+    title: Unidad "Infecciones Respiratorias Altas y afecciones otorrinolaringológicas"
+      - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/infecciones-respiratorias-altas--p02.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-bajas
+    title: Unidad 5 " Infecciones respiratorias bajas"
+    file: KNOWLEDGE/salud/med-emergencia/infecciones-respiratorias-bajas.md
+    status: published
+  - urn: urn:salud:kb:me-mareo-vertigo
+    title: Mareo y Vértigo
+    file: KNOWLEDGE/salud/med-emergencia/mareo-vertigo.md
+    status: published
+  - urn: urn:salud:kb:me-perfil-urgenciologo
+    title: Perfil diferencial del medico emergenciologo
+    file: KNOWLEDGE/salud/med-emergencia/perfil-urgenciologo.md
+    status: published
+  - urn: urn:salud:kb:me-razonamiento-clinico
+    title: razonamiento-clinico.md
+    file: KNOWLEDGE/salud/med-emergencia/razonamiento-clinico.md
+    status: published
+  - urn: urn:salud:kb:me-sincope
+    title: Síncope
+    file: KNOWLEDGE/salud/med-emergencia/sincope.md
+    status: published
+  - urn: urn:salud:kb:me-sincope-p02
+    title: Síncope - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/sincope--p02.md
+    status: published
+  - urn: urn:salud:kb:me-sintomas-urinarios
+    title: Unidad 7 "Síntomas Urinarios"
+    file: KNOWLEDGE/salud/med-emergencia/sintomas-urinarios.md
+    status: published
+  - urn: urn:salud:kb:me-tec-leve
+    title: Golpe en la cabeza
+    file: KNOWLEDGE/salud/med-emergencia/tec-leve.md
+    status: published
+  - urn: urn:salud:kb:me-toc-body-of-knowledge
+    title: toc-body-of-knowledge.md
+    file: KNOWLEDGE/salud/med-emergencia/toc-body-of-knowledge.md
+    status: published
+  - urn: urn:salud:kb:me-traumatismos-frecuentes
+    title: Unidad 8 "Traumatismos frecuentes"
+    file: KNOWLEDGE/salud/med-emergencia/traumatismos-frecuentes.md
+    status: published
+  - urn: urn:salud:kb:me-traumatismos-frecuentes-p02
+    title: Unidad 8 "Traumatismos frecuentes" - Parte 02
+    file: KNOWLEDGE/salud/med-emergencia/traumatismos-frecuentes--p02.md
+    status: published
+  - urn: urn:salud:kb:med-emergencia
+    title: Body of Knowledge — Medicina de Emergencia
+    file: KNOWLEDGE/salud/med-emergencia-placeholder.md
+    status: published
   - urn: urn:sii:kb:faq-activos-digitales
     title: Activos digitales — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-activos-digitales.md
@@ -3183,14 +4052,6 @@ Catalog:
   - urn: urn:sii:kb:faq-actualizacion-de-informacion
     title: Actualización de información — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion.md
-    status: published
-  - urn: urn:sii:kb:faq-actualizacion-de-informacion-p02
-    title: Actualización de información — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-actualizacion-de-informacion-p03
-    title: Actualización de información — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-actualizacion-de-informacion--p03.md
     status: published
   - urn: urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia
     title: Acuerdos Anticipados de Precios de Transferencia — Preguntas Frecuentes
@@ -3201,21 +4062,6 @@ Catalog:
     title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md
     status: published
-  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p02
-    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
-      Parte 02
-    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p03
-    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
-      Parte 03
-    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices-p04
-    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII -
-      Parte 04
-    file: KNOWLEDGE/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices--p04.md
-    status: published
   - urn: urn:sii:kb:faq-beneficios-tributarios
     title: Beneficios Tributarios — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-beneficios-tributarios.md
@@ -3223,14 +4069,6 @@ Catalog:
   - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas
     title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas.md
-    status: published
-  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas-p02
-    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas-p03
-    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-boletas-de-honorarios-electronicas--p03.md
     status: published
   - urn: urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios
     title: Boletas Electrónicas de Ventas y Servicios — Preguntas Frecuentes SII
@@ -3249,113 +4087,17 @@ Catalog:
     title: Declaración de renta — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta.md
     status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p02
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p03
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p04
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 04
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p04.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p05
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 05
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p05.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p06
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 06
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p06.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p07
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 07
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p07.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p08
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 08
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p08.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p09
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 09
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p09.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p10
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 10
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p10.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p11
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 11
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p11.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p12
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 12
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p12.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p13
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 13
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p13.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p14
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 14
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p14.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p15
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 15
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p15.md
-    status: published
-  - urn: urn:sii:kb:faq-declaracion-de-renta-p16
-    title: Declaración de renta — Preguntas Frecuentes SII - Parte 16
-    file: KNOWLEDGE/sii/kb/faq-declaracion-de-renta--p16.md
-    status: published
   - urn: urn:sii:kb:faq-declaraciones-juradas
     title: Declaraciones juradas — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas.md
-    status: published
-  - urn: urn:sii:kb:faq-declaraciones-juradas-p02
-    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-declaraciones-juradas-p03
-    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-declaraciones-juradas-p04
-    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 04
-    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p04.md
-    status: published
-  - urn: urn:sii:kb:faq-declaraciones-juradas-p05
-    title: Declaraciones juradas — Preguntas Frecuentes SII - Parte 05
-    file: KNOWLEDGE/sii/kb/faq-declaraciones-juradas--p05.md
     status: published
   - urn: urn:sii:kb:faq-factura-electronica
     title: Factura Electrónica — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-factura-electronica.md
     status: published
-  - urn: urn:sii:kb:faq-factura-electronica-p02
-    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-factura-electronica-p03
-    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-factura-electronica-p04
-    title: Factura Electrónica — Preguntas Frecuentes SII - Parte 04
-    file: KNOWLEDGE/sii/kb/faq-factura-electronica--p04.md
-    status: published
   - urn: urn:sii:kb:faq-herencias
     title: Herencias — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-herencias.md
-    status: published
-  - urn: urn:sii:kb:faq-herencias-p02
-    title: Herencias — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-herencias--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-herencias-p03
-    title: Herencias — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-herencias--p03.md
     status: published
   - urn: urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor
     title: Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto valor — Preguntas
@@ -3365,50 +4107,6 @@ Catalog:
   - urn: urn:sii:kb:faq-impuestos-mensuales
     title: Impuestos mensuales — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p02
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p03
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p04
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 04
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p04.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p05
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 05
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p05.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p06
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 06
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p06.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p07
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 07
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p07.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p08
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 08
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p08.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p09
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 09
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p09.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p10
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 10
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p10.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p11
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 11
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p11.md
-    status: published
-  - urn: urn:sii:kb:faq-impuestos-mensuales-p12
-    title: Impuestos mensuales — Preguntas Frecuentes SII - Parte 12
-    file: KNOWLEDGE/sii/kb/faq-impuestos-mensuales--p12.md
     status: published
   - urn: urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones
     title: Infracciones, Pago de giros y Condonaciones — Preguntas Frecuentes SII
@@ -3434,29 +4132,9 @@ Catalog:
     title: Preguntas Generales — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-preguntas-generales.md
     status: published
-  - urn: urn:sii:kb:faq-preguntas-generales-p02
-    title: Preguntas Generales — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-preguntas-generales--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-preguntas-generales-p03
-    title: Preguntas Generales — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-preguntas-generales--p03.md
-    status: published
   - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades
     title: RUT e Inicio de actividades — Preguntas Frecuentes SII
     file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades.md
-    status: published
-  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p02
-    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 02
-    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p02.md
-    status: published
-  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p03
-    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 03
-    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p03.md
-    status: published
-  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades-p04
-    title: RUT e Inicio de actividades — Preguntas Frecuentes SII - Parte 04
-    file: KNOWLEDGE/sii/kb/faq-rut-e-inicio-de-actividades--p04.md
     status: published
   - urn: urn:sii:kb:faq-situacion-tributaria
     title: Situación Tributaria — Preguntas Frecuentes SII
@@ -3489,6 +4167,36 @@ Catalog:
   - urn: urn:tde:kb:decreto-4-procedimientos-electronicos
     title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
     file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p02
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 02
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p02.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p03
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 03
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p03.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p04
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 04
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p04.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p05
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 05
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p05.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p06
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 06
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p06.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p07
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 07
+    file: KNOWLEDGE/tde/regulacion/decreto-4-procedimientos-electronicos--p07.md
     status: published
   - urn: urn:tde:kb:decreto-7-norma-seguridad-informacion
     title: Decreto 7 — Norma Técnica de Seguridad de la Información y Ciberseguridad
@@ -3539,6 +4247,10 @@ Catalog:
     title: Guía Metodológica del Sistema de Transformación Digital 2025
     file: KNOWLEDGE/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025.md
     status: published
+  - urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025-p02
+    title: Guía Metodológica del Sistema de Transformación Digital 2025 - Parte 02
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025--p02.md
+    status: published
   - urn: urn:tde:kb:guia-rapida-cpat
     title: Guía rápida CPAT
     file: KNOWLEDGE/tde/lineamientos-guias/guia-rapida-cpat.md
@@ -3561,6 +4273,10 @@ Catalog:
     title: Guía Técnica de Seguridad de la Información y Ciberseguridad
     file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad.md
     status: published
+  - urn: urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad-p02
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad - Parte 02
+    file: KNOWLEDGE/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad--p02.md
+    status: published
   - urn: urn:tde:kb:guia-voz-y-tono
     title: Guía de Voz y Tono — Wiki de Plataformas
     file: KNOWLEDGE/tde/plataformas-manuales/guia-voz-y-tono.md
@@ -3568,6 +4284,34 @@ Catalog:
   - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos
     title: Ley N° 19.880 — Bases de los Procedimientos Administrativos
     file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p02
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 02
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p02.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p03
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 03
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p03.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p04
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 04
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p04.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p05
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 05
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p05.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p06
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 06
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p06.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p07
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 07
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p07.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p08
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 08
+    file: KNOWLEDGE/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p08.md
     status: published
   - urn: urn:tde:kb:ley-21180-transformacion-digital-estado
     title: Ley N° 21.180 — Transformación Digital del Estado
@@ -3597,6 +4341,11 @@ Catalog:
   - urn: urn:tde:kb:manual-integracion-notificaciones
     title: Manual de Integración — Plataforma de Notificaciones del Estado
     file: KNOWLEDGE/tde/plataformas-manuales/manual-integracion-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-notificaciones-p02
+    title: Manual de Integración — Plataforma de Notificaciones del Estado - Parte
+      02
+    file: KNOWLEDGE/tde/plataformas-manuales/manual-integracion-notificaciones--p02.md
     status: published
   - urn: urn:tde:kb:manual-uso-boton-claveunica
     title: 'Manual de uso: Botón ClaveÚnica'
@@ -3637,8 +4386,4 @@ Catalog:
     file: KNOWLEDGE/tde/plataformas-terminos/terminos-condiciones-claveunica.md
     status: published
   Documents: []
-  Other:
-  - urn: urn:omega:openclaw-agent-spec:salubrista:1.0.0
-    title: Especificacion Integral del Agente OpenClaw `salubrista`
-    file: KNOWLEDGE/OMEGA/salubrista-openclaw-especificacion-integral.md
-    status: implementation_ready
+  Other: []

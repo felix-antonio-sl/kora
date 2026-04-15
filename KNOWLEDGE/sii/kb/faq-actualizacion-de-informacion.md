@@ -21,12 +21,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 3
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-actualizacion-de-informacion
 ---
 
 # Actualización de información — Preguntas Frecuentes SII
-
 
 ## ¿Cuáles son las modificaciones que hay que informar obligatoriamente al SII?
 

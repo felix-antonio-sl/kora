@@ -1,3 +1,17 @@
+---
+_manifest:
+  urn: "urn:fxsl:kb:icas-enriquecimiento"
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-14"
+    source: "ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl"
+version: "1.0.0"
+status: published
+tags: [enriched-category, cost, metricas-cuantitativas, ICAS-BoK, teoria-categorias, corpus-categorico]
+lang: es
+extensions: {}
+---
+
 # Enriquecimiento
 
 ## Mas alla de si o no

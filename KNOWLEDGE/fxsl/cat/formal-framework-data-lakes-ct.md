@@ -15,6 +15,11 @@ tags:
 - compositionality
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:formal-framework-data-lakes-ct
 ---
 
 # Formal Framework for Data Lakes (CT)
@@ -22,7 +27,7 @@ lang: en
 ## Abstract
 
 Ctx: Modeling data lake functionalities as categories linked via functors for compositionality and lineage.
-Src: `sources/cat/A Formal Framework for Data Lakes Base.md`
+Src: ` Formal Framework for Data Lakes Base.md`
 
 Big Data management (5V: Volume, Variety, Velocity, Veracity, Value). Data lakes = flexible schema-on-read vs. rigid schema-on-write warehouses. This framework uses category theory to define and unify data lake functionalities, ensuring compositionality and lineage tracking.
 

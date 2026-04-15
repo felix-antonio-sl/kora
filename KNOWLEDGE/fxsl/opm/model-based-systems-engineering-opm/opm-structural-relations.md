@@ -1,24 +1,45 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-structural-relations"
+  urn: urn:fxsl:kb:opm-structural-relations
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-structural-relations.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-structural-relations.md
+version: 1.0.0
 status: published
-tags: [opm, structural-relations, aggregation, exhibition, generalization, classification, states, participation-constraints, forks]
+tags:
+- opm
+- structural-relations
+- aggregation
+- exhibition
+- generalization
+- classification
+- states
+- participation-constraints
+- forks
 lang: en
 extensions:
   kora:
     family: textbook
     bilingual: true
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opm-mbse-foundations"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: [14, 15, 16, 17, 18, 19, 20]
+    - urn:fxsl:kb:opm-iso-19450
+    - urn:fxsl:kb:opm-mbse-foundations
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+relations:
+  cites:
+  - urn:fxsl:kb:opm-iso-19450
 ---
+
 
 # OPM Structural Relations — Fundamental Relations, States, and Hierarchies
 

@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:guia-comunicaciones"
+  urn: urn:gn:kb:guia-comunicaciones
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "source/gn/gorenuble_koda/domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: source/gn/gorenuble_koda/domains/gn/04_habilitadores/comunicaciones/kb_gn_030_guia_comunicaciones_koda.yml
+version: 1.0.0
 status: published
-tags: [comunicaciones, guia-editorial, documentos-administrativos, gore-nuble, estrategia-comunicacional]
+tags:
+- comunicaciones
+- guia-editorial
+- documentos-administrativos
+- gore-nuble
+- estrategia-comunicacional
 lang: es
 extensions:
   gn:
-    family: "guide"
+    family: guide
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:guia-comunicaciones
 ---
 
 # Guía Integral de Comunicaciones GORE Ñuble
@@ -93,10 +102,10 @@ Traducir los ejes de la ERD en un relato coherente, simple y movilizador.
 
 - **Acceso internet:** 94.9%, pero 49.7% solo móvil. Brecha rural en fibra óptica. → No depender de videos alta resolución; privilegiar formatos bajo consumo de datos.
 - **Hipótesis de dieta mediática:**
-  - Alta penetración de la radio (zonas rurales, adultos mayores).
-  - Diario La Discusión: principal formador de opinión de élite regional.
-  - Jóvenes urbanos: noticias vía Instagram, Facebook, TikTok.
-  - Creciente importancia de medios digitales locales y páginas "noticias" comunales en Facebook.
+ - Alta penetración de la radio (zonas rurales, adultos mayores).
+ - Diario La Discusión: principal formador de opinión de élite regional.
+ - Jóvenes urbanos: noticias vía Instagram, Facebook, TikTok.
+ - Creciente importancia de medios digitales locales y páginas "noticias" comunales en Facebook.
 
 **Advertencia:** Estrategia "Digital First" no es viable para toda la región.
 
@@ -128,10 +137,10 @@ Traducir los ejes de la ERD en un relato coherente, simple y movilizador.
 
 - **Broadcasting:** Radios, Prensa Escrita (élite regional), TV Local/Regional. Uso: hitos de gestión, campañas de bien público.
 - **Narrowcasting:** Radios comunitarias, grupos WhatsApp locales. Uso: persuasión dirigida.
-  - Agricultores: medios sectoriales; foco riego, fomento.
-  - Jóvenes: Instagram, TikTok; foco educación, emprendimiento, cultura.
-  - Adultos mayores: radios locales, prensa; foco salud, seguridad.
-  - Emprendedores: LinkedIn, cámaras de comercio; foco fondos (FRPD), capacitación.
+ - Agricultores: medios sectoriales; foco riego, fomento.
+ - Jóvenes: Instagram, TikTok; foco educación, emprendimiento, cultura.
+ - Adultos mayores: radios locales, prensa; foco salud, seguridad.
+ - Emprendedores: LinkedIn, cámaras de comercio; foco fondos (FRPD), capacitación.
 - **Digital:** Evolucionar de brochureware a plataforma de servicio y comunidad. Facebook (masivo-digital), Twitter/X (periodistas, líderes de opinión), Instagram/TikTok (jóvenes), YouTube (repositorio), WhatsApp (líderes comunitarios).
 
 ---
@@ -149,8 +158,8 @@ Traducir los ejes de la ERD en un relato coherente, simple y movilizador.
 - Los medios no solo reportan la política — la *hacen* (negocian, interpretan, amplifican).
 - **Agenda-Setting:** Lograr que los temas prioritarios del GORE sean también prioridad para medios y público.
 - **Framing:** No es solo *qué* se discute, sino *cómo* se discute.
-  - Marco GORE (ej.): Inversión en camino rural → "Conectividad para el Desarrollo Productivo".
-  - Anticipar marcos negativos; inocular el marco propio proactivamente; usar metáforas simples ("Justicia territorial").
+ - Marco GORE (ej.): Inversión en camino rural → "Conectividad para el Desarrollo Productivo".
+ - Anticipar marcos negativos; inocular el marco propio proactivamente; usar metáforas simples ("Justicia territorial").
 
 ---
 

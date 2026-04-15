@@ -1,11 +1,23 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:decreto-10-documentos-expedientes-electronicos"
-  provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto10"
+  urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
+  provenance: https://wikiguias.digital.gob.cl/Normas/Decreto10
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-normas, decreto, expediente-electronico, norma-tecnica, comunicacion-oficial, gestion-documental]
+tags:
+- tde
+- lineamientos-normas
+- decreto
+- expediente-electronico
+- norma-tecnica
+- comunicacion-oficial
+- gestion-documental
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
 ---
 
 # Decreto 10 — Norma Técnica de Documentos y Expedientes Electrónicos
@@ -61,15 +73,11 @@ Definir los **estándares, formatos, metadatos, registros de trazabilidad, fases
 
 ---
 
-## Modelo de Gestión de Expedientes y Gestión Documental del Estado
-
-### Párrafo 1º — Política de Gestión Documental
-
-### Artículo 3 — Política de Gestión Documental
+## Artículo 3 — Política de Gestión Documental
 
 Los órganos deberán definir una **Política de Gestión Documental** elaborando una estructura institucional de gestión documental y almacenamiento, bajo la conformación de plataformas de gestión, repositorios y archivos institucionales. La Política deberá ajustarse a las directrices del Artículo 4 y a las guías técnicas del Artículo 38.
 
-### Artículo 4 — Directrices para una Política de Gestión Documental
+## Artículo 4 — Directrices para una Política de Gestión Documental
 
 La Política deberá abordar al menos:
 
@@ -82,7 +90,7 @@ La Política deberá abordar al menos:
 
 > La Política debe revisarse y actualizarse en períodos de **mínimo 1 año y máximo 3 años**.
 
-### Artículo 5 — Elementos para la conformación de documentos y expedientes electrónicos
+## Artículo 5 — Elementos para la conformación de documentos y expedientes electrónicos
 
 Conforme a la Política de Gestión Documental, esta norma y el Ciclo de Gestión de la Calidad (→ Norma Técnica de Calidad y Funcionamiento, art. 57 Reglamento), los órganos deberán contar al menos con:
 
@@ -92,7 +100,7 @@ Conforme a la Política de Gestión Documental, esta norma y el Ciclo de Gestió
 
 Todos deben cumplir los requisitos de conformación del esquema estructural del Artículo 19.
 
-### Artículo 6 — Plataforma de Gestión de Expedientes Electrónicos
+## Artículo 6 — Plataforma de Gestión de Expedientes Electrónicos
 
 Todo órgano deberá contar con una **Plataforma de Gestión de Expedientes Electrónicos** conforme al Reglamento y esta norma. Debe sustentar el ciclo vital del expediente electrónico en sus **cinco fases**:
 
@@ -102,23 +110,23 @@ Todo órgano deberá contar con una **Plataforma de Gestión de Expedientes Elec
 4. Transición del expediente electrónico
 5. Disposición final del expediente electrónico
 
-### Artículo 7 — Repositorio Documental
+## Artículo 7 — Repositorio Documental
 
 Cada órgano deberá contar con al menos un **repositorio documental** que almacene y custodie los documentos y expedientes electrónicos, permitiendo su gestión, trazabilidad, relaciones y metadatos asociados. Los órganos definirán estrategias de accesibilidad a los documentos custodiados. Para la preservación institucional a largo plazo: cumplir con las especificaciones del **Archivo Nacional**.
 
-### Artículo 8 — Codificación
+## Artículo 8 — Codificación
 
 En todas las plataformas, los órganos deben utilizar los **códigos estandarizados del Gestor de Códigos del Estado** (→ Norma Técnica de Interoperabilidad, art. 57 Reglamento) para registrar e identificar unívocamente órganos, procedimientos administrativos y cobertura geográfica (comuna, provincia, región, país) en los documentos y expedientes que gestionen, interoperen o custodien.
 
-### Artículo 9 — Registro de fecha y hora
+## Artículo 9 — Registro de fecha y hora
 
 Los órganos deben registrar en todas las plataformas la **fecha y hora** de todas las gestiones sobre documentos y/o expedientes electrónicos, utilizando **UTC+00:00** y la ubicación geográfica del órgano, en permanente sincronización con el **Servicio Hidrográfico y Oceanográfico de la Armada de Chile**.
 
-### Artículo 10 — Gestión de documentos y expedientes electrónicos y otras plataformas
+## Artículo 10 — Gestión de documentos y expedientes electrónicos y otras plataformas
 
 Toda plataforma o sistema informático que se interconecte, integre, interopere o permita el acceso a las plataformas de gestión de expedientes electrónicos deberá cumplir con las normas técnicas del art. 57 del Reglamento.
 
-### Artículo 11 — Trazabilidad
+## Artículo 11 — Trazabilidad
 
 Los órganos que administren plataformas de gestión de expedientes, repositorios o plataformas relacionadas deberán incluir los siguientes **registros de trazabilidad mínima** (tanto en las plataformas como en el expediente electrónico):
 
@@ -130,46 +138,42 @@ Los métodos de implementación y estandarización se especificarán en las guí
 
 ---
 
-### Párrafo 2º — De los Documentos Electrónicos
-
-### Artículo 12 — Estandarización de la estructura de los tipos de documentación oficial
+## Artículo 12 — Estandarización de la estructura de los tipos de documentación oficial
 
 La estructura estandarizada de un documento electrónico se compone de: **datos + formato de archivo + metadatos estandarizados**. Los formatos, esquemas, plantillas y metodologías para los principales tipos documentales se detallarán en las guías técnicas (→ Artículo 38).
 
-### Artículo 13 — Formatos válidos para documentos electrónicos en expedientes electrónicos
+## Artículo 13 — Formatos válidos para documentos electrónicos en expedientes electrónicos
 
 Todo documento electrónico en un expediente debe incorporarse según los **formatos de las guías técnicas** (→ Artículo 38). Si un órgano no puede usar el formato estándar, o requiere un nuevo formato, podrá sugerirlo para su incorporación a la guía, previa **visación de la División de Gobierno Digital** (que podrá consultar al Archivo Nacional). Si el formato no puede incorporarse, el órgano deberá:
 - Incorporarlo indicando expresamente la razón.
 - Asegurar cumplimiento de todos los requisitos de trazabilidad y metadatos.
 - Crear una **copia en formato aprobado** para asegurar visualización, acceso e interoperabilidad.
 
-### Artículo 14 — Metadatos Estandarizados de un Documento Electrónico
+## Artículo 14 — Metadatos Estandarizados de un Documento Electrónico
 
 Todo documento electrónico que los órganos creen, generen o gestionen deberá vincularse con una **estructura de metadatos estandarizados**. Los campos obligatorios, condicionales y sugeridos se especificarán en las guías técnicas (→ Artículo 38).
 
-### Artículo 15 — Acceso a los Documentos Electrónicos
+## Artículo 15 — Acceso a los Documentos Electrónicos
 
 El acceso de interesados(as) y usuarios(as): mediante los mecanismos de la **Norma Técnica de Autenticación** (art. 57 Reglamento). El acceso para otros órganos: según la **Norma Técnica de Interoperabilidad** (art. 57 Reglamento).
 
-### Artículo 16 — Requisitos de verificación de los documentos electrónicos
+## Artículo 16 — Requisitos de verificación de los documentos electrónicos
 
 Los órganos deberán habilitar la consulta de trazabilidad (→ Artículo 11) para:
 - Verificar la identificación de los documentos electrónicos que se incorporen, compartan, soliciten o interoperen.
 - Constatar modificaciones, cambios o gestiones, identificando a quien las ejecutó.
 
-### Artículo 17 — Requisitos de preservación de los documentos electrónicos
+## Artículo 17 — Requisitos de preservación de los documentos electrónicos
 
 Los órganos deberán conservar sus documentos electrónicos asegurando **confidencialidad, disponibilidad e integridad** a lo largo de todo su ciclo de vida, conforme a la Norma Técnica de Seguridad (art. 57 Reglamento), en repositorios que cumplan el Artículo 7. Las plataformas de gestión documental deben usar los formatos, tipos documentales, metadatos y características técnicas de esta norma. Los expedientes deberán estar disponibles según la Política de Gestión Documental; vencido el plazo, podrán ser **eliminados o transferidos al Archivo Nacional** conforme a la normativa vigente.
 
 ---
 
-### Párrafo 3º — Expedientes Electrónicos
-
-### Artículo 18 — Creación del expediente electrónico
+## Artículo 18 — Creación del expediente electrónico
 
 Al iniciarse un procedimiento administrativo (de oficio o a petición de parte), los órganos deberán crear un **expediente electrónico** en su Plataforma de Gestión de Expedientes, asignándole un **IUIe**. La creación deberá registrarse y asociarse a la generación de metadatos obligatorios (→ guías técnicas, Artículo 38).
 
-### Artículo 19 — Esquema estructural de un expediente electrónico
+## Artículo 19 — Esquema estructural de un expediente electrónico
 
 Cada expediente electrónico deberá conformarse con:
 
@@ -183,11 +187,11 @@ Cada expediente electrónico deberá conformarse con:
 
 Los estándares de conformación se especificarán en las guías técnicas (→ Artículo 38).
 
-### Artículo 20 — Elementos del expediente electrónico
+## Artículo 20 — Elementos del expediente electrónico
 
 En virtud del principio de **fidelidad** (art. 16 bis ley Nº 19.880), todo expediente debe registrar íntegramente y en orden sucesivo todas las actuaciones del procedimiento administrativo, conforme al Reglamento y esta norma.
 
-### Artículo 21 — Incorporación de Documentos a un Expediente Electrónico
+## Artículo 21 — Incorporación de Documentos a un Expediente Electrónico
 
 La forma de incorporación depende del origen del documento:
 
@@ -198,11 +202,11 @@ La forma de incorporación depende del origen del documento:
 
 **Procedimiento iniciado de oficio:** crear expediente e incorporar el acto de inicio como documento electrónico estandarizado.
 
-### Artículo 22 — Vinculación del Expediente con Metadatos
+## Artículo 22 — Vinculación del Expediente con Metadatos
 
 Todo el contenido del expediente deberá vincularse unívocamente al índice electrónico y a sus metadatos estandarizados, según los estándares de las guías técnicas (→ Artículo 38).
 
-### Artículo 23 — Trazabilidad de la incorporación de documentos electrónicos al expediente
+## Artículo 23 — Trazabilidad de la incorporación de documentos electrónicos al expediente
 
 Los órganos deben registrar la trazabilidad de incorporación y gestión de documentos mediante alguno de estos mecanismos:
 
@@ -210,7 +214,7 @@ Los órganos deben registrar la trazabilidad de incorporación y gestión de doc
 2. Como **enlace persistente** a documento en repositorio documental externo.
 3. Como **enlace a otro expediente relacionado** (anidamiento de expedientes), obligatorio en casos de acumulación de procedimientos (art. 33 ley Nº 19.880).
 
-### Artículo 24 — Datos y documentos aportados por interoperabilidad
+## Artículo 24 — Datos y documentos aportados por interoperabilidad
 
 Al incorporar datos o documentos obtenidos por interoperabilidad (→ Norma Técnica de Interoperabilidad, art. 57 Reglamento), el órgano solicitante deberá:
 
@@ -223,27 +227,27 @@ En ambos casos, deberá:
 - c) Identificar el Servicio de Interoperabilidad utilizado.
 - d) Registrar la autorización del(de la) interesado(a) si se interoperam datos personales sensibles.
 
-### Artículo 25 — Documentación física y microformas
+## Artículo 25 — Documentación física y microformas
 
 Para incorporar documentación física a un expediente electrónico: conformar una **copia digitalizada con calidad de copia fiel** en formato de **microforma**, conforme al DFL Nº 1/2020 Culturas y al DS Nº 23/2020 Culturas (reglamento de microformas).
 
-### Artículo 26 — Casos de excepción de documentación física y conformación de expedientes híbridos
+## Artículo 26 — Casos de excepción de documentación física y conformación de expedientes híbridos
 
 Para los casos de excepción del art. 14 del Reglamento en que no sea posible digitalizar documentos en papel: incorporarlos al expediente electrónico mediante una **estructura de documento electrónico que describa y referencie** la documentación física. La estructuración del **expediente híbrido** se hará según las guías técnicas (→ Artículo 38).
 
-### Artículo 27 — Incorporación de comunicaciones oficiales al expediente electrónico
+## Artículo 27 — Incorporación de comunicaciones oficiales al expediente electrónico
 
 Los órganos deben incorporar al expediente electrónico **todas las comunicaciones oficiales** del procedimiento administrativo, registradas mediante la **Plataforma de Comunicaciones Oficiales** de la División de Gobierno Digital del MINSEGPRES (→ guías técnicas, Artículo 38).
 
-### Artículo 28 — Incorporación de notificaciones al expediente electrónico
+## Artículo 28 — Incorporación de notificaciones al expediente electrónico
 
 Los órganos deben incorporar al expediente electrónico **todas las notificaciones** realizadas en el marco del procedimiento administrativo, según las guías técnicas para cada tipo de notificación (→ Artículo 38).
 
-### Artículo 29 — Accesibilidad a expedientes
+## Artículo 29 — Accesibilidad a expedientes
 
 El acceso de interesados(as) y usuarios(as): mediante la **Norma Técnica de Autenticación** (art. 57 Reglamento). El acceso para otros órganos: según la **Norma Técnica de Interoperabilidad** (art. 57 Reglamento). Los expedientes también estarán a disposición de los(as) interesados(as) en las dependencias del órgano.
 
-### Artículo 30 — Certificado de presentación de documentación al expediente electrónico
+## Artículo 30 — Certificado de presentación de documentación al expediente electrónico
 
 Toda Plataforma de Gestión de Expedientes deberá emitir **automáticamente** el certificado electrónico de presentación de un documento (art. 10 Reglamento), **con firma electrónica**, accesible a todos los(as) interesados(as). El certificado deberá contener:
 
@@ -256,19 +260,19 @@ Toda Plataforma de Gestión de Expedientes deberá emitir **automáticamente** e
 
 > El certificado debe incorporarse al expediente. En los casos del art. 19 bis ley Nº 19.880, además se emitirá en formato físico si el(la) interesado(a) lo solicita.
 
-### Artículo 31 — Requisitos de verificación de los expedientes electrónicos
+## Artículo 31 — Requisitos de verificación de los expedientes electrónicos
 
 Los órganos deberán habilitar la consulta de trazabilidad (→ Artículo 11) para verificar y constatar el contenido, gestiones, actuaciones, modificaciones y cambios a los expedientes bajo su custodia.
 
-### Artículo 32 — Requisitos de preservación de los expedientes electrónicos
+## Artículo 32 — Requisitos de preservación de los expedientes electrónicos
 
 Los órganos deben conservar sus expedientes electrónicos asegurando **confidencialidad, disponibilidad e integridad** (→ Norma Técnica de Seguridad, art. 57 Reglamento), en repositorios que cumplan el Artículo 7. Los expedientes deberán estar disponibles según la normativa de transferencia documental o las guías técnicas (→ Artículo 38); vencido el plazo, podrán ser **eliminados o transferidos al Archivo Nacional**.
 
-### Artículo 33 — Enlaces persistentes
+## Artículo 33 — Enlaces persistentes
 
 Los órganos podrán utilizar **enlaces externos** para referenciar documentación o expedientes alojados en plataformas de otros órganos o en repositorios propios (para casos de duplicidad). Solo se podrán usar vínculos si el órgano utiliza algún tipo de **enlace persistente**. La habilitación de los sistemas de gestión de enlaces es responsabilidad de cada órgano (→ guías técnicas, Artículo 38).
 
-### Artículo 34 — Registro de actuaciones en la Plataforma de Gestión de Expedientes Electrónicos
+## Artículo 34 — Registro de actuaciones en la Plataforma de Gestión de Expedientes Electrónicos
 
 La Plataforma de Gestión de Expedientes debe **validar la identidad** de los(as) usuarios(as) que realicen cualquier gestión (→ Norma Técnica de Autenticación, art. 57 Reglamento), o identificar si la acción fue ingresada de forma automatizada. Las guías técnicas (→ Artículo 38) determinarán la forma de incorporar este registro de actuaciones a los expedientes.
 

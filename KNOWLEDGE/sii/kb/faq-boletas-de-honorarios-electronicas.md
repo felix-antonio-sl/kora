@@ -21,12 +21,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 3
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas
 ---
 
 # Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII
-
 
 ## ¿En qué consiste el Beneficio para Trabajadores Independientes?
 

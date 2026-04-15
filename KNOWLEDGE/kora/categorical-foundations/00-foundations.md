@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Fong & Spivak (Seven Sketches), Spivak (Categorical Systems Theory), Barbosa (Coalgebra for Working SE), Mac Lane (CWM)"
+    source: Fong & Spivak (Seven Sketches), Spivak (Categorical Systems Theory), Barbosa
+      (Coalgebra for Working SE), Mac Lane (CWM)
 version: 1.0.0
 status: published
 tags:
@@ -13,6 +14,11 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:cat-foundations
 ---
 
 # Categorical Foundations for KORA
@@ -68,13 +74,13 @@ preserving:
 **Definition.** Given functors F, G: **C** → **D**, a natural transformation α: F ⇒ G assigns to each object A ∈ **C** a morphism α_A: F(A) → G(A) in **D** such that for every f: A → B:
 
 ```
-        F(f)
-  F(A) -----→ F(B)
-   |            |
-   | α_A        | α_B
-   ↓            ↓
-  G(A) -----→ G(B)
-        G(f)
+ F(f)
+ F(A) -----→ F(B)
+ | |
+ | α_A | α_B
+ ↓ ↓
+ G(A) -----→ G(B)
+ G(f)
 ```
 
 commutes: α_B ∘ F(f) = G(f) ∘ α_A.
@@ -134,13 +140,13 @@ satisfying:
 **F-coalgebra morphism.** Given (U, c) and (V, d), a morphism h: U → V such that F(h) ∘ c = d ∘ h:
 
 ```
-       c
-  U ------→ F(U)
-  |           |
-  | h         | F(h)
-  ↓           ↓
-  V ------→ F(V)
-       d
+ c
+ U ------→ F(U)
+ | |
+ | h | F(h)
+ ↓ ↓
+ V ------→ F(V)
+ d
 ```
 
 **Bisimulation.** A relation R ⊆ U × V such that related states produce related outputs. Formally: there exists a coalgebra structure on R making both projections coalgebra morphisms.

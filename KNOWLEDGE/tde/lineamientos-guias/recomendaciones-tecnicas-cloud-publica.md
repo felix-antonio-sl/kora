@@ -1,11 +1,20 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:recomendaciones-tecnicas-cloud-publica"
-  provenance: "https://wikiguias.digital.gob.cl/guias/guias/recomendaciones_cloud"
+  urn: urn:tde:kb:recomendaciones-tecnicas-cloud-publica
+  provenance: https://wikiguias.digital.gob.cl/guias/guias/recomendaciones_cloud
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, guia-tecnica, cloud]
+tags:
+- tde
+- lineamientos-guias
+- guia-tecnica
+- cloud
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:recomendaciones-tecnicas-cloud-publica
 ---
 
 # Recomendaciones Técnicas para la Adquisición de Servicios de Cloud Pública en los OAE
@@ -182,13 +191,13 @@ En muchos casos (especialmente Hyperscalers y empresas regionales en Chile), la 
 - El "consumo" visible en la consola de uso puede diferir del monto final a pagar (márgenes de comercialización, impuestos, conversión de monedas)
 - El soporte técnico de primer nivel generalmente lo provee el partner; se escala al proveedor global si es necesario
 - Los requerimientos de compra deben incluir:
-  1. Expectativas técnicas y comerciales del modelo de operación
-  2. Modelo comercial (tasas adicionales, modalidad de precios, cobros, impuestos, instrumento de compra)
-  3. Modelo de servicios, con responsabilidades explícitas de:
-     - La institución
-     - El socio comercial
-     - El proveedor de Nube Pública
-     - El modelo de control de la consola y distribución de responsabilidades en su administración
+ 1. Expectativas técnicas y comerciales del modelo de operación
+ 2. Modelo comercial (tasas adicionales, modalidad de precios, cobros, impuestos, instrumento de compra)
+ 3. Modelo de servicios, con responsabilidades explícitas de:
+ - La institución
+ - El socio comercial
+ - El proveedor de Nube Pública
+ - El modelo de control de la consola y distribución de responsabilidades en su administración
 
 En virtud del artículo 35 bis de la Ley N°19.886 (contratacióncomplejas), se deben utilizar mecanismos de análisis técnico, financiero, de ciclo de vida útil, consulta al mercado y otros procedimientos existentes.
 

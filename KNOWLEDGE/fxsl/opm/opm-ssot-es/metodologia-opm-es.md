@@ -1,18 +1,38 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:manual-metodologico-opm-es"
-version: "4.0.0"
+  urn: urn:fxsl:kb:manual-metodologico-opm-es
+version: 4.0.0
 status: published
-tags: [opm, methodology, system-modeling, sd-construction, refinement, complexity-management, modeling-protocol, patrones, antipatterns, control-flow, error-handling, quantitative, simulation, executable-modeling]
+tags:
+- opm
+- methodology
+- system-modeling
+- sd-construction
+- refinement
+- complexity-management
+- modeling-protocol
+- patrones
+- antipatterns
+- control-flow
+- error-handling
+- quantitative
+- simulation
+- executable-modeling
 lang: es
 extensions:
   kora:
     family: specification
     depends_on:
-      - "urn:fxsl:kb:opm-es"
-      - "urn:fxsl:kb:opl-es"
-      - "urn:fxsl:kb:opd-es"
+    - urn:fxsl:kb:opm-es
+    - urn:fxsl:kb:opl-es
+    - urn:fxsl:kb:opd-es
+relations:
+  cites:
+  - urn:fxsl:kb:opd-es
+  - urn:fxsl:kb:opl-es
+  - urn:fxsl:kb:opm-es
 ---
+
 
 # Manual metodológico de OPM
 

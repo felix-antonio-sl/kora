@@ -1,23 +1,38 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-opl-bimodal"
+  urn: urn:fxsl:kb:opm-opl-bimodal
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-opl-bimodal.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-opl-bimodal.md
+version: 1.0.0
 status: published
-tags: [opm, opl, bimodal, text-graphics, simulation, metamodel, tesperanto]
+tags:
+- opm
+- opl
+- bimodal
+- text-graphics
+- simulation
+- metamodel
+- tesperanto
 lang: en
 extensions:
   kora:
     family: textbook
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opl-es"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: [2, 11]
+    - urn:fxsl:kb:opm-iso-19450
+    - urn:fxsl:kb:opl-es
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - 2
+    - 11
+relations:
+  cites:
+  - urn:fxsl:kb:opl-es
+  - urn:fxsl:kb:opm-iso-19450
 ---
+
 
 # OPM OPL Bimodal — Graphic-Text Equivalence and Textual Specification
 

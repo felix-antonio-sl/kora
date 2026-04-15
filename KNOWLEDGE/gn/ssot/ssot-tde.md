@@ -1,19 +1,30 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-tde"
+  urn: urn:gn:kb:ssot-tde
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "Ley 21.180, Ley 19.799, digital.gob.cl, omega_gore_nuble_mermaid.md v2.6.0"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: Ley 21.180, Ley 19.799, digital.gob.cl, omega_gore_nuble_mermaid.md v2.6.0
+version: 1.0.0
 status: published
-tags: [ssot, tde, transformacion-digital, fea, gesdoc, interoperabilidad, clave-unica]
+tags:
+- ssot
+- tde
+- transformacion-digital
+- fea
+- gesdoc
+- interoperabilidad
+- clave-unica
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+relations:
+  cites:
+  - urn:gn:kb:ssot-dgi
 ---
+
 
 # SSOT — Transformación Digital del Estado (TDE)
 

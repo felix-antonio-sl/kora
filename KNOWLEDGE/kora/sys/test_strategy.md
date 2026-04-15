@@ -14,7 +14,17 @@ tags:
 - sys
 - test
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:test-strategy
+relations:
+  cites:
+  - urn:kora:kb:hub-agentes
+  - urn:kora:kb:workflow-wikiguias
 ---
+
 
 # Estrategia de Pruebas KB TDE (wikiguias)
 
@@ -43,15 +53,15 @@ XRef_Required: urn:kora:kb:workflow-wikiguias
 
 - Source_Declared: cada artefacto declara al menos un archivo fuente en `_manifest.provenance.source_file(s)` y, cuando exista, `source_url`.
 - MEAT_Coverage_Audit: comparación sistemática MEAT fuente vs KODA (muestreo estratificado en fuentes extensas); no deben detectarse hechos, requisitos, definiciones o procesos ausentes en el artefacto.
-  - Resultado: FS por artefacto (ideal 100%); listado de hallazgos MEAT con propuesta de parche si FS<100%.
-  - Rec: Automatizar con TDE_AUDITOR_KB; revisión manual muestral en normas y plataformas críticas.
+ - Resultado: FS por artefacto (ideal 100%); listado de hallazgos MEAT con propuesta de parche si FS<100%.
+ - Rec: Automatizar con TDE_AUDITOR_KB; revisión manual muestral en normas y plataformas críticas.
 
 ## Suite 3: TER y RD (ID: TDE_TEST_WIKIGUIAS_SUITE_003)
 
 - TER_Calculation: calcular tokens_fuente y tokens_KODA con mismo tokenizador; generar TER por artefacto y por categoría (normas, guías, plataformas, estrategias).
-  - Warn: Marcar artefactos con TER<25% como candidatos a revisión.
+ - Warn: Marcar artefactos con TER<25% como candidatos a revisión.
 - RD_Calculation: calcular promedio Ref/XRef/Ctx por bloque Tier1; alertar cuando RD<umbral objetivo.
-  - Rec: Usar resultados para enriquecer XRef en iteraciones futuras.
+ - Rec: Usar resultados para enriquecer XRef en iteraciones futuras.
 
 ## Suite 4: Coherencia de Referencias y Dominios (ID: TDE_TEST_WIKIGUIAS_SUITE_004)
 

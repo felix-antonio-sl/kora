@@ -1,19 +1,32 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-ecosistema"
+  urn: urn:gn:kb:ssot-ecosistema
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "omega_gore_nuble_mermaid.md v2.6.0, LOC GORE DFL 1-19.175"
-version: "1.1.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: omega_gore_nuble_mermaid.md v2.6.0, LOC GORE DFL 1-19.175
+version: 1.1.1
 status: published
-tags: [ssot, ecosistema, actores-externos, leyes, planificacion, probidad, seremias]
+tags:
+- ssot
+- ecosistema
+- actores-externos
+- leyes
+- planificacion
+- probidad
+- seremias
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+relations:
+  cites:
+  - urn:gn:kb:ssot-legal
+  - urn:gn:kb:ssot-mecanismos
+  - urn:gn:kb:ssot-rendiciones
 ---
+
 
 # SSOT — Ecosistema institucional GORE Ñuble
 

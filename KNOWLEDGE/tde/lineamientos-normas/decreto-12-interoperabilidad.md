@@ -1,11 +1,23 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:decreto-12-interoperabilidad"
-  provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto12"
+  urn: urn:tde:kb:decreto-12-interoperabilidad
+  provenance: https://wikiguias.digital.gob.cl/Normas/Decreto12
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-normas, decreto, norma-tecnica, interoperabilidad, nodo, gestor-de-codigos]
+tags:
+- tde
+- lineamientos-normas
+- decreto
+- norma-tecnica
+- interoperabilidad
+- nodo
+- gestor-de-codigos
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:decreto-12-interoperabilidad
 ---
 
 # Decreto 12 — Norma Técnica de Interoperabilidad
@@ -63,13 +75,11 @@ Definir los **estándares, protocolos y herramientas** para que los órganos de 
 
 ---
 
-## De la red de interoperabilidad
-
-### Artículo 3 — Red de interoperabilidad
+## Artículo 3 — Red de interoperabilidad
 
 La **red de interoperabilidad** consiste en un conjunto de conexiones directas y seguras a través de internet, basadas en **nodos de interoperabilidad** alojados en la infraestructura de los órganos, que actuando como proveedores y/o consumidores permiten el intercambio de datos, documentos y expedientes electrónicos (arts. 16 bis, 17 lit. d), 19 y 24 bis ley Nº 19.880; y Título VII del Reglamento). La trazabilidad, registros y autorizaciones de acceso se almacenan centralizadamente mediante comunicación obligatoria de las plataformas con los **servicios centralizados de interoperabilidad**.
 
-### Artículo 4 — Componentes de la red de interoperabilidad
+## Artículo 4 — Componentes de la red de interoperabilidad
 
 | Nº | Componente |
 |----|-----------|
@@ -80,15 +90,13 @@ La **red de interoperabilidad** consiste en un conjunto de conexiones directas y
 
 > Los componentes 1, 2 y 3 son dispuestos por la División de Gobierno Digital del MINSEGPRES a todos los órganos.
 
-### Artículo 5 — Forma de integrarse a la red de interoperabilidad
+## Artículo 5 — Forma de integrarse a la red de interoperabilidad
 
 Los órganos deberán integrarse a la red actuando como **proveedores y/o consumidores**, a través de nodos de interoperabilidad conectados a los servicios centralizados de interoperabilidad.
 
 ---
 
-### Párrafo 1º — Del nodo de interoperabilidad
-
-### Artículo 6 — Requisitos de un nodo de interoperabilidad
+## Artículo 6 — Requisitos de un nodo de interoperabilidad
 
 El **nodo de interoperabilidad** es un componente de software alojado en la infraestructura del órgano, que le permite integrarse a la red con los estándares y protocolos de esta norma. La División de Gobierno Digital pondrá a disposición un nodo estándar; cada órgano podrá optar por desarrollar uno propio.
 
@@ -109,13 +117,11 @@ Todo nodo deberá cumplir al menos:
 
 ---
 
-### Párrafo 2º — De los servicios centralizados de interoperabilidad
-
-### Artículo 7 — Servicios centralizados de interoperabilidad
+## Artículo 7 — Servicios centralizados de interoperabilidad
 
 Los **servicios centralizados** son el conjunto de herramientas de software e infraestructura que habilitan: Catálogo de Servicios, Registro de Trazabilidad, Directorio de Datos, Catálogo de Esquemas, Gestor de Acuerdos y Gestor de Autorizaciones; junto con la infraestructura que almacena los metadatos de cada transacción. Validan permisos de acceso entregando tokens y endpoints a los nodos. Son desarrollados por la División de Gobierno Digital del MINSEGPRES. Los órganos designarán funcionarios(as) responsables de mantener actualizada la información de cada servicio.
 
-### Artículo 8 — Catálogo de Servicios de Interoperabilidad
+## Artículo 8 — Catálogo de Servicios de Interoperabilidad
 
 Componente de software que lista los datos, documentos y expedientes electrónicos que los órganos proveen para intercambio en la red. Los órganos deberán **publicar todos los servicios bajo su administración** en el Catálogo. Cada servicio debe tener un código unívoco (del Gestor de Códigos del Estado) y vincularse con el Catálogo de Procedimientos Administrativos y Trámites.
 
@@ -128,7 +134,7 @@ Por cada servicio publicado, los órganos deben:
 
 > La primera carga la efectúa la División de Gobierno Digital. La incorporación de nuevos servicios y las actualizaciones son responsabilidad de cada órgano (→ guía técnica, Artículo 27).
 
-### Artículo 9 — Registro de Trazabilidad
+## Artículo 9 — Registro de Trazabilidad
 
 Componente de software que almacena la información de cada transacción para registrar y validar operaciones de procedimientos administrativos. Los nodos enviarán el registro a los servicios centralizados **de manera paralela e inmediata** al envío de la consulta o respuesta. En casos de interrupción, alto volumen o fuerza mayor, se permite envío diferido por paquetes dentro de las **48 horas** siguientes a la primera transacción del paquete.
 
@@ -141,19 +147,19 @@ Cada nodo debe registrar:
 6. Nombre y código del órgano proveedor.
 7. Nombre y código del órgano consumidor.
 
-### Artículo 10 — Directorio de Datos
+## Artículo 10 — Directorio de Datos
 
 Servicio centralizado que exhibe los datos disponibles en el Catálogo de Servicios, con descripción, atributos y funcionario(a) responsable. Permite buscar e identificar datos administrados por otros órganos. Todos los datos expuestos en un servicio publicado deben publicarse en el Directorio. Los órganos deberán hacer un **catastro de los datos que administran** según sus competencias y mantenerlos publicados y actualizados. Para solicitar un dato publicado: el órgano consumidor lo solicita al proveedor mediante el Catálogo de Servicios. Para datos sensibles: requiere además la autorización del(de la) interesado(a) mediante el **Gestor de Autorizaciones**.
 
-### Artículo 11 — Catálogo de Esquemas
+## Artículo 11 — Catálogo de Esquemas
 
 El **Catálogo de Esquemas** gestiona el listado de esquemas aprobados para interoperar. Un **esquema basal** define un dato atómico o pequeño conjunto de datos relacionados. Un **esquema documental** define un conjunto de datos que componen un documento (compuesto de esquemas basales). La primera carga la efectúa la División de Gobierno Digital; las actualizaciones son responsabilidad de cada órgano que ofrezca servicios (→ procedimiento en guía técnica, Artículo 27). Cambios de funcionario(a) responsable: plazo máximo **3 días** para actualizar. Nuevos esquemas requieren **visación de la División de Gobierno Digital**. Esquemas con errores sintácticos o incompatibles serán rechazados hasta que el órgano subsane el error.
 
-### Artículo 12 — Gestor de Acuerdos
+## Artículo 12 — Gestor de Acuerdos
 
 Servicio centralizado que facilita la solicitud de un servicio de interoperabilidad entre consumidor y proveedor, habilitando la conexión y definiendo niveles de servicio mediante **términos y condiciones** o convenios tipo. Aplica a datos y servicios del Directorio de Datos o Catálogo de Servicios. No aplica para datos abiertos. Los acuerdos pueden ser para: (a) uso de un servicio, (b) interoperar un dato una única vez, o (c) acceso permanente a un servicio. **Solo se pueden celebrar acuerdos por medio del Gestor de Acuerdos.** Cada órgano debe autoevaluar la cantidad de TPS que podrá realizar y establecer su ANS.
 
-### Artículo 13 — Tramitación de solicitudes de acuerdo
+## Artículo 13 — Tramitación de solicitudes de acuerdo
 
 La solicitud debe ser efectuada por el(la) **Jefe(a) de la Unidad de Tecnologías** del órgano consumidor (o quien cumpla esas funciones), con visto bueno del área jurídica. Cuando corresponda, se debe adjuntar la ley que da origen al procedimiento administrativo. La solicitud se envía al órgano proveedor vía Gestor de Acuerdos, con aviso automático a la División de Gobierno Digital.
 
@@ -164,7 +170,7 @@ Plazos:
 
 La División de Gobierno Digital **mediará** en caso de negativa, analizando argumentos técnicos y legales. En caso de **negativa injustificada o fuera de plazo**, la División tomará la decisión por sí. En caso de **falta de capacidad manifiesta** (pocos funcionarios TI, infraestructura limitada, presupuesto insuficiente u otra circunstancia fundada): la División presta apoyo técnico y el proveedor debe incluir la mejora en su Plan de Mejora Continua (→ Norma Técnica de Calidad y Funcionamiento, art. 57 Reglamento). Aprobada la solicitud, los(as) Jefes(as) Superiores de Servicio suscriben el acuerdo en la plataforma **con firma electrónica avanzada**.
 
-### Artículo 14 — Gestor de Autorizaciones
+## Artículo 14 — Gestor de Autorizaciones
 
 Permite a las **personas naturales interesadas** en un procedimiento administrativo:
 1. Ver el historial de autorizaciones de tratamiento de datos otorgadas (verificable: quién, cuándo, cómo, para qué procedimiento, qué datos sensibles).
@@ -173,7 +179,7 @@ Permite a las **personas naturales interesadas** en un procedimiento administrat
 
 La autorización se presta integrada a **Clave Única** (art. 30 lit. f) ley Nº 19.880). El consentimiento aplica a toda gestión del procedimiento hasta su tramitación total y debe incorporarse como documento al expediente electrónico, siendo preservado por el órgano. La revocación **no tiene efecto retroactivo** sobre gestiones ya realizadas.
 
-### Artículo 15 — Requisitos del consentimiento
+## Artículo 15 — Requisitos del consentimiento
 
 El consentimiento debe:
 
@@ -188,13 +194,11 @@ El consentimiento debe:
 
 ---
 
-### Párrafo 3º — Herramientas complementarias
-
-### Artículo 16 — Herramientas complementarias
+## Artículo 16 — Herramientas complementarias
 
 Son herramientas complementarias el **Gestor de Códigos del Estado** y el **Catálogo de Procedimientos Administrativos y Trámites**, gestionadas por la División de Gobierno Digital del MINSEGPRES. Los órganos son responsables de mantener actualizada la información en ellas.
 
-### Artículo 17 — Gestor de Códigos del Estado
+## Artículo 17 — Gestor de Códigos del Estado
 
 Componente de software que gestiona los **códigos estandarizados** asignados a órganos del Estado, procedimientos administrativos, nombres territoriales, entre otras dimensiones. Permite a cada órgano:
 
@@ -203,7 +207,7 @@ Componente de software que gestiona los **códigos estandarizados** asignados a 
 3. Acceder a equivalencias de códigos utilizados por otros órganos.
 4. Incorporar nuevas categorías de códigos con metadatos y relaciones con categorías existentes.
 
-### Artículo 18 — Catálogo de Procedimientos Administrativos y Trámites
+## Artículo 18 — Catálogo de Procedimientos Administrativos y Trámites
 
 Nómina de procedimientos administrativos y trámites identificados por los órganos, para su codificación, estandarización y caracterización. Cada órgano deberá identificar sus procedimientos especificando al menos:
 
@@ -215,9 +219,7 @@ Nómina de procedimientos administrativos y trámites identificados por los órg
 
 ---
 
-### Párrafo 4º — Elementos transmisibles
-
-### Artículo 19 — Elementos transmisibles
+## Artículo 19 — Elementos transmisibles
 
 Los proveedores deben transmitir por medio del nodo los **datos y documentos de su competencia** necesarios para el conocimiento o resolución de un procedimiento administrativo del órgano consumidor. Los documentos deben estar descritos conforme a un esquema documental (→ Artículo 11). Deben transmitirse:
 - Datos personales de los(as) interesados(as).
@@ -227,35 +229,33 @@ Los proveedores deben transmitir por medio del nodo los **datos y documentos de 
 
 > Los **datos abiertos** son consumidos directamente por los órganos sin pasar por la red de interoperabilidad. Los documentos públicos deben publicarse en portales conforme a la ley Nº 20.285.
 
-### Artículo 20 — Clasificación de datos
+## Artículo 20 — Clasificación de datos
 
 Conforme al Directorio de Datos (→ Artículo 10), cada órgano deberá **clasificar los datos** que gestione en: personales, sensibles, estadísticos, secretos, reservados u otros, según la ley Nº 19.628 y la normativa vigente aplicable.
 
 ---
 
-### Párrafo 5º — De la coordinación de interoperabilidad
-
-### Artículo 21 — De la coordinación de interoperabilidad
+## Artículo 21 — De la coordinación de interoperabilidad
 
 Se establecen reglas de gestión de la interoperabilidad articuladas en **comités por niveles**, en virtud de los principios de eficiencia, eficacia, coordinación (principio de interoperabilidad, art. 16 bis ley Nº 19.880).
 
-### Artículo 22 — Niveles de coordinación
+## Artículo 22 — Niveles de coordinación
 
 Los niveles son: **primer nivel** (institucional), **segundo nivel** (sectorial) y **tercer nivel** (estratégico).
 
-### Artículo 23 — Primer nivel o nivel institucional
+## Artículo 23 — Primer nivel o nivel institucional
 
 Coordinado por la División de Gobierno Digital del MINSEGPRES con representantes de los órganos. Resuelve los **problemas operativos** que se presenten al interoperar, salvo aquellos que correspondan a comités sectoriales.
 
-### Artículo 24 — Segundo nivel o nivel sectorial
+## Artículo 24 — Segundo nivel o nivel sectorial
 
 Existirán tantos **comités sectoriales** como sectores económicos y sociales requieran coordinarse, para coordinar estándares, codificaciones y esquemas de cada sector. La División de Gobierno Digital apoyará cada comité.
 
-### Artículo 25 — Tercer nivel o nivel estratégico
+## Artículo 25 — Tercer nivel o nivel estratégico
 
 **Comité Estratégico**: coordina, valida y aprueba estándares, protocolos, codificaciones, esquemas y cualquier materia que garantice el adecuado funcionamiento de la red. Su composición se determina por acto administrativo del MINSEGPRES. Es presidido por el(la) Jefe(a) de la División de Gobierno Digital. Funciones: asesoría técnica para validar propuestas sectoriales; resolución de discrepancias entre órganos; sugerencia de datos, esquemas y metadatos basales transversales.
 
-### Artículo 26 — Rol de la División de Gobierno Digital
+## Artículo 26 — Rol de la División de Gobierno Digital
 
 Conforme al art. 9A ley Nº 18.993, la División de Gobierno Digital apoya la coordinación estratégica de interoperabilidad mediante: guías técnicas, propuestas de estándares, esquemas y códigos; asesoría a los órganos para la implementación de la red; y convocatoria de instancias de coordinación transversales o sectoriales.
 

@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Leinster (Basic Category Theory), Spivak (Categorical Systems Theory), Benabou (2-categories), KORA agent-spec-md v6.0.0 §13"
+    source: Leinster (Basic Category Theory), Spivak (Categorical Systems Theory),
+      Benabou (2-categories), KORA agent-spec-md v6.0.0 §13
 version: 1.0.0
 status: published
 tags:
@@ -15,6 +16,15 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:cat-ecosystem-2cat
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-agent-coalgebra"
 ---
 
 # The 2-Category Eco: Interoperability of Agents
@@ -73,7 +83,7 @@ All notation and definitions from [00-foundations](urn:kora:kb:cat-foundations) 
 **Definition.** Two 0-cells A₁ and A₂ are **equal** in Eco iff they are bisimilar:
 
 ```
-A₁ = A₂  in Eco  ⟺  A₁ ~ A₂  (bisimilar)
+A₁ = A₂ in Eco ⟺ A₁ ~ A₂ (bisimilar)
 ```
 
 *Consequence:* An agent's identity is its behavior, not its implementation. Two workspaces with different file contents but identical observable behavior are the same 0-cell.
@@ -143,14 +153,14 @@ Composes two agents into a multi-agent system via a wiring diagram W.
 #### Type R (Restriction)
 
 ```
-R: A → A'    where A' is a "smaller" agent
+R: A → A' where A' is a "smaller" agent
 ```
 
 Restricts the interface functor F or the effect monad M of an agent, producing a constrained version.
 
 **Formal definition:** R consists of:
-- R_tools: F_A → F_A'  where F_A' ⊆ F_A (tool subset)
-- R_monad: M_A → M_A'  where M_A' is more restrictive than M_A
+- R_tools: F_A → F_A' where F_A' ⊆ F_A (tool subset)
+- R_monad: M_A → M_A' where M_A' is more restrictive than M_A
 - Identity on states and transitions (FSM unchanged)
 
 **Examples:**
@@ -160,13 +170,13 @@ Restricts the interface functor F or the effect monad M of an agent, producing a
 #### Type P (Promotion)
 
 ```
-P: A → A+    where A+ has more capabilities
+P: A → A+ where A+ has more capabilities
 ```
 
 Extends the interface functor F with discovered Skills, producing an enhanced version.
 
 **Formal definition:** P consists of:
-- P_tools: F_A ↪ F_A+  where F_A ⊆ F_A+ (tool superset)
+- P_tools: F_A ↪ F_A+ where F_A ⊆ F_A+ (tool superset)
 - Identity on states, transitions, and monad
 - The additional tools come from the Discovery Presheaf (document 04)
 
@@ -206,19 +216,19 @@ for any 1-cell T: A → B.
 **Definition.** A 2-cell α: T ⇒ T' (where T, T': A → B) assigns to each state u of agent A a morphism:
 
 ```
-α_u: T(u) → T'(u)    in agent B
+α_u: T(u) → T'(u) in agent B
 ```
 
 such that for every transition t: u → v in A:
 
 ```
-        T(t)
-  T(u) -----→ T(v)
-   |            |
-   | α_u        | α_v
-   ↓            ↓
-  T'(u) ----→ T'(v)
-        T'(t)
+ T(t)
+ T(u) -----→ T(v)
+ | |
+ | α_u | α_v
+ ↓ ↓
+ T'(u) ----→ T'(v)
+ T'(t)
 ```
 
 commutes.
@@ -237,14 +247,14 @@ commutes.
 
 ```
 For every KODA agent X:
-  G_v5(X) --α_X--> G_v6(X)
-  v5 workspace      v6 workspace (with §13, §14)
+ G_v5(X) --α_X--> G_v6(X)
+ v5 workspace v6 workspace (with §13, §14)
 ```
 
 Naturality ensures that for any KODA transformation f: X → Y:
 
 ```
-G_v5(f) followed by α_Y  =  α_X followed by G_v6(f)
+G_v5(f) followed by α_Y = α_X followed by G_v6(f)
 ```
 
 *Meaning:* It doesn't matter whether you first migrate the agent and then upgrade the workspace format, or first upgrade the format and then migrate. The result is the same.
@@ -264,7 +274,7 @@ G_v5(f) followed by α_Y  =  α_X followed by G_v6(f)
 
 ```
 inject_lazy(Skill) --α--> inject_full(Skill)
-(CM Core only)             (CM Core + scripts + refs)
+(CM Core only) (CM Core + scripts + refs)
 ```
 
 ## 5. Properties of Eco

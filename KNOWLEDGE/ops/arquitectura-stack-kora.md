@@ -1,15 +1,35 @@
 ---
 _manifest:
-  urn: "urn:ops:kb:arquitectura-stack-kora"
+  urn: urn:ops:kb:arquitectura-stack-kora
   provenance:
-    created_by: "ops/clawstack + kora/curator"
-    created_at: "2026-03-23"
-    source: "Estado operacional del stack desplegado en Hetzner i7-7700 62GB Ubuntu 24.04"
-version: "1.0.0"
+    created_by: ops/clawstack + kora/curator
+    created_at: '2026-03-23'
+    source: Estado operacional del stack desplegado en Hetzner i7-7700 62GB Ubuntu
+      24.04
+version: 1.0.0
 status: published
-tags: [arquitectura, stack, docker, containers, redes, inventario, produccion]
+tags:
+- arquitectura
+- stack
+- docker
+- containers
+- redes
+- inventario
+- produccion
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:ops:kb:arquitectura-stack-kora
+relations:
+  cites:
+  - urn:ops:kb:deploy-agente-kora-en-openclaw
+  - urn:ops:kb:federacion-kora-v2
+  - urn:ops:kb:principios-transmutacion-kora-openclaw
+  - urn:ops:kb:ux-telegram-openclaw
 ---
+
 
 # Arquitectura del stack KORA — Estado operacional
 
@@ -21,32 +41,32 @@ Vista completa del stack de producción desplegado en servidor Hetzner (i7-7700,
 
 ```
 Internet (138.201.53.205, *.sanixai.com Cloudflare DNS-only)
-    │
-    │ :80/:443
-    ▼
+ │
+ │ :80/:443
+ ▼
 ┌──────────────────────────────────────────────┐
-│  RED: web (Traefik routing)                   │
-│                                               │
-│  traefik          reverse proxy + TLS auto    │
-│  crowdsec         WAF + IP reputation         │
-│  traefik-bouncer  bouncer middleware          │
-│  netdata          monitor.sanixai.com         │
-│  kora-panel       kora.sanixai.com            │◄── dual-homed
-│  opmodel-dev      opmodel.sanixai.com         │
+│ RED: web (Traefik routing) │
+│ │
+│ traefik reverse proxy + TLS auto │
+│ crowdsec WAF + IP reputation │
+│ traefik-bouncer bouncer middleware │
+│ netdata monitor.sanixai.com │
+│ kora-panel kora.sanixai.com │◄── dual-homed
+│ opmodel-dev opmodel.sanixai.com │
 └──────────────────────────────────────────────┘
-         (redes aisladas, sin puente)
+ (redes aisladas, sin puente)
 ┌──────────────────────────────────────────────┐
-│  RED: kora-federation (bridge Docker)         │
-│                                               │
-│  kora-personal   :18789  korax       🦴       │
-│  kora-pca        :8100   sidecar PCA          │
-│  kora-steipete   :18810  steipete    🏗️       │
-│  kora-salubrista :18830  salubrista  🏥       │
-│  kora-panel      :3000   panel web            │◄── dual-homed
-│                                               │
-│  Comunicación: hooks HTTP + DNS interno       │
-│  Gateways: bind=lan (0.0.0.0 en container)   │
-│  Host ports: 127.0.0.1 only (no publico)     │
+│ RED: kora-federation (bridge Docker) │
+│ │
+│ kora-personal :18789 korax 🦴 │
+│ kora-pca :8100 sidecar PCA │
+│ kora-steipete :18810 steipete 🏗️ │
+│ kora-salubrista :18830 salubrista 🏥 │
+│ kora-panel :3000 panel web │◄── dual-homed
+│ │
+│ Comunicación: hooks HTTP + DNS interno │
+│ Gateways: bind=lan (0.0.0.0 en container) │
+│ Host ports: 127.0.0.1 only (no publico) │
 └──────────────────────────────────────────────┘
 ```
 
@@ -113,34 +133,34 @@ Named volumes para state OpenClaw (config vive aquí, no en bind mount — atomi
 
 ```
 /srv/kora/
-├── compose/                    ← korax gateway
-├── compose-steipete/           ← steipete gateway
-├── compose-salubrista/         ← salubrista gateway
-├── config/{personal,steipete,salubrista}/  ← openclaw.json5 fuente
-├── workspaces/                 ← workspaces transmutados (bind mount RW)
-│   ├── personal/agents/korax/
-│   ├── steipete/agents/steipete/
-│   └── salubrista/agents/salubrista-hah/
-├── knowledge/                  ← KBs compartidas (mount RO)
-│   ├── korvo/
-│   ├── dev/
-│   └── salud/
-├── shared/                     ← storage federation v2
-│   ├── federation/             ← directorio agentes (RO todos)
-│   ├── korax/                  ← propio korax (RW)
-│   ├── steipete/               ← propio steipete (RW)
-│   └── salubrista-hah/         ← propio salubrista (RW)
+├── compose/ ← korax gateway
+├── compose-steipete/ ← steipete gateway
+├── compose-salubrista/ ← salubrista gateway
+├── config/{personal,steipete,salubrista}/ ← openclaw.json5 fuente
+├── workspaces/ ← workspaces transmutados (bind mount RW)
+│ ├── personal/agents/korax/
+│ ├── steipete/agents/steipete/
+│ └── salubrista/agents/salubrista-hah/
+├── knowledge/ ← KBs compartidas (mount RO)
+│ ├── korvo/
+│ ├── dev/
+│ └── salud/
+├── shared/ ← storage federation v2
+│ ├── federation/ ← directorio agentes (RO todos)
+│ ├── korax/ ← propio korax (RW)
+│ ├── steipete/ ← propio steipete (RW)
+│ └── salubrista-hah/ ← propio salubrista (RW)
 ├── scripts/
-│   ├── sync-config.sh          ← merge config host→volume
-│   └── federation-health.sh    ← health check centralizado
+│ ├── sync-config.sh ← merge config host→volume
+│ └── federation-health.sh ← health check centralizado
 └── backups/
 
 ~/projects/
-├── kora-panel/                 ← source del panel web
-├── openclaw/                   ← source OpenClaw (checkout v2026.3.22)
-├── docker-stacks/              ← infra (traefik, security, monitoring)
-├── pca/                        ← PCA source
-└── opmodel/                    ← proyecto activo
+├── kora-panel/ ← source del panel web
+├── openclaw/ ← source OpenClaw (checkout v2026.3.22)
+├── docker-stacks/ ← infra (traefik, security, monitoring)
+├── pca/ ← PCA source
+└── opmodel/ ← proyecto activo
 ```
 
 ---
@@ -172,8 +192,8 @@ kora-panel → Docker socket (RO) → estado containers, restart
 
 ```
 operador edita config/*/openclaw.json5
-  → sync-config.sh (merge host + runtime keys)
-  → docker compose restart
+ → sync-config.sh (merge host + runtime keys)
+ → docker compose restart
 ```
 
 ---

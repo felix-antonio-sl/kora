@@ -4,29 +4,36 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - justicia
-  - carabineros
-  - pdi
-  - bomberos
-  - sename
-  - fronteras
-  - recintos-penitenciarios
+- ris
+- sni
+- inversion
+- gn
+- justicia
+- carabineros
+- pdi
+- bomberos
+- sename
+- fronteras
+- recintos-penitenciarios
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:gn:kb:ris-seguridad-justicia
 ---
 
 # Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
 
+
 ## Proyectos Construcción, Ampliación y Reparación Infraestructura (Justicia)
 
-Establece requisitos para proyectos de construcción, ampliación, reposición y reparaciones mayores en infraestructura de Administración de Justicia. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Administracion_Justicia_2024.pdf>
+Establece requisitos para proyectos de construcción, ampliación, reposición y reparaciones mayores en infraestructura de Administración de Justicia. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Administracion_Justicia_2024.pdf
 
 ### Alcance del Proyecto
 
@@ -35,10 +42,10 @@ Propósito principal: ampliar y mejorar capacidad institucional para apoyar pres
 ### Principios y Criterios de Diseño
 
 - **Arquitectura sustentable:**
-  - Diseño integrado (climatización, iluminación, sanitario, aguas lluvias, etc.).
-  - Uso eficiente de energía y agua para minimizar impactos ambientales.
+ - Diseño integrado (climatización, iluminación, sanitario, aguas lluvias, etc.).
+ - Uso eficiente de energía y agua para minimizar impactos ambientales.
 - **Accesibilidad universal:**
-  - Cumplimiento obligatorio de normativas para asegurar libre acceso y circulación a personas con discapacidad (Ley 19.284, DS 47, DS 201).
+ - Cumplimiento obligatorio de normativas para asegurar libre acceso y circulación a personas con discapacidad (Ley 19.284, DS 47, DS 201).
 
 ### Registro y Clasificación en SNI
 
@@ -74,14 +81,14 @@ Propósito específico: mejorar infraestructura de edificios con funciones de ap
 #### Postulación para Etapa de Ejecución
 
 - **Presentación del proyecto:**
-  - **Opción A (Directa):** estudio preinversión (perfil), todos los docs de etapa diseño, y diseño finalizado.
-  - **Opción B (Desde Diseño):** resumen ejecutivo del estudio preinversional y diseño finalizado.
+ - **Opción A (Directa):** estudio preinversión (perfil), todos los docs de etapa diseño, y diseño finalizado.
+ - **Opción B (Desde Diseño):** resumen ejecutivo del estudio preinversional y diseño finalizado.
 - **Documentos técnicos adicionales:**
-  - Acreditar antecedentes técnicos según normativas de edificación.
+ - Acreditar antecedentes técnicos según normativas de edificación.
 - Certificación del diseño: verificación formal, incluyendo cronogramas (Gantt y financiero).
 - **Presupuesto de ejecución:**
-  - Detalle: obras civiles, asesorías/consultorías, equipos/equipamiento.
-  - Anexo: presupuesto para Plan de Contingencia si corresponde.
+ - Detalle: obras civiles, asesorías/consultorías, equipos/equipamiento.
+ - Anexo: presupuesto para Plan de Contingencia si corresponde.
 - Plan de Contingencia: para inmuebles existentes, asegurar funcionamiento durante intervención.
 - Cronogramas: coherentes con procesos y ficha IDI.
 - Uso de Precios Sociales vigentes.
@@ -90,7 +97,7 @@ Propósito específico: mejorar infraestructura de edificios con funciones de ap
 
 ## Proyectos Corporación Administrativa del Poder Judicial
 
-Establece requisitos para proyectos de la Corporación Administrativa del Poder Judicial (CAPJ). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Corp_Adm_Poder_Judicial_2024.pdf>
+Establece requisitos para proyectos de la Corporación Administrativa del Poder Judicial (CAPJ). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Corp_Adm_Poder_Judicial_2024.pdf
 
 ### Contexto y Rol
 
@@ -139,9 +146,7 @@ Rol PJUD: pilar del Estado Democrático. Estructura: >450 tribunales (Corte Supr
 
 ## Proyectos Establecimientos Atención de Menores (SENAME)
 
-Establece requisitos para proyectos del SENAME en justicia y reinserción juvenil. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Asistencia_de_menores_-SENAME_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos del SENAME en justicia y reinserción juvenil. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Asistencia_de_menores_-SENAME_2024.pdf
 
 Entidad: SENAME (dependiente Min. Justicia y DDHH). Misión: que adolescentes/jóvenes imputados/infractores abandonen conductas delictivas mediante intervenciones oportunas y de calidad. Visión: favorecer reinserción social de adolescentes/jóvenes según Ley de Responsabilidad Penal Adolescente. Resolución de dudas: adenda por Jefatura de la División.
 
@@ -171,9 +176,9 @@ Entidad: SENAME (dependiente Min. Justicia y DDHH). Misión: que adolescentes/j�
 ### Postulación para Etapa de Ejecución
 
 - **Formulación del proyecto:**
-  - **Opción A (Directa):** usar metodología SENAME.
-  - **Opción B (Desde Diseño Aprobado):** presentar Informe Ejecutivo.
-  - Anexos: documento de propiedad, cronograma, ficha IDI.
+ - **Opción A (Directa):** usar metodología SENAME.
+ - **Opción B (Desde Diseño Aprobado):** presentar Informe Ejecutivo.
+ - Anexos: documento de propiedad, cronograma, ficha IDI.
 - Resultados de diseño: presentar resultados de arquitectura, ingeniería, especialidades, visados por Unidad Técnica.
 - Antecedentes técnicos: incorporar doc. de "Antecedentes técnicos para proyectos que consideran edificación".
 - Presupuesto oficial: para etapa de ejecución.
@@ -188,9 +193,7 @@ Entidad: SENAME (dependiente Min. Justicia y DDHH). Misión: que adolescentes/j�
 
 ## Proyectos Recintos Penitenciarios
 
-Establece requisitos para proyectos de inversión en recintos penitenciarios. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Recintos_Penitenciarios_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de inversión en recintos penitenciarios. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Recintos_Penitenciarios_2024.pdf
 
 Propósito general: ampliar capacidad institucional para optimizar actividades.
 
@@ -248,28 +251,26 @@ Variables adicionales:
 
 ## Complejos Fronterizos
 
-Establece requisitos para proyectos de inversión en complejos fronterizos. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Complejos_Fronterizos_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de inversión en complejos fronterizos. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Complejos_Fronterizos_2024.pdf
 
 Propósito: iniciativas de inversión pública para control de flujo de vehículos, pasajeros y carga en frontera. Proponente: Unidad de Pasos Fronterizos (coordina PDI, SAG, Aduanas, etc.). Proceso: Perfil → Diseño → Ejecución. Resolución de dudas: Jefatura de la División de Evaluación Social de Inversiones.
 
 ### Orientaciones Sectoriales
 
 - **Infraestructura y capacidad:**
-  - Construir, ampliar y mejorar dependencias.
-  - Optimizar actividades organizacionales.
+ - Construir, ampliar y mejorar dependencias.
+ - Optimizar actividades organizacionales.
 - **Integración internacional:**
-  - Implementación de Complejos Integrados con funcionarios de países vecinos.
-  - Administración: a cargo del Ministerio del Interior.
+ - Implementación de Complejos Integrados con funcionarios de países vecinos.
+ - Administración: a cargo del Ministerio del Interior.
 - **Arquitectura sustentable:**
-  - Coordinación paralela de especialidades (climatización, iluminación, etc.).
-  - Uso eficiente de energía y agua, minimización de impacto.
+ - Coordinación paralela de especialidades (climatización, iluminación, etc.).
+ - Uso eficiente de energía y agua, minimización de impacto.
 - Enfoque de género: incorporar según Requisitos de Información.
 - **Clasificación BIP:**
-  - Sector: Multisectorial.
-  - Subsector: Administración Multisector.
-  - Descriptor: "Edificación Pública".
+ - Sector: Multisectorial.
+ - Subsector: Administración Multisector.
+ - Descriptor: "Edificación Pública".
 
 ### Postulación (Etapas Prefactibilidad y Factibilidad)
 
@@ -293,9 +294,7 @@ Propósito: iniciativas de inversión pública para control de flujo de vehícul
 
 ## Proyectos Infraestructura Policía de Investigaciones
 
-Establece requisitos para proyectos de inversión de la Policía de Investigaciones (PDI). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Policia_Investigaciones_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de inversión de la Policía de Investigaciones (PDI). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Policia_Investigaciones_2024.pdf
 
 Aplicabilidad: proyectos de inversión relacionados con funciones de la PDI. Resolución de dudas: adenda por Jefatura de la División.
 
@@ -329,81 +328,3 @@ Marco legal: Ley N° 2460 (1979), art. 5°. Funciones PDI: mantener tranquilidad
 - Plan de Contingencia: para ampliaciones/reposiciones, incluir funcionamiento alterno, almacenaje, costos.
 
 ---
-
-## Proyectos Infraestructura Carabineros de Chile
-
-Establece requisitos para proyectos de infraestructura de Carabineros. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Carabineros_2024.pdf>
-
-### Alcance
-
-Propósito: ampliar capacidad institucional para mejorar funciones de seguridad. Arquitectura sustentable: diseño integrado (climatización, etc.) para uso eficiente de recursos. Accesibilidad: cumplimiento normativas (Ley 19.284, DS 47, DS 201). Competencia: análisis por SEREMI de Desarrollo Social y Familia. Etapas: Diseño y Ejecución (modelo recintos policiales tipo).
-
-### Orientaciones Sectoriales
-
-- **Tipologías de proyectos:**
-  - **Tipo A (Reposición/Ampliación/Mejoramiento):**
-    - Foco: funciones de seguridad y orden público.
-    - Metodología: "Metodología de Infraestructura y Equipamiento para Carabineros".
-  - **Tipo B (Aumento de Unidades de Vigilancia):**
-    - Foco: reforzar vigilancia en Seguridad Ciudadana.
-    - Metodología: "Metodología de Vigilancia Policial". Si incluye infraestructura, complementar con metodología de Infra/Equip.
-
-### Postulación para Etapa de Diseño
-
-- **Metodologías aplicables:**
-  - Aumento de unidades: usar planilla UVE y, si aplica, Infra/Equip.
-  - Mantención de unidades: solo Infra/Equip.
-- Planos de emplazamiento, localización, planta/croquis.
-- Aplicar "Instructivo de Riesgo de Desastres".
-- Incorporar lineamientos de enfoque de género.
-- Aspectos técnicos: informe estado actual infra., programa arq. visado DILOCAR, especificaciones técnicas CCTV (visado AUPOL), listado equipos (Excel), presupuesto detallado, cronograma.
-
-### Postulación para Etapa de Ejecución
-
-- **Presentación:**
-  - Directa: incluir formulación y antecedentes de diseño.
-  - Desde diseño: Informe Ejecutivo, detectar diferencias programa arq.
-- Resultados técnicos: resultados diseño (Arq, Ing, Esp) con revisiones indep., programa arq. comparado, planos definitivos visados DILOCAR.
-- Equipamiento y presupuesto: listado equipos (3 cotizaciones), presupuesto oficial detallado (Excel).
-- Especificaciones técnicas y TDR para obras civiles.
-- Plan de Contingencia y cronograma: detalle acciones, cronograma con tiempos de inspección.
-
----
-
-## Proyectos de Infraestructura Cuarteles de Bomberos
-
-Establece requisitos mínimos para proyectos de infraestructura y equipamiento de Bomberos de Chile. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Bomberos_2024.pdf>
-
-### Contexto y Alcance
-
-Iniciativas cubiertas: proyectos de inversión en infraestructura y equipamiento. Foco: financiamiento etapas de diseño y/o ejecución. Normativa aplicable: Ley 20.564, Código Civil, normas asignación nombres SNI. Enfoques: enfoque de género, reducción riesgo de desastre.
-
-### Orientaciones Sectoriales
-
-Organización: agrupados en Junta Nacional de Bomberos (corporación derecho privado). Funciones: coordinar acciones, servir de enlace, asegurar cumplimiento, mantener Academia Nacional. Carácter: integran Sistema Nacional de Bomberos, considerados "servicio de utilidad pública".
-
-### Requerimientos para Presentación
-
-#### 1. Etapa de Diseño
-
-- Formulación basada en "Metodología de Bomberos de Chile", incluir todos los costos, usar Precios Sociales.
-- Antecedentes de propiedad según requisitos genéricos.
-- Documentación técnica según antecedentes técnicos para edificación.
-- Plano de localización: visualización geográfica.
-- Programa arquitectónico alineado con dotación proyectada (m2/standard).
-- Proyectos de ampliación/reposición: incluir plano de planta existente.
-- TDR para contratación del diseño: debe incluir análisis eficiencia energética.
-- Presupuesto Detallado: consultorías, gastos adm., justificación profesionales, participación ciudadana (opcional).
-- Cronograma y calendario financiero: Gantt y calendario de inversiones.
-
-#### 2. Etapa de Ejecución
-
-- **Presentación:**
-  - Directa: estudio preinversión perfil + diseño terminado.
-  - Desde diseño: resumen ejecutivo + diseño terminado.
-- Documentación técnica según antecedentes requeridos para edificación.
-- Certificación: aprobación formal del diseño.
-- Presupuesto Detallado: obras, equipos, equipamiento, consultorías, gastos adm.
-- Plan de Contingencia: para continuidad de funcionamiento en inmuebles existentes.
-- Cronograma y calendario financiero: Gantt y calendario de inversiones.
-- Observaciones generales: usar Precios Sociales, planimetría completa visada, listado equipamiento valorizado (3 cotizaciones), plan de contingencia con costos para inmuebles existentes.

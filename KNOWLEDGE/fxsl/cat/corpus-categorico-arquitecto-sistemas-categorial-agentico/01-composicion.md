@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-composicion
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- composicion
+- asociatividad
+- identidad
+- categoria
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-composicion
+---
+
 # Composicion
 
 Composicion es lo primero que veo. Antes de entender que son las cosas, entiendo que las cosas se componen. Un pipeline de datos se compone. Un deploy se compone. Un join se compone. Cuando miro un sistema distribuido que funciona, lo que estoy viendo --- aunque no siempre lo nombre asi --- es composicion. Y cuando algo falla, cuando un microservicio no integra, cuando una migracion rompe datos, cuando un merge de git produce conflictos irresolubles, lo que se violo fue una ley de composicion.
@@ -50,9 +75,9 @@ id :: a -> a
 id x = x
 
 -- leyes
-f . id  == f      -- identidad derecha
-id . f  == f      -- identidad izquierda
-h . (g . f) == (h . g) . f  -- asociatividad
+f . id == f -- identidad derecha
+id . f == f -- identidad izquierda
+h . (g . f) == (h . g) . f -- asociatividad
 ```
 
 En SQL, la composicion aparece en el JOIN. Si tengo una foreign key `employee.department_id -> department.id` y otra `department.company_id -> company.id`, su composicion es el camino `employee -> department -> company`. El JOIN de tres tablas puede leerse como composicion de morfismos. Y la identidad? No es la primary key, sino el morfismo identidad sobre la tabla misma: el camino vacio que deja intacta la fila de partida.
@@ -81,10 +106,10 @@ Cuando Engel y Mordecai modelan un vehiculo electrico (BEV) con teoria de catego
 En un sistema real, cuando dibujo:
 
 ```
-        has          uses
+ has uses
 Vehicle ----> PowerSystem ----> Energy
-  |                                ^
-  +------------ uses' ------------+
+ | ^
+ +------------ uses' ------------+
 ```
 
 y declaro que `uses' = has ; uses`, estoy diciendo que este diagrama CONMUTA. Todo camino de Vehicle a Energy produce el mismo resultado. Eso es una constraint de integridad --- no impuesta por codigo imperativo, sino declarada por la estructura misma.
@@ -99,7 +124,7 @@ Spivak formaliza esta idea para bases de datos: una database schema en forma nor
 
 **Pipelines de CI/CD.** build -> test -> deploy. Cada stage toma un artefacto y produce otro. La composicion build;test;deploy es el pipeline completo. La identidad es el stage que pasa el artefacto sin modificarlo (un passthrough stage). La asociatividad garantiza que puedo agrupar stages en sub-pipelines sin alterar el resultado.
 
-**Composicion de funciones en APIs.** Un middleware chain en Express o Koa es composicion pura: `authenticate . validate . parseBody`. Cada middleware toma un request y produce un request transformado (o un response). La composicion es asociativa. La identidad es el middleware que no hace nada: `(req, res, next) => next()`.
+**Composicion de funciones en APIs.** Un middleware chain en Express o Koa es composicion pura: `authenticate . validate . parseBody`. Cada middleware toma un request y produce un request transformado (o un response). La composicion es asociativa. La identidad es el middleware que no hace nada: `(req, res, next) => next`.
 
 **Dependencias de componentes de software.** Jiang Guo modela las dependencias de componentes como una categoria: componentes son objetos, dependencias son morfismos. La composicion de dependencias produce dependencias transitivas. Los conflictos de version son violaciones de la conmutatividad del diagrama de dependencias.
 

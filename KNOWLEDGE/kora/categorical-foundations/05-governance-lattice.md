@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Davey & Priestley (Introduction to Lattices and Order), KORA gobernanza v1.3.0, spec-md v2.1.0, md-spec v2.0.0"
+    source: Davey & Priestley (Introduction to Lattices and Order), KORA gobernanza
+      v1.3.0, spec-md v2.1.0, md-spec v2.0.0
 version: 1.0.0
 status: published
 tags:
@@ -16,9 +17,18 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:kora:kb:cat-governance-lattice
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
 ---
 
 # Governance as Lattice: Precedence, Transformation, and Spec Hierarchy
+
 
 ## Purpose
 
@@ -38,7 +48,7 @@ All notation from [00-foundations](urn:kora:kb:cat-foundations). Familiarity wit
 
 ```
 L = { gobernanza, spec-md, md-spec, agent-spec-md, skill-spec-md,
-      ext-ns₁, ext-ns₂, ..., ext-ns_k }
+ ext-ns₁, ext-ns₂, ..., ext-ns_k }
 ```
 
 **Order (≤):** Precedence. s₁ ≤ s₂ means "s₂ prevails over s₁ in case of conflict."
@@ -50,18 +60,18 @@ L = { gobernanza, spec-md, md-spec, agent-spec-md, skill-spec-md,
 ### 1.2 The Lattice Structure
 
 ```
-                    gobernanza (⊤)
-                    /          \
-              spec-md          md-spec
-                |                |
-           agent-spec-md         |
-              /    \             |
-    skill-spec-md   \            |
-         |      runtime-spec-md  |
-         |           |           |
-    swarm-spec-md    |           |
-                \    |         /
-                 ext-namespace (⊥ ... ⊥)
+ gobernanza (⊤)
+ / \
+ spec-md md-spec
+ | |
+ agent-spec-md |
+ / \ |
+ skill-spec-md \ |
+ | runtime-spec-md |
+ | | |
+ swarm-spec-md | |
+ \ | /
+ ext-namespace (⊥ ... ⊥)
 ```
 
 **Formally:**
@@ -166,8 +176,8 @@ The input is heterogeneous: design decisions (explicit or tacit), existing pract
 **Definition.** G operates in two modes:
 
 ```
-G₁: Requirements → KORA/Agent    (construction from scratch)
-G₂: KODA/Agent   → KORA/Agent    (transmutation from legacy)
+G₁: Requirements → KORA/Agent (construction from scratch)
+G₂: KODA/Agent → KORA/Agent (transmutation from legacy)
 ```
 
 **Properties:**
@@ -190,8 +200,8 @@ G produces workspaces governed by agent-spec-md (level 2a)
 **Theorem (Governance Preservation).** Each functor produces artifacts that satisfy their governing spec:
 
 ```
-K(doc) ⊨ md-spec       for all documents doc
-C(dec) ⊨ spec-md       for all decision sets dec
+K(doc) ⊨ md-spec for all documents doc
+C(dec) ⊨ spec-md for all decision sets dec
 G(req) ⊨ agent-spec-md for all requirements req
 ```
 
@@ -205,9 +215,9 @@ where ⊨ means "satisfies all rules of."
 
 ```
 FORMAL LAYER (this series: 00-05)
-    ↕ traces-to
+ ↕ traces-to
 OPERATIONAL LAYER (specs: gobernanza, md-spec, spec-md, agent-spec-md, skill-spec-md, runtime-spec-md, swarm-spec-md)
-    ↕ instances
+ ↕ instances
 RUNTIME LAYER (agents, skills, knowledge artifacts)
 ```
 
@@ -286,65 +296,3 @@ The following operational rules are pragmatic and have no categorical theorem ba
 | Prompt injection prevention in swarms | Security engineering practice |
 
 These rules are valid but NOT derived from category theory. They are **operational constraints** that complement the formal foundations.
-
-## 4. The Full Picture
-
-### 4.1 KORA as a Categorical System
-
-Assembling documents 00-05, KORA is formalized as:
-
-```
-KORA = (Eco, Psh(F), Free ⊣ Forget, L, {K, C, G})
-
-where:
-  Eco           = 2-category of agents (03)
-  Psh(F)        = presheaf of discoverable Skills over Eco (04)
-  Free ⊣ Forget = adjunction between CMs and Skills (02)
-  L             = governance lattice of specs (05)
-  K, C, G       = transformation functors producing KORA artifacts (05 §2)
-```
-
-### 4.2 What This System Covers
-
-| Dimension of Agentic Space | Formal Coverage | Document |
-|----------------------------|----------------|----------|
-| Agent definition | F-coalgebra in Kl(M) | 01 |
-| Agent identity | Bisimulation | 01 §5 |
-| Component architecture | Fiber decomposition + segregation | 01 §2, §7 |
-| Security model | Monad M, immutability theorem | 01 §1.3 |
-| Agent composition | Wiring diagrams, adjunctions | 01 §6 |
-| Skill model | Free ⊣ Forget adjunction | 02 |
-| Skill lifecycle | Progressive disclosure phases | 02 §3 |
-| Backward compatibility | η isomorphism | 02 §2.3 |
-| Skill composition | Kleisli composition >=> | 02 §6 |
-| Inter-agent relationships | 2-category Eco | 03 |
-| Interoperability | 1-cells (T, C, R, P) | 03 §3 |
-| Migration and versioning | 2-cells (natural transformations) | 03 §4 |
-| Dynamic capability | Presheaf Psh(F) | 04 |
-| Skill discovery | Discovery functor D | 04 §2 |
-| Runtime extensibility | Fibered coproduct F_eff | 04 §4 |
-| Governance hierarchy | Spec lattice L | 05 §1 |
-| Multi-agent orchestration | Kleisli composition + coinduction | swarm-spec (01 §6, 02 §6, 01 §3.3) |
-| Artifact transformation | Functors K, C, G | 05 §2 |
-| Formal-operational bridge | Traceability functor | 05 §3 |
-
-### 4.3 What This System Does NOT Cover
-
-| Dimension | Status | Why |
-|-----------|--------|-----|
-| Runtime execution (interpreter, scheduler) | Out of scope | Implementation detail, not mathematical structure |
-| Inter-session memory | Partially covered (U_epi fiber) | Persistence mechanisms are platform-dependent |
-| Observability (metrics, tracing) | Not covered | Engineering concern, no categorical model proposed |
-| Dynamic negotiation between agents | Not covered | Would require game-theoretic extension |
-| Empirical evaluation (benchmarks) | Not covered | Experimental, not formal |
-| Token optimization algorithms | Not covered | Computational, not structural |
-
-These dimensions are acknowledged as outside the formal layer. They are legitimate engineering concerns that the operational specs may address without requiring categorical justification.
-
-## Sources
-
-- Davey, B.A. & Priestley, H.A. "Introduction to Lattices and Order" — Chapters 1-2
-- Mac Lane, S. "Categories for the Working Mathematician" — Chapter IV (functors, natural transformations)
-- KORA gobernanza v1.3.0 — §4 (precedence hierarchy)
-- KORA spec-md v2.1.0 — §1.2 (crystallization functor)
-- KORA md-spec v2.0.0 — §6 (koraficación functor)

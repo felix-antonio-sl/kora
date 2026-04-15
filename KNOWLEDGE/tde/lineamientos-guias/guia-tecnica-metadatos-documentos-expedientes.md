@@ -1,34 +1,27 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes"
-  provenance: "https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electrónico"
+  urn: urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes
+  provenance: https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electrónico
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, expediente-electronico, guia-tecnica, metadatos, documentos-electronicos]
+tags:
+- tde
+- lineamientos-guias
+- expediente-electronico
+- guia-tecnica
+- metadatos
+- documentos-electronicos
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes
 ---
 
 # Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
 
 **Norma Técnica:** Documentos y Expedientes Electrónicos — **Versión BORRADOR**
-
----
-
-## Introducción
-
-**Marco legal habilitante:**
-
-- **Ley N° 21.180** (2019): modificó la Ley N° 19.880 incorporando la digitalización del ciclo de los procedimientos administrativos.
-- **D.S. N° 4** (2020, MINSEGPRES): regula la expresión de procedimientos administrativos por medios electrónicos. Dispuso la dictación de 6 normas técnicas (interoperabilidad, seguridad/ciberseguridad, documentos/expedientes electrónicos, notificaciones, calidad y funcionamiento, y autenticación).
-- **D.S. N° 10** (17 agosto 2023, MINSEGPRES): establece la norma técnica de documentos y expedientes electrónicos para gestión de procedimientos administrativos. La presente guía define los metadatos para su implementación.
-
-**Estándares de referencia:**
-- **ISO 15.489:** gestión de documentos; marco para procedimientos de gestión documental y archivos.
-- **ISO 23.081:** metadatos para la gestión de documentos; marco para creación, gestión y uso de metadatos en el contexto de ISO 15.489.
-
-La guía se elaboró con base en la mesa de expertos de diversas instituciones del Estado. Incorpora referencias del *Australian Government Recordkeeping Metadata Standard* y el esquema e-EMGDE de España, adaptados a la Norma Técnica y legislación chilena vigente.
-
-Se proyecta que versiones posteriores incorporen avances del cumplimiento de la Norma Técnica.
 
 ---
 

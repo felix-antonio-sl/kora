@@ -1,11 +1,21 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:orientaciones-basicas-gestion-tic"
-  provenance: "https://wikiguias.digital.gob.cl/guias/orientaciones-TIC"
+  urn: urn:tde:kb:orientaciones-basicas-gestion-tic
+  provenance: https://wikiguias.digital.gob.cl/guias/orientaciones-TIC
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, tic, guias, institucionalidad]
+tags:
+- tde
+- lineamientos-guias
+- tic
+- guias
+- institucionalidad
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:orientaciones-basicas-gestion-tic
 ---
 
 # Orientaciones Básicas para la Gestión de las TIC
@@ -74,17 +84,17 @@ Definir una Estrategia TIC permite alinear la tecnología con los objetivos inst
 3. **Jefatura TIC** — lidera estrategias y proyectos tecnológicos. Perfil requerido: profesional en ingeniería o informática con conocimientos en gestión de proyectos, arquitectura de información y nube
 
 4. **Equipo responsable de TIC** — según estrategia (desarrollo externo, SaaS, on premise o cloud):
-   - Infraestructura: ingenieros/as en nube, operaciones, redes, telecomunicaciones y seguridad
-   - Desarrollo propio: desarrolladores, administradores de BD, diseñadores UX/UI, especialistas QA
-   - Analítica: analistas, científicos e ingenieros de datos; expertos en SIG para datos georreferenciados
+ - Infraestructura: ingenieros/as en nube, operaciones, redes, telecomunicaciones y seguridad
+ - Desarrollo propio: desarrolladores, administradores de BD, diseñadores UX/UI, especialistas QA
+ - Analítica: analistas, científicos e ingenieros de datos; expertos en SIG para datos georreferenciados
 
 5. **Oficial de Seguridad de la Información y Ciberseguridad** — define políticas, gestiona riesgos, atiende incidentes y cumple regulaciones; actúa en coordinación con la Agencia Nacional de Ciberseguridad (ANCI)
 
 6. **Encargado/a de Protección de Datos (DPO)** — garantiza cumplimiento normativo, asesora, capacita, supervisa y actúa como enlace con autoridades
 
 7. **Otras contrapartes importantes:**
-   - Abogado/a experto/a en datos personales, tecnología y transformación digital
-   - Especialista en compras TIC para gestionar inversiones y compras coordinando con áreas técnicas y legales
+ - Abogado/a experto/a en datos personales, tecnología y transformación digital
+ - Especialista en compras TIC para gestionar inversiones y compras coordinando con áreas técnicas y legales
 
 ---
 

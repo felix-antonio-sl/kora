@@ -1,11 +1,20 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:recomendaciones-diseno-servicios-estado"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios"
+  urn: urn:tde:kb:recomendaciones-diseno-servicios-estado
+  provenance: https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, guía, diseño-de-servicios]
+tags:
+- tde
+- plataformas-manuales
+- guía
+- diseño-de-servicios
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:recomendaciones-diseno-servicios-estado
 ---
 
 # Recomendaciones para el Diseño de Servicios en el Estado
@@ -123,10 +132,10 @@ Acciones:
 2. Mantener sistemas actualizados con parches y medidas preventivas; realizar copias de seguridad periódicas.
 3. Implementar pruebas de vulnerabilidad, monitoreo continuo y simulaciones de fallas.
 4. Cumplir con:
-   - Norma Técnica de Seguridad de la Información y Ciberseguridad.
-   - Política Nacional de Ciberseguridad 2023-2028.
-   - Ley N° 21.663 Marco de Ciberseguridad.
-   - Futuros protocolos de la Agencia Nacional de Ciberseguridad.
+ - Norma Técnica de Seguridad de la Información y Ciberseguridad.
+ - Política Nacional de Ciberseguridad 2023-2028.
+ - Ley N° 21.663 Marco de Ciberseguridad.
+ - Futuros protocolos de la Agencia Nacional de Ciberseguridad.
 
 ### 12. Priorizar estándares abiertos, componentes comunes y servicios compartidos
 

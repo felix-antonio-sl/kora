@@ -1,16 +1,28 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:skill-overlay-spec"
+  urn: urn:kora:kb:skill-overlay-spec
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-14"
-    source: "agentskills.io spec v1.0; KORA skill-spec-md v4.3.0; polymath analysis"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-14'
+    source: agentskills.io spec v1.0; KORA skill-spec-md v4.3.0; polymath analysis
+version: 1.0.0
 status: published
-tags: [spec, skill, overlay, agentskills, composicion]
+tags:
+- spec
+- skill
+- overlay
+- agentskills
+- composicion
 lang: es
+relations:
+  depends:
+  - urn:kora:kb:skill-spec-md
+  - urn:kora:kb:gobernanza
+  cites:
+  - urn:kora:kb:md-spec
 extensions: {}
 ---
+
 
 # KORA/Skill-Overlay-Spec v1.0.0
 

@@ -1,19 +1,30 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-convenios"
+  urn: urn:gn:kb:ssot-convenios
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleApprovalData.ttl, goreNubleReferenceData.ttl, omega_gore_nuble_mermaid.md v2.6.0"
-version: "1.2.0"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleApprovalData.ttl, goreNubleReferenceData.ttl, omega_gore_nuble_mermaid.md
+      v2.6.0
+version: 1.2.0
 status: published
-tags: [ssot, convenios, acuerdos, estados, cuotas, transferencias]
+tags:
+- ssot
+- convenios
+- acuerdos
+- estados
+- cuotas
+- transferencias
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+relations:
+  cites:
+  - urn:gn:kb:ssot-rendiciones
 ---
+
 
 # SSOT — Convenios GORE Ñuble
 

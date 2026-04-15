@@ -15,6 +15,11 @@ tags:
 - kan-lifts
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:unified-representation-transformation-multimodel
 ---
 
 # Unified Representation and Transformation of Multi-Model Data
@@ -22,7 +27,7 @@ lang: en
 ## Abstract
 
 Ctx: Unified category-theoretic representation for multi-model data with high-level transformation algorithms.
-Src: `sources/cat/A unified representation and transform.md`
+Src: ` unified representation and transform.md`
 
 Multi-model data = combination of relational, document, graph, wide-column, key/value models. Proposes category-theory-based unifying model for representing and transforming multi-model schemas and instances. Enables querying, evolution, and migration across models via common categorical intermediary.
 

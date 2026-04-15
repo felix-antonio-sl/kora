@@ -1,19 +1,28 @@
 ---
 _manifest:
-  urn: "urn:agengai:kb:openclaw-integration"
+  urn: urn:agengai:kb:openclaw-integration
   provenance:
     created_by: kora/transmutador
-    created_at: "2026-03-14"
-    source: "openclaw/docs (snapshot 2026-03)"
-version: "1.0.0"
+    created_at: '2026-03-14'
+    source: openclaw/docs (snapshot 2026-03)
+version: 1.0.0
 status: published
-tags: [openclaw, platform, integration, transmutacion, agentes]
+tags:
+- openclaw
+- platform
+- integration
+- transmutacion
+- agentes
 lang: es
 extensions:
   kora:
     family: reference
-    snapshot_date: "2026-03-14"
-    disclaimer: "Snapshot versionado. Para info actualizada consultar documentacion oficial OpenClaw."
+    snapshot_date: '2026-03-14'
+    disclaimer: Snapshot versionado. Para info actualizada consultar documentacion
+      oficial OpenClaw.
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:openclaw-integration
 ---
 
 # OpenClaw Integration Guide
@@ -64,7 +73,7 @@ description: Que hace y cuando usarla
 user-invocable: true
 disable-model-invocation: false
 metadata:
-  { "openclaw": { "emoji": "emoji", "requires": { "bins": [], "env": [], "config": [] }, "primaryEnv": "ENV_VAR", "always": false, "os": ["darwin", "linux"] } }
+ { "openclaw": { "emoji": "emoji", "requires": { "bins": [], "env": [], "config": [] }, "primaryEnv": "ENV_VAR", "always": false, "os": ["darwin", "linux"] } }
 ---
 ```
 
@@ -100,18 +109,18 @@ total_chars = 195 + Σ (97 + len(name) + len(description) + len(location))
 
 ```json5
 {
-  skills: {
-    allowBundled: ["skill1"],
-    entries: {
-      "skill-name": {
-        enabled: true,
-        apiKey: "...",
-        env: { KEY: "value" },
-        config: { endpoint: "..." }
-      }
-    },
-    load: { extraDirs: [], watch: true, watchDebounceMs: 250 }
-  }
+ skills: {
+ allowBundled: ["skill1"],
+ entries: {
+ "skill-name": {
+ enabled: true,
+ apiKey: "...",
+ env: { KEY: "value" },
+ config: { endpoint: "..." }
+ }
+ },
+ load: { extraDirs: [], watch: true, watchDebounceMs: 250 }
+ }
 }
 ```
 
@@ -141,33 +150,33 @@ Default sub-agents: todos tools excepto session tools. Orchestrators (depth-1 co
 
 ```json5
 {
-  agents: {
-    defaults: {
-      workspace: "~/.openclaw/workspace",
-      model: "anthropic/claude-sonnet-4-5",
-      sandbox: { mode: "off", scope: "agent" },
-      subagents: {
-        maxSpawnDepth: 1,
-        maxChildrenPerAgent: 5,
-        maxConcurrent: 8,
-        model: "provider/model",
-        thinking: "low"
-      }
-    },
-    list: [
-      {
-        id: "agent-id",
-        name: "Nombre",
-        default: true,
-        workspace: "path",
-        model: "provider/model",
-        identity: { name: "N", emoji: "e", theme: "t" },
-        sandbox: { mode: "off" },
-        tools: { profile: "coding", allow: [], deny: [] },
-        subagents: { maxSpawnDepth: 1, allowAgents: ["*"] }
-      }
-    ]
-  }
+ agents: {
+ defaults: {
+ workspace: "~/.openclaw/workspace",
+ model: "anthropic/claude-sonnet-4-5",
+ sandbox: { mode: "off", scope: "agent" },
+ subagents: {
+ maxSpawnDepth: 1,
+ maxChildrenPerAgent: 5,
+ maxConcurrent: 8,
+ model: "provider/model",
+ thinking: "low"
+ }
+ },
+ list: [
+ {
+ id: "agent-id",
+ name: "Nombre",
+ default: true,
+ workspace: "path",
+ model: "provider/model",
+ identity: { name: "N", emoji: "e", theme: "t" },
+ sandbox: { mode: "off" },
+ tools: { profile: "coding", allow: [], deny: [] },
+ subagents: { maxSpawnDepth: 1, allowAgents: ["*"] }
+ }
+ ]
+ }
 }
 ```
 
@@ -212,10 +221,10 @@ Bindings mapean channel + account + peer a agent id. Orden deterministico: peer 
 
 ```json5
 {
-  bindings: [
-    { agentId: "work", match: { channel: "whatsapp", accountId: "biz" } },
-    { agentId: "home", match: { channel: "telegram" } }
-  ]
+ bindings: [
+ { agentId: "work", match: { channel: "whatsapp", accountId: "biz" } },
+ { agentId: "home", match: { channel: "telegram" } }
+ ]
 }
 ```
 

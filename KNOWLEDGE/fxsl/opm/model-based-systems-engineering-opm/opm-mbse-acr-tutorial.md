@@ -1,28 +1,53 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-mbse-acr-tutorial"
+  urn: urn:fxsl:kb:opm-mbse-acr-tutorial
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-acr-tutorial.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-acr-tutorial.md
+version: 1.0.0
 status: published
-tags: [opm, tutorial, acr, automatic-crash-response, mbse-history, worked-example, modeling-walkthrough]
+tags:
+- opm
+- tutorial
+- acr
+- automatic-crash-response
+- mbse-history
+- worked-example
+- modeling-walkthrough
 lang: en
 extensions:
   kora:
     family: textbook
     bilingual: true
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-      - "urn:fxsl:kb:opm-mbse-foundations"
-      - "urn:fxsl:kb:opm-dynamic-behavior"
-      - "urn:fxsl:kb:opm-structural-relations"
-      - "urn:fxsl:kb:opm-complexity-management"
-      - "urn:fxsl:kb:sysml-foundations-diagrams"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: ["Preface", 1, 2, 3, 4, 5, 6, 7, 8]
+    - urn:fxsl:kb:opm-iso-19450
+    - urn:fxsl:kb:opm-mbse-foundations
+    - urn:fxsl:kb:opm-dynamic-behavior
+    - urn:fxsl:kb:opm-structural-relations
+    - urn:fxsl:kb:opm-complexity-management
+    - urn:fxsl:kb:sysml-foundations-diagrams
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - Preface
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+relations:
+  cites:
+  - urn:fxsl:kb:opm-complexity-management
+  - urn:fxsl:kb:opm-dynamic-behavior
+  - urn:fxsl:kb:opm-mbse-foundations
+  - urn:fxsl:kb:opm-structural-relations
+  - urn:fxsl:kb:sysml-foundations-diagrams
 ---
+
 
 # ACR Tutorial — OPM History and Modeling the Automatic Crash Response System
 

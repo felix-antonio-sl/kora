@@ -94,3 +94,20 @@ def cmd_intake():
     print(
         f"\nSummary: {counts['PUBLISHED']} published, {counts['PROCESSING']} processing, {counts['PENDING']} pending, {orphan_count} orphan(s)"
     )
+
+    # Inbox zone report
+    inbox_dir = resolve_operational_dir("inbox")
+    if inbox_dir.exists():
+        inbox_items = []
+        for item in sorted(inbox_dir.iterdir()):
+            if item.name.startswith("."):
+                continue
+            inbox_items.append(item)
+        if inbox_items:
+            print(f"\n=== Inbox ({len(inbox_items)} item(s)) ===\n")
+            for item in inbox_items:
+                kind = "dir" if item.is_dir() else item.suffix or "file"
+                size = sum(f.stat().st_size for f in item.rglob("*") if f.is_file()) if item.is_dir() else item.stat().st_size
+                size_str = f"{size // 1024}KB" if size > 1024 else f"{size}B"
+                print(f"  [{kind:5s}] {item.name} ({size_str})")
+            print(f"\n  Triage: move items to source/{{ns}}/ for pipeline processing")

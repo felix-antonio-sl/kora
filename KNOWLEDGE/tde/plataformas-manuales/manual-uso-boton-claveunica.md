@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:manual-uso-boton-claveunica"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/Bot%C3%B3nCU"
+  urn: urn:tde:kb:manual-uso-boton-claveunica
+  provenance: https://wikiguias.digital.gob.cl/Manuales/Bot%C3%B3nCU
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, clave-única, cómo-usar, manuales, integración]
+tags:
+- tde
+- plataformas-manuales
+- clave-única
+- cómo-usar
+- manuales
+- integración
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:manual-uso-boton-claveunica
 ---
 
 # Manual de uso: Botón ClaveÚnica
@@ -28,9 +39,9 @@ Uso: autenticación exclusiva con ClaveÚnica. Atributo recomendado: `aria-label
 
 ```html
 <a class="btn-cu btn-m btn-color-estandar" href="#"
-    aria-label="Iniciar sesión con ClaveÚnica">
-    <span class="cl-claveunica" aria-hidden="true"></span>
-    <span class="texto" aria-hidden="true">Iniciar sesión</span>
+ aria-label="Iniciar sesión con ClaveÚnica">
+ <span class="cl-claveunica" aria-hidden="true"></span>
+ <span class="texto" aria-hidden="true">Iniciar sesión</span>
 </a>
 ```
 
@@ -38,9 +49,9 @@ Uso: autenticación exclusiva con ClaveÚnica. Atributo recomendado: `aria-label
 
 ```html
 <a class="btn-cu btn-m btn-color-estandar" href="#"
-    aria-label="Continuar con ClaveÚnica">
-    <span class="cl-claveunica" aria-hidden="true"></span>
-    <span class="texto" aria-hidden="true">ClaveÚnica</span>
+ aria-label="Continuar con ClaveÚnica">
+ <span class="cl-claveunica" aria-hidden="true"></span>
+ <span class="texto" aria-hidden="true">ClaveÚnica</span>
 </a>
 ```
 
@@ -48,9 +59,9 @@ Uso: autenticación exclusiva con ClaveÚnica. Atributo recomendado: `aria-label
 
 ```html
 <button class="btn-cu btn-m btn-color-estandar" type="button" id="#"
-    aria-label="Continuar con ClaveÚnica">
-    <span class="cl-claveunica" aria-hidden="true"></span>
-    <span class="texto" aria-hidden="true">ClaveÚnica</span>
+ aria-label="Continuar con ClaveÚnica">
+ <span class="cl-claveunica" aria-hidden="true"></span>
+ <span class="texto" aria-hidden="true">ClaveÚnica</span>
 </button>
 ```
 
@@ -75,69 +86,69 @@ Agregar clase `btn-fw` (max-width: 550px, width: 100%).
 ```css
 /* Base */
 .btn-cu {
-    display: flex;
-    justify-content: center;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    vertical-align: middle;
-    user-select: none;
-    border-radius: 0;
-    border: 0;
+ display: flex;
+ justify-content: center;
+ font-family: "Roboto", sans-serif;
+ font-weight: bold;
+ text-decoration: none;
+ vertical-align: middle;
+ user-select: none;
+ border-radius: 0;
+ border: 0;
 }
 .btn-cu:hover { text-decoration: none; }
 
 /* Icono */
 .btn-cu .cl-claveunica {
-    text-indent: -9999px;
-    background: url(../icon/cu-blanco.svg);
-    /* Ajustar URL según ubicación del archivo */
+ text-indent: -9999px;
+ background: url(../icon/cu-blanco.svg);
+ /* Ajustar URL según ubicación del archivo */
 }
 
 /* Texto */
 .btn-cu .text {
-    padding-left: 4px;
-    font-size: 1rem;
-    text-rendering: geometricPrecision;
+ padding-left: 4px;
+ font-size: 1rem;
+ text-rendering: geometricPrecision;
 }
 .btn-cu .text-px {
-    font-size: 16px;
-    padding-left: 4px;
-    text-rendering: optimizeLegibility;
+ font-size: 16px;
+ padding-left: 4px;
+ text-rendering: optimizeLegibility;
 }
 
 /* Color estándar */
-.btn-cu.btn-color-estandar             { background-color: #0F69C4; color: #FFF; }
-.btn-cu.btn-color-estandar:hover       { background-color: #0B4E91; color: #FFF; }
-.btn-cu.btn-color-estandar:active      { background-color: #07305A; color: #FFF; }
-.btn-cu.btn-color-estandar:focus       { background-color: #0B4E91; color: #FFF;
-                                         outline: 4px solid #FFBE5C; outline-offset: 0; }
+.btn-cu.btn-color-estandar { background-color: #0F69C4; color: #FFF; }
+.btn-cu.btn-color-estandar:hover { background-color: #0B4E91; color: #FFF; }
+.btn-cu.btn-color-estandar:active { background-color: #07305A; color: #FFF; }
+.btn-cu.btn-color-estandar:focus { background-color: #0B4E91; color: #FFF;
+ outline: 4px solid #FFBE5C; outline-offset: 0; }
 
 /* Tamaño M */
 .btn-cu.btn-m {
-    width: fit-content;
-    min-height: 48px;
-    padding: 8px 14px !important;
-    font-size: 16px;
-    line-height: 2rem;
+ width: fit-content;
+ min-height: 48px;
+ padding: 8px 14px !important;
+ font-size: 16px;
+ line-height: 2rem;
 }
 .btn-cu.btn-m .cl-claveunica {
-    width: 24px; height: 24px;
-    background-size: 24px 24px;
-    margin: auto 4px auto 0;
+ width: 24px; height: 24px;
+ background-size: 24px 24px;
+ margin: auto 4px auto 0;
 }
 
 /* Bordes redondeados */
-.btn-cu.rounded-none   { border-radius: 0; }
+.btn-cu.rounded-none { border-radius: 0; }
 .btn-cu.rounded-middle { border-radius: 4px; }
-.btn-cu.rounded-full   { border-radius: 99px; }
+.btn-cu.rounded-full { border-radius: 99px; }
 
 /* Alto contraste */
-.btn-cu.btn-color-highContrast             { background-color: #625AF6; color: #FFF; }
-.btn-cu.btn-color-highContrast:hover       { background-color: #4943B6; color: #FFF; }
-.btn-cu.btn-color-highContrast:active      { background-color: #2D2971; color: #FFF; }
-.btn-cu.btn-color-highContrast:focus       { background-color: #4943B6; color: #FFF;
-                                             outline: 4px solid rgba(216,215,250,1); outline-offset: 0; }
+.btn-cu.btn-color-highContrast { background-color: #625AF6; color: #FFF; }
+.btn-cu.btn-color-highContrast:hover { background-color: #4943B6; color: #FFF; }
+.btn-cu.btn-color-highContrast:active { background-color: #2D2971; color: #FFF; }
+.btn-cu.btn-color-highContrast:focus { background-color: #4943B6; color: #FFF;
+ outline: 4px solid rgba(216,215,250,1); outline-offset: 0; }
 
 /* Ancho flexible */
 .btn-cu.btn-fw { max-width: 550px; width: 100%; display: flex; justify-content: center; }

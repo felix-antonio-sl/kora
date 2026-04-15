@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-protocolos
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- session-type
+- coreografia
+- saga
+- multi-agente
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-protocolos
+---
+
 # Protocolos y coreografia
 
 ## Quien dirige la danza
@@ -52,9 +77,9 @@ El retry tiene una lectura coinductiva y comonadica sugerente. Un retry con expo
 
 ```
 retry_with_backoff : c_p
-  extract = try_now           -- la counit: el intento actual
-  duplicate = \s ->            -- la comultiplicacion: el arbol de reintentos
-    Cons s (fmap (delay * 2) (duplicate (next_state s)))
+ extract = try_now -- la counit: el intento actual
+ duplicate = \s -> -- la comultiplicacion: el arbol de reintentos
+ Cons s (fmap (delay * 2) (duplicate (next_state s)))
 ```
 
 El circuit breaker es un hybrid sheaf -- un sheaf con modos continuos conectados por transiciones discretas instantaneas. Tiene dos modos continuos -- cerrado (operacion normal) y abierto (fallback activo) -- con transiciones discretas entre ellos. La transicion de cerrado a abierto ocurre cuando la tasa de errores cruza un umbral. La transicion inversa ocurre despues de un timeout. El circuit breaker vive en un tipo Hyb(C, D) donde C tiene dos componentes (cerrado, abierto) y D tiene dos transiciones (trip, reset): el pushout de los dos modos continuos sobre los puntos de transicion, seguido de sheafificacion. La condicion de sheaf garantiza que el comportamiento es consistente a traves de ventanas temporales que incluyen la transicion. El documento 15 desarrolla la maquinaria de hybrid sheaves con precision formal.

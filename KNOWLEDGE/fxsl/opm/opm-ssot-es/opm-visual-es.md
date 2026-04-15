@@ -1,16 +1,26 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opd-es"
-version: "2.0.0"
+  urn: urn:fxsl:kb:opd-es
+version: 2.0.0
 status: published
-tags: [opm, especificacion-visual, gramatica-grafica, opd]
+tags:
+- opm
+- especificacion-visual
+- gramatica-grafica
+- opd
 lang: es
 extensions:
   kora:
     family: specification
     depends_on:
-      - "urn:fxsl:kb:opm-es"
+    - urn:fxsl:kb:opm-es
+relations:
+  cites:
+  - urn:fxsl:kb:manual-metodologico-opm-es
+  - urn:fxsl:kb:opl-es
+  - urn:fxsl:kb:opm-es
 ---
+
 
 # OPD — Gramática visual de OPM
 

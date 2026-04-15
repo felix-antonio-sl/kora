@@ -16,13 +16,21 @@ tags:
 - s2ml
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:mbse-consistency
+relations:
+  cites:
+  - urn:fxsl:kb:categorical-systems-theory
+  - urn:fxsl:kb:mathematical-modelling
 ---
+
 
 # MBSE Consistency via Category Theory
 
-## Source
-
-Src: `sources/cat/Category Theory for Consistency Betwee.md`
+Src: ` Theory for Consistency Betwee.md`
 XRef: `urn:fxsl:kb:mathematical-modelling#MM-COMPLEXITY-ORDER`, `urn:fxsl:kb:categorical-systems-theory#WIRING-DEF`
 
 Notes: Catblocks analogous to components in wiring diagrams; injection poset = instance of Model Poset from mathematical_modelling; binary consistency = type of pullback in category of Catmodels.

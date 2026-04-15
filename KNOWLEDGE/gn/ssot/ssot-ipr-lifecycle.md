@@ -1,19 +1,35 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-ipr-lifecycle"
+  urn: urn:gn:kb:ssot-ipr-lifecycle
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleReferenceData.ttl, goreNubleIPRData.ttl, goreNubleOntology.ttl, omega_gore_nuble_mermaid.md v2.6.0, goreNubleCQs_Master.yml"
-version: "1.2.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleReferenceData.ttl, goreNubleIPRData.ttl, goreNubleOntology.ttl,
+      omega_gore_nuble_mermaid.md v2.6.0, goreNubleCQs_Master.yml
+version: 1.2.1
 status: published
-tags: [ssot, ipr, ciclo-vida, fases, estados, tracks, evaluacion]
+tags:
+- ssot
+- ipr
+- ciclo-vida
+- fases
+- estados
+- tracks
+- evaluacion
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-ipr-lifecycle
+relations:
+  cites:
+  - urn:gn:kb:gestion-ipr
 ---
+
 
 # SSOT — Ciclo de vida IPR
 
@@ -200,7 +216,7 @@ FATC: colisión de acrónimos — ReferenceData usa "Transferencia de Competenci
 | 2 | Estándar | Perfil → Prefactibilidad → Ejecución |
 | 3 | Alta complejidad | Idea → Perfil → Prefactibilidad → Factibilidad → Ejecución |
 
-[impl: `core.sni_level_config` (4 niveles, admin CRUD). `_check_sni_proporcionalidad()` gate F1→F2. CLAUDE.md §Rule 38]
+[impl: `core.sni_level_config` (4 niveles, admin CRUD). `_check_sni_proporcionalidad` gate F1→F2. CLAUDE.md §Rule 38]
 
 ## Categorías FRIL (12)
 
@@ -219,7 +235,7 @@ FATC: colisión de acrónimos — ReferenceData usa "Transferencia de Competenci
 | | D2 | Áreas Verdes | No |
 | | D3 | Sustentabilidad | No |
 
-[impl: `core.fril_category` (12, `is_exempt_commune_limit` para A2/A3). `_check_fril_max_per_comuna()` gate F0→F1. CLAUDE.md §Rule 38]
+[impl: `core.fril_category` (12, `is_exempt_commune_limit` para A2/A3). `_check_fril_max_per_comuna` gate F0→F1. CLAUDE.md §Rule 38]
 
 ## Fondos temáticos Subv. 8% (7)
 

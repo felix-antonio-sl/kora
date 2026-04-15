@@ -1,14 +1,25 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:manual-integracion-notificaciones"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica"
+  urn: urn:tde:kb:manual-integracion-notificaciones
+  provenance: https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, notificaciones, casilla-unica, manuales]
+tags:
+- tde
+- plataformas-manuales
+- notificaciones
+- casilla-unica
+- manuales
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:tde:kb:manual-integracion-notificaciones
 ---
 
 # Manual de Integración — Plataforma de Notificaciones del Estado
+
 
 Define las consideraciones técnicas, operativas y administrativas para el uso de la plataforma de notificaciones, conforme a la [Norma Técnica de Notificaciones Electrónicas](https://www.bcn.cl/leychile/navegar?idNorma=1195121).
 
@@ -46,31 +57,31 @@ Antes de solicitar la integración, la institución debe:
 
 1. Ingresar "Solicitud de integración a la Plataforma de Notificaciones" en [CeroFilas](https://gobdigital.cerofilas.gob.cl/).
 
-   Datos requeridos en el formulario:
-   - Institución solicitante
-   - Datos de contacto administrativo
-   - Datos del administrador institucional
-   - Tipo de integración: Manual / Vía API / Ambas
-   - Datos de contacto técnico (si API o ambas)
-   - Para integración vía API: nombre y descripción de la aplicación; URL (opcional)
-   - Aceptar términos y condiciones de uso.
+ Datos requeridos en el formulario:
+ - Institución solicitante
+ - Datos de contacto administrativo
+ - Datos del administrador institucional
+ - Tipo de integración: Manual / Vía API / Ambas
+ - Datos de contacto técnico (si API o ambas)
+ - Para integración vía API: nombre y descripción de la aplicación; URL (opcional)
+ - Aceptar términos y condiciones de uso.
 
 2. La SGD evalúa la solicitud verificando:
-   - Datos completos.
-   - Correos institucionales.
-   - Institución no integrada previamente.
+ - Datos completos.
+ - Correos institucionales.
+ - Institución no integrada previamente.
 
-   Si hay inconsistencias: se rechaza con observaciones; la institución debe presentar nueva solicitud corregida.
+ Si hay inconsistencias: se rechaza con observaciones; la institución debe presentar nueva solicitud corregida.
 
-   Si es aceptada: la SGD habilita en ambiente de pruebas y envía correo con información de acceso.
+ Si es aceptada: la SGD habilita en ambiente de pruebas y envía correo con información de acceso.
 
 3. Realizar actividades en ambiente de pruebas (ver sección siguiente).
 
 4. Ingresar "Solicitud de certificación" en CeroFilas.
 
 5. La SGD evalúa la certificación:
-   - Si hay observaciones: la institución corrige y presenta nueva solicitud.
-   - Si es aprobada: se envía correo con información para configuración en producción.
+ - Si hay observaciones: la institución corrige y presenta nueva solicitud.
+ - Si es aprobada: se envía correo con información para configuración en producción.
 
 6. Habilitación en producción: la institución puede enviar notificaciones electrónicas.
 
@@ -159,18 +170,16 @@ Completar todas las actividades de la sección "Habilitación en producción".
 
 Ver en "Mensajes enviados" en el menú.
 
-## Envío de notificaciones — API
-
-### Requisito
+## Requisito
 
 Tener configurado un nodo de interoperabilidad PISEE 2 y un `client_id` y `client_secret` asociados a la institución.
 
-### Endpoint: Enviar notificación
+## Endpoint: Enviar notificación
 
 ```
-URL:   /notificador/sendMessage
+URL: /notificador/sendMessage
 Método: POST
-Tipo:   multipart/form-data
+Tipo: multipart/form-data
 ```
 
 **Parte `data` (JSON obligatorio):**
@@ -203,13 +212,13 @@ Tipo:   multipart/form-data
 **Respuesta exitosa (HTTP 200):**
 ```json
 {
-  "message_data_id": "630c7a94ee5a2dbd341d23ff7",
-  "sent_at": "Mon, 14 Jun 2023 15:09:03 GMT",
-  "status": "pending"
+ "message_data_id": "630c7a94ee5a2dbd341d23ff7",
+ "sent_at": "Mon, 14 Jun 2023 15:09:03 GMT",
+ "status": "pending"
 }
 ```
 
-### Códigos de error de envío
+## Códigos de error de envío
 
 | Código | Mensaje | Posibles causas |
 |--------|---------|-----------------|
@@ -240,31 +249,31 @@ Tipo:   multipart/form-data
 | ERR033 | Nombre de archivo con caracteres no permitidos | Usar solo letras (sin acentos ni ñ), números, guiones, guiones bajos y espacios. |
 | ERR034 | `webhook_url` no válida | URL con estructura incorrecta. |
 
-### Endpoint: Ver estado de una notificación
+## Endpoint: Ver estado de una notificación
 
 ```
-URL:    /notificador/messageStatus/{message_data_id}
+URL: /notificador/messageStatus/{message_data_id}
 Método: GET
 ```
 
 **Respuesta JSON (ejemplo):**
 ```json
 {
-  "entity_id": "794a0088-cec0-11eb-b8bc-0242ac130003",
-  "message_data_id": "60c7a94ee5a2dbd341d23ff7",
-  "received_at": "Wed, 24 Aug 2022 15:59:23 GMT",
-  "status": "processed",
-  "subject": "Asunto de ejemplo",
-  "recipents_counts": 5,
-  "recipients": {
-    "10936746": {
-      "ddu_type": "not_configured",
-      "message_status": "delivered",
-      "method": "API",
-      "delivered_at": "Wed, 24 Aug 2022 15:59:23 GMT",
-      "read_at": null
-    }
-  }
+ "entity_id": "794a0088-cec0-11eb-b8bc-0242ac130003",
+ "message_data_id": "60c7a94ee5a2dbd341d23ff7",
+ "received_at": "Wed, 24 Aug 2022 15:59:23 GMT",
+ "status": "processed",
+ "subject": "Asunto de ejemplo",
+ "recipents_counts": 5,
+ "recipients": {
+ "10936746": {
+ "ddu_type": "not_configured",
+ "message_status": "delivered",
+ "method": "API",
+ "delivered_at": "Wed, 24 Aug 2022 15:59:23 GMT",
+ "read_at": null
+ }
+ }
 }
 ```
 
@@ -307,164 +316,20 @@ Campos de `recipients`:
 | Casilla | `delivered` | `delivered` o `error` |
 | Correo electrónico | `pending` (por pocos segundos) | `delivered` o `error` |
 
-### Endpoint: Ver mensajes pendientes de un ciudadano
+## Endpoint: Ver mensajes pendientes de un ciudadano
 
 ```
-URL:    /notificador/citizenPending/{rol-unico}
+URL: /notificador/citizenPending/{rol-unico}
 Método: GET
 ```
 
 **Respuesta JSON:**
 ```json
 {
-  "access_url": "https://portal.devel.casillaunica.gob.cl/ext/bandeja",
-  "current_ddu_type": "casilla",
-  "result_message": "Usuario tiene mensajes pendientes por leer en su casilla",
-  "status": true,
-  "total_pending": 11
+ "access_url": "https://portal.devel.casillaunica.gob.cl/ext/bandeja",
+ "current_ddu_type": "casilla",
+ "result_message": "Usuario tiene mensajes pendientes por leer en su casilla",
+ "status": true,
+ "total_pending": 11
 }
 ```
-
-### Endpoint: Obtener códigos de procedimientos administrativos
-
-```
-URL:    /notificador/getProcedure
-Método: GET
-```
-
-**Respuesta JSON:**
-```json
-{
-  "procedures": [
-    {
-      "code": "PA-SER0000-5463",
-      "name": "Licitación Pública",
-      "stage": 1,
-      "stage_name": "Etapa de inicio"
-    }
-  ]
-}
-```
-
-### Endpoint: Obtener UUID de firmas institucionales
-
-```
-URL:    /notificador/getSignature
-Método: GET
-```
-
-**Respuesta JSON:**
-```json
-{
-  "signatures": [
-    {
-      "body": "<p>...</p>",
-      "name": "Firma institución",
-      "uid": "483ef791-7253-46a0-997c-afd8d089cc26",
-      "updated_at": "Mon, 20 Dec 2024 10:42:18 GMT"
-    }
-  ]
-}
-```
-
-### Endpoint: Obtener comprobante de mensaje
-
-```
-URL:    /notificador/getReceipt/{message_data_id}/{rol_unico}
-Método: GET
-```
-
-**Respuesta JSON:**
-```json
-{
-  "url": "https://s3-...amazonaws.com/.../comprobante_envio_...pdf?..."
-}
-```
-
-**Errores de comprobante:**
-
-| Código | Mensaje | Causa |
-|--------|---------|-------|
-| ERR022 | Código de mensaje no válido | No existe, pertenece a otra institución o formato incorrecto. |
-| ERR023 | RUN no válido | Caracteres no numéricos o fuera de rango. |
-| ERR024 | Mensaje no válido | Certificado no corresponde al destinatario. |
-| ERR025 | No se puede descargar el comprobante | Mensaje en proceso, con error o no enviado. |
-
-### Nivel de transacciones
-
-La API está disponible 24×7 con un máximo de **6 TPS**.
-
-## Procedimiento para registrar una excepción
-
-El administrador institucional puede registrar una excepción para un ciudadano que, previa solicitud, quede exento de recibir notificaciones electrónicas (Ley 19.880, art. 46; Norma Técnica, art. 8; Reglamento, arts. 28 y 29).
-
-Campos del formulario de excepción:
-
-| Campo | Descripción |
-|-------|-------------|
-| **RUN** | RUN del ciudadano con excepción aprobada. |
-| **Correo electrónico** | Correo del solicitante. |
-| **Teléfono** | Teléfono del solicitante. |
-| **Dirección** | Dirección completa del solicitante. |
-| **ID expediente electrónico** | ID de la carpeta virtual del ciudadano (interno, opcional). |
-| **Fecha de solicitud** | Fecha en que se realizó la solicitud de excepción. |
-| **Motivo** | Seleccionar de lista desplegable predefinida. |
-| **Otros motivos** | Texto explicativo (solo si se selecciona "Otros motivos"). |
-| **Archivos** | Documentos de soporte. |
-| **Botón "Aprobar"** | Registra la excepción; el ciudadano queda en estado "Excepción". |
-
-## Certificado de envío
-
-La plataforma permite descargar un certificado de envío por cada mensaje que certifica el envío a un destinatario, con fecha, hora y datos del envío. Disponible desde la interfaz web y la API. Los certificados pueden ser validados por cualquier persona.
-
-## Soporte y escalamiento
-
-- **Mesa de servicios (instituciones):** https://gobdigitalcl.freshdesk.com/support/home
-- **Sugerencias:** correo del producto (ver plataforma).
-
-## Anexo: Ejemplos cURL
-
-### Envío de notificación
-```bash
-curl --location '{url}/notificador/sendMessage' \
---form 'data="{\"recipients\":[{\"rol_unico\":26093912}],\"message_type\":\"NT\",\"procedure_code\":\"PA-SUP00604-00007\",\"procedure_stage\":1,\"subject\":\"Asunto\",\"content\":\"Contenido\",\"content_type\":\"text/html\",\"webhook_url\":null}"' \
---form 'attachments=@"/ruta/al/archivo.pdf"'
-```
-
-### Ver estado de un envío
-```bash
-curl --location '{url}/notificador/messageStatus/6789a014291e172670ae075e'
-```
-
-### Ver mensajes pendientes de un ciudadano
-```bash
-curl --location '{url}/notificador/citizenPending/26093912'
-```
-
-### Ver procedimientos administrativos
-```bash
-curl --location '{url}/notificador/getProcedure'
-```
-
-### Ver firmas institucionales
-```bash
-curl --location '{url}/notificador/getSignature'
-```
-
-### Obtener comprobante de mensaje
-```bash
-curl --location '{url}/notificador/getReceipt/64f65a4d144e0d5ac4bfd25e/26093912'
-```
-
-## Anexo: Configuración de Nodo PISEE 2
-
-### Credenciales
-
-En el archivo `config.json` del nodo PISEE, dentro de `identificación.custom`, agregar o ajustar:
-
-- `id`: corresponde al `client_id` de la institución.
-- `secret`: corresponde al `client_secret` de la institución.
-
-### Endpoints
-
-En el arreglo `consumidor` del archivo `config.json`, listar los servicios que la institución desea utilizar.

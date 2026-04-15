@@ -1,15 +1,37 @@
 ---
 _manifest:
-  urn: "urn:ops:kb:tres-generaciones-agentes-kora"
+  urn: urn:ops:kb:tres-generaciones-agentes-kora
   provenance:
-    created_by: "ops/clawforge + kora/curator"
-    created_at: "2026-04-02"
-    source: "Taxonomía operacional de las tres generaciones del ecosistema de agentes KORA"
-version: "1.0.0"
+    created_by: ops/clawforge + kora/curator
+    created_at: '2026-04-02'
+    source: Taxonomía operacional de las tres generaciones del ecosistema de agentes
+      KORA
+version: 1.0.0
 status: published
-tags: [arquitectura, generaciones, korvo, federacion, clawforge, openclaw, docker, systemd, evolucion]
+tags:
+- arquitectura
+- generaciones
+- korvo
+- federacion
+- clawforge
+- openclaw
+- docker
+- systemd
+- evolucion
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:ops:kb:tres-generaciones-agentes-kora
+relations:
+  cites:
+  - urn:ops:kb:arquitectura-stack-kora
+  - urn:ops:kb:deploy-agente-kora-en-openclaw
+  - urn:ops:kb:federacion-kora-v2
+  - urn:ops:kb:principios-transmutacion-kora-openclaw
 ---
+
 
 # Tres generaciones del ecosistema de agentes KORA
 
@@ -36,7 +58,7 @@ Taxonomía de las tres generaciones que componen el ecosistema de agentes IA de 
 
 **Agente**: korax (`@korax_kv_bot`)
 - Workspace: `AGENTS/korvo/korax/`
-- Knowledge: `KNOWLEDGE/korvo/`
+- Knowledge: `
 - Modelo: `minimax/MiniMax-M2.7-highspeed`
 
 **Características**:
@@ -68,11 +90,11 @@ Taxonomía de las tres generaciones que componen el ecosistema de agentes IA de 
 **Arquitectura de red**:
 ```
 Red web (Traefik, *.sanixai.com)
-  traefik · crowdsec · netdata · kora-panel · opmodel-dev
+ traefik · crowdsec · netdata · kora-panel · opmodel-dev
 
 Red kora-federation (bridge Docker)
-  kora-personal :18789 · kora-steipete :18810 · kora-salubrista :18830
-  kora-panel (dual-homed: web + federation)
+ kora-personal :18789 · kora-steipete :18810 · kora-salubrista :18830
+ kora-panel (dual-homed: web + federation)
 ```
 
 **Documentación de referencia**:
@@ -133,4 +155,4 @@ En el `sessions.json` de Clawforge pueden aparecer sesiones con modelos `MiniMax
 
 - Arquitectura Docker 2ª gen: `urn:ops:kb:arquitectura-stack-kora`
 - Federación cross-gateway: `urn:ops:kb:federacion-kora-v2`
-- Manual operativo Clawforge: `KNOWLEDGE/OMEGA/openclaw-manual-integral.md`
+- Manual operativo Clawforge: `

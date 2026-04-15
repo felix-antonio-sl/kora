@@ -15,6 +15,11 @@ tags:
 - catamorphism
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:multicategory-multimodel-query-processing
 ---
 
 # MultiCategory: Multi-Model Query Processing
@@ -22,7 +27,7 @@ lang: en
 ## Abstract
 
 Ctx: Multi-model query processing based on category theory and functional programming (Haskell).
-Src: `sources/cat/MultiCategory Multi-model Query Proce.md`
+Src: ` Multi-model Query Proce.md`
 
 MultiCategory processes multi-model queries based on category theory and functional programming. Four main scenarios: building schema and instance categories from various data models; query processing using Haskell; flexible output models; visualizing queries as graphs in relation to the schema category.
 
@@ -51,7 +56,7 @@ Queries use QUERY/FROM/TO keywords with Haskell functions and expressions.
 
 ```haskell
 QUERY (\x -> if creditLimit x > 3000
-             then cons x else nil)
+ then cons x else nil)
 FROM customers
 TO graph/xml/relational
 ```
@@ -61,10 +66,10 @@ TO graph/xml/relational
 ```haskell
 LET t BE
 QUERY (\x xs -> if elem "Book" (map productName (orderProducts x))
-               then cons x xs else xs)
+ then cons x xs else xs)
 FROM orders TO relational IN
 QUERY (\x -> if any (\y -> orderedBy y customers == x)
-             then cons (customerName x, countryName (located x locations)) else nil)
+ then cons (customerName x, countryName (located x locations)) else nil)
 FROM customers TO algebraic graph/relational/xml
 ```
 

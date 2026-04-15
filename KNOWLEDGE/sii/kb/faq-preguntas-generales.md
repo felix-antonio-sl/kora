@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 3
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-preguntas-generales
 ---
 
 # Preguntas Generales — Preguntas Frecuentes SII
-
 
 ## ¿Qué es el sistema de Contacto Web del SII?
 

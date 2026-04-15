@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-composicion-estructura
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- monoidal
+- string-diagram
+- tensor
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-composicion-estructura
+---
+
 # Composicion con estructura
 
 ## Cuando componer no basta
@@ -90,7 +114,7 @@ El Curry-Howard-Lambek correspondence cierra el triangulo:
 | Implicacion A => B | Funcion A -> B | Exponencial B^A |
 | Conjuncion A and B | Par (A, B) | Producto A x B |
 | Disjuncion A or B | Either A B | Coproducto A + B |
-| Verdadero | () | Objeto terminal 1 |
+| Verdadero | | Objeto terminal 1 |
 | Falso | Void | Objeto inicial 0 |
 | Modus ponens | Aplicacion de funcion | eval |
 

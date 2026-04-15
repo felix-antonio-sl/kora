@@ -310,6 +310,37 @@ def build_graph_payload():
                 }
             )
 
+    # Layer 0: Knowledge relations (from frontmatter relations field)
+    _RELATION_EDGE_KINDS = {"cites": "Cites", "depends": "DependsOn", "supersedes": "Supersedes", "refines": "Refines"}
+    for node in nodes.values():
+        if node.get("kind") != "knowledge":
+            continue
+        node_path = KORA_ROOT / node.get("path", "")
+        if not node_path.exists():
+            continue
+        try:
+            fm, _err = load_yaml_safe(node_path)
+        except Exception:
+            continue
+        if not isinstance(fm, dict):
+            continue
+        relations = fm.get("relations", {})
+        if not isinstance(relations, dict):
+            continue
+        for rel_type, edge_kind in _RELATION_EDGE_KINDS.items():
+            targets = relations.get(rel_type, [])
+            if isinstance(targets, str):
+                targets = [targets]
+            if not isinstance(targets, list):
+                continue
+            for target_urn in targets:
+                edges_payload.append({
+                    "kind": edge_kind,
+                    "source": node["id"],
+                    "target": target_urn,
+                    "layer": "knowledge",
+                })
+
     edge_kind_counts = {}
     for item in edges_payload:
         edge_kind_counts[item["kind"]] = edge_kind_counts.get(item["kind"], 0) + 1

@@ -1,20 +1,47 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-master"
+  urn: urn:gn:kb:ssot-master
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "Auditoría de consistencia v2.0 — organigrama, ontología (12 TTL), omega v2.6.0, CQs v1.0.1"
-version: "1.5.0"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: Auditoría de consistencia v2.0 — organigrama, ontología (12 TTL), omega
+      v2.6.0, CQs v1.0.1
+version: 1.5.0
 status: published
-tags: [ssot, gore-nuble, reconciliacion, fundamentos, indice]
+tags:
+- ssot
+- gore-nuble
+- reconciliacion
+- fundamentos
+- indice
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle_version: "1.5.0"
+    bundle_version: 1.5.0
     satellites: 14
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-master
+relations:
+  cites:
+  - urn:gn:kb:ssot-actos-admin
+  - urn:gn:kb:ssot-convenios
+  - urn:gn:kb:ssot-dgi
+  - urn:gn:kb:ssot-ecosistema
+  - urn:gn:kb:ssot-ipr-lifecycle
+  - urn:gn:kb:ssot-legal
+  - urn:gn:kb:ssot-mecanismos
+  - urn:gn:kb:ssot-operaciones
+  - urn:gn:kb:ssot-organica
+  - urn:gn:kb:ssot-presupuesto
+  - urn:gn:kb:ssot-relaciones-dominio
+  - urn:gn:kb:ssot-rendiciones
+  - urn:gn:kb:ssot-tde
+  - urn:gn:kb:ssot-territorio
 ---
+
 
 # SSOT GORE Ñuble — Índice Maestro
 
@@ -26,9 +53,9 @@ Fuente de verdad reconciliada del dominio GORE Ñuble. Bundle de 15 artefactos K
 
 | Prioridad | Fuente | Naturaleza | Ubicación |
 |-----------|--------|------------|-----------|
-| 1 (máxima) | Organigrama GORE 2026 | Resolución exenta — acto administrativo legal | `staging/organigrama_gore_2026.md` |
+| 1 (máxima) | Organigrama GORE 2026 | Resolución exenta — acto administrativo legal | ` |
 | 2 | Ontología goreNubleBundle | Modelo formal OWL/SKOS (12 TTL) | `ontologies/onto_gorenuble/` |
-| 3 | Omega Mermaid v2.6.0 | Modelo de referencia descriptivo | `domains/gn/01_fundamentos/intro/omega_gore_nuble_mermaid.md` |
+| 3 | Omega Mermaid v2.6.0 | Modelo de referencia descriptivo | ` |
 | 4 (mínima) | CQs Master v1.0.1 | 472 preguntas de competencia | `ontologies/onto_gorenuble/goreNubleCQs_Master.yml` |
 
 **Criterio de resolución**: ante conflicto entre fuentes, prevalece la de mayor prioridad. Las fuentes mantienen su ciclo de vida propio — este SSOT es una vista reconciliada, no un reemplazo.

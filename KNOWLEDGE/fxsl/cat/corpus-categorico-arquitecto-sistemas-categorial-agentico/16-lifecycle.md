@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-lifecycle
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- recursion-composicional
+- v-model
+- devops
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-lifecycle
+---
+
 # Lifecycle
 
 ## La V no es un diagrama bonito
@@ -51,14 +75,14 @@ La pregunta critica es: la evolucion preserva los invariantes. Formalmente, hay 
 El drift es lo que ocurre cuando eta deja de ser natural. La definicion de naturalidad requiere que para todo morfismo f : A -> B en Sys, el diagrama
 
 ```
-        eta_A
-  A  ---------> E(A)
-  |               |
-  f               E(f)
-  |               |
-  v               v
-  B  ---------> E(B)
-        eta_B
+ eta_A
+ A ---------> E(A)
+ | |
+ f E(f)
+ | |
+ v v
+ B ---------> E(B)
+ eta_B
 ```
 
 conmute: eta_B . f = E(f) . eta_A. El drift ocurre cuando este diagrama no conmuta para algun morfismo f. En la practica: el componente A evoluciono a E(A), el componente B evoluciono a E(B), pero la dependencia f entre ellos no evoluciono de forma compatible. El sistema "en papel" dice que A y B se conectan de una manera; el sistema real se conecto de otra. La brecha entre el diagrama y la realidad es el drift.
@@ -85,8 +109,8 @@ Lo que convierte esto en una estructura rica es el funtor de esquema **F : Ver �
 
 ```
 Inst(S₁) --Σ_F--> Inst(S₂)
-    |                   |
-    v                   v
+ | |
+ v v
  v1.0.0 --upgrade--> v1.1.0
 ```
 

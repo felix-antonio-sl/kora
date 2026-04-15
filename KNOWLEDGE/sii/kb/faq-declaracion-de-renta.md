@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 16
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-declaracion-de-renta
 ---
 
 # Declaración de renta — Preguntas Frecuentes SII
-
 
 ## ¿Qué es el Asistente de “Enajenación de Acciones, Cuotas de Fondos Mutuos y/o Cuotas de Fondos de Inversión”?
 

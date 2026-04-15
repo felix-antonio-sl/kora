@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:terminos-condiciones-claveunica"
-  provenance: "https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica"
+  urn: urn:tde:kb:terminos-condiciones-claveunica
+  provenance: https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica
 version: 1.0.0
 status: published
-tags: [tde, plataformas-terminos, claveunica, identidad-digital, términos-y-condiciones, plataformas-compartidas]
+tags:
+- tde
+- plataformas-terminos
+- claveunica
+- identidad-digital
+- términos-y-condiciones
+- plataformas-compartidas
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:terminos-condiciones-claveunica
 ---
 
 # Términos y Condiciones: integración y uso del Sistema de ClaveÚnica
@@ -78,10 +89,10 @@ La SGD considerará al menos:
 
 1. Utilizar ClaveÚnica en estricto apego a la normativa aplicable y a los habilitantes legales o administrativos que les permitan ser Entidad Usuaria.
 2. Cumplir en todas las plataformas donde se use ClaveÚnica:
-   - Ley N° 19.880 (Bases de Procedimientos Administrativos).
-   - Ley N° 19.628 (Protección de la Vida Privada).
-   - Ley N° 21.663 (Marco de Ciberseguridad).
-   - Todas las demás normas administrativas relacionadas.
+ - Ley N° 19.880 (Bases de Procedimientos Administrativos).
+ - Ley N° 19.628 (Protección de la Vida Privada).
+ - Ley N° 21.663 (Marco de Ciberseguridad).
+ - Todas las demás normas administrativas relacionadas.
 3. Cumplir con normas técnicas mandatadas por el artículo 57 del Reglamento, en especial la Norma Técnica de Autenticación, y el artículo 47 del DS N° 181/2020 del Ministerio de Economía (Reglamento Ley N° 19.799 sobre documentos electrónicos y firma electrónica). Las entidades no pertenecientes a la Administración del Estado deben cumplir estas normas salvo incompatibilidad con su naturaleza.
 4. Cumplir con los lineamientos, estándares, directrices y guías técnicas establecidas por la SGD en el marco de la Ley N° 21.658 y su reglamento.
 
@@ -89,9 +100,9 @@ La SGD considerará al menos:
 
 1. Comunicar y difundir los presentes Términos y Condiciones y las obligaciones derivadas dentro de la organización.
 2. Cuando la integración se realice a través de un proveedor SaaS:
-   - Difundir los Términos y Condiciones al proveedor.
-   - Incorporar en las bases de licitación y en el contrato con el proveedor SaaS la **obligación de cumplir estos Términos y Condiciones**.
-   - Establecer en el contrato la forma en que el proveedor cumplirá el deber de comunicación y difusión internamente.
+ - Difundir los Términos y Condiciones al proveedor.
+ - Incorporar en las bases de licitación y en el contrato con el proveedor SaaS la **obligación de cumplir estos Términos y Condiciones**.
+ - Establecer en el contrato la forma en que el proveedor cumplirá el deber de comunicación y difusión internamente.
 
 ### 6.3. Garantía de la correcta integración y funcionamiento
 

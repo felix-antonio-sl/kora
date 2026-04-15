@@ -16,6 +16,12 @@ tags:
 - formal-layer
 - kora
 lang: en
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-agent-coalgebra"
+    - "urn:kora:kb:cat-ecosystem-2cat"
+    - "urn:kora:kb:cat-discovery-presheaf"
 ---
 
 # Behavioral Preservation in KORA

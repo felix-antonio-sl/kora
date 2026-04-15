@@ -15,14 +15,25 @@ tags:
 - integration
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases
+relations:
+  cites:
+  - urn:fxsl:kb:formal-framework-data-lakes-ct
+  - urn:fxsl:kb:seven-sketches
+  - urn:fxsl:kb:unified-multimodel
 ---
+
 
 # Category-Theoretic Database Approaches
 
 ## Functorial Data Model (FDM)
 
 Ctx: Analysis (Walter) on FDM and DIK hierarchy applied to databases and migrations.
-Src: `sources/cat/Exploring Category-Theoretic Approaches to Databases.md`
+Src: ` Category-Theoretic Approaches to Databases.md`
 XRef: `urn:fxsl:kb:seven-sketches`
 
 Database = functor I: S → **Set**, where S = schema category (finitely presented). Allows migration and schema integration as functorial operations (pullbacks, pushforwards), guaranteeing mathematical integrity.

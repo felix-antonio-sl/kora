@@ -4,33 +4,38 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - cultura
-  - arte
-  - patrimonio
-  - deporte
-  - turismo
-  - areas-silvestres
-  - caletas-pesqueras
+- ris
+- sni
+- inversion
+- gn
+- cultura
+- arte
+- patrimonio
+- deporte
+- turismo
+- areas-silvestres
+- caletas-pesqueras
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:gn:kb:ris-cultura-deporte-turismo
 ---
 
 # Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+
 
 ## Arte y Cultura
 
 Establecer requisitos de información para proyectos de inversión cultural.
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf>
-
-### Alcance
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Cultura_2024.pdf
 
 Aplica a todas las iniciativas de inversión en proyectos culturales con foco en necesidades culturales y artísticas.
 
@@ -78,22 +83,22 @@ Incorporar diagnósticos que respondan a políticas sectoriales (nacionales, reg
 #### III. Etapa de Ejecución
 
 - **Presentación del Proyecto:**
-  - Opción A: con Estudio de Preinversión (perfil).
-  - Opción B: con resumen ejecutivo si proviene de etapa de diseño.
-  - Entrega obligatoria: diseño terminado.
+ - Opción A: con Estudio de Preinversión (perfil).
+ - Opción B: con resumen ejecutivo si proviene de etapa de diseño.
+ - Entrega obligatoria: diseño terminado.
 - **Documentación Técnica:**
-  - Antecedentes técnicos requeridos para edificaciones.
-  - Certificación de aprobación del diseño.
+ - Antecedentes técnicos requeridos para edificaciones.
+ - Certificación de aprobación del diseño.
 - **TDR de Ejecución:** especificaciones técnicas detalladas.
 - **Presupuesto de Ejecución:**
-  - Obras civiles (planilla Excel detallada por partidas y niveles).
-  - Equipos y equipamiento (incluir cotizaciones).
-  - Asesorías/Consultorías (si corresponde).
-  - Gastos administrativos.
+ - Obras civiles (planilla Excel detallada por partidas y niveles).
+ - Equipos y equipamiento (incluir cotizaciones).
+ - Asesorías/Consultorías (si corresponde).
+ - Gastos administrativos.
 - **Lista de Equipos:** detallada y con respaldos de costos.
 - **Cronogramas:**
-  - De Actividades (Gantt): contemplar licitación, adjudicación, tiempos de contrato y control de Unidad Técnica.
-  - Financiero: concordante con Carta Gantt y ficha IDI.
+ - De Actividades (Gantt): contemplar licitación, adjudicación, tiempos de contrato y control de Unidad Técnica.
+ - Financiero: concordante con Carta Gantt y ficha IDI.
 - **Plan de Contingencia:** especialmente para inmuebles existentes (abarcar funcionamiento, almacenaje, etc.).
 
 ### Aspectos Adicionales
@@ -109,9 +114,7 @@ Incorporar diagnósticos que respondan a políticas sectoriales (nacionales, reg
 
 Establecer requisitos de información para proyectos de inversión en inmuebles patrimoniales.
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf>
-
-### Alcance
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Inmuebles_Patrimoniales_2024.pdf
 
 Preservar e incrementar patrimonio cultural nacional a través de inversiones en inmuebles patrimoniales.
 
@@ -134,8 +137,8 @@ Preservar e incrementar patrimonio cultural nacional a través de inversiones en
 #### I. Etapa de Prefactibilidad y Factibilidad
 
 - **Formulación del Proyecto:**
-  - Base metodológica: "Metodología para la formulación y evaluación socioeconómica de proyectos de patrimonio cultural inmueble".
-  - Aplicar precios sociales en la evaluación.
+ - Base metodológica: "Metodología para la formulación y evaluación socioeconómica de proyectos de patrimonio cultural inmueble".
+ - Aplicar precios sociales en la evaluación.
 - **Documentación Legal:** copia de Resolución o Decreto Oficial que avale la protección (emitido por CMN o MINVU).
 - **Propiedad del Terreno:** acreditar según "Requisitos genéricos sobre las propiedades en que se proyectan edificaciones".
 - **Presupuesto de Etapa:** detalle de consultorías, actividades (nombre, costo hora/hombre, insumos, gastos administrativos); firmado por profesional responsable.
@@ -156,18 +159,18 @@ Preservar e incrementar patrimonio cultural nacional a través de inversiones en
 #### III. Etapa de Ejecución
 
 - **Formulación del Proyecto:**
-  - Opción A (directo a ejecución): Estudio de preinversión a nivel de perfil (con Metodología) y entrega de diseño terminado.
-  - Opción B (desde diseño): resumen ejecutivo y entrega del diseño final.
+ - Opción A (directo a ejecución): Estudio de preinversión a nivel de perfil (con Metodología) y entrega de diseño terminado.
+ - Opción B (desde diseño): resumen ejecutivo y entrega del diseño final.
 - **Aprobación de Diseño:** diseño de arquitectura aprobado por CMN o SEREMI MINVU (según corresponda).
 - **Equipamiento:** lista detallada de ítems, cantidad, especificaciones técnicas, costo unitario y total (si aplica).
 - **Presupuesto Detallado:** obras civiles (ítems, cantidad, costos), equipos/equipamiento, consultorías/asesorías especiales, gastos administrativos.
 - **Documentación Adicional:** entrega de documentos requeridos para proyectos con edificación.
 - **TDR y Especificaciones Técnicas:**
-  - Requerimientos de obras, experiencia de oferentes, equipamiento y equipos.
-  - TDR específico para asesorías o consultorías especializadas.
+ - Requerimientos de obras, experiencia de oferentes, equipamiento y equipos.
+ - TDR específico para asesorías o consultorías especializadas.
 - **Cronogramas:**
-  - De Actividades (Gantt): incluir todos los procesos (licitación, adjudicación, contrato, adquisiciones).
-  - Financiero: acorde a Carta Gantt y ficha IDI.
+ - De Actividades (Gantt): incluir todos los procesos (licitación, adjudicación, contrato, adquisiciones).
+ - Financiero: acorde a Carta Gantt y ficha IDI.
 - **Plan de Contingencia:** especialmente si se retiran elementos patrimoniales; debe detallar almacenamiento y condiciones de preservación durante la ejecución.
 
 ---
@@ -176,20 +179,20 @@ Preservar e incrementar patrimonio cultural nacional a través de inversiones en
 
 Establecer requisitos y criterios de evaluación para proyectos de infraestructura deportiva.
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS__Proyectos_Deportes_2024.pdf
 
 ### Alcances
 
 - Proyectos de edificación para práctica física y deportiva, evaluados mediante "Metodología de Formulación y Evaluación de Proyectos de Infraestructura Deportiva".
 - **Modalidades deportivas:**
-  - Deporte formativo.
-  - Deporte recreativo.
-  - Deporte competitivo.
-  - Deporte de alto rendimiento.
-  - Un proyecto puede atender varias modalidades; se clasifica por tamaño/estándar o costo.
+ - Deporte formativo.
+ - Deporte recreativo.
+ - Deporte competitivo.
+ - Deporte de alto rendimiento.
+ - Un proyecto puede atender varias modalidades; se clasifica por tamaño/estándar o costo.
 - **Proyectos en establecimientos educacionales:**
-  - Deben ser abiertos a la comunidad.
-  - Operables de forma autónoma (administración, financiamiento, accesos propios a vía pública).
+ - Deben ser abiertos a la comunidad.
+ - Operables de forma autónoma (administración, financiamiento, accesos propios a vía pública).
 - **Definición de aumento de oferta:** criterio de incremento en número de deportistas atendidos simultáneamente. No se considera aumento si solo mejora confort (ej.: iluminación, camarines) sin intensificar uso.
 
 ### Orientaciones Sectoriales
@@ -197,11 +200,11 @@ Establecer requisitos y criterios de evaluación para proyectos de infraestructu
 #### Componentes de Instalaciones Deportivas
 
 - **Áreas de uso deportivo:**
-  - Componentes esenciales: espacios de juego (dimensiones, altura requerida); equipos, equipamientos, instalaciones accesorias (camarines, baños, áreas de ejercicios, bodegas, oficinas, primeros auxilios, accesos, circulaciones, estacionamientos).
-  - Componentes opcionales (alto rendimiento): habitaciones, alimentación, lavandería, estudios, entretención, atención especializada física/psicológica.
+ - Componentes esenciales: espacios de juego (dimensiones, altura requerida); equipos, equipamientos, instalaciones accesorias (camarines, baños, áreas de ejercicios, bodegas, oficinas, primeros auxilios, accesos, circulaciones, estacionamientos).
+ - Componentes opcionales (alto rendimiento): habitaciones, alimentación, lavandería, estudios, entretención, atención especializada física/psicológica.
 - **Áreas de espectadores:**
-  - Uso presencial: accesos, graderías, circulaciones, boleterías, puntos de venta, baños, estacionamientos.
-  - Uso transmisión: espacios para trabajo radial, televisivo, periodístico (puntos de prensa, salas especializadas, ascensores especiales).
+ - Uso presencial: accesos, graderías, circulaciones, boleterías, puntos de venta, baños, estacionamientos.
+ - Uso transmisión: espacios para trabajo radial, televisivo, periodístico (puntos de prensa, salas especializadas, ascensores especiales).
 - **Áreas mixtas (uso compartido):** administración, seguridad, iluminación, urbanización, muros, losas, estacionamientos.
 
 #### Desglose de Presupuestos y Prorrateo
@@ -215,13 +218,13 @@ Establecer requisitos y criterios de evaluación para proyectos de infraestructu
 
 - **Escala menor (análisis simplificado):** proyectos de 5.000 a 8.000 UTM sin aumento de oferta.
 - **Escala mediana (costo-eficiencia deportista):**
-  - Inversión en instalaciones existentes.
-  - Aforo limitado (menos de 500 en cerrados, menos de 1.500 en abiertos).
-  - Criterio CAE Deportista: costo máximo 0,075 UTM.
+ - Inversión en instalaciones existentes.
+ - Aforo limitado (menos de 500 en cerrados, menos de 1.500 en abiertos).
+ - Criterio CAE Deportista: costo máximo 0,075 UTM.
 - **Escala mayor (costo-eficiencia deportista y espectador):**
-  - Aforo cerradas: hasta 1.500 personas.
-  - Aforo abiertas: hasta 2.500 personas.
-  - Evaluación separada: CAE Deportista 0,075 UTM; CAE Espectador 0,11 UTM.
+ - Aforo cerradas: hasta 1.500 personas.
+ - Aforo abiertas: hasta 2.500 personas.
+ - Evaluación separada: CAE Deportista 0,075 UTM; CAE Espectador 0,11 UTM.
 
 #### 3.2. Alta Competencia
 
@@ -232,11 +235,11 @@ Establecer requisitos y criterios de evaluación para proyectos de infraestructu
 
 - **Niveles:** regional (CER) y nacional (CAR).
 - **Evaluación:**
-  - Respaldados por políticas y autoridades deportivas nacionales.
-  - CAE Deportista CER: puede incrementarse hasta 30% con enfoque en alto rendimiento.
-  - CAE Deportista CAR: sin limitación.
-  - Espectadores CAR: evaluados con VAN y TIR.
-  - Se recomienda uso de tecnologías para optimizar costos de operación y mantención.
+ - Respaldados por políticas y autoridades deportivas nacionales.
+ - CAE Deportista CER: puede incrementarse hasta 30% con enfoque en alto rendimiento.
+ - CAE Deportista CAR: sin limitación.
+ - Espectadores CAR: evaluados con VAN y TIR.
+ - Se recomienda uso de tecnologías para optimizar costos de operación y mantención.
 
 #### 3.4. Proyectos de Optimización
 
@@ -272,9 +275,7 @@ Seguir Normas, Instrucciones y Procedimientos (NIP) de Inversión Pública.
 
 Establecer requisitos para proyectos de inversión en caletas pesqueras y muelles artesanales.
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_-_Caletas_Pesqueras_2024.pdf>
-
-### Alcance
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_-_Caletas_Pesqueras_2024.pdf
 
 Mantener o incrementar nivel operativo de caletas pesqueras (según D.S. N°240/1998). Incluir obras de protección para inversión, bienes y vidas.
 
@@ -283,27 +284,27 @@ Mantener o incrementar nivel operativo de caletas pesqueras (según D.S. N°240/
 - **Obras Marítimas:** protección/abrigo de infraestructura, generación de aguas seguras.
 - **Obras Portuarias:** atracaderos, muelles, rampas, malecones, grúas. (Opcional si hay resguardo natural.)
 - **Infraestructura Terrestre:**
-  - Respaldo directo: explanadas, áreas de trabajo, sombreaderos, boxes.
-  - Servicios: quioscos, bodegas, SS.HH., agua, luz, alcantarillado.
-  - Accesibilidad: accesos, estacionamientos, cierros, seguridad, accesibilidad universal.
+ - Respaldo directo: explanadas, áreas de trabajo, sombreaderos, boxes.
+ - Servicios: quioscos, bodegas, SS.HH., agua, luz, alcantarillado.
+ - Accesibilidad: accesos, estacionamientos, cierros, seguridad, accesibilidad universal.
 
 ### Orientaciones Sectoriales
 
 - **Programa de Operación y Mantención:**
-  - Vigencia mínima: 5 años.
-  - Debe detallar estado actual de TODAS las instalaciones, no solo las a intervenir.
+ - Vigencia mínima: 5 años.
+ - Debe detallar estado actual de TODAS las instalaciones, no solo las a intervenir.
 - **Normalizaciones y Permisos:**
-  - Cumplimiento de normas (productivas, seguridad, higiene, conectividad).
-  - OGUC: caletas registradas como Infraestructura de Transporte.
-  - Exenciones: no requiere permiso de edificación, CIP, certificado IMIV; exento de art. 55° LGUC.
+ - Cumplimiento de normas (productivas, seguridad, higiene, conectividad).
+ - OGUC: caletas registradas como Infraestructura de Transporte.
+ - Exenciones: no requiere permiso de edificación, CIP, certificado IMIV; exento de art. 55° LGUC.
 - **Enfoque de Género (Ley 21.370/2021):**
-  - Promover equidad en sector pesquero.
-  - Considerar actividades conexas: encarnadores, charqueadores, ahumadores, tejedores, etc.
-  - Infraestructura de apoyo: salas para mujeres, lactancia, baños, galpones.
+ - Promover equidad en sector pesquero.
+ - Considerar actividades conexas: encarnadores, charqueadores, ahumadores, tejedores, etc.
+ - Infraestructura de apoyo: salas para mujeres, lactancia, baños, galpones.
 - **Excepciones Costo/Beneficio:**
-  - Planes de Desarrollo/Zonas Extremas: evaluación Costo Eficiencia.
-  - Componentes específicos con umbrales de costo: Infraestructura Marítima < 12.000 UTM, Infraestructura Terrestre < 5.000 UTM.
-  - Proyectos financiados por Fondo de Fomento de la Pesca Artesanal.
+ - Planes de Desarrollo/Zonas Extremas: evaluación Costo Eficiencia.
+ - Componentes específicos con umbrales de costo: Infraestructura Marítima < 12.000 UTM, Infraestructura Terrestre < 5.000 UTM.
+ - Proyectos financiados por Fondo de Fomento de la Pesca Artesanal.
 
 ### Etapas de Postulación
 
@@ -338,106 +339,3 @@ Mantener o incrementar nivel operativo de caletas pesqueras (según D.S. N°240/
 - **Programa de Gestión y Acuerdos:** plan de gestión de instalaciones, actas de acuerdo con pescadores.
 
 ---
-
-## Atractivos Turísticos
-
-Establecer requisitos para proyectos de puesta en valor o desarrollo de atractivos turísticos.
-
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Instalaciones_Turisticas_2024.pdf>
-
-### Alcance y Objetivo
-
-Aplica a la puesta en valor o desarrollo de atractivos turísticos. Propósito: potenciar cualidades (naturales, culturales, recreativas), incrementar visitas, promover desarrollo económico sostenible. Aspectos no contemplados se resuelven por Jefatura de la División.
-
-### Orientaciones Sectoriales
-
-- **Base Legal:** Ley 20.423 (fomento turismo).
-- **Lineamientos adicionales:** Reducción Riesgo de Desastres, Enfoque de Género.
-
-### Tipos de Instalaciones
-
-Proyectos para potenciar atractivos e instalaciones complementarias. **Exclusiones:** proyectos en Áreas Silvestres Protegidas, sector Transporte, Borde Costero, Patrimonio Cultural Inmueble, proyectos urbanos de calidad de vida.
-
-### Marco Normativo
-
-- **Normativa Sectorial:** Ley 20.423, DS 222 (2011), DS 200 (2011), DS 30 (2016).
-- **Normativa Complementaria:** Ley 20.422 (inclusión), DS 142 (2011), DS 50 (2016).
-
-### Postulación a Etapa de Diseño
-
-- Estudio Preinversión ("Metodología Instalaciones Turísticas").
-- Documentos geográficos/técnicos.
-- Programa Arquitectónico visado.
-- Presupuestos y TDR.
-- Compromiso Financiamiento O&M.
-- Cronograma y Programación.
-
-### Postulación a Etapa de Ejecución
-
-- Estudio Preinversional actualizado.
-- Diseño Completo visado.
-- Programa Arquitectónico Definitivo visado.
-- Modelo de Gestión detallado.
-- Compromiso Financiamiento O&M.
-- Presupuesto y Certificaciones.
-- Especificaciones y TDR.
-- Cronograma y Programación Financiera.
-
----
-
-## Áreas Silvestres Protegidas
-
-Establecer requisitos para proyectos de inversión en instalaciones turísticas en Áreas Silvestres Protegidas (ASPE).
-
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Instalaciones_Areas_Silvestres_Protegidas_2024.pdf>
-
-### Alcance
-
-Aplica a proyectos con financiamiento público en instalaciones turísticas en ASPE administradas por CONAF. Aspectos no contemplados se resuelven por Jefatura de la División.
-
-### Orientaciones Sectoriales
-
-- **Marco Legal:** Ley 18.362.
-- **Propósitos de Conservación:** preservar diversidad ecológica, mantener flora/fauna, conservar recursos escénicos/culturales.
-- **Clasificación de Áreas:** Parque Nacional, Reserva Nacional, Monumento Natural.
-- **Actualización Normativa:** Ley 21.600 (nuevo Servicio de Biodiversidad y Áreas Protegidas).
-- **Prioridades:** Comité de Ministros del Turismo selecciona ASPE con potencial turístico.
-- **Requisitos adicionales:** Reducción Riesgo Desastres, Enfoque de Género.
-
-### Tipos de Instalaciones
-
-Construcciones imprescindibles para la actividad turística. Propósitos: ordenamiento, sensibilización, desarrollo económico local sostenible. Herramientas: metodología para proyectos en ASPE, Guía de Estándares para Diseño. Las intervenciones complementarias (saneamiento, electrificación, etc.) se rigen por metodologías sectoriales específicas.
-
-### Marco Normativo
-
-- **Legislación:** Ley 18.362, Ley 18.348, Ley 19.300, Ley 20.423.
-- **Decretos:** DS 50 (2011/2016).
-- **Inclusión:** Ley 20.422, DS 142 (2011).
-- **Instrumentos:** Plan de Manejo (CONAF), Plan de Uso Público, Plan de accesibilidad.
-
-### Postulación de Proyecto — Etapa de Diseño
-
-- Estudio Preinversión perfil (metodología ASPE, certificado CONAF).
-- Programa Arquitectónico.
-- Antecedentes de Localización/Terreno.
-- Presupuesto oficial detallado.
-- TDR.
-- Certificados de Factibilidad de Servicios.
-- Compromiso Financiamiento O&M.
-- Modelo de Gestión visado.
-- Cronograma (Gantt).
-- Programación Financiera.
-
-### Postulación de Proyecto — Etapa de Ejecución
-
-- Estudio Preinversional actualizado.
-- Resultados completos del Diseño.
-- Presupuesto oficial de ejecución.
-- Especificaciones técnicas de obra.
-- Aprobaciones técnicas gubernamentales.
-- Certificados de factibilidad actualizados.
-- Compromiso Financiamiento O&M.
-- Modelo de Gestión definitivo.
-- TDR para consultorías.
-- Cronograma (Gantt) de ejecución.
-- Programación Financiera de ejecución.

@@ -13,6 +13,11 @@ tags:
 - fx
 - rules
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:fx-rules
 ---
 
 # MBT Modeling Assistant Rules
@@ -20,7 +25,6 @@ lang: es
 ## Activación
 
 - Estas reglas se activan automáticamente cuando el usuario está modelando sistemas.
-
 
 ## Indicadores de Modelamiento
 
@@ -36,28 +40,26 @@ lang: es
 
 - Cuando se detecta actividad de modelamiento:
 
-
 1. **Hacer explícitas las tensiones**
-   - Identificar tensiones implícitas en las decisiones del usuario
-   - Formular preguntas que revelen la tensión
+ - Identificar tensiones implícitas en las decisiones del usuario
+ - Formular preguntas que revelen la tensión
 
 2. **Presentar polos sin imponer**
-   - Mostrar las opciones con sus implicaciones
-   - Dejar que el usuario decida
+ - Mostrar las opciones con sus implicaciones
+ - Dejar que el usuario decida
 
 3. **Recordar documentar**
-   - Sugerir registrar decisiones importantes
-   - Ofrecer generar un Registro de Tensiones
+ - Sugerir registrar decisiones importantes
+ - Ofrecer generar un Registro de Tensiones
 
 4. **Tensiones principales a detectar**
-   - Entidad ↔ Evento
-   - Todo ↔ Partes
-   - General ↔ Particular
-   - Estático ↔ Dinámico
-   - Causa ↔ Efecto
-   - Detalle ↔ Abstracción
+ - Entidad ↔ Evento
+ - Todo ↔ Partes
+ - General ↔ Particular
+ - Estático ↔ Dinámico
+ - Causa ↔ Efecto
+ - Detalle ↔ Abstracción
 
 ## Referencia
 
 - Para guía completa, usar `/modelamiento-mbt`
-

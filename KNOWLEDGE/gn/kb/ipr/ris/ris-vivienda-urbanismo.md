@@ -4,28 +4,35 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - vivienda
-  - urbanismo
-  - campamentos
-  - espacios-publicos
-  - parques
-  - quiero-mi-barrio
+- ris
+- sni
+- inversion
+- gn
+- vivienda
+- urbanismo
+- campamentos
+- espacios-publicos
+- parques
+- quiero-mi-barrio
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:gn:kb:ris-vivienda-urbanismo
 ---
 
 # Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
 
+
 ## Construcción de Viviendas Sociales
 
-Establece requisitos para proyectos de construcción de viviendas sociales asumidos por el Estado. Responsable: SERVIU. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS__Proy_VIVIENDASOCIALES_2024.pdf>
+Establece requisitos para proyectos de construcción de viviendas sociales asumidos por el Estado. Responsable: SERVIU. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS__Proy_VIVIENDASOCIALES_2024.pdf
 
 ### Documento y Alcance
 
@@ -72,7 +79,7 @@ Propósito: Resolver falta de oferta de viviendas sociales en zonas sin interés
 
 ## Construcción de Viviendas para Adulto Mayor
 
-Establece requisitos para proyectos de vivienda para adulto mayor (MINVU-SENAMA). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proy_Viviendas_adulto_mayor_2024.pdf>
+Establece requisitos para proyectos de vivienda para adulto mayor (MINVU-SENAMA). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proy_Viviendas_adulto_mayor_2024.pdf
 
 ### Contexto y Alcance
 
@@ -122,9 +129,7 @@ Establece requisitos para proyectos de vivienda para adulto mayor (MINVU-SENAMA)
 
 ## Saneamiento de Poblaciones
 
-Establece requisitos para proyectos de rehabilitación y saneamiento de poblaciones. Responsable: SERVIU. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_VIVIENDA_Saneamiento_Poblaciones.pdf>
-
-### Alcance
+Establece requisitos para proyectos de rehabilitación y saneamiento de poblaciones. Responsable: SERVIU. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_VIVIENDA_Saneamiento_Poblaciones.pdf
 
 Propósito: Rehabilitación y saneamiento de poblaciones deterioradas (fallas sanitarias, derrumbes, etc.). Prevención de dichos deterioros. Exclusión: No incluye reparaciones o construcción de viviendas. Resolución de dudas mediante adenda por Jefatura de la División.
 
@@ -160,7 +165,7 @@ Propósito: Rehabilitación y saneamiento de poblaciones deterioradas (fallas sa
 
 ## Urbanización en Campamentos
 
-Establece requisitos para proyectos de urbanización en campamentos (Línea de Radicación). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_de_Urbanizacion_Campamentos.pdf>
+Establece requisitos para proyectos de urbanización en campamentos (Línea de Radicación). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_de_Urbanizacion_Campamentos.pdf
 
 ### Contexto y Alcance
 
@@ -194,7 +199,7 @@ Enfoque del documento: Estrategia 2.
 
 ## Programa Quiero Mi Barrio (PQMB)
 
-Establece requisitos para el Programa Quiero Mi Barrio (PQMB). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Progr_Quiero_mi_Barrio_2024.pdf>
+Establece requisitos para el Programa Quiero Mi Barrio (PQMB). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Progr_Quiero_mi_Barrio_2024.pdf
 
 ### Contexto y Alcance
 
@@ -238,7 +243,7 @@ Productos derivados:
 
 ## Macro Infraestructura y Parques Urbanos (Contexto PQMB)
 
-Establece modalidades y requisitos de inversión para el PQMB y proyectos asociados de Macroinfraestructura y Parques Urbanos. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proyectos_Macro_infraestructura_urbana.pdf>
+Establece modalidades y requisitos de inversión para el PQMB y proyectos asociados de Macroinfraestructura y Parques Urbanos. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS_Proyectos_Macro_infraestructura_urbana.pdf
 
 ### Clasificación General
 
@@ -285,7 +290,7 @@ Solicitud IDI por barrio: Sector Vivienda y Desarrollo Urbano / Subsector Desarr
 
 ## Construcción de Espacios Públicos
 
-Establece requisitos para proyectos de construcción, mejoramiento y reposición de espacios públicos. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS-Proyectos_Espacios_Publicos_2024.pdf>
+Establece requisitos para proyectos de construcción, mejoramiento y reposición de espacios públicos. Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS-Proyectos_Espacios_Publicos_2024.pdf
 
 ### Alcance de la Intervención
 
@@ -314,9 +319,7 @@ Propósito principal: Recuperar espacios públicos. Intervenciones: Iluminación
 
 ## Construcción de Parques Urbanos
 
-Establece requisitos para proyectos de construcción de Parques Urbanos (≥2 hectáreas). Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS-Construccion_Parques_urbanos_2024.pdf>
-
-### Alcance
+Establece requisitos para proyectos de construcción de Parques Urbanos (≥2 hectáreas). Emisor: MDSF, 2024. **Fuente:** https://sni.gob.cl/storage/docs/RIS-Construccion_Parques_urbanos_2024.pdf
 
 Definición de intervención: Parques urbanos ≥2 hectáreas. Resolución de dudas mediante adenda por Jefatura de la División.
 
@@ -345,32 +348,3 @@ Definición de intervención: Parques urbanos ≥2 hectáreas. Resolución de du
 - Validación/actualización diseño, Diseño Definitivo, Presupuesto Ejecución, Costo O&M detallado, Compromisos y Certificaciones, Modelo de Gestión en Ejecución, Cronograma y Calendario Financiero.
 
 ---
-
-## Mejoramiento Parques Urbanos
-
-Establece requisitos para proyectos de mejoramiento de Parques Urbanos. Alcance: Intervención en parques con obsolescencia funcional, incumplimiento normativo o prestación inadecuada. Emisor: MDSF, 2024. **Fuente:** <https://sni.gob.cl/storage/docs/RIS-Mejoramiento_Parques_Urbanos_2024.pdf>
-
-### Origen y Alcance
-
-Resolución de dudas mediante adenda por Jefatura de la División.
-
-### Orientaciones Sectoriales
-
-- Propósito general: Mejorar calidad de espacios y servicios de parques urbanos.
-- Marco normativo: Política Nacional de Parques Urbanos (PNPU, Decreto 17-2020).
-
-### Requisitos para Selección de Parques
-
-Criterios: Parque en uso, obsolescencia funcional importante, superficie ≥2 hectáreas, mantención vigente.
-
-### Postulación para Etapa de Diseño
-
-- **Formulación:** Metodología General, Enfoque Género, Guía Formulación Parques, Diagnóstico (historial, contexto, Ficha INE).
-- **Programa arq.:** Declaración diseño, validación UT.
-- **Presupuesto estimativo:** Detalle por partidas.
-- **TDR:** Incluir participación ciudadana.
-- Presupuesto Oficial Diseño, Modelo de Gestión, Cronograma, Estimación Costos Mantención, Certificados y Compromisos.
-
-### Postulación para Etapa de Ejecución
-
-- Validación/actualización diseño, Diseño Definitivo, Presupuesto Oficial Ejecución, Costos O&M, Certificado Compromiso, Modelo de Gestión, Certificado Propiedad, Cronograma y Calendario Financiero.

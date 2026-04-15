@@ -1,18 +1,31 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:convenios-estados-fases"
+  urn: urn:gn:kb:convenios-estados-fases
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-16"
-    source: "ssot-convenios v1.2.0 + goreNubleApprovalData.ttl + goreNubleReferenceData.ttl + ssot-relaciones-dominio v2.0.0"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-16'
+    source: ssot-convenios v1.2.0 + goreNubleApprovalData.ttl + goreNubleReferenceData.ttl
+      + ssot-relaciones-dominio v2.0.0
+version: 1.0.0
 status: published
-tags: [convenios, estados, ciclo-vida, transferencias, cuotas, gore-nuble, fsm, formalización]
+tags:
+- convenios
+- estados
+- ciclo-vida
+- transferencias
+- cuotas
+- gore-nuble
+- fsm
+- formalización
 lang: es
 extensions:
   gn:
     family: guide
+relations:
+  cites:
+  - urn:gn:kb:gestion-rendiciones
 ---
+
 
 # Convenios GORE Ñuble — Estados y Ciclo de Vida
 

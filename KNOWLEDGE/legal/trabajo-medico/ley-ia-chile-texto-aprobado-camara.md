@@ -4,22 +4,27 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "15869-19 y 16821-19 Regula los sistemas de inteligencia artificial.docx"
-    source_ref: "Oficio Nº 20.843, Cámara de Diputados, 13 octubre 2025"
+    source: 15869-19 y 16821-19 Regula los sistemas de inteligencia artificial.docx
+    source_ref: Oficio Nº 20.843, Cámara de Diputados, 13 octubre 2025
 version: 1.0.0
 status: published
 tags:
-  - inteligencia-artificial
-  - regulacion
-  - ley
-  - chile
-  - normativa
-  - riesgo
-  - sanciones
-  - biometria
-  - datos-personales
-  - legal
+- inteligencia-artificial
+- regulacion
+- ley
+- chile
+- normativa
+- riesgo
+- sanciones
+- biometria
+- datos-personales
+- legal
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:legal:kb:ley-ia-chile-texto-aprobado-camara
 ---
 
 # Ley que Regula los Sistemas de Inteligencia Artificial — Texto Aprobado Cámara (Boletines 15.869-19 y 16.821-19)
@@ -39,7 +44,7 @@ Proyecto de ley aprobado por la Cámara de Diputados, Oficio Nº 20.843, Valpara
 **Exclusiones:**
 - Sistemas de IA para defensa nacional — identificados por resolución reservada del Ministerio de Defensa + reglamento con criterios.
 - I+D previa a mercado que respete derechos fundamentales; excluye pruebas en condiciones reales; daños se rigen por Arts. 12 y 18.
-- Componentes open source/código abierto, salvo que formen parte de un sistema de alto riesgo; daños se rigen por Art. 19.
+- Componentes open abierto, salvo que formen parte de un sistema de alto riesgo; daños se rigen por Art. 19.
 
 ---
 

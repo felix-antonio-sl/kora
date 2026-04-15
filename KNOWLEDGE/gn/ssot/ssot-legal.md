@@ -1,19 +1,33 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-legal"
+  urn: urn:gn:kb:ssot-legal
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleLegalData.ttl, omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl"
-version: "1.1.0"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleLegalData.ttl, omega_gore_nuble_mermaid.md v2.6.0, goreNubleIPRData.ttl
+version: 1.1.0
 status: published
-tags: [ssot, legal, normativo, glosas, loc-gore, presupuestos]
+tags:
+- ssot
+- legal
+- normativo
+- glosas
+- loc-gore
+- presupuestos
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-legal
+relations:
+  cites:
+  - urn:gn:kb:ssot-presupuesto
 ---
+
 
 # SSOT — Marco normativo GORE Ñuble
 
@@ -68,7 +82,7 @@ extensions:
 | 13 | FRPD (Royalty Minero) | — | I+D+i, instituciones habilitadas |
 | 14 | Emergencias | — | 3% traspasable a Subsec. Interior + 2% uso interno GORE |
 
-[impl: GORE_OS implementa 7/7 glosas. `check_glosa_rules()` en `ipr.py`. `_check_glosa03_prohibition()` bloquea FNDR→PERSONAL. `check_glosa07_transfer_limits()` en `presupuesto.py`. CLAUDE.md §Rules 36-38]
+[impl: GORE_OS implementa 7/7 glosas. `check_glosa_rules` en `ipr.py`. `_check_glosa03_prohibition` bloquea FNDR→PERSONAL. `check_glosa07_transfer_limits` en `presupuesto.py`. CLAUDE.md §Rules 36-38]
 
 ## Tipos de glosa
 
@@ -83,7 +97,7 @@ extensions:
 
 Circular 33: exige 20% aporte propio en Activos No Financieros. `requiresCoFinancing = true`.
 
-[impl: `_check_c33_conservation()` gate F1→F2, informational. CLAUDE.md §Rule 38]
+[impl: `_check_c33_conservation` gate F1→F2, informational. CLAUDE.md §Rule 38]
 
 ## Jerarquía presupuestaria
 

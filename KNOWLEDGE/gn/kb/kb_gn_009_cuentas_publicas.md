@@ -1,17 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:cuentas-publicas-2021-2024"
+  urn: urn:gn:kb:cuentas-publicas-2021-2024
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "Cuentas Públicas de Gestión del Gobierno Regional de Ñuble, periodos 2021, 2022, 2023, 2024"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: Cuentas Públicas de Gestión del Gobierno Regional de Ñuble, periodos 2021,
+      2022, 2023, 2024
+version: 1.0.0
 status: published
-tags: [cuentas-publicas, ejecucion-presupuestaria, gore-nuble, inversion-regional, gestion-gobernador]
+tags:
+- cuentas-publicas
+- ejecucion-presupuestaria
+- gore-nuble
+- inversion-regional
+- gestion-gobernador
 lang: es
 extensions:
   gn:
     family: report
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:cuentas-publicas-2021-2024
 ---
 
 # Cuentas Públicas GORE Ñuble 2021–2024
@@ -36,9 +46,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 | 2023 | 59.441.127 | 60.015.566 | 99,04% |
 | 2024 | 63.330.546 | 69.956.822 | 90,53% |
 
-## Gestión 2024
-
-### Ejecución presupuestaria 2024
+## Ejecución presupuestaria 2024
 
 **Inversión por origen de iniciativa:**
 
@@ -77,16 +85,16 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 | FRIL 2021 | 1.485.473 | 36 |
 | FRIL 2020 | 1.589.025 | 45 |
 
-### Eje 1: Economía, innovación y capital humano
+## Eje 1: Economía, innovación y capital humano
 
 **Inversión y atracción de capitales:**
 
 - Programa "Fortalecimiento y atracción de inversiones productivas IFI": presupuesto $3.500M, Corfo, inversión mínima US$2 millones, 4 proyectos, ~450 empleos directos, ~6.000 temporales.
 - Proyectos IFI beneficiados:
-  - Softserve: 53 puestos TIC proyectados.
-  - Exportadora Cordillera: 71 empleos directos, 2.500 temporales.
-  - Chilean Marroni Frozen: 53 empleos permanentes, 500 temporales.
-  - NDF Arándanos: 261 empleos directos, ~3.000 en temporada.
+ - Softserve: 53 puestos TIC proyectados.
+ - Exportadora Cordillera: 71 empleos directos, 2.500 temporales.
+ - Chilean Marroni Frozen: 53 empleos permanentes, 500 temporales.
+ - NDF Arándanos: 261 empleos directos, ~3.000 en temporada.
 - Convocatoria Corfo >$2.200M (sectores: energía, agroindustria, construcción, turismo).
 - Convenio GORE-Corfo >$14.000M para competitividad MIPYMES.
 
@@ -129,7 +137,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 - Programa Turismo Tercera Edad: $431M, 3.800 adultos mayores, 130 agrupaciones.
 - Programa Gore Promesas Ñuble 2024-2025: $600M, ~450 deportistas, 23 disciplinas.
 
-### Eje 2: Movilidad, conectividad y transporte público
+## Eje 2: Movilidad, conectividad y transporte público
 
 - Adquisición 69 maquinarias y camiones (inversión total $11.973M): 41 máquinas (12 motoniveladoras, 17 retroexcavadoras, 12 excavadoras), 28 camiones (13 aljibes, 10 residuos sólidos, 5 limpiafosas). Entregas 2024: 33 unidades, $3.633M.
 - Programa Renueva tu Micro y Colectivo: >$3.500M aprobados; 72 buses (10 comunas, $1.899M), 46 colectivos (5 comunas, $155,7M).
@@ -146,7 +154,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 | Bandejón Av. Collín, Chillán (14.684 m²) | $940M | Terminada |
 | Conservación caminos post-inundaciones (25 proyectos, 159,73 km) | >$2.796M | — |
 
-### Eje 3: Vivienda, urbanización e integración
+## Eje 3: Vivienda, urbanización e integración
 
 **Agua potable y alcantarillado:**
 
@@ -162,7 +170,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 - Oficina Móvil Bienes Nacionales: $622M, 600 familias con título de propiedad, 21 comunas.
 - Plan Regulador PRICH vigente: +3.493 ha extensión urbana, +1.123 ha industria.
 
-### Eje 4: Seguridad y emergencias
+## Eje 4: Seguridad y emergencias
 
 **Infraestructura y equipamiento policial:**
 
@@ -185,7 +193,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 - 797 luminarias instaladas en 2024: $878M (Ranguelmo, Ñiquén, Pinto, Quirihue).
 - 25 proyectos en avance: 2.986 luminarias, 16 comunas.
 
-### Eje 5: Calidad de espacios compartidos
+## Eje 5: Calidad de espacios compartidos
 
 **Infraestructura deportiva:**
 
@@ -203,7 +211,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 - Edificio Consistorial San Nicolás: inaugurado, >$3.400M (GORE + SUBDERE).
 - 5 Centros de la Mujer (Yungay, Bulnes, Coelemu, El Carmen, Coihueco): >460 mujeres.
 
-### Eje 6: Salud y educación
+## Eje 6: Salud y educación
 
 **Salud:**
 
@@ -230,7 +238,7 @@ Base legal: Ley N°19.175 sobre Gobierno y Administración Regional.
 - Nuevo Liceo de Yungay: $16.358M totales (40% GORE, 60% SUBDERE).
 - Programa Apoyo Niños TEA (Fundación MiTea): $930.585.000, 135 niños, 250 establecimientos.
 
-### Fondos 8% FNDR 2024
+## Fondos 8% FNDR 2024
 
 ~2.000 organizaciones postularon; admisibilidad 90,62%; eje más demandado: Seguridad (576 iniciativas, 32%).
 

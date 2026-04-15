@@ -1,38 +1,26 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:estrategia-identidad-digital"
-  provenance: "https://wikiguias.digital.gob.cl/Estrategias/identidad-digital"
+  urn: urn:tde:kb:estrategia-identidad-digital
+  provenance: https://wikiguias.digital.gob.cl/Estrategias/identidad-digital
 version: 1.0.0
 status: published
-tags: [tde, estrategia, identidad digital, ClaveÚnica, cédula digital, autenticación, gobernanza digital]
+tags:
+- tde
+- estrategia
+- identidad digital
+- ClaveÚnica
+- cédula digital
+- autenticación
+- gobernanza digital
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:estrategia-identidad-digital
 ---
 
 # Estrategia de Identidad Digital
-
----
-
-## Introducción
-
-### Alcance
-
-Marco estratégico para un nuevo sistema de identidad digital para personas naturales que actúen por sí y, eventualmente, en representación de otra persona natural o jurídica. El modelo propuesto puede extenderse gradualmente a objetos y sistemas, aunque no los incluye directamente.
-
-### Relevancia
-
-**Dimensión de derechos:** la identidad es un derecho humano reconocido por la Convención sobre los Derechos del Niño (UNICEF, 1989). El ODS 16 establece como meta "de aquí a 2030, proporcionar acceso a una identidad jurídica para todos" (Naciones Unidas, 2023). La identidad digital habilita atención médica, beneficios sociales, acceso a capital y servicios financieros, voto, cruce de fronteras y posesión de bienes (BID, 2017; CEPAL, 2021).
-
-**Dimensión económica:**
-
-| Referencia | Estimación |
-|-----------|-----------|
-| Unión Europea (European Commission, 2021) | Billeteras de identidad digital generarían valor añadido de 1.268 millones de euros en 10 años |
-| Reino Unido (Gobierno del Reino Unido, 2022) | Nuevo sistema de identidad digital esperado generaría beneficios de ~800 millones de libras esterlinas anuales |
-| Estonia (e-Estonia, 2019) | Sistema de identidad y firma digital genera ahorro de hasta 2% del PIB anual |
-| McKinsey & Company (2019) | Para Chile (economía de ingreso medio-alto, OCDE 2025): implementación de identidad digital aportaría entre 3% y 13% sobre el PIB para 2030, según nivel de adopción |
-| McKinsey & Company (2022) | ~47.000 millones de dólares/año invertidos globalmente en tecnologías para privacidad y autenticidad de datos |
-| Banco Mundial (2024) | Implementación de identidad digital puede reducir costos de gestión y verificación de identidad hasta en 50% |
-| WEF (2022) | En 2020, pagos digitales consolidados como principal método de compra en la región; aumento del 18% en comercio electrónico |
 
 ---
 

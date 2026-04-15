@@ -14,7 +14,12 @@ tags:
 - schema-unification
 - fxsl
 lang: en
+relations:
+  cites:
+  - urn:fxsl:kb:algebraic-databases
+  - urn:fxsl:kb:data-lakes-ct
 ---
+
 
 # Unified Multi-Model Representation
 

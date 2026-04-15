@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:manual-usuario-institucional-notificaciones"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/instituciones-plataforma-de-notificaciones"
+  urn: urn:tde:kb:manual-usuario-institucional-notificaciones
+  provenance: https://wikiguias.digital.gob.cl/Manuales/instituciones-plataforma-de-notificaciones
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, notificaciones, casilla-única, instituciones, oae]
+tags:
+- tde
+- plataformas-manuales
+- notificaciones
+- casilla-única
+- instituciones
+- oae
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:manual-usuario-institucional-notificaciones
 ---
 
 # Manual de usuario institucional: Plataforma de Notificaciones del Estado (CasillaÚnica)
@@ -57,8 +68,8 @@ Cada institución debe tener **al menos un Administrador de Instituciones**. Pue
 
 ### Inicio
 - Muestra accesos directos según perfil:
-  - **Adm. Instituciones:** administración de usuarios, estadísticas, términos y condiciones.
-  - **Adm. de Mensajes:** crear mensajes, consultar mensajes, consulta DDU, términos y condiciones.
+ - **Adm. Instituciones:** administración de usuarios, estadísticas, términos y condiciones.
+ - **Adm. de Mensajes:** crear mensajes, consultar mensajes, consulta DDU, términos y condiciones.
 - **Consulta DDU:** permite verificar la configuración de un RUN (valores posibles: No configurado / Excepcionado / Casilla).
 
 ### Crear mensajes

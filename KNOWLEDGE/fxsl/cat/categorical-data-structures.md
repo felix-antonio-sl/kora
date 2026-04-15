@@ -17,6 +17,11 @@ tags:
 - technical-computing
 - fxsl
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:categorical-data-structures
 ---
 
 # Categorical Data Structures
@@ -41,7 +46,7 @@ Enabling technologies: GATs (Generalized Algebraic Theories), C-Sets (sets index
 
 | Operator | Definition | Analogy |
 |----------|-----------|---------|
-| Δ_F (pullback) | Precomposition with F; brings data from D to C | —  |
+| Δ_F (pullback) | Precomposition with F; brings data from D to C | — |
 | Σ_F (left pushforward) | Adds/unions structures (C to D) | UNION or generalization |
 | Π_F (right pushforward) | Products (C to D) | JOIN or MATCH |
 
@@ -75,10 +80,10 @@ Enabling technologies: GATs (Generalized Algebraic Theories), C-Sets (sets index
 
 ```julia
 @present TheoryGraph(FreeSchema) begin
-  V::Ob
-  E::Ob
-  src::Hom(E,V)
-  tgt::Hom(E,V)
+ V::Ob
+ E::Ob
+ src::Hom(E,V)
+ tgt::Hom(E,V)
 end
 ```
 

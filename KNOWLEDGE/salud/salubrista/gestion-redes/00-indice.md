@@ -1,15 +1,31 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:gestion-redes-indice"
+  urn: urn:salud:kb:gestion-redes-indice
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-03"
-    source: "Síntesis multi-fuente: OPS, IHI, NICE, AHRQ, MINSAL, Cochrane, NotebookLM 46 fuentes HaH"
-version: "2.0.0"
+    created_by: FS
+    created_at: '2026-03-03'
+    source: 'Síntesis multi-fuente: OPS, IHI, NICE, AHRQ, MINSAL, Cochrane, NotebookLM
+      46 fuentes HaH'
+version: 2.0.0
 status: published
-tags: [gestion-redes, asistencial, indice, glosario, normativa, kpi, blueprint]
+tags:
+- gestion-redes
+- asistencial
+- indice
+- glosario
+- normativa
+- kpi
+- blueprint
 lang: es
+relations:
+  cites:
+  - urn:salud:kb:gestion-redes-general
+  - urn:salud:kb:gestion-redes-herramientas
+  - urn:salud:kb:gestion-redes-salud-mental
+  - urn:salud:kb:gestion-redes-unidades
+  - urn:salud:kb:gestion-redes-urgencias
 ---
+
 
 # Gestión de Redes Asistenciales — Índice General
 

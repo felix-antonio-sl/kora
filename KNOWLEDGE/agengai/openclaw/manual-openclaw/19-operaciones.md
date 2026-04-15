@@ -13,6 +13,11 @@ tags:
 - '19'
 - operaciones
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:19-operaciones
 ---
 
 # Capítulo 19 — Operaciones
@@ -21,25 +26,23 @@ lang: es
 
 - ---
 
-
 ## 19.1 Diagnóstico Rápido
 
 ### openclaw status
 
 ```bash
-openclaw status          # resumen general
-openclaw status --all    # detallado (safe to share, secrets redacted)
+openclaw status # resumen general
+openclaw status --all # detallado (safe to share, secrets redacted)
 ```
 
 - Muestra: gateway version, uptime, canales conectados, agentes, modelos, sesiones activas, cron jobs, heartbeat state.
 
-
 ### openclaw doctor
 
 ```bash
-openclaw doctor                    # diagnóstico + recomendaciones
-openclaw doctor --fix              # aplicar fixes automáticos
-openclaw doctor --generate-gateway-token   # generar token seguro
+openclaw doctor # diagnóstico + recomendaciones
+openclaw doctor --fix # aplicar fixes automáticos
+openclaw doctor --generate-gateway-token # generar token seguro
 ```
 
 - Diagnostica: config obsoleta, permisos, migraciones pendientes, token faltante.
@@ -51,23 +54,22 @@ openclaw hooks info session-memory
 openclaw hooks check
 ```
 
-
 ### openclaw security audit
 
 ```bash
-openclaw security audit            # quick
-openclaw security audit --deep     # + live probe
-openclaw security audit --fix      # auto-fix
-openclaw security audit --json     # para CI / policy checks
+openclaw security audit # quick
+openclaw security audit --deep # + live probe
+openclaw security audit --fix # auto-fix
+openclaw security audit --json # para CI / policy checks
 ```
 
 ### openclaw sessions
 
 ```bash
-openclaw sessions                  # listar todas
-openclaw sessions --active 60      # activas última hora
-openclaw sessions --json           # parseable
-openclaw sessions --agent work     # filtrar por agente
+openclaw sessions # listar todas
+openclaw sessions --active 60 # activas última hora
+openclaw sessions --json # parseable
+openclaw sessions --agent work # filtrar por agente
 openclaw sessions cleanup --dry-run
 openclaw sessions cleanup --enforce
 ```
@@ -75,14 +77,13 @@ openclaw sessions cleanup --enforce
 ### openclaw sandbox explain
 
 ```bash
-openclaw sandbox explain                          # default agent
-openclaw sandbox explain --agent work             # agente específico
-openclaw sandbox explain --session agent:work:main  # sesión específica
-openclaw sandbox explain --json                   # parseable
+openclaw sandbox explain # default agent
+openclaw sandbox explain --agent work # agente específico
+openclaw sandbox explain --session agent:work:main # sesión específica
+openclaw sandbox explain --json # parseable
 ```
 
 - ---
-
 
 ## 19.2 Gateway (systemd)
 
@@ -139,28 +140,27 @@ curl -s http://localhost:18789/health
 
 - ---
 
-
 ## 19.3 Logging
 
 ### Ubicación
 
 ```
-Default:    /tmp/openclaw/openclaw-YYYY-MM-DD.log
-Custom:     logging.file en openclaw.json
-Systemd:    journalctl -u openclaw-gateway
+Default: /tmp/openclaw/openclaw-YYYY-MM-DD.log
+Custom: logging.file en openclaw.json
+Systemd: journalctl -u openclaw-gateway
 ```
 
 ### Redaction
 
 ```json5
 {
-  logging: {
-    redactSensitive: "tools",      // default: redacta tool summaries
-    redactPatterns: [
-      "sk-ant-[a-zA-Z0-9]+",       // Anthropic keys
-      "Bearer [a-zA-Z0-9]+"         // Bearer tokens
-    ]
-  }
+ logging: {
+ redactSensitive: "tools", // default: redacta tool summaries
+ redactPatterns: [
+ "sk-ant-[a-zA-Z0-9]+", // Anthropic keys
+ "Bearer [a-zA-Z0-9]+" // Bearer tokens
+ ]
+ }
 }
 ```
 
@@ -188,14 +188,12 @@ journalctl -u openclaw-gateway | grep cron
 - Los logs no se auto-rotan.
 - Configurar logrotate o limpiar manualmente:
 
-
 ```bash
 # Limpiar logs >7 días
 find /tmp/openclaw/ -name 'openclaw-*.log' -mtime +7 -delete
 ```
 
 - ---
-
 
 ## 19.4 Backup Strategy
 
@@ -220,12 +218,12 @@ BACKUP_DIR=~/backups
 DATE=$(date +%Y%m%d)
 
 tar -czvf "$BACKUP_DIR/openclaw-$DATE.tar.gz" \
-  ~/.openclaw/openclaw.json \
-  ~/.openclaw/.env \
-  ~/.openclaw/agents/*/agent/auth-profiles.json \
-  ~/.openclaw/credentials/ \
-  ~/.openclaw/cron/jobs.json \
-  ~/clawd/
+ ~/.openclaw/openclaw.json \
+ ~/.openclaw/.env \
+ ~/.openclaw/agents/*/agent/auth-profiles.json \
+ ~/.openclaw/credentials/ \
+ ~/.openclaw/cron/jobs.json \
+ ~/clawd/
 
 echo "Backup: $BACKUP_DIR/openclaw-$DATE.tar.gz"
 ```
@@ -250,7 +248,6 @@ openclaw status
 ```
 
 - ---
-
 
 ## 19.5 Monitoreo
 
@@ -281,7 +278,6 @@ cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add
 
 - ---
 
-
 ## 19.6 Mantenimiento Periódico
 
 ### Semanal
@@ -309,7 +305,6 @@ cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add
 
 - ---
 
-
 ## Resumen del Capítulo
 
 | Tarea | Herramienta |
@@ -325,6 +320,5 @@ cat ~/.openclaw/agents/main/sessions/sessions.json | jq '[.[].totalTokens] | add
 | Incident response | Stop → Rotate → Audit → Report |
 
 - ---
-
 
 - *Siguiente: [Capítulo 20 — Patrones de Diseño](20-patrones-diseno.md) (Parte VI)*

@@ -15,7 +15,11 @@ tags:
 - legislacion-medica
 - knowledge
 lang: es
+relations:
+  cites:
+  - urn:legal:kb:confianza-legitima
 ---
+
 
 # Introducción y Estatutos Jurídicos - Trabajo Médico Chile
 

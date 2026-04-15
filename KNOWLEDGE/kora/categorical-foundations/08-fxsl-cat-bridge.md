@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-03-08'
-    source: "Bridge from legacy FXSL categorical knowledge into the official KORA formal layer"
+    source: Bridge from legacy FXSL categorical knowledge into the official KORA formal
+      layer
 version: 1.0.0
 status: published
 tags:
@@ -15,17 +16,30 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:cat-fxsl-bridge
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-skill-algebra"
+    - "urn:kora:kb:cat-ecosystem-2cat"
+    - "urn:kora:kb:cat-discovery-presheaf"
+    - "urn:kora:kb:cat-audit-invariants"
+    - "urn:kora:kb:cat-behavioral-preservation"
 ---
 
 # Bridge from FXSL/Cat to the KORA Formal Layer
 
 ## Purpose
 
-This document records how the legacy FXSL categorical corpus is absorbed into the official KORA formal layer. It is not a replacement for the source notes in `knowledge/fxsl/cat`; it is the canonical bridge that explains which concepts were promoted, where they now live, and how they should be cited from KORA documents.
+This document records how the legacy FXSL categorical corpus is absorbed into the official KORA formal layer. It is not a replacement for the source notes in ` it is the canonical bridge that explains which concepts were promoted, where they now live, and how they should be cited from KORA documents.
 
 ## 1. Bridge Rule
 
-**Rule.** When a concept exists both in `knowledge/fxsl/cat` and in the KORA formal layer, KORA documents should cite the KORA formal-layer document for canonical formal traceability and the FXSL note as supporting source material.
+**Rule.** When a concept exists both in ` and in the KORA formal layer, KORA documents should cite the KORA formal-layer document for canonical formal traceability and the FXSL note as supporting source material.
 
 ## 2. Promoted Themes
 

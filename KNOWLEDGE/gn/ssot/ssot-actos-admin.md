@@ -1,18 +1,29 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ssot-actos-admin"
+  urn: urn:gn:kb:ssot-actos-admin
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-10"
-    source: "goreNubleApprovalData.ttl, goreNubleDipirOntology.ttl, goreNubleDipirRules.ttl, omega_gore_nuble_mermaid.md v2.6.0"
-version: "1.1.1"
+    created_by: FS
+    created_at: '2026-03-10'
+    source: goreNubleApprovalData.ttl, goreNubleDipirOntology.ttl, goreNubleDipirRules.ttl,
+      omega_gore_nuble_mermaid.md v2.6.0
+version: 1.1.1
 status: published
-tags: [ssot, actos-administrativos, aprobacion, visacion, toma-razon, decretos]
+tags:
+- ssot
+- actos-administrativos
+- aprobacion
+- visacion
+- toma-razon
+- decretos
 lang: es
 extensions:
   gn:
     family: ssot
-    bundle: "urn:gn:kb:ssot-master"
+    bundle: urn:gn:kb:ssot-master
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ssot-actos-admin
 ---
 
 # SSOT — Actos administrativos
@@ -90,7 +101,7 @@ Gap ontológico: `TomaRazonEvent` carece de propiedad dedicada (no existe `tomaR
 
 Para GORE Ñuble, umbral operativo: 2.500 UTM (Omega).
 
-[impl: Track enforcement via `_check_track_amount_gates()`. `cgr_res30_utm` en JSONB de `core.financing_track`. CLAUDE.md §Rule 34]
+[impl: Track enforcement via `_check_track_amount_gates`. `cgr_res30_utm` en JSONB de `core.financing_track`. CLAUDE.md §Rule 34]
 
 ## Operadores de comparación (ontología)
 

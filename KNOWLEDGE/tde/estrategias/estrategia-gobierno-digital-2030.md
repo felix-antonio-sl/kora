@@ -1,11 +1,24 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:estrategia-gobierno-digital-2030"
-  provenance: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030"
+  urn: urn:tde:kb:estrategia-gobierno-digital-2030
+  provenance: https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030
 version: 1.0.0
 status: published
-tags: [tde, estrategia, gobierno digital 2030, transformación digital, servicios digitales, gobernanza, identidad digital, datos]
+tags:
+- tde
+- estrategia
+- gobierno digital 2030
+- transformación digital
+- servicios digitales
+- gobernanza
+- identidad digital
+- datos
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:estrategia-gobierno-digital-2030
 ---
 
 # Estrategia de Gobierno Digital 2030
@@ -77,9 +90,9 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 
 ---
 
-### 5.1. Servicios Digitales centrados en las Personas
+## 5.1. Servicios Digitales centrados en las Personas
 
-#### Ámbito 1: Simplificar, digitalizar e integrar servicios
+### Ámbito 1: Simplificar, digitalizar e integrar servicios
 
 - La SGD ejercerá rectoría, administración, evolución y directrices de «Gob.cl» como sitio web oficial del Estado y principal punto de acceso a servicios transaccionales, tomando como referencia a Dinamarca, Reino Unido, España y Uruguay.
 - La SGD proveerá estándares evaluables para experiencia de uso coherente y accesible en sitios web y servicios digitales del Estado.
@@ -91,13 +104,13 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Incrementar disponibilidad y alcance de los servicios digitales de la Comisaría Virtual.
 - Fortalecer sistemas de atención integrados en Educación, Salud, Servicios Sociales y Seguridad Social, integrándolos progresivamente a un sistema único de atención integral.
 
-#### Ámbito 2: Fortalecer los canales de atención ciudadana
+### Ámbito 2: Fortalecer los canales de atención ciudadana
 
 - Fortalecer "ChileAtiende" como sistema multicanal con IA para servicios transaccionales, integrándolo gradualmente a Gob.cl.
 - Implementar estrategia omnicanal para iniciar, continuar o finalizar trámites a través de múltiples canales sin repetir información.
 - Establecer colaboraciones con centros de excelencia en tecnologías emergentes (IA) para diseño y prestación de servicios.
 
-#### Ámbito 3: Evaluación de calidad y mejora continua
+### Ámbito 3: Evaluación de calidad y mejora continua
 
 - Promover y establecer estándares de calidad, accesibilidad y diseño centrado en el usuario.
 - Fortalecer la Medición de Satisfacción Usuaria (MESU), especialmente en componentes digitales.
@@ -105,9 +118,9 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 
 ---
 
-### 5.2. Sector Público Eficiente
+## 5.2. Sector Público Eficiente
 
-#### Ámbito 1: Digitalizar todos los procesos de gestión pública (Ley N° 21.180)
+### Ámbito 1: Digitalizar todos los procesos de gestión pública (Ley N° 21.180)
 
 - La SGD proveerá servicios compartidos y/o estándares para que en 2028 todos los órganos implementen los requisitos de la Ley de TD: gestión de expedientes, notificaciones electrónicas, interoperabilidad, autenticación digital, según las fases legales de gradualidad.
 - Implementar en toda la administración el Notificador Electrónico y la Casilla Electrónica Única para comunicaciones oficiales.
@@ -126,14 +139,14 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Desarrollar Plataforma de Preservación Digital para documentación de instituciones públicas.
 - La SGD proveerá una plataforma de participación digital de ciudadanos, integrada a mecanismos de identidad digital.
 
-#### Ámbito 2: Transformación digital con equidad territorial
+### Ámbito 2: Transformación digital con equidad territorial
 
 - Proveer servicio en la nube para gestión de documentos y/o expedientes electrónicos conforme a estándares estatales.
 - Desarrollar módulos ERP municipales como bien público digital para procedimientos de función común.
 - Apoyar implementación de la Ley de TD mediante convenios con universidades y centros de formación.
 - Reforzar el Sistema de Transformación Digital del PMG en procesos, calidad de servicios digitales y gobernanza de datos.
 
-#### Ámbito 3: Eficacia y eficiencia en uso de recursos TIC
+### Ámbito 3: Eficacia y eficiencia en uso de recursos TIC
 
 - Adoptar las Recomendaciones de Política y Buenas Prácticas OCDE sobre contratación pública y adquisición de tecnología.
 - Fortalecer y optimizar EvalTIC para alineación estratégica de inversiones tecnológicas.
@@ -143,9 +156,9 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 
 ---
 
-### 5.3. Gestión Inteligente basada en Datos
+## 5.3. Gestión Inteligente basada en Datos
 
-#### Ámbito 1: Consolidar gobernanza y ecosistema de datos
+### Ámbito 1: Consolidar gobernanza y ecosistema de datos
 
 - Aprobar e implementar un marco legal que coordine a todos los poderes del Estado en gobernanza de datos.
 - Fortalecer gobernanza de datos mediante la Estrategia de Datos, la guía "Marco de Referencia de Gestión de Datos", y la creación del Consejo Estratégico de Datos de la Administración del Estado.
@@ -153,7 +166,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Desarrollar nodos de gobernanza sectorial o temática (ej. trabajo y seguridad social; Hacienda y análisis financieros), liderados por los respectivos ministerios; incluye Ficha Única Laboral y Previsional.
 - Desarrollar sistemas de información sectoriales: Observatorio de Datos Económicos (ODE) y sistema de "Competitividad y Transparencia sectorial" de pesca y acuicultura.
 
-#### Ámbito 2: Promover intercambio e integración de datos
+### Ámbito 2: Promover intercambio e integración de datos
 
 - La SGD desarrollará una solución tipo "lago de datos" para integración y análisis avanzado de datos gubernamentales, como servicio compartido disponible para nodos sectoriales, instituciones académicas y entidades de evaluación de políticas públicas.
 - Fortalecer implementación de estándares comunes en la Red de Interoperabilidad del Estado, integrando mecanismos de gestión del consentimiento de datos personales.
@@ -162,7 +175,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Implementar sistema automatizado para consumo, control de calidad y anonimización de datos desde la SGD.
 - Avanzar en integración de plataformas geoespaciales, APIs y herramientas de gestión.
 
-#### Ámbito 3: Inteligencia Artificial en el sector público
+### Ámbito 3: Inteligencia Artificial en el sector público
 
 - Fortalecer el marco regulatorio y guías prácticas para uso ético y transparente de IA; repositorio de algoritmos públicos y normas de uso ético en la SGD.
 - Fortalecer equipos técnicos de la SGD en IA.
@@ -172,9 +185,9 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 
 ---
 
-### 5.4. Gobernanza y Rectoría para la Transformación Digital
+## 5.4. Gobernanza y Rectoría para la Transformación Digital
 
-#### Ámbito 1: Fortalecer el rol rector de la SGD
+### Ámbito 1: Fortalecer el rol rector de la SGD
 
 - Evolucionar hacia un modelo de gestión profesional y especializada en TI con capacidades en arquitectura, gestión de proyectos, procesos, producción y contratación de servicios tecnológicos.
 - Fortalecer reglamentación de mecanismos e instrumentos para implementar la Estrategia de Gobierno Digital y ejercer rectoría.
@@ -185,7 +198,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Implementar un comité técnico de expertos para colaborar en evaluaciones y decisiones de la SGD.
 - La SGD se someterá a auditorías técnicas periódicas para garantizar adhesión a marcos de referencia técnicos.
 
-#### Ámbito 2: Modernizar el marco normativo y regulatorio
+### Ámbito 2: Modernizar el marco normativo y regulatorio
 
 - Fortalecer competencias legales de la SGD para rol rector en servicios digitales y datos.
 - Desarrollar y actualizar normativa de transformación digital (gobernanza de datos, identidad digital, servicios digitales e IA en el sector público).
@@ -193,7 +206,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Apoyar cumplimiento de la Ley N° 21.179 sobre protección y tratamiento de datos personales en el sector público; reformar la Ley N° 21.180 según pautas de la Agencia de Protección de Datos.
 - Implementar planes de acción y coordinación regulatoria con entidades responsables de ciberseguridad, datos personales, telecomunicaciones y firma electrónica.
 
-#### Ámbito 3: Redes y comunidades de práctica
+### Ámbito 3: Redes y comunidades de práctica
 
 - Fortalecer la Red de Coordinadores de Transformación Digital como canal entre la SGD y los organismos.
 - Impulsar herramientas para participación e intercambio de experiencias; gestión del conocimiento.
@@ -202,31 +215,31 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 
 ---
 
-### 5.5. Competencias y Talento Digital
+## 5.5. Competencias y Talento Digital
 
-#### Ámbito 1: Capacitación y sensibilización del sector público
+### Ámbito 1: Capacitación y sensibilización del sector público
 
 - Crear un marco de trabajo para la transformación digital en el sector público.
 - Impulsar soluciones innovadoras para desarrollar talento digital y capacitación masiva en el Estado.
 - Implementar en la plataforma «Campus» del Servicio Civil un área en Transformación Digital de Gobierno con cursos desarrollados con expertos en gestión del cambio.
 - Desarrollar talleres sobre gestión del cambio para directivos y funcionarios.
 
-#### Ámbito 2: Desarrollo y retención del talento digital
+### Ámbito 2: Desarrollo y retención del talento digital
 
 - Evaluar la creación de un «Estatuto especial de TIC» y/o «Estatutos profesionales de función crítica» para facilitar contratación y retención de personal especializado.
 - Identificar y cuantificar necesidades de perfiles tecnológicos en el sector público; establecer mallas curriculares de especialidades críticas (ciencia de datos, ciberseguridad) incluyendo certificaciones.
 - Establecer asociaciones estratégicas con universidades y centros de investigación para programas de becas para funcionarios.
 
-#### Ámbito 3: Alfabetización digital universal
+### Ámbito 3: Alfabetización digital universal
 
 - Establecer gobernanza para el desarrollo de habilidades digitales básicas y sensibilización de la población.
 - Desarrollar cursos específicos para grupos vulnerables: personas de tercera edad, con capacidades diferentes, pertenecientes a pueblos originarios o que habiten en zonas rurales.
 
 ---
 
-### 5.6. Identidad e Infraestructura Pública Digital
+## 5.6. Identidad e Infraestructura Pública Digital
 
-#### Ámbito 1: Nuevo sistema de identidad digital
+### Ámbito 1: Nuevo sistema de identidad digital
 
 - Construir un marco institucional de confianza de identidad digital basado en el modelo centralizado del Registro Civil.
 - Fortalecer ClaveÚnica como activo de identidad digital, agregando más factores de seguridad e implementando integraciones internacionales.
@@ -235,7 +248,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Establecer gobernanza conjunta del ecosistema de identidad digital, liderada por Registro Civil (SRCeI), SGD y ANCI.
 - Fortalecer el Nuevo Sistema de Identificación (NSI) del SRCeI como registro base del Estado; reforzar mecanismos de seguridad en enrolamiento de identidad digital.
 
-#### Ámbito 2: Servicios de infraestructura base
+### Ámbito 2: Servicios de infraestructura base
 
 - Desarrollar e implementar estrategia integral de adopción de servicios y soluciones basadas en la nube para aplicaciones y servicios públicos.
 - Desarrollar mecanismos institucionales para facilitar acceso y gestión de servicios de nube, especialmente para organismos sin capacidades suficientes.
@@ -244,7 +257,7 @@ La estrategia se estructura en seis ejes agrupados en dos categorías:
 - Evaluar servicios compartidos de SOC (Centro de Operaciones de Seguridad) para organizaciones públicas.
 - Desarrollar estrategia que considere seguridad y soberanía nacional en infraestructura de datos.
 
-#### Ámbito 3: SGD como ente rector de infraestructura pública digital
+### Ámbito 3: SGD como ente rector de infraestructura pública digital
 
 - Disponibilizar sistema de Gestión Documental y de Expedientes para implementación de la Ley N° 21.180.
 - Implementar sistema unificado de notificaciones electrónicas para ámbito público y privado.

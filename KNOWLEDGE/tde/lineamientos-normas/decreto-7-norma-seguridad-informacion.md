@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:decreto-7-norma-seguridad-informacion"
-  provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto7"
+  urn: urn:tde:kb:decreto-7-norma-seguridad-informacion
+  provenance: https://wikiguias.digital.gob.cl/Normas/Decreto7
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-normas, decreto, norma-tecnica, seguridad-de-la-informacion, ciberseguridad]
+tags:
+- tde
+- lineamientos-normas
+- decreto
+- norma-tecnica
+- seguridad-de-la-informacion
+- ciberseguridad
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:decreto-7-norma-seguridad-informacion
 ---
 
 # Decreto 7 — Norma Técnica de Seguridad de la Información y Ciberseguridad
@@ -80,10 +91,10 @@ Cada órgano deberá elaborar una **Política**, aprobada por acto administrativ
 2. Identificar y delimitar el alcance (activos, roles, plataformas de procedimientos administrativos).
 3. Señalar la legislación y normativa vigente aplicable.
 4. Especificar roles y designar:
-   - Un(a) **responsable institucional de seguridad de la información y ciberseguridad**: vela por la seguridad, desarrollo, cumplimiento y actualización de la Política. **No puede ser externalizado.**
-   - Un(a) **responsable de los activos de información**: identifica, clasifica y gestiona los riesgos. **No puede ser externalizado.**
-   - Cada órgano determinará si estos roles se unifican o no en una sola persona.
-   - Los órganos que ya designaron encargado(a) de ciberseguridad conforme al Instructivo Nº 8/2018 se entienden cumplidos en este requisito, salvo que opten por designar uno nuevo.
+ - Un(a) **responsable institucional de seguridad de la información y ciberseguridad**: vela por la seguridad, desarrollo, cumplimiento y actualización de la Política. **No puede ser externalizado.**
+ - Un(a) **responsable de los activos de información**: identifica, clasifica y gestiona los riesgos. **No puede ser externalizado.**
+ - Cada órgano determinará si estos roles se unifican o no en una sola persona.
+ - Los órganos que ya designaron encargado(a) de ciberseguridad conforme al Instructivo Nº 8/2018 se entienden cumplidos en este requisito, salvo que opten por designar uno nuevo.
 
 La Política también deberá velar por la preservación, confidencialidad, integridad y disponibilidad de la información, incorporando seguridad y privacidad desde el diseño. Las guías técnicas del Artículo 12 complementarán los detalles operativos.
 

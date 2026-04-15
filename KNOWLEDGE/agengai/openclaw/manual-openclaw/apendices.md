@@ -12,12 +12,16 @@ tags:
 - manual-openclaw
 - apendices
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:apendices
 ---
 
 # Apéndices
 
 - ---
-
 
 ## Apéndice A — Referencia Rápida de Configuración
 
@@ -25,63 +29,63 @@ lang: es
 
 ```json5
 {
-  // === Gateway ===
-  gateway: {
-    port: 18789,
-    bind: "loopback",
-    auth: { mode: "token", token: "${OPENCLAW_GATEWAY_TOKEN}" }
-  },
+ // === Gateway ===
+ gateway: {
+ port: 18789,
+ bind: "loopback",
+ auth: { mode: "token", token: "${OPENCLAW_GATEWAY_TOKEN}" }
+ },
 
-  // === Canales ===
-  channels: {
-    telegram: {
-      botToken: "${TELEGRAM_BOT_TOKEN}",
-      dmPolicy: "allowlist",
-      allowFrom: ["tg:USER_ID"]
-    }
-  },
+ // === Canales ===
+ channels: {
+ telegram: {
+ botToken: "${TELEGRAM_BOT_TOKEN}",
+ dmPolicy: "allowlist",
+ allowFrom: ["tg:USER_ID"]
+ }
+ },
 
-  // === Agentes ===
-  agents: {
-    defaults: {
-      workspace: "~/.openclaw/workspace",
-      model: {
-        primary: "anthropic/claude-sonnet-4-6",
-        fallbacks: ["openai-codex/gpt-5.2", "moonshot/kimi-k2.5"]
-      },
-      sandbox: { mode: "off" },
-      heartbeat: { every: "30m", model: "anthropic/claude-haiku-4-5", target: "last" },
-      memorySearch: {
-        provider: "openai",
-        query: { hybrid: { vectorWeight: 0.7, textWeight: 0.3 } }
-      }
-    },
-    list: [
-      { id: "main", default: true }
-    ]
-  },
+ // === Agentes ===
+ agents: {
+ defaults: {
+ workspace: "~/.openclaw/workspace",
+ model: {
+ primary: "anthropic/claude-sonnet-4-6",
+ fallbacks: ["openai-codex/gpt-5.2", "moonshot/kimi-k2.5"]
+ },
+ sandbox: { mode: "off" },
+ heartbeat: { every: "30m", model: "anthropic/claude-haiku-4-5", target: "last" },
+ memorySearch: {
+ provider: "openai",
+ query: { hybrid: { vectorWeight: 0.7, textWeight: 0.3 } }
+ }
+ },
+ list: [
+ { id: "main", default: true }
+ ]
+ },
 
-  // === Sesiones ===
-  session: {
-    dmScope: "per-channel-peer",
-    reset: { mode: "daily", atHour: 4 }
-  },
+ // === Sesiones ===
+ session: {
+ dmScope: "per-channel-peer",
+ reset: { mode: "daily", atHour: 4 }
+ },
 
-  // === Tools ===
-  tools: {
-    elevated: { enabled: false }
-  },
+ // === Tools ===
+ tools: {
+ elevated: { enabled: false }
+ },
 
-  // === Hooks ===
-  hooks: {
-    internal: {
-      enabled: true,
-      entries: {
-        "session-memory": { enabled: true },
-        "command-logger": { enabled: true }
-      }
-    }
-  }
+ // === Hooks ===
+ hooks: {
+ internal: {
+ enabled: true,
+ entries: {
+ "session-memory": { enabled: true },
+ "command-logger": { enabled: true }
+ }
+ }
+ }
 }
 ```
 
@@ -105,7 +109,6 @@ lang: es
 | `hooks.token` | string | — | Token para webhooks |
 
 - ---
-
 
 ## Apéndice B — Glosario
 
@@ -156,7 +159,6 @@ lang: es
 
 - ---
 
-
 ## Apéndice C — Checklist de Setup Multi-Agente
 
 ### Pre-requisitos
@@ -168,49 +170,48 @@ lang: es
 ### Paso a paso
 
 1. **Definir agentes**
-   ```bash
-   mkdir -p ~/.openclaw/workspace-work
-   mkdir -p ~/.openclaw/workspace-family
-   ```
+ ```bash
+ mkdir -p ~/.openclaw/workspace-work
+ mkdir -p ~/.openclaw/workspace-family
+ ```
 
 2. **Configurar agents.list[] en openclaw.json**
-   - id, workspace, model, sandbox, tools por agente
-   - Exactamente un agente con `default: true`
+ - id, workspace, model, sandbox, tools por agente
+ - Exactamente un agente con `default: true`
 
 3. **Configurar bindings**
-   - Más específico primero
-   - Cubrir todos los canales/cuentas esperados
+ - Más específico primero
+ - Cubrir todos los canales/cuentas esperados
 
 4. **Auth per-agent**
-   ```bash
-   openclaw models auth login --provider anthropic --agent work
-   openclaw models auth login --provider anthropic --agent family
-   ```
+ ```bash
+ openclaw models auth login --provider anthropic --agent work
+ openclaw models auth login --provider anthropic --agent family
+ ```
 
 5. **Bootstrap files per-agent**
-   - Crear AGENTS.md, SOUL.md en cada workspace
-   - Opcionalmente: IDENTITY.md, USER.md, TOOLS.md
+ - Crear AGENTS.md, SOUL.md en cada workspace
+ - Opcionalmente: IDENTITY.md, USER.md, TOOLS.md
 
 6. **Verificar**
-   ```bash
-   openclaw agents list --bindings
-   openclaw sandbox explain --agent work
-   openclaw sandbox explain --agent family
-   openclaw security audit
-   ```
+ ```bash
+ openclaw agents list --bindings
+ openclaw sandbox explain --agent work
+ openclaw sandbox explain --agent family
+ openclaw security audit
+ ```
 
 7. **Restart gateway**
-   ```bash
-   sudo systemctl restart openclaw-gateway
-   ```
+ ```bash
+ sudo systemctl restart openclaw-gateway
+ ```
 
 8. **Test**
-   - Enviar DM desde cada canal → verificar que llega al agente correcto
-   - Enviar en cada grupo → verificar routing
-   - Verificar que cada agente tiene los tools esperados
+ - Enviar DM desde cada canal → verificar que llega al agente correcto
+ - Enviar en cada grupo → verificar routing
+ - Verificar que cada agente tiene los tools esperados
 
 - ---
-
 
 ## Apéndice D — Checklist de Seguridad (Auditoría Express)
 
@@ -261,7 +262,6 @@ openclaw security audit --deep
 
 - ---
 
-
 ## Apéndice E — Mapeo KODA → OpenClaw
 
 ### Tabla de equivalencias
@@ -286,13 +286,13 @@ openclaw security audit --deep
 
 ```
 KODA YAML Agent Definition
-         │
-         ├── identity + safety    → SOUL.md
-         ├── state_machine        → AGENTS.md
-         ├── CMs guidance         → skills/domain/SKILL.md
-         ├── KB files             → memory/ + cabinet/docs/
-         ├── Tier 1 personas      → agents.list[] con workspace dedicado
-         └── Tier 2 workers       → sessions_spawn con model override
+ │
+ ├── identity + safety → SOUL.md
+ ├── state_machine → AGENTS.md
+ ├── CMs guidance → skills/domain/SKILL.md
+ ├── KB files → memory/ + cabinet/docs/
+ ├── Tier 1 personas → agents.list[] con workspace dedicado
+ └── Tier 2 workers → sessions_spawn con model override
 ```
 
 ### Principios que mapean directamente
@@ -307,6 +307,4 @@ KODA YAML Agent Definition
 
 - ---
 
-
 - *Fin del Manual*
-

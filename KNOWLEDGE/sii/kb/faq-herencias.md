@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 3
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-herencias
 ---
 
 # Herencias — Preguntas Frecuentes SII
-
 
 ## ¿Cómo se puede obtener un certificado de exención de Impuesto a las Herencias?
 

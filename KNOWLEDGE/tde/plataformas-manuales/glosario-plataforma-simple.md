@@ -1,14 +1,23 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:glosario-plataforma-simple"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple"
+  urn: urn:tde:kb:glosario-plataforma-simple
+  provenance: https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales]
+tags:
+- tde
+- plataformas-manuales
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:glosario-plataforma-simple
 ---
 
 # Glosario — Plataforma SIMPLE
+
+## Resumen
 
 | Término | Definición |
 |---------|------------|

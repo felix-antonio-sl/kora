@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 5
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-declaraciones-juradas
 ---
 
 # Declaraciones juradas — Preguntas Frecuentes SII
-
 
 ## ¿Quiénes deben presentar el formulario F3325?
 

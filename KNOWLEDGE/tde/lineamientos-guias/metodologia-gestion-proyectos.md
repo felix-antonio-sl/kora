@@ -1,11 +1,22 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:metodologia-gestion-proyectos"
-  provenance: "https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos"
+  urn: urn:tde:kb:metodologia-gestion-proyectos
+  provenance: https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, guia-tecnica, proyectos, tecnologias-de-la-informacion, tic]
+tags:
+- tde
+- lineamientos-guias
+- guia-tecnica
+- proyectos
+- tecnologias-de-la-informacion
+- tic
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:metodologia-gestion-proyectos
 ---
 
 # Metodología para la Gestión de Proyectos TIC
@@ -234,9 +245,9 @@ El inicio de un proyecto presupone un proceso previo de identificación y priori
 - **Monitoreo post-proyecto:** retroalimentación de usuarios; revisión de comportamiento de indicadores definidos
 - **Análisis de oportunidades de mejora:** identificar desviaciones, problemas emergentes o nuevas necesidades; proponer soluciones de ajuste
 - **Implementación de mejoras:**
-  - Mejoras menores: aplicar directamente
-  - Mejoras significativas: pueden requerir un nuevo proyecto
-  - Documentar cambios realizados, razones y resultados
+ - Mejoras menores: aplicar directamente
+ - Mejoras significativas: pueden requerir un nuevo proyecto
+ - Documentar cambios realizados, razones y resultados
 - **Comunicación y roles:** informar a partes interesadas; designar responsable de impulsar mejoras; validar formalmente las modificaciones de mayor impacto
 
 ---

@@ -1,17 +1,30 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:selector-ipr"
+  urn: urn:gn:kb:selector-ipr
   provenance:
-    created_by: "GORE Ñuble"
-    created_at: "2026-03-15"
-    source: "kb_gn_011_selector_ipr.md"
-version: "1.0.0"
+    created_by: GORE Ñuble
+    created_at: '2026-03-15'
+    source: kb_gn_011_selector_ipr.md
+version: 1.0.0
 status: published
-tags: [selector, financiamiento, ipr, fndr, fril, frpd, gore-nuble, vias-financiamiento, decision]
+tags:
+- selector
+- financiamiento
+- ipr
+- fndr
+- fril
+- frpd
+- gore-nuble
+- vias-financiamiento
+- decision
 lang: es
 extensions:
   gn:
     family: guide
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:selector-ipr
 ---
 
 # Selector de Vías de Financiamiento para Iniciativas Públicas Regionales (IPR)
@@ -43,13 +56,11 @@ Marco de discernimiento previo a la formulación detallada para determinar la v�
 | **ANF** | Activos No Financieros. Bienes durables no financieros (edificios, maquinaria, vehículos) |
 | **UTM** | Unidad Tributaria Mensual |
 
-## Catálogo de Mecanismos de Financiamiento
-
-### IPR Tipo Proyecto (IDI)
+## IPR Tipo Proyecto (IDI)
 
 Iniciativas de gasto de capital para crear, ampliar, reponer o mejorar activos físicos o intangibles de larga duración (Subt. 31 o Subt. 33). Producto: activo durable o intangible con vida útil >1 año. Proceso de evaluación primario: SNI / BIP.
 
-#### SNI General
+### SNI General
 
 Financia proyectos de inversión que por complejidad o monto no califican en vías simplificadas. El SNI no es un proceso único: el rigor se adapta según la magnitud del proyecto (principio de proporcionalidad).
 
@@ -70,7 +81,7 @@ Financia proyectos de inversión que por complejidad o monto no califican en ví
 
 Base legal: DL 1.263 Art. 19bis. Guía de referencia: kb_gn_024_guia_idi_sni.
 
-#### FRIL (Fondo Regional de Infraestructura Local)
+### FRIL (Fondo Regional de Infraestructura Local)
 
 Agiliza financiamiento de proyectos de infraestructura menor escala. Exclusivo para ejecución municipal.
 
@@ -95,7 +106,7 @@ Agiliza financiamiento de proyectos de infraestructura menor escala. Exclusivo p
 
 Base legal: Ley de Presupuestos 2026 Partida 31 Glosa 12; Res. Exenta N°15.051/2023 SUBDERE; Oficio Ordinario N°2/26.01.2024 MH y MDSyF. Guía de referencia: kb_gn_026_guia-fril.
 
-#### Circular 33 (Procedimientos Especiales)
+### Circular 33 (Procedimientos Especiales)
 
 Simplifica y agiliza evaluación/financiamiento de IPR tipo proyecto con características específicas de menor complejidad. El grado de simplificación y autonomía es modificado por normativa vigente, especialmente en conservaciones y emergencias.
 
@@ -105,10 +116,10 @@ Simplifica y agiliza evaluación/financiamiento de IPR tipo proyecto con caracte
 - Exige cofinanciamiento ≥ **20%** del costo total por la institución solicitante
 - Modificaciones presupuestarias requieren visación DIPRES
 - Certificados adicionales requeridos:
-  - Nuevos ANF: certificado de disponibilidad presupuestaria para gastos recurrentes (Ministerio/Subsecretaría)
-  - Fuerzas de Orden y Seguridad Pública: certificado de pertinencia del Ministerio de Seguridad Pública
-  - Bomberos: certificado de pertinencia técnica de la Junta Nacional de Bomberos
-  - Compra de terrenos: coordinación con SERVIU regional cuando corresponda
+ - Nuevos ANF: certificado de disponibilidad presupuestaria para gastos recurrentes (Ministerio/Subsecretaría)
+ - Fuerzas de Orden y Seguridad Pública: certificado de pertinencia del Ministerio de Seguridad Pública
+ - Bomberos: certificado de pertinencia técnica de la Junta Nacional de Bomberos
+ - Compra de terrenos: coordinación con SERVIU regional cuando corresponda
 
 **Proyectos de conservación:**
 - Costo de reparación ≤ **30%** del costo de reponer el activo completo
@@ -120,11 +131,11 @@ Simplifica y agiliza evaluación/financiamiento de IPR tipo proyecto con caracte
 
 Base legal: Circular N°33/2009 MINHAC; Ley de Presupuestos 2026 (Ley N°21.796). Guía de referencia: kb_gn_029_guia-circ33.
 
-### IPR Tipo Programa (PPR)
+## IPR Tipo Programa (PPR)
 
 Conjunto de acciones/prestaciones para resolver un problema de una población objetivo mediante entrega de servicios/transferencias, sin creación de activos físicos (Subt. 24). La vía se divide en dos mecanismos mutuamente excluyentes según el ejecutor.
 
-#### Glosa 06 Directa (PPR Ejecución Directa GORE)
+### Glosa 06 Directa (PPR Ejecución Directa GORE)
 
 Financia programas donde el GORE es el responsable principal de la implementación y entrega de servicios (con personal y recursos propios).
 
@@ -146,7 +157,7 @@ Cuando existan convenios de transferencia con instituciones privadas, aplicar ob
 
 Base legal: Ley de Presupuestos 2026 Partida 31 Glosa 06; Oficio Circular N°22 (o vigente). Guía de referencia: kb_gn_025_guia-programas.
 
-#### Transferencia a Entidad Pública (PPR Ejecución Indirecta)
+### Transferencia a Entidad Pública (PPR Ejecución Indirecta)
 
 Financia programas donde una entidad pública distinta del GORE ejecuta la iniciativa. Instituciones elegibles: servicios públicos, municipalidades, universidades del Estado.
 
@@ -169,7 +180,7 @@ Para municipalidades: transferencia directa de fondos (no consolidable); no exim
 
 Guía de referencia: kb_gn_001_guia-transferencia-programas.
 
-#### Subvención 8% FNDR (Concurso Vinculación con la Comunidad)
+### Subvención 8% FNDR (Concurso Vinculación con la Comunidad)
 
 Subvenciona actividades acotadas de interés comunitario. No financia programas públicos con lógica de resolución de problemas estructurales; financia "actividades" de corta duración (talleres, festivales, campañas).
 
@@ -188,7 +199,7 @@ Convenios de transferencia deben cumplir obligaciones y prohibiciones del Art. 2
 
 Base legal: Ley de Presupuestos 2026 Partida 31 Glosa 07. Guía de referencia: kb_gn_028_instructivo-subvencion-8.
 
-### IPR Tipo Productivo (FRPD)
+## IPR Tipo Productivo (FRPD)
 
 Iniciativas orientadas a inversión productiva y desarrollo económico regional: fomento productivo, desarrollo de capital humano, apoyo a competitividad regional, I+D+i.
 

@@ -1,15 +1,36 @@
 ---
 _manifest:
-  urn: "urn:ops:kb:federacion-kora-v2"
+  urn: urn:ops:kb:federacion-kora-v2
   provenance:
-    created_by: "ops/clawstack + kora/curator"
-    created_at: "2026-03-23"
-    source: "Diseño e implementación de federation v2 sobre 3 gateways OpenClaw en Docker"
-version: "1.0.0"
+    created_by: ops/clawstack + kora/curator
+    created_at: '2026-03-23'
+    source: Diseño e implementación de federation v2 sobre 3 gateways OpenClaw en
+      Docker
+version: 1.0.0
 status: published
-tags: [federacion, hooks, shared-storage, cross-gateway, panel, arquitectura, openclaw, docker]
+tags:
+- federacion
+- hooks
+- shared-storage
+- cross-gateway
+- panel
+- arquitectura
+- openclaw
+- docker
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:ops:kb:federacion-kora-v2
+relations:
+  cites:
+  - urn:ops:kb:arquitectura-stack-kora
+  - urn:ops:kb:deploy-agente-kora-en-openclaw
+  - urn:ops:kb:principios-transmutacion-kora-openclaw
+  - urn:ops:kb:ux-telegram-openclaw
 ---
+
 
 # Federación KORA v2 — Comunicación cross-gateway y storage compartido
 
@@ -35,8 +56,8 @@ Cada `openclaw.json5` requiere:
 
 ```json5
 hooks: {
-  enabled: true,
-  token: "{token-compartido-entre-gateways}",
+ enabled: true,
+ token: "{token-compartido-entre-gateways}",
 }
 ```
 
@@ -53,13 +74,13 @@ Referencia: docs oficiales OpenClaw `docs/gateway/configuration-reference.md`:
 
 ```
 agente-origen detecta caso fuera de su dominio
-  → lee directorio-agentes.md (montado RO en /home/node/shared/federation/)
-  → identifica agente destino + gateway URL
-  → informa al usuario: "Derivo a {destino} en {bot telegram}. La respuesta aparecerá allá."
-  → web_fetch POST http://{container}:{port}/hooks/agent
-    Authorization: Bearer {hooks-token}
-    { "message": "[Derivación de {origen}] {contexto}", "name": "derivacion-{origen}" }
-  → gateway destino recibe hook, ejecuta turno, responde en su canal Telegram
+ → lee directorio-agentes.md (montado RO en /home/node/shared/federation/)
+ → identifica agente destino + gateway URL
+ → informa al usuario: "Derivo a {destino} en {bot telegram}. La respuesta aparecerá allá."
+ → web_fetch POST http://{container}:{port}/hooks/agent
+ Authorization: Bearer {hooks-token}
+ { "message": "[Derivación de {origen}] {contexto}", "name": "derivacion-{origen}" }
+ → gateway destino recibe hook, ejecuta turno, responde en su canal Telegram
 ```
 
 La respuesta aparece en el **bot Telegram del destino**, no en el del origen. Mismo usuario (mismo `allowFrom` ID).
@@ -75,15 +96,13 @@ La respuesta aparece en el **bot Telegram del destino**, no en el del origen. Mi
 
 ## Storage compartido
 
-### Estructura
-
 ```
 /srv/kora/shared/
-├── federation/           ← RO para todos, nadie escribe en runtime
-│   └── directorio-agentes.md  ← inventario: quién, dónde, dominio, hook URL
-├── {agent-id}/           ← RW para el agente dueño
-├── {agent-id}/           ← ...
-└── {agent-id}/           ← ...
+├── federation/ ← RO para todos, nadie escribe en runtime
+│ └── directorio-agentes.md ← inventario: quién, dónde, dominio, hook URL
+├── {agent-id}/ ← RW para el agente dueño
+├── {agent-id}/ ← ...
+└── {agent-id}/ ← ...
 ```
 
 ### Mounts Docker por gateway

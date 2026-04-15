@@ -1,11 +1,28 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:manual-coordinadora-transformacion-digital"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador"
+  urn: urn:tde:kb:manual-coordinadora-transformacion-digital
+  provenance: https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, casilla-única, clave-única, coordinadores-de-transformación-digital, datos-abiertos, plataforma, docdigital, pisee, firma, simple, habilitacion]
+tags:
+- tde
+- plataformas-manuales
+- casilla-única
+- clave-única
+- coordinadores-de-transformación-digital
+- datos-abiertos
+- plataforma
+- docdigital
+- pisee
+- firma
+- simple
+- habilitacion
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:manual-coordinadora-transformacion-digital
 ---
 
 # Manual del Coordinador/a de Transformación Digital (CTD)
@@ -60,13 +77,13 @@ Pasos:
 3. Requisito previo: el OAE debe tener dominio `.gob.cl`. Si no lo tiene, presentar plan de adopción.
 4. Integrar según [Guía Técnica para Integradores](https://docs.google.com/document/d/16c0D2jVhuYOYGI9z4kC2aoNH8oWNA9v1cc3tXQ76TO0/edit).
 5. Solicitar certificación de integración. Requisitos:
-   - Uso del botón oficial de ClaveÚnica.
-   - Protocolo HTTPS en la aplicación integradora.
-   - Llamada correcta al formulario de ClaveÚnica.
-   - State dinámico.
-   - Llamada correcta al servicio.
-   - Llamadas al servicio desde el backend.
-   - Cierre de sesión implementado.
+ - Uso del botón oficial de ClaveÚnica.
+ - Protocolo HTTPS en la aplicación integradora.
+ - Llamada correcta al formulario de ClaveÚnica.
+ - State dinámico.
+ - Llamada correcta al servicio.
+ - Llamadas al servicio desde el backend.
+ - Cierre de sesión implementado.
 6. Las credenciales de producción se habilitan solo al cumplir todos los requisitos de certificación.
 
 Cambios de RedirectUri: formulario disponible en https://gobdigital.cerofilas.gob.cl/tramites/iniciar/2229
@@ -77,8 +94,8 @@ Pasos:
 1. Asistir a la capacitación ["PISEE: Introducción a la red de interoperabilidad"](https://gobdigital.cerofilas.gob.cl/tramites/informativo/2785).
 2. [Solicitar Nodo de Desarrollo](https://gobdigital.cerofilas.gob.cl/tramites/informativo/3041) a través del CTD (para pruebas y validación previa a producción).
 3. Asistir al taller técnico según necesidad:
-   - [Consumo de Servicios de Información](https://gobdigital.cerofilas.gob.cl/tramites/iniciar/3021)
-   - [Proveedor de Servicios de Información](https://gobdigital.cerofilas.gob.cl/tramites/iniciar/3022)
+ - [Consumo de Servicios de Información](https://gobdigital.cerofilas.gob.cl/tramites/iniciar/3021)
+ - [Proveedor de Servicios de Información](https://gobdigital.cerofilas.gob.cl/tramites/iniciar/3022)
 4. Designar (a través del CTD) a los funcionarios o asesores encargados de administrar servicios de interoperabilidad en el [Portal PISEE](https://portal.pisee.cl/). Una vez enrolados, se autentican con ClaveÚnica.
 5. [Solicitar Nodo de Producción](https://gobdigital.cerofilas.gob.cl/tramites/informativo/3020).
 
@@ -124,8 +141,8 @@ Detalle de etapas disponible en: https://gobdigital.cerofilas.gob.cl/etapas/ver/
 1. Solicitar el [convenio Subsecretaría de Hacienda–Municipio](https://gobdigital.cerofilas.gob.cl/tramites/informativo/2286).
 2. Tramitar el convenio con firma del Alcalde y enviarlo a la SGD.
 3. Al recibir convenio firmado por la Subsecretaría, generar:
-   - Decreto de aprobación del convenio en el municipio.
-   - Decreto para establecer roles de operador y ministro de fe ([modelo disponible](https://docs.google.com/document/d/1AVoCUtsmaKl-WvImZSt5LoCSPhlLqFln/edit)).
+ - Decreto de aprobación del convenio en el municipio.
+ - Decreto para establecer roles de operador y ministro de fe ([modelo disponible](https://docs.google.com/document/d/1AVoCUtsmaKl-WvImZSt5LoCSPhlLqFln/edit)).
 4. Solicitar **Habilitación de la Institución**: https://gobdigital.cerofilas.gob.cl/tramites/informativo/1627 (adjuntar ambos decretos).
 5. Gobierno Digital informa acceso al operador.
 6. El operador ingresa con ClaveÚnica y crea usuarios; comenzar con el Ministro de Fe como "Autoridad/Funcionario".

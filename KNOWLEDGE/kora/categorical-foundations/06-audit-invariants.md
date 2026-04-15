@@ -16,6 +16,12 @@ tags:
 - formal-layer
 - kora
 lang: en
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-agent-coalgebra"
+    - "urn:kora:kb:cat-skill-algebra"
+    - "urn:kora:kb:cat-governance-lattice"
 ---
 
 # Audit Invariants for the KORA Knowledge Layer

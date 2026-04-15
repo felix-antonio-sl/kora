@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 4
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-factura-electronica
 ---
 
 # Factura Electrónica — Preguntas Frecuentes SII
-
 
 ## ¿En qué prestaciones de servicios no rige la limitación de tener que hacer el acuse de recibo de servicios prestados, para poder utilizar el crédito fiscal recargado en una factura electrónica?
 

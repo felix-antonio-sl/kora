@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-efectos
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- monada
+- kleisli
+- coalgebra
+- bisimulacion
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-efectos
+---
+
 # Efectos
 
 ## El problema de las funciones que mienten
@@ -18,9 +43,9 @@ Concretamente, una monada sobre C es un endofuntor T : C -> C junto con dos tran
 sujetas a tres leyes:
 
 ```
-mu . T(mu)  = mu . mu_T       -- asociatividad
-mu . T(eta) = id              -- unidad derecha
-mu . eta_T  = id              -- unidad izquierda
+mu . T(mu) = mu . mu_T -- asociatividad
+mu . T(eta) = id -- unidad derecha
+mu . eta_T = id -- unidad izquierda
 ```
 
 Perrone lo ilustra con el power set monad P en Set. El unit sigma_X : X -> PX envuelve cada elemento en su singleton: x |-> {x}. La multiplicacion union_X : PPX -> PX aplana un conjunto de conjuntos tomando la union. Las leyes de monada son las leyes de la union: union de uniones es asociativa, y la union de singletons da el conjunto original.
@@ -32,7 +57,7 @@ La conexion con adjunciones, que ya explore en el documento 06, es directa: toda
 Dada una monada T en C, la categoria de Kleisli Kl(T) tiene los mismos objetos que C pero sus morfismos son "Kleisli arrows": un morfismo de A a B en Kl(T) es un morfismo A -> TB en C. La composicion de Kleisli de k : A -> TB y h : B -> TC es:
 
 ```
-h .kl k  =  mu_C . T(h) . k  :  A -> TC
+h .kl k = mu_C . T(h) . k : A -> TC
 ```
 
 Primero aplico k para obtener un TB, luego levanto h con T para obtener T(TC), y finalmente aplano con mu. La identidad de Kleisli en A es eta_A : A -> TA.
@@ -50,9 +75,9 @@ f >=> g = \a -> f a >>= g
 Las leyes de la monada se vuelven las leyes de una categoria:
 
 ```haskell
-return >=> f       = f              -- identidad izquierda
-f >=> return       = f              -- identidad derecha
-(f >=> g) >=> h    = f >=> (g >=> h) -- asociatividad
+return >=> f = f -- identidad izquierda
+f >=> return = f -- identidad derecha
+(f >=> g) >=> h = f >=> (g >=> h) -- asociatividad
 ```
 
 Esto es lo fundamental: la monada no es sobre efectos. La monada es sobre composicion. Los efectos son lo que permite componer.
@@ -65,34 +90,34 @@ Cada monada captura un patron de efecto distinto. Los reconozco porque los uso t
 -- Parcialidad: el computo puede fallar
 -- Maybe a = Nothing | Just a
 instance Monad Maybe where
-  Nothing >>= f = Nothing
-  Just x  >>= f = f x
+ Nothing >>= f = Nothing
+ Just x >>= f = f x
 
 -- No-determinismo: multiples resultados
 -- [a] = [] | a : [a]
 instance Monad [] where
-  xs >>= f = concatMap f xs
+ xs >>= f = concatMap f xs
 
 -- Estado mutable: lectura y escritura
 -- State s a = s -> (a, s)
 instance Monad (State s) where
-  m >>= f = \s -> let (a, s') = m s in f a s'
+ m >>= f = \s -> let (a, s') = m s in f a s'
 
 -- Configuracion: lectura de entorno
 -- Reader r a = r -> a
 instance Monad (Reader r) where
-  m >>= f = \r -> f (m r) r
+ m >>= f = \r -> f (m r) r
 
 -- Logging: acumular un monoide
 -- Writer w a = (a, w)
 instance Monad (Writer w) where
-  (a, w) >>= f = let (b, w') = f a in (b, w <> w')
+ (a, w) >>= f = let (b, w') = f a in (b, w <> w')
 
 -- Errores tipados: fallo con informacion
 -- Either e a = Left e | Right a
 instance Monad (Either e) where
-  Left e  >>= f = Left e
-  Right a >>= f = f a
+ Left e >>= f = Left e
+ Right a >>= f = f a
 
 -- Efectos del mundo real
 -- IO a: la monada que encapsula todo side effect
@@ -105,9 +130,9 @@ En TypeScript, las Promises son una monada. `Promise.resolve(x)` es return. `.th
 La otra adjuncion canonica genera la categoria de Eilenberg-Moore C^T. Un T-algebra es un par (A, alg) donde alg : TA -> A es un "evaluador" que satisface:
 
 ```
-alg . eta_A = id_A          -- evaluar un valor trivial da el valor
-alg . mu_A = alg . T(alg)   -- evaluar un efecto anidado da lo mismo
-                              -- que evaluar el efecto interno y luego el externo
+alg . eta_A = id_A -- evaluar un valor trivial da el valor
+alg . mu_A = alg . T(alg) -- evaluar un efecto anidado da lo mismo
+ -- que evaluar el efecto interno y luego el externo
 ```
 
 Milewski lo ilustra con la monada lista. Una algebra para la lista es un tipo A con una funcion `[A] -> A` que es asociativa y tiene unidad -- un fold. Las algebras de la monada lista son exactamente los monoids. Mas generalmente, las algebras de la monada libre sobre una signatura algebrica son exactamente los modelos de esa signatura.
@@ -125,10 +150,10 @@ con las leyes duales. Si la monada dice "puedo meter un valor en un contexto per
 
 ```haskell
 class Functor w => Comonad w where
-  extract   :: w a -> a
-  duplicate :: w a -> w (w a)
-  extend    :: (w a -> b) -> w a -> w b
-  extend f  = fmap f . duplicate
+ extract :: w a -> a
+ duplicate :: w a -> w (w a)
+ extend :: (w a -> b) -> w a -> w b
+ extend f = fmap f . duplicate
 ```
 
 El producto comonad `Product e a = (e, a)` es el dual del reader monad. Un co-Kleisli arrow `(e, a) -> b` es una funcion que computa en un entorno. Extract ignora el entorno. Duplicate duplica el entorno para sub-computaciones.
@@ -139,8 +164,8 @@ El stream comonad es el ejemplo que mas ilumina:
 data Stream a = Cons a (Stream a)
 
 instance Comonad Stream where
-  extract (Cons a _) = a                          -- el valor actual
-  duplicate (Cons a as) = Cons (Cons a as) (duplicate as)  -- todos los shifts
+ extract (Cons a _) = a -- el valor actual
+ duplicate (Cons a as) = Cons (Cons a as) (duplicate as) -- todos los shifts
 ```
 
 Duplicate produce un stream de streams, cada uno enfocado en una posicion distinta. Extend aplica una funcion a cada posicion con todo su contexto. Es exactamente el patron de Conway's Game of Life: cada celda computa su proximo estado mirando sus vecinos.
@@ -179,7 +204,7 @@ La criba de Eratostenes es un anamorphismo canonico:
 era :: [Int] -> StreamF Int [Int]
 era (p : ns) = StreamF p (filter (\n -> n `mod` p /= 0) ns)
 
-primes = ana era [2..]  -- stream infinito de primos
+primes = ana era [2..] -- stream infinito de primos
 ```
 
 Event sourcing es anamorfismo. Dado un estado inicial y una funcion de transicion `State -> Event x State`, el unfold genera la secuencia infinita de eventos. El estado es el carrier de la coalgebra. Los eventos son las observaciones. La funcion de transicion es la estructura coalgebraica.
@@ -207,7 +232,7 @@ En la practica: State + Either compone bien (puedo tener estado con errores). St
 Los monad transformers de Haskell son una solucion pragmatica al problema: en lugar de buscar leyes distributivas, apilan monadas con una interfaz estandarizada:
 
 ```haskell
--- StateT s (Either e) a  =  s -> Either e (a, s)
+-- StateT s (Either e) a = s -> Either e (a, s)
 -- La ley distributiva esta codificada en la implementacion del transformer
 
 type App = ReaderT Config (StateT AppState (ExceptT AppError IO))

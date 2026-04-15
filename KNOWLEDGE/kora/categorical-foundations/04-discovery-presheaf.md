@@ -4,7 +4,8 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-02-26'
-    source: "Fong & Spivak (Seven Sketches, Ch. 7 Sheaves), Mac Lane & Moerdijk (Sheaves in Geometry and Logic), KORA agent-spec-md v6.0.0 §14"
+    source: Fong & Spivak (Seven Sketches, Ch. 7 Sheaves), Mac Lane & Moerdijk (Sheaves
+      in Geometry and Logic), KORA agent-spec-md v6.0.0 §14
 version: 1.0.0
 status: published
 tags:
@@ -15,6 +16,16 @@ tags:
 - formal-layer
 - kora
 lang: en
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:cat-discovery-presheaf
+relations:
+  depends:
+    - "urn:kora:kb:cat-foundations"
+    - "urn:kora:kb:cat-agent-coalgebra"
+    - "urn:kora:kb:cat-ecosystem-2cat"
 ---
 
 # The Discovery Presheaf Psh(F)
@@ -122,9 +133,9 @@ D_M: Reg → Set
 D_M(R) = { s ∈ D(R) | compatible(s, M_A) }
 
 where compatible(s, M_A) ⟺
-  allowed-tools(s) ⊆ tools.allow(M_A)  AND
-  allowed-tools(s) ∩ tools.deny(M_A) = ∅  AND
-  requires(s) satisfiable in sandbox(M_A)
+ allowed-tools(s) ⊆ tools.allow(M_A) AND
+ allowed-tools(s) ∩ tools.deny(M_A) = ∅ AND
+ requires(s) satisfiable in sandbox(M_A)
 ```
 
 **Theorem (D_M is a subfunctor of D).** D_M(R) ⊆ D(R) for all R, and D_M preserves inclusions.
@@ -136,9 +147,9 @@ where compatible(s, M_A) ⟺
 ```
 Agent: goreologo (sandbox: strict, tools.deny: [web_search])
 Registry R contains: CM-evaluador-riesgo (allowed-tools: [search_kb])
-                     CM-web-scraper (allowed-tools: [web_search])
+ CM-web-scraper (allowed-tools: [web_search])
 
-D_M(R) = { CM-evaluador-riesgo }    (web-scraper filtered out by M)
+D_M(R) = { CM-evaluador-riesgo } (web-scraper filtered out by M)
 ```
 
 ## 3. The Presheaf Psh(F)
@@ -168,7 +179,7 @@ Psh(F)(T): Psh(F)(B) → Psh(F)(A)
 **Formally:** The restriction map Psh(F)(T) is:
 
 ```
-Psh(F)(T)(s) = s ∘ T    for Skill s discoverable by B
+Psh(F)(T)(s) = s ∘ T for Skill s discoverable by B
 ```
 
 The Skill s, originally designed for B, is "pulled back" along T to work with A. This pullback may fail (if T doesn't preserve the tools s needs), in which case s is not in the image.
@@ -201,12 +212,12 @@ where:
 **Construction:** The pushout is computed as:
 
 ```
-           D
-     F_declared ←--- D(R) ---→ F_discovered
-          \                      /
-           \                    /
-            ↘                  ↙
-              F_eff = F_declared +_D F_discovered
+ D
+ F_declared ←--- D(R) ---→ F_discovered
+ \ /
+ \ /
+ ↘ ↙
+ F_eff = F_declared +_D F_discovered
 ```
 
 where D(R) maps to F_declared via the tool declarations and to F_discovered via the discovery functor.
@@ -224,7 +235,7 @@ where D(R) maps to F_declared via the tool declarations and to F_discovered via 
 **Theorem 5 (Monotonicity).** During a session, F_discovered can only grow:
 
 ```
-F_discovered(t₁) ⊆ F_discovered(t₂)    for t₁ ≤ t₂ (time ordering)
+F_discovered(t₁) ⊆ F_discovered(t₂) for t₁ ≤ t₂ (time ordering)
 ```
 
 Once a Skill is discovered, it remains in F_eff for the rest of the session.
@@ -236,7 +247,7 @@ Once a Skill is discovered, it remains in F_eff for the rest of the session.
 **Theorem (Extended Coalgebra).** The agent with effective interface is an F_eff-coalgebra:
 
 ```
-(U, c_eff: U → F_eff(U))    in Kl(M)
+(U, c_eff: U → F_eff(U)) in Kl(M)
 ```
 
 where c_eff extends c by allowing transitions that invoke discovered Skills. The original c (using only F_declared) factors through c_eff:
@@ -263,13 +274,13 @@ The progressive disclosure lifecycle (02-skill-algebra §3) maps to presheaf ope
 ### 5.2 Formal Lifecycle
 
 ```
-1. Bootstrap:  agent loads with F = F_declared
-2. Discover:   runtime evaluates Psh(F)(A) → metadata set (name, description per Skill)
-3. FSM gates:  transition condition determines if a discovered Skill should be activated
-4. Activate:   F_eff = F_declared + {selected Skill}
-               runtime injects Forget(Skill) = CM Core into context window
-5. Execute:    if CM Core references scripts, runtime mounts full Skill directory
-6. Loop:       return to step 2 (more Skills may become discoverable)
+1. Bootstrap: agent loads with F = F_declared
+2. Discover: runtime evaluates Psh(F)(A) → metadata set (name, description per Skill)
+3. FSM gates: transition condition determines if a discovered Skill should be activated
+4. Activate: F_eff = F_declared + {selected Skill}
+ runtime injects Forget(Skill) = CM Core into context window
+5. Execute: if CM Core references scripts, runtime mounts full Skill directory
+6. Loop: return to step 2 (more Skills may become discoverable)
 ```
 
 ### 5.3 Presheaf Consistency

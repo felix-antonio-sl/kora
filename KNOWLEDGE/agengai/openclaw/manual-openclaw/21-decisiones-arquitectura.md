@@ -14,6 +14,11 @@ tags:
 - decisiones
 - arquitectura
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:agengai:kb:21-decisiones-arquitectura
 ---
 
 # Capítulo 21 — Decisiones de Arquitectura (Decision Records)
@@ -21,7 +26,6 @@ lang: es
 > **Propósito:** Framework para las decisiones arquitectónicas más comunes. Cada sección plantea la pregunta, los criterios de decisión, las opciones con trade-offs, y una recomendación. Úsalo como checklist al diseñar tu setup.
 
 - ---
-
 
 ## 21.1 ¿Cuántos agentes necesito?
 
@@ -40,9 +44,7 @@ lang: es
 - Agrega cuando la separación sea **necesaria**, no cuando sea "nice to have".
 - Cada agente es mantenimiento (workspace, auth, memoria).
 
-
 - ---
-
 
 ## 21.2 ¿Sandbox on/off?
 
@@ -56,9 +58,7 @@ lang: es
 - **Si dudas:** `non-main` es el sweet spot.
 - DMs de confianza en host, todo lo demás en sandbox.
 
-
 - ---
-
 
 ## 21.3 ¿Sub-agentes vs cron aislado?
 
@@ -74,9 +74,7 @@ lang: es
 - **Recomendación:** Si la tarea es **reactiva** (el usuario la pide) → sub-agente.
 - Si es **proactiva** (schedule fijo) → cron.
 
-
 - ---
-
 
 ## 21.4 ¿Un gateway o múltiples?
 
@@ -91,15 +89,12 @@ lang: es
 - **Recomendación:** Un gateway para 99% de los setups.
 - Agregar un rescue bot solo si dependes críticamente del agente y necesitas un failsafe.
 
-
 - ---
-
 
 ## 21.5 ¿Heartbeat vs cron?
 
 - **Resumen ejecutivo del Cap.
 - 14:**
-
 
 ```
 Checks periódicos simples que se batchean → Heartbeat
@@ -108,7 +103,6 @@ Ambos → Sí, se complementan
 ```
 
 - ---
-
 
 ## 21.6 ¿Modelo por agente o fallback chain compartida?
 
@@ -120,9 +114,7 @@ Ambos → Sí, se complementan
 
 - **Recomendación:** Primary per-agent (cada agente con el modelo que mejor sirve su propósito), fallbacks en `agents.defaults.model.fallbacks` (compartidos, diversidad de provider).
 
-
 - ---
-
 
 ## 21.7 ¿tools.elevated: cuándo y para quién?
 
@@ -137,9 +129,7 @@ Ambos → Sí, se complementan
 - **Recomendación:** `enabled: false` por default.
 - Habilitar solo cuando no hay alternativa (bind mount suele ser mejor).
 
-
 - ---
-
 
 ## 21.8 Memory architecture
 
@@ -156,50 +146,47 @@ Ambos → Sí, se complementan
 
 - ---
 
-
 ## 21.9 Checklist Pre-Deployment
 
 ```
 Identity
-  [ ] ¿Quién puede enviar DMs? (dmPolicy + allowFrom)
-  [ ] ¿Quién puede trigger en grupos? (groupPolicy + requireMention)
-  [ ] ¿dmScope apropiado para el número de usuarios?
+ [ ] ¿Quién puede enviar DMs? (dmPolicy + allowFrom)
+ [ ] ¿Quién puede trigger en grupos? (groupPolicy + requireMention)
+ [ ] ¿dmScope apropiado para el número de usuarios?
 
 Scope
-  [ ] ¿Tool policy apropiada por agente?
-  [ ] ¿Sandbox mode apropiado? (off/non-main/all)
-  [ ] ¿Control plane tools (gateway, cron) denied para untrusted?
-  [ ] ¿Elevated disabled o con allowFrom tight?
+ [ ] ¿Tool policy apropiada por agente?
+ [ ] ¿Sandbox mode apropiado? (off/non-main/all)
+ [ ] ¿Control plane tools (gateway, cron) denied para untrusted?
+ [ ] ¿Elevated disabled o con allowFrom tight?
 
 Network
-  [ ] Gateway en loopback?
-  [ ] Auth token configurado y largo?
-  [ ] ¿Funnel/Serve necesario? Si no, desactivado
-  [ ] Webhook token separado del gateway token?
+ [ ] Gateway en loopback?
+ [ ] Auth token configurado y largo?
+ [ ] ¿Funnel/Serve necesario? Si no, desactivado
+ [ ] Webhook token separado del gateway token?
 
 Modelo
-  [ ] ¿Primary model apropiado para el nivel de trust?
-  [ ] ¿Fallbacks configurados con diversidad de provider?
-  [ ] ¿Heartbeat usando modelo barato?
+ [ ] ¿Primary model apropiado para el nivel de trust?
+ [ ] ¿Fallbacks configurados con diversidad de provider?
+ [ ] ¿Heartbeat usando modelo barato?
 
 Memoria
-  [ ] MEMORY.md <10KB?
-  [ ] Embedding provider configurado?
-  [ ] MMR/decay habilitados si aplica?
+ [ ] MEMORY.md <10KB?
+ [ ] Embedding provider configurado?
+ [ ] MMR/decay habilitados si aplica?
 
 Operaciones
-  [ ] Backup strategy definida?
-  [ ] Health check periódico configurado?
-  [ ] `openclaw security audit` limpio?
+ [ ] Backup strategy definida?
+ [ ] Health check periódico configurado?
+ [ ] `openclaw security audit` limpio?
 
 Permisos
-  [ ] ~/.openclaw/ = 700
-  [ ] openclaw.json = 600
-  [ ] .env = 600
+ [ ] ~/.openclaw/ = 700
+ [ ] openclaw.json = 600
+ [ ] .env = 600
 ```
 
 - ---
 
-
 - *Siguiente: [Apéndices](apendices.md)*
-

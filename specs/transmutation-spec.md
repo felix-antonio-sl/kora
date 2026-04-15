@@ -1,16 +1,31 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:transmutation-spec"
+  urn: urn:kora:kb:transmutation-spec
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-14"
-    source: "KORA runtime-spec-md v3.6.0; polymath analysis; categorical-foundations 02, 14"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-14'
+    source: KORA runtime-spec-md v3.6.0; polymath analysis; categorical-foundations
+      02, 14
+version: 1.0.0
 status: published
-tags: [spec, transmutacion, funtor, runtime, plataforma]
+tags:
+- spec
+- transmutacion
+- funtor
+- runtime
+- plataforma
 lang: es
+relations:
+  depends:
+  - urn:kora:kb:agentfile-spec
+  - urn:kora:kb:runtime-spec-md
+  cites:
+  - urn:kora:kb:gobernanza
+  - urn:kora:kb:md-spec
+  - urn:kora:kb:spec-md
 extensions: {}
 ---
+
 
 # KORA/Transmutation-Spec v1.0.0
 

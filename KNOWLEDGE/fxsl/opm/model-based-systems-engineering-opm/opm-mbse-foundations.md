@@ -1,23 +1,40 @@
 ---
 _manifest:
-  urn: "urn:fxsl:kb:opm-mbse-foundations"
+  urn: urn:fxsl:kb:opm-mbse-foundations
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-25"
-    source: "OPERATIONS/source/fxsl/opm-methodology/opm-libro-foundations.md"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-25'
+    source: OPERATIONS/source/fxsl/opm-methodology/opm-libro-foundations.md
+version: 1.0.0
 status: published
-tags: [opm, mbse, conceptual-modeling, systems-engineering, ontology, objects, processes, minimal-ontology]
+tags:
+- opm
+- mbse
+- conceptual-modeling
+- systems-engineering
+- ontology
+- objects
+- processes
+- minimal-ontology
 lang: en
 extensions:
   kora:
     family: textbook
     bilingual: true
     depends_on:
-      - "urn:fxsl:kb:opm-iso-19450"
-    book_source: "Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML. Springer."
-    chapters: [1, 9, 10]
+    - urn:fxsl:kb:opm-iso-19450
+    book_source: Dori, D. (2015). Model-Based Systems Engineering with OPM and SysML.
+      Springer.
+    chapters:
+    - 1
+    - 9
+    - 10
+relations:
+  cites:
+  - urn:fxsl:kb:opm-complexity-management
+  - urn:fxsl:kb:opm-iso-19450
 ---
+
 
 # OPM MBSE Foundations — Conceptual Modeling with Objects and Processes
 

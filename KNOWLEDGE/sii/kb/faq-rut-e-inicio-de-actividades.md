@@ -21,12 +21,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 4
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-rut-e-inicio-de-actividades
 ---
 
 # RUT e Inicio de actividades — Preguntas Frecuentes SII
-
 
 ## ¿Cómo se obtiene un certificado digital de Inicio de Actividades?
 

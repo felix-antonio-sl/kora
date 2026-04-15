@@ -1,17 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:dictamenes-cgr-gore"
+  urn: urn:gn:kb:dictamenes-cgr-gore
   provenance:
-    created_by: "GORE Ñuble"
-    created_at: "2026-03-15"
-    source: "Compilación de dictámenes CGR aplicables a Gobiernos Regionales — GORE Ñuble"
-version: "1.0.0"
+    created_by: GORE Ñuble
+    created_at: '2026-03-15'
+    source: Compilación de dictámenes CGR aplicables a Gobiernos Regionales — GORE
+      Ñuble
+version: 1.0.0
 status: published
-tags: [dictamenes-cgr, jurisprudencia-administrativa, gore-nuble, contraloria, legalidad]
+tags:
+- dictamenes-cgr
+- jurisprudencia-administrativa
+- gore-nuble
+- contraloria
+- legalidad
 lang: es
 extensions:
   gn:
-    family: "normative"
+    family: normative
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:dictamenes-cgr-gore
 ---
 
 # Dictámenes CGR Relevantes para GOREs
@@ -30,9 +40,9 @@ Catálogo de dictámenes de la Contraloría General de la República (CGR) aplic
 - **Fecha:** 2019-11-22
 - **Materia:** Transferencia de recursos GORE a Municipios
 - **Extracto:** El GORE puede transferir recursos a Municipalidades para ejecución de proyectos de interés regional, siempre que:
-  1. Exista convenio de transferencia aprobado por CORE.
-  2. Se defina claramente el objeto y obligación de rendir.
-  3. El proyecto cuente con RS favorable en el SNI.
+ 1. Exista convenio de transferencia aprobado por CORE.
+ 2. Se defina claramente el objeto y obligación de rendir.
+ 3. El proyecto cuente con RS favorable en el SNI.
 - **Aplicación:** Fundamentar resoluciones de convenios GORE-Municipio.
 
 ### Dictamen CGR N° 052891 de 2020

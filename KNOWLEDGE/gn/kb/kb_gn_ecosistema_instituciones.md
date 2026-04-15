@@ -1,18 +1,31 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:ecosistema-instituciones"
+  urn: urn:gn:kb:ecosistema-instituciones
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-16"
-    source: "ssot-ecosistema v1.1.1 + LOC GORE DFL 1-19.175 + ssot-mecanismos v1.1.1"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-16'
+    source: ssot-ecosistema v1.1.1 + LOC GORE DFL 1-19.175 + ssot-mecanismos v1.1.1
+version: 1.0.0
 status: published
-tags: [ecosistema, actores-externos, seremias, servicios-publicos, leyes, planificacion, probidad, gore-nuble]
+tags:
+- ecosistema
+- actores-externos
+- seremias
+- servicios-publicos
+- leyes
+- planificacion
+- probidad
+- gore-nuble
 lang: es
 extensions:
   gn:
     family: kb
+relations:
+  cites:
+  - urn:gn:kb:gestion-rendiciones
+  - urn:gn:kb:ssot-legal
 ---
+
 
 # Ecosistema Institucional Externo — GORE Ñuble
 

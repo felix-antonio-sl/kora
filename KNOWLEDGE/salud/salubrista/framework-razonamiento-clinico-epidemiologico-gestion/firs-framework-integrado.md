@@ -1,15 +1,30 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
-  type: "kb"
+  urn: urn:salud:kb:firs-framework-integrado-razonamiento-salud
+  type: kb
   provenance:
-    created_by: "pensador-generador + FS"
-    created_at: "2026-03-03"
-    source: "Integración dialéctica: Framework ChatGPT (taxonomía ontológica) + Framework Gemini/FIRS (narrativa académica, 83 fuentes)"
-version: "1.0.0"
+    created_by: pensador-generador + FS
+    created_at: '2026-03-03'
+    source: 'Integración dialéctica: Framework ChatGPT (taxonomía ontológica) + Framework
+      Gemini/FIRS (narrativa académica, 83 fuentes)'
+version: 1.0.0
 status: published
-tags: [razonamiento-clinico, epidemiologia, gestion-sanitaria, framework-integrado, FIRS, bayesiano, HRO, VBHC, systems-thinking]
+tags:
+- razonamiento-clinico
+- epidemiologia
+- gestion-sanitaria
+- framework-integrado
+- FIRS
+- bayesiano
+- HRO
+- VBHC
+- systems-thinking
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:firs-framework-integrado-razonamiento-salud
 ---
 
 # FIRS — Framework Integrado de Razonamiento en Salud
@@ -24,31 +39,31 @@ Integrar razonamiento clínico, inferencia epidemiológica y gestión sanitaria 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    EJES TRANSVERSALES                        │
-│  [Nivel de análisis] [Tiempo] [Medición] [Aprendizaje]      │
+│ EJES TRANSVERSALES │
+│ [Nivel de análisis] [Tiempo] [Medición] [Aprendizaje] │
 ├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐  Clinical    ┌──────────────┐             │
-│  │  DIMENSION I │  Epidemiology│ DIMENSION II  │             │
-│  │  MICRO       │◄────────────►│ MESO          │             │
-│  │  Cognición   │   (puente)   │ Inferencia    │             │
-│  │  Clínica     │              │ Epidemiológica│             │
-│  └──────┬───────┘              └──────┬────────┘             │
-│         │                             │                      │
-│         │    Systems Thinking         │                      │
-│         │    (gramática integradora)  │                      │
-│         └──────────┬──────────────────┘                      │
-│                    ▼                                         │
-│         ┌──────────────────┐                                 │
-│         │  DIMENSION III    │                                 │
-│         │  MACRO            │                                 │
-│         │  Gestión Sanitaria│                                 │
-│         │  ┌──────────────┐ │                                 │
-│         │  │ Finalidad    │ │  VBHC, Quadruple Aim           │
-│         │  │ Operación    │ │  HRO, Quality/Safety, EBMgt    │
-│         │  │ Herramientas │ │  BSC, SWOT                     │
-│         │  └──────────────┘ │                                 │
-│         └──────────────────┘                                 │
+│ │
+│ ┌─────────────┐ Clinical ┌──────────────┐ │
+│ │ DIMENSION I │ Epidemiology│ DIMENSION II │ │
+│ │ MICRO │◄────────────►│ MESO │ │
+│ │ Cognición │ (puente) │ Inferencia │ │
+│ │ Clínica │ │ Epidemiológica│ │
+│ └──────┬───────┘ └──────┬────────┘ │
+│ │ │ │
+│ │ Systems Thinking │ │
+│ │ (gramática integradora) │ │
+│ └──────────┬──────────────────┘ │
+│ ▼ │
+│ ┌──────────────────┐ │
+│ │ DIMENSION III │ │
+│ │ MACRO │ │
+│ │ Gestión Sanitaria│ │
+│ │ ┌──────────────┐ │ │
+│ │ │ Finalidad │ │ VBHC, Quadruple Aim │
+│ │ │ Operación │ │ HRO, Quality/Safety, EBMgt │
+│ │ │ Herramientas │ │ BSC, SWOT │
+│ │ └──────────────┘ │ │
+│ └──────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
 ```
 

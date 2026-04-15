@@ -20,12 +20,11 @@ extensions:
     question_count: 50
   kora:
     shard_index: 1
-    shard_count: 12
+    shard_count: 1
     shard_root_urn: urn:sii:kb:faq-impuestos-mensuales
 ---
 
 # Impuestos mensuales — Preguntas Frecuentes SII
-
 
 ## ¿Cómo opera el Cambio de Sujeto del Impuesto al Valor Agregado (IVA)?
 

@@ -1,3 +1,27 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-comparacion
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- transformacion-natural
+- equivalencia
+- comparacion
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-comparacion
+---
+
 # Comparación y equivalencia
 
 ## No basta preservar
@@ -13,12 +37,12 @@ Cuando tengo dos funtores F, G : C → D -- dos maneras de mapear una categoría
 Concretamente: para cada objeto c en C, tengo un morfismo α_c : F(c) → G(c) en D. No uno solo -- una familia entera, uno por cada objeto. Pero no cualquier familia: exijo que estos morfismos sean compatibles con la estructura. Para cada morfismo f : c → c' en C, el siguiente cuadrado debe conmutar:
 
 ```
-    F(c) ---F(f)--→ F(c')
-     |                |
-    α_c              α_c'
-     |                |
-     ↓                ↓
-    G(c) ---G(f)--→ G(c')
+ F(c) ---F(f)--→ F(c')
+ | |
+ α_c α_c'
+ | |
+ ↓ ↓
+ G(c) ---G(f)--→ G(c')
 ```
 
 La condición de naturalidad dice exactamente esto: **da igual qué camino tomes alrededor del cuadrado**. Puedo primero transformar y luego mapear, o primero mapear y luego transformar -- el resultado es el mismo:
@@ -33,7 +57,7 @@ El lugar donde esto se hace tangible inmediatamente es en Haskell. Una función 
 
 ```haskell
 safeHead :: [a] -> Maybe a
-safeHead []     = Nothing
+safeHead [] = Nothing
 safeHead (x:xs) = Just x
 ```
 
@@ -48,14 +72,14 @@ fmap f . safeHead = safeHead . fmap f
 Y se verifica directamente. Para la lista vacía:
 
 ```haskell
-fmap f (safeHead [])    = fmap f Nothing  = Nothing
-safeHead (fmap f [])    = safeHead []     = Nothing
+fmap f (safeHead []) = fmap f Nothing = Nothing
+safeHead (fmap f []) = safeHead [] = Nothing
 ```
 
 Para la lista con elementos:
 
 ```haskell
-fmap f (safeHead (x:xs)) = fmap f (Just x)          = Just (f x)
+fmap f (safeHead (x:xs)) = fmap f (Just x) = Just (f x)
 safeHead (fmap f (x:xs)) = safeHead (f x : fmap f xs) = Just (f x)
 ```
 
@@ -104,7 +128,7 @@ Pero hay otra forma de componer transformaciones naturales, que surge cuando ten
 
 ```
 C --F,G-→ D --H-→ E
-     ↕α
+ ↕α
 ```
 
 Si α : F ⇒ G es una transformación natural y H : D → E un funtor, puedo formar Hα : HF ⇒ HG, el **whiskering** de α por H a la derecha. En cada componente: (Hα)_c = H(α_c). Aplico H a cada componente de α -- y como H es un funtor y α es natural, el resultado es natural.
@@ -115,7 +139,7 @@ Cuando tengo la situación completa:
 
 ```
 C --F,G-→ D --H,I-→ E
-     ↕α         ↕β
+ ↕α ↕β
 ```
 
 puedo formar la **composición horizontal** βα : HF ⇒ IG. Se puede construir de dos maneras equivalentes:

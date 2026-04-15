@@ -14,7 +14,11 @@ tags:
 - knowledge
 - legal
 lang: es
+relations:
+  cites:
+  - urn:legal:kb:ley-ia-chile-texto-aprobado-camara
 ---
+
 
 # Análisis de la Legislación de Inteligencia Artificial en Chile
 

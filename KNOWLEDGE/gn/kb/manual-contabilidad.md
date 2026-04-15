@@ -1,18 +1,27 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:manual-contabilidad"
+  urn: urn:gn:kb:manual-contabilidad
   provenance:
-    created_by: "FS"
-    created_at: "2026-03-15"
-    source: "Manual 1.2 Contabilidad Gubernamental y Cierre Financiero GORE Ñuble"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-03-15'
+    source: Manual 1.2 Contabilidad Gubernamental y Cierre Financiero GORE Ñuble
+version: 1.0.0
 status: published
-tags: [contabilidad, cierre-financiero, gore-nuble, nicsp, sigfe]
+tags:
+- contabilidad
+- cierre-financiero
+- gore-nuble
+- nicsp
+- sigfe
 lang: es
 extensions:
   gn:
     family: guide
+relations:
+  cites:
+  - urn:gn:kb:gestion-rendiciones
 ---
+
 
 # Contabilidad Gubernamental y Cierre Financiero — GORE Ñuble
 

@@ -1,18 +1,39 @@
 ---
 _manifest:
-  urn: "urn:gn:kb:mecanismos-matriz-decision"
+  urn: urn:gn:kb:mecanismos-matriz-decision
   provenance:
-    created_by: "kora/curator"
-    created_at: "2026-03-16"
-    source: "ssot-mecanismos v1.1.1 + ssot-ipr-lifecycle v1.2.1 + selector-ipr v1.0.0"
-version: "1.0.0"
+    created_by: kora/curator
+    created_at: '2026-03-16'
+    source: ssot-mecanismos v1.1.1 + ssot-ipr-lifecycle v1.2.1 + selector-ipr v1.0.0
+version: 1.0.0
 status: published
-tags: [mecanismos, financiamiento, arbol-decision, tracks, fril, frpd, sni, c33, glosa06, subvencion-8, gore-nuble]
+tags:
+- mecanismos
+- financiamiento
+- arbol-decision
+- tracks
+- fril
+- frpd
+- sni
+- c33
+- glosa06
+- subvencion-8
+- gore-nuble
 lang: es
 extensions:
   gn:
     family: guide
+relations:
+  cites:
+  - urn:gn:kb:guia-circular-33-sts
+  - urn:gn:kb:guia-fril-2025-sts
+  - urn:gn:kb:guia-frpd-nuble
+  - urn:gn:kb:guia-idi-sni-sts
+  - urn:gn:kb:guia-programas-directos-gore
+  - urn:gn:kb:instructivo-subvencion-8-2025-sts
+  - urn:gn:kb:transferencia-ppr
 ---
+
 
 # Matriz Unificada de Mecanismos de Financiamiento — GORE Ñuble
 

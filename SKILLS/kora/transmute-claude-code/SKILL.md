@@ -1,4 +1,7 @@
 ---
+_manifest:
+  urn: "urn:kora:skill:transmute-claude-code:1.0.0"
+  type: lazy_load_endofunctor
 name: transmute-claude-code
 description: >-
   Transmuta un AGENT.md KORA a un archivo .md de Claude Code (persona o
@@ -8,7 +11,7 @@ description: >-
 allowed-tools: Read Glob Write Bash
 metadata:
   kora:
-    urn: "urn:kora:skill:transmute-claude-code"
+    urn: "urn:kora:skill:transmute-claude-code:1.0.0"
     lifecycle:
       status: active
       created: "2026-04-14"

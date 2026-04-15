@@ -4,26 +4,32 @@ _manifest:
   provenance:
     created_by: kora/curator
     created_at: '2026-03-15'
-    source: "source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md (split into 11 RIS artifacts)"
+    source: source/gn/gorenuble_koda/domains/gn/03_operacion/ipr/guias_iprs/kb_gn_010_ris.md
+      (split into 11 RIS artifacts)
 version: 1.0.0
 status: published
 tags:
-  - ris
-  - sni
-  - inversion
-  - gn
-  - cementerios
-  - organizaciones-comunitarias
-  - adulto-mayor
-  - mercados-municipales
+- ris
+- sni
+- inversion
+- gn
+- cementerios
+- organizaciones-comunitarias
+- adulto-mayor
+- mercados-municipales
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:gn:kb:ris-equipamiento-social
 ---
 
 # Requisitos de Información SNI — Equipamiento Social y Comunitario
 
 ## Cementerios Municipales
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Cementerios_Municipales_2024.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Cementerios_Municipales_2024.pdf
 
 Establecer requisitos para proyectos de inversión en cementerios municipales. Emisor: MDSF, 2024.
 
@@ -48,15 +54,15 @@ Cementerio: Establecimiento para inhumación/incineración de cadáveres, conser
 - Aplicar Metodología Complementaria de Riesgo de Desastres (desde 2024).
 - Incorporar lineamientos de Enfoque de Género.
 - **Etapas de presentación:**
-  - **Diseño:**
-    - Formulación y evaluación de rentabilidad (precios sociales).
-    - Antecedentes de propiedad, estudios técnicos.
-    - Certificaciones (conectividad, mantención, sanitaria, ambiental, impacto vial).
-    - Presupuesto, planimetría, cronogramas (Gantt, financiero), modelo de gestión.
-  - **Ejecución:**
-    - Formulación (Metodología General).
-    - Resumen ejecutivo, listado equipos, TDR obras, presupuesto detallado, modelo de gestión actualizado.
-    - Planimetría completa, justificación de diferencias arquitectónicas.
+ - **Diseño:**
+ - Formulación y evaluación de rentabilidad (precios sociales).
+ - Antecedentes de propiedad, estudios técnicos.
+ - Certificaciones (conectividad, mantención, sanitaria, ambiental, impacto vial).
+ - Presupuesto, planimetría, cronogramas (Gantt, financiero), modelo de gestión.
+ - **Ejecución:**
+ - Formulación (Metodología General).
+ - Resumen ejecutivo, listado equipos, TDR obras, presupuesto detallado, modelo de gestión actualizado.
+ - Planimetría completa, justificación de diferencias arquitectónicas.
 
 ### Requisitos Técnicos y Administrativos
 
@@ -76,11 +82,9 @@ Cementerio: Establecimiento para inhumación/incineración de cadáveres, conser
 
 ## Proyectos Organizaciones Comunitarias
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proy_Organizaciones_Comunitarias_2024.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Proy_Organizaciones_Comunitarias_2024.pdf
 
 Establecer requisitos para proyectos de infraestructura y equipamiento para organizaciones comunitarias.
-
-### Alcance
 
 Fortalecer organizaciones comunitarias mediante infraestructura y equipamiento. Definición de organización (Ley 19.418): Unidad Vecinal, Juntas de Vecinos, Organizaciones Comunitarias, Unión Comunal.
 
@@ -92,35 +96,33 @@ Fortalecer organizaciones comunitarias mediante infraestructura y equipamiento. 
 ### Proceso de Financiamiento
 
 - **Etapa de Diseño:**
-  - **Formulación:** Coherencia políticas, justificación problema, análisis demanda/oferta, evaluación socioeconómica (VAC/CAE).
-  - **Localización:** Plano geográfico, deslindes, estudio cabida, riesgo desastres.
-  - **Terreno:** Certificado factibilidad/existencia de redes.
-  - **Modelo de gestión:** Estudio de acciones, actores, costos, financiamiento, plan operación.
-  - **Programa arquitectónico:** Definición áreas, estructura espacial, dimensiones.
-  - **Presupuesto estimado:** Uso de datos referenciales.
-  - **TDR de diseño:** Incluir estudios técnicos (topográfico, mecánica suelo, etc.).
-  - **Presupuesto oficial de diseño:** Detalle profesionales, gastos.
-  - **Cronograma:** Carta Gantt detallada.
-  - **Certificado de compromiso:** Entidad responsable de mantención/operación.
+ - **Formulación:** Coherencia políticas, justificación problema, análisis demanda/oferta, evaluación socioeconómica (VAC/CAE).
+ - **Localización:** Plano geográfico, deslindes, estudio cabida, riesgo desastres.
+ - **Terreno:** Certificado factibilidad/existencia de redes.
+ - **Modelo de gestión:** Estudio de acciones, actores, costos, financiamiento, plan operación.
+ - **Programa arquitectónico:** Definición áreas, estructura espacial, dimensiones.
+ - **Presupuesto estimado:** Uso de datos referenciales.
+ - **TDR de diseño:** Incluir estudios técnicos (topográfico, mecánica suelo, etc.).
+ - **Presupuesto oficial de diseño:** Detalle profesionales, gastos.
+ - **Cronograma:** Carta Gantt detallada.
+ - **Certificado de compromiso:** Entidad responsable de mantención/operación.
 - **Etapa de Ejecución:**
-  - Cumplir requisitos de diseño o justificar modificaciones.
-  - Cuadro comparativo (programa arquitectónico aprobado vs. ejecutado).
-  - **Diseño definitivo:** Planimetría, especificaciones, permisos, proyectos especialidades aprobados.
-  - **Presupuesto oficial de ejecución:** Detalle por partidas (obras, equipamiento, etc.).
-  - **Certificado de compromiso:** Ratificación de costos y responsabilidades.
-  - **Modelo de gestión actualizado:** Basado en diseño final.
-  - **Cronograma de actividades:** Carta Gantt detallada.
-  - **Calendario de financiamiento:** Coherente con ficha IDI.
+ - Cumplir requisitos de diseño o justificar modificaciones.
+ - Cuadro comparativo (programa arquitectónico aprobado vs. ejecutado).
+ - **Diseño definitivo:** Planimetría, especificaciones, permisos, proyectos especialidades aprobados.
+ - **Presupuesto oficial de ejecución:** Detalle por partidas (obras, equipamiento, etc.).
+ - **Certificado de compromiso:** Ratificación de costos y responsabilidades.
+ - **Modelo de gestión actualizado:** Basado en diseño final.
+ - **Cronograma de actividades:** Carta Gantt detallada.
+ - **Calendario de financiamiento:** Coherente con ficha IDI.
 
 ---
 
 ## Proyectos Centros de Día para Adulto Mayor
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Proy_Centrosdedia_Adulto_Mayor_2024.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Proy_Centrosdedia_Adulto_Mayor_2024.pdf
 
 Establecer requisitos para proyectos de Centros de Día para personas mayores (SENAMA). Emisor: MDSF.
-
-### Alcance
 
 Política pública de envejecimiento positivo. Construir Centros de Día para personas mayores (PM) que requieran cuidados especializados durante el día. Carácter: Socio-terapéutico, intermedio, de apoyo familiar. Resolución de dudas: Adenda de Jefatura de la División.
 
@@ -128,15 +130,15 @@ Política pública de envejecimiento positivo. Construir Centros de Día para pe
 
 - **Población objetivo:** PM en situación de dependencia leve o moderada.
 - **Beneficios para personas mayores:**
-  - Recuperación/mantenimiento de autonomía (rehabilitación cognitiva, funcional, social).
-  - Desarrollo de autoestima y mejora estado psico-afectivo.
-  - Prevención/retraso de institucionalización.
+ - Recuperación/mantenimiento de autonomía (rehabilitación cognitiva, funcional, social).
+ - Desarrollo de autoestima y mejora estado psico-afectivo.
+ - Prevención/retraso de institucionalización.
 - **Beneficios para familia cuidadora:**
-  - Provisión de tiempo libre y descanso.
-  - Orientación y asesoramiento.
-  - Prevención de conflictos familiares y claudicación.
+ - Provisión de tiempo libre y descanso.
+ - Orientación y asesoramiento.
+ - Prevención de conflictos familiares y claudicación.
 - **Análisis de oferta y demanda:**
-  - Identificación población potencial, criterios focalización, registro oferta pública/privada.
+ - Identificación población potencial, criterios focalización, registro oferta pública/privada.
 
 ### Marco Normativo y Requisitos
 
@@ -170,11 +172,9 @@ Normativas: LGUC, OGUC, Plan Regulador, Ley 20.422 (Accesibilidad Universal), Re
 
 ## Proyectos de Mercados Municipales
 
-**Fuente:** <https://sni.gob.cl/storage/docs/RIS_Mercados_Municipales_2024.pdf>
+**Fuente:** https://sni.gob.cl/storage/docs/RIS_Mercados_Municipales_2024.pdf
 
 Establecer requisitos para proyectos de infraestructura para servicio comercial de abasto. Emisor: MDSF, 2024.
-
-### Alcance
 
 Desarrollar infraestructura para servicio comercial de abasto, complementario a actividad privada. Enfoque: Espacios para abastecimiento que potencian cultura, identidad, turismo, desarrollo económico. Resolución de dudas: Jefatura de la División.
 
@@ -188,10 +188,10 @@ Desarrollar infraestructura para servicio comercial de abasto, complementario a 
 ### Tipos de Infraestructuras y Definiciones
 
 - **Mercados Municipales:**
-  - Infraestructura cerrada, propiedad municipal, acceso público, funcionamiento permanente. Comercialización minorista de alimentos.
-  - Modalidades: General (tradicional), especializado (turístico, artesanal, etc.), mixto.
+ - Infraestructura cerrada, propiedad municipal, acceso público, funcionamiento permanente. Comercialización minorista de alimentos.
+ - Modalidades: General (tradicional), especializado (turístico, artesanal, etc.), mixto.
 - **Ferias Libres:**
-  - Infraestructura básica, pequeña escala, espacios públicos, locales abiertos/semiabiertos. Funcionamiento periódico.
+ - Infraestructura básica, pequeña escala, espacios públicos, locales abiertos/semiabiertos. Funcionamiento periódico.
 - **Criterio de separabilidad:** Diferenciar dependencias esenciales de adicionales, analizar independientemente.
 - **Procesos:** Construcción, Ampliación, Mejoramiento, Reposición, Normalización, Reparación, Restauración.
 

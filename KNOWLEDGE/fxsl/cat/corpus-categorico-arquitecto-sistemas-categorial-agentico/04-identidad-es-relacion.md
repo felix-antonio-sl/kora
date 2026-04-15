@@ -1,3 +1,28 @@
+---
+_manifest:
+  urn: urn:fxsl:kb:icas-identidad-relacion
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: ICAS-BoK corpus — Fong/Spivak, Mac Lane, Barbosa, Awodey, Riehl
+version: 1.0.0
+status: published
+tags:
+- yoneda
+- representabilidad
+- API
+- interfaz
+- ICAS-BoK
+- teoria-categorias
+- corpus-categorico
+lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:icas-identidad-relacion
+---
+
 # Identidad es relación
 
 ## El momento en que todo cambia
@@ -18,7 +43,7 @@ Lo crucial es que esta asignación X ↦ Hom(A, X) es un funtor. Si tengo un mor
 
 ```
 Hom(A, X) ——f∘—→ Hom(A, Y)
-    h     ↦——————→  f ∘ h
+ h ↦——————→ f ∘ h
 ```
 
 Este funtor Hom(A, −) : C → Set es el **hom-funtor covariante** fijando A. Es un funtor porque preserva identidades (id_X ∘ h = h) y composición ((g ∘ f) ∘ h = g ∘ (f ∘ h) por asociatividad -- una ley que ya conozco desde que empecé a componer).
@@ -35,9 +60,9 @@ En Haskell, Milewski lo explica con una imagen que me resultó iluminadora: un f
 
 ```haskell
 class Representable f where
-  type Rep f :: *
-  tabulate :: (Rep f -> x) -> f x
-  index    :: f x -> Rep f -> x
+ type Rep f :: *
+ tabulate :: (Rep f -> x) -> f x
+ index :: f x -> Rep f -> x
 ```
 
 Un Stream infinito, por ejemplo, es representable por Integer: es exactamente una función de Integer a valores, empaquetada como estructura de datos.
@@ -46,9 +71,9 @@ Un Stream infinito, por ejemplo, es representable por Integer: es exactamente un
 data Stream x = Cons x (Stream x)
 
 instance Representable Stream where
-  type Rep Stream = Integer
-  tabulate f = Cons (f 0) (tabulate (f . (+1)))
-  index (Cons b bs) n = if n == 0 then b else index bs (n - 1)
+ type Rep Stream = Integer
+ tabulate f = Cons (f 0) (tabulate (f . (+1)))
+ index (Cons b bs) n = if n == 0 then b else index bs (n - 1)
 ```
 
 No toda estructura de datos es representable. La lista finita no lo es, porque puede estar vacía -- no hay manera de recuperar un valor de una lista vacía dada una clave arbitraria. La representabilidad exige que para cada clave haya un valor.
@@ -77,7 +102,7 @@ Toda la transformación natural se reconstruye a partir de q aplicando el funtor
 
 Conversamente, dado cualquier q ∈ F(A), puedo definir una transformación natural α^q por:
 
-α^q_Y(f) = (Ff)(q)   para todo f : A → Y
+α^q_Y(f) = (Ff)(q) para todo f : A → Y
 
 Es inmediato verificar que esto es natural. Así que la correspondencia es biyectiva.
 
@@ -85,7 +110,7 @@ En Haskell, el lema toma una forma que uso regularmente:
 
 ```haskell
 -- El lema de Yoneda dice:
--- forall x. (a -> x) -> F x  ≅  F a
+-- forall x. (a -> x) -> F x ≅ F a
 
 -- De izquierda a derecha: aplicar a id
 toData :: (forall x. (a -> x) -> f x) -> f a

@@ -160,7 +160,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
         agent_spec = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
         skill_spec = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
-        self.assertIn("### 4.4 Manifest kind", governance)
+        self.assertIn("### 4.5 Manifest kind", governance)
         self.assertIn("bootstrap_agents", governance)
         self.assertIn("bootstrap_config", governance)
         self.assertIn("lazy_load_endofunctor", governance)

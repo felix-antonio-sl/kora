@@ -19,7 +19,11 @@ lang: es
 extensions:
   legal:
     family: guide
+relations:
+  cites:
+  - urn:legal:kb:ley-20659-regimen-simplificado
 ---
+
 
 # Registro de Empresas y Sociedades (RES) — Guia Operativa
 ## Registro de Empresas y Sociedades (RES)

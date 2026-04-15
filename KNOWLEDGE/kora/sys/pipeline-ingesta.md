@@ -1,15 +1,33 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:pipeline-ingesta"
+  urn: urn:kora:kb:pipeline-ingesta
   provenance:
-    created_by: "FS"
-    created_at: "2026-02-24"
-    source: "KORA pipeline design"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-02-24'
+    source: KORA pipeline design
+version: 1.0.0
 status: published
-tags: [pipeline, ingesta, intake, funtor, workflow, cristalizacion, koraficacion]
+tags:
+- pipeline
+- ingesta
+- intake
+- funtor
+- workflow
+- cristalizacion
+- koraficacion
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:kora:kb:pipeline-ingesta
+relations:
+  cites:
+  - urn:kora:kb:agent-spec-md
+  - urn:kora:kb:md-spec
+  - urn:kora:kb:spec-md
 ---
+
 
 # Pipeline de Ingesta — Infraestructura de Transformacion de Artefactos v1.0.0
 
@@ -41,15 +59,15 @@ Este pipeline **DEBE** aplicarse a todo documento externo que ingrese al monorep
 | **Funtor F** | Transformacion `DocHumano → KORA/MD` definida en [KORA/MD](urn:kora:kb:md-spec) §6 (koraficacion, descriptivo) |
 | **Funtor G** | Transformacion `{Decisiones ∪ Practicas ∪ Restricciones} → KORA/Spec-MD` definida en [KORA/Spec-MD](urn:kora:kb:spec-md) §1.2 (cristalizacion, prescriptivo) |
 | **Manifiesto** | Bloque YAML frontmatter con `_manifest`, `version`, `status`, `tags`, `lang` |
-| **Provenance** | Campo `_manifest.provenance.source` que traza el artefacto a su archivo en `source/` |
+| **Provenance** | Campo `_manifest.provenance.source` que traza el artefacto a su archivo en ` |
 
 ---
 
 ## 3. Topologia del Pipeline
 
 ```
-inbox/        →  source/        →  drafts/         →  knowledge/
-(aterrizaje)     (dominio F|G)     (en proceso)       (publicado)
+inbox/ → source/ → drafts/ → knowledge/
+(aterrizaje) (dominio F|G) (en proceso) (publicado)
 ```
 
 ### 3.1 Zona 1: `inbox/`
@@ -67,41 +85,41 @@ Zona de aterrizaje para objetos crudos. **NO DEBE** contener metadata KORA. **NO
 **Correcto:** `Depositar un PDF de 300 paginas en inbox/ para procesamiento posterior.`
 **Incorrecto:** `Depositar un artefacto con frontmatter KORA en inbox/ (debe ir a drafts/).`
 
-### 3.2 Zona 2: `source/`
+### 3.2 Zona 2: `
 
-Extractos curados listos para transformacion. Organizados por namespace destino, espejando `knowledge/`. **NO DEBE** contener metadata KORA.
+Extractos curados listos para transformacion. Organizados por namespace destino, espejando ` **NO DEBE** contener metadata KORA.
 
 | Propiedad | Valor |
 | --- | --- |
 | Contenido permitido | Markdown curado, texto plano extraido de objetos crudos |
 | Metadata KORA | Prohibida |
-| Organizacion | Por namespace: `source/{namespace}/{subdir}/` espejando `knowledge/` |
+| Organizacion | Por namespace: ` espejando ` |
 | Indexado por catalogo | No — excluido de `kora index` |
 | Ciclo de vida | Permanente — sirve como fuente de verdad para trazabilidad |
 
-**Correcto:** `Extraer un capitulo de un libro PDF (inbox/) y colocarlo como .md en source/fxsl/xanpan/.`
+**Correcto:** `Extraer un capitulo de un libro PDF (inbox/) y colocarlo como .md en 
 **Incorrecto:** `Colocar un PDF completo sin procesar en source/ (debe ir a inbox/).`
 
-Un documento **PUEDE** saltar `inbox/` e ir directo a `source/` si ya es un extracto curado (markdown listo para transformacion).
+Un documento **PUEDE** saltar `inbox/` e ir directo a ` si ya es un extracto curado (markdown listo para transformacion).
 
-### 3.3 Zona 3: `drafts/`
+### 3.3 Zona 3: `
 
-Artefactos en proceso de transformacion. **DEBE** contener frontmatter KORA con `status: draft`. Organizado por namespace, espejando `knowledge/`.
+Artefactos en proceso de transformacion. **DEBE** contener frontmatter KORA con `status: draft`. Organizado por namespace, espejando `
 
 | Propiedad | Valor |
 | --- | --- |
 | Contenido permitido | Artefactos KORA/MD o KORA/Spec-MD con frontmatter |
 | Metadata KORA | Obligatoria (`status: draft`) |
-| Organizacion | Por namespace: `drafts/{namespace}/{subdir}/` espejando `knowledge/` |
+| Organizacion | Por namespace: ` espejando ` |
 | Indexado por catalogo | No — excluido de `kora index` |
-| Ciclo de vida | Temporal — los artefactos se iteran hasta pasar verificacion, luego se promueven a `knowledge/` |
+| Ciclo de vida | Temporal — los artefactos se iteran hasta pasar verificacion, luego se promueven a ` |
 
-El campo `_manifest.provenance.source` **DEBE** apuntar al archivo correspondiente en `source/`, cerrando la cadena de trazabilidad.
+El campo `_manifest.provenance.source` **DEBE** apuntar al archivo correspondiente en `, cerrando la cadena de trazabilidad.
 
-**Correcto:** `drafts/fxsl/xanpan/chapter0-operador-solitario.md con status: draft y provenance.source: source/fxsl/xanpan/chapter0-operador-solitario.md`
-**Incorrecto:** `drafts/fxsl/xanpan/chapter0-operador-solitario.md sin frontmatter (es source/, no draft).`
+**Correcto:** ` con status: draft y provenance.source: 
+**Incorrecto:** ` sin frontmatter (es source/, no draft).`
 
-### 3.4 Zona 4: `knowledge/`
+### 3.4 Zona 4: `
 
 Artefactos publicados y verificados. **DEBE** contener frontmatter KORA con `status: published`. Registrados en el catalogo via `kora index`.
 
@@ -109,12 +127,12 @@ Artefactos publicados y verificados. **DEBE** contener frontmatter KORA con `sta
 | --- | --- |
 | Contenido permitido | Artefactos KORA/MD o KORA/Spec-MD verificados |
 | Metadata KORA | Obligatoria (`status: published`) |
-| Organizacion | Por namespace: `knowledge/{namespace}/{subdir}/` |
+| Organizacion | Por namespace: ` |
 | Indexado por catalogo | Si — unica zona que alimenta el catalogo |
 | Ciclo de vida | Permanente — artefactos publicados, versionados via SemVer |
 
-**Correcto:** `knowledge/fxsl/xanpan/chapter0-operador-solitario.md con status: published, URN registrada en catalogo.`
-**Incorrecto:** `knowledge/fxsl/xanpan/chapter0-operador-solitario.md con status: draft (debe estar en drafts/).`
+**Correcto:** ` con status: published, URN registrada en catalogo.`
+**Incorrecto:** ` con status: draft (debe estar en drafts/).`
 
 ---
 
@@ -126,21 +144,21 @@ Todo artefacto en el pipeline **DEBE** encontrarse en exactamente uno de los sig
 
 | Estado | Zona fisica | Manifiesto | Indexado |
 | --- | --- | --- | --- |
-| `PENDING` | `source/` (sin correspondencia en drafts/ ni knowledge/) | No | No |
-| `PROCESSING` | `drafts/` con `status: draft` | Si | No |
-| `PUBLISHED` | `knowledge/` con `status: published` | Si | Si |
-| `ORPHAN` | Catalogo apunta a `source/` inexistente | Si | Si (invalido) |
+| `PENDING` | ` (sin correspondencia en drafts/ ni knowledge/) | No | No |
+| `PROCESSING` | ` con `status: draft` | Si | No |
+| `PUBLISHED` | ` con `status: published` | Si | Si |
+| `ORPHAN` | Catalogo apunta a ` inexistente | Si | Si (invalido) |
 
 ### 4.2 Transiciones
 
 ```
-PENDING → PROCESSING    Crear artefacto en drafts/ con frontmatter (status: draft)
+PENDING → PROCESSING Crear artefacto en drafts/ con frontmatter (status: draft)
 PROCESSING → PROCESSING Iterar cristalizacion/koraficacion en drafts/
-PROCESSING → PUBLISHED  Mover artefacto a knowledge/, cambiar status: draft → published, ejecutar kora index
-PUBLISHED → ORPHAN      Si se elimina el source sin actualizar provenance (estado invalido)
+PROCESSING → PUBLISHED Mover artefacto a knowledge/, cambiar status: draft → published, ejecutar kora index
+PUBLISHED → ORPHAN Si se elimina el source sin actualizar provenance (estado invalido)
 ```
 
-Un artefacto **NO DEBE** transitar de `PENDING` a `PUBLISHED` sin pasar por `PROCESSING`. La zona `drafts/` es obligatoria para toda transformacion.
+Un artefacto **NO DEBE** transitar de `PENDING` a `PUBLISHED` sin pasar por `PROCESSING`. La zona ` es obligatoria para toda transformacion.
 
 **Correcto:** `source → drafts (cristalizar, verificar, iterar) → knowledge (publicar).`
 **Incorrecto:** `source → knowledge (publicar sin verificacion en drafts/).`
@@ -170,25 +188,25 @@ La seleccion **DEBE** realizarse antes de iniciar la transformacion. Un document
 Todo artefacto publicado **DEBE** mantener una cadena de trazabilidad completa:
 
 ```
-knowledge/{ns}/{subdir}/{id}.md
-  └─ _manifest.provenance.source → source/{ns}/{subdir}/{source-file}.md
-       └─ (si aplica) objeto crudo original en inbox/ (ya removido o archivado)
+
+ └─ _manifest.provenance.source → 
+ └─ (si aplica) objeto crudo original en inbox/ (ya removido o archivado)
 ```
 
 El campo `provenance.source` **DEBE** ser una ruta relativa desde la raiz del monorepo.
 
-**Correcto:** `source: "source/fxsl/xanpan/chapter0-operador-solitario.md"`
+**Correcto:** `source: "
 **Incorrecto:** `source: "~/Downloads/files/chapter0-operador-solitario.md"`
 
 ### 6.2 Permanencia de Sources
 
-Los archivos en `source/` **NO DEBEN** eliminarse tras la publicacion del artefacto. Sirven como fuente de verdad para auditorias de fidelidad y re-transformaciones.
+Los archivos en ` **NO DEBEN** eliminarse tras la publicacion del artefacto. Sirven como fuente de verdad para auditorias de fidelidad y re-transformaciones.
 
 ---
 
 ## 7. Monitoreo: `kora intake`
 
-El subcomando `kora intake` **DEBE** reportar el estado de cada archivo en `source/` cruzando con `drafts/` y `knowledge/`:
+El subcomando `kora intake` **DEBE** reportar el estado de cada archivo en ` cruzando con ` y `
 
 ```bash
 scripts/kora intake
@@ -199,10 +217,10 @@ Output esperado:
 ```
 === KORA Intake Status ===
 
-  [PUBLISHED]  source/fxsl/xanpan/file.md → knowledge/fxsl/xanpan/file.md (urn:fxsl:kb:file)
-  [PROCESSING] source/fxsl/xanpan/file2.md → drafts/fxsl/xanpan/file2.md
-  [PENDING]    source/fxsl/xanpan/file3.md
-  [ORPHAN]     knowledge/ns/file4.md → source/ns/file4.md (source missing)
+ [PUBLISHED] → (urn:fxsl:kb:file)
+ [PROCESSING] → 
+ [PENDING] 
+ [ORPHAN] → (source missing)
 
 Summary: 1 published, 1 processing, 1 pending, 1 orphan(s)
 ```
@@ -211,13 +229,13 @@ Summary: 1 published, 1 processing, 1 pending, 1 orphan(s)
 
 ## 8. Exclusion del Catalogo
 
-Las zonas `inbox/`, `source/` y `drafts/` **DEBEN** estar excluidas del indexado de `kora index`. Solo `knowledge/` alimenta el catalogo. Los artefactos en `drafts/` con `status: draft` **NO DEBEN** ser resolvibles via `kora resolve`.
+Las zonas `inbox/`, ` y ` **DEBEN** estar excluidas del indexado de `kora index`. Solo ` alimenta el catalogo. Los artefactos en ` con `status: draft` **NO DEBEN** ser resolvibles via `kora resolve`.
 
 La razon es que los drafts son trabajo en curso y sus URNs podrian colisionar con versiones publicadas o contener errores no verificados.
 
 **Correcto:**
 ```
-kora resolve "urn:{ns}:kb:{id}" → knowledge/{ns}/{subdir}/{id}.md
+kora resolve "urn:{ns}:kb:{id}" → 
 ```
 
 **Incorrecto:**
@@ -239,10 +257,10 @@ Cada artefacto publicado **DEBE** tener exactamente un `provenance.source`. Dos 
 
 ### 9.3 Espejado de Namespace
 
-La estructura de directorios en `source/` y `drafts/` **DEBE** espejar la de `knowledge/`. El namespace y subdirectorio de un archivo **NO DEBE** cambiar entre zonas.
+La estructura de directorios en ` y ` **DEBE** espejar la de ` El namespace y subdirectorio de un archivo **NO DEBE** cambiar entre zonas.
 
-**Correcto:** `source/fxsl/xanpan/file.md → drafts/fxsl/xanpan/file.md → knowledge/fxsl/xanpan/file.md`
-**Incorrecto:** `source/fxsl/xanpan/file.md → knowledge/gn/xanpan/file.md (namespace cambio de fxsl a gn).`
+**Correcto:** ` → → 
+**Incorrecto:** ` → (namespace cambio de fxsl a gn).`
 
 ---
 
@@ -250,9 +268,9 @@ La estructura de directorios en `source/` y `drafts/` **DEBE** espejar la de `kn
 
 | Check | Criterio | Accion si falla |
 | --- | --- | --- |
-| Zonas excluidas | `inbox/`, `source/`, `drafts/` no aparecen en catalogo | Verificar exclusion en `scripts/kora` |
-| Provenance valida | Todo artefacto publicado tiene `provenance.source` que resuelve a un archivo existente en `source/` | Corregir provenance o restaurar source |
-| Status coherente | Artefactos en `drafts/` tienen `status: draft`; en `knowledge/` tienen `status: published` | Corregir status |
+| Zonas excluidas | `inbox/`, `, ` no aparecen en catalogo | Verificar exclusion en `scripts/kora` |
+| Provenance valida | Todo artefacto publicado tiene `provenance.source` que resuelve a un archivo existente en ` | Corregir provenance o restaurar source |
+| Status coherente | Artefactos en ` tienen `status: draft`; en ` tienen `status: published` | Corregir status |
 | Espejado de namespace | Ruta relativa post-zona es identica entre source/, drafts/ y knowledge/ | Reorganizar directorios |
 | Sin orphans | `kora intake` reporta 0 orphans | Restaurar source o actualizar provenance |
 | Funtor correcto | Documentos descriptivos usan F, prescriptivos usan G | Re-transformar con funtor correcto |

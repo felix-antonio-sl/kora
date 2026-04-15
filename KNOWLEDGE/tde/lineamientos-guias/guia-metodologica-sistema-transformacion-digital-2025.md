@@ -1,14 +1,26 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025"
-  provenance: "https://wikiguias.digital.gob.cl/guias/guia-metodologica-std"
+  urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025
+  provenance: https://wikiguias.digital.gob.cl/guias/guia-metodologica-std
 version: 1.0.0
 status: published
-tags: [tde, lineamientos-guias, std, pmg, transformacion-digital, gobernanza]
+tags:
+- tde
+- lineamientos-guias
+- std
+- pmg
+- transformacion-digital
+- gobernanza
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025
 ---
 
 # Guía Metodológica del Sistema de Transformación Digital 2025
+
 
 **Versión:** 2.0 (actualiza la publicada en enero de 2025) — **Autor:** Secretaría de Gobierno Digital
 
@@ -54,9 +66,7 @@ El STD se enmarca en la **Estrategia de Gobierno Digital 2030** e implementa los
 
 ---
 
-## Etapa 1
-
-### (E1 - O1 - RT1) Conformar una estructura de gobernanza
+## (E1 - O1 - RT1) Conformar una estructura de gobernanza
 
 **Requisito técnico N°1:** Conformar el **Comité de Calidad de Servicio, Experiencia Usuaria y Transformación Digital**, formalizado mediante resolución de la jefatura de servicio.
 
@@ -66,7 +76,7 @@ El STD se enmarca en la **Estrategia de Gobierno Digital 2030** e implementa los
 
 **Medio de verificación:** Resolución que detalla nombre, cargo, área, nivel jerárquico y rol de cada integrante; funciones del Comité; firmada por la Jefatura de Servicio durante 2025.
 
-#### Integrantes mínimos (de distintos niveles jerárquicos)
+### Integrantes mínimos (de distintos niveles jerárquicos)
 
 - **Coordinador/a de Transformación Digital (CTD):** contraparte institucional con SGD, designado por jefatura mediante oficio. Para actualizar CTD: completar [formulario de actualización](https://gobdigital.cerofilas.gob.cl/etapas/ver/37163902/0) adjuntando oficio con datos del titular y subrogante (nombre, RUN, correo, teléfono, cargo).
 - **Representante de la Jefatura de TIC** (si coincide con el CTD, indicar en resolución que ejerce ambos roles).
@@ -75,7 +85,7 @@ El STD se enmarca en la **Estrategia de Gobierno Digital 2030** e implementa los
 
 Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en Estatuto Administrativo; o contrato Código del Trabajo en servicios no regidos por él).
 
-#### Recomendaciones de funcionamiento
+### Recomendaciones de funcionamiento
 
 - Informar a la Jefatura de Servicio al menos semestralmente sobre acuerdos, avances e hitos.
 - Considerar criterios de género y presencia regional; designar suplente por cada titular.
@@ -86,7 +96,7 @@ Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en
 
 ---
 
-### (E1 - O2 - RT1) Efectuar un diagnóstico institucional
+## (E1 - O2 - RT1) Efectuar un diagnóstico institucional
 
 **Requisito técnico N°1:** Realizar diagnóstico institucional de brechas en 3 dimensiones estratégicas (RT2, RT3 y RT4). **No se debe generar un documento adicional**; cada instrumento genera automáticamente el diagnóstico para su dimensión.
 
@@ -107,7 +117,7 @@ Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en
 
 ---
 
-### (E1 - O2 - RT2) Instrumento CPAT
+## (E1 - O2 - RT2) Instrumento CPAT
 
 **Requisito técnico N°2:** Aplicar el CPAT para identificar todos los procedimientos administrativos y otras tramitaciones, caracterizando usuarios, servicio entregado y avance al soporte electrónico.
 
@@ -115,7 +125,7 @@ Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en
 - Reporte consolidado generado por la plataforma CPAT.
 - Certificado de aplicación del instrumento CPAT.
 
-#### Definiciones
+### Definiciones
 
 **Procedimiento administrativo** (Art. 18 Ley N° 19.880): sucesión de actos trámites vinculados, emanados de la Administración y en su caso de particulares interesados, con finalidad de producir un acto administrativo terminal.
 
@@ -124,7 +134,7 @@ Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en
 
 **Otras tramitaciones:** acciones necesarias para que una persona (natural o jurídica) obtenga un producto o servicio de una institución pública; no constituyen un PA formal pero pueden relacionarse con ellos.
 
-#### Estándares de incorporación requeridos para los procedimientos
+### Estándares de incorporación requeridos para los procedimientos
 
 - Comunicaciones oficiales entre OAE registradas en DocDigital.
 - Notificaciones al medio electrónico solicitado por el interesado o al Domicilio Digital Único.
@@ -133,7 +143,7 @@ Los integrantes mínimos deben ser **personas funcionarias** (planta/contrata en
 - Documentos en papel incorporados al expediente como microforma.
 - Datos e información transmitidos por la Red de Interoperabilidad del Estado.
 
-#### El instrumento se considera aplicado cuando se informa
+### El instrumento se considera aplicado cuando se informa
 
 - **Nómina:** número total de procedimientos administrativos y otras tramitaciones.
 - **Caracterización:** preguntas por cada PA según [Plantilla guía CPAT .xlsx](https://docs.google.com/spreadsheets/d/1HCCl3hgk1RhYki7Xel7IT5ecTgAdcH_8/edit#gid=318493845).
@@ -143,7 +153,7 @@ Recursos: [Guía rápida del CPAT](https://digital.gob.cl/transformacion-digital
 
 ---
 
-### (E1 - O2 - RT3) Instrumento Pauta de evaluación de sitios web y servicios digitales
+## (E1 - O2 - RT3) Instrumento Pauta de evaluación de sitios web y servicios digitales
 
 **Requisito técnico N°3:** Aplicar la Pauta de evaluación al **sitio web institucional principal** y al **servicio digital más demandado**, previa opinión técnica favorable de la Red de Expertos/as sobre la selección.
 
@@ -153,14 +163,14 @@ Recursos: [Guía rápida del CPAT](https://digital.gob.cl/transformacion-digital
 - Reporte de aplicación del instrumento de sitios web.
 - Reporte de aplicación del instrumento de servicios digitales.
 
-#### Criterios de selección
+### Criterios de selección
 
 1. **Sitio web:** sitio web institucional principal (no sitios complementarios). Ej.: Subsecretaría de Hacienda → https://www.hacienda.gob.cl/
 2. **Servicio digital:** registro informado en el CPAT que cumpla:
-   - Canal digital web disponible en la web (independientemente de otros canales digitales).
-   - Alta demanda: servicio digital más demandado durante el año calendario anterior.
+ - Canal digital web disponible en la web (independientemente de otros canales digitales).
+ - Alta demanda: servicio digital más demandado durante el año calendario anterior.
 
-#### Estructura del instrumento
+### Estructura del instrumento
 
 - **Dimensión** → **Indicador** → **Pregunta(s) de chequeo**
 
@@ -186,7 +196,7 @@ Recurso: [Guía de uso del Instrumento de evaluación de calidad](/guias/Guia_We
 
 ---
 
-### (E1 - O2 - RT4) Instrumento Marco de Referencia de Gestión de Datos del Estado
+## (E1 - O2 - RT4) Instrumento Marco de Referencia de Gestión de Datos del Estado
 
 **Requisito técnico N°4:** Aplicar el instrumento MGDE para evaluar las capacidades institucionales para el uso estratégico de los datos.
 
@@ -235,10 +245,10 @@ El **Portafolio de Iniciativas del Plan de TD** define una iniciativa por subdim
 1. Objetivo general.
 2. Descripción de las principales brechas prioritarias detectadas en el diagnóstico.
 3. Iniciativas de transformación digital alineadas con EvalTIC, que detallan:
-   - Objetivo.
-   - Área responsable.
-   - Estimación de costo, recursos, bienes y servicios.
-   - Cronograma de actividades, hitos e indicadores de avance.
+ - Objetivo.
+ - Área responsable.
+ - Estimación de costo, recursos, bienes y servicios.
+ - Cronograma de actividades, hitos e indicadores de avance.
 
 **Notas de plazo:** El DFL 1 establece plazos legales: cumplimiento total de la Ley 21.180 planificado para **2026** (grupo A: gobierno central) y **2027** (grupos B y C: gobiernos regionales y municipalidades). Dentro del horizonte de 3 años, se debe priorizar las iniciativas para cumplir la Ley en los plazos dispuestos.
 
@@ -266,8 +276,8 @@ El **Portafolio de Iniciativas del Plan de TD** define una iniciativa por subdim
 **Medios de verificación:** Minuta del Comité que detalla:
 - Fecha(s) de difusión.
 - Medio de difusión: correo electrónico, publicación en intranet/sitio web, memo, actividad presencial o remota, u otras.
-  - Si es correo o memo: listado de destinatarios (nombre, área, calidad contractual).
-  - Si es actividad presencial/remota: listado de participantes (nombre, área, calidad contractual).
+ - Si es correo o memo: listado de destinatarios (nombre, área, calidad contractual).
+ - Si es actividad presencial/remota: listado de participantes (nombre, área, calidad contractual).
 - Evidencia de la difusión (captura de correo, intranet, citación, presentación, etc.).
 - Nombre, rol y firma de los integrantes del Comité.
 
@@ -314,47 +324,3 @@ Tiempo de respuesta: **3 días hábiles** (consultas complejas pueden requerir p
 Para consultas sobre CPAT: usar el soporte propio de la plataforma CPAT.
 
 ---
-
-## Anexo 1: Instituciones que deben informar al MDSyF
-
-El **Registro de Información Social** (administrado por la Subsecretaría de Evaluación Social del MDSF, Ley N° 19.949) contiene datos de familias e individuos beneficiarios de prestaciones y programas públicos. El Art. 3, letra s) de la Ley N° 20.530 faculta al MDSF a solicitar información a ministerios, servicios y entidades públicas, quienes deben proporcionarla oportunamente.
-
-Las siguientes 37 instituciones que entregan programas sociales deben incorporar en su Plan de TD iniciativas para cumplir el mandato de la Ley N° 20.530:
-
-1. Corporación Nacional de Desarrollo Indígena
-2. Defensoría Penal Pública
-3. Dirección de Educación Pública
-4. Fondo de Solidaridad e Inversión Social
-5. Fondo Nacional de Salud
-6. Gendarmería de Chile
-7. Instituto de Previsión Social
-8. Instituto Nacional de Deportes de Chile
-9. Instituto Nacional de la Juventud
-10. Junta Nacional de Auxilio Escolar y Becas
-11. Junta Nacional de Jardines Infantiles
-12. Servicio Médico Legal
-13. Servicio Nacional de Capacitación y Empleo
-14. Servicio Nacional de la Discapacidad
-15. Servicio Nacional de la Mujer y la Equidad de Género
-16. Servicio Nacional de Prevención y Respuesta ante Desastres
-17. Servicio Nacional de Protección Especializada a la Niñez y Adolescencia
-18. Servicio Nacional del Adulto Mayor
-19. Servicio Nacional del Patrimonio Cultural
-20. Servicio Nacional para la Prevención y Rehabilitación del Consumo de Drogas y Alcohol
-21. Subsecretaría de Derechos Humanos
-22. Subsecretaría de Educación
-23. Subsecretaría de Educación Parvularia
-24. Subsecretaría de Educación Superior
-25. Subsecretaría de Evaluación Social
-26. Subsecretaría de Justicia
-27. Subsecretaría de la Niñez
-28. Subsecretaría de las Culturas y las Artes
-29. Subsecretaría de Prevención del Delito
-30. Subsecretaría de Previsión Social
-31. Subsecretaría de Redes Asistenciales
-32. Subsecretaría de Salud Pública
-33. Subsecretaría de Servicios Sociales
-34. Subsecretaría de Vivienda y Urbanismo
-35. Subsecretaría del Interior
-36. Subsecretaría del Trabajo
-37. Subsecretaría Desarrollo Regional y Administrativo

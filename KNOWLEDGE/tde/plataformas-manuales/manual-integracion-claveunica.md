@@ -1,11 +1,21 @@
 ---
 _manifest:
-  urn: "urn:tde:kb:manual-integracion-claveunica"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica"
+  urn: urn:tde:kb:manual-integracion-claveunica
+  provenance: https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica
 version: 1.0.0
 status: published
-tags: [tde, plataformas-manuales, como-usar, integracion, guia]
+tags:
+- tde
+- plataformas-manuales
+- como-usar
+- integracion
+- guia
 lang: es
+extensions:
+  kora:
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:tde:kb:manual-integracion-claveunica
 ---
 
 # Manual de Integración — ClaveÚnica
@@ -55,9 +65,9 @@ La complejidad de la implementación depende del lenguaje de la plataforma. Exis
 
 5. Enviar la solicitud. Revisión en **6 días hábiles**.
 6. Si es aprobada: se envían 3 pares de credenciales (`client_id` + `client_secret`) a la casilla indicada (remitente: no-reply@digital.gob.cl; verificar que no esté en spam).
-   - Par 1: **Sandbox/Testing** — operativo de inmediato.
-   - Par 2: **QA** — operativo de inmediato.
-   - Par 3: **Producción** — bloqueado hasta certificación.
+ - Par 1: **Sandbox/Testing** — operativo de inmediato.
+ - Par 2: **QA** — operativo de inmediato.
+ - Par 3: **Producción** — bloqueado hasta certificación.
 7. Si es rechazada: se enviará correo con el motivo.
 
 ### Credenciales de sandbox y QA
@@ -77,11 +87,11 @@ Permiten probar en un ambiente limitado usando solo los siguientes RUN de prueba
 
 Protocolo: **HTTPS obligatorio**. TLS 1.2 o superior. No se acepta TLS 1.0 ni 1.1. HTTP no permitido en producción.
 
-### Paso 1: Crear token de estado anti-falsificación (CSRF)
+## Paso 1: Crear token de estado anti-falsificación (CSRF)
 
 Generar una cadena aleatoria de 30 o más caracteres (o hash con secreto). Mantener este token entre el cliente y la aplicación para verificar en Paso 3.
 
-### Paso 2: Enviar solicitud de autenticación
+## Paso 2: Enviar solicitud de autenticación
 
 Solicitud **GET** vía **HTTPS** a:
 ```
@@ -103,11 +113,11 @@ Ejemplo de URI final:
 https://accounts.claveunica.gob.cl/openid/authorize/?client_id=Wbgx7HkjoeU6uarez3uYnn41VmGkd600&response_type=code&scope=openid run name&redirect_uri=https%3A%2F%2Fintegrador.cl%2Fcallback&state=abcdefgh
 ```
 
-### Paso 3: Confirmar token anti-falsificación
+## Paso 3: Confirmar token anti-falsificación
 
 ClaveÚnica redirige a la `redirect_uri` añadiendo `code` y `state`. Verificar que el `state` recibido coincide con el token creado en Paso 1.
 
-### Paso 4: Cambiar código de autorización por token de acceso
+## Paso 4: Cambiar código de autorización por token de acceso
 
 El `code` expira en **5 minutos**. Solicitud **POST** vía **HTTPS** a:
 ```
@@ -128,23 +138,23 @@ Parámetros en el body (`application/x-www-form-urlencoded`):
 Ejemplo cURL:
 ```bash
 curl -i https://accounts.claveunica.gob.cl/openid/token/ \
-  -H "content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-  --data "client_id=123&client_secret=456&redirect_uri=https%3A%2F%2Fexample.com&grant_type=authorization_code&code=aa4af81bc6574800bee3aada0fed99c4&state=abcdefgh"
+ -H "content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+ --data "client_id=123&client_secret=456&redirect_uri=https%3A%2F%2Fexample.com&grant_type=authorization_code&code=aa4af81bc6574800bee3aada0fed99c4&state=abcdefgh"
 ```
 
-### Paso 5: Autenticar usuario
+## Paso 5: Autenticar usuario
 
 La respuesta es un JSON con el `access_token`:
 ```json
 {
-  "access_token": "95104ab471534af08683aefa7d0935a3",
-  "token_type": "bearer",
-  "expires_in": 3600,
-  "id_token": "eyJhbGciOiJSUzI1NiIs..."
+ "access_token": "95104ab471534af08683aefa7d0935a3",
+ "token_type": "bearer",
+ "expires_in": 3600,
+ "id_token": "eyJhbGciOiJSUzI1NiIs..."
 }
 ```
 
-### Paso 6: Obtener datos del ciudadano
+## Paso 6: Obtener datos del ciudadano
 
 Solicitud **POST** vía **HTTPS** a:
 ```
@@ -155,28 +165,28 @@ Header: `Authorization: Bearer {access_token}`
 Ejemplo cURL:
 ```bash
 curl -i https://accounts.claveunica.gob.cl/openid/userinfo/ -X POST \
-  -H "authorization: Bearer 2718e590ec7e47858e4af5922050d28b"
+ -H "authorization: Bearer 2718e590ec7e47858e4af5922050d28b"
 ```
 
 Respuesta JSON:
 ```json
 {
-  "sub": "1234567",
-  "RolUnico": {
-    "DV": "9",
-    "numero": 12345678,
-    "tipo": "RUN"
-  },
-  "name": {
-    "apellidos": ["Del Río", "Gonzalez"],
-    "nombres": ["María", "Carmen"]
-  }
+ "sub": "1234567",
+ "RolUnico": {
+ "DV": "9",
+ "numero": 12345678,
+ "tipo": "RUN"
+ },
+ "name": {
+ "apellidos": ["Del Río", "Gonzalez"],
+ "nombres": ["María", "Carmen"]
+ }
 }
 ```
 
 > El campo `sub` no debe usarse como llave del registro. El identificador de la persona es `RolUnico.numero` (RUN).
 
-### Paso 7: Cierre de sesión
+## Paso 7: Cierre de sesión
 
 La sesión de ClaveÚnica dura 60 segundos. La aplicación integradora siempre debe cerrar la sesión de ClaveÚnica al cerrar la propia.
 
@@ -187,11 +197,11 @@ https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout?redirect=logout_ur
 
 **Método 2 (JavaScript):**
 ```javascript
-function Logout() {
-  window.location.href = "https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout";
-  setTimeout(function () {
-    window.location.href = "logout_uri";
-  }, 1000);
+function Logout {
+ window.location.href = "https://accounts.claveunica.gob.cl/api/v1/accounts/app/logout";
+ setTimeout(function {
+ window.location.href = "logout_uri";
+ }, 1000);
 }
 ```
 
@@ -221,8 +231,8 @@ Las credenciales de producción están desactivadas por defecto. El mensaje "La 
 1. Ingresar a [CeroFilas](https://gobdigital.cerofilas.gob.cl/) y continuar el flujo de la solicitud de credenciales original.
 2. En "Datos para la revisión práctica": verificar que el `client_id` corresponde a las credenciales de producción.
 3. Seleccionar método de revisión:
-   - **Sitio público en internet:** indicar URL del botón de ClaveÚnica y adjuntar evidencia en imágenes de las llamadas a los endpoints `token` y `userinfo`.
-   - **Ambiente no accesible públicamente:** el equipo de ClaveÚnica agenda videollamada. El contacto administrativo debe estar presente.
+ - **Sitio público en internet:** indicar URL del botón de ClaveÚnica y adjuntar evidencia en imágenes de las llamadas a los endpoints `token` y `userinfo`.
+ - **Ambiente no accesible públicamente:** el equipo de ClaveÚnica agenda videollamada. El contacto administrativo debe estar presente.
 4. Agregar información adicional si es necesario.
 
 Plazo de certificación: **6 días hábiles** desde el ingreso del ticket. Puede extenderse si hay observaciones, dificultades de acceso o si la certificación es por videollamada.
@@ -255,14 +265,14 @@ Inscripción en [CeroFilas](https://gobdigital.cerofilas.gob.cl/) en el trámite
 ### Token de acceso
 ```bash
 curl -i https://accounts.claveunica.gob.cl/openid/token/ \
-  -H "content-type: application/x-www-form-urlencoded; charset=UTF-8" \
-  --data "client_id=2177fdbd81d54ebab895ed86b5f7d1b4&client_secret=1ec2a3c429ac4763b2665d57d2379b81&redirect_uri=https%3A%2F%2Flocalhost%2Fcallback&grant_type=authorization_code&code=5050299f54064a708ac17420d02417e8&state=1e5bdc760608dc3cfcd0e7ae4"
+ -H "content-type: application/x-www-form-urlencoded; charset=UTF-8" \
+ --data "client_id=2177fdbd81d54ebab895ed86b5f7d1b4&client_secret=1ec2a3c429ac4763b2665d57d2379b81&redirect_uri=https%3A%2F%2Flocalhost%2Fcallback&grant_type=authorization_code&code=5050299f54064a708ac17420d02417e8&state=1e5bdc760608dc3cfcd0e7ae4"
 ```
 
 ### Datos de usuario
 ```bash
 curl -i https://accounts.claveunica.gob.cl/openid/userinfo/ -X POST \
-  -H "authorization: Bearer 10a169a98eb143c18a732ed2e1df32fb"
+ -H "authorization: Bearer 10a169a98eb143c18a732ed2e1df32fb"
 ```
 
 ### Formulario de login (en navegador, no cURL)
