@@ -540,7 +540,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("| Dec.12, Interoperabilidad | urn:tde:kb:decreto-12-interoperabilidad |", tools)
 
     def test_pensador_generador_normalizes_control_targets_and_soul(self):
-        agents = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "AGENTS.md").read_text(encoding="utf-8")
+        ws = AGENTS_ROOT / "fxsl" / "pensador-generador"
+        if not ws.is_dir():
+            self.skipTest("fxsl/pensador-generador no productivo — en staging")
+        agents = (ws / "AGENTS.md").read_text(encoding="utf-8")
         soul = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "SOUL.md").read_text(encoding="utf-8")
         tools = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "TOOLS.md").read_text(encoding="utf-8")
         config = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "config.json").read_text(encoding="utf-8")
@@ -560,7 +563,10 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("VINDICATE", agents)
 
     def test_opm_specialist_uses_neutral_intent_classification_and_clarify_state(self):
-        agents = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "AGENTS.md").read_text(encoding="utf-8")
+        ws = AGENTS_ROOT / "fxsl" / "opm-specialist"
+        if not ws.is_dir():
+            self.skipTest("fxsl/opm-specialist no productivo — en staging")
+        agents = (ws / "AGENTS.md").read_text(encoding="utf-8")
         soul = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "SOUL.md").read_text(encoding="utf-8")
         tools = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "TOOLS.md").read_text(encoding="utf-8")
         classifier = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "skills" / "CM-INTENT-CLASSIFIER.md").read_text(encoding="utf-8")

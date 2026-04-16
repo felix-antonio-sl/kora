@@ -1,6 +1,6 @@
 # KORA Knowledge Graph
 
-Generated: 2026-04-16T23:54:17.695496
+Generated: 2026-04-17T00:02:14.726919
 
 ## Summary
 

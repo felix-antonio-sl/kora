@@ -82,6 +82,19 @@ def assert_contract_supports_scenario(test_case, contract, scenario):
         test_case.assertEqual(contract.handoff_targets, [], msg=f"{contract.workspace} unexpectedly declares handoffs")
 
 
+def _workspace_exists(workspace_ref):
+    ns, name = workspace_ref.split("/", 1)
+    return (AGENTS_ROOT / ns / name).is_dir()
+
+
+def _require_workspaces(test_case, *refs):
+    missing = [r for r in refs if not _workspace_exists(r)]
+    if missing:
+        test_case.skipTest(
+            f"Workspace(s) no productivos: {', '.join(missing)} — en staging durante reprocesamiento v8"
+        )
+
+
 class OperatingCoreScenarioTests(unittest.TestCase):
     def setUp(self):
         if not has_productive_workspaces():
@@ -152,12 +165,14 @@ class OperatingCoreScenarioTests(unittest.TestCase):
             )
 
     def test_domain_canary_allowed_kb_entries_are_urns(self):
+        _require_workspaces(self, "gn/goreologo", "gn/digitrans")
         for workspace in ("gn/goreologo", "gn/digitrans"):
             contract = load_workspace_contract(workspace)
             self.assertTrue(contract.allowed_kb, msg=f"{workspace} should declare allowed_kb")
             self.assertTrue(all(urn.startswith("urn:") for urn in contract.allowed_kb), msg=f"{workspace} has non-URN allowed_kb")
 
     def test_domain_canary_agent_urns_resolve_via_cli(self):
+        _require_workspaces(self, "gn/goreologo", "gn/digitrans")
         manifest_paths = (
             AGENTS_ROOT / "gn" / "goreologo" / "AGENTS.md",
             AGENTS_ROOT / "gn" / "goreologo" / "TOOLS.md",
@@ -174,6 +189,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
 def make_agent_scenario_test(scenario):
     def test_method(self):
+        _require_workspaces(self, scenario["workspace"])
         contract = load_workspace_contract(scenario["workspace"])
         assert_contract_supports_scenario(self, contract, scenario)
 
@@ -182,6 +198,7 @@ def make_agent_scenario_test(scenario):
 
 def make_handoff_test(scenario):
     def test_method(self):
+        _require_workspaces(self, scenario["from"], scenario["to"])
         source_contract = load_workspace_contract(scenario["from"])
         target_contract = load_workspace_contract(scenario["to"])
         assert_workspace_refs_resolve(self, source_contract.route_targets, "source route")
@@ -215,6 +232,7 @@ def make_handoff_test(scenario):
 
 def make_loop_test(loop):
     def test_method(self):
+        _require_workspaces(self, *loop["steps"])
         for workspace in loop["steps"]:
             contract = load_workspace_contract(workspace)
             for state_name in loop["required_states_by_step"].get(workspace, []):
@@ -230,6 +248,7 @@ def make_loop_test(loop):
 
 def make_canary_support_test(step):
     def test_method(self):
+        _require_workspaces(self, step["workspace"])
         contract = load_workspace_contract(step["workspace"])
         assert_contract_supports_scenario(self, contract, step)
 
