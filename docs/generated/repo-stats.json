@@ -5,16 +5,16 @@
   "agent_bootstrap_artifacts": 155,
   "catalog_counts": {
     "Agents": 155,
-    "Skills": 382,
-    "Knowledge": 543,
+    "Skills": 383,
+    "Knowledge": 538,
     "Documents": 0,
     "Other": 0
   },
-  "total_catalog_entries": 1080,
+  "total_catalog_entries": 1076,
   "by_namespace": {
     "fxsl": 247,
     "gn": 233,
-    "kora": 202,
+    "kora": 198,
     "salud": 157,
     "tde": 55,
     "korvo": 37,

@@ -644,7 +644,7 @@ def _register_builtins():
     register_check(
         Check("workspace-validity", "Workspaces validate against schema + semantics",
               scope="workspace", severity="high", enforcement="schema",
-              spec_ref="agent-spec-md / agentfile-spec", depends=("catalog-exists",), phase="verify"),
+              spec_ref="agentfile-spec legacy-compat profile", depends=("catalog-exists",), phase="verify"),
         _check_workspace_validity,
     )
     register_check(
@@ -687,7 +687,7 @@ def _register_builtins():
     register_check(
         Check("tools-config-coherence", "TOOLS.md and config.json tools.allow match",
               scope="workspace", severity="medium", enforcement="lint",
-              spec_ref="CLAUDE.md / agent-spec-md §5", depends=("catalog-exists",), phase="verify"),
+              spec_ref="agentfile-spec legacy-compat profile", depends=("catalog-exists",), phase="verify"),
         _check_tools_config_coherence,
     )
 

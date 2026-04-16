@@ -1282,6 +1282,10 @@ Catalog:
     title: CM-SYNTHESIZER
     file: SKILLS/gn/goreologo/CM-SYNTHESIZER/SKILL.md
     status: published
+  - urn: urn:kora:skill:atomize:1.0.0
+    title: Atomize — Productor canonico de la familia `atomic`
+    file: SKILLS/kora/atomize/SKILL.md
+    status: published
   - urn: urn:kora:skill:clawforge-agent-deployer:1.2.0
     title: CM-AGENT-DEPLOYER
     file: AGENTS/kora/clawforge/skills/CM-AGENT-DEPLOYER/SKILL.md
@@ -3337,10 +3341,6 @@ Catalog:
     title: Visión de Desarrollo GORE Ñuble
     file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
     status: published
-  - urn: urn:kora:kb:agent-spec-md
-    title: KORA/Agent-Spec v8.9.0
-    file: specs/agent-spec-md.md
-    status: published
   - urn: urn:kora:kb:agentfile-spec
     title: KORA/Agentfile-Spec v1.0.0
     file: specs/agentfile-spec.md
@@ -3403,7 +3403,7 @@ Catalog:
     file: specs/knowledge-spec.md
     status: published
   - urn: urn:kora:kb:md-spec
-    title: KORA/MD v6.3.0
+    title: KORA/MD v7.0.0
     file: specs/md-spec.md
     status: published
   - urn: urn:kora:kb:pipeline-ingesta
@@ -3418,25 +3418,9 @@ Catalog:
     title: KORA/Skill-Overlay-Spec v1.0.0
     file: specs/skill-overlay-spec.md
     status: published
-  - urn: urn:kora:kb:skill-spec-md
-    title: KORA/Skill-Spec v4.3.0
-    file: specs/skill-spec-md.md
-    status: published
-  - urn: urn:kora:kb:spec-md
-    title: KORA/Spec-MD v5.2.0
-    file: specs/spec-md.md
-    status: published
-  - urn: urn:kora:kb:swarm-spec-md
-    title: KORA/Swarm-Spec v2.3.0
-    file: specs/swarm-spec-md.md
-    status: published
   - urn: urn:kora:kb:test-strategy
     title: Estrategia de Pruebas KB TDE (wikiguias)
     file: KNOWLEDGE/kora/sys/test_strategy.md
-    status: published
-  - urn: urn:kora:kb:transmutation-spec
-    title: KORA/Transmutation-Spec v1.0.0
-    file: specs/transmutation-spec.md
     status: published
   - urn: urn:kora:kb:workflow-wikiguias
     title: TDE-WORKFLOW-WIKIGUIAS-029

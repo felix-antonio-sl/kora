@@ -4,15 +4,18 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-09"
-    source: "KORA categorical-foundations 05, KORA/Gobernanza v3.0.0, refactor del contrato de compresion y realizacion superficial"
-version: "6.3.0"
+    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.0.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize"
+version: "7.0.0"
 status: published
-tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad]
+tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad, atomic]
 lang: es
 extensions: {}
+relations:
+  cites:
+    - "urn:kora:kb:gobernanza"
 ---
 
-# KORA/MD v6.3.0
+# KORA/MD v7.0.0
 
 ## 1. Definicion
 
@@ -41,6 +44,8 @@ La audiencia primaria son runtimes y pipelines de recuperacion. La audiencia sec
 | FS                      | Fidelity Score. Porcentaje de hechos preservados o comprimidos sin perdida semantica                       |
 | CR                      | Compression Ratio. Longitud fuente / longitud salida                                                       |
 | SSOT                    | Un hecho, un lugar                                                                                         |
+| Proposicion atomica     | Hecho verificable minimo autocontenido, con tipo, texto comprimido y ancla de fuente resoluble             |
+| Productor canonico      | Herramienta autorizada para generar artefactos de una familia con garantia de invariantes                  |
 
 ## 3. Anatomia del documento
 
@@ -345,14 +350,57 @@ Familias minimas:
 | `organigram`        | dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
 | `cq_catalog`        | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento                                   |
 | `inventory/control` | puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada                               |
+| `atomic`            | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales; dedup multi-source permitido; conflicto semantico entre fuentes -> tipo `tension`; limite operativo 5.000 palabras y 200 proposiciones por artefacto; si excede, segmentar y generar artefacto indice |
 
 Clasificacion de familia:
 
 La familia de un artefacto **DEBE** identificarse por uno de estos mecanismos, en orden de precedencia:
 
 1. `extensions.{namespace}.family` explicito en el frontmatter.
-2. Convencion de directorio (e.g., `glossaries/`, `normative/`).
+2. Convencion de directorio (e.g., `glossaries/`, `normative/`, `atomic/`).
 3. Clasificacion manual del curador durante koraficacion.
+4. Productor canonico declarado (ver `knowledge-spec §12`): si existe, el productor fija la familia al emitir el artefacto.
+
+### 5.6.1 Familia `atomic`: tipos y forma de proposicion
+
+La familia `atomic` tiene enum cerrado de tipos de proposicion:
+
+| Tipo          | Semantica                                         |
+| ------------- | ------------------------------------------------- |
+| `requirement` | algo que se debe cumplir                          |
+| `definition`  | que es algo                                       |
+| `rule`        | como funciona algo                                |
+| `exclusion`   | que no aplica o esta prohibido                    |
+| `constraint`  | limite numerico o temporal                        |
+| `obligation`  | accion que alguien debe realizar                  |
+| `permission`  | algo que esta permitido                           |
+| `deadline`    | plazo especifico                                  |
+| `tension`     | contradiccion o ambiguedad entre fuentes          |
+| `fact`        | dato verificable sin carga normativa              |
+| `scope`       | alcance o ambito de aplicacion                    |
+
+Forma minima de proposicion (dentro de un `##` de la familia):
+
+- una fuente:
+  ```
+  - **P042** · `exclusion` · texto atomico verificable · [src](urn:...#loc)
+  ```
+- varias fuentes (dedup aplicado):
+  ```
+  - **P042** · `exclusion` · texto atomico verificable
+    - [src-a](urn:...#loc)
+    - [src-b](urn:...#loc)
+  ```
+
+Reglas:
+
+1. El ID `Pxxx` **DEBE** ser unico en el artefacto; en artefactos segmentados, el `indice` **DEBE** mantener la unicidad global.
+2. El tipo **DEBE** pertenecer al enum cerrado.
+3. El texto **DEBE** ser autocontenido y preservar cifras, fechas, nombres propios, leyes y decretos sin compresion destructiva.
+4. Cada proposicion **DEBE** tener al menos una fuente resoluble.
+5. Si dos fuentes afirman el mismo hecho, se dedup en una sola proposicion con cita multiple.
+6. Si dos fuentes se contradicen sobre el mismo hecho, **NO** se dedup: se emite una proposicion `tension` que nombra ambas posiciones.
+7. Extensiones del frontmatter **DEBEN** declarar `extensions.kora.family: atomic` y, cuando aplique, `extensions.kora.atomic.source_corpus`, `extensions.kora.atomic.n_propositions` y `extensions.kora.atomic.producer`.
 
 ## 6. Koraficacion
 
@@ -380,6 +428,8 @@ Propiedades:
 
 La implementacion concreta puede usar trabajo manual, una o multiples pasadas LLM, siempre que el resultado satisfaga esta spec.
 
+Cuando una familia tiene productor canonico declarado (`knowledge-spec §12`), la generacion de artefactos **DEBERIA** delegarse al productor; la edicion manual posterior **DEBE** marcarse explicitamente para inhibir sobreescrituras.
+
 ### 6.4 Evaluacion del input
 
 Antes de transformar, **DEBE** clasificarse el documento fuente segun:
@@ -400,6 +450,12 @@ Para documentos grandes:
 1. Los cortes **DEBEN** realizarse entre secciones naturales.
 2. Cada segmento **DEBE** ser tematicamente coherente.
 3. **NO DEBE** cortarse dentro de una tabla, lista o parrafo.
+
+Para familia `atomic`, segmentacion operativa:
+
+4. Si el artefacto atomic supera 5.000 palabras o 200 proposiciones, **DEBE** emitirse un artefacto `atomic-{slug}-index` y N artefactos `atomic-{slug}-{NN}`.
+5. El indice **DEBE** contener tabla `Segmento | Rango Pxxx | Dominios` y resolver URNs a cada segmento.
+6. Los IDs `Pxxx` **DEBEN** ser unicos a traves del indice + todos los segmentos (numeracion global).
 
 ### 6.6 Transformacion
 
@@ -468,6 +524,7 @@ Checks deterministas minimos:
 - heading primario recuperable
 - resumen obligatorio por familia cuando aplique
 - ausencia de headings-campo prohibidos en KB publicada
+- para familia `atomic`: IDs Pxxx unicos, tipos dentro del enum cerrado, cada proposicion con ≥1 fuente resoluble
 
 ### 6.11 Verificacion de fidelidad y calidad
 
@@ -516,6 +573,10 @@ Las estructuras existentes **NO DEBEN** degradarse y la duplicacion de hechos **
 
 La compresion maxima **NO DEBE** producir headings truncados, chunks primarios pobres, labelese ni dumping estructural.
 
+### 7.6 Integridad de la familia `atomic`
+
+En artefactos `atomic`, la unicidad global de IDs y la resolubilidad de fuentes son invariantes; violarlos invalida la familia.
+
 ## 8. Versionado
 
 - correccion editorial sin cambio semantico: patch
@@ -542,12 +603,26 @@ La compresion maxima **NO DEBE** producir headings truncados, chunks primarios p
 | Namespace-directorio      | Namespace URN coincide con subdirectorio bajo `KNOWLEDGE/`  | lint        | Migrar artefacto o corregir URN           |
 | Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `OPERATIONS/drafts/` o publicar   |
 | Lifecycle status          | Transicion de status cumple protocolo auditoria             | manual      | Completar auditoria antes de publicar     |
+| Indice atomic             | `atomic` tiene `## Indice de fuentes` no vacio              | lint        | Completar indice                          |
+| Proposiciones atomic      | Cada entry tiene ID Pxxx + tipo + texto + ≥1 fuente         | lint        | Reparar entry                             |
+| Tipos atomic              | Cada tipo pertenece al enum cerrado (`§5.6.1`)              | schema      | Corregir tipo                             |
+| Unicidad Pxxx             | IDs Pxxx unicos en artefacto y en conjunto segmentado       | lint        | Renumerar o consolidar                    |
+| Segmentacion atomic       | Artefacto ≤5.000 palabras y ≤200 props o existe `-index`    | lint        | Segmentar o declarar indice               |
+| Dedup atomic              | Multi-source solo si hechos equivalentes; conflicto -> `tension` | manual  | Reclasificar proposicion                  |
 
 ## 10. Migracion
 
 Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
 
-### Contrato vigente v6
+### 10.1 Contrato vigente v7
+
+- Todo el contrato v6 se preserva sin quiebres.
+- Se agrega familia documental `atomic` (§5.6) con invariantes y enum cerrado de tipos (§5.6.1).
+- Se declara la figura de `productor canonico de familia`, referida a `knowledge-spec §12`.
+- Se agregan checks de validacion para `atomic` (§9).
+- Se agrega invariante de integridad de la familia `atomic` (§7.6).
+
+### 10.2 Contrato v6
 
 - URN conceptual tripartito, version fuera del URN (§4.1).
 - Koraficacion como functor fiel, comprimido e idempotente (§6.2).
@@ -558,5 +633,15 @@ Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bump
 - Familias documentales con invariantes propios (§5.6).
 - Verificacion mecanica y de fidelidad obligatorias (§6.10, §6.11).
 - Lifecycle `draft -> published -> deprecated` con auditoria para transitar (§3.1).
+
+### 10.3 Que migrar desde v6
+
+- Artefactos existentes que representan proposiciones atomicas **PUEDEN** reclasificarse como familia `atomic` en su frontmatter sin perder identidad URN.
+- Los archivos en `atomize/raw/` permanecen pre-canonicos hasta ser re-procesados por el productor canonico de la familia `atomic`; su persistencia en ese estado es deuda declarada.
+- Los outputs legacy de `atomize` con formato `_ATOMIC_GRAPH.md` plano **DEBEN** regenerarse con el productor canonico antes de ingresar a `KNOWLEDGE/`.
+
+### 10.4 Que se depreca
+
+- El formato plano `_ATOMIC_GRAPH.md` sin frontmatter queda deprecado como artefacto publicable. Se mantiene solo como salida operativa temporal dentro de `atomize/raw/atomize-out/`.
 
 Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

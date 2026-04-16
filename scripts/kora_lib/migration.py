@@ -314,9 +314,8 @@ Markdown breve, con reglas, riesgos y decisiones explicitas.
                 },
                 "allowed_kb": [
                     "urn:kora:kb:gobernanza",
-                    "urn:kora:kb:spec-md",
                     "urn:kora:kb:md-spec",
-                    "urn:kora:kb:agent-spec-md",
+                    "urn:kora:kb:agentfile-spec",
                 ],
                 "sandbox": {"mode": "strict"},
                 "tools": {"allow": ["kb_route", "repo_health"], "deny": []},

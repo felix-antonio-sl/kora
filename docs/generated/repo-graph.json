@@ -1,14 +1,14 @@
 {
   "meta": {
-    "scanned_files": 1194,
-    "node_count": 958,
-    "edge_count": 5772
+    "scanned_files": 1190,
+    "node_count": 959,
+    "edge_count": 5696
   },
   "node_kind_counts": {
-    "artifact": 156,
+    "artifact": 161,
     "knowledge": 507,
-    "skill": 192,
-    "spec": 12,
+    "skill": 193,
+    "spec": 7,
     "tool": 65,
     "workspace": 26
   },
@@ -22,8 +22,8 @@
     "DependsOn": 59,
     "InvokesSkill": 180,
     "RoutesToAgent": 13,
-    "TracesTo": 84,
-    "XRef": 4330
+    "TracesTo": 13,
+    "XRef": 4325
   },
   "nodes": [
     {
@@ -1128,6 +1128,31 @@
       "id": "urn:kora:catalog:master:2.0.0",
       "kind": "artifact",
       "urn": "urn:kora:catalog:master:2.0.0"
+    },
+    {
+      "id": "urn:kora:kb:agent-spec-md",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:agent-spec-md"
+    },
+    {
+      "id": "urn:kora:kb:skill-spec-md",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:skill-spec-md"
+    },
+    {
+      "id": "urn:kora:kb:spec-md",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:spec-md"
+    },
+    {
+      "id": "urn:kora:kb:swarm-spec-md",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:swarm-spec-md"
+    },
+    {
+      "id": "urn:kora:kb:transmutation-spec",
+      "kind": "artifact",
+      "urn": "urn:kora:kb:transmutation-spec"
     },
     {
       "id": "urn:korvo:agent-bootstrap:korax-agents:3.5.0",
@@ -6728,6 +6753,15 @@
       "namespace": "gn"
     },
     {
+      "id": "urn:kora:skill:atomize:1.0.0",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:skill:atomize:1.0.0",
+      "title": "Atomize — Productor canonico de la familia `atomic`",
+      "path": "SKILLS/kora/atomize/SKILL.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:skill:clawforge-agent-deployer:1.2.0",
       "kind": "skill",
       "category": "Skills",
@@ -7727,15 +7761,6 @@
       "namespace": "agengai"
     },
     {
-      "id": "urn:kora:kb:agent-spec-md",
-      "kind": "spec",
-      "category": "Knowledge",
-      "urn": "urn:kora:kb:agent-spec-md",
-      "title": "KORA/Agent-Spec v8.9.0",
-      "path": "specs/agent-spec-md.md",
-      "namespace": "kora"
-    },
-    {
       "id": "urn:kora:kb:agentfile-spec",
       "kind": "spec",
       "category": "Knowledge",
@@ -7767,7 +7792,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:md-spec",
-      "title": "KORA/MD v6.3.0",
+      "title": "KORA/MD v7.0.0",
       "path": "specs/md-spec.md",
       "namespace": "kora"
     },
@@ -7787,42 +7812,6 @@
       "urn": "urn:kora:kb:skill-overlay-spec",
       "title": "KORA/Skill-Overlay-Spec v1.0.0",
       "path": "specs/skill-overlay-spec.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:kb:skill-spec-md",
-      "kind": "spec",
-      "category": "Knowledge",
-      "urn": "urn:kora:kb:skill-spec-md",
-      "title": "KORA/Skill-Spec v4.3.0",
-      "path": "specs/skill-spec-md.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:kb:spec-md",
-      "kind": "spec",
-      "category": "Knowledge",
-      "urn": "urn:kora:kb:spec-md",
-      "title": "KORA/Spec-MD v5.2.0",
-      "path": "specs/spec-md.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:kb:swarm-spec-md",
-      "kind": "spec",
-      "category": "Knowledge",
-      "urn": "urn:kora:kb:swarm-spec-md",
-      "title": "KORA/Swarm-Spec v2.3.0",
-      "path": "specs/swarm-spec-md.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:kb:transmutation-spec",
-      "kind": "spec",
-      "category": "Knowledge",
-      "urn": "urn:kora:kb:transmutation-spec",
-      "title": "KORA/Transmutation-Spec v1.0.0",
-      "path": "specs/transmutation-spec.md",
       "namespace": "kora"
     },
     {
@@ -16144,20 +16133,6 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:agengai:kb:openclaw-runtime-extension",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/openclaw-runtime-extension.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:agengai:kb:openclaw-runtime-extension",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/openclaw-runtime-extension.md"
-    },
-    {
-      "kind": "TracesTo",
       "source": "urn:gn:agent-bootstrap:goreologo-agents:3.3.0",
       "target": "urn:kora:kb:cat-agent-coalgebra",
       "fragment": null,
@@ -16228,244 +16203,6 @@
     },
     {
       "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:gobernanza",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/gobernanza.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:gobernanza",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/gobernanza.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:gobernanza",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/gobernanza.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-foundations",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:knowledge-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/knowledge-spec.md"
-    },
-    {
-      "kind": "TracesTo",
       "source": "urn:kora:kb:md-spec",
       "target": "urn:kora:kb:cat-governance-lattice",
       "fragment": null,
@@ -16477,251 +16214,6 @@
       "target": "urn:kora:kb:cat-governance-lattice",
       "fragment": null,
       "source_path": "specs/md-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:runtime-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/runtime-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:runtime-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/runtime-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:runtime-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/runtime-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:runtime-spec-md",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/runtime-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:runtime-spec-md",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/runtime-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:spec-md",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:spec-md",
-      "target": "urn:kora:kb:cat-governance-lattice",
-      "fragment": null,
-      "source_path": "specs/spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-discovery-presheaf",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:cat-ecosystem-2cat",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:cat-agent-coalgebra",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:cat-behavioral-preservation",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "TracesTo",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:cat-skill-algebra",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
     },
     {
       "kind": "TracesTo",
@@ -20800,13 +20292,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:kb:agentfile-spec",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -20940,27 +20425,6 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:skill-spec-md",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:spec-md",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:swarm-spec-md",
-      "fragment": null,
-      "source_path": "catalog/catalog_master_kora.yml"
-    },
-    {
-      "kind": "XRef",
-      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:kb:test-strategy",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -20968,14 +20432,14 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:transmutation-spec",
+      "target": "urn:kora:kb:workflow-wikiguias",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
-      "target": "urn:kora:kb:workflow-wikiguias",
+      "target": "urn:kora:skill:atomize:1.0.0",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
     },
@@ -39013,20 +38477,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:agent-spec-md",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": "specs/agent-spec-md.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:agent-spec-md",
-      "fragment": null,
-      "source_path": "specs/agentfile-spec.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:kora:kb:agentfile-spec",
       "target": "urn:kora:kb:agentfile-spec",
       "fragment": null,
@@ -39049,14 +38499,14 @@
     {
       "kind": "XRef",
       "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:skill-spec-md",
+      "target": "urn:kora:kb:runtime-spec-md",
       "fragment": null,
       "source_path": "specs/agentfile-spec.md"
     },
     {
       "kind": "XRef",
       "source": "urn:kora:kb:agentfile-spec",
-      "target": "urn:kora:kb:spec-md",
+      "target": "urn:kora:kb:skill-overlay-spec",
       "fragment": null,
       "source_path": "specs/agentfile-spec.md"
     },
@@ -39545,6 +38995,13 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:kb:gobernanza",
+      "target": "urn:kora:kb:md-spec",
+      "fragment": null,
+      "source_path": "specs/gobernanza.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:kb:hub-agentes",
       "target": "urn:kora:kb:hub-agentes",
       "fragment": null,
@@ -39637,6 +39094,13 @@
     {
       "kind": "XRef",
       "source": "urn:kora:kb:knowledge-spec",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/knowledge-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:knowledge-spec",
       "target": "urn:kora:kb:knowledge-spec",
       "fragment": null,
       "source_path": "specs/knowledge-spec.md"
@@ -39647,6 +39111,20 @@
       "target": "urn:kora:kb:md-spec",
       "fragment": null,
       "source_path": "specs/knowledge-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:knowledge-spec",
+      "target": "urn:kora:skill:atomize:1.0.0",
+      "fragment": null,
+      "source_path": "specs/knowledge-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:md-spec",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/md-spec.md"
     },
     {
       "kind": "XRef",
@@ -39742,6 +39220,20 @@
     {
       "kind": "XRef",
       "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:agentfile-spec",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:runtime-spec-md",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/runtime-spec-md.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:runtime-spec-md",
       "target": "urn:kora:kb:runtime-spec-md",
       "fragment": null,
       "source_path": "specs/runtime-spec-md.md"
@@ -39769,34 +39261,6 @@
     },
     {
       "kind": "XRef",
-      "source": "urn:kora:kb:skill-overlay-spec",
-      "target": "urn:kora:kb:skill-spec-md",
-      "fragment": null,
-      "source_path": "specs/skill-overlay-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:skill-spec-md",
-      "target": "urn:kora:kb:skill-spec-md",
-      "fragment": null,
-      "source_path": "specs/skill-spec-md.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:spec-md",
-      "target": "urn:kora:kb:spec-md",
-      "fragment": null,
-      "source_path": "specs/spec-md.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:swarm-spec-md",
-      "target": "urn:kora:kb:swarm-spec-md",
-      "fragment": null,
-      "source_path": "specs/swarm-spec-md.md"
-    },
-    {
-      "kind": "XRef",
       "source": "urn:kora:kb:test-strategy",
       "target": "urn:kora:kb:hub-agentes",
       "fragment": null,
@@ -39850,48 +39314,6 @@
       "target": "urn:kora:kb:workflow-wikiguias",
       "fragment": null,
       "source_path": "KNOWLEDGE/kora/sys/test_strategy.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:agentfile-spec",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:gobernanza",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:md-spec",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:runtime-spec-md",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:spec-md",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
-    },
-    {
-      "kind": "XRef",
-      "source": "urn:kora:kb:transmutation-spec",
-      "target": "urn:kora:kb:transmutation-spec",
-      "fragment": null,
-      "source_path": "specs/transmutation-spec.md"
     },
     {
       "kind": "XRef",
@@ -39899,6 +39321,41 @@
       "target": "urn:kora:kb:workflow-wikiguias",
       "fragment": null,
       "source_path": "KNOWLEDGE/kora/sys/workflow_wikiguias.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:atomize:1.0.0",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "SKILLS/kora/atomize/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:atomize:1.0.0",
+      "target": "urn:kora:kb:md-spec",
+      "fragment": null,
+      "source_path": "SKILLS/kora/atomize/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:atomize:1.0.0",
+      "target": "urn:kora:skill:atomize:1.0.0",
+      "fragment": null,
+      "source_path": "SKILLS/kora/atomize/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:atomize:1.0.0",
+      "target": "urn:kora:skill:atomize:1.0.0",
+      "fragment": null,
+      "source_path": "SKILLS/kora/atomize/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:skill:atomize:1.0.0",
+      "target": "urn:kora:skill:atomize:1.0.0",
+      "fragment": null,
+      "source_path": "SKILLS/kora/atomize/SKILL.md"
     },
     {
       "kind": "XRef",

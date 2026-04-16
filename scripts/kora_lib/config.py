@@ -219,6 +219,14 @@ OPERATING_CORE_COHORTS = {
         "gn/digitrans",
     ),
 }
+
+DEPRECATED_URN_ALIASES = {
+    "urn:kora:kb:spec-md": "urn:kora:kb:md-spec",
+    "urn:kora:kb:agent-spec-md": "urn:kora:kb:agentfile-spec",
+    "urn:kora:kb:skill-spec-md": "urn:kora:kb:skill-overlay-spec",
+    "urn:kora:kb:swarm-spec-md": "urn:kora:kb:agentfile-spec",
+    "urn:kora:kb:transmutation-spec": "urn:kora:kb:runtime-spec-md",
+}
 SEMANTIC_TOOL_DOC_MARKERS = (
     "**Firma:**",
     "**Cuando usar:**",

@@ -85,18 +85,17 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertEqual(doc["_manifest"]["urn"], "urn:test:skill:sample-extended:1.0.0")
 
     def test_agent_spec_restores_fsm_contract(self):
-        content = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
+        content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "## 1. FSM",
-            "## 2. Reglas Duras",
-            "## 3. Co-induccion",
-            "## 4. Contexto Multi-turno",
-            "## 5. Wiring",
-            "S-DISPATCHER",
-            "S-END",
-            "formal/01 §3.2",
-            "formal/01 §3.3",
-            "formal/01 §6.3",
+            "`AGENT.md` es la representacion intermedia canonica del agente KORA",
+            "1. `coalgebra`",
+            "2. `plan`",
+            "3. `interface`",
+            "4. `fibers`",
+            "5. `composition`",
+            "6. `safety`",
+            "Topologia moderna",
+            "AGENT.md",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -104,7 +103,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v6.3.0",
+            "KORA/MD v7.0.0",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -117,59 +116,68 @@ class ArtifactFixtureTests(unittest.TestCase):
             "Calidad de superficie",
             "### 6.10 Verificacion mecanica",
             "### 6.11 Verificacion de fidelidad",
+            "`atomic`",
+            "### 5.6.1 Familia `atomic`",
+            "productor canonico",
         )
         for term in required_terms:
             self.assertIn(term, content)
         self.assertNotIn("test de bolsillo", content)
 
-    def test_spec_md_restores_crystallization_contract(self):
-        content = (ROOT / "specs" / "spec-md.md").read_text(encoding="utf-8")
+    def test_md_spec_declares_atomic_family_and_canonical_producer(self):
+        content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "### 1.2 Proceso de cristalizacion",
-            "## 6. Patron obligatorio: regla + ejemplo + traza",
-            "Correcto:",
-            "Incorrecto:",
-            "## 10. Template (esqueleto minimo)",
+            "familia `atomic`",
+            "productor canonico",
+            "enum cerrado",
+            "5.000 palabras",
+            "200 proposiciones",
+            "dedup multi-source",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_knowledge_spec_registers_atomize_as_canonical_producer(self):
+        content = (ROOT / "specs" / "knowledge-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "## 12. Productores canonicos de familia",
+            "urn:kora:skill:atomize:1.0.0",
+            "OPERATIONS/drafts/kora/atomic-",
+            "hand_edited",
         )
         for term in required_terms:
             self.assertIn(term, content)
 
     def test_skill_spec_restores_extended_support_with_governed_contract(self):
-        content = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
+        content = (ROOT / "specs" / "skill-overlay-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "dos materializaciones gobernadas del mismo objeto `skill`",
-            "Skill extendido: directorio `skills/CM-*/` con entrypoint `SKILL.md`",
-            "## 5. Progressive Disclosure y Skills extendidos",
-            "Discover",
-            "Activate",
-            "Execute",
-            "El validator base **DEBE** juzgar conformidad sobre `skills/CM-*.md` y sobre `skills/CM-*/SKILL.md` cuando existan.",
+            "formato preferido de capacidad",
+            "Todo skill portable **DEBERIA** declarar",
+            "metadata.kora.urn",
+            "No todo lo que vive bajo `SKILLS/` reclama esta spec",
+            "tiene alias o espejo `CM-*` por compatibilidad",
         )
         for term in required_terms:
             self.assertIn(term, content)
 
         rejected_terms = (
-            "## 5. Descope explicito de Skills extendidos",
             "fuera del soporte efectivo del repo",
-            "El validator base **DEBE** juzgar conformidad solo sobre Skill degenerado.",
         )
         for term in rejected_terms:
             self.assertNotIn(term, content)
 
     def test_specs_declare_manifest_kind_taxonomy(self):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
-        agent_spec = (ROOT / "specs" / "agent-spec-md.md").read_text(encoding="utf-8")
-        skill_spec = (ROOT / "specs" / "skill-spec-md.md").read_text(encoding="utf-8")
-        self.assertIn("### 4.5 Manifest kind", governance)
+        agent_spec = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
+        skill_spec = (ROOT / "specs" / "skill-overlay-spec.md").read_text(encoding="utf-8")
+        self.assertIn("Manifest kind", governance)
         self.assertIn("bootstrap_agents", governance)
         self.assertIn("bootstrap_config", governance)
         self.assertIn("lazy_load_endofunctor", governance)
-        self.assertIn("`_manifest.type` expresa el kind estructural del componente", agent_spec)
-        self.assertIn("La URN identitaria `skill` y el kind `_manifest.type = lazy_load_endofunctor` son ortogonales", skill_spec)
-        self.assertIn("firma, parametros, cuando usar, cuando NO usar, notas semanticas", agent_spec)
-        self.assertIn("Orquestacion de fases del agente", skill_spec)
-        self.assertIn("Composicion inter-componente operativa", skill_spec)
-        self.assertIn("Un Skill **PUEDE** producir o evaluar contenido sobre behavior, interface, security o wiring", skill_spec)
+        self.assertIn("`AGENT.md` es la unica fuente de verdad normativa del agente", agent_spec)
+        self.assertIn("Toda capacidad nueva **DEBERIA** resolverse como skill portable", agent_spec)
+        self.assertIn("Todo skill portable **DEBERIA** declarar", skill_spec)
+        self.assertIn("El overlay agrega trazabilidad y gobierno", skill_spec)
 
     def test_forgemaster_tracks_governed_extended_skill_support(self):
         files = (
@@ -545,19 +553,21 @@ class ArtifactFixtureTests(unittest.TestCase):
             "## 6. Platform equivalence",
             "## 7. Model routing",
             "## 8. Fallback chains y budget",
+            "## 10. Transmutacion",
+            "_transmutation.yml",
         )
         for term in required_terms:
             self.assertIn(term, content)
 
     def test_swarm_spec_restores_operational_orchestration_contract(self):
-        content = (ROOT / "specs" / "swarm-spec-md.md").read_text(encoding="utf-8")
+        content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "## 4. Golden Paths",
-            "## 5. Circuit Breakers",
-            "## 6. Backpressure",
-            "## 7. Event Routing",
-            "## 9. Security inter-agente",
-            "## 10. Sentinel pattern",
+            "golden paths",
+            "circuit breakers",
+            "backpressure",
+            "event routing",
+            "sentinel pattern",
+            "## 10. Composition avanzada",
         )
         for term in required_terms:
             self.assertIn(term, content)

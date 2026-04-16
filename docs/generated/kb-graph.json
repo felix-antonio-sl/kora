@@ -7221,19 +7221,6 @@
       ]
     },
     {
-      "urn": "urn:kora:kb:agent-spec-md",
-      "namespace": "kora",
-      "status": "published",
-      "version": "8.9.0",
-      "tags": [
-        "spec",
-        "agentes",
-        "workspace",
-        "discovery",
-        "validation"
-      ]
-    },
-    {
       "urn": "urn:kora:kb:agentfile-spec",
       "namespace": "kora",
       "status": "published",
@@ -7242,8 +7229,8 @@
         "spec",
         "agente",
         "agentfile",
-        "coalgebra",
-        "transmutacion"
+        "canon",
+        "ir"
       ]
     },
     {
@@ -7278,14 +7265,15 @@
       "urn": "urn:kora:kb:md-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "6.3.0",
+      "version": "7.0.0",
       "tags": [
         "spec",
         "markdown",
         "conocimiento",
         "rag",
         "koraficacion",
-        "fidelidad"
+        "fidelidad",
+        "atomic"
       ]
     },
     {
@@ -7311,9 +7299,7 @@
         "spec",
         "runtime",
         "deployment",
-        "adapters",
-        "wrappers",
-        "fallback"
+        "equivalence"
       ]
     },
     {
@@ -7325,62 +7311,8 @@
         "spec",
         "skill",
         "overlay",
-        "agentskills",
-        "composicion"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:skill-spec-md",
-      "namespace": "kora",
-      "status": "published",
-      "version": "4.3.0",
-      "tags": [
-        "spec",
-        "skill",
-        "cm",
-        "degenerate",
-        "lazy-load"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:spec-md",
-      "namespace": "kora",
-      "status": "published",
-      "version": "5.2.0",
-      "tags": [
-        "spec",
-        "prescriptivo",
-        "formato",
-        "crystallization",
-        "enforcement",
-        "traces"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:swarm-spec-md",
-      "namespace": "kora",
-      "status": "published",
-      "version": "2.3.0",
-      "tags": [
-        "spec",
-        "swarm",
-        "orchestration",
-        "golden-path",
-        "circuit-breaker",
-        "backpressure"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:transmutation-spec",
-      "namespace": "kora",
-      "status": "published",
-      "version": "1.0.0",
-      "tags": [
-        "spec",
-        "transmutacion",
-        "funtor",
-        "runtime",
-        "plataforma"
+        "portable",
+        "capability"
       ]
     }
   ],
@@ -8017,7 +7949,7 @@
     },
     {
       "from": "urn:ops:kb:principios-transmutacion-kora-openclaw-p02",
-      "to": "urn:kora:kb:agent-spec-md",
+      "to": "urn:kora:kb:agentfile-spec",
       "type": "cites"
     },
     {
@@ -8527,7 +8459,7 @@
     },
     {
       "from": "urn:kora:kb:pipeline-ingesta",
-      "to": "urn:kora:kb:agent-spec-md",
+      "to": "urn:kora:kb:agentfile-spec",
       "type": "cites"
     },
     {
@@ -8537,7 +8469,7 @@
     },
     {
       "from": "urn:kora:kb:pipeline-ingesta",
-      "to": "urn:kora:kb:spec-md",
+      "to": "urn:kora:kb:md-spec",
       "type": "cites"
     },
     {
@@ -8557,23 +8489,28 @@
     },
     {
       "from": "urn:kora:kb:agentfile-spec",
-      "to": "urn:kora:kb:spec-md",
+      "to": "urn:kora:kb:runtime-spec-md",
       "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:agentfile-spec",
-      "to": "urn:kora:kb:agent-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:agentfile-spec",
-      "to": "urn:kora:kb:skill-spec-md",
-      "type": "depends"
     },
     {
       "from": "urn:kora:kb:agentfile-spec",
       "to": "urn:kora:kb:gobernanza",
       "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:agentfile-spec",
+      "to": "urn:kora:kb:skill-overlay-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:gobernanza",
+      "to": "urn:kora:kb:md-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:knowledge-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
     },
     {
       "from": "urn:kora:kb:knowledge-spec",
@@ -8581,50 +8518,35 @@
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:md-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:skill-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:transmutation-spec",
+      "from": "urn:kora:kb:md-spec",
       "to": "urn:kora:kb:gobernanza",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:transmutation-spec",
-      "to": "urn:kora:kb:md-spec",
+      "from": "urn:kora:kb:runtime-spec-md",
+      "to": "urn:kora:kb:gobernanza",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:transmutation-spec",
-      "to": "urn:kora:kb:spec-md",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:transmutation-spec",
+      "from": "urn:kora:kb:runtime-spec-md",
       "to": "urn:kora:kb:agentfile-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:gobernanza",
       "type": "depends"
     },
     {
-      "from": "urn:kora:kb:transmutation-spec",
-      "to": "urn:kora:kb:runtime-spec-md",
+      "from": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:md-spec",
       "type": "depends"
     }
   ],
   "broken_edges": [],
   "stats": {
-    "total_nodes": 514,
-    "total_edges": 247,
+    "total_nodes": 509,
+    "total_edges": 245,
     "by_namespace": {
       "gn": 129,
       "fxsl": 96,
@@ -8632,17 +8554,17 @@
       "tde": 55,
       "legal": 35,
       "agengai": 34,
-      "kora": 27,
       "sii": 26,
+      "kora": 22,
       "ops": 10,
       "korvo": 6,
       "pro": 3
     },
     "by_relation_type": {
-      "cites": 181,
-      "depends": 66
+      "cites": 182,
+      "depends": 63
     },
-    "orphan_nodes": 330,
+    "orphan_nodes": 329,
     "broken_edges": 0,
     "cycles_in_depends": 0
   }

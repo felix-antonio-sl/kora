@@ -1,14 +1,14 @@
 # KORA Knowledge Graph
 
-Generated: 2026-04-15T02:50:15.852943
+Generated: 2026-04-16T21:36:11.053362
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Nodes | 514 |
-| Edges | 247 |
-| Orphan nodes | 330 |
+| Nodes | 509 |
+| Edges | 245 |
+| Orphan nodes | 329 |
 | Broken edges | 0 |
 | Cycles in depends | 0 |
 
@@ -22,8 +22,8 @@ Generated: 2026-04-15T02:50:15.852943
 | tde | 55 |
 | legal | 35 |
 | agengai | 34 |
-| kora | 27 |
 | sii | 26 |
+| kora | 22 |
 | ops | 10 |
 | korvo | 6 |
 | pro | 3 |
@@ -32,8 +32,8 @@ Generated: 2026-04-15T02:50:15.852943
 
 | Type | Count |
 |------|-------|
-| cites | 181 |
-| depends | 66 |
+| cites | 182 |
+| depends | 63 |
 
 ## Most Connected Nodes
 
@@ -53,4 +53,4 @@ Generated: 2026-04-15T02:50:15.852943
 | `urn:gn:kb:ssot-legal` | 7 |
 | `urn:gn:kb:mecanismos-matriz-decision` | 7 |
 | `urn:fxsl:kb:opm-iso-19450` | 7 |
-| `urn:salud:kb:gestion-redes-general` | 7 |
+| `urn:kora:kb:agentfile-spec` | 7 |

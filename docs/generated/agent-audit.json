@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-15",
+  "generated_at": "2026-04-16",
   "baseline_specs": [
     "specs/gobernanza.md",
-    "specs/agent-spec-md.md",
-    "specs/skill-spec-md.md",
     "specs/md-spec.md",
-    "specs/spec-md.md",
+    "specs/knowledge-spec.md",
+    "specs/agentfile-spec.md",
+    "specs/skill-overlay-spec.md",
     "specs/runtime-spec-md.md",
-    "specs/swarm-spec-md.md"
+    "specs/openclaw-runtime-extension.md"
   ],
   "methodology": {
     "cohort_order": [
@@ -99,7 +99,7 @@
           "rule_id": "skill.state_variable_leak",
           "rule": "Skill degenerado recibe o emite estado FSM",
           "severity": "P1",
-          "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
+          "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
           "evidence": {
             "path": "AGENTS/ops/clawstack/skills/CM-CONTEXT-MANAGER.md",
             "line": 13,
@@ -153,7 +153,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/ar-virtual/AGENTS.md",
             "line": 9,
@@ -169,7 +169,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/ar-virtual/AGENTS.md",
             "line": 11,
@@ -185,7 +185,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
             "line": 9,
@@ -201,7 +201,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
             "line": 13,
@@ -217,7 +217,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
             "line": 19,
@@ -233,7 +233,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
             "line": 62,
@@ -249,7 +249,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
             "line": 9,
@@ -265,7 +265,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/erp-gore/AGENTS.md",
             "line": 9,
@@ -281,7 +281,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 65,
@@ -297,7 +297,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 69,
@@ -313,7 +313,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 75,
@@ -329,7 +329,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 9,
@@ -345,7 +345,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 11,
@@ -361,7 +361,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 13,
@@ -377,7 +377,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 15,
@@ -393,7 +393,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 17,
@@ -409,7 +409,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 19,
@@ -425,7 +425,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 21,
@@ -441,7 +441,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 23,
@@ -457,7 +457,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 25,
@@ -473,7 +473,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 27,
@@ -489,7 +489,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
             "line": 29,
@@ -505,7 +505,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
             "line": 9,
@@ -521,7 +521,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
             "line": 23,
@@ -537,7 +537,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
             "line": 25,
@@ -553,7 +553,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
             "line": 27,
@@ -569,7 +569,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/gn/goreologo/AGENTS.md",
             "line": 65,
@@ -585,7 +585,7 @@
           "rule_id": "agent.fsm_pseudostate_destination",
           "rule": "Destino de control no declarado",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2-§4.3",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 72,
@@ -601,7 +601,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 11,
@@ -617,7 +617,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 13,
@@ -633,7 +633,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 15,
@@ -649,7 +649,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 17,
@@ -665,7 +665,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 19,
@@ -681,7 +681,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 21,
@@ -697,7 +697,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
             "line": 23,
@@ -713,7 +713,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 9,
@@ -729,7 +729,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 11,
@@ -745,7 +745,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 13,
@@ -761,7 +761,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 15,
@@ -777,7 +777,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 17,
@@ -793,7 +793,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
             "line": 19,
@@ -809,7 +809,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 9,
@@ -825,7 +825,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 11,
@@ -841,7 +841,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 13,
@@ -857,7 +857,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 15,
@@ -873,7 +873,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 17,
@@ -889,7 +889,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 19,
@@ -905,7 +905,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 21,
@@ -921,7 +921,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 23,
@@ -937,7 +937,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
             "line": 25,
@@ -953,7 +953,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 9,
@@ -969,7 +969,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 11,
@@ -985,7 +985,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 13,
@@ -1001,7 +1001,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 15,
@@ -1017,7 +1017,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 17,
@@ -1033,7 +1033,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 19,
@@ -1049,7 +1049,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 21,
@@ -1065,7 +1065,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
             "line": 23,
@@ -1081,7 +1081,7 @@
           "rule_id": "skill.transition_classifier_leak",
           "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
           "severity": "P1",
-          "spec_rule": "skill-spec-md §3-§6",
+          "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
           "evidence": {
             "path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md",
             "line": 12,
@@ -1097,7 +1097,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 9,
@@ -1113,7 +1113,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 11,
@@ -1129,7 +1129,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 13,
@@ -1145,7 +1145,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 15,
@@ -1161,7 +1161,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 17,
@@ -1177,7 +1177,7 @@
           "rule_id": "agent.missing_transition_precedence",
           "rule": "Precedencia de transiciones no declarada",
           "severity": "P1",
-          "spec_rule": "agent-spec-md §4.2.6",
+          "spec_rule": "agentfile-spec legacy-compat profile",
           "evidence": {
             "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
             "line": 19,
@@ -1193,7 +1193,7 @@
           "rule_id": "skill.operational_skill_composition",
           "rule": "Skill compone otro skill operativamente",
           "severity": "P2",
-          "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+          "spec_rule": "skill-overlay-spec legacy-compat profile, Composicion inter-componente operativa",
           "evidence": {
             "path": "AGENTS/korvo/korax/skills/CM-CLOSE.md",
             "line": 19,
@@ -1273,7 +1273,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/ar-virtual/AGENTS.md",
                 "line": 9,
@@ -1289,7 +1289,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/ar-virtual/AGENTS.md",
                 "line": 11,
@@ -1305,7 +1305,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
                 "line": 9,
@@ -1321,7 +1321,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
                 "line": 13,
@@ -1337,7 +1337,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/asesor-juridico/AGENTS.md",
                 "line": 19,
@@ -1353,7 +1353,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
                 "line": 62,
@@ -1369,7 +1369,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/dgi-virtual/AGENTS.md",
                 "line": 9,
@@ -1385,7 +1385,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/erp-gore/AGENTS.md",
                 "line": 9,
@@ -1401,7 +1401,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 65,
@@ -1417,7 +1417,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 69,
@@ -1433,7 +1433,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 75,
@@ -1449,7 +1449,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 9,
@@ -1465,7 +1465,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 11,
@@ -1481,7 +1481,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 13,
@@ -1497,7 +1497,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 15,
@@ -1513,7 +1513,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 17,
@@ -1529,7 +1529,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 19,
@@ -1545,7 +1545,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 21,
@@ -1561,7 +1561,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 23,
@@ -1577,7 +1577,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 25,
@@ -1593,7 +1593,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 27,
@@ -1609,7 +1609,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gestor-ipr-360/AGENTS.md",
                 "line": 29,
@@ -1625,7 +1625,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
                 "line": 9,
@@ -1641,7 +1641,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
                 "line": 23,
@@ -1657,7 +1657,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
                 "line": 25,
@@ -1673,7 +1673,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/gobernador-virtual/AGENTS.md",
                 "line": 27,
@@ -1689,7 +1689,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/gn/goreologo/AGENTS.md",
                 "line": 65,
@@ -1746,7 +1746,7 @@
               "rule_id": "agent.fsm_pseudostate_destination",
               "rule": "Destino de control no declarado",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2-§4.3",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 72,
@@ -1762,7 +1762,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 11,
@@ -1778,7 +1778,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 13,
@@ -1794,7 +1794,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 15,
@@ -1810,7 +1810,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 17,
@@ -1826,7 +1826,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 19,
@@ -1842,7 +1842,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 21,
@@ -1858,7 +1858,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/salud/medico-urgencias/AGENTS.md",
                 "line": 23,
@@ -1903,7 +1903,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 9,
@@ -1919,7 +1919,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 11,
@@ -1935,7 +1935,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 13,
@@ -1951,7 +1951,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 15,
@@ -1967,7 +1967,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 17,
@@ -1983,7 +1983,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-automatizacion-organizacional/AGENTS.md",
                 "line": 19,
@@ -1999,7 +1999,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 9,
@@ -2015,7 +2015,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 11,
@@ -2031,7 +2031,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 13,
@@ -2047,7 +2047,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 15,
@@ -2063,7 +2063,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 17,
@@ -2079,7 +2079,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 19,
@@ -2095,7 +2095,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 21,
@@ -2111,7 +2111,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 23,
@@ -2127,7 +2127,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/arquitecto-sistemas-informacion/AGENTS.md",
                 "line": 25,
@@ -2143,7 +2143,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 9,
@@ -2159,7 +2159,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 11,
@@ -2175,7 +2175,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 13,
@@ -2191,7 +2191,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 15,
@@ -2207,7 +2207,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 17,
@@ -2223,7 +2223,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 19,
@@ -2239,7 +2239,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 21,
@@ -2255,7 +2255,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ingeniero-sistemas-composicional/AGENTS.md",
                 "line": 23,
@@ -2271,7 +2271,7 @@
               "rule_id": "skill.transition_classifier_leak",
               "rule": "Skill degenerado clasifica transiciones o continuidad FSM",
               "severity": "P1",
-              "spec_rule": "skill-spec-md §3-§6",
+              "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
               "evidence": {
                 "path": "AGENTS/fxsl/neriomath/skills/CM-CLASIFICADOR.md",
                 "line": 12,
@@ -2287,7 +2287,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 9,
@@ -2303,7 +2303,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 11,
@@ -2319,7 +2319,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 13,
@@ -2335,7 +2335,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 15,
@@ -2351,7 +2351,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 17,
@@ -2367,7 +2367,7 @@
               "rule_id": "agent.missing_transition_precedence",
               "rule": "Precedencia de transiciones no declarada",
               "severity": "P1",
-              "spec_rule": "agent-spec-md §4.2.6",
+              "spec_rule": "agentfile-spec legacy-compat profile",
               "evidence": {
                 "path": "AGENTS/fxsl/ontologista-gist/AGENTS.md",
                 "line": 19,
@@ -2415,7 +2415,7 @@
               "rule_id": "skill.operational_skill_composition",
               "rule": "Skill compone otro skill operativamente",
               "severity": "P2",
-              "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+              "spec_rule": "skill-overlay-spec legacy-compat profile, Composicion inter-componente operativa",
               "evidence": {
                 "path": "AGENTS/korvo/korax/skills/CM-CLOSE.md",
                 "line": 19,

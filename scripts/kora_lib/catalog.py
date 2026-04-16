@@ -3,7 +3,7 @@ import os
 import yaml
 
 from .artifacts import get_artifact_title, load_yaml_safe
-from .config import CATALOG_PATH, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT
+from .config import CATALOG_PATH, DEPRECATED_URN_ALIASES, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT
 
 
 def load_catalog():
@@ -27,6 +27,11 @@ def build_catalog_lookup(doc):
                 "entry": item,
             }
             known_urns.add(urn)
+    for alias, canonical in DEPRECATED_URN_ALIASES.items():
+        canonical_entry = urn_to_entry.get(canonical)
+        if canonical_entry:
+            urn_to_entry[alias] = canonical_entry
+            known_urns.add(alias)
     known_urns.add(doc["_manifest"]["urn"])
     return known_urns, urn_to_entry
 
@@ -137,6 +142,9 @@ def cmd_resolve(urn):
     if not doc or "Catalog" not in doc:
         print("Error: Catalog not found or invalid. Run 'kora index' first.")
         raise SystemExit(1)
+
+    if urn in DEPRECATED_URN_ALIASES:
+        urn = DEPRECATED_URN_ALIASES[urn]
 
     prefix_matches = []
     for category, items in doc["Catalog"].items():

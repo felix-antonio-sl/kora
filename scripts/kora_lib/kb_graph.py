@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 
 from .artifacts import load_yaml_safe
-from .config import KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
+from .config import DEPRECATED_URN_ALIASES, KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
 
 
 def collect_knowledge_nodes():
@@ -70,9 +70,10 @@ def build_graph(nodes):
             if not isinstance(targets, list):
                 continue
             for target_urn in targets:
+                canonical_target = DEPRECATED_URN_ALIASES.get(target_urn, target_urn)
                 edges.append({
                     "from": node["urn"],
-                    "to": target_urn,
+                    "to": canonical_target,
                     "type": rel_type,
                 })
 

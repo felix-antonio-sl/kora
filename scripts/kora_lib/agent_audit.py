@@ -14,12 +14,12 @@ from .workspaces import iter_agent_workspaces, iter_skill_entrypoints
 DOMAIN_SUBGROUPS = ("gn", "pro", "salud", "fxsl", "korvo")
 BASELINE_SPECS = [
     "specs/gobernanza.md",
-    "specs/agent-spec-md.md",
-    "specs/skill-spec-md.md",
     "specs/md-spec.md",
-    "specs/spec-md.md",
+    "specs/knowledge-spec.md",
+    "specs/agentfile-spec.md",
+    "specs/skill-overlay-spec.md",
     "specs/runtime-spec-md.md",
-    "specs/swarm-spec-md.md",
+    "specs/openclaw-runtime-extension.md",
 ]
 
 SEMANTIC_RUNTIME_CAPABILITIES = {
@@ -33,7 +33,7 @@ AGENT_RULES = {
     "agent.fsm_pseudostate_destination": {
         "label": "Destino de control no declarado",
         "severity": "P1",
-        "spec_rule": "agent-spec-md §4.2-§4.3",
+        "spec_rule": "agentfile-spec legacy-compat profile",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -41,7 +41,7 @@ AGENT_RULES = {
     "agent.missing_transition_precedence": {
         "label": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "spec_rule": "agent-spec-md §4.2.6",
+        "spec_rule": "agentfile-spec legacy-compat profile",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
@@ -49,7 +49,7 @@ AGENT_RULES = {
     "tools.policy_leakage": {
         "label": "Policy operativa filtrada en TOOLS.md",
         "severity": "P2",
-        "spec_rule": "agent-spec-md §4.4.4",
+        "spec_rule": "agentfile-spec legacy-compat profile",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
@@ -57,7 +57,7 @@ AGENT_RULES = {
     "config.semantic_runtime_capability": {
         "label": "Facultad semántica en runtime_capabilities",
         "severity": "P2",
-        "spec_rule": "agent-spec-md §5",
+        "spec_rule": "runtime-spec-md + agentfile legacy-compat profile",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "runtime_capabilities debe contener permisos crudos del runtime, no facultades abstractas del agente.",
@@ -68,7 +68,7 @@ SKILL_RULES = {
     "skill.state_variable_leak": {
         "label": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "spec_rule": "skill-spec-md §3, tabla de patrones prohibidos",
+        "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
@@ -76,7 +76,7 @@ SKILL_RULES = {
     "skill.transition_classifier_leak": {
         "label": "Skill degenerado clasifica transiciones o continuidad FSM",
         "severity": "P1",
-        "spec_rule": "skill-spec-md §3-§6",
+        "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
@@ -84,7 +84,7 @@ SKILL_RULES = {
     "skill.agent_phase_orchestration": {
         "label": "Skill orquesta fases del agente",
         "severity": "P1",
-        "spec_rule": "skill-spec-md §3, Orquestacion de fases del agente",
+        "spec_rule": "skill-overlay-spec legacy-compat profile, Orquestacion de fases del agente",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "El control secuencial del ciclo del agente no debe vivir dentro del CM degenerado.",
@@ -92,7 +92,7 @@ SKILL_RULES = {
     "skill.operational_skill_composition": {
         "label": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "spec_rule": "skill-spec-md §3, Composicion inter-componente operativa",
+        "spec_rule": "skill-overlay-spec legacy-compat profile, Composicion inter-componente operativa",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
@@ -100,7 +100,7 @@ SKILL_RULES = {
     "skill.relaxes_hard_rule": {
         "label": "Skill relaja o reinterpreta una regla dura del bootstrap",
         "severity": "P1",
-        "spec_rule": "skill-spec-md §6.6",
+        "spec_rule": "agentfile-spec / skill-overlay legacy-compat profile",
         "closure_type": "agent_fix",
         "enforcement_candidate": "manual",
         "why": "Si una regla dura debe cambiar, se modifica en AGENTS.md o en la spec; no en el skill.",
@@ -108,7 +108,7 @@ SKILL_RULES = {
     "skill.ad_hoc_root_metadata": {
         "label": "Skill prescribe metadata raíz ad hoc",
         "severity": "P2",
-        "spec_rule": "gobernanza.md §6 / md-spec §3.1",
+        "spec_rule": "gobernanza.md §6 / md-spec §3",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La metadata adicional debe tener soporte normativo explícito; no puede aparecer por costumbre dentro de un CM.",
