@@ -242,6 +242,19 @@ def ensure_missing_skills(workspace_dir, newly_scaffolded):
 
 
 def ensure_guardian_workspace():
+    """Scaffold minimal guardian workspace (v7 legacy).
+
+    En v8 (pipeline descentralizado), si guardian vive en staging
+    `AGENTS/_FRAGUA/INBOX/guardian/`, NO se re-scaffoldea productivo;
+    queda como deuda de promocion. Esta funcion se conserva solo por
+    compatibilidad con `kora migrate --profile transitional` antiguo.
+    """
+    from .config import FRAGUA_ROOT
+    staging_guardian = FRAGUA_ROOT / "INBOX" / "guardian"
+    if staging_guardian.exists():
+        # Guardian esta en staging — no re-scaffoldear productivo.
+        return []
+
     workspace_dir = AGENTS_ROOT / "kora" / "guardian"
     changed = []
     if workspace_dir.exists():

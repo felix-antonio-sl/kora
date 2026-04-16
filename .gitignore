@@ -8,12 +8,13 @@ __pycache__/
 *.tar.bz2
 *.traineddata
 
-# BUILD — outputs de transmutacion (regenerables)
+# _BUILD/ — outputs de transmutacion dentro de workspaces (regenerables por target)
+**/_BUILD/
+# Vestigios v7 (ya eliminados; salvaguardia si reaparecen)
 /BUILD/
-
-# OPERATIONS — solo track inbox/ y drafts/
-/OPERATIONS/source/
-/OPERATIONS/build/
+/OPERATIONS/
+# Sub-repos anidados en staging (tienen su propio .git, no trackear)
+AGENTS/_FRAGUA/INBOX/openclaw-main/codex/
 
 # Skills upstream (referencia externa)
 /SKILLS/_sources-skills/

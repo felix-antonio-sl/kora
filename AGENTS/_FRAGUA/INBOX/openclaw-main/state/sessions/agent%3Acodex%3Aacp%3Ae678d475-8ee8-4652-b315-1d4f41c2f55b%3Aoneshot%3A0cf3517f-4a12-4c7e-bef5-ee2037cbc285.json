@@ -1,0 +1,47 @@
+{
+  "schema": "acpx.session.v1",
+  "acpx_record_id": "agent:codex:acp:e678d475-8ee8-4652-b315-1d4f41c2f55b:oneshot:0cf3517f-4a12-4c7e-bef5-ee2037cbc285",
+  "acp_session_id": "019d87e9-5aa2-7312-9fee-a395f6bf7090",
+  "agent_command": "npx @zed-industries/codex-acp@^0.11.1",
+  "cwd": "/home/felix/projects/opmodel",
+  "name": "agent:codex:acp:e678d475-8ee8-4652-b315-1d4f41c2f55b",
+  "created_at": "2026-04-13T17:35:10.511Z",
+  "last_used_at": "2026-04-13T17:35:10.511Z",
+  "last_seq": 0,
+  "event_log": {
+    "active_path": "/home/felix/.acpx/sessions/agent%3Acodex%3Aacp%3Ae678d475-8ee8-4652-b315-1d4f41c2f55b%3Aoneshot%3A0cf3517f-4a12-4c7e-bef5-ee2037cbc285.stream.ndjson",
+    "segment_count": 5,
+    "max_segment_bytes": 67108864,
+    "max_segments": 5,
+    "last_write_error": null
+  },
+  "closed": false,
+  "pid": 2758570,
+  "agent_started_at": "2026-04-13T17:35:05.813Z",
+  "protocol_version": 1,
+  "agent_capabilities": {
+    "loadSession": true,
+    "promptCapabilities": {
+      "image": true,
+      "audio": false,
+      "embeddedContext": true
+    },
+    "mcpCapabilities": {
+      "http": true,
+      "sse": false
+    },
+    "sessionCapabilities": {
+      "list": {},
+      "close": {}
+    },
+    "auth": {
+      "logout": {}
+    }
+  },
+  "title": null,
+  "messages": [],
+  "updated_at": "2026-04-13T17:35:10.511Z",
+  "cumulative_token_usage": {},
+  "request_token_usage": {},
+  "acpx": {}
+}

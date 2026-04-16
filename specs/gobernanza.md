@@ -44,7 +44,7 @@ Corolarios:
 
 1. `AGENT.md` es el centro del sistema.
 2. `SKILL.md` portable es el formato preferido de capacidad.
-3. `BUILD/` y los workspaces runtime son derivados.
+3. Los outputs de transmutacion (`_BUILD/` por workspace) y los workspaces runtime son derivados.
 4. El formato legacy de 5 archivos y los `CM-*` no son el futuro del sistema;
    son perfiles de compatibilidad mientras existan consumidores.
 
@@ -94,7 +94,7 @@ Todo objeto KORA **DEBE** tener una fuente primaria:
 
 - agente moderno: `AGENT.md`
 - capacidad portable: `SKILL.md`
-- output target: artefacto derivado en `BUILD/`
+- output target: artefacto derivado en `{workspace}/_BUILD/{target}/`
 - artefacto legacy: entrypoint legacy solo cuando no existe equivalente moderno
 
 ### 4.1 Regla de mirrors

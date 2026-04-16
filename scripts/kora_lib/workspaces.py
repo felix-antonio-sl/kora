@@ -53,6 +53,11 @@ def _is_workspace_deprecated(workspace_dir):
 
 
 def iter_agent_workspaces(cohort=None, include_deprecated=False):
+    """Descubre workspaces agente en AGENTS/{ns}/{name}/ productivos.
+
+    Excluye el staging area `AGENTS/_FRAGUA/` (cualquier subdir empezando
+    con `_` se considera staging o metadata, no workspace productivo).
+    """
     agents_root = AGENTS_ROOT
     if not agents_root.exists():
         return []
@@ -61,10 +66,15 @@ def iter_agent_workspaces(cohort=None, include_deprecated=False):
     for namespace_dir in sorted(agents_root.iterdir()):
         if not namespace_dir.is_dir() or namespace_dir.name.startswith("."):
             continue
+        if namespace_dir.name.startswith("_"):
+            # Staging areas (_FRAGUA, _perfiles si llegara) quedan fuera del
+            # descubrimiento productivo.
+            continue
         for workspace_dir in sorted(namespace_dir.iterdir()):
             if (
                 workspace_dir.is_dir()
                 and not workspace_dir.name.startswith(".")
+                and not workspace_dir.name.startswith("_")
                 and workspace_in_cohort(workspace_dir, cohort=cohort)
             ):
                 if not include_deprecated and _is_workspace_deprecated(workspace_dir):

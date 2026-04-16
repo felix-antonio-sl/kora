@@ -4,9 +4,21 @@ import re
 
 KORA_ROOT = Path(__file__).resolve().parents[2]
 AGENTS_ROOT = KORA_ROOT / "AGENTS" if (KORA_ROOT / "AGENTS").exists() else KORA_ROOT / "agents"
+SKILLS_ROOT = KORA_ROOT / "SKILLS"
 KNOWLEDGE_ROOT = KORA_ROOT / "KNOWLEDGE" if (KORA_ROOT / "KNOWLEDGE").exists() else KORA_ROOT / "knowledge"
-OPERATIONS_ROOT_NAME = "OPERATIONS"
-OPERATIONS_ROOT = KORA_ROOT / OPERATIONS_ROOT_NAME
+# Staging areas descentralizados (v8): el procesamiento vive dentro de cada
+# directorio principal, no en un OPERATIONS/ centralizado.
+# - AGENTS/_FRAGUA/{INBOX,REVIEW} para agentes en staging.
+# - SKILLS/_TALLER/{INBOX,REVIEW} para skills en staging.
+# - KNOWLEDGE/_SCRIPTORIUM/{INBOX,REVIEW} para knowledge en staging.
+# Los subdirectorios de INBOX/ son pre-categoriales (sin namespace KORA); el
+# URN se asigna al promover a REVIEW y luego a productivo.
+FRAGUA_ROOT = AGENTS_ROOT / "_FRAGUA"
+TALLER_ROOT = SKILLS_ROOT / "_TALLER"
+SCRIPTORIUM_ROOT = KNOWLEDGE_ROOT / "_SCRIPTORIUM"
+STAGING_ROOTS = (FRAGUA_ROOT, TALLER_ROOT, SCRIPTORIUM_ROOT)
+STAGING_DIR_NAMES = {"_FRAGUA", "_TALLER", "_SCRIPTORIUM"}
+STAGING_STAGES = ("INBOX", "REVIEW")
 CATALOG_PATH = KORA_ROOT / "catalog" / "catalog_master_kora.yml"
 GENERATED_DOCS_DIR = KORA_ROOT / "docs" / "generated"
 BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
@@ -29,17 +41,19 @@ IGNORED_DIRS = {
     "scripts",
     "tests",
     "docs",
-    "staging",
-    "inbox",
-    "source",
-    "drafts",
-    OPERATIONS_ROOT_NAME,
+    "_FRAGUA",
+    "_TALLER",
+    "_SCRIPTORIUM",
+    "_BUILD",
     ".claude",
     ".agent",
     ".gemini",
     ".venv",
     "__pycache__",
 }
+# Directorios al raíz del repo que se ignoran explícitamente (distintos de
+# los ignored-by-name porque aquí el match es por path absoluto al raíz).
+ROOT_IGNORED_DIRS = {"atomize"}
 IGNORED_FILES = {
     "README.md",
     "CLAUDE.md",
@@ -238,32 +252,40 @@ SEMANTIC_TOOL_DOC_MARKERS = (
 MISSING_SKILL_SPECS = {}  # Only for newly-scaffolded workspaces; never for pre-existing ones
 
 
-def operations_dir(name: str) -> Path:
-    return OPERATIONS_ROOT / name
+def staging_dir(kind: str, stage: str) -> Path:
+    """Resuelve el directorio de staging por tipo y etapa.
+
+    kind: 'agents' | 'skills' | 'knowledge'
+    stage: 'INBOX' | 'REVIEW'
+    """
+    roots = {
+        "agents": FRAGUA_ROOT,
+        "skills": TALLER_ROOT,
+        "knowledge": SCRIPTORIUM_ROOT,
+    }
+    if kind not in roots:
+        raise ValueError(f"Unknown staging kind: {kind}")
+    if stage not in STAGING_STAGES:
+        raise ValueError(f"Unknown staging stage: {stage}")
+    return roots[kind] / stage
 
 
-def resolve_operational_dir(name: str) -> Path:
-    preferred = operations_dir(name)
-    legacy = KORA_ROOT / name
-    return preferred if preferred.exists() or not legacy.exists() else legacy
+def is_in_staging(path: Path) -> bool:
+    """True si el path vive dentro de algun staging area (_FRAGUA/_TALLER/_SCRIPTORIUM)."""
+    try:
+        resolved = path.resolve()
+    except OSError:
+        return False
+    for staging_root in STAGING_ROOTS:
+        if staging_root.exists() and (resolved == staging_root.resolve() or staging_root.resolve() in resolved.parents):
+            return True
+    return False
 
 
 def resolve_logical_repo_path(path_str: str) -> Path:
-    path = Path(path_str)
-    if not path.parts:
-        return KORA_ROOT
-    root_name = path.parts[0]
-    if root_name in {"inbox", "source", "drafts", "build"}:
-        return resolve_operational_dir(root_name).joinpath(*path.parts[1:])
-    return KORA_ROOT / path
+    return KORA_ROOT / Path(path_str)
 
 
 def physical_to_logical_repo_path(path: Path) -> Path:
     resolved = path.resolve()
-    for root_name in ("inbox", "source", "drafts", "build"):
-        physical_root = operations_dir(root_name).resolve()
-        legacy_root = (KORA_ROOT / root_name).resolve()
-        for candidate in (physical_root, legacy_root):
-            if resolved == candidate or candidate in resolved.parents:
-                return Path(root_name) / resolved.relative_to(candidate)
     return resolved.relative_to(KORA_ROOT.resolve())

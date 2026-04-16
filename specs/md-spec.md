@@ -85,7 +85,7 @@ Reglas:
    - artefactos descriptivos (KORA/MD en `KNOWLEDGE/` y specs): `draft -> published -> deprecated`.
    - artefactos ejecutables (workspaces agente, skills, bootstrap): `draft -> active -> deprecated -> retired`.
    Las transiciones inversas son invalidas en ambos regimenes.
-9. `KNOWLEDGE/` solo acepta artefactos con `status: published` o `status: deprecated`. Artefactos con `status: draft` **DEBEN** residir en `OPERATIONS/drafts/` o `OPERATIONS/source/`. Enforcement: schema.
+9. `KNOWLEDGE/` solo acepta artefactos con `status: published` o `status: deprecated`. Artefactos con `status: draft` **DEBEN** residir en `KNOWLEDGE/_SCRIPTORIUM/INBOX/` (material pre-categorial) o `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` (drafts en revision). Enforcement: schema.
 10. La transicion a `status: published` (o `status: active` para ejecutables) **DEBE** pasar por `kora promote` u otro procedimiento equivalente que verifique verificacion mecanica (§6.10), verificacion de fidelidad (§6.11) y ausencia de conflictos de namespace (regla 7).
 11. Cuando `source` referencia archivos del monorepo, la ruta **DEBERIA** ser resoluble desde la raiz del repo. Enforcement: manual.
 
@@ -421,7 +421,11 @@ Reglas:
 
 ### 6.1 Entrada
 
-Cualquier documento originalmente escrito para humanos **PUEDE** usarse como entrada. Todo documento que ingrese al monorepo para koraficacion **DEBE** transitar por el pipeline `inbox/ -> source/ -> drafts/ -> KNOWLEDGE/`.
+Cualquier documento originalmente escrito para humanos **PUEDE** usarse como entrada. Todo documento que ingrese al monorepo para koraficacion **DEBE** transitar por el pipeline descentralizado definido en `knowledge-spec §6`:
+
+```
+KNOWLEDGE/_SCRIPTORIUM/INBOX/  ->  KNOWLEDGE/_SCRIPTORIUM/REVIEW/  ->  KNOWLEDGE/{ns}/...
+```
 
 ### 6.2 El proceso de koraficacion
 
@@ -616,7 +620,7 @@ En artefactos `atomic`, la unicidad global de IDs y la resolubilidad de fuentes 
 | Estructuras preservadas   | Tablas y listas no se degradan                              | manual      | Restaurar estructura                      |
 | Catalogo derivado         | El artefacto es indexable y regenerable por CLI             | lint        | Corregir manifest o indexador             |
 | Namespace-directorio      | Namespace URN coincide con subdirectorio bajo `KNOWLEDGE/`  | lint        | Migrar artefacto o corregir URN           |
-| Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `OPERATIONS/drafts/` o publicar   |
+| Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` o publicar |
 | Lifecycle status          | Transicion de status cumple protocolo auditoria             | manual      | Completar auditoria antes de publicar     |
 | Indice atomic             | `atomic` tiene `## Indice de fuentes` no vacio              | lint        | Completar indice                          |
 | Proposiciones atomic      | Cada entry tiene ID Pxxx + tipo + texto + ≥1 fuente         | lint        | Reparar entry                             |
@@ -649,7 +653,7 @@ Cambios v7.1:
 
 - URN conceptual tripartito, version fuera del URN (§4.1).
 - Koraficacion como functor fiel, comprimido e idempotente (§6.2).
-- Pipeline `inbox/ -> source/ -> drafts/ -> KNOWLEDGE/` (§6.1).
+- Pipeline descentralizado en `_SCRIPTORIUM/{INBOX,REVIEW}/` -> `KNOWLEDGE/{ns}/...` (§6.1; detalle en `knowledge-spec §6`).
 - Fidelidad absoluta `FS=100%` como criterio de cierre (§7.3).
 - Compresion `CR>1.5` o justificacion explicita (§5.5).
 - Telegrafizacion con reglas T1-T7 y realizacion superficial (§5.4).

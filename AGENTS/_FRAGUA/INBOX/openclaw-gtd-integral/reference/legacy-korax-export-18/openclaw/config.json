@@ -1,0 +1,705 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.4.1",
+    "lastTouchedAt": "2026-04-03T04:06:07.405Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-03T04:05:48.251Z",
+    "lastRunVersion": "2026.4.1",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "redactSensitive": "tools"
+  },
+  "update": {
+    "channel": "stable",
+    "auto": {
+      "enabled": false,
+      "stableDelayHours": 6,
+      "stableJitterHours": 12
+    }
+  },
+  "browser": {
+    "enabled": true,
+    "executablePath": "/home/clawdbot/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome",
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw",
+    "profiles": {
+      "openclaw": {
+        "cdpPort": 18800,
+        "color": "#FF4500"
+      }
+    }
+  },
+  "auth": "__REDACTED__",
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimax.io/anthropic",
+        "apiKey": "sk-cp-j_sSnuoT9jLb2A4mlTxMNOvmdyHgQktH3ZfqGahMJ3ER-5tiI7yfnMcVsAlTgpFrNJQMpdGSopUsvTxybEqfAxsRj2wUAzzf2vfQ7MsByhdCjHS5GUTbg38",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax M2.7 Highspeed",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "zai": {
+        "baseUrl": "https://api.z.ai/api/anthropic",
+        "apiKey": "eb095bbd39444236b923ba3343b7d1d6.TBshawzAXGd43u3z",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-5.1",
+            "name": "GLM-5.1",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-5",
+            "name": "GLM-5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax/MiniMax-M2.7",
+        "fallbacks": [
+          "zai/glm-5.1"
+        ]
+      },
+      "models": {
+        "anthropic/claude-haiku-4-5": {
+          "alias": "haiku"
+        },
+        "anthropic/claude-opus-4-6": {
+          "alias": "opus",
+          "params": {
+            "context1m": true
+          }
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "alias": "sonnet",
+          "params": {
+            "context1m": true
+          }
+        },
+        "minimax-portal/MiniMax-M2.5": {
+          "alias": "minimax"
+        },
+        "qwen-portal/coder-model": {
+          "alias": "qwen-coder"
+        },
+        "qwen-portal/vision-model": {
+          "alias": "qwen-vision"
+        },
+        "openai-codex/gpt-5.3-codex": {
+          "alias": "codex-5.3"
+        },
+        "google/gemini-3-flash-preview": {
+          "alias": "gemini-flash"
+        },
+        "kilocode/moonshotai/kimi-k2.5": {
+          "alias": "kimi"
+        },
+        "kilocode/z-ai/glm-5:free": {
+          "alias": "glm5"
+        },
+        "kilocode/minimax/minimax-m2.5:free": {
+          "alias": "minimax-kilo"
+        },
+        "openai-codex/gpt-5.4": {
+          "alias": "gpt-5.4",
+          "params": {
+            "context1m": true
+          }
+        },
+        "openrouter/hunter-alpha": {
+          "alias": "hunter"
+        },
+        "openrouter/healer-alpha": {
+          "alias": "healer"
+        }
+      },
+      "workspace": "/home/clawdbot/clawd",
+      "memorySearch": {
+        "extraPaths": [
+          "docs/activa",
+          "projects/kora"
+        ],
+        "provider": "openai",
+        "remote": {
+          "apiKey": "${OPENAI_API_KEY}",
+          "batch": {
+            "enabled": false
+          }
+        },
+        "model": "text-embedding-3-small",
+        "sync": {
+          "watch": true
+        },
+        "query": {
+          "maxResults": 10,
+          "minScore": 0.3,
+          "hybrid": {
+            "enabled": true,
+            "vectorWeight": 0.7,
+            "textWeight": 0.3,
+            "mmr": {
+              "enabled": true,
+              "lambda": 0.7
+            },
+            "temporalDecay": {
+              "enabled": true,
+              "halfLifeDays": 30
+            }
+          }
+        }
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "model": "minimax/MiniMax-M2.7",
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": 4000,
+          "prompt": "Review this session. Write DURABLE facts, decisions, and lessons learned to MEMORY.md (long-term curated memory). Write raw events and transient context to memory/YYYY-MM-DD.md (daily log). Reply NO_REPLY if nothing worth storing.",
+          "systemPrompt": "Session nearing compaction. Separate durable knowledge (\u2192 MEMORY.md) from ephemeral context (\u2192 daily log). Store what future-Korax needs to remember long-term."
+        }
+      },
+      "thinkingDefault": "off",
+      "humanDelay": {
+        "mode": "natural"
+      },
+      "typingMode": "instant",
+      "heartbeat": {
+        "every": "1h",
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00",
+          "timezone": "America/Santiago"
+        },
+        "model": "anthropic/claude-opus-4-6"
+      },
+      "maxConcurrent": 3,
+      "subagents": {
+        "maxConcurrent": 6,
+        "maxSpawnDepth": 2,
+        "model": "minimax/MiniMax-M2.7",
+        "runTimeoutSeconds": 300
+      },
+      "sandbox": {
+        "mode": "off",
+        "browser": {
+          "allowHostControl": true,
+          "autoStart": true
+        }
+      }
+    },
+    "list": [
+      {
+        "id": "urgencista",
+        "name": "M\u00e9dico Urgencias",
+        "workspace": "/home/clawdbot/agents/medico-urgencias",
+        "agentDir": "/home/clawdbot/agents/medico-urgencias",
+        "model": {
+          "primary": "minimax/MiniMax-M2.7",
+          "fallbacks": [
+            "zai/glm-5.1"
+          ]
+        },
+        "memorySearch": {
+          "enabled": true,
+          "sources": [
+            "memory"
+          ]
+        },
+        "identity": {
+          "name": "Urgencista",
+          "emoji": "\ud83c\udfe5"
+        },
+        "subagents": {
+          "allowAgents": [
+            "clawmaster",
+            "salubrista",
+            "pensador"
+          ]
+        },
+        "tools": {
+          "profile": "full"
+        }
+      },
+      {
+        "id": "main",
+        "default": true,
+        "name": "Korax",
+        "workspace": "/home/clawdbot/clawd",
+        "identity": {
+          "name": "Korax",
+          "emoji": "\ud83e\udeb6"
+        },
+        "subagents": {
+          "allowAgents": [
+            "urgencista",
+            "salubrista",
+            "clawmaster",
+            "pensador"
+          ]
+        },
+        "tools": {}
+      },
+      {
+        "id": "salubrista",
+        "name": "Salubrista HaH",
+        "workspace": "/home/clawdbot/agents/salubrista-hah",
+        "agentDir": "/home/clawdbot/agents/salubrista-hah",
+        "memorySearch": {
+          "enabled": true,
+          "sources": [
+            "memory"
+          ],
+          "extraPaths": [
+            "docs"
+          ]
+        },
+        "identity": {
+          "name": "Salubrista HaH",
+          "emoji": "\ud83c\udfe0"
+        },
+        "subagents": {
+          "allowAgents": [
+            "clawmaster",
+            "urgencista",
+            "pensador"
+          ]
+        },
+        "tools": {
+          "profile": "full"
+        }
+      },
+      {
+        "id": "clawmaster",
+        "name": "Clawmaster",
+        "workspace": "/home/clawdbot/agents/clawmaster",
+        "agentDir": "/home/clawdbot/agents/clawmaster",
+        "memorySearch": {
+          "enabled": true,
+          "sources": [
+            "memory"
+          ],
+          "extraPaths": [
+            "docs"
+          ]
+        },
+        "heartbeat": {
+          "every": "6h",
+          "activeHours": {
+            "start": "08:00",
+            "end": "23:00",
+            "timezone": "America/Santiago"
+          },
+          "model": "anthropic/claude-opus-4-6",
+          "lightContext": true
+        },
+        "identity": {
+          "name": "Clawmaster",
+          "emoji": "\ud83d\udd27"
+        },
+        "subagents": {
+          "allowAgents": [
+            "urgencista",
+            "salubrista",
+            "pensador"
+          ]
+        },
+        "tools": {
+          "profile": "full"
+        }
+      },
+      {
+        "id": "pensador",
+        "name": "Korpensulo",
+        "workspace": "/home/clawdbot/agents/pensador-generador",
+        "memorySearch": {
+          "enabled": true,
+          "sources": [
+            "memory"
+          ]
+        },
+        "identity": {
+          "name": "Korpensulo",
+          "emoji": "\ud83d\udd2e"
+        },
+        "subagents": {
+          "allowAgents": [
+            "urgencista",
+            "salubrista",
+            "clawmaster"
+          ]
+        },
+        "tools": {
+          "profile": "minimal",
+          "alsoAllow": [
+            "web_search",
+            "web_fetch",
+            "memory_search",
+            "memory_get",
+            "pdf",
+            "image",
+            "sessions_send",
+            "sessions_list",
+            "sessions_history",
+            "sessions_spawn",
+            "subagents"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true
+      }
+    },
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true
+    },
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off",
+      "node": "air"
+    },
+    "sandbox": {
+      "tools": {
+        "allow": [
+          "*"
+        ],
+        "deny": []
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "salubrista",
+      "match": {
+        "channel": "telegram",
+        "accountId": "salubrista"
+      }
+    },
+    {
+      "agentId": "urgencista",
+      "match": {
+        "channel": "telegram",
+        "accountId": "urgencista"
+      }
+    },
+    {
+      "agentId": "clawmaster",
+      "match": {
+        "channel": "telegram",
+        "accountId": "clawmaster"
+      }
+    },
+    {
+      "agentId": "pensador",
+      "match": {
+        "channel": "telegram",
+        "accountId": "pensador"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "all",
+    "tts": {
+      "auto": "inbound",
+      "provider": "microsoft"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "enabled": true,
+    "path": "/hooks",
+    "token": "__REDACTED__",
+    "defaultSessionKey": "hook:ingress",
+    "allowedAgentIds": [
+      "main"
+    ],
+    "presets": [
+      "gmail"
+    ],
+    "mappings": [
+      {
+        "match": {
+          "path": "gmail"
+        },
+        "action": "agent",
+        "wakeMode": "now",
+        "name": "Gmail",
+        "messageTemplate": "Clasifica este email para m\u00e9dico urgencias + ingeniero GORE \u00d1uble.\nDe: {{messages[0].from}} | Asunto: {{messages[0].subject}} | Snippet: {{messages[0].snippet}}\nReglas: @goredenuble/@contraloria/@minsal/@hospitalsc/@ssnable=trabajo/hospital, noreply/newsletter=ruido, \"urgente\"/\"plazo\"=+urgencia\nFormato: {emoji} {dominio} | {remitente} / {asunto} / {acci\u00f3n}\n\ud83d\udd34=inmediato \ud83d\udfe1=hoy \ud83d\udd35=semana \u26aa=alg\u00fan d\u00eda \ud83d\uddd1\ufe0f=ruido\nRuido en 1 l\u00ednea: \ud83d\uddd1\ufe0f {remitente} \u2014 {asunto}",
+        "deliver": true,
+        "channel": "telegram",
+        "to": "7192195698",
+        "model": "minimax/MiniMax-M2.7"
+      }
+    ],
+    "gmail": {
+      "account": "koraxfx@gmail.com",
+      "topic": "projects/korax-workspace/topics/korax-gmail-watch",
+      "pushToken": "237a2b35c897233ab1a78bbdf06cb0197ddc0746814407e6f7e23c72ee531b64",
+      "model": "haiku"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "markdown": {
+        "tables": "bullets"
+      },
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "replyToMode": "first",
+      "allowFrom": [
+        "7192195698"
+      ],
+      "groupPolicy": "allowlist",
+      "chunkMode": "length",
+      "streaming": "block",
+      "mediaMaxMb": 20,
+      "linkPreview": false,
+      "ackReaction": "",
+      "accounts": {
+        "default": {
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "7192195698"
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "salubrista": {
+          "dmPolicy": "allowlist",
+          "botToken": "8635601695:AAGAHjiC64So1CQbpE5XfXO5U4zYhuAx1-Y",
+          "allowFrom": [
+            "7192195698"
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "urgencista": {
+          "dmPolicy": "allowlist",
+          "botToken": "8571763604:AAEQ3VIkMWx8DiXReR44H-JSQImTvvJCaPg",
+          "allowFrom": [
+            "7192195698"
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "clawmaster": {
+          "dmPolicy": "allowlist",
+          "botToken": "8660214730:AAEK5foskyQPLxDgNmwxy4oldEDH-IIg0o4",
+          "allowFrom": [
+            "7192195698"
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "pensador": {
+          "dmPolicy": "allowlist",
+          "botToken": "8631119194:AAGbl0BuAEOT6IIgYOem8_hkHrK8sfaD1qQ",
+          "allowFrom": [
+            "7192195698"
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        }
+      }
+    },
+    "slack": {
+      "mode": "socket",
+      "webhookPath": "/slack/events",
+      "markdown": {
+        "tables": "bullets"
+      },
+      "enabled": true,
+      "botToken": "${SLACK_BOT_TOKEN}",
+      "appToken": "${SLACK_APP_TOKEN}",
+      "userTokenReadOnly": true,
+      "groupPolicy": "allowlist",
+      "streaming": "partial",
+      "nativeStreaming": true,
+      "dmPolicy": "pairing",
+      "channels": {
+        "kora": {
+          "requireMention": true
+        },
+        "C0AGSKV0ZAQ": {
+          "requireMention": true
+        },
+        "C0AHWSHFYTA": {
+          "requireMention": false
+        }
+      },
+      "ackReaction": "feather"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "https://clawdbot-hetzner.tail84b159.ts.net"
+      ],
+      "dangerouslyDisableDeviceAuth": false
+    },
+    "auth": "__REDACTED__",
+    "trustedProxies": [
+      "100.64.0.0/10",
+      "127.0.0.1"
+    ],
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "browser": {
+        "mode": "auto",
+        "node": "air"
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "dau-sgh": {
+        "env": {
+          "DAU_USER": "fsanhuezal",
+          "DAU_PASSWORD": "__REDACTED__",
+          "DAU_SERVICIO": "4",
+          "DAU_USUARIO_ID": "3225",
+          "DAU_INSTITUCION": "4",
+          "SGH_USER": "fsanhuezal",
+          "SGH_PASSWORD": "__REDACTED__",
+          "SGH_USR": "fsanhuezal",
+          "SGH_PASS": "__REDACTED__"
+        }
+      },
+      "openclaw-ops": {}
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true,
+        "config": {}
+      },
+      "llm-task": {
+        "enabled": true,
+        "config": {}
+      },
+      "brave": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "BSAjJwJKqZKmBFBTgZDCKUfr5zL3q2_"
+          }
+        }
+      },
+      "minimax": {
+        "enabled": true,
+        "config": {}
+      },
+      "browser": {
+        "enabled": true
+      }
+    }
+  }
+}

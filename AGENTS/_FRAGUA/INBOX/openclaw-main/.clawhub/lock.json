@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "skills": {
+    "arquitecto-categorico": {
+      "version": "1.0.1",
+      "installedAt": 1774972477235
+    },
+    "openclaw-lifecycle-manager": {
+      "version": "1.0.0",
+      "installedAt": 1774520525104
+    },
+    "academic-deep-research": {
+      "version": "1.0.0",
+      "installedAt": 1774522109597
+    },
+    "pandas-skill": {
+      "version": "1.0.0",
+      "installedAt": 1774522128778
+    },
+    "marp-cli": {
+      "version": "0.0.1",
+      "installedAt": 1774522393361
+    },
+    "opm-modeler": {
+      "version": "1.0.0",
+      "installedAt": 1774902141041
+    },
+    "analyst": {
+      "version": "1.0.0",
+      "installedAt": 1774969745420
+    },
+    "kv-migration-architect": {
+      "version": "1.0.0",
+      "installedAt": 1774974269880
+    },
+    "kv-senior-frontend": {
+      "version": "1.0.0",
+      "installedAt": 1774974307488
+    },
+    "kv-senior-data-engineering": {
+      "version": "1.0.0",
+      "installedAt": 1774974326824
+    },
+    "kv-database-designer": {
+      "version": "1.0.0",
+      "installedAt": 1774974399570
+    },
+    "kv-senior-architect": {
+      "version": "1.0.0",
+      "installedAt": 1774974423746
+    }
+  }
+}

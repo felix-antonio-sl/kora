@@ -1,0 +1,4 @@
+[allan-kelly/sessions/boot-2026-04-02_20-34-26-162-d866e1ed.jsonl#L478] User: You are running a boot check. Follow BOOT.md instructions exactly. BOOT.md: # Bootstrap 1. `openclaw health --json` — verificar gateway healthy. 2. `free -h` y `df -h /` — verificar recursos host. 3. Leer `MEMORY.md` — establecer ultimo estado conocido. 4. En Telegr
+[allan-kelly/sessions/boot-2026-04-02_20-34-26-162-d866e1ed.jsonl#L483] Assistant: NO_REPLY
+[allan-kelly/sessions/boot-2026-04-02_20-34-26-162-d866e1ed.jsonl#L485] User: You are running a boot check. Follow BOOT.md instructions exactly. BOOT.md: # Bootstrap 1. `openclaw health --json` — verificar gateway healthy. 2. `free -h` y `df -h /` — verificar recursos host. 3. Leer `MEMORY.md` — establecer ultimo estado conocido. 4. En Telegr
+[allan-kelly/sessions/boot-2026-04-02_20-34-26-162-d866e1ed.jsonl#L490] Assistant: NO_REPLY

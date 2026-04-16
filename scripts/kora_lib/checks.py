@@ -398,60 +398,64 @@ def _check_kb_graph_cycles(path_filter=None):
 
 
 def _check_knowledge_zone(path_filter=None):
-    """Verify all files in KNOWLEDGE/ have valid _manifest."""
+    """Verify all files in KNOWLEDGE/{ns}/ (productivo) have valid _manifest.
+
+    Excluye KNOWLEDGE/_SCRIPTORIUM/ (staging pre-categorial) del check: el
+    SCRIPTORIUM acepta material crudo sin frontmatter.
+    """
     import os
-    from .config import KNOWLEDGE_ROOT, KORA_ROOT
+    from .config import KNOWLEDGE_ROOT, KORA_ROOT, SCRIPTORIUM_ROOT
 
     diags = []
     if not KNOWLEDGE_ROOT.exists():
         return diags
 
-    for root, _dirs, files in os.walk(KNOWLEDGE_ROOT):
+    scriptorium = SCRIPTORIUM_ROOT.resolve() if SCRIPTORIUM_ROOT.exists() else None
+
+    def is_in_scriptorium(path: Path) -> bool:
+        if scriptorium is None:
+            return False
+        try:
+            resolved = path.resolve()
+        except OSError:
+            return False
+        return resolved == scriptorium or scriptorium in resolved.parents
+
+    for root, dirs, files in os.walk(KNOWLEDGE_ROOT):
+        # Poda: no descender en _SCRIPTORIUM/
+        dirs[:] = [d for d in dirs if d != "_SCRIPTORIUM"]
         for fname in sorted(files):
-            if not fname.endswith(".md") or fname == "README.md":
-                continue
             fpath = Path(root) / fname
-            try:
-                with open(fpath) as f:
-                    head = f.read(2000)
-            except Exception:
+            if is_in_scriptorium(fpath):
                 continue
-            if "_manifest:" not in head:
-                rel = str(fpath.relative_to(KORA_ROOT))
-                diags.append(Diagnostic(
-                    check_id="knowledge-zone",
-                    severity="high",
-                    scope="artifact",
-                    path=rel,
-                    message="File in KNOWLEDGE/ lacks _manifest frontmatter",
-                    fix_hint="Add KORA/MD frontmatter or move to OPERATIONS/source/",
-                ))
-            # Check non-md files
-            if not fname.endswith(".md"):
+            if fname == "README.md":
+                continue
+            if fname.endswith(".md"):
+                try:
+                    with open(fpath) as f:
+                        head = f.read(2000)
+                except Exception:
+                    continue
+                if "_manifest:" not in head:
+                    rel = str(fpath.relative_to(KORA_ROOT))
+                    diags.append(Diagnostic(
+                        check_id="knowledge-zone",
+                        severity="high",
+                        scope="artifact",
+                        path=rel,
+                        message="File in KNOWLEDGE/{ns}/ lacks _manifest frontmatter",
+                        fix_hint="Add KORA/MD frontmatter or move to KNOWLEDGE/_SCRIPTORIUM/INBOX/",
+                    ))
+            elif not fname.startswith("."):
                 rel = str(fpath.relative_to(KORA_ROOT))
                 diags.append(Diagnostic(
                     check_id="knowledge-zone",
                     severity="medium",
                     scope="artifact",
                     path=rel,
-                    message="Non-markdown file in KNOWLEDGE/ (should be in OPERATIONS/source/)",
-                    fix_hint="Move to OPERATIONS/source/{ns}/",
+                    message=f"Non-markdown file in KNOWLEDGE/{{ns}}/: {fname}",
+                    fix_hint="Move to KNOWLEDGE/_SCRIPTORIUM/INBOX/",
                 ))
-
-    for root, _dirs, files in os.walk(KNOWLEDGE_ROOT):
-        for fname in sorted(files):
-            if fname.endswith(".md") or fname.startswith("."):
-                continue
-            fpath = Path(root) / fname
-            rel = str(fpath.relative_to(KORA_ROOT))
-            diags.append(Diagnostic(
-                check_id="knowledge-zone",
-                severity="medium",
-                scope="artifact",
-                path=rel,
-                message=f"Non-markdown file in KNOWLEDGE/: {fname}",
-                fix_hint="Move to OPERATIONS/source/",
-            ))
 
     if path_filter:
         diags = [d for d in diags if d.path.startswith(path_filter)]

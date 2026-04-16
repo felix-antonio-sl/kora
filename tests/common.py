@@ -28,3 +28,22 @@ def run_cli(*args, check=True):
 
 def load_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def has_productive_workspaces():
+    """Return True si existen workspaces de agente en AGENTS/{ns}/{name}/ productivos.
+
+    En la arquitectura v8 (pipeline descentralizado), todos los workspaces
+    pueden estar en staging (`AGENTS/_FRAGUA/INBOX/`) durante reprocesamiento
+    del fleet. Tests que presumen fleet productivo deben skip cuando el
+    estado no los tiene.
+    """
+    if not AGENTS_ROOT.exists():
+        return False
+    for ns_dir in AGENTS_ROOT.iterdir():
+        if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+            continue
+        for ws_dir in ns_dir.iterdir():
+            if ws_dir.is_dir() and not ws_dir.name.startswith((".", "_")):
+                return True
+    return False

@@ -15,10 +15,6 @@ lang: es
 extensions:
   kora:
     family: specification
-    consolidado: true
-    shard_index: 1
-    shard_count: 5
-    shard_root_urn: urn:fxsl:kb:opm-es
 relations:
   cites:
   - urn:fxsl:kb:manual-metodologico-opm-es
@@ -322,3 +318,844 @@ Tres designaciones califican estados: **inicial** (estado al crearse el objeto),
 Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del atributo. Puede especificarse unidad de medida. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §14.
 
 ---
+
+## Panorama de enlaces
+
+### Enlaces procedimentales
+
+Existen tres clases:
+
+- **enlaces transformadores**: conectan proceso con transformado (consumo, resultado o efecto);
+- **enlaces habilitadores**: conectan habilitador con proceso (agente o instrumento);
+- **enlaces de control**: enlaces procedimentales con modificador `e` o `c`.
+
+**Principio de unicidad del enlace procedimental:** un objeto o estado tiene exactamente un rol respecto de un proceso enlazado: transformado o habilitador.
+
+**Enlaces procedimentales con estado especificado:** conectan el proceso con un estado específico de un objeto, no con el objeto completo.
+
+### Enlaces estructurales
+
+Hay dos clases:
+
+- **etiquetados**, cuya semántica la define quien modela;
+- **fundamentales**, con semántica fija: agregación-participación, exhibición-caracterización, generalización-especialización y clasificación-instanciación.
+
+Los enlaces estructurales conectan objetos con objetos o procesos con procesos, excepto exhibición-caracterización, que también puede conectar objetos con procesos.
+
+### Control evento-condición-acción
+
+La ejecución de un proceso comienza cuando:
+
+1. ocurre el evento iniciador, si existe;
+2. y se satisface la precondición.
+
+Los eventos se pierden tras la evaluación, incluso si la precondición falla.
+
+- **Conjunto previo al proceso**: consumidos + afectados + habilitadores necesarios antes de iniciar el proceso.
+- **Conjunto posterior al proceso**: resultantes + objetos afectados después de completar el proceso.
+
+---
+
+## Enlaces transformadores
+
+Tres tipos básicos:
+
+| Enlace | Semántica | Dirección abstracta |
+|---|---|---|
+| Consumo | El proceso destruye o elimina el objeto. | objeto → proceso |
+| Resultado | El proceso crea o genera el objeto. | proceso → objeto |
+| Efecto | El proceso cambia el estado del objeto. | objeto ↔ proceso |
+
+**Restricción sobre modificadores de control del enlace de resultado:** no existen las variantes "evento de resultado" ni "condición de resultado". La razón es que el resultado no existe antes del proceso, pues es creado por él, por lo que no puede ser precondición (`c`) ni disparador (`e`). El consumo sí admite ambos modificadores porque el objeto consumido existe en el conjunto previo al proceso. Esta asimetría entre consumo y resultado es inherente a la ontología OPM: el consumo opera sobre el conjunto previo; el resultado opera sobre el conjunto posterior.
+
+> **Nota de capa base:** el conjunto posterior al proceso no admite precondiciones, por lo que los modificadores `c` y `e` no aplican a enlaces de resultado. Esta restricción es absoluta y no admite excepciones.
+
+### Enlaces transformadores con estado especificado
+
+Los enlaces transformadores pueden restringirse a estados concretos del objeto: consumo con estado, resultado con estado, efecto entrada-salida, efecto solo entrada y efecto solo salida.
+
+La realización textual canónica de estas variantes vive en `opm-opl-es` §4. La realización gráfica vive en `opm-visual-es` §3.
+
+Cuando el consumo ocurre a lo largo del tiempo, puede modelarse mediante una propiedad de tasa del enlace y un atributo de cantidad del consumido. Sin esas propiedades, el consumo se interpreta como inmediato al activarse el proceso.
+
+**Resultado hacia un objeto con estado inicial:** el enlace de resultado debe conectarse al rectángulo del objeto o a un estado distinto del inicial, nunca al estado inicial directamente.
+
+**Semántica de transición del afectado:** una vez que el proceso afectador comienza, el afectado sale del estado de entrada. Solo alcanza el estado de salida al completarse el proceso. Si el proceso se aborta antes, el estado del afectado queda indeterminado salvo que exista manejo de excepción.
+
+**Resolución de salida en efecto con solo estado de entrada:** si no se especifica estado de salida, el destino es el estado por defecto del objeto. Si no existe estado por defecto, se usa la distribución de probabilidad de estados.
+
+---
+
+## Enlaces habilitadores
+
+Los habilitadores son necesarios para que ocurra un proceso, pero no son transformados. Hay dos clases:
+
+| Enlace | Tipo de habilitador |
+|---|---|
+| Agente | Persona o grupo con toma de decisiones. |
+| Instrumento | Objeto inanimado sin decisión propia. |
+
+Si un habilitador deja de existir durante la ejecución, el proceso se detiene y el estado del afectado queda indeterminado.
+
+### Enlaces habilitadores con estado especificado
+
+Los habilitadores también pueden restringirse a un estado específico. El proceso ocurre si y solo si el habilitador está en el estado requerido.
+
+La realización textual canónica de estas variantes vive en `opm-opl-es` §5. La realización gráfica vive en `opm-visual-es` §3.
+
+---
+
+## Enlaces de control: eventos
+
+Los enlaces de evento anotan un enlace transformador o habilitador con `e`. Un evento dispara la evaluación de la precondición y luego se pierde, tanto si la precondición se satisface como si no.
+
+### Enlaces de evento transformadores
+
+Las variantes transformadoras incluyen evento de consumo y evento de efecto, con o sin estado especificado.
+
+### Enlaces de evento habilitadores
+
+Las variantes habilitadoras incluyen evento de agente y evento de instrumento, con o sin estado especificado.
+
+La realización textual canónica de todos los eventos vive en `opm-opl-es` §6. La realización gráfica vive en `opm-visual-es` §4.
+
+---
+
+## Enlaces de control: condiciones y excepciones
+
+### Enlaces de condición
+
+Los enlaces de condición anotan un enlace con `c`. Introducen un **mecanismo de omisión condicional** (*bypass*): si la precondición falla, el proceso se omite en vez de esperar.
+
+### Enlaces transformadores condicionales
+
+Los transformadores condicionales introducen omisión condicional: si falla la precondición, el proceso se omite en vez de esperar. Existen variantes de consumo y efecto, con y sin estado especificado.
+
+### Enlaces habilitadores condicionales
+
+Los habilitadores condicionales aplican el mismo patrón a agentes e instrumentos.
+
+### Enlaces condicionales con estado especificado
+
+Las variantes con estado especificado heredan la misma semántica de omisión condicional, restringida a un estado concreto.
+
+La realización textual canónica de todas las condiciones vive en `opm-opl-es` §7. La realización gráfica vive en `opm-visual-es` §4.
+
+### Enlaces de excepción
+
+Conectan un proceso fuente con un proceso de manejo según la duración observada.
+
+| Enlace | Disparador |
+|---|---|
+| Sobretiempo | La fuente excede su duración máxima. |
+| Subtiempo | La fuente queda por debajo de su duración mínima. |
+
+La duración de un proceso puede especializarse en mínima, esperada y máxima. La distribución de duración determina el valor efectivo por instancia.
+
+La realización textual canónica vive en `opm-opl-es` §8.1. La realización gráfica de los enlaces de excepción vive en `opm-visual-es` §4.4; las propiedades de duración que los disparan viven en `opm-visual-es` §14.
+
+---
+
+## Enlaces de invocación
+
+La invocación modela que un proceso inicia otro. Semánticamente puede verse como la creación de un objeto intermedio transitorio consumido de inmediato por el proceso destino.
+
+| Enlace | Semántica |
+|---|---|
+| Invocación | Un proceso inicia otro proceso. |
+| Auto-invocación | Un proceso se reinicia o se reitera a sí mismo. |
+
+**Invocación implícita** dentro de un proceso descompuesto: la terminación de un subproceso invoca al que se encuentra inmediatamente debajo. No hay enlace explícito; la altura relativa determina el orden. Cuando dos o más subprocesos tienen la misma altura superior, comienzan en paralelo y el último en terminar inicia al siguiente.
+
+**Invocación cíclica con omisión condicional:** los enlaces de invocación modelan comportamiento iterativo o cíclico. Después de cada ciclo, un nodo de decisión booleano evalúa si se vuelve a entrar o se continúa. En sistemas de refrigeración, por ejemplo, *Evaporar* invoca al proceso completo de refrigeración por compresión para expresar el ciclo continuo del refrigerante.
+
+La realización textual canónica vive en `opm-opl-es` §8.2. La realización gráfica vive en `opm-visual-es` §9.
+
+---
+
+## Enlaces estructurales
+
+### Enlaces estructurales etiquetados
+
+Los **enlaces estructurales etiquetados** permiten expresar relaciones semánticas definidas por quien modela, no predefinidas por la ontología OPM. Se distinguen cuatro variantes:
+
+- **Unidireccional**: lleva una etiqueta textual que describe la relación desde la fuente al destino.
+- **Unidireccional sin etiqueta (null-tagged)**: la etiqueta por defecto es `se relaciona con` (*relates to*). Se usa cuando la relación existe pero no requiere calificación explícita.
+- **Bidireccional**: lleva etiquetas independientes en cada dirección.
+- **Recíproco**: la misma semántica aplica en ambas direcciones.
+
+### Relaciones estructurales fundamentales
+
+| Relación | Refinable → refinador |
+|---|---|
+| Agregación-participación | todo → partes |
+| Exhibición-caracterización | exhibidor → rasgos |
+| Generalización-especialización | general → especializaciones |
+| Clasificación-instanciación | clase → instancias |
+
+Las colecciones incompletas usan una barra horizontal bajo el triángulo. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §9.
+
+**Restricción de perseverancia:** salvo en exhibición-caracterización, el refinable y los refinadores deben tener la misma perseverancia.
+
+Exhibición-caracterización es el único enlace estructural que puede conectar objetos con procesos: el rasgo es atributo si es objeto y operación si es proceso.
+
+**Clasificación-instanciación:** a diferencia de las otras tres relaciones fundamentales, no distingue entre colección completa e incompleta. El número de instancias puede variar durante la operación.
+
+La realización textual canónica de enlaces estructurales y sus variantes básicas vive en `opm-opl-es` §9. La realización gráfica vive en `opm-visual-es` §8.
+
+### Herencia
+
+Las especializaciones heredan del general:
+
+- todas las partes;
+- todos los rasgos;
+- todos los enlaces estructurales etiquetados;
+- todos los enlaces procedimentales.
+
+Se permite herencia múltiple. Un atributo discriminante restringe los valores válidos para las especializaciones. El máximo número de especializaciones con varios atributos discriminantes es el producto cartesiano de sus valores posibles.
+
+**Mecanismo de sobreescritura:** quien modela puede reemplazar un participante heredado especificando una especialización de ese participante con otro nombre y otro conjunto de estados.
+
+**Regla de existencia en ejecución:** una instancia especializada no existe en ausencia de la instancia más general de la que hereda.
+
+**Procedimiento para crear un general a partir de especializaciones existentes:**
+
+1. identificar rasgos y participantes comunes;
+2. crear una nueva cosa general con esos elementos;
+3. conectarla con sus especializaciones mediante generalización-especialización;
+4. eliminar de las especializaciones lo ahora heredado;
+5. migrar al general los enlaces procedimentales y estructurales comunes.
+
+### Enlaces estructurales con estado especificado
+
+Estos enlaces asocian objetos especializados con valores concretos de atributos.
+
+Siete clases se agrupan en tres familias:
+
+- estado especificado en el origen;
+- estado especificado en el destino;
+- estado especificado en origen y destino.
+
+Las variantes bidireccionales y recíprocas no existen para el caso de estado solo en el destino.
+
+La realización textual canónica de estas variantes vive en `opm-opl-es` §9.4. La realización gráfica vive en `opm-visual-es` §8.5.
+
+---
+
+## Cardinalidades de relación
+
+### Multiplicidad de objetos
+
+La multiplicidad restringe el número de instancias de objeto asociadas a un enlace. El valor por defecto es una instancia por extremo. Aplica a enlaces etiquetados, agregación-participación y enlaces procedimentales.
+
+| Símbolo | Límites |
+|---|---|
+| `?` | 0..1 |
+| `*` | 0..* |
+| sin símbolo | 1..1 |
+| `+` | 1..* |
+
+La sintaxis de rango es `qmín..qmáx`. Pueden usarse varios rangos separados por comas y expresiones aritméticas con `+`, `-`, `*`, `/`, `(`, `)`. Las restricciones usan `=`, `≠`, `<`, `≤`, `≥`, llaves para conjuntos y el operador `∈`.
+
+**Los nombres de parámetros deben ser únicos en todo el modelo.**
+
+**Las restricciones de participación no aplican a procesos.** La repetición secuencial de un proceso se modela con un proceso recurrente y contador de iteración; la repetición paralela, con subprocesos síncronos o asíncronos dentro de una descomposición.
+
+**Declaración de tipo:** un objeto puede declarar tipo computacional. Los tipos comunes incluyen `boolean`, `string`, `integer`, `float`, `double`, `short`, `long` y `enumerated`.
+
+La realización textual canónica de multiplicidades, restricciones y tipos vive en `opm-opl-es` §12.
+
+---
+
+## Operadores lógicos: AND, XOR, OR
+
+### AND
+
+AND se expresa con enlaces separados, del mismo tipo, sin tocarse entre sí.
+
+### XOR
+
+Un abanico XOR exige exclusión mutua: exactamente una ruta del abanico queda habilitada.
+
+### OR
+
+Un abanico OR exige inclusión: al menos una ruta del abanico queda habilitada.
+
+### Combinatoria de abanicos de enlaces
+
+XOR y OR aplican a todas las familias de enlaces procedimentales. El extremo convergente es el extremo común; el divergente no lo es.
+La realización visual de estos abanicos vive en `opm-visual-es` §5. La realización textual canónica vive en `opm-opl-es` §11.
+
+### Abanicos de enlaces con modificadores de control
+
+Los abanicos XOR y OR pueden combinarse con modificadores de evento y condición. La semántica sigue siendo la de selección exclusiva o inclusiva, enriquecida respectivamente con iniciación o omisión condicional.
+
+### Abanicos probabilísticos
+
+Cada enlace del abanico se anota con `Pr=p`, y las probabilidades suman 1. Si no se anotan probabilidades explícitas, la distribución por defecto es uniforme.
+
+### Trayectorias de ejecución y etiquetas de ruta
+
+Las etiquetas de ruta resuelven ambigüedad cuando existen varias opciones de salida. La regla es: al salir de un proceso, se sigue el enlace cuya etiqueta coincide con la etiqueta de entrada.
+
+La realización textual canónica de etiquetas de ruta y escenarios pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §13.
+
+Un **escenario** es un conjunto de una o más etiquetas de ruta que define una variante concreta de ejecución. En sistemas complejos, los escenarios evitan crear un OPD adicional por cada variante.
+
+---
+
+## Gestión de contexto y refinamiento
+
+### Completar el SD
+
+El Diagrama de Sistema debe modelar:
+
+- interesados, especialmente beneficiarios;
+- el proceso que entrega valor;
+- las cosas ambientales y sistémicas necesarias para producir un párrafo OPL breve y claro.
+
+El SD debe contener solo las cosas centrales e indispensables. El valor funcional puede aparecer explícitamente como cambio de estado de un atributo del beneficiario o de forma implícita si el beneficiario es afectado.
+
+### Mecanismos de refinamiento y abstracción
+
+Tres pares principales:
+
+| Mecanismo | Refinamiento | Abstracción |
+|---|---|---|
+| Estados | Expresión de estados | Supresión de estados |
+| Estructura | Despliegue | Plegado |
+| Comportamiento | Descomposición | Recomposición |
+
+Hay cuatro pares de despliegue-plegado, uno por relación fundamental: agregación, exhibición, generalización y clasificación.
+
+**Despliegue en el mismo diagrama:** refinable y refinadores comparten OPD.
+
+**Despliegue en nuevo diagrama:** se crea OPD hijo; el refinable aparece con contorno grueso en ambos diagramas.
+
+**Descomposición síncrona (*in-zooming*) vs asíncrona (*unfolding*):** la descomposición de un proceso (in-zooming) es síncrona — el proceso padre espera a que todos los subprocesos completen antes de devolver control. En cambio, el despliegue (unfolding) de una relación estructural es asíncrono respecto del flujo de control del proceso: revela estructura estática sin implicar secuenciación temporal. Esta distinción es relevante al decidir si un refinamiento debe modelarse como descomposición (comportamiento secuenciado) o como despliegue (estructura revelada).
+
+**Diagramas de vista (model views):** OPDs que reúnen hechos provenientes de múltiples OPDs para explicar un fenómeno o enfatizar un aspecto concreto. Las herramientas OPM deben soportar la creación de vistas que filtren por criterios específicos, como:
+
+- el camino crítico para la duración mínima de ejecución del sistema;
+- los agentes e instrumentos del sistema;
+- todos los objetos y procesos vinculados por un tipo específico de enlace;
+- la asignación de cosas de varios OPDs a módulos del sistema.
+
+**Mapa del sistema (system map):** un árbol de procesos OPD que muestra explícitamente el contenido (cosas y enlaces) de cada OPD como nodo. Dado que el mapa puede volverse muy grande, los mecanismos de vista permiten acceder al contenido del modelo y a las asociaciones entre elementos.
+
+---
+
+## Árboles OPD y control implícito
+
+**Árbol de procesos OPD:** raíz `SD`, y cada nodo corresponde a un OPD creado por descomposición de un proceso. Es el mecanismo principal de navegación. Etiquetas típicas: `SD`, `SD1`, `SD1.1`, `SD1.1.1`, etc.
+
+**Árbol de objetos OPD:** raíz en un objeto, muestra su elaboración por refinamiento.
+
+La línea temporal dentro de un proceso descompuesto fluye de arriba hacia abajo. Los subprocesos cuyos puntos de referencia superiores tienen la misma altura se ejecutan en paralelo.
+
+### Resumen de enlaces de invocación implícitos
+
+Dos formas gobiernan la ejecución implícita en descomposición síncrona:
+
+| Forma | Semántica | Indicio estructural |
+|---|---|---|
+| Invocación implícita | Un subproceso invoca al subproceso inmediatamente inferior cuando termina | puntos superiores de elipses ordenados verticalmente |
+| Conjunto de invocación implícita paralela | Varios subprocesos comienzan juntos cuando sus puntos superiores están alineados | mismas alturas en el contexto de descomposición |
+
+---
+
+## Distribución de enlaces a través del contexto
+
+Los enlaces conectados al **contorno exterior** de un proceso descompuesto tienen semántica distributiva. La especificación formal completa de las reglas de distribución — tipos de enlace, restricciones de frontera, distribución por posición de subproceso, excepciones para eventos ambientales y reglas de escisión — vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §11 y §12.
+
+Invariantes semánticos que esta capa conserva:
+
+- los enlaces de **consumo** y **resultado** no deben conectarse al contorno exterior de un proceso descompuesto;
+- los enlaces de agente e instrumento se distribuyen a todos los subprocesos;
+- los enlaces de evento desde objetos sistémicos no deben cruzar el límite de la descomposición para iniciar subprocesos — **excepción:** los enlaces de evento desde objetos **ambientales** pueden cruzar este límite; en tal caso la herramienta debería guiar a quien modela para definir cómo manejar la contingencia (véase §12 de la especificación visual);
+- si un enlace de condición hace que un subproceso se omita, el control pasa al siguiente.
+
+---
+
+## Enlaces transformadores escindidos con estado especificado
+
+Cuando un enlace de efecto entrada-salida se descompone en subprocesos, el modelo queda subespecificado. La escisión del enlace en un par (entrada al subproceso temprano, salida al subproceso tardío) es el único mecanismo correcto para resolver esa subespecificación.
+
+La especificación formal de los pares escindidos, su tabla de geometría y sus restricciones vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §12.
+
+La realización textual de los enlaces escindidos vive en [OPL-ES](urn:fxsl:kb:opl-es) §4 y §7.
+
+**Cambio de rol con la abstracción:** un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto sus estados inicial y final coinciden.
+
+### Instancias operacionales del conjunto de objetos involucrados
+
+Como consecuencia de la distribución de enlaces, las siguientes restricciones se aplican a las instancias operacionales de los transformados:
+
+1. Cada instancia operacional de un **consumido** en el conjunto previo al proceso DEBE dejar de existir al inicio del subproceso más detallado que lo consume, y la instancia operacional no está en el conjunto posterior al proceso.
+2. Cada instancia operacional de un **afectado** en el conjunto previo al proceso que cambia de estado DEBE salir de su estado de entrada al inicio del subproceso más detallado que cambia al afectado.
+3. Cada instancia operacional de un **afectado** en el conjunto posterior al proceso que cambia de estado DEBE entrar en su estado de salida al completarse el subproceso más detallado que cambia al afectado.
+4. Cada instancia operacional de un **resultante** en el conjunto posterior al proceso DEBE comenzar a existir al completarse el subproceso más detallado que lo genera, y la instancia operacional no está en el conjunto previo al proceso.
+
+---
+
+## Precedencia de enlaces durante la recomposición
+
+Al recomponer, los enlaces procedimentales de subprocesos migran al proceso padre. La **fuerza semántica** determina cuál prevalece cuando dos enlaces compiten por el mismo par objeto-proceso.
+
+La especificación formal de la jerarquía completa de precedencia, incluyendo la matriz transformadora, el orden principal `consumo = resultado > efecto > agente > instrumento`, la precedencia secundaria por modificador de control y el orden completo de **12 niveles** de fuerza semántica, vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §13.
+
+Los invariantes semánticos que gobiernan la precedencia se formalizan en `opm-visual-es` §13. Esta capa no los re-enuncia para evitar duplicación con divergencia.
+
+---
+
+## Etiquetas OPD y navegación
+
+**El SD contiene exactamente un proceso sistémico**, que expresa la función del sistema. Puede contener uno o más procesos ambientales.
+
+Etiquetas típicas:
+
+- `SD` para nivel 0;
+- `SD1`, `SD2`, etc., para niveles descendientes.
+
+**Etiquetas de aristas del árbol OPD:** cada arista del árbol de procesos usa un enlace estructural etiquetado unidireccional con una fórmula de refinamiento equivalente a `se refina por descomposición de NombreProceso en` o `se refina por despliegue de NombreCosa en`. La realización textual canónica de estas sentencias pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §10.
+
+**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`. El procedimiento operativo de recorrido pertenece a [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
+
+### OPL del sistema completo
+
+El OPL del sistema completo es la especificación textual total obtenida al recorrer el árbol OPD y concatenar los párrafos OPL locales en orden de modelo. No describe solo el contexto actual, sino la totalidad del sistema.
+
+Núcleo recuperable del ejemplo clásico de *Sistema de Lavado de Platos*:
+
+- `**Usuario Doméstico** maneja *Lavar Platos*.`
+- `*Lavar Platos* requiere **Lavavajillas**.`
+- `*Lavar Platos* consume **Jabón**.`
+- `*Lavar Platos* afecta **Conjunto de Platos**.`
+- `SD se refina por descomposición de *Lavar Platos* en SD1.`
+- `**Lavavajillas** consta de **Compartimento de Jabón** y otras partes.`
+- `**Lavavajillas** puede estar \`vacío\` o \`cargado\`.`
+- `Estado \`vacío\` de **Lavavajillas** es inicial y final.`
+- `**Compartimento de Jabón** puede estar \`vacío\` o \`cargado\`.`
+- `Estado \`vacío\` de **Compartimento de Jabón** es inicial.`
+- `**Conjunto de Platos** exhibe **Limpieza**.`
+- `**Limpieza** de **Conjunto de Platos** puede estar \`sucio\` o \`limpio\`.`
+- `Estado \`sucio\` de **Limpieza** de **Conjunto de Platos** es inicial.`
+- `Estado \`limpio\` de **Limpieza** de **Conjunto de Platos** es final.`
+- `*Lavar Platos* se descompone en *Cargar Platos*, *Insertar Detergente*, *Lavar y Secar Platos* y *Descargar Platos*, en esa secuencia.`
+- `*Cargar Platos* cambia **Lavavajillas** de \`vacío\` a \`cargado\`.`
+- `*Insertar Detergente* requiere **Jabón**.`
+- `*Insertar Detergente* cambia **Compartimento de Jabón** de \`vacío\` a \`cargado\`.`
+- `*Lavar y Secar Platos* requiere **Lavavajillas**.`
+- `*Lavar y Secar Platos* consume **Jabón**.`
+- `*Lavar y Secar Platos* cambia **Limpieza** de **Conjunto de Platos** de \`sucio\` a \`limpio\`.`
+- `*Descargar Platos* cambia **Lavavajillas** de \`cargado\` a \`vacío\`.`
+
+**Simplificación de OPD:** la recomposición dentro del mismo diagrama y la descomposición en nuevo diagrama pueden simplificar un OPD sobrecargado. Restricción: un objeto no puede incorporarse al conjunto abstraído si eso crearía enlaces procedimentales directos entre procesos pares sin semántica OPM.
+
+### Principio de consistencia de hechos OPM
+
+Si un hecho aparece en un OPD y contradice otro hecho del mismo modelo en otro OPD, el modelo es inconsistente y la herramienta debería detectarlo. Que un hecho sea refinamiento o abstracción de otro no constituye contradicción.
+
+---
+
+## Diagrama de sistema: procedimiento y componentes
+
+El SD es el OPD de nivel 0 y proporciona una vista de alto nivel comprensible para cualquier interesado, incluso sin especialización técnica. En la capa base solo interesa su función semántica: expresar la función del sistema y su contexto de máximo nivel.
+
+La construcción detallada del SD, sus variantes por tipo de sistema, la secuencia de preguntas, la jerarquía de detalle, los nodos de decisión y las reglas de praxis asociadas pertenecen a [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
+
+---
+
+## Ingeniería de sistemas basada en modelos con OPM
+
+### Visión general de MBSE
+
+La Ingeniería de Sistemas Basada en Modelos (MBSE) usa modelos conceptuales para diseñar y desarrollar sistemas complejos. Los enfoques tradicionales basados en texto carecen de lenguaje estandarizado y de verificación o validación formales. OPM resuelve eso mediante especificación formal bimodal.
+
+### Conceptos alternativos de solución
+
+Procedimiento recomendado para generar alternativas:
+
+1. crear al menos tres modelos conceptuales distintos;
+2. aplicar pensamiento creativo holístico;
+3. destilar el concepto central de cada uno;
+4. explicitar los supuestos implícitos.
+
+Un **concepto** es el principio físico o lógico central de una arquitectura. Los **conceptos alternativos de solución** son enfoques arquitectónicos distintos para un mismo problema.
+
+### Revisión preliminar de diseño (PDR)
+
+Una PDR estructurada incluye ocho secciones:
+
+1. portada;
+2. formulación del problema;
+3. propósito y motivación;
+4. supuestos y restricciones;
+5. soluciones alternativas;
+6. solución seleccionada con justificación;
+7. costos de ciclo de vida y cronograma;
+8. riesgos y mecanismos de mitigación.
+
+### OPM como plano común
+
+OPM sirve como especificación neutral entre disciplinas para el diseño detallado de sistemas complejos donde cada disciplina tiene su propio lenguaje. Los modelos detallados suelen abarcar entre **5 y 10 niveles de detalle** en el árbol de procesos OPD.
+
+### Integración virtual
+
+La integración virtual combina modelos conceptuales de hardware con módulos de software ejecutable real. El software controla virtualmente los modelos de hardware, lo que permite validar antes del prototipado físico.
+
+---
+
+## Sintaxis formal de OPL: delegación editorial
+
+La gramática formal completa de OPL-ES deja de vivir en esta capa para eliminar solapamiento con la capa textual canónica. La EBNF española completa, incluyendo producción base, oraciones procedimentales, estructurales, condicionales y de gestión de contexto, vive ahora exclusivamente en [OPL-ES](urn:fxsl:kb:opl-es), Apéndice A.
+
+> **Nota:** El Apéndice A de OPL-ES forma parte vinculante de la capa textual canónica. Las producciones EBNF definidas allí son parte de la especificación del corpus.
+
+Este documento conserva solo el contrato semántico que la gramática textual debe preservar:
+
+- la dualidad OPD–OPL;
+- la correspondencia entre familia semántica de enlace y plantilla textual;
+- la trazabilidad entre refinamiento del modelo y composición textual;
+- la equivalencia semántica entre la formulación inglesa de referencia y la formulación canónica española.
+
+---
+
+## Metamodelo OPM
+
+La estructura del modelo OPM tiene dos jerarquías paralelas:
+
+- **Modelo OPM** → conjunto de OPDs (gráfico) + especificación OPL (texto)
+- **Conjunto de OPDs** → OPDs → constructos OPD → conjuntos de cosas + conjuntos de enlaces
+- **Especificación OPL** → párrafos OPL → oraciones OPL → frases y nombres reservados
+
+Un **constructo básico** contiene exactamente 2 cosas y 1 enlace. Los constructos compuestos incluyen abanicos de enlaces o más de dos refinadores.
+
+---
+
+## Modelo de enlace
+
+Un enlace consta de:
+
+- origen;
+- destino;
+- conector;
+- línea;
+- símbolo;
+- etiqueta opcional;
+- nombre de ruta opcional.
+
+La multiplicidad tiene límites inferior y superior: `0..1`, `0..*`, `1..1`, `1..*`.
+
+## Modelo de cosa
+
+Una cosa es:
+
+- **objeto**, o
+- **proceso**.
+
+Los objetos pueden ser sin estados o con estados. Los objetos con estados generan referencias a estados específicos.
+
+**Objeto Específico de Estado (State-Specific Object).** Un objeto con estados que tiene `s` estados genera un conjunto de `s` **objetos específicos de estado**, cada uno de los cuales es una especialización sin estados del objeto original que "refiere a" un estado concreto. El concepto permite simplificar el modelo conceptual: cuando se necesita referenciar un objeto en un estado particular, se puede tratar como un objeto independiente sin estados. Por ejemplo, un **Producto** con estados `diseñado`, `fabricado`, `probado`, `comprado` y `usado` genera cinco especializaciones: **Producto Diseñado**, **Producto Fabricado**, etc. Cada una refiere al estado correspondiente de **Producto** mediante un enlace estructural etiquetado `refiere al estado de`.
+
+- Un objeto sin estados tiene un conjunto de estados de cardinalidad `s=0`.
+- Un objeto con estados tiene cardinalidad `s≥1`.
+- El estado actual es una instancia de **Estado** dentro del **Conjunto de Estados** del objeto.
+- Los estados se especializan en **Estado Inicial**, **Estado Final** y **Estado por Defecto**, cada uno con su designación y símbolo gráfico propio (rectángulo redondeado de borde grueso, doble borde, y señalador con flecha diagonal, respectivamente).
+
+## Modelo de constructo estructural
+
+Un constructo estructural básico = refinable + refinador + enlace estructural. Cinco variantes:
+
+- agregación-participación;
+- exhibición-caracterización;
+- generalización-especialización;
+- clasificación-instanciación;
+- enlace estructural etiquetado.
+
+## Modelo de constructo procedimental
+
+Un constructo procedimental básico = objeto + proceso + enlace procedimental.
+
+Las semánticas básicas son:
+
+- transformación;
+- habilitación;
+- transformación con control;
+- habilitación con control.
+
+Los constructos transformadores se descomponen en:
+
+- consumo;
+- efecto;
+- resultado.
+
+Los habilitadores se descomponen en:
+
+- agente;
+- instrumento.
+
+## Modelos de descomposición y recomposición en nuevo diagrama
+
+Esta adaptación modela la descomposición y la recomposición en nuevo diagrama como procesos OPM de primera clase:
+
+- **Descomposición en nuevo diagrama**: requiere `SDn`, realiza Mostrar Contenido y luego Refinar Enlaces, y genera `SDn+1`.
+- **Recomposición en nuevo diagrama**: requiere `SDn+1`, realiza Abstraer Enlaces y luego Ocultar Contenido, y genera `SDn`.
+- **OPD semidescompuesto**: objeto transitorio que existe solo dentro de esas transformaciones.
+
+Las figuras de referencia muestran la migración de enlaces desde un proceso refinado `P` hacia subprocesos `P1`, `P2`, `P3`, reubicando consumidos, agentes, instrumentos y resultantes en el nivel detallado.
+
+## Simplificación de un OPD
+
+Un OPD sobrecargado puede simplificarse abstrayendo un conjunto acotado de procesos y objetos hacia un constructo de nivel superior, siempre que la abstracción no cree enlaces procedimentales ilegales entre procesos pares.
+
+## Modelo de control del desempeño de procesos
+
+Este modelo autorreferencial completo demuestra cómo OPM controla la ejecución de procesos en tiempo de simulación.
+
+Jerarquía principal:
+
+- `SD`
+- `SD1`
+- `SD1.1`
+- `SD1.1.1`
+- `SD1.1.1.1`
+- `SD1.2`
+- `SD1.2.1`
+- `SD1.2.2`
+- `SD1.2.3`
+
+**SD: Control del Desempeño de Procesos**
+Un *Proceso Ejecutable* invoca *Controlar Desempeño de Proceso*, que afecta el **Conjunto de Objetos Involucrados** y genera un **Mensaje de Éxito** o un **Mensaje de Falla**.
+
+**SD1: Descomposición principal**
+*Controlar Desempeño de Proceso* se descompone en *Iniciar Proceso* y *Ejecutar Proceso*, en esa secuencia. **Estado del Proceso** recorre `inactivo → iniciado(t=0) → operando(t<n) → completando(t=n) → completado(t=n)` o `abortado`. **Poscondición** pasa de `falsa` a `verdadera`.
+
+**SD1.1: Iniciar Proceso**
+Se descompone en *Evaluar Precondición* → (`Cancelar` | `Iniciar`). Si la precondición es falsa, *Cancelar* genera **Mensaje de Cancelación** y devuelve el estado a `inactivo`. Si es verdadera, *Iniciar* consume la precondición, genera poscondición falsa y cambia el estado del proceso a `iniciado(t=0)`.
+
+**SD1.1.1: Evaluar Precondición**
+Se descompone en *Verificar Habilitadores* → *Verificar Consumidos y Afectados* → (`Refutar Precondición` | `Confirmar Precondición`). Si alguna verificación falla, se refuta la precondición; si todas pasan, se confirma.
+
+**SD1.2: Ejecutar Proceso**
+Se descompone en *Ejecución Inicial* → *Ejecución Principal* → *Ejecución Final*.
+
+- Inicial: en paralelo, *Salir de Estado de Entrada* + *Consumir Conjunto de Consumidos*.
+- Principal: ciclo de *Comparar Tiempo y Duración* → *Verificar Habilitadores y Afectados* → *Ejecutar Proceso e Incrementar Tiempo*.
+- Final: en paralelo, *Generar Resultantes* + *Entrar en Estado de Salida* + *Notificar Éxito*.
+
+Ese modelo muestra:
+
+- descomposición multinivel;
+- transiciones de estado a través de la jerarquía;
+- enlaces condicionales y omisión condicional;
+- manejo de excepciones;
+- subprocesos paralelos;
+- cambio de rol entre instrumento y afectado según el nivel de abstracción.
+
+---
+
+## Dinámica y simulación
+
+### Ejecutabilidad
+
+Un modelo OPM puede ser ejecutable: la simulación anima el sistema ejecutando el modelo en un entorno de software.
+
+### Modos de transformación
+
+| Modo | Significado |
+|---|---|
+| Construcción | El objeto es creado o generado |
+| Efecto | El objeto cambia de estado y mantiene identidad |
+| Consumo | El objeto es eliminado y deja de existir |
+
+Construcción y consumo son transformaciones más profundas que efecto porque cambian existencia, no solo estado.
+
+### Principio de línea de tiempo
+
+La línea temporal por defecto en una descomposición fluye de arriba hacia abajo. Subprocesos a la misma altura se ejecutan en paralelo. Un proceso de salida por excepción puede provocar salida inmediata sin importar su posición gráfica.
+
+### Eventos temporizados
+
+Los eventos de estado pueden representar eventos temporales. Objetos tipo reloj o temporizador del sistema con valores concretos pueden iniciar procesos en instantes definidos.
+
+### Diagrama de vida útil
+
+Un diagrama de vida útil muestra, para cualquier instante:
+
+- qué objetos existen;
+- en qué estado está cada uno;
+- qué procesos están activos.
+
+Es útil para seguir transiciones a lo largo de la vida del sistema.
+
+### Propiedades de duración de proceso
+
+Las propiedades de duración de proceso (mínima, esperada, máxima, distribución) son propiedades semánticas del proceso. Su especificación formal y representación gráfica (ubicación dentro de la elipse, formato) viven en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §14.
+
+La unidad temporal del sistema es la unidad por defecto para todos los procesos, salvo que se redefina.
+
+Ejemplo:
+
+- `Procesar [min] (30.0, 45.6, 60.0)` con distribución `normal, media=45.6, desviación=7.3`.
+
+### Ejemplos de duración
+
+Esta adaptación recoge cuatro patrones recuperables:
+
+1. **Metamodelo de duración de proceso:** una notación compacta puede codificar duración mínima, esperada y máxima junto con parámetros de distribución; la duración real sigue siendo propiedad de ejecución.
+2. **Variantes de distribución:** un mismo proceso puede parametrizarse con distribuciones exponencial, normal o uniforme.
+3. **Excepción por sobretiempo:** si la duración real supera la duración máxima, ocurre el proceso de manejo de sobretiempo.
+4. **Excepción por subtiempo:** si la duración real cae por debajo de la mínima, ocurre el proceso de manejo de subtiempo.
+
+Ejemplos canónicos:
+
+- `Procesar [min] (30.0, 45.6, 60.0)` con `uniforme, a=5.0, b=70.0`, duración real `63.3`, instancia `1`, para el caso de sobretiempo.
+- El mismo intervalo de duración, con duración real `23.4` e instancia `2`, corresponde al caso de subtiempo.
+
+---
+
+## Convenciones editoriales delegadas
+
+Las siguientes materias dejan de definirse en esta capa para evitar duplicación interna del corpus:
+
+- buenas prácticas de legibilidad, densidad visual, apariencias múltiples y copias visuales: [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §15–§16;
+- política de nombrado, capitalización, unicidad nominal y patrones de superficie en español: [OPL-ES](urn:fxsl:kb:opl-es) §1;
+- reglas operativas para decidir cuándo descomponer, cuándo duplicar una apariencia y cómo resolver ambigüedad durante el modelado: [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
+
+Este documento conserva como invariantes semánticos transversales:
+
+- un estado no existe sin su objeto propietario;
+- el objeto consumido desaparece al inicio del proceso, no al final;
+- un objeto puede además actuar como disparador (`e`) y/o como condicionante (`c`) sin perder su rol principal como transformado o habilitador;
+- la importancia relativa de una cosa suele ser proporcional al OPD más alto de la jerarquía en el que aparece.
+
+---
+
+## Ejemplos aplicados
+
+Ejemplos canónicos del corpus que muestran la notación OPM en uso.
+
+### Mecanizado de barra de acero (enlaces con estado especificado)
+
+Objetos: **Barra de Metal** con estados `pre-cortada`, `cortada`; **Pieza** con estados `pre-probada`, `probada`. Procesos: *Cortar* (ambiental), *Mecanizar* (físico), *Probar* (ambiental). Habilitadores: **Operario de Máquina** y **Refrigerante**.
+
+Composición OPL-ES:
+
+- `*Cortar* cambia **Barra de Metal** de \`pre-cortada\` a \`cortada\`.`
+- `*Mecanizar* consume **Barra de Metal** en \`cortada\`.`
+- `*Mecanizar* genera **Pieza** en \`pre-probada\`.`
+- `**Operario de Máquina** maneja *Mecanizar*.`
+- `*Mecanizar* requiere **Refrigerante**.`
+- `*Probar* cambia **Pieza** de \`pre-probada\` a \`probada\`.`
+
+### Pago con cheque (descomposición con transiciones de estado)
+
+Objeto: **Cheque** con estados `en blanco → firmado → endosado → cobrado y cancelado`. Atributo: **Custodio** con estados `pagador → beneficiario → institución financiera`. Agentes: **Pagador**, **Beneficiario**, **Banco**.
+
+`*Pagar con Cheque*` se descompone en:
+
+1. `*Escribir y Firmar*`
+2. `*Entregar y Aceptar*`
+3. `*Endosar y Presentar*`
+4. `*Cobrar y Cancelar*`
+
+Ejemplos OPL-ES:
+
+- `*Escribir y Firmar* cambia **Cheque** de \`en blanco\` a \`firmado\`.`
+- `*Entregar y Aceptar* cambia **Custodio** de \`pagador\` a \`beneficiario\`.`
+- `*Endosar y Presentar* cambia **Cheque** de \`firmado\` a \`endosado\`.`
+- `*Cobrar y Cancelar* cambia **Cheque** de \`endosado\` a \`cobrado y cancelado\`.`
+
+### Lavado de platos (cambio de rol según nivel de abstracción)
+
+SD:
+
+- `**Usuario Doméstico** maneja *Lavar Platos*.`
+- `*Lavar Platos* requiere **Lavavajillas**.`
+- `*Lavar Platos* consume **Jabón**.`
+- `*Lavar Platos* afecta **Conjunto de Platos**.`
+
+`SD1`:
+
+- `*Lavar Platos* se descompone en *Cargar Platos*, *Insertar Detergente*, *Lavar y Secar Platos* y *Descargar Platos*, en esa secuencia.`
+- `*Cargar Platos* cambia **Lavavajillas** de \`vacío\` a \`cargado\`.`
+- `*Descargar Platos* cambia **Lavavajillas** de \`cargado\` a \`vacío\`.`
+
+El punto clave es que **Lavavajillas** es instrumento en el nivel abstracto, pero afectado en el nivel detallado.
+
+### Apertura de caja fuerte (operadores lógicos)
+
+Ejemplos:
+
+- XOR: exactamente uno entre **Propietario A** y **Propietario B** maneja *Abrir Caja Fuerte*.
+- OR: al menos uno entre **Propietario A** y **Propietario B** maneja *Abrir Caja Fuerte*.
+- AND: `*Abrir Caja Fuerte* requiere **Llave A**, **Llave B** y **Llave C**.`
+
+### Especialización de vehículos (atributo discriminante)
+
+- `**Vehículo** exhibe **Medio de Desplazamiento**.`
+- `**Medio de Desplazamiento** puede estar \`tierra\`, \`aire\` o \`superficie acuática\`.`
+- `**Auto**, **Aeronave** y **Barco** son **Vehículo**.`
+- `**Auto** exhibe **Medio de Desplazamiento** en \`tierra\`.`
+- `**Aeronave** exhibe **Medio de Desplazamiento** en \`aire\`.`
+- `**Barco** exhibe **Medio de Desplazamiento** en \`superficie acuática\`.`
+
+### Seguridad del hogar (proceso asincrónico)
+
+`*Mantener Seguridad del Hogar*` consta de:
+
+- *Atender Robo*;
+- *Proteger contra Incendio*;
+- *Alertar Terremoto*.
+
+Como no se conoce el orden temporal, se usa despliegue por agregación-participación y no descomposición temporal.
+
+### Preparación de café (estructura-comportamiento-función)
+
+Estructura:
+
+- `**Máquina de Café** consta de **Depósito de Agua**, **Espumador de Leche**, **Calentador de Agua**, **Compartimento de Cápsulas** y **Portataza**.`
+
+Comportamiento:
+
+- `*Preparar Café*` se descompone en *Calentar Agua*, *Espumar Leche*, *Preparar Café* y *Agregar Leche*.
+
+Función:
+
+- el beneficiario es **Persona que Bebe Café**;
+- la función cambia **Satisfacción** de `insatisfecha` a `satisfecha`.
+
+### Operación de auto eléctrico (componentes del SD)
+
+Ejemplo de SD:
+
+- propósito: mejorar **Éxito del Negocio** de **Grupo de Interesados de la Empresa**;
+- función: `*Operar Auto Eléctrico*` cambia **Auto Eléctrico** de `detenido` a `en movimiento`;
+- agente: **Conductor**;
+- instrumento: **Sistema Operativo del Auto Eléctrico**;
+- entorno: **Tipo de Terreno**, **Regulaciones**.
+
+### Ejemplos sociales y sociotécnicos auxiliares
+
+- **Control de Tráfico Aéreo:** **Piloto** y **Controlador Aéreo** son agentes; **Torre de Control** es instrumento.
+- **Aprendizaje MOOC:** **Grupo de Estudiantes** actúa como agente; la plataforma MOOC como instrumento.
+- **Gestión de Identidad Profesional en Línea:** el perfil en línea representa a la persona mediante enlace estructural etiquetado.
+- **Transporte de Equipaje:** la función principal cambia la ubicación del equipaje del aeropuerto de origen al de destino.
+- **Sistema de Conferencia:** **Organizador** y **Acomodadores** son agentes; instalaciones y equipamiento son instrumentos; el clima puede ser ambiental.
+
+Los flujos de interfaz y los detalles específicos de herramienta que no alteren la semántica del modelo deben mantenerse en documentación operacional separada de este SSOT.
+
+---
+
+## Notas para implementadores de herramientas
+
+Las siguientes notas informativas del estándar están dirigidas a quienes desarrollan herramientas compatibles con OPM:
+
+- Una herramienta puede rastrear el conjunto de refinadores de cada refinable y ajustar automáticamente el símbolo gráfico y las oraciones OPL correspondientes cuando quien modela cambia la colección de refinadores.
+- Una herramienta puede ofrecer la opción de especificar la esencia primaria del sistema como medio para establecer el valor por defecto del atributo genérico de esencia.
+- Una herramienta puede notificar a quien modela cuando se intenta incluir un objeto como refinador en más de un contexto, para que determine la pertinencia de la inclusión.
+- Una herramienta puede establecer una sintaxis por defecto para resolver nombres de refinadores ambiguos.
+- El OPL correspondiente a un OPD debe expresar solo los estados de los objetos tal como aparecen en ese OPD; la unión de estados de un objeto a través de todos los OPDs constituye el conjunto completo de estados de ese objeto.
+- Cuando un enlace de evento desde un objeto o estado sistémico cruza el límite de un proceso descompuesto para iniciar un subproceso, la herramienta debería advertir que esto puede interferir con el orden temporal prescrito de la descomposición síncrona. Si el evento proviene de un objeto ambiental, la herramienta debería guiar a quien modela para definir cómo manejar la contingencia.
+- Las herramientas de modelado OPM necesitan rastrear el número e identidades de las instancias operacionales de cada objeto y de cada proceso para poder realizar simulaciones.

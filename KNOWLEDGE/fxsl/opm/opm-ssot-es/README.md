@@ -4,10 +4,10 @@ Este directorio reúne una adaptación canónica en español de OPM. La arquitec
 
 Capas del corpus:
 
-- `opm-es.md`: núcleo conceptual de OPM. El nombre de archivo se conserva por compatibilidad, pero su función editorial es la capa base semántica del corpus.
-- `opm-opl-es.md`: capa textual canónica. Define OPL-ES, su gramática y sus plantillas de oración.
-- `opm-visual-es.md`: capa gráfica canónica. Define la gramática visual del OPD, su composición y sus restricciones.
-- `metodologia-opm-es.md`: manual metodológico. Define el procedimiento de modelado, las heurísticas, las validaciones y los patrones de operación.
+- `opm-iso-19450-es.md`: núcleo conceptual de OPM (`urn:fxsl:kb:opm-es`). Capa semántica y ontológica canónica: definiciones, clases de elementos, clases de relaciones, principios de modelado, ejemplos aplicados y notas para implementadores.
+- `opm-opl-es.md`: capa textual canónica (`urn:fxsl:kb:opl-es`). Define OPL-ES, su gramática, plantillas de oración y gramática formal EBNF completa (Apéndice A).
+- `opm-visual-es.md`: capa gráfica canónica (`urn:fxsl:kb:opd-es`). Define la gramática visual del OPD, su composición y sus restricciones.
+- `metodologia-opm-es.md`: manual metodológico (`urn:fxsl:kb:manual-metodologico-opm-es`). Define el procedimiento de modelado, las heurísticas, las validaciones y los patrones de operación.
 
 Identidades canónicas:
 
@@ -18,7 +18,7 @@ Identidades canónicas:
 
 Regla de precedencia:
 
-1. Base semántica: `opm-es.md`
+1. Base semántica: `opm-iso-19450-es.md`
 2. Realización textual: `opm-opl-es.md`
 3. Realización gráfica: `opm-visual-es.md`
 4. Procedimiento y praxis: `metodologia-opm-es.md`

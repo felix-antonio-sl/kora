@@ -114,21 +114,41 @@ Reglas:
 
 ## 6. Pipeline como cadena de funtores
 
+El pipeline de conocimiento vive **dentro de `KNOWLEDGE/`** en el staging area
+dedicado `_SCRIPTORIUM/`. No existe pipeline centralizado fuera de
+`KNOWLEDGE/`.
+
+Topologia canonica:
+
+```
+KNOWLEDGE/_SCRIPTORIUM/INBOX/   <- material crudo, pre-categorial, sin URN asignado
+KNOWLEDGE/_SCRIPTORIUM/REVIEW/  <- drafts con URN provisional, status: draft, listos para auditar
+KNOWLEDGE/{ns}/...              <- productivo con status: published o deprecated
+```
+
 El pipeline canonicamente es:
 
-1. intake
-2. normalize
-3. enrich
-4. publish
-5. graph
+1. **intake** — material crudo llega a `_SCRIPTORIUM/INBOX/`. Los
+   subdirectorios de `INBOX/` son opacos al toolchain (no representan
+   namespace KORA).
+2. **normalize** — el curador (humano o skill canonico) convierte el crudo
+   a artefacto KORA/MD conforme a `md-spec`; el resultado pasa a
+   `_SCRIPTORIUM/REVIEW/` con `status: draft` y URN provisional.
+3. **enrich** — se agregan `relations`, `tags` y `provenance`.
+4. **publish** — `kora promote` mueve de `REVIEW/` a `KNOWLEDGE/{ns}/...`
+   cambiando `status: draft -> published`.
+5. **graph** — `kora index` + `kora kb-graph` materializan los morfismos
+   derivados.
 
-Interpretacion:
+Reglas:
 
-- intake recibe material crudo,
-- normalize lo lleva a `md-spec` y, si hace falta, a su perfil prescriptivo,
-- enrich agrega relaciones, tags y provenance,
-- publish cambia lifecycle y lo vuelve consumible,
-- graph materializa los morfismos para consulta.
+1. Un artefacto con `status: published` o `status: deprecated` **NO PUEDE**
+   residir en `_SCRIPTORIUM/`.
+2. Un artefacto con `status: draft` **NO PUEDE** residir en
+   `KNOWLEDGE/{ns}/...` productivo.
+3. Los subdirectorios de `INBOX/` son **pre-categoriales**: no implican
+   namespace KORA. El namespace se asigna en `REVIEW/` como URN
+   provisional y se confirma al promover a productivo.
 
 ## 7. Grafo de conocimiento
 
@@ -206,7 +226,7 @@ del artefacto se beneficia de determinismo mecanico. En ese caso:
 
 | Familia  | Productor canonico            | Output                                          | Namespace fijo |
 | -------- | ----------------------------- | ----------------------------------------------- | -------------- |
-| `atomic` | `urn:kora:skill:atomize:1.0.0` | `OPERATIONS/drafts/kora/atomic-{slug}.md`      | `kora`         |
+| `atomic` | `urn:kora:skill:atomize:1.0.0` | `KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-{slug}.md` | `kora`         |
 
 ### 12.3 Reglas operativas
 
@@ -217,9 +237,9 @@ del artefacto se beneficia de determinismo mecanico. En ese caso:
    `extensions.kora.{family}.hand_edited: true` para que el productor no lo
    sobreescriba en la siguiente corrida.
 3. El productor canonico **DEBE** emitir artefactos con `status: draft` en
-   `OPERATIONS/drafts/{namespace}/`; la promocion a `KNOWLEDGE/` pasa por el
-   pipeline normal (`kora promote`), sujeta al protocolo de auditoria de
-   `gobernanza §10`.
+   `KNOWLEDGE/_SCRIPTORIUM/REVIEW/`; la promocion a `KNOWLEDGE/{ns}/...` pasa
+   por `kora promote`, sujeta a los checks de `md-spec §6.10` y `§6.11` y a
+   la coherencia de namespace (`md-spec §3.1` regla 7).
 4. El productor canonico **DEBE** declararse en su salida mediante
    `extensions.kora.{family}.producer: urn:...`.
 5. Una familia con productor canonico **PUEDE** tambien aceptar edicion

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "route-001",
+    "nombre": "Unidad Móvil 1",
+    "macroZona": "urbana",
+    "metricas": {
+      "visitasEstimadas": 4,
+      "kmRecorrido": 18,
+      "duracionMinutos": 180,
+      "urgenciaLoad": 1,
+      "timeWindow": {
+        "inicio": "08:00",
+        "fin": "16:00"
+      }
+    },
+    "pacientes": [
+      "pac-001",
+      "pac-002",
+      "pac-006",
+      "pac-007"
+    ]
+  },
+  {
+    "id": "route-002",
+    "nombre": "Unidad Móvil 2",
+    "macroZona": "periurbana",
+    "metricas": {
+      "visitasEstimadas": 2,
+      "kmRecorrido": 45,
+      "duracionMinutos": 240,
+      "urgenciaLoad": 2,
+      "timeWindow": {
+        "inicio": "08:00",
+        "fin": "17:00"
+      }
+    },
+    "pacientes": [
+      "pac-004"
+    ]
+  },
+  {
+    "id": "route-003",
+    "nombre": "Unidad Móvil 3",
+    "macroZona": "rural",
+    "metricas": {
+      "visitasEstimadas": 3,
+      "kmRecorrido": 85,
+      "duracionMinutos": 300,
+      "urgenciaLoad": 2,
+      "timeWindow": {
+        "inicio": "07:00",
+        "fin": "18:00"
+      }
+    },
+    "pacientes": [
+      "pac-003",
+      "pac-005",
+      "pac-008"
+    ]
+  }
+]

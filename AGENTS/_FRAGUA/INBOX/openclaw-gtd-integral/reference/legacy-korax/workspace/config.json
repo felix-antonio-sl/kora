@@ -1,0 +1,107 @@
+{
+  "_manifest": {
+    "urn": "urn:korvo:agent-bootstrap:korax-config:3.4.0",
+    "type": "bootstrap_config"
+  },
+  "allowed_kb": [
+    "urn:korvo:kb:manual-de-vida",
+    "urn:korvo:kb:dan-koe-filosofia-creador"
+  ],
+  "sandbox": {
+    "mode": "permissive",
+    "rationale": "Korax opera como cliente del sistema PCA v4.1 via CLI. Requiere code_execution para invocar pca_cli.py."
+  },
+  "pca": {
+    "api_base": "http://kora-pca:8100/api",
+    "mode": "http",
+    "rationale": "En deploy Docker, PCA es sidecar HTTP. CLI path no aplica — todo via HTTP binding en TOOLS.md."
+  },
+  "tools": {
+    "allow": [
+      "asignar_ut_proyecto",
+      "bloquear_ut",
+      "caos",
+      "captura",
+      "catalizador",
+      "completar_bloque",
+      "completar_proyecto",
+      "completar_ut",
+      "completitud",
+      "crear_contribucion",
+      "crear_objetivo",
+      "crear_proyecto",
+      "descartar_proyecto",
+      "descartar_ut",
+      "emergencia",
+      "estado",
+      "iniciar_bloque",
+      "pausar_proyecto",
+      "pca_init",
+      "plan_diario",
+      "reactivar_proyecto",
+      "reflexion",
+      "regulacion_emocional",
+      "rescate",
+      "signals",
+      "sync",
+      "throughput",
+      "triaje"
+    ],
+    "deny": []
+  },
+  "sub_agents": {
+    "max_depth": 0,
+    "max_concurrent": 1,
+    "rationale": "Deshabilitado por P4. Korax opera como agente unico sin sub-agentes."
+  },
+  "cron_jobs": [
+    {
+      "id": "morning_plan",
+      "schedule": "0 8 * * 1-5",
+      "event": "heartbeat_morning",
+      "description": "Trigger planificacion matutina L-V 08:00"
+    },
+    {
+      "id": "evening_close",
+      "schedule": "0 21 * * *",
+      "event": "heartbeat_evening",
+      "description": "Cierre nocturno diario 21:00"
+    },
+    {
+      "id": "biweekly_sync",
+      "schedule": "0 20 * * 5",
+      "condition": "odd_week",
+      "event": "heartbeat_sync",
+      "description": "Sincronizacion quincenal viernes 20:00 semanas impares"
+    },
+    {
+      "id": "abandonment_check",
+      "schedule": "0 10 * * *",
+      "event": "heartbeat_abandon",
+      "description": "Verificar senales de abandono diario 10:00"
+    },
+    {
+      "id": "collapse_monitor",
+      "schedule": "0 */6 * * *",
+      "event": "heartbeat_collapse",
+      "description": "Monitorear senales de colapso cada 6 horas"
+    }
+  ],
+  "runtime_capabilities": {
+    "allow": [
+      "code_execution",
+      "/captura",
+      "/triaje",
+      "/plan",
+      "/sync",
+      "/estado",
+      "/emergencia",
+      "/caos"
+    ],
+    "deny": [
+      "kb_search",
+      "sub_agent_spawn",
+      "web_search"
+    ]
+  }
+}

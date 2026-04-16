@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
-from common import AGENTS_ROOT, ROOT, run_cli
+from common import AGENTS_ROOT, ROOT, has_productive_workspaces, run_cli
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.config import OPERATING_CORE_COHORTS
 from kora_lib.graph import build_reference_graph
@@ -12,6 +12,12 @@ from kora_lib.workspaces import (
     fragment_exists,
     iter_agent_workspaces,
     workspace_exists_from_urn,
+)
+
+
+_SKIP_IF_NO_WORKSPACES = unittest.skipUnless(
+    has_productive_workspaces(),
+    "Workspaces productivos en staging; grafo no representa fleet activo.",
 )
 
 
@@ -23,6 +29,7 @@ class GraphInvariantTests(unittest.TestCase):
         cls.known_urns, cls.urn_to_entry = build_catalog_lookup(cls.catalog)
         cls.scanned_files, cls.edges = build_reference_graph()
 
+    @_SKIP_IF_NO_WORKSPACES
     def test_repository_graph_is_nontrivial(self):
         self.assertGreater(self.scanned_files, 700)
         self.assertTrue(any(edge.kind == "TracesTo" for edge in self.edges))

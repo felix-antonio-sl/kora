@@ -1,0 +1,127 @@
+=== SD ===
+Sistema de Hospitalización Domiciliaria es un objeto, físico.
+Hospitalizar Domiciliariamente es un proceso, físico.
+Paciente es un objeto, físico, ambiental.
+Condición Clínica es un objeto, informático.
+Continuidad de Cuidado Hospitalario es un objeto, informático.
+Equipo Clínico de Hospitalización Domiciliaria es un objeto, físico.
+Sistema Operativo UHD es un objeto, informático.
+Red de Comunicación 24 Horas es un objeto, físico.
+Logística de Traslado es un objeto, físico.
+Medios Clínicos es un objeto, físico.
+Manual Operativo es un objeto, informático.
+Domicilio del Paciente es un objeto, físico, ambiental.
+Servicios Clínicos Hospitalarios es un objeto, físico, ambiental.
+Atención Primaria de Salud es un objeto, físico, ambiental.
+Normativa Vigente es un objeto, informático, ambiental.
+Ocurrir Episodio Agudo es un proceso, físico, ambiental.
+
+Paciente exhibe Condición Clínica.
+Sistema de Hospitalización Domiciliaria exhibe Hospitalizar Domiciliariamente.
+
+Condición Clínica puede estar agudo-reagudizado o recuperado.
+Estado agudo-reagudizado de Condición Clínica es inicial.
+Estado recuperado de Condición Clínica es final.
+
+Continuidad de Cuidado Hospitalario puede estar fragmentada o integrada.
+Estado fragmentada de Continuidad de Cuidado Hospitalario es inicial.
+Estado integrada de Continuidad de Cuidado Hospitalario es final.
+
+Hospitalizar Domiciliariamente cambia Condición Clínica de agudo-reagudizado a recuperado.
+Hospitalizar Domiciliariamente cambia Continuidad de Cuidado Hospitalario de fragmentada a integrada.
+
+Equipo Clínico de Hospitalización Domiciliaria maneja Hospitalizar Domiciliariamente.
+Hospitalizar Domiciliariamente requiere Sistema Operativo UHD.
+Hospitalizar Domiciliariamente requiere Red de Comunicación 24 Horas.
+Hospitalizar Domiciliariamente requiere Logística de Traslado.
+Hospitalizar Domiciliariamente requiere Medios Clínicos.
+Hospitalizar Domiciliariamente requiere Manual Operativo.
+Hospitalizar Domiciliariamente requiere Domicilio del Paciente.
+
+Ocurrir Episodio Agudo cambia Condición Clínica a agudo-reagudizado.
+
+=== SD1 ===
+SD se refina por descomposición de Hospitalizar Domiciliariamente en SD1.
+
+Derivar y Admitir Paciente es un proceso, informático.
+Ingresar Paciente es un proceso, informático.
+Planificar Atención es un proceso, informático.
+Ejecutar Atención Domiciliaria es un proceso, físico.
+Monitorear y Decidir Continuidad es un proceso, informático.
+Egresar y Contrarreferir Paciente es un proceso, informático.
+
+Hospitalizar Domiciliariamente se descompone en Derivar y Admitir Paciente, Ingresar Paciente, Planificar Atención, Ejecutar Atención Domiciliaria, Monitorear y Decidir Continuidad y Egresar y Contrarreferir Paciente, en esa secuencia.
+
+Derivación es un objeto, informático.
+Derivación puede estar pendiente, aceptada o rechazada.
+Estado pendiente de Derivación es inicial.
+
+Elegibilidad es un objeto, informático.
+Elegibilidad puede estar no evaluada, elegible o no elegible.
+Estado no evaluada de Elegibilidad es inicial.
+
+Estadía Domiciliaria es un objeto, informático.
+Estadía Domiciliaria puede estar pendiente, activa o egresada.
+Estado pendiente de Estadía Domiciliaria es inicial.
+Estado egresada de Estadía Domiciliaria es final.
+
+Plan Terapéutico es un objeto, informático.
+Plan Terapéutico puede estar borrador, activo o completado.
+Estado borrador de Plan Terapéutico es inicial.
+Estado activo de Plan Terapéutico es por defecto.
+Estado completado de Plan Terapéutico es final.
+
+Plan de Cuidados es un objeto, informático.
+Plan de Cuidados puede estar borrador, activo o completado.
+Estado borrador de Plan de Cuidados es inicial.
+Estado activo de Plan de Cuidados es por defecto.
+Estado completado de Plan de Cuidados es final.
+
+Decisión de Continuidad es un objeto, informático.
+Decisión de Continuidad puede estar pendiente, continuar o egresar.
+Estado pendiente de Decisión de Continuidad es inicial.
+
+Epicrisis es un objeto, informático.
+Contrarreferencia es un objeto, informático.
+Contrarreferencia puede estar pendiente o enviada.
+Estado pendiente de Contrarreferencia es inicial.
+Estado enviada de Contrarreferencia es final.
+
+Derivar y Admitir Paciente cambia Derivación de pendiente a aceptada.
+Derivar y Admitir Paciente cambia Elegibilidad de no evaluada a elegible.
+Derivar y Admitir Paciente requiere Sistema Operativo UHD.
+
+Ingresar Paciente cambia Estadía Domiciliaria de pendiente a activa.
+Ingresar Paciente requiere Derivación en aceptada.
+Ingresar Paciente requiere Elegibilidad en elegible.
+Ingresar Paciente requiere Sistema Operativo UHD.
+
+Planificar Atención genera Plan Terapéutico en activo.
+Planificar Atención genera Plan de Cuidados en activo.
+Planificar Atención requiere Sistema Operativo UHD.
+
+Ejecutar Atención Domiciliaria requiere Plan Terapéutico en activo.
+Ejecutar Atención Domiciliaria requiere Plan de Cuidados en activo.
+Ejecutar Atención Domiciliaria requiere Medios Clínicos.
+Ejecutar Atención Domiciliaria requiere Logística de Traslado.
+Ejecutar Atención Domiciliaria requiere Domicilio del Paciente.
+
+Monitorear y Decidir Continuidad afecta Condición Clínica.
+Monitorear y Decidir Continuidad cambia Decisión de Continuidad de pendiente.
+Monitorear y Decidir Continuidad requiere Sistema Operativo UHD.
+Monitorear y Decidir Continuidad requiere Red de Comunicación 24 Horas.
+
+Egresar y Contrarreferir Paciente cambia Estadía Domiciliaria de activa a egresada.
+Egresar y Contrarreferir Paciente cambia Plan Terapéutico de activo a completado.
+Egresar y Contrarreferir Paciente cambia Plan de Cuidados de activo a completado.
+Egresar y Contrarreferir Paciente cambia Condición Clínica de agudo-reagudizado a recuperado.
+Egresar y Contrarreferir Paciente genera Epicrisis.
+Egresar y Contrarreferir Paciente cambia Contrarreferencia de pendiente a enviada.
+Egresar y Contrarreferir Paciente requiere Sistema Operativo UHD.
+
+Equipo Clínico de Hospitalización Domiciliaria maneja Derivar y Admitir Paciente.
+Equipo Clínico de Hospitalización Domiciliaria maneja Ingresar Paciente.
+Equipo Clínico de Hospitalización Domiciliaria maneja Planificar Atención.
+Equipo Clínico de Hospitalización Domiciliaria maneja Ejecutar Atención Domiciliaria.
+Equipo Clínico de Hospitalización Domiciliaria maneja Monitorear y Decidir Continuidad.
+Equipo Clínico de Hospitalización Domiciliaria maneja Egresar y Contrarreferir Paciente.

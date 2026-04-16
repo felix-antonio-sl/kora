@@ -1,6 +1,6 @@
 import unittest
 
-from common import AGENTS_ROOT, FIXTURES, GENERATED_DOCS, ROOT, load_json, run_cli
+from common import AGENTS_ROOT, FIXTURES, GENERATED_DOCS, ROOT, has_productive_workspaces, load_json, run_cli
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.contracts import build_operating_core_payload, load_workspace_contract
@@ -83,6 +83,11 @@ def assert_contract_supports_scenario(test_case, contract, scenario):
 
 
 class OperatingCoreScenarioTests(unittest.TestCase):
+    def setUp(self):
+        if not has_productive_workspaces():
+            self.skipTest(
+                "Sin workspaces productivos en AGENTS/{ns}/{name}/. El fleet esta en staging (_FRAGUA/INBOX/) durante el reprocesamiento v8."
+            )
     def test_operating_core_payload_is_materialized_by_sync_docs(self):
         run_cli("sync-docs")
         payload = load_json(GENERATED_DOCS / "operating-core-contracts.json")

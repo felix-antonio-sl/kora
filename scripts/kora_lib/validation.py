@@ -32,7 +32,7 @@ from .config import (
     TRACES_TO_DOC_PATTERN,
     TRACES_TO_SECTION_PATTERN,
     USER_FORBIDDEN_PATTERNS,
-    resolve_operational_dir,
+    SCRIPTORIUM_ROOT,
 )
 from .workspaces import (
     extract_cm_refs,
@@ -789,13 +789,38 @@ def lint_published_kora_markdown(path, max_lines_per_h2=None):
 
 
 def iter_markdown_lint_targets(paths):
+    """Itera archivos .md para lintar.
+
+    Excluye rutas dentro de directorios staging pre-categoriales
+    (`_FRAGUA/`, `_TALLER/`, `_SCRIPTORIUM/INBOX/`). Los drafts en
+    `_SCRIPTORIUM/REVIEW/` si son sujetos a lint porque deben ser
+    KORA/MD-conformes antes de promover.
+    """
+    inbox_markers = ("_SCRIPTORIUM/INBOX", "_FRAGUA/INBOX", "_TALLER/INBOX")
+    staging_any = ("_FRAGUA", "_TALLER")
+
+    def is_excluded(child: Path) -> bool:
+        parts = child.parts
+        parts_str = "/".join(parts)
+        # Siempre excluir INBOX (pre-categorial, no KORA/MD).
+        if any(m in parts_str for m in inbox_markers):
+            return True
+        # Excluir cualquier cosa dentro de _FRAGUA/ o _TALLER/ (agentes y
+        # skills en staging no se lintan como KORA/MD descriptivo).
+        if any(s in parts for s in staging_any):
+            return True
+        return False
+
     for raw_path in paths:
         path = Path(raw_path).expanduser().resolve()
         if path.is_file() and path.suffix == ".md":
-            yield path
+            if not is_excluded(path):
+                yield path
             continue
         if path.is_dir():
             for child in sorted(path.rglob("*.md")):
+                if is_excluded(child):
+                    continue
                 yield child
 
 
@@ -1466,7 +1491,7 @@ def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
 
 
 def cmd_lint_md(paths=None, max_lines_per_h2=None, fix=False):
-    target_paths = paths or [KNOWLEDGE_ROOT, resolve_operational_dir("drafts")]
+    target_paths = paths or [KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT / "REVIEW"]
     if fix:
         auto_fix_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
     result = lint_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)

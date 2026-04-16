@@ -1,0 +1,1309 @@
+# Déficit Neurológico
+
+## Introducción
+
+Un déficit neurológico es una anomalía funcional causada por la disminución del funcionamiento cerebral, medular, muscular o nervioso. Ejemplos de esto incluyen incapacidad para hablar, sensibilidad reducida, pérdida de equilibrio, debilidad, problemas mentales, cambios visuales, reflejos anormales y dificultades al caminar.
+
+### Método Neurológico
+
+Para abordar un déficit neurológico, se sigue un método que incluye:
+
+- **Identificar la localización anatómica** de la lesión.
+- **Identificar la fisiopatología** involucrada.
+- **Generar diagnósticos diferenciales** basados en la información recopilada.
+- **Seleccionar pruebas específicas** para confirmar el diagnóstico.
+
+#### Preguntas Clave para la Localización Anatómica
+
+- ¿La lesión es única o múltiple?
+- ¿Está limitada al sistema nervioso o es parte de un trastorno sistémico?
+- ¿Qué parte del sistema nervioso está afectada?
+
+Las partes del sistema nervioso a considerar incluyen:
+
+- Corteza cerebral
+- Sustancia blanca subcortical
+- Ganglios basales
+- Tálamo
+- Cerebelo
+- Tronco encefálico
+- Médula espinal
+- Plexo braquial o lumbosacro
+- Nervios periféricos
+- Unión neuromuscular
+- Músculo
+
+#### Causas Fisiopatológicas
+
+- Vascular
+- Infeccioso
+- Neoplásico
+- Degenerativo
+- Traumático
+- Toxicometabólico
+- Inmunomediado
+
+Un déficit neurológico breve y reversible es común en consultas médicas. Sin embargo, su naturaleza transitoria dificulta su observación directa. La anamnesis es clave para el diagnóstico etiológico, ya que la desaparición del déficit no implica benignidad; puede haber riesgo de déficit persistente o compromiso vital según la etiología.
+
+#### Acciones en Urgencias
+
+En situaciones de urgencia, las acciones deben ser breves y enfocadas:
+
+1. **Glicemia** con tira reactiva (Hemoglucotest).
+2. **Anamnesis**: recopilar información del paciente y su entorno, antecedentes, circunstancias, duración, signos asociados, etc.
+3. **Exploración clínica**: evaluar temperatura, tensión arterial, pulsos, etc.
+4. **Exploración neurológica**: buscar signos de localización, cefaleas, edema papilar. Realizar pruebas como velocidad de sedimentación (si se sospecha arteritis de Horton), ionograma, glucemia, urea, creatinina, ECG. Otras pruebas según el paciente y el déficit incluyen TC cerebral, ecografía Doppler, ecografía cardíaca, etc.
+5. **Pauta terapéutica** según la etiología identificada.
+
+Para evaluar el déficit neurológico, es esencial un examen neurológico ordenado. No existe una técnica ideal, pero evaluar las funciones del sistema nervioso central y periférico ayuda al diagnóstico.
+
+### Tipos de Diagnóstico
+
+- **Diagnóstico Topográfico**: Ubicación de la lesión en el neuroeje.
+- **Diagnóstico Sindromático**: Identificación de un síndrome clínico reconocible (ej. parkinsonismo, esclerosis múltiple).
+- **Diagnóstico Etiológico**: Determinación de las causas posibles, que pueden ser genéticas, congénitas, infecciosas, inflamatorias, neoplásicas, degenerativas, metabólicas, tóxicas, paroxísticas (migraña, epilepsia), endocrinas o vasculares.
+
+La historia clínica es crucial e incluye detalles como edad, sexo, dominancia manual, ocupación, historia del síntoma, antecedentes personales, farmacológicos, familiares y sociales.
+
+## Examen Neurológico
+
+### Examen Mental
+
+El examen mental es fundamental y se divide en:
+
+1. **Examen de la Conciencia**
+2. **Examen de la Orientación**
+3. **Examen de la Memoria**
+4. **Examen del Lenguaje**
+5. **Examen de Apraxia**
+
+#### 1. Examen de la Conciencia
+
+La conciencia es el estado de autopercepción y percepción del entorno. Requiere:
+
+- **Estado despierto**: integridad del tallo cerebral y estructuras talámicas.
+- **Estado cognoscitivo**: integridad de la corteza cerebral y núcleos subcorticales.
+
+##### Trastornos del Nivel de Conciencia
+
+Evaluar la respuesta a estímulos:
+
+- **Verbal**: reactividad al llamarlo por su nombre.
+- **Táctil**: reactividad al tocarlo.
+- **Dolor**: reactividad a estímulo doloroso (solo en casos necesarios).
+
+###### Niveles de Conciencia
+
+- **Vigilia**: Responde a estímulos verbales, táctiles y dolorosos.
+- **Sopor Superficial**: Responde con dificultad a estímulos verbales y táctiles, responde al dolor.
+- **Sopor Profundo**: No responde a estímulos verbales ni táctiles, pero sí al dolor.
+- **Coma**: No responde a ningún tipo de estímulo.
+
+##### Delirium
+
+Estado de agitación, atención pobre, desorientación, déficit de memoria y trastornos del lenguaje. Para evaluar la atención, se puede pedir al paciente que invierta series automáticas o que deletree la palabra "mundo" al revés.
+
+#### 2. Examen de la Orientación
+
+- **Orientación Personal**: Preguntar nombre, edad, etc.
+- **Orientación Temporal**: Preguntar día, fecha y mes.
+- **Orientación Espacial**: Preguntar ubicación física.
+
+#### 3. Examen de la Memoria
+
+- **Pérdida de Memoria**: Incapacidad para aprender o evocar información.
+- **Olvidos**: Dificultad para recordar debido a inatención.
+
+##### Tipos de Memoria
+
+- **Recuerdo Inmediato**: Prueba de nombre y dirección.
+- **Memoria a Corto Plazo**: Repetir nombre y dirección tras 5 minutos.
+
+#### 4. Examen del Lenguaje
+
+Evaluación de:
+
+- **Oír**: Sordera.
+- **Comprender**: Afasia.
+- **Emisión de Voz**: Disfonía.
+- **Articulación**: Disartria.
+
+##### Afasia
+
+Problemas de comprensión y expresión del lenguaje.
+
+- **Comprensión**: Evaluar con preguntas simples y órdenes.
+- **Lenguaje Espontáneo**: El paciente entiende pero no responde.
+- **Nominación**: Pedir al paciente que identifique objetos.
+
+##### Disfonía
+
+Voz baja o susurrante.
+
+- **Evaluación**:
+  - Pedir al paciente que tosa y emita el sonido "eeee".
+  - **Tos normal**: Cuerdas vocales intactas.
+  - **Disfonía con tos normal**: Problemas locales o histeria.
+  - **Tos explosiva**: Posible parálisis de cuerdas vocales.
+  - **"Eee" no sostenida**: Indica miastenia.
+
+##### Disartria
+
+Dificultad en la articulación de palabras.
+
+- **Evaluación**:
+  - Pedir al paciente que repita frases difíciles.
+  - **Disartria Espástica**: Lenguaje confuso; puede indicar enfermedad cerebrovascular.
+  - **Disartria Extrapiramidal**: Lenguaje monótono; asociado con parkinsonismo.
+  - **Disartria Cerebelosa**: Lenguaje confuso; visto en esclerosis múltiple o toxicidad por fenitoína.
+
+#### 5. Examen de Apraxia
+
+Las **praxias** son la planificación y ejecución de actos motores y pensamiento.
+
+##### Apraxia
+
+Incapacidad para realizar una tarea sin que exista debilidad, falta de coordinación o trastorno motor que lo impida.
+
+- **Evaluación**:
+  - Pedir al paciente que realice una tarea imaginaria, como peinarse.
+  - Si hay dificultad, demostrar la acción y pedir que la imite.
+
+##### Deficiencias Focales
+
+Las deficiencias en áreas específicas pueden indicar un proceso focal. Es importante identificar la zona afectada y buscar signos asociados.
+
+**Tabla 2: Pérdida Focal**
+
+| Lóbulo    | Alteración             | Asociaciones                                    |
+|-----------|------------------------|--------------------------------------------------|
+| Frontal   | Apatía, desinhibición  | Hemiplejía contralateral, afasia de expresión    |
+| Temporal  | Problemas de memoria   | Afasia de comprensión                            |
+| Parietal  | Cálculo, orientación   | Apraxia, hemianopsia homónima                    |
+| Occipital | Orientación visual     | Hemianopsia                                      |
+
+Las apraxias se observan en demencias y suelen acompañarse de otros síntomas como amnesia, afasia y agnosia, afectando las funciones mentales superiores.
+
+##### Definiciones
+
+- **Amnesia**: Incapacidad para aprender o evocar información.
+- **Afasia**: Incapacidad relacionada con el lenguaje.
+- **Apraxia**: Incapacidad para realizar actos motores con fuerza y sensibilidad conservadas.
+- **Agnosia**: Incapacidad para reconocer el entorno y a las personas.
+
+### Examen de Pares Craneanos
+
+El examen de los pares craneanos es esencial para localizar alteraciones neurológicas. Hay 12 nervios craneales, algunos de los cuales se evalúan en conjunto (por ejemplo, III, IV y VI; IX y X).
+
+#### Nervio Olfatorio (I)
+
+- **Evaluación**: Generalmente poco evaluado. La alteración principal es la anosmia, que también afecta el sentido del gusto.
+- **Causas de Anosmia**: Rinitis crónica, traumatismo craneoencefálico (TEC), tumores frontales.
+- **Método**: Evaluar con sustancias aromáticas.
+
+#### Nervio Óptico (II)
+
+- **Importancia**: Es crucial para evaluar el nivel de conciencia. Las alteraciones indican posibles lesiones intracerebrales.
+- **Evaluación**:
+  - **Agudeza Visual**.
+  - **Reflejo Fotomotor**: Respuestas pupilares.
+    - **Miosis**: Contracción pupilar.
+    - **Midriasis**: Dilatación pupilar.
+
+##### Anomalías Pupilares
+
+- **Anisocoria**: Diferencia de tamaño entre las pupilas.
+- **Discoria**: Pupila con forma irregular.
+- **Isocoria**: Pupilas de tamaño y forma iguales.
+
+##### Procedimiento
+
+1. Observar si las pupilas tienen el mismo tamaño y forma.
+2. Iluminar cada ojo con una luz fuerte y observar la reacción pupilar directa y consensual.
+3. Asegurarse de que el paciente mire a lo lejos durante la evaluación.
+4. Evaluar la acomodación pupilar pidiendo al paciente que enfoque en un objeto cercano y luego en uno lejano.
+
+##### Campo Visual
+
+- Evaluar hemicampos y cuadrantes visuales mediante confrontación.
+- La **heminegligencia visual** puede indicar una lesión parietal contralateral.
+- **Hemianopsias**: Lesiones desde el quiasma óptico hasta la corteza occipital.
+- **Cuadrantopsias**: Lesiones en el lóbulo temporal contralateral.
+
+#### Nervio Oculomotor (III)
+
+- **Funciones**:
+  - Inerva músculos como el elevador del párpado y los rectos interno, medial, superior e inferior, y el oblicuo inferior.
+  - Transporta fibras para la contracción pupilar.
+- **Evaluación**:
+  - **Inspección**: Buscar ptosis palpebral.
+  - **Movimientos Oculares**: Evaluar aducción, movimientos verticales y elevación en aducción.
+
+#### Nervio Troclear (IV)
+
+- **Función**: Inerva el músculo oblicuo superior, que desvía el ojo hacia abajo en aducción.
+
+#### Nervio Motor Ocular Externo (VI)
+
+- **Función**: Inerva el recto externo, responsable de la abducción del ojo.
+
+#### Nervio Trigémino (V)
+
+- **Tipo**: Mixto, con funciones motoras y sensitivas.
+
+##### Rama Sensitiva
+
+- Proporciona sensibilidad a la hemicara y a la mitad anterior del cuero cabelludo.
+- **Reflejo Corneal**: Se evalúa rozando la córnea con un algodón y observando el parpadeo.
+
+##### Rama Motora
+
+- Inerva la musculatura de la masticación y permite la movilidad de la mandíbula.
+- **Evaluación**: Verificar la fuerza contralateral de la mandíbula.
+
+##### Alteraciones
+
+- **Neuralgia del Trigémino**.
+- **Patologías Centrales**: La ausencia del reflejo corneal puede indicar lesiones supratentoriales como un accidente cerebrovascular (ACV).
+
+#### Nervio Facial (VII)
+
+- **Tipo**: Mixto.
+
+##### Funciones Sensitivas
+
+- Gusto en los dos tercios anteriores de la lengua.
+- Sensibilidad del conducto auditivo externo, tímpano y concha auricular.
+
+##### Funciones Motoras
+
+- Músculos faciales y platisma.
+- Músculo estilohioideo y vientre posterior del músculo digástrico.
+- Músculo del estribo (estapedio).
+
+##### Funciones Autónomas
+
+- Glándulas salivales submandibulares y sublinguales.
+- Glándulas lagrimales y nasales.
+
+##### Alteraciones
+
+- **Parálisis Facial**: Puede ser central (no afecta la frente) o periférica (afecta la frente y puede incluir disgeusia, xeroftalmia y dolor en la región petrosa).
+- **Diferenciación**:
+  - Un ACV puede causar parálisis facial pero generalmente permite cerrar el ojo y arrugar la frente.
+  - La parálisis de Bell (periférica) no permite estas acciones y puede afectar otros músculos.
+
+#### Nervio Vestíbulococlear (VIII)
+
+- **Ramas**:
+  - **Auditiva**: Responsable de la audición.
+  - **Vestibular**: Responsable del equilibrio.
+
+##### Evaluación
+
+- **Marcha**: Observación de la estabilidad, tendencia a caer, marcha en tándem y marcha cerebelosa.
+- **Nistagmus**: Movimientos oculares involuntarios con fases lenta y rápida; pueden ser agotables.
+- **Reflejos Oculocefálicos**: Pruebas con agua fría o caliente en el oído para observar movimientos oculares.
+
+##### Lesiones Vestibulares
+
+- **Vértigo**: Sensación de movimiento o giro.
+- **Nistagmus Rápido**: Indicativo de lesión vestibular.
+
+###### Vértigos Periféricos
+
+- **Origen**: Nervio vestibular.
+- **Síntomas**: Vértigo objetivo, inestabilidad postural, hipoacusia, tinnitus.
+- **Causas**:
+  - Paresia Vestibular Súbita.
+  - Neuronitis Vestibular.
+  - Vértigo Postural Paroxístico Benigno.
+
+###### Vértigo Central
+
+- **Origen**: Sistema Nervioso Central (SNC).
+- **Síntomas**: Vértigo objetivo, afectación del tronco cerebral, síntomas asociados como disartria, disfagia, diplopía, dismetría, debilidad o pérdida sensorial.
+- **Causas**:
+  - Esclerosis Múltiple.
+  - Epilepsia.
+  - Tumores.
+  - ACV de la fosa posterior.
+
+#### Nervio Glosofaríngeo (IX) y Nervio Vago (X)
+
+Estos nervios son los primeros nervios craneales bajos en el tronco encefálico y están involucrados en la inervación de la musculatura facial baja.
+
+- **Nervio Glosofaríngeo (IX)**:
+  - Proporciona sensibilidad a las fauces, úvula y paladar blando.
+  - Es la vía aferente del reflejo nauseoso.
+- **Nervio Vago (X)**:
+  - Inerva el nervio laríngeo recurrente, crucial para el tono de voz.
+
+#### Nervio Espinal (XI)
+
+- **Función**: Motor; responsable del movimiento de la cintura escapular, elevación de hombros y oposición del músculo esternocleidomastoideo.
+
+#### Nervio Hipogloso (XII)
+
+- **Tipo**: Mixto; motor y sensitivo para el tercio posterior de la lengua.
+- **Función**: Inervación ipsilateral para la movilidad lingual.
+- **Alteraciones**: La desviación de la lengua puede indicar una lesión en este nervio.
+
+### Examen Motor
+
+El examen motor evalúa la integridad de las vías motoras, tanto central (vía piramidal) como periférica.
+
+#### Vía Piramidal
+
+La vía piramidal se origina en la corteza cerebral, desciende por la cápsula interna, se decusa en las pirámides bulbares y llega a la neurona del asta anterior contralateral. De allí, emerge por la raíz vertebral, sigue por el nervio periférico hasta la unión neuromuscular y finalmente al músculo.
+
+##### Alteraciones
+
+- **Motoneurona Superior**: Abarca desde el homúnculo motor hasta la vía piramidal.
+- **Motoneurona Inferior**: Incluye la neurona del asta anterior, raíz vertebral, nervio periférico y unión neuromuscular.
+
+#### Evaluación del Sistema Motor
+
+##### a. Trofismo Muscular
+
+- **Método**: Palpación y comparación de grupos musculares.
+- **Resultados**:
+  - **Eutrofia**: Trofismo normal.
+  - **Hipotrofia**: Disminución leve del volumen muscular.
+  - **Atrofia**: Disminución severa del volumen muscular.
+  - **Hipertrofia**: Aumento del volumen muscular.
+  - **Pseudohipertrofia**: Aumento aparente del volumen muscular debido a infiltración grasa o fibrosis.
+
+**Observaciones**:
+
+- **Motoneurona Superior**:
+  - Trofismo conservado inicialmente.
+  - Hipotrofia o atrofia puede desarrollarse tardíamente.
+- **Motoneurona Inferior**:
+  - Trofismo reducido precozmente.
+- **Distrofinopatías**:
+  - Hipertrofia reactiva y pseudohipertrofia.
+
+##### b. Fuerza Muscular
+
+La fuerza muscular se evalúa mediante una escala de 0 a 5:
+
+- **Grado 0/5**: Sin contracción muscular detectable.
+- **Grado 1/5**: Contracción muscular visible o palpable, sin movimiento.
+- **Grado 2/5**: Movimiento activo con eliminación de la gravedad.
+- **Grado 3/5**: Movimiento activo contra gravedad, pero no contra resistencia.
+- **Grado 4/5**: Movimiento activo contra gravedad y resistencia, pero menor de lo normal.
+- **Grado 5/5**: Fuerza muscular normal.
+
+##### c. Tono Muscular
+
+El tono muscular es la resistencia al movimiento pasivo.
+
+- **Resultados**:
+  - **Eutonía**: Tono normal.
+  - **Hipotonía**: Disminución del tono.
+  - **Hipertonía Piramidal**: Aumento del tono con patrón "navaja".
+  - **Hipertonía Extrapiramidal**: Aumento del tono con resistencia constante ("tubo de plomo").
+
+**Hipertonía Degenerativa**:
+
+- Aumento del tono muscular en **paratonía**.
+- Mayor velocidad del evaluador, mayor resistencia del paciente.
+- **Motoneurona Superior**:
+  - Tono muscular reducido al inicio.
+  - Aumenta a hipertonía piramidal en semanas.
+- **Motoneurona Inferior**:
+  - Tono muscular disminuido durante la enfermedad.
+
+##### d. Reflejos Osteotendinosos
+
+Los reflejos osteotendinosos tienen un comportamiento similar al tono muscular y varían según la lesión de la motoneurona superior o inferior.
+
+**Reflejos en Extremidades Superiores**:
+
+- **Bicipital**:
+  - Estimulación del tendón del bíceps en el codo.
+  - Respuesta: Flexión del antebrazo.
+  - Arco reflejo: C5-C6, nervio musculocutáneo.
+- **Tricipital**:
+  - Percusión del tendón del tríceps en el codo.
+  - Respuesta: Extensión del antebrazo.
+  - Arco reflejo: C7-C8, nervio radial.
+
+**Reflejos en Extremidades Inferiores**:
+
+- **Patelar**:
+  - Percusión del tendón del cuádriceps en la rodilla.
+  - Respuesta: Extensión de la pierna.
+  - Arco reflejo: L4-L5, nervio femoral.
+- **Aquileano**:
+  - Estimulación del tendón de Aquiles en el tobillo.
+  - Respuesta: Flexión plantar del pie.
+  - Arco reflejo: S1-S2, nervio tibial posterior.
+
+###### Reflejos Patológicos
+
+Indican lesión del sistema nervioso central.
+
+- **Signo de Babinski**:
+  - Estimulación plantar lateral.
+  - Respuesta: Extensión dorsal del dedo gordo.
+  - Indica lesión piramidal.
+
+###### Reflejos Arcaicos
+
+También llamados reflejos de liberación frontal, presentes en enfermedades neurodegenerativas.
+
+- **Succión**:
+  - Estimulación de los labios provoca movimiento de succión.
+- **Palmomentoniano**:
+  - Estimulación de la palma de la mano provoca contracción del mentón.
+- **Glabelar**:
+  - Percusión entre la frente y las cejas provoca pestañeo inagotable.
+- **Prensión**:
+  - Prensión manual involuntaria al estimular la palma.
+
+#### Alteraciones de la Fuerza Muscular
+
+##### Monoparesias
+
+Afectan una extremidad o grupo muscular de un nervio o raíz nerviosa.
+
+**Causas**:
+
+1. **Neurona Motora del Asta Anterior**:
+   - Monoparesia motora pura.
+   - Sensibilidad conservada.
+2. **Raíz Nerviosa o Nervio Periférico**:
+   - Área de hipoestesia o anestesia cutánea según dermatoma o nervio afectado.
+
+**Principales Monoparesias**:
+
+- **Parálisis Radial**:
+  - "Mano caída".
+  - Asociada al consumo de alcohol.
+  - Parestesia en extensión de muñeca y dedos.
+  - Déficit sensitivo en la tabaquera anatómica.
+- **Parálisis del Nervio Mediano**:
+  - "Mano del predicador".
+  - Flexión de dedos 4 y 5 conservada.
+  - Incapacidad para flexionar dedos 2 y 3.
+  - "Mano simiesca" en casos severos con atrofia tenar.
+  - Alteración sensitiva en cara palmar de dedos 2, 3 y mitad del 4.
+- **Parálisis Cubital**:
+  - "Mano en garra" al extender los dedos.
+  - Afectación de los músculos lumbricales.
+  - Pérdida de sensibilidad en mitad cubital del dedo 4 y todo el 5.
+- **Parálisis del Nervio Peroneo**:
+  - "Pie caído" al intentar dorsiflexión.
+  - Afectación del músculo tibial anterior.
+  - Déficit sensitivo en cara externa de la pierna y dorso del pie.
+
+##### Hemiparesias
+
+Paresias en un hemicuerpo.
+
+**Clasificación**:
+
+- **Armónicas**:
+  - Déficit motor igual en extremidades superior e inferior.
+  - Indica lesión profunda en el encéfalo.
+- **Disarmónicas**:
+  - Déficit motor desigual.
+  - Indica lesión en la corteza cerebral.
+
+##### Paraparesias
+
+Paresias en extremidades inferiores.
+
+**Causas**:
+
+1. **Lesiones Medulares**:
+   - Déficit sensitivo con distribución dermatómica.
+2. **Lesiones Neuropáticas**:
+   - Déficit sensitivo con distribución neural.
+
+##### Tetraparesias
+
+Pérdida de fuerza en brazos y piernas.
+
+- **Origen Neuropático**:
+  - Pérdida de fuerza distal.
+  - Asociado con trastornos sensitivos.
+- **Origen Miopático**:
+  - Pérdida de fuerza proximal.
+  - Sin trastornos sensitivos.
+
+### Examen Sensitivo
+
+El examen sensitivo evalúa la integridad de las vías sensitivas.
+
+- **Parestesia**: Sensación de hormigueo.
+- **Hipoestesia**: Reducción de la sensibilidad.
+- **Anestesia**: Pérdida total de la sensibilidad.
+- **Hiperalgesia**: Mayor sensibilidad al dolor.
+- **Disestesia**: Sensación anómala o desagradable.
+
+### Examen Extrapiramidal y Cerebeloso
+
+#### Examen Extrapiramidal
+
+##### Hipocinesias
+
+Disminución de la velocidad y amplitud de los movimientos.
+
+**Síndrome Parkinsoniano**:
+
+- **Temblor de Reposo**:
+  - Observado durante la anamnesis.
+- **Rigidez**:
+  - Resistencia al movimiento pasivo ("rueda dentada").
+- **Bradicinesia**:
+  - Lentitud en movimientos alternos rápidos.
+- **Alteraciones Posturales**:
+  - Evaluadas mediante el "Pull test".
+
+##### Hipercinesias
+
+Aumento anormal de movimientos involuntarios.
+
+- **Temblor**:
+  - Contracción alternante de músculos agonistas y antagonistas.
+- **Corea**:
+  - Movimientos involuntarios, rápidos y desordenados, predominio distal.
+- **Atetosis**:
+  - Movimientos lentos y reptantes, predominio proximal.
+- **Balismo**:
+  - Movimientos amplios y bruscos de las extremidades proximales ("aspas de molino").
+
+#### Evaluación Cerebelosa
+
+- **Disartria Cerebelosa**:
+  - Alteración en la fluidez y coordinación del lenguaje.
+- **Pruebas de Coordinación**:
+  - **Dedo-Nariz**: Tocar la punta de la nariz con el dedo índice.
+  - **Talón-Rodilla**: Deslizar el talón de un pie por la espinilla de la otra pierna.
+
+### Signos de Irritación Radicular y Meníngea
+
+#### Signos de Irritación Radicular
+
+- **Dolor irradiado** al levantar la pierna estirada (prueba de Lasègue).
+
+#### Signos de Irritación Meníngea
+
+- **Rigidez de Nuca**:
+  - Resistencia al flexionar el cuello.
+- **Signo de Brudzinski**:
+  - Flexión involuntaria de las caderas y rodillas al flexionar el cuello.
+- **Signo de Kernig**:
+  - Dolor y resistencia al extender la pierna con la cadera flexionada.
+
+## Grandes Simuladores del Accidente Vascular Cerebral (ACV)
+
+Es importante considerar otras condiciones que pueden simular un ACV:
+
+- **Hipoglucemia**:
+  - Glicemia <45 mg/dL.
+  - Déficit neurológico reversible con administración de glucosa.
+- **Desequilibrios Metabólicos**:
+  - Hiperglucemia.
+  - Hipernatremia o hiponatremia.
+  - Encefalopatía hepática.
+- **Parálisis de Todd**:
+  - Parálisis focal transitoria post-convulsión.
+- **Neoplasia Cerebral**:
+  - Cambios visuales rápidos, afasia, signos focales.
+- **Migraña Hemipléjica**:
+  - Más común en mujeres jóvenes.
+  - Auras y síntomas neurológicos focales.
+- **Hemiparesia Funcional**:
+  - Debilidad sin causa orgánica detectable.
+  - Asociada a trastornos psicológicos.
+
+## Diagnóstico y Tratamiento de la Parálisis Facial
+
+### Causas Comunes
+
+- **Parálisis de Bell** (idiopática).
+- **Traumatismo al Nacer**.
+- **Tumores Cerebrales**.
+- **Infecciones**:
+  - Otitis media, herpes zóster (síndrome de Ramsay Hunt).
+- **Enfermedad de Lyme**.
+- **Sarcoidosis**.
+- **Accidente Cerebrovascular (ACV)**.
+
+### Epidemiología
+
+- En Chile, las consultas neurológicas representan el 10-15% de las atenciones médicas.
+- El ACV es la segunda causa de muerte, con más de 35,000 consultas anuales.
+- La parálisis facial afecta a 15-40 personas por cada 100,000 a nivel mundial.
+- No existe predilección racial, geográfica o de sexo.
+- El riesgo es tres veces mayor durante el embarazo, especialmente en el tercer trimestre.
+- Tasa de recurrencia: 8-10%.
+- Diabetes presente en 5-10% de los casos.
+
+### Anatomía del Nervio Facial
+
+El nervio facial (VII par craneal) es mixto y tiene múltiples funciones.
+
+#### Origen Real
+
+- **Núcleo Motor**: Localizado en el puente.
+- **Núcleo Sensitivo**: Parte del núcleo del tracto solitario.
+- **Núcleo Parasimpático**: Núcleo salivatorio superior.
+
+#### Origen Aparente
+
+- Emerge del surco bulbopontino entre el nervio abducens (VI) y el nervio vestibulococlear (VIII).
+- Entra al conducto auditivo interno (CAI).
+
+#### Funciones del Nervio Facial
+
+- **Motoras**:
+  - Inerva los músculos de la expresión facial y el platisma.
+  - Vientre posterior del músculo digástrico y músculo estilohioideo.
+- **Sensitiva**:
+  - Sensibilidad del conducto auditivo externo, tímpano, concha, trago y antitrago.
+- **Sensorial**:
+  - Gusto en los dos tercios anteriores de la lengua.
+- **Secretora**:
+  - Inervación parasimpática de las glándulas lagrimales, nasales, submandibulares y sublinguales.
+
+#### Estructuras Asociadas
+
+- **Ganglio Geniculado**: Contiene cuerpos celulares de neuronas sensitivas.
+- **Nervio Petroso Superficial Mayor**: Lleva fibras parasimpáticas al ganglio esfenopalatino.
+- **Nervio Vidiano**: Formación del nervio petroso superficial mayor y profundo.
+- **Complejo Lágrimo-Naso-Palatino**: Inervación de glándulas lagrimales y nasales.
+- **Nervio Estapedio**: Inerva el músculo del estribo en el oído medio.
+- **Cuerda del Tímpano**: Lleva fibras gustativas y parasimpáticas a la lengua y glándulas salivales.
+- **Ganglio Submandibular**: Inervación de glándulas submandibulares y sublinguales.
+
+### Fisiopatología
+
+El nervio periférico está compuesto en un 20-80% por tejido de sostén, que incluye el **endoneuro**, **perineuro** y **epineuro**.
+
+- **Endoneuro**: Capa delgada que rodea cada fibra nerviosa individual.
+- **Perineuro**: Envuelve un fascículo de fibras nerviosas.
+- **Epineuro**: Tejido externo al perineuro que protege y sostiene el nervio en su conjunto.
+
+#### Lesiones del Nervio Periférico
+
+1. **Neuropraxia**:
+   - Falla en la conducción nerviosa sin daño estructural.
+   - Es una lesión reversible.
+
+2. **Axonotmesis**:
+   - Lesión del axón distal al sitio de la lesión.
+   - Puede haber regeneración espontánea del nervio.
+
+3. **Neurotmesis**:
+   - Disrupción completa del axón y sus estructuras de soporte.
+   - Requiere intervención quirúrgica para su reparación.
+
+#### Etiología
+
+Las causas de la parálisis facial pueden clasificarse según su localización y origen:
+
+- **Lesiones Intracraneales**:
+  - Tumores del ángulo pontocerebeloso.
+  - Neurinoma del acústico.
+  - Meningioma.
+
+- **Lesiones Intratemporales**:
+  - Otitis media y otras infecciones del oído.
+  - Traumatismos craneales.
+  - Cirugía relacionada con el vértigo.
+
+- **Lesiones Extratemporales**:
+  - Traumatismos faciales.
+  - Tumores en la región parotídea.
+  - Yatrogenia (daño accidental durante procedimientos médicos).
+
+- **Otras Causas**:
+  - Síndrome de Melkersson-Rosenthal.
+  - Enfermedad de Lyme.
+  - Tuberculosis.
+  - Mononucleosis.
+  - Sífilis.
+  - Hemangiomas.
+  - Parálisis de Bell.
+  - Síndrome de Guillain-Barré.
+  - Sarcoidosis.
+  - Accidentes cerebrovasculares (ACV).
+
+La **parálisis facial periférica** es frecuentemente idiopática, conocida como **parálisis de Bell**. La parálisis facial bilateral puede ser consecuencia de:
+
+- Síndrome de Guillain-Barré.
+- Mononucleosis infecciosa.
+- Sarcoidosis.
+- Leucemias.
+
+Otras causas potenciales incluyen:
+
+- Isquemia nerviosa.
+- Predisposición hereditaria.
+- Exposición al frío.
+- Mecanismos inmunitarios.
+
+### Diagnóstico
+
+El diagnóstico de la parálisis facial se basa en una evaluación clínica detallada que incluye:
+
+#### 1. Anamnesis
+
+##### Alteración de la Movilidad Facial
+
+- **Asimetría facial**.
+- **Inmovilidad homolateral**: Falta de movimiento en el lado afectado.
+- **Hemicara inexpresiva**: Pérdida de expresiones faciales en un lado.
+- **Desviación de la comisura bucal** hacia el lado sano.
+- **Ceja homolateral más baja**.
+- **Hendidura palpebral ampliada**: Dificultad para cerrar el ojo (Signo de Bell).
+- **Dificultad en la masticación y deglución**.
+
+##### Alteraciones Sensitivas y Sensoriales
+
+- **Rigidez facial**.
+- **Acorchamiento** o sensación de entumecimiento en la cara.
+- **Parestesias**: Hormigueo o sensación de pinchazos.
+- **Otalgia** (dolor de oído): Indica mal pronóstico. Es importante diferenciar de la neuralgia del trigémino.
+- **Disgeusia**: Alteración del sentido del gusto (sabor metálico).
+- **Hiposmia**: Disminución del sentido del olfato debido a alteración en la motilidad de la ventana nasal.
+- **Disacusia**: Alteración en la audición.
+- **Algiacusia**: Dolor al percibir sonidos (afectación del nervio estapedial).
+
+##### Disfunciones Parasimpáticas y Secretoras
+
+- **Hiperlacrimación** o **hipolacrimación**: Exceso o disminución de la producción de lágrimas.
+- **Molestias oculares**: Sequedad, irritación o sensación de cuerpo extraño en el ojo.
+
+#### 2. Exploración Física
+
+- **Signos Vitales**: Presión arterial, frecuencia cardíaca, glucemia.
+- **Evaluación Dermatológica**: Inspección de la piel en busca de lesiones o erupciones.
+- **Examen Otorrinolaringológico**:
+  - Inspección del oído externo y medio.
+  - Evaluación de la nariz y cavidad oral.
+- **Palpación Bimanual de la Glándula Parótida**:
+  - Identificación de masas o tumoraciones.
+
+#### 3. Exploración Neurológica Básica
+
+- **Evaluación de la Mímica Facial**:
+  - Pedir al paciente que arrugue la frente.
+  - Que cierre los ojos fuertemente.
+  - Que muestre los dientes.
+  - Que infle las mejillas.
+- **Observación de Asimetrías**:
+  - Imposibilidad de cerrar el ojo en el lado afectado.
+  - Desviación de la boca al lado sano.
+- **Control Muscular**:
+  - El núcleo facial superior tiene control bilateral.
+  - El núcleo facial inferior tiene control unilateral contralateral.
+
+**Fenómeno de Bell**:
+
+- Al intentar cerrar el ojo afectado, el globo ocular gira hacia arriba y hacia afuera, mostrando la esclerótica.
+
+- **Exploración del Gusto**:
+  - Evaluar posibles alteraciones en los dos tercios anteriores de la lengua.
+
+- **Evaluación de Otros Pares Craneales**:
+  - Afectación conjunta de los nervios craneales VI (abducens) y VII (facial) sugiere una lesión en el tronco encefálico.
+
+#### 4. Pruebas Complementarias
+
+- **Estudios de Imagen**:
+  - **Tomografía Axial Computarizada (TAC)**.
+  - **Resonancia Magnética Nuclear (RMN)**.
+  - Indicadas en pacientes con:
+    - Otorrea.
+    - Sordera.
+    - Tinnitus.
+    - Afectación de otros pares craneales.
+    - Sospecha de ACV.
+
+- **Pruebas Electrodiagnósticas**:
+  - No son urgentes.
+  - **Electroneuronografía**: Después de 72 horas para evaluar la integridad del nervio.
+  - **Electromiografía**: Seguimiento de la recuperación muscular.
+
+### Evaluación y Pronóstico
+
+La **Escala de House-Brackmann** se utiliza para valorar la severidad y el progreso de la parálisis facial periférica.
+
+**Grados de la Escala**:
+
+1. **Grado I**: Función simétrica y normal.
+2. **Grado II**: Ligera debilidad, cierre completo del ojo, ligera asimetría al sonreír.
+3. **Grado III**: Debilidad obvia, cierre del ojo con esfuerzo, movimiento asimétrico de la boca.
+4. **Grado IV**: Debilidad evidente, asimetría desfigurante, cierre incompleto del ojo.
+5. **Grado V**: Movimiento facial mínimo, asimetría en reposo, cierre incompleto del ojo.
+6. **Grado VI**: Sin movimiento facial.
+
+- **Pronóstico Favorable**: Grados I y II suelen tener buenos resultados.
+- **Disfunción Moderada**: Grados III y IV.
+- **Mal Pronóstico**: Grados V y VI, mayor riesgo de secuelas permanentes.
+
+### Tratamiento
+
+El enfoque terapéutico depende de la causa subyacente de la parálisis facial.
+
+- **Parálisis Facial Central**:
+  - Seguir el protocolo de manejo de ACV.
+  - Exploración neurológica detallada.
+  - Neuroimágenes urgentes para identificar lesiones isquémicas o hemorrágicas.
+
+- **Parálisis Facial Periférica (Parálisis de Bell)**:
+  - El 85% de los pacientes mejora en 3 semanas.
+  - El 71% recupera la función normal.
+  - Objetivos del tratamiento:
+    - Acelerar la recuperación.
+    - Evitar secuelas como sinquinesias (movimientos involuntarios asociados) o asimetrías faciales.
+  - **Intervenciones**:
+    - Corticosteroides (prednisona) para reducir la inflamación.
+    - Protección ocular (lágrimas artificiales, tapado del ojo) para prevenir lesiones corneales.
+    - Fisioterapia facial.
+    - En casos específicos, terapia antiviral si se sospecha infección por virus del herpes.
+
+## Accidente Cerebrovascular (ACV)
+
+### Caso Inicial
+
+**Paciente**:
+
+- Mujer de 84 años.
+- Acude a urgencias por disartria, asimetría facial y debilidad en el lado izquierdo.
+
+#### Antecedentes Personales
+
+- **Hipertensión arterial**.
+- **Dislipidemia**.
+- **Cardiopatía isquémica**: Estenosis revascularizada con stents.
+- **Hipotiroidismo**.
+- Independiente en actividades diarias.
+- Vive con su hija.
+
+#### Tratamiento Actual
+
+- Bisoprolol.
+- Amlodipino.
+- Valsartán.
+- Furosemida.
+- Espironolactona.
+- Ácido acetilsalicílico (AAS).
+- Atorvastatina.
+- Levotiroxina (Eutirox).
+- Omeprazol.
+
+#### Criterios de Inclusión que Cumple el Paciente
+
+- **Inicio de síntomas**: 12:30 horas.
+- **Llegada a urgencias**: 13:40 horas.
+- **Déficit neurológico focal**:
+  - Déficit sensitivo-motor.
+  - Alteración del lenguaje.
+  - Déficit visual unilateral.
+- **Tiempo desde el inicio de los síntomas**: Menos de 4.5 horas.
+- **Independiente en actividades diarias**.
+
+#### Examen Físico
+
+- **Signos Vitales**:
+  - Presión arterial: 165/55 mmHg.
+  - Frecuencia cardíaca: 60 lpm.
+  - Glucemia: 109 mg/dL.
+- **Estado Neurológico**:
+  - Consciente.
+  - Disartria moderada.
+  - Desviación ocular a la derecha.
+  - Hemianopsia izquierda.
+  - Hemiplejía izquierda.
+  - **Escala NIHSS**: 16 puntos.
+
+#### Exámenes Complementarios
+
+- **Laboratorio**:
+  - Hemoglobina: 11.9 g/dL.
+  - Creatinina: 1.1 mg/dL.
+- **Radiografía de Tórax**:
+  - Sin signos de insuficiencia cardíaca.
+- **Electrocardiograma (ECG)**:
+  - Ritmo sinusal.
+- **Tomografía Computarizada (TC) sin Contraste**:
+  - Muestra atrofia cerebral y lesiones isquémicas sin evidencia de hemorragia.
+
+#### Diagnóstico
+
+- **Accidente Cerebrovascular Isquémico** en la arteria cerebral media derecha.
+
+#### Plan
+
+1. **Activación de Código ACV**.
+2. **Evaluación para Fibrinólisis**:
+   - Cumple criterios para trombólisis intravenosa.
+3. **Tratamiento con Alteplasa**:
+   - Dosis en bolo: 6 mg.
+   - Perfusión continua: 61 mg.
+   - Administrada a las 14:20 horas (peso del paciente: 73 kg).
+
+#### Tras Fibrinolisis
+
+- **Signos Vitales**:
+  - Presión arterial: 165/109 mmHg.
+- **Estado Neurológico**:
+  - Consciente y orientada.
+  - Disartria leve.
+  - Obedece órdenes.
+  - Mirada normal.
+  - Campimetría normal.
+  - Leve parálisis facial izquierda.
+  - Sin déficit motor actual.
+  - **Escala NIHSS**: Mejora de 16 a 2 puntos.
+
+### Accidentes Cerebrovasculares
+
+Los accidentes cerebrovasculares pueden ser **isquémicos** o **hemorrágicos**.
+
+#### Mortalidad y Morbilidad
+
+- **Chile**:
+  - Primera causa de muerte (9% en 2005).
+  - 1.2% de los egresos hospitalarios por enfermedad cerebrovascular (ECV).
+  - 4.3% en pacientes mayores de 65 años.
+  - En 2005: 7,698 muertes y 19,805 hospitalizaciones por ECV.
+
+#### Incidencia y Pronóstico en Chile
+
+- **Incidencia de ECV**: 130 por 100,000 habitantes al año.
+- **Primer Infarto Cerebral**: 60 por 100,000 habitantes al año.
+- **Mortalidad**:
+  - Al mes: 19%.
+  - A los 6 meses: 28%.
+- **Dependencia Moderada o Severa**: 18% de los sobrevivientes a los 6 meses.
+
+#### Proyección Anual
+
+- 21,000 casos nuevos de ECV.
+- 12,000 infartos cerebrales nuevos o recurrentes.
+- 2,500 muertes por primer infarto cerebral.
+- 1,600 pacientes con dependencia moderada o severa.
+
+#### Prevalencia de ECV en Chile
+
+- 6 por 1,000 habitantes.
+- 25 por 1,000 en mayores de 65 años (Santiago, 1992).
+- El **ACV isquémico agudo** representa el 65% de los ECV en Chile.
+- Proyección de 96,000 personas con ECV, la mayoría mayores de 65 años.
+
+#### Factores de Riesgo
+
+- **No Modificables**:
+  - Edad avanzada.
+  - Sexo masculino.
+- **Modificables**:
+  - Tabaquismo.
+  - Consumo excesivo de alcohol.
+  - Obesidad.
+  - Sedentarismo.
+  - Hipertensión arterial.
+  - Fibrilación auricular.
+  - Diabetes mellitus.
+  - Dislipidemia.
+
+### ¿En Qué Pacientes Sospechar un ACV Agudo?
+
+- **Síntomas y Signos**:
+  - Debilidad o adormecimiento unilateral.
+  - Dificultad para hablar o entender.
+  - Alteraciones sensitivas.
+  - Pérdida de equilibrio o coordinación.
+  - Pérdida de visión en uno o ambos ojos.
+  - Visión doble.
+  - Vértigo o mareo súbito.
+
+- **Escala de Cincinnati**:
+  - **Asimetría Facial**: Pedir al paciente que sonría o muestre los dientes.
+  - **Fuerza en Brazos**: Pedir que levante ambos brazos.
+  - **Lenguaje**: Pedir que repita una frase sencilla.
+
+  *La presencia de uno de estos signos indica una alta sospecha de ACV.*
+
+#### ACV Isquémico Agudo
+
+- **Definición**: Aparición súbita de síntomas o signos neurológicos focales que duran más de 24 horas o llevan a la muerte, debido a una causa vascular.
+
+#### ACV Subagudo o Crónico
+
+- **Definición**: Síndrome clínico con evolución mayor a 14 días.
+
+### Estabilización Inicial (Antes de Imágenes)
+
+#### Estabilización del Paciente
+
+- **Vía Aérea**:
+  - Asegurar la permeabilidad.
+  - Soporte avanzado si hay disminución del nivel de conciencia.
+
+- **Ventilación**:
+  - Administrar oxígeno si la saturación es menor al 94%.
+
+- **Monitorización Cardiovascular**:
+  - Control de glucemia.
+  - Establecer acceso venoso.
+  - Monitorizar presión arterial cada 15 minutos.
+  - Corregir hipotensión o hipovolemia.
+  - Controlar la temperatura (tratar si es mayor a 38°C).
+  - Realizar exámenes básicos:
+    - Istat CHEM8+.
+    - Hemograma completo.
+    - Tiempos de coagulación (TTP, TTPK, INR).
+    - Creatinina sérica.
+  - Electrocardiograma (ECG) para detectar arritmias.
+
+#### Toma de Imágenes
+
+- **Priorizar la realización de imágenes cerebrales**:
+  - **Tomografía Computarizada (TC) sin Contraste**:
+    - Debe realizarse en los primeros 20 minutos tras el ingreso.
+    - Útil para descartar hemorragia intracraneal.
+  - **Resonancia Magnética Nuclear (RMN)**:
+    - Protocolo STROKE si se necesita mayor precisión en la localización del área isquémica.
+    - Más sensible que la TC para infartos pequeños y lesiones en el tronco encefálico.
+
+### Protocolo de Trombólisis
+
+El protocolo de trombólisis es una guía para administrar tratamiento fibrinolítico en pacientes con accidente cerebrovascular isquémico agudo. Los pasos y consideraciones son los siguientes:
+
+- **Tiempo desde el inicio de síntomas**: Menos de 4.5 horas.
+- **Descartar hemorragias**: Mediante tomografía axial computarizada (TAC) sin contraste.
+- **Presión arterial**: Sistólica menor de 185 mmHg y diastólica menor de 110 mmHg.
+
+#### Pasos del Protocolo
+
+1. **Instalar vía venosa**: Asegurar acceso intravenoso para administración de medicamentos.
+2. **Administrar suero fisiológico**: Infusión de 50-120 cc/hora.
+3. **Monitorización**: Controlar presión arterial, frecuencia cardíaca, temperatura, saturación de oxígeno y ritmo cardíaco.
+4. **Medir glucemia capilar (HGT)**.
+5. **Realizar electrocardiograma (ECG)**.
+6. **Exámenes de sangre inmediatos**:
+   - Hematocrito.
+   - Recuento de plaquetas.
+   - Tiempos de coagulación (TTPK, protrombina).
+   - Glicemia.
+7. **Solicitar TAC urgente**: Para descartar hemorragia intracraneal.
+8. **Contactar al neurólogo de turno**: Activar protocolo de "código ACV".
+
+##### Acciones a Evitar
+
+- **No bajar la presión arterial** con Nifedipino o Captopril sublingual.
+- **No usar soluciones glucosadas** en infusión intravenosa.
+- **No demorar la realización de la TAC**.
+
+#### Dosificación del Tratamiento Fibrinolítico
+
+- **Cálculo de la dosis de Alteplasa (Actilyse)**:
+  - Dosis total: 0.9 mg/kg (máximo 90 mg).
+  - **Administración**:
+    - 10% de la dosis en bolo inicial intravenoso.
+    - 90% restante en infusión continua durante 60 minutos.
+- **Monitoreo**:
+  - Utilizar Doppler transcraneal para evaluar flujo sanguíneo cerebral.
+  - Controlar signos vitales constantemente.
+- **Suspender el tratamiento** si aparecen:
+  - Cefalea severa.
+  - Hipertensión arterial aguda.
+  - Náuseas o vómitos.
+  - Realizar TAC urgente para reevaluación.
+
+### Criterios de Inclusión y Exclusión para Trombólisis
+
+#### Criterios de Inclusión
+
+- **Síntomas neurológicos focales** con duración menor a 270 minutos (4.5 horas) desde el inicio definido.
+- **Déficit neurológico** con puntuación en NIHSS entre 5 y 23 puntos, con duración mayor a 30 minutos.
+- **Edad mayor de 18 años**.
+- **TAC sin evidencia de hemorragia intracerebral**.
+- **Ausencia de criterios de exclusión**.
+
+#### Criterios de Exclusión
+
+- **Hora de inicio desconocida** o tiempo mayor a 270 minutos desde el inicio de los síntomas.
+- **Déficit neurológico muy leve** (NIHSS menor a 5) o muy severo (NIHSS mayor a 23).
+- **ACV extenso** en los últimos 3 meses.
+- **Traumatismo craneoencefálico o cirugía del SNC** en los últimos 3 meses.
+- **Infarto agudo de miocardio (IAM)** en los últimos 21 días, a menos que sea concomitante con el ACV.
+- **Cirugía mayor o biopsia** en los últimos 14 días.
+- **Hemorragia subaracnoidea previa**.
+- **Malformación arteriovenosa o aneurisma cerebral conocido**.
+- **Hemorragia gastrointestinal o urinaria** en los últimos 21 días.
+- **Coagulopatía conocida** (por ejemplo, hemofilia).
+- **Punción arterial no compresible** o punción lumbar en los últimos 7 días.
+- **Presión arterial sistólica > 185 mmHg** y/o diastólica > 110 mmHg refractaria a labetalol.
+- **Signos neurológicos que revierten rápidamente**.
+- **Alteraciones en pruebas de coagulación**:
+  - INR > 1.6.
+  - TTPK > 15 segundos.
+  - Uso de heparina en las últimas 24 horas.
+  - Plaquetas < 100,000/mm³.
+- **Glicemia** menor a 50 mg/dL o mayor a 400 mg/dL.
+- **TAC con puntuación ASPECT menor a 7**.
+- **Condiciones médicas graves**:
+  - Varices esofágicas.
+  - Colitis ulcerosa.
+  - Diverticulitis.
+  - Pancreatitis aguda.
+  - Retinopatía diabética.
+  - Neoplasias activas.
+  - Trauma agudo.
+  - Enfermedad sistémica severa.
+  - Embarazo o parto en el último mes.
+  - Sangrado activo.
+  - Sospecha de embolia séptica o endocarditis.
+
+##### Situaciones que No Contraindican el Uso de rt-PA
+
+1. Uso previo de ácido acetilsalicílico (AAS), ticlopidina o antiinflamatorios no esteroideos (AINEs).
+2. Antecedente de úlcera duodenal inactiva.
+3. Infarto reciente no complicado.
+
+### Post Trombólisis
+
+1. **Mantener Presión Arterial Media (PAM)** entre 100 y 130 mmHg.
+2. **Evitar soluciones hipotónicas**; si es necesario administrar fluidos, usar solución salina al 0.9%.
+3. **Evaluación de sondas**:
+   - Considerar la colocación de sonda vesical (Foley) antes de la trombólisis; si se requiere después, esperar al menos 4 horas post-trombólisis y utilizar técnica atraumática.
+   - Evaluar la necesidad de sonda nasogástrica en pacientes con compromiso de conciencia o vómitos; si se instala después de la trombólisis, esperar al menos 4 horas.
+4. **En las primeras 24 horas post-trombólisis**:
+   - Evitar la administración de heparina, anticoagulantes orales, AAS, ticlopidina y AINEs.
+   - No realizar punciones arteriales para gases sanguíneos.
+   - Evitar la colocación de vías centrales.
+   - No administrar inyecciones intramusculares.
+   - Evitar la ecocardiografía transesofágica.
+5. **Evaluación Neurológica**:
+   - Aplicar la escala NIHSS antes de la administración de rt-PA y a las 30 minutos, 1, 3, 6, 12, 24, 48, 72 horas y al alta hospitalaria.
+6. **Control por Imágenes**:
+   - Realizar una TAC de control entre 18 y 36 horas post-trombólisis (generalmente a las 24 horas) o según la condición neurológica del paciente.
+
+### Trombólisis Intra-Arterial
+
+La trombólisis intra-arterial es una alternativa en casos específicos:
+
+- **Ventana Terapéutica**:
+  - Menos de 6 horas desde el inicio de síntomas para circulación anterior.
+  - Menos de 12 horas para circulación posterior con evidencia de "mismatch" en resonancia magnética (áreas de penumbra isquémica).
+- **Criterios**:
+  - Oclusión proximal de la arteria cerebral media (ACM) o arteria basilar.
+  - Angiografía por resonancia magnética que confirme oclusión en segmentos M1/M2 de la ACM o en la arteria basilar.
+  - Contraindicación para rt-PA intravenoso:
+    - Infarto cerebral en los últimos 3 meses.
+    - Cirugía mayor en los últimos 14 días.
+    - Uso de anticoagulantes orales o heparina.
+- **Procedimiento**:
+  - **Cateterismo** mediante técnica de Seldinger.
+  - **Administración de Fibrinolíticos**:
+    - Infusión intra-trombo de r-uroquinasa 9 mg más heparina intravenosa (2000 unidades en bolo seguido de 500 unidades/hora por 4 horas).
+    - Si no se dispone de r-uroquinasa, utilizar rt-PA hasta una dosis de 0.3 mg/kg sin heparina.
+
+#### Trombólisis Combinada
+
+- Se pueden combinar técnicas intravenosas e intra-arteriales si se cumplen los criterios y se dispone de los recursos.
+- **Dosis**:
+  - Administrar 0.6 mg/kg de Actilyse.
+  - 15% en bolo inicial, el resto en infusión durante 1 hora.
+
+#### Consideraciones Adicionales
+
+- **Anestesiólogo**:
+  - Gestionar el traslado a angiografía.
+  - Instalar vía arterial para monitoreo invasivo.
+  - Solicitar cama en la unidad de cuidados intensivos (UCI).
+  - Asegurar vías venosas adecuadas.
+  - Realizar sedación si es necesario.
+
+- **Trombólisis Intra-Arterial Mecánica y Enzimática**:
+  - **Dosis**: Actilyse 1 mg post-trombo, 1 mg pre-trombo, con dosis sucesivas sin exceder 20 mg (o 90 mg en total).
+  - **Suspender el procedimiento** si el paciente presenta cefalea severa, hipertensión arterial aguda, náuseas o vómitos. Realizar una TAC urgente para reevaluación.
+
+### Escalas
+
+#### Escala NIHSS (National Institutes of Health Stroke Scale)
+
+La escala NIHSS se utiliza para evaluar la gravedad del accidente cerebrovascular:
+
+1. **Conciencia**:
+   - **1a**. Nivel de conciencia:
+     - 0: Alerta.
+     - 1: Responde a estímulos verbales o táctiles.
+     - 2: Responde a estímulos dolorosos.
+     - 3: No responde.
+   - **1b**. Preguntas sobre mes y edad:
+     - 0: Ambas respuestas correctas.
+     - 1: Una respuesta correcta.
+     - 2: Ninguna respuesta correcta.
+   - **1c**. Órdenes simples:
+     - 0: Ejecuta ambas órdenes.
+     - 1: Ejecuta una orden.
+     - 2: No ejecuta ninguna orden.
+2. **Mirada**:
+   - 0: Normal.
+   - 1: Parálisis parcial de la mirada.
+   - 2: Parálisis completa de la mirada.
+3. **Campos Visuales**:
+   - 0: Sin déficit.
+   - 1: Pérdida parcial (cuadrantopsia).
+   - 2: Hemianopsia completa.
+   - 3: Ceguera bilateral.
+4. **Parálisis Facial**:
+   - 0: Ausente.
+   - 1: Déficit menor.
+   - 2: Déficit moderado.
+   - 3: Déficit severo.
+5-6. **Función Motora en Extremidades**:
+   - 0: Fuerza normal.
+   - 1: Déficit leve (caída de brazo o pierna).
+   - 2: Vence la gravedad pero no resistencia.
+   - 3: No vence la gravedad.
+   - 4: Sin movimiento.
+7. **Ataxia de Extremidades**:
+   - 0: Ausente.
+   - 1: Presente en una extremidad.
+   - 2: Presente en dos extremidades.
+8. **Sensibilidad**:
+   - 0: Normal.
+   - 1: Pérdida leve o moderada.
+   - 2: Pérdida severa o coma.
+9. **Lenguaje**:
+   - 0: Normal.
+   - 1: Afasia leve o moderada.
+   - 2: Afasia severa.
+   - 3: Mutez o afasia global.
+10. **Disartria**:
+    - 0: Ausente.
+    - 1: Leve o moderada.
+    - 2: Severa.
+11. **Extinción o Inatención (Negligencia)**:
+    - 0: Normal.
+    - 1: Negligencia en una modalidad sensorial.
+    - 2: Negligencia en más de una modalidad.
+
+#### Escala de Rankin Modificada
+
+Esta escala mide el grado de discapacidad o dependencia en las actividades cotidianas:
+
+- **0**: Sin síntomas.
+- **1**: Sin discapacidad significativa; capaz de realizar todas las actividades habituales.
+- **2**: Discapacidad leve; incapaz de realizar algunas actividades previas pero independiente en el autocuidado.
+- **3**: Discapacidad moderada; requiere cierta ayuda pero puede caminar sin asistencia.
+- **4**: Discapacidad moderada a severa; incapaz de caminar sin asistencia y necesita ayuda en el autocuidado.
+- **5**: Discapacidad severa; postrado en cama, incontinente, requiere atención y cuidado constantes.
+- **6**: Fallecido.
+
+### Puntos Principales
+
+- **Déficit Neurológico**: Es una anomalía funcional causada por una disminución en el funcionamiento cerebral, medular, muscular o nervioso.
+- **Parálisis Facial**: Pérdida de movimiento en un lado de la cara debido a una afectación del nervio facial.
+- **Parálisis de Bell**: Es la causa más común de parálisis facial, representando aproximadamente el 75% de los casos. Es una parálisis facial periférica idiopática.

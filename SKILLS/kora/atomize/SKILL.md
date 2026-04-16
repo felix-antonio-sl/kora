@@ -4,12 +4,13 @@ _manifest:
   type: lazy_load_endofunctor
 name: atomize
 description: >-
-  Productor canonico de la familia documental `atomic` (md-spec v7 §5.6,
+  Productor canonico de la familia documental `atomic` (md-spec v7.1 §5.6,
   knowledge-spec §12). Extrae proposiciones atomicas de carpetas de documentos
   y emite artefactos KORA/MD conformes a `md-spec`, con segmentacion automatica
   (≤5.000 palabras y ≤200 proposiciones por artefacto) y dedup multi-source.
-  Output canonico: `OPERATIONS/drafts/kora/atomic-{slug}.md`. Este registro KORA
-  refleja el skill operativo del harness Claude Code en `~/.claude/skills/atomize/`.
+  Output canonico: `KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-{slug}.md` (pipeline
+  descentralizado v8). Este registro KORA refleja el skill operativo del
+  harness Claude Code en `~/.claude/skills/atomize/`.
 allowed-tools: Read Glob Write Bash
 metadata:
   kora:
@@ -49,11 +50,14 @@ invariantes.
   profundidad.
 - Flags opcionales: `--slug`, `--output`, `--legacy`.
 
-**Output canonico:**
-- `OPERATIONS/drafts/kora/atomic-{slug}.md` si el corpus produce ≤5.000 palabras
-  y ≤200 proposiciones.
-- `OPERATIONS/drafts/kora/atomic-{slug}-index.md` + N segmentos
+**Output canonico (pipeline descentralizado v8):**
+- `KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-{slug}.md` si el corpus produce
+  ≤5.000 palabras y ≤200 proposiciones.
+- `KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-{slug}-index.md` + N segmentos
   `atomic-{slug}-{NN}.md` si excede los umbrales.
+
+Al promover via `kora promote`, el artefacto migra a `KNOWLEDGE/kora/atomic/`
+con `status: published`.
 
 **URNs asignados** (templates, no URNs resolubles):
 
@@ -78,8 +82,8 @@ urn:kora:kb:atomic-<slug>-<NN>
 El procedimiento completo vive en el skill operativo del harness Claude Code:
 `~/.claude/skills/atomize/SKILL.md`. Se resume aqui:
 
-1. **Detectar contexto KORA** — buscar ancestros con `OPERATIONS/`,
-   `KNOWLEDGE/` y `specs/` para fijar el output canonico.
+1. **Detectar contexto KORA** — buscar ancestros con `KNOWLEDGE/`, `SKILLS/`
+   y `specs/` para fijar el output canonico.
 2. **Detectar archivos** — hasta 20 archivos directo; chunking interno para
    archivos >5.000 palabras.
 3. **Extraer proposiciones** — tipo del enum cerrado (11 tipos),
@@ -104,7 +108,7 @@ El procedimiento completo vive en el skill operativo del harness Claude Code:
 - FS=100% sobre cifras, fechas, excepciones, nombres propios y referencias
   legales.
 - IDs `Pxxx` unicos (globalmente en conjunto segmentado).
-- `status: draft` en `OPERATIONS/drafts/kora/`.
+- `status: draft` en `KNOWLEDGE/_SCRIPTORIUM/REVIEW/`.
 
 ## Retrocompatibilidad
 
@@ -117,5 +121,5 @@ con consumidores externos mientras se migran.
 - Citado por: `specs/knowledge-spec.md §12.2` como productor canonico de
   familia `atomic`.
 - Consume invariantes de: `specs/md-spec.md §5.6` y `§5.6.1`.
-- Pipeline de publicacion: atomize → `OPERATIONS/drafts/kora/` → `kora check`
-  → `kora promote` → `KNOWLEDGE/kora/atomic/`.
+- Pipeline de publicacion: atomize -> `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` ->
+  `kora check` -> `kora promote` -> `KNOWLEDGE/kora/atomic/`.

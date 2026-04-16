@@ -1,9 +1,28 @@
+"""Intake report para el pipeline descentralizado (v8).
+
+Muestra el estado de los tres staging areas:
+- AGENTS/_FRAGUA/{INBOX,REVIEW}
+- SKILLS/_TALLER/{INBOX,REVIEW}
+- KNOWLEDGE/_SCRIPTORIUM/{INBOX,REVIEW}
+
+El pipeline centralizado en OPERATIONS/ fue eliminado en v8; cada tipo de
+artefacto tiene su propio pipeline local. Los subdirectorios de INBOX/ son
+pre-categoriales: no tienen namespace KORA asignado hasta promoverse.
+"""
+
 import os
 from pathlib import Path
 
 from .artifacts import load_yaml_safe
 from .catalog import load_catalog
-from .config import KORA_ROOT, physical_to_logical_repo_path, resolve_logical_repo_path, resolve_operational_dir
+from .config import (
+    KORA_ROOT,
+    FRAGUA_ROOT,
+    TALLER_ROOT,
+    SCRIPTORIUM_ROOT,
+    STAGING_STAGES,
+    physical_to_logical_repo_path,
+)
 
 
 def provenance_source_from_artifact(artifact):
@@ -19,95 +38,68 @@ def provenance_source_from_artifact(artifact):
     return source
 
 
+def _count_items(path: Path) -> tuple[int, int]:
+    """Returns (top-level items, total files) in path."""
+    if not path.exists():
+        return (0, 0)
+    top = sum(1 for _ in path.iterdir() if not _.name.startswith("."))
+    files = sum(1 for p in path.rglob("*") if p.is_file() and not p.name.startswith("."))
+    return (top, files)
+
+
+def _report_staging_area(label: str, root: Path):
+    print(f"\n=== {label} ===")
+    if not root.exists():
+        print(f"  (no existe: {root.relative_to(KORA_ROOT)})")
+        return
+    for stage in STAGING_STAGES:
+        stage_dir = root / stage
+        top, files = _count_items(stage_dir)
+        rel = stage_dir.relative_to(KORA_ROOT)
+        print(f"  [{stage:6s}] {rel}: {top} items top-level, {files} archivos totales")
+
+
 def cmd_intake():
-    source_dir = resolve_operational_dir("source")
-    drafts_dir = resolve_operational_dir("drafts")
+    print("=== KORA Intake Status (pipeline descentralizado v8) ===")
+    _report_staging_area("Agentes (AGENTS/_FRAGUA)", FRAGUA_ROOT)
+    _report_staging_area("Skills (SKILLS/_TALLER)", TALLER_ROOT)
+    _report_staging_area("Knowledge (KNOWLEDGE/_SCRIPTORIUM)", SCRIPTORIUM_ROOT)
 
-    if not source_dir.exists():
-        print("No source/ directory found.")
-        return
-
-    source_files = []
-    for root, _dirs, files in os.walk(source_dir):
-        for file_name in sorted(files):
-            if file_name.startswith("."):
+    # Detalle SCRIPTORIUM/INBOX: reporta sources no trackeados por catalogo
+    scriptorium_inbox = SCRIPTORIUM_ROOT / "INBOX"
+    if scriptorium_inbox.exists():
+        print("\n=== SCRIPTORIUM/INBOX — items pendientes ===")
+        for item in sorted(scriptorium_inbox.iterdir()):
+            if item.name.startswith("."):
                 continue
-            source_files.append(Path(root) / file_name)
+            kind = "dir" if item.is_dir() else item.suffix or "file"
+            size = sum(f.stat().st_size for f in item.rglob("*") if f.is_file()) if item.is_dir() else item.stat().st_size
+            size_str = f"{size // 1024}KB" if size > 1024 else f"{size}B"
+            print(f"  [{kind:5s}] {item.name} ({size_str})")
 
-    if not source_files:
-        print("No source files found.")
-        return
-
+    # Cross-reference: fuentes en catalogo que ya no existen en SCRIPTORIUM
     doc = load_catalog()
-    catalog_sources = {}
     if doc and "Catalog" in doc:
+        orphans = []
         for category, items in doc["Catalog"].items():
             for item in items:
-                urn = item.get("urn", "")
+                if not isinstance(item, dict):
+                    continue
                 file_path = KORA_ROOT / item.get("file", "")
                 artifact, _ = load_yaml_safe(file_path)
                 if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
                     prov_source = provenance_source_from_artifact(artifact)
-                    if prov_source:
-                        catalog_sources[prov_source] = {
-                            "urn": urn,
-                            "status": item.get("status", "unknown"),
-                            "file": item.get("file", ""),
-                        }
+                    if prov_source and prov_source.startswith(("source/", "KNOWLEDGE/_SCRIPTORIUM/")):
+                        src_path = KORA_ROOT / prov_source
+                        if not src_path.exists():
+                            orphans.append((item.get("file", ""), prov_source))
+        if orphans:
+            print(f"\n=== Catalog orphans ({len(orphans)}) — artefactos publicados cuya fuente no existe ===")
+            for artifact_file, src in orphans[:20]:
+                print(f"  [ORPHAN] {artifact_file} → {src}")
+            if len(orphans) > 20:
+                print(f"  ... y {len(orphans) - 20} mas")
 
-    draft_sources = {}
-    if drafts_dir.exists():
-        for root, _dirs, files in os.walk(drafts_dir):
-            for file_name in sorted(files):
-                if not file_name.endswith(".md") or file_name.startswith("."):
-                    continue
-                draft_path = Path(root) / file_name
-                artifact, _ = load_yaml_safe(draft_path)
-                if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
-                    prov_source = provenance_source_from_artifact(artifact)
-                    if prov_source:
-                        draft_sources[prov_source] = str(draft_path.relative_to(KORA_ROOT))
-
-    print("=== KORA Intake Status ===\n")
-    counts = {"PENDING": 0, "PROCESSING": 0, "PUBLISHED": 0}
-
-    for source_file in sorted(source_files):
-        rel = str(physical_to_logical_repo_path(source_file))
-        if rel in catalog_sources:
-            status = "PUBLISHED"
-            info = catalog_sources[rel]
-            print(f"  [{status}] {rel} → {info['file']} ({info['urn']})")
-        elif rel in draft_sources:
-            status = "PROCESSING"
-            print(f"  [{status}] {rel} → {draft_sources[rel]}")
-        else:
-            status = "PENDING"
-            print(f"  [{status}] {rel}")
-        counts[status] += 1
-
-    orphan_count = 0
-    for source_path, info in catalog_sources.items():
-        if source_path.startswith("source/") and not resolve_logical_repo_path(source_path).exists():
-            print(f"  [ORPHAN] {info['file']} → {source_path} (source missing)")
-            orphan_count += 1
-
-    print(
-        f"\nSummary: {counts['PUBLISHED']} published, {counts['PROCESSING']} processing, {counts['PENDING']} pending, {orphan_count} orphan(s)"
-    )
-
-    # Inbox zone report
-    inbox_dir = resolve_operational_dir("inbox")
-    if inbox_dir.exists():
-        inbox_items = []
-        for item in sorted(inbox_dir.iterdir()):
-            if item.name.startswith("."):
-                continue
-            inbox_items.append(item)
-        if inbox_items:
-            print(f"\n=== Inbox ({len(inbox_items)} item(s)) ===\n")
-            for item in inbox_items:
-                kind = "dir" if item.is_dir() else item.suffix or "file"
-                size = sum(f.stat().st_size for f in item.rglob("*") if f.is_file()) if item.is_dir() else item.stat().st_size
-                size_str = f"{size // 1024}KB" if size > 1024 else f"{size}B"
-                print(f"  [{kind:5s}] {item.name} ({size_str})")
-            print(f"\n  Triage: move items to source/{{ns}}/ for pipeline processing")
+    print("\nTriage:")
+    print("  - INBOX items: revisar, limpiar, convertir a formato KORA/MD, mover a REVIEW.")
+    print("  - REVIEW items: validar con `kora check`, asignar URN final, promover con `kora promote`.")

@@ -107,15 +107,15 @@ Pipeline minimo:
 2. parsear IR,
 3. validar dimensiones,
 4. resolver adapter,
-5. emitir artefactos derivados en `BUILD/`,
-6. emitir `_transmutation.yml`.
+5. emitir artefactos derivados en `{workspace}/_BUILD/{target}/` (p. ej. `AGENTS/{ns}/{name}/_BUILD/{target}/` para productivos, o `AGENTS/_FRAGUA/REVIEW/{name}/_BUILD/{target}/` para workspaces en staging),
+6. emitir `{workspace}/_BUILD/{target}/_transmutation.yml`.
 
 Reglas:
 
 1. el target nunca se vuelve fuente primaria,
 2. toda degradacion de fidelidad debe declararse,
 3. `_transmutation.yml` es obligatorio,
-4. `BUILD/` es regenerable por definicion.
+4. los directorios `_BUILD/` son regenerables por definicion y **DEBEN** estar gitignored a nivel de repositorio.
 
 ## 11. Validacion
 
@@ -149,7 +149,7 @@ convertir lo legacy en camino canonico.
    los archivos `AGENTS.md`, `config.json`, `SOUL.md`, `USER.md`, `TOOLS.md`
    desde `AGENTS/{ns}/{name}/`. Valido solo cuando el agente carece de
    `AGENT.md` o cuando el runtime aun no soporta el IR.
-2. **Outputs transmutados pre-v3.6**: artefactos en `BUILD/{target}/`
+2. **Outputs transmutados pre-v3.6**: artefactos en `{workspace}/_BUILD/{target}/`
    generados por versiones antiguas de la transmutacion. Permanecen
    consumibles hasta que el target se regenere.
 3. **Adapter legacy a target nativo**: wrapper especifico que traduce
@@ -157,9 +157,9 @@ convertir lo legacy en camino canonico.
 
 ### 13.2 Reglas
 
-1. El camino canonico es `AGENT.md -> transmute -> BUILD/{target}/`.
+1. El camino canonico es `AGENT.md -> transmute -> {workspace}/_BUILD/{target}/`.
 2. Un runtime nuevo **NO DEBE** depender de outputs legacy cuando exista
-   `BUILD/{target}/` regenerable y actualizado.
+   `{workspace}/_BUILD/{target}/` regenerable y actualizado.
 3. Un adapter `legacy -> target` **DEBE** declararse como perfil de
    compatibilidad, no como pipeline canonico.
 4. Los outputs legacy **NO DEBEN** emitirse con `_transmutation.yml` del
@@ -173,5 +173,5 @@ convertir lo legacy en camino canonico.
 1. Nuevos targets **NO DEBEN** disenarse para consumir scaffold legacy.
 2. La transmutacion canonica **NO DEBE** hibridarse con outputs legacy
    en el mismo ciclo.
-3. `BUILD/` **NO DEBE** conservar artefactos que ya no tienen agente fuente
+3. Los directorios `_BUILD/` **NO DEBEN** conservar artefactos que ya no tienen agente fuente
    activo; la reconciliacion periodica elimina huerfanos.

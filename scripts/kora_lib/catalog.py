@@ -1,9 +1,10 @@
 import os
+from pathlib import Path
 
 import yaml
 
 from .artifacts import get_artifact_title, load_yaml_safe
-from .config import CATALOG_PATH, DEPRECATED_URN_ALIASES, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT
+from .config import CATALOG_PATH, DEPRECATED_URN_ALIASES, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT, ROOT_IGNORED_DIRS
 
 
 def load_catalog():
@@ -59,7 +60,12 @@ def cmd_index():
     extensions = {".yaml", ".yml", ".md", ".json"}
 
     for root, dirs, files in os.walk(KORA_ROOT):
-        dirs[:] = sorted(directory for directory in dirs if directory not in IGNORED_DIRS)
+        at_root = Path(root) == KORA_ROOT
+        dirs[:] = sorted(
+            directory for directory in dirs
+            if directory not in IGNORED_DIRS
+            and not (at_root and directory in ROOT_IGNORED_DIRS)
+        )
 
         for file_name in sorted(files):
             file_path = KORA_ROOT / os.path.relpath(os.path.join(root, file_name), KORA_ROOT)

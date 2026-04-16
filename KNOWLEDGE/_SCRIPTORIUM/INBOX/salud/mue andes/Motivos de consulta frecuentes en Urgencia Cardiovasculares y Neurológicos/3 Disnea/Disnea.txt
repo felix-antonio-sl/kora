@@ -1,0 +1,400 @@
+# Disnea Aguda
+
+## Caso Clínico
+
+Mientras está de turno en la urgencia de un hospital primario, le toca atender a un paciente joven que consulta por disnea. Está acompañado por su madre y usted nota que viste de escolar. En los datos de triage y admisión dice:
+
+**Motivo de consulta**: Disnea (Neumotórax previo)
+
+Sus signos vitales son:
+
+- **FC**: 98 latidos por minuto
+- **PA**: 100/50
+- **Sat**: 98% ambiental
+
+Y piensa: _“¡Por qué no le tomaron la frecuencia respiratoria! Debe tener nuevamente un neumotórax. ¿O será que faltó a la prueba y viene a pedir un certificado?”_
+
+Con estos antecedentes y preguntas usted entra a evaluar al paciente. Saluda amablemente a él y su madre y le pregunta en qué lo puede ayudar.
+
+El paciente refiere que le cuesta respirar y que hace un mes tuvo un neumotórax por el que requirió de una pleurostomía.
+
+Usted realiza una evaluación primaria en la que le parece levemente taquipneico y taquicárdico, pero a la auscultación pulmonar no encuentra ninguna alteración, tampoco percibe hipersonoridad en el hemicampo pulmonar que le duele.
+
+Se prepara para hacer la orden de la radiografía de tórax cuando la mamá le hace notar que su hijo está pálido y que él no es así. Usted se voltea a mirarlo y nota su palidez. Le pregunta si esta dificultad para respirar es mayor en ejercicio, si se inició de forma súbita o no, desde hace cuánto que la tiene y si hay algún otro síntoma asociado.
+
+Luego pregunta por antecedentes médicos y quirúrgicos llegando a los medicamentos de uso habitual y drogas de abuso, cuando el paciente refiere que está tomando una pastilla para el dolor desde que le hicieron el diagnóstico de neumotórax. Ibuprofeno dice que se llama, esto enciende la alarma y a continuación le pregunta si ha tenido deposiciones negras, pastosas o si ha sangrado en las deposiciones o ha vomitado sangre a lo que él paciente contesta que solo tiene las deposiciones más oscuras y pastosas desde hace un mes aproximadamente.
+
+Ahora todo le calza y, en vez de solicitar la radiografía de tórax, toma la orden y solicita un hematocrito, obviando el tacto rectal en el paciente.
+
+Casos como este nos hacen reflexionar sobre lo fácil que es anclarse precozmente a un diagnóstico, aún cuando no tenemos los elementos suficientes que nos hagan sospecharlo. Es por esto la importancia que tiene el evaluar de forma estructurada al paciente, sin dejarse llevar por la primera impresión, ni sesgando su evaluación con los antecedentes.
+
+Se deben considerar todos los elementos de la anamnesis y el examen físico del paciente, que en la mayoría de los casos son altamente sugerentes del origen de la disnea.
+
+También nos hace recordar que muchas de las causas de disnea no provienen del pulmón propiamente tal, sino que hay una cadena que se inicia con la respiración o movimiento motor gatillado por el centro respiratorio del cerebro, continúa con la ventilación o intercambio gaseoso a nivel del parénquima pulmonar, pasando por la distribución del gas a través de la sangre hasta llegar a todos los tejidos para realizar el metabolismo aeróbico, por lo que la causa de la disnea puede estar en cualquiera de estos niveles.
+
+En Estados Unidos, son cerca de 4 millones anuales las consultas a los servicios de urgencia por disnea como motivo de consulta principal, siendo más frecuente en los adultos mayores. En Chile, no tenemos datos publicados, pero estudios preliminares nos indican que corresponden al 5% de las consultas de urgencia, llegando al 7% en los adultos mayores, número que aumenta si consideramos que muchos de los pacientes que consultan por EPOC (enfermedad pulmonar obstructiva crónica) descompensado, asma descompensada o neumonía, en realidad presentan disnea como principal motivo de consulta.
+
+La disnea o sensación de ahogo (ver tabla), se define como disconfort al respirar y es un síntoma que resulta del desajuste entre la actividad motora conducida por el centro respiratorio y la información aferente que proviene de los receptores de la vía aérea, pulmones y las estructuras de la pared torácica.
+
+Por ejemplo, en las enfermedades cardiovasculares se produce disnea porque disminuye el bombeo de sangre oxigenada a los tejidos y la de sangre con dióxido de carbono de vuelta a los pulmones, es decir, hay menos transporte de oxígeno y se produce disnea. Algo similar ocurre en los cuadros de anemia aguda o crónica extrema.
+
+La disnea puede ocurrir por distintas causas que van desde algunas muy graves y de riesgo vital, que incluyen el paro cardiorespiratorio, hasta otras leves que no requieren mayor intervención.
+
+Los diagnósticos diferenciales van desde aquellos originados en el pulmón propiamente tal como la neumonía o el tromboembolismo pulmonar, hasta los por aumento de la demanda de oxígeno, como en el caso de la sepsis o el ejercicio extremo, siempre y cuando este último produzca disconfort.
+
+Por lo tanto, son la evaluación primaria, la historia y el examen físico los que nos darán las pistas necesarias para conducir los exámenes complementarios y llegar a un diagnóstico operativo que nos permita ayudar al paciente en particular, sin necesariamente llegar al diagnóstico en particular.
+
+## Otras Formas de Decir Disnea por Parte del Paciente
+
+1. Urgencia respiratoria
+2. Sostener el aire
+3. Me falta el aliento
+4. Hambriento de aire
+5. Desesperado por respirar
+6. Siento que respiro poco
+7. Inspiración insuficiente o no entra suficiente aire
+8. Sensación de ahogo
+9. Al respirar siento que no entra todo el aire a los pulmones
+10. Necesito más aire
+11. No puedo llenar los pulmones
+
+## Evaluación del Paciente con Disnea Aguda
+
+En este artículo estudiaremos cómo enfrentar la disnea aguda en urgencias, para lo que revisaremos la evaluación primaria en estos pacientes.
+
+Lo primero a evaluar frente a un paciente con disnea es su aspecto general para saber si se está grave o no. Recordemos que estos pacientes pueden caer rápidamente en paro cardiorespiratorio, por lo que hay que estar atentos a cualquier cambio en el paciente.
+
+Posterior a esto, evaluaremos su vía aérea, respiración y circulación, es decir, haremos una evaluación primaria.
+
+### A: Vía Aérea
+
+Es fundamental evaluar la permeabilidad de la vía aérea en todo paciente que consulta por disnea aguda, dado que el síntoma puede deberse precisamente a una obstrucción a este nivel, tanto por un cuerpo extraño como por edema o aumento de volumen de alguno de los componentes de la vía aérea.
+
+Un ejemplo de esto es la anafilaxis con edema de mucosa oral, faringe o laringe, que puede producir disnea y debe ser diagnosticada y tratada a tiempo para evitar la obstrucción total y con ello la pérdida de la vía aérea.
+
+### B: Respiración
+
+Nunca está de más recordarle al equipo la importancia de la frecuencia respiratoria como signo vital, sobre todo en la consulta por disnea o sospecha de enfermedad pulmonar propiamente tal.
+
+Se evaluará la frecuencia respiratoria junto a la saturación y la mecánica ventilatoria, para evaluar la gravedad de la situación y realizar intervenciones inmediatas como aporte de oxígeno o preparación para ventilación mecánica no invasiva o invasiva si es necesario.
+
+Al mismo tiempo, la auscultación pulmonar será muy importante tanto en la valoración de los diagnósticos diferenciales como para guiar las intervenciones necesarias. Así, se pueden encontrar sibilancias en pacientes con EPOC (enfermedad pulmonar obstructiva crónica), asma o anafilaxis, casos en los que serán útiles los broncodilatadores, aunque también pueden estar presentes en pacientes con edema pulmonar agudo o insuficiencia cardíaca descompensada.
+
+Recordemos que no todo lo que silba es asma, ni todo lo que crepita es neumonía.
+
+Algunos diagnósticos los podemos hacer con la sola auscultación pulmonar como el neumotórax, y con esto ya podremos realizar las intervenciones correspondientes.
+
+Exámenes complementarios se pueden tomar en este minuto como la radiografía de tórax portátil si el paciente se encuentra grave, o en radiología si su enfermedad es leve y usted autorice su ida al correspondiente servicio clínico.
+
+### C: Circulación
+
+Frecuencia cardíaca, presión arterial, ingurgitación yugular, ruidos cardíacos, perfusión y edema periférico serán útiles para realizar el diagnóstico diferencial entre causas cardíacas y no cardíacas de la disnea, como también para evaluar la gravedad del cuadro en casos como el paciente que consulta por disnea y está en shock.
+
+Exámenes complementarios como un ECG (Electrocardiograma) son fundamentales para evaluar al paciente con disnea, ya que esta se puede deber a un infarto o síndrome coronario agudo, hipertrofia ventricular izquierda que genere una insuficiencia cardíaca, o menos frecuentemente a un taponamiento cardíaco (ver imagen) o un TEP que también tienen signos indirectos al ECG que podemos buscar activamente, como la sobrecarga derecha (patrón S1, QIII, TIII).
+
+**Alternancia eléctrica y bajo voltaje** = Derrame pericárdico
+
+**Signos de sobrecarga derecha o TEP:**
+
+- S1, QIII, TIII
+- Eje desviado a la derecha
+- Taquicardia sinusal
+- Supradesnivel del ST en aVR
+- T invertida en V1 a V3 y en III y aVF
+
+Hay que monitorizar al paciente de aspecto grave y a quien se sospeche de alguna enfermedad potencialmente fatal. Además, debemos solicitar exámenes de sangre en el momento en que el personal de enfermería instale las vías venosas periféricas.
+
+También pueden ser de ayuda la troponina y el proBNP, que inclinarán la balanza hacia una causa cardíaca de la disnea, aunque no hay que olvidar que un mismo paciente puede tener insuficiencia cardíaca crónica y no ser esta la causa de la disnea aguda.
+
+### U: Ultrasonido
+
+Si está disponible el ecógrafo, podremos usarlo para establecer diagnósticos diferenciales en el paciente que consulta por disnea aguda, existiendo distintos protocolos. Lo importante será saber qué estructuras mirar y cuáles son los patrones a buscar en cada una de ellas:
+
+- **Corazón**: Buscar derrame pericárdico, evaluar la contractilidad ventricular izquierda (buscando una causa cardíaca) y evaluar el tamaño del ventrículo derecho en relación al izquierdo.
+  
+- **Pulmón**: Evaluar signos de neumotórax, existencia de derrame pleural y signos de síndrome intersticial.
+  
+- **Vena Cava Inferior**: Si colapsa en inspiración y está chica, nos habla de hipovolemia. Si está grande (>2 cm) y no colapsa, hay hipervolemia.
+  
+- **Vena Femoral y Poplítea**: Si no se comprimen o colapsan a la compresión con el transductor, podría haber un trombo.
+
+### D: Déficit Neurológico
+
+No debería haber un déficit neurológico focal, si lo hay, debe registrarse adecuadamente para evitar confusión.
+
+Por otro lado, puede haber compromiso de conciencia cualitativo y cuantitativo, sobre todo en pacientes graves. La mayoría de las veces el paciente se agita en su lucha por respirar, hasta que el agotamiento y la hipercarbia lo hacen somnoliento.
+
+**Recordar tomar hemoglucotest** para evaluar a pacientes diabéticos.
+
+### E: Exposición
+
+Podríamos encontrar enfisema subcutáneo, lo que puede hablar de un neumotórax por fractura costal, sobre todo en adultos mayores o en casos de sospecha de abuso.
+
+La medición de la temperatura es importante para interpretar otros signos vitales como taquicardia o taquipnea, y también puede apoyar algunos diagnósticos diferenciales como neumonía y tromboembolismo pulmonar.
+
+Con cada alteración de la evaluación primaria debemos tomar una conducta adecuada en pos de mejorar al paciente y reevaluarlo para asegurarnos que nuestra intervención funcionó.
+
+Posterior a la evaluación primaria, pero en la realidad de forma paralela, se ahondará en la anamnesis y el examen físico del paciente para así acotar los diagnósticos diferenciales, los que revisaremos con más detalle en el siguiente artículo.
+
+## Diagnósticos Diferenciales del Paciente que Consulta por Disnea Aguda
+
+La mayoría de los pacientes, cerca de un 80%, que consultan por disnea aguda tienen alguna causa pulmonar de la disnea como neumonía, asma, EPOC o edema pulmonar. Sin embargo, la lista de causas de disnea aguda es mucho más extensa.
+
+Aunque no hay que revisar cada uno de los diagnósticos en cada paciente, sí hay que pensar "fuera de caja" para poder llegar al diagnóstico real del paciente y salir de los cuatro diagnósticos de siempre mencionados previamente.
+
+Como conversamos al inicio de la unidad, el anclaje precoz es un peligro latente al que estamos expuestos a diario, sobre todo al sesgarnos con los antecedentes del paciente. Así, un paciente con antecedentes de EPOC que consulta por disnea no necesariamente es por falta de medicamentos de su enfermedad de base o por una neumonía. También podría tener un neumotórax o un TEP, dado que estuvo hospitalizado previamente o por un infarto agudo al miocardio. Todas estas enfermedades tienen tratamientos completamente distintos al broncodilatador, corticoide y antibiótico que se le indicaría al primer diagnóstico.
+
+Lo mismo puede ocurrir en un paciente con antecedentes de insuficiencia cardíaca que consulte por disnea. Este paciente no necesariamente tiene un edema pulmonar agudo, también puede tener anemia severa o un Guillain-Barré, o haber ido de vacaciones al sur y tener Hanta. Son diagnósticos muy distintos entre sí, con tratamientos también diferentes, por lo que hay que estar atentos y pensar de una forma amplia pero a la vez acotada al paciente particular que estamos evaluando en la urgencia.
+
+Para esto, nos sirve clasificar las causas de disnea aguda. Existen distintas maneras de hacerlo. Una de ellas es dividiéndolas en cinco grupos de causas:
+
+### Causas de Disnea
+
+| Grupo| Causa|
+|-|-|
+| Obstructivas| Asma, EPOC, cuerpo extraño, epiglotitis|
+| Parenquimatosas| Neumonía, edema pulmonar no cardiogénico, anafilaxis, enfisema pulmonar, TEP (Tromboembolismo pulmonar) masivo|
+| Cardíacas| EPA (Edema Pulmonar Agudo), IAM (Infarto Agudo al Miocardio), Taponamiento Cardíaco|
+| Compensatorias| Anemia, sepsis, acidosis metabólica, crisis de pánico|
+| Otras| Neumotórax, Guillain-Barré, Miastenia Gravis|
+
+Una forma más gráfica de agrupar y pensar los diagnósticos diferenciales es considerando los componentes del proceso respiratorio como si fuera una máquina con controladores, bomba ventilatoria y el intercambiador de gas.
+
+### Causas de Disnea según Etapa del Proceso Respiratorio
+
+| Componente| Descripción| Manifestación| Ejemplos|
+|-|-|-|-|
+| Controlador| Alteración de la frecuencia respiratoria o profundidad de la respiración.| Sensación de ahogo y necesidad de respirar.| Acidosis metabólica, ansiedad.|
+| Bomba ventilatoria| Músculos, nervios aferentes, pared torácica y pleura que crean presión torácica negativa, espacio aéreo y alvéolos permitiendo el flujo desde la atmósfera y el intercambio gaseoso.| Aumento del trabajo respiratorio, bajo volumen tidal.| Guillain-Barré, neumotórax, neumonía, broncoespasmo (EPOC, asma).|
+| Intercambiador de gas| Oxígeno y dióxido de carbono cruzan los capilares pulmonares en el alvéolo. Destrucción de la membrana o interrupción de la interface entre el gas y los capilares por fluido o células inflamatorias limitan el intercambio gaseoso.| Aumento del drive respiratorio, hipoxemia, hipercapnia crónica.| Enfisema, neumonía, edema pulmonar, derrame pleural, hemotórax.|
+
+Fuente: Schwartzstein RM, Dyspnea. In Broaddus V, Mason RC, Ernest JD, et al, editors. Murray & Nadel’s textbook of respiratory medicine. Elsevier health sciences. 6th edition. Philadelphia: Saunders/Elsevier; 2015.
+
+Podemos también enfocarnos en las causas más graves:
+
+### Causas Críticas de Disnea
+
+**Pulmonares**:
+
+- Obstrucción de la vía aérea
+- TEP (Tromboembolismo pulmonar) masivo
+- Edema pulmonar no cardiogénico
+- Anafilaxis
+- Falla respiratoria
+- Neumotórax a tensión
+
+**Cardíacas**:
+
+- EPA (Edema pulmonar agudo)
+- IAM (Infarto agudo al miocardio)
+- Taponamiento cardíaco
+
+**Otros**:
+
+- Tóxicos (organofosforados, monóxido de carbono)
+- Cetoacidosis diabética
+- Epiglotitis
+- ACV (Accidente cerebrovascular)
+
+Fuente: Rosen's Emergency Medicine. Chapter 25: Dyspnea
+
+Y en las menos frecuentes:
+
+### Causas Menos Frecuentes de Disnea
+
+- Enfermedad valvular aguda
+- Miocardiopatía
+- Interferencia mecánica (embarazo, ascitis, obesidad, hernia hiatal)
+- Tirotoxicosis
+- Síndrome de Guillain-Barré
+- Polimiositis
+- Porfiria
+
+La historia y el examen físico deben ser dirigidos a identificar la causa de la disnea, acotando los diagnósticos diferenciales. Además, deben considerarse los factores de riesgo, como antecedentes médicos, quirúrgicos, familiares, viajes, medicamentos, exposiciones o trauma reciente que no haya sido contado espontáneamente. También es importante saber si hay contactos que presenten síntomas similares o no.
+
+El examen físico puede ser clave al mostrarnos alguna característica de la enfermedad causante de la disnea, como en los siguientes ejemplos:
+
+### Hallazgos en el Examen Físico
+
+| Síntoma| Diagnóstico diferencial|
+|-|-|
+| Sibilancias| EPOC/enfisema, asma, reacción alérgica, IC (insuficiencia cardíaca)|
+| Tos| Neumonía, asma, EPOC/enfisema|
+| Dolor pleurítico| Neumonía, TEP, neumotórax, EPOC, asma|
+| Ortopnea| IC|
+| Fiebre| Neumonía, bronquitis, tuberculosis, tumor, TEP|
+| Hemoptisis| Neumonía, tuberculosis, tumor, TEP|
+| Edema de extremidades| IC, DHC (daño hepático crónico), IRC (insuficiencia renal crónica)|
+| Edema Pulmonar| IC, DHC, IRC, Sepsis|
+| Taquipnea aislada| TEP, acidosis, ansiedad|
+
+Por último, hay exámenes complementarios que también nos pueden ayudar a hacer el diagnóstico correcto o a descartar algún diagnóstico según sea el escenario. Ya vimos que la ecoscopía puede ser de gran ayuda, sobre todo por la instantaneidad de su análisis, así como también el ECG y la radiografía de tórax portátil.
+
+Otros exámenes como el dímero D, la troponina y el proBNP también pueden ser útiles, pero demoran en estar listos sus resultados.
+
+A continuación se presenta una tabla resumen con el uso de algunos exámenes que pueden servir en la evaluación del paciente que consulta por disnea aguda al servicio de urgencias:
+
+### Test y Exámenes Complementarios en la Evaluación de la Disnea Aguda
+
+| Test| Información General| Pros| Contras|
+|-|-|-|-|
+| Radiografía de tórax| Frecuentemente es la primera imagen disponible.| Baja radiación, puede mostrar consolidación, derrame pleural, hiperinsuflación, neumotórax.| Baja sensibilidad en disnea aguda. Solo 8 de 26 neumonías se ven en la radiografía.|
+| Ecoscopía| Múltiples protocolos.| Sin radiación, rápido, reproducible, al lado de la cama, se puede hacer en pacientes inestables.| Depende del operador y del paciente. Obesos y enfisematosos tienen malas ventanas.|
+| Dímero D| Marcador de la actividad fibrinolítica.| Altamente disponible.| Poco específico. Aumenta en infecciones, cáncer, traumas, entre otros.|
+| Gases de sangre venosa| Información adicional sobre la ventilación (PaCO2).| Útiles para confirmar hiperventilación.| Poca evidencia sobre su utilidad real en disnea aguda.|
+| ECG| Evaluación cardíaca inicial en el paciente con disnea.| Rápido, de bajo costo, fácil de obtener. Específico para arritmias y síndrome coronario agudo.| Hallazgos poco específicos.|
+| Troponina| Indicador sérico de daño miocárdico.| Ampliamente disponible.| Puede elevarse también en TEP.|
+| ProBNP| Útil en la evaluación de insuficiencia cardíaca.| Ampliamente disponible.| Limitada utilidad en obeso, insuficiencia mitral e insuficiencia renal.|
+| Hemograma| Aporta información sobre la capacidad de transporte de oxígeno.| Ampliamente disponible.| Poco específico.|
+| TAC de tórax| Imágenes detalladas del sistema cardiorrespiratorio.| Resultados sensibles y específicos.| Exposición a radiación acumulativa.|
+
+Vale la pena profundizar un poco más en el diagnóstico de TEP, los scores para clasificar al paciente como de bajo riesgo para TEP, como se usa el Dímero D y el rol del AngioTAC de tórax en la evaluación de estos pacientes.
+
+### Wells y PERC para TEP
+
+Son dos scores útiles en la evaluación del paciente con disnea aguda. La diferencia entre ellos es que el PERC se aplicará en aquellos pacientes en que la probabilidad clínica antes de aplicar el score es baja (menor al 15%), mientras que el Wells no requiere de analizar la probabilidad de TEP previo a la aplicación del score.
+
+### Criterios Diagnósticos de TEP: Wells
+
+| Variable| Puntaje (original)|
+|-|-|
+| Síntomas y signos de TVP| 3|
+| TVP o TEP previo| 1.5|
+| Inmovilización por ≥ 3 días o Cx en las últimas 4 semanas| 1.5|
+| FC > 100x’| 1.5|
+| Hemoptisis| 1|
+| Cáncer activo (en tratamiento en los últimos 6 meses o en cuidados paliativos)| 1|
+| Sin diagnóstico alternativo más probable| 3|
+
+Puntaje total:
+
+- 0-4 (12,1%) poco probable
+- >4 (37,1%) probable
+
+Fuente: JAMA, 2006; 295: 172-179
+
+### Criterios Diagnósticos de TEP: PERC (baja probabilidad clínica <15%)
+
+| Variable| Puntaje si no cumple criterios|
+|-|-|
+| ≥ 50 años| 1|
+| FC ≥ 100x’ inicial| 1|
+| Sat < 95% ambiental inicial| 1|
+| Aumento de volumen EEII unilateral| 1|
+| Hemoptisis| 1|
+| Cx o Tx en las últimas 4 semanas| 1|
+| Antecedentes de TEP o TVP| 1|
+| Anticonceptivos orales con estrógenos| 1|
+
+Puntaje total:
+
+- 0: <2% TEP
+- Si alguno positivo: Dímero D
+
+Así, si el paciente tiene una probabilidad baja de TEP con PERC negativo, deberíamos descartar el diagnóstico de TEP. Cuando cualquiera de los criterios de PERC es positivo o la probabilidad por Wells es baja (menor o igual a 4 puntos), le tomaremos un Dímero D y así esperamos poder descartar el diagnóstico de TEP.
+
+Para poder utilizar el Dímero D, deberíamos saber qué técnica de test en particular tenemos disponible, ya que esto determina la sensibilidad del resultado. En general, los ELISA son de alta sensibilidad y están ampliamente disponibles.
+
+Debemos recordar que un Dímero D menor de 500 microgramos por litro tiene una sensibilidad de un 95%, con un valor predictivo negativo (VPN) del 99%, pero con una muy baja especificidad (55%), por lo que si el resultado es mayor a 500 microgramos por litro no sabremos si el paciente tiene o no un TEP y deberemos complementar la evaluación con un AngioTAC de tórax.
+
+**Nota:** En pacientes mayores de 50 años debemos ajustar el punto de corte multiplicando la edad por 10.
+
+El AngioTAC de tórax es un examen altamente específico para TEP, con una sensibilidad que va del 66 al 93%, dependiendo de la tecnología del escáner, una especificidad del orden del 93% (89 – 97%) y un VPN del 99.1% para mortalidad por TEP, dejando muy pocos pacientes con TEP significativo no diagnosticados y dando diagnósticos alternativos en muchos casos. Pero cuando la duda aún es razonable, debemos realizar una angiografía pulmonar, que es el gold standard y el paso que sigue a un AngioTAC de tórax negativo para TEP en un paciente de alto riesgo.
+
+## Manejo Inicial del Paciente Grave con Disnea Aguda
+
+Para saber qué intervenciones debemos realizar y hacerlas de forma oportuna, debemos pensar qué está ocurriendo en el paciente en particular.
+
+Si luego de nuestra evaluación primaria encontramos que el paciente está en shock, lo enfrentaremos como un paciente con shock indiferenciado que consultó por disnea y buscaremos si este es:
+
+### Causas de Shock que Pueden Provocar Disnea
+
+| Tipo de shock| Ejemplo|
+|-|-|
+| **Cardiogénico**| IAM, bradi o taqui arritmias|
+| **Distributivo**| Sepsis, anafilaxis|
+| **Obstructivo**| Neumotórax a tensión, TEP masivo, taponamiento cardíaco|
+| **Hipovolémico**| Hemorrágico, deshidratación|
+
+Cualquiera de estos puede darnos disnea, por las razones que vimos en la introducción de la unidad.
+
+Luego de identificado el tipo de shock, lo manejaremos acorde al diagnóstico, es decir, tratando la causa subyacente.
+
+Cuando el paciente que consulta por disnea está con insuficiencia respiratoria evidente, debemos actuar de forma igual de rápida que ante el paciente en shock, ya que nos dará incluso menos tiempo antes de agotarse y caer en PCR, dependiendo de la reserva o basal del paciente.
+
+El enfrentamiento inicial del paciente que consulta por disnea y está en insuficiencia respiratoria parte por aportarle oxígeno, además de monitorizarlo. Se le aportará oxígeno a alto flujo por mascarilla de recirculación, dado que es altamente probable que haya que intubarlo.
+
+En el caso particular del paciente que retiene CO2, pero que está en insuficiencia respiratoria, desaturando más que lo habitual, usando musculatura accesoria para respirar, sin tolerar el decúbito, hay que aportarle oxígeno de todas maneras, y prepararse para ventilarlo a presión positiva, lo que más lo ayudará a respirar, ya sea de forma invasiva o no.
+
+## Manejo del Paciente Sibilante
+
+Cabe hacer notar que debemos primero distinguir si lo que oímos son sibilancias o estridor, es decir, si la obstrucción está en la vía aérea inferior (sibilancias) o en la vía aérea superior (estridor).
+
+Si la obstrucción es de la vía aérea superior, esta puede ser por un cuerpo extraño o por edema o inflamación de las partes blandas de la misma vía aérea.
+
+La primera requiere de la permeabilización extrayendo el cuerpo extraño manualmente o a través de la maniobra de Heimlich, mientras que la segunda requiere maniobras de posicionamiento de la vía aérea y medicamentos de forma inmediata.
+
+**Imagen: Maniobra de Heimlich**
+
+Si la obstrucción es en la vía aérea inferior, las sibilancias pueden ser secundarias a una crisis asmática, crisis epótica, anafilaxis, edema pulmonar, entre otras.
+
+Si nuestra evaluación nos indica que estamos frente a un paciente con una crisis asmática, además de oxígeno, indicaremos broncodilatadores vía inhalatoria. Si el paciente coopera, puede ser con un inhalador. Si no, será a través de nebulizaciones o directamente al sistema de ventilación en caso del paciente en VMNI (ventilación mecánica no invasiva) o intubado.
+
+El broncodilatador más rápido en actuar es el beta dos agonista de acción corta como el salbutamol, que puede ser usado de forma continua si el paciente así lo requiere, aun cuando esté taquicárdico.
+
+En el paciente grave debemos intercalar la nebulización de salbutamol con un anticolinérgico (bromuro de ipratropio) y mantener las nebulizaciones continuas. Además, el anticolinérgico será una opción en el paciente que tolera mal el salbutamol.
+
+Al mismo tiempo, iniciaremos una dosis de corticoides. La vía de administración será endovenosa si el paciente está grave, u oral si no lo está, pudiendo usarlo también de forma inhalada.
+
+En pacientes graves, también debemos usar sulfato de magnesio endovenoso, siempre con la precaución de diluirlo y administrarlo lentamente para evitar la hipotensión del paciente (2 ampollas en 250 cc SF).
+
+Como último recurso en medicamentos, tenemos la adrenalina, que usaremos en bolos endovenosos de 20 microgramos (en dilución de 10 microgramos por ml) o en infusión continua (que requiere de monitorización adecuada para su administración, por lo que no se recomienda en la urgencia) o a través del TOT. Esta será útil en los pacientes con crisis asmática o con anafilaxis. En estos últimos, las primeras dosis se administran intramusculares en el muslo anterior a dosis de 0.3 a 0.5 mg por vez, repitiendo esto hasta 2 veces, para luego pasar a un bolo endovenoso de adrenalina de no mejorar con las medidas previas.
+
+Otra alternativa en el paciente grave es el uso de ketamina, una droga que cada día se usa más en la urgencia. Esta tiene propiedades broncodilatadoras, por lo que puede ayudar al paciente con crisis asmática severa. Las dosis usadas son de 1.5 a 2 mg/kg en bolo inicial, y luego una infusión continua a 2 mg/kg/hr. Esta puede producir broncorrea, por lo que debemos aspirar de forma frecuente al paciente, pero tiene la ventaja de que no abole la ventilación espontánea, por lo que es útil en la ventilación a presión positiva tanto invasiva como no invasiva.
+
+En relación a la ventilación mecánica no invasiva, está claramente demostrada su utilidad en el paciente epótico descompensado, pero también hay evidencia en el paciente con crisis asmática severa, así como también puede ser usada en la preoxigenación de estos pacientes previo a la intubación orotraqueal.
+
+La sedación con ketamina ayuda a acoplarse al BiPAP y también puede ser la droga de elección en una intubación vigil en un paciente con crisis epótica o asmática grave.
+
+Si, pese a todos nuestros esfuerzos, el paciente no mejora, debemos replantearnos los diagnósticos y evaluar la posibilidad de neumotórax asociado, TEP, taponamiento cardíaco, etc.
+
+**Fuente**: [NCBI - Ventilación en pacientes con EPOC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3415813/)
+
+Si aún así el paciente continúa mal, deberemos proceder a ventilarlo invasivamente. La intubación se debe hacer tomando ciertas precauciones, como una buena preoxigenación o incluso con intubación vigil, siempre eligiendo al más experimentado para realizar la intubación, dado la poca reserva de oxígeno que tiene el paciente.
+
+Una vez intubado, el paciente se debe manejar con bajos volúmenes corrientes, PEEP bajo o normal, frecuencia respiratoria lo más baja posible para darle un mayor tiempo espiratorio e hipercapnia permisiva.
+
+No debemos olvidar durante todo este proceso volemizar al paciente, lo que también es parte del tratamiento del paciente con crisis asmática.
+
+El paciente con anafilaxis requerirá para su manejo corticoides endovenosos, beta agonistas, antihistamínicos y adrenalina. Esta se administra inicialmente de forma intramuscular, y en caso de no haber una respuesta adecuada con las medidas previas, se debe administrar de forma endovenosa. También se debe volemizar al paciente, al igual que en el paciente asmático.
+
+Y, ante la falla de todas las medidas previas, la intubación es necesaria para no perder la vía aérea y mejorar la ventilación del paciente.
+
+El paciente con edema pulmonar agudo que está en insuficiencia respiratoria requiere apoyo con oxígeno. Si el paciente no está en shock, podemos evaluar su respuesta a nitroglicerina endovenosa en bolo y bomba de infusión continua (de 50 a 400 microgramos/minuto). Si no responde o su presión no permite iniciar nitroglicerina, requerirá de VMNI inmediata. También se puede iniciar la VMNI antes que la nitroglicerina si está disponible.
+
+Si no responde, se debe plantear la ventilación invasiva del paciente, previo apoyo con drogas vasoactivas como noradrenalina y dobutamina para optimizar las condiciones antes de intubarlo, bajo monitorización estricta, ya que ambas tienen efectos adversos como arritmias y aumento de los requerimientos de oxígeno miocárdico.
+
+Los diuréticos en la etapa aguda del tratamiento del edema pulmonar cardiogénico han sido motivo de controversia, siendo la última recomendación el usar una dosis de furosemida igual o mayor a la habitualmente usada por el paciente. Aunque el efecto no será inmediato, servirá para disminuir la hipervolemia del paciente sin producir hipernatremia ni hiperkalemia grave, y tampoco falla renal secundaria a su uso en pacientes que realmente tienen hipervolemia.
+
+Por último, hay que buscar de forma activa alguna causa reversible de la descompensación, como un síndrome coronario agudo, una arritmia o un derrame pericárdico, aunque a veces es difícil saber qué ocurrió primero.
+
+## Hipervínculo Externo: Ventilación Mecánica no Invasiva en la Enfermedad [Ver artículo completo aquí](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3415813/)
+
+## El Paciente con EPOC Descompensado
+
+El paciente con EPOC descompensado requiere de un manejo similar al del paciente con una crisis asmática, es decir, oxígeno, broncodilatadores de rápida acción como salbutamol y bromuro de ipratropio, corticoides, volemización y ventilación mecánica inicialmente no invasiva para pasar a una invasiva en caso de no responder al tratamiento previo.
+
+La gran diferencia en el manejo del paciente con EPOC descompensado comparado con el paciente asm
+
+ático es que es mejor en el paciente epótico titular el oxígeno para saturar entre 88 y 92%, y dar antibióticos dentro del manejo inicial del paciente. Además, no es de utilidad la epinefrina ni el sulfato de magnesio en su tratamiento.
+
+Así, con una clínica similar tenemos distintos diagnósticos que tienen tratamientos levemente diferentes, por lo que debemos hacer lo posible por distinguir uno de otro y así realizar las intervenciones necesarias lo más precozmente posible para que el paciente no empeore.
+
+## Puntos Principales
+
+1. La evaluación del paciente con disnea aguda se dificulta dado que el síntoma puede ser secundario a la alteración en cualquier nivel en el proceso de la respiración.
+2. Los diagnósticos diferenciales a plantear en los pacientes que consultan por disnea aguda son muchos y se pueden agrupar de distintas maneras.
+3. Debemos conocer las causas potencialmente fatales de disnea aguda y buscarlas activamente para poder realizar las intervenciones críticas en su manejo inicial.
+4. Son varios los exámenes complementarios que podrían ayudarnos en la evaluación de un paciente con disnea aguda, debemos elegir el examen correcto para contestar la pregunta clínica que nos planteamos.
+5. Dentro de los exámenes complementarios, los más importantes en la urgencia son el ECG, la radiografía de tórax y la ecoscopía, dada su inmediatez y su utilidad para el diagnóstico de más de una enfermedad causante de la disnea a la vez.
+6. El tratamiento del paciente con disnea dependerá de su gravedad y del diagnóstico subyacente.

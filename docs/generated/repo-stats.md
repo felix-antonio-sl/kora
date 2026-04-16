@@ -4,19 +4,19 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen
 
-- Agent workspaces activos: 25
-- Workspaces deprecated: 1
-- Workspaces incompletos: 1
-- Artefactos bootstrap de agente: 155
-- Entradas totales de catalogo: 1076
+- Agent workspaces activos: 0
+- Workspaces deprecated: 0
+- Workspaces incompletos: 0
+- Artefactos bootstrap de agente: 0
+- Entradas totales de catalogo: 504
 
 ## Catalogo por categoria
 
 | Categoria | Conteo |
 |-----------|--------|
-| Agents | 155 |
-| Skills | 383 |
-| Knowledge | 538 |
+| Agents | 0 |
+| Skills | 1 |
+| Knowledge | 503 |
 | Documents | 0 |
 | Other | 0 |
 
@@ -24,15 +24,14 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 | Namespace | Entradas |
 |-----------|----------|
-| fxsl | 247 |
-| gn | 233 |
-| kora | 198 |
-| salud | 157 |
+| gn | 129 |
+| salud | 93 |
+| fxsl | 89 |
 | tde | 55 |
-| korvo | 37 |
 | agengai | 36 |
 | legal | 35 |
-| dev | 28 |
 | sii | 26 |
-| ops | 20 |
-| pro | 4 |
+| kora | 22 |
+| ops | 10 |
+| korvo | 6 |
+| pro | 3 |

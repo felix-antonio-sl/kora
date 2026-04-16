@@ -1,28 +1,27 @@
 {
-  "agent_workspaces": 25,
-  "deprecated_workspaces": 1,
-  "incomplete_workspaces": 1,
-  "agent_bootstrap_artifacts": 155,
+  "agent_workspaces": 0,
+  "deprecated_workspaces": 0,
+  "incomplete_workspaces": 0,
+  "agent_bootstrap_artifacts": 0,
   "catalog_counts": {
-    "Agents": 155,
-    "Skills": 383,
-    "Knowledge": 538,
+    "Agents": 0,
+    "Skills": 1,
+    "Knowledge": 503,
     "Documents": 0,
     "Other": 0
   },
-  "total_catalog_entries": 1076,
+  "total_catalog_entries": 504,
   "by_namespace": {
-    "fxsl": 247,
-    "gn": 233,
-    "kora": 198,
-    "salud": 157,
+    "gn": 129,
+    "salud": 93,
+    "fxsl": 89,
     "tde": 55,
-    "korvo": 37,
     "agengai": 36,
     "legal": 35,
-    "dev": 28,
     "sii": 26,
-    "ops": 20,
-    "pro": 4
+    "kora": 22,
+    "ops": 10,
+    "korvo": 6,
+    "pro": 3
   }
 }

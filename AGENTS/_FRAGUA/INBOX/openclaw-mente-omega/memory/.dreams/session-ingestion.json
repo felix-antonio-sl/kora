@@ -1,0 +1,1710 @@
+{
+  "version": 3,
+  "files": {
+    "mente-omega:sessions/015cb882-87d6-4b50-9023-099aebb225ad.jsonl.reset.2026-04-01T17-24-05.625Z": {
+      "mtimeMs": 1775058018395,
+      "size": 578419,
+      "contentHash": "b2aef7044e7ed0b5f04082339ab53299496d82a4660c00fcd908dd2c186fc1eb",
+      "lineCount": 10,
+      "lastContentLine": 10
+    },
+    "mente-omega:sessions/028d3f6f-ca48-43dd-ade2-9ee9bde265ff.jsonl": {
+      "mtimeMs": 1776287327486,
+      "size": 49128,
+      "contentHash": "e1e2e42942ea5d447919a78cc2f60016a5285e6a7472290fc69190eda076a959",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/031f6124-b611-4c7a-864c-7a1df97514d0.jsonl.reset.2026-03-30T02-28-50.350Z": {
+      "mtimeMs": 1774834873972,
+      "size": 180855,
+      "contentHash": "f3e41bae4d6b064e407df25625cc0d93aeffa18ca8866639f8a161b7f631e237",
+      "lineCount": 23,
+      "lastContentLine": 23
+    },
+    "mente-omega:sessions/03f9787b-b52d-408b-8250-1012b30027f7.jsonl": {
+      "mtimeMs": 1775031202521,
+      "size": 246521,
+      "contentHash": "47e68f1ee2dbe2f4c360235b8198635de0c1a4f78e77fa21d8befa243f3c1fed",
+      "lineCount": 1,
+      "lastContentLine": 1
+    },
+    "mente-omega:sessions/097550c8-acb5-4136-b3f8-7eef7034797f.jsonl.reset.2026-04-01T15-25-20.197Z": {
+      "mtimeMs": 1775052512630,
+      "size": 567441,
+      "contentHash": "cee6fea2a2cc9c73ec326c3a5911682ebcef71c0757d5aa1e8c3ef2e3888e04e",
+      "lineCount": 10,
+      "lastContentLine": 10
+    },
+    "mente-omega:sessions/0d57ebbc-3643-4d72-b109-878a6c9e6b29.jsonl": {
+      "mtimeMs": 1776182924745,
+      "size": 39909,
+      "contentHash": "a849eca888ffc3de2d86b2386ea3113458f691223be58ddd413cb0fbe9ca033c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/0eb1085c-a143-41b1-a2c1-a1fcd8ef925f.jsonl": {
+      "mtimeMs": 1776289131940,
+      "size": 75770,
+      "contentHash": "5f1f79b51198cfc96a07107fb8945c30f9a14ee576be59fca5bea4ae327cc461",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/0f8ce193-d219-44ad-82f8-1f320e9161c7.jsonl.reset.2026-03-29T20-16-19.987Z": {
+      "mtimeMs": 1774524422831,
+      "size": 41615,
+      "contentHash": "d3bfe6bed325faec77691c001e329d0d5411c6b8276915f34094266efe47838b",
+      "lineCount": 10,
+      "lastContentLine": 10
+    },
+    "mente-omega:sessions/10957313-2b74-4675-abbf-dfc9055a4377.jsonl": {
+      "mtimeMs": 1776253123372,
+      "size": 67289,
+      "contentHash": "ea08a345477454c73d7f68b441d0eaf3ef3f25cbd1235ccd134ce824921baff8",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/135d0e12-9c92-4e93-a804-1170da8e4ce2.jsonl.reset.2026-04-01T13-50-13.177Z": {
+      "mtimeMs": 1775045740403,
+      "size": 784964,
+      "contentHash": "7604170d7ee5e05feac9e44ddd5cf1c7b7037d511bfef166c7122bbbbb0836f9",
+      "lineCount": 91,
+      "lastContentLine": 91
+    },
+    "mente-omega:sessions/139e635d-d23c-41b1-ba62-cd226ed85995.jsonl": {
+      "mtimeMs": 1776269348034,
+      "size": 92303,
+      "contentHash": "ff1f1737ebbc999410cd1fb32984814dc4997d616d7607bc8825c7440ec566fd",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/1575ca20-6084-4e53-8478-b29cdb3f5979.jsonl": {
+      "mtimeMs": 1776186551087,
+      "size": 145127,
+      "contentHash": "a2589aae0ebba36d381bcd8738f72ce6b3093ae5a139496c748945a4d8afcb1d",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/163c3a0f-2a95-43a5-93cc-4e0f18b47dd7.jsonl": {
+      "mtimeMs": 1776091238209,
+      "size": 78687,
+      "contentHash": "ad1af281cecb576ae41a1953cb579e31b4afb1e6d854d8ff24204ff067600aee",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/1d97dd61-f088-4552-897d-e0c6c16030cb.jsonl": {
+      "mtimeMs": 1776109111722,
+      "size": 45692,
+      "contentHash": "62169f35e6d8cadadea5c78f590e204c30c887869c7a8ed2b1aadd8855420f57",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/1ec9960a-3d85-4455-b830-600af83405af.jsonl.reset.2026-04-01T20-01-43.194Z": {
+      "mtimeMs": 1775072106040,
+      "size": 694508,
+      "contentHash": "c96eba5ae8337c60cb3e14f46c513809986e07ce69b0af866e7cfa1f0db6f203",
+      "lineCount": 46,
+      "lastContentLine": 46
+    },
+    "mente-omega:sessions/223f2009-8ed4-4883-94cc-164f279c8299.jsonl": {
+      "mtimeMs": 1776184756330,
+      "size": 63871,
+      "contentHash": "8802eb0c162a7b6e77502999ea2994625279a5b1af9ac1398eebc242e3f72040",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/2531a91d-512f-4807-825e-7e0cee74c18c.jsonl": {
+      "mtimeMs": 1776352122756,
+      "size": 71095,
+      "contentHash": "77a93131d064b93422757f336eafa49b9fb6c02c612b1754bd38e7566b9cb401",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/263e0d4c-6a49-4967-9e8f-8ad66d074b17.jsonl": {
+      "mtimeMs": 1775032527186,
+      "size": 210223,
+      "contentHash": "a60ecd776951ab328398f18a3d2836caed3be79295ac098ffa3125ba44a34abb",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/27a160c6-a75d-4f8f-9611-22f9658b3e36.jsonl": {
+      "mtimeMs": 1776274757070,
+      "size": 124539,
+      "contentHash": "17b6aa89d580cfff4f103b59100c4a651ac6e3dd616da47b0a900bc3b3feeaf0",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/28d42232-3a9b-4086-bf91-c541227c5196.jsonl": {
+      "mtimeMs": 1776188464446,
+      "size": 82915,
+      "contentHash": "14c453d5774667ad0bcf5cbe1fee90b07d63cc2da70c372aa3c9201b362e8d58",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/2e9e593a-6efe-4491-b04d-097ba9df831e.jsonl": {
+      "mtimeMs": 1776125331281,
+      "size": 79259,
+      "contentHash": "f154c272c9219629278200e669c16411998d725678a656947f835ed47e1b1adb",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/2f122319-d4bd-4ea6-a319-9eec1b61c097.jsonl": {
+      "mtimeMs": 1776348528919,
+      "size": 125754,
+      "contentHash": "2ce431a39953810915b50b034da6f4c8ad9bab196ce74ade794ff8c180aa4fdc",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/32fe3fae-25e1-40ad-87e4-83cb39f19469.jsonl": {
+      "mtimeMs": 1775083567093,
+      "size": 375298,
+      "contentHash": "a817b1c593525f950729b4aa64ebd52f0d553472b140b0c0677f028a3234fed5",
+      "lineCount": 9,
+      "lastContentLine": 9
+    },
+    "mente-omega:sessions/362fc92b-6b59-4e9d-aff8-722b3b33b33b.jsonl": {
+      "mtimeMs": 1776166730192,
+      "size": 97042,
+      "contentHash": "2b3eb9d1ced5e1cce93ab17a2c7ba80bc15623c3e87772ee04b80c8319c1e943",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/364fec19-3390-4167-badc-9a5fb1449538.jsonl": {
+      "mtimeMs": 1776170340614,
+      "size": 76918,
+      "contentHash": "87593ecaf6c4abd9bff3cd8c01cdd03e390c603457a61278c6de9e0e149eda58",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3651d3b5-cef1-47aa-9e18-74ffd6bbfa7a.jsonl": {
+      "mtimeMs": 1776343128626,
+      "size": 81894,
+      "contentHash": "5e5fd3cc6f6d3aeb3ec0bbc0f4108f0552e87634bdd68261182298f1216b0d27",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3672fea4-3d31-4a3e-9e32-cda1eb596999.jsonl": {
+      "mtimeMs": 1775069120363,
+      "size": 273312,
+      "contentHash": "2f3ed83dc02003bc8fbbdb6354c6a7e7ab7b55d538a4d0db4b813015f839a2ed",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/38c76cd0-1018-421e-b358-cba670c0104e.jsonl": {
+      "mtimeMs": 1776209955728,
+      "size": 47705,
+      "contentHash": "bc60203dc183a61f3ee752315e496b18c6564255148c11d3c5d4d3bf2de77e3f",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3c7e3317-9c34-496e-8c36-68c005eb69ca.jsonl": {
+      "mtimeMs": 1775032523149,
+      "size": 219682,
+      "contentHash": "7bbec949188083b85567b5eca9ce3faa4f34d3806ad1d6eecf84a577f504bc78",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3cb2a2c1-ac38-46dd-8919-71f02a623ac4.jsonl": {
+      "mtimeMs": 1776215341230,
+      "size": 100368,
+      "contentHash": "c8b67034adceecb7905b37d1f6404211fbb9d8a0ed2cadb3b8e1df979bb65214",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3d515648-86bf-48f6-a333-561893c06f53.jsonl": {
+      "mtimeMs": 1775823571480,
+      "size": 2370355,
+      "contentHash": "5e9ea87fbb58f47dadd879ab08fe193aa826ad22364a8a085a7cf40da6116177",
+      "lineCount": 146,
+      "lastContentLine": 146
+    },
+    "mente-omega:sessions/3eb57b49-c949-4826-8ed3-272c9e6db60e.jsonl": {
+      "mtimeMs": 1776271132328,
+      "size": 17982,
+      "contentHash": "d7e295f6291498996d4f03fc951808edd011ef9520c8682f4835515e04fb493c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/3ffff6e0-a499-4e1c-bc7d-aa37b2d69442.jsonl": {
+      "mtimeMs": 1776296336297,
+      "size": 93902,
+      "contentHash": "ce05caf1000c6e7b85574be714a8f684c93116bb0c72ee6b40bc1402756cfb7a",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/416e11ad-39ae-48aa-b48b-d8b87c58871b.jsonl": {
+      "mtimeMs": 1775083642918,
+      "size": 12829,
+      "contentHash": "1739ce80e1c9d03f7c73d70fce7ac2316b1e06be90f35cb487630d9f16542d75",
+      "lineCount": 1,
+      "lastContentLine": 1
+    },
+    "mente-omega:sessions/42eb8456-3240-4763-9875-5283f1a945d1.jsonl": {
+      "mtimeMs": 1776272931192,
+      "size": 95446,
+      "contentHash": "4c4ecfc46ea75765610967130ad1809a7a92adeb11740d616161dbb42831e9a2",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/42ff8652-253f-4e74-956d-d9cf083d2858.jsonl": {
+      "mtimeMs": 1776164944638,
+      "size": 63368,
+      "contentHash": "416d0a5c9d2400819e530b821185cd2d88ef52147c48817030b6e245bd5e1713",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/43a0913b-f9ff-43da-92ed-e15d7220945b.jsonl.reset.2026-03-31T12-25-47.896Z": {
+      "mtimeMs": 1774912818508,
+      "size": 21029,
+      "contentHash": "a502600365a2716286632411099d08e7de81a3c7498a966bea35d9c268852848",
+      "lineCount": 8,
+      "lastContentLine": 8
+    },
+    "mente-omega:sessions/4600e3dc-a003-4afc-8e97-7b1ad0c11ac8.jsonl": {
+      "mtimeMs": 1776353938082,
+      "size": 82971,
+      "contentHash": "fcad2c8ae94eab0ca363a7e4bea8f4f153999e6d70807e6f33cba17faea7a5d3",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/49f636a5-e792-4945-9248-4d8c5135c5fc.jsonl.reset.2026-03-31T17-04-10.297Z": {
+      "mtimeMs": 1774972888468,
+      "size": 799567,
+      "contentHash": "14af72b713ba64b70b2d1ae61d4d90f72d0164899d42a0e6e9a7c6f8303436fb",
+      "lineCount": 47,
+      "lastContentLine": 47
+    },
+    "mente-omega:sessions/4a7052de-bcec-4066-895c-3c2a608e056d.jsonl": {
+      "mtimeMs": 1776181148827,
+      "size": 78555,
+      "contentHash": "e46b9c8364f576378a481cc223416ff056748eaadb0420591b806c5690358b05",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/4afaa346-5326-4145-975d-17add9f495cb.jsonl": {
+      "mtimeMs": 1776292725842,
+      "size": 80589,
+      "contentHash": "b45e66906389450657103b9da950dca46edb2eda029670f5896a34be83aae87b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/507433d8-128c-4fa7-9a5f-2f83e4eae150.jsonl": {
+      "mtimeMs": 1776200984171,
+      "size": 48918,
+      "contentHash": "d53be117490c04650f78c967834b0322655465a9aefb8c783e346a2ae2903b89",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/515b6bf0-efc2-4351-859d-0483ed0bdd44.jsonl": {
+      "mtimeMs": 1776098344862,
+      "size": 102255,
+      "contentHash": "c8206568df48684e174374c90a49234ba8c30051c97fbd82640dde5b90b7240e",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/53adbebd-0168-4c1c-8d98-dbff08b2367e.jsonl": {
+      "mtimeMs": 1776251349381,
+      "size": 65072,
+      "contentHash": "dfe7c4e510ae10c66239f840a92cdcd89db3ee8496b31802d004c4e03ed612df",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/568cacc5-a055-4dec-9aa8-ee7f29e019aa.jsonl": {
+      "mtimeMs": 1776276531543,
+      "size": 18474,
+      "contentHash": "c854fee6e31360a0e5fb68242b5815ba9288e2e5889c8c111034fe984cca5a6b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/57326693-6076-45b9-9b59-d2e8ce20c111.jsonl": {
+      "mtimeMs": 1776206336193,
+      "size": 58165,
+      "contentHash": "0187898233792f8f81d648a79fdc56cb38197218ea1e9d43baa677049867e365",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/599d1f57-0c84-488a-9209-4c122015f612.jsonl": {
+      "mtimeMs": 1776177541933,
+      "size": 94348,
+      "contentHash": "9d8ee8be11497be2996c0f754ff02961fd32bbb7f9c5ce1c7bbfa35712a61aed",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/5bb1c9b3-2a9d-44aa-96dc-8e2bdeb6c60a.jsonl": {
+      "mtimeMs": 1776118116629,
+      "size": 81990,
+      "contentHash": "ff895bb9f84083041dc5d56f35e717509a61a31ec8e8513a3577a744a36e1ec2",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/5c95edc4-d076-4dfa-9f32-355830917a2f.jsonl": {
+      "mtimeMs": 1776103718469,
+      "size": 45837,
+      "contentHash": "ac0f132713a49a16dfd57813ca1ff50727548020a13a6c6e9ddab016dabdf4fb",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/5e2326c8-44f6-4f30-8723-5fd18d1a040f.jsonl": {
+      "mtimeMs": 1775032393994,
+      "size": 229922,
+      "contentHash": "15d784ade0f8f7c89a6b760c56aa797d52391f0cc263bc6bfc0c38086e52003a",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/5ec575a8-011f-4b92-acfa-12701222f9f6.jsonl": {
+      "mtimeMs": 1776173935751,
+      "size": 26734,
+      "contentHash": "c40d7c13cee3c14aaf524284c4aa76bdc982c76a4d79f47846da256cc9f2f80a",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/5f7ac730-a5cc-4f7b-ba93-626212148053.jsonl": {
+      "mtimeMs": 1776299934992,
+      "size": 69796,
+      "contentHash": "3534131e606df273e8e46565518267ae2033acd2580ef8d5d79d2b523a410ef9",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/603efd24-f783-4e7e-bad5-ede7b76ebf18.jsonl": {
+      "mtimeMs": 1776256723413,
+      "size": 49694,
+      "contentHash": "2f814f19b760c2e44e7dedf4262076dd2dcc19279082781059f2cf23851c1db5",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/651932bf-c346-405a-9212-808cf8b04209.jsonl": {
+      "mtimeMs": 1776130721043,
+      "size": 81368,
+      "contentHash": "c3089c3aed4cc3721dc56592918baa493bd6769d11f8bad70a4202fcd32096ff",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/67b9315d-781d-4e3f-8b53-b4731eb93681.jsonl": {
+      "mtimeMs": 1776197344211,
+      "size": 112718,
+      "contentHash": "764d3dce79bf39ea44e7660b0034130325cf7868b1ad165934b5e3e40bafcece",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/67fc18bd-e180-40c5-a304-8774a145552d.jsonl.reset.2026-04-07T00-53-31.401Z": {
+      "mtimeMs": 1775523065700,
+      "size": 22715,
+      "contentHash": "a66fb64e5d803e18c60a390ffab42330e2b6a67fdd9636f5eb46fae191e9ba2d",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/6d28170e-c380-42c4-b615-74a667f765b6.jsonl": {
+      "mtimeMs": 1776339540025,
+      "size": 82732,
+      "contentHash": "d3411d19ab364678b5aa54828242085588c034d04da1c9cc53c8ce4cd9125144",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/6e20fb89-3c45-442b-a655-9ed5e141755f.jsonl": {
+      "mtimeMs": 1776280130070,
+      "size": 80222,
+      "contentHash": "74d5fbdde1cde695a49c6060b8061ad4d1184bb44206de0f036ddfb1b46d4508",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/73167745-7244-4911-8d5d-b74adabb4b33.jsonl": {
+      "mtimeMs": 1776195526891,
+      "size": 44564,
+      "contentHash": "4a5d47ca8a2520da30b3f634733c99ae0caf821f3bd2d031525e27ba251cbe75",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/736ebf81-0bb7-48a4-951f-ca93ff52c627.jsonl": {
+      "mtimeMs": 1776089374037,
+      "size": 34124,
+      "contentHash": "8da00b8db93c874ed537c8e7c09364c6d454efff11b38d283b275172cc348028",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/78476255-942a-4f93-b44e-4bcdd5636cd7.jsonl": {
+      "mtimeMs": 1776294522797,
+      "size": 71369,
+      "contentHash": "c8e2a4fe41afeb4f84701eda286d9de87ceab603038aef5b75fae4a4e5d06816",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/791b4bf1-e81a-4773-968c-30a96128f51c.jsonl.reset.2026-03-26T11-01-09.756Z": {
+      "mtimeMs": 1774522640218,
+      "size": 10770,
+      "contentHash": "1c10a46608b2950c09adf659234df94f665bb0d72017e314e8d9e15c5fa2f0d5",
+      "lineCount": 6,
+      "lastContentLine": 6
+    },
+    "mente-omega:sessions/7a40c0a0-e170-4fe3-9f6e-21d0b322deae.jsonl": {
+      "mtimeMs": 1776168537410,
+      "size": 37482,
+      "contentHash": "204b35f15c0e2937421abac8a52da3440f55d0741f6354924ee28c236d100b70",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/7a9fbbdd-1d24-4948-b91e-229824566faf.jsonl": {
+      "mtimeMs": 1776290941597,
+      "size": 100930,
+      "contentHash": "003ba30a6b1c9e6f7886ce7a0895fec49077728b85b0ed3e22192454155aef46",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/7aba64d6-b5dc-4c6c-81cf-8eebf6de79c0.jsonl.reset.2026-04-07T03-48-00.235Z": {
+      "mtimeMs": 1775523472844,
+      "size": 34473,
+      "contentHash": "d5f8858e4924ad402ae705cedee340ef1ed87bcd48ba4b838ea7dce7965f8385",
+      "lineCount": 6,
+      "lastContentLine": 6
+    },
+    "mente-omega:sessions/7e8cf07c-964b-49a6-a47f-d0d2bbd03e86.jsonl": {
+      "mtimeMs": 1776265745169,
+      "size": 94973,
+      "contentHash": "2fc98056564ca604f52ca5d8b8dcc832152a19ec4de19032abd12d4a95709b5c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/82ab17f6-5315-4849-a03e-0a4f43c127d5.jsonl": {
+      "mtimeMs": 1776346723596,
+      "size": 73042,
+      "contentHash": "354ba7060fa0205aaf3bd0b8242c8acd6bfb3feadbc6522983d8a1f30ff4e15a",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/82e24dd9-286d-4760-8cc3-f892444b0ebd.jsonl": {
+      "mtimeMs": 1776112731948,
+      "size": 107283,
+      "contentHash": "544be74c4b256c4e42a292166848267691d0cbbd41bb3f5abcb9dbe5d57b7964",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/84afe783-05c7-4951-a139-93bafe5aa4be.jsonl": {
+      "mtimeMs": 1776087559386,
+      "size": 3359592,
+      "contentHash": "a6422ee83ca9d2203e42025758b594f75911297a6f0e4736c66faecaafaa18e1",
+      "lineCount": 765,
+      "lastContentLine": 765
+    },
+    "mente-omega:sessions/88259c63-1f4a-4f8d-ae08-7abbca6e4274.jsonl": {
+      "mtimeMs": 1776211796299,
+      "size": 55905,
+      "contentHash": "210361d716f62702a60d0e9f4431200c7a7e7152e2efcc685961eed181bf5765",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/8af1111c-8b35-4fd4-9ecc-b26aab919340.jsonl": {
+      "mtimeMs": 1776258532802,
+      "size": 87110,
+      "contentHash": "27850e7a74a810c3974e6eaf0481600b186af30b93b3eac7574214d1087b5482",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/8b54be78-474c-4802-ac5f-d2a8004cf0b7.jsonl": {
+      "mtimeMs": 1776278480310,
+      "size": 70121,
+      "contentHash": "fc5bc4b91702148e8f9ce73cf8567f1f0715ece2b914d4ccbb462ccb35eebc50",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/8b86fa56-0a90-4292-988b-8adec911e133.jsonl": {
+      "mtimeMs": 1776262150879,
+      "size": 128397,
+      "contentHash": "5a1ed5d6561cecff1c8453e36a5ba08f3c3b22ae0b81a2773ccb9f13fdbc64ec",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/8c25bb22-7ff4-4410-9adf-22c834e4a9db.jsonl": {
+      "mtimeMs": 1776116317058,
+      "size": 51003,
+      "contentHash": "e8a88d513998feba4630542c32682afdd164554197c2609ffddbf82b4f93d8d3",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/8d40901b-0696-4cf1-8ced-616e68a288bd.jsonl": {
+      "mtimeMs": 1774985692586,
+      "size": 675702,
+      "contentHash": "e1e8d36d59c7e7f3457fcd44e0d08c9489c8e480bf68fa857d6a873638d6c938",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
+    "mente-omega:sessions/8ffaabc5-b480-402f-873c-a12b5fcfd1a8.jsonl.reset.2026-04-01T18-54-00.179Z": {
+      "mtimeMs": 1775069182189,
+      "size": 585798,
+      "contentHash": "b75e27a46ea244362643e34e78ed3f1939f934bf35dd59f10f3e10587855cfd3",
+      "lineCount": 19,
+      "lastContentLine": 19
+    },
+    "mente-omega:sessions/90897027-7315-4765-bb44-80c19730feb2.jsonl.reset.2026-04-10T06-22-44.345Z": {
+      "mtimeMs": 1775777455222,
+      "size": 1782602,
+      "contentHash": "6ff3e7d390403a0f9652a78ec98ae3c709a567d9b6ff4b5826e64d6d56b34c81",
+      "lineCount": 145,
+      "lastContentLine": 145
+    },
+    "mente-omega:sessions/935fe771-2618-4dae-aca6-733656d4c28e.jsonl": {
+      "mtimeMs": 1776267531507,
+      "size": 20730,
+      "contentHash": "eb615aaed375d199609a02a6080a58e96784bdec8f702675e0c82130073202fc",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/9362a245-e829-4c0a-b463-d0cc6d2da7cc.jsonl": {
+      "mtimeMs": 1775045711111,
+      "size": 344884,
+      "contentHash": "f5ed9ded7d015d6d20b95314ccc764c9130e386e58bfaa401bd4d71d5650ac50",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/95205844-625b-41ac-983e-cc4c96a94289.jsonl": {
+      "mtimeMs": 1776105524115,
+      "size": 70353,
+      "contentHash": "cb06c49564ee9993dceda24431acaeb97142040426e78d33a52c1696f7327018",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/976ac9a8-0269-4951-9861-7c8ff0dddd17.jsonl": {
+      "mtimeMs": 1776303533989,
+      "size": 71937,
+      "contentHash": "9cd970cedcd899a108555eaefd8b1124886478aeba0dc0cb20f804f9f929ae42",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/976fa295-cf4c-4199-ad16-92b772e9308d.jsonl": {
+      "mtimeMs": 1776110915834,
+      "size": 48975,
+      "contentHash": "37f874fd1e135594d870c046b7be6346795b2c344c49b946c0a19ded85f51b88",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/9a844a0f-7cef-4f9a-8f85-3288f8df7535.jsonl": {
+      "mtimeMs": 1776281939561,
+      "size": 71582,
+      "contentHash": "69d58da120cbd77ee9a0d02079d0c6282ae2e2d3bcc00e321c5ccd9d016bc019",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/a2a6de21-bff4-4548-9916-de08c3511609.jsonl": {
+      "mtimeMs": 1776199129312,
+      "size": 21509,
+      "contentHash": "a10879bc4f03b139dbed1abd28cbe37acf63cb2d83b1bbc9ab49945c33a69055",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/a539c7f1-7386-47c9-93d3-32f21fd84132.jsonl.reset.2026-04-07T00-49-14.321Z": {
+      "mtimeMs": 1775154776682,
+      "size": 1143311,
+      "contentHash": "e52c3a951208027d305ed4461f2c134d72de3d309e3436f109223f341d5354fc",
+      "lineCount": 81,
+      "lastContentLine": 81
+    },
+    "mente-omega:sessions/a5d77bd3-3054-44ae-b1de-5a22b46525b9.jsonl": {
+      "mtimeMs": 1776350323601,
+      "size": 72619,
+      "contentHash": "0cd4af8a7b1d25d0aec317700ce6f62a4b90c936ec937ae7517109116aab2831",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/a63884bd-0423-438d-b57d-8127f031027f.jsonl": {
+      "mtimeMs": 1776298129832,
+      "size": 71441,
+      "contentHash": "e709a838641671136a20717d85bea59628921d27b5e1bff0340d13aed59e1078",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/aa70929e-a1bb-47e2-9065-bdc08494657c.jsonl": {
+      "mtimeMs": 1776095000540,
+      "size": 71713,
+      "contentHash": "535d89ae4173e635d5af93166e6c2375530ea33569f4a501d24af25e06a36ade",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/b0c16cd2-a393-4cf3-8ddd-f08460ef3172.jsonl": {
+      "mtimeMs": 1776263935038,
+      "size": 67735,
+      "contentHash": "93c283ba5ff84f2ccfdb76221ecf8c1f2bec62fadae62709ebd92540075ad77c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/b1965b2e-5132-4830-a566-7e04c06f7960.jsonl": {
+      "mtimeMs": 1776172134058,
+      "size": 67027,
+      "contentHash": "40e759b88de7c9048e5b80433f8675f3896b407176148f6a160e80b32d24368c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/b4e73cb7-724c-43c6-a1a5-fd4e46e4fa34.jsonl.reset.2026-04-01T22-16-30.505Z": {
+      "mtimeMs": 1775079770801,
+      "size": 713589,
+      "contentHash": "20776076e90ceff5c5aa3cba059592e87cef5ca8047bd415892cc29743ca83ea",
+      "lineCount": 48,
+      "lastContentLine": 48
+    },
+    "mente-omega:sessions/babda808-adbb-4cc7-acea-0393e569aca2.jsonl.reset.2026-03-30T01-12-27.568Z": {
+      "mtimeMs": 1774818861274,
+      "size": 11030,
+      "contentHash": "a71cc0607e58649e4da24ddf1b9702d0d4e528bcaf5247386378fa19e4b12a88",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/be659cc2-bc5e-42b7-acdf-e770fabcb2f2.jsonl": {
+      "mtimeMs": 1776341332852,
+      "size": 129212,
+      "contentHash": "a9c6ee5bf161afef58cbebc9dd56eed528f3d30c50f9c59fe3f28bc9b69a7bfa",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_21-06-07-190-3c67cb84.jsonl": {
+      "mtimeMs": 1774904773875,
+      "size": 4610,
+      "contentHash": "2d327c52c7ba72652bbaffac2661b3c2ee1d32a3e714324a75d3439379d3132a",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_21-09-34-045-7a6b4eae.jsonl": {
+      "mtimeMs": 1774904981461,
+      "size": 4602,
+      "contentHash": "e95a2a96d4979a31bab93901c5be4dfe9aed5b5ff1940420b3539321b0312c8b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_23-09-20-521-e8e274d2.jsonl": {
+      "mtimeMs": 1774912167062,
+      "size": 4587,
+      "contentHash": "87685ae30b2e50aceeb4ec3b76ebf79f6474f8e6bfde853165bd4b89ce456bea",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_23-10-15-202-10208ba1.jsonl": {
+      "mtimeMs": 1774912221924,
+      "size": 4580,
+      "contentHash": "f62b2228854e2f6c4e3c8c1178b0f2cd64dcd183497e1c1fa1f11092e78219c8",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_23-13-35-764-b04f2d8b.jsonl": {
+      "mtimeMs": 1774912422943,
+      "size": 4580,
+      "contentHash": "439a444f263890d0ffff13bfcff67119b90e416d3aba8079d0307591691ad8c8",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-30_23-14-11-818-89e0494c.jsonl": {
+      "mtimeMs": 1774912462470,
+      "size": 4667,
+      "contentHash": "1e2e55a376ab774cbe8d85b23f88da8e600496cdd7bd05a5c92e62e2eff403c3",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_01-03-29-810-3c71dc7e.jsonl": {
+      "mtimeMs": 1774919017336,
+      "size": 4610,
+      "contentHash": "9f4566f2fbfbc9ed966e76abf18fd4fd4cf14f4aae81d0df02824f327fef2644",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_03-21-02-519-c7e54466.jsonl": {
+      "mtimeMs": 1774927269082,
+      "size": 5412,
+      "contentHash": "433076b4d44b99098bccd43005599afabcedef07b9dda76649470c059fc0dca6",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_03-22-50-886-e31d163f.jsonl": {
+      "mtimeMs": 1774927379324,
+      "size": 4511,
+      "contentHash": "3b6a3615d106832f5a922c219452941f6204b46257c57abd5d51a6dfc439b9cb",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_04-05-17-236-38c5219c.jsonl": {
+      "mtimeMs": 1774929922773,
+      "size": 4512,
+      "contentHash": "096fee0150e124dd63e1d8db26f413c1a808f3ef6f027f842d5863f38b324bed",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_12-27-54-253-6bdc2384.jsonl": {
+      "mtimeMs": 1774960081798,
+      "size": 4687,
+      "contentHash": "2d7bdd75c1ad92197b492dbe57cc4910f1f60ef34d49ddc3d7342565d8280a3d",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_12-32-44-961-1f7fa229.jsonl": {
+      "mtimeMs": 1774960390584,
+      "size": 16040,
+      "contentHash": "f72607a7b77d17034a14eca772fac079c275c3fc6d6d5a55abad55be10e2de75",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_12-46-43-360-9a8e0131.jsonl": {
+      "mtimeMs": 1774961330339,
+      "size": 41202,
+      "contentHash": "be32c47a514a02b6abbf689462d8732f96e03ad5e0e74c4ffb2b63100b76cdd9",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_14-14-55-750-89e3f7aa.jsonl": {
+      "mtimeMs": 1774966690270,
+      "size": 38935,
+      "contentHash": "e263592f7bdb3b43a74440136a334c6e27ef16d536e4d74912eab7281583c667",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_14-49-36-899-a3bd1d24.jsonl": {
+      "mtimeMs": 1774968613123,
+      "size": 39837,
+      "contentHash": "2f99c6e67e3f5fc22bcf44746033fbb334d6c69897de22953a6d7ca356371484",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_15-18-08-437-c7adcda9.jsonl": {
+      "mtimeMs": 1774970322492,
+      "size": 40227,
+      "contentHash": "4e15e5caf1e76ce622a56902fb8d9833da1fd6dbd2b7e6ce54c3395ee149bedc",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_21-45-10-068-5635c89d.jsonl": {
+      "mtimeMs": 1774993540245,
+      "size": 39696,
+      "contentHash": "a37a6c4827b0ee56907f70f5d17eb817812ab27e95f87d7eafcf566317a173ca",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-03-31_21-48-21-463-7a9725a6.jsonl": {
+      "mtimeMs": 1774993729088,
+      "size": 13600,
+      "contentHash": "4839e684d535484e8df9d0a7b6a625af38868a1aa38ab16ebd38ae3e00b1f558",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_02-02-25-212-091ed97d.jsonl": {
+      "mtimeMs": 1775008985398,
+      "size": 43219,
+      "contentHash": "8da90455227de83894ea8130356ff6f94d680d6e0f4d5c73e96f961fd906dfcf",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_03-04-03-407-ccd6640a.jsonl": {
+      "mtimeMs": 1775012689496,
+      "size": 41800,
+      "contentHash": "9c2e649e0c5e5a32b363ec639ef405226bee8b7900e6fa794744416138f7ad22",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_03-20-07-031-dbedd002.jsonl": {
+      "mtimeMs": 1775013647440,
+      "size": 41576,
+      "contentHash": "178cc48490e1b8a4e6ac3317a5c6150dde1355ed82dad9391a5837e40cc9f788",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_08-05-46-661-fd6c85ac.jsonl": {
+      "mtimeMs": 1775030800976,
+      "size": 39261,
+      "contentHash": "2da279e72853d4c7eb81c257b9ef88d9bb6d764c7e0404650f614acf1cb0ba4e",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_08-16-07-881-ce7d87a1.jsonl": {
+      "mtimeMs": 1775031419398,
+      "size": 40021,
+      "contentHash": "8c90df606149c0b4cb71f4c9d12ce7b0a41ed01075b6ca5508e1dc43a4a65edf",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_08-25-00-609-725b47b4.jsonl": {
+      "mtimeMs": 1775031964764,
+      "size": 40594,
+      "contentHash": "c56a033962f629c5de644e7b2fd801ab0b7c9ca89026f59daa52edfa36bdf143",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-01_09-03-02-182-a44f86e4.jsonl": {
+      "mtimeMs": 1775034213988,
+      "size": 4215,
+      "contentHash": "e0feaf8811dac437bed9d31fb8bccfbe0cae1d2ffeae47d14beb4d69564840b3",
+      "lineCount": 1,
+      "lastContentLine": 1
+    },
+    "mente-omega:sessions/boot-2026-04-01_19-27-58-043-d61b5b42.jsonl": {
+      "mtimeMs": 1775071716132,
+      "size": 43829,
+      "contentHash": "e6da120d1ce4743131b0e12a771b96d11aabad8501f5b41f16d69986649db186",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_03-08-48-175-5bc96daa.jsonl": {
+      "mtimeMs": 1775099355662,
+      "size": 14305,
+      "contentHash": "b75c27960533f2a9de5c33514790d1088fbafd7224f875d74d19071a9356becf",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_16-06-54-177-50fee3b6.jsonl": {
+      "mtimeMs": 1775146051428,
+      "size": 41745,
+      "contentHash": "77ee47ef1144c4714a137ae0f23dc699f2013615f40faa3be8c97037e4503a70",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_16-15-42-932-d4332903.jsonl": {
+      "mtimeMs": 1775146568167,
+      "size": 14509,
+      "contentHash": "7aa542775e1d7bcc0541a281da3a13f5393477c6ff483584c7c191eb1fe161de",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_16-26-03-217-2048f31f.jsonl": {
+      "mtimeMs": 1775147229945,
+      "size": 45664,
+      "contentHash": "a6fa4779faa7d7ec5d12f5271ddf8eebdfdef138347019b003611ec2ec3bb2bc",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
+    "mente-omega:sessions/boot-2026-04-02_16-44-52-968-074821ce.jsonl": {
+      "mtimeMs": 1775148321521,
+      "size": 15807,
+      "contentHash": "f9f7bb337f255f646debabda51f014e916974dee42fae8dbbefc49493ca5e4ed",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_20-17-05-934-0c36c2d3.jsonl": {
+      "mtimeMs": 1775161074274,
+      "size": 40350,
+      "contentHash": "d6ebe614c79bf8a993dd5caf2e2a7a4674df0ae9b399c55cb71f7dfcd6a6428c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_20-26-39-180-0103eaf2.jsonl": {
+      "mtimeMs": 1775161637039,
+      "size": 40716,
+      "contentHash": "441ef5b25f2562e836adafedc41bb2dcc21d762df04cc09e1f4721963a6055ab",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_20-32-44-430-926e303f.jsonl": {
+      "mtimeMs": 1775161995079,
+      "size": 40353,
+      "contentHash": "4af1b43d8b0374ca05d7647a67aede9615993ef65e131eb626d127f06fab1786",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-02_20-35-32-062-aa4ed01a.jsonl": {
+      "mtimeMs": 1775162161163,
+      "size": 41056,
+      "contentHash": "023b77a7b8892123f3664a7b1dcdec7f8e5cf4dc86dc96270876f3b640d3bcf6",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-03_04-30-35-453-cb29e16a.jsonl": {
+      "mtimeMs": 1775190745109,
+      "size": 184734,
+      "contentHash": "1a5632fa8e181b5c9673481e4489fa56ea27b306b88c525f3f73c259ceeaa6bc",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/boot-2026-04-05_19-23-57-943-c4e430bd.jsonl": {
+      "mtimeMs": 1775417055098,
+      "size": 15661,
+      "contentHash": "be3c51af089f65ba28a188c7400904162facc9d9d3260f76133bf8e9339b3de3",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/boot-2026-04-05_19-31-22-458-4e3667d4.jsonl": {
+      "mtimeMs": 1775417495622,
+      "size": 11796,
+      "contentHash": "9d68e76ce4ad404844dbbc64238c9946b9259de99c222fe51b435cb855a221ce",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-05_19-38-53-362-fddb3c79.jsonl": {
+      "mtimeMs": 1775417952536,
+      "size": 13153,
+      "contentHash": "892880bed2c2f43751b2bcd854d0cf5ea45633fa18f667f95af876204c1d1c11",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-05_20-39-54-573-18f71c4c.jsonl": {
+      "mtimeMs": 1775421688343,
+      "size": 44319,
+      "contentHash": "b38e470aa3e966ff6c9608377e2743ef8371ebca28f3c8d7e71db56a56dd275c",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/boot-2026-04-05_20-46-00-859-8c1c1a4e.jsonl": {
+      "mtimeMs": 1775422024439,
+      "size": 11650,
+      "contentHash": "352e4fe0eb76c341238e525359ecfac46d5d9af09492499fb65cda1c9f2164d4",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/boot-2026-04-05_21-14-33-413-9dcc7d01.jsonl": {
+      "mtimeMs": 1775423728504,
+      "size": 36177,
+      "contentHash": "4963ad9265c5a4f78c8a15210bd5db015f2adcb152c1f17613de06d06612aa90",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/boot-2026-04-05_21-39-20-556-cd32dd45.jsonl": {
+      "mtimeMs": 1775425180693,
+      "size": 3247,
+      "contentHash": "d472c9f063eeac0292c3ea65a356e70cf5bff3b65a8903c84a28edfa35c798b5",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/boot-2026-04-05_21-41-03-491-46e835fc.jsonl": {
+      "mtimeMs": 1776236164516,
+      "size": 567662,
+      "contentHash": "80ac4a113e1dd7e4471458df09017a3b9017b60fba929305e110e4776409a3c9",
+      "lineCount": 199,
+      "lastContentLine": 199
+    },
+    "mente-omega:sessions/c5248385-f2f0-41df-ba12-0e0e647ba7eb.jsonl.reset.2026-04-01T18-54-11.245Z": {
+      "mtimeMs": 1775069651007,
+      "size": 4246,
+      "contentHash": "56b807dda28e7695435d761502468bb751a24e4c929bac251b81061dcc57a02d",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/c5d75bbc-bf5e-4d7e-b866-d45730edc32a.jsonl": {
+      "mtimeMs": 1776175734944,
+      "size": 82006,
+      "contentHash": "961e6d4757691e616abec2aae64537aab0875e741cceb43c11c74321d326ae20",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/c6eef1ac-e666-4cd7-b546-ac2c298785e8.jsonl": {
+      "mtimeMs": 1776121718104,
+      "size": 61340,
+      "contentHash": "0546958c9ec68b562dc4c5bee33e3661917b327af12a9a280980687fe50b664c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/c79bcfdb-4596-43cc-ba3b-57c38caddf67.jsonl": {
+      "mtimeMs": 1776190134163,
+      "size": 63257,
+      "contentHash": "2e09657c4a7ebfab5882b8377c88b0ff0e73fba60a21122af1c47a80159d585b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/c89a5cd0-b45d-461a-a915-cbe25d1d93fa.jsonl": {
+      "mtimeMs": 1776128922468,
+      "size": 47867,
+      "contentHash": "e5d1bdbe00269146a85fc3de0587bf03a0d407cdb7c0a1cf1a004089db4e75ac",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/c8d2996c-4aec-46e1-bfa7-cf41b78a32c7.jsonl": {
+      "mtimeMs": 1776202763863,
+      "size": 118640,
+      "contentHash": "1552d0722fcba8cee19355e7939c38452cf136b0da3688a824e000ac5586bd6b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/cb8d2fe5-1a34-4f5c-be71-29c176b5fcc0.jsonl": {
+      "mtimeMs": 1776208143165,
+      "size": 93948,
+      "contentHash": "cfbccbd05ec07b7fe2dcb2d2bdb92f12bac61135265ec20828fd709ce88badef",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d08ab053-131a-4e38-bf3d-9f596ce0f59b.jsonl": {
+      "mtimeMs": 1776204956803,
+      "size": 19117,
+      "contentHash": "68f8aa77981fce869360ccdd8ce6c208563548d7eb8fdb41b50d93c5c5beffab",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d0d2e612-ab91-4b36-ab9e-66fe36c1a30f.jsonl": {
+      "mtimeMs": 1776301733519,
+      "size": 81824,
+      "contentHash": "6d99d9e40c2db1d8fe7bab58256aa0fe48ebd951f6179723cb617cf48843bb4c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d0ea19e7-fb47-496e-8606-3ed6eb4cd980.jsonl": {
+      "mtimeMs": 1776093310794,
+      "size": 126972,
+      "contentHash": "be797b5a9e5305a541b8ea39a91df8d1e60630f761c8e26a85517f0939ea83ee",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/d1a5eef5-2e15-49d6-988f-2a9a6a86bca6.jsonl": {
+      "mtimeMs": 1776096534942,
+      "size": 75953,
+      "contentHash": "4164fb692477ab436d82ea4fd4df77449f56934c7807cb152f0b5f9fec6cf5bc",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/d1a6a309-fd62-4fb5-ab49-4bebe55100ae.jsonl.reset.2026-04-07T00-50-22.786Z": {
+      "mtimeMs": 1775522991436,
+      "size": 23663,
+      "contentHash": "0c9a3cfe75d82829b633c5726041dafe9889f654e1ec83d25056f40c6302e461",
+      "lineCount": 4,
+      "lastContentLine": 4
+    },
+    "mente-omega:sessions/d2604369-5622-4ab8-9c46-80308cf4d7cb.jsonl": {
+      "mtimeMs": 1776119922880,
+      "size": 77402,
+      "contentHash": "c6c18676f6c2cf42685449ccdf3d687da38210a5fbc09ea4b2d43b1493e20c85",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d4bc1b7a-aeaa-4e59-82d5-483312372914.jsonl": {
+      "mtimeMs": 1776344929249,
+      "size": 98993,
+      "contentHash": "b59e136e3925556d06aa7f4fdacb16ef3326fe00a0f6fe1c65aa43ad5a582f0c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d5803416-7ffd-4f08-a80e-cc2be3934b17.jsonl": {
+      "mtimeMs": 1776260326919,
+      "size": 61486,
+      "contentHash": "73f6f1e368ed22f5c8154fc77bd6b8cff91523322946c2c0ff48c095ed173508",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d6183f3f-d624-4e50-87d0-3d278ac05e77.jsonl": {
+      "mtimeMs": 1776191943319,
+      "size": 34965,
+      "contentHash": "be61cf3f526cfec849eecb632a05a82b7a22f85e9a8a69f5513ff35d4fad5d80",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/d6aea063-adce-426c-9d32-b64655cb65db.jsonl": {
+      "mtimeMs": 1776107312933,
+      "size": 48487,
+      "contentHash": "e34ec6640215d7b2bd22a8eff8e9b84afb7fda2c5f765e105bea5b6a3ffb87be",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/e4b87bc4-d198-49d2-89fb-365e0c10b16c.jsonl.reset.2026-04-07T04-18-10.964Z": {
+      "mtimeMs": 1775534569904,
+      "size": 460317,
+      "contentHash": "a4aaf008ef3c28199e241a47434d0c4681c44d8a2a7563774985aeda2cf24edc",
+      "lineCount": 13,
+      "lastContentLine": 13
+    },
+    "mente-omega:sessions/e908549f-4e6b-47c0-bb60-1e3076932828.jsonl": {
+      "mtimeMs": 1776101948308,
+      "size": 60915,
+      "contentHash": "4086490788c14f85f644dd55e8532ef7149223d65e170f15f2ce8abb11b9eaad",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "mente-omega:sessions/ef69b969-4dbb-4770-8919-64e67dd650a8.jsonl": {
+      "mtimeMs": 1776217578348,
+      "size": 62750,
+      "contentHash": "a9ea7325493995a42d84256a93807c14a30a1a69d3ee41441fae9ede793995bd",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f37325db-603c-46eb-ab1c-566b8e2dcc9e.jsonl": {
+      "mtimeMs": 1776193728078,
+      "size": 84874,
+      "contentHash": "bd29e5e623808aa01715193429a6b5887a5e8eda32668eafbb89f20d5fdd7dd8",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f443cff5-f35e-4efd-a31c-2c76be247c38.jsonl": {
+      "mtimeMs": 1776179326145,
+      "size": 86282,
+      "contentHash": "13bc4faef4c87ab1fd3dd5bb62ac49e8988561031bc454f565e5ce7d08ed3456",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f615d31c-bbb0-472e-a623-64c5c2a6d660.jsonl": {
+      "mtimeMs": 1776283728161,
+      "size": 94257,
+      "contentHash": "4d089b1100be235170ecc8795fabb85ce7e448841f875cdd4255c2e8652c0ba5",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f7f019a9-0da8-4178-ad0e-0c63d6608f91.jsonl": {
+      "mtimeMs": 1776114516075,
+      "size": 76442,
+      "contentHash": "cc8cecbc3687c61a171796a024c146b50d1e795d18facc69d777bbaeac31f63c",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f8653102-27d3-4c35-9c27-d1c24dc0cfc5.jsonl": {
+      "mtimeMs": 1776254935498,
+      "size": 119107,
+      "contentHash": "42dc22d895735b71e13aefff9b66f65b373992e6c81e4cec04433abde953abdd",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f8d0fa6c-3d5e-417b-b698-2fec1b0f8b40.jsonl.reset.2026-03-31T21-20-10.731Z": {
+      "mtimeMs": 1774991696616,
+      "size": 849555,
+      "contentHash": "8a99423d01dd179c52de3f0c0629a6bf5cd0fc0412c57fdac8cad2f1673c6996",
+      "lineCount": 66,
+      "lastContentLine": 66
+    },
+    "mente-omega:sessions/f9576119-b0b2-4aff-ac1d-6ccdf6d9bf3c.jsonl": {
+      "mtimeMs": 1776285537024,
+      "size": 88880,
+      "contentHash": "8201c150e14bf13124ac9d3cd8909fd350e3206654b04ad708532482a0606716",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f9e52424-fa54-4322-ad4d-0cb705d5869a.jsonl": {
+      "mtimeMs": 1776123522157,
+      "size": 47650,
+      "contentHash": "38acbc923e014908ad28011920cd3bcef1f9f9e59f6310462e3575863be8de9b",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/f9f77774-9ec6-49d2-adf4-f698ffa29383.jsonl": {
+      "mtimeMs": 1776337721621,
+      "size": 81994,
+      "contentHash": "76ab5d3167b5a98e34380c96af5fcfa8dc93c84f91bb4d0846ecbb4080c590c3",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/fce115bc-2053-47ac-b186-c670111a0342.jsonl": {
+      "mtimeMs": 1776213561597,
+      "size": 76902,
+      "contentHash": "1b0bd258065f22ffdb7e27e32c8967c0c0718d3c5c28584f12433c1a1e900aed",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "mente-omega:sessions/fcef7826-c275-4d51-a151-f050f715af00.jsonl": {
+      "mtimeMs": 1776127132823,
+      "size": 107241,
+      "contentHash": "5206dbdcc1413e35835c9fe8c26267ea02af804161d772b87d32daad3f8e18f6",
+      "lineCount": 2,
+      "lastContentLine": 2
+    }
+  },
+  "seenMessages": {
+    "mente-omega:0d57ebbc-3643-4d72-b109-878a6c9e6b29": [
+      "0a2d3d571786ca9bd8df50dc910d47ff18959a48",
+      "58d28de7e92d864eba50b46b634aca88117d9909"
+    ],
+    "mente-omega:1575ca20-6084-4e53-8478-b29cdb3f5979": [
+      "3815bcb0f25ce703ac771410f042a6543864021d",
+      "1b60f17f1e1b6fbdcc5148992d2aa4d505cedb7e"
+    ],
+    "mente-omega:163c3a0f-2a95-43a5-93cc-4e0f18b47dd7": [
+      "213a15fd7d0cf63fe0201acc0d312c10ad95f046",
+      "1cee6d8dc87c9282d2fe697bdab831c91fa7f609",
+      "6a155635fbde168f45fd9e399a121b85fc47b3f6"
+    ],
+    "mente-omega:1d97dd61-f088-4552-897d-e0c6c16030cb": [
+      "e102a57ac42ff635c25248b8bf8141a47180415a",
+      "3d74a2b2e432ede81ba17f588da33aeeb44661dd"
+    ],
+    "mente-omega:223f2009-8ed4-4883-94cc-164f279c8299": [
+      "f76307db3c24e1b48693586f7b7400ea1004f2b9",
+      "d8f48b20df9a6883f5bcdb443378e01aa360515f"
+    ],
+    "mente-omega:28d42232-3a9b-4086-bf91-c541227c5196": [
+      "82ee8778bc77394d08c67ab7852a6d19cebfe147",
+      "4a1ab480ece0bb7727de36cea78ddf5bbf9c3586"
+    ],
+    "mente-omega:2e9e593a-6efe-4491-b04d-097ba9df831e": [
+      "cfafb7d5edbf710e3177984888d6637dd3f1787d",
+      "c786559b5910fe69d27320545e99d7aeba79d88c"
+    ],
+    "mente-omega:362fc92b-6b59-4e9d-aff8-722b3b33b33b": [
+      "cc0d01cabcc2c36e4917616da6a1312173496a3d",
+      "d246443f3674ae76ec377e2937549e4211d6cda4"
+    ],
+    "mente-omega:364fec19-3390-4167-badc-9a5fb1449538": [
+      "8b734aa7b6779dfe62c4647132a2454ed67e7f34",
+      "c07b30ca066deb63f62ca6567aefcd538a49b708"
+    ],
+    "mente-omega:42ff8652-253f-4e74-956d-d9cf083d2858": [
+      "f93519f1dcd3a028bf7cbe5f5d591bec24bee1a2",
+      "59e6c97daf86e189b21ae071335f9340fcb672b8"
+    ],
+    "mente-omega:4a7052de-bcec-4066-895c-3c2a608e056d": [
+      "2537c781e636998cc3aa9e7f2badf515e0cfc629",
+      "af1e7e43c3dbcb798679934187ab211783c30ee4"
+    ],
+    "mente-omega:507433d8-128c-4fa7-9a5f-2f83e4eae150": [
+      "42257df2a0a8ae610d53778d5591e6a996fc3e3c",
+      "1f5821ce7f170c0c0fa1c0b1d825e7ae4552e0f1"
+    ],
+    "mente-omega:515b6bf0-efc2-4351-859d-0483ed0bdd44": [
+      "52149282314b2cf2fb0bf3a5d40a934cfd889c40",
+      "b09e3364aaa869c2597a35e76dc1b6565d3ed820",
+      "db4444606e40f6943823b6b1cc81231406c6520e"
+    ],
+    "mente-omega:599d1f57-0c84-488a-9209-4c122015f612": [
+      "366814b460b507bd011fc83508f48e810d3f803b",
+      "4a68501d87329e8aa3fc0eb034ad7511d65d6f32"
+    ],
+    "mente-omega:5bb1c9b3-2a9d-44aa-96dc-8e2bdeb6c60a": [
+      "71db69952794f57804137e39dd26b18921ee2571",
+      "564325e9fcaa7c26c2ab5cb595730b5cf6e0f4dc"
+    ],
+    "mente-omega:5c95edc4-d076-4dfa-9f32-355830917a2f": [
+      "acc1c2cf97fc2adb5116500320cb8d40e74ba007",
+      "9aee329fdd8cf08a2e910f9d7163245a69ac20aa"
+    ],
+    "mente-omega:5ec575a8-011f-4b92-acfa-12701222f9f6": [
+      "5e0efa7ee786ecf6d355a0ac85fb6646f6742f08",
+      "06432907e976f66446698462c591973a25a0ddc7"
+    ],
+    "mente-omega:651932bf-c346-405a-9212-808cf8b04209": [
+      "3d498c4963300a3690bc889121b918e60e1fd46a",
+      "fdef6b20c7db5e67491b1d14ba34e6cc09c0eca9"
+    ],
+    "mente-omega:67b9315d-781d-4e3f-8b53-b4731eb93681": [
+      "590f9857682b8586bb6e95228b2d4265c6eb9f39",
+      "1dcee3a0ab21e7cb88ec1bc90a6d17b321c8af27"
+    ],
+    "mente-omega:73167745-7244-4911-8d5d-b74adabb4b33": [
+      "bb250450d8f40d88e7d5641bcd42e3c6569c1471",
+      "6d5cb7bd1e1e94eda47aa6a937c85388eed07ad1"
+    ],
+    "mente-omega:736ebf81-0bb7-48a4-951f-ca93ff52c627": [
+      "244d5e5907ab0003634845d4741a78e3f2c62c2d",
+      "6370379cb7c4bb6bb22dd9ff875a214ee097e97b",
+      "2ccc0ec12c1ac90cbe843d73c91aec87071ca037"
+    ],
+    "mente-omega:7a40c0a0-e170-4fe3-9f6e-21d0b322deae": [
+      "e3e17f65f707468478877a9bd662c79a8236ac46",
+      "782e9ab4f7e65384ad8d4cfee3ce34a5c681afed"
+    ],
+    "mente-omega:82e24dd9-286d-4760-8cc3-f892444b0ebd": [
+      "a9524e476b145a0998fb45da47fc9a0a6e01e6f3",
+      "0538e276bbb90021b9fde23bd4e235fc5a394cad"
+    ],
+    "mente-omega:84afe783-05c7-4951-a139-93bafe5aa4be": [
+      "646565fa719c74c3633d62dc7b0ff9794dd3e092",
+      "a924c7defc523ba72697b0080de67a53ae76794a",
+      "7aa2f2d325fff4d6cbf1c5e54ecd4d54837f25aa",
+      "331f3ab5609d32014a22e602dfd0b7eee9bdbcd4",
+      "70367a20d031519f9b31bb58323c3e2c811f3d67",
+      "91ab5d3bb051172fc9acf546402ba93534b6b8ea",
+      "5b10336836bb8b46a7ecc6e4c5abde8dda9f6e84",
+      "e10ee2a44edad69716f9736d2cc00fa8bb867e65",
+      "d850c256b0ede70fa74d603821007787b38c74f9",
+      "e459c15068ae0fe885f0b5258d62c0a7f6435f21",
+      "4f2aa1b33518a22e709921f6ef94bc8006d0e1f9",
+      "2919cf1ede06718ba5455711fcb79322af90e7d9",
+      "45bc05feff0d1f287995202d21508c263dc45ec6",
+      "7b7f98923979b6e642501e94686efc38845a2011",
+      "d25a368371ffa06c70241b6c3ee2743692bd61d1",
+      "aac05363c288c92dfcb25deddaae79a0deda0f73",
+      "3edc94b3a41742e438a115df6d223e39b26bada3",
+      "69006cb306bca0695b754f1bcf1da84f15106e31",
+      "44b8f3a291089c9c371ef71049c620f50f3f8158",
+      "b81962ca556bd292d728d654b3a104d53da83314",
+      "20b01a70f1d924100af9d7f10a3ad7152636ce80",
+      "3e4177b0bbe1e64aba581392b765a7b8887c1eb8",
+      "59dcb20a32eeecfe20f299ad38e92cb8c85883a3",
+      "d59a6b67f5014ac675ad5aed0fee38ce2bac6cf3",
+      "337373c492c571acb5f6a9d82b8a1c6054168fe3",
+      "79afdae7008697b5ae4114af40880c5e42c40ac4",
+      "85abde9be30af937dd927857c3b9382a69808a17",
+      "379e9c077c9967793dc1eb12b0e17761164eec52",
+      "5a61adb56f741c3ae54dd5f75e29d463e821a5f6",
+      "2ba3e737017dd38053d7d340c53a879e03bfd562",
+      "a6a0280f478c0cf721814070fff192b22ed57754",
+      "b9c090b9e4dbd99df165014d895ff0acb8c2f752",
+      "a4e2d73420d0226a9034926401a545907f21f5d1",
+      "621ff1c4cc99db1305caa32afc2a193dfd572cc0",
+      "8ad5caf8ae23d0c2cedc9409aeb61279456aa96f",
+      "63ca06abb3b522cfc47f170db9acc0ae75362e6b",
+      "6b009c1f92635fd082d2f53f1fc448325fbf0ac2",
+      "133eced1591325789cc5c59395abc7a3bffe7194",
+      "6a2590b64a96aab1135a5fa95b232f3cbce8ca1b",
+      "7f42f13e8722796b63609ee7ed9bb605dd56d074",
+      "be1470dcfaed960fecfd7a26b2bc8f44cf3e6c79",
+      "262548d1ccea3bf89e4df5fbb76ad9d8f333a250",
+      "477afc4c6afab17094388315ea7031fbc1d25f93",
+      "264adb74621b5053e54e973c19122646a692bfa2",
+      "01c41c8e17562efc60c56b259359cd5ef6ad2387",
+      "57ec56b8c752e5787bf06dcff4779e23b6e7b7d1",
+      "8676a54e0e2244993df62ac11597b360c4b435c7",
+      "93f00154376e4e7cfdcd8643710b84f5b2fceffe",
+      "b8d126478815b6bcd80e2a730ae803792656927a",
+      "4a88675366e9feb527ee7c1fbdc0d85a9c551d0e",
+      "8322e2778bb13fa20a07b0cabaf29df79c322fac",
+      "082cf616e840cb82e973217ccd35899bbfd8441c",
+      "9077fc8846a607b5dfad684f826a73943b2cdb57",
+      "b57361b170cff57cb70b9910c394a398d78502d8",
+      "0849af6d04df07adfb57f54cf2b74dd9556980f6",
+      "3b977a71b36f9fc1c1fab45dfe2547cd14e434eb",
+      "fe3f828c7bc8d68ceb8cdd336db8fa6eb82e4e96",
+      "8d6e95e0d5415681e01ae4e5ea51730019598f34",
+      "1decbe7bba33522290a58d29de4fab7fd903d79d",
+      "9c83f62f344523473c3b72a5468fc1672af2b5e1",
+      "e2bf6e4206718a284e4afb78788a0494e2245bc6",
+      "c499ee07b1b180f1529b9b16202cca1ea6905e4f",
+      "847aa8e41dab2323aef8f07877e5d78f5148d9ee",
+      "004f112af9bd0763988809e836126f1850ae6c62",
+      "3c20f3bba8839d10ea65cf08ff600eafa5b317a1",
+      "65aca8a1123b1dbba7b0f2a05205e376aca0282d"
+    ],
+    "mente-omega:8c25bb22-7ff4-4410-9adf-22c834e4a9db": [
+      "2e7ded300026bda5b199c4e62f4b41451d20e5ba",
+      "011dc4bf223b69e83b32c6b7313c76e910e9ea6b"
+    ],
+    "mente-omega:95205844-625b-41ac-983e-cc4c96a94289": [
+      "e307b7c87206cd5c66d70eb2a0df69ff4522593d",
+      "aa2e04d3b6be2a556ebaba7f8c1928c6096d6f75"
+    ],
+    "mente-omega:976fa295-cf4c-4199-ad16-92b772e9308d": [
+      "9ff5349c0c9d1c9c84f10b4c7ca56412c4b59dcf",
+      "2237359ef50581e13d72644a5aa3d8444dbfd0dc"
+    ],
+    "mente-omega:a2a6de21-bff4-4548-9916-de08c3511609": [
+      "415167e37e7ad231df0b920ac9bb62bd05fdd035",
+      "0cd60e22f02a20c88a212072ed760f08da7b152e"
+    ],
+    "mente-omega:aa70929e-a1bb-47e2-9065-bdc08494657c": [
+      "ee08460c5715be180f9bce20f9f4ea733d7dc711",
+      "f6a277ddd54b955a1ccf0e951871be7decdf21f5",
+      "a081c1250cad387abbc9106eaae80ee8af9bd7cd"
+    ],
+    "mente-omega:b1965b2e-5132-4830-a566-7e04c06f7960": [
+      "3180567f4d927ff62028397cf7a94ff2e9481b57",
+      "13d91ef5bcbd687ddb9ec385700551610f886b75"
+    ],
+    "mente-omega:boot-2026-04-05_21-41-03-491-46e835fc": [
+      "936977d4587a60e55c910d6189bfcc30b93e8603",
+      "1e47bb04d8b0b9f80544bc495e59e75c71b5d55d",
+      "4e8e4871b11c53dbedb6f9eeed52e839f4e10ab2",
+      "d7a10da718842ac4e266999ff8b665cb58ea59a7",
+      "0f1aae52d5d315785d10a94005406657e2e0b490",
+      "8bbacced87f43bf73147431e993f08b352d55ad2",
+      "e7dc2b5e00bf09a01e6d692a79f66544abe07bca",
+      "3d904d0f68e0d885ec82f2fe151f7e394f579355",
+      "664a9d5ed59fca817ad9ccf81850af318ba474ba",
+      "202d9980c80fb1b0a7674ff2a6b53dc21c8bbb47",
+      "46209bb3ace1ae95d1e910390406c9f8b72314a0",
+      "9ef191c55c09fa380831ddac73bd583e8e72783f",
+      "b9ebc45f4642017bb56a3b5ef11a9fb3acc59b67",
+      "05e70f4cc420dc7872008e501034fd362e54472a",
+      "4bc5aea67995928294da8335110df64912071fac",
+      "c3f630bdca3f9271d9d35fb5a97454691d9c54c6",
+      "efdd3e480dbd3e835951019ced736b19419b1342",
+      "d2be6621f3d5b26f38b551346df2c236c5c24430",
+      "e7d3f33a86e30ebd9dcf5ef583ccf5f389725169",
+      "27e20356be8456b4b181e540927e6bd9d124cb21",
+      "b8b16c1b6bcae4c6488de241b51e642e7d0d3dc7",
+      "77b2fc6371b6b58d0991c75060bd10ed5b791b3f",
+      "9ff33a7a340fc404e426632ab57e310d3fada5bf",
+      "acb07f2f1088d8ed8f367d96aaad883fb1f63879",
+      "f437f229ecd3400ea2b2cfcbe63c4943760790e5",
+      "44ccf9aefc08da97af3ff30a425998eeac4369f3",
+      "4c8a69d856c186d59448e06dc2ee2655f1301bfc",
+      "361cfa6b69ec9f0976d4720862f66970392cecee",
+      "217dd2deaf71fca3af828e4471d9e78f7f401866",
+      "c4066e05e2a405026bc86dbb8ebcb8f855a91ac3",
+      "4d3bd823122a59c9928ceae68623625ea6acc423",
+      "59b6ca49c79db2e4d2798ef8e55692cb0bdbeea8",
+      "ad10c61585df4ce84bb860bdb7001e9f4c7e556c",
+      "e352671d8695ecc6f22eb5f855d6491c2dffadea",
+      "5a457083149c9de6dab732a0da1ceec4f43c3f18",
+      "fa41f9c212368a770633191e918e63a96743d427",
+      "cda236466d13711f6b5411fecd78e43ba1fb8e92",
+      "36147419b95f3199e5fb37c961d8785a5ae8b07b",
+      "7cb0a4be4d3cc4fa1a8cd115d5b99b3bc453f4d1",
+      "0ff5e9de98e8dc98b075a3cc8ab77f82c6e9c035",
+      "e8168271e3c81593558d9c76098df5dc92e17f9d",
+      "4a87ca84dc627f5a8eb0a3811c776fdff7c303d9",
+      "712e7de9967e06f405b8736ea33caa3248723ac4",
+      "0b088b89ae182cc5abddd2c81c061616e127ae37",
+      "46bf0f23d9301c4145694a61ce185e194b2d375b",
+      "e9822f2ad177855ec9fdf0679141c9a0ca0758ab",
+      "42bae05199dbe552abdf0d5ca30748c4dc2e5e56",
+      "81ba19e68f63f9071738d7180b786d08a6470789",
+      "87fef187779f916a7b7d80c8910e6ea6300c06e3",
+      "fd96c52c7eaf41652c8ff65758b2e8b267f11280",
+      "cd84fbc7d74ed877d32bcc6c7918d6284baa2da4",
+      "58cf0abc30160085229096d7a94b7a082850e34b",
+      "31536453eb9aadf66b91da82c06b80da7e8b92e6",
+      "ff643c192b1316e24ba3bcd35206d8c7c9820adf",
+      "78afd3c215e0b92235128aecfaa87fafded279e5",
+      "cf035bd4346577d66d82d6b02cf80294c16b1d7f",
+      "b68feeabc591e121bdb07256bede35ddaff32c46",
+      "6271559895dee890f122de327da4b5517edf388f",
+      "29160dd07a9e812e227f8c8d86d79f52d7a11548",
+      "2cab08ae1682c860c9b8c77ba6ae51e90a1d3361",
+      "0fb3ffece0175b2a9028dba0ee1af03e23ca02c6",
+      "91a9619ec8de4edccde1461f3db6855f7aa81d6d",
+      "d719f7f116e9b44731c2ac85420352b03a4d08db",
+      "f1658962a76b74c1710dfc7b8eda64394d9da562",
+      "63c3988995eae73066c6460dc8a7b8c9bdd0a1e1",
+      "ec8a63d11a5a56e057dafb77af2cb0718c116354",
+      "4802f33c51f32e58343db707f7d7b953614e988c",
+      "37f01a1d34df24cdd5fd616859d482dc16412e70",
+      "c58604111f6fa1f36808c0fa24e8eddc9e9b9dca",
+      "217471c22071a65da84831ffee0b42470c0a4ace",
+      "458cf3836645cd1adcf8e551de230a3c20bb0d93",
+      "273710b683b7fc0a3a310eb4dee883fee54e7168",
+      "c6f9e1c7266447b9c65add754c42f81711d7b92f",
+      "100267438bcec41f65f18875060a91e940bf78ec",
+      "7dd8cde48004ed29640cfd3934af89506825bb14",
+      "0b943626f86f45683bfe25da894535bb0536ac87",
+      "d38226dc5687491c06408fc332b1cac2196b7f5a",
+      "db788a28d0ed5b4501c403b77d65c8c3cd36f5d2"
+    ],
+    "mente-omega:c5d75bbc-bf5e-4d7e-b866-d45730edc32a": [
+      "54e45ab94bf1c91a555e8508645830ea79219e88",
+      "0db3d0424acf0295605f6d60943102960dc1a41b"
+    ],
+    "mente-omega:c6eef1ac-e666-4cd7-b546-ac2c298785e8": [
+      "31ba14766bbb9349eb42473fd0d96aeda741e928",
+      "33c866f88489e0d481936fb62c07e4ba3ecbd1cd"
+    ],
+    "mente-omega:c79bcfdb-4596-43cc-ba3b-57c38caddf67": [
+      "38fde0e5e1bc1dd5854d38a9ccdafdb0ca4e1c4e",
+      "df4c21710e9588c140b40f929ce585c3de083464"
+    ],
+    "mente-omega:c89a5cd0-b45d-461a-a915-cbe25d1d93fa": [
+      "202946cb72cb21f9e665ffa12cb58f1eac3efbaf",
+      "71bccf5333ea015a883ad065bebee400018db639"
+    ],
+    "mente-omega:c8d2996c-4aec-46e1-bfa7-cf41b78a32c7": [
+      "d0c04f0dc477f02423b4380c26fc4df1d623771f",
+      "9426ff18a9c0e6157817445aeb403aa791b3e220"
+    ],
+    "mente-omega:d0ea19e7-fb47-496e-8606-3ed6eb4cd980": [
+      "55285eccc8f6449816915ce4b0185fe58fc2105d",
+      "c9b9764ba6c921487c8fc8c16ff46fd389db971a",
+      "7d11259259ba5dd7167adbecf9c3c41899d1e8b9"
+    ],
+    "mente-omega:d1a5eef5-2e15-49d6-988f-2a9a6a86bca6": [
+      "7183457f6404b272579a148ba777e05ef9cf5993",
+      "ea1fbde9281718fbea0781ecc5d9f15a859c22cb",
+      "f4ec8a3fb547c11470a9281efa0c78015726dc8c"
+    ],
+    "mente-omega:d2604369-5622-4ab8-9c46-80308cf4d7cb": [
+      "08f8ca82cd8b2a182fdd45b7b79b4c290609234d",
+      "96e6bfd334fb466defd33fd9dc1c771f4d97f803"
+    ],
+    "mente-omega:d6183f3f-d624-4e50-87d0-3d278ac05e77": [
+      "ae28086ccf03f5a1704d70e940b7512a1bb865f5",
+      "c170f7527aef1c0baa3be28bb90e0362fd689e26"
+    ],
+    "mente-omega:d6aea063-adce-426c-9d32-b64655cb65db": [
+      "ae52cc55e6d22bedd237b1efd79ce08cc9f930a6",
+      "0a1f391c23aa38073fa2a158d0ffca3a068c1619"
+    ],
+    "mente-omega:e908549f-4e6b-47c0-bb60-1e3076932828": [
+      "fecc61027c9ea1de9f1e327d30eac6d7d041901e",
+      "7c044aa434067d4866efcc6ae40f0fdfa823741c",
+      "676e32f7039d82b20f2ac62a515f04edaa64603b"
+    ],
+    "mente-omega:f37325db-603c-46eb-ab1c-566b8e2dcc9e": [
+      "89ad4b3c0901243a0700dd75a2ef9055c1d234b0",
+      "11653828e3d64ca65338c74f9ca8c6502c31fade"
+    ],
+    "mente-omega:f443cff5-f35e-4efd-a31c-2c76be247c38": [
+      "c09cf8e2f34e8ab3d38c4e1369e80081eaa260b1",
+      "faa917f183741b5732a6042bdca7818cdb59c435"
+    ],
+    "mente-omega:f7f019a9-0da8-4178-ad0e-0c63d6608f91": [
+      "92f31b6c12908e37befa40f54289dbaa2c1275ee",
+      "2f1dd322747d46b95946739fb33ee9def6d1453c"
+    ],
+    "mente-omega:f9e52424-fa54-4322-ad4d-0cb705d5869a": [
+      "053374037cc1847ba2c7e602791b6aeb2b3c31e4",
+      "c6d37abef6756355523f16d5ad2fa4ead5638e74"
+    ],
+    "mente-omega:fcef7826-c275-4d51-a151-f050f715af00": [
+      "a4f11e841a64e682f71288a4fa7bc41410fcebb7",
+      "3a55c01b48b0132fdd3cf49fce87888f080a0217"
+    ],
+    "mente-omega:38c76cd0-1018-421e-b358-cba670c0104e": [
+      "32d5530889f9c8cfb7b57bc74a8c640a7468ee06",
+      "336d0d4b87b1a65a0c46f845194858c8191825c0"
+    ],
+    "mente-omega:3cb2a2c1-ac38-46dd-8919-71f02a623ac4": [
+      "81b7a923bf3ac9445dc62442611900fdfaf55e33",
+      "bc3cb3c3d8ff1dfe84076b4c1884c60450687c9a"
+    ],
+    "mente-omega:57326693-6076-45b9-9b59-d2e8ce20c111": [
+      "4d7779f1db5706b1f01e77433d5cbe2fb46fee6e",
+      "250705855721ed622649a72e88e1a47186236612"
+    ],
+    "mente-omega:88259c63-1f4a-4f8d-ae08-7abbca6e4274": [
+      "275e3f1cda71f1cb9b57f4478cf0a41b37a31496",
+      "f5faf0bae38bb1edea640171b581d1a97b27d6ed"
+    ],
+    "mente-omega:cb8d2fe5-1a34-4f5c-be71-29c176b5fcc0": [
+      "b267fcb0e0229d24ec801b906d5197606d0a71d0",
+      "532b4a68ead0081862af611e60e4957e82766f08"
+    ],
+    "mente-omega:d08ab053-131a-4e38-bf3d-9f596ce0f59b": [
+      "b2eac7fe8ec12f6aeab650305ca2fff05471b7d2",
+      "b84420836befdbd3abb98746af767a2ec3537f61"
+    ],
+    "mente-omega:ef69b969-4dbb-4770-8919-64e67dd650a8": [
+      "bf1b58022b371f95e6fae134c91c8cd35665ab02",
+      "f75d2082fc36915339cbb2a114a81365f512e5e9"
+    ],
+    "mente-omega:fce115bc-2053-47ac-b186-c670111a0342": [
+      "e49dc044dc00fe9513a9bd88404367efed58afab",
+      "b6fa1469ab72bf21eb64e8bd086882316da73f26"
+    ],
+    "mente-omega:10957313-2b74-4675-abbf-dfc9055a4377": [
+      "47b66b4777a20a9342850aa86b8f40a0bb4140b0",
+      "5787de6a0c9772d84b811e890326ca853b79dd07"
+    ],
+    "mente-omega:53adbebd-0168-4c1c-8d98-dbff08b2367e": [
+      "0b44d43489f4d9cacf8f52aad4143a6df268af8b",
+      "b11bc61a95133b08914a543cdfb0205848f9c99e"
+    ],
+    "mente-omega:603efd24-f783-4e7e-bad5-ede7b76ebf18": [
+      "366caad680356c235a8c242932abd4c68ea6c29c",
+      "609cefc9b51bef72b27381317880e1806515f7d6"
+    ],
+    "mente-omega:7e8cf07c-964b-49a6-a47f-d0d2bbd03e86": [
+      "6780668380a2d3b3f68c4049a1183e9232113af4",
+      "ac6d3340f09ca2aa63612bb7a4109b9a9334f4aa"
+    ],
+    "mente-omega:8af1111c-8b35-4fd4-9ecc-b26aab919340": [
+      "a2e629d172c143c8e90865d6a9ea6eeb8076a945",
+      "a6ef7eb41fcf858abd0a242a777dddaa7eb7e1c0"
+    ],
+    "mente-omega:8b86fa56-0a90-4292-988b-8adec911e133": [
+      "1d77a31f5f2e1f84b9ff0dbc1ca783bfce4dba54",
+      "f53dbc0fe3659d05b2d4e81f38a265ad97cae874"
+    ],
+    "mente-omega:935fe771-2618-4dae-aca6-733656d4c28e": [
+      "3128d3531fdaba1a09b2e38069d6b35455418d49",
+      "339488d79426d8866d630ad75d2ee80fe5de8a1b"
+    ],
+    "mente-omega:b0c16cd2-a393-4cf3-8ddd-f08460ef3172": [
+      "195cb6d13212e0c433ffaee4db6109be2cd416d5",
+      "982757390e94c8716c7e476b810ec09bd8ebc65b"
+    ],
+    "mente-omega:d5803416-7ffd-4f08-a80e-cc2be3934b17": [
+      "2336bbd6b13354a28c4fbb77359ac6607cb8f749",
+      "e41accece8e88c23db4a7db9adc05b6af9206528"
+    ],
+    "mente-omega:f8653102-27d3-4c35-9c27-d1c24dc0cfc5": [
+      "04f6ba4c41f7daeedf3107689337bc4c9903abaa",
+      "ef8234805aa19ac5960072dc56b15d833e1dc96d"
+    ],
+    "mente-omega:028d3f6f-ca48-43dd-ade2-9ee9bde265ff": [
+      "4802dd49ce37805c5e40f1ba82ea5884e1aa0887",
+      "dd422198a9483e71e582f0a2d5c3f712869e1b29"
+    ],
+    "mente-omega:0eb1085c-a143-41b1-a2c1-a1fcd8ef925f": [
+      "802c4722c56ea0ed1465f29fe4d58b0827721d82",
+      "f430e4b9d1a003a7460616838207199c18cb51d6"
+    ],
+    "mente-omega:139e635d-d23c-41b1-ba62-cd226ed85995": [
+      "fe8775d5374779800be3f9189f6cfc84ef99462c",
+      "ca6e46f9ae6c2ec9f4ae8045e77d0dc3e56ddb65"
+    ],
+    "mente-omega:27a160c6-a75d-4f8f-9611-22f9658b3e36": [
+      "05b9973f6a78b4affe079cbe57aa976b458d9ca2",
+      "8f20e32ee20de82ca1556596e35eaeb64465a8bc"
+    ],
+    "mente-omega:3eb57b49-c949-4826-8ed3-272c9e6db60e": [
+      "38a1fcce8ad6005898fd2af229b8c577924de9e3",
+      "5c3247dc25443eef563f7a9b6edd9996d27deb84"
+    ],
+    "mente-omega:42eb8456-3240-4763-9875-5283f1a945d1": [
+      "0afca508178521933e0cfce93f567005d10133c0",
+      "e6ecdffae2de5f77b7aa332451bf0c903007b461"
+    ],
+    "mente-omega:568cacc5-a055-4dec-9aa8-ee7f29e019aa": [
+      "25c4a43fb13ff2e29e418710163a4b064725bb48",
+      "03701387986fd89c9cf91f422fa44a7f4a244e68"
+    ],
+    "mente-omega:6e20fb89-3c45-442b-a655-9ed5e141755f": [
+      "4b5fb5c5d5c45438af98d1fca0bacacb95d189b4",
+      "478003e08150cd6154367669900a61ebd2b59c9d"
+    ],
+    "mente-omega:8b54be78-474c-4802-ac5f-d2a8004cf0b7": [
+      "30a69f5b3c810a2ee9af3090d67ff5580ee1f558",
+      "6053e5d2754e103d5b2103e60297f2d83a2f4459"
+    ],
+    "mente-omega:9a844a0f-7cef-4f9a-8f85-3288f8df7535": [
+      "a7cd53c07a0f3f174f0836e455b5cd110d1070e1",
+      "971d603c2a62d737682126f0abe848e403b87622"
+    ],
+    "mente-omega:f615d31c-bbb0-472e-a623-64c5c2a6d660": [
+      "59fa940bf06fd04ee05d7a8810acb03dcf53e99c",
+      "ac8964da10966d7c32de2131769c5e0602d9115b"
+    ],
+    "mente-omega:f9576119-b0b2-4aff-ac1d-6ccdf6d9bf3c": [
+      "d1ed36d94f74efb8cbb44e0f95329b1d9e77f286",
+      "c6708427394058c2c045ff01918c7d4e28739bbf"
+    ],
+    "mente-omega:3ffff6e0-a499-4e1c-bc7d-aa37b2d69442": [
+      "1261a18a8a9fb1e0795d0e96375dd991eff35d68",
+      "eb574fa896485c141de09c01566095d397cdecf9"
+    ],
+    "mente-omega:4afaa346-5326-4145-975d-17add9f495cb": [
+      "00a6bbbb639d1e0c07a0dcf3933ad54a1b6b6a7e",
+      "11aa7c27c8370471c01e0d872f1102389f6fa207"
+    ],
+    "mente-omega:5f7ac730-a5cc-4f7b-ba93-626212148053": [
+      "461533777303739ae44dd13f822578717e0ab165",
+      "9dca9ba209928593678b40835f6d7aee6c06dc90"
+    ],
+    "mente-omega:78476255-942a-4f93-b44e-4bcdd5636cd7": [
+      "8d801460e740be85cb403c0cd43b5efd68d167a5",
+      "b3b1c77f76b404393ee609d4ed43814d9d388a46"
+    ],
+    "mente-omega:7a9fbbdd-1d24-4948-b91e-229824566faf": [
+      "e4f120475cc26b504d902802e446da98f04b3269",
+      "8e68aeab1aa0fae1db9c219c81f10ce76e421cb8"
+    ],
+    "mente-omega:976ac9a8-0269-4951-9861-7c8ff0dddd17": [
+      "a3bec3f602a12a6aac0e12dd781436748cf6ca09",
+      "205ed7f7d6e28f30575f97c134fed74778d5817a"
+    ],
+    "mente-omega:a63884bd-0423-438d-b57d-8127f031027f": [
+      "c8ae2e3b3d7b2e9ca36ee9eb36e5bf2678355c93",
+      "5957a86609be8e3bde8d83745a63ca2f0dc9417a"
+    ],
+    "mente-omega:d0d2e612-ab91-4b36-ab9e-66fe36c1a30f": [
+      "919966fdae69498ab5e8425ad760d0e6b9258509",
+      "13713e65e1aa4f5c9f1ef79642b7b8c3b22e7d4d"
+    ],
+    "mente-omega:2531a91d-512f-4807-825e-7e0cee74c18c": [
+      "50f6d22dc3c3e30529abc420d7b23859c7dadb73",
+      "7031931812351a50300c81c94d53cdfbebe5f689"
+    ],
+    "mente-omega:2f122319-d4bd-4ea6-a319-9eec1b61c097": [
+      "4804c558c3828fca3cbab3bb7bfa230661c80eab",
+      "f92456c1b33ca90cd21900d424e4f8a126bc900f"
+    ],
+    "mente-omega:3651d3b5-cef1-47aa-9e18-74ffd6bbfa7a": [
+      "a193441c4f1ce343c722e9a1ba827da16feb42f5",
+      "9722d2a45075aa8b46eb8c752814bea947823a84"
+    ],
+    "mente-omega:4600e3dc-a003-4afc-8e97-7b1ad0c11ac8": [
+      "90bfa461e164b37e29c8060b77fc54522d37ebf2",
+      "229dad393c3ace4ff09caac122f9597ff2902f09"
+    ],
+    "mente-omega:6d28170e-c380-42c4-b615-74a667f765b6": [
+      "f4043bad717d920d5f2a2ba6227835cc30e95c50",
+      "a52cb081e3e7ed7960a7859cb9c96755b2921eaf"
+    ],
+    "mente-omega:82ab17f6-5315-4849-a03e-0a4f43c127d5": [
+      "87960cc2f1b248e0f33a162a98a1716f928af588",
+      "6c91430271b0d9f2ce2927f4357f90f78f5c8b02"
+    ],
+    "mente-omega:a5d77bd3-3054-44ae-b1de-5a22b46525b9": [
+      "537ac5bb8c98ba9b9a057ea71467ce29d42d2bee",
+      "8875b11aa2c8315d7f66d0b432843512ee40b8b4"
+    ],
+    "mente-omega:be659cc2-bc5e-42b7-acdf-e770fabcb2f2": [
+      "6baa76f0d88c627934084c5b948d844ce18cd2e8",
+      "6fa7f38a0b35dbc3f13a25867efde5209dad8591"
+    ],
+    "mente-omega:d4bc1b7a-aeaa-4e59-82d5-483312372914": [
+      "07e5868c07a1fd5f49cd3a0c0a75a208b4335374",
+      "237fb437c656d4fc90cbde087109fc3e0f6ce852"
+    ],
+    "mente-omega:f9f77774-9ec6-49d2-adf4-f698ffa29383": [
+      "7e259067f4639ed978a1d8d5b16da7b7a160eed0",
+      "d352e7df2aa1ba8fbd8bbdb23cd25d367afb9398"
+    ]
+  }
+}

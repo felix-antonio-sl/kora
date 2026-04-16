@@ -3919,66 +3919,6 @@
       ]
     },
     {
-      "urn": "urn:fxsl:kb:opm-es-p02",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "fundamentos",
-        "ingenieria-de-sistemas",
-        "modelado-conceptual",
-        "representacion-bimodal",
-        "mbse",
-        "opl-es"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-es-p03",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "fundamentos",
-        "ingenieria-de-sistemas",
-        "modelado-conceptual",
-        "representacion-bimodal",
-        "mbse",
-        "opl-es"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-es-p04",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "fundamentos",
-        "ingenieria-de-sistemas",
-        "modelado-conceptual",
-        "representacion-bimodal",
-        "mbse",
-        "opl-es"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-es-p05",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "fundamentos",
-        "ingenieria-de-sistemas",
-        "modelado-conceptual",
-        "representacion-bimodal",
-        "mbse",
-        "opl-es"
-      ]
-    },
-    {
       "urn": "urn:fxsl:kb:opm-es",
       "namespace": "fxsl",
       "status": "published",
@@ -3991,70 +3931,6 @@
         "representacion-bimodal",
         "mbse",
         "opl-es"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opl-es-p02",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "opl",
-        "spanish",
-        "es",
-        "grammar",
-        "i18n",
-        "bimodal",
-        "localization"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opl-es-p03",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "opl",
-        "spanish",
-        "es",
-        "grammar",
-        "i18n",
-        "bimodal",
-        "localization"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opl-es-p04",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "opl",
-        "spanish",
-        "es",
-        "grammar",
-        "i18n",
-        "bimodal",
-        "localization"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opl-es-p05",
-      "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "opm",
-        "opl",
-        "spanish",
-        "es",
-        "grammar",
-        "i18n",
-        "bimodal",
-        "localization"
       ]
     },
     {
@@ -5528,6 +5404,506 @@
         "kaufman",
         "koe",
         "sirois"
+      ]
+    },
+    {
+      "urn": "urn:agengai:kb:openclaw-skills-ops",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "openclaw",
+        "skills",
+        "lifecycle",
+        "clawhub",
+        "gating",
+        "configuracion",
+        "agentes"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:metodologia-modelamiento-opm-protocolo",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "0.1.0",
+      "tags": [
+        "opm",
+        "methodology",
+        "protocol",
+        "modeling-workflow",
+        "heuristics",
+        "validation"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "methodology",
+        "system-modeling",
+        "sd-construction",
+        "refinement",
+        "complexity-management",
+        "modeling-protocol",
+        "spec"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-applied-system-modeling",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "system-diagram",
+        "sd-method",
+        "worked-examples",
+        "natural-systems",
+        "social-systems",
+        "applied-mbse",
+        "mobileye",
+        "problem-occurrence"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-canonical-example",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "canonical-example",
+        "worked-example",
+        "autonomous-vehicle",
+        "manufacturing",
+        "complete-methodology",
+        "all-constructs"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-complexity-management",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "complexity-management",
+        "refinement",
+        "abstraction",
+        "in-zooming",
+        "unfolding",
+        "opd-tree",
+        "system-map"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-corpus-architecture",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "0.1.0",
+      "tags": [
+        "opm",
+        "corpus-architecture",
+        "ssot",
+        "curation",
+        "information-architecture",
+        "artifact-boundaries"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-dynamic-behavior",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "dynamic-aspect",
+        "procedural-links",
+        "transforming-links",
+        "enabling-links",
+        "control-flow",
+        "eca",
+        "logical-operators",
+        "event-links",
+        "condition-links"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-mbse-acr-tutorial",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "tutorial",
+        "acr",
+        "automatic-crash-response",
+        "mbse-history",
+        "worked-example",
+        "modeling-walkthrough"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-mbse-foundations",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "mbse",
+        "conceptual-modeling",
+        "systems-engineering",
+        "ontology",
+        "objects",
+        "processes",
+        "minimal-ontology"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-opcloud-operational-guide",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "0.1.0",
+      "tags": [
+        "opcloud",
+        "opm",
+        "tutorial",
+        "operational-guide",
+        "workflow",
+        "modeling-tool"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-opl-bimodal",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "opl",
+        "bimodal",
+        "text-graphics",
+        "simulation",
+        "metamodel",
+        "tesperanto"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-opl-es-practical-companion",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "0.1.0",
+      "tags": [
+        "opm",
+        "opl-es",
+        "spanish",
+        "companion",
+        "worked-example",
+        "implementation-notes"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-sd-wizard",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "system-diagram",
+        "wizard",
+        "protocol",
+        "sd-construction",
+        "checklist"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opm-structural-relations",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "structural-relations",
+        "aggregation",
+        "exhibition",
+        "generalization",
+        "classification",
+        "states",
+        "participation-constraints",
+        "forks"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:sysml-foundations-diagrams",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "sysml",
+        "uml",
+        "diagrams",
+        "systems-modeling",
+        "block-definition",
+        "activity",
+        "sequence",
+        "requirements",
+        "parametric"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-actos-admin",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.1.1",
+      "tags": [
+        "ssot",
+        "actos-administrativos",
+        "aprobacion",
+        "visacion",
+        "toma-razon",
+        "decretos"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-convenios",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.2.0",
+      "tags": [
+        "ssot",
+        "convenios",
+        "acuerdos",
+        "estados",
+        "cuotas",
+        "transferencias"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-dgi",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.1.0",
+      "tags": [
+        "ssot",
+        "dgi",
+        "indicadores",
+        "iniciativas",
+        "reportes",
+        "senales"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-ecosistema",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.1.1",
+      "tags": [
+        "ssot",
+        "ecosistema",
+        "actores-externos",
+        "leyes",
+        "planificacion",
+        "probidad",
+        "seremias"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-ipr-lifecycle",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.2.1",
+      "tags": [
+        "ssot",
+        "ipr",
+        "ciclo-vida",
+        "fases",
+        "estados",
+        "tracks",
+        "evaluacion"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-legal",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.1.0",
+      "tags": [
+        "ssot",
+        "legal",
+        "normativo",
+        "glosas",
+        "loc-gore",
+        "presupuestos"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-master",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.5.0",
+      "tags": [
+        "ssot",
+        "gore-nuble",
+        "reconciliacion",
+        "fundamentos",
+        "indice"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-mecanismos",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.1.1",
+      "tags": [
+        "ssot",
+        "mecanismos",
+        "tracks",
+        "fril",
+        "frpd",
+        "subv8",
+        "c33",
+        "ppr",
+        "sni",
+        "evaluacion"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-operaciones",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.1",
+      "tags": [
+        "ssot",
+        "operaciones",
+        "alertas",
+        "compromisos",
+        "problemas",
+        "hitos",
+        "reuniones"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-organica",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.3.1",
+      "tags": [
+        "ssot",
+        "organica",
+        "divisiones",
+        "estructura-gore",
+        "jerarquia"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-presupuesto",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.4.1",
+      "tags": [
+        "ssot",
+        "presupuesto",
+        "clasificador",
+        "subtitulos",
+        "umbrales",
+        "ciclo"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-relaciones-dominio",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "2.0.0",
+      "tags": [
+        "ssot",
+        "relaciones",
+        "dominio",
+        "ipr",
+        "convenio",
+        "resolucion",
+        "morfismos",
+        "categorico"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-rendiciones",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.2.1",
+      "tags": [
+        "ssot",
+        "rendiciones",
+        "sisrec",
+        "cgr",
+        "sla",
+        "estados"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-tde",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "ssot",
+        "tde",
+        "transformacion-digital",
+        "fea",
+        "gesdoc",
+        "interoperabilidad",
+        "clave-unica"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:ssot-territorio",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "ssot",
+        "territorio",
+        "provincias",
+        "comunas",
+        "nuble"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:opm-methodology-glossary",
+      "namespace": "_SCRIPTORIUM",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "glossary",
+        "methodology"
+      ]
+    },
+    {
+      "urn": "urn:fxsl:kb:opcloud-tutorial-videos",
+      "namespace": "_SCRIPTORIUM",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "opcloud",
+        "opm",
+        "tutorial",
+        "modelado",
+        "youtube",
+        "video-course"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:opm-youtube-cheatsheet",
+      "namespace": "_SCRIPTORIUM",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "opm",
+        "cheatsheet",
+        "methodology"
       ]
     },
     {
@@ -7708,41 +8084,6 @@
       "type": "cites"
     },
     {
-      "from": "urn:fxsl:kb:opm-es-p02",
-      "to": "urn:fxsl:kb:opl-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p03",
-      "to": "urn:fxsl:kb:manual-metodologico-opm-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p03",
-      "to": "urn:fxsl:kb:opd-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p03",
-      "to": "urn:fxsl:kb:opl-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p04",
-      "to": "urn:fxsl:kb:manual-metodologico-opm-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p04",
-      "to": "urn:fxsl:kb:opd-es",
-      "type": "cites"
-    },
-    {
-      "from": "urn:fxsl:kb:opm-es-p04",
-      "to": "urn:fxsl:kb:opl-es",
-      "type": "cites"
-    },
-    {
       "from": "urn:fxsl:kb:opm-es",
       "to": "urn:fxsl:kb:manual-metodologico-opm-es",
       "type": "cites"
@@ -8555,15 +8896,16 @@
   ],
   "broken_edges": [],
   "stats": {
-    "total_nodes": 509,
-    "total_edges": 247,
+    "total_nodes": 535,
+    "total_edges": 240,
     "by_namespace": {
       "gn": 129,
-      "fxsl": 96,
       "salud": 93,
+      "fxsl": 88,
       "tde": 55,
       "legal": 35,
       "agengai": 34,
+      "_SCRIPTORIUM": 34,
       "sii": 26,
       "kora": 22,
       "ops": 10,
@@ -8571,10 +8913,10 @@
       "pro": 3
     },
     "by_relation_type": {
-      "cites": 183,
+      "cites": 176,
       "depends": 64
     },
-    "orphan_nodes": 328,
+    "orphan_nodes": 334,
     "broken_edges": 0,
     "cycles_in_depends": 0
   }

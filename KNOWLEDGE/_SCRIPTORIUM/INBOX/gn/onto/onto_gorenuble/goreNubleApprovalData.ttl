@@ -1,0 +1,166 @@
+@prefix gnub: <https://gorenuble.gob.cl/ns/ontology/> .
+@prefix gnubd: <https://gorenuble.gob.cl/ns/data/> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# DATOS DE DOMINIO: FLUJOS DE APROBACIÓN Y CONVENIOS
+# Fuente: kb_gn_015_aprobaciones_koda.yml
+# =============================================================================
+
+<https://gorenuble.gob.cl/data/goreNubleApprovalData>
+    a owl:Ontology ;
+    owl:imports <https://gorenuble.gob.cl/ontology/goreNubleOntology> ;
+    skos:definition "Instancias (ABox) del dominio de Flujos de Aprobación de Actos Administrativos y Convenios del GORE Ñuble."@es ;
+    skos:prefLabel "GORE Ñuble - Datos de Aprobaciones"@es ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ESTADOS DE CONVENIO (gnub:AgreementState)
+# Fuente: kb_gn_015_aprobaciones_koda.yml - Flujo Convenio
+# =============================================================================
+
+gnubd:AgreementState_Borrador
+    a gnub:AgreementState ;
+    skos:prefLabel "Borrador"@es ;
+    skos:definition "Convenio en elaboración por la división técnica proponente."@es ;
+    gist:sequence 1 ;
+    .
+
+gnubd:AgreementState_EnRevisionJuridica
+    a gnub:AgreementState ;
+    skos:prefLabel "En Revisión Jurídica"@es ;
+    skos:definition "Convenio siendo revisado por la Asesoría Jurídica del GORE."@es ;
+    gist:sequence 2 ;
+    .
+
+gnubd:AgreementState_EnRevisionFinanciera
+    a gnub:AgreementState ;
+    skos:prefLabel "En Revisión Financiera"@es ;
+    skos:definition "Convenio siendo revisado por la DAF (cláusulas de rendición)."@es ;
+    gist:sequence 3 ;
+    .
+
+gnubd:AgreementState_Visado
+    a gnub:AgreementState ;
+    skos:prefLabel "Visado Internamente"@es ;
+    skos:definition "Convenio aprobado por Asesoría Jurídica y DAF, listo para firma."@es ;
+    gist:sequence 4 ;
+    .
+
+gnubd:AgreementState_Firmado
+    a gnub:AgreementState ;
+    skos:prefLabel "Firmado"@es ;
+    skos:definition "Convenio firmado por ambas partes (Gobernador/a y representante legal del receptor)."@es ;
+    gist:sequence 5 ;
+    .
+
+gnubd:AgreementState_TdRPendiente
+    a gnub:AgreementState ;
+    skos:prefLabel "Toma de Razón Pendiente"@es ;
+    skos:definition "Convenio enviado a CGR para control preventivo de legalidad."@es ;
+    gist:sequence 6 ;
+    .
+
+gnubd:AgreementState_Formalizado
+    a gnub:AgreementState ;
+    skos:prefLabel "Formalizado (Tramitado)"@es ;
+    skos:definition "Convenio con TdR de CGR, vigente y habilitado para transferencia de recursos."@es ;
+    gist:sequence 7 ;
+    .
+
+# =============================================================================
+# INSTANCIAS DE ETAPAS DE APROBACIÓN (gnub:ApprovalFlowStage)
+# Fuente: kb_gn_015_aprobaciones_koda.yml - Flujo Resolución Exenta
+# =============================================================================
+
+gnubd:ApprovalStage_Elaboracion
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "Elaboración (Borrador)"@es ;
+    skos:definition "Unidad competente elabora el borrador del acto administrativo."@es ;
+    gist:sequence 1 ;
+    .
+
+gnubd:ApprovalStage_VoBJuridico
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "V°B° Jurídico"@es ;
+    skos:definition "Revisión de legalidad por la Asesoría Jurídica."@es ;
+    gist:sequence 2 ;
+    .
+
+gnubd:ApprovalStage_VoBControl
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "V°B° Control"@es ;
+    skos:definition "Revisión de conformidad procedimental por la Unidad de Control."@es ;
+    gist:sequence 3 ;
+    .
+
+gnubd:ApprovalStage_VoBJefatura
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "V°B° Jefatura División"@es ;
+    skos:definition "Visado por la jefatura de la división que origina el acto."@es ;
+    gist:sequence 4 ;
+    .
+
+gnubd:ApprovalStage_VoBAdministrador
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "V°B° Administrador/a Regional"@es ;
+    skos:definition "Último filtro de coordinación administrativa antes de firma ejecutiva."@es ;
+    gist:sequence 5 ;
+    .
+
+gnubd:ApprovalStage_FirmaGobernador
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "Firma Gobernador/a (FEA)"@es ;
+    skos:definition "El Gobernador/a firma el acto con Firma Electrónica Avanzada."@es ;
+    gist:sequence 6 ;
+    .
+
+gnubd:ApprovalStage_TdRCGR
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "Toma de Razón CGR"@es ;
+    skos:definition "Control preventivo de legalidad por la Contraloría General de la República."@es ;
+    skos:scopeNote "Solo para actos que comprometen fondos públicos o por exigencia normativa."@es ;
+    gist:sequence 7 ;
+    .
+
+gnubd:ApprovalStage_Notificacion
+    a gnub:ApprovalFlowStage ;
+    skos:prefLabel "Notificación y Archivo"@es ;
+    skos:definition "Acto firmado es notificado a interesados y archivado en expediente electrónico."@es ;
+    gist:sequence 8 ;
+    .
+
+# =============================================================================
+# TIPOS DE DOCUMENTO ADMINISTRATIVO (Reference Data - Remediación Gist v2.1)
+# Instanceas de gnub:AdministrativeDocumentType
+# =============================================================================
+
+# Tipos específicos vinculados a la taxonomía base en goreNubleReferenceData.ttl
+gnubd:_DocType_ResolutionExenta
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución Exenta"@es ;
+    skos:definition "Documento de resolución exenta de Toma de Razón por CGR."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    .
+
+gnubd:_DocType_ResolutionAfecta
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Resolución Afecta"@es ;
+    skos:definition "Documento de resolución sujeta a Toma de Razón por CGR."@es ;
+    skos:broader gnubd:_DocType_Resolution ;
+    .
+
+gnubd:_DocType_Oficio
+    a gnub:AdministrativeDocumentType ;
+    skos:prefLabel "Oficio"@es ;
+    skos:definition "Documento de correspondencia oficial."@es ;
+    .
+
+# =============================================================================
+# FIN DEL DOCUMENTO ABOX
+# =============================================================================

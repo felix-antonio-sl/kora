@@ -51,7 +51,7 @@ textual improvisado.
 La salida derivada **DEBERIA** vivir bajo:
 
 ```text
-BUILD/openclaw/{namespace}/{agent}/
+AGENTS/{namespace}/{agent}/_BUILD/openclaw/
 ```
 
 Dentro de ese contenedor pueden existir:
@@ -86,7 +86,7 @@ Quedan fuera de la fuente canonica:
 - sesiones,
 - volúmenes operativos.
 
-Estos artefactos **DEBEN** resolverse en runtime, no en `BUILD/` como si fueran
+Estos artefactos **DEBEN** resolverse en runtime, no en `_BUILD/` como si fueran
 parte estable del agente.
 
 ## 7. Validacion
