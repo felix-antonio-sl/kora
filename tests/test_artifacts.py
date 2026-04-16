@@ -187,7 +187,15 @@ class ArtifactFixtureTests(unittest.TestCase):
             "Todo skill portable **DEBERIA** declarar",
             "metadata.kora.urn",
             "No todo lo que vive bajo `SKILLS/` reclama esta spec",
-            "tiene alias o espejo `CM-*` por compatibilidad",
+            "tener alias o espejo `CM-*` por compatibilidad",
+            # v1.2 — estructura portable de recursos
+            "v1.2.0",
+            "## 5. Estructura interna del skill",
+            "scripts/",
+            "references/",
+            "assets/",
+            "## Resources",
+            "composable_with",
         )
         for term in required_terms:
             self.assertIn(term, content)

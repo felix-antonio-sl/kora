@@ -4564,7 +4564,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:skill-overlay-spec",
-      "title": "KORA/Skill-Overlay-Spec v1.1.0",
+      "title": "KORA/Skill-Overlay-Spec v1.2.0",
       "path": "specs/skill-overlay-spec.md",
       "namespace": "kora"
     }

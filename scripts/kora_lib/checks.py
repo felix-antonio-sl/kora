@@ -627,6 +627,110 @@ def _fix_catalog_rebuild(diagnostics):
     cmd_index()
 
 
+def _check_skill_structure(path_filter=None):
+    """Skills productivos cumplen la estructura portable (skill-overlay-spec §5).
+
+    Valida:
+    - Subdirs productivos solo pueden ser {scripts, references, assets}
+      (ademas de cualquier archivo como SKILL.md).
+    - Si existe alguno de esos subdirs, el SKILL.md menciona `## Resources`.
+    - No hay anidamiento `skills/CM-*` en skills productivos `active`.
+
+    Excluye skills en staging (_TALLER/) y bundles legacy CM-* (exentos por §5.5).
+    """
+    import os
+    import re
+    from .config import SKILLS_ROOT, KORA_ROOT
+
+    CANONICAL_SUBDIRS = {"scripts", "references", "assets"}
+    diags = []
+
+    if not SKILLS_ROOT.exists():
+        return diags
+
+    def iter_productive_skills():
+        for entry in sorted(SKILLS_ROOT.iterdir()):
+            if not entry.is_dir() or entry.name.startswith((".", "_")):
+                continue
+            # Directo: SKILLS/{name}/SKILL.md
+            if (entry / "SKILL.md").exists():
+                yield entry
+                continue
+            # Con namespace: SKILLS/{ns}/{name}/SKILL.md
+            for sub in sorted(entry.iterdir()):
+                if not sub.is_dir() or sub.name.startswith((".", "_")):
+                    continue
+                if sub.name.startswith("CM-"):
+                    continue  # perfil legacy, exento
+                if (sub / "SKILL.md").exists():
+                    yield sub
+
+    for skill_dir in iter_productive_skills():
+        rel = str(skill_dir.relative_to(KORA_ROOT))
+        skill_md = skill_dir / "SKILL.md"
+
+        # Check subdirs no canonicos
+        present_canonical = set()
+        for child in skill_dir.iterdir():
+            if not child.is_dir() or child.name.startswith("."):
+                continue
+            if child.name in CANONICAL_SUBDIRS:
+                present_canonical.add(child.name)
+            elif child.name == "skills":
+                # Anidamiento de sub-skills solo permitido en CM-* legacy
+                diags.append(Diagnostic(
+                    check_id="skill-structure",
+                    severity="medium",
+                    scope="artifact",
+                    path=rel,
+                    message="Skill productivo anida 'skills/' — composicionalidad debe declararse en metadata.kora.composable_with (skill-overlay-spec §5.5)",
+                    fix_hint="Extrae sub-skills a SKILLS/{name}/ top-level y referencialos en overlay",
+                ))
+            else:
+                diags.append(Diagnostic(
+                    check_id="skill-structure",
+                    severity="medium",
+                    scope="artifact",
+                    path=rel,
+                    message=f"Subdir no canonico en skill productivo: '{child.name}' (canonicos: scripts, references, assets)",
+                    fix_hint=f"Renombra '{child.name}/' a references/ o assets/ segun semantica, o mueve a CM-* legacy",
+                ))
+
+        # Check seccion ## Resources cuando hay subdirs canonicos
+        if present_canonical:
+            try:
+                body = skill_md.read_text(encoding="utf-8")
+            except Exception:
+                continue
+            has_resources_section = bool(re.search(r"^##\s+Resources\s*$", body, re.MULTILINE | re.IGNORECASE))
+            if not has_resources_section:
+                diags.append(Diagnostic(
+                    check_id="skill-structure",
+                    severity="medium",
+                    scope="artifact",
+                    path=rel,
+                    message=f"Skill usa subdirs ({', '.join(sorted(present_canonical))}) pero body carece de seccion '## Resources' (skill-overlay-spec §5.3)",
+                    fix_hint="Agrega '## Resources' al body del SKILL.md con subsecciones ### Scripts, ### References, ### Assets segun corresponda",
+                ))
+            else:
+                # Validar que cada subdir presente tiene subseccion
+                for subdir in sorted(present_canonical):
+                    heading = subdir.capitalize()
+                    if not re.search(rf"^###\s+{heading}\s*$", body, re.MULTILINE):
+                        diags.append(Diagnostic(
+                            check_id="skill-structure",
+                            severity="low",
+                            scope="artifact",
+                            path=rel,
+                            message=f"Subdir '{subdir}/' presente pero sin subseccion '### {heading}' en ## Resources",
+                            fix_hint=f"Agrega subseccion '### {heading}' describiendo el uso de {subdir}/",
+                        ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 # ---------------------------------------------------------------------------
 # Registration — wire up all built-in checks
 # ---------------------------------------------------------------------------
@@ -693,6 +797,12 @@ def _register_builtins():
               scope="workspace", severity="medium", enforcement="lint",
               spec_ref="agentfile-spec legacy-compat profile", depends=("catalog-exists",), phase="verify"),
         _check_tools_config_coherence,
+    )
+    register_check(
+        Check("skill-structure", "Skills productivos siguen estructura portable (scripts/references/assets + ## Resources)",
+              scope="artifact", severity="medium", enforcement="lint",
+              spec_ref="skill-overlay-spec §5", phase="verify"),
+        _check_skill_structure,
     )
 
 

@@ -7682,13 +7682,14 @@
       "urn": "urn:kora:kb:skill-overlay-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "tags": [
         "spec",
         "skill",
         "overlay",
         "portable",
-        "capability"
+        "capability",
+        "resources"
       ]
     }
   ],
