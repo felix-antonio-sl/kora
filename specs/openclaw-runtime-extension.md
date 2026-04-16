@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "OpenAI"
     created_at: "2026-03-23"
-    source: "runtime-spec-md v3.6.0, OpenClaw baseline"
-version: "1.0.0"
+    source: "runtime-spec-md v3.7.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas"
+version: "1.0.1"
 status: published
 tags: [spec, runtime, openclaw, extension, transmutacion, deploy]
 lang: es
@@ -16,9 +16,14 @@ extensions:
     precedence_tier: 4
     platform: "openclaw"
     baseline_docs_release: "2026.3.22"
+relations:
+  depends:
+    - "urn:kora:kb:runtime-spec-md"
+  cites:
+    - "urn:kora:kb:gobernanza"
 ---
 
-# AGENGAI/OpenClaw-Runtime-Extension v1.0.0
+# AGENGAI/OpenClaw-Runtime-Extension v1.0.1
 
 ## 1. Definicion
 

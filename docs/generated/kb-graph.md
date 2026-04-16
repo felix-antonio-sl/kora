@@ -1,14 +1,14 @@
 # KORA Knowledge Graph
 
-Generated: 2026-04-16T21:36:11.053362
+Generated: 2026-04-16T22:07:32.959050
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
 | Nodes | 509 |
-| Edges | 245 |
-| Orphan nodes | 329 |
+| Edges | 247 |
+| Orphan nodes | 328 |
 | Broken edges | 0 |
 | Cycles in depends | 0 |
 
@@ -32,8 +32,8 @@ Generated: 2026-04-16T21:36:11.053362
 
 | Type | Count |
 |------|-------|
-| cites | 182 |
-| depends | 63 |
+| cites | 183 |
+| depends | 64 |
 
 ## Most Connected Nodes
 

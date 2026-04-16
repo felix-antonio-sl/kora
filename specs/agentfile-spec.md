@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "IR canonico del agente KORA"
-version: "1.0.0"
+    source: "IR canonico del agente KORA; v1.1 agrega §13 Compatibilidad legacy para materializar la absorcion declarada en gobernanza §3.2"
+version: "1.1.0"
 status: published
 tags: [spec, agente, agentfile, canon, ir]
 lang: es
@@ -19,7 +19,7 @@ relations:
     - "urn:kora:kb:runtime-spec-md"
 ---
 
-# KORA/Agentfile-Spec v1.0.0
+# KORA/Agentfile-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -193,3 +193,66 @@ Contrato vigente v1:
 - Los workspaces nuevos no requieren scaffold legacy.
 - La migracion correcta absorbe legado en el IR y deja lo viejo como mirror
   temporal o lo elimina.
+
+Cambios v1.1:
+
+- §13 materializa la compatibilidad de workspace legacy declarada en
+  `gobernanza §3.2` como absorcion dentro de `agentfile-spec`.
+
+## 13. Compatibilidad con workspace legacy
+
+El **scaffold legacy** de un workspace consiste en los archivos
+`AGENTS.md`, `config.json`, `IDENTITY.md`, `SOUL.md`, `USER.md`, `TOOLS.md`
+y un directorio `skills/` con bundles `CM-*`. Este perfil preserva la
+semantica pre-Agentfile para consumidores que aun no soportan el IR
+moderno.
+
+### 13.1 Regla de coexistencia
+
+Reglas:
+
+1. Si `AGENT.md` y scaffold legacy coexisten en un mismo workspace,
+   `AGENT.md` es la autoridad normativa (`gobernanza §4`).
+2. Los archivos legacy son **mirrors subordinados**: sirven como
+   importacion o interoperabilidad mientras se completa la absorcion.
+3. Un conflicto entre `AGENT.md` y un archivo legacy se resuelve a favor
+   de `AGENT.md` sin excepciones.
+4. La coexistencia prolongada (mas alla del ciclo de absorcion
+   declarado) es **deuda declarada** y **DEBE** registrarse en
+   `extensions.kora.legacy_coexistence: <motivo>`.
+
+### 13.2 Regimen URN de los archivos legacy
+
+Los archivos legacy usan el regimen ejecutable legacy
+(`gobernanza §4.3`):
+
+| Archivo       | URN                                                  |
+| ------------- | ---------------------------------------------------- |
+| `AGENTS.md`   | `urn:{ns}:agent-bootstrap:{id}-agents:{version}`     |
+| `config.json` | `urn:{ns}:agent-bootstrap:{id}-config:{version}`     |
+| `IDENTITY.md` | `urn:{ns}:agent-bootstrap:{id}-identity:{version}`   |
+| `SOUL.md`     | `urn:{ns}:agent-bootstrap:{id}-soul:{version}`       |
+| `USER.md`     | `urn:{ns}:agent-bootstrap:{id}-user:{version}`       |
+| `TOOLS.md`    | `urn:{ns}:agent-bootstrap:{id}-tools:{version}`      |
+
+Un `AGENT.md` que absorbe uno de estos archivos **NO DEBE** heredar su URN;
+mantiene el regimen Agentfile (`urn:{ns}:agent:{id}`) y **PUEDE** declarar
+`supersedes` hacia los URN legacy.
+
+### 13.3 Disipacion
+
+La disipacion del scaffold legacy procede en tres pasos:
+
+1. **Absorcion**: el contenido legacy relevante se traduce a una dimension
+   de `AGENT.md`.
+2. **Mirror**: los archivos legacy se conservan como mirror subordinado
+   (`gobernanza §4.1`) mientras algun consumidor los requiera.
+3. **Eliminacion**: al cesar la dependencia externa, los archivos legacy
+   se eliminan y el workspace queda unicamente con `AGENT.md`.
+
+### 13.4 Prohibiciones
+
+1. Nuevos workspaces **NO DEBEN** nacer en scaffold legacy.
+2. Nuevas capacidades **NO DEBEN** agregarse al legacy en lugar de al IR.
+3. Ningun archivo legacy puede reclamar autoridad sobre `hard_rules` o
+   `safety` declarados en `AGENT.md`.

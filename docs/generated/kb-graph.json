@@ -7224,7 +7224,7 @@
       "urn": "urn:kora:kb:agentfile-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "agente",
@@ -7237,7 +7237,7 @@
       "urn": "urn:kora:kb:gobernanza",
       "namespace": "kora",
       "status": "published",
-      "version": "4.0.0",
+      "version": "4.1.0",
       "tags": [
         "gobernanza",
         "constitucion",
@@ -7250,7 +7250,7 @@
       "urn": "urn:kora:kb:knowledge-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "knowledge",
@@ -7265,7 +7265,7 @@
       "urn": "urn:kora:kb:md-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "7.0.0",
+      "version": "7.1.0",
       "tags": [
         "spec",
         "markdown",
@@ -7280,7 +7280,7 @@
       "urn": "urn:agengai:kb:openclaw-runtime-extension",
       "namespace": "kora",
       "status": "published",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tags": [
         "spec",
         "runtime",
@@ -7294,7 +7294,7 @@
       "urn": "urn:kora:kb:runtime-spec-md",
       "namespace": "kora",
       "status": "published",
-      "version": "3.6.0",
+      "version": "3.7.0",
       "tags": [
         "spec",
         "runtime",
@@ -7306,7 +7306,7 @@
       "urn": "urn:kora:kb:skill-overlay-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "skill",
@@ -8523,6 +8523,16 @@
       "type": "cites"
     },
     {
+      "from": "urn:agengai:kb:openclaw-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:openclaw-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
       "from": "urn:kora:kb:runtime-spec-md",
       "to": "urn:kora:kb:gobernanza",
       "type": "cites"
@@ -8546,7 +8556,7 @@
   "broken_edges": [],
   "stats": {
     "total_nodes": 509,
-    "total_edges": 245,
+    "total_edges": 247,
     "by_namespace": {
       "gn": 129,
       "fxsl": 96,
@@ -8561,10 +8571,10 @@
       "pro": 3
     },
     "by_relation_type": {
-      "cites": 182,
-      "depends": 63
+      "cites": 183,
+      "depends": 64
     },
-    "orphan_nodes": 329,
+    "orphan_nodes": 328,
     "broken_edges": 0,
     "cycles_in_depends": 0
   }

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-09"
-    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.0.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize"
-version: "7.0.0"
+    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.0.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales, acota reglas 7-8 por regimen, reformula regla 10"
+version: "7.1.0"
 status: published
 tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad, atomic]
 lang: es
@@ -15,7 +15,7 @@ relations:
     - "urn:kora:kb:gobernanza"
 ---
 
-# KORA/MD v7.0.0
+# KORA/MD v7.1.0
 
 ## 1. Definicion
 
@@ -80,10 +80,13 @@ Reglas:
 4. `tags` **DEBE** contener al menos 3 tags semanticos.
 5. `lang` describe el idioma del cuerpo.
 6. `source` describe la procedencia humana o documental del conocimiento.
-7. El namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `KNOWLEDGE/` donde reside el artefacto. Enforcement: lint.
-8. `status` **DEBE** seguir el lifecycle `draft -> published -> deprecated`. Las transiciones inversas son invalidas.
+7. Cuando el artefacto reside bajo `KNOWLEDGE/`, el namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `KNOWLEDGE/`. Enforcement: lint. Los artefactos que viven fuera de `KNOWLEDGE/` (specs en `specs/`, workspaces en `AGENTS/`, capacidades en `SKILLS/`, outputs en `BUILD/`) derivan su namespace de la topologia declarada por la spec canonica que los gobierna; para ellos esta regla no aplica.
+8. El valor de `status` **DEBE** respetar el regimen de lifecycle correspondiente (`gobernanza §5`):
+   - artefactos descriptivos (KORA/MD en `KNOWLEDGE/` y specs): `draft -> published -> deprecated`.
+   - artefactos ejecutables (workspaces agente, skills, bootstrap): `draft -> active -> deprecated -> retired`.
+   Las transiciones inversas son invalidas en ambos regimenes.
 9. `KNOWLEDGE/` solo acepta artefactos con `status: published` o `status: deprecated`. Artefactos con `status: draft` **DEBEN** residir en `OPERATIONS/drafts/` o `OPERATIONS/source/`. Enforcement: schema.
-10. La transicion a `status: published` **DEBE** cumplir el protocolo de auditoria (`gobernanza §10`).
+10. La transicion a `status: published` (o `status: active` para ejecutables) **DEBE** pasar por `kora promote` u otro procedimiento equivalente que verifique verificacion mecanica (§6.10), verificacion de fidelidad (§6.11) y ausencia de conflictos de namespace (regla 7).
 11. Cuando `source` referencia archivos del monorepo, la ruta **DEBERIA** ser resoluble desde la raiz del repo. Enforcement: manual.
 
 ### 3.2 Capa 2: Cuerpo de conocimiento
@@ -339,18 +342,26 @@ Metricas:
 
 ### 5.6 Familias documentales
 
-La spec general **DEBE** complementarse con invariantes por familia documental cuando la estructura del dominio lo requiera.
+Una **familia documental** es un perfil del formato KORA/MD — no un formato
+distinto. Todos los artefactos KORA/MD cumplen el contrato base (§§1-5); cada
+familia agrega invariantes que su estructura de dominio requiere. Esta lista
+es la **fuente unica** de clasificacion de artefactos KORA/MD, reemplazando
+la dualidad anterior "tipos" (en `knowledge-spec`) vs "familias" (en esta
+spec). `knowledge-spec §3` referencia esta tabla como autoridad.
 
-Familias minimas:
-
-| Familia             | Invariantes                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `normative`         | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
-| `glossary`          | buckets recuperables; sin duplicados no resueltos; alias explicitos                                                         |
-| `organigram`        | dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
-| `cq_catalog`        | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento                                   |
-| `inventory/control` | puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada                               |
-| `atomic`            | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales; dedup multi-source permitido; conflicto semantico entre fuentes -> tipo `tension`; limite operativo 5.000 palabras y 200 proposiciones por artefacto; si excede, segmentar y generar artefacto indice |
+| Familia      | Invariantes                                                                                                                 |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `spec`       | Documenta reglas y contratos; precedencia declarada al inicio; URN `urn:{ns}:kb:{id}`; reside en `specs/`, no en `KNOWLEDGE/` |
+| `guide`      | Manual o guia operativa; prosa tecnica controlada; ejemplos concretos vinculados a headings; `## Resumen` recomendado        |
+| `normative`  | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
+| `glossary`   | Buckets recuperables; sin duplicados no resueltos; alias explicitos                                                          |
+| `faq`        | `##` por pregunta; respuesta autocontenida; orden por frecuencia o tema                                                     |
+| `catalog`    | Entradas tabuladas; columnas minimas `id | urn | titulo | resumen`; indexable por CLI                                        |
+| `cq_catalog` | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento; subperfil de `catalog`            |
+| `inventory`  | Puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada                               |
+| `organigram` | Dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
+| `atomic`     | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales; dedup multi-source permitido; conflicto semantico entre fuentes -> tipo `tension`; limite operativo 5.000 palabras y 200 proposiciones por artefacto; si excede, segmentar y generar artefacto indice |
+| `note`       | Nota tecnica compacta; al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante                |
 
 Clasificacion de familia:
 
@@ -360,6 +371,10 @@ La familia de un artefacto **DEBE** identificarse por uno de estos mecanismos, e
 2. Convencion de directorio (e.g., `glossaries/`, `normative/`, `atomic/`).
 3. Clasificacion manual del curador durante koraficacion.
 4. Productor canonico declarado (ver `knowledge-spec §12`): si existe, el productor fija la familia al emitir el artefacto.
+
+Una familia **PUEDE** heredar invariantes de otra declarando su relacion como
+subperfil (ej. `cq_catalog` subperfil de `catalog`). La herencia es estrictamente
+aditiva: el subperfil no puede relajar invariantes del perfil base.
 
 ### 5.6.1 Familia `atomic`: tipos y forma de proposicion
 
@@ -621,6 +636,14 @@ Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bump
 - Se declara la figura de `productor canonico de familia`, referida a `knowledge-spec §12`.
 - Se agregan checks de validacion para `atomic` (§9).
 - Se agrega invariante de integridad de la familia `atomic` (§7.6).
+
+Cambios v7.1:
+
+- §3.1 regla 7 se acota a artefactos que residen bajo `KNOWLEDGE/`; artefactos en `specs/`, `AGENTS/`, `SKILLS/` o `BUILD/` derivan namespace de su spec canonica correspondiente.
+- §3.1 regla 8 distingue lifecycle descriptivo (`draft -> published -> deprecated`) vs ejecutable (`draft -> active -> deprecated -> retired`) segun `gobernanza §5`.
+- §3.1 regla 10 reapunta al procedimiento `kora promote` y verificaciones §6.10 + §6.11 + regla 7, eliminando referencia a "protocolo de auditoria" inexistente en gobernanza v4.
+- §5.6 fusiona las taxonomias previas de `knowledge-spec §3` ("tipos de artefacto") y `md-spec §5.6` ("familias documentales") en una sola tabla. `knowledge-spec §3` pasa a referenciar esta tabla como autoridad.
+- §5.6 agrega familias `spec`, `guide`, `faq`, `catalog`, `note` (antes tipos en `knowledge-spec`); renombra `inventory/control` a `inventory` con publication_class como discriminante; formaliza `cq_catalog` como subperfil de `catalog`.
 
 ### 10.2 Contrato v6
 

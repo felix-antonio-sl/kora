@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad"
-version: "4.0.0"
+    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3"
+version: "4.1.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -15,7 +15,7 @@ relations:
     - "urn:kora:kb:md-spec"
 ---
 
-# KORA/Gobernanza v4.0.0
+# KORA/Gobernanza v4.1.0
 
 ## 1. Definicion
 
@@ -120,6 +120,33 @@ reservados siguen siendo:
 - `lazy_load_endofunctor`
 - `runtime_extension`
 - `transmutation_record`
+
+### 4.3 Regimenes de URN
+
+KORA distingue tres regimenes de identidad URN. El regimen elegido determina
+forma del URN y ubicacion de la version:
+
+| Regimen            | Patron                                  | Version                      | Uso                                                      |
+| ------------------ | --------------------------------------- | ---------------------------- | -------------------------------------------------------- |
+| Conceptual         | `urn:{ns}:kb:{id}`                      | campo `version` fuera del URN | artefactos KORA/MD (knowledge, specs, meta)             |
+| Agentfile          | `urn:{ns}:agent:{id}`                   | campo `version` fuera del URN | agentes modernos (`AGENT.md`)                           |
+| Ejecutable legacy  | `urn:{ns}:{kind}:{id}:{version}`        | incorporada en el URN         | bootstrap artifacts y skills `CM-*` (compat)            |
+
+`{kind}` en el regimen ejecutable legacy es uno de los `_manifest.type`
+listados en §4.2 (p. ej. `agent-bootstrap`, `skill`, `lazy_load_endofunctor`).
+
+Reglas:
+
+1. El regimen conceptual es preferido para artefactos descriptivos nuevos.
+2. El regimen Agentfile es canonico para agentes modernos.
+3. El regimen ejecutable legacy **NO DEBE** usarse para componentes nuevos;
+   solo persiste en componentes de compatibilidad explicitamente declarados.
+4. Referencias a artefactos conceptuales y Agentfile en `relations`, `depends`,
+   `cites` o body **DEBEN** usar la forma sin version; la resolucion de version
+   es responsabilidad del catalogo y del runtime.
+5. Un mismo componente **NO DEBE** declarar URN en dos regimenes
+   simultaneamente; la migracion entre regimenes obliga a emitir un
+   `supersedes` explicito.
 
 ## 5. Lifecycle y deprecacion
 

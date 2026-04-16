@@ -103,7 +103,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v7.0.0",
+            "KORA/MD v7.1.0",
             "## 6. Koraficacion",
             "skeleton",
             "meat",

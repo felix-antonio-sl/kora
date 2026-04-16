@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "capability profile portable canonico"
-version: "1.0.0"
+    source: "capability profile portable canonico; v1.1 alinea lifecycle con gobernanza §5 (agrega retired)"
+version: "1.1.0"
 status: published
 tags: [spec, skill, overlay, portable, capability]
 lang: es
@@ -16,7 +16,7 @@ relations:
     - "urn:kora:kb:md-spec"
 ---
 
-# KORA/Skill-Overlay-Spec v1.0.0
+# KORA/Skill-Overlay-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -76,11 +76,17 @@ Pero:
 
 ## 6. Lifecycle
 
-Lifecycle minimo sugerido:
+Los skills son artefactos ejecutables. Su lifecycle se alinea con
+`gobernanza §5`:
 
-- `draft`
-- `active`
-- `deprecated`
+- `draft` — aun no se carga en runtime
+- `active` — productivo, resolvible por agentes
+- `deprecated` — se conserva pero nuevos agentes no deben invocarlo
+- `retired` — no debe cargarse; se mantiene por trazabilidad historica,
+  su `_manifest.urn` no resuelve en runtime
+
+Las transiciones inversas son invalidas. Un skill `retired` **NO PUEDE**
+reactivarse; debe emitirse uno nuevo con `supersedes` hacia el retirado.
 
 ## 7. Validacion
 

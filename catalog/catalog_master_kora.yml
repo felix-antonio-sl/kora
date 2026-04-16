@@ -2285,7 +2285,7 @@ Catalog:
     file: KNOWLEDGE/agengai/openclaw/specs-legacy/openclaw-manual-integral.md
     status: published
   - urn: urn:agengai:kb:openclaw-runtime-extension
-    title: AGENGAI/OpenClaw-Runtime-Extension v1.0.0
+    title: AGENGAI/OpenClaw-Runtime-Extension v1.0.1
     file: specs/openclaw-runtime-extension.md
     status: published
   - urn: urn:agengai:kb:openclaw-skills-manual
@@ -3342,7 +3342,7 @@ Catalog:
     file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
     status: published
   - urn: urn:kora:kb:agentfile-spec
-    title: KORA/Agentfile-Spec v1.0.0
+    title: KORA/Agentfile-Spec v1.1.0
     file: specs/agentfile-spec.md
     status: published
   - urn: urn:kora:kb:cat-agent-coalgebra
@@ -3391,7 +3391,7 @@ Catalog:
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra--p02.md
     status: published
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v4.0.0
+    title: KORA/Gobernanza v4.1.0
     file: specs/gobernanza.md
     status: published
   - urn: urn:kora:kb:hub-agentes
@@ -3399,11 +3399,11 @@ Catalog:
     file: KNOWLEDGE/kora/sys/hub_agentes.md
     status: published
   - urn: urn:kora:kb:knowledge-spec
-    title: KORA/Knowledge-Spec v1.0.0
+    title: KORA/Knowledge-Spec v1.1.0
     file: specs/knowledge-spec.md
     status: published
   - urn: urn:kora:kb:md-spec
-    title: KORA/MD v7.0.0
+    title: KORA/MD v7.1.0
     file: specs/md-spec.md
     status: published
   - urn: urn:kora:kb:pipeline-ingesta
@@ -3411,11 +3411,11 @@ Catalog:
     file: KNOWLEDGE/kora/sys/pipeline-ingesta.md
     status: published
   - urn: urn:kora:kb:runtime-spec-md
-    title: KORA/Runtime-Spec v3.6.0
+    title: KORA/Runtime-Spec v3.7.0
     file: specs/runtime-spec-md.md
     status: published
   - urn: urn:kora:kb:skill-overlay-spec
-    title: KORA/Skill-Overlay-Spec v1.0.0
+    title: KORA/Skill-Overlay-Spec v1.1.0
     file: specs/skill-overlay-spec.md
     status: published
   - urn: urn:kora:kb:test-strategy

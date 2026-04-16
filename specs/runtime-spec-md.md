@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "contrato minimo de runtime para el sistema moderno"
-version: "3.6.0"
+    source: "contrato minimo de runtime para el sistema moderno; v3.7 agrega §13 Compatibilidad con outputs antiguos para materializar la absorcion declarada en gobernanza §3.2"
+version: "3.7.0"
 status: published
 tags: [spec, runtime, deployment, equivalence]
 lang: es
@@ -16,7 +16,7 @@ relations:
     - "urn:kora:kb:agentfile-spec"
 ---
 
-# KORA/Runtime-Spec v3.6.0
+# KORA/Runtime-Spec v3.7.0
 
 ## 1. Definicion
 
@@ -129,8 +129,49 @@ Reglas:
 
 ## 12. Migracion
 
-Contrato vigente v3.6.0:
+Contrato vigente v3.7.0:
 
 - runtime queda reducido a invariantes runtime,
 - absorbe la compilacion concreta del IR,
-- el diseño moderno evita reinyectar semantica del agente dentro del runtime.
+- el diseño moderno evita reinyectar semantica del agente dentro del runtime,
+- §13 materializa la compatibilidad de outputs antiguos declarada en
+  `gobernanza §3.2` como absorcion dentro de `runtime-spec`.
+
+## 13. Compatibilidad con outputs antiguos
+
+Runtimes y consumidores pueden ejecutar artefactos anteriores al regimen
+de transmutacion actual. Esta seccion fija la regla de coexistencia sin
+convertir lo legacy en camino canonico.
+
+### 13.1 Modalidades de output legacy
+
+1. **Consumo directo de workspace legacy**: un runtime carga directamente
+   los archivos `AGENTS.md`, `config.json`, `SOUL.md`, `USER.md`, `TOOLS.md`
+   desde `AGENTS/{ns}/{name}/`. Valido solo cuando el agente carece de
+   `AGENT.md` o cuando el runtime aun no soporta el IR.
+2. **Outputs transmutados pre-v3.6**: artefactos en `BUILD/{target}/`
+   generados por versiones antiguas de la transmutacion. Permanecen
+   consumibles hasta que el target se regenere.
+3. **Adapter legacy a target nativo**: wrapper especifico que traduce
+   `AGENT.md` hacia un target que solo conoce el perfil legacy.
+
+### 13.2 Reglas
+
+1. El camino canonico es `AGENT.md -> transmute -> BUILD/{target}/`.
+2. Un runtime nuevo **NO DEBE** depender de outputs legacy cuando exista
+   `BUILD/{target}/` regenerable y actualizado.
+3. Un adapter `legacy -> target` **DEBE** declararse como perfil de
+   compatibilidad, no como pipeline canonico.
+4. Los outputs legacy **NO DEBEN** emitirse con `_transmutation.yml` del
+   regimen moderno — eso es exclusivo del pipeline canonico.
+5. La coexistencia prolongada entre workspace legacy y `AGENT.md` es
+   deuda declarada (`agentfile-spec §13.1`) y **NO DEBE** reflejarse
+   como divergencia en `BUILD/`.
+
+### 13.3 Prohibiciones
+
+1. Nuevos targets **NO DEBEN** disenarse para consumir scaffold legacy.
+2. La transmutacion canonica **NO DEBE** hibridarse con outputs legacy
+   en el mismo ciclo.
+3. `BUILD/` **NO DEBE** conservar artefactos que ya no tienen agente fuente
+   activo; la reconciliacion periodica elimina huerfanos.

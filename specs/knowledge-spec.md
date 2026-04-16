@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v6.3.0; gobernanza v4.0.0"
-version: "1.0.0"
+    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.1.0; v1.1 delega taxonomia de tipos a md-spec §5.6 como fuente unica"
+version: "1.1.0"
 status: published
 tags: [spec, knowledge, categoria, grafo, pipeline, namespace, artefacto]
 lang: es
@@ -16,7 +16,7 @@ relations:
     - "urn:kora:kb:md-spec"
 ---
 
-# KORA/Knowledge-Spec v1.0.0
+# KORA/Knowledge-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -57,19 +57,23 @@ Gobierna:
 
 ## 3. Tipos de artefacto
 
-Los tipos funcionales admitidos incluyen:
+Los tipos funcionales admitidos en `KNOWLEDGE/` son las **familias
+documentales** declaradas por `md-spec §5.6` — fuente unica y autoritativa
+de la taxonomia. Esta spec no duplica la lista; si necesitas el catalogo
+operativo de familias, lee `md-spec §5.6`.
 
-- spec
-- guide
-- glossary
-- inventory
-- FAQ
-- catalog
-- note tecnica
+Reglas:
 
-El tipo es semantico, no una carpeta obligatoria. Lo que vuelve valido a un
-artefacto no es su nombre de archivo sino su conformidad con `md-spec` y su
-perfil correspondiente, junto con su URN.
+1. La clasificacion por familia es semantica, no una carpeta obligatoria.
+2. Lo que vuelve valido a un artefacto es su conformidad con `md-spec` y
+   con los invariantes de la familia correspondiente, junto con su URN.
+3. Un artefacto **PUEDE** declarar su familia via
+   `extensions.{namespace}.family` o delegar la clasificacion a los
+   mecanismos de `md-spec §5.6` (convencion de directorio, curaduria
+   manual, productor canonico).
+4. La familia `spec` vive exclusivamente en `specs/` y no en `KNOWLEDGE/`;
+   las demas familias **PUEDEN** residir en `KNOWLEDGE/` segun su ciclo
+   de publicacion.
 
 ## 4. Morfismos de KnowCat
 
