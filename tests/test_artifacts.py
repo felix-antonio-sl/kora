@@ -119,15 +119,21 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_agent_spec_restores_fsm_contract(self):
         content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "`AGENT.md` es la representacion intermedia canonica del agente KORA",
-            "1. `coalgebra`",
-            "2. `plan`",
-            "3. `interface`",
-            "4. `fibers`",
-            "5. `composition`",
-            "6. `safety`",
-            "Topologia moderna",
+            # v2: agentfile redefinido como serializacion de ontologia
+            "v2.0.0",
+            "serializacion",
+            "harness_vector",
+            "PMI × LFS",
+            # Dominios del shape
             "AGENT.md",
+            "agent.profile",
+            "agent.plan",
+            "agent.interface",
+            "agent.context",
+            "agent.composition",
+            "agent.invariants",
+            # Referencias a harness-spec
+            "harness-spec",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -183,19 +189,20 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_skill_spec_restores_extended_support_with_governed_contract(self):
         content = (ROOT / "specs" / "skill-overlay-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "formato preferido de capacidad",
-            "Todo skill portable **DEBERIA** declarar",
-            "metadata.kora.urn",
-            "No todo lo que vive bajo `SKILLS/` reclama esta spec",
-            "tener alias o espejo `CM-*` por compatibilidad",
-            # v1.2 — estructura portable de recursos
-            "v1.2.0",
+            # v2: skill-overlay redefinido como serializacion de ontologia
+            "v2.0.0",
+            "serializacion",
+            "harness_vector",
+            # v1.2 estructura portable mantenida
             "## 5. Estructura interna del skill",
             "scripts/",
             "references/",
             "assets/",
             "## Resources",
             "composable_with",
+            # Nuevas dimensiones v2
+            "skill_freedom",
+            "progressive disclosure",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -206,6 +213,47 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in rejected_terms:
             self.assertNotIn(term, content)
 
+    def test_harness_spec_canonizes_ontology(self):
+        content = (ROOT / "specs" / "harness-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "v1.0.0",
+            "PMI × LFS",
+            "constitucion ontologica",
+            "harness_vector",
+            "free monad",
+            "cofree comonad",
+            # 6 ejes
+            "Π — Plan",
+            "Μ — Materia",
+            "Ξ — Interaccion",
+            "Λ — Nivel sociotecnico",
+            "Φ — Acoplamiento humano-AI",
+            "Σ — Vector etico",
+            # 3 atlas
+            "Atlas A",
+            "Atlas B",
+            "Atlas C",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_transmutation_spec_defines_functor_laws(self):
+        content = (ROOT / "specs" / "transmutation-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "v1.0.0",
+            "functor",
+            "preservacion",
+            "bisimulacion",
+            "_transmutation.yml",
+            "matriz de preservacion",
+            "fidelidad",
+            "source_vector",
+            "structural_preservation",
+            "projections",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
     def test_specs_declare_manifest_kind_taxonomy(self):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
         agent_spec = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
@@ -214,10 +262,14 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("bootstrap_agents", governance)
         self.assertIn("bootstrap_config", governance)
         self.assertIn("lazy_load_endofunctor", governance)
-        self.assertIn("`AGENT.md` es la unica fuente de verdad normativa del agente", agent_spec)
-        self.assertIn("Toda capacidad nueva **DEBERIA** resolverse como skill portable", agent_spec)
-        self.assertIn("Todo skill portable **DEBERIA** declarar", skill_spec)
-        self.assertIn("El overlay agrega trazabilidad y gobierno", skill_spec)
+        # v2: el vector ontologico es fuente de verdad; AGENT.md es su serializacion
+        self.assertIn("vector ontologico", agent_spec)
+        self.assertIn("serializacion", agent_spec)
+        # Compatibilidad con arneses portables sigue vigente (v2 §13)
+        self.assertIn("Compatibilidad con workspace legacy", agent_spec)
+        # v2: skill-overlay usa 'DEBE' con contrato minimo + vector ontologico
+        self.assertIn("Todo skill portable **DEBE** declarar", skill_spec)
+        self.assertIn("harness_vector", skill_spec)
 
     def test_forgemaster_tracks_governed_extended_skill_support(self):
         files = (
@@ -607,13 +659,15 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_swarm_spec_restores_operational_orchestration_contract(self):
         content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
+        # v2: orquestacion avanzada proyecta a Ξ-4 (operad dinamica) con
+        # golden_paths, circuit_breakers, event_routing declarados en composition
         required_terms = (
-            "golden paths",
-            "circuit breakers",
-            "backpressure",
-            "event routing",
-            "sentinel pattern",
-            "## 10. Composition avanzada",
+            "golden_paths",
+            "circuit_breakers",
+            "event_routing",
+            "composition",
+            # operad dinamica es el nombre formal
+            "operad dinamica",
         )
         for term in required_terms:
             self.assertIn(term, content)

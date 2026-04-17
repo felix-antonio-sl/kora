@@ -1562,7 +1562,7 @@ Catalog:
     file: KNOWLEDGE/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
     status: published
   - urn: urn:kora:kb:agentfile-spec
-    title: KORA/Agentfile-Spec v1.1.0
+    title: KORA/Agentfile-Spec v2.0.0
     file: specs/agentfile-spec.md
     status: published
   - urn: urn:kora:kb:cat-agent-coalgebra
@@ -1611,8 +1611,12 @@ Catalog:
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra--p02.md
     status: published
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v4.1.0
+    title: KORA/Gobernanza v4.2.0
     file: specs/gobernanza.md
+    status: published
+  - urn: urn:kora:kb:harness-spec
+    title: KORA/Harness-Spec v1.0.0
+    file: specs/harness-spec.md
     status: published
   - urn: urn:kora:kb:hub-agentes
     title: Hub de Agentes TDE
@@ -1635,12 +1639,16 @@ Catalog:
     file: specs/runtime-spec-md.md
     status: published
   - urn: urn:kora:kb:skill-overlay-spec
-    title: KORA/Skill-Overlay-Spec v1.2.0
+    title: KORA/Skill-Overlay-Spec v2.0.0
     file: specs/skill-overlay-spec.md
     status: published
   - urn: urn:kora:kb:test-strategy
     title: Estrategia de Pruebas KB TDE (wikiguias)
     file: KNOWLEDGE/kora/sys/test_strategy.md
+    status: published
+  - urn: urn:kora:kb:transmutation-spec
+    title: KORA/Transmutation-Spec v1.0.0
+    file: specs/transmutation-spec.md
     status: published
   - urn: urn:kora:kb:workflow-wikiguias
     title: TDE-WORKFLOW-WIKIGUIAS-029

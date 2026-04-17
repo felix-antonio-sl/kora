@@ -7600,26 +7600,42 @@
       "urn": "urn:kora:kb:agentfile-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "tags": [
         "spec",
         "agente",
         "agentfile",
-        "canon",
-        "ir"
+        "serializacion",
+        "proyeccion",
+        "compat"
       ]
     },
     {
       "urn": "urn:kora:kb:gobernanza",
       "namespace": "kora",
       "status": "published",
-      "version": "4.1.0",
+      "version": "4.2.0",
       "tags": [
         "gobernanza",
         "constitucion",
         "precedencia",
         "identidad",
         "enforcement"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:harness-spec",
+      "namespace": "kora",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "ontologia",
+        "arnés",
+        "pmi-lfs",
+        "agentico",
+        "hcai",
+        "constitucion"
       ]
     },
     {
@@ -7682,14 +7698,29 @@
       "urn": "urn:kora:kb:skill-overlay-spec",
       "namespace": "kora",
       "status": "published",
-      "version": "1.2.0",
+      "version": "2.0.0",
       "tags": [
         "spec",
         "skill",
         "overlay",
         "portable",
         "capability",
-        "resources"
+        "serializacion"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:transmutation-spec",
+      "namespace": "kora",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "transmutacion",
+        "functor",
+        "proyeccion",
+        "preservacion",
+        "bisimulacion",
+        "runtime"
       ]
     }
   ],
@@ -8836,7 +8867,17 @@
     },
     {
       "from": "urn:kora:kb:agentfile-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:agentfile-spec",
       "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:agentfile-spec",
+      "to": "urn:kora:kb:harness-spec",
       "type": "depends"
     },
     {
@@ -8848,6 +8889,36 @@
       "from": "urn:kora:kb:gobernanza",
       "to": "urn:kora:kb:md-spec",
       "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:fxsl:kb:icas-agencia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:fxsl:kb:icas-efectos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:fxsl:kb:icas-interaccion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:fxsl:kb:icas-escala",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:md-spec",
+      "type": "depends"
     },
     {
       "from": "urn:kora:kb:knowledge-spec",
@@ -8886,19 +8957,64 @@
     },
     {
       "from": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:md-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:skill-overlay-spec",
       "to": "urn:kora:kb:gobernanza",
       "type": "depends"
     },
     {
       "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:md-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:kora:kb:skill-overlay-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:fxsl:kb:icas-preservacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:fxsl:kb:icas-efectos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
       "type": "depends"
     }
   ],
   "broken_edges": [],
   "stats": {
-    "total_nodes": 535,
-    "total_edges": 240,
+    "total_nodes": 537,
+    "total_edges": 257,
     "by_namespace": {
       "gn": 129,
       "salud": 93,
@@ -8908,16 +9024,16 @@
       "agengai": 34,
       "_SCRIPTORIUM": 34,
       "sii": 26,
-      "kora": 22,
+      "kora": 24,
       "ops": 10,
       "korvo": 6,
       "pro": 3
     },
     "by_relation_type": {
-      "cites": 176,
-      "depends": 64
+      "cites": 188,
+      "depends": 69
     },
-    "orphan_nodes": 334,
+    "orphan_nodes": 329,
     "broken_edges": 0,
     "cycles_in_depends": 0
   }

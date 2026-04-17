@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3"
-version: "4.1.0"
+    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones"
+version: "4.2.0"
 status: published
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -15,7 +15,7 @@ relations:
     - "urn:kora:kb:md-spec"
 ---
 
-# KORA/Gobernanza v4.1.0
+# KORA/Gobernanza v4.2.0
 
 ## 1. Definicion
 
@@ -58,35 +58,66 @@ Cuando dos reglas parezcan contradecirse, prevalece esta jerarquia:
 4. extensiones de namespace
 5. README, plantillas, artefactos generados
 
-### 3.1 Specs canonicas de dominio
+### 3.1 Separacion ontologia / serializacion / runtime / distribucion
 
-Las specs canonicas son:
+v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 
-- `knowledge-spec.md`
-- `agentfile-spec.md`
-- `skill-overlay-spec.md`
-- `runtime-spec-md.md`
+| Capa | Qué gobierna | Specs |
+|------|--------------|-------|
+| **Ontologia** | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec` |
+| **Serializacion** | Como se *escribe* el artefacto (shapes de authoring) | `agentfile-spec`, `skill-overlay-spec`, futuras |
+| **Runtime** | Como se *ejecuta* en un target concreto | `runtime-spec-md`, runtime-extensions |
+| **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
 
-### 3.2 Perfiles de compatibilidad legacy
+**Principio**: KORA IR canoniza **ontologia** (PMI × LFS). Las
+serializaciones son *proyecciones* de authoring. Los runtimes son *fibras
+proyectadas*. La distribucion es *meta-encaje*.
+
+### 3.2 Specs canonicas por capa
+
+**Capa ontologica**:
+
+- `harness-spec.md` — **constitucion ontologica** (espacio PMI × LFS).
+
+**Capa de serializacion**:
+
+- `agentfile-spec.md` — shape de authoring para vectores con Π≥2, Μ≥2.
+- `skill-overlay-spec.md` — shape de authoring para vectores con Π≤2, Μ≤1.
+
+**Capa de base** (formato y tejido):
+
+- `md-spec.md` — formato KORA/MD usado por las serializaciones.
+- `knowledge-spec.md` — tejido relacional y pipeline de conocimiento.
+
+**Capa de runtime**:
+
+- `runtime-spec-md.md` — contrato generico.
+- `transmutation-spec.md` — leyes functoriales de proyeccion IR → runtime.
+- `openclaw-runtime-extension.md` — proyeccion a OpenClaw.
+- Futuras: `claude-code-runtime-extension`, `codex-runtime-extension`, `gemini-runtime-extension`.
+
+### 3.3 Perfiles de compatibilidad legacy
 
 La compatibilidad legacy sigue existiendo, pero ya no como centro del mapa
 normativo. Vive absorbida dentro de las specs canonicas:
 
-- compatibilidad de workspace legacy dentro de `agentfile-spec`
-- compatibilidad de skills `CM-*` dentro de `skill-overlay-spec`
-- compatibilidad de outputs antiguos dentro de `runtime-spec`
+- compatibilidad de workspace legacy dentro de `agentfile-spec v2 §13`
+- compatibilidad de skills `CM-*` dentro de `skill-overlay-spec v2 §5.5`
+- compatibilidad de outputs antiguos dentro de `runtime-spec §13`
 
 Si una regla legacy choca con una regla canonica, la regla canonica prevalece.
 
-### 3.3 Regla de especializacion
+### 3.4 Regla de especializacion
 
 Entre specs del mismo nivel prevalece la más especifica para el objeto que
 gobierna:
 
-- `agentfile-spec` para `AGENT.md`
-- `skill-overlay-spec` para capacidades portables
-- `runtime-spec` para invariantes runtime y compilacion del IR
-- los perfiles legacy solo para interpretar mirrors o imports residuales
+- `harness-spec` para vector ontologico PMI × LFS.
+- `agentfile-spec` para shape de authoring de `AGENT.md`.
+- `skill-overlay-spec` para shape de authoring de `SKILL.md`.
+- `transmutation-spec` para leyes de proyeccion IR → runtime.
+- `runtime-spec-md` + extensions para encaje en runtime concreto.
+- los perfiles legacy solo para interpretar mirrors o imports residuales.
 
 ## 4. Identidad y fuente de verdad
 
