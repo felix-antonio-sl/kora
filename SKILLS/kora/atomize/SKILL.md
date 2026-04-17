@@ -12,13 +12,29 @@ description: >-
   descentralizado v8). Este registro KORA refleja el skill operativo del
   harness Claude Code en `~/.claude/skills/atomize/`.
 allowed-tools: Read Glob Write Bash
+extensions:
+  kora:
+    # Vector ontologico PMI × LFS (harness-spec v1.0)
+    harness_vector:
+      pi: 2              # plan ramificado (7 pasos + segmentacion + dedup)
+      mu: 0              # sin materia propia (ejecutor externo)
+      xi: 1              # interaccion atomica (invocacion → output)
+      lambda: 0          # individual
+      phi: 1             # instrumental
+      sigma: [1, 1, 3, 1, 0]  # safety: 1, fairness: 1, transparency: 3, accountability: 1, sustainability: 0
+    presentation: state-primary
+    skill_freedom: medium
+    atlas:
+      harness_name: disciplina
+      form: skill-standard
+      hcai_metaphor: supertool
 metadata:
   kora:
     urn: "urn:kora:skill:atomize:1.0.0"
     lifecycle:
       status: active
       created: "2026-04-16"
-      updated: "2026-04-16"
+      updated: "2026-04-17"
     tools: ["Read", "Glob", "Write", "Bash"]
     knowledge:
       - "urn:kora:kb:md-spec"

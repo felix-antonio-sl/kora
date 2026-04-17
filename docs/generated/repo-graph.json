@@ -1,14 +1,14 @@
 {
   "meta": {
-    "scanned_files": 695,
-    "node_count": 667,
-    "edge_count": 3550
+    "scanned_files": 698,
+    "node_count": 670,
+    "edge_count": 3570
   },
   "node_kind_counts": {
     "artifact": 47,
     "knowledge": 496,
     "skill": 85,
-    "spec": 9,
+    "spec": 12,
     "tool": 23,
     "workspace": 7
   },
@@ -23,7 +23,7 @@
     "InvokesSkill": 82,
     "RoutesToAgent": 8,
     "TracesTo": 12,
-    "XRef": 2827
+    "XRef": 2847
   },
   "nodes": [
     {
@@ -5663,7 +5663,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:agengai:kb:openclaw-runtime-extension",
-      "title": "AGENGAI/OpenClaw-Runtime-Extension v1.0.1",
+      "title": "AGENGAI/OpenClaw-Runtime-Extension v1.1.0",
       "path": "specs/openclaw-runtime-extension.md",
       "namespace": "agengai"
     },
@@ -5674,6 +5674,33 @@
       "urn": "urn:kora:kb:agentfile-spec",
       "title": "KORA/Agentfile-Spec v2.0.0",
       "path": "specs/agentfile-spec.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:claude-code-runtime-extension",
+      "kind": "spec",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:claude-code-runtime-extension",
+      "title": "KORA/Claude-Code-Runtime-Extension v1.0.0",
+      "path": "specs/claude-code-runtime-extension.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:codex-runtime-extension",
+      "kind": "spec",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:codex-runtime-extension",
+      "title": "KORA/Codex-Runtime-Extension v1.0.0",
+      "path": "specs/codex-runtime-extension.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:gemini-runtime-extension",
+      "kind": "spec",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:gemini-runtime-extension",
+      "title": "KORA/Gemini-Runtime-Extension v1.0.0",
+      "path": "specs/gemini-runtime-extension.md",
       "namespace": "kora"
     },
     {
@@ -12442,6 +12469,27 @@
     {
       "kind": "XRef",
       "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:kb:claude-code-runtime-extension",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:kb:codex-runtime-extension",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
+      "target": "urn:kora:kb:gemini-runtime-extension",
+      "fragment": null,
+      "source_path": "catalog/catalog_master_kora.yml"
+    },
+    {
+      "kind": "XRef",
+      "source": "file:catalog/catalog_master_kora.yml",
       "target": "urn:kora:kb:gobernanza",
       "fragment": null,
       "source_path": "catalog/catalog_master_kora.yml"
@@ -15081,6 +15129,13 @@
     {
       "kind": "XRef",
       "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
       "target": "urn:kora:kb:runtime-spec-md",
       "fragment": null,
       "source_path": "specs/openclaw-runtime-extension.md"
@@ -15089,6 +15144,13 @@
       "kind": "XRef",
       "source": "urn:agengai:kb:openclaw-runtime-extension",
       "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "specs/openclaw-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:agengai:kb:openclaw-runtime-extension",
+      "target": "urn:kora:kb:transmutation-spec",
       "fragment": null,
       "source_path": "specs/openclaw-runtime-extension.md"
     },
@@ -24520,6 +24582,111 @@
       "target": "urn:kora:kb:cat-skill-algebra-p02",
       "fragment": null,
       "source_path": "KNOWLEDGE/kora/categorical-foundations/02-skill-algebra--p02.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:claude-code-runtime-extension",
+      "target": "urn:kora:kb:claude-code-runtime-extension",
+      "fragment": null,
+      "source_path": "specs/claude-code-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:claude-code-runtime-extension",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/claude-code-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:claude-code-runtime-extension",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "specs/claude-code-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:claude-code-runtime-extension",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "specs/claude-code-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:claude-code-runtime-extension",
+      "target": "urn:kora:kb:transmutation-spec",
+      "fragment": null,
+      "source_path": "specs/claude-code-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:codex-runtime-extension",
+      "target": "urn:kora:kb:codex-runtime-extension",
+      "fragment": null,
+      "source_path": "specs/codex-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:codex-runtime-extension",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/codex-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:codex-runtime-extension",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "specs/codex-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:codex-runtime-extension",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "specs/codex-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:codex-runtime-extension",
+      "target": "urn:kora:kb:transmutation-spec",
+      "fragment": null,
+      "source_path": "specs/codex-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:gemini-runtime-extension",
+      "target": "urn:kora:kb:gemini-runtime-extension",
+      "fragment": null,
+      "source_path": "specs/gemini-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:gemini-runtime-extension",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "specs/gemini-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:gemini-runtime-extension",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "specs/gemini-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:gemini-runtime-extension",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "specs/gemini-runtime-extension.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:gemini-runtime-extension",
+      "target": "urn:kora:kb:transmutation-spec",
+      "fragment": null,
+      "source_path": "specs/gemini-runtime-extension.md"
     },
     {
       "kind": "XRef",

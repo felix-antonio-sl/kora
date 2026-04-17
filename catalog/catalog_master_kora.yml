@@ -641,7 +641,7 @@ Catalog:
     file: KNOWLEDGE/agengai/openclaw/specs-legacy/openclaw-manual-integral.md
     status: published
   - urn: urn:agengai:kb:openclaw-runtime-extension
-    title: AGENGAI/OpenClaw-Runtime-Extension v1.0.1
+    title: AGENGAI/OpenClaw-Runtime-Extension v1.1.0
     file: specs/openclaw-runtime-extension.md
     status: published
   - urn: urn:agengai:kb:openclaw-skills-manual
@@ -1609,6 +1609,18 @@ Catalog:
   - urn: urn:kora:kb:cat-skill-algebra-p02
     title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget - Parte 02'
     file: KNOWLEDGE/kora/categorical-foundations/02-skill-algebra--p02.md
+    status: published
+  - urn: urn:kora:kb:claude-code-runtime-extension
+    title: KORA/Claude-Code-Runtime-Extension v1.0.0
+    file: specs/claude-code-runtime-extension.md
+    status: published
+  - urn: urn:kora:kb:codex-runtime-extension
+    title: KORA/Codex-Runtime-Extension v1.0.0
+    file: specs/codex-runtime-extension.md
+    status: published
+  - urn: urn:kora:kb:gemini-runtime-extension
+    title: KORA/Gemini-Runtime-Extension v1.0.0
+    file: specs/gemini-runtime-extension.md
     status: published
   - urn: urn:kora:kb:gobernanza
     title: KORA/Gobernanza v4.2.0

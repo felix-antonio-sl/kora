@@ -7611,6 +7611,49 @@
       ]
     },
     {
+      "urn": "urn:kora:kb:claude-code-runtime-extension",
+      "namespace": "kora",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "runtime",
+        "claude-code",
+        "extension",
+        "transmutacion",
+        "proyeccion"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:codex-runtime-extension",
+      "namespace": "kora",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "runtime",
+        "codex",
+        "extension",
+        "transmutacion",
+        "proyeccion"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:gemini-runtime-extension",
+      "namespace": "kora",
+      "status": "published",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "runtime",
+        "gemini",
+        "extension",
+        "transmutacion",
+        "proyeccion",
+        "clawhub"
+      ]
+    },
+    {
       "urn": "urn:kora:kb:gobernanza",
       "namespace": "kora",
       "status": "published",
@@ -7672,14 +7715,15 @@
       "urn": "urn:agengai:kb:openclaw-runtime-extension",
       "namespace": "kora",
       "status": "published",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "runtime",
         "openclaw",
         "extension",
         "transmutacion",
-        "deploy"
+        "deploy",
+        "acp"
       ]
     },
     {
@@ -8886,6 +8930,66 @@
       "type": "depends"
     },
     {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
       "from": "urn:kora:kb:gobernanza",
       "to": "urn:kora:kb:md-spec",
       "type": "cites"
@@ -8937,8 +9041,18 @@
     },
     {
       "from": "urn:agengai:kb:openclaw-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:openclaw-runtime-extension",
       "to": "urn:kora:kb:gobernanza",
       "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:openclaw-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
     },
     {
       "from": "urn:agengai:kb:openclaw-runtime-extension",
@@ -9013,8 +9127,8 @@
   ],
   "broken_edges": [],
   "stats": {
-    "total_nodes": 537,
-    "total_edges": 257,
+    "total_nodes": 540,
+    "total_edges": 271,
     "by_namespace": {
       "gn": 129,
       "salud": 93,
@@ -9023,15 +9137,15 @@
       "legal": 35,
       "agengai": 34,
       "_SCRIPTORIUM": 34,
+      "kora": 27,
       "sii": 26,
-      "kora": 24,
       "ops": 10,
       "korvo": 6,
       "pro": 3
     },
     "by_relation_type": {
-      "cites": 188,
-      "depends": 69
+      "cites": 195,
+      "depends": 76
     },
     "orphan_nodes": 329,
     "broken_edges": 0,

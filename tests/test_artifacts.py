@@ -254,6 +254,36 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
+    def test_runtime_extensions_declare_preservation_matrix(self):
+        """Cada runtime-extension declara dominio y matriz de preservacion por eje."""
+        for spec_name in (
+            "claude-code-runtime-extension.md",
+            "codex-runtime-extension.md",
+            "gemini-runtime-extension.md",
+            "openclaw-runtime-extension.md",
+        ):
+            content = (ROOT / "specs" / spec_name).read_text(encoding="utf-8")
+            # Todos declaran matriz por eje
+            for eje in ("pi:", "mu:", "xi:", "lambda:", "phi:", "sigma:"):
+                self.assertIn(eje, content, msg=f"{spec_name} missing eje {eje}")
+            # Todos citan transmutation-spec
+            self.assertIn("transmutation-spec", content, msg=f"{spec_name} missing transmutation-spec ref")
+            # Todos tienen contrato vigente declarado
+            self.assertIn("Contrato vigente", content, msg=f"{spec_name} missing Contrato vigente")
+
+    def test_openclaw_extension_declares_acp_meta_runtime(self):
+        content = (ROOT / "specs" / "openclaw-runtime-extension.md").read_text(encoding="utf-8")
+        required_terms = (
+            "v1.1.0",
+            "meta-runtime",
+            "ACP",
+            "acp_backend",
+            "Unico",  # unico target con soporte a Servicio (Μ=3)
+            "Servicio",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
     def test_specs_declare_manifest_kind_taxonomy(self):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
         agent_spec = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
