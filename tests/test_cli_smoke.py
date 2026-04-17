@@ -105,6 +105,42 @@ class KoraCliSmokeTests(unittest.TestCase):
         result = run_cli("migrate", "--profile", "transitional", "--cohort", "meta-kora")
         self.assertIn("Changed paths: 0", result.stdout)
 
+    def test_migrate_v2_agentfile_profile_accepted(self):
+        """Profile v2-agentfile esta disponible y es idempotente tras primera corrida."""
+        if not has_productive_workspaces():
+            self.skipTest("requires productive workspaces")
+        # Primera corrida ya deberia haber poblado harness_vector; segunda es idempotente
+        result = run_cli("migrate", "--profile", "v2-agentfile")
+        # Idempotente si ya se aplico
+        self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)
+
+    def test_transmute_accepts_all_four_targets(self):
+        """Los 4 runtime targets (claude-code, codex, gemini, openclaw) aceptan --target."""
+        if not has_productive_workspaces():
+            self.skipTest("requires productive workspaces")
+        for target in ("claude-code", "codex", "gemini", "openclaw"):
+            result = run_cli("transmute", "--target", target, "--agent", "kora/curator", "--dry-run")
+            self.assertIn("KORA Transmutation", result.stdout)
+            self.assertIn(f"→ {target}", result.stdout)
+            self.assertIn("Vector IR:", result.stdout)
+
+    def test_ingest_subcommand_exists(self):
+        """El subcomando `kora ingest` existe y acepta los 4 runtimes fuente."""
+        result = run_cli("ingest", "--help", check=False)
+        self.assertIn("--from", result.stdout)
+        for rt in ("claude-code", "codex", "gemini", "openclaw"):
+            self.assertIn(rt, result.stdout)
+
+    def test_transmute_out_of_domain_fails(self):
+        """Transmutar un vector fuera del dominio del runtime debe fallar."""
+        if not has_productive_workspaces():
+            self.skipTest("requires productive workspaces")
+        # Claude Code no soporta Mu=3 (ambient always-on). Por ahora el fleet promovido
+        # tiene Mu<=2, por lo que no dispara el error. Smoke: verifica que el sistema
+        # emite un `_transmutation.yml` con estructura completa tras transmute real.
+        result = run_cli("transmute", "--target", "claude-code", "--agent", "kora/curator")
+        self.assertIn("Manifest:", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

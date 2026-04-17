@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "KORA Agentfile Frontmatter Schema",
-  "description": "Validates the YAML frontmatter of an AGENT.md file per agentfile-spec v1.0.0",
+  "title": "KORA Agentfile Frontmatter Schema v2",
+  "description": "Validates the YAML frontmatter of an AGENT.md file per agentfile-spec v2.0.0. Acepta shape v1 (legacy con coalgebra/fibers/safety) durante transicion, requiere extensions.kora.harness_vector en v2.",
   "type": "object",
   "required": ["_manifest", "version", "name", "status", "tags", "lang", "extensions", "agent"],
   "properties": {
@@ -54,14 +54,88 @@
       "type": "string",
       "pattern": "^[a-z]{2}$"
     },
-    "extensions": { "type": "object" },
-
+    "extensions": {
+      "type": "object",
+      "properties": {
+        "kora": {
+          "type": "object",
+          "properties": {
+            "harness_vector": {
+              "$ref": "#/$defs/harness_vector"
+            },
+            "presentation": {
+              "enum": ["state-primary", "action-primary"]
+            },
+            "atlas": {
+              "type": "object",
+              "properties": {
+                "harness_name": {
+                  "enum": ["utilidad", "disciplina", "delegado", "persona", "orquestador", "servicio", "arquetipo"]
+                },
+                "form": {
+                  "enum": ["skill-standard", "subagent", "agent-proper", "platform-agent", "archetype"]
+                },
+                "hcai_metaphor": {
+                  "enum": ["supertool", "tele-bot", "active-appliance", "control-center"]
+                }
+              }
+            },
+            "legacy_coexistence": { "type": "string" },
+            "composable_with": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "allowed_kb": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
     "agent": {
       "type": "object",
-      "required": ["coalgebra", "plan"],
+      "oneOf": [
+        { "$ref": "#/$defs/agent_v2" },
+        { "$ref": "#/$defs/agent_v1_legacy" }
+      ]
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^CM-[A-Z][A-Z0-9-]*$" },
+          "required": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "harness_vector": {
+      "type": "object",
+      "required": ["pi", "mu", "xi", "lambda", "phi", "sigma"],
       "properties": {
-
-        "coalgebra": {
+        "pi": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "mu": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "xi": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "lambda": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "phi": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "sigma": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+        }
+      }
+    },
+    "agent_v2": {
+      "type": "object",
+      "required": ["profile", "plan"],
+      "description": "Shape v2: profile (antes coalgebra), context (antes fibers), invariants (bifurca safety).",
+      "properties": {
+        "profile": {
           "type": "object",
           "required": ["description", "domain"],
           "properties": {
@@ -79,223 +153,40 @@
               "type": "array",
               "items": { "type": "string" }
             },
-            "invariants": {
-              "type": "array",
-              "items": { "type": "string" }
-            }
+            "narrative": { "type": "string" }
           }
         },
-
-        "plan": {
-          "type": "object",
-          "required": ["initial_state", "terminal_state", "states"],
-          "properties": {
-            "initial_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
-            "terminal_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
-            "states": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "required": ["id", "act"],
-                "properties": {
-                  "id": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
-                  "act": { "type": "string", "minLength": 1 },
-                  "transitions": {
-                    "oneOf": [
-                      { "const": "terminal" },
-                      {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": ["condition", "target", "priority"],
-                          "properties": {
-                            "condition": { "type": "string" },
-                            "target": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
-                            "priority": { "type": "integer", "minimum": 1 }
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-
-        "interface": {
+        "plan": { "$ref": "#/$defs/plan" },
+        "interface": { "$ref": "#/$defs/interface" },
+        "context": {
           "type": "object",
           "properties": {
-            "tools": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["name", "description", "parameters", "when_to_use", "when_not_to_use"],
-                "properties": {
-                  "name": { "type": "string", "minLength": 1 },
-                  "description": { "type": "string" },
-                  "parameters": { "type": "string" },
-                  "when_to_use": { "type": "string" },
-                  "when_not_to_use": { "type": "string" }
-                }
+            "memory_config": {
+              "type": "object",
+              "properties": {
+                "mode": { "enum": ["stateless", "session", "persistent", "ambient"] },
+                "storage": { "type": "string" }
               }
             },
-            "permissions": {
+            "operator_profile": {
               "type": "object",
-              "required": ["allow"],
-              "properties": {
-                "allow": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                },
-                "deny": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-
-        "fibers": {
-          "type": "object",
-          "properties": {
-            "identity": {
-              "type": "object",
-              "required": ["paradigm", "tone"],
-              "properties": {
-                "paradigm": { "type": "string", "minLength": 1 },
-                "tone": { "type": "string", "minLength": 1 },
-                "voice": { "type": "string" }
-              }
-            },
-            "operator": {
-              "type": "object",
-              "required": ["role", "context"],
               "properties": {
                 "role": { "type": "string" },
                 "context": { "type": "string" }
               }
             },
-            "memory": {
-              "type": "object",
-              "required": ["mode"],
-              "properties": {
-                "mode": { "enum": ["stateless", "session", "persistent"] },
-                "storage": { "type": "string" }
-              }
-            },
-            "runtime": {
-              "type": "object",
-              "required": ["sandbox"],
-              "properties": {
-                "model": { "type": "string" },
-                "model_routing": { "type": "object" },
-                "sandbox": { "enum": ["strict", "permissive", "isolated", "off"] },
-                "limits": { "type": "object" }
-              }
-            },
-            "knowledge": {
-              "type": "object",
-              "required": ["allowed_kb"],
-              "properties": {
-                "allowed_kb": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                },
-                "kb_routes": { "type": "object" }
-              }
-            }
-          }
-        },
-
-        "composition": {
-          "type": "object",
-          "properties": {
-            "type": { "enum": ["root", "sub-agent", "peer"] },
-            "sub_agents": {
+            "kb_refs": {
               "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["urn", "role"],
-                "properties": {
-                  "urn": { "type": "string" },
-                  "role": { "type": "string" },
-                  "max_concurrent": { "type": "integer", "minimum": 1 }
-                }
-              }
-            },
-            "delegation": {
-              "type": "object",
-              "properties": {
-                "max_depth": { "type": "integer", "minimum": 0 },
-                "dissipation": {
-                  "type": "object",
-                  "properties": {
-                    "propagate": { "type": "array", "items": { "type": "string" } },
-                    "dissipate": { "type": "array", "items": { "type": "string" } }
-                  }
-                }
-              }
+              "items": { "type": "string" }
             }
           }
         },
-
-        "safety": {
+        "composition": { "$ref": "#/$defs/composition" },
+        "invariants": {
           "type": "object",
-          "required": ["hard_rules", "co_induction"],
           "properties": {
-            "hard_rules": {
-              "type": "object",
-              "required": ["scope"],
-              "properties": {
-                "scope": {
-                  "type": "object",
-                  "required": ["allowed", "forbidden", "rejection"],
-                  "properties": {
-                    "allowed": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-                    "forbidden": { "type": "array", "items": { "type": "string" } },
-                    "rejection": { "type": "string", "minLength": 1 }
-                  }
-                },
-                "constraints": {
-                  "type": "array",
-                  "items": { "type": "string" }
-                }
-              }
-            },
-            "co_induction": {
-              "type": "object",
-              "required": ["pre_output_checks"],
-              "properties": {
-                "pre_output_checks": {
-                  "type": "array",
-                  "minItems": 3,
-                  "items": {
-                    "type": "object",
-                    "required": ["id", "description", "on_fail"],
-                    "properties": {
-                      "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
-                      "description": { "type": "string" },
-                      "on_fail": { "type": "string" }
-                    }
-                  }
-                },
-                "custom_checks": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": ["id", "description", "on_fail"],
-                    "properties": {
-                      "id": { "type": "string" },
-                      "description": { "type": "string" },
-                      "on_fail": { "type": "string" }
-                    }
-                  }
-                }
-              }
-            },
+            "hard_rules": { "type": "object" },
+            "co_induction": { "type": "object" },
             "guardrails": {
               "type": "array",
               "items": { "type": "string" }
@@ -306,20 +197,145 @@
                 "principal": { "type": "string" },
                 "contract": { "type": "string" }
               }
+            },
+            "ethical_commitments": {
+              "type": "object",
+              "description": "Desarrollo en prosa de Σ; debe ser consistente con harness_vector.sigma",
+              "properties": {
+                "safety_norm": { "type": "string" },
+                "fairness": { "type": "string" },
+                "transparency": { "type": "string" },
+                "accountability": { "type": "string" },
+                "sustainability": { "type": "string" }
+              }
             }
           }
         }
       }
     },
-
-    "skills": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["id"],
-        "properties": {
-          "id": { "type": "string", "pattern": "^CM-[A-Z][A-Z0-9-]*$" },
-          "required": { "type": "boolean" }
+    "agent_v1_legacy": {
+      "type": "object",
+      "required": ["coalgebra", "plan"],
+      "description": "Shape v1 legacy: acepta coalgebra/fibers/safety durante transicion a v2. Emite warning al lint.",
+      "properties": {
+        "coalgebra": {
+          "type": "object",
+          "required": ["description", "domain"],
+          "properties": {
+            "description": { "type": "string", "minLength": 10 },
+            "domain": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "triggers": { "type": "array", "items": { "type": "string" } },
+            "outputs": { "type": "array", "items": { "type": "string" } },
+            "invariants": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "plan": { "$ref": "#/$defs/plan" },
+        "interface": { "$ref": "#/$defs/interface" },
+        "fibers": {
+          "type": "object",
+          "properties": {
+            "identity": { "type": "object" },
+            "operator": { "type": "object" },
+            "memory": { "type": "object" },
+            "runtime": { "type": "object" },
+            "knowledge": { "type": "object" }
+          }
+        },
+        "composition": { "$ref": "#/$defs/composition" },
+        "safety": {
+          "type": "object",
+          "properties": {
+            "hard_rules": { "type": "object" },
+            "co_induction": { "type": "object" },
+            "guardrails": { "type": "array" },
+            "alignment": { "type": "object" }
+          }
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "required": ["initial_state", "terminal_state", "states"],
+      "properties": {
+        "initial_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+        "terminal_state": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "act"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+              "act": { "type": "string", "minLength": 1 },
+              "transitions": {
+                "oneOf": [
+                  { "const": "terminal" },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["condition", "target", "priority"],
+                      "properties": {
+                        "condition": { "type": "string" },
+                        "target": { "type": "string", "pattern": "^S-[A-Z][A-Z0-9_]*$" },
+                        "priority": { "type": "integer", "minimum": 1 }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "interface": {
+      "type": "object",
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "allow": { "type": "array", "items": { "type": "string" } },
+            "deny": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "composition": {
+      "type": "object",
+      "properties": {
+        "type": { "enum": ["root", "sub-agent", "peer"] },
+        "sub_agents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["urn", "role"]
+          }
+        },
+        "golden_paths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "circuit_breakers": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "event_routing": { "type": "object" },
+        "delegation": {
+          "type": "object",
+          "properties": {
+            "max_depth": { "type": "integer", "minimum": 0 },
+            "dissipation": { "type": "object" }
+          }
         }
       }
     }

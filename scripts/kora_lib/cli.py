@@ -8,7 +8,7 @@ from .graph import cmd_graph
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
 from .promote import cmd_promote
-from .transmute import cmd_transmute
+from .transmute import cmd_transmute, cmd_ingest, SUPPORTED_TARGETS
 from .validation import cmd_lint_md, cmd_validate
 
 
@@ -61,9 +61,9 @@ def main():
     p_migrate = subparsers.add_parser("migrate", help="Apply codemods to move workspaces toward the current spec")
     p_migrate.add_argument(
         "--profile",
-        choices=("legacy", "transitional", "strict"),
+        choices=("legacy", "transitional", "strict", "v2-agentfile"),
         default="transitional",
-        help="Migration profile",
+        help="Migration profile (v2-agentfile: auto-derive harness_vector from legacy shape)",
     )
     p_migrate.add_argument("--dry-run", action="store_true", help="Report only; do not write files")
     p_migrate.add_argument(
@@ -85,13 +85,22 @@ def main():
     p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from drafts/ to KNOWLEDGE/")
     p_promote.add_argument("path", help="Path to the draft artifact to promote")
 
-    p_transmute = subparsers.add_parser("transmute", help="Prepare transmutation workspace for an agent to a target platform")
-    p_transmute.add_argument("--target", required=True, choices=("claude-code", "openclaw"),
-                             help="Target platform (e.g., claude-code, openclaw)")
+    p_transmute = subparsers.add_parser("transmute", help="Proyecta KORA IR a runtime target con matriz de preservacion")
+    p_transmute.add_argument("--target", required=True, choices=SUPPORTED_TARGETS,
+                             help=f"Runtime target ({', '.join(SUPPORTED_TARGETS)})")
     p_transmute.add_argument("--agent", required=True,
                              help="Agent reference as namespace/name (e.g., kora/curator)")
     p_transmute.add_argument("--dry-run", action="store_true",
                              help="Show what would be done without writing files")
+
+    p_ingest = subparsers.add_parser("ingest", help="Ingesta inversa Lift_R — eleva artefacto runtime foraneo a KORA IR")
+    p_ingest.add_argument("--from", dest="from_runtime", required=True,
+                          choices=("claude-code", "codex", "gemini", "openclaw"),
+                          help="Runtime fuente del artefacto foraneo")
+    p_ingest.add_argument("--file", help="Path al archivo del artefacto (claude-code / codex / gemini)")
+    p_ingest.add_argument("--workspace", help="Path al workspace (openclaw)")
+    p_ingest.add_argument("--namespace", default="kora", help="Namespace KORA destino (default: kora)")
+    p_ingest.add_argument("--dry-run", action="store_true", help="Reportar sin escribir")
 
     p_check = subparsers.add_parser("check", help="Run unified maintenance checks (composable check algebra)")
     p_check.add_argument("--scope", choices=("artifact", "workspace", "repo"), default=None,
@@ -134,6 +143,10 @@ def main():
         cmd_promote(args.path)
     elif args.command == "transmute":
         cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
+    elif args.command == "ingest":
+        cmd_ingest(from_runtime=args.from_runtime, file=args.file,
+                   workspace=args.workspace, namespace=args.namespace,
+                   dry_run=args.dry_run)
     elif args.command == "check":
         if args.list_checks:
             checks = all_checks()

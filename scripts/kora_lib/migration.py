@@ -348,6 +348,120 @@ Markdown breve, con reglas, riesgos y decisiones explicitas.
     return changed
 
 
+def derive_harness_vector_from_legacy(frontmatter, agent_path):
+    """Deriva heuristicamente harness_vector PMI x LFS desde campos v1 legacy.
+
+    Se usa durante migracion v1 → v2 del agentfile-spec.
+    Ver harness-spec §3 y agentfile-spec v2 §14.
+    """
+    agent = frontmatter.get("agent", {})
+
+    # Pi (plan) — derivado del FSM declarado en agent.plan
+    plan = agent.get("plan", {})
+    states = plan.get("states", []) or []
+    if not states:
+        pi = 0
+    elif len(states) <= 1:
+        pi = 1
+    elif any(isinstance(s.get("transitions"), list) and len(s.get("transitions", [])) > 1 for s in states):
+        pi = 2  # FSM ramificado
+    else:
+        pi = 1  # FSM lineal
+
+    # Mu (materia) — derivado de fibers.memory.mode o inferido
+    fibers = agent.get("fibers", {})
+    memory_mode = fibers.get("memory", {}).get("mode", "stateless")
+    mu_map = {"stateless": 0, "session": 1, "persistent": 2}
+    mu = mu_map.get(memory_mode, 0)
+
+    # Xi (interaccion) — derivado de interface + composition
+    interface = agent.get("interface", {})
+    composition = agent.get("composition", {})
+    has_sub_agents = bool(composition.get("sub_agents"))
+    has_tools = bool(interface.get("tools"))
+    if has_sub_agents and composition.get("golden_paths"):
+        xi = 4  # operad dinamica
+    elif has_sub_agents:
+        xi = 3  # protocolo multi-fase
+    elif has_tools:
+        xi = 2  # lente polinomial con tools
+    elif has_tools is False and plan:
+        xi = 1  # atomica
+    else:
+        xi = 1
+
+    # Lambda (nivel sociotecnico) — inferido por scope y sub_agents
+    if has_sub_agents:
+        lambda_lvl = 1  # organizacional
+    else:
+        lambda_lvl = 0  # individual
+
+    # Phi (acoplamiento humano) — derivado de fibers.operator
+    operator = fibers.get("operator", {})
+    safety_align = agent.get("safety", {}).get("alignment", {})
+    if safety_align.get("principal") and operator.get("role"):
+        phi = 2  # colaborativo
+    elif operator.get("role"):
+        phi = 1  # instrumental
+    else:
+        phi = 0
+
+    # Sigma (vector etico) — defaults conservadores, autor ajusta
+    # [safety, fairness, transparency, accountability, sustainability]
+    safety_obj = agent.get("safety", {})
+    hard_rules = safety_obj.get("hard_rules", {})
+    co_induction = safety_obj.get("co_induction", {})
+    sigma = [
+        2 if hard_rules else 1,              # safety_norm
+        1,                                    # fairness (default)
+        2 if co_induction else 1,             # transparency
+        2 if hard_rules.get("scope") else 1,  # accountability
+        1,                                    # sustainability (default)
+    ]
+
+    return {
+        "pi": pi,
+        "mu": mu,
+        "xi": xi,
+        "lambda": lambda_lvl,
+        "phi": phi,
+        "sigma": sigma,
+    }
+
+
+def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
+    """Agrega extensions.kora.harness_vector derivado al AGENT.md si falta.
+
+    No altera el shape v1 (coalgebra/fibers/safety) — solo agrega el vector
+    ontologico declarativo. El renombrado coalgebra→profile y disolucion de
+    fibers queda como paso manual posterior.
+    """
+    agent_path = workspace_dir / "AGENT.md"
+    if not agent_path.exists():
+        return []
+
+    frontmatter, body = load_markdown_parts(agent_path)
+    if not isinstance(frontmatter, dict):
+        return []
+
+    extensions = frontmatter.setdefault("extensions", {})
+    kora_ext = extensions.setdefault("kora", {})
+
+    # Si ya existe harness_vector, no sobreescribir
+    if "harness_vector" in kora_ext:
+        return []
+
+    # Derivar y agregar
+    vector = derive_harness_vector_from_legacy(frontmatter, agent_path)
+    kora_ext["harness_vector"] = vector
+    kora_ext.setdefault("presentation", "state-primary")
+
+    if not dry_run:
+        dump_yaml_frontmatter_and_body(agent_path, frontmatter, body)
+
+    return [agent_path]
+
+
 def migrate_agents(profile="transitional", dry_run=False, cohort=None):
     changed_paths = []
     newly_scaffolded = set()
@@ -355,6 +469,12 @@ def migrate_agents(profile="transitional", dry_run=False, cohort=None):
         scaffolded = ensure_guardian_workspace() if not dry_run else []
         changed_paths.extend(scaffolded)
         newly_scaffolded.update(scaffolded)
+
+    # Perfil v2-agentfile: auto-derivar harness_vector en cada workspace
+    if profile == "v2-agentfile":
+        for workspace_dir in iter_agent_workspaces(cohort=cohort):
+            changed_paths.extend(migrate_to_v2_agentfile(workspace_dir, dry_run=dry_run))
+        return changed_paths
 
     for workspace_dir in iter_agent_workspaces(cohort=cohort):
         agents_path = workspace_dir / "AGENTS.md"
