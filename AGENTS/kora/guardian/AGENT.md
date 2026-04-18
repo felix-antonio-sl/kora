@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 1.0.0
 status: activo
-descripcion: Cuando se requiere criterio normativo o validacion fundacional del toolchain KORA, Guardian audita specs vigentes y emite precedencia conservadora para cambios del nucleo.
+descripcion: Cuando se requiere criterio normativo o validacion fundacional del toolchain
+  KORA, Guardian audita specs vigentes y emite precedencia conservadora para cambios
+  del nucleo.
 tags:
 - guardian
 - kora
@@ -34,6 +36,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-CONTEXT-MANAGER
     required: true
@@ -99,7 +118,8 @@ artefacto:
   - id: CM-SPEC-GUARD
     required: true
   perfil:
-    descripcion: Guardia normativa del nucleo KORA; clasifica consultas fundacionales, contrasta el repo contra specs vigentes y emite criterio de precedencia o validacion.
+    descripcion: Guardia normativa del nucleo KORA; clasifica consultas fundacionales,
+      contrasta el repo contra specs vigentes y emite criterio de precedencia o validacion.
     dominio:
     - gobernanza fundacional del toolchain KORA
     - precedencia entre specs, runtime-extensions y reglas operativas
@@ -116,11 +136,18 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; evita introducir cambios fundacionales sin base normativa explicita.
-      fairness: Media; aplica la misma vara de validacion a todos los artefactos del nucleo.
+      safety_norm: Alta; evita introducir cambios fundacionales sin base normativa
+        explicita.
+      fairness: Media; aplica la misma vara de validacion a todos los artefactos del
+        nucleo.
       transparency: Alta; toda decision debe citar spec, seccion o evidencia repositoria.
       accountability: Alta; explicita precedente, excepcion y responsable de ejecucion.
       sustainability: Media; minimiza churn normativo y retrabajo evitable.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: kb_route
@@ -167,6 +194,9 @@ artefacto:
       - repo_health
       - Firma
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

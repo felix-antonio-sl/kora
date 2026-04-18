@@ -454,6 +454,112 @@ def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) 
 
 
 # ---------------------------------------------------------------------------
+# Round-trip verification: T_target ∘ Lift_target ≈ id
+# ---------------------------------------------------------------------------
+
+def _collect_comparable_projection(skill_md_path: Path):
+    """Extrae el conjunto minimo comparable de un SKILL.md KORA.
+
+    Retorna dict con claves que SOBREVIVEN al round-trip a agentskills:
+    {name, description, body_semantic, subdirs_files_hash}.
+    """
+    import hashlib
+    fm, body = load_markdown_parts(skill_md_path)
+    name = (fm or {}).get("nombre") or (fm or {}).get("name") or ""
+    desc = (fm or {}).get("descripcion") or (fm or {}).get("description") or ""
+
+    # Body semantico: texto sin headings (que se renombran)
+    import re
+    body_no_headings = re.sub(r"^#{1,6}\s.*$", "", body, flags=re.MULTILINE).strip()
+    body_hash = hashlib.sha256(body_no_headings.encode("utf-8")).hexdigest()
+
+    # Hash de contenido de subdirs (scripts/referencias/recursos en KORA;
+    # scripts/references/assets en agentskills — los archivos son los mismos).
+    skill_dir = skill_md_path.parent
+    file_hashes = {}
+    KORA_TO_AGENTSKILLS = {"referencias": "references", "recursos": "assets"}
+    AGENTSKILLS_TO_KORA = {v: k for k, v in KORA_TO_AGENTSKILLS.items()}
+    for sub in ("scripts", "referencias", "recursos", "references", "assets"):
+        sub_dir = skill_dir / sub
+        if not sub_dir.is_dir():
+            continue
+        # Clave canonica en espanol para comparacion cross-regimen
+        canonical = AGENTSKILLS_TO_KORA.get(sub, sub)
+        for f in sorted(sub_dir.rglob("*")):
+            if f.is_file():
+                rel = f.relative_to(sub_dir)
+                key = f"{canonical}/{rel}"
+                file_hashes[key] = hashlib.sha256(f.read_bytes()).hexdigest()
+
+    return {
+        "name": name,
+        "description": desc,
+        "body_semantic_hash": body_hash,
+        "file_hashes": file_hashes,
+    }
+
+
+def cmd_roundtrip_check(agent_ref: str, target: str = "agentskills"):
+    """Verifica la dualidad T_target ∘ Lift_target ≈ id para una habilidad.
+
+    Para target=agentskills, la proyeccion es byte-identical modulo renames;
+    el round-trip se valida comparando (name, description, body_semantic, files)
+    entre la fuente KORA y el output proyectado (que es lo que un runtime
+    foraneo veria).
+
+    Para otros targets, el round-trip requiere Lift_R dedicado; v1.0 solo
+    cubre agentskills.
+    """
+    if target != "agentskills":
+        print(f"round-trip-check v1.0 solo cubre target=agentskills; {target} aun no tiene Lift dedicado")
+        raise SystemExit(2)
+
+    skill_md = _resolve_skill_path(agent_ref)
+    print(f"=== Round-trip check: {agent_ref} ↔ {target} ===\n")
+
+    # Proyecta
+    target_dir, _summary = _transmute_skill_to_agentskills(skill_md, dry_run=False)
+    projected_skill_md = target_dir / "SKILL.md"
+    if not projected_skill_md.exists():
+        print(f"ERROR: proyeccion no produjo {projected_skill_md}")
+        raise SystemExit(1)
+
+    # Recolecta fingerprints comparables
+    source = _collect_comparable_projection(skill_md)
+    proj = _collect_comparable_projection(projected_skill_md)
+
+    diffs = []
+    if source["name"] != proj["name"]:
+        diffs.append(f"name: KORA='{source['name']}' vs agentskills='{proj['name']}'")
+    if source["description"] != proj["description"]:
+        diffs.append(f"description: KORA='{source['description'][:60]}...' vs agentskills='{proj['description'][:60]}...'")
+    if source["body_semantic_hash"] != proj["body_semantic_hash"]:
+        diffs.append("body semantico (sin headings) difiere — proyeccion no preserva contenido")
+    # File hashes: deben coincidir cuando se normaliza a clave canonica es
+    source_files = source["file_hashes"]
+    proj_files = proj["file_hashes"]
+    only_source = set(source_files) - set(proj_files)
+    only_proj = set(proj_files) - set(source_files)
+    mismatched = {k for k in set(source_files) & set(proj_files) if source_files[k] != proj_files[k]}
+    if only_source:
+        diffs.append(f"archivos solo en KORA: {sorted(only_source)[:5]}")
+    if only_proj:
+        diffs.append(f"archivos solo en agentskills: {sorted(only_proj)[:5]}")
+    if mismatched:
+        diffs.append(f"archivos con contenido distinto: {sorted(mismatched)[:5]}")
+
+    if diffs:
+        print("ROUND-TRIP FALLA — la proyeccion no es byte-identical:")
+        for d in diffs:
+            print(f"  - {d}")
+        raise SystemExit(1)
+    else:
+        print("ROUND-TRIP OK — T_agentskills preserva name, description, body semantico y contenidos.")
+        print(f"  Source:    {skill_md.relative_to(KORA_ROOT)}")
+        print(f"  Projected: {projected_skill_md.relative_to(KORA_ROOT)}")
+
+
+# ---------------------------------------------------------------------------
 # CLI commands
 # ---------------------------------------------------------------------------
 
@@ -473,7 +579,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     # Target agentskills: proyeccion de habilidad
     if target == "agentskills":
         skill_md_path = _resolve_skill_path(agent)
-        print(f"=== KORA Transmutation: {agent} → agentskills.io ===\n")
+        print(f"=== KORA Transmutation: {agent} -> agentskills.io ===\n")
         print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
         if dry_run:
             target_dir, summary = _transmute_skill_to_agentskills(skill_md_path, dry_run=True)

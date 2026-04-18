@@ -864,6 +864,110 @@ def _check_autoria_conformance(path_filter=None):
     return diags
 
 
+def _check_vector_laws(path_filter=None):
+    """Verifica las 5 leyes inter-eje declaradas en harness-spec §4.1.
+
+    Leyes obligatorias (vector mal-formado si se violan):
+      L1. Π>=3 ⟹ Μ>=1   (fixed-points requieren estado)
+      L2. Ξ=4  ⟹ Λ>=1   (operad dinamica requiere composicion organizacional)
+      L3. Φ>=2 ⟹ Μ>=1   (colaborativo requiere memoria observable)
+      L4. Σ.accountability>=2 ⟹ Σ.transparency>=2   (responsabilidad requiere explicabilidad)
+      L5. Λ=3  ⟹ Σᵢ>=2 para todo i   (sociedad requiere compromisos eticos completos)
+
+    Se aplica a todo artefacto productivo con vector_ontologico declarado.
+    """
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
+
+    diags = []
+
+    def iter_productive_artifacts():
+        if AGENTS_ROOT.exists():
+            for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+                if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+                    continue
+                for ws_dir in sorted(ns_dir.iterdir()):
+                    if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                        continue
+                    am = ws_dir / "AGENT.md"
+                    if am.exists():
+                        yield am
+        if SKILLS_ROOT.exists():
+            for entry in sorted(SKILLS_ROOT.iterdir()):
+                if not entry.is_dir() or entry.name.startswith((".", "_")):
+                    continue
+                direct = entry / "SKILL.md"
+                if direct.exists():
+                    yield direct
+                    continue
+                for sub in sorted(entry.iterdir()):
+                    if not sub.is_dir() or sub.name.startswith((".", "_")):
+                        continue
+                    candidate = sub / "SKILL.md"
+                    if candidate.exists():
+                        yield candidate
+
+    for artifact_path in iter_productive_artifacts():
+        fm, err = load_yaml_safe(artifact_path)
+        if err or not isinstance(fm, dict):
+            continue
+        kora_ext = (fm.get("extensions") or {}).get("kora") or {}
+        v = kora_ext.get("vector_ontologico") or kora_ext.get("harness_vector")
+        if not isinstance(v, dict):
+            continue
+
+        pi = v.get("pi")
+        mu = v.get("mu")
+        xi = v.get("xi")
+        lam = v.get("lambda")
+        phi = v.get("phi")
+        sigma = v.get("sigma") or []
+
+        rel = str(artifact_path.relative_to(KORA_ROOT))
+        scope_kind = "workspace" if artifact_path.name == "AGENT.md" else "artifact"
+
+        def emit(code, msg, fix):
+            diags.append(Diagnostic(
+                check_id="vector-laws",
+                severity="high",
+                scope=scope_kind,
+                path=rel,
+                message=f"{code}: {msg}",
+                fix_hint=fix,
+            ))
+
+        if isinstance(pi, int) and isinstance(mu, int):
+            if pi >= 3 and mu < 1:
+                emit("L1-pi-requiere-mu", f"Π={pi} requiere Μ>=1 (fixed-points necesitan estado); encontrado Μ={mu}",
+                     "Sube mu a >=1 o baja pi a <=2")
+        if isinstance(xi, int) and isinstance(lam, int):
+            if xi == 4 and lam < 1:
+                emit("L2-xi-requiere-lambda", f"Ξ=4 (operad dinamica) requiere Λ>=1; encontrado Λ={lam}",
+                     "Declara composicion organizacional (Λ>=1) o baja xi a <=3")
+        if isinstance(phi, int) and isinstance(mu, int):
+            if phi >= 2 and mu < 1:
+                emit("L3-phi-requiere-mu", f"Φ={phi} (colaborativo) requiere Μ>=1; encontrado Μ={mu}",
+                     "Sube mu a >=1 o baja phi a <=1")
+        if isinstance(sigma, list) and len(sigma) == 5:
+            acc = sigma[3]
+            trans = sigma[2]
+            if isinstance(acc, int) and isinstance(trans, int):
+                if acc >= 2 and trans < 2:
+                    emit("L4-accountability-requiere-transparency",
+                         f"Σ.accountability={acc} requiere Σ.transparency>=2; encontrado transparency={trans}",
+                         "Sube transparency a >=2 o baja accountability a <=1")
+        if isinstance(lam, int) and lam == 3 and isinstance(sigma, list) and len(sigma) == 5:
+            low = [i for i, v in enumerate(sigma) if not isinstance(v, int) or v < 2]
+            if low:
+                emit("L5-sociedad-requiere-sigma-completo",
+                     f"Λ=3 requiere todos los componentes de Σ>=2; insuficientes: indices {low} (valores {[sigma[i] for i in low]})",
+                     "Sube los componentes de sigma a >=2 o baja lambda a <=2")
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 def _check_fidelidad_agentskills(path_filter=None):
     """Verifica que cada habilidad productiva se proyecta a agentskills.io sin perdida.
 
@@ -1231,6 +1335,13 @@ def _register_builtins():
               scope="artifact", severity="high", enforcement="eval",
               spec_ref="autoria-spec §3.5; harness-spec §4; ICAS Part IV", depends=("catalog-exists",), phase="verify"),
         _check_coalgebra_conformance,
+    )
+    register_check(
+        Check("vector-laws",
+              "Vector PMI × LFS cumple las 5 leyes inter-eje de harness-spec §4.1",
+              scope="artifact", severity="high", enforcement="schema",
+              spec_ref="harness-spec §4.1", depends=("catalog-exists",), phase="verify"),
+        _check_vector_laws,
     )
     register_check(
         Check("fidelidad-agentskills",

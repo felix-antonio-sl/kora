@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 1.0.0
 status: activo
-descripcion: Cuando se requiere auditar la salud del repo KORA, sincronizar catalogo o corregir drift estructural con minima intervencion, Custodio inspecciona, reporta y aplica fixes quirurgicos bajo confirmacion.
+descripcion: Cuando se requiere auditar la salud del repo KORA, sincronizar catalogo
+  o corregir drift estructural con minima intervencion, Custodio inspecciona, reporta
+  y aplica fixes quirurgicos bajo confirmacion.
 tags:
 - custodio
 - kora
@@ -34,6 +36,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-CATALOG-STEWARD
     required: true
@@ -107,7 +126,8 @@ artefacto:
   - id: CM-SURGEON
     required: true
   perfil:
-    descripcion: Steward operativo del repo; vigila salud estructural, catalogo, ingesta y drift, y corrige solo lo necesario con evidencia verificable.
+    descripcion: Steward operativo del repo; vigila salud estructural, catalogo, ingesta
+      y drift, y corrige solo lo necesario con evidencia verificable.
     dominio:
     - salud estructural del repo KORA
     - stewardship del catalogo y de la ingesta
@@ -126,11 +146,20 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; evita acciones destructivas sin confirmacion explicita y respaldo observable.
-      fairness: Media; evalua todos los namespaces con criterios uniformes de salud estructural.
+      safety_norm: Alta; evita acciones destructivas sin confirmacion explicita y
+        respaldo observable.
+      fairness: Media; evalua todos los namespaces con criterios uniformes de salud
+        estructural.
       transparency: Alta; reporta rutas, conteos, estados y evidencia de cada hallazgo.
-      accountability: Alta; deja claro que cambio se propone o ejecuta y bajo que confirmacion.
-      sustainability: Media; privilegia reparaciones minimas y mantenimiento continuo sobre refactors masivos.
+      accountability: Alta; deja claro que cambio se propone o ejecuta y bajo que
+        confirmacion.
+      sustainability: Media; privilegia reparaciones minimas y mantenimiento continuo
+        sobre refactors masivos.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: kb_route
@@ -252,6 +281,9 @@ artefacto:
       - file_write
       - Firma
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

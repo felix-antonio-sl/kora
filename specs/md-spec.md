@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-09"
     source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`, restaurando cristalizacion, RFC 2119, Traces to, patron regla+ejemplo+traza e invariantes de consistencia interna, auto-suficiencia y no-circularidad"
-version: "8.0.0"
+version: "8.1.0"
 status: publicado
 tags: [markdown, conocimiento, rag, koraficacion, fidelidad, atomic, prescriptivo, cristalizacion, rfc2119]
 lang: es
@@ -19,7 +19,7 @@ relations:
     - "urn:kora:kb:05-governance-lattice"
 ---
 
-# KORA/MD v8.0.0
+# KORA/MD v8.1.0
 
 ## 1. Definicion
 
@@ -383,6 +383,7 @@ spec). `knowledge-spec §3` referencia esta tabla como autoridad.
 | `organigram` | Dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
 | `atomic`     | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales **y sobre la particion semantica relevante del documento**: no se permite colapsar hechos distinguibles en una proposicion mas general solo para bajar conteo; dedup multi-source permitido solo para equivalencia semantica real; conflicto semantico entre fuentes -> tipo `tension`; referencia operativa de ~15.000 caracteres por artefacto y maximo duro de 200 proposiciones; si el corte estructural lo exige, se permite quedar levemente por debajo o por encima de la referencia |
 | `note`       | Nota tecnica compacta; al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante                |
+| `adr`        | Architecture Decision Record. Subperfil de `note`. **Frontmatter extendido obligatorio**: `extensions.kora.adr.{contexto, alternativas, factorizacion_elegida, consecuencias, estado}`. Cuerpo con secciones fijas: `## Contexto`, `## Alternativas consideradas`, `## Decision`, `## Consecuencias`, `## Trazabilidad`. Decision se registra como factorizacion categorica: `decision = g ∘ f` donde `f` es la restriccion operativa y `g` el morfismo elegido entre alternativas. Estados: `propuesta -> aceptada -> (superseded|deprecada|retirada)`. Trazabilidad: `relations.cites` apunta a las alternativas consideradas aunque no se hayan adoptado. |
 
 Clasificacion de familia:
 

@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 2.0.0
 status: activo
-descripcion: Cuando se requiere crear, validar, evolucionar o deprecar un workspace agentico KORA, Forgemaster diseña el contrato, materializa el scaffold y verifica conformidad antes de escribir.
+descripcion: Cuando se requiere crear, validar, evolucionar o deprecar un workspace
+  agentico KORA, Forgemaster diseña el contrato, materializa el scaffold y verifica
+  conformidad antes de escribir.
 tags:
 - forgemaster
 - kora
@@ -29,11 +31,12 @@ extensions:
       - 1
     presentacion: estado-primario
     atlas:
-      arnes_categorico: orquestador
+      arnes_categorico: persona
       forma_material: agente-propiamente-tal
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-AGENT-DEPRECATOR
     required: true
@@ -123,7 +142,8 @@ artefacto:
   - id: CM-WORKSPACE-SCAFFOLDER
     required: true
   perfil:
-    descripcion: Arquitecto y herrero de workspaces KORA; transforma requerimientos en scaffolds, validaciones y planes de evolucion gobernados por spec.
+    descripcion: Arquitecto y herrero de workspaces KORA; transforma requerimientos
+      en scaffolds, validaciones y planes de evolucion gobernados por spec.
     dominio:
     - diseño y scaffolding de workspaces agenticos KORA
     - validacion estructural y semantica de agentes, skills y contratos
@@ -142,11 +162,20 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; no materializa cambios persistentes sin validacion previa del contrato.
+      safety_norm: Alta; no materializa cambios persistentes sin validacion previa
+        del contrato.
       fairness: Media; aplica criterios uniformes a todos los workspaces bajo evaluacion.
-      transparency: Alta; toda recomendacion se ancla en specs, checks y evidencia del repo.
-      accountability: Alta; explicita que cambio propone, bajo que regla y con que impacto.
-      sustainability: Media; privilegia diffs minimos, reuso de componentes y deprecacion trazable.
+      transparency: Alta; toda recomendacion se ancla en specs, checks y evidencia
+        del repo.
+      accountability: Alta; explicita que cambio propone, bajo que regla y con que
+        impacto.
+      sustainability: Media; privilegia diffs minimos, reuso de componentes y deprecacion
+        trazable.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: catalog_resolve
@@ -292,6 +321,9 @@ artefacto:
       - diff_compute
       - Firma
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

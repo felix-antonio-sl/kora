@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-17"
-    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material."
-version: "1.0.0"
+    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material. v1.1 agrega shape coalgebraico opcional (§3.5)."
+version: "1.1.0"
 status: publicado
 tags: [autoria, artefacto-agentico, serializacion, proyeccion, unificada]
 lang: es
@@ -267,6 +267,35 @@ cuando `plan.fsm` esta declarado; no hace nada si el campo esta ausente
 
 Estos campos son **opcionales en v1.1** y **obligatorios** para
 artefactos que declaren `extensions.kora.verificacion_coalgebraica: true`.
+
+#### 3.5.1 API observable (Yoneda operativo)
+
+Un artefacto **PUEDE** declarar `artefacto.interfaz.api_observable` como el
+perfil representable minimo que un caller externo observa del artefacto —
+materializa la identidad-como-relacion de Yoneda (`04-identidad-es-relacion`).
+
+```yaml
+artefacto:
+  interfaz:
+    api_observable:
+      entradas:
+        - nombre: consulta
+          tipo: texto
+          obligatorio: true
+      salidas:
+        - nombre: respuesta
+          tipo: texto-estructurado
+      invariantes_io:
+        - "respuesta.urns_referenciados ⊆ conocimiento_permitido"
+        - "respuesta.tiempo_generacion <= contexto.qa_budget.latency"
+```
+
+Dos artefactos con el mismo `api_observable` son **indistinguibles por
+cualquier caller**; su diferencia queda en implementacion (plan, dominio,
+narrativa del perfil), no en contrato externo.
+
+Campo opcional en v1.1. Recomendado cuando el artefacto participa en
+composicion con otros (`componible_con` no vacio).
 
 ## 4. Los tres atlas y el vector ontologico
 

@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 2.0.0
 status: activo
-descripcion: Cuando se requiere orientacion sobre Transformacion Digital del Estado, Digitrans integra marco legal, plataformas habilitantes, CPAT y estrategia para responder con base normativa vigente.
+descripcion: Cuando se requiere orientacion sobre Transformacion Digital del Estado,
+  Digitrans integra marco legal, plataformas habilitantes, CPAT y estrategia para
+  responder con base normativa vigente.
 tags:
 - digitrans
 - gn
@@ -34,6 +36,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-CPAT-ANALYZER
     required: true
@@ -103,7 +122,9 @@ artefacto:
   - id: CM-SYNTHESIZER
     required: true
   perfil:
-    descripcion: Especialista en Transformacion Digital del Estado; conecta normativa, plataformas, madurez digital y estrategia para orientar decisiones de implementacion publica.
+    descripcion: Especialista en Transformacion Digital del Estado; conecta normativa,
+      plataformas, madurez digital y estrategia para orientar decisiones de implementacion
+      publica.
     dominio:
     - marco legal y normas tecnicas de TDE
     - plataformas habilitantes del ecosistema estatal digital
@@ -123,11 +144,21 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; no recomienda implementaciones incompatibles con normativa vigente o seguridad institucional.
-      fairness: Media; considera accesibilidad, inclusion y trato equivalente en la transformacion digital.
-      transparency: Alta; toda orientacion debe distinguir norma, dato institucional e interpretacion.
-      accountability: Media-alta; explicita responsables institucionales y limites de la recomendacion automatizada.
-      sustainability: Media; privilegia decisiones interoperables, escalables y mantenibles en el tiempo.
+      safety_norm: Alta; no recomienda implementaciones incompatibles con normativa
+        vigente o seguridad institucional.
+      fairness: Media; considera accesibilidad, inclusion y trato equivalente en la
+        transformacion digital.
+      transparency: Alta; toda orientacion debe distinguir norma, dato institucional
+        e interpretacion.
+      accountability: Media-alta; explicita responsables institucionales y limites
+        de la recomendacion automatizada.
+      sustainability: Media; privilegia decisiones interoperables, escalables y mantenibles
+        en el tiempo.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: catalog_resolve
@@ -173,6 +204,9 @@ artefacto:
       - Firma
       - Parametros
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

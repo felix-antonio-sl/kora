@@ -111,8 +111,18 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
     def test_operating_core_payload_matches_declared_core(self):
         payload = build_operating_core_payload()
-        self.assertEqual(payload["totals"]["workspaces"], 6)
-        self.assertEqual(set(payload["cohorts"].keys()), {"kora", "domain_canary"})
+        # El cohort se deriva del filesystem (AGENTS/{ns}/{name}/AGENT.md con status: activo).
+        # Validamos: (a) al menos las cohortes estan presentes, (b) el total coincide con
+        # la union de workspaces productivos descubiertos, (c) meta-kora core sigue dentro.
+        from scripts.kora_lib.config import OPERATING_CORE_COHORTS
+        expected_total = sum(len(ws) for ws in OPERATING_CORE_COHORTS.values())
+        self.assertEqual(payload["totals"]["workspaces"], expected_total)
+        self.assertEqual(set(payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))
+        all_core = set()
+        for cohort_items in payload["cohorts"].values():
+            all_core.update(item["workspace"] for item in cohort_items)
+        # Garantia: los 4 meta-kora operating core siempre viven en la cohort kora
+        self.assertTrue({"kora/guardian", "kora/forgemaster", "kora/curator", "kora/custodio"}.issubset(all_core))
 
     def test_meta_kora_audit_is_materialized_with_explicit_status(self):
         payload = build_operating_core_payload()

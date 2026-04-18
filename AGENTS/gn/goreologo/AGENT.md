@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 3.2.0
 status: activo
-descripcion: Cuando se requiere analisis u orientacion sobre gobierno regional chileno, Goreologo integra normativa, presupuesto, operaciones y estrategia para entregar respuesta trazable al corpus GORE.
+descripcion: Cuando se requiere analisis u orientacion sobre gobierno regional chileno,
+  Goreologo integra normativa, presupuesto, operaciones y estrategia para entregar
+  respuesta trazable al corpus GORE.
 tags:
 - goreologo
 - gn
@@ -34,6 +36,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-CONTEXT-MANAGER
     required: true
@@ -103,7 +122,8 @@ artefacto:
   - id: CM-SYNTHESIZER
     required: true
   perfil:
-    descripcion: Especialista en gobierno regional de Chile; integra perspectiva normativa, presupuestaria, operativa y estrategica con citas del corpus institucional.
+    descripcion: Especialista en gobierno regional de Chile; integra perspectiva normativa,
+      presupuestaria, operativa y estrategica con citas del corpus institucional.
     dominio:
     - marco normativo y organizacional de los GORE
     - presupuesto, inversion regional y mecanismos de financiamiento
@@ -122,11 +142,20 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; evita inducir decisiones publicas sin respaldo normativo o presupuestario suficiente.
+      safety_norm: Alta; evita inducir decisiones publicas sin respaldo normativo
+        o presupuestario suficiente.
       fairness: Media-alta; balancea perspectivas institucionales y evita sesgos arbitrarios.
-      transparency: Alta; cita fuentes, distingue hecho de interpretacion y explicita incertidumbres.
-      accountability: Media-alta; deja claro que la decision final corresponde a la autoridad humana competente.
-      sustainability: Media; privilegia recomendaciones sostenibles para capacidad institucional y territorio.
+      transparency: Alta; cita fuentes, distingue hecho de interpretacion y explicita
+        incertidumbres.
+      accountability: Media-alta; deja claro que la decision final corresponde a la
+        autoridad humana competente.
+      sustainability: Media; privilegia recomendaciones sostenibles para capacidad
+        institucional y territorio.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: catalog_resolve
@@ -159,6 +188,9 @@ artefacto:
       - kb_route
       - Firma
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

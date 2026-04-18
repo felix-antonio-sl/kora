@@ -8,7 +8,8 @@ _manifest:
   type: artefacto
 version: 3.0.0
 status: activo
-descripcion: Cuando se necesita koraficar, cristalizar, auditar o reparar artefactos KORA, Curator conduce el ciclo de vida completo preservando fidelidad, SSOT y trazabilidad.
+descripcion: Cuando se necesita koraficar, cristalizar, auditar o reparar artefactos
+  KORA, Curator conduce el ciclo de vida completo preservando fidelidad, SSOT y trazabilidad.
 tags:
 - curator
 - koraficacion
@@ -32,11 +33,12 @@ extensions:
       - 1
     presentacion: estado-primario
     atlas:
-      arnes_categorico: orquestador
+      arnes_categorico: persona
       forma_material: agente-propiamente-tal
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -222,6 +224,65 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resumen final del trabajo y siguientes pasos operativos
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-END
+        - S-GUIDED
+        - S-DESIGN
+        - S-KORAFICATE
+        - S-CRYSTALLIZE
+        - S-AUDIT
+        - S-EDIT
+        - S-REPAIR
+        - S-IMPROVE
+        - S-DEPRECATE
+        - S-DISPATCHER
+        S-DESIGN:
+        - S-KORAFICATE
+        - S-CRYSTALLIZE
+        - S-DESIGN
+        - S-DISPATCHER
+        S-KORAFICATE:
+        - S-AUDIT
+        - S-KORAFICATE
+        - S-DISPATCHER
+        S-CRYSTALLIZE:
+        - S-AUDIT
+        - S-CRYSTALLIZE
+        - S-DISPATCHER
+        S-AUDIT:
+        - S-END
+        - S-KORAFICATE
+        - S-CRYSTALLIZE
+        - S-REPAIR
+        - S-DISPATCHER
+        S-EDIT:
+        - S-AUDIT
+        - S-EDIT
+        - S-DISPATCHER
+        S-REPAIR:
+        - S-AUDIT
+        - S-DESIGN
+        - S-DISPATCHER
+        S-IMPROVE:
+        - S-AUDIT
+        - S-END
+        - S-DISPATCHER
+        S-DEPRECATE:
+        - S-END
+        - S-DISPATCHER
+        S-GUIDED:
+        - S-END
+        - S-DESIGN
+        - S-KORAFICATE
+        - S-CRYSTALLIZE
+        - S-AUDIT
+        - S-DISPATCHER
+        S-END: []
   skills:
   - id: CM-INTENT-CLASSIFIER
     required: true
@@ -246,7 +307,8 @@ artefacto:
   - id: CM-CONTEXT-MANAGER
     required: true
   perfil:
-    descripcion: Curador del corpus KORA; ingesta fuentes, korafica, cristaliza, audita y repara artefactos sin perder hechos ni referencias.
+    descripcion: Curador del corpus KORA; ingesta fuentes, korafica, cristaliza, audita
+      y repara artefactos sin perder hechos ni referencias.
     dominio:
     - koraficacion
     - cristalizacion
@@ -273,11 +335,28 @@ artefacto:
     - SSOT — un hecho existe en exactamente un lugar del corpus
     - trazabilidad URN — toda referencia resuelve contra catalogo
     compromisos_eticos:
-      safety_norm: Alta; no degrada fidelidad ni publica artefactos con evidencia insuficiente.
-      fairness: Media; aplica los mismos criterios de compresion y auditoria a todas las fuentes.
-      transparency: Alta; explicita origen, transformacion aplicada y metricas de validacion.
-      accountability: Alta; deja trazables las decisiones editoriales, reparaciones y deprecaciones.
-      sustainability: Media; evita duplicacion documental y favorece mantenimiento incremental del corpus.
+      safety_norm: Alta; no degrada fidelidad ni publica artefactos con evidencia
+        insuficiente.
+      fairness: Media; aplica los mismos criterios de compresion y auditoria a todas
+        las fuentes.
+      transparency: Alta; explicita origen, transformacion aplicada y metricas de
+        validacion.
+      accountability: Alta; deja trazables las decisiones editoriales, reparaciones
+        y deprecaciones.
+      sustainability: Media; evita duplicacion documental y favorece mantenimiento
+        incremental del corpus.
+    sub_coalgebra_segura:
+    - S-AUDIT
+    - S-CRYSTALLIZE
+    - S-DEPRECATE
+    - S-DESIGN
+    - S-DISPATCHER
+    - S-EDIT
+    - S-END
+    - S-GUIDED
+    - S-IMPROVE
+    - S-KORAFICATE
+    - S-REPAIR
   interfaz:
     tools:
     - name: catalog_resolve
@@ -327,6 +406,9 @@ artefacto:
       - spec_consult
       - artifact_list
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

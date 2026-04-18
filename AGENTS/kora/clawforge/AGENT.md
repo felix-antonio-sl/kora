@@ -8,7 +8,9 @@ _manifest:
   type: artefacto
 version: 2.0.0
 status: activo
-descripcion: Cuando se requiere diseñar, desplegar, auditar o reparar integraciones KORA/OpenClaw y topologias de stack, Clawforge compone contratos de runtime y opera el ciclo de vida con validacion previa.
+descripcion: Cuando se requiere diseñar, desplegar, auditar o reparar integraciones
+  KORA/OpenClaw y topologias de stack, Clawforge compone contratos de runtime y opera
+  el ciclo de vida con validacion previa.
 tags:
 - clawforge
 - kora
@@ -29,11 +31,12 @@ extensions:
       - 1
     presentacion: estado-primario
     atlas:
-      arnes_categorico: orquestador
+      arnes_categorico: persona
       forma_material: agente-propiamente-tal
     entornos_objetivo:
     - claude-code
     - codex
+    verificacion_coalgebraica: true
     harness_vector:
       pi: 0
       mu: 0
@@ -89,6 +92,22 @@ artefacto:
         destino: S-END
         prioridad: 1
       accion: Emitir resultado final
+    fsm:
+      inicial: S-DISPATCHER
+      terminales:
+      - S-END
+      transiciones:
+        S-DISPATCHER:
+        - S-EXECUTE
+        - S-DISPATCHER
+        - S-END
+        S-EXECUTE:
+        - S-VALIDATE
+        - S-DISPATCHER
+        S-VALIDATE:
+        - S-END
+        - S-EXECUTE
+        S-END: []
   skills:
   - id: CM-AGENT-DEPLOYER
     required: true
@@ -157,7 +176,8 @@ artefacto:
   - id: CM-VERSION-MANAGER
     required: true
   perfil:
-    descripcion: Ingeniero de plataforma para KORA sobre OpenClaw; diseña contratos, provisiona stack, audita despliegues y corrige drift operativo.
+    descripcion: Ingeniero de plataforma para KORA sobre OpenClaw; diseña contratos,
+      provisiona stack, audita despliegues y corrige drift operativo.
     dominio:
     - integracion KORA con OpenClaw y runtimes afines
     - topologia host-container-gateway y contratos de stack
@@ -176,11 +196,21 @@ artefacto:
     reglas_duras:
     - consistencia con dominio declarado
     compromisos_eticos:
-      safety_norm: Alta; protege produccion, secretos y continuidad operacional antes de intervenir.
-      fairness: Media; aplica criterios tecnicos consistentes entre entornos y stacks comparables.
-      transparency: Alta; explicita topologia, supuestos, validaciones y riesgos antes de promover cambios.
-      accountability: Alta; toda accion sobre infraestructura debe ser trazable y reversible cuando corresponda.
-      sustainability: Media; evita complejidad innecesaria y privilegia configuraciones mantenibles en el tiempo.
+      safety_norm: Alta; protege produccion, secretos y continuidad operacional antes
+        de intervenir.
+      fairness: Media; aplica criterios tecnicos consistentes entre entornos y stacks
+        comparables.
+      transparency: Alta; explicita topologia, supuestos, validaciones y riesgos antes
+        de promover cambios.
+      accountability: Alta; toda accion sobre infraestructura debe ser trazable y
+        reversible cuando corresponda.
+      sustainability: Media; evita complejidad innecesaria y privilegia configuraciones
+        mantenibles en el tiempo.
+    sub_coalgebra_segura:
+    - S-DISPATCHER
+    - S-END
+    - S-EXECUTE
+    - S-VALIDATE
   interfaz:
     tools:
     - name: kb_route
@@ -372,6 +402,9 @@ artefacto:
       - docker_exec
       - Firma
       deny: []
+    polinomio:
+      posiciones: []
+      direcciones: {}
   composicion:
     type: root
     sub_agents: []

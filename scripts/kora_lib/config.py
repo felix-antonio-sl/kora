@@ -223,18 +223,67 @@ META_KORA_STATUS = {
         "reason": "Nucleo operativo: cierra salud, catalogo e ingesta del repo.",
     },
 }
-OPERATING_CORE_COHORTS = {
-    "kora": (
-        "kora/guardian",
-        "kora/forgemaster",
-        "kora/curator",
-        "kora/custodio",
-    ),
-    "domain_canary": (
-        "gn/goreologo",
-        "gn/digitrans",
-    ),
-}
+def _discover_productive_workspaces():
+    """Deriva los workspaces productivos desde el filesystem.
+
+    Un workspace es productivo si:
+      - vive en AGENTS/{ns}/{name}/ (ns no empieza con "_"),
+      - contiene AGENT.md,
+      - AGENT.md declara status: activo.
+
+    Retorna dict {ns: tuple(ns/name, ...)} agrupado por namespace.
+    """
+    from .artifacts import load_yaml_safe
+
+    agents_root = KORA_ROOT / "AGENTS"
+    if not agents_root.exists():
+        return {}
+    out = {}
+    for ns_dir in sorted(agents_root.iterdir()):
+        if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+            continue
+        ns = ns_dir.name
+        workspaces = []
+        for ws_dir in sorted(ns_dir.iterdir()):
+            if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                continue
+            agent_md = ws_dir / "AGENT.md"
+            if not agent_md.exists():
+                continue
+            fm, err = load_yaml_safe(agent_md)
+            if err or not isinstance(fm, dict):
+                continue
+            if fm.get("status") not in ("activo", "publicado"):
+                continue
+            workspaces.append(f"{ns}/{ws_dir.name}")
+        if workspaces:
+            out[ns] = tuple(workspaces)
+    return out
+
+
+def _build_operating_core_cohorts():
+    """Agrupa workspaces productivos en cohortes canonicas.
+
+    Regla: namespace `kora` es cohort core; todo otro namespace es
+    domain cohort. Resultado es dict {cohort_name: tuple(workspaces)}.
+    """
+    productive = _discover_productive_workspaces()
+    cohorts = {}
+    if "kora" in productive:
+        cohorts["kora"] = productive["kora"]
+    domain_workspaces = []
+    for ns, workspaces in productive.items():
+        if ns == "kora":
+            continue
+        domain_workspaces.extend(workspaces)
+    if domain_workspaces:
+        cohorts["domain_canary"] = tuple(domain_workspaces)
+    return cohorts
+
+
+# Vista materializada de los cohorts productivos. Derivado del filesystem:
+# pasa a ser fuente de verdad cualquier AGENT.md con status activo.
+OPERATING_CORE_COHORTS = _build_operating_core_cohorts()
 
 DEPRECATED_URN_ALIASES = {
     "urn:kora:kb:spec-md": "urn:kora:kb:md-spec",
