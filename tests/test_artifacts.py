@@ -117,22 +117,17 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertEqual(doc["_manifest"]["urn"], "urn:test:skill:sample-extended:1.0.0")
 
     def test_agent_spec_restores_fsm_contract(self):
-        content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            # v2: agentfile redefinido como serializacion de ontologia
-            "v2.0.0",
             "serializacion",
-            "harness_vector",
-            "PMI × LFS",
-            # Dominios del shape
             "AGENT.md",
-            "agent.profile",
-            "agent.plan",
-            "agent.interface",
-            "agent.context",
-            "agent.composition",
-            "agent.invariants",
-            # Referencias a harness-spec
+            "artefacto.plan",
+            "artefacto.interfaz",
+            "artefacto.contexto",
+            "artefacto.composicion",
+            "artefacto.invariantes",
+            "agente-propiamente-tal",
+            "atlas.forma_material",
             "harness-spec",
         )
         for term in required_terms:
@@ -141,13 +136,12 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v7.1.0",
+            "KORA/MD v8.0.0",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
             "fat",
             "FS=100%",
-            "CR>1.5",
             "### 5.4.2 Realizacion superficial",
             "### 5.6 Familias documentales",
             "Heading truncado",
@@ -157,6 +151,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             "`atomic`",
             "### 5.6.1 Familia `atomic`",
             "productor canonico",
+            "Contrato vigente v8",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -168,9 +163,10 @@ class ArtifactFixtureTests(unittest.TestCase):
             "familia `atomic`",
             "productor canonico",
             "enum cerrado",
-            "5.000 palabras",
+            "15.000 caracteres",
             "200 proposiciones",
             "dedup multi-source",
+            "particion semantica relevante",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -180,29 +176,83 @@ class ArtifactFixtureTests(unittest.TestCase):
         required_terms = (
             "## 12. Productores canonicos de familia",
             "urn:kora:skill:atomize:1.0.0",
-            "KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-",
+            "KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-",
             "hand_edited",
+            "unica ruta soportada",
+            "scaffold semantico degradado",
+            "FS=100%",
         )
         for term in required_terms:
             self.assertIn(term, content)
 
-    def test_skill_spec_restores_extended_support_with_governed_contract(self):
-        content = (ROOT / "specs" / "skill-overlay-spec.md").read_text(encoding="utf-8")
+    def test_atomize_skill_is_runtime_agnostic_and_llm_first(self):
+        content = (ROOT / "SKILLS" / "kora" / "atomize" / "SKILL.md").read_text(encoding="utf-8")
         required_terms = (
-            # v2: skill-overlay redefinido como serializacion de ontologia
-            "v2.0.0",
-            "serializacion",
-            "harness_vector",
-            # v1.2 estructura portable mantenida
-            "## 5. Estructura interna del skill",
-            "scripts/",
-            "references/",
-            "assets/",
+            "Claude Code",
+            "Codex",
+            "LLM",
+            "Modo unico de operacion",
+            "unico productor soportado",
+            "Modo de recuperacion obligatoria",
+            "Criterios de rechazo",
             "## Resources",
-            "composable_with",
-            # Nuevas dimensiones v2
-            "skill_freedom",
-            "progressive disclosure",
+            "### Scripts",
+            "scripts/atomize.py",
+            "scripts/validate_atomic.py",
+            "scripts/check_atomic_bundle.py",
+            "scripts/review_atomic_quality.py",
+            "scripts/prepare_atomic_fidelity_review.py",
+            "scripts/review_atomic_acceptance.py",
+            "scripts/publish_atomic.py",
+            "references/llm-first-workflow.md",
+            "references/atomic-output-contract.md",
+            "references/plaintext-book-recovery.md",
+            "references/golden-case-opm-libro.md",
+            "references/golden-case-ocr-procedure.md",
+            "references/golden-case-multifile-dedup.md",
+            "references/golden-case-multifile-tension.md",
+            "references/quality-gates.md",
+            "references/semantic-fidelity-review.md",
+            "Criterio de cierre semantico",
+            "particion semantica relevante",
+            "colapsa hechos distinguibles",
+            "review aceptada y fresca",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+        required_paths = (
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "atomize.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "validate_atomic.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "check_atomic_bundle.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_quality.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "publish_atomic.py",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "llm-first-workflow.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "atomic-output-contract.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "plaintext-book-recovery.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "golden-case-opm-libro.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "golden-case-ocr-procedure.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "golden-case-multifile-dedup.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "golden-case-multifile-tension.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "quality-gates.md",
+            ROOT / "SKILLS" / "kora" / "atomize" / "references" / "semantic-fidelity-review.md",
+        )
+        for path in required_paths:
+            self.assertTrue(path.exists(), str(path))
+
+    def test_skill_spec_restores_extended_support_with_governed_contract(self):
+        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "serializacion",
+            "forma_material: habilidad",
+            "scripts/",
+            "referencias/",
+            "recursos/",
+            "fidelidad-agentskills",
+            "progressive-disclosure",
+            "componible_con",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -286,29 +336,27 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_specs_declare_manifest_kind_taxonomy(self):
         governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
-        agent_spec = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
-        skill_spec = (ROOT / "specs" / "skill-overlay-spec.md").read_text(encoding="utf-8")
+        autoria_spec = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
         self.assertIn("Manifest kind", governance)
-        self.assertIn("bootstrap_agents", governance)
-        self.assertIn("bootstrap_config", governance)
-        self.assertIn("lazy_load_endofunctor", governance)
-        # v2: el vector ontologico es fuente de verdad; AGENT.md es su serializacion
-        self.assertIn("vector ontologico", agent_spec)
-        self.assertIn("serializacion", agent_spec)
-        # Compatibilidad con arneses portables sigue vigente (v2 §13)
-        self.assertIn("Compatibilidad con workspace legacy", agent_spec)
-        # v2: skill-overlay usa 'DEBE' con contrato minimo + vector ontologico
-        self.assertIn("Todo skill portable **DEBE** declarar", skill_spec)
-        self.assertIn("harness_vector", skill_spec)
+        self.assertIn("artefacto agentico", governance)
+        self.assertIn("runtime_extension", governance)
+        self.assertIn("transmutation_record", governance)
+        self.assertIn("vector ontologico", autoria_spec)
+        self.assertIn("serializacion de autoria", autoria_spec)
+        self.assertIn("atlas.forma_material", autoria_spec)
+        self.assertIn("urn:{ns}:artefacto:{id}", governance)
 
     def test_forgemaster_tracks_governed_extended_skill_support(self):
         files = (
-            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md",
             AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
+            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertIn("baseline auditado soporta Skills degenerados y entrypoints extendidos", content)
         self.assertIn("BUNDLE GOBERNADO", content)
+        self.assertIn("skills/CM-*/SKILL.md", content)
+        self.assertIn("scripts/", content)
+        self.assertIn("references/", content)
+        self.assertIn("assets/", content)
 
     def test_forgemaster_generation_skills_keep_soul_minimal(self):
         files = (
@@ -322,20 +370,17 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("Ejemplos", content)
 
     def test_meta_core_agents_keep_control_layer_compact(self):
-        files = (
-            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
-            AGENTS_ROOT / "kora" / "custodio" / "AGENTS.md",
-            AGENTS_ROOT / "kora" / "forgemaster" / "AGENTS.md",
-            AGENTS_ROOT / "kora" / "guardian" / "AGENTS.md",
+        workspace_dirs = (
+            AGENTS_ROOT / "kora" / "curator",
+            AGENTS_ROOT / "kora" / "custodio",
+            AGENTS_ROOT / "kora" / "forgemaster",
+            AGENTS_ROOT / "kora" / "guardian",
         )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("REFINE_DRAFT", content)
-        self.assertNotIn("-> CONTEXT_SHIFT", content)
-        self.assertNotIn("→ ACT:", content)
-        self.assertNotIn("Pre-analisis(", content)
-        self.assertNotIn("Elicitar dominio y fuente", content)
-        self.assertNotIn("Ejecutar kora health", content)
-        self.assertNotIn("Ejecutar ciclo completo secuencial", content)
+        for workspace_dir in workspace_dirs:
+            self.assertTrue((workspace_dir / "AGENT.md").exists(), workspace_dir.as_posix())
+            self.assertFalse((workspace_dir / "AGENTS.md").exists(), workspace_dir.as_posix())
+            self.assertFalse((workspace_dir / "SOUL.md").exists(), workspace_dir.as_posix())
+            self.assertFalse((workspace_dir / "TOOLS.md").exists(), workspace_dir.as_posix())
 
     def test_meta_context_managers_do_not_encode_fsm_destinations(self):
         files = (
@@ -418,31 +463,24 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("assets/", content)
 
     def test_custodio_scope_excludes_agent_and_kb_mutation(self):
-        agents = (AGENTS_ROOT / "kora" / "custodio" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "kora" / "custodio" / "AGENT.md").read_text(encoding="utf-8")
         surgeon = (
             AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-SURGEON.md"
         ).read_text(encoding="utf-8")
         evolution = (
             AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", agents)
+        self.assertIn("excluyendo `AGENTS/`, specs fundacionales y contenido KB", agents)
         self.assertIn("sin intervenir `AGENTS/`, specs fundacionales ni contenido KB", surgeon)
         self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", evolution)
 
     def test_curator_and_custodio_soul_avoid_operational_policy_leakage(self):
-        curator = (AGENTS_ROOT / "kora" / "curator" / "SOUL.md").read_text(encoding="utf-8")
-        custodio = (AGENTS_ROOT / "kora" / "custodio" / "SOUL.md").read_text(encoding="utf-8")
-        self.assertNotIn("FS=100%", curator)
-        self.assertNotIn("CR>1.5", curator)
-        self.assertNotIn("Pipeline de ingesta", curator)
-        self.assertNotIn("catalog_master_kora.yml", custodio)
-        self.assertNotIn("Pipeline como flujo", custodio)
+        self.assertFalse((AGENTS_ROOT / "kora" / "curator" / "SOUL.md").exists())
+        self.assertFalse((AGENTS_ROOT / "kora" / "custodio" / "SOUL.md").exists())
 
     def test_meta_core_tools_stay_semantic(self):
-        custodio_tools = (AGENTS_ROOT / "kora" / "custodio" / "TOOLS.md").read_text(encoding="utf-8")
-        forgemaster_tools = (
-            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md"
-        ).read_text(encoding="utf-8")
+        custodio_tools = (AGENTS_ROOT / "kora" / "custodio" / "AGENT.md").read_text(encoding="utf-8")
+        forgemaster_tools = (AGENTS_ROOT / "kora" / "forgemaster" / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn("Implementacion:", custodio_tools)
         self.assertNotIn("Invoca internamente", forgemaster_tools)
         self.assertNotIn("Leer todos los archivos del workspace", forgemaster_tools)
@@ -477,7 +515,7 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_curator_tracks_governed_extended_skill_support(self):
         files = (
-            AGENTS_ROOT / "kora" / "curator" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENT.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-DESIGNER" / "SKILL.md",
         )
@@ -488,10 +526,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("assets/", content)
 
     def test_forgemaster_validator_drops_private_17_check_baseline(self):
-        files = (
-            AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",
-            AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md",
-        )
+        files = (AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md",)
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertNotIn("17 checks", content)
         self.assertNotIn("CMs huerfanos", content)
@@ -499,7 +534,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("baseline publicado", content)
 
     def test_forgemaster_tracks_current_spec_versions_and_fsm_precedence(self):
-        agents = (AGENTS_ROOT / "kora" / "forgemaster" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "kora" / "forgemaster" / "AGENT.md").read_text(encoding="utf-8")
         skills = "\n".join(
             path.read_text(encoding="utf-8")
             for path in (
@@ -509,7 +544,6 @@ class ArtifactFixtureTests(unittest.TestCase):
             )
         )
         self.assertIn("[prioridad 1]", agents)
-        self.assertIn("agent-spec-md v8.7.0", agents)
         self.assertIn("agent-spec-md v8.7.0", skills)
         self.assertIn("skill-spec-md v4.2.0", skills)
         self.assertNotIn("agent-spec-md v8.3.0", skills)
@@ -519,17 +553,14 @@ class ArtifactFixtureTests(unittest.TestCase):
         validator = (
             AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-AGENT-VALIDATOR" / "SKILL.md"
         ).read_text(encoding="utf-8")
-        tools = (AGENTS_ROOT / "kora" / "forgemaster" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (AGENTS_ROOT / "kora" / "forgemaster" / "config.json").read_text(encoding="utf-8")
+        agent = (AGENTS_ROOT / "kora" / "forgemaster" / "AGENT.md").read_text(encoding="utf-8")
         self.assertIn("agent-spec-md §4.1", validator)
         self.assertIn("agent-spec-md §4.2-§4.3", validator)
         self.assertIn("gobernanza.md §5 y §8", validator)
         self.assertNotIn("GRAMATICA DE BEHAVIOR (§3.1)", validator)
         self.assertNotIn("FSM CANONICA (§3.2)", validator)
-        self.assertIn("Formal layer oficial, fundamentos, formal/00", tools)
-        self.assertIn("Formal layer agente, determinismo, coalgebra, formal/01", tools)
-        self.assertIn('"urn:kora:kb:cat-foundations"', config)
-        self.assertIn('"urn:kora:kb:cat-behavioral-preservation"', config)
+        self.assertIn("urn:kora:kb:cat-foundations", agent)
+        self.assertIn("urn:kora:kb:cat-behavioral-preservation", agent)
 
     def test_forgemaster_extended_skill_docs_cover_design_build_and_validation(self):
         files = (
@@ -569,29 +600,24 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertNotIn("Generar _transmutation.yml", content)
 
     def test_guardian_runtime_capabilities_drop_analysis(self):
-        content = (AGENTS_ROOT / "kora" / "guardian" / "config.json").read_text(encoding="utf-8")
+        content = (AGENTS_ROOT / "kora" / "guardian" / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)
+        self.assertNotIn("runtime_capabilities", content)
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
-        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (AGENTS_ROOT / "gn" / "digitrans" / "config.json").read_text(encoding="utf-8")
-        self.assertNotIn("urn:gov:kb:intro-tde", tools)
-        self.assertNotIn("urn:gov:kb:lexicon-wikiguias", tools)
-        self.assertNotIn("urn:gov:kb:datosgob", tools)
-        self.assertNotIn("urn:legal:kb:ley-21658-segdig", tools)
-        self.assertNotIn("urn:legal:kb:ley-21719-datos-personales", tools)
-        self.assertNotIn("urn:legal:kb:legislacion-ia-chile", tools)
-        self.assertNotIn("urn:gov:kb:intro-tde", config)
-        self.assertNotIn("urn:legal:kb:ley-21658-segdig", config)
-        self.assertIn("urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025", tools)
-        self.assertIn("urn:tde:kb:recomendaciones-tecnicas-cloud-publica", config)
-        self.assertNotIn("urn:orko:kb:orko-metodologia", config)
+        agent = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
+        self.assertNotIn("urn:gov:kb:intro-tde", agent)
+        self.assertNotIn("urn:gov:kb:lexicon-wikiguias", agent)
+        self.assertNotIn("urn:gov:kb:datosgob", agent)
+        self.assertNotIn("urn:legal:kb:ley-21658-segdig", agent)
+        self.assertNotIn("urn:legal:kb:ley-21719-datos-personales", agent)
+        self.assertNotIn("urn:legal:kb:legislacion-ia-chile", agent)
+        self.assertIn("urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025", agent)
+        self.assertIn("urn:tde:kb:recomendaciones-tecnicas-cloud-publica", agent)
+        self.assertNotIn("urn:orko:kb:orko-metodologia", agent)
 
     def test_digitrans_bootstrap_matches_current_agent_spec(self):
-        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (AGENTS_ROOT / "gn" / "digitrans" / "SOUL.md").read_text(encoding="utf-8")
-        user = (AGENTS_ROOT / "gn" / "digitrans" / "USER.md").read_text(encoding="utf-8")
-        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
         intake = (AGENTS_ROOT / "gn" / "digitrans" / "skills" / "CM-INTAKE.md").read_text(encoding="utf-8")
         self.assertIn("[prioridad 1]", agents)
         self.assertIn("dominio=normativo", agents)
@@ -599,17 +625,16 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("S-CLARIFY", agents)
         self.assertNotIn("REFINE_DRAFT_INTERNALLY", agents)
         self.assertNotIn("-> CONTEXT_SHIFT", agents)
-        self.assertNotIn("## Saludo", soul)
-        self.assertNotIn("## Estilo", soul)
-        self.assertNotIn("## Ejemplos de Comportamiento", soul)
-        self.assertNotIn("Sesion de consulta TDE", user)
-        self.assertIn("**Parametros:**", tools)
-        self.assertIn("**Descripcion funcional:**", tools)
+        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "SOUL.md").exists())
+        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "USER.md").exists())
+        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").exists())
+        self.assertIn("artefacto:", agents)
+        self.assertIn("interfaz:", agents)
         self.assertNotIn("lista para enrutar a S-", intake)
         self.assertIn("cierre_solicitado", intake)
 
     def test_digitrans_dispatcher_exits_scope_and_ambiguity_without_self_loop(self):
-        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md").read_text(encoding="utf-8")
+        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn("IF fuera_scope [prioridad 1] -> S-DISPATCHER", agents)
         self.assertNotIn("IF ambiguo [prioridad 7] -> S-DISPATCHER", agents)
         self.assertIn("IF fuera_scope [prioridad 1] -> S-REJECT", agents)
@@ -617,9 +642,9 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("IF tema != dominio TDE -> rechazar con motivo", agents)
 
     def test_digitrans_tools_route_docdigital_and_pisee_explicitly(self):
-        tools = (AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").read_text(encoding="utf-8")
-        self.assertIn("| DocDigital, Coordinacion TDE | urn:tde:kb:manual-coordinadora-transformacion-digital |", tools)
-        self.assertIn("| Dec.12, Interoperabilidad | urn:tde:kb:decreto-12-interoperabilidad |", tools)
+        agent = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
+        self.assertIn("urn:tde:kb:manual-coordinadora-transformacion-digital", agent)
+        self.assertIn("urn:tde:kb:decreto-12-interoperabilidad", agent)
 
     def test_pensador_generador_normalizes_control_targets_and_soul(self):
         ws = AGENTS_ROOT / "fxsl" / "pensador-generador"
@@ -688,25 +713,19 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_swarm_spec_restores_operational_orchestration_contract(self):
-        content = (ROOT / "specs" / "agentfile-spec.md").read_text(encoding="utf-8")
-        # v2: orquestacion avanzada proyecta a Ξ-4 (operad dinamica) con
-        # golden_paths, circuit_breakers, event_routing declarados en composition
+        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "golden_paths",
-            "circuit_breakers",
-            "event_routing",
-            "composition",
-            # operad dinamica es el nombre formal
+            "orquestador",
             "operad dinamica",
+            "artefacto.composicion",
+            "agente-plataforma",
         )
         for term in required_terms:
             self.assertIn(term, content)
 
     def test_curator_tracks_restored_md_and_spec_contracts(self):
         files = (
-            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
-            AGENTS_ROOT / "kora" / "curator" / "SOUL.md",
-            AGENTS_ROOT / "kora" / "curator" / "TOOLS.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENT.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-KORAFICATOR.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-CRYSTALLIZER.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-ARTIFACT-AUDITOR" / "SKILL.md",
@@ -723,21 +742,21 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("verificacion adversarial", content)
 
     def test_curator_declares_fsm_precedence_and_type_safe_fidelity_routing(self):
-        agents = (AGENTS_ROOT / "kora" / "curator" / "AGENTS.md").read_text(encoding="utf-8")
-        self.assertIn("[prioridad 1]", agents)
+        agents = (AGENTS_ROOT / "kora" / "curator" / "AGENT.md").read_text(encoding="utf-8")
+        self.assertIn("prioridad: 1", agents)
         self.assertIn(
-            "IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=descriptivo [prioridad 2] -> S-KORAFICATE",
+            "validacion_falla AND causa=fidelidad AND tipo=descriptivo",
             agents,
         )
         self.assertIn(
-            "IF validacion_falla AND causa_principal=fidelidad AND tipo_artefacto=prescriptivo [prioridad 3] -> S-CRYSTALLIZE",
+            "validacion_falla AND causa=fidelidad AND tipo=prescriptivo",
             agents,
         )
         self.assertNotIn("IF FIDELITY_CHECK fails -> S-KORAFICATE", agents)
 
     def test_curator_guided_mode_uses_declared_transform_phases_only(self):
         files = (
-            AGENTS_ROOT / "kora" / "curator" / "AGENTS.md",
+            AGENTS_ROOT / "kora" / "curator" / "AGENT.md",
             AGENTS_ROOT / "kora" / "curator" / "skills" / "CM-LIFECYCLE-ORCHESTRATOR.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)

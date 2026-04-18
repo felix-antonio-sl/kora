@@ -16,12 +16,51 @@ Nota v8: el staging previo de drafts/ en OPERATIONS/ fue eliminado.
 SCRIPTORIUM/REVIEW reemplaza OPERATIONS/drafts/ para knowledge.
 """
 
-import shutil
+import re
 from pathlib import Path
 
-from .artifacts import load_yaml_safe, dump_yaml_frontmatter_and_body
+from .artifacts import dump_yaml_frontmatter_and_body
 from .config import KORA_ROOT, KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT
-from .validation import lint_kora_markdown_parts, load_markdown_parts
+from .validation import lint_kora_markdown_parts, load_markdown_parts, resolve_document_family
+
+
+def _atomic_bundle_root(stem):
+    if stem.endswith("-index"):
+        return stem[:-6]
+    return re.sub(r"-\d+$", "", stem)
+
+
+def _atomic_bundle_paths(draft_path, frontmatter):
+    if resolve_document_family(frontmatter) != "atomic":
+        return [draft_path]
+
+    atomic_ext = frontmatter.get("extensions", {}).get("kora", {}).get("atomic", {})
+    if not isinstance(atomic_ext, dict) or not atomic_ext.get("segmented"):
+        return [draft_path]
+
+    root = _atomic_bundle_root(draft_path.stem)
+
+    candidates = []
+    index_path = draft_path.parent / f"{root}-index{draft_path.suffix}"
+    if index_path.exists():
+        candidates.append(index_path)
+    segment_pattern = re.compile(rf"^{re.escape(root)}-(\d+){re.escape(draft_path.suffix)}$")
+    segment_matches = []
+    for candidate in draft_path.parent.glob(f"{root}-*{draft_path.suffix}"):
+        match = segment_pattern.match(candidate.name)
+        if match:
+            segment_matches.append((int(match.group(1)), candidate))
+    candidates.extend(
+        candidate for _, candidate in sorted(segment_matches, key=lambda item: item[0])
+    )
+    if draft_path not in candidates:
+        candidates.append(draft_path)
+
+    unique = []
+    for item in candidates:
+        if item not in unique:
+            unique.append(item)
+    return unique
 
 
 def cmd_promote(draft_path_str):
@@ -50,49 +89,63 @@ def cmd_promote(draft_path_str):
         print(f"ERROR: No _manifest.urn found in {draft_path_str}")
         raise SystemExit(1)
 
-    status = frontmatter.get("status", "")
-    if status != "draft":
-        print(f"ERROR: Expected status: draft, found status: {status}")
-        print(f"  Only draft artifacts can be promoted.")
-        raise SystemExit(1)
+    bundle_paths = _atomic_bundle_paths(draft_path, frontmatter)
+    bundle_frontmatters = {}
+    bundle_bodies = {}
+    promoted_pairs = []
 
-    # Run lint checks
-    failures = lint_kora_markdown_parts(frontmatter, body)
-    if failures:
-        print(f"ERROR: Lint failures prevent promotion:")
-        for f in failures[:10]:
-            print(f"  - {f}")
-        print(f"\nFix lint issues first, then retry promotion.")
-        raise SystemExit(1)
+    for bundle_path in bundle_paths:
+        bundle_frontmatter, bundle_body = load_markdown_parts(bundle_path)
+        if not isinstance(bundle_frontmatter, dict):
+            print(f"ERROR: Cannot parse frontmatter in {bundle_path}")
+            raise SystemExit(1)
 
-    # Compute destination path (mirror REVIEW structure to KNOWLEDGE/)
-    rel_to_drafts = draft_path.relative_to(review_root)
-    dest_path = KNOWLEDGE_ROOT / rel_to_drafts
+        bundle_status = bundle_frontmatter.get("status", "")
+        if bundle_status != "draft":
+            print(f"ERROR: Expected status: draft, found status: {bundle_status}")
+            print(f"  Only draft artifacts can be promoted.")
+            raise SystemExit(1)
 
-    if dest_path.exists():
-        print(f"WARNING: Target already exists: {dest_path.relative_to(KORA_ROOT)}")
-        print(f"  This will overwrite the existing file.")
+        failures = lint_kora_markdown_parts(bundle_frontmatter, bundle_body, path=bundle_path)
+        if failures:
+            print(f"ERROR: Lint failures prevent promotion of {bundle_path.name}:")
+            for failure in failures[:10]:
+                print(f"  - {failure}")
+            print(f"\nFix lint issues first, then retry promotion.")
+            raise SystemExit(1)
 
-    # Change status to published
-    frontmatter["status"] = "published"
+        bundle_frontmatters[bundle_path] = bundle_frontmatter
+        bundle_bodies[bundle_path] = bundle_body
 
-    # Ensure destination directory exists
-    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    for bundle_path in bundle_paths:
+        bundle_frontmatter = bundle_frontmatters[bundle_path]
+        bundle_body = bundle_bodies[bundle_path]
+        rel_to_drafts = bundle_path.relative_to(review_root)
+        dest_path = KNOWLEDGE_ROOT / rel_to_drafts
 
-    # Write to destination
-    dump_yaml_frontmatter_and_body(dest_path, frontmatter, body, lint_guard=False)
+        if dest_path.exists():
+            print(f"WARNING: Target already exists: {dest_path.relative_to(KORA_ROOT)}")
+            print(f"  This will overwrite the existing file.")
 
-    # Remove the draft
-    draft_path.unlink()
+        bundle_frontmatter["status"] = "published"
+        dest_path.parent.mkdir(parents=True, exist_ok=True)
+        dump_yaml_frontmatter_and_body(dest_path, bundle_frontmatter, bundle_body, lint_guard=False)
+        bundle_path.unlink()
+        promoted_pairs.append(
+            (
+                bundle_frontmatter.get("_manifest", {}).get("urn", ""),
+                bundle_path.relative_to(KORA_ROOT),
+                dest_path.relative_to(KORA_ROOT),
+            )
+        )
 
-    # Clean up empty directories
     try:
         draft_path.parent.rmdir()
     except OSError:
-        pass  # Directory not empty, that's fine
+        pass
 
-    rel_dest = dest_path.relative_to(KORA_ROOT)
-    print(f"PROMOTED: {urn}")
-    print(f"  {draft_path.relative_to(KORA_ROOT)} → {rel_dest}")
-    print(f"  status: draft → published")
+    for promoted_urn, source_rel, dest_rel in promoted_pairs:
+        print(f"PROMOTED: {promoted_urn}")
+        print(f"  {source_rel} → {dest_rel}")
+        print(f"  status: draft → published")
     print(f"\nRun 'python3 scripts/kora index' to update the catalog.")

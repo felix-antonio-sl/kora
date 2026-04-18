@@ -18,7 +18,8 @@ read_when:
 
 - `FS=100%` es obligatorio.
 - `CR>1.5` es el objetivo por defecto; si la densidad informacional lo impide, debe explicitarse la justificacion.
-- Todo artefacto nuevo sigue el pipeline `OPERATIONS/inbox -> OPERATIONS/source -> OPERATIONS/drafts -> KNOWLEDGE/`.
+- Todo artefacto nuevo sigue el pipeline `KNOWLEDGE/_SCRIPTORIUM/INBOX -> KNOWLEDGE/_SCRIPTORIUM/REVIEW -> KNOWLEDGE/{ns}/...`.
+- La familia `atomic` se emite solo via `atomize`; no se publica desde `REVIEW` sin acceptance review persistente y aceptada.
 - Se aplica `SSOT`: un hecho, un lugar.
 
 ## Scope y Routing

@@ -1,0 +1,22 @@
+12
+OPERATIONS MANUAL 2024
+Incident Respon-
+se Procedure
+1. Scope
+This proce-
+dure applies to all contracted operators.
+Figure 1 Incident Flow
+13
+OPERATIONS MANUAL 2024
+Operators must log each incident within 24 hours.
+Exceptions are permitted only when the duty manager approves the delay.
+2. Communication
+The control room must notify the field supervisor immediately.
+Continued on next page
+14
+OPERATIONS MANUAL 2024
+The field supervisor may escalate high-risk incidents to the response lead.
+3. Retention
+The platform stores each incident log for 90 days.
+Archived logs remain available for audit requests.
+https://example.com/noise
