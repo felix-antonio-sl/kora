@@ -44,7 +44,7 @@ def dump_yaml_frontmatter_and_body(path, frontmatter, body, lint_guard=True):
                 kora_ext["shard_root_urn"] = urn
 
             if lint_guard:
-                failures = lint_kora_markdown_parts(shard_frontmatter, shard_body)
+                failures = lint_kora_markdown_parts(shard_frontmatter, shard_body, path=shard_path)
                 if failures:
                     joined = "; ".join(failures[:8])
                     raise ValueError(f"KORA/MD blocked by lint: {joined}")

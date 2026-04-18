@@ -96,6 +96,11 @@ def main():
 
     p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from drafts/ to KNOWLEDGE/")
     p_promote.add_argument("path", help="Path to the draft artifact to promote")
+    p_promote.add_argument(
+        "--review",
+        default=None,
+        help="Optional acceptance review path for atomic bundles; ignored for non-atomic families",
+    )
 
     p_transmute = subparsers.add_parser("transmute", help="Proyecta KORA IR a runtime target con matriz de preservacion")
     p_transmute.add_argument("--target", required=True, choices=SUPPORTED_TARGETS,
@@ -154,7 +159,7 @@ def main():
     elif args.command == "kb-graph":
         cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles)
     elif args.command == "promote":
-        cmd_promote(args.path)
+        cmd_promote(args.path, review_path_str=args.review)
     elif args.command == "transmute":
         cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
     elif args.command == "ingest":

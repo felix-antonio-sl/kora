@@ -23,11 +23,17 @@ from .artifacts import dump_yaml_frontmatter_and_body
 from .config import KORA_ROOT, KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT
 from .validation import lint_kora_markdown_parts, load_markdown_parts, resolve_document_family
 
+ATOMIC_ACCEPTANCE_REVIEW_TYPE = "atomic_acceptance"
+
 
 def _atomic_bundle_root(stem):
     if stem.endswith("-index"):
         return stem[:-6]
     return re.sub(r"-\d+$", "", stem)
+
+
+def default_atomic_review_path(draft_path):
+    return draft_path.with_name(f"{_atomic_bundle_root(draft_path.stem)}-review{draft_path.suffix}")
 
 
 def _atomic_bundle_paths(draft_path, frontmatter):
@@ -63,9 +69,49 @@ def _atomic_bundle_paths(draft_path, frontmatter):
     return unique
 
 
-def cmd_promote(draft_path_str):
+def _atomic_bundle_latest_mtime(bundle_paths):
+    return max(path.stat().st_mtime for path in bundle_paths)
+
+
+def _display_review_path(review_path):
+    try:
+        return review_path.relative_to(KORA_ROOT)
+    except ValueError:
+        return review_path
+
+
+def validate_atomic_acceptance_review(draft_path, *, review_path=None, bundle_paths=None):
+    review_path = review_path or default_atomic_review_path(draft_path)
+    if not review_path.exists():
+        return False, f"missing acceptance review: {review_path}", review_path
+
+    review_frontmatter, _review_body = load_markdown_parts(review_path)
+    if not isinstance(review_frontmatter, dict):
+        return False, f"cannot parse acceptance review frontmatter: {review_path}", review_path
+    if review_frontmatter.get("review_type") != ATOMIC_ACCEPTANCE_REVIEW_TYPE:
+        return False, f"invalid review_type in {review_path}", review_path
+    if review_frontmatter.get("bundle_root") != _atomic_bundle_root(draft_path.stem):
+        return False, f"review bundle_root does not match target bundle: {review_path}", review_path
+    if review_frontmatter.get("decision") != "accept":
+        return False, f"review decision is not accept: {review_path}", review_path
+    if not review_frontmatter.get("publish_ready"):
+        return False, f"review is not publish_ready: {review_path}", review_path
+
+    if bundle_paths is None:
+        frontmatter, _body = load_markdown_parts(draft_path)
+        if not isinstance(frontmatter, dict):
+            return False, f"cannot parse frontmatter in {draft_path}", review_path
+        bundle_paths = _atomic_bundle_paths(draft_path, frontmatter)
+    if review_path.stat().st_mtime < _atomic_bundle_latest_mtime(bundle_paths):
+        return False, f"review is stale for current bundle state: {review_path}", review_path
+
+    return True, "", review_path
+
+
+def cmd_promote(draft_path_str, *, review_path_str=None):
     draft_path = Path(draft_path_str).resolve()
     review_root = (SCRIPTORIUM_ROOT / "REVIEW").resolve()
+    review_path = Path(review_path_str).expanduser().resolve() if review_path_str else None
 
     # Verify the file is in SCRIPTORIUM/REVIEW/
     if review_root not in draft_path.parents and draft_path.parent != review_root:
@@ -90,6 +136,20 @@ def cmd_promote(draft_path_str):
         raise SystemExit(1)
 
     bundle_paths = _atomic_bundle_paths(draft_path, frontmatter)
+    if resolve_document_family(frontmatter) == "atomic":
+        valid_review, message, resolved_review_path = validate_atomic_acceptance_review(
+            draft_path,
+            review_path=review_path,
+            bundle_paths=bundle_paths,
+        )
+        if not valid_review:
+            print(f"ERROR: {message}")
+            print(
+                "Run review_atomic_acceptance.py with --decision accept after finishing bundle and semantic review."
+            )
+            raise SystemExit(1)
+        print(f"ACCEPTANCE REVIEW: {_display_review_path(resolved_review_path)}")
+
     bundle_frontmatters = {}
     bundle_bodies = {}
     promoted_pairs = []

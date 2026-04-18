@@ -3,6 +3,7 @@ import sys
 import tempfile
 import textwrap
 import unittest
+import os
 from pathlib import Path
 from uuid import uuid4
 
@@ -12,6 +13,26 @@ from kora_lib.atomize import _build_source_docs, _deduplicate_candidates, _extra
 from kora_lib.promote import _atomic_bundle_paths
 from kora_lib.validation import _collect_atomic_bundle_paths
 from kora_lib.validation import lint_kora_markdown_parts, parse_atomic_propositions
+
+
+def write_atomic_acceptance_review(path: Path, bundle_root: str, *, decision: str = "accept", publish_ready: bool = True):
+    path.write_text(
+        textwrap.dedent(
+            f"""\
+            ---
+            review_type: atomic_acceptance
+            decision: {decision}
+            publish_ready: {str(publish_ready).lower()}
+            bundle_root: {bundle_root}
+            ---
+
+            # Atomic Acceptance Review
+
+            Bundle de prueba para gate de promote.
+            """
+        ),
+        encoding="utf-8",
+    )
 
 
 class AtomizeCliTests(unittest.TestCase):
@@ -438,6 +459,8 @@ class AtomizeCliTests(unittest.TestCase):
                 self.assertGreaterEqual(len(review_outputs), 3)
 
                 index_path = review_dir / f"atomic-{slug}-index.md"
+                review_path = review_dir / f"atomic-{slug}-review.md"
+                write_atomic_acceptance_review(review_path, f"atomic-{slug}")
                 promote = run_cli("promote", str(index_path))
                 self.assertIn("PROMOTED:", promote.stdout)
 
@@ -580,6 +603,139 @@ class AtomizeCliTests(unittest.TestCase):
                 self.assertEqual(published.returncode, 0, published.stdout + published.stderr)
                 self.assertIn("ACCEPTANCE REVIEW:", published.stdout)
                 self.assertTrue((published_dir / f"atomic-{slug}.md").exists())
+            finally:
+                for path in review_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+                for path in published_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+
+    def test_promote_atomic_requires_acceptance_review(self):
+        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        slug = f"test-promote-missing-{uuid4().hex[:10]}"
+
+        review_dir.mkdir(parents=True, exist_ok=True)
+        published_dir.mkdir(parents=True, exist_ok=True)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmpdir = Path(tmp)
+            corpus = tmpdir / "corpus.md"
+            corpus.write_text(
+                "# Norma\n\n- Registrar el evento en 48 horas.\n- Mantener trazabilidad.\n",
+                encoding="utf-8",
+            )
+
+            try:
+                run_cli("atomize", str(corpus), "--slug", slug)
+
+                artifact_path = review_dir / f"atomic-{slug}.md"
+                blocked = run_cli("promote", str(artifact_path), check=False)
+                self.assertNotEqual(blocked.returncode, 0)
+                self.assertIn("missing acceptance review", blocked.stdout)
+                self.assertFalse((published_dir / f"atomic-{slug}.md").exists())
+            finally:
+                for path in review_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+                for path in published_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+
+    def test_promote_atomic_rejects_stale_acceptance_review(self):
+        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        slug = f"test-promote-stale-{uuid4().hex[:10]}"
+
+        review_dir.mkdir(parents=True, exist_ok=True)
+        published_dir.mkdir(parents=True, exist_ok=True)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmpdir = Path(tmp)
+            corpus = tmpdir / "corpus.md"
+            corpus.write_text(
+                "# Norma\n\n- Registrar el evento en 48 horas.\n- Mantener trazabilidad.\n",
+                encoding="utf-8",
+            )
+
+            try:
+                run_cli("atomize", str(corpus), "--slug", slug)
+
+                artifact_path = review_dir / f"atomic-{slug}.md"
+                review_path = review_dir / f"atomic-{slug}-review.md"
+                write_atomic_acceptance_review(review_path, f"atomic-{slug}")
+                stale_ts = review_path.stat().st_mtime + 5
+                os.utime(artifact_path, (stale_ts, stale_ts))
+
+                blocked = run_cli("promote", str(artifact_path), check=False)
+                self.assertNotEqual(blocked.returncode, 0)
+                self.assertIn("review is stale", blocked.stdout)
+                self.assertFalse((published_dir / f"atomic-{slug}.md").exists())
+            finally:
+                for path in review_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+                for path in published_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+
+    def test_promote_atomic_accepts_fresh_review(self):
+        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        slug = f"test-promote-fresh-{uuid4().hex[:10]}"
+
+        review_dir.mkdir(parents=True, exist_ok=True)
+        published_dir.mkdir(parents=True, exist_ok=True)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmpdir = Path(tmp)
+            corpus = tmpdir / "corpus.md"
+            corpus.write_text(
+                "# Norma\n\n- Registrar el evento en 48 horas.\n- Mantener trazabilidad.\n",
+                encoding="utf-8",
+            )
+
+            try:
+                run_cli("atomize", str(corpus), "--slug", slug)
+
+                artifact_path = review_dir / f"atomic-{slug}.md"
+                review_path = review_dir / f"atomic-{slug}-review.md"
+                write_atomic_acceptance_review(review_path, f"atomic-{slug}")
+
+                promoted = run_cli("promote", str(artifact_path))
+                self.assertIn("ACCEPTANCE REVIEW:", promoted.stdout)
+                self.assertIn("PROMOTED:", promoted.stdout)
+                self.assertTrue((published_dir / f"atomic-{slug}.md").exists())
+                self.assertFalse(artifact_path.exists())
+            finally:
+                for path in review_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+                for path in published_dir.glob(f"atomic-{slug}*.md"):
+                    path.unlink(missing_ok=True)
+
+    def test_promote_atomic_accepts_explicit_review_override(self):
+        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        slug = f"test-promote-override-{uuid4().hex[:10]}"
+
+        review_dir.mkdir(parents=True, exist_ok=True)
+        published_dir.mkdir(parents=True, exist_ok=True)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmpdir = Path(tmp)
+            corpus = tmpdir / "corpus.md"
+            corpus.write_text(
+                "# Norma\n\n- Registrar el evento en 48 horas.\n- Mantener trazabilidad.\n",
+                encoding="utf-8",
+            )
+
+            try:
+                run_cli("atomize", str(corpus), "--slug", slug)
+
+                artifact_path = review_dir / f"atomic-{slug}.md"
+                review_path = tmpdir / f"atomic-{slug}-custom-review.md"
+                write_atomic_acceptance_review(review_path, f"atomic-{slug}")
+
+                promoted = run_cli("promote", str(artifact_path), "--review", str(review_path))
+                self.assertIn(f"ACCEPTANCE REVIEW: {review_path}", promoted.stdout)
+                self.assertIn("PROMOTED:", promoted.stdout)
+                self.assertTrue((published_dir / f"atomic-{slug}.md").exists())
+                self.assertFalse(artifact_path.exists())
             finally:
                 for path in review_dir.glob(f"atomic-{slug}*.md"):
                     path.unlink(missing_ok=True)
