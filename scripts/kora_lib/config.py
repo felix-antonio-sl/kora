@@ -25,7 +25,9 @@ BOOTSTRAP_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-schema.json"
 CONFIG_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agent-config-schema.json"
 AGENTFILE_SCHEMA_PATH = KORA_ROOT / "schemas" / "kora-agentfile-schema.json"
 AGENT_BOOTSTRAP_FILES = ("AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md")
-AGENT_REQUIRED_FILES = AGENT_BOOTSTRAP_FILES + ("config.json",)
+# autoria-spec v1.0 §13.2: el workspace productivo solo requiere AGENT.md.
+# AGENT_BOOTSTRAP_FILES se conserva para lookup historico de manifest types.
+AGENT_REQUIRED_FILES = ("AGENT.md",)
 AGENTFILE_NAME = "AGENT.md"
 BOOTSTRAP_MANIFEST_TYPES = {
     "AGENTS.md": "bootstrap_agents",

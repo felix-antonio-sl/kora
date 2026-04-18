@@ -5654,6 +5654,1271 @@
       ]
     },
     {
+      "urn": "urn:kora:kb:atomic-opm-libro-01",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-02",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-03",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-04",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-05",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-06",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-07",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-08",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-09",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-10",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-11",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-12",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-13",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-14",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-15",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-16",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-17",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-18",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-19",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-20",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-21",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-22",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-23",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-24",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-25",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-26",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-27",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-28",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-29",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-30",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-31",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-32",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-index",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-01",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-02",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-03",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-04",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-05",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-06",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-07",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-08",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-09",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-10",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-11",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-12",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-13",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-14",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-15",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-16",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-17",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-18",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-19",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-20",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-21",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-22",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-23",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-24",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-25",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-26",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-27",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-28",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-29",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-30",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-31",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-32",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-33",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-34",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-35",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-36",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-37",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-38",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-39",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-40",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-41",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-42",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-43",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-44",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-45",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-46",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-47",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-48",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-49",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-50",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-51",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-52",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-53",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-54",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-55",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-56",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-57",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-58",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-59",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-60",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-61",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-62",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-63",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-64",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-65",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-66",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-67",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-68",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-69",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-70",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-71",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-72",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-73",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-74",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-75",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-76",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-77",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-78",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-79",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-80",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-81",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-index",
+      "namespace": "_SCRIPTORIUM",
+      "status": "draft",
+      "version": "1.0.0",
+      "tags": [
+        "atomic",
+        "knowledge",
+        "opm-libro-rebuilt"
+      ]
+    },
+    {
       "urn": "urn:gn:kb:ssot-actos-admin",
       "namespace": "_SCRIPTORIUM",
       "status": "draft",
@@ -7597,23 +8862,22 @@
       ]
     },
     {
-      "urn": "urn:kora:kb:agentfile-spec",
+      "urn": "urn:kora:kb:autoria-spec",
       "namespace": "kora",
-      "status": "published",
-      "version": "2.0.0",
+      "status": "publicado",
+      "version": "1.0.0",
       "tags": [
-        "spec",
-        "agente",
-        "agentfile",
+        "autoria",
+        "artefacto-agentico",
         "serializacion",
         "proyeccion",
-        "compat"
+        "unificada"
       ]
     },
     {
       "urn": "urn:kora:kb:claude-code-runtime-extension",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
@@ -7627,7 +8891,7 @@
     {
       "urn": "urn:kora:kb:codex-runtime-extension",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
@@ -7641,7 +8905,7 @@
     {
       "urn": "urn:kora:kb:gemini-runtime-extension",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
@@ -7656,8 +8920,8 @@
     {
       "urn": "urn:kora:kb:gobernanza",
       "namespace": "kora",
-      "status": "published",
-      "version": "4.2.0",
+      "status": "publicado",
+      "version": "4.3.0",
       "tags": [
         "gobernanza",
         "constitucion",
@@ -7669,7 +8933,7 @@
     {
       "urn": "urn:kora:kb:harness-spec",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
@@ -7684,10 +8948,9 @@
     {
       "urn": "urn:kora:kb:knowledge-spec",
       "namespace": "kora",
-      "status": "published",
-      "version": "1.1.0",
+      "status": "publicado",
+      "version": "1.2.0",
       "tags": [
-        "spec",
         "knowledge",
         "categoria",
         "grafo",
@@ -7699,22 +8962,24 @@
     {
       "urn": "urn:kora:kb:md-spec",
       "namespace": "kora",
-      "status": "published",
-      "version": "7.1.0",
+      "status": "publicado",
+      "version": "8.0.0",
       "tags": [
-        "spec",
         "markdown",
         "conocimiento",
         "rag",
         "koraficacion",
         "fidelidad",
-        "atomic"
+        "atomic",
+        "prescriptivo",
+        "cristalizacion",
+        "rfc2119"
       ]
     },
     {
       "urn": "urn:agengai:kb:openclaw-runtime-extension",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "spec",
@@ -7729,7 +8994,7 @@
     {
       "urn": "urn:kora:kb:runtime-spec-md",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "3.7.0",
       "tags": [
         "spec",
@@ -7739,23 +9004,9 @@
       ]
     },
     {
-      "urn": "urn:kora:kb:skill-overlay-spec",
-      "namespace": "kora",
-      "status": "published",
-      "version": "2.0.0",
-      "tags": [
-        "spec",
-        "skill",
-        "overlay",
-        "portable",
-        "capability",
-        "serializacion"
-      ]
-    },
-    {
       "urn": "urn:kora:kb:transmutation-spec",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
@@ -8900,34 +10151,39 @@
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:md-spec",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:runtime-spec-md",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:runtime-spec-md",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:gobernanza",
       "type": "depends"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:harness-spec",
       "type": "depends"
     },
     {
-      "from": "urn:kora:kb:agentfile-spec",
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "supersedes"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
       "to": "urn:kora:kb:skill-overlay-spec",
-      "type": "depends"
+      "type": "supersedes"
     },
     {
       "from": "urn:kora:kb:claude-code-runtime-extension",
@@ -8995,6 +10251,16 @@
       "type": "cites"
     },
     {
+      "from": "urn:kora:kb:gobernanza",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gobernanza",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "cites"
+    },
+    {
       "from": "urn:kora:kb:harness-spec",
       "to": "urn:fxsl:kb:icas-agencia",
       "type": "cites"
@@ -9036,8 +10302,13 @@
     },
     {
       "from": "urn:kora:kb:md-spec",
-      "to": "urn:kora:kb:gobernanza",
+      "to": "urn:kora:kb:05-governance-lattice",
       "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:md-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
     },
     {
       "from": "urn:agengai:kb:openclaw-runtime-extension",
@@ -9066,42 +10337,22 @@
     },
     {
       "from": "urn:kora:kb:runtime-spec-md",
-      "to": "urn:kora:kb:agentfile-spec",
+      "to": "urn:kora:kb:autoria-spec",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:md-spec",
+      "from": "urn:kora:kb:runtime-spec-md",
+      "to": "urn:kora:kb:harness-spec",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:skill-overlay-spec",
+      "from": "urn:kora:kb:runtime-spec-md",
       "to": "urn:kora:kb:runtime-spec-md",
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:skill-overlay-spec",
-      "to": "urn:kora:kb:harness-spec",
-      "type": "depends"
-    },
-    {
       "from": "urn:kora:kb:transmutation-spec",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:transmutation-spec",
-      "to": "urn:kora:kb:skill-overlay-spec",
+      "to": "urn:kora:kb:autoria-spec",
       "type": "cites"
     },
     {
@@ -9125,30 +10376,57 @@
       "type": "depends"
     }
   ],
-  "broken_edges": [],
+  "broken_edges": [
+    {
+      "from": "urn:ops:kb:principios-transmutacion-kora-openclaw-p02",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:pipeline-ingesta",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "supersedes"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:skill-overlay-spec",
+      "type": "supersedes"
+    },
+    {
+      "from": "urn:kora:kb:md-spec",
+      "to": "urn:kora:kb:05-governance-lattice",
+      "type": "cites"
+    }
+  ],
   "stats": {
-    "total_nodes": 540,
+    "total_nodes": 654,
     "total_edges": 271,
     "by_namespace": {
+      "_SCRIPTORIUM": 149,
       "gn": 129,
       "salud": 93,
       "fxsl": 88,
       "tde": 55,
       "legal": 35,
       "agengai": 34,
-      "_SCRIPTORIUM": 34,
-      "kora": 27,
       "sii": 26,
+      "kora": 26,
       "ops": 10,
       "korvo": 6,
       "pro": 3
     },
     "by_relation_type": {
       "cites": 195,
-      "depends": 76
+      "depends": 74,
+      "supersedes": 2
     },
-    "orphan_nodes": 329,
-    "broken_edges": 0,
+    "orphan_nodes": 444,
+    "broken_edges": 5,
     "cycles_in_depends": 0
   }
 }

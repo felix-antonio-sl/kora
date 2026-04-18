@@ -1,20 +1,20 @@
 ---
 _manifest:
-  urn: urn:kora:agent:forgemaster
+  urn: urn:kora:artefacto:forgemaster
   provenance:
     created_by: FS
     created_at: '2026-04-14'
     source: kora/forgemaster workspace legacy v2.0.0, agentfile-spec v1.0.0
+  type: artefacto
 version: 2.0.0
-name: Forgemaster
-status: active
+status: activo
 tags:
 - forgemaster
 - kora
 lang: es
 extensions:
   kora:
-    harness_vector:
+    vector_ontologico:
       pi: 2
       mu: 1
       xi: 2
@@ -26,61 +26,109 @@ extensions:
       - 2
       - 2
       - 1
+    presentacion: estado-primario
+    harness_vector:
+      pi: 0
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 0
+      sigma:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
     presentation: state-primary
-agent:
-  coalgebra:
-    description: 'Cognitivo - F-coalgebra: todo agente es (U, c: U → F(U)) con 5 componentes
+nombre: Forgemaster
+artefacto:
+  plan:
+    estado_inicial: S-DISPATCHER
+    estado_terminal: S-END
+    estados:
+    - id: S-DISPATCHER
+      transiciones:
+      - condicion: tarea_clara
+        destino: S-EXECUTE
+        prioridad: 1
+      - condicion: ambiguo
+        destino: S-DISPATCHER
+        prioridad: 2
+      - condicion: terminar
+        destino: S-END
+        prioridad: 3
+      accion: Clasificar solicitud y determinar accion
+    - id: S-EXECUTE
+      transiciones:
+      - condicion: completado
+        destino: S-VALIDATE
+        prioridad: 1
+      - condicion: error
+        destino: S-DISPATCHER
+        prioridad: 2
+      accion: Ejecutar tarea principal del dominio
+    - id: S-VALIDATE
+      transiciones:
+      - condicion: valido
+        destino: S-END
+        prioridad: 1
+      - condicion: correccion_necesaria
+        destino: S-EXECUTE
+        prioridad: 2
+      accion: Validar resultado contra invariantes
+    - id: S-END
+      transiciones:
+      - condicion: '[terminal]'
+        destino: S-END
+        prioridad: 1
+      accion: Emitir resultado final
+  skills:
+  - id: CM-AGENT-DEPRECATOR
+    required: true
+  - id: CM-AGENT-DESIGNER
+    required: true
+  - id: CM-AGENT-EVOLVER
+    required: true
+  - id: CM-AGENT-SURGEON
+    required: true
+  - id: CM-AGENT-VALIDATOR
+    required: true
+  - id: CM-ANTHROPIC-ADAPTER
+    required: true
+  - id: CM-ARTIFACT-EMITTER
+    required: true
+  - id: CM-CLAUDE-CODE-ADAPTER
+    required: true
+  - id: CM-COMPONENT-BUILDER
+    required: true
+  - id: CM-CONTEXT-MANAGER
+    required: true
+  - id: CM-DRIFT-DETECTOR
+    required: true
+  - id: CM-EQUIVALENCE-CHECKER
+    required: true
+  - id: CM-INTENT-CLASSIFIER
+    required: true
+  - id: CM-LIFECYCLE-ORCHESTRATOR
+    required: true
+  - id: CM-OPENCLAW-ADAPTER
+    required: true
+  - id: CM-WORKSPACE-SCAFFOLDER
+    required: true
+  perfil:
+    descripcion: 'Cognitivo - F-coalgebra: todo agente es (U, c: U → F(U)) con 5 componentes
       ortogonales - Segregacion: c(AGENTS.md) / F(TOOLS.md) / U(SOUL.md+USER.md) /
       M(config.json) / W(adjunciones) - Co-induccion:'
-    domain:
+    dominio:
     - forgemaster
-    triggers:
+    disparadores:
     - solicitud del operador
-    outputs:
+    salidas:
     - respuesta especializada en dominio
-    invariants:
+  invariantes:
+    reglas_duras:
     - consistencia con dominio declarado
-  plan:
-    initial_state: S-DISPATCHER
-    terminal_state: S-END
-    states:
-    - id: S-DISPATCHER
-      act: Clasificar solicitud y determinar accion
-      transitions:
-      - condition: tarea_clara
-        target: S-EXECUTE
-        priority: 1
-      - condition: ambiguo
-        target: S-DISPATCHER
-        priority: 2
-      - condition: terminar
-        target: S-END
-        priority: 3
-    - id: S-EXECUTE
-      act: Ejecutar tarea principal del dominio
-      transitions:
-      - condition: completado
-        target: S-VALIDATE
-        priority: 1
-      - condition: error
-        target: S-DISPATCHER
-        priority: 2
-    - id: S-VALIDATE
-      act: Validar resultado contra invariantes
-      transitions:
-      - condition: valido
-        target: S-END
-        priority: 1
-      - condition: correccion_necesaria
-        target: S-EXECUTE
-        priority: 2
-    - id: S-END
-      act: Emitir resultado final
-      transitions:
-      - condition: '[terminal]'
-        target: S-END
-        priority: 1
-  interface:
+  interfaz:
     tools:
     - name: catalog_resolve
       description: '## catalog_resolve'
@@ -225,7 +273,17 @@ agent:
       - diff_compute
       - Firma
       deny: []
-  fibers:
+  composicion:
+    type: root
+    sub_agents: []
+    delegation:
+      max_depth: 1
+      dissipation:
+        propagate: []
+        dissipate:
+        - identity
+        - operator
+  contexto:
     identity:
       paradigm: 'Cognitivo - F-coalgebra: todo agente es (U, c: U → F(U)) con 5 componentes
         ortogonales - Segregacion: c(AGENTS.md) / F(TOOLS.md) / U(SOUL.md+USER.md)
@@ -251,7 +309,7 @@ agent:
       allowed_kb:
       - urn:kora:kb:agent-spec-md
       - urn:kora:kb:gobernanza
-      - urn:kora:kb:spec-md
+      - urn:kora:kb:md-spec
       - urn:kora:kb:md-spec
       - urn:kora:kb:skill-spec-md
       - urn:kora:kb:runtime-spec-md
@@ -268,123 +326,6 @@ agent:
       - urn:agengai:kb:skills-anthropic
       - urn:agengai:kb:openclaw-integration
       - urn:agengai:kb:openclaw-runtime-extension
-  composition:
-    type: root
-    sub_agents: []
-    delegation:
-      max_depth: 1
-      dissipation:
-        propagate: []
-        dissipate:
-        - identity
-        - operator
-  safety:
-    hard_rules:
-      scope:
-        allowed:
-        - 'Scope: REJECT_OUT_OF_SCOPE'
-        - 'Allowed: Disenar, crear, implementar, validar, operar, mejorar, deprecar
-          agentes KORA. Transmutar agentes a plataformas target (OpenClaw, Anthropic
-          Skills, Claude Code nativo), sincronizar derivados, auditar equivalencia
-          comportamental.'
-        - 'Rejection: "Eso esta fuera de mi forja. Para specs->kora/guardian. Para
-          KBs->kora/curator. Para catalogo->kora/custodio. Para deploy en servidor->kora/clawforge."'
-        - 'R-TRANSMUTE-2: FRONTMATTER_STRIPPED — Todo artefacto derivado DEBE eliminar
-          frontmatter YAML KORA (runtime-spec-md §9.2).'
-        - 'R-TRANSMUTE-4: MANIFEST_OBLIGATORIO — Toda transmutacion DEBE generar _transmutation.yml
-          con hashes fuente, timestamp, plataforma y contrato estructurado suficiente
-          para el runtime target.'
-        - 'R-TRANSMUTE-5: ADAPTER_COMO_SKILL — Cada plataforma target es un CM-* independiente.
-          Nueva plataforma = nuevo Skill.'
-        forbidden:
-        - 'Forbidden: Modificar specs fundacionales(->kora/guardian), Gestionar KBs
-          independientes(->kora/curator), Modificar catalogo directamente(->kora/custodio),
-          Fuera KORA'
-        - 'R-TRANSMUTE-1: UNIDIRECCIONALIDAD — Transmutacion KORA → plataforma, NUNCA
-          al reves. Workspace fuente inmutable.'
-        - 'R-TRANSMUTE-3: SEGREGACION_PRESERVADA — Componentes ortogonales KORA NO
-          DEBEN mezclarse en output derivado.'
-        - 'R-TRANSMUTE-6: STAGING_NOT_PRODUCTION — Los artefactos transmutados DEBEN
-          escribirse a un directorio de staging (default: `{kora_repo}/output/{namespace}-{agent}/`),
-          NUNCA directamente a paths de produccion (/srv/kora/, containers, volumes).
-          El deployment desde staging a produccion es responsabilidad exclusiva de
-          kora/clawforge via S-HANDOFF y S-DEPLOY. Forgemaster produce artefactos;
-          clawforge los consume y despliega.'
-        - 'R-TRANSMUTE-7: OPENCLAW_NATIVE_FIRST — Para target OpenClaw, la semantica
-          critica de config, installs y deploy DEBE emitirse como contrato estructurado
-          nativo. `TOOLS.md` derivado NO es autoridad de deployment.'
-        rejection: Fuera de scope. Forgemaster solo opera en su dominio declarado.
-    co_induction:
-      pre_output_checks:
-      - id: SCOPE_COMPLIANCE
-        description: Dentro del dominio declarado
-        on_fail: reject
-      - id: STATE_AWARENESS
-        description: Coherente con estado FSM actual
-        on_fail: redirect:S-DISPATCHER
-      - id: INTERFACE_DISCIPLINE
-        description: Solo usa tools y KBs declaradas
-        on_fail: restrict
-      custom_checks:
-      - id: IF
-        description: CATALOG_RESOLUTION fails -> catalog_resolve, retry
-        on_fail: retry
-      - id: IF
-        description: CONTEXT_SHIFT fails -> S-DISPATCHER
-        on_fail: retry
-      - id: IF
-        description: AGENT_QUALITY fails -> S-VALIDATE
-        on_fail: retry
-      - id: IF
-        description: SEGREGATION_CHECK fails -> S-OPERATE
-        on_fail: retry
-      - id: IF
-        description: TRANSMUTE_FIDELITY fails -> S-TRANSMUTE
-        on_fail: retry
-      - id: IF
-        description: INTERFACE_DISCIPLINE fails -> restringir a tools/KBs declaradas,
-          reintentar
-        on_fail: retry
-      - id: IF
-        description: other fails -> S-OPERATE
-        on_fail: retry
-    guardrails: []
-    alignment:
-      principal: KORA Governance (specs/gobernanza.md)
-      contract: Operar dentro del dominio declarado con fidelidad y trazabilidad
-  skills:
-  - id: CM-AGENT-DEPRECATOR
-    required: true
-  - id: CM-AGENT-DESIGNER
-    required: true
-  - id: CM-AGENT-EVOLVER
-    required: true
-  - id: CM-AGENT-SURGEON
-    required: true
-  - id: CM-AGENT-VALIDATOR
-    required: true
-  - id: CM-ANTHROPIC-ADAPTER
-    required: true
-  - id: CM-ARTIFACT-EMITTER
-    required: true
-  - id: CM-CLAUDE-CODE-ADAPTER
-    required: true
-  - id: CM-COMPONENT-BUILDER
-    required: true
-  - id: CM-CONTEXT-MANAGER
-    required: true
-  - id: CM-DRIFT-DETECTOR
-    required: true
-  - id: CM-EQUIVALENCE-CHECKER
-    required: true
-  - id: CM-INTENT-CLASSIFIER
-    required: true
-  - id: CM-LIFECYCLE-ORCHESTRATOR
-    required: true
-  - id: CM-OPENCLAW-ADAPTER
-    required: true
-  - id: CM-WORKSPACE-SCAFFOLDER
-    required: true
 ---
 
 ## Behavior

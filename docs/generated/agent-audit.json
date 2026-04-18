@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17",
+  "generated_at": "2026-04-18",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/md-spec.md",
@@ -28,20 +28,47 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "meta-kora",
-        "workspace_valid": 4,
-        "workspace_invalid": 0,
-        "bootstrap_validated": 4,
+        "workspace_valid": 0,
+        "workspace_invalid": 4,
+        "bootstrap_validated": 0,
         "global_failures": 0,
-        "issue_counts": {},
-        "issues": [],
-        "ok": true
+        "issue_counts": {
+          "agentfile_schema": 4
+        },
+        "issues": [
+          {
+            "path": "AGENTS/kora/curator/AGENT.md",
+            "workspace": "AGENTS/kora/curator",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          },
+          {
+            "path": "AGENTS/kora/custodio/AGENT.md",
+            "workspace": "AGENTS/kora/custodio",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          },
+          {
+            "path": "AGENTS/kora/forgemaster/AGENT.md",
+            "workspace": "AGENTS/kora/forgemaster",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          },
+          {
+            "path": "AGENTS/kora/guardian/AGENT.md",
+            "workspace": "AGENTS/kora/guardian",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          }
+        ],
+        "ok": false
       },
       "summary": {
         "findings_total": 0,
         "p1": 0,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": true
+        "strict_validate_green": false
       },
       "findings": [],
       "repeated_findings": [],
@@ -103,86 +130,43 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 2,
-        "workspace_invalid": 0,
-        "bootstrap_validated": 2,
+        "workspace_valid": 0,
+        "workspace_invalid": 2,
+        "bootstrap_validated": 0,
         "global_failures": 0,
-        "issue_counts": {},
-        "issues": [],
-        "ok": true
+        "issue_counts": {
+          "agentfile_schema": 2
+        },
+        "issues": [
+          {
+            "path": "AGENTS/gn/digitrans/AGENT.md",
+            "workspace": "AGENTS/gn/digitrans",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          },
+          {
+            "path": "AGENTS/gn/goreologo/AGENT.md",
+            "workspace": "AGENTS/gn/goreologo",
+            "category": "agentfile_schema",
+            "message": "'name' is a required property"
+          }
+        ],
+        "ok": false
       },
       "summary": {
-        "findings_total": 1,
-        "p1": 1,
+        "findings_total": 0,
+        "p1": 0,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": true
+        "strict_validate_green": false
       },
-      "findings": [
-        {
-          "workspace": "gn/goreologo",
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "spec_rule": "agentfile-spec legacy-compat profile",
-          "evidence": {
-            "path": "AGENTS/gn/goreologo/AGENTS.md",
-            "line": 65,
-            "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
-          },
-          "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-          "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        }
-      ],
-      "repeated_findings": [
-        {
-          "rule_id": "agent.fsm_pseudostate_destination",
-          "rule": "Destino de control no declarado",
-          "severity": "P1",
-          "count": 1,
-          "workspaces": [
-            "gn/goreologo"
-          ],
-          "closure_type": "agent_fix",
-          "enforcement_candidate": "lint"
-        }
-      ],
+      "findings": [],
+      "repeated_findings": [],
       "subgroups": {
         "gn": {
           "workspace_count": 2,
-          "findings": [
-            {
-              "workspace": "gn/goreologo",
-              "rule_id": "agent.fsm_pseudostate_destination",
-              "rule": "Destino de control no declarado",
-              "severity": "P1",
-              "spec_rule": "agentfile-spec legacy-compat profile",
-              "evidence": {
-                "path": "AGENTS/gn/goreologo/AGENTS.md",
-                "line": 65,
-                "snippet": "- IF any fails -> REFINE_DRAFT_INTERNALLY"
-              },
-              "why_real": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
-              "minimal_fix": "Reemplazar el pseudoestado por un `S-*` declarado o por `[terminal]`, y mover la semántica auxiliar al texto explicativo.",
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            }
-          ],
-          "repeated_findings": [
-            {
-              "rule_id": "agent.fsm_pseudostate_destination",
-              "rule": "Destino de control no declarado",
-              "severity": "P1",
-              "count": 1,
-              "workspaces": [
-                "gn/goreologo"
-              ],
-              "closure_type": "agent_fix",
-              "enforcement_candidate": "lint"
-            }
-          ]
+          "findings": [],
+          "repeated_findings": []
         },
         "pro": {
           "workspace_count": 0,
@@ -208,33 +192,10 @@
     }
   },
   "global_summary": {
-    "top_systemic_debts": [
-      {
-        "rule_id": "agent.fsm_pseudostate_destination",
-        "rule": "Destino de control no declarado",
-        "severity": "P1",
-        "count": 1,
-        "workspaces": [
-          "gn/goreologo"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      }
-    ],
-    "top_false_greens": [
-      {
-        "rule_id": "agent.fsm_pseudostate_destination",
-        "rule": "Destino de control no declarado",
-        "severity": "P1",
-        "count": 1,
-        "workspaces": [
-          "gn/goreologo"
-        ],
-        "closure_type": "agent_fix",
-        "enforcement_candidate": "lint"
-      }
-    ],
+    "top_systemic_debts": [],
+    "top_false_greens": [],
     "rules_absorbed": [
+      "agent.fsm_pseudostate_destination",
       "agent.missing_transition_precedence",
       "tools.policy_leakage",
       "config.semantic_runtime_capability",
@@ -245,13 +206,9 @@
       "skill.relaxes_hard_rule",
       "skill.ad_hoc_root_metadata"
     ],
-    "rules_not_institutionalized": [
-      "agent.fsm_pseudostate_destination"
-    ],
+    "rules_not_institutionalized": [],
     "enforcement_rollout": {
-      "lint": [
-        "Destino de control no declarado"
-      ],
+      "lint": [],
       "manual": [],
       "do_not_automate": [
         "Juicios de densidad o calidad semántica sin ancla estructural fuerte",

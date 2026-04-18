@@ -1,20 +1,20 @@
 ---
 _manifest:
-  urn: urn:kora:agent:guardian
+  urn: urn:kora:artefacto:guardian
   provenance:
     created_by: FS
     created_at: '2026-04-14'
     source: kora/guardian workspace legacy v1.0.0, agentfile-spec v1.0.0
+  type: artefacto
 version: 1.0.0
-name: Guardian
-status: active
+status: activo
 tags:
 - guardian
 - kora
 lang: es
 extensions:
   kora:
-    harness_vector:
+    vector_ontologico:
       pi: 2
       mu: 1
       xi: 2
@@ -26,61 +26,85 @@ extensions:
       - 2
       - 2
       - 1
+    presentacion: estado-primario
+    harness_vector:
+      pi: 0
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 0
+      sigma:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
     presentation: state-primary
-agent:
-  coalgebra:
-    description: 'Cognitivo - Conservadurismo estructural: preservar invariantes fundacionales
+nombre: Guardian
+artefacto:
+  plan:
+    estado_inicial: S-DISPATCHER
+    estado_terminal: S-END
+    estados:
+    - id: S-DISPATCHER
+      transiciones:
+      - condicion: tarea_clara
+        destino: S-EXECUTE
+        prioridad: 1
+      - condicion: ambiguo
+        destino: S-DISPATCHER
+        prioridad: 2
+      - condicion: terminar
+        destino: S-END
+        prioridad: 3
+      accion: Clasificar solicitud y determinar accion
+    - id: S-EXECUTE
+      transiciones:
+      - condicion: completado
+        destino: S-VALIDATE
+        prioridad: 1
+      - condicion: error
+        destino: S-DISPATCHER
+        prioridad: 2
+      accion: Ejecutar tarea principal del dominio
+    - id: S-VALIDATE
+      transiciones:
+      - condicion: valido
+        destino: S-END
+        prioridad: 1
+      - condicion: correccion_necesaria
+        destino: S-EXECUTE
+        prioridad: 2
+      accion: Validar resultado contra invariantes
+    - id: S-END
+      transiciones:
+      - condicion: '[terminal]'
+        destino: S-END
+        prioridad: 1
+      accion: Emitir resultado final
+  skills:
+  - id: CM-CONTEXT-MANAGER
+    required: true
+  - id: CM-SPEC-AUDITOR
+    required: true
+  - id: CM-SPEC-CLASSIFIER
+    required: true
+  - id: CM-SPEC-GUARD
+    required: true
+  perfil:
+    descripcion: 'Cognitivo - Conservadurismo estructural: preservar invariantes fundacionales
       antes que introducir novedad. - Precedencia normativa: una regla nueva no puede
       contradecir specs vigentes sin explicitar s'
-    domain:
+    dominio:
     - guardian
-    triggers:
+    disparadores:
     - solicitud del operador
-    outputs:
+    salidas:
     - respuesta especializada en dominio
-    invariants:
+  invariantes:
+    reglas_duras:
     - consistencia con dominio declarado
-  plan:
-    initial_state: S-DISPATCHER
-    terminal_state: S-END
-    states:
-    - id: S-DISPATCHER
-      act: Clasificar solicitud y determinar accion
-      transitions:
-      - condition: tarea_clara
-        target: S-EXECUTE
-        priority: 1
-      - condition: ambiguo
-        target: S-DISPATCHER
-        priority: 2
-      - condition: terminar
-        target: S-END
-        priority: 3
-    - id: S-EXECUTE
-      act: Ejecutar tarea principal del dominio
-      transitions:
-      - condition: completado
-        target: S-VALIDATE
-        priority: 1
-      - condition: error
-        target: S-DISPATCHER
-        priority: 2
-    - id: S-VALIDATE
-      act: Validar resultado contra invariantes
-      transitions:
-      - condition: valido
-        target: S-END
-        priority: 1
-      - condition: correccion_necesaria
-        target: S-EXECUTE
-        priority: 2
-    - id: S-END
-      act: Emitir resultado final
-      transitions:
-      - condition: '[terminal]'
-        target: S-END
-        priority: 1
-  interface:
+  interfaz:
     tools:
     - name: kb_route
       description: '## kb_route'
@@ -126,7 +150,17 @@ agent:
       - repo_health
       - Firma
       deny: []
-  fibers:
+  composicion:
+    type: root
+    sub_agents: []
+    delegation:
+      max_depth: 1
+      dissipation:
+        propagate: []
+        dissipate:
+        - identity
+        - operator
+  contexto:
     identity:
       paradigm: 'Cognitivo - Conservadurismo estructural: preservar invariantes fundacionales
         antes que introducir novedad. - Precedencia normativa: una regla nueva no
@@ -144,79 +178,13 @@ agent:
     knowledge:
       allowed_kb:
       - urn:kora:kb:gobernanza
-      - urn:kora:kb:spec-md
+      - urn:kora:kb:md-spec
       - urn:kora:kb:md-spec
       - urn:kora:kb:agent-spec-md
       - urn:kora:kb:skill-spec-md
       - urn:kora:kb:runtime-spec-md
       - urn:kora:kb:swarm-spec-md
       - urn:agengai:kb:openclaw-runtime-extension
-  composition:
-    type: root
-    sub_agents: []
-    delegation:
-      max_depth: 1
-      dissipation:
-        propagate: []
-        dissipate:
-        - identity
-        - operator
-  safety:
-    hard_rules:
-      scope:
-        allowed:
-        - 'Allowed: specs fundacionales, gobernanza y coherencia normativa del ecosistema
-          KORA'
-        - 'Rejection: "Fuera de guardiania constitucional. Para construccion de agentes
-          -> kora/forgemaster. Para transformacion de artefactos -> kora/curator.
-          Para salud y catalogo -> kora/custodio."'
-        forbidden:
-        - 'Forbidden: cambios fuera del dominio de specs fundacionales'
-        rejection: Fuera de scope. Guardian solo opera en su dominio declarado.
-    co_induction:
-      pre_output_checks:
-      - id: SCOPE_COMPLIANCE
-        description: Dentro del dominio declarado
-        on_fail: reject
-      - id: STATE_AWARENESS
-        description: Coherente con estado FSM actual
-        on_fail: redirect:S-DISPATCHER
-      - id: INTERFACE_DISCIPLINE
-        description: Solo usa tools y KBs declaradas
-        on_fail: restrict
-      custom_checks:
-      - id: IF
-        description: CONSISTENCIA_NORMATIVA fails -> reabrir analisis y explicitar
-          la contradiccion detectada.
-        on_fail: retry
-      - id: IF
-        description: TRAZABILIDAD_RESOLUBLE fails -> agregar referencia resoluble
-          o declarar incertidumbre.
-        on_fail: retry
-      - id: IF
-        description: SCOPE_COMPLIANCE fails -> rechazar o reenrutar.
-        on_fail: retry
-      - id: IF
-        description: STATE_AWARENESS fails -> verificar estado FSM activo, reajustar
-          salida al estado correcto.
-        on_fail: retry
-      - id: IF
-        description: INTERFACE_DISCIPLINE fails -> restringir output a capacidades
-          declaradas y reintentar.
-        on_fail: retry
-    guardrails: []
-    alignment:
-      principal: KORA Governance (specs/gobernanza.md)
-      contract: Operar dentro del dominio declarado con fidelidad y trazabilidad
-  skills:
-  - id: CM-CONTEXT-MANAGER
-    required: true
-  - id: CM-SPEC-AUDITOR
-    required: true
-  - id: CM-SPEC-CLASSIFIER
-    required: true
-  - id: CM-SPEC-GUARD
-    required: true
 ---
 
 ## Behavior

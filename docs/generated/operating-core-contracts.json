@@ -3,44 +3,15 @@
     "kora": [
       {
         "workspace": "kora/guardian",
-        "state_names": [
-          "S-DISPATCHER",
-          "S-END",
-          "S-GOVERNANCE",
-          "S-VALIDATION"
-        ],
-        "tool_names": [
-          "kb_route",
-          "repo_health",
-          "spec_consult"
-        ],
-        "tools_allow": [
-          "kb_route",
-          "repo_health",
-          "spec_consult"
-        ],
-        "skill_refs": [
-          "CM-CONTEXT-MANAGER",
-          "CM-SPEC-AUDITOR",
-          "CM-SPEC-CLASSIFIER",
-          "CM-SPEC-GUARD"
-        ],
-        "handoff_targets": [
-          "kora/curator",
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/curator",
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
-          "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
-        ],
-        "allowed_kb_count": 8,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/guardian/AGENTS.md",
           "tools": "AGENTS/kora/guardian/TOOLS.md",
@@ -49,82 +20,15 @@
       },
       {
         "workspace": "kora/forgemaster",
-        "state_names": [
-          "S-CREATE",
-          "S-DEPRECATE",
-          "S-DESIGN",
-          "S-DISPATCHER",
-          "S-END",
-          "S-GUIDED",
-          "S-IMPLEMENT",
-          "S-IMPROVE",
-          "S-OPERATE",
-          "S-TRANSMUTE",
-          "S-VALIDATE"
-        ],
-        "tool_names": [
-          "agent_list",
-          "artifact_read",
-          "artifact_write",
-          "catalog_resolve",
-          "diff_compute",
-          "health_check",
-          "kb_route",
-          "spec_consult",
-          "workspace_read",
-          "workspace_write"
-        ],
-        "tools_allow": [
-          "agent_list",
-          "artifact_read",
-          "artifact_write",
-          "catalog_resolve",
-          "diff_compute",
-          "health_check",
-          "kb_route",
-          "spec_consult",
-          "workspace_read",
-          "workspace_write"
-        ],
-        "skill_refs": [
-          "CM-AGENT-DEPRECATOR",
-          "CM-AGENT-DESIGNER",
-          "CM-AGENT-EVOLVER",
-          "CM-AGENT-SURGEON",
-          "CM-AGENT-VALIDATOR",
-          "CM-ANTHROPIC-ADAPTER",
-          "CM-ARTIFACT-EMITTER",
-          "CM-CLAUDE-CODE-ADAPTER",
-          "CM-COMPONENT-BUILDER",
-          "CM-CONTEXT-MANAGER",
-          "CM-DRIFT-DETECTOR",
-          "CM-EQUIVALENCE-CHECKER",
-          "CM-INTENT-CLASSIFIER",
-          "CM-LIFECYCLE-ORCHESTRATOR",
-          "CM-OPENCLAW-ADAPTER",
-          "CM-WORKSPACE-SCAFFOLDER"
-        ],
-        "handoff_targets": [
-          "kora/clawforge",
-          "kora/curator",
-          "kora/custodio",
-          "kora/guardian"
-        ],
-        "route_targets": [
-          "kora/clawforge",
-          "kora/curator",
-          "kora/custodio",
-          "kora/guardian"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "- Retencion entre turnos: agente_target (namespace + nombre), fase_activa (estado FSM actual), hallazgos_pendientes (issues no resueltos del ciclo), baseline_spec (versiones agent-spec/skill-spec contra las que se audita).",
-          "2. **Validar agente existente** — \"Valida agents/fxsl/pensador-generador\" → Modo libre, S-VALIDATE. CM-AGENT-VALIDATOR: leer workspace, checklist conformidad, reporte PASS|FAIL.",
-          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
-          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
-        ],
-        "allowed_kb_count": 19,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/forgemaster/AGENTS.md",
           "tools": "AGENTS/kora/forgemaster/TOOLS.md",
@@ -133,65 +37,15 @@
       },
       {
         "workspace": "kora/curator",
-        "state_names": [
-          "S-AUDIT",
-          "S-CRYSTALLIZE",
-          "S-DEPRECATE",
-          "S-DESIGN",
-          "S-DISPATCHER",
-          "S-EDIT",
-          "S-END",
-          "S-GUIDED",
-          "S-IMPROVE",
-          "S-KORAFICATE",
-          "S-REPAIR"
-        ],
-        "tool_names": [
-          "artifact_list",
-          "artifact_read",
-          "artifact_validate",
-          "artifact_write",
-          "catalog_resolve",
-          "kb_route",
-          "spec_consult"
-        ],
-        "tools_allow": [
-          "artifact_list",
-          "artifact_read",
-          "artifact_validate",
-          "artifact_write",
-          "catalog_resolve",
-          "kb_route",
-          "spec_consult"
-        ],
-        "skill_refs": [
-          "CM-ARTIFACT-AUDITOR",
-          "CM-ARTIFACT-DEPRECATOR",
-          "CM-ARTIFACT-DESIGNER",
-          "CM-ARTIFACT-EDITOR",
-          "CM-ARTIFACT-OPTIMIZER",
-          "CM-ARTIFACT-SURGEON",
-          "CM-CONTEXT-MANAGER",
-          "CM-CRYSTALLIZER",
-          "CM-INTENT-CLASSIFIER",
-          "CM-KORAFICATOR",
-          "CM-LIFECYCLE-ORCHESTRATOR"
-        ],
-        "handoff_targets": [
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado [prioridad 1] -> S-AUDIT. IF iterar_segmento [prioridad 2] -> S-KORAFICATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "- Retencion entre turnos: se preservan el artefacto target (URN + path), la fase activa del ciclo de vida, los hallazgos pendientes de auditoria, el tipo de artefacto (descriptivo/prescriptivo), y las metricas FS/CR del ultimo artefacto procesado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
-          "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
-        ],
-        "allowed_kb_count": 3,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/curator/AGENTS.md",
           "tools": "AGENTS/kora/curator/TOOLS.md",
@@ -200,60 +54,15 @@
       },
       {
         "workspace": "kora/custodio",
-        "state_names": [
-          "S-AUDITORIA",
-          "S-CATALOGO",
-          "S-CIRUGIA",
-          "S-DISPATCHER",
-          "S-END",
-          "S-EVOLUCION",
-          "S-INGESTA",
-          "S-SALUD"
-        ],
-        "tool_names": [
-          "catalog_sync",
-          "file_write",
-          "filesystem_scan",
-          "git_status",
-          "intake_pipeline",
-          "kb_route",
-          "repo_health",
-          "urn_resolve"
-        ],
-        "tools_allow": [
-          "catalog_sync",
-          "file_write",
-          "filesystem_scan",
-          "git_status",
-          "intake_pipeline",
-          "kb_route",
-          "repo_health",
-          "urn_resolve"
-        ],
-        "skill_refs": [
-          "CM-CATALOG-STEWARD",
-          "CM-CONTEXT-MANAGER",
-          "CM-ESTRUCTURA-AUDITOR",
-          "CM-EVOLUCION-PLANNER",
-          "CM-HEALTH-INSPECTOR",
-          "CM-INGESTA-STEWARD",
-          "CM-INTENT-CLASSIFIER",
-          "CM-SURGEON"
-        ],
-        "handoff_targets": [
-          "kora/curator",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/curator",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico [prioridad 1] -> S-CIRUGIA. IF requiere_auditoria_profunda [prioridad 2] -> S-AUDITORIA. IF todo_ok [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER.",
-          "5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos [prioridad 1] -> S-CIRUGIA. IF hallazgos_menores [prioridad 2] -> S-DISPATCHER. IF limpio [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER."
-        ],
-        "allowed_kb_count": 4,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/custodio/AGENTS.md",
           "tools": "AGENTS/kora/custodio/TOOLS.md",
@@ -264,38 +73,15 @@
     "domain_canary": [
       {
         "workspace": "gn/goreologo",
-        "state_names": [
-          "S-ANALYSIS",
-          "S-CALIBRATE",
-          "S-DISPATCHER",
-          "S-END",
-          "S-REJECT",
-          "S-ROUTING",
-          "S-SINTESIS"
-        ],
-        "tool_names": [
-          "catalog_resolve",
-          "kb_route"
-        ],
-        "tools_allow": [
-          "catalog_resolve",
-          "kb_route"
-        ],
-        "skill_refs": [
-          "CM-CONTEXT-MANAGER",
-          "CM-DOMAIN-ANALYZER",
-          "CM-INTAKE",
-          "CM-KB-GUIDANCE",
-          "CM-SPECIALIST-ROUTER",
-          "CM-SYNTHESIZER"
-        ],
-        "handoff_targets": [
-          "gn/digitrans"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 76,
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/gn/goreologo/AGENTS.md",
           "tools": "AGENTS/gn/goreologo/TOOLS.md",
@@ -304,37 +90,15 @@
       },
       {
         "workspace": "gn/digitrans",
-        "state_names": [
-          "S-CLARIFY",
-          "S-CPAT",
-          "S-DISPATCHER",
-          "S-END",
-          "S-ESTRATEGIAS",
-          "S-NORMATIVO",
-          "S-PLATAFORMAS",
-          "S-REJECT"
-        ],
-        "tool_names": [
-          "catalog_resolve",
-          "kb_route"
-        ],
-        "tools_allow": [
-          "catalog_resolve",
-          "kb_route"
-        ],
-        "skill_refs": [
-          "CM-CPAT-ANALYZER",
-          "CM-INTAKE",
-          "CM-NORMATIVE-GUIDE",
-          "CM-PLATFORM-GUIDANCE",
-          "CM-STRATEGIC-GUIDE",
-          "CM-SYNTHESIZER"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
         "handoff_targets": [],
         "route_targets": [],
         "sub_agents": [],
         "evidence_lines": [],
-        "allowed_kb_count": 39,
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/gn/digitrans/AGENTS.md",
           "tools": "AGENTS/gn/digitrans/TOOLS.md",
@@ -345,9 +109,9 @@
   },
   "totals": {
     "workspaces": 6,
-    "states": 49,
-    "tools": 32,
-    "handoffs": 12
+    "states": 0,
+    "tools": 0,
+    "handoffs": 0
   },
   "meta_kora": {
     "summary": {
@@ -358,44 +122,15 @@
     "workspaces": [
       {
         "workspace": "kora/guardian",
-        "state_names": [
-          "S-DISPATCHER",
-          "S-END",
-          "S-GOVERNANCE",
-          "S-VALIDATION"
-        ],
-        "tool_names": [
-          "kb_route",
-          "repo_health",
-          "spec_consult"
-        ],
-        "tools_allow": [
-          "kb_route",
-          "repo_health",
-          "spec_consult"
-        ],
-        "skill_refs": [
-          "CM-CONTEXT-MANAGER",
-          "CM-SPEC-AUDITOR",
-          "CM-SPEC-CLASSIFIER",
-          "CM-SPEC-GUARD"
-        ],
-        "handoff_targets": [
-          "kora/curator",
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/curator",
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "- Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).",
-          "- **Notas:** Limitar a evidencia observable del repo y toolchain visible; no inferir capacidades externas no declaradas."
-        ],
-        "allowed_kb_count": 8,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/guardian/AGENTS.md",
           "tools": "AGENTS/kora/guardian/TOOLS.md",
@@ -407,82 +142,15 @@
       },
       {
         "workspace": "kora/forgemaster",
-        "state_names": [
-          "S-CREATE",
-          "S-DEPRECATE",
-          "S-DESIGN",
-          "S-DISPATCHER",
-          "S-END",
-          "S-GUIDED",
-          "S-IMPLEMENT",
-          "S-IMPROVE",
-          "S-OPERATE",
-          "S-TRANSMUTE",
-          "S-VALIDATE"
-        ],
-        "tool_names": [
-          "agent_list",
-          "artifact_read",
-          "artifact_write",
-          "catalog_resolve",
-          "diff_compute",
-          "health_check",
-          "kb_route",
-          "spec_consult",
-          "workspace_read",
-          "workspace_write"
-        ],
-        "tools_allow": [
-          "agent_list",
-          "artifact_read",
-          "artifact_write",
-          "catalog_resolve",
-          "diff_compute",
-          "health_check",
-          "kb_route",
-          "spec_consult",
-          "workspace_read",
-          "workspace_write"
-        ],
-        "skill_refs": [
-          "CM-AGENT-DEPRECATOR",
-          "CM-AGENT-DESIGNER",
-          "CM-AGENT-EVOLVER",
-          "CM-AGENT-SURGEON",
-          "CM-AGENT-VALIDATOR",
-          "CM-ANTHROPIC-ADAPTER",
-          "CM-ARTIFACT-EMITTER",
-          "CM-CLAUDE-CODE-ADAPTER",
-          "CM-COMPONENT-BUILDER",
-          "CM-CONTEXT-MANAGER",
-          "CM-DRIFT-DETECTOR",
-          "CM-EQUIVALENCE-CHECKER",
-          "CM-INTENT-CLASSIFIER",
-          "CM-LIFECYCLE-ORCHESTRATOR",
-          "CM-OPENCLAW-ADAPTER",
-          "CM-WORKSPACE-SCAFFOLDER"
-        ],
-        "handoff_targets": [
-          "kora/clawforge",
-          "kora/curator",
-          "kora/custodio",
-          "kora/guardian"
-        ],
-        "route_targets": [
-          "kora/clawforge",
-          "kora/curator",
-          "kora/custodio",
-          "kora/guardian"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "- Retencion entre turnos: agente_target (namespace + nombre), fase_activa (estado FSM actual), hallazgos_pendientes (issues no resueltos del ciclo), baseline_spec (versiones agent-spec/skill-spec contra las que se audita).",
-          "2. **Validar agente existente** — \"Valida agents/fxsl/pensador-generador\" → Modo libre, S-VALIDATE. CM-AGENT-VALIDATOR: leer workspace, checklist conformidad, reporte PASS|FAIL.",
-          "- **Firma:** agent_path: string → {result: PASS|FAIL, checks: {id, nombre, veredicto, detalle}[], issues: {severity, component, field, message, fix}[]}",
-          "- **Notas:** Devuelve un veredicto estructurado de conformidad contra el baseline vigente, incluyendo trazabilidad oficial cuando el envelope o el baseline auditado expone la Formal Layer necesaria. El baseline auditado soporta Skills degenerados y entrypoints extendidos `skills/CM-*/SKILL.md`."
-        ],
-        "allowed_kb_count": 19,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/forgemaster/AGENTS.md",
           "tools": "AGENTS/kora/forgemaster/TOOLS.md",
@@ -494,65 +162,15 @@
       },
       {
         "workspace": "kora/curator",
-        "state_names": [
-          "S-AUDIT",
-          "S-CRYSTALLIZE",
-          "S-DEPRECATE",
-          "S-DESIGN",
-          "S-DISPATCHER",
-          "S-EDIT",
-          "S-END",
-          "S-GUIDED",
-          "S-IMPROVE",
-          "S-KORAFICATE",
-          "S-REPAIR"
-        ],
-        "tool_names": [
-          "artifact_list",
-          "artifact_read",
-          "artifact_validate",
-          "artifact_write",
-          "catalog_resolve",
-          "kb_route",
-          "spec_consult"
-        ],
-        "tools_allow": [
-          "artifact_list",
-          "artifact_read",
-          "artifact_validate",
-          "artifact_write",
-          "catalog_resolve",
-          "kb_route",
-          "spec_consult"
-        ],
-        "skill_refs": [
-          "CM-ARTIFACT-AUDITOR",
-          "CM-ARTIFACT-DEPRECATOR",
-          "CM-ARTIFACT-DESIGNER",
-          "CM-ARTIFACT-EDITOR",
-          "CM-ARTIFACT-OPTIMIZER",
-          "CM-ARTIFACT-SURGEON",
-          "CM-CONTEXT-MANAGER",
-          "CM-CRYSTALLIZER",
-          "CM-INTENT-CLASSIFIER",
-          "CM-KORAFICATOR",
-          "CM-LIFECYCLE-ORCHESTRATOR"
-        ],
-        "handoff_targets": [
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/custodio",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "3. STATE: S-KORAFICATE -> ACT: CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD conforme a md-spec y emitir reporte estructurado de fidelidad. -> Trans: IF artefacto_generado [prioridad 1] -> S-AUDIT. IF iterar_segmento [prioridad 2] -> S-KORAFICATE. IF cambio [prioridad 3] -> S-DISPATCHER.",
-          "- Retencion entre turnos: se preservan el artefacto target (URN + path), la fase activa del ciclo de vida, los hallazgos pendientes de auditoria, el tipo de artefacto (descriptivo/prescriptivo), y las metricas FS/CR del ultimo artefacto procesado. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos",
-          "- **Firma:** path_or_urn: string → {result: PASS|FAIL, checks: {name, status, detail}[], metrics: {FS, CR}?}: Report"
-        ],
-        "allowed_kb_count": 3,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/curator/AGENTS.md",
           "tools": "AGENTS/kora/curator/TOOLS.md",
@@ -564,60 +182,15 @@
       },
       {
         "workspace": "kora/custodio",
-        "state_names": [
-          "S-AUDITORIA",
-          "S-CATALOGO",
-          "S-CIRUGIA",
-          "S-DISPATCHER",
-          "S-END",
-          "S-EVOLUCION",
-          "S-INGESTA",
-          "S-SALUD"
-        ],
-        "tool_names": [
-          "catalog_sync",
-          "file_write",
-          "filesystem_scan",
-          "git_status",
-          "intake_pipeline",
-          "kb_route",
-          "repo_health",
-          "urn_resolve"
-        ],
-        "tools_allow": [
-          "catalog_sync",
-          "file_write",
-          "filesystem_scan",
-          "git_status",
-          "intake_pipeline",
-          "kb_route",
-          "repo_health",
-          "urn_resolve"
-        ],
-        "skill_refs": [
-          "CM-CATALOG-STEWARD",
-          "CM-CONTEXT-MANAGER",
-          "CM-ESTRUCTURA-AUDITOR",
-          "CM-EVOLUCION-PLANNER",
-          "CM-HEALTH-INSPECTOR",
-          "CM-INGESTA-STEWARD",
-          "CM-INTENT-CLASSIFIER",
-          "CM-SURGEON"
-        ],
-        "handoff_targets": [
-          "kora/curator",
-          "kora/forgemaster"
-        ],
-        "route_targets": [
-          "kora/curator",
-          "kora/forgemaster"
-        ],
+        "state_names": [],
+        "tool_names": [],
+        "tools_allow": [],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
         "sub_agents": [],
-        "evidence_lines": [
-          "2. STATE: S-SALUD -> ACT: CM-HEALTH-INSPECTOR: consolidar estado actual del repo, metricas y severidad ERROR|WARNING|OK en un reporte. -> Trans: IF error_critico [prioridad 1] -> S-CIRUGIA. IF requiere_auditoria_profunda [prioridad 2] -> S-AUDITORIA. IF todo_ok [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER.",
-          "5. STATE: S-AUDITORIA -> ACT: CM-ESTRUCTURA-AUDITOR: verificar topologia, convenciones y completitud estructural del repo y emitir reporte con hallazgos. -> Trans: IF hallazgos_criticos [prioridad 1] -> S-CIRUGIA. IF hallazgos_menores [prioridad 2] -> S-DISPATCHER. IF limpio [prioridad 3] -> S-DISPATCHER. IF cambio [prioridad 4] -> S-DISPATCHER."
-        ],
-        "allowed_kb_count": 4,
+        "evidence_lines": [],
+        "allowed_kb_count": 0,
         "sources": {
           "agents": "AGENTS/kora/custodio/AGENTS.md",
           "tools": "AGENTS/kora/custodio/TOOLS.md",

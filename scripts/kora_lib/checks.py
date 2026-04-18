@@ -334,7 +334,9 @@ def _check_lint_md(path_filter=None):
     from .config import KNOWLEDGE_ROOT
     from .validation import lint_markdown_paths
 
-    target_paths = [KNOWLEDGE_ROOT]
+    target_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
+    if not target_paths:
+        target_paths = [KNOWLEDGE_ROOT]
     if path_filter:
         target_paths = [KNOWLEDGE_ROOT / path_filter] if (KNOWLEDGE_ROOT / path_filter).exists() else target_paths
 
@@ -368,7 +370,8 @@ def _fix_lint_md(diagnostics):
     """Auto-fix lint issues."""
     from .config import KNOWLEDGE_ROOT
     from .validation import auto_fix_markdown_paths
-    auto_fix_markdown_paths([KNOWLEDGE_ROOT], emit=False)
+    target_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
+    auto_fix_markdown_paths(target_paths or [KNOWLEDGE_ROOT], emit=False)
 
 
 def _check_kb_graph_cycles(path_filter=None):
@@ -731,6 +734,91 @@ def _check_skill_structure(path_filter=None):
     return diags
 
 
+def _fix_autoria_conformance(diagnostics):
+    """Adjoint izquierdo PARCIAL de `autoria-conformance`.
+
+    Factoriza el check en dos sub-functores:
+      Check = CheckRenames  (+)  CheckFibra
+      Fix   = FixRenames        (FixFibra no existe)
+
+    `FixRenames = migrate_to_autoria` cubre diagnostics mecanicamente
+    reparables (codes envelope-urn-formato, envelope-type-artefacto,
+    envelope-nombre/descripcion-requerida, envelope-status-enum,
+    atlas-*-enum). Los diagnostics de fibra (forma-* bounds, compromisos
+    eticos, nivel_prescripcion faltante) requieren autor humano — son
+    residual tras aplicar el fix.
+
+    Propiedades esperadas (tests las verifican):
+      - Idempotencia:   fix . fix = fix
+      - Reduccion:      diagnose . fix  no contiene codes rename-like
+    """
+    from .migration import migrate_to_autoria
+    migrate_to_autoria(dry_run=False)
+
+
+def _check_autoria_conformance(path_filter=None):
+    """Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.0.
+
+    Morfismo: cada artefacto se proyecta sobre atlas.forma_material y se
+    compone con el functor R de reglas (pullback). Implementacion vive en
+    `kora_lib.autoria_validate` como composicion funcional pura.
+
+    Este check es la superficie de reporting del validador; las reglas
+    individuales y su estructura monoidal estan en autoria_validate.
+    """
+    from .artifacts import load_yaml_safe
+    from .autoria_validate import validate
+    from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
+
+    diags = []
+
+    def iter_productive_artifacts():
+        if AGENTS_ROOT.exists():
+            for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+                if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+                    continue
+                for ws_dir in sorted(ns_dir.iterdir()):
+                    if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                        continue
+                    agent_md = ws_dir / "AGENT.md"
+                    if agent_md.exists():
+                        yield agent_md
+        if SKILLS_ROOT.exists():
+            for entry in sorted(SKILLS_ROOT.iterdir()):
+                if not entry.is_dir() or entry.name.startswith((".", "_")):
+                    continue
+                direct = entry / "SKILL.md"
+                if direct.exists():
+                    yield direct
+                    continue
+                for sub in sorted(entry.iterdir()):
+                    if not sub.is_dir() or sub.name.startswith((".", "_")):
+                        continue
+                    candidate = sub / "SKILL.md"
+                    if candidate.exists():
+                        yield candidate
+
+    for artifact_path in iter_productive_artifacts():
+        frontmatter, err = load_yaml_safe(artifact_path)
+        if err or not isinstance(frontmatter, dict):
+            continue
+        rel = str(artifact_path.relative_to(KORA_ROOT))
+        scope_kind = "workspace" if artifact_path.name == "AGENT.md" else "artifact"
+        for d in validate(frontmatter):
+            diags.append(Diagnostic(
+                check_id="autoria-conformance",
+                severity=d.severity,
+                scope=scope_kind,
+                path=rel,
+                message=f"{d.code} @ {d.path}: {d.message}",
+                fix_hint="Run `kora migrate --perfil a-autoria` para renames estructurales; campos de shape/invariantes son manuales.",
+            ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 # ---------------------------------------------------------------------------
 # Registration — wire up all built-in checks
 # ---------------------------------------------------------------------------
@@ -803,6 +891,14 @@ def _register_builtins():
               scope="artifact", severity="medium", enforcement="lint",
               spec_ref="skill-overlay-spec §5", phase="verify"),
         _check_skill_structure,
+    )
+    register_check(
+        Check("autoria-conformance",
+              "Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.0 (universal + fibra por forma material)",
+              scope="artifact", severity="high", enforcement="schema",
+              spec_ref="autoria-spec §3, §6", depends=("catalog-exists",), phase="verify"),
+        _check_autoria_conformance,
+        _fix_autoria_conformance,
     )
 
 

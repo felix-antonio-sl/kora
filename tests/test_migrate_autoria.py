@@ -1,0 +1,333 @@
+"""Tests para el perfil `a-autoria` de `kora migrate`.
+
+Cubre las reglas de `autoria-spec v1.0 §13`:
+- URN rename de agent/skill -> artefacto (con extraccion de version embebida).
+- `_manifest.type: artefacto`.
+- Renames envelope: name->nombre, description->descripcion, status ingles->espanol.
+- Renames overlay KORA: harness_vector->vector_ontologico, presentation->presentacion,
+  skill_freedom->nivel_prescripcion, atlas.harness_name->atlas.arnes_categorico,
+  atlas.form->atlas.forma_material (con slugs en espanol).
+- Renames shape agent.*->artefacto.* con sub-renames profundos.
+- Barrido de urn:kora:kb:spec-md -> urn:kora:kb:md-spec.
+- Eliminacion de scaffolds legacy del workspace.
+- Rename de subdirs (references/, assets/, memory/) al glosario espanol.
+- Idempotencia: segunda corrida = sin cambios.
+- Skiplist (SKILLS/kora/atomize/ no se toca).
+"""
+
+import shutil
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+from common import ROOT  # noqa: F401 (inyecta scripts/ al sys.path)
+
+import yaml
+
+from kora_lib.artifacts import load_markdown_parts
+from kora_lib.migration import (
+    AUTORIA_MIGRATION_SKIPLIST,
+    _autoria_rename_urn,
+    _autoria_rewrite_urn_refs,
+    _is_skipped_for_autoria,
+    migrate_artifact_to_autoria,
+    migrate_to_autoria,
+)
+
+
+AGENT_LEGACY_FRONTMATTER = """---
+_manifest:
+  urn: urn:kora:agent:curator
+  provenance:
+    created_by: FS
+    created_at: '2026-04-14'
+    source: legacy
+version: 3.0.0
+name: Curator
+description: Curador legacy
+status: active
+tags: [test]
+lang: es
+extensions:
+  kora:
+    harness_vector:
+      pi: 2
+      mu: 2
+      xi: 2
+      lambda: 0
+      phi: 2
+      sigma: [2, 1, 2, 2, 1]
+    presentation: state-primary
+    atlas:
+      harness_name: person
+      form: agent-workspace
+      relational_metaphor: control-panel
+    allowed_knowledge:
+      - urn:kora:kb:spec-md
+      - urn:kora:kb:md-spec
+    composable_with:
+      - urn:kora:agent:custodio
+agent:
+  coalgebra:
+    description: Curador del corpus
+    domain: [curacion]
+    triggers: [nuevo_artefacto]
+    outputs: [artefacto]
+    invariants: [fidelidad]
+  plan:
+    initial_state: S-INIT
+    terminal_state: S-END
+    states:
+      - id: S-INIT
+        act: Recibir
+        transitions:
+          - condition: ok
+            target: S-END
+            priority: 1
+  interface:
+    tools: [Read]
+  context:
+    identity: Curator
+  invariants:
+    hard_rules: [no_borrar_knowledge]
+---
+
+# Curator
+
+Ver urn:kora:kb:spec-md para detalles.
+"""
+
+
+SKILL_LEGACY_FRONTMATTER = """---
+_manifest:
+  urn: urn:gn:skill:dgi-meyer:1.2.0
+  type: lazy_load_endofunctor
+name: dgi-meyer
+description: Meyer principles
+extensions:
+  kora:
+    harness_vector:
+      pi: 2
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 1
+      sigma: [1, 1, 1, 1, 1]
+    presentation: state-primary
+    skill_freedom: medium
+    atlas:
+      harness_name: discipline
+      form: skill-standard
+---
+
+# dgi-meyer
+
+Cuerpo.
+"""
+
+
+class TestUrnRename(unittest.TestCase):
+    def test_rename_agent_urn(self):
+        new, ver = _autoria_rename_urn("urn:kora:agent:curator")
+        self.assertEqual(new, "urn:kora:artefacto:curator")
+        self.assertIsNone(ver)
+
+    def test_rename_skill_urn_extracts_version(self):
+        new, ver = _autoria_rename_urn("urn:gn:skill:dgi-meyer:1.2.0")
+        self.assertEqual(new, "urn:gn:artefacto:dgi-meyer")
+        self.assertEqual(ver, "1.2.0")
+
+    def test_rename_skill_urn_without_version(self):
+        new, ver = _autoria_rename_urn("urn:kora:skill:atomize")
+        self.assertEqual(new, "urn:kora:artefacto:atomize")
+        self.assertIsNone(ver)
+
+    def test_rewrite_sweeps_spec_md_and_urn_refs(self):
+        value, changed = _autoria_rewrite_urn_refs(
+            "ver urn:kora:kb:spec-md y urn:kora:agent:curator"
+        )
+        self.assertTrue(changed)
+        self.assertIn("urn:kora:kb:md-spec", value)
+        self.assertIn("urn:kora:artefacto:curator", value)
+        self.assertNotIn("urn:kora:agent:", value)
+        self.assertNotIn("urn:kora:kb:spec-md", value)
+
+    def test_non_legacy_urn_unchanged(self):
+        new, ver = _autoria_rename_urn("urn:kora:artefacto:curator")
+        self.assertEqual(new, "urn:kora:artefacto:curator")
+        self.assertIsNone(ver)
+
+
+class TestAgentMigration(unittest.TestCase):
+    def _write_and_migrate(self, content):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        path = tmp / "AGENT.md"
+        path.write_text(content, encoding="utf-8")
+        migrate_artifact_to_autoria(path)
+        fm, body = load_markdown_parts(path)
+        return fm, body, path
+
+    def test_envelope_renames(self):
+        fm, _, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
+        self.assertEqual(fm["_manifest"]["urn"], "urn:kora:artefacto:curator")
+        self.assertEqual(fm["_manifest"]["type"], "artefacto")
+        self.assertEqual(fm["nombre"], "Curator")
+        self.assertEqual(fm["descripcion"], "Curador legacy")
+        self.assertEqual(fm["status"], "activo")
+        self.assertNotIn("name", fm)
+        self.assertNotIn("description", fm)
+
+    def test_kora_overlay_renames(self):
+        fm, _, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
+        kora = fm["extensions"]["kora"]
+        self.assertIn("vector_ontologico", kora)
+        self.assertNotIn("harness_vector", kora)
+        self.assertEqual(kora["presentacion"], "estado-primario")
+        self.assertNotIn("presentation", kora)
+        atlas = kora["atlas"]
+        self.assertEqual(atlas["arnes_categorico"], "persona")
+        self.assertEqual(atlas["forma_material"], "agente-propiamente-tal")
+        self.assertEqual(atlas["metafora_relacional"], "centro-de-control")
+
+    def test_kora_overlay_urn_lists_rewritten(self):
+        fm, _, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
+        kora = fm["extensions"]["kora"]
+        self.assertIn("urn:kora:kb:md-spec", kora["conocimiento_permitido"])
+        self.assertNotIn("urn:kora:kb:spec-md", kora["conocimiento_permitido"])
+        self.assertEqual(kora["componible_con"], ["urn:kora:artefacto:custodio"])
+
+    def test_shape_deep_renames(self):
+        fm, _, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
+        self.assertIn("artefacto", fm)
+        self.assertNotIn("agent", fm)
+        art = fm["artefacto"]
+        # coalgebra -> perfil
+        self.assertIn("perfil", art)
+        self.assertEqual(art["perfil"]["descripcion"], "Curador del corpus")
+        self.assertEqual(art["perfil"]["dominio"], ["curacion"])
+        self.assertEqual(art["perfil"]["disparadores"], ["nuevo_artefacto"])
+        # plan deep rename
+        plan = art["plan"]
+        self.assertEqual(plan["estado_inicial"], "S-INIT")
+        self.assertEqual(plan["estado_terminal"], "S-END")
+        estado0 = plan["estados"][0]
+        self.assertIn("transiciones", estado0)
+        self.assertEqual(estado0["accion"], "Recibir")
+        trans0 = estado0["transiciones"][0]
+        self.assertEqual(trans0["condicion"], "ok")
+        self.assertEqual(trans0["destino"], "S-END")
+        self.assertEqual(trans0["prioridad"], 1)
+        # interface -> interfaz, context -> contexto, invariants -> invariantes
+        self.assertIn("interfaz", art)
+        self.assertIn("contexto", art)
+        self.assertIn("invariantes", art)
+        # coalgebra.invariants promovida a invariantes.reglas_duras
+        self.assertIn("fidelidad", art["invariantes"]["reglas_duras"])
+
+    def test_body_spec_md_barrido(self):
+        _, body, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
+        self.assertIn("urn:kora:kb:md-spec", body)
+        self.assertNotIn("urn:kora:kb:spec-md", body)
+
+    def test_idempotencia(self):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        path = tmp / "AGENT.md"
+        path.write_text(AGENT_LEGACY_FRONTMATTER, encoding="utf-8")
+
+        first = migrate_artifact_to_autoria(path)
+        second = migrate_artifact_to_autoria(path)
+
+        self.assertEqual(len(first), 1, "primera corrida debe cambiar el archivo")
+        self.assertEqual(second, [], "segunda corrida debe ser no-op (idempotente)")
+
+
+class TestSkillMigration(unittest.TestCase):
+    def test_skill_urn_version_extraction(self):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        path = tmp / "SKILL.md"
+        path.write_text(SKILL_LEGACY_FRONTMATTER, encoding="utf-8")
+        migrate_artifact_to_autoria(path)
+        fm, _ = load_markdown_parts(path)
+        self.assertEqual(fm["_manifest"]["urn"], "urn:gn:artefacto:dgi-meyer")
+        self.assertEqual(fm["_manifest"]["type"], "artefacto")
+        self.assertEqual(fm["version"], "1.2.0")
+
+    def test_skill_overlay_renames(self):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        path = tmp / "SKILL.md"
+        path.write_text(SKILL_LEGACY_FRONTMATTER, encoding="utf-8")
+        migrate_artifact_to_autoria(path)
+        fm, _ = load_markdown_parts(path)
+        kora = fm["extensions"]["kora"]
+        self.assertEqual(kora["nivel_prescripcion"], "medio")
+        self.assertNotIn("skill_freedom", kora)
+        atlas = kora["atlas"]
+        self.assertEqual(atlas["arnes_categorico"], "disciplina")
+        self.assertEqual(atlas["forma_material"], "habilidad")
+
+
+class TestWorkspaceScaffoldPurge(unittest.TestCase):
+    def test_legacy_scaffolds_purged_and_subdirs_renamed(self):
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+
+        # Monta un workspace simulado
+        (tmp / "AGENT.md").write_text(AGENT_LEGACY_FRONTMATTER, encoding="utf-8")
+        for scaffold in ("SOUL.md", "IDENTITY.md", "USER.md", "TOOLS.md", "AGENTS.md", "config.json"):
+            (tmp / scaffold).write_text("legacy", encoding="utf-8")
+        (tmp / "references").mkdir()
+        (tmp / "references" / "x.md").write_text("ref", encoding="utf-8")
+        (tmp / "assets").mkdir()
+        (tmp / "memory").mkdir()
+
+        # Usa las funciones internas directamente (orquestacion sin discovery).
+        from kora_lib.migration import (
+            _autoria_purge_legacy_scaffolds,
+            _autoria_rename_subdirs,
+        )
+
+        renamed = _autoria_rename_subdirs(tmp)
+        self.assertTrue((tmp / "referencias").is_dir())
+        self.assertFalse((tmp / "references").exists())
+        self.assertTrue((tmp / "recursos").is_dir())
+        self.assertTrue((tmp / "memoria").is_dir())
+        self.assertEqual(len(renamed), 3)
+
+        removed = _autoria_purge_legacy_scaffolds(tmp)
+        self.assertGreaterEqual(len(removed), 6)
+        for scaffold in ("SOUL.md", "IDENTITY.md", "USER.md", "TOOLS.md", "AGENTS.md", "config.json"):
+            self.assertFalse((tmp / scaffold).exists(), f"{scaffold} deberia borrarse")
+        self.assertTrue((tmp / "AGENT.md").exists(), "AGENT.md debe preservarse")
+
+
+class TestSkiplist(unittest.TestCase):
+    def test_atomize_is_skipped(self):
+        self.assertIn("SKILLS/kora/atomize", AUTORIA_MIGRATION_SKIPLIST)
+        from kora_lib.config import KORA_ROOT
+        self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "SKILLS/kora/atomize"))
+        self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "SKILLS/kora/atomize/SKILL.md"))
+        self.assertFalse(_is_skipped_for_autoria(KORA_ROOT / "SKILLS/kora/other"))
+
+    def test_migrate_skips_atomize(self):
+        paths = migrate_to_autoria(dry_run=True)
+        for path in paths:
+            self.assertNotIn("SKILLS/kora/atomize", str(path))
+
+
+class TestRealCorpusDryRunIdempotency(unittest.TestCase):
+    """Segunda corrida del dry-run sobre el corpus real debe ser estable
+    (la primera corrida no mutua nada, y si re-ejecutamos da el mismo set)."""
+
+    def test_dry_run_is_deterministic(self):
+        first = sorted(str(p) for p in migrate_to_autoria(dry_run=True))
+        second = sorted(str(p) for p in migrate_to_autoria(dry_run=True))
+        self.assertEqual(first, second)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,13 +1,13 @@
 ---
 _manifest:
-  urn: urn:kora:agent:curator
+  urn: urn:kora:artefacto:curator
   provenance:
     created_by: FS
     created_at: '2026-04-14'
     source: kora/curator workspace legacy v2.2.0, agentfile-spec v1.0.0
+  type: artefacto
 version: 3.0.0
-name: Curator
-status: active
+status: activo
 tags:
 - curator
 - koraficacion
@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   kora:
-    harness_vector:
+    vector_ontologico:
       pi: 2
       mu: 2
       xi: 2
@@ -29,12 +29,219 @@ extensions:
       - 2
       - 2
       - 1
+    presentacion: estado-primario
+    harness_vector:
+      pi: 0
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 0
+      sigma:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
     presentation: state-primary
-agent:
-  coalgebra:
-    description: Curador del corpus de conocimiento KORA — domina ciclo de vida completo
+nombre: Curator
+artefacto:
+  plan:
+    estado_inicial: S-DISPATCHER
+    estado_terminal: S-END
+    estados:
+    - id: S-DISPATCHER
+      transiciones:
+      - condicion: terminar
+        destino: S-END
+        prioridad: 1
+      - condicion: nuevo_artefacto AND modo=guiado
+        destino: S-GUIDED
+        prioridad: 2
+      - condicion: nuevo_artefacto AND modo=libre
+        destino: S-DESIGN
+        prioridad: 3
+      - condicion: koraficiar
+        destino: S-KORAFICATE
+        prioridad: 4
+      - condicion: cristalizar
+        destino: S-CRYSTALLIZE
+        prioridad: 5
+      - condicion: auditar
+        destino: S-AUDIT
+        prioridad: 6
+      - condicion: editar
+        destino: S-EDIT
+        prioridad: 7
+      - condicion: reparar
+        destino: S-REPAIR
+        prioridad: 8
+      - condicion: mejorar
+        destino: S-IMPROVE
+        prioridad: 9
+      - condicion: deprecar
+        destino: S-DEPRECATE
+        prioridad: 10
+      - condicion: ambiguo
+        destino: S-DISPATCHER
+        prioridad: 11
+      accion: 'CM-INTENT-CLASSIFIER: clasificar solicitud, tipo de artefacto y modo
+        de trabajo'
+    - id: S-DESIGN
+      transiciones:
+      - condicion: plan_aprobado AND tipo=descriptivo
+        destino: S-KORAFICATE
+        prioridad: 1
+      - condicion: plan_aprobado AND tipo=prescriptivo
+        destino: S-CRYSTALLIZE
+        prioridad: 2
+      - condicion: ajustar
+        destino: S-DESIGN
+        prioridad: 3
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 4
+      accion: 'CM-ARTIFACT-DESIGNER: producir plan estructural y clasificacion normativa'
+    - id: S-KORAFICATE
+      transiciones:
+      - condicion: artefacto_generado
+        destino: S-AUDIT
+        prioridad: 1
+      - condicion: iterar_segmento
+        destino: S-KORAFICATE
+        prioridad: 2
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 3
+      accion: 'CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD'
+    - id: S-CRYSTALLIZE
+      transiciones:
+      - condicion: artefacto_generado
+        destino: S-AUDIT
+        prioridad: 1
+      - condicion: iterar
+        destino: S-CRYSTALLIZE
+        prioridad: 2
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 3
+      accion: 'CM-CRYSTALLIZER: transformar decisiones implicitas en KORA/Spec-MD'
+    - id: S-AUDIT
+      transiciones:
+      - condicion: validacion_ok
+        destino: S-END
+        prioridad: 1
+      - condicion: validacion_falla AND causa=fidelidad AND tipo=descriptivo
+        destino: S-KORAFICATE
+        prioridad: 2
+      - condicion: validacion_falla AND causa=fidelidad AND tipo=prescriptivo
+        destino: S-CRYSTALLIZE
+        prioridad: 3
+      - condicion: validacion_falla
+        destino: S-REPAIR
+        prioridad: 4
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 5
+      accion: 'CM-ARTIFACT-AUDITOR: verificar conformidad del artefacto'
+    - id: S-EDIT
+      transiciones:
+      - condicion: edicion_completa
+        destino: S-AUDIT
+        prioridad: 1
+      - condicion: ajustar
+        destino: S-EDIT
+        prioridad: 2
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 3
+      accion: 'CM-ARTIFACT-EDITOR: aplicar cambios controlados preservando invariantes'
+    - id: S-REPAIR
+      transiciones:
+      - condicion: fix_aplicado
+        destino: S-AUDIT
+        prioridad: 1
+      - condicion: requiere_rediseno
+        destino: S-DESIGN
+        prioridad: 2
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 3
+      accion: 'CM-ARTIFACT-SURGEON: aplicar fix minimo sin romper referencias'
+    - id: S-IMPROVE
+      transiciones:
+      - condicion: mejora_aplicada
+        destino: S-AUDIT
+        prioridad: 1
+      - condicion: descartar
+        destino: S-END
+        prioridad: 2
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 3
+      accion: 'CM-ARTIFACT-OPTIMIZER: proponer y aplicar mejoras aprobadas'
+    - id: S-DEPRECATE
+      transiciones:
+      - condicion: deprecacion_completa
+        destino: S-END
+        prioridad: 1
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 2
+      accion: 'CM-ARTIFACT-DEPRECATOR: deprecar artefacto y preparar migracion'
+    - id: S-GUIDED
+      transiciones:
+      - condicion: ciclo_completo
+        destino: S-END
+        prioridad: 1
+      - condicion: usuario_interrumpe AND fase=DESIGN
+        destino: S-DESIGN
+        prioridad: 2
+      - condicion: usuario_interrumpe AND fase=KORAFICATE
+        destino: S-KORAFICATE
+        prioridad: 3
+      - condicion: usuario_interrumpe AND fase=CRYSTALLIZE
+        destino: S-CRYSTALLIZE
+        prioridad: 4
+      - condicion: usuario_interrumpe AND fase=AUDIT
+        destino: S-AUDIT
+        prioridad: 5
+      - condicion: cambio
+        destino: S-DISPATCHER
+        prioridad: 6
+      accion: 'CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints del modo guiado'
+    - id: S-END
+      transiciones:
+      - condicion: '[terminal]'
+        destino: S-END
+        prioridad: 1
+      accion: Emitir resumen final del trabajo y siguientes pasos operativos
+  skills:
+  - id: CM-INTENT-CLASSIFIER
+    required: true
+  - id: CM-ARTIFACT-DESIGNER
+    required: true
+  - id: CM-KORAFICATOR
+    required: true
+  - id: CM-CRYSTALLIZER
+    required: true
+  - id: CM-ARTIFACT-AUDITOR
+    required: true
+  - id: CM-ARTIFACT-EDITOR
+    required: true
+  - id: CM-ARTIFACT-SURGEON
+    required: true
+  - id: CM-ARTIFACT-OPTIMIZER
+    required: true
+  - id: CM-ARTIFACT-DEPRECATOR
+    required: true
+  - id: CM-LIFECYCLE-ORCHESTRATOR
+    required: true
+  - id: CM-CONTEXT-MANAGER
+    required: true
+  perfil:
+    descripcion: Curador del corpus de conocimiento KORA — domina ciclo de vida completo
       de artefactos
-    domain:
+    dominio:
     - koraficacion
     - cristalizacion
     - auditoria de artefactos
@@ -43,192 +250,23 @@ agent:
     - mejora de artefactos
     - deprecacion de artefactos
     - diseno de artefactos
-    triggers:
+    disparadores:
     - nuevo artefacto solicitado
     - artefacto existente requiere edicion
     - auditoria programada o post-cambio
     - fuente raw para koraficiar
     - decisiones implicitas para cristalizar
-    outputs:
+    salidas:
     - artefacto KORA/MD (descriptivo)
     - artefacto KORA/Spec-MD (prescriptivo)
     - reporte de auditoria con severidades
     - reporte de fidelidad (FS, CR)
-    invariants:
+  invariantes:
+    reglas_duras:
     - fidelidad radical — no perder hechos, condiciones, fechas ni cifras
     - SSOT — un hecho existe en exactamente un lugar del corpus
     - trazabilidad URN — toda referencia resuelve contra catalogo
-  plan:
-    initial_state: S-DISPATCHER
-    terminal_state: S-END
-    states:
-    - id: S-DISPATCHER
-      act: 'CM-INTENT-CLASSIFIER: clasificar solicitud, tipo de artefacto y modo de
-        trabajo'
-      transitions:
-      - condition: terminar
-        target: S-END
-        priority: 1
-      - condition: nuevo_artefacto AND modo=guiado
-        target: S-GUIDED
-        priority: 2
-      - condition: nuevo_artefacto AND modo=libre
-        target: S-DESIGN
-        priority: 3
-      - condition: koraficiar
-        target: S-KORAFICATE
-        priority: 4
-      - condition: cristalizar
-        target: S-CRYSTALLIZE
-        priority: 5
-      - condition: auditar
-        target: S-AUDIT
-        priority: 6
-      - condition: editar
-        target: S-EDIT
-        priority: 7
-      - condition: reparar
-        target: S-REPAIR
-        priority: 8
-      - condition: mejorar
-        target: S-IMPROVE
-        priority: 9
-      - condition: deprecar
-        target: S-DEPRECATE
-        priority: 10
-      - condition: ambiguo
-        target: S-DISPATCHER
-        priority: 11
-    - id: S-DESIGN
-      act: 'CM-ARTIFACT-DESIGNER: producir plan estructural y clasificacion normativa'
-      transitions:
-      - condition: plan_aprobado AND tipo=descriptivo
-        target: S-KORAFICATE
-        priority: 1
-      - condition: plan_aprobado AND tipo=prescriptivo
-        target: S-CRYSTALLIZE
-        priority: 2
-      - condition: ajustar
-        target: S-DESIGN
-        priority: 3
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 4
-    - id: S-KORAFICATE
-      act: 'CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD'
-      transitions:
-      - condition: artefacto_generado
-        target: S-AUDIT
-        priority: 1
-      - condition: iterar_segmento
-        target: S-KORAFICATE
-        priority: 2
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 3
-    - id: S-CRYSTALLIZE
-      act: 'CM-CRYSTALLIZER: transformar decisiones implicitas en KORA/Spec-MD'
-      transitions:
-      - condition: artefacto_generado
-        target: S-AUDIT
-        priority: 1
-      - condition: iterar
-        target: S-CRYSTALLIZE
-        priority: 2
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 3
-    - id: S-AUDIT
-      act: 'CM-ARTIFACT-AUDITOR: verificar conformidad del artefacto'
-      transitions:
-      - condition: validacion_ok
-        target: S-END
-        priority: 1
-      - condition: validacion_falla AND causa=fidelidad AND tipo=descriptivo
-        target: S-KORAFICATE
-        priority: 2
-      - condition: validacion_falla AND causa=fidelidad AND tipo=prescriptivo
-        target: S-CRYSTALLIZE
-        priority: 3
-      - condition: validacion_falla
-        target: S-REPAIR
-        priority: 4
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 5
-    - id: S-EDIT
-      act: 'CM-ARTIFACT-EDITOR: aplicar cambios controlados preservando invariantes'
-      transitions:
-      - condition: edicion_completa
-        target: S-AUDIT
-        priority: 1
-      - condition: ajustar
-        target: S-EDIT
-        priority: 2
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 3
-    - id: S-REPAIR
-      act: 'CM-ARTIFACT-SURGEON: aplicar fix minimo sin romper referencias'
-      transitions:
-      - condition: fix_aplicado
-        target: S-AUDIT
-        priority: 1
-      - condition: requiere_rediseno
-        target: S-DESIGN
-        priority: 2
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 3
-    - id: S-IMPROVE
-      act: 'CM-ARTIFACT-OPTIMIZER: proponer y aplicar mejoras aprobadas'
-      transitions:
-      - condition: mejora_aplicada
-        target: S-AUDIT
-        priority: 1
-      - condition: descartar
-        target: S-END
-        priority: 2
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 3
-    - id: S-DEPRECATE
-      act: 'CM-ARTIFACT-DEPRECATOR: deprecar artefacto y preparar migracion'
-      transitions:
-      - condition: deprecacion_completa
-        target: S-END
-        priority: 1
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 2
-    - id: S-GUIDED
-      act: 'CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints del modo guiado'
-      transitions:
-      - condition: ciclo_completo
-        target: S-END
-        priority: 1
-      - condition: usuario_interrumpe AND fase=DESIGN
-        target: S-DESIGN
-        priority: 2
-      - condition: usuario_interrumpe AND fase=KORAFICATE
-        target: S-KORAFICATE
-        priority: 3
-      - condition: usuario_interrumpe AND fase=CRYSTALLIZE
-        target: S-CRYSTALLIZE
-        priority: 4
-      - condition: usuario_interrumpe AND fase=AUDIT
-        target: S-AUDIT
-        priority: 5
-      - condition: cambio
-        target: S-DISPATCHER
-        priority: 6
-    - id: S-END
-      act: Emitir resumen final del trabajo y siguientes pasos operativos
-      transitions:
-      - condition: '[terminal]'
-        target: S-END
-        priority: 1
-  interface:
+  interfaz:
     tools:
     - name: catalog_resolve
       description: Resolver URN a path via catalogo
@@ -277,7 +315,17 @@ agent:
       - spec_consult
       - artifact_list
       deny: []
-  fibers:
+  composicion:
+    type: root
+    sub_agents: []
+    delegation:
+      max_depth: 1
+      dissipation:
+        propagate: []
+        dissipate:
+        - identity
+        - operator
+  contexto:
     identity:
       paradigm: 'Funtor K (koraficacion): DocHumano -> KORA/MD. Fiel, comprimido,
         promotor, realizador de superficie, normalizador, idioma-invariante, idempotente.
@@ -311,111 +359,12 @@ agent:
     knowledge:
       allowed_kb:
       - urn:kora:kb:md-spec
-      - urn:kora:kb:spec-md
+      - urn:kora:kb:md-spec
       - urn:kora:kb:gobernanza
       kb_routes:
         formato_descriptivo: urn:kora:kb:md-spec
-        formato_prescriptivo: urn:kora:kb:spec-md
+        formato_prescriptivo: urn:kora:kb:md-spec
         gobernanza_precedencia: urn:kora:kb:gobernanza
-  composition:
-    type: root
-    sub_agents: []
-    delegation:
-      max_depth: 1
-      dissipation:
-        propagate: []
-        dissipate:
-        - identity
-        - operator
-  safety:
-    hard_rules:
-      scope:
-        allowed:
-        - Disenar, koraficiar, cristalizar, auditar, editar, reparar, mejorar, deprecar
-          artefactos KORA/MD y KORA/Spec-MD
-        forbidden:
-        - Modificar specs fundacionales (-> operador directo)
-        - Construir/modificar agentes (-> kora/forgemaster)
-        - Modificar catalogo directamente (-> kora/custodio)
-        - Cualquier tarea fuera de KORA
-        rejection: Eso esta fuera de mi curaduria. Para specs fundacionales -> operador
-          directo. Para agentes -> kora/forgemaster. Para catalogo -> kora/custodio.
-      constraints:
-      - 'Fidelidad: Todo artefacto DEBE cumplir FS=100%. CR>1.5 es objetivo; si la
-        densidad informacional impide alcanzarlo, documentar justificacion.'
-      - 'Pipeline: Todo artefacto nuevo DEBE transitar inbox -> source -> drafts ->
-        knowledge.'
-      - 'SSOT: Un hecho, un lugar. Toda duplicacion DEBE eliminarse.'
-    co_induction:
-      pre_output_checks:
-      - id: SCOPE_COMPLIANCE
-        description: Dentro del dominio ciclo de vida artefactos
-        on_fail: reject
-      - id: STATE_AWARENESS
-        description: Coherente con estado FSM actual
-        on_fail: redirect:S-DISPATCHER
-      - id: INTERFACE_DISCIPLINE
-        description: Solo usa tools y KBs declaradas
-        on_fail: restrict
-      - id: CATALOG_RESOLUTION
-        description: URN resuelto via catalogo
-        on_fail: retry
-      - id: FIDELITY_STANDARD
-        description: Fuente correcta via cadena kb_route->catalog_resolve
-        on_fail: retry
-      - id: CITATION_COMPLIANCE
-        description: Fuente citada con nombre oficial
-        on_fail: retry
-      custom_checks:
-      - id: ARTIFACT_QUALITY
-        description: Artefacto cumple md-spec o spec-md
-        on_fail: redirect:S-AUDIT
-      - id: FIDELITY_CHECK
-        description: FS=100%, CR>1.5 o justificacion explicita
-        on_fail: redirect:S-KORAFICATE
-      - id: SSOT_CHECK
-        description: Sin duplicacion de hechos en artefacto
-        on_fail: redirect:S-REPAIR
-      - id: EXECUTION_FIDELITY
-        description: State machine sin improvisacion
-        on_fail: redirect:S-DISPATCHER
-      - id: ENCAPSULATION
-        description: CMs no expuestos al operador
-        on_fail: restrict
-      - id: SEMANTIC_ABSTRACTION
-        description: Sin IDs internos expuestos
-        on_fail: restrict
-    guardrails:
-    - Require audit before publish
-    - Require user approval for deprecation
-    - 'Max artifact size: 50000 tokens'
-    - 'Max segments per artifact: 20'
-    alignment:
-      principal: KORA Governance (specs/gobernanza.md)
-      contract: Preservar fidelidad, trazabilidad y consistencia del corpus
-  skills:
-  - id: CM-INTENT-CLASSIFIER
-    required: true
-  - id: CM-ARTIFACT-DESIGNER
-    required: true
-  - id: CM-KORAFICATOR
-    required: true
-  - id: CM-CRYSTALLIZER
-    required: true
-  - id: CM-ARTIFACT-AUDITOR
-    required: true
-  - id: CM-ARTIFACT-EDITOR
-    required: true
-  - id: CM-ARTIFACT-SURGEON
-    required: true
-  - id: CM-ARTIFACT-OPTIMIZER
-    required: true
-  - id: CM-ARTIFACT-DEPRECATOR
-    required: true
-  - id: CM-LIFECYCLE-ORCHESTRATOR
-    required: true
-  - id: CM-CONTEXT-MANAGER
-    required: true
 ---
 
 ## Behavior

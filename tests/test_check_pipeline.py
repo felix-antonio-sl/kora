@@ -19,6 +19,7 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertIn("urn-integrity", result.stdout)
         self.assertIn("knowledge-zone", result.stdout)
         self.assertIn("lint-md", result.stdout)
+        self.assertIn("autoria-conformance", result.stdout)
 
     def test_check_strict_exits_zero_when_clean(self):
         result = run_cli("check", "--strict", check=False)

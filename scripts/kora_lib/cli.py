@@ -1,5 +1,6 @@
 import argparse
 
+from .atomize import cmd_atomize
 from .audit import cmd_health
 from .catalog import cmd_index, cmd_resolve
 from .checks import run_checks, run_fixes, all_checks, CheckResult
@@ -61,9 +62,15 @@ def main():
     p_migrate = subparsers.add_parser("migrate", help="Apply codemods to move workspaces toward the current spec")
     p_migrate.add_argument(
         "--profile",
-        choices=("legacy", "transitional", "strict", "v2-agentfile"),
+        "--perfil",
+        dest="profile",
+        choices=("legacy", "transitional", "strict", "v2-agentfile", "a-autoria"),
         default="transitional",
-        help="Migration profile (v2-agentfile: auto-derive harness_vector from legacy shape)",
+        help=(
+            "Migration profile. "
+            "a-autoria: forced one-pass migration to autoria-spec v1.0 (idempotent). "
+            "v2-agentfile: auto-derive harness_vector from legacy shape."
+        ),
     )
     p_migrate.add_argument("--dry-run", action="store_true", help="Report only; do not write files")
     p_migrate.add_argument(
@@ -77,6 +84,11 @@ def main():
     p_graph = subparsers.add_parser("graph", help="Emit the typed categorical graph of the repo")
     p_graph.add_argument("--json", action="store_true", help="Emit graph as JSON")
     subparsers.add_parser("intake", help="Show status of source files vs knowledge artifacts")
+
+    p_atomize = subparsers.add_parser("atomize", help="Productor canonico md-spec para artefactos KORA/MD de familia atomic")
+    p_atomize.add_argument("input_path", help="Archivo o carpeta con el corpus fuente")
+    p_atomize.add_argument("--slug", default=None, help="Slug del artefacto atomic")
+    p_atomize.add_argument("--output", default=None, help="Directorio de salida; por defecto usa KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/")
 
     p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from KNOWLEDGE/ artifacts")
     p_kb_graph.add_argument("--json", action="store_true", help="Write graph as JSON to docs/generated/")
@@ -137,6 +149,8 @@ def main():
         cmd_graph(json_output=args.json)
     elif args.command == "intake":
         cmd_intake()
+    elif args.command == "atomize":
+        cmd_atomize(input_path=args.input_path, slug=args.slug, output=args.output)
     elif args.command == "kb-graph":
         cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles)
     elif args.command == "promote":

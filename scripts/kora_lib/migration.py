@@ -12,6 +12,7 @@ from .config import (
     LEGACY_SKILL_HEADING_ALIASES,
     LOW_LEVEL_RUNTIME_HINTS,
     MISSING_SKILL_SPECS,
+    SKILLS_ROOT,
     TOOL_IDENTIFIER_PATTERN,
 )
 from .workspaces import extract_declared_tool_headings, iter_agent_workspaces
@@ -462,7 +463,531 @@ def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
     return [agent_path]
 
 
+# ---------------------------------------------------------------------------
+# Perfil a-autoria: migracion forzada a autoria-spec v1.0 (una pasada,
+# idempotente). Ver specs/autoria-spec.md §13.
+# ---------------------------------------------------------------------------
+
+AUTORIA_STATUS_MAP = {
+    "active": "activo",
+    "draft": "borrador",
+    "deprecated": "deprecado",
+    "retired": "retirado",
+    "published": "publicado",
+}
+
+AUTORIA_PRESENTACION_MAP = {
+    "state-primary": "estado-primario",
+    "action-primary": "accion-primaria",
+}
+
+AUTORIA_PRESCRIPCION_MAP = {
+    "high": "alto",
+    "medium": "medio",
+    "low": "bajo",
+}
+
+AUTORIA_FORMA_MATERIAL_MAP = {
+    "skill-standard": "habilidad",
+    "agent-workspace": "agente-propiamente-tal",
+    "agent-platform": "agente-plataforma",
+    "subagent": "subagente",
+}
+
+AUTORIA_ATLAS_A_MAP = {
+    "utility": "utilidad",
+    "discipline": "disciplina",
+    "delegate": "delegado",
+    "person": "persona",
+    "orchestrator": "orquestador",
+    "service": "servicio",
+    "archetype": "arquetipo",
+}
+
+AUTORIA_METAFORA_MAP = {
+    "super-tool": "supertool",
+    "tele-bot": "telebot",
+    "active-appliance": "electrodomestico-activo",
+    "control-panel": "centro-de-control",
+    "centro-control": "centro-de-control",
+}
+
+AUTORIA_KORA_KEY_RENAMES = {
+    "harness_vector": "vector_ontologico",
+    "presentation": "presentacion",
+    "skill_freedom": "nivel_prescripcion",
+    "allowed_knowledge": "conocimiento_permitido",
+    "composable_with": "componible_con",
+    "target_environments": "entornos_objetivo",
+    "targets": "entornos_objetivo",
+}
+
+AUTORIA_ATLAS_KEY_RENAMES = {
+    "harness_name": "arnes_categorico",
+    "harness": "arnes_categorico",
+    "form": "forma_material",
+    "relational_metaphor": "metafora_relacional",
+    "metaphor": "metafora_relacional",
+}
+
+AUTORIA_ENVELOPE_RENAMES = {
+    "name": "nombre",
+    "description": "descripcion",
+}
+
+# Renames profundos del shape agent.* -> artefacto.*
+AUTORIA_AGENT_SECTION_RENAMES = {
+    "interface": "interfaz",
+    "context": "contexto",
+    "composition": "composicion",
+    "invariants": "invariantes",
+    "safety": "invariantes",  # fusion: safety entra como invariantes.*
+}
+
+# Dentro de agent.coalgebra.* (promocion a artefacto.perfil.*)
+AUTORIA_COALGEBRA_RENAMES = {
+    "description": "descripcion",
+    "domain": "dominio",
+    "triggers": "disparadores",
+    "outputs": "salidas",
+    "narrative": "narrativa",
+    "invariants": "_invariantes_agent_profile",  # se mueve a artefacto.invariantes
+}
+
+# Dentro de agent.plan.*
+AUTORIA_PLAN_RENAMES = {
+    "initial_state": "estado_inicial",
+    "terminal_state": "estado_terminal",
+    "states": "estados",
+}
+
+AUTORIA_PLAN_STATE_RENAMES = {
+    "transitions": "transiciones",
+    "act": "accion",
+}
+
+AUTORIA_PLAN_TRANSITION_RENAMES = {
+    "condition": "condicion",
+    "target": "destino",
+    "priority": "prioridad",
+}
+
+# Scaffolds legacy que se eliminan del workspace.
+AUTORIA_LEGACY_SCAFFOLDS = (
+    "SOUL.md",
+    "IDENTITY.md",
+    "USER.md",
+    "TOOLS.md",
+    "AGENTS.md",
+    "config.json",
+    "README.md",
+)
+
+# Subdirs que se renombran a glosario espanol (§15.3).
+AUTORIA_SUBDIR_RENAMES = {
+    "references": "referencias",
+    "assets": "recursos",
+    "memory": "memoria",
+}
+
+# Artefactos que NO se migran (dependencias en flight, gestionados a mano).
+# Se listan como rutas relativas a KORA_ROOT.
+AUTORIA_MIGRATION_SKIPLIST = (
+    "SKILLS/kora/atomize",  # Felix trabaja la linea atomize por separado.
+)
+
+
+URN_LEGACY_PATTERN = re.compile(
+    r"urn:(?P<ns>[a-z0-9\-]+):(?P<kind>agent|skill):(?P<id>[a-z0-9\-]+)(?::(?P<ver>\d+\.\d+\.\d+(?:[a-z0-9\-\.]*)?))?"
+)
+
+URN_SPEC_MD_PATTERN = re.compile(r"urn:kora:kb:spec-md\b")
+
+
+def _autoria_rename_urn(urn_str):
+    """urn:{ns}:agent:{id}[:{ver}] | urn:{ns}:skill:{id}[:{ver}] -> canonico.
+
+    Returns tuple (new_urn, extracted_version_or_None).
+    """
+    if not isinstance(urn_str, str):
+        return urn_str, None
+    m = URN_LEGACY_PATTERN.match(urn_str.strip())
+    if not m:
+        return urn_str, None
+    ns = m.group("ns")
+    artifact_id = m.group("id")
+    ver = m.group("ver")
+    new_urn = f"urn:{ns}:artefacto:{artifact_id}"
+    return new_urn, ver
+
+
+def _autoria_rewrite_urn_refs(value):
+    """Rewrite urn:{ns}:agent:{id} / urn:{ns}:skill:{id}[:{ver}] in any string.
+
+    Also barres urn:kora:kb:spec-md -> urn:kora:kb:md-spec.
+    """
+    if not isinstance(value, str):
+        return value, False
+    original = value
+    value = URN_SPEC_MD_PATTERN.sub("urn:kora:kb:md-spec", value)
+
+    def _sub(match):
+        ns = match.group("ns")
+        artifact_id = match.group("id")
+        return f"urn:{ns}:artefacto:{artifact_id}"
+
+    value = URN_LEGACY_PATTERN.sub(_sub, value)
+    return value, value != original
+
+
+def _autoria_rewrite_urn_list(items):
+    if not isinstance(items, list):
+        return items, False
+    changed = False
+    out = []
+    for item in items:
+        new_item, did = _autoria_rewrite_urn_refs(item) if isinstance(item, str) else (item, False)
+        out.append(new_item)
+        changed = changed or did
+    return out, changed
+
+
+def _rename_keys(mapping, rename_map):
+    """Rename top-level keys of a dict in place. Returns True if anything changed."""
+    if not isinstance(mapping, dict):
+        return False
+    changed = False
+    for old_key, new_key in list(rename_map.items()):
+        if old_key == new_key:
+            continue
+        if old_key in mapping and new_key not in mapping:
+            mapping[new_key] = mapping.pop(old_key)
+            changed = True
+        elif old_key in mapping and new_key in mapping:
+            # Target already exists (ya migrado); descartar el legacy.
+            mapping.pop(old_key)
+            changed = True
+    return changed
+
+
+def _remap_value(mapping, key, value_map):
+    if not isinstance(mapping, dict) or key not in mapping:
+        return False
+    current = mapping[key]
+    if not isinstance(current, str):
+        return False
+    new = value_map.get(current)
+    if new is None or new == current:
+        return False
+    mapping[key] = new
+    return True
+
+
+def _autoria_migrate_envelope(frontmatter):
+    """Rename top-level envelope fields: name->nombre, description->descripcion.
+
+    Normalize status to Spanish lifecycle. Ensure lang=es default.
+    """
+    changed = False
+    if _rename_keys(frontmatter, AUTORIA_ENVELOPE_RENAMES):
+        changed = True
+    if _remap_value(frontmatter, "status", AUTORIA_STATUS_MAP):
+        changed = True
+    if "lang" not in frontmatter:
+        frontmatter["lang"] = "es"
+        changed = True
+    return changed
+
+
+def _autoria_migrate_manifest(frontmatter):
+    """Rewrite _manifest.urn to artefacto regime, set type=artefacto."""
+    manifest = frontmatter.get("_manifest")
+    if not isinstance(manifest, dict):
+        return False
+    changed = False
+    urn = manifest.get("urn")
+    if isinstance(urn, str):
+        new_urn, extracted_ver = _autoria_rename_urn(urn)
+        if new_urn != urn:
+            manifest["urn"] = new_urn
+            changed = True
+        if extracted_ver and not frontmatter.get("version"):
+            frontmatter["version"] = extracted_ver
+            changed = True
+    if manifest.get("type") != "artefacto":
+        manifest["type"] = "artefacto"
+        changed = True
+    return changed
+
+
+def _autoria_migrate_kora_overlay(frontmatter):
+    """Rename extensions.kora.* legacy keys and atlas slugs to Spanish."""
+    extensions = frontmatter.get("extensions")
+    if not isinstance(extensions, dict):
+        return False
+    kora = extensions.get("kora")
+    if not isinstance(kora, dict):
+        return False
+
+    changed = False
+    if _rename_keys(kora, AUTORIA_KORA_KEY_RENAMES):
+        changed = True
+    if _remap_value(kora, "presentacion", AUTORIA_PRESENTACION_MAP):
+        changed = True
+    if _remap_value(kora, "nivel_prescripcion", AUTORIA_PRESCRIPCION_MAP):
+        changed = True
+
+    atlas = kora.get("atlas")
+    if isinstance(atlas, dict):
+        if _rename_keys(atlas, AUTORIA_ATLAS_KEY_RENAMES):
+            changed = True
+        if _remap_value(atlas, "arnes_categorico", AUTORIA_ATLAS_A_MAP):
+            changed = True
+        if _remap_value(atlas, "forma_material", AUTORIA_FORMA_MATERIAL_MAP):
+            changed = True
+        if _remap_value(atlas, "metafora_relacional", AUTORIA_METAFORA_MAP):
+            changed = True
+
+    for key in ("conocimiento_permitido", "componible_con"):
+        if key in kora:
+            new_list, did = _autoria_rewrite_urn_list(kora.get(key))
+            if did:
+                kora[key] = new_list
+                changed = True
+
+    return changed
+
+
+def _autoria_migrate_plan(plan):
+    if not isinstance(plan, dict):
+        return False
+    changed = _rename_keys(plan, AUTORIA_PLAN_RENAMES)
+    estados = plan.get("estados")
+    if isinstance(estados, list):
+        for estado in estados:
+            if not isinstance(estado, dict):
+                continue
+            if _rename_keys(estado, AUTORIA_PLAN_STATE_RENAMES):
+                changed = True
+            transiciones = estado.get("transiciones")
+            if isinstance(transiciones, list):
+                for trans in transiciones:
+                    if isinstance(trans, dict):
+                        if _rename_keys(trans, AUTORIA_PLAN_TRANSITION_RENAMES):
+                            changed = True
+    return changed
+
+
+def _autoria_migrate_shape(frontmatter):
+    """Rewrite agent.* -> artefacto.*; coalgebra -> perfil; Spanish sub-field renames.
+
+    Idempotente: si `artefacto.*` ya esta en forma canonica, retorna False.
+    """
+    changed = False
+
+    if "agent" in frontmatter:
+        legacy = frontmatter.pop("agent")
+        if "artefacto" in frontmatter and isinstance(frontmatter["artefacto"], dict) and isinstance(legacy, dict):
+            # Fusion defensiva: ya hay artefacto parcial y sobrevive agent legacy.
+            for key, val in legacy.items():
+                frontmatter["artefacto"].setdefault(key, val)
+        else:
+            frontmatter["artefacto"] = legacy
+        changed = True
+
+    artefacto = frontmatter.get("artefacto")
+    if not isinstance(artefacto, dict):
+        return changed
+
+    # coalgebra -> perfil (fusion).
+    if "coalgebra" in artefacto:
+        coalgebra = artefacto.pop("coalgebra")
+        perfil = artefacto.setdefault("perfil", {})
+        if isinstance(coalgebra, dict):
+            for src, dst in AUTORIA_COALGEBRA_RENAMES.items():
+                if src in coalgebra:
+                    perfil[dst] = coalgebra.pop(src)
+            for leftover_key, leftover_val in coalgebra.items():
+                perfil.setdefault(leftover_key, leftover_val)
+            # Mueve invariants de coalgebra a artefacto.invariantes.reglas_duras
+            legacy_invariants = perfil.pop("_invariantes_agent_profile", None)
+            if legacy_invariants:
+                invariantes = artefacto.setdefault("invariantes", {})
+                existing = invariantes.get("reglas_duras") or []
+                if isinstance(existing, list) and isinstance(legacy_invariants, list):
+                    invariantes["reglas_duras"] = existing + [
+                        rule for rule in legacy_invariants if rule not in existing
+                    ]
+                elif not existing:
+                    invariantes["reglas_duras"] = legacy_invariants
+        changed = True
+
+    if _rename_keys(artefacto, AUTORIA_AGENT_SECTION_RENAMES):
+        changed = True
+
+    if "fibers" in artefacto:
+        fibers = artefacto.pop("fibers")
+        if isinstance(fibers, dict):
+            contexto = artefacto.setdefault("contexto", {})
+            for fk, fv in fibers.items():
+                contexto.setdefault(fk, fv)
+        changed = True
+
+    if _autoria_migrate_plan(artefacto.get("plan")):
+        changed = True
+
+    return changed
+
+
+def _autoria_sweep_urn_refs(value):
+    """Recursively rewrite urn:{ns}:agent:*/skill:* and urn:kora:kb:spec-md in any string inside dict/list."""
+    if isinstance(value, str):
+        return _autoria_rewrite_urn_refs(value)
+    if isinstance(value, list):
+        changed_any = False
+        for i, item in enumerate(value):
+            new_item, did = _autoria_sweep_urn_refs(item)
+            if did:
+                value[i] = new_item
+                changed_any = True
+        return value, changed_any
+    if isinstance(value, dict):
+        changed_any = False
+        for k, v in list(value.items()):
+            new_v, did = _autoria_sweep_urn_refs(v)
+            if did:
+                value[k] = new_v
+                changed_any = True
+        return value, changed_any
+    return value, False
+
+
+def migrate_artifact_to_autoria(path, dry_run=False):
+    """Migra un AGENT.md o SKILL.md en sitio a autoria-spec v1.0.
+
+    Idempotente: si ya esta migrado, no hace cambios.
+    Retorna lista con el path si cambio.
+    """
+    if not path.exists():
+        return []
+
+    frontmatter, body = load_markdown_parts(path)
+    if not isinstance(frontmatter, dict):
+        return []
+
+    changed = False
+    if _autoria_migrate_manifest(frontmatter):
+        changed = True
+    if _autoria_migrate_envelope(frontmatter):
+        changed = True
+    if _autoria_migrate_kora_overlay(frontmatter):
+        changed = True
+    if _autoria_migrate_shape(frontmatter):
+        changed = True
+
+    _, swept = _autoria_sweep_urn_refs(frontmatter)
+    if swept:
+        changed = True
+
+    # Body: barrer urn:kora:kb:spec-md y urn:{ns}:agent/skill:*.
+    new_body, body_changed = _autoria_rewrite_urn_refs(body)
+    if body_changed:
+        body = new_body
+        changed = True
+
+    if changed and not dry_run:
+        dump_yaml_frontmatter_and_body(path, frontmatter, body)
+    return [path] if changed else []
+
+
+def _autoria_rename_subdirs(workspace_dir, dry_run=False):
+    changed = []
+    for old, new in AUTORIA_SUBDIR_RENAMES.items():
+        old_path = workspace_dir / old
+        new_path = workspace_dir / new
+        if old_path.exists() and old_path.is_dir() and not new_path.exists():
+            if not dry_run:
+                old_path.rename(new_path)
+            changed.append(new_path)
+    return changed
+
+
+def _autoria_purge_legacy_scaffolds(workspace_dir, dry_run=False):
+    removed = []
+    for scaffold in AUTORIA_LEGACY_SCAFFOLDS:
+        scaffold_path = workspace_dir / scaffold
+        if scaffold_path.exists() and scaffold_path.is_file():
+            if not dry_run:
+                scaffold_path.unlink()
+            removed.append(scaffold_path)
+    # skills/ legacy subdir (material embebido v1) — si existe, NO lo borramos
+    # aqui; es un path productivo de v1 que el autor revisa manualmente para
+    # promover a SKILLS/{ns}/{name}/.
+    return removed
+
+
+def _iter_productive_skill_files():
+    """Yield SKILL.md paths bajo SKILLS/{ns}/{name}/ y SKILLS/{name}/ productivos."""
+    if not SKILLS_ROOT.exists():
+        return
+    for entry in sorted(SKILLS_ROOT.iterdir()):
+        if not entry.is_dir() or entry.name.startswith(("_", ".")):
+            continue
+        # Caso A: SKILLS/{name}/SKILL.md (top-level productivo)
+        direct = entry / "SKILL.md"
+        if direct.exists():
+            yield direct
+            continue
+        # Caso B: SKILLS/{ns}/{name}/SKILL.md
+        for sub in sorted(entry.iterdir()):
+            if not sub.is_dir() or sub.name.startswith(("_", ".")):
+                continue
+            candidate = sub / "SKILL.md"
+            if candidate.exists():
+                yield candidate
+
+
+def _is_skipped_for_autoria(path):
+    try:
+        rel = path.relative_to(KORA_ROOT).as_posix()
+    except ValueError:
+        return False
+    return any(rel == skip or rel.startswith(skip + "/") for skip in AUTORIA_MIGRATION_SKIPLIST)
+
+
+def migrate_to_autoria(dry_run=False, cohort=None):
+    """Perfil a-autoria: migracion forzada de todo el corpus productivo.
+
+    Idempotente: segunda corrida = sin cambios.
+    Alcance: AGENTS/{ns}/{name}/AGENT.md, SKILLS/{ns}/{name}/SKILL.md.
+    NO toca staging (_FRAGUA/, _TALLER/, _SCRIPTORIUM/) ni artefactos en
+    AUTORIA_MIGRATION_SKIPLIST.
+    """
+    changed_paths = []
+
+    for workspace_dir in iter_agent_workspaces(cohort=cohort):
+        if _is_skipped_for_autoria(workspace_dir):
+            continue
+        agent_path = workspace_dir / "AGENT.md"
+        changed_paths.extend(migrate_artifact_to_autoria(agent_path, dry_run=dry_run))
+        changed_paths.extend(_autoria_rename_subdirs(workspace_dir, dry_run=dry_run))
+        changed_paths.extend(_autoria_purge_legacy_scaffolds(workspace_dir, dry_run=dry_run))
+
+    # Cohort no aplica a SKILLS/ — son portables.
+    for skill_path in _iter_productive_skill_files():
+        if _is_skipped_for_autoria(skill_path.parent):
+            continue
+        changed_paths.extend(migrate_artifact_to_autoria(skill_path, dry_run=dry_run))
+
+    return changed_paths
+
+
 def migrate_agents(profile="transitional", dry_run=False, cohort=None):
+    # Perfil a-autoria: ruptura forzada a autoria-spec v1.0. No scaffoldea
+    # legacy (SOUL/USER/AGENTS.md). Idempotente. Ver spec §13.
+    if profile == "a-autoria":
+        return migrate_to_autoria(dry_run=dry_run, cohort=cohort)
+
     changed_paths = []
     newly_scaffolded = set()
     if profile != "legacy":
