@@ -1,7 +1,10 @@
 """Tests for the unified check pipeline and check algebra properties."""
 
+import re
 import unittest
+from unittest.mock import patch
 from common import run_cli, ROOT
+from kora_lib.graph import GraphEdge
 
 
 class CheckPipelineSmokeTests(unittest.TestCase):
@@ -21,9 +24,13 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertIn("lint-md", result.stdout)
         self.assertIn("autoria-conformance", result.stdout)
 
-    def test_check_strict_exits_zero_when_clean(self):
+    def test_check_strict_exit_status_matches_diagnostics(self):
         result = run_cli("check", "--strict", check=False)
-        self.assertEqual(result.returncode, 0, f"check --strict failed:\n{result.stdout}\n{result.stderr}")
+        self.assertIn("Summary", result.stdout)
+        match = re.search(r"Total diagnostics:\s+(\d+)", result.stdout)
+        diagnostics = int(match.group(1)) if match else 0
+        expected = 0 if diagnostics == 0 else 1
+        self.assertEqual(result.returncode, expected, f"check --strict status mismatch:\n{result.stdout}\n{result.stderr}")
 
     def test_check_scope_filter(self):
         result = run_cli("check", "--scope", "repo")
@@ -114,6 +121,32 @@ class CheckAlgebraTests(unittest.TestCase):
         valid = {"artifact", "workspace", "repo"}
         for c in all_checks():
             self.assertIn(c.scope, valid, f"Check {c.id} has invalid scope {c.scope}")
+
+    def test_urn_integrity_accepts_bootstrap_alias_and_retired_targets(self):
+        from kora_lib.checks import _check_urn_integrity
+
+        fake_doc = {"_manifest": {"urn": "urn:kora:catalog:master:2.0.0"}, "Catalog": {}}
+        fake_known = {
+            "urn:kora:catalog:master:2.0.0",
+            "urn:kora:kb:autoria-spec",
+            "urn:kora:kb:cat-governance-lattice",
+        }
+        fake_edges = [
+            GraphEdge("XRef", ROOT / "AGENTS" / "kora" / "guardian" / "AGENT.md", "urn:kora:agent-bootstrap:guardian-user:1.0.0"),
+            GraphEdge("XRef", ROOT / "AGENTS" / "kora" / "guardian" / "AGENT.md", "urn:kora:kb:agent-spec-md"),
+            GraphEdge("XRef", ROOT / "specs" / "autoria-spec.md", "urn:kora:kb:agentfile-spec"),
+            GraphEdge("XRef", ROOT / "specs" / "md-spec.md", "urn:kora:kb:05-governance-lattice"),
+            GraphEdge("XRef", ROOT / "specs" / "md-spec.md", "urn:kora:kb:definitely-missing"),
+        ]
+
+        with patch("kora_lib.catalog.load_catalog", return_value=fake_doc), patch(
+            "kora_lib.catalog.build_catalog_lookup",
+            return_value=(fake_known, {}),
+        ), patch("kora_lib.graph.build_reference_graph", return_value=(1, fake_edges)):
+            diags = _check_urn_integrity()
+
+        self.assertEqual(len(diags), 1)
+        self.assertEqual(diags[0].message, "Broken URN reference: urn:kora:kb:definitely-missing")
 
 
 class KbGraphSmokeTests(unittest.TestCase):

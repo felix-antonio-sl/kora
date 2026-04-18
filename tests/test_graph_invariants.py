@@ -5,9 +5,10 @@ import unittest
 from unittest.mock import patch
 
 from common import AGENTS_ROOT, ROOT, has_productive_workspaces, run_cli
-from kora_lib.catalog import build_catalog_lookup, load_catalog
-from kora_lib.config import OPERATING_CORE_COHORTS
+from kora_lib.catalog import build_catalog_lookup, load_catalog, urn_is_known
+from kora_lib.config import DEPRECATED_URN_ALIASES, OPERATING_CORE_COHORTS
 from kora_lib.graph import build_reference_graph
+from kora_lib.kb_graph import build_graph
 from kora_lib.workspaces import (
     fragment_exists,
     iter_agent_workspaces,
@@ -34,7 +35,7 @@ class GraphInvariantTests(unittest.TestCase):
         # Threshold escalado al fleet actual; ajustar al alza al promover
         # mas workspaces desde _FRAGUA/INBOX/.
         self.assertGreater(self.scanned_files, 500)
-        self.assertTrue(any(edge.kind == "TracesTo" for edge in self.edges))
+        self.assertTrue(any(edge.kind == "XRef" for edge in self.edges))
         self.assertTrue(any(edge.kind == "RoutesToAgent" for edge in self.edges))
         self.assertTrue(any(edge.kind == "InvokesSkill" for edge in self.edges))
 
@@ -61,7 +62,8 @@ class GraphInvariantTests(unittest.TestCase):
                 )
             elif workspace_exists_from_urn(edge.target):
                 parts = edge.target.split(":")
-                target_path = AGENTS_ROOT / parts[1] / parts[3] / "AGENTS.md"
+                target_file = "AGENT.md" if len(parts) > 2 and parts[2] == "artefacto" else "AGENTS.md"
+                target_path = AGENTS_ROOT / parts[1] / parts[3] / target_file
                 self.assertTrue(
                     fragment_exists(target_path, edge.fragment),
                     msg=f"Broken workspace fragment {edge.target}#{edge.fragment}",
@@ -121,7 +123,10 @@ class GraphInvariantTests(unittest.TestCase):
             workspace = f"{rel.parts[0]}/{rel.parts[1]}"
             if workspace not in enforced_workspaces:
                 continue
-            self.assertIn(edge.target, self.known_urns, msg=f"Unknown allowed_kb URN: {edge.target}")
+            self.assertTrue(
+                edge.target in self.known_urns or edge.target in DEPRECATED_URN_ALIASES,
+                msg=f"Unknown allowed_kb URN: {edge.target}",
+            )
 
     def test_build_reference_graph_raises_on_invalid_workspace_config(self):
         with TemporaryDirectory(dir=ROOT) as tmpdir:
@@ -130,6 +135,51 @@ class GraphInvariantTests(unittest.TestCase):
             with patch("kora_lib.graph.iter_repository_files", return_value=[config_path]):
                 with self.assertRaises(RuntimeError):
                     build_reference_graph()
+
+    def test_urn_resolution_accepts_historical_aliases_and_bootstrap_urns(self):
+        known_urns = {
+            "urn:kora:kb:autoria-spec",
+            "urn:kora:kb:cat-governance-lattice",
+        }
+        self.assertTrue(urn_is_known("urn:kora:kb:agent-spec-md", known_urns))
+        self.assertTrue(urn_is_known("urn:kora:kb:agentfile-spec", known_urns))
+        self.assertTrue(urn_is_known("urn:kora:kb:05-governance-lattice", known_urns))
+        self.assertTrue(urn_is_known("urn:kora:agent-bootstrap:guardian-user:1.0.0", known_urns))
+        self.assertFalse(urn_is_known("urn:kora:kb:definitely-missing", known_urns))
+
+    def test_kb_graph_ignores_retired_relations_and_canonicalizes_renames(self):
+        nodes = [
+            {
+                "urn": "urn:kora:kb:autoria-spec",
+                "namespace": "kora",
+                "status": "published",
+                "version": "1.0.0",
+                "tags": [],
+                "file": "specs/autoria-spec.md",
+                "relations": {"supersedes": ["urn:kora:kb:agentfile-spec", "urn:kora:kb:skill-overlay-spec"]},
+            },
+            {
+                "urn": "urn:kora:kb:md-spec",
+                "namespace": "kora",
+                "status": "published",
+                "version": "8.0.0",
+                "tags": [],
+                "file": "specs/md-spec.md",
+                "relations": {"cites": ["urn:kora:kb:05-governance-lattice"]},
+            },
+            {
+                "urn": "urn:kora:kb:cat-governance-lattice",
+                "namespace": "kora",
+                "status": "published",
+                "version": "1.0.0",
+                "tags": [],
+                "file": "KNOWLEDGE/kora/categorical-foundations/05-governance-lattice.md",
+                "relations": {},
+            },
+        ]
+
+        graph = build_graph(nodes)
+        self.assertEqual(graph["broken_edges"], [])
 
 
 if __name__ == "__main__":

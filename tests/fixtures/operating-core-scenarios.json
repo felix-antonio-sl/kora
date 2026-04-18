@@ -6,9 +6,8 @@
       "requires_states": ["S-GOVERNANCE", "S-VALIDATION"],
       "requires_skills": ["CM-CONTEXT-MANAGER", "CM-SPEC-CLASSIFIER", "CM-SPEC-GUARD"],
       "requires_tools": ["kb_route", "repo_health", "spec_consult"],
-      "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
       "requires_allowed_kb_min": 4,
-      "requires_evidence_terms": ["CONSISTENCIA_NORMATIVA", "TRAZABILIDAD_RESOLUBLE"]
+      "requires_evidence_terms": ["precedencia normativa", "trazabilidad resoluble"]
     },
     {
       "id": "guardian-foundational-validation-audit",
@@ -16,8 +15,7 @@
       "requires_states": ["S-VALIDATION"],
       "requires_skills": ["CM-CONTEXT-MANAGER", "CM-SPEC-CLASSIFIER", "CM-SPEC-GUARD"],
       "requires_tools": ["repo_health", "spec_consult"],
-      "requires_routes": ["kora/forgemaster", "kora/curator", "kora/custodio"],
-      "requires_allowed_terms": ["specs fundacionales", "gobernanza", "coherencia normativa"]
+      "requires_allowed_terms": ["specs fundacionales", "gobernanza", "precedencia normativa"]
     },
     {
       "id": "forgemaster-create-valid-workspace",
@@ -25,7 +23,6 @@
       "requires_states": ["S-CREATE", "S-VALIDATE"],
       "requires_skills": ["CM-WORKSPACE-SCAFFOLDER", "CM-AGENT-VALIDATOR"],
       "requires_tools": ["workspace_write", "health_check"],
-      "requires_routes": ["kora/custodio"],
       "requires_evidence_terms": ["PASS|FAIL", "Reporte"]
     },
     {
@@ -42,7 +39,6 @@
       "requires_states": ["S-KORAFICATE", "S-AUDIT"],
       "requires_skills": ["CM-KORAFICATOR", "CM-ARTIFACT-AUDITOR"],
       "requires_tools": ["artifact_write", "artifact_validate"],
-      "requires_routes": ["kora/custodio"],
       "requires_evidence_terms": ["reporte estructurado", "PASS|FAIL"]
     },
     {
@@ -67,7 +63,6 @@
       "requires_states": ["S-CATALOGO", "S-SALUD"],
       "requires_skills": ["CM-CATALOG-STEWARD", "CM-HEALTH-INSPECTOR"],
       "requires_tools": ["catalog_sync", "urn_resolve", "repo_health"],
-      "requires_routes": ["kora/forgemaster", "kora/curator"],
       "requires_evidence_terms": ["metricas", "reporte"]
     }
   ],
@@ -76,7 +71,6 @@
       "id": "handoff-forgemaster-to-custodio",
       "from": "kora/forgemaster",
       "to": "kora/custodio",
-      "requires_explicit_route": true,
       "source_requires_tools": ["health_check", "workspace_write"],
       "target_requires_tools": ["repo_health", "catalog_sync"]
     },
@@ -84,7 +78,6 @@
       "id": "handoff-curator-to-custodio",
       "from": "kora/curator",
       "to": "kora/custodio",
-      "requires_explicit_route": true,
       "source_requires_tools": ["artifact_write", "artifact_validate"],
       "target_requires_tools": ["catalog_sync", "urn_resolve"]
     }
@@ -100,8 +93,7 @@
       "required_tools_by_step": {
         "kora/forgemaster": ["workspace_read", "workspace_write", "health_check"],
         "kora/custodio": ["repo_health", "catalog_sync", "urn_resolve"]
-      },
-      "required_routes": [["kora/forgemaster", "kora/custodio"]]
+      }
     },
     {
       "id": "loop-knowledge-lifecycle",
@@ -113,8 +105,7 @@
       "required_tools_by_step": {
         "kora/curator": ["artifact_write", "artifact_validate"],
         "kora/custodio": ["catalog_sync", "urn_resolve", "repo_health"]
-      },
-      "required_routes": [["kora/curator", "kora/custodio"]]
+      }
     }
   ],
   "domain_canary": {
@@ -154,7 +145,7 @@
       "CM-SYNTHESIZER"
     ],
     "requires_tools": ["catalog_resolve", "kb_route"],
-    "requires_allowed_terms": ["Ley 21.180", "CPAT", "madurez digital"],
+    "requires_allowed_terms": ["ley-21180", "CPAT", "madurez digital"],
     "requires_evidence_terms": [
       "[norma vigente]",
       "[dato institucional]",

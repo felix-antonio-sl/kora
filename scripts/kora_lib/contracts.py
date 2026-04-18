@@ -3,8 +3,9 @@ import re
 from dataclasses import asdict, dataclass
 from functools import lru_cache
 
+from .artifacts import load_yaml_safe
 from .config import AGENTS_ROOT, KORA_ROOT, META_KORA_AUDIT_WORKSPACES, META_KORA_STATUS, OPERATING_CORE_COHORTS
-from .workspaces import extract_cm_refs, extract_workspace_tokens
+from .workspaces import extract_cm_refs, extract_workspace_tokens, iter_skill_entrypoints
 
 
 STATE_LINE_PATTERN = re.compile(r"^\d+\.\s+STATE:\s+(S-[A-Z0-9-]+)\s*(?:->|→)\s*ACT:\s*(.+)$")
@@ -20,6 +21,7 @@ EVIDENCE_PATTERNS = (
     re.compile(r"\bhallazg", re.IGNORECASE),
     re.compile(r"\bgate\b", re.IGNORECASE),
 )
+_PLACEHOLDER_TOOL_NAMES = {"firma", "parametros", "parameters", "signature"}
 
 
 @dataclass(frozen=True)
@@ -169,10 +171,219 @@ def build_tool_contracts(tools_text):
     return contracts
 
 
+def _nested_get(mapping, *keys):
+    current = mapping
+    for key in keys:
+        if not isinstance(current, dict):
+            return None
+        current = current.get(key)
+    return current
+
+
+def _dedupe(items):
+    seen = set()
+    ordered = []
+    for item in items:
+        if item in seen:
+            continue
+        seen.add(item)
+        ordered.append(item)
+    return ordered
+
+
+def _is_semantic_tool_name(name):
+    if not isinstance(name, str):
+        return False
+    stripped = name.strip()
+    if not stripped or stripped.lower() in _PLACEHOLDER_TOOL_NAMES:
+        return False
+    return bool(re.fullmatch(r"[A-Za-z0-9._/-]+", stripped))
+
+
+def _extract_output_signature(signature):
+    if "→" in signature:
+        return signature.split("→", 1)[1].strip()
+    if "->" in signature:
+        return signature.split("->", 1)[1].strip()
+    return ""
+
+
+def _build_tool_contracts_from_entries(entries):
+    contracts = {}
+    for entry in entries or []:
+        if not isinstance(entry, dict):
+            continue
+        name = str(entry.get("name", "")).strip()
+        if not _is_semantic_tool_name(name):
+            continue
+        signature = str(entry.get("parameters") or "").strip()
+        description = str(entry.get("description") or "").strip()
+        when_to_use = str(entry.get("when_to_use") or "").strip()
+        when_not_to_use = str(entry.get("when_not_to_use") or "").strip()
+        body = "\n".join(
+            part for part in (description, signature, when_to_use, when_not_to_use) if part
+        )
+        contracts[name] = ToolContract(
+            name=name,
+            signature=signature,
+            output_signature=_extract_output_signature(signature or description),
+            body=body,
+        )
+    return contracts
+
+
+def _extract_autoria_states(doc):
+    states = {}
+    state_entries = (
+        _nested_get(doc, "artefacto", "plan", "estados")
+        or _nested_get(doc, "agent", "plan", "states")
+        or []
+    )
+    for item in state_entries:
+        if not isinstance(item, dict):
+            continue
+        state_id = item.get("id") or item.get("name")
+        if not isinstance(state_id, str) or not state_id:
+            continue
+        action = item.get("accion") or item.get("action") or ""
+        states[state_id] = str(action).strip()
+    return states
+
+
+def _extract_autoria_skill_refs(agent_path, doc):
+    refs = set(extract_cm_refs(agent_path))
+    skill_entries = (
+        _nested_get(doc, "artefacto", "skills")
+        or _nested_get(doc, "agent", "skills")
+        or doc.get("skills")
+        or []
+    )
+    for item in skill_entries:
+        if not isinstance(item, dict):
+            continue
+        skill_id = item.get("id")
+        if isinstance(skill_id, str) and skill_id:
+            refs.add(skill_id)
+    return sorted(refs)
+
+
+def _extract_autoria_allowed_tools(doc):
+    values = (
+        _nested_get(doc, "artefacto", "interfaz", "permissions", "allow")
+        or _nested_get(doc, "agent", "interface", "permissions", "allow")
+        or []
+    )
+    return sorted(
+        _dedupe(
+            item.strip()
+            for item in values
+            if isinstance(item, str) and _is_semantic_tool_name(item)
+        )
+    )
+
+
+def _extract_autoria_allowed_kb(doc):
+    values = (
+        _nested_get(doc, "artefacto", "contexto", "knowledge", "allowed_kb")
+        or _nested_get(doc, "agent", "context", "kb_refs")
+        or []
+    )
+    return _dedupe(item for item in values if isinstance(item, str) and item)
+
+
+def _extract_autoria_sub_agents(doc):
+    values = (
+        _nested_get(doc, "artefacto", "composicion", "sub_agents")
+        or _nested_get(doc, "agent", "composition", "sub_agents")
+        or []
+    )
+    refs = []
+    for item in values:
+        if isinstance(item, str):
+            refs.append(item)
+        elif isinstance(item, dict):
+            ref = item.get("ref") or item.get("workspace") or item.get("id")
+            if isinstance(ref, str):
+                refs.append(ref)
+    return sorted(
+        ref for ref in _dedupe(refs) if re.fullmatch(r"[a-z0-9-]+/[A-Za-z0-9_-]+", ref)
+    )
+
+
+def _build_autoria_sources(workspace_dir):
+    sources = {"agent": str((workspace_dir / "AGENT.md").relative_to(KORA_ROOT))}
+    memory_path = workspace_dir / "MEMORY.md"
+    if memory_path.exists():
+        sources["memory"] = str(memory_path.relative_to(KORA_ROOT))
+    for index, skill_path in enumerate(iter_skill_entrypoints(workspace_dir / "skills"), start=1):
+        sources[f"skill_{index:02d}"] = str(skill_path.relative_to(KORA_ROOT))
+    return sources
+
+
 @lru_cache(maxsize=None)
 def load_workspace_contract(workspace_ref):
     workspace_dir = workspace_dir_from_ref(workspace_ref)
     namespace, name = workspace_ref.split("/", 1)
+    agent_path = workspace_dir / "AGENT.md"
+    if agent_path.exists():
+        agent_text = agent_path.read_text(encoding="utf-8")
+        agent_doc, _ = load_yaml_safe(agent_path)
+        if not isinstance(agent_doc, dict):
+            agent_doc = {}
+        sources = _build_autoria_sources(workspace_dir)
+        source_texts = []
+        for rel_path in sources.values():
+            abs_path = KORA_ROOT / rel_path
+            if abs_path.exists():
+                source_texts.append(abs_path.read_text(encoding="utf-8"))
+        combined_text = "\n".join(source_texts) if source_texts else agent_text
+
+        states = _extract_autoria_states(agent_doc)
+        states.update(parse_states(agent_text))
+        states.update(parse_states(combined_text))
+
+        tools = _build_tool_contracts_from_entries(
+            _nested_get(agent_doc, "artefacto", "interfaz", "tools")
+            or _nested_get(agent_doc, "agent", "interface", "tools")
+            or []
+        )
+        tools_allow = _extract_autoria_allowed_tools(agent_doc)
+        if not tools_allow and tools:
+            tools_allow = sorted(tools.keys())
+        allowed_kb = _extract_autoria_allowed_kb(agent_doc)
+        allowed_line = combined_text
+        forbidden_line = ""
+        rejection_line = ""
+        route_targets = extract_targets_from_text(combined_text, workspace_ref)
+        sub_agents = sorted(set(_extract_autoria_sub_agents(agent_doc)) | set(SUB_AGENT_PATTERN.findall(combined_text)))
+        handoff_targets = sorted(set(route_targets) | set(sub_agents))
+        evidence_lines = extract_evidence_lines(*source_texts)
+        report_lines = [
+            line
+            for line in evidence_lines
+            if re.search(r"reporte|veredicto|PASS\|FAIL|APROBADO\|RECHAZADO", line, re.IGNORECASE)
+        ]
+
+        return CapabilityContract(
+            workspace=workspace_ref,
+            namespace=namespace,
+            name=name,
+            states=states,
+            skill_refs=_extract_autoria_skill_refs(agent_path, agent_doc),
+            tools=tools,
+            tools_allow=tools_allow,
+            allowed_kb=allowed_kb,
+            allowed_line=allowed_line,
+            forbidden_line=forbidden_line,
+            rejection_line=rejection_line,
+            route_targets=sorted(route_targets),
+            sub_agents=sub_agents,
+            handoff_targets=handoff_targets,
+            evidence_lines=evidence_lines,
+            report_lines=report_lines,
+            sources=sources,
+        )
+
     agents_path = workspace_dir / "AGENTS.md"
     tools_path = workspace_dir / "TOOLS.md"
     config_path = workspace_dir / "config.json"

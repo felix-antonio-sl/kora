@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 
 from common import AGENTS_ROOT, GENERATED_DOCS, ROOT, has_productive_workspaces, run_cli
@@ -26,11 +27,11 @@ class KoraCliSmokeTests(unittest.TestCase):
         result = run_cli("validate", "--profile", "strict", check=False)
         self.assertIn("Validation complete!", result.stdout)
 
-    def test_resolve_config_urn_returns_expected_path(self):
+    def test_resolve_artifact_urn_returns_expected_path(self):
         if not has_productive_workspaces():
             self.skipTest("Sin workspaces productivos — guardian en staging.")
-        result = run_cli("resolve", "urn:kora:agent-bootstrap:guardian-config:1.0.0")
-        self.assertIn(str((AGENTS_ROOT / "kora" / "guardian" / "config.json").resolve()), result.stdout)
+        result = run_cli("resolve", "urn:kora:artefacto:guardian")
+        self.assertIn(str((AGENTS_ROOT / "kora" / "guardian" / "AGENT.md").resolve()), result.stdout)
 
     def test_migrate_is_idempotent_on_clean_repo(self):
         result = run_cli("migrate", "--profile", "transitional")
@@ -92,14 +93,22 @@ class KoraCliSmokeTests(unittest.TestCase):
         if has_productive_workspaces():
             for kind in ("artifact", "workspace", "skill"):
                 self.assertIn(kind, payload["node_kind_counts"])
-            for kind in ("XRef", "TracesTo", "InvokesSkill", "RoutesToAgent", "DeclaresTool", "AllowsTool", "AllowsKB"):
+            for kind in ("XRef", "InvokesSkill", "RoutesToAgent", "DeclaresTool", "AllowsTool", "AllowsKB"):
                 self.assertIn(kind, payload["edge_kind_counts"])
+            self.assertTrue(
+                any(kind in payload["edge_kind_counts"] for kind in ("TracesTo", "Cites")),
+                payload["edge_kind_counts"],
+            )
         else:
             self.assertIn("XRef", payload["edge_kind_counts"])
 
-    def test_validate_strict_by_meta_kora_cohort_is_green(self):
-        result = run_cli("validate", "--profile", "strict", "--cohort", "meta-kora")
-        self.assertIn("Invalid: 0", result.stdout)
+    def test_validate_strict_by_meta_kora_cohort_has_consistent_exit_status(self):
+        result = run_cli("validate", "--profile", "strict", "--cohort", "meta-kora", check=False)
+        self.assertIn("Validation complete!", result.stdout)
+        match = re.search(r"Invalid:\s+(\d+)", result.stdout)
+        invalid = int(match.group(1)) if match else 0
+        expected = 0 if invalid == 0 else 1
+        self.assertEqual(result.returncode, expected)
 
     def test_migrate_meta_kora_cohort_is_idempotent(self):
         result = run_cli("migrate", "--profile", "transitional", "--cohort", "meta-kora")

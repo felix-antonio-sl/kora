@@ -174,12 +174,8 @@ class OperatingCoreScenarioTests(unittest.TestCase):
     def test_domain_canary_agent_urns_resolve_via_cli(self):
         _require_workspaces(self, "gn/goreologo", "gn/digitrans")
         manifest_paths = (
-            AGENTS_ROOT / "gn" / "goreologo" / "AGENTS.md",
-            AGENTS_ROOT / "gn" / "goreologo" / "TOOLS.md",
-            AGENTS_ROOT / "gn" / "goreologo" / "config.json",
-            AGENTS_ROOT / "gn" / "digitrans" / "AGENTS.md",
-            AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md",
-            AGENTS_ROOT / "gn" / "digitrans" / "config.json",
+            AGENTS_ROOT / "gn" / "goreologo" / "AGENT.md",
+            AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md",
         )
         for path in manifest_paths:
             urn = load_manifest_urn(path)

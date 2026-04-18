@@ -1,4 +1,4 @@
-from .catalog import build_catalog_lookup, load_catalog
+from .catalog import build_catalog_lookup, get_reference_entry, load_catalog, urn_is_known
 from .config import AGENTS_ROOT, KORA_ROOT
 from .graph import build_reference_graph, get_deprecated_dirs_skipped
 from .workspaces import fragment_exists
@@ -29,7 +29,7 @@ def cmd_health(strict=False):
                     invalid_config_entries += 1
                 continue
 
-            if edge.target not in known_urns:
+            if not urn_is_known(edge.target, known_urns):
                 label = "CONFIG" if edge.kind == "AllowsKB" else "BROKEN"
                 print(f"[{label}] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}")
                 if edge.kind == "AllowsKB":
@@ -38,7 +38,8 @@ def cmd_health(strict=False):
                     broken_links += 1
                 continue
 
-            if edge.fragment and not fragment_exists(urn_to_entry[edge.target]["file"], edge.fragment):
+            entry = get_reference_entry(edge.target, urn_to_entry)
+            if edge.fragment and entry and not fragment_exists(entry["file"], edge.fragment):
                 print(f"[BROKEN-FRAGMENT] In {edge.source.relative_to(KORA_ROOT)}: {edge.target}#{edge.fragment}")
                 broken_fragments += 1
 

@@ -21,6 +21,9 @@ HTML_ANCHOR_PATTERN_TEMPLATE = r"""<(?:a|span)\b[^>]*\b(?:id|name)=["']{fragment
 WORKSPACE_BOOTSTRAP_URN_PATTERN = re.compile(
     r"^urn:([a-z0-9-]+):agent-bootstrap:([a-z0-9._-]+)-agents:[0-9]+\.[0-9]+\.[0-9]+$"
 )
+WORKSPACE_ARTEFACT_URN_PATTERN = re.compile(
+    r"^urn:([a-z0-9-]+):artefacto:([a-z0-9-]+)$"
+)
 
 
 def workspace_in_cohort(workspace_dir, cohort=None):
@@ -274,7 +277,11 @@ def expected_bootstrap_manifest_type(path):
 def workspace_exists_from_urn(urn):
     base_urn = urn.partition("#")[0]
     match = WORKSPACE_BOOTSTRAP_URN_PATTERN.fullmatch(base_urn)
-    if not match:
-        return False
-    namespace, workspace_name = match.groups()
-    return (AGENTS_ROOT / namespace / workspace_name).is_dir()
+    if match:
+        namespace, workspace_name = match.groups()
+        return (AGENTS_ROOT / namespace / workspace_name).is_dir()
+    match = WORKSPACE_ARTEFACT_URN_PATTERN.fullmatch(base_urn)
+    if match:
+        namespace, workspace_name = match.groups()
+        return (AGENTS_ROOT / namespace / workspace_name).is_dir()
+    return False

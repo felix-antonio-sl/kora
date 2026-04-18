@@ -241,8 +241,16 @@ DEPRECATED_URN_ALIASES = {
     "urn:kora:kb:agent-spec-md": "urn:kora:kb:agentfile-spec",
     "urn:kora:kb:skill-spec-md": "urn:kora:kb:skill-overlay-spec",
     "urn:kora:kb:swarm-spec-md": "urn:kora:kb:agentfile-spec",
+    "urn:kora:kb:05-governance-lattice": "urn:kora:kb:cat-governance-lattice",
     "urn:kora:kb:transmutation-spec": "urn:kora:kb:runtime-spec-md",
 }
+RETIRED_KB_URNS = frozenset({
+    "urn:kora:kb:agentfile-spec",
+    "urn:kora:kb:skill-overlay-spec",
+})
+LEGACY_BOOTSTRAP_URN_PATTERN = re.compile(
+    r"^urn:[a-z0-9-]+:agent-bootstrap:[A-Za-z0-9._-]+:[0-9]+\.[0-9]+\.[0-9]+$"
+)
 SEMANTIC_TOOL_DOC_MARKERS = (
     "**Firma:**",
     "**Cuando usar:**",

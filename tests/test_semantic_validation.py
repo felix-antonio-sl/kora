@@ -387,6 +387,187 @@ class SemanticValidationTests(unittest.TestCase):
             self.assertIn("CM-my-skill", naming_issues[0]["message"])
             self.assertIn("CM-MY-SKILL", naming_issues[0]["message"])
 
+    def test_validate_workspaces_accepts_autoria_agent_md(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            workspace.mkdir(parents=True)
+            schemas_dir = temp_root / "schemas"
+            schemas_dir.mkdir()
+            (schemas_dir / "kora-artefacto.json").write_text(
+                (ROOT / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            frontmatter = {
+                "_manifest": {
+                    "urn": "urn:test:artefacto:sample",
+                    "type": "artefacto",
+                    "provenance": {
+                        "created_by": "test",
+                        "created_at": "2026-04-18",
+                        "source": "fixture",
+                    },
+                },
+                "version": "1.0.0",
+                "status": "activo",
+                "nombre": "Sample",
+                "descripcion": "Cuando se necesita orientar un caso de prueba, Sample responde bajo autoria-spec.",
+                "tags": ["sample"],
+                "lang": "es",
+                "extensions": {
+                    "kora": {
+                        "vector_ontologico": {"pi": 2, "mu": 1, "xi": 2, "lambda": 0, "phi": 2, "sigma": [2, 1, 2, 2, 1]},
+                        "presentacion": "estado-primario",
+                        "atlas": {"arnes_categorico": "persona", "forma_material": "agente-propiamente-tal"},
+                        "entornos_objetivo": ["codex"],
+                    }
+                },
+                "artefacto": {
+                    "perfil": {
+                        "dominio": ["pruebas"],
+                        "disparadores": ["caso de validacion"],
+                        "salidas": ["resultado"],
+                    },
+                    "plan": {
+                        "estado_inicial": "S-DISPATCHER",
+                        "estado_terminal": "S-END",
+                        "estados": [{"id": "S-DISPATCHER", "accion": "clasificar"}, {"id": "S-END", "accion": "cerrar"}],
+                    },
+                    "interfaz": {"tools": [], "permissions": {"allow": [], "deny": []}},
+                    "contexto": {"memory": {"mode": "session"}},
+                    "invariantes": {
+                        "reglas_duras": ["consistencia con dominio declarado"],
+                        "compromisos_eticos": {
+                            "safety_norm": "Alta; fixture no debe inducir dano.",
+                            "fairness": "Media; aplica criterio uniforme.",
+                            "transparency": "Alta; explicita supuestos.",
+                            "accountability": "Alta; deja trazabilidad del caso.",
+                            "sustainability": "Media; fixture simple y mantenible.",
+                        },
+                    },
+                },
+            }
+            dump_yaml_frontmatter_and_body(workspace / "AGENT.md", frontmatter, "# Sample\n")
+            with patch.object(validation_module, "KORA_ROOT", temp_root), \
+                 patch.object(validation_module, "iter_agent_workspaces", return_value=[workspace]):
+                result = validation_module.validate_workspaces(profile="strict", emit=False)
+            self.assertTrue(result["ok"], result["issues"])
+            self.assertEqual(result["workspace_invalid"], 0)
+            self.assertEqual(result["issues"], [])
+
+    def test_validate_workspaces_flags_autoria_agent_missing_descripcion(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            workspace.mkdir(parents=True)
+            schemas_dir = temp_root / "schemas"
+            schemas_dir.mkdir()
+            (schemas_dir / "kora-artefacto.json").write_text(
+                (ROOT / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            frontmatter = {
+                "_manifest": {
+                    "urn": "urn:test:artefacto:sample",
+                    "type": "artefacto",
+                    "provenance": {
+                        "created_by": "test",
+                        "created_at": "2026-04-18",
+                        "source": "fixture",
+                    },
+                },
+                "version": "1.0.0",
+                "status": "activo",
+                "nombre": "Sample",
+                "tags": ["sample"],
+                "lang": "es",
+                "extensions": {
+                    "kora": {
+                        "vector_ontologico": {"pi": 2, "mu": 1, "xi": 2, "lambda": 0, "phi": 2, "sigma": [2, 1, 2, 2, 1]},
+                        "presentacion": "estado-primario",
+                        "atlas": {"arnes_categorico": "persona", "forma_material": "agente-propiamente-tal"},
+                        "entornos_objetivo": ["codex"],
+                    }
+                },
+                "artefacto": {
+                    "perfil": {
+                        "dominio": ["pruebas"],
+                        "disparadores": ["caso de validacion"],
+                        "salidas": ["resultado"],
+                    },
+                    "plan": {
+                        "estado_inicial": "S-DISPATCHER",
+                        "estado_terminal": "S-END",
+                        "estados": [{"id": "S-DISPATCHER", "accion": "clasificar"}, {"id": "S-END", "accion": "cerrar"}],
+                    },
+                    "interfaz": {"tools": [], "permissions": {"allow": [], "deny": []}},
+                    "contexto": {"memory": {"mode": "session"}},
+                    "invariantes": {
+                        "reglas_duras": ["consistencia con dominio declarado"],
+                        "compromisos_eticos": {
+                            "safety_norm": "Alta; fixture no debe inducir dano.",
+                            "fairness": "Media; aplica criterio uniforme.",
+                            "transparency": "Alta; explicita supuestos.",
+                            "accountability": "Alta; deja trazabilidad del caso.",
+                            "sustainability": "Media; fixture simple y mantenible.",
+                        },
+                    },
+                },
+            }
+            dump_yaml_frontmatter_and_body(workspace / "AGENT.md", frontmatter, "# Sample\n")
+            with patch.object(validation_module, "KORA_ROOT", temp_root), \
+                 patch.object(validation_module, "iter_agent_workspaces", return_value=[workspace]):
+                result = validation_module.validate_workspaces(profile="strict", emit=False)
+            categories = {issue["category"] for issue in result["issues"]}
+            self.assertIn("envelope-descripcion-requerida", categories)
+            self.assertFalse(result["ok"])
+
+    def test_agentfile_dimensions_reads_autoria_dimensions(self):
+        from kora_lib import config as config_module
+        from kora_lib.checks import _check_agentfile_dimensions
+
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            agents_root = temp_root / "AGENTS"
+            workspace = agents_root / "test" / "sample"
+            workspace.mkdir(parents=True)
+            (workspace / "AGENT.md").write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: urn:test:artefacto:sample
+                      type: artefacto
+                    version: 1.0.0
+                    status: activo
+                    nombre: Sample
+                    descripcion: Fixture
+                    lang: es
+                    extensions:
+                      kora:
+                        vector_ontologico:
+                          pi: 2
+                          mu: 1
+                          xi: 2
+                          lambda: 0
+                          phi: 2
+                          sigma: [2, 1, 2, 2, 1]
+                    artefacto:
+                      perfil: {}
+                      plan: {}
+                      interfaz: {}
+                      invariantes: {}
+                    ---
+                    """
+                ),
+                encoding="utf-8",
+            )
+            with patch.object(config_module, "AGENTS_ROOT", agents_root), \
+                 patch.object(config_module, "KORA_ROOT", temp_root):
+                diags = _check_agentfile_dimensions()
+            self.assertEqual(len(diags), 1)
+            self.assertIn("contexto", diags[0].message)
+
     def test_find_truncated_markdown_headings_detects_ellipsis_suffix(self):
         headings = find_truncated_markdown_headings("# Demo\n\n## Glosa 03 - Texto truncado...\n")
         self.assertEqual(headings, ["Glosa 03 - Texto truncado..."])

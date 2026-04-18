@@ -7,9 +7,17 @@ import re
 from .catalog import load_catalog
 from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
-from .workspaces import _is_workspace_deprecated, extract_cm_refs, extract_declared_tool_headings, iter_agent_workspaces, iter_skill_entrypoints
+from .workspaces import (
+    _is_workspace_deprecated,
+    extract_cm_refs,
+    extract_declared_tool_headings,
+    extract_workspace_tokens,
+    iter_agent_workspaces,
+    iter_skill_entrypoints,
+)
 
 FORMAL_TRACE_PATTERN = re.compile(r"formal/([0-9]{2})")
+_PLACEHOLDER_TOOL_NAMES = {"firma", "parametros", "parameters", "signature"}
 
 
 @dataclass(frozen=True)
@@ -91,7 +99,61 @@ def collect_urn_edges(file_path, content):
 
 def collect_workspace_edges(file_path):
     edges = []
-    if file_path.name == "AGENTS.md":
+    if file_path.name == "AGENT.md":
+        content = file_path.read_text(encoding="utf-8")
+        doc, _ = load_yaml_safe(file_path)
+        if not isinstance(doc, dict):
+            doc = {}
+
+        skill_entries = doc.get("artefacto", {}).get("skills", []) or doc.get("agent", {}).get("skills", []) or []
+        skill_refs = set(extract_cm_refs(file_path))
+        for item in skill_entries:
+            if isinstance(item, dict):
+                skill_id = item.get("id")
+                if isinstance(skill_id, str) and skill_id:
+                    skill_refs.add(skill_id)
+        for cm_ref in sorted(skill_refs):
+            edges.append(GraphEdge("InvokesSkill", file_path, cm_ref))
+
+        for workspace_ref in sorted(extract_workspace_tokens(content, self_workspace=f"{file_path.parent.parent.name}/{file_path.parent.name}")):
+            namespace, name = workspace_ref.split("/", 1)
+            edges.append(GraphEdge("RoutesToAgent", file_path, f"{namespace}/{name}"))
+
+        tool_entries = (
+            doc.get("artefacto", {}).get("interfaz", {}).get("tools", [])
+            or doc.get("agent", {}).get("interface", {}).get("tools", [])
+            or []
+        )
+        for entry in tool_entries:
+            if not isinstance(entry, dict):
+                continue
+            tool_name = str(entry.get("name", "")).strip()
+            if not tool_name or tool_name.lower() in _PLACEHOLDER_TOOL_NAMES:
+                continue
+            edges.append(GraphEdge("DeclaresTool", file_path, tool_name))
+
+        allowed_tools = (
+            doc.get("artefacto", {}).get("interfaz", {}).get("permissions", {}).get("allow", [])
+            or doc.get("agent", {}).get("interface", {}).get("permissions", {}).get("allow", [])
+            or []
+        )
+        for tool_name in sorted(
+            {
+                item.strip()
+                for item in allowed_tools
+                if isinstance(item, str) and item.strip() and item.strip().lower() not in _PLACEHOLDER_TOOL_NAMES
+            }
+        ):
+            edges.append(GraphEdge("AllowsTool", file_path, tool_name))
+
+        allowed_kb = (
+            doc.get("artefacto", {}).get("contexto", {}).get("knowledge", {}).get("allowed_kb", [])
+            or doc.get("agent", {}).get("context", {}).get("kb_refs", [])
+            or []
+        )
+        for kb_urn in sorted({item for item in allowed_kb if isinstance(item, str) and item}):
+            edges.append(GraphEdge("AllowsKB", file_path, kb_urn))
+    elif file_path.name == "AGENTS.md":
         for cm_ref in sorted(extract_cm_refs(file_path)):
             edges.append(GraphEdge("InvokesSkill", file_path, cm_ref))
         content = file_path.read_text(encoding="utf-8")
@@ -235,7 +297,7 @@ def build_graph_payload():
         source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.parent.name)
         if source_path.name == "config.json":
             source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.name)
-        elif source_path.name in {"TOOLS.md", "AGENTS.md", "SOUL.md", "USER.md"}:
+        elif source_path.name in {"AGENT.md", "TOOLS.md", "AGENTS.md", "SOUL.md", "USER.md"}:
             source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.name)
 
         if edge.kind in {"XRef", "TracesTo"}:

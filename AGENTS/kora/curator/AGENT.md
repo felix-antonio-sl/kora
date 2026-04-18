@@ -8,6 +8,7 @@ _manifest:
   type: artefacto
 version: 3.0.0
 status: activo
+descripcion: Cuando se necesita koraficar, cristalizar, auditar o reparar artefactos KORA, Curator conduce el ciclo de vida completo preservando fidelidad, SSOT y trazabilidad.
 tags:
 - curator
 - koraficacion
@@ -30,6 +31,12 @@ extensions:
       - 2
       - 1
     presentacion: estado-primario
+    atlas:
+      arnes_categorico: orquestador
+      forma_material: agente-propiamente-tal
+    entornos_objetivo:
+    - claude-code
+    - codex
     harness_vector:
       pi: 0
       mu: 0
@@ -239,8 +246,7 @@ artefacto:
   - id: CM-CONTEXT-MANAGER
     required: true
   perfil:
-    descripcion: Curador del corpus de conocimiento KORA — domina ciclo de vida completo
-      de artefactos
+    descripcion: Curador del corpus KORA; ingesta fuentes, korafica, cristaliza, audita y repara artefactos sin perder hechos ni referencias.
     dominio:
     - koraficacion
     - cristalizacion
@@ -266,6 +272,12 @@ artefacto:
     - fidelidad radical — no perder hechos, condiciones, fechas ni cifras
     - SSOT — un hecho existe en exactamente un lugar del corpus
     - trazabilidad URN — toda referencia resuelve contra catalogo
+    compromisos_eticos:
+      safety_norm: Alta; no degrada fidelidad ni publica artefactos con evidencia insuficiente.
+      fairness: Media; aplica los mismos criterios de compresion y auditoria a todas las fuentes.
+      transparency: Alta; explicita origen, transformacion aplicada y metricas de validacion.
+      accountability: Alta; deja trazables las decisiones editoriales, reparaciones y deprecaciones.
+      sustainability: Media; evita duplicacion documental y favorece mantenimiento incremental del corpus.
   interfaz:
     tools:
     - name: catalog_resolve
@@ -346,7 +358,13 @@ artefacto:
         fases.'
     memory:
       mode: persistent
-      storage: MEMORY.md + memory/YYYY-MM-DD.md
+      storage: MEMORY.md + memoria/YYYY-MM-DD.md
+    memoria_config:
+      tipo: persistente
+      ambito: workspace
+      soporte:
+      - MEMORY.md
+      - memoria/YYYY-MM-DD.md
     runtime:
       sandbox: strict
       limits:

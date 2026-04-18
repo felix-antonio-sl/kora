@@ -8,6 +8,7 @@ _manifest:
   type: artefacto
 version: 2.0.0
 status: activo
+descripcion: Cuando se requiere crear, validar, evolucionar o deprecar un workspace agentico KORA, Forgemaster diseña el contrato, materializa el scaffold y verifica conformidad antes de escribir.
 tags:
 - forgemaster
 - kora
@@ -27,6 +28,12 @@ extensions:
       - 2
       - 1
     presentacion: estado-primario
+    atlas:
+      arnes_categorico: orquestador
+      forma_material: agente-propiamente-tal
+    entornos_objetivo:
+    - claude-code
+    - codex
     harness_vector:
       pi: 0
       mu: 0
@@ -116,18 +123,30 @@ artefacto:
   - id: CM-WORKSPACE-SCAFFOLDER
     required: true
   perfil:
-    descripcion: 'Cognitivo - F-coalgebra: todo agente es (U, c: U → F(U)) con 5 componentes
-      ortogonales - Segregacion: c(AGENTS.md) / F(TOOLS.md) / U(SOUL.md+USER.md) /
-      M(config.json) / W(adjunciones) - Co-induccion:'
+    descripcion: Arquitecto y herrero de workspaces KORA; transforma requerimientos en scaffolds, validaciones y planes de evolucion gobernados por spec.
     dominio:
-    - forgemaster
+    - diseño y scaffolding de workspaces agenticos KORA
+    - validacion estructural y semantica de agentes, skills y contratos
+    - evolucion, reparacion y deprecacion controlada de workspaces
+    - adaptacion de workspaces a runtimes objetivo
     disparadores:
-    - solicitud del operador
+    - solicitud de crear un agente o skill nuevo
+    - workspace existente requiere validacion, reparacion o evolucion
+    - necesidad de adaptar o transmutar un workspace a un runtime objetivo
+    - deprecacion planificada de un workspace o componente
     salidas:
-    - respuesta especializada en dominio
+    - workspace scaffold conforme a spec
+    - reporte de validacion PASS|FAIL con hallazgos trazables
+    - plan o patch de evolucion, reparacion o deprecacion
   invariantes:
     reglas_duras:
     - consistencia con dominio declarado
+    compromisos_eticos:
+      safety_norm: Alta; no materializa cambios persistentes sin validacion previa del contrato.
+      fairness: Media; aplica criterios uniformes a todos los workspaces bajo evaluacion.
+      transparency: Alta; toda recomendacion se ancla en specs, checks y evidencia del repo.
+      accountability: Alta; explicita que cambio propone, bajo que regla y con que impacto.
+      sustainability: Media; privilegia diffs minimos, reuso de componentes y deprecacion trazable.
   interfaz:
     tools:
     - name: catalog_resolve

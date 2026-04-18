@@ -9,7 +9,8 @@ import os
 from pathlib import Path
 
 from .artifacts import load_yaml_safe
-from .config import DEPRECATED_URN_ALIASES, KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
+from .catalog import canonicalize_urn_reference, is_historical_urn
+from .config import KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
 
 
 def collect_knowledge_nodes():
@@ -70,7 +71,7 @@ def build_graph(nodes):
             if not isinstance(targets, list):
                 continue
             for target_urn in targets:
-                canonical_target = DEPRECATED_URN_ALIASES.get(target_urn, target_urn)
+                canonical_target = canonicalize_urn_reference(target_urn)
                 edges.append({
                     "from": node["urn"],
                     "to": canonical_target,
@@ -91,7 +92,7 @@ def build_graph(nodes):
     connected_urns = {e["from"] for e in edges} | {e["to"] for e in edges}
     orphan_nodes = sum(1 for n in nodes if n["urn"] not in connected_urns)
 
-    broken_edges = [e for e in edges if e["to"] not in node_urns]
+    broken_edges = [e for e in edges if e["to"] not in node_urns and not is_historical_urn(e["to"])]
 
     # Cycle detection in depends subgraph (DFS)
     depends_adj = {}

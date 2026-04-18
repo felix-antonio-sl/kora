@@ -4,7 +4,16 @@ from pathlib import Path
 import yaml
 
 from .artifacts import get_artifact_title, load_yaml_safe
-from .config import CATALOG_PATH, DEPRECATED_URN_ALIASES, IGNORED_DIRS, IGNORED_FILES, KORA_ROOT, ROOT_IGNORED_DIRS
+from .config import (
+    CATALOG_PATH,
+    DEPRECATED_URN_ALIASES,
+    IGNORED_DIRS,
+    IGNORED_FILES,
+    KORA_ROOT,
+    LEGACY_BOOTSTRAP_URN_PATTERN,
+    RETIRED_KB_URNS,
+    ROOT_IGNORED_DIRS,
+)
 
 
 def load_catalog():
@@ -12,6 +21,38 @@ def load_catalog():
     if not doc or "Catalog" not in doc:
         return None
     return doc
+
+
+def canonicalize_urn_reference(urn):
+    current = urn
+    visited = set()
+    while current in DEPRECATED_URN_ALIASES and current not in visited:
+        visited.add(current)
+        current = DEPRECATED_URN_ALIASES[current]
+    return current
+
+
+def is_special_non_catalog_urn(urn):
+    return bool(LEGACY_BOOTSTRAP_URN_PATTERN.fullmatch(urn))
+
+
+def is_historical_urn(urn):
+    return canonicalize_urn_reference(urn) in RETIRED_KB_URNS
+
+
+def urn_is_known(urn, known_urns):
+    canonical = canonicalize_urn_reference(urn)
+    return (
+        urn in known_urns
+        or canonical in known_urns
+        or canonical in RETIRED_KB_URNS
+        or is_special_non_catalog_urn(urn)
+    )
+
+
+def get_reference_entry(urn, urn_to_entry):
+    canonical = canonicalize_urn_reference(urn)
+    return urn_to_entry.get(urn) or urn_to_entry.get(canonical)
 
 
 def build_catalog_lookup(doc):
@@ -34,6 +75,7 @@ def build_catalog_lookup(doc):
             urn_to_entry[alias] = canonical_entry
             known_urns.add(alias)
     known_urns.add(doc["_manifest"]["urn"])
+    known_urns.update(RETIRED_KB_URNS)
     return known_urns, urn_to_entry
 
 
