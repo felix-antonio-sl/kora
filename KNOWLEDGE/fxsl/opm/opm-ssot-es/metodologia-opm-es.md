@@ -1,8 +1,25 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:manual-metodologico-opm-es
-version: 4.0.0
-status: published
+version: 4.1.0-ampliada.4
+status: draft-publishable
+source_base: "ssot/metodologia-opm-es.md (v4.0.0)"
+derived_from:
+  - ssot/metodologia-opm-es.md
+  - ssot-v2-draft/metodologia-opm-es-merge-ready.md
+  - metodologia-merge-ready-desde-paso-0.md
+  - ssot-decisiones-axiomaticas.md
+  - ssot-v2-draft/opm-visual-es-v2-merge-ready.md
+  - ssot-v2-draft/opm-iso-19450-es-merge-ready.md
+  - ssot-v2-draft/opm-opl-es-merge-ready.md
+scope: >
+  Versión íntegra y publicable de la metodología OPM-ES con la taxonomía
+  actualizada de mecanismos, la separación entre navegación visible e identidad
+  persistente, la composición inter-modelo por referencia, la frontera entre
+  modelo propietario y modelo consumidor, y los invariantes y verificaciones
+  ampliados ya integrados en el cuerpo del documento. A diferencia del
+  merge-ready, esta versión se presenta como texto completo listo para
+  reemplazar a `ssot/metodologia-opm-es.md` cuando se decida publicar v2.
 tags:
 - opm
 - methodology
@@ -18,6 +35,8 @@ tags:
 - quantitative
 - simulation
 - executable-modeling
+- v2
+- ampliada
 lang: es
 extensions:
   kora:
@@ -34,7 +53,11 @@ relations:
 ---
 
 
-# Manual metodológico de OPM
+# Manual metodológico de OPM (versión ampliada v2)
+
+Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: taxonomía revisada de mecanismos, organización del árbol OPD y del modelo compuesto, tipología fuerte de vistas, ejecución compuesta sin asumir un árbol global único e invariantes adicionales para identidad persistente y referencias inter-modelo.
+
+Sustituye, cuando se publique, al archivo `ssot/metodologia-opm-es.md`.
 
 ## 1 Alcance y contrato editorial
 
@@ -127,7 +150,7 @@ Los siguientes patrones sintetizan casos pedagógicos recurrentes. Son útiles p
 | Natural | `Fetus Developing`, `Rain Storm Forming` | Se modela resultado en vez de propósito; el resultado puede ser beneficioso o perjudicial; no hay agentes humanos |
 | Social | `Conference Occurring` | Las condiciones ambientales PUEDEN expresarse con enlaces habilitadores con estado especificado, por ejemplo `good Weather` |
 | Socio-técnico | `Online Professional Identity Managing` | Los enlaces estructurales etiquetados suelen ser necesarios para relaciones no fundamentales, por ejemplo `Profile represents User` |
-| Físico con partes informacionales | `Baggage Transporting` | Un sistema con seguimiento o software auxiliar SIGUE clasificándose como físico si la transformación dominante es física |
+| Físico con partes informacionales (sub-caso de artificial) | `Baggage Transporting` | Un sistema con seguimiento o software auxiliar SIGUE clasificándose como físico si la transformación dominante es física |
 
 ## 6 Construcción del SD — Nivel 0
 
@@ -223,14 +246,15 @@ Cuando el proceso transforma múltiples transformados, solo el objeto proveedor 
 
 El término "agente" y el enlace de agente (círculo negro relleno) DEBEN usarse exclusivamente para humanos o grupos humanos [Semántica base: opm-es glosario 3.3]. Robots, agentes de software y sistemas IA DEBEN usar enlace de instrumento. Un robot PUEDE describirse como "agente de software embebido" en prosa, pero en el modelo DEBE usar enlace de instrumento.
 
-Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la precedencia semántica del corpus: si el beneficiario es transformado, el enlace transformador prevalece sobre el habilitador; la identidad humana puede mantenerse en la figura y en la denominación, pero no mediante un segundo rol procedimental simultáneo para el mismo proceso.
+Cuando el beneficiario es también agente del proceso, el modelador DEBE elegir el enlace según la precedencia semántica del corpus: si el beneficiario es transformado, el enlace transformador prevalece sobre el habilitador. La identidad humana del beneficiario se preserva en el nombre de la cosa y en su ubicación en el OPD, no mediante un segundo enlace procedimental simultáneo al mismo proceso.
 
 OPL-ES: `**Agente** maneja *Proceso Principal*.` (cfr. opm-opl-es H1)
 
 **Doble rol en procesos distintos:** Un objeto PUEDE ser agente de un proceso y transformado de otro proceso distinto simultáneamente. Ejemplo: Learner es agente de MOOC Learning pero también transformado (Knowledge Level cambia). Esto es distinto de la colisión agente-afectado del mismo proceso, donde prevalece el rol transformador.
 
 ## 6b Completación y Verificación del SD
-<!-- 6b agrupa pasos 6–8 de verificación del SD; la numeración preserva continuidad con §6a -->
+
+Las secciones `Nb` (6b, 7b, 8b) agrupan actividades de completación y verificación asociadas al paso `N` sin incrementar la numeración principal. Cada `Nb` aloja subsecciones de paso (`§N.6`, `§N.7`, ...) que cierran el bloque de trabajo de `N` antes de pasar al siguiente paso.
 
 ### 6.6 Paso 6: Nombre del Sistema y Exhibición
 
@@ -263,6 +287,8 @@ Para sistemas artificiales y sociales, el modelador DEBE modelar la ocurrencia d
 Para sistemas naturales, la ocurrencia del problema NO DEBE modelarse.
 
 ### 6.11 Verificación del SD
+
+Las tablas de verificación de este manual usan una escala `CRÍTICA / ALTA / MEDIA / BAJA` que refleja el peso operativo de la verificación y **no es equivalente** a las marcas `DEBE / DEBERÍA / PUEDE` del cuerpo normativo. Una verificación con severidad `CRÍTICA` típicamente corresponde a una regla `DEBE`; una `ALTA` a `DEBERÍA`; pero la correspondencia no es estricta y cada tabla usa la escala que se ajuste a su grano.
 
 | Verificación | Condición | Severidad |
 |--------------|-----------|----------|
@@ -323,7 +349,7 @@ Aplica cuando los subprocesos tienen un orden fijo y predefinido.
 
 Aplica cuando los subprocesos son independientes y PUEDEN ocurrir en cualquier orden.
 
-**Cuatro pares de despliegue-plegado** (cada una corresponde a una relación estructural fundamental):
+**Cuatro pares de despliegue-plegado** (uno por cada relación estructural fundamental de §7.2). Estos pares son operaciones de refinamiento-abstracción sobre relaciones estructurales; no debe confundirse su conteo con los **cuatro mecanismos ontológicos** enumerados en §8.1 (descomposición, despliegue, expresión de estados, composición inter-modelo por sub-modelo), que categorizan las operaciones de toda la capa base y pertenecen a un nivel taxonómico distinto:
 
 | Relación | Despliegue | Plegado |
 |----------|------------|---------|
@@ -353,7 +379,7 @@ Los objetos se refinan vía descomposición (composición espacial/estructural) 
 
 **Proceso ambiental (patrón de ciclo de vida):** Cuando un proceso opera sobre el sistema pero no es parte de su función primaria — típicamente procesos de ciclo de vida como diseño, fabricación, mantenimiento, venta o instalación — el modelador DEBERÍA modelarlo como **proceso ambiental** (contorno discontinuo). Ejemplo canónico: el proceso de gestión del ciclo de vida de un electrodoméstico (conceptualizar, diseñar, fabricar, vender, instalar) es ambiental porque gestiona el ciclo de vida del sistema pero no entrega valor funcional directo al beneficiario. **Regla de decisión:** si el proceso no entrega valor funcional directo al beneficiario del sistema, es candidato a proceso ambiental.
 
-**Alcance de objeto interior vs exterior:** Un objeto creado dentro de un proceso descompuesto (objeto interior) existe solo en el alcance de ese proceso y se elimina si el proceso padre se elimina. Un objeto creado a nivel SD (objeto exterior) existe independientemente y es referenciable entre múltiples OPDs. El modelador DEBE decidir el alcance basándose en si la existencia del objeto depende del proceso (interior) o es independiente (exterior). Mover un objeto exterior dentro de un proceso inflado NO lo convierte en interior — el objeto retorna a su alcance original al reposicionarlo (envolvimiento visual, no semántico).
+**Alcance de objeto interior vs exterior:** Un objeto creado dentro de un proceso descompuesto (objeto interior) existe solo en el alcance de ese proceso y se elimina si el proceso padre se elimina. Un objeto creado a nivel SD (objeto exterior) existe independientemente y es referenciable entre múltiples OPDs. El modelador DEBE decidir el alcance basándose en si la existencia del objeto depende del proceso (interior) o es independiente (exterior). Mover un objeto exterior dentro de un proceso inflado NO lo convierte en interior — el alcance del objeto no cambia por su posición visual; el reposicionamiento es envolvimiento gráfico sin efecto semántico.
 
 ## 7b Distribución de Enlaces y Verificación de SD1
 
@@ -368,9 +394,7 @@ La especificación formal completa de distribución de enlaces vive en `opm-visu
 | Enlace de efecto | PERMITIDO (distribuye a todos) (V-104) | — |
 | Enlace de consumo | PROHIBIDO (V-103) | Migra al primer subproceso (V-103); reasignar |
 | Enlace de resultado | PROHIBIDO (V-103) | Migra al último subproceso (V-103); reasignar |
-| Enlace de evento sistémico | PROHIBIDO (V-38) | PROHIBIDO para sistémicos; los eventos de objetos **ambientales** sí pueden cruzar el límite |
-
-> **Nota — excepción ambiental:** La prohibición de enlaces de evento en contorno exterior aplica solo a eventos sistémicos. Los eventos originados en objetos ambientales (contorno discontinuo) pueden legítimamente cruzar el límite del proceso descompuesto para disparar subprocesos internos, conforme a V-38.
+| Enlace de evento sistémico | PROHIBIDO (V-38) | La prohibición aplica solo a eventos sistémicos; los eventos originados en objetos **ambientales** (contorno discontinuo) sí pueden cruzar el límite del proceso descompuesto para disparar subprocesos internos, conforme a V-38 |
 
 **Procedimiento de migración de enlaces** (al hacer descomposición):
 
@@ -418,62 +442,89 @@ Los estados DEBERÍAN suprimirse en el SD cuando no están conectados a ningún 
 
 ## 8 Gestión de Complejidad — Niveles 2+
 
-### 8.1 Cuatro Mecanismos de Refinamiento-Abstracción
+### 8.1 Mecanismos de Refinamiento, Abstracción y Composición
 
-[Semántica heredada de opm-es §14. Los cuatro mecanismos constituyen la totalidad de operaciones de refinamiento-abstracción de la capa base.]
+[Semántica heredada de `opm-es` y alineada con la versión vigente ampliada del corpus. Esta sección distingue mecanismos ontológicos, artefactos contextuales y operadores derivados.]
 
 | Mecanismo | Refinamiento | Abstracción | Uso principal | Referencia de capa base |
 |-----------|-------------|-------------|---------------|--------------------------|
-| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales | `opm-es` §14.1.1 |
-| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos | `opm-es` §14.1.2 |
-| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual | `opm-es` §14.1.3 |
-| Creación / Eliminación de Vistas | Ensambla hechos de varios OPDs | Elimina una vista | Vistas transversales | `opm-es` §14.1.4 |
+| Descomposición / Recomposición | Expone contenido interno | Oculta contenido interno | Procesos síncronos; objetos con partes espaciales | `opm-es` |
+| Despliegue / Plegado | Expone refinadores vía relación estructural | Oculta refinadores | Procesos asíncronos; taxonomías; rasgos | `opm-es` |
+| Expresión / Supresión de estados | Muestra estados | Oculta estados irrelevantes | Simplificación contextual | `opm-es` |
+| Composición inter-modelo por sub-modelo | Referencia a sub-modelo | Retiro o desconexión de la referencia | Trabajo concurrente; encapsulación; compuesto por referencia | `opm-es` |
+
+Las vistas no constituyen un mecanismo ontológico del mismo rango que los anteriores. Son artefactos contextuales para navegación, explicación o inspección.
+
+Operaciones como `Bring`, `bring connected things`, `bring links between selected entities` y materializaciones equivalentes son operadores derivados sobre el canvas y el árbol. No deben tratarse como mecanismos de refinamiento nuevos.
 
 **Decisión descomposición vs despliegue para procesos síncronos:** Descomposición DEBERÍA preferirse porque: (a) requiere menos símbolos, (b) genera OPL más corto, (c) reemplaza eventos/enlaces de invocación explícitos con invocación implícita de la línea de tiempo. El despliegue de procesos síncronos es semánticamente equivalente pero más verboso.
 
 **Plegado en puertos:** variante de plegado donde la operación (proceso rasgo) se desplaza al contorno del exhibidor (objeto). Es útil cuando el modelador quiere que los rectángulos de objetos representen disposición física y tamaños relativos. El plegado en puertos también aplica a atributos de procesos.
 
-**Resumen operativo de semi-plegado:** la semántica y las restricciones canónicas del semi-plegado viven en `opm-visual-es` V-116 a V-120. En esta capa solo aplica la decisión de uso: el modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs y DEBERÍA evitarlo cuando oculte relaciones necesarias para el propósito del modelo.
+**Resumen operativo de semi-plegado:** la semántica y las restricciones canónicas del semi-plegado viven en `opm-visual-es`. En esta capa solo aplica la decisión de uso: el modelador DEBERÍA usar semi-plegado para inspección rápida de estructura sin proliferación de OPDs y DEBERÍA evitarlo cuando oculte relaciones necesarias para el propósito del modelo.
 
-**Refinamiento dual (ramas hermanas):** Un SD PUEDE tener ramas hermanas de distinto tipo de refinamiento. Ejemplo: SD1 como descomposición del proceso principal y SD2 como despliegue del objeto sistema. Ambos son refinamientos del mismo SD pero exploran dimensiones ortogonales: comportamiento (SD1) y estructura (SD2). El modelador DEBERÍA usar refinamiento dual cuando necesita exponer simultáneamente la estructura interna del sistema y el comportamiento de su función principal.
+**Refinamiento dual (ramas hermanas):** Un SD PUEDE tener ramas hermanas de distinto tipo de refinamiento. Ejemplo: SD1 como descomposición del proceso principal y SD2 como despliegue del objeto sistema. Ambos son refinamientos del mismo SD pero exploran dimensiones ortogonales: comportamiento y estructura.
 
-**Heurística de profundidad:** Si un OPD de nivel N no agrega transformados, estados ni enlaces nuevos al modelo respecto de su padre, la refinación es probablemente innecesaria. El modelador DEBERÍA detenerse cuando el nivel de detalle ya no revela información relevante para el propósito del modelo. Modelos pedagógicos alcanzan hasta 6 niveles; modelos reales rara vez necesitan más de 4-5 niveles.
+**Heurística de profundidad:** Si un OPD de nivel N no agrega transformados, estados ni enlaces nuevos al modelo respecto de su padre, la refinación es probablemente innecesaria.
 
-Reglas adicionales:
+### 8.2 Organización del Árbol OPD y del Modelo Compuesto
 
-- Las vistas NO DEBEN editarse; la edición ocurre en OPDs que no son vistas
-- El conjunto completo de estados de un objeto es la unión de estados en todos los OPDs
+Convención de etiquetado visible: `SD`, `SD1`, `SD1.1`, `SD1.2`, `SD2`, etc. Estas etiquetas son útiles para navegación humana y referencia editorial local.
 
-### 8.2 Organización del Árbol OPD y Bosque
+Las etiquetas visibles `SDx.y` NO constituyen identidad persistente del OPD. Cada OPD DEBE tener además un identificador persistente recuperable en la serialización, por ejemplo un URI o handle persistente declarado por la implementación. Metodológicamente, quien modela NO DEBE usar `SDx.y` como identificador estable para trazabilidad externa, integración entre modelos o auditoría.
 
-Convención de etiquetado: SD, SD1, SD1.1, SD1.2, SD2, etc. El **Mapa del Sistema** muestra el contenido de cada OPD, incluyendo cosas y enlaces, sirviendo como índice navegable.
+Cada modelo OPM individual tiene su propio árbol OPD. Cuando existen sub-modelos, el resultado no es un único super-árbol ontológico, sino un modelo compuesto por referencia entre modelos individuales. La regla práctica es:
 
-**Resumen operativo del árbol:** la regla canónica de integridad del árbol vive en `opm-visual-es` V-113 y V-114. Metodológicamente, quien modela DEBE tratar los OPDs hoja como única clase eliminable y DEBERÍA usar OPDs de vista solo como artefactos de navegación, no como nodos de refinamiento.
+- árbol OPD local para refinamiento dentro del modelo individual;
+- referencias explícitas entre modelos para composición inter-modelo.
 
-**Mapa del Sistema:** árbol OPD elaborado donde cada nodo es un icono miniaturizado del OPD, con flechas gruesas indicando refinamiento. Esencial para navegación en modelos complejos (>10 OPDs). El modelador DEBERÍA generar el mapa del sistema para cualquier modelo con más de un nivel de detalle.
+**Resumen operativo del árbol:** la regla canónica de integridad del árbol vive en `opm-visual-es`. Metodológicamente, quien modela DEBE tratar los OPDs hoja como única clase eliminable y DEBERÍA usar OPDs de vista solo como artefactos de navegación, no como nodos de refinamiento.
 
-**OPD Último:** Representación plana obtenida por aplanamiento recursivo del árbol OPD de abajo hacia arriba. No apta para consumo humano excepto en modelos muy pequeños; útil para uso automatizado (gestión de conocimiento, consultas).
+**Mapa del Sistema:** vista anclada al árbol que muestra el contenido de cada OPD como índice navegable. Esencial para navegación en modelos complejos. El modelador DEBERÍA generarlo para modelos con más de 10 OPDs (ver §16).
 
-**Especificación Completa del Sistema** — tres constructos complementarios:
+**OPD Último:** representación plana obtenida por aplanamiento recursivo del árbol OPD local. Es útil para uso automatizado, pero no sustituye la identidad persistente ni la estructura explícita de referencias entre modelos.
+
+**Especificación Completa del Sistema** — tres constructos complementarios por modelo individual:
 
 | Constructo | Contenido |
 |-----------|-----------|
-| Especificación de modelo OPD | Colección de OPDs sucesivos en orden en anchura |
-| Especificación de modelo OPL | Colección de párrafos OPL correspondientes, con sentencias duplicadas eliminadas |
-| Especificación de modelo OPM | Presentación lado a lado: cada OPD con su párrafo OPL a la derecha |
+| Especificación de modelo OPD | Colección de OPDs sucesivos dentro del modelo individual |
+| Especificación de modelo OPL | Colección de párrafos OPL correspondientes del modelo individual, con sentencias duplicadas eliminadas |
+| Especificación de modelo OPM | Presentación lado a lado: cada OPD local con su párrafo OPL a la derecha |
+
+En modelos compuestos, la especificación global DEBE preservar estas especificaciones locales por modelo individual y declarar explícitamente la composición entre modelos. NO DEBE inferirse un único texto global solamente desde la numeración visible del árbol.
 
 **Sub-modelos para trabajo concurrente:** Cuando múltiples modeladores trabajan en subsistemas simultáneamente, el modelador DEBERÍA separar subsistemas en sub-modelos. Las conexiones entre el modelo principal y los sub-modelos DEBEN mantenerse mínimas para reducir acoplamiento y conflictos de edición concurrente.
 
 **Contrato de interfaz de sub-modelo:** La creación de un sub-modelo requiere un mínimo de: un objeto + un proceso conectados por exhibición-caracterización y enlace de instrumento, con un solo proceso por sub-modelo, y las cosas compartidas DEBEN estar sin refinar. Una vez creado el sub-modelo:
 
-- Las cosas compartidas en el modelo principal NO PUEDEN recibir nuevos enlaces de refinamiento ni nuevas conexiones (la interfaz se congela).
-- Las cosas compartidas en el sub-modelo NO PUEDEN renombrarse, recibir nuevos estados ni eliminarse (el sub-modelo respeta el contrato del padre).
+- Las cosas compartidas en el modelo principal NO PUEDEN recibir nuevos enlaces de refinamiento ni nuevas conexiones.
+- Las cosas compartidas en el sub-modelo NO PUEDEN renombrarse, recibir nuevos estados ni eliminarse.
 - NO PUEDEN agregarse nuevas cosas compartidas después de la creación del sub-modelo; si la interfaz es incorrecta, DEBE destruirse y recrearse.
-- Los sub-modelos PUEDEN anidarse recursivamente (sub-sub-modelos), aplicando las mismas reglas de contrato en cada nivel.
+- Los sub-modelos PUEDEN anidarse recursivamente, aplicando las mismas reglas de contrato en cada nivel.
+- La autoridad semántica de una cosa compartida pertenece al modelo propietario; el modelo consumidor solo la referencia.
+- La referencia entre modelo propietario y modelo consumidor DEBE poder resolverse mediante identificador persistente, por ejemplo URI o handle persistente, no solo mediante posición en el árbol o etiqueta visible.
 
 ### 8.3 Creación de Vistas
 
-Tipos: árbol de procesos, árbol de objetos, vista de asignación, vista motivada por simulación.
+Metodológicamente conviene distinguir tres categorías:
+
+| Categoría | Función | Regla de uso |
+|-----------|---------|--------------|
+| OPD jerárquico | Nodo del árbol local de refinamiento | Es el único que participa directamente en refinamiento y abstracción |
+| Vista anclada | Artefacto de navegación ligado al árbol o a la composición | Ayuda a recorrer, resumir o inspeccionar el modelo sin crear hechos nuevos |
+| Vista ad hoc | Artefacto explicativo transversal | Reúne hechos existentes para explicar un aspecto concreto |
+
+Ejemplos típicos de vista anclada: mapa del sistema, árbol de procesos, árbol de objetos, vista de sub-modelo.
+
+Ejemplos típicos de vista ad hoc: vista de asignación, vista motivada por simulación, vista temática para revisión de un requisito o escenario.
+
+Reglas metodológicas:
+
+- solo el OPD jerárquico DEBE tratarse como nodo de refinamiento;
+- una vista anclada PUEDE facilitar navegación, pero NO sustituye identidad persistente;
+- una vista ad hoc NO DEBE usarse como ancla de identidad ni como fuente única de trazabilidad;
+- las vistas NO DEBEN editarse cuando eso altere hechos cuyo origen pertenece a OPDs jerárquicos o a modelos propietarios externos.
 
 ### 8.4 Precedencia de Enlaces durante Recomposición
 
@@ -515,7 +566,7 @@ El modelador DEBE verificar que la arquitectura del sistema (estructura + compor
 
 ### 8.7 Gobernanza del Modelo
 
-Las capacidades de gobernanza de esta subsección pertenecen al manual metodológico del corpus. OPPL se usa aquí como capa de clasificación de informatividad del modelo.
+Las capacidades de gobernanza de esta subsección pertenecen al manual metodológico del corpus. **OPPL** (Object-Process Pseudo-Language) se usa aquí como capa de clasificación de informatividad del modelo. Su domicilio canónico es `opm-es` §3 (entrada de glosario E1).
 
 **Aplicación de ontología:** Para consistencia terminológica en equipos, el modelador DEBERÍA configurar aplicación de ontología organizacional en tres niveles:
 
@@ -578,7 +629,7 @@ Un objeto PUEDE ser instrumento en un nivel abstracto (ej: SD) y afectado en un 
 
 **Incorrecto:** Declarar un objeto como instrumento en SD cuando su estado neto cambia en SD1 (debe ser afectado en ambos niveles).
 
-### 9.5 Arbol de Decisión de Propiedades de Atributos
+### 9.5 Árbol de Decisión de Propiedades de Atributos
 
 Al definir un atributo, el modelador DEBERÍA clasificarlo en cuatro dimensiones binarias:
 
@@ -673,7 +724,7 @@ Un estado PUEDE ser simultáneamente inicial y final, modelando objetos que reto
 
 ### 9.20 Atributos Cuantitativos con Unidad y Tipo
 
-Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato como parte de su especificación, independientemente de si el modelo se simula. La convención es: nombre del atributo seguido de unidad entre corchetes y alias entre llaves: `Pressure [kPa] {p}`, `Height [in] {h}`, `Cost [$] {c}`.
+Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato como parte de su especificación, independientemente de si el modelo se simula. En la superficie visual o computacional, la convención recomendada es: nombre del atributo seguido de unidad entre corchetes y alias entre llaves: `Pressure [kPa] {p}`, `Height [in] {h}`, `Cost [$] {c}`. La serialización textual canónica de OPL-ES puede proyectar esa misma información sin reproducir necesariamente esa decoración literal.
 
 **Tipos válidos:** integer, float, string, character, boolean. El tipo restringe los valores admisibles del atributo y permite validación de rangos.
 
@@ -688,7 +739,7 @@ Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato com
 | Sin condición (sin `c`) | Proceso ESPERA indefinidamente | Proceso obligatorio — el sistema se detiene |
 | Con condición (con `c`) | Proceso se SALTA | Proceso opcional — la ejecución avanza |
 
-**Regla de decisión:** Usar enlace de condición cuando el proceso es opcional; usar non-enlace de condición cuando es obligatorio. Error común: usar non-enlace de condición para un recurso que puede no aparecer → deadlock.
+**Regla de decisión:** Usar enlace con condición (con `c`) cuando el proceso es opcional; usar enlace sin condición cuando el proceso es obligatorio. Error común: usar enlace sin condición para un recurso que puede no aparecer → deadlock.
 
 ### 10.2 Precedencia de Omisión sobre Espera
 
@@ -703,10 +754,10 @@ Cuando el conjunto de objetos previo al proceso contiene tanto enlaces de condic
 
 | Abanico | Símbolo | Semántica | Uso |
 |-----|---------|-----------|-----|
-| XOR | Arco discontinuo simple | Exactamente uno de las rutas | Decisiones mutuamente excluyentes |
-| OR | Arco discontinuo doble | Al menos uno de las rutas | Concurrencia condicional |
+| XOR | Arco discontinuo simple | Exactamente una de las rutas | Decisiones mutuamente excluyentes |
+| OR | Arco discontinuo doble | Al menos una de las rutas | Concurrencia condicional |
 
-Para abanicos de tamaño f=2: XOR usa "exactamente uno de"; para f>2: ídem. OR siempre usa "al menos uno de".
+Para cualquier tamaño de abanico (f ≥ 2), XOR usa "exactamente uno de" y OR usa "al menos uno de". La fórmula de cardinalidad combinatorial m-de-f se desarrolla en §10.5.
 
 ### 10.5 XOR/OR Combinatorial (m-de-f)
 
@@ -754,7 +805,7 @@ Un **escenario** (hilo de ejecución) es una ruta específica a través de la je
 |--------|-----------|--------|
 | Consumo condicional | Si consumido existe, proceso lo consume; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso **Objeto** se consume, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es TS6) |
 | Efecto condicional | Si afectado existe, proceso lo afecta; si no, se omite | `*Proceso* ocurre si **Objeto** existe, en cuyo caso *Proceso* afecta **Objeto**, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es TS6) |
-| Agente condicional | Si agente existe, proceso opera con agente; si no, se omite | `**Agente** maneja *Proceso* si **Agente** existe, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es H1) |
+| Agente condicional | Si agente existe, proceso opera con agente; si no, se omite | `**Agente** maneja *Proceso* si **Agente** existe, de lo contrario *Proceso* se omite.` (cfr. opm-opl-es CH1) |
 | Instrumento condicional | Si instrumento existe, proceso opera; si no, se omite | `*Proceso* ocurre si **Instrumento** existe, de lo contrario *Proceso* se omite.` |
 
 Cada uno de estos TIENE versión con estado especificado (proceso opera si objeto está en estado específico; si no, se omite).
@@ -891,11 +942,19 @@ El entorno de modelado puede ofrecer capacidades auxiliares que el modelador PUE
 
 ## 14 Simulación y Ejecución del Modelo
 
-### 14.1 Recorrido en Profundidad del Árbol OPD para Ejecución
+### 14.1 Recorrido en Profundidad para Ejecución
 
-La ejecución animada del modelo OPM sigue un recorrido **en profundidad** del árbol OPD. Los tokens fluyen a lo largo de los enlaces: al llegar a un proceso descompuesto, el control se transfiere recursivamente al subproceso más profundo (superior del nivel más bajo). El control retorna al nivel padre tras completar el último subproceso.
+La ejecución animada de un modelo OPM individual sigue un recorrido **en profundidad** de su árbol OPD local. Los tokens fluyen a lo largo de los enlaces: al llegar a un proceso descompuesto, el control se transfiere recursivamente al subproceso más profundo del modelo individual. El control retorna al nivel padre tras completar el último subproceso aplicable.
 
 Los tokens se visualizan como valores que se pasan entre objetos y procesos: consumido (eliminado del origen), instrumento (solo lectura, permanece), resultante (creado en destino). Tokens computacionales llevan valores numéricos.
+
+Cuando el comportamiento cruza a un sub-modelo, el cruce NO DEBE interpretarse como mera continuación implícita de un árbol global único. Debe tratarse como una transición explícita entre fronteras de modelo, gobernada por la composición inter-modelo y por la referencia persistente al sub-modelo correspondiente.
+
+Consecuencia metodológica:
+
+- el orden visible de `SDx.y` ayuda a navegar, pero no gobierna por sí solo la ejecución compuesta;
+- si la herramienta soporta ejecución compuesta, el modelador DEBE explicitar el punto de handoff entre modelo consumidor y modelo propietario;
+- si la herramienta no soporta ejecución compuesta, el modelador DEBERÍA ejecutar o simular cada modelo individual por separado y tratar la frontera como punto explícito de coordinación.
 
 ### 14.2 Transición Conceptual → Computacional
 
@@ -941,8 +1000,8 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Modelo bimodal: todo OPD tiene párrafo OPL equivalente | esquema | `opm-es` |
 | Un hecho del modelo aparece en al menos un OPD | esquema | `opm-es` |
 | Enlaces estructurales son homogéneos (excepción: exhibición-caracterización) | automático | `opm-es` |
-| Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) | manual | `opm-es` |
-| Probabilidades en abanico XOR suman exactamente 1 | automático | `opm-es` |
+| Habilitadores y afectados pertenecen a Pre(P) ∩ Post(P); consumidos solo a Pre(P); resultantes solo a Post(P) — donde Pre(P) es el conjunto de objetos/estados requeridos antes de ejecutar el proceso P y Post(P) el conjunto de objetos/estados presentes tras su ejecución | manual | `opm-es` |
+| Probabilidades en abanico XOR divergente probabilístico suman exactamente 1 | automático | `opm-es` |
 | Subprocesos paralelos tienen borde superior de elipse a la misma altura | manual | `opd-es` |
 | Enlaces escindidos con modificador de control no están permitidos | automático | `opd-es` |
 | Arquitectura del sistema produce al menos una capacidad emergente | manual | `manual` |
@@ -955,12 +1014,16 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | Refinamiento no trivial: descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | automático | `manual` |
 | Proceso que no entrega valor funcional directo al beneficiario DEBERÍA ser ambiental | manual | `manual` |
 | Interfaz de sub-modelo congelada tras creación: sin nuevas cosas compartidas, sin renombrar, sin agregar estados | manual | `manual` |
+| Cada OPD tiene identificador persistente distinto de su etiqueta visible `SDx.y` | esquema | `opm-es` |
+| Toda referencia inter-modelo explicita modelo propietario y modelo consumidor | manual | `opm-es` |
+| La especificación textual de un modelo compuesto preserva OPL local autocontenido por modelo individual | esquema | `opl-es` |
+| Las cosas referenciadas externamente no se renombran ni reciben estados nuevos en el modelo consumidor | manual | `manual` |
 | Estado cíclico (initial+final simultáneo) es válido para objetos con ciclos cerrados | manual | `manual` |
 | Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | `opm-es` |
 
 ## 16 Lista de verificación de Validación
 
-Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabla lista verificaciones operativas adicionales organizadas por nivel. La columna **Capa propietaria** usa las mismas claves que §15: `opm-es`, `opl-es`, `opd-es` y `manual`.
+Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable que indica su contexto (SD, SD1, SD2+, Cuant, Global, Requisitos). Esta tabla lista verificaciones operativas adicionales organizadas por nivel en la primera columna. La columna **Capa propietaria** usa las mismas claves que §15: `opm-es`, `opl-es`, `opd-es` y `manual`.
 
 | Nivel | Verificación | Condición | Severidad | Capa propietaria |
 |-------|-------|-----------|----------|------------------|
@@ -979,6 +1042,7 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | SD1 | Sin redundancia | Sin duplicación innecesaria de hechos del SD | MEDIA | `manual` |
 | SD2+ | Precedencia de enlaces | Recomposición aplica matriz de precedencia | ALTA | `opd-es` |
 | SD2+ | Árbol OPD válido | Etiquetado secuencial correcto | MEDIA | `opd-es` |
+| SD2+ | Etiqueta visible vs identidad | `SDx.y` se usa solo para navegación y existe identificador persistente recuperable | ALTA | `opm-es` |
 | SD2+ | Coherencia de cambio de rol | Instrumento en abstracto = afectado en detallado solo si cambio neto = 0 | ALTA | `manual` |
 | Cuant | Operandos explícitos | Operaciones no conmutativas con roles designados | MEDIA | `manual` |
 | Cuant | Flujo computacional | Atributos computacionales con tipo, alias y fórmula | MEDIA | `manual` |
@@ -992,10 +1056,13 @@ Todos los invariantes de §15 DEBEN verificarse en el nivel aplicable. Esta tabl
 | Global | Informatividad del modelo | Clasificación ejecutada; sin enlaces de precedencia faltantes críticos | MEDIA | `manual` |
 | Global | Mapa del sistema | Generado para modelos con >10 OPDs | MEDIA | `manual` |
 | Global | Constructos de especificación | OPD + OPL + OPM spec completos en orden en anchura | MEDIA | `manual` |
+| Global | Referencia inter-modelo explícita | Sub-modelos y referencias externas declarados explícitamente; no inferidos desde layout o numeración visible | ALTA | `opm-es` |
+| Global | OPL local por modelo | Cada modelo individual conserva especificación textual autocontenida | MEDIA | `opl-es` |
 | Global | Refinamiento no trivial | Descomposición ≥ 2 subprocesos; despliegue ≥ 2 refinadores | ALTA | `manual` |
 | Global | Profundidad justificada | Cada nivel de refinamiento agrega ≥ 1 transformado/estado/enlace nuevo | MEDIA | `manual` |
 | Global | Procesos ambientales | Procesos de ciclo de vida sin valor funcional directo son ambientales | MEDIA | `manual` |
 | Global | Contrato de sub-modelo | Interfaz congelada; sin adiciones post-creación | ALTA | `manual` |
+| Global | Frontera propietario/consumidor | El consumidor no renombra ni agrega estados a referencias externas | ALTA | `manual` |
 | Global | Plegado en puertos | Usado donde disposición física de componentes es relevante | BAJA | `manual` |
 | Global | Objetos implícitos | Objetos implícitos en texto fuente identificados y modelados explícitamente | ALTA | `manual` |
 | Requisitos | Trazabilidad estructural | Si se usan requisitos, se ocupan enlaces estructurales y la convención `satisface` en OPL-ES | MEDIA | `manual` |
