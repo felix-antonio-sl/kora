@@ -1,8 +1,25 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:opm-es
-version: 2.0.0
-status: published
+version: 2.1.0-ampliada.4
+status: draft-publishable
+source_base: "ssot/opm-iso-19450-es.md (v2.0.0)"
+derived_from:
+  - ssot/opm-iso-19450-es.md
+  - ssot-v2-draft/opm-iso-19450-es-merge-ready.md
+  - core-merge-ready-desde-paso-0.md
+  - ssot-decisiones-axiomaticas.md
+  - ssot-v2-draft/opm-visual-es-v2-merge-ready.md
+  - ssot-v2-draft/opm-opl-es-merge-ready.md
+  - ssot-v2-draft/metodologia-opm-es-merge-ready.md
+scope: >
+  Versión íntegra y publicable del núcleo conceptual OPM-ES con la dualidad
+  OPD-OPL por modelo individual, el metamodelo compuesto por referencia,
+  la identidad persistente separada de la navegación visible, la composición
+  inter-modelo por sub-modelo y la referencia externa de cosas ya integradas
+  en el cuerpo del documento. A diferencia del merge-ready, esta versión se
+  presenta como texto completo listo para reemplazar a `ssot/opm-iso-19450-es.md`
+  cuando se decida publicar v2.
 tags:
 - opm
 - fundamentos
@@ -11,6 +28,8 @@ tags:
 - representacion-bimodal
 - mbse
 - opl-es
+- v2
+- ampliada
 lang: es
 extensions:
   kora:
@@ -23,10 +42,14 @@ relations:
 ---
 
 
-# OPM — Núcleo conceptual
+# OPM — Núcleo conceptual (versión ampliada v2)
 
 
 Lenguaje conceptual compacto y metodología para modelar sistemas y representar conocimiento. Esta edición presenta una adaptación canónica en español técnico natural de OPM y adopta **OPL-ES** como forma textual canónica del corpus.
+
+Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: modelo compuesto por referencia, quinto mecanismo explícito de composición inter-modelo, separación entre identidad persistente y etiquetas visibles de navegación, y cláusulas de referencia externa para cosas y OPDs citables.
+
+Sustituye, cuando se publique, al archivo `ssot/opm-iso-19450-es.md`.
 
 OPM ofrece dos modalidades semánticamente equivalentes:
 
@@ -83,7 +106,7 @@ La tabla siguiente consolida el glosario operativo de esta capa. Los términos b
 | 3.4 | Atributo | Objeto que caracteriza una cosa distinta de sí mismo |
 | 3.5 | Comportamiento | Transformación de objetos (3.39) resultante de la ejecución de un modelo OPM compuesto por una colección de cosas (3.76) y enlaces (3.36) |
 | 3.6 | Beneficiario | Interesado (3.65) que recibe valor funcional de la operación (3.46) del sistema |
-| 3.7 | Clase | Colección de cosas (3.76) con los mismos valores de perseverancia (3.50), esencia y afiliación, y el mismo conjunto de rasgos (3.21) y estados (3.69) |
+| 3.7 | Clase | Colección de cosas (3.76) con los mismos valores de perseverancia (3.50), esencia y afiliación, y el mismo conjunto de rasgos (3.21) y estados de objeto (3.68) |
 | 3.8 | Completitud | Grado en que todos los detalles del sistema están especificados |
 | 3.9 | Enlace de condición | Enlace procedimental desde objeto o estado hacia proceso que expresa una restricción procedimental |
 | 3.10 | Consumido | Transformado que un proceso consume o elimina |
@@ -148,6 +171,7 @@ La tabla siguiente consolida el glosario operativo de esta capa. Los términos b
 | 3.69 | Estado de sistema | Instantánea del modelo del sistema en un momento dado |
 | 3.70 | Expresión de estados | Refinamiento que revela un subconjunto de estados de un objeto |
 | 3.71 | Supresión de estados | Abstracción que oculta un subconjunto de estados de un objeto |
+| 3.71a | Designación de estado | Calificación que asigna a un estado de objeto un rol persistente dentro de su conjunto de estados. Esta adaptación reconoce cuatro designaciones: **inicial**, **final**, **por defecto** y **`Current` declarado** (ver §Estados iniciales, `Current`, por defecto y finales). |
 | 3.72 | Enlace estructural | Notación gráfica de una relación estructural |
 | 3.73 | Relación estructural | Conexión operacionalmente invariante entre cosas |
 | 3.74 | Estructura | Objetos y relaciones no transitorias del modelo |
@@ -165,7 +189,7 @@ La tabla siguiente consolida el glosario operativo de esta capa. Los términos b
 Notas normativas clave:
 
 - **Propiedad vs atributo (3.60):** a diferencia de un atributo, el valor de una propiedad no cambia durante la simulación ni en la implementación operacional. Cardinalidades, etiquetas y etiquetas de ruta son propiedades.
-- **No hay estados de proceso (3.68):** OPM no usa estados de proceso como "iniciado", "en proceso" o "terminado". En su lugar se modelan subprocesos como *Iniciar*, *Procesar* o *Finalizar*.
+- **No hay estados de proceso:** OPM reserva los estados (3.68) para objetos. No usa estados de proceso como "iniciado", "en proceso" o "terminado". En su lugar se modelan subprocesos como *Iniciar*, *Procesar* o *Finalizar*.
 - **Toda cosa implica instancias (3.28/3.29):** al crear una cosa en el modelo conceptual, quien modela implica que al menos una instancia operacional de esa cosa, o de una especialización suya, puede existir durante la operación del sistema.
 
 ---
@@ -187,12 +211,14 @@ Seis principios gobiernan el modelado OPM:
 
 ### Representación bimodal
 
-Todo modelo OPM se expresa en dos formas equivalentes:
+Todo modelo OPM individual se expresa en dos formas equivalentes:
 
 - **OPD**, la representación gráfica;
 - **OPL-ES**, la representación textual canónica en español.
 
-Cada OPD tiene un párrafo OPL correspondiente. La redundancia entre la representación gráfica y la textual aprovecha los dos canales cognitivos, visual y verbal.
+Cada OPD tiene un párrafo OPL correspondiente dentro del mismo modelo individual. La redundancia entre la representación gráfica y la textual aprovecha los dos canales cognitivos, visual y verbal.
+
+Cuando un modelo OPM referencia otros modelos OPM como sub-modelos, la equivalencia OPD↔OPL se preserva íntegramente **dentro** de cada modelo individual. La composición **entre** modelos no colapsa esa dualidad en una única especificación cerrada: se regula por referencias explícitas entre fronteras de modelo y por metadatos persistentes de identidad.
 
 ### Elementos de modelado
 
@@ -203,11 +229,15 @@ Existen dos clases de elementos:
 
 ### Gestión de contexto
 
-El OPD es la unidad fundamental para representar un contexto. Los mecanismos principales para gestionar su alcance son:
+El OPD es la unidad fundamental para representar un contexto. Los mecanismos principales de gestión contextual **intra-modelo** son:
 
 - expresión y supresión de estados;
 - despliegue y plegado;
 - descomposición y recomposición.
+
+Además, un modelo OPM puede gestionar contexto **inter-modelo** mediante composición por referencia a sub-modelos. Esta composición cruza la frontera del modelo como unidad de serialización y no debe confundirse con una vista ad hoc ni con una mera operación de navegación.
+
+Operaciones auxiliares como `bring connected things`, `bring links between selected entities` o equivalentes materializan sobre un OPD hechos ya existentes en el modelo. Son operadores derivados de contexto, no mecanismos ontológicos adicionales.
 
 #### Tabla de equivalencia terminológica (mecanismos de refinamiento)
 
@@ -229,29 +259,42 @@ El corpus usa términos en español como forma canónica. Los términos en ingl�
 
 Los modelos conceptuales describen patrones de estructura y comportamiento. Los modelos de ejecución representan instancias operacionales durante una simulación. Un modelo con un nivel consistente de detalle es implementable como simulación capaz de activar recursos y producir valor funcional; ese es el criterio formal de completitud.
 
-#### Modelos conceptuales vs modelos de ejecución (§6.2.6.1)
+#### Modelos conceptuales vs modelos de ejecución (cfr. ISO 19450 §6.2.6.1)
 
 Quien modela debe distinguir entre el modelo conceptual y una ocurrencia operacional (en tiempo de ejecución) usada para evaluar el comportamiento del sistema. Un modelo OPM es un marco formal donde ocurrencias de objetos y procesos interactúan mediante enlaces. Quien modela puede simular el comportamiento creando instancias operacionales de cosas y siguiendo el flujo de control de ejecución definido por las conexiones y las reglas semánticas de OPM.
 
 La presencia de ocurrencias de cosas traduce el modelo conceptual abstracto en una forma concreta de ejecución. El comportamiento del sistema modelado solo ocurre cuando existen instancias operacionales. Un enlace entre dos cosas no implica comportamiento hasta que existan instancias operacionales. La noción de tiempo de ejecución está implícita en toda declaración de especificación.
 
-#### Realización del modelo (§6.2.6.2)
+#### Realización del modelo (cfr. ISO 19450 §6.2.6.2)
 
 Un modelo que expresa detalle consistente es implementable como simulación capaz de realizar recursos, usar procesos para transformar objetos y producir valor funcional para un beneficiario. Esta es la capacidad de realización del modelo.
 
-#### Navegación de OPD y composición de OPL (§6.2.6.3)
+#### Navegación de OPD y composición de OPL (cfr. ISO 19450 §6.2.6.3)
 
-Los mecanismos de descomposición y despliegue de esta capa proveen las formas de enlazar diagramas OPD con el OPL correspondiente. Esta capa no prescribe las etiquetas para identificar niveles jerárquicos sucesivos, ni la vinculación entre OPDs relacionados, ni los segmentos OPL correspondientes.
+Los mecanismos de descomposición y despliegue de esta capa proveen las formas de enlazar diagramas OPD con el OPL correspondiente. En esta adaptación ampliada, la capa sí prescribe la vinculación canónica entre etiquetas visibles de navegación, OPDs relacionados y segmentos OPL locales, manteniendo la distinción entre etiqueta visible e identidad persistente.
 
 ---
 
 ## Especificación de la notación visual
 
-La capa gráfica de OPM usa un conjunto mínimo de formas, contornos, sombreados y marcas. En la capa base basta distinguir tres familias:
+La capa gráfica de OPM usa un conjunto mínimo de formas, contornos, sombreados y marcas. En la capa base basta distinguir tres **superfamilias**:
 
 - **cosas**: objetos, procesos y estados;
-- **enlaces procedimentales**: transformadores, habilitadores y de control;
-- **enlaces estructurales**: etiquetados y fundamentales.
+- **enlaces procedimentales**;
+- **enlaces estructurales**.
+
+Dentro de la superfamilia procedimental, la partición operativa canónica distingue:
+
+- enlaces transformadores;
+- enlaces habilitadores;
+- enlaces de invocación.
+
+Dentro de la superfamilia estructural, la partición operativa canónica distingue:
+
+- enlaces estructurales fundamentales;
+- enlaces estructurales etiquetados.
+
+En conjunto, estas dos particiones forman cinco familias canónicas de enlace.
 
 La semántica de cada familia pertenece a esta capa base; su geometría, decoración, composición, comportamiento visual entre OPDs e índices de reglas pertenecen a [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
 
@@ -309,9 +352,9 @@ Un objeto con estados tiene un conjunto de estados permitidos. En cada instante,
 
 El estado se representa como un rectángulo redondeado dentro del objeto. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §3.2 y §14.
 
-### Estados iniciales, por defecto y finales
+### Estados iniciales, `Current`, por defecto y finales
 
-Tres designaciones califican estados: **inicial** (estado al crearse el objeto), **final** (estado al consumirse) y **por defecto** (estado más probable al inspeccionar aleatoriamente). Un objeto puede tener cero o más estados iniciales, cero o más finales, y como máximo uno por defecto. La realización gráfica de cada designación (contorno grueso, doble borde, flecha diagonal) vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §2.2.
+Cuatro designaciones califican estados en esta adaptación: **inicial** (estado al crearse el objeto), **final** (estado al consumirse), **por defecto** (estado más probable al inspeccionar aleatoriamente) y **`Current` declarado** (estado marcado persistentemente como actual por el modelador). Un objeto puede tener cero o más estados iniciales, cero o más finales, como máximo uno por defecto y como máximo un estado `Current` declarado. La realización gráfica de cada designación y la distinción entre estado `Current` declarado y estado actual de runtime viven en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es) §2.2 y §17.2.
 
 ### Valores de atributos
 
@@ -323,11 +366,13 @@ Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del a
 
 ### Enlaces procedimentales
 
-Existen tres clases:
+Existen tres clases canónicas:
 
 - **enlaces transformadores**: conectan proceso con transformado (consumo, resultado o efecto);
 - **enlaces habilitadores**: conectan habilitador con proceso (agente o instrumento);
-- **enlaces de control**: enlaces procedimentales con modificador `e` o `c`.
+- **enlaces de invocación**: conectan proceso con proceso (firma `Proceso → Proceso`).
+
+**Control como modificador:** los enlaces de control no constituyen una familia procedimental adicional. Son enlaces transformadores o habilitadores modificados por un modificador de control `e` (evento) o `c` (condición). La semántica de evento/condición/excepción aplica sobre el enlace base; la realización gráfica de estas marcas vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
 
 **Principio de unicidad del enlace procedimental:** un objeto o estado tiene exactamente un rol respecto de un proceso enlazado: transformado o habilitador.
 
@@ -618,21 +663,26 @@ El SD debe contener solo las cosas centrales e indispensables. El valor funciona
 
 ### Mecanismos de refinamiento y abstracción
 
-Tres pares principales:
+Los mecanismos canónicos de refinamiento y abstracción se organizan así:
 
-| Mecanismo | Refinamiento | Abstracción |
+| Ámbito | Refinamiento | Abstracción |
 |---|---|---|
 | Estados | Expresión de estados | Supresión de estados |
 | Estructura | Despliegue | Plegado |
 | Comportamiento | Descomposición | Recomposición |
+| Composición inter-modelo | Referencia a sub-modelo | Desconexión o retiro de la referencia |
 
-Hay cuatro pares de despliegue-plegado, uno por relación fundamental: agregación, exhibición, generalización y clasificación.
+Hay cuatro pares de despliegue-plegado intra-modelo, uno por relación fundamental: agregación, exhibición, generalización y clasificación.
 
 **Despliegue en el mismo diagrama:** refinable y refinadores comparten OPD.
 
 **Despliegue en nuevo diagrama:** se crea OPD hijo; el refinable aparece con contorno grueso en ambos diagramas.
 
-**Descomposición síncrona (*in-zooming*) vs asíncrona (*unfolding*):** la descomposición de un proceso (in-zooming) es síncrona — el proceso padre espera a que todos los subprocesos completen antes de devolver control. En cambio, el despliegue (unfolding) de una relación estructural es asíncrono respecto del flujo de control del proceso: revela estructura estática sin implicar secuenciación temporal. Esta distinción es relevante al decidir si un refinamiento debe modelarse como descomposición (comportamiento secuenciado) o como despliegue (estructura revelada).
+**Descomposición síncrona (*in-zooming*) vs despliegue asíncrono (*unfolding*):** la descomposición de un proceso es síncrona: el proceso padre espera a que todos los subprocesos completen antes de devolver control. El despliegue de una relación estructural es asíncrono respecto del flujo de control del proceso: revela estructura estática sin implicar secuenciación temporal.
+
+**Composición inter-modelo por sub-modelo:** un sub-modelo es un mecanismo explícito de refinamiento que cruza la frontera del modelo OPM como unidad de serialización. Introduce identidad persistente de vínculo, gobernanza propia y reglas de referencia entre modelo propietario y modelo consumidor.
+
+**Operaciones derivadas:** operaciones como `bring connected things`, `bring links between selected entities`, importes asistidos y otras materializaciones automáticas de contexto no constituyen mecanismos de refinamiento ontológico. Son operadores derivados sobre el árbol y el canvas.
 
 **Diagramas de vista (model views):** OPDs que reúnen hechos provenientes de múltiples OPDs para explicar un fenómeno o enfatizar un aspecto concreto. Las herramientas OPM deben soportar la creación de vistas que filtren por criterios específicos, como:
 
@@ -641,7 +691,7 @@ Hay cuatro pares de despliegue-plegado, uno por relación fundamental: agregaci�
 - todos los objetos y procesos vinculados por un tipo específico de enlace;
 - la asignación de cosas de varios OPDs a módulos del sistema.
 
-**Mapa del sistema (system map):** un árbol de procesos OPD que muestra explícitamente el contenido (cosas y enlaces) de cada OPD como nodo. Dado que el mapa puede volverse muy grande, los mecanismos de vista permiten acceder al contenido del modelo y a las asociaciones entre elementos.
+**Mapa del sistema (system map):** un árbol de procesos OPD que muestra explícitamente el contenido (cosas y enlaces) de cada OPD como nodo. Dado que el mapa puede volverse muy grande, los mecanismos de vista permiten acceder al contenido del modelo y a las asociaciones entre elementos. Su semántica de navegación y su estatus como vista anclada pertenecen a la especificación visual.
 
 ---
 
@@ -685,7 +735,7 @@ La especificación formal de los pares escindidos, su tabla de geometría y sus 
 
 La realización textual de los enlaces escindidos vive en [OPL-ES](urn:fxsl:kb:opl-es) §4 y §7.
 
-**Cambio de rol con la abstracción:** un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido si a nivel abstracto sus estados inicial y final coinciden.
+**Cambio de rol con la abstracción:** un objeto puede ser instrumento en un nivel abstracto y afectado en un nivel detallado. Esto es válido cuando, a nivel abstracto, el cambio neto del objeto entre entrada y salida del proceso es nulo (estado inicial = estado final); a nivel detallado, el objeto transita por estados intermedios con entrada ≠ salida dentro del proceso descompuesto, sin violar la invariancia declarada a nivel abstracto.
 
 ### Instancias operacionales del conjunto de objetos involucrados
 
@@ -717,13 +767,19 @@ Etiquetas típicas:
 - `SD` para nivel 0;
 - `SD1`, `SD2`, etc., para niveles descendientes.
 
+Estas etiquetas visibles son **etiquetas de navegación**, no identificadores persistentes. Su forma puede mutar por reordenamiento de hermanos, inserción de nuevos nodos o cambios de layout que alteren el orden de navegación.
+
+Todo OPD DEBE tener además un identificador persistente, estable bajo renumeración de etiquetas y bajo reordenamiento del árbol. La forma concreta del identificador persistente (UUID, slug, URI u otra) pertenece a la serialización del modelo y no necesita imprimirse en la superficie visible del OPD.
+
 **Etiquetas de aristas del árbol OPD:** cada arista del árbol de procesos usa un enlace estructural etiquetado unidireccional con una fórmula de refinamiento equivalente a `se refina por descomposición de NombreProceso en` o `se refina por despliegue de NombreCosa en`. La realización textual canónica de estas sentencias pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §10.
 
-**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general orden en anchura, comenzando desde `SD`. El procedimiento operativo de recorrido pertenece a [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
+**Orden de especificación OPL:** la secuencia de párrafos OPL sigue en general el orden de navegación del árbol, comenzando desde `SD`. Ese orden puede proyectarse desde el layout del padre, pero no sustituye la identidad persistente del OPD. El procedimiento operativo de recorrido pertenece a [Manual metodológico de OPM](urn:fxsl:kb:manual-metodologico-opm-es).
+
+**Acoplamiento de proyección:** la posición vertical de un subproceso en el canvas, el orden de navegación del árbol y el orden textual del OPL pueden derivarse coherentemente entre sí. Ese acoplamiento es de **proyección**, no de **identidad**. Ninguno de esos tres canales sustituye al identificador persistente.
 
 ### OPL del sistema completo
 
-El OPL del sistema completo es la especificación textual total obtenida al recorrer el árbol OPD y concatenar los párrafos OPL locales en orden de modelo. No describe solo el contexto actual, sino la totalidad del sistema.
+El OPL del sistema completo es la especificación textual total obtenida al recorrer el árbol OPD y concatenar los párrafos OPL locales en orden de navegación. No describe solo el contexto actual, sino la totalidad del sistema. En modelos compuestos, cada modelo individual conserva su OPL local autocontenido y la composición entre modelos requiere referencias explícitas entre fronteras de modelo.
 
 Núcleo recuperable del ejemplo clásico de *Sistema de Lavado de Platos*:
 
@@ -823,13 +879,21 @@ Este documento conserva solo el contrato semántico que la gramática textual de
 
 ## Metamodelo OPM
 
-La estructura del modelo OPM tiene dos jerarquías paralelas:
+La estructura del modelo OPM se organiza en tres capas relacionadas:
 
-- **Modelo OPM** → conjunto de OPDs (gráfico) + especificación OPL (texto)
+- **Modelo OPM individual** → conjunto de OPDs (gráfico) + especificación OPL (texto) + metadatos persistentes de identidad
 - **Conjunto de OPDs** → OPDs → constructos OPD → conjuntos de cosas + conjuntos de enlaces
 - **Especificación OPL** → párrafos OPL → oraciones OPL → frases y nombres reservados
 
-Un **constructo básico** contiene exactamente 2 cosas y 1 enlace. Los constructos compuestos incluyen abanicos de enlaces o más de dos refinadores.
+Un modelo OPM individual puede, además, referenciar `0..*` modelos OPM adicionales como sub-modelos. Cuando eso ocurre, se obtiene un **modelo OPM compuesto por referencia**.
+
+La dualidad OPD↔OPL se preserva íntegramente dentro de cada modelo individual. La composición entre modelos no colapsa esas dualidades en una única especificación cerrada: se regula por referencias explícitas entre fronteras de modelo y por metadatos de identidad persistente.
+
+Una cosa puede aparecer en otro modelo como **referencia externa** a la misma existencia compartida. La referencia externa no crea una nueva existencia propietaria. La existencia pertenece al modelo propietario; la aparición en el modelo consumidor es una referencia explícita a esa existencia.
+
+Toda cosa que pueda ser referenciada desde otro modelo y todo OPD que pueda ser citado externamente DEBEN exponer un identificador persistente recuperable en la serialización, por ejemplo un URI o handle persistente declarado por la implementación.
+
+Un **constructo básico** contiene exactamente 2 cosas y 1 enlace. Los constructos compuestos incluyen abanicos de enlaces o más de dos refinadores. Las referencias externas y los vínculos entre modelos no alteran esta definición del constructo básico; pertenecen al nivel metamodelo del compuesto.
 
 ---
 
@@ -861,7 +925,7 @@ Los objetos pueden ser sin estados o con estados. Los objetos con estados genera
 - Un objeto sin estados tiene un conjunto de estados de cardinalidad `s=0`.
 - Un objeto con estados tiene cardinalidad `s≥1`.
 - El estado actual es una instancia de **Estado** dentro del **Conjunto de Estados** del objeto.
-- Los estados se especializan en **Estado Inicial**, **Estado Final** y **Estado por Defecto**, cada uno con su designación y símbolo gráfico propio (rectángulo redondeado de borde grueso, doble borde, y señalador con flecha diagonal, respectivamente).
+- Los estados se especializan en **Estado Inicial**, **Estado Final** y **Estado por Defecto**; adicionalmente, esta adaptación admite **Estado `Current` declarado** como designación persistente opcional, distinta del estado actual de runtime.
 
 ## Modelo de constructo estructural
 
@@ -875,14 +939,19 @@ Un constructo estructural básico = refinable + refinador + enlace estructural. 
 
 ## Modelo de constructo procedimental
 
-Un constructo procedimental básico = objeto + proceso + enlace procedimental.
+Un constructo procedimental básico = objeto + proceso + enlace procedimental. Preserva la cardinalidad 2 cosas + 1 enlace del constructo básico.
 
 Las semánticas básicas son:
 
 - transformación;
-- habilitación;
+- habilitación.
+
+Cada una admite un modificador de control `e` (evento) o `c` (condición) sobre el enlace, lo que produce variantes derivadas:
+
 - transformación con control;
 - habilitación con control.
+
+El modificador no añade una cosa ni un enlace, por lo que la cardinalidad del constructo básico se preserva. La semántica de cada modificador se especifica en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
 
 Los constructos transformadores se descomponen en:
 
@@ -899,8 +968,8 @@ Los habilitadores se descomponen en:
 
 Esta adaptación modela la descomposición y la recomposición en nuevo diagrama como procesos OPM de primera clase:
 
-- **Descomposición en nuevo diagrama**: requiere `SDn`, realiza Mostrar Contenido y luego Refinar Enlaces, y genera `SDn+1`.
-- **Recomposición en nuevo diagrama**: requiere `SDn+1`, realiza Abstraer Enlaces y luego Ocultar Contenido, y genera `SDn`.
+- *Descomposición en nuevo diagrama*: requiere `SDn`, realiza *Mostrar Contenido* y luego *Refinar Enlaces*, y genera `SDn+1`.
+- *Recomposición en nuevo diagrama*: requiere `SDn+1`, realiza *Abstraer Enlaces* y luego *Ocultar Contenido*, y genera `SDn`.
 - **OPD semidescompuesto**: objeto transitorio que existe solo dentro de esas transformaciones.
 
 Las figuras de referencia muestran la migración de enlaces desde un proceso refinado `P` hacia subprocesos `P1`, `P2`, `P3`, reubicando consumidos, agentes, instrumentos y resultantes en el nivel detallado.
@@ -1119,7 +1188,7 @@ Estructura:
 
 Comportamiento:
 
-- `*Preparar Café*` se descompone en *Calentar Agua*, *Espumar Leche*, *Preparar Café* y *Agregar Leche*.
+- `*Preparar Café*` se descompone en *Calentar Agua*, *Espumar Leche*, *Extraer Café* y *Agregar Leche*.
 
 Función:
 
