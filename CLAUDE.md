@@ -16,7 +16,7 @@ estricta entre **ontologia**, **serializaciones**, **runtimes** y **distribucion
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
 | **Ontologia** | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec` |
-| **Serializacion** | Como se *escribe* (shapes de authoring) | `agentfile-spec v2`, `skill-overlay-spec v2`, `md-spec`, `knowledge-spec` |
+| **Serializacion** | Como se *escribe* (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
 | **Runtime** | Como se *ejecuta* y *proyecta* | `runtime-spec-md`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta* | `plugin.json`, `marketplace.json` (externas a KORA) |
 
@@ -49,10 +49,10 @@ Cada tipo de artefacto tiene staging **dentro de su directorio principal**.
 
 | Capa | Path | Rol | Git |
 |------|------|-----|-----|
-| Specs (constitucion) | `specs/` | 11 specs (harness, agentfile v2, skill-overlay v2, transmutation, 4 runtime-extensions, gobernanza, md-spec, knowledge-spec) | tracked |
+| Specs (constitucion) | `specs/` | 11 specs (gobernanza, harness, autoria, md-spec, knowledge, runtime-spec-md, transmutation, 4 runtime-extensions) | tracked |
 | Conocimiento productivo | `KNOWLEDGE/{ns}/...` | Artefactos KORA/MD publicados (11 ns) | tracked |
 | Staging knowledge | `KNOWLEDGE/_SCRIPTORIUM/{INBOX,REVIEW}/` | Material crudo + drafts | tracked |
-| Workspaces productivos | `AGENTS/{ns}/{name}/` | Agentes activos con `AGENT.md` v2 | tracked |
+| Workspaces productivos | `AGENTS/{ns}/{name}/` | Agentes activos con `AGENT.md` unificado | tracked |
 | Staging agentes | `AGENTS/_FRAGUA/{INBOX,REVIEW}/` | Agentes en elaboracion | tracked |
 | Perfiles | `AGENTS/_FRAGUA/_perfiles/` | Specs de personalidad/input | tracked |
 | Skills portables | `SKILLS/{name}/` o `SKILLS/{ns}/{name}/` | Skills productivos | tracked |
@@ -98,19 +98,18 @@ Segun `gobernanza v4.2 §3.1-3.4`:
 1. **`gobernanza.md`** (v4.2 — constitucion, 3 regimenes URN, 4 capas).
 2. **`harness-spec.md`** (v1.0 — ontologia canonica PMI × LFS).
 3. **`md-spec.md`** (v7.1 — formato KORA/MD con 11 familias).
-4. Specs canonicas de serializacion: `agentfile-spec v2`, `skill-overlay-spec v2`, `knowledge-spec v1.1`.
+4. Specs canonicas de serializacion: `autoria-spec v1.0` (unificada), `knowledge-spec v1.1`.
 5. Specs de runtime: `runtime-spec-md v3.7`, `transmutation-spec v1.0`, runtime-extensions.
 6. Extensiones de namespace.
 
-Legacy: `agentfile-spec v2 §13` (workspace legacy 5-componentes), `skill-overlay-spec v2 §5.5` (CM-*), `runtime-spec §13` (outputs antiguos).
+`agentfile-spec` y `skill-overlay-spec` fueron retiradas: absorbidas por `autoria-spec`.
 
-## Identidad URN (gobernanza §4.3)
+## Identidad URN
 
-Tres regimenes formales:
+Dos regimenes:
 
-- **Conceptual** (`urn:{ns}:kb:{id}` + campo `version`): artefactos KORA/MD.
-- **Agentfile** (`urn:{ns}:agent:{id}` + campo `version`): agentes modernos.
-- **Ejecutable legacy** (`urn:{ns}:{kind}:{id}:{version}`): bootstrap + skills CM-*.
+- **Conceptual** (`urn:{ns}:kb:{id}` + campo `version`): artefactos KORA/MD de conocimiento.
+- **Artefacto agentico** (`urn:{ns}:artefacto:{id}` + campo `version`): todo artefacto productivo conforme a `autoria-spec` (habilidad, subagente, agente-propiamente-tal, agente-plataforma).
 
 El `_manifest.type` es ortogonal al URN.
 
@@ -120,37 +119,32 @@ El `_manifest.type` es ortogonal al URN.
 - `KNOWLEDGE/fxsl/cat/` es corpus auxiliar.
 - `Traces to:` solo apunta a Formal Layer oficial.
 
-## Modelo del workspace v2
+## Shape unificado de autoria (`autoria-spec v1.0`)
 
-### Formato Agentfile v2 (preferido)
+Todo artefacto agentico productivo usa el mismo shape. Cuatro formas materiales:
 
-Un `AGENT.md` v2 tiene:
+| `atlas.forma_material` | Archivo | Topologia |
+|------------------------|---------|-----------|
+| `habilidad` | `SKILL.md` | `SKILLS/{ns}/{nombre}/` |
+| `subagente` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` |
+| `agente-propiamente-tal` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` con workspace |
+| `agente-plataforma` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` con `extensions.openclaw` |
 
-1. **Frontmatter YAML** con:
-   - `_manifest.urn` (regimen Agentfile).
-   - `extensions.kora.harness_vector` (vector ontologico, obligatorio).
-   - `extensions.kora.atlas` (atlas A/B/C opcionales).
-   - `extensions.{runtime}.*` (metadata runtime-especifica).
-   - `agent.{profile, plan, interface, context, composition, invariants}` (shape de authoring).
+Frontmatter canonico (identificadores en espanol):
 
-2. **Body Markdown**: refinamiento legible que no contradice el frontmatter.
+- `_manifest.urn: urn:{ns}:artefacto:{id}` (regimen unico).
+- `version: semver` (fuera del URN).
+- `extensions.kora.vector_ontologico` (6 ejes PMI × LFS, obligatorio).
+- `extensions.kora.atlas.{arnes_categorico, forma_material, metafora_relacional}`.
+- `extensions.kora.entornos_objetivo` (lista de runtimes).
+- `extensions.kora.nivel_prescripcion` (obligatorio solo si `forma_material: habilidad`).
+- `artefacto.{perfil, plan, interfaz, contexto, composicion, invariantes}` (shape de 6 dimensiones, condicional por forma).
 
-### Cambios clave v1 → v2
+Subdirs canonicos en workspaces: `memoria/`, `referencias/`, `recursos/`, `scripts/`, `_BUILD/`.
 
-- Campo `coalgebra` (v1) → `profile` (descriptivo, no formal categorico).
-- Objeto `fibers` (v1) **disuelto**: `memory`→`context.memory_config`+Μ, `operator`→`context.operator_profile`+Φ, `runtime`→`extensions.{runtime}.*`, `knowledge`→`extensions.kora.allowed_kb`, `identity`→atlas.
-- Campo `safety` **bifurcado**: estructural (sub-coalgebra, derivable) vs Σ normativa (declarable).
-- `harness_vector` obligatorio.
+**Proyeccion fiel a agentskills.io**: las habilidades transmutan byte-identical a paquetes del estandar externo (check `fidelidad-agentskills`). El renaming en ingles es responsabilidad del transmutor, no del autor.
 
-### Skills v2
-
-Skills portables viven en `SKILLS/` con formato agentskills.io + overlay KORA.
-Estructura interna: `scripts/`, `references/`, `assets/` (opcionales).
-Seccion `## Resources` canonica en body si hay subdirs.
-`extensions.kora.skill_freedom: high|medium|low` declara prescripcion.
-Progressive disclosure (metadata/body/resources) como invariante.
-
-Ver `skill-overlay-spec v2`.
+Ver `specs/autoria-spec.md` para el detalle completo, matriz de validacion condicional por forma material, reglas de promocion, y ejemplos.
 
 ### Familias documentales
 
@@ -193,15 +187,12 @@ python3 scripts/kora ingest --from claude-code --file ~/.claude/agents/polymath.
 python3 scripts/kora ingest --from codex --file ~/.codex/skills/X/SKILL.md
 python3 scripts/kora ingest --from gemini --file path/SKILL.md
 python3 scripts/kora ingest --from openclaw --workspace ~/openclaw-fleet/workspaces/X
-# Genera AGENT.md v2 (agentes) o SKILL.md (skills) en staging con harness_vector
-# auto-derivado + campos TODO para revision humana.
+# Genera AGENT.md o SKILL.md conforme a autoria-spec en staging,
+# con vector_ontologico auto-derivado + campos TODO para revision humana.
 
-# Migracion v1 → v2 de agentfile (auto-derivar harness_vector)
-python3 scripts/kora migrate --profile v2-agentfile
-python3 scripts/kora migrate --profile v2-agentfile --cohort meta-kora --dry-run
-
-# Migracion transitional (codemods legacy generales)
-python3 scripts/kora migrate --profile transitional
+# Migracion forzada a autoria-spec (una sola pasada, sin compat transitoria)
+python3 scripts/kora migrate --perfil a-autoria
+python3 scripts/kora migrate --perfil a-autoria --cohort meta-kora --dry-run
 
 # Reporte de staging (FRAGUA + TALLER + SCRIPTORIUM)
 python3 scripts/kora intake
@@ -219,7 +210,7 @@ python3 scripts/kora sync-docs
 
 Cohorts disponibles: `meta-kora`, `dev`, `ops`, `domains`.
 Targets soportados: `claude-code`, `codex`, `gemini`, `openclaw`.
-Profiles migrate: `legacy`, `transitional`, `strict`, `v2-agentfile`.
+Perfiles migrate: `a-autoria` (forzado, una pasada).
 
 ## Round-trip runtime ↔ IR ↔ runtime
 
@@ -264,26 +255,26 @@ Suites: `test_cli_smoke`, `test_artifacts`, `test_semantic_validation`,
 Cuando cambies specs, workspaces o knowledge:
 
 1. Aplica cambios.
-2. `python3 scripts/kora migrate --profile v2-agentfile` si hubo cambios en shape v1.
+2. `python3 scripts/kora migrate --perfil a-autoria` si quedan artefactos sin migrar.
 3. `python3 scripts/kora index`.
 4. `python3 scripts/kora check --strict`.
 5. `python3 scripts/kora sync-docs`.
 6. `python3 -m unittest discover -s tests`.
 
-Cuando transmutas un agente a runtime:
+Cuando transmutas un artefacto a runtime:
 
-1. Verifica que `AGENT.md` tiene `harness_vector` (si no, corre `kora migrate --profile v2-agentfile`).
-2. `kora transmute --target X --agent ns/name [--dry-run]`.
-3. Revisa `{workspace}/_BUILD/{target}/_transmutation.yml` para pérdidas declaradas.
+1. Verifica que el artefacto tiene `vector_ontologico` y `atlas.forma_material` (si no, corre `kora migrate --perfil a-autoria`).
+2. `kora transmute --target X --artefacto ns/nombre [--dry-run]`.
+3. Revisa `{workspace}/_BUILD/{target}/_transmutation.yml` para perdidas declaradas.
 4. Compila el IR con adapter skill (si existe) o con LLM generico usando la runtime-extension.
 
 Cuando ingestas un artefacto foraneo:
 
 1. `kora ingest --from X --file path` (o `--workspace` para openclaw).
-2. Revisa el AGENT.md generado en `_FRAGUA/INBOX/`.
-3. Completa campos TODO (`invariants.ethical_commitments`, `plan` FSM real, etc.).
-4. Ajusta `harness_vector` si la heuristica fue imprecisa.
-5. Promueve manualmente a `_FRAGUA/REVIEW/` y luego a productivo.
+2. Revisa el artefacto generado en `_FRAGUA/INBOX/` (o `_TALLER/INBOX/` si `forma_material: habilidad`).
+3. Completa campos TODO (`invariantes.compromisos_eticos`, `plan` FSM real, etc.).
+4. Ajusta `vector_ontologico` si la heuristica fue imprecisa.
+5. Promueve manualmente a `REVIEW/` y luego a productivo.
 
 ## Notas practicas
 
@@ -296,9 +287,9 @@ Cuando ingestas un artefacto foraneo:
 - Usa `docs/generated/operating-core-contracts.*` para contrato operativo sin releer workspace por workspace.
 - Si corriges `fxsl/cat`, hazlo para eliminar ruido o preparar absorcion formal, no para darle autoridad normativa directa.
 
-## Estado del fleet (2026-04-17)
+## Estado del fleet
 
-- 7 workspaces productivos con `harness_vector` poblado: kora/{guardian, curator, custodio, forgemaster, clawforge}, gn/{goreologo, digitrans}.
-- ~28 workspaces en `AGENTS/_FRAGUA/INBOX/` pendientes de promocion.
-- 1 skill productivo top-level: `SKILLS/kora/atomize/` (productor canonico familia atomic).
-- Muchos skills en `SKILLS/_TALLER/INBOX/` pendientes de promocion/dedup.
+- 7 workspaces productivos con vector poblado: kora/{guardian, curator, custodio, forgemaster, clawforge}, gn/{goreologo, digitrans}. Pendientes: migracion a `autoria-spec` (shape `artefacto.*` + URN `urn:{ns}:artefacto:{id}`).
+- Workspaces pendientes en `AGENTS/_FRAGUA/INBOX/` migran en la misma pasada.
+- 1 habilidad productiva top-level: `SKILLS/kora/atomize/`.
+- Habilidades en `SKILLS/_TALLER/INBOX/` pendientes de promocion/dedup + migracion.
