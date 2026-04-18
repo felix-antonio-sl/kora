@@ -289,7 +289,7 @@ Cuando ingestas un artefacto foraneo:
 
 ## Estado del fleet
 
-- 7 workspaces productivos con vector poblado: kora/{guardian, curator, custodio, forgemaster, clawforge}, gn/{goreologo, digitrans}. Pendientes: migracion a `autoria-spec` (shape `artefacto.*` + URN `urn:{ns}:artefacto:{id}`).
+- 7 workspaces productivos migrados a `autoria-spec v1.0` (commit `84dc1bb`, 2026-04-18): kora/{guardian, curator, custodio, forgemaster, clawforge}, gn/{goreologo, digitrans}. URN `urn:{ns}:artefacto:{id}` + shape `artefacto.*` + scaffolds legacy purgados. Residual (deuda de autoria humana): 8 `descripcion` faltante en AGENT.md (ver `kora check` con `autoria-conformance`).
 - Workspaces pendientes en `AGENTS/_FRAGUA/INBOX/` migran en la misma pasada.
 - 1 habilidad productiva top-level: `SKILLS/kora/atomize/`.
 - Habilidades en `SKILLS/_TALLER/INBOX/` pendientes de promocion/dedup + migracion.
