@@ -218,7 +218,7 @@ def has_any_platform_extension(art: Mapping[str, Any]) -> bool:
     extensions = art.get("extensions") if isinstance(art, Mapping) else None
     if not isinstance(extensions, Mapping):
         return False
-    plat_keys = ("claude_code", "codex", "gemini", "openclaw")
+    plat_keys = ("claude_code", "codex", "gemini", "mastra", "openclaw")
     return any(isinstance(extensions.get(k), Mapping) and extensions.get(k) for k in plat_keys)
 
 
@@ -447,7 +447,7 @@ _AGENTE_PLAT_RULES: Tuple[Rule, ...] = (
             code="forma-agente-plat-requiere-extension",
             severity="high",
             location="extensions.{plataforma}",
-            message="agente-plataforma requiere al menos una extension de plataforma (claude_code|codex|gemini|openclaw).",
+            message="agente-plataforma requiere al menos una extension de plataforma (claude_code|codex|gemini|mastra|openclaw).",
         ),
     ),
 )

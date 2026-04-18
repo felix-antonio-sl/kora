@@ -123,11 +123,11 @@ class KoraCliSmokeTests(unittest.TestCase):
         # Idempotente si ya se aplico
         self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)
 
-    def test_transmute_accepts_all_four_targets(self):
-        """Los 4 runtime targets (claude-code, codex, gemini, openclaw) aceptan --target."""
+    def test_transmute_accepts_all_five_targets(self):
+        """Los 5 runtime targets (claude-code, codex, gemini, mastra, openclaw) aceptan --target."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        for target in ("claude-code", "codex", "gemini", "openclaw"):
+        for target in ("claude-code", "codex", "gemini", "mastra", "openclaw"):
             result = run_cli("transmute", "--target", target, "--agent", "kora/curator", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)

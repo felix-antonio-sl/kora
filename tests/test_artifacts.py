@@ -252,6 +252,8 @@ class ArtifactFixtureTests(unittest.TestCase):
             "referencias/",
             "recursos/",
             "fidelidad-agentskills",
+            "fidelidad-mastra",
+            "risk_register",
             "progressive-disclosure",
             "componible_con",
         )
@@ -267,7 +269,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_harness_spec_canonizes_ontology(self):
         content = (ROOT / "ontology" / "harness-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.0.0",
+            "v1.1.0",
             "PMI × LFS",
             "constitucion ontologica",
             "harness_vector",
@@ -288,10 +290,42 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
+    def test_qa_spec_defines_enriched_quality_contract(self):
+        content = (ROOT / "ontology" / "qa-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "KORA/QA-Spec v1.0.0",
+            "([0,1]^5, <=, 1̄, ⊗)",
+            "quality attributes",
+            "qa_budget",
+            "sigma_min",
+            "latency",
+            "availability",
+            "mttr",
+            "cost",
+            "Bool",
+            "Cost",
+            "harness-spec",
+            "runtime-spec-md",
+            "autoria-spec",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_core_specs_reference_qa_spec(self):
+        files = (
+            ROOT / "governance" / "gobernanza.md",
+            ROOT / "ontology" / "harness-spec.md",
+            ROOT / "serialization" / "autoria-spec.md",
+            ROOT / "runtime" / "runtime-spec-md.md",
+        )
+        for path in files:
+            content = path.read_text(encoding="utf-8")
+            self.assertIn("qa-spec", content, msg=str(path))
+
     def test_transmutation_spec_defines_functor_laws(self):
         content = (ROOT / "runtime" / "transmutation-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.0.0",
+            "v1.1.0",
             "functor",
             "preservacion",
             "bisimulacion",
@@ -311,6 +345,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             "claude-code-runtime-extension.md",
             "codex-runtime-extension.md",
             "gemini-runtime-extension.md",
+            "mastra-runtime-extension.md",
             "openclaw-runtime-extension.md",
         ):
             content = (ROOT / "runtime" / spec_name).read_text(encoding="utf-8")
@@ -325,7 +360,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_openclaw_extension_declares_acp_meta_runtime(self):
         content = (ROOT / "runtime" / "openclaw-runtime-extension.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.1.0",
+            "v1.2.0",
             "meta-runtime",
             "ACP",
             "acp_backend",
@@ -334,6 +369,37 @@ class ArtifactFixtureTests(unittest.TestCase):
         )
         for term in required_terms:
             self.assertIn(term, content)
+
+    def test_mastra_extension_declares_workflow_and_mcp_surfaces(self):
+        content = (ROOT / "runtime" / "mastra-runtime-extension.md").read_text(encoding="utf-8")
+        required_terms = (
+            "v1.0.0",
+            "Mastra",
+            "Workflow",
+            "runtimeContext",
+            "MCP",
+            "fidelidad-mastra",
+            "mastra/",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_structural_backlog_specs_are_materialized(self):
+        files = (
+            ROOT / "runtime" / "multiagente-spec.md",
+            ROOT / "ontology" / "procesos-spec.md",
+            ROOT / "ontology" / "risk-register-spec.md",
+        )
+        required_terms = {
+            "multiagente-spec.md": ("sheaf", "coreografia", "handoff", "ACP"),
+            "procesos-spec.md": ("migrate", "validate", "transmute", "index"),
+            "risk-register-spec.md": ("Kleisli", "risk_register", "qa-spec", "residual_sigma_floor"),
+        }
+        for path in files:
+            self.assertTrue(path.exists(), str(path))
+            content = path.read_text(encoding="utf-8")
+            for term in required_terms[path.name]:
+                self.assertIn(term, content, msg=f"{path.name} missing {term}")
 
     def test_specs_declare_manifest_kind_taxonomy(self):
         governance = (ROOT / "governance" / "gobernanza.md").read_text(encoding="utf-8")

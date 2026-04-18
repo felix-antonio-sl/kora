@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion"
-version: "4.3.0"
+    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5"
+version: "4.4.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -16,10 +16,11 @@ relations:
   cites:
     - "urn:kora:kb:md-spec"
     - "urn:kora:kb:harness-spec"
+    - "urn:kora:kb:qa-spec"
     - "urn:kora:kb:autoria-spec"
 ---
 
-# KORA/Gobernanza v4.3.0
+# KORA/Gobernanza v4.4.0
 
 ## 1. Definicion
 
@@ -70,7 +71,7 @@ Corolarios:
 Cuando dos reglas parezcan contradecirse, prevalece esta jerarquia:
 
 1. `gobernanza.md` — constitucion.
-2. `harness-spec.md` — ontologia PMI × LFS.
+2. specs ontologicas (`harness-spec.md`, `qa-spec.md`).
 3. `md-spec.md` — formato base KORA/MD y perfil prescriptivo de specs.
 4. specs canonicas de serializacion (`autoria-spec`, `knowledge-spec`) y de runtime (`runtime-spec-md`, `transmutation-spec`, runtime-extensions).
 5. extensiones de namespace.
@@ -84,9 +85,9 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
-| **Ontologia** | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec` |
+| **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec` |
 | **Serializacion** | Como se *escribe* el artefacto (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
-| **Runtime** | Como se *ejecuta* en un target concreto | `runtime-spec-md`, `transmutation-spec`, runtime-extensions |
+| **Runtime** | Como se *ejecuta* en un target concreto y como compone multiagente | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
 
 **Principio**: KORA IR canoniza **ontologia** (PMI × LFS). Las
@@ -98,6 +99,9 @@ proyectadas*. La distribucion es *meta-encaje*.
 **Capa ontologica**:
 
 - `harness-spec.md` — **constitucion ontologica** (espacio PMI × LFS).
+- `qa-spec.md` — semantica enriquecida de quality attributes y `qa_budget`.
+- `procesos-spec.md` — procesos del toolchain como funtores declarados.
+- `risk-register-spec.md` — registro de riesgo como composicion Kleisli.
 
 **Capa de serializacion**:
 
@@ -108,8 +112,9 @@ proyectadas*. La distribucion es *meta-encaje*.
 **Capa de runtime**:
 
 - `runtime-spec-md.md` — contrato generico.
+- `multiagente-spec.md` — ley de coreografia multiagente y handoffs.
 - `transmutation-spec.md` — leyes functoriales de proyeccion IR → runtime.
-- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md` — proyecciones a runtimes concretos.
+- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md`, `mastra-runtime-extension.md` — proyecciones a runtimes concretos.
 
 ### 3.3 Ruptura con formatos anteriores
 
@@ -125,10 +130,12 @@ Entre specs del mismo nivel prevalece la más especifica para el objeto que
 gobierna:
 
 - `harness-spec` para vector ontologico PMI × LFS.
+- `qa-spec` para quality attributes, floors derivados de `Σ` y `qa_budget`.
 - `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
 - `autoria-spec` para shape de todo artefacto agentico productivo.
 - `knowledge-spec` para tejido relacional y pipeline de conocimiento.
 - `transmutation-spec` para leyes de proyeccion IR → runtime.
+- `multiagente-spec` para coherencia de protocolos distribuidos y handoffs.
 - `runtime-spec-md` + extensions para encaje en runtime concreto.
 
 ## 4. Identidad y fuente de verdad
@@ -137,7 +144,8 @@ Todo objeto KORA **DEBE** tener una fuente primaria:
 
 - artefacto agentico productivo: `AGENT.md` (cuando `forma_material ∈ {subagente, agente-propiamente-tal, agente-plataforma}`) o `SKILL.md` (cuando `forma_material = habilidad`), conforme a `autoria-spec`.
 - artefacto de conocimiento: archivo KORA/MD conforme a `md-spec` + `knowledge-spec`.
-- spec: archivo bajo `specs/` conforme a `md-spec` perfil `spec` (§5.6.2).
+- spec: archivo bajo `governance/`, `ontology/`, `serialization/` o `runtime/`
+  conforme a `md-spec` perfil `spec`.
 - output target: artefacto derivado en `{workspace}/_BUILD/{target}/`, regenerable desde la fuente primaria.
 
 ### 4.1 Regla de mirrors y outputs derivados
@@ -217,7 +225,7 @@ objeto que la anterior no pudo comprimir.
 | Ola | Estado | Perimetro | Deuda residual |
 |-----|--------|-----------|-----------------|
 | ola-1 | cerrada (2026-04-18) | 7 workspaces meta-kora/dev + toolchain a-autoria + atomize acceptance gate | fidelidad-agentskills; coalgebra-conformance; multiagente; 21 agentes INBOX; 7 skills INBOX |
-| ola-2 | abierta | fidelidad-agentskills + coalgebra-conformance + batch-promote + dedup staging (ejecutado 2026-04-18) | qa_budget enriched; multiagente-spec; wrapper frontier runtimes |
+| ola-2 | cerrada (2026-04-19) | fidelidad-agentskills + coalgebra-conformance + batch-promote + dedup staging + H6/H5/H2/H13/H23/H7 | H9, H17, H20, H22 |
 
 Esta tabla es la vista materializada del morfismo `Ola_k -> Ola_{k+1}`;
 actualizarla es parte de cerrar una ola.
@@ -232,7 +240,7 @@ Reglas:
 1. Una extension **DEBE** depender de una spec base o canonica.
 2. Una extension **PUEDE** estrechar reglas.
 3. Una extension **NO DEBE** relajar el canon por omision.
-4. La extension vive en nivel 5 de precedencia (§3 lista jerarquica) aunque resida dentro de `specs/`.
+4. La extension vive en nivel 5 de precedencia (§3 lista jerarquica) aunque resida dentro de `runtime/`, `ontology/`, `serialization/` o `governance/`.
 
 ## 7. Enforcement
 
@@ -275,7 +283,7 @@ Checks minimos:
 
 ## 10. Migracion
 
-Contrato vigente v4.3:
+Contrato vigente v4.4:
 
 - KORA unifica authoring en `autoria-spec`.
 - `agentfile-spec` y `skill-overlay-spec` fueron retiradas — absorbidas por `autoria-spec`.

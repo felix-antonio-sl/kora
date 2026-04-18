@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "contrato minimo de runtime para el sistema moderno; v3.7 agrega §13 Compatibilidad con outputs antiguos para materializar la absorcion declarada en gobernanza §3.2"
-version: "3.7.0"
+    source: "contrato minimo de runtime para el sistema moderno; v3.7 agrega §13 Compatibilidad con outputs antiguos para materializar la absorcion declarada en gobernanza §3.2; v3.8 incorpora multiagente-spec y el target Mastra"
+version: "3.8.0"
 status: publicado
 tags: [spec, runtime, deployment, equivalence]
 lang: es
@@ -15,16 +15,18 @@ relations:
     - "urn:kora:kb:gobernanza"
     - "urn:kora:kb:autoria-spec"
     - "urn:kora:kb:harness-spec"
+    - "urn:kora:kb:qa-spec"
+    - "urn:kora:kb:multiagente-spec"
     - "urn:kora:kb:transmutation-spec"
 ---
 
-# KORA/Runtime-Spec v3.7.0
+# KORA/Runtime-Spec v3.8.0
 
 ## 1. Definicion
 
 `runtime-spec` gobierna solo invariantes runtime: equivalencia observable,
-enforcement fuera del prompt, routing, budget y frontera entre fuente y estado
-operativo.
+enforcement fuera del prompt, routing, `qa_budget` proyectado, coreografia
+multiagente proyectada y frontera entre fuente y estado operativo.
 
 No gobierna el IR del artefacto; eso pertenece a `autoria-spec`.
 
@@ -88,8 +90,17 @@ el runtime aplica la decision final fuera del texto.
 ## 8. Fallback chains y budget
 
 1. Los budgets se aplican fuera del prompt.
-2. Un fallback **PUEDE** degradar calidad.
-3. Un fallback **NO DEBE** cambiar dominio o ley.
+2. Cuando un artefacto declara `artefacto.contexto.qa_budget`, el runtime
+   **DEBE** interpretarlo conforme a `qa-spec`; no se permiten semanticas
+   runtime-ad-hoc para los mismos nombres.
+3. Un runtime **PUEDE** estrechar budgets para proteger seguridad o capacidad
+   del target.
+4. Un fallback **PUEDE** degradar calidad.
+5. Un fallback **NO DEBE** cruzar silenciosamente el piso duro derivado de `Σ`
+   o de `qa_budget.sigma_min`.
+6. Un fallback **NO DEBE** cambiar dominio o ley.
+7. Si el fallback ocurre dentro de una corrida multiagente, **DEBE** preservar
+   `protocol_id`, `session_id` y budget vigente conforme a `multiagente-spec`.
 
 ## 9. Drift
 

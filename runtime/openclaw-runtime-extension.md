@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "OpenAI"
     created_at: "2026-03-23"
-    source: "runtime-spec-md v3.7.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas; v1.1.0 alinea con transmutation-spec v1.0 y harness-spec v1.0 — incorpora matriz de preservacion por eje, dominio de soporte, ACP como meta-runtime"
-version: "1.1.0"
+    source: "runtime-spec-md v3.8.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas; v1.1.0 alinea con transmutation-spec v1.0 y harness-spec v1.0 — incorpora matriz de preservacion por eje, dominio de soporte, ACP como meta-runtime; v1.2.0 se ancla a multiagente-spec como ley de coreografia"
+version: "1.2.0"
 status: publicado
 tags: [spec, runtime, openclaw, extension, transmutacion, deploy, acp]
 lang: es
@@ -20,12 +20,13 @@ relations:
   depends:
     - "urn:kora:kb:runtime-spec-md"
     - "urn:kora:kb:transmutation-spec"
+    - "urn:kora:kb:multiagente-spec"
   cites:
     - "urn:kora:kb:harness-spec"
     - "urn:kora:kb:gobernanza"
 ---
 
-# AGENGAI/OpenClaw-Runtime-Extension v1.1.0
+# AGENGAI/OpenClaw-Runtime-Extension v1.2.0
 
 ## 1. Definicion
 
@@ -50,7 +51,7 @@ A diferencia de Claude Code, Codex y Gemini — que son runtimes individuales
 15 backends permitidos: `claude, codex, copilot, cursor, droid, gemini,
 iflow, kilocode, kimi, kiro, openclaw, opencode, pi, qwen, ...`.
 
-Esto lo hace soportar el **dominio mas amplio** de los 4 runtimes target,
+Esto lo hace soportar el **dominio mas amplio** de los 5 runtimes target,
 incluyendo el unico soporte nativo a **arnés Servicio** (Μ=3 ambiental,
 always-on).
 
@@ -65,7 +66,7 @@ always-on).
 
 ## 3. Matriz de preservacion por eje
 
-OpenClaw soporta el dominio mas amplio de los 4 runtimes target.
+OpenClaw soporta el dominio mas amplio de los 5 runtimes target.
 
 ### 3.1 Eje Π (plan)
 
@@ -236,6 +237,10 @@ Claude, Codex, Gemini, Pi, o cualquier backend ACP — OpenClaw orquesta.
 fibra ACP**. Artefactos que requieren multi-backend inherentemente
 (p. ej. que delegan tareas creativas a Claude y tareas de codigo a Codex)
 viven nativamente en OpenClaw.
+
+La validez de esos handoffs ya no queda implicita: desde `multiagente-spec
+v1.0.0`, ACP debe leerse como realizacion de una coreografia con `protocol_id`,
+`session_id` y budget propagados.
 
 ## 9. Dominio de invocacion
 

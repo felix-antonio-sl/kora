@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-17"
-    source: "ICAS-BoK corpus-categorico-arquitecto-sistemas-categorial-agentico; HCAI Foundations (Xu 2025); Shneiderman 2D framework; Libkind-Spivak Poly; revisión de docs oficiales Claude Code, Codex, Gemini, OpenClaw"
-version: "1.0.0"
+    source: "ICAS-BoK corpus-categorico-arquitecto-sistemas-categorial-agentico; HCAI Foundations (Xu 2025); Shneiderman 2D framework; Libkind-Spivak Poly; revisión de docs oficiales Claude Code, Codex, Gemini, OpenClaw y Mastra"
+version: "1.1.0"
 status: publicado
 tags: [spec, ontologia, arnés, pmi-lfs, agentico, hcai, constitucion]
 lang: es
@@ -15,13 +15,17 @@ relations:
     - "urn:kora:kb:gobernanza"
     - "urn:kora:kb:md-spec"
   cites:
+    - "urn:kora:kb:qa-spec"
+    - "urn:kora:kb:procesos-spec"
+    - "urn:kora:kb:risk-register-spec"
+    - "urn:kora:kb:multiagente-spec"
     - "urn:fxsl:kb:icas-agencia"
     - "urn:fxsl:kb:icas-efectos"
     - "urn:fxsl:kb:icas-interaccion"
     - "urn:fxsl:kb:icas-escala"
 ---
 
-# KORA/Harness-Spec v1.0.0
+# KORA/Harness-Spec v1.1.0
 
 ## 1. Definicion y propósito
 
@@ -143,6 +147,11 @@ Vector de 5 componentes con valores {0..3}:
 - `transparency` — explicabilidad de decisiones.
 - `accountability` — atribucion de responsabilidad.
 - `sustainability` — impacto ecologico y social.
+
+La vista canonica del IR mantiene `Σ` en la grilla discreta `{0..3}^5` por
+ergonomia de authoring. La interpretacion continua de ese vector como objeto
+enriched en `[0,1]^5`, junto al puente hacia `qa_budget`, se gobierna por
+`qa-spec`.
 
 ### 3.3 Vector ontologico
 
@@ -266,6 +275,10 @@ Cada eje tiene raiz directa en documentos del corpus referencial:
 Esta alineacion garantiza que el marco no es invencion: es **consolidacion**
 de estructura categorica ya presente en el corpus + HCAI.
 
+`qa-spec` materializa esta fila como contrato operativo: `harness-spec`
+declara el vector discreto y sus leyes; `qa-spec` fija la moneda enriched y los
+cambios de base autorizados.
+
 ## 7. Invariantes del IR canonico
 
 1. **Canonicidad ontologica**: el vector `harness_vector` es la
@@ -330,7 +343,10 @@ campos derivan del vector ontologico). Ver `autoria-spec §4, §5, §6`.
 Estas specs definen functores `T_R: Espacio → Ideal_R`:
 
 - `runtime-spec-md`: contrato generico.
-- `claude-code-runtime-extension`, `codex-runtime-extension`, `gemini-runtime-extension`, `openclaw-runtime-extension`: proyecciones a runtimes concretos.
+- `procesos-spec`: functorialidad declarada del toolchain.
+- `risk-register-spec`: riesgo como efecto acumulativo sobre el artefacto.
+- `multiagente-spec`: coherencia local-global de protocolos distribuidos.
+- `claude-code-runtime-extension`, `codex-runtime-extension`, `gemini-runtime-extension`, `openclaw-runtime-extension`, `mastra-runtime-extension`: proyecciones a runtimes concretos.
 
 Cada runtime-extension declara:
 - Subconjunto del espacio ontologico que soporta.
@@ -346,6 +362,7 @@ en `_transmutation.yml`.
 ### 10.4 Specs de gobernanza y base
 
 - `gobernanza`: precedencia, regimenes URN, identidad.
+- `qa-spec`: semantica enriched de `Σ` y budgets de calidad.
 - `md-spec`: formato KORA/MD usado por todas las serializaciones.
 - `knowledge-spec`: tejido relacional de conocimiento consumible.
 

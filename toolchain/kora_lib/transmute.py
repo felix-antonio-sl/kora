@@ -62,6 +62,14 @@ PRESERVATION_MATRIX = {
         "lambda":  {0: (0, "full"), 1: (1, "full"), 2: (1, "partial"), 3: (None, "none")},
         "phi":     {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (2, "partial"), 4: (None, "none")},
     },
+    "mastra": {
+        "domain": {"pi": [0,1,2,3], "mu": [0,1,2,3], "xi": [0,1,2,3,4], "lambda": [0,1,2], "phi": [0,1,2,3], "sigma_max": [3,2,3,2,1]},
+        "pi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "workflows y loops existen, pero el fixed-point completo depende del wrapper aplicativo")},
+        "mu":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "persistencia y resume existen; la daemonidad depende del host")},
+        "xi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "full"), 4: (4, "partial", "agent networks y workflows aproximan la operad, pero la topologia dinamica completa queda en la app")},
+        "lambda":  {0: (0, "full"), 1: (1, "full"), 2: (2, "partial", "ecosystem via MCP y auth context; fronteras organizacionales dependen del deploy"), 3: (None, "none", "society-in-the-loop no soportado como primitive")},
+        "phi":     {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "human-in-the-loop y runtime context existen, pero la cognicion hibrida completa es aplicativo"), 4: (None, "none", "co-evolutivo no soportado")},
+    },
     "openclaw": {
         "domain": {"pi": [0,1,2,3], "mu": [0,1,2,3], "xi": [0,1,2,3,4], "lambda": [0,1,2,3], "phi": [0,1,2,3], "sigma_max": [3,3,3,3,2]},
         "pi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "full")},
@@ -77,6 +85,7 @@ TARGET_ADAPTERS = {
     "openclaw": "transmute-openclaw",
     "codex": "transmute-codex",
     "gemini": "transmute-gemini",
+    "mastra": "transmute-mastra",
     "agentskills": None,  # proyeccion directa sin LLM (byte-identical)
 }
 
@@ -570,7 +579,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     (SKILL.md en SKILLS/{ns}/{name}/ con forma_material: habilidad). La
     proyeccion es byte-identical (sin LLM) segun autoria-spec §5.5.
 
-    Para otros targets (claude-code, codex, gemini, openclaw), el artefacto
+    Para otros targets (claude-code, codex, gemini, mastra, openclaw), el artefacto
     es un AGENT.md y la compilacion final requiere un adapter skill o LLM.
     """
     if target not in SUPPORTED_TARGETS:

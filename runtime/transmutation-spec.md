@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-17"
-    source: "harness-spec v1.0 + runtime-spec-md v3.7 + ICAS corpus 02-preservacion, 06-adjunciones, 09-efectos"
-version: "1.0.0"
+    source: "harness-spec v1.1 + runtime-spec-md v3.8 + ICAS corpus 02-preservacion, 06-adjunciones, 09-efectos"
+version: "1.1.0"
 status: publicado
 tags: [spec, transmutacion, functor, proyeccion, preservacion, bisimulacion, runtime]
 lang: es
@@ -16,17 +16,18 @@ relations:
     - "urn:kora:kb:runtime-spec-md"
   cites:
     - "urn:kora:kb:autoria-spec"
+    - "urn:kora:kb:multiagente-spec"
     - "urn:fxsl:kb:icas-preservacion"
     - "urn:fxsl:kb:icas-efectos"
 ---
 
-# KORA/Transmutation-Spec v1.0.0
+# KORA/Transmutation-Spec v1.1.0
 
 ## 1. Definicion
 
 `transmutation-spec` define las **leyes functoriales de la transmutacion**
 desde el IR canonico de KORA (espacio PMI × LFS de `harness-spec`) hacia
-runtimes concretos (Claude Code, Codex, OpenClaw, Gemini, agentskills.io).
+runtimes concretos (Claude Code, Codex, OpenClaw, Gemini, Mastra, agentskills.io).
 
 ### 1.1 Objetivo
 
@@ -74,7 +75,7 @@ Cada runtime `R` tiene:
   esta definido.
 
 Los runtime-extensions (`openclaw-runtime-extension`,
-`claude-code-runtime-extension`, etc.) declaran `D_R` e
+`claude-code-runtime-extension`, `mastra-runtime-extension`, etc.) declaran `D_R` e
 `Im(T_R)` por eje.
 
 ### 2.3 Adjuncion inversa (cuando existe)

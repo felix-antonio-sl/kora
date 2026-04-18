@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-17"
-    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material. v1.1 agrega shape coalgebraico opcional (§3.5)."
-version: "1.1.0"
+    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material. v1.1 agrega shape coalgebraico opcional (§3.5). v1.2 agrega risk_register y soporte declarativo para target Mastra."
+version: "1.2.0"
 status: publicado
 tags: [autoria, artefacto-agentico, serializacion, proyeccion, unificada]
 lang: es
@@ -18,6 +18,7 @@ relations:
     - "urn:kora:kb:harness-spec"
   cites:
     - "urn:kora:kb:md-spec"
+    - "urn:kora:kb:qa-spec"
     - "urn:kora:kb:runtime-spec-md"
     - "urn:kora:kb:transmutation-spec"
   supersedes:
@@ -25,7 +26,7 @@ relations:
     - "urn:kora:kb:skill-overlay-spec"
 ---
 
-# Especificacion de Autoria de Artefactos Agenticos v1.1.0
+# Especificacion de Autoria de Artefactos Agenticos v1.2.0
 
 ## 1. Definicion
 
@@ -203,7 +204,7 @@ dimensiones. Cuales son obligatorias y cuales no depende de
 | `perfil` | descripcion operativa, dominio, disparadores, salidas, narrativa | descriptivo (no proyecta) |
 | `plan` | estado inicial, estado terminal, estados (FSM) | Π |
 | `interfaz` | herramientas, permisos, protocolos | Ξ |
-| `contexto` | identidad, perfil del operador, configuracion de memoria, pistas runtime | Μ, Φ, knowledge refs |
+| `contexto` | identidad, perfil del operador, configuracion de memoria, `qa_budget`, `risk_register`, pistas runtime | Μ, Φ, knowledge refs, budgets, riesgos |
 | `composicion` | sub-agentes, rutas doradas, cortacircuitos, ruteo de eventos | Ξ=4, Λ si delega |
 | `invariantes` | reglas duras, invariantes coinductivas, guardrails, compromisos eticos | Σ + safety estructural derivable |
 
@@ -287,7 +288,7 @@ artefacto:
           tipo: texto-estructurado
       invariantes_io:
         - "respuesta.urns_referenciados ⊆ conocimiento_permitido"
-        - "respuesta.tiempo_generacion <= contexto.qa_budget.latency"
+        - "respuesta.tiempo_generacion_ms <= contexto.qa_budget.latency.max_ms"
 ```
 
 Dos artefactos con el mismo `api_observable` son **indistinguibles por
@@ -296,6 +297,69 @@ narrativa del perfil), no en contrato externo.
 
 Campo opcional en v1.1. Recomendado cuando el artefacto participa en
 composicion con otros (`componible_con` no vacio).
+
+#### 3.5.2 Budget de calidad (opcional)
+
+Un artefacto **PUEDE** declarar `artefacto.contexto.qa_budget` para fijar pisos
+y cotas operativas sobre calidad. Este campo es **serializacion**, no ontologia:
+su semantica la gobierna `qa-spec`, no `autoria-spec`.
+
+Forma canonica recomendada:
+
+```yaml
+artefacto:
+  contexto:
+    qa_budget:
+      sigma_min: [0.67, 0.33, 0.67, 0.67, 0.33]
+      latency:
+        max_ms: 2000
+      availability:
+        min: 0.99
+        window: "30d"
+      mttr:
+        max_s: 600
+      cost:
+        max_usd_per_turn: 0.05
+```
+
+Reglas:
+
+1. `qa_budget` **PUEDE** omitirse en cualquier forma material.
+2. Si se declara, **DEBERIA** usar la forma canonica anterior.
+3. `qa_budget` **NO DEBE** contradecir `extensions.kora.vector_ontologico.sigma`;
+   solo puede igualarlo o estrecharlo segun `qa-spec`.
+
+#### 3.5.3 Risk register (opcional)
+
+Un artefacto **PUEDE** declarar `artefacto.contexto.risk_register` para
+materializar riesgos, mitigaciones y riesgo residual. Este campo es
+**serializacion**; su semantica la gobierna `risk-register-spec`.
+
+Forma canonica recomendada:
+
+```yaml
+artefacto:
+  contexto:
+    risk_register:
+      - risk_id: qa-fallback-01
+        category: quality
+        source: fallback-chain
+        trigger: "modelo primario indisponible"
+        likelihood: 0.35
+        impact: 0.40
+        sigma_exposure: [0.0, 0.0, 0.1, 0.2, 0.0]
+        mitigation: "forzar fallback con sigma_min intacto"
+        residual_sigma_floor: [0.67, 0.33, 0.67, 0.67, 0.33]
+        owner: runtime
+        status: mitigated
+```
+
+Reglas:
+
+1. `risk_register` **PUEDE** omitirse en cualquier forma material.
+2. Si se declara, cada entrada **DEBERIA** ajustarse a la forma anterior.
+3. `risk_register` **NO DEBE** reemplazar `compromisos_eticos`; documenta
+   amenaza y mitigacion, no compromiso normativo.
 
 ## 4. Los tres atlas y el vector ontologico
 
@@ -570,6 +634,8 @@ validar.
 | `artefacto.plan` | condicional (Π≥1) | requiere | requiere | requiere |
 | `artefacto.interfaz` | requiere | requiere | requiere | requiere |
 | `artefacto.contexto.memoria_config` | prohibe (Μ≤1) | condicional (Μ≥2) | requiere si Μ≥2 | requiere (Μ=3) |
+| `artefacto.contexto.qa_budget` | opcional | opcional | opcional | opcional |
+| `artefacto.contexto.risk_register` | opcional | opcional | opcional | opcional |
 | `artefacto.contexto.agente_padre` | no aplica | opcional | no aplica | no aplica |
 | `artefacto.composicion` | prohibe | prohibe | condicional (Ξ=4) | opcional |
 | `artefacto.invariantes.compromisos_eticos` | opcional | opcional | requiere | requiere |
@@ -837,6 +903,7 @@ Checks canonicos sobre artefactos conformes a esta spec:
 | `recursos-documentados` | Si hay subdirs, body tiene `## Recursos`. | media | lint | `habilidad` |
 | `progressive-disclosure` | Body ≤ 500 lineas. | media | lint | `habilidad` |
 | `fidelidad-agentskills` | Transmute a agentskills.io produce paquete valido. | alta | runtime | `habilidad` |
+| `fidelidad-mastra` | Dry-run a Mastra cae en dominio declarado y conserva perdida explicita. | alta | runtime | `subagente`, `agente-propiamente-tal`, `agente-plataforma` |
 | `memoria-declarada` | Si Μ≥2, `contexto.memoria_config` presente. | media | lint | `subagente` y superiores |
 | `compromisos-eticos` | `invariantes.compromisos_eticos` declarado. | alta | lint | `agente-propiamente-tal`, `agente-plataforma` |
 | `extension-runtime-plataforma` | Al menos un `extensions.{plataforma}` declarado. | alta | schema | `agente-plataforma` |
@@ -865,6 +932,7 @@ Esta tabla es la fuente canonica:
 | `nivel_prescripcion` | enum | `alto`, `medio`, `bajo` (solo `habilidad`). |
 | `conocimiento_permitido` | lista | URNs de KB referenciables. |
 | `componible_con` | lista | URNs de artefactos componibles. |
+| `risk_register` | lista | Ledger opcional de riesgos tipados y mitigaciones. |
 
 ### 15.2 Shape del artefacto
 
@@ -923,7 +991,7 @@ extensions:
       arnes_categorico: utilidad
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini, openclaw]
+    entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
     nivel_prescripcion: medio
     conocimiento_permitido:
       - "urn:kora:kb:md-spec"

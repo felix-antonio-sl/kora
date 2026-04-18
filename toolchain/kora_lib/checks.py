@@ -1064,6 +1064,54 @@ def _check_fidelidad_agentskills(path_filter=None):
     return diags
 
 
+def _check_fidelidad_mastra(path_filter=None):
+    """Verifica que agentes productivos caen dentro del dominio Mastra.
+
+    H23 cierra un target adicional de runtime. A diferencia de agentskills, la
+    proyeccion actual es blueprint-first y no byte-identical, por lo que este
+    check valida dominio + perdida declarada sin exigir round-trip.
+    """
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, KORA_ROOT
+    from .transmute import _get_harness_vector, _project_vector
+
+    diags = []
+    if not AGENTS_ROOT.exists():
+        return diags
+
+    for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+        if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+            continue
+        for agent_dir in sorted(ns_dir.iterdir()):
+            if not agent_dir.is_dir() or agent_dir.name.startswith((".", "_")):
+                continue
+            agent_md = agent_dir / "AGENT.md"
+            if not agent_md.is_file():
+                continue
+
+            fm, err = load_yaml_safe(agent_md)
+            if err or not isinstance(fm, dict):
+                continue
+            rel = str(agent_md.relative_to(KORA_ROOT))
+
+            try:
+                vector = _get_harness_vector(fm)
+                _project_vector(vector, "mastra")
+            except ValueError as exc:
+                diags.append(Diagnostic(
+                    check_id="fidelidad-mastra",
+                    severity="high",
+                    scope="workspace",
+                    path=rel,
+                    message=f"Proyeccion a Mastra falla: {exc}",
+                    fix_hint="Ajusta vector_ontologico o quita mastra del dominio esperado",
+                ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 def _check_coalgebra_conformance(path_filter=None):
     """Verifica termination del FSM declarado en artefacto.plan.fsm (autoria-spec v1.1 §3.5).
 
@@ -1352,6 +1400,13 @@ def _register_builtins():
               scope="artifact", severity="high", enforcement="eval",
               spec_ref="autoria-spec §5.5", depends=("catalog-exists",), phase="verify"),
         _check_fidelidad_agentskills,
+    )
+    register_check(
+        Check("fidelidad-mastra",
+              "Agentes productivos proyectan a Mastra dentro del dominio y con perdida declarada",
+              scope="workspace", severity="high", enforcement="eval",
+              spec_ref="mastra-runtime-extension §3, §8", depends=("catalog-exists",), phase="verify"),
+        _check_fidelidad_mastra,
     )
 
 
