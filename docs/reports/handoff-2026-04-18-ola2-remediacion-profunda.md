@@ -89,7 +89,7 @@ Ocho frentes post-auditoría categorial detallada:
 - **H3 — Shape coalgebraico en los 7 productivos**: `plan.fsm` +
   `interfaz.polinomio` + `sub_coalgebra_segura` derivados mecánicamente
   desde el shape existente. Los 7 pasan `coalgebra-conformance`.
-  Script one-shot en `scripts/migrate_coalgebra.py`.
+  Script one-shot en `toolchain/migrate_coalgebra.py`.
 - **H14 — `kora roundtrip-check`**: verifica dualidad
   `T_agentskills ∘ Lift_agentskills ≈ id` por fingerprint (name,
   description, body semántico, file hashes normalizados).
@@ -100,26 +100,26 @@ Ocho frentes post-auditoría categorial detallada:
 ## Perímetro final de los dos commits
 
 Commit `2812c09`:
-- `AGENTS/_FRAGUA/INBOX/*` (dedup deletes + _perfiles relocation)
-- `SKILLS/_TALLER/INBOX/*` (dedup deletes)
-- `scripts/kora_lib/{checks,cli,kb_graph,promote,transmute}.py`
+- `artifacts/agents/_FRAGUA/INBOX/*` (dedup deletes + _perfiles relocation)
+- `artifacts/skills/_TALLER/INBOX/*` (dedup deletes)
+- `toolchain/kora_lib/{checks,cli,kb_graph,promote,transmute}.py`
 - `specs/{autoria-spec,gobernanza}.md`
 
 Commit `2a38143`:
-- `AGENTS/{kora,gn}/*/AGENT.md` (7 productivos con shape coalgebraico + legacy purgado)
-- `scripts/kora_lib/{checks,cli,config,transmute}.py`
-- `scripts/migrate_coalgebra.py` (nuevo)
+- `artifacts/agents/{kora,gn}/*/AGENT.md` (7 productivos con shape coalgebraico + legacy purgado)
+- `toolchain/kora_lib/{checks,cli,config,transmute}.py`
+- `toolchain/migrate_coalgebra.py` (nuevo)
 - `specs/{autoria-spec,md-spec,agentskills-runtime-extension}.md`
 - `tests/{test_artifacts,test_operating_core_scenarios}.py`
 
 ## Verificación ejecutada
 
-- `python3 scripts/kora index` → 603 artifacts indexados.
-- `python3 scripts/kora check --strict` → **15/15 verde** (checks_run=15, passed=15, failed=0).
-- `python3 scripts/kora roundtrip-check --agent kora/atomize` → OK.
+- `python3 toolchain/kora index` → 603 artifacts indexados.
+- `python3 toolchain/kora check --strict` → **15/15 verde** (checks_run=15, passed=15, failed=0).
+- `python3 toolchain/kora roundtrip-check --agent kora/atomize` → OK.
 - `python3 -m unittest discover -s tests` → **295 tests OK** (skipped=2 condicional).
-- `python3 scripts/kora sync-docs` → docs regeneradas.
-- `python3 scripts/kora kb-graph --json --orphans` → clasificación
+- `python3 toolchain/kora sync-docs` → docs regeneradas.
+- `python3 toolchain/kora kb-graph --json --orphans` → clasificación
   emitida (318 huérfanos reales documentados).
 
 ## Estado de los 7 productivos después de la remediación
@@ -185,9 +185,9 @@ Para retomar sin recargar contexto:
 
 ```bash
 cd /home/felix/kora
-python3 scripts/kora check --strict   # debe estar 15/15 verde
+python3 toolchain/kora check --strict   # debe estar 15/15 verde
 python3 -m unittest discover -s tests # debe estar 295 OK
-python3 scripts/kora kb-graph --orphans # para ver 318 huérfanos reales
+python3 toolchain/kora kb-graph --orphans # para ver 318 huérfanos reales
 ```
 
 Si cualquiera de estos no sale como se declara aquí, **investigar drift antes de tocar**.

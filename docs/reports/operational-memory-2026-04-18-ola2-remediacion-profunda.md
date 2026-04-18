@@ -27,13 +27,13 @@ profunda). Comandos, numéricos, invariantes verificables.
 
 | Métrica | Valor | Comando que la verifica |
 |---------|-------|--------------------------|
-| Specs constitucionales | 11 | `ls specs/*.md \| wc -l` |
-| Checks registry | 15 | `python3 scripts/kora check --list` |
+| Specs constitucionales | 11 | `ls governance ontology serialization runtime \| grep "\\.md$" \| wc -l` |
+| Checks registry | 15 | `python3 toolchain/kora check --list` |
 | Tests suite | 295 (skipped=2) | `python3 -m unittest discover -s tests` |
-| Workspaces productivos | 7 | `ls AGENTS/*/*/ \| grep -v _FRAGUA \| wc -l` |
-| Habilidades productivas | 1 (`kora/atomize`) | `ls SKILLS/*/*/SKILL.md` |
-| Agentes en staging (INBOX) | 21 | `ls AGENTS/_FRAGUA/INBOX/ \| wc -l` |
-| Skills en staging (INBOX) | 7 | `ls SKILLS/_TALLER/INBOX/ \| wc -l` |
+| Workspaces productivos | 7 | `ls artifacts/agents/*/*/ \| grep -v _FRAGUA \| wc -l` |
+| Habilidades productivas | 1 (`kora/atomize`) | `ls artifacts/skills/*/*/SKILL.md` |
+| Agentes en staging (INBOX) | 21 | `ls artifacts/agents/_FRAGUA/INBOX/ \| wc -l` |
+| Skills en staging (INBOX) | 7 | `ls artifacts/skills/_TALLER/INBOX/ \| wc -l` |
 | Knowledge nodos kb-graph | 505 | `kora kb-graph` |
 | Knowledge edges | 271 | `kora kb-graph` |
 | Huérfanos reales kb | 318 | `kora kb-graph --orphans` |
@@ -63,38 +63,38 @@ Por phase:
 
 ```bash
 # Indexación
-python3 scripts/kora index
-python3 scripts/kora resolve "urn:kora:kb:harness-spec"
+python3 toolchain/kora index
+python3 toolchain/kora resolve "urn:kora:kb:harness-spec"
 
 # Validación
-python3 scripts/kora check --strict
-python3 scripts/kora health --strict
-python3 scripts/kora validate
+python3 toolchain/kora check --strict
+python3 toolchain/kora health --strict
+python3 toolchain/kora validate
 
 # Stats y grafo
-python3 scripts/kora stats --json
-python3 scripts/kora graph --json
-python3 scripts/kora kb-graph --json --orphans
+python3 toolchain/kora stats --json
+python3 toolchain/kora graph --json
+python3 toolchain/kora kb-graph --json --orphans
 
 # Migración
-python3 scripts/kora migrate --perfil a-autoria [--dry-run]
-python3 scripts/migrate_coalgebra.py [--dry-run]
+python3 toolchain/kora migrate --perfil a-autoria [--dry-run]
+python3 toolchain/migrate_coalgebra.py [--dry-run]
 
 # Transmutación
-python3 scripts/kora transmute --target agentskills --agent kora/atomize
-python3 scripts/kora transmute --target claude-code --agent kora/curator
-python3 scripts/kora roundtrip-check --agent kora/atomize
+python3 toolchain/kora transmute --target agentskills --agent kora/atomize
+python3 toolchain/kora transmute --target claude-code --agent kora/curator
+python3 toolchain/kora roundtrip-check --agent kora/atomize
 
 # Ingesta inversa
-python3 scripts/kora ingest --from claude-code --file <path>
+python3 toolchain/kora ingest --from claude-code --file <path>
 
 # Lifecycle
-python3 scripts/kora promote <path>
-python3 scripts/kora promote --cohort <ns>
-python3 scripts/kora deprecate <path> [--supersedes URN] [--force] [--retire]
+python3 toolchain/kora promote <path>
+python3 toolchain/kora promote --cohort <ns>
+python3 toolchain/kora deprecate <path> [--supersedes URN] [--force] [--retire]
 
 # Docs
-python3 scripts/kora sync-docs
+python3 toolchain/kora sync-docs
 ```
 
 ## Invariantes duras
@@ -106,8 +106,8 @@ python3 scripts/kora sync-docs
    `USER.md`, `IDENTITY.md`, `AGENTS.md` (plural), `config.json` NO vuelven a
    productivos. Están en el set `AUTORIA_LEGACY_SCAFFOLDS`.
 4. **Cohort derivado**: `OPERATING_CORE_COHORTS` NO se hardcodea — se computa
-   desde `AGENTS/{ns}/{name}/AGENT.md` con status=activo.
-5. **Regenerables fuera del commit de código**: `catalog/catalog_master_kora.yml`,
+   desde `artifacts/agents/{ns}/{name}/AGENT.md` con status=activo.
+5. **Regenerables fuera del commit de código**: `docs/generated/catalog.yml`,
    `docs/generated/*`, `_BUILD/` no se commitean junto con cambios de código.
 6. **URN canónico agéntico**: `urn:{ns}:artefacto:{id}` para forma material
    `habilidad|subagente|agente-propiamente-tal|agente-plataforma`. Sin versión
@@ -153,7 +153,7 @@ Push pendiente a `origin/master` al momento de emitir este documento.
 ## Archivos nuevos emitidos
 
 - `specs/agentskills-runtime-extension.md` v1.0
-- `scripts/migrate_coalgebra.py` (one-shot migrator)
+- `toolchain/migrate_coalgebra.py` (one-shot migrator)
 - `docs/generated/kb-orphans.md` (reporte de clasificación)
 - `docs/reports/handoff-2026-04-18-ola2-remediacion-profunda.md`
 - `docs/reports/next-session-prompt-2026-04-18-ola2-remediacion-profunda.md`

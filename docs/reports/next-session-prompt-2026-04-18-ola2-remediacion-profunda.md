@@ -29,7 +29,7 @@ de palanca functorial.
 ## Prompt a pegar
 
 ```
-Encarnate en SKILLS/_TALLER/INBOX/arquitecto-categorico y opera sobre
+Encarnate en artifacts/skills/_TALLER/INBOX/arquitecto-categorico y opera sobre
 KORA (/home/felix/kora, rama master, actualizada al commit 2a38143 o
 posterior).
 
@@ -42,7 +42,7 @@ post-auditoría ICAS-BoK) están cerradas. Ver:
 
 Verificación mínima antes de tocar cualquier cosa:
 
-    python3 scripts/kora check --strict   # debe salir 15/15 verde
+    python3 toolchain/kora check --strict   # debe salir 15/15 verde
     python3 -m unittest discover -s tests # debe salir 295 OK
 
 Si alguno falla, diagnosticar drift antes de avanzar. No parchar
@@ -84,7 +84,7 @@ romanticismo por lo legacy.
 
 Primera pregunta al usuario: ¿qué frente arrancamos? ¿O prefiere un
 bloque distinto (p.ej., promover alguno de los 21 agentes en
-AGENTS/_FRAGUA/INBOX/ o los 7 skills en SKILLS/_TALLER/INBOX/ antes
+artifacts/agents/_FRAGUA/INBOX/ o los 7 skills en artifacts/skills/_TALLER/INBOX/ antes
 de deuda estructural)?
 ```
 

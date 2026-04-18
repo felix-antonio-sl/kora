@@ -11,14 +11,17 @@ No es un proyecto de aplicacion tradicional: el activo principal es la **consist
 entre conocimiento, specs, workspaces y toolchain** — y desde v4.2, la separacion
 estricta entre **ontologia**, **serializaciones**, **runtimes** y **distribucion**.
 
-## Arquitectura en 4 capas (gobernanza v4.2)
+## Arquitectura en 4 capas (gobernanza v4.3)
 
-| Capa | Qué gobierna | Specs |
-|------|--------------|-------|
-| **Ontologia** | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec` |
-| **Serializacion** | Como se *escribe* (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
-| **Runtime** | Como se *ejecuta* y *proyecta* | `runtime-spec-md`, `transmutation-spec`, runtime-extensions |
-| **Distribucion** | Como se *empaqueta* | `plugin.json`, `marketplace.json` (externas a KORA) |
+**Desde la reorg v5 (2026-04-18) las 4 capas son visibles en el filesystem.**
+
+| Capa | Directorio | Qué gobierna | Specs |
+|------|-----------|--------------|-------|
+| **Constitucion** | `governance/` | Reglas meta (precedencia, lifecycle, URN) | `gobernanza.md` |
+| **Ontologia** | `ontology/` | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec.md` |
+| **Serializacion** | `serialization/` | Como se *escribe* (shape unificado de authoring + schemas JSON) | `autoria-spec`, `md-spec`, `knowledge-spec`, `schemas/` |
+| **Runtime** | `runtime/` | Como se *ejecuta* y *proyecta* | `runtime-spec-md`, `transmutation-spec`, 5 runtime-extensions |
+| **Distribucion** | — (externa a KORA) | Como se *empaqueta* | `plugin.json`, `marketplace.json` |
 
 **Principio**: KORA IR canoniza ontologia. Las serializaciones son proyecciones de
 authoring. Los runtimes son fibras proyectadas con fidelidad declarada.
@@ -39,34 +42,39 @@ harness_vector:
 presentation: state-primary | action-primary
 ```
 
-Ver `specs/harness-spec.md` para definiciones formales completas + 3 atlas (arneses
+Ver `ontology/harness-spec.md` para definiciones formales completas + 3 atlas (arneses
 categoricos, formas materiales, metaforas HCAI Shneiderman).
 
-## Topologia del repo (pipeline descentralizado v8)
+## Topologia del repo (reorg v5, 2026-04-18)
 
-Cada tipo de artefacto tiene staging **dentro de su directorio principal**.
-`OPERATIONS/` fue eliminado.
+Las 4 capas constitucionales son directorios top-level. Los artefactos
+productivos y staging viven bajo `artifacts/`. Pipeline descentralizado
+v8 preservado.
 
 | Capa | Path | Rol | Git |
 |------|------|-----|-----|
-| Specs (constitucion) | `specs/` | 11 specs (gobernanza, harness, autoria, md-spec, knowledge, runtime-spec-md, transmutation, 4 runtime-extensions) | tracked |
-| Conocimiento productivo | `KNOWLEDGE/{ns}/...` | Artefactos KORA/MD publicados (11 ns) | tracked |
-| Staging knowledge | `KNOWLEDGE/_SCRIPTORIUM/{INBOX,REVIEW}/` | Material crudo + drafts | tracked |
-| Workspaces productivos | `AGENTS/{ns}/{name}/` | Agentes activos con `AGENT.md` unificado | tracked |
-| Staging agentes | `AGENTS/_FRAGUA/{INBOX,REVIEW}/` | Agentes en elaboracion | tracked |
-| Perfiles | `AGENTS/_FRAGUA/_perfiles/` | Specs de personalidad/input | tracked |
-| Skills portables | `SKILLS/{name}/` o `SKILLS/{ns}/{name}/` | Skills productivos | tracked |
-| Staging skills | `SKILLS/_TALLER/{INBOX,REVIEW}/` | Skills en elaboracion | tracked |
+| Constitucion | `governance/` | `gobernanza.md` | tracked |
+| Ontologia | `ontology/` | `harness-spec.md` | tracked |
+| Serializacion | `serialization/` | `autoria-spec.md`, `md-spec.md`, `knowledge-spec.md`, `schemas/` | tracked |
+| Runtime | `runtime/` | `runtime-spec-md`, `transmutation-spec`, 5 runtime-extensions | tracked |
+| Conocimiento productivo | `artifacts/knowledge/{ns}/...` | Artefactos KORA/MD publicados | tracked |
+| Staging knowledge | `artifacts/knowledge/_SCRIPTORIUM/{INBOX,REVIEW}/` | Material crudo + drafts | tracked |
+| Workspaces productivos | `artifacts/agents/{ns}/{name}/` | Agentes activos con `AGENT.md` | tracked |
+| Staging agentes | `artifacts/agents/_FRAGUA/{INBOX,REVIEW}/` | Agentes en elaboracion | tracked |
+| Perfiles | `artifacts/agents/_FRAGUA/_perfiles/` | Specs de personalidad/input | tracked |
+| Skills portables | `artifacts/skills/{ns}/{name}/` | Skills productivos | tracked |
+| Staging skills | `artifacts/skills/_TALLER/{INBOX,REVIEW}/` | Skills en elaboracion | tracked |
 | Outputs transmutacion | `{workspace}/_BUILD/{target}/` | Derivados per-workspace | gitignored |
-| Toolchain | `scripts/kora` | CLI Python | tracked |
-| Schemas | `schemas/` | JSON Schemas (kora-agentfile v2, config, etc.) | tracked |
+| Toolchain | `toolchain/kora` + `toolchain/kora_lib/` | CLI Python | tracked |
+| Tests | `tests/` | 295 tests | tracked |
+| Docs | `docs/generated/` + `docs/reports/` | Vistas materializadas + handoffs | parcial (generated gitignored si aplica) |
 
 Pipelines locales:
 
 ```
-KNOWLEDGE/_SCRIPTORIUM/INBOX/ → REVIEW/ → KNOWLEDGE/{ns}/...
-AGENTS/_FRAGUA/INBOX/         → REVIEW/ → AGENTS/{ns}/{name}/
-SKILLS/_TALLER/INBOX/         → REVIEW/ → SKILLS/{name}/
+artifacts/knowledge/_SCRIPTORIUM/INBOX/ → REVIEW/ → artifacts/knowledge/{ns}/...
+artifacts/agents/_FRAGUA/INBOX/         → REVIEW/ → artifacts/agents/{ns}/{name}/
+artifacts/skills/_TALLER/INBOX/         → REVIEW/ → artifacts/skills/{ns}/{name}/
 ```
 
 Los subdirs de `INBOX/` son **pre-categoriales**: no representan namespace KORA.
@@ -87,13 +95,13 @@ El namespace se asigna al promover a productivo.
 ## Source of Truth
 
 - El source of truth es el filesystem con manifests validos.
-- `catalog/catalog_master_kora.yml` es vista materializada de `kora index`. No autoritativa.
-- No escribas conteos a mano en docs. Usa `scripts/kora sync-docs`.
+- `docs/generated/catalog.yml` es vista materializada de `kora index`. No autoritativa.
+- No escribas conteos a mano en docs. Usa `toolchain/kora sync-docs`.
 - No tomes README antiguos como autoridad si contradicen la CLI o las specs vigentes.
 
 ## Precedencia de specs
 
-Segun `gobernanza v4.2 §3.1-3.4`:
+Segun `gobernanza v4.3 §3.1-3.4`:
 
 1. **`gobernanza.md`** (v4.2 — constitucion, 3 regimenes URN, 4 capas).
 2. **`harness-spec.md`** (v1.0 — ontologia canonica PMI × LFS).
@@ -115,8 +123,8 @@ El `_manifest.type` es ortogonal al URN.
 
 ## Formal Layer
 
-- La Formal Layer oficial es `KNOWLEDGE/kora/categorical-foundations/`.
-- `KNOWLEDGE/fxsl/cat/` es corpus auxiliar.
+- La Formal Layer oficial es `artifacts/knowledge/kora/categorical-foundations/`.
+- `artifacts/knowledge/fxsl/cat/` es corpus auxiliar.
 - `Traces to:` solo apunta a Formal Layer oficial.
 
 ## Shape unificado de autoria (`autoria-spec v1.0`)
@@ -125,10 +133,10 @@ Todo artefacto agentico productivo usa el mismo shape. Cuatro formas materiales:
 
 | `atlas.forma_material` | Archivo | Topologia |
 |------------------------|---------|-----------|
-| `habilidad` | `SKILL.md` | `SKILLS/{ns}/{nombre}/` |
-| `subagente` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` |
-| `agente-propiamente-tal` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` con workspace |
-| `agente-plataforma` | `AGENT.md` | `AGENTS/{ns}/{nombre}/` con `extensions.openclaw` |
+| `habilidad` | `SKILL.md` | `artifacts/skills/{ns}/{nombre}/` |
+| `subagente` | `AGENT.md` | `artifacts/agents/{ns}/{nombre}/` |
+| `agente-propiamente-tal` | `AGENT.md` | `artifacts/agents/{ns}/{nombre}/` con workspace |
+| `agente-plataforma` | `AGENT.md` | `artifacts/agents/{ns}/{nombre}/` con `extensions.openclaw` |
 
 Frontmatter canonico (identificadores en espanol):
 
@@ -144,7 +152,7 @@ Subdirs canonicos en workspaces: `memoria/`, `referencias/`, `recursos/`, `scrip
 
 **Proyeccion fiel a agentskills.io**: las habilidades transmutan byte-identical a paquetes del estandar externo (check `fidelidad-agentskills`). El renaming en ingles es responsabilidad del transmutor, no del autor.
 
-Ver `specs/autoria-spec.md` para el detalle completo, matriz de validacion condicional por forma material, reglas de promocion, y ejemplos.
+Ver `serialization/autoria-spec.md` para el detalle completo, matriz de validacion condicional por forma material, reglas de promocion, y ejemplos.
 
 ### Familias documentales
 
@@ -152,60 +160,60 @@ Ver `specs/autoria-spec.md` para el detalle completo, matriz de validacion condi
 
 ## Toolchain CLI
 
-Entrypoint: `scripts/kora` (Python 3, deps en `requirements.txt`).
+Entrypoint: `toolchain/kora` (Python 3, deps en `requirements.txt`).
 
 ### Comandos
 
 ```bash
 # CHECK UNIFICADO — pipeline composicional de mantencion
-python3 scripts/kora check                       # todos los checks en orden topologico
-python3 scripts/kora check --severity high       # solo critical + high
-python3 scripts/kora check --fix                 # auto-apply fixes canonicos
-python3 scripts/kora check --list                # listar checks registrados
-python3 scripts/kora check --strict              # exit 1 si hay fallos
+python3 toolchain/kora check                       # todos los checks en orden topologico
+python3 toolchain/kora check --severity high       # solo critical + high
+python3 toolchain/kora check --fix                 # auto-apply fixes canonicos
+python3 toolchain/kora check --list                # listar checks registrados
+python3 toolchain/kora check --strict              # exit 1 si hay fallos
 
 # Indexar catalogo (siempre antes de check/stats)
-python3 scripts/kora index
+python3 toolchain/kora index
 
 # Resolver URN a path
-python3 scripts/kora resolve "urn:kora:kb:harness-spec"
+python3 toolchain/kora resolve "urn:kora:kb:harness-spec"
 
 # Stats y grafo
-python3 scripts/kora stats --json
-python3 scripts/kora graph --json
+python3 toolchain/kora stats --json
+python3 toolchain/kora graph --json
 
 # Transmutacion IR → runtime (con matriz de preservacion PMI × LFS)
-python3 scripts/kora transmute --target claude-code --agent kora/curator
-python3 scripts/kora transmute --target openclaw --agent gn/goreologo
-python3 scripts/kora transmute --target codex --agent X/Y --dry-run
-python3 scripts/kora transmute --target gemini --agent X/Y --dry-run
+python3 toolchain/kora transmute --target claude-code --agent kora/curator
+python3 toolchain/kora transmute --target openclaw --agent gn/goreologo
+python3 toolchain/kora transmute --target codex --agent X/Y --dry-run
+python3 toolchain/kora transmute --target gemini --agent X/Y --dry-run
 # Emite {workspace}/_BUILD/{target}/_transmutation.yml con source_vector,
 # structural_preservation, projections por eje con fidelity/loss, bisimulation_claim.
 
 # Ingesta inversa Lift_R — eleva artefacto runtime foraneo a KORA IR
-python3 scripts/kora ingest --from claude-code --file ~/.claude/agents/polymath.md
-python3 scripts/kora ingest --from codex --file ~/.codex/skills/X/SKILL.md
-python3 scripts/kora ingest --from gemini --file path/SKILL.md
-python3 scripts/kora ingest --from openclaw --workspace ~/openclaw-fleet/workspaces/X
+python3 toolchain/kora ingest --from claude-code --file ~/.claude/agents/polymath.md
+python3 toolchain/kora ingest --from codex --file ~/.codex/skills/X/SKILL.md
+python3 toolchain/kora ingest --from gemini --file path/SKILL.md
+python3 toolchain/kora ingest --from openclaw --workspace ~/openclaw-fleet/workspaces/X
 # Genera AGENT.md o SKILL.md conforme a autoria-spec en staging,
 # con vector_ontologico auto-derivado + campos TODO para revision humana.
 
 # Migracion forzada a autoria-spec (una sola pasada, sin compat transitoria)
-python3 scripts/kora migrate --perfil a-autoria
-python3 scripts/kora migrate --perfil a-autoria --cohort meta-kora --dry-run
+python3 toolchain/kora migrate --perfil a-autoria
+python3 toolchain/kora migrate --perfil a-autoria --cohort meta-kora --dry-run
 
 # Reporte de staging (FRAGUA + TALLER + SCRIPTORIUM)
-python3 scripts/kora intake
+python3 toolchain/kora intake
 
 # Grafo de conocimiento
-python3 scripts/kora kb-graph --json
-python3 scripts/kora kb-graph --check-cycles
+python3 toolchain/kora kb-graph --json
+python3 toolchain/kora kb-graph --check-cycles
 
 # Promover draft a publicado
-python3 scripts/kora promote KNOWLEDGE/_SCRIPTORIUM/REVIEW/archivo.md
+python3 toolchain/kora promote KNOWLEDGE/_SCRIPTORIUM/REVIEW/archivo.md
 
 # Regenerar docs publicas
-python3 scripts/kora sync-docs
+python3 toolchain/kora sync-docs
 ```
 
 Cohorts disponibles: `meta-kora`, `dev`, `ops`, `domains`.
@@ -255,10 +263,10 @@ Suites: `test_cli_smoke`, `test_artifacts`, `test_semantic_validation`,
 Cuando cambies specs, workspaces o knowledge:
 
 1. Aplica cambios.
-2. `python3 scripts/kora migrate --perfil a-autoria` si quedan artefactos sin migrar.
-3. `python3 scripts/kora index`.
-4. `python3 scripts/kora check --strict`.
-5. `python3 scripts/kora sync-docs`.
+2. `python3 toolchain/kora migrate --perfil a-autoria` si quedan artefactos sin migrar.
+3. `python3 toolchain/kora index`.
+4. `python3 toolchain/kora check --strict`.
+5. `python3 toolchain/kora sync-docs`.
 6. `python3 -m unittest discover -s tests`.
 
 Cuando transmutas un artefacto a runtime:
@@ -283,7 +291,7 @@ Cuando ingestas un artefacto foraneo:
 - Los artefactos KORA/MD usan YAML frontmatter con `_manifest.urn` obligatorio.
 - `_BUILD/` dentro de workspaces es gitignored y regenerable.
 - `_transmutation.yml` es proof-carrying: si falta o estructura incompleta, la transmutacion es invalida.
-- Usa `python3 scripts/kora graph --json` para auditar nodos y morfismos, no los infieras.
+- Usa `python3 toolchain/kora graph --json` para auditar nodos y morfismos, no los infieras.
 - Usa `docs/generated/operating-core-contracts.*` para contrato operativo sin releer workspace por workspace.
 - Si corriges `fxsl/cat`, hazlo para eliminar ruido o preparar absorcion formal, no para darle autoridad normativa directa.
 
