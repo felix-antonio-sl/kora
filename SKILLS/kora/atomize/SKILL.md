@@ -1,48 +1,77 @@
 ---
 _manifest:
-  urn: "urn:kora:skill:atomize:1.0.0"
-  type: lazy_load_endofunctor
-name: atomize
-description: >-
-  Productor canonico y unica via soportada de emision para la familia
-  documental `atomic` (md-spec v7.1 §5.6, knowledge-spec §12). Skill
-  runtime-agnostic para Claude Code y Codex: transforma uno o varios
-  documentos humanos en artefactos KORA/MD de familia `atomic`. El LLM hace la
-  extraccion semantica, tipado, dedup, deteccion de tensiones y reparacion
-  estructural; los scripts del repo quedan como capa de enforcement posterior.
-  Output canonico:
-  `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}.md`.
-allowed-tools: Read Glob Write Bash
+  urn: "urn:kora:artefacto:atomize"
+  type: artefacto
+  provenance:
+    created_by: "FS"
+    created_at: "2026-04-16"
+    source: "Productor canonico familia atomic (knowledge-spec §12); migrado a autoria-spec v1.0 desde regimen skill-overlay v1 pre-unificacion."
+version: "1.0.0"
+status: activo
+nombre: atomize
+descripcion: "Productor canonico de la familia documental atomic (md-spec §5.6, knowledge-spec §12): transforma uno o varios documentos humanos en artefactos KORA/MD con proposiciones atomicas, runtime-agnostic para Claude Code y Codex."
+tags: [atomize, atomic, knowledge, productor, koraficacion]
+lang: es
 extensions:
   kora:
-    # Vector ontologico PMI × LFS (harness-spec v1.0)
-    harness_vector:
-      pi: 2              # plan ramificado (7 pasos + segmentacion + dedup)
-      mu: 0              # sin materia propia (ejecutor externo)
-      xi: 1              # interaccion atomica (invocacion → output)
-      lambda: 0          # individual
-      phi: 1             # instrumental
-      sigma: [1, 1, 3, 1, 0]  # safety: 1, fairness: 1, transparency: 3, accountability: 1, sustainability: 0
-    presentation: state-primary
-    skill_freedom: medium
+    vector_ontologico:
+      pi: 2            # plan ramificado (workflow 10 pasos + segmentacion + dedup)
+      mu: 0            # sin materia propia (ejecutor externo)
+      xi: 1            # interaccion atomica (invocacion -> output)
+      lambda: 0        # individual
+      phi: 1           # instrumental
+      sigma: [1, 1, 3, 1, 0]
+    presentacion: estado-primario
     atlas:
-      harness_name: disciplina
-      form: skill-standard
-      hcai_metaphor: supertool
-metadata:
-  kora:
-    urn: "urn:kora:skill:atomize:1.0.0"
-    lifecycle:
-      status: active
-      created: "2026-04-16"
-      updated: "2026-04-18"
-    tools: ["Read", "Glob", "Write", "Bash"]
-    knowledge:
+      arnes_categorico: disciplina
+      forma_material: habilidad
+      metafora_relacional: supertool
+    entornos_objetivo: [claude-code, codex]
+    nivel_prescripcion: medio
+    conocimiento_permitido:
       - "urn:kora:kb:md-spec"
       - "urn:kora:kb:knowledge-spec"
-    composable_with: []
-    domain: ["knowledge", "atomic", "koraficacion"]
-    level: L1
+    componible_con: []
+artefacto:
+  perfil:
+    dominio: [knowledge, atomic, koraficacion]
+    disparadores:
+      - "corpus denso donde RAG no es practico"
+      - "solicitud explicita de atomizar documentos (.md, .txt, OCR, libro exportado)"
+      - "dedup multi-source o deteccion de tensiones entre fuentes"
+    salidas:
+      - "atomic-{slug}.md unico"
+      - "bundle segmentado atomic-{slug}-index.md + atomic-{slug}-{NN}.md"
+  plan:
+    estado_inicial: triage-de-fuente
+    estado_terminal: drafts-en-review
+    estados:
+      - triage-de-fuente
+      - inventario-de-estructura-y-ruido
+      - reconstruccion-de-esquema
+      - extraccion-de-proposiciones
+      - clasificacion-semantica
+      - deduplicacion-por-equivalencia
+      - segmentacion-estructural
+      - muestreo-de-cierre
+      - escritura-drafts
+      - validacion-y-publicacion
+  interfaz:
+    herramientas: [Read, Glob, Write, Bash]
+    permisos: lectura-corpus-y-escritura-scriptorium
+    protocolos:
+      entrada: "path a carpeta o archivo; flags opcionales --slug, --output"
+      salida: "KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}*.md"
+  invariantes:
+    reglas_duras:
+      - "lint OK no equivale a atomizacion buena: FS=100% sobre el cuerpo sustantivo (md-spec §6.11, §7.3)."
+      - "No colapsar hechos distinguibles; no comprimir contenido sustantivo fusionando afirmaciones distintas."
+      - "No filtrar TOC, running headers, page numbers, captions, epigrafes o notas al pie como proposiciones."
+      - "IDs Pxxx unicos globalmente en bundles segmentados."
+      - "Segmentacion en fronteras estructurales, no en puntos arbitrarios."
+    compromisos_eticos:
+      transparency: "Alta; cada proposicion lleva ancla resoluble al original."
+      accountability: "Media; el productor emite status=borrador para revision humana antes de promote."
 ---
 
 # Atomize — Productor canonico de la familia `atomic`
@@ -119,7 +148,7 @@ urn:kora:kb:atomic-<slug>-<NN>
 **Frontmatter emitido:**
 - `status: draft` (pasa por `kora promote` para publicar).
 - `extensions.kora.family: atomic`
-- `extensions.kora.atomic.producer: "urn:kora:skill:atomize:1.0.0"`
+- `extensions.kora.atomic.producer: "urn:kora:artefacto:atomize"`
 - `extensions.kora.atomic.source_corpus`, `n_propositions`, `segmented`,
   `segment_index`, `segment_count`, `hand_edited`.
 
@@ -161,8 +190,8 @@ urn:kora:kb:atomic-<slug>-<NN>
 Cuando la fuente sea `.txt`, OCR, libro exportado o documento claramente mal
 formateado:
 
-- cargar `references/plaintext-book-recovery.md`
-- cargar `references/golden-case-opm-libro.md` si la fuente se parece a un
+- cargar `referencias/plaintext-book-recovery.md`
+- cargar `referencias/golden-case-opm-libro.md` si la fuente se parece a un
   libro exportado o a un `.txt` largo con paginacion incrustada
 - muestrear el original antes de atomizar:
   - primeras 150-250 lineas
@@ -173,7 +202,7 @@ formateado:
   - donde empieza el cuerpo sustantivo
   - cuales son los verdaderos cortes de capitulo/seccion
   - que clases de ruido deben excluirse
-- no cerrar la corrida hasta pasar `references/quality-gates.md`
+- no cerrar la corrida hasta pasar `referencias/quality-gates.md`
 
 No basta con que el lint pase. Una corrida puede ser formalmente valida y a la
 vez semanticamente mala.
@@ -195,7 +224,7 @@ Rechazar y rehacer la atomizacion si ocurre cualquiera de estos casos:
 
 Regla corta: `lint OK` no equivale a `atomizacion buena`.
 
-## Resources
+## Recursos
 
 ### Scripts
 - `scripts/atomize.py` — invoca el productor canonico `kora atomize` desde el
@@ -216,26 +245,26 @@ Regla corta: `lint OK` no equivale a `atomizacion buena`.
   review aceptada y fresca para el bundle; luego reconstruye el catalogo con
   `kora index`.
 
-### References
-- `references/llm-first-workflow.md` — playbook runtime-agnostic para Claude
+### Referencias
+- `referencias/llm-first-workflow.md` — playbook runtime-agnostic para Claude
   Code y Codex; define como usar el LLM como motor semantico principal.
-- `references/atomic-output-contract.md` — contrato compacto del artefacto
+- `referencias/atomic-output-contract.md` — contrato compacto del artefacto
   final: frontmatter, forma de proposicion, bundle segmentado e invariantes de
   validacion.
-- `references/plaintext-book-recovery.md` — protocolo de recuperacion para
+- `referencias/plaintext-book-recovery.md` — protocolo de recuperacion para
   `.txt`, OCR y libros exportados: triage, exclusion de ruido y reconstruccion
   estructural.
-- `references/golden-case-opm-libro.md` — caso patron real de comparacion:
+- `referencias/golden-case-opm-libro.md` — caso patron real de comparacion:
   corrida mala vs corrida aceptable para un libro exportado a `.txt`.
-- `references/golden-case-ocr-procedure.md` — fixture corto de OCR/procedimiento
+- `referencias/golden-case-ocr-procedure.md` — fixture corto de OCR/procedimiento
   con running headers, captions y guiones partidos; baseline de recuperacion.
-- `references/golden-case-multifile-dedup.md` — fixture multiarchivo para
+- `referencias/golden-case-multifile-dedup.md` — fixture multiarchivo para
   validar dedup real sin perder multiplicidad de fuentes.
-- `references/golden-case-multifile-tension.md` — fixture multiarchivo para
+- `referencias/golden-case-multifile-tension.md` — fixture multiarchivo para
   conflicto real entre fuentes: preservar ambas posiciones y agregar `tension`.
-- `references/quality-gates.md` — gates de calidad para decidir si una
+- `referencias/quality-gates.md` — gates de calidad para decidir si una
   atomizacion debe aceptarse o rehacerse.
-- `references/semantic-fidelity-review.md` — protocolo de revision semantica:
+- `referencias/semantic-fidelity-review.md` — protocolo de revision semantica:
   soporte, no-invencion, no-colapso y conservacion de condiciones.
 
 ## Signature Output

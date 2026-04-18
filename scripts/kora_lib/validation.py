@@ -122,7 +122,7 @@ ATOMIC_ALLOWED_TYPES = {
 }
 ATOMIC_SOFT_SEGMENT_TARGET_CHARS = 15000
 ATOMIC_HARD_MAX_PROPOSITIONS = 200
-ATOMIC_PRODUCER_URN = "urn:kora:skill:atomize:1.0.0"
+ATOMIC_PRODUCER_URN = "urn:kora:artefacto:atomize"
 ATOMIC_PROP_LINE_PATTERN = re.compile(r"^\s*-\s+\*\*(P\d{3,})\*\*\s+·\s+`([a-z]+)`\s+·\s+(.+?)\s*$")
 ATOMIC_PROP_LINE_INLINE_SOURCE_PATTERN = re.compile(
     r"^\s*-\s+\*\*(P\d{3,})\*\*\s+·\s+`([a-z]+)`\s+·\s+(.+?)\s+·\s+\[([^\]]+)\]\(([^)]+)\)\s*$"
@@ -1458,13 +1458,15 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
     issue_counts = Counter()
     issues = []
 
-    def report_issue(path, category, message, workspace=None):
+    def report_issue(path, category, message, workspace=None, severity=None):
         entry = {
             "path": str(path),
             "workspace": str(workspace) if workspace else None,
             "category": category,
             "message": message,
         }
+        if severity is not None:
+            entry["severity"] = severity
         issues.append(entry)
         if emit:
             print(f"[FAIL] {path} - {message}")
@@ -1473,12 +1475,12 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
     active_workspaces = iter_agent_workspaces(cohort=cohort)
     deprecated_excluded = len(all_workspaces) - len(active_workspaces)
 
-    # Load agentfile schema if available
-    agentfile_schema = None
-    agentfile_schema_path = KORA_ROOT / "schemas" / "kora-agentfile-schema.json"
-    if agentfile_schema_path.exists():
+    # Load autoria universal schema for AGENT.md workspaces if available.
+    autoria_schema = None
+    autoria_schema_path = KORA_ROOT / "schemas" / "kora-artefacto.json"
+    if autoria_schema_path.exists():
         try:
-            agentfile_schema, _ = load_yaml_safe(agentfile_schema_path)
+            autoria_schema, _ = load_yaml_safe(autoria_schema_path)
         except Exception:
             pass
 
@@ -1489,21 +1491,41 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
         # Check if workspace uses new AGENT.md format
         agentfile_path = workspace_dir / "AGENT.md"
         if agentfile_path.exists():
-            # New format: validate AGENT.md against agentfile schema
+            # New format: validate AGENT.md against autoria universal schema
+            # plus the conditional fiber encoded in autoria_validate.
             agentfile_data, agentfile_err = load_yaml_safe(agentfile_path)
             if not agentfile_data:
                 report_issue(agentfile_path.relative_to(KORA_ROOT), "agentfile_parse",
-                             f"Could not parse AGENT.md YAML: {agentfile_err}", workspace=rel_workspace)
+                             f"Could not parse AGENT.md YAML: {agentfile_err}", workspace=rel_workspace, severity="high")
                 issue_counts["agentfile_parse"] += 1
                 workspace_ok = False
-            elif agentfile_schema is not None:
-                try:
-                    jsonschema.validate(instance=agentfile_data, schema=agentfile_schema)
-                    bootstrap_validated += 1
-                except jsonschema.exceptions.ValidationError as exc:
-                    report_issue(agentfile_path.relative_to(KORA_ROOT), "agentfile_schema",
-                                 exc.message, workspace=rel_workspace)
-                    issue_counts["agentfile_schema"] += 1
+            else:
+                if autoria_schema is not None:
+                    try:
+                        jsonschema.validate(instance=agentfile_data, schema=autoria_schema)
+                        bootstrap_validated += 1
+                    except jsonschema.exceptions.ValidationError as exc:
+                        report_issue(
+                            agentfile_path.relative_to(KORA_ROOT),
+                            "autoria_schema",
+                            exc.message,
+                            workspace=rel_workspace,
+                            severity="high",
+                        )
+                        issue_counts["autoria_schema"] += 1
+                        workspace_ok = False
+
+                from .autoria_validate import validate as validate_autoria_artifact
+
+                for diagnostic in validate_autoria_artifact(agentfile_data):
+                    report_issue(
+                        agentfile_path.relative_to(KORA_ROOT),
+                        diagnostic.code,
+                        diagnostic.message,
+                        workspace=rel_workspace,
+                        severity=diagnostic.severity,
+                    )
+                    issue_counts[diagnostic.code] += 1
                     workspace_ok = False
 
             if workspace_ok:

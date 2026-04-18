@@ -6,7 +6,7 @@
   `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}.md`
 - `status: draft`
 - `extensions.kora.family: atomic`
-- `extensions.kora.atomic.producer: urn:kora:skill:atomize:1.0.0`
+- `extensions.kora.atomic.producer: urn:kora:artefacto:atomize`
 
 ## Bundle segmentado
 

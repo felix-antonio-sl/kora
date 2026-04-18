@@ -227,7 +227,7 @@ En ese caso:
 
 | Familia  | Productor canonico            | Output                                          | Namespace fijo |
 | -------- | ----------------------------- | ----------------------------------------------- | -------------- |
-| `atomic` | `urn:kora:skill:atomize:1.0.0` | `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}.md` | `kora`         |
+| `atomic` | `urn:kora:artefacto:atomize` | `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}.md` | `kora`         |
 
 ### 12.3 Reglas operativas
 

@@ -30,7 +30,7 @@ class AtomizeCliTests(unittest.TestCase):
                       kora:
                         family: atomic
                         atomic:
-                          producer: urn:kora:skill:atomize:1.0.0
+                          producer: urn:kora:artefacto:atomize
                           source_corpus: /tmp/fuente.md
                           n_propositions: 1
                           segmented: false
@@ -42,7 +42,7 @@ class AtomizeCliTests(unittest.TestCase):
 
                     ## Resumen
 
-                    - Productor canonico: `urn:kora:skill:atomize:1.0.0`
+                    - Productor canonico: `urn:kora:artefacto:atomize`
                     - Corpus fuente: `/tmp/fuente.md`
                     - Proposiciones: `1`
                     - Fuentes: `1`
@@ -344,7 +344,7 @@ class AtomizeCliTests(unittest.TestCase):
 
             ## Resumen
 
-            - Productor canonico: `urn:kora:skill:atomize:1.0.0`
+            - Productor canonico: `urn:kora:artefacto:atomize`
             - Corpus fuente: `/tmp/fuente.md`
             - Proposiciones: `1`
             - Fuentes: `1`
@@ -366,7 +366,7 @@ class AtomizeCliTests(unittest.TestCase):
                 "kora": {
                     "family": "atomic",
                     "atomic": {
-                        "producer": "urn:kora:skill:atomize:1.0.0",
+                        "producer": "urn:kora:artefacto:atomize",
                         "source_corpus": "/tmp/fuente.md",
                         "n_propositions": 1,
                         "segmented": False,

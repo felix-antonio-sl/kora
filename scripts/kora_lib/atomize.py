@@ -12,7 +12,7 @@ from .artifacts import dump_yaml_frontmatter_and_body, load_markdown_parts
 from .config import KORA_ROOT, SCRIPTORIUM_ROOT
 
 
-ATOMIC_PRODUCER_URN = "urn:kora:skill:atomize:1.0.0"
+ATOMIC_PRODUCER_URN = "urn:kora:artefacto:atomize"
 ATOMIC_TYPES = (
     "requirement",
     "definition",

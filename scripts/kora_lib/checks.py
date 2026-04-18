@@ -251,7 +251,7 @@ def _check_catalog_exists(path_filter=None):
 
 def _check_urn_integrity(path_filter=None):
     """Verify all URN references resolve to existing catalog entries."""
-    from .catalog import build_catalog_lookup, load_catalog
+    from .catalog import build_catalog_lookup, get_reference_entry, load_catalog, urn_is_known
     from .config import AGENTS_ROOT, KORA_ROOT
     from .graph import build_reference_graph
     from .workspaces import fragment_exists
@@ -277,7 +277,7 @@ def _check_urn_integrity(path_filter=None):
                         fix_hint="Replace with valid URN or remove",
                     ))
                 continue
-            if edge.target not in known_urns:
+            if not urn_is_known(edge.target, known_urns):
                 diags.append(Diagnostic(
                     check_id="urn-integrity",
                     severity="high",
@@ -287,7 +287,8 @@ def _check_urn_integrity(path_filter=None):
                     fix_hint="Correct the URN or remove the reference",
                 ))
                 continue
-            if edge.fragment and not fragment_exists(urn_to_entry[edge.target]["file"], edge.fragment):
+            entry = get_reference_entry(edge.target, urn_to_entry)
+            if edge.fragment and entry and not fragment_exists(entry["file"], edge.fragment):
                 diags.append(Diagnostic(
                     check_id="urn-integrity",
                     severity="medium",
@@ -317,9 +318,19 @@ def _check_workspace_validity(path_filter=None):
     result = validate_workspaces(profile="strict", emit=False)
     diags = []
     for issue in result.get("issues", []):
+        severity = issue.get("severity")
+        if severity is None:
+            category = issue.get("category", "")
+            severity = (
+                "high"
+                if category.endswith("_parse")
+                or category.endswith("_schema")
+                or category in {"missing_files", "invalid_json", "config_schema"}
+                else "medium"
+            )
         diags.append(Diagnostic(
             check_id="workspace-validity",
-            severity="high" if "FAIL" in issue.get("category", "") else "medium",
+            severity=severity,
             scope="workspace",
             path=issue.get("path", ""),
             message=issue.get("message", str(issue)),
@@ -529,12 +540,12 @@ def _check_supersedes_consistency(path_filter=None):
 
 
 def _check_agentfile_dimensions(path_filter=None):
-    """Every AGENT.md must declare all 6 categorical dimensions."""
+    """Every AGENT.md must declare the real autoria dimensions in artefacto.*."""
     import os
     from .config import AGENTS_ROOT, KORA_ROOT, AGENTFILE_NAME
     from .artifacts import load_yaml_safe
 
-    required_dims = {"coalgebra", "plan", "interface", "fibers", "composition", "safety"}
+    required_dims = {"perfil", "plan", "interfaz", "contexto", "invariantes"}
     diags = []
 
     if not AGENTS_ROOT.exists():
@@ -552,11 +563,33 @@ def _check_agentfile_dimensions(path_filter=None):
             fm, err = load_yaml_safe(agentfile)
             if err or not isinstance(fm, dict):
                 continue
-            agent = fm.get("agent", {})
-            if not isinstance(agent, dict):
-                continue
-            present = set(agent.keys()) & required_dims
-            missing = required_dims - present
+            artefacto = fm.get("artefacto")
+            if isinstance(artefacto, dict):
+                required_for_file = set(required_dims)
+                xi = (
+                    ((fm.get("extensions") or {}).get("kora") or {})
+                    .get("vector_ontologico", {})
+                    .get("xi")
+                )
+                if isinstance(xi, int) and xi >= 4:
+                    required_for_file.add("composicion")
+                present = {
+                    dim
+                    for dim in required_for_file | {"composicion"}
+                    if isinstance(artefacto.get(dim), dict)
+                }
+                missing = required_for_file - present
+                message = f"AGENT.md missing artefacto dimensions: {', '.join(sorted(missing))}"
+                fix_hint = "Add the missing artefacto.* dimensions to AGENT.md frontmatter"
+            else:
+                agent = fm.get("agent", {})
+                if not isinstance(agent, dict):
+                    continue
+                legacy_dims = {"coalgebra", "plan", "interface", "fibers", "composition", "safety"}
+                present = set(agent.keys()) & legacy_dims
+                missing = legacy_dims - present
+                message = f"AGENT.md missing legacy dimensions: {', '.join(sorted(missing))}"
+                fix_hint = "Add the missing legacy agent.* dimensions to AGENT.md frontmatter"
             if missing:
                 rel = str(agentfile.relative_to(KORA_ROOT))
                 diags.append(Diagnostic(
@@ -564,8 +597,8 @@ def _check_agentfile_dimensions(path_filter=None):
                     severity="medium",
                     scope="workspace",
                     path=rel,
-                    message=f"AGENT.md missing dimensions: {', '.join(sorted(missing))}",
-                    fix_hint="Add the missing dimension sections to AGENT.md frontmatter",
+                    message=message,
+                    fix_hint=fix_hint,
                 ))
 
     if path_filter:
@@ -631,21 +664,30 @@ def _fix_catalog_rebuild(diagnostics):
 
 
 def _check_skill_structure(path_filter=None):
-    """Skills productivos cumplen la estructura portable (skill-overlay-spec §5).
+    """Habilidades productivas cumplen la estructura portable (autoria-spec §5.1).
 
     Valida:
-    - Subdirs productivos solo pueden ser {scripts, references, assets}
-      (ademas de cualquier archivo como SKILL.md).
-    - Si existe alguno de esos subdirs, el SKILL.md menciona `## Resources`.
-    - No hay anidamiento `skills/CM-*` en skills productivos `active`.
+    - Subdirs productivos solo pueden ser {scripts, referencias, recursos}
+      (glosario canonico espanol de autoria-spec §15.3).
+    - Si existe alguno de esos subdirs, el SKILL.md menciona `## Recursos`.
+    - No hay anidamiento `skills/CM-*` en habilidades productivas `activo`.
 
-    Excluye skills en staging (_TALLER/) y bundles legacy CM-* (exentos por §5.5).
+    Excluye skills en staging (_TALLER/) y bundles legacy CM-* (exentos).
+
+    Los nombres en ingles (`references/`, `assets/`, `## Resources`) son
+    proyecciones del transmutor a agentskills.io (autoria-spec §5.5) y no
+    constituyen shape de autoria valido.
     """
-    import os
     import re
     from .config import SKILLS_ROOT, KORA_ROOT
 
-    CANONICAL_SUBDIRS = {"scripts", "references", "assets"}
+    CANONICAL_SUBDIRS = {"scripts", "referencias", "recursos"}
+    # Mapa subdir -> heading esperado en ## Recursos
+    SUBDIR_HEADINGS = {
+        "scripts": "Scripts",
+        "referencias": "Referencias",
+        "recursos": "Recursos",
+    }
     diags = []
 
     if not SKILLS_ROOT.exists():
@@ -686,8 +728,8 @@ def _check_skill_structure(path_filter=None):
                     severity="medium",
                     scope="artifact",
                     path=rel,
-                    message="Skill productivo anida 'skills/' — composicionalidad debe declararse en metadata.kora.composable_with (skill-overlay-spec §5.5)",
-                    fix_hint="Extrae sub-skills a SKILLS/{name}/ top-level y referencialos en overlay",
+                    message="Habilidad productiva anida 'skills/' — composicionalidad debe declararse en extensions.kora.componible_con (autoria-spec §9)",
+                    fix_hint="Extrae sub-habilidades a SKILLS/{name}/ top-level y referencialas via componible_con",
                 ))
             else:
                 diags.append(Diagnostic(
@@ -695,37 +737,37 @@ def _check_skill_structure(path_filter=None):
                     severity="medium",
                     scope="artifact",
                     path=rel,
-                    message=f"Subdir no canonico en skill productivo: '{child.name}' (canonicos: scripts, references, assets)",
-                    fix_hint=f"Renombra '{child.name}/' a references/ o assets/ segun semantica, o mueve a CM-* legacy",
+                    message=f"Subdir no canonico en habilidad productiva: '{child.name}' (canonicos: scripts, referencias, recursos)",
+                    fix_hint=f"Renombra '{child.name}/' a referencias/ o recursos/ segun semantica (autoria-spec §5.1, §15.3)",
                 ))
 
-        # Check seccion ## Resources cuando hay subdirs canonicos
+        # Check seccion ## Recursos cuando hay subdirs canonicos
         if present_canonical:
             try:
                 body = skill_md.read_text(encoding="utf-8")
             except Exception:
                 continue
-            has_resources_section = bool(re.search(r"^##\s+Resources\s*$", body, re.MULTILINE | re.IGNORECASE))
+            has_resources_section = bool(re.search(r"^##\s+Recursos\s*$", body, re.MULTILINE))
             if not has_resources_section:
                 diags.append(Diagnostic(
                     check_id="skill-structure",
                     severity="medium",
                     scope="artifact",
                     path=rel,
-                    message=f"Skill usa subdirs ({', '.join(sorted(present_canonical))}) pero body carece de seccion '## Resources' (skill-overlay-spec §5.3)",
-                    fix_hint="Agrega '## Resources' al body del SKILL.md con subsecciones ### Scripts, ### References, ### Assets segun corresponda",
+                    message=f"Habilidad usa subdirs ({', '.join(sorted(present_canonical))}) pero body carece de seccion '## Recursos' (autoria-spec §5.1, §7.1)",
+                    fix_hint="Agrega '## Recursos' al body del SKILL.md con subsecciones ### Scripts, ### Referencias, ### Recursos segun corresponda",
                 ))
             else:
                 # Validar que cada subdir presente tiene subseccion
                 for subdir in sorted(present_canonical):
-                    heading = subdir.capitalize()
+                    heading = SUBDIR_HEADINGS[subdir]
                     if not re.search(rf"^###\s+{heading}\s*$", body, re.MULTILINE):
                         diags.append(Diagnostic(
                             check_id="skill-structure",
                             severity="low",
                             scope="artifact",
                             path=rel,
-                            message=f"Subdir '{subdir}/' presente pero sin subseccion '### {heading}' en ## Resources",
+                            message=f"Subdir '{subdir}/' presente pero sin subseccion '### {heading}' en ## Recursos",
                             fix_hint=f"Agrega subseccion '### {heading}' describiendo el uso de {subdir}/",
                         ))
 
@@ -840,7 +882,7 @@ def _register_builtins():
     register_check(
         Check("workspace-validity", "Workspaces validate against schema + semantics",
               scope="workspace", severity="high", enforcement="schema",
-              spec_ref="agentfile-spec legacy-compat profile", depends=("catalog-exists",), phase="verify"),
+              spec_ref="autoria-spec §3, §6; legacy-compat profile", depends=("catalog-exists",), phase="verify"),
         _check_workspace_validity,
     )
     register_check(
@@ -875,9 +917,9 @@ def _register_builtins():
         _check_supersedes_consistency,
     )
     register_check(
-        Check("agentfile-dimensions", "AGENT.md declares all 6 categorical dimensions",
+        Check("agentfile-dimensions", "AGENT.md declares required artefacto dimensions",
               scope="workspace", severity="medium", enforcement="schema",
-              spec_ref="agentfile-spec §1, §3", depends=("catalog-exists",), phase="verify"),
+              spec_ref="autoria-spec §3.4, §5.2-§5.4", depends=("catalog-exists",), phase="verify"),
         _check_agentfile_dimensions,
     )
     register_check(
@@ -887,9 +929,9 @@ def _register_builtins():
         _check_tools_config_coherence,
     )
     register_check(
-        Check("skill-structure", "Skills productivos siguen estructura portable (scripts/references/assets + ## Resources)",
+        Check("skill-structure", "Habilidades productivas siguen estructura portable (scripts/referencias/recursos + ## Recursos)",
               scope="artifact", severity="medium", enforcement="lint",
-              spec_ref="skill-overlay-spec §5", phase="verify"),
+              spec_ref="autoria-spec §5.1, §5.5, §15.3", phase="verify"),
         _check_skill_structure,
     )
     register_check(
