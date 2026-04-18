@@ -34,7 +34,7 @@ from kora_lib.autoria_validate import (
 )
 
 
-SCHEMA_PATH = ROOT / "schemas" / "kora-artefacto.json"
+SCHEMA_PATH = ROOT / "serialization" / "schemas" / "kora-artefacto.json"
 
 
 # ---------------------------------------------------------------------------

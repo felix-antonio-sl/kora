@@ -47,8 +47,8 @@ def _requires_productive_workspaces(cls):
 class ArtifactFixtureTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.bootstrap_schema = load_json(ROOT / "schemas" / "kora-agent-schema.json")
-        cls.config_schema = load_json(ROOT / "schemas" / "kora-agent-config-schema.json")
+        cls.bootstrap_schema = load_json(ROOT / "serialization" / "schemas" / "kora-agent-schema.json")
+        cls.config_schema = load_json(ROOT / "serialization" / "schemas" / "kora-agent-config-schema.json")
 
     def test_valid_kora_md_fixture_loads(self):
         doc, err = load_yaml_safe(FIXTURES / "valid-kora-md.md")
@@ -117,7 +117,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertEqual(doc["_manifest"]["urn"], "urn:test:skill:sample-extended:1.0.0")
 
     def test_agent_spec_restores_fsm_contract(self):
-        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "serializacion",
             "AGENT.md",
@@ -134,7 +134,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_md_spec_restores_koraficacion_contract(self):
-        content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "KORA/MD v8",
             "## 6. Koraficacion",
@@ -158,7 +158,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("test de bolsillo", content)
 
     def test_md_spec_declares_atomic_family_and_canonical_producer(self):
-        content = (ROOT / "specs" / "md-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "familia `atomic`",
             "productor canonico",
@@ -172,11 +172,11 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_knowledge_spec_registers_atomize_as_canonical_producer(self):
-        content = (ROOT / "specs" / "knowledge-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "## 12. Productores canonicos de familia",
             "urn:kora:artefacto:atomize",
-            "KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-",
+            "artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-",
             "hand_edited",
             "unica ruta soportada",
             "scaffold semantico degradado",
@@ -186,7 +186,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_atomize_skill_is_runtime_agnostic_and_llm_first(self):
-        content = (ROOT / "SKILLS" / "kora" / "atomize" / "SKILL.md").read_text(encoding="utf-8")
+        content = (ROOT / "artifacts" / "skills" / "kora" / "atomize" / "SKILL.md").read_text(encoding="utf-8")
         required_terms = (
             "Claude Code",
             "Codex",
@@ -223,28 +223,28 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
         required_paths = (
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "atomize.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "validate_atomic.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "check_atomic_bundle.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_quality.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "publish_atomic.py",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "llm-first-workflow.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "atomic-output-contract.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "plaintext-book-recovery.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "golden-case-opm-libro.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "golden-case-ocr-procedure.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "golden-case-multifile-dedup.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "golden-case-multifile-tension.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "quality-gates.md",
-            ROOT / "SKILLS" / "kora" / "atomize" / "referencias" / "semantic-fidelity-review.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "atomize.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "validate_atomic.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "check_atomic_bundle.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_quality.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "publish_atomic.py",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "llm-first-workflow.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "atomic-output-contract.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "plaintext-book-recovery.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-opm-libro.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-ocr-procedure.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-multifile-dedup.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-multifile-tension.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "quality-gates.md",
+            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "semantic-fidelity-review.md",
         )
         for path in required_paths:
             self.assertTrue(path.exists(), str(path))
 
     def test_skill_spec_restores_extended_support_with_governed_contract(self):
-        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "serializacion",
             "forma_material: habilidad",
@@ -265,7 +265,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertNotIn(term, content)
 
     def test_harness_spec_canonizes_ontology(self):
-        content = (ROOT / "specs" / "harness-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "ontology" / "harness-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "v1.0.0",
             "PMI × LFS",
@@ -289,7 +289,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_transmutation_spec_defines_functor_laws(self):
-        content = (ROOT / "specs" / "transmutation-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "runtime" / "transmutation-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "v1.0.0",
             "functor",
@@ -313,7 +313,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             "gemini-runtime-extension.md",
             "openclaw-runtime-extension.md",
         ):
-            content = (ROOT / "specs" / spec_name).read_text(encoding="utf-8")
+            content = (ROOT / "runtime" / spec_name).read_text(encoding="utf-8")
             # Todos declaran matriz por eje
             for eje in ("pi:", "mu:", "xi:", "lambda:", "phi:", "sigma:"):
                 self.assertIn(eje, content, msg=f"{spec_name} missing eje {eje}")
@@ -323,7 +323,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn("Contrato vigente", content, msg=f"{spec_name} missing Contrato vigente")
 
     def test_openclaw_extension_declares_acp_meta_runtime(self):
-        content = (ROOT / "specs" / "openclaw-runtime-extension.md").read_text(encoding="utf-8")
+        content = (ROOT / "runtime" / "openclaw-runtime-extension.md").read_text(encoding="utf-8")
         required_terms = (
             "v1.1.0",
             "meta-runtime",
@@ -336,8 +336,8 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_specs_declare_manifest_kind_taxonomy(self):
-        governance = (ROOT / "specs" / "gobernanza.md").read_text(encoding="utf-8")
-        autoria_spec = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
+        governance = (ROOT / "governance" / "gobernanza.md").read_text(encoding="utf-8")
+        autoria_spec = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")
         self.assertIn("Manifest kind", governance)
         self.assertIn("artefacto agentico", governance)
         self.assertIn("runtime_extension", governance)
@@ -456,7 +456,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         content = (
             AGENTS_ROOT / "kora" / "forgemaster" / "skills" / "CM-WORKSPACE-SCAFFOLDER" / "SKILL.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("AGENTS/{namespace}/{nombre}/skills/CM-{id}/", content)
+        self.assertIn("artifacts/agents/{namespace}/{nombre}/skills/CM-{id}/", content)
         self.assertIn("skills/CM-{id}/", content)
         self.assertIn("SKILL.md", content)
         self.assertIn("scripts/", content)
@@ -700,7 +700,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("terminar|fuera_scope|ambiguo", classifier)
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
-        content = (ROOT / "specs" / "runtime-spec-md.md").read_text(encoding="utf-8")
+        content = (ROOT / "runtime" / "runtime-spec-md.md").read_text(encoding="utf-8")
         required_terms = (
             "## 4. Adapters por plataforma",
             "## 5. Wrapper generation",
@@ -714,7 +714,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_swarm_spec_restores_operational_orchestration_contract(self):
-        content = (ROOT / "specs" / "autoria-spec.md").read_text(encoding="utf-8")
+        content = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "orquestador",
             "operad dinamica",
@@ -781,7 +781,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("agent-spec-md` v8.7.0 y `skill-spec-md` v4.2.0", content)
 
     def test_all_agents_follow_canonical_section_order(self):
-        for path in ROOT.glob("AGENTS/*/*/AGENTS.md"):
+        for path in ROOT.glob("artifacts/agents/*/*/AGENTS.md"):
             content = path.read_text(encoding="utf-8")
             self.assertEqual(validate_agents_canonical_structure(content), [], path.as_posix())
 

@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kora.dev/schemas/kora-artefacto.json",
+  "title": "KORA Artefacto Frontmatter — seccion universal",
+  "description": "Captura la *componente universal* del shape definido en autoria-spec v1.0: reglas que se factorizan por I -> 1, es decir, aplican a toda forma material. La fibra condicional (reglas que dependen de atlas.forma_material) vive en toolchain/kora_lib/autoria_validate.py como functor Python. Este schema es el pullback terminal: contrato base sin ramificacion.",
+  "type": "object",
+  "required": [
+    "_manifest",
+    "version",
+    "status",
+    "nombre",
+    "descripcion",
+    "lang",
+    "extensions"
+  ],
+  "additionalProperties": true,
+
+  "properties": {
+    "_manifest": {
+      "type": "object",
+      "required": ["urn", "type", "provenance"],
+      "additionalProperties": true,
+      "properties": {
+        "urn": {
+          "type": "string",
+          "description": "Regimen unico: urn:{ns}:artefacto:{id}. Sin version embebida.",
+          "pattern": "^urn:[a-z][a-z0-9-]*:artefacto:[a-z][a-z0-9-]*$"
+        },
+        "type": {
+          "const": "artefacto"
+        },
+        "provenance": {
+          "type": "object",
+          "required": ["created_by", "created_at"],
+          "additionalProperties": true,
+          "properties": {
+            "created_by": { "type": "string", "minLength": 1 },
+            "created_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "source": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([a-z0-9.-]*)?$"
+    },
+
+    "status": {
+      "description": "Lifecycle en espanol (gobernanza v4.3 §5).",
+      "enum": ["borrador", "activo", "publicado", "deprecado", "retirado"]
+    },
+
+    "nombre": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "descripcion": { "type": "string", "minLength": 1 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "lang": { "enum": ["es", "en"] },
+
+    "extensions": {
+      "type": "object",
+      "required": ["kora"],
+      "additionalProperties": true,
+      "properties": {
+        "kora": {
+          "type": "object",
+          "required": [
+            "vector_ontologico",
+            "presentacion",
+            "atlas",
+            "entornos_objetivo"
+          ],
+          "additionalProperties": true,
+          "properties": {
+
+            "vector_ontologico": {
+              "type": "object",
+              "required": ["pi", "mu", "xi", "lambda", "phi", "sigma"],
+              "additionalProperties": false,
+              "properties": {
+                "pi":     { "type": "integer", "minimum": 0, "maximum": 3 },
+                "mu":     { "type": "integer", "minimum": 0, "maximum": 3 },
+                "xi":     { "type": "integer", "minimum": 0, "maximum": 4 },
+                "lambda": { "type": "integer", "minimum": 0, "maximum": 3 },
+                "phi":    { "type": "integer", "minimum": 0, "maximum": 4 },
+                "sigma": {
+                  "type": "array",
+                  "minItems": 5,
+                  "maxItems": 5,
+                  "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+                }
+              }
+            },
+
+            "presentacion": {
+              "enum": ["estado-primario", "accion-primaria"]
+            },
+
+            "atlas": {
+              "type": "object",
+              "required": ["arnes_categorico", "forma_material"],
+              "additionalProperties": true,
+              "properties": {
+                "arnes_categorico": {
+                  "description": "Atlas A — 7 slugs canonicos (autoria-spec §4.2).",
+                  "enum": [
+                    "utilidad",
+                    "disciplina",
+                    "delegado",
+                    "persona",
+                    "orquestador",
+                    "servicio",
+                    "arquetipo"
+                  ]
+                },
+                "forma_material": {
+                  "description": "Atlas B — 4 slugs canonicos (autoria-spec §4.3).",
+                  "enum": [
+                    "habilidad",
+                    "subagente",
+                    "agente-propiamente-tal",
+                    "agente-plataforma"
+                  ]
+                },
+                "metafora_relacional": {
+                  "description": "Atlas C — 4 slugs nombrados (opcional).",
+                  "enum": [
+                    "supertool",
+                    "telebot",
+                    "electrodomestico-activo",
+                    "centro-de-control"
+                  ]
+                }
+              }
+            },
+
+            "entornos_objetivo": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "enum": ["claude-code", "codex", "gemini", "openclaw"]
+              }
+            },
+
+            "nivel_prescripcion": {
+              "enum": ["alto", "medio", "bajo"]
+            },
+
+            "conocimiento_permitido": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^urn:[a-z][a-z0-9-]*:kb:[a-z][a-z0-9-]*$"
+              }
+            },
+
+            "componible_con": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^urn:[a-z][a-z0-9-]*:artefacto:[a-z][a-z0-9-]*$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

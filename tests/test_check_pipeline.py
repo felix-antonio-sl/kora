@@ -132,11 +132,11 @@ class CheckAlgebraTests(unittest.TestCase):
             "urn:kora:kb:cat-governance-lattice",
         }
         fake_edges = [
-            GraphEdge("XRef", ROOT / "AGENTS" / "kora" / "guardian" / "AGENT.md", "urn:kora:agent-bootstrap:guardian-user:1.0.0"),
-            GraphEdge("XRef", ROOT / "AGENTS" / "kora" / "guardian" / "AGENT.md", "urn:kora:kb:agent-spec-md"),
-            GraphEdge("XRef", ROOT / "specs" / "autoria-spec.md", "urn:kora:kb:agentfile-spec"),
-            GraphEdge("XRef", ROOT / "specs" / "md-spec.md", "urn:kora:kb:05-governance-lattice"),
-            GraphEdge("XRef", ROOT / "specs" / "md-spec.md", "urn:kora:kb:definitely-missing"),
+            GraphEdge("XRef", ROOT / "artifacts" / "agents" / "kora" / "guardian" / "AGENT.md", "urn:kora:agent-bootstrap:guardian-user:1.0.0"),
+            GraphEdge("XRef", ROOT / "artifacts" / "agents" / "kora" / "guardian" / "AGENT.md", "urn:kora:kb:agent-spec-md"),
+            GraphEdge("XRef", ROOT / "serialization" / "autoria-spec.md", "urn:kora:kb:agentfile-spec"),
+            GraphEdge("XRef", ROOT / "serialization" / "md-spec.md", "urn:kora:kb:05-governance-lattice"),
+            GraphEdge("XRef", ROOT / "serialization" / "md-spec.md", "urn:kora:kb:definitely-missing"),
         ]
 
         with patch("kora_lib.catalog.load_catalog", return_value=fake_doc), patch(

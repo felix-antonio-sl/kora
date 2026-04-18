@@ -114,7 +114,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         # El cohort se deriva del filesystem (AGENTS/{ns}/{name}/AGENT.md con status: activo).
         # Validamos: (a) al menos las cohortes estan presentes, (b) el total coincide con
         # la union de workspaces productivos descubiertos, (c) meta-kora core sigue dentro.
-        from scripts.kora_lib.config import OPERATING_CORE_COHORTS
+        from kora_lib.config import OPERATING_CORE_COHORTS
         expected_total = sum(len(ws) for ws in OPERATING_CORE_COHORTS.values())
         self.assertEqual(payload["totals"]["workspaces"], expected_total)
         self.assertEqual(set(payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))

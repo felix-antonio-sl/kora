@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KORA Agent Component Schema",
+  "description": "Minimal structural validation of KORA bootstrap frontmatter aligned with agent-spec-md v8.6.0; stronger semantic invariants are enforced by toolchain/kora_lib/validation.py.",
+  "type": "object",
+  "required": ["_manifest"],
+  "properties": {
+    "_manifest": {
+      "type": "object",
+      "required": ["urn", "type"],
+      "properties": {
+        "urn": {
+          "type": "string",
+          "pattern": "^urn:[a-z][a-z0-9]*:"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "bootstrap_agents",
+            "bootstrap_soul",
+            "bootstrap_tools",
+            "bootstrap_user",
+            "bootstrap_config",
+            "lazy_load_endofunctor"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

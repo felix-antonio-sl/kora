@@ -1,0 +1,2469 @@
+_manifest:
+  urn: urn:kora:catalog:master:2.0.0
+  federation:
+    visibility: public
+  description: Auto-generated Kora Monorepo Catalog
+Catalog:
+  Agents: []
+  Skills:
+  - urn: urn:gn:skill:digitrans-cpat-analyzer:2.0.0
+    title: CM-CPAT-ANALYZER.md
+    file: artifacts/agents/gn/digitrans/skills/CM-CPAT-ANALYZER.md
+    status: published
+  - urn: urn:gn:skill:digitrans-intake:2.0.0
+    title: CM-INTAKE.md
+    file: artifacts/agents/gn/digitrans/skills/CM-INTAKE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-normative-guide:2.0.0
+    title: CM-NORMATIVE-GUIDE.md
+    file: artifacts/agents/gn/digitrans/skills/CM-NORMATIVE-GUIDE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-platform-guidance:2.0.0
+    title: CM-PLATFORM-GUIDANCE.md
+    file: artifacts/agents/gn/digitrans/skills/CM-PLATFORM-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-strategic-guide:2.0.0
+    title: CM-STRATEGIC-GUIDE.md
+    file: artifacts/agents/gn/digitrans/skills/CM-STRATEGIC-GUIDE.md
+    status: published
+  - urn: urn:gn:skill:digitrans-synthesizer:2.0.0
+    title: CM-SYNTHESIZER.md
+    file: artifacts/agents/gn/digitrans/skills/CM-SYNTHESIZER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/gn/goreologo/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-domain-analyzer:1.0.0
+    title: CM-DOMAIN-ANALYZER
+    file: artifacts/agents/gn/goreologo/skills/CM-DOMAIN-ANALYZER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-intake:2.0.0
+    title: CM-INTAKE
+    file: artifacts/agents/gn/goreologo/skills/CM-INTAKE.md
+    status: published
+  - urn: urn:gn:skill:goreologo-kb-guidance:1.0.0
+    title: CM-KB-GUIDANCE
+    file: artifacts/agents/gn/goreologo/skills/CM-KB-GUIDANCE.md
+    status: published
+  - urn: urn:gn:skill:goreologo-specialist-router:1.0.0
+    title: CM-SPECIALIST-ROUTER
+    file: artifacts/agents/gn/goreologo/skills/CM-SPECIALIST-ROUTER.md
+    status: published
+  - urn: urn:gn:skill:goreologo-synthesizer:1.0.0
+    title: CM-SYNTHESIZER
+    file: artifacts/agents/gn/goreologo/skills/CM-SYNTHESIZER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-agent-deployer:1.2.0
+    title: CM-AGENT-DEPLOYER
+    file: artifacts/agents/kora/clawforge/skills/CM-AGENT-DEPLOYER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/kora/clawforge/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: artifacts/agents/kora/clawforge/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-knowledge-navigator:1.1.0
+    title: CM-KNOWLEDGE-NAVIGATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-KNOWLEDGE-NAVIGATOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-lifecycle-orchestrator:1.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-auditor:1.0.0
+    title: CM-OPENCLAW-AUDITOR
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-AUDITOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-builder:1.0.0
+    title: CM-OPENCLAW-BUILDER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-BUILDER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-assembler:1.0.0
+    title: CM-OPENCLAW-CONTRACT-ASSEMBLER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-ASSEMBLER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-emitter:1.0.0
+    title: CM-OPENCLAW-CONTRACT-EMITTER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-EMITTER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-reconciler:1.0.0
+    title: CM-OPENCLAW-CONTRACT-RECONCILER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-RECONCILER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contract-validator:1.1.0
+    title: CM-OPENCLAW-CONTRACT-VALIDATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-CONTRACT-VALIDATOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-contractor:1.0.0
+    title: CM-OPENCLAW-CONTRACTOR
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-CONTRACTOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-designer:1.0.0
+    title: CM-OPENCLAW-DESIGNER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-evolver:1.0.0
+    title: CM-OPENCLAW-EVOLVER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-EVOLVER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-handoff:1.1.0
+    title: CM-OPENCLAW-HANDOFF
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-HANDOFF/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-knowledge-navigator:1.0.0
+    title: CM-OPENCLAW-KNOWLEDGE-NAVIGATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-KNOWLEDGE-NAVIGATOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-lifecycle-manager:1.0.0
+    title: CM-OPENCLAW-LIFECYCLE-MANAGER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-LIFECYCLE-MANAGER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-operator:1.0.0
+    title: CM-OPENCLAW-OPERATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-OPERATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-patch-applier:1.1.0
+    title: CM-OPENCLAW-PATCH-APPLIER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-PATCH-APPLIER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-patch-planner:1.0.0
+    title: CM-OPENCLAW-PATCH-PLANNER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-PATCH-PLANNER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-plugin-bundle-manager:1.0.0
+    title: CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-PLUGIN-BUNDLE-MANAGER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-production-promoter:1.0.0
+    title: CM-OPENCLAW-PRODUCTION-PROMOTER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-PRODUCTION-PROMOTER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-sandbox-architect:1.0.0
+    title: CM-OPENCLAW-SANDBOX-ARCHITECT
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-SANDBOX-ARCHITECT/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-surgeon:1.0.0
+    title: CM-OPENCLAW-SURGEON
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-telegram-architect:1.0.0
+    title: CM-OPENCLAW-TELEGRAM-ARCHITECT
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-TELEGRAM-ARCHITECT/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-topologist:1.0.0
+    title: CM-OPENCLAW-TOPOLOGIST
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-TOPOLOGIST/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-openclaw-troubleshooter:1.0.0
+    title: CM-OPENCLAW-TROUBLESHOOTER
+    file: artifacts/agents/kora/clawforge/skills/CM-OPENCLAW-TROUBLESHOOTER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-stack-auditor:1.1.0
+    title: CM-STACK-AUDITOR
+    file: artifacts/agents/kora/clawforge/skills/CM-STACK-AUDITOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-stack-configurator:1.1.0
+    title: CM-STACK-CONFIGURATOR
+    file: artifacts/agents/kora/clawforge/skills/CM-STACK-CONFIGURATOR.md
+    status: published
+  - urn: urn:kora:skill:clawforge-stack-optimizer:1.0.0
+    title: CM-STACK-OPTIMIZER
+    file: artifacts/agents/kora/clawforge/skills/CM-STACK-OPTIMIZER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-stack-provisioner:1.1.0
+    title: CM-STACK-PROVISIONER
+    file: artifacts/agents/kora/clawforge/skills/CM-STACK-PROVISIONER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:clawforge-stack-troubleshooter:1.0.0
+    title: CM-STACK-TROUBLESHOOTER
+    file: artifacts/agents/kora/clawforge/skills/CM-STACK-TROUBLESHOOTER.md
+    status: published
+  - urn: urn:kora:skill:clawforge-version-manager:1.1.0
+    title: CM-VERSION-MANAGER
+    file: artifacts/agents/kora/clawforge/skills/CM-VERSION-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-auditor:2.0.0
+    title: CM-ARTIFACT-AUDITOR
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-AUDITOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-deprecator:2.0.0
+    title: CM-ARTIFACT-DEPRECATOR
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-DEPRECATOR.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-designer:2.0.0
+    title: CM-ARTIFACT-DESIGNER
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-DESIGNER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-editor:2.0.0
+    title: CM-ARTIFACT-EDITOR
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-EDITOR.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-optimizer:2.0.0
+    title: CM-ARTIFACT-OPTIMIZER
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-OPTIMIZER.md
+    status: published
+  - urn: urn:kora:skill:curator-artifact-surgeon:2.0.0
+    title: CM-ARTIFACT-SURGEON
+    file: artifacts/agents/kora/curator/skills/CM-ARTIFACT-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:curator-context-manager:2.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/kora/curator/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:curator-crystallizer:2.0.0
+    title: CM-CRYSTALLIZER
+    file: artifacts/agents/kora/curator/skills/CM-CRYSTALLIZER.md
+    status: published
+  - urn: urn:kora:skill:curator-intent-classifier:2.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: artifacts/agents/kora/curator/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:curator-koraficator:2.0.0
+    title: CM-KORAFICATOR
+    file: artifacts/agents/kora/curator/skills/CM-KORAFICATOR.md
+    status: published
+  - urn: urn:kora:skill:curator-lifecycle-orchestrator:2.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: artifacts/agents/kora/curator/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
+  - urn: urn:kora:skill:custodio-catalog-steward:1.0.0
+    title: CM-CATALOG-STEWARD
+    file: artifacts/agents/kora/custodio/skills/CM-CATALOG-STEWARD.md
+    status: published
+  - urn: urn:kora:skill:custodio-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/kora/custodio/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:custodio-estructura-auditor:1.0.0
+    title: CM-ESTRUCTURA-AUDITOR
+    file: artifacts/agents/kora/custodio/skills/CM-ESTRUCTURA-AUDITOR.md
+    status: published
+  - urn: urn:kora:skill:custodio-evolucion-planner:1.0.0
+    title: CM-EVOLUCION-PLANNER
+    file: artifacts/agents/kora/custodio/skills/CM-EVOLUCION-PLANNER.md
+    status: published
+  - urn: urn:kora:skill:custodio-health-inspector:1.0.0
+    title: CM-HEALTH-INSPECTOR
+    file: artifacts/agents/kora/custodio/skills/CM-HEALTH-INSPECTOR.md
+    status: published
+  - urn: urn:kora:skill:custodio-ingesta-steward:1.0.0
+    title: CM-INGESTA-STEWARD
+    file: artifacts/agents/kora/custodio/skills/CM-INGESTA-STEWARD.md
+    status: published
+  - urn: urn:kora:skill:custodio-intent-classifier:1.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: artifacts/agents/kora/custodio/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:custodio-surgeon:1.0.0
+    title: CM-SURGEON
+    file: artifacts/agents/kora/custodio/skills/CM-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-agent-deprecator:2.0.0
+    title: CM-AGENT-DEPRECATOR
+    file: artifacts/agents/kora/forgemaster/skills/CM-AGENT-DEPRECATOR.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-agent-designer:2.0.0
+    title: CM-AGENT-DESIGNER
+    file: artifacts/agents/kora/forgemaster/skills/CM-AGENT-DESIGNER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-agent-evolver:2.0.0
+    title: CM-AGENT-EVOLVER
+    file: artifacts/agents/kora/forgemaster/skills/CM-AGENT-EVOLVER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-agent-surgeon:2.0.0
+    title: CM-AGENT-SURGEON
+    file: artifacts/agents/kora/forgemaster/skills/CM-AGENT-SURGEON.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-agent-validator:2.0.0
+    title: CM-AGENT-VALIDATOR
+    file: artifacts/agents/kora/forgemaster/skills/CM-AGENT-VALIDATOR/SKILL.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-anthropic-adapter:1.0.0
+    title: CM-ANTHROPIC-ADAPTER
+    file: artifacts/agents/kora/forgemaster/skills/CM-ANTHROPIC-ADAPTER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-artifact-emitter:1.1.0
+    title: CM-ARTIFACT-EMITTER
+    file: artifacts/agents/kora/forgemaster/skills/CM-ARTIFACT-EMITTER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-claude-code-adapter:1.0.0
+    title: CM-CLAUDE-CODE-ADAPTER
+    file: artifacts/agents/kora/forgemaster/skills/CM-CLAUDE-CODE-ADAPTER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-component-builder:2.0.0
+    title: CM-COMPONENT-BUILDER
+    file: artifacts/agents/kora/forgemaster/skills/CM-COMPONENT-BUILDER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-context-manager:2.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/kora/forgemaster/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-drift-detector:1.0.0
+    title: CM-DRIFT-DETECTOR
+    file: artifacts/agents/kora/forgemaster/skills/CM-DRIFT-DETECTOR.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-equivalence-checker:1.0.0
+    title: CM-EQUIVALENCE-CHECKER
+    file: artifacts/agents/kora/forgemaster/skills/CM-EQUIVALENCE-CHECKER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-intent-classifier:2.0.0
+    title: CM-INTENT-CLASSIFIER
+    file: artifacts/agents/kora/forgemaster/skills/CM-INTENT-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-lifecycle-orchestrator:2.0.0
+    title: CM-LIFECYCLE-ORCHESTRATOR
+    file: artifacts/agents/kora/forgemaster/skills/CM-LIFECYCLE-ORCHESTRATOR.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-openclaw-adapter:1.2.0
+    title: CM-OPENCLAW-ADAPTER
+    file: artifacts/agents/kora/forgemaster/skills/CM-OPENCLAW-ADAPTER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:forgemaster-workspace-scaffolder:2.0.0
+    title: CM-WORKSPACE-SCAFFOLDER
+    file: artifacts/agents/kora/forgemaster/skills/CM-WORKSPACE-SCAFFOLDER/SKILL.md
+    status: published
+  - urn: urn:kora:skill:guardian-context-manager:1.0.0
+    title: CM-CONTEXT-MANAGER
+    file: artifacts/agents/kora/guardian/skills/CM-CONTEXT-MANAGER.md
+    status: published
+  - urn: urn:kora:skill:guardian-spec-auditor:1.0.0
+    title: CM-SPEC-AUDITOR
+    file: artifacts/agents/kora/guardian/skills/CM-SPEC-AUDITOR.md
+    status: published
+  - urn: urn:kora:skill:guardian-spec-classifier:1.0.0
+    title: CM-SPEC-CLASSIFIER
+    file: artifacts/agents/kora/guardian/skills/CM-SPEC-CLASSIFIER.md
+    status: published
+  - urn: urn:kora:skill:guardian-spec-guard:1.0.0
+    title: CM-SPEC-GUARD
+    file: artifacts/agents/kora/guardian/skills/CM-SPEC-GUARD.md
+    status: published
+  Knowledge:
+  - urn: urn:agengai:kb:00-fundamentos-previos
+    title: Capítulo 0 — Fundamentos Previos
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/00-fundamentos-previos.md
+    status: published
+  - urn: urn:agengai:kb:00-toc
+    title: Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/00-toc.md
+    status: published
+  - urn: urn:agengai:kb:01-arquitectura-gateway
+    title: Capítulo 1 — Arquitectura del Gateway
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/01-arquitectura-gateway.md
+    status: published
+  - urn: urn:agengai:kb:02-agente-unidad-fundamental
+    title: Capítulo 2 — El Agente como Unidad Fundamental
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/02-agente-unidad-fundamental.md
+    status: published
+  - urn: urn:agengai:kb:03-sesiones
+    title: Capítulo 3 — Sesiones
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/03-sesiones.md
+    status: published
+  - urn: urn:agengai:kb:04-modelos-failover
+    title: Capítulo 4 — Modelos y Failover
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/04-modelos-failover.md
+    status: published
+  - urn: urn:agengai:kb:05-memoria
+    title: Capítulo 5 — Memoria
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/05-memoria.md
+    status: published
+  - urn: urn:agengai:kb:06-multi-agent-routing
+    title: Capítulo 6 — Multi-Agent Routing
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/06-multi-agent-routing.md
+    status: published
+  - urn: urn:agengai:kb:07-aislamiento-seguridad
+    title: Capítulo 7 — Aislamiento y Seguridad por Agente
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/07-aislamiento-seguridad.md
+    status: published
+  - urn: urn:agengai:kb:08-patrones-multitenant
+    title: Capítulo 8 — Patrones Multi-Tenant
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/08-patrones-multitenant.md
+    status: published
+  - urn: urn:agengai:kb:09-sub-agentes
+    title: Capítulo 9 — Sub-Agentes (sessions_spawn)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/09-sub-agentes.md
+    status: published
+  - urn: urn:agengai:kb:10-sub-agentes-anidados
+    title: Capítulo 10 — Sub-Agentes Anidados (Orchestrator Pattern)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/10-sub-agentes-anidados.md
+    status: published
+  - urn: urn:agengai:kb:11-comunicacion-inter-sesion
+    title: Capítulo 11 — Comunicación Inter-Sesión
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/11-comunicacion-inter-sesion.md
+    status: published
+  - urn: urn:agengai:kb:12-heartbeats
+    title: Capítulo 12 — Heartbeats
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/12-heartbeats.md
+    status: published
+  - urn: urn:agengai:kb:13-cron-jobs
+    title: Capítulo 13 — Cron Jobs
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/13-cron-jobs.md
+    status: published
+  - urn: urn:agengai:kb:14-cron-vs-heartbeat
+    title: 'Capítulo 14 — Cron vs Heartbeat: Árbol de Decisión'
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/14-cron-vs-heartbeat.md
+    status: published
+  - urn: urn:agengai:kb:15-hooks
+    title: Capítulo 15 — Hooks (Event-Driven Automation)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/15-hooks.md
+    status: published
+  - urn: urn:agengai:kb:16-webhooks
+    title: Capítulo 16 — Webhooks (External Triggers)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/16-webhooks.md
+    status: published
+  - urn: urn:agengai:kb:17-lobster
+    title: Capítulo 17 — Lobster (Workflow Runtime)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/17-lobster.md
+    status: published
+  - urn: urn:agengai:kb:18-modelo-seguridad
+    title: Capítulo 18 — Modelo de Seguridad
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/18-modelo-seguridad.md
+    status: published
+  - urn: urn:agengai:kb:19-operaciones
+    title: Capítulo 19 — Operaciones
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/19-operaciones.md
+    status: published
+  - urn: urn:agengai:kb:20-patrones-diseno
+    title: Capítulo 20 — Patrones de Diseño para Agentes OpenClaw
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/20-patrones-diseno.md
+    status: published
+  - urn: urn:agengai:kb:21-decisiones-arquitectura
+    title: Capítulo 21 — Decisiones de Arquitectura (Decision Records)
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/21-decisiones-arquitectura.md
+    status: published
+  - urn: urn:agengai:kb:22-multi-gateway-docker-federation
+    title: 'Capítulo 22 — Multi-Gateway Dockerizado: Federación de Agentes'
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/22-multi-gateway-docker-federation.md
+    status: published
+  - urn: urn:agengai:kb:apendices
+    title: Apéndices
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/apendices.md
+    status: published
+  - urn: urn:agengai:kb:cheatsheet
+    title: OpenClaw — Cheatsheet Definitivo
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/CHEATSHEET.md
+    status: published
+  - urn: urn:agengai:kb:cheatsheet-p02
+    title: OpenClaw — Cheatsheet Definitivo - Parte 02
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/CHEATSHEET--p02.md
+    status: published
+  - urn: urn:agengai:kb:forjador-especialista-openclaw
+    title: FORJADOR ESPECIALISTA — Despliegue, Configuración y Mantención de Agentes
+      OpenClaw en Ubuntu Host
+    file: artifacts/knowledge/agengai/openclaw/specs-legacy/forjador-especialista-openclaw.md
+    status: published
+  - urn: urn:agengai:kb:forjador-openclaw
+    title: FORJADOR — Agente Forjador de Agentes OpenClaw
+    file: artifacts/knowledge/agengai/openclaw/specs-legacy/forjador-openclaw.md
+    status: published
+  - urn: urn:agengai:kb:openclaw-integration
+    title: OpenClaw Integration Guide
+    file: artifacts/knowledge/agengai/openclaw-integration.md
+    status: published
+  - urn: urn:agengai:kb:openclaw-manual-integral
+    title: 'Manual Integral — Agentes OpenClaw: Creacion, Operacion y Evolucion'
+    file: artifacts/knowledge/agengai/openclaw/specs-legacy/openclaw-manual-integral.md
+    status: published
+  - urn: urn:agengai:kb:openclaw-runtime-extension
+    title: AGENGAI/OpenClaw-Runtime-Extension v1.1.0
+    file: runtime/openclaw-runtime-extension.md
+    status: publicado
+  - urn: urn:agengai:kb:openclaw-skills-manual
+    title: Manual Integral de Skills en OpenClaw
+    file: artifacts/knowledge/agengai/openclaw/specs-legacy/manual-integral-skills-openclaw.md
+    status: draft
+  - urn: urn:agengai:kb:readme
+    title: Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
+    file: artifacts/knowledge/agengai/openclaw/manual-openclaw/README.md
+    status: published
+  - urn: urn:agengai:kb:salubrista-openclaw-spec
+    title: Especificacion Integral del Agente OpenClaw `salubrista`
+    file: artifacts/knowledge/agengai/openclaw/specs-legacy/salubrista-openclaw-especificacion-integral.md
+    status: published
+  - urn: urn:agengai:kb:skills-anthropic
+    title: The Complete Guide to Building Skills for Claude
+    file: artifacts/knowledge/agengai/skills-anthropic.md
+    status: published
+  - urn: urn:fxsl:kb:action-primary-key
+    title: Action as Primary Key
+    file: artifacts/knowledge/fxsl/cat/action-primary-key.md
+    status: published
+  - urn: urn:fxsl:kb:algebraic-databases
+    title: Algebraic Databases
+    file: artifacts/knowledge/fxsl/cat/algebraic-databases.md
+    status: published
+  - urn: urn:fxsl:kb:algebraic-model-management
+    title: Algebraic Model Management
+    file: artifacts/knowledge/fxsl/cat/algebraic-model-management.md
+    status: published
+  - urn: urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual
+    title: 'Allan Kelly: gemelo digital intelectual'
+    file: artifacts/knowledge/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual.md
+    status: published
+  - urn: urn:fxsl:kb:audit-patterns
+    title: Categorical Audit Patterns
+    file: artifacts/knowledge/fxsl/cat/audit-patterns.md
+    status: published
+  - urn: urn:fxsl:kb:categorical-data-structures
+    title: Categorical Data Structures
+    file: artifacts/knowledge/fxsl/cat/categorical-data-structures.md
+    status: published
+  - urn: urn:fxsl:kb:categorical-systems-theory
+    title: Categorical Systems Theory
+    file: artifacts/knowledge/fxsl/cat/categorical-systems-theory.md
+    status: published
+  - urn: urn:fxsl:kb:chapter0-operador-solitario
+    title: 'CHAPTER 0: EL OPERADOR SOLITARIO'
+    file: artifacts/knowledge/fxsl/xanpan/chapter0-operador-solitario.md
+    status: published
+  - urn: urn:fxsl:kb:chapter0-operador-solitario-p02
+    title: 'CHAPTER 0: EL OPERADOR SOLITARIO - Parte 02'
+    file: artifacts/knowledge/fxsl/xanpan/chapter0-operador-solitario--p02.md
+    status: published
+  - urn: urn:fxsl:kb:coalgebras
+    title: Coalgebras for Software Engineering
+    file: artifacts/knowledge/fxsl/cat/coalgebras.md
+    status: published
+  - urn: urn:fxsl:kb:cognitive-toolkit
+    title: Categorical Cognitive Toolkit v1.2
+    file: artifacts/knowledge/fxsl/cat/cognitive-toolkit.md
+    status: published
+  - urn: urn:fxsl:kb:constraint-logic
+    title: Unified Constraint Logic
+    file: artifacts/knowledge/fxsl/cat/constraint-logic.md
+    status: published
+  - urn: urn:fxsl:kb:cql-data-integration
+    title: CQL Data Integration for Computational Science
+    file: artifacts/knowledge/fxsl/cat/cql-data-integration.md
+    status: published
+  - urn: urn:fxsl:kb:data-access-layers
+    title: Data Access Layers via Category Theory
+    file: artifacts/knowledge/fxsl/cat/data-access-layers.md
+    status: published
+  - urn: urn:fxsl:kb:data-lakes-ct
+    title: Data Lakes via Category Theory
+    file: artifacts/knowledge/fxsl/cat/data-lakes-ct.md
+    status: published
+  - urn: urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases
+    title: Category-Theoretic Database Approaches
+    file: artifacts/knowledge/fxsl/cat/exploring-category-theoretic-approaches-to-databases.md
+    status: published
+  - urn: urn:fxsl:kb:formal-framework-data-lakes-ct
+    title: Formal Framework for Data Lakes (CT)
+    file: artifacts/knowledge/fxsl/cat/formal-framework-data-lakes-ct.md
+    status: published
+  - urn: urn:fxsl:kb:formal-framework-multimodel-data-transformations
+    title: Multi-Model Data Transformations via Kan Lifts
+    file: artifacts/knowledge/fxsl/cat/formal-framework-multimodel-data-transformations.md
+    status: published
+  - urn: urn:fxsl:kb:fx-address-guidance
+    title: New Patterns for Using gist:Address
+    file: artifacts/knowledge/fxsl/gist/fx-address-guidance.md
+    status: published
+  - urn: urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol
+    title: Protocolo de Auditoría Ontológica 360° (Gist)
+    file: artifacts/knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.md
+    status: published
+  - urn: urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol-p02
+    title: Protocolo de Auditoría Ontológica 360° (Gist) - Parte 02
+    file: artifacts/knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol--p02.md
+    status: published
+  - urn: urn:fxsl:kb:fx-namespace
+    title: The Ontology Namespace vs the Ontology IRI
+    file: artifacts/knowledge/fxsl/gist/fx-namespace.md
+    status: published
+  - urn: urn:fxsl:kb:fx-readme
+    title: About gist
+    file: artifacts/knowledge/fxsl/gist/fx-readme.md
+    status: published
+  - urn: urn:fxsl:kb:fx-rules
+    title: MBT Modeling Assistant Rules
+    file: artifacts/knowledge/fxsl/mbt/fx-rules.md
+    status: published
+  - urn: urn:fxsl:kb:fx-tensiones
+    title: Tensiones del Modelamiento de Sistemas
+    file: artifacts/knowledge/fxsl/mbt/fx-tensiones.md
+    status: published
+  - urn: urn:fxsl:kb:fx-uom-model
+    title: New Magnitudes and Units of Measure in gist 13
+    file: artifacts/knowledge/fxsl/gist/fx-uom-model.md
+    status: published
+  - urn: urn:fxsl:kb:icas-adjunciones
+    title: Adjunciones
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/06-adjunciones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-agencia
+    title: Agencia
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/14-agencia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-calidad-riesgo
+    title: Calidad y riesgo
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/18-calidad-riesgo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-comparacion
+    title: Comparación y equivalencia
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/03-comparacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion
+    title: Composicion
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/01-composicion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-composicion-estructura
+    title: Composicion con estructura
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/07-composicion-con-estructura.md
+    status: published
+  - urn: urn:fxsl:kb:icas-efectos
+    title: Efectos
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/09-efectos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-enriquecimiento
+    title: Enriquecimiento
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08-enriquecimiento.md
+    status: published
+  - urn: urn:fxsl:kb:icas-escala
+    title: Escala
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/13-escala.md
+    status: published
+  - urn: urn:fxsl:kb:icas-extension
+    title: Extension
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/10-extension.md
+    status: published
+  - urn: urn:fxsl:kb:icas-higher-categories
+    title: Categorias superiores
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08b-higher-categories.md
+    status: published
+  - urn: urn:fxsl:kb:icas-identidad-relacion
+    title: Identidad es relación
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/04-identidad-es-relacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-infraestructura
+    title: Infraestructura autonoma
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/20-infraestructura-autonoma.md
+    status: published
+  - urn: urn:fxsl:kb:icas-interaccion
+    title: Interaccion
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/11-interaccion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-lifecycle
+    title: Lifecycle
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/16-lifecycle.md
+    status: published
+  - urn: urn:fxsl:kb:icas-patrones
+    title: Patrones
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/19-patrones.md
+    status: published
+  - urn: urn:fxsl:kb:icas-preservacion
+    title: Preservacion
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/02-preservacion.md
+    status: published
+  - urn: urn:fxsl:kb:icas-procesos
+    title: Procesos
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/17-procesos.md
+    status: published
+  - urn: urn:fxsl:kb:icas-protocolos
+    title: Protocolos y coreografia
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/14b-protocolos-coreografia.md
+    status: published
+  - urn: urn:fxsl:kb:icas-safety-alignment
+    title: Safety y alignment
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12b-safety-alignment.md
+    status: published
+  - urn: urn:fxsl:kb:icas-sintesis
+    title: 'Sintesis: ADN cognitivo del Arquitecto de Sistemas Categorial'
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/00-sintesis.md
+    status: published
+  - urn: urn:fxsl:kb:icas-tiempo
+    title: Tiempo
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/15-tiempo.md
+    status: published
+  - urn: urn:fxsl:kb:icas-topoi
+    title: Topoi
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12-topoi.md
+    status: published
+  - urn: urn:fxsl:kb:icas-universales
+    title: Construcciones universales
+    file: artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/05-universales.md
+    status: published
+  - urn: urn:fxsl:kb:kb-category
+    title: Knowledge Base as Category
+    file: artifacts/knowledge/fxsl/cat/kb-category.md
+    status: published
+  - urn: urn:fxsl:kb:manual-metodologico-opm-es
+    title: Manual metodológico de OPM (versión ampliada v2)
+    file: artifacts/knowledge/fxsl/opm/opm-ssot-es/metodologia-opm-es.md
+    status: draft-publishable
+  - urn: urn:fxsl:kb:mathematical-modelling
+    title: Mathematical Modelling via Category Theory
+    file: artifacts/knowledge/fxsl/cat/mathematical-modelling.md
+    status: published
+  - urn: urn:fxsl:kb:mbse-consistency
+    title: MBSE Consistency via Category Theory
+    file: artifacts/knowledge/fxsl/cat/mbse-consistency.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/metodologia-modelamiento-opm.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p02
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 02
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p02.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p03
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 03
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p03.md
+    status: published
+  - urn: urn:fxsl:kb:metodologia-modelamiento-opm-p04
+    title: Metodologia de Modelamiento OPM — Protocolo de Modelamiento Conceptual
+      de Sistemas - Parte 04
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/metodologia-modelamiento-opm--p04.md
+    status: published
+  - urn: urn:fxsl:kb:multicategory-multimodel-query-processing
+    title: 'MultiCategory: Multi-Model Query Processing'
+    file: artifacts/knowledge/fxsl/cat/multicategory-multimodel-query-processing.md
+    status: published
+  - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations
+    title: Observaciones visuales de los tutoriales OPCloud
+    file: artifacts/knowledge/fxsl/opm/opcloud-tutorial-visual-observations.md
+    status: published
+  - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations-p02
+    title: Observaciones visuales de los tutoriales OPCloud - Parte 02
+    file: artifacts/knowledge/fxsl/opm/opcloud-tutorial-visual-observations--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opd-es
+    title: OPD — Gramática visual de OPM (versión ampliada v2)
+    file: artifacts/knowledge/fxsl/opm/opm-ssot-es/opm-visual-es.md
+    status: draft-publishable
+  - urn: urn:fxsl:kb:opl-es
+    title: OPL-ES — Lenguaje Objeto-Proceso en Español (versión ampliada v2)
+    file: artifacts/knowledge/fxsl/opm/opm-ssot-es/opm-opl-es.md
+    status: draft-publishable
+  - urn: urn:fxsl:kb:opm-complexity-management
+    title: OPM Complexity Management — Refinement and Abstraction
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-complexity-management.md
+    status: published
+  - urn: urn:fxsl:kb:opm-dynamic-behavior
+    title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior.md
+    status: published
+  - urn: urn:fxsl:kb:opm-dynamic-behavior-p02
+    title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
+      - Parte 02
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opm-dynamic-behavior-p03
+    title: OPM Dynamic Behavior — Procedural Links, Control Flow, and Logical Operators
+      - Parte 03
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-dynamic-behavior--p03.md
+    status: published
+  - urn: urn:fxsl:kb:opm-es
+    title: OPM — Núcleo conceptual (versión ampliada v2)
+    file: artifacts/knowledge/fxsl/opm/opm-ssot-es/opm-iso-19450-es.md
+    status: draft-publishable
+  - urn: urn:fxsl:kb:opm-iso-19450
+    title: OPM ISO/PAS 19450 — Object-Process Methodology
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/opm-iso-19450.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p02
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 02
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/opm-iso-19450--p02.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p03
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 03
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/opm-iso-19450--p03.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p04
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 04
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/opm-iso-19450--p04.md
+    status: published
+  - urn: urn:fxsl:kb:opm-iso-19450-p05
+    title: OPM ISO/PAS 19450 — Object-Process Methodology - Parte 05
+    file: artifacts/knowledge/fxsl/opm/opm-ssot/opm-iso-19450--p05.md
+    status: published
+  - urn: urn:fxsl:kb:opm-mbse-acr-tutorial
+    title: ACR Tutorial — OPM History and Modeling the Automatic Crash Response System
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-acr-tutorial.md
+    status: published
+  - urn: urn:fxsl:kb:opm-mbse-foundations
+    title: OPM MBSE Foundations — Conceptual Modeling with Objects and Processes
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-mbse-foundations.md
+    status: published
+  - urn: urn:fxsl:kb:opm-opl-bimodal
+    title: OPM OPL Bimodal — Graphic-Text Equivalence and Textual Specification
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-opl-bimodal.md
+    status: published
+  - urn: urn:fxsl:kb:opm-readme
+    title: README — Corpus OPM
+    file: artifacts/knowledge/fxsl/opm/README.md
+    status: published
+  - urn: urn:fxsl:kb:opm-structural-relations
+    title: OPM Structural Relations — Fundamental Relations, States, and Hierarchies
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/opm-structural-relations.md
+    status: published
+  - urn: urn:fxsl:kb:procrastination-sirois
+    title: Procrastination — Sirois (2022)
+    file: artifacts/knowledge/fxsl/procrastination-sirois.md
+    status: published
+  - urn: urn:fxsl:kb:procrastination-sirois-p02
+    title: Procrastination — Sirois (2022) - Parte 02
+    file: artifacts/knowledge/fxsl/procrastination-sirois--p02.md
+    status: published
+  - urn: urn:fxsl:kb:schema-evolution
+    title: Schema Evolution and Behavioral Audit
+    file: artifacts/knowledge/fxsl/cat/schema-evolution.md
+    status: published
+  - urn: urn:fxsl:kb:seven-sketches
+    title: Functorial Data Model (FDM)
+    file: artifacts/knowledge/fxsl/cat/seven-sketches.md
+    status: published
+  - urn: urn:fxsl:kb:stack-llm-arquitectura
+    title: STACK::LLM v1.0
+    file: artifacts/knowledge/fxsl/xanpan/stack-llm-arquitectura.md
+    status: published
+  - urn: urn:fxsl:kb:stack-llm-arquitectura-p02
+    title: STACK::LLM v1.0 - Parte 02
+    file: artifacts/knowledge/fxsl/xanpan/stack-llm-arquitectura--p02.md
+    status: published
+  - urn: urn:fxsl:kb:swarm-ops-metodologia
+    title: SWARM::OPS v1.0
+    file: artifacts/knowledge/fxsl/xanpan/swarm-ops-metodologia.md
+    status: published
+  - urn: urn:fxsl:kb:sysml-foundations-diagrams
+    title: SysML Foundations and Diagrams — Systems Modeling Language Overview
+    file: artifacts/knowledge/fxsl/opm/model-based-systems-engineering-opm/sysml-foundations-diagrams.md
+    status: published
+  - urn: urn:fxsl:kb:unified-multimodel
+    title: Unified Multi-Model Representation
+    file: artifacts/knowledge/fxsl/cat/unified-multimodel.md
+    status: published
+  - urn: urn:fxsl:kb:unified-representation-transformation-multimodel
+    title: Unified Representation and Transformation of Multi-Model Data
+    file: artifacts/knowledge/fxsl/cat/unified-representation-transformation-multimodel.md
+    status: published
+  - urn: urn:fxsl:kb:xanpan-agents-metodologia
+    title: XANPAN::AGENTS v2.1
+    file: artifacts/knowledge/fxsl/xanpan/xanpan-agents-metodologia.md
+    status: published
+  - urn: urn:gn:kb:bpmn-actos-administrativos
+    title: Tramitación de Actos Administrativos — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/bpmn-actos-administrativos.md
+    status: published
+  - urn: urn:gn:kb:bpmn-cies-sitia
+    title: Gestion Operativa CIES/SITIA -- GORE Nuble
+    file: artifacts/knowledge/gn/kb/bpmn-cies-sitia.md
+    status: published
+  - urn: urn:gn:kb:bpmn-geoespacial-ide
+    title: Gestión de Información Geoespacial (IDE/Geonodo) — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/bpmn-geoespacial-ide.md
+    status: published
+  - urn: urn:gn:kb:comunicaciones-oc
+    title: Comunicaciones Oscar Crisóstomo — Gobernador Regional de Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_008_comunicaciones_oc.md
+    status: published
+  - urn: urn:gn:kb:convenios-estados-fases
+    title: Convenios GORE Ñuble — Estados y Ciclo de Vida
+    file: artifacts/knowledge/gn/kb/kb_gn_convenios_estados_fases.md
+    status: published
+  - urn: urn:gn:kb:cuentas-publicas-2021-2024
+    title: Cuentas Públicas GORE Ñuble 2021–2024
+    file: artifacts/knowledge/gn/kb/kb_gn_009_cuentas_publicas.md
+    status: published
+  - urn: urn:gn:kb:dictamenes-cgr-gore
+    title: Dictámenes CGR Relevantes para GOREs
+    file: artifacts/knowledge/gn/kb/kb_gn_101_dictamenes_cgr.md
+    status: published
+  - urn: urn:gn:kb:ecosistema-instituciones
+    title: Ecosistema Institucional Externo — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_ecosistema_instituciones.md
+    status: published
+  - urn: urn:gn:kb:erd-nuble-2024-2030
+    title: Estrategia Regional de Desarrollo Ñuble 2024–2030
+    file: artifacts/knowledge/gn/kb/kb_gn_006_erd_nuble.md
+    status: published
+  - urn: urn:gn:kb:estrategia-gestion
+    title: Estrategia y Gestión del Gobierno Regional en Chile
+    file: artifacts/knowledge/gn/kb/kb_gn_035_estrategia_gestion.md
+    status: published
+  - urn: urn:gn:kb:estrategia-gestion-p02
+    title: Estrategia y Gestión del Gobierno Regional en Chile - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_035_estrategia_gestion--p02.md
+    status: published
+  - urn: urn:gn:kb:estructura-estado-chile
+    title: Estructura del Estado de Chile
+    file: artifacts/knowledge/gn/kb/kb_gn_007_estructura_estado_chile.md
+    status: published
+  - urn: urn:gn:kb:flujos-aprobacion-documentos
+    title: Flujos de Aprobación de Documentos — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_015_aprobaciones.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR)
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_019_gestion_ipr.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr-p02
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      02
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_019_gestion_ipr--p02.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr-p03
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      03
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_019_gestion_ipr--p03.md
+    status: published
+  - urn: urn:gn:kb:gestion-ipr-p04
+    title: Gestión Operacional de Intervenciones Públicas Regionales (IPR) - Parte
+      04
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_019_gestion_ipr--p04.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026
+    file: artifacts/knowledge/gn/kb/kb_gn_018_gestion_prpto_2026.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto-p02
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      02
+    file: artifacts/knowledge/gn/kb/kb_gn_018_gestion_prpto_2026--p02.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto-p03
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      03
+    file: artifacts/knowledge/gn/kb/kb_gn_018_gestion_prpto_2026--p03.md
+    status: published
+  - urn: urn:gn:kb:gestion-prpto-p04
+    title: Gestión Financiera y Operativa del Presupuesto Regional GORE 2026 - Parte
+      04
+    file: artifacts/knowledge/gn/kb/kb_gn_018_gestion_prpto_2026--p04.md
+    status: published
+  - urn: urn:gn:kb:gestion-rendiciones
+    title: Gestión de Rendiciones de Cuentas — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_020_gestion_rendiciones.md
+    status: published
+  - urn: urn:gn:kb:gestion-rendiciones-p02
+    title: Gestión de Rendiciones de Cuentas — GORE Ñuble - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_020_gestion_rendiciones--p02.md
+    status: published
+  - urn: urn:gn:kb:gore-ideal
+    title: 'GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional'
+    file: artifacts/knowledge/gn/kb/kb_gn_900_gore_ideal.md
+    status: published
+  - urn: urn:gn:kb:guia-circular-33-sts
+    title: Guía Operativa Circular 33 – GORE Ñuble
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_029_guia_circ33.md
+    status: published
+  - urn: urn:gn:kb:guia-comunicaciones
+    title: Guía Integral de Comunicaciones GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_030_guia_comunicaciones.md
+    status: published
+  - urn: urn:gn:kb:guia-fril-2025-sts
+    title: Instructivo FRIL 2025 – Región de Ñuble
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_026_guia_fril.md
+    status: published
+  - urn: urn:gn:kb:guia-frpd-nuble
+    title: Guía Operativa FRPD Ñuble 2025
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_027_guia_frpd.md
+    status: published
+  - urn: urn:gn:kb:guia-idi-sni-sts
+    title: Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos
+      Regionales
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_024_guia_idi_sni.md
+    status: published
+  - urn: urn:gn:kb:guia-programas-directos-gore
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE – Glosa 06
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_025_guia_programas.md
+    status: published
+  - urn: urn:gn:kb:guia-programas-directos-gore-p02
+    title: Guía de Formulación de Programas Públicos Regionales (PPR) de Ejecución
+      Directa GORE – Glosa 06 - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_025_guia_programas--p02.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble
+    title: Indicadores Regionales y Comunales — Región de Ñuble
+    file: artifacts/knowledge/gn/kb/indicadores-nuble.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p02
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 02
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p02.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p03
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 03
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p03.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p04
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 04
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p04.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p05
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 05
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p05.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p06
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 06
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p06.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p07
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 07
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p07.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p08
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 08
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p08.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p09
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 09
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p09.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p10
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 10
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p10.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p11
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 11
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p11.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p12
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 12
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p12.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p13
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 13
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p13.md
+    status: published
+  - urn: urn:gn:kb:indicadores-nuble-p14
+    title: Indicadores Regionales y Comunales — Región de Ñuble - Parte 14
+    file: artifacts/knowledge/gn/kb/indicadores-nuble--p14.md
+    status: published
+  - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts
+    title: Instructivo Concurso Vinculación con la Comunidad 8% 2025 – Región de Ñuble
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_028_instructivo_subvencion_8.md
+    status: published
+  - urn: urn:gn:kb:instructivo-subvencion-8-2025-sts-p02
+    title: Instructivo Concurso Vinculación con la Comunidad 8% 2025 – Región de Ñuble
+      - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_028_instructivo_subvencion_8--p02.md
+    status: published
+  - urn: urn:gn:kb:intro-gores-nuble
+    title: Introducción al Gobierno Regional de Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_000_intro_gores_nuble.md
+    status: published
+  - urn: urn:gn:kb:lean6-gestion-core
+    title: 'Lean Six Sigma: Core Methods and Tools'
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_lean6_core.md
+    status: published
+  - urn: urn:gn:kb:lean6-gestion-core-p02
+    title: 'Lean Six Sigma: Core Methods and Tools - Parte 02'
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_lean6_core--p02.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-glosas-gore
+    title: Ley de Presupuestos 2026 — Glosas Gobiernos Regionales
+    file: artifacts/knowledge/gn/kb/kb_gn_211_ley_presupuestos_2026_glosas.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p02
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p02.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p03
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 03
+    file: artifacts/knowledge/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p03.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-gore-nuble-p04
+    title: Ley de Presupuestos 2026 — Marco Operativo GORE Ñuble - Parte 04
+    file: artifacts/knowledge/gn/kb/kb_gn_212_ley_presupuestos_2026_gore_nuble--p04.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-normas-generales
+    title: Ley N° 21.796 — Normas Generales Ley de Presupuestos 2026
+    file: artifacts/knowledge/gn/kb/kb_gn_211_ley_presupuestos_2026_normas_generales.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales'
+    file: artifacts/knowledge/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p02
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 02'
+    file: artifacts/knowledge/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p02.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p03
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 03'
+    file: artifacts/knowledge/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p03.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p04
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 04'
+    file: artifacts/knowledge/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p04.md
+    status: published
+  - urn: urn:gn:kb:ley-presupuestos-2026-partida-31-p05
+    title: 'Ley de Presupuestos 2026 — Partida 31: Financiamiento Gobiernos Regionales
+      - Parte 05'
+    file: artifacts/knowledge/gn/kb/kb_gn_210_ley_presupuestos_2026_partida_31--p05.md
+    status: published
+  - urn: urn:gn:kb:loc-gore
+    title: LOC sobre Gobierno y Administración Regional (DFL 1-19.175)
+    file: artifacts/knowledge/gn/kb/kb_gn_031_loc_gore.md
+    status: published
+  - urn: urn:gn:kb:loc-gore-p02
+    title: LOC sobre Gobierno y Administración Regional (DFL 1-19.175) - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_031_loc_gore--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-compras-contrataciones
+    title: Gestión de Compras y Contrataciones — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/manual-compras-contrataciones.md
+    status: published
+  - urn: urn:gn:kb:manual-compras-contrataciones-p02
+    title: Gestión de Compras y Contrataciones — GORE Ñuble - Parte 02
+    file: artifacts/knowledge/gn/kb/manual-compras-contrataciones--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-contabilidad
+    title: Contabilidad Gubernamental y Cierre Financiero — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/manual-contabilidad.md
+    status: published
+  - urn: urn:gn:kb:manual-flota-servicios-generales
+    title: Gestion de Flota Vehicular y Servicios Generales — GORE Nuble
+    file: artifacts/knowledge/gn/kb/manual-flota-servicios-generales.md
+    status: published
+  - urn: urn:gn:kb:manual-flota-servicios-generales-p02
+    title: Gestion de Flota Vehicular y Servicios Generales — GORE Nuble - Parte 02
+    file: artifacts/knowledge/gn/kb/manual-flota-servicios-generales--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-gestion-personas
+    title: Gestion de Personas — GORE Nuble
+    file: artifacts/knowledge/gn/kb/manual-gestion-personas.md
+    status: published
+  - urn: urn:gn:kb:manual-gestion-personas-p02
+    title: Gestion de Personas — GORE Nuble - Parte 02
+    file: artifacts/knowledge/gn/kb/manual-gestion-personas--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-gestion-personas-p03
+    title: Gestion de Personas — GORE Nuble - Parte 03
+    file: artifacts/knowledge/gn/kb/manual-gestion-personas--p03.md
+    status: published
+  - urn: urn:gn:kb:manual-induccion-gore-nuble-2026
+    title: Manual de Inducción del Gobierno Regional de Ñuble 2026
+    file: artifacts/knowledge/gn/kb/kb_gn_017_manual_induccion.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-activo-fijo
+    title: Gestion de Inventarios y Activo Fijo — GORE Nuble
+    file: artifacts/knowledge/gn/kb/manual-inventarios-activo-fijo.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-activo-fijo-p02
+    title: Gestion de Inventarios y Activo Fijo — GORE Nuble - Parte 02
+    file: artifacts/knowledge/gn/kb/manual-inventarios-activo-fijo--p02.md
+    status: published
+  - urn: urn:gn:kb:manual-inventarios-activo-fijo-p03
+    title: Gestion de Inventarios y Activo Fijo — GORE Nuble - Parte 03
+    file: artifacts/knowledge/gn/kb/manual-inventarios-activo-fijo--p03.md
+    status: published
+  - urn: urn:gn:kb:manual-operacional-dgi
+    title: Manual Operacional del Departamento de Gestión Institucional
+    file: artifacts/knowledge/gn/kb/kb_gn_manual_operacional_dgi.md
+    status: published
+  - urn: urn:gn:kb:manual-tesoreria
+    title: Tesorería y Gestión de Ingresos — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/manual-tesoreria.md
+    status: published
+  - urn: urn:gn:kb:marco-legal-gores
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico
+    file: artifacts/knowledge/gn/kb/kb_gn_200_marco_legal_gores.md
+    status: published
+  - urn: urn:gn:kb:marco-legal-gores-p02
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_200_marco_legal_gores--p02.md
+    status: published
+  - urn: urn:gn:kb:marco-legal-gores-p03
+    title: Marco Legal de los Gobiernos Regionales — Compendio Jurídico - Parte 03
+    file: artifacts/knowledge/gn/kb/kb_gn_200_marco_legal_gores--p03.md
+    status: published
+  - urn: urn:gn:kb:mecanismos-matriz-decision
+    title: Matriz Unificada de Mecanismos de Financiamiento — GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_mecanismos_matriz_decision.md
+    status: published
+  - urn: urn:gn:kb:meyer-estructura-organizacional
+    title: Principle-based Organizational Structure
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_meyer_org_structure.md
+    status: published
+  - urn: urn:gn:kb:meyer-estructura-organizacional-p02
+    title: Principle-based Organizational Structure - Parte 02
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_meyer_org_structure--p02.md
+    status: published
+  - urn: urn:gn:kb:modelos-actos-juridicos
+    title: Modelos de Actos Jurídicos GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_100_modelos_actos_juridicos.md
+    status: published
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth
+    title: Introducción a la Gestión Pública (Waissbluth)
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_mw_waissbluth.md
+    status: published
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth-p02
+    title: Introducción a la Gestión Pública (Waissbluth) - Parte 02
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_mw_waissbluth--p02.md
+    status: published
+  - urn: urn:gn:kb:modernizacion-estado-waissbluth-p03
+    title: Introducción a la Gestión Pública (Waissbluth) - Parte 03
+    file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_mw_waissbluth--p03.md
+    status: published
+  - urn: urn:gn:kb:nuble-250
+    title: Agenda Estratégica Ñuble 250
+    file: artifacts/knowledge/gn/kb/kb_gn_056_nuble250.md
+    status: published
+  - urn: urn:gn:kb:organigrama
+    title: Organigrama Institucional GORE Ñuble 2026
+    file: artifacts/knowledge/gn/kb/kb_gn_002_organigrama.md
+    status: published
+  - urn: urn:gn:kb:organigrama-p02
+    title: Organigrama Institucional GORE Ñuble 2026 - Parte 02
+    file: artifacts/knowledge/gn/kb/kb_gn_002_organigrama--p02.md
+    status: published
+  - urn: urn:gn:kb:plan-potenciamiento-dgi
+    title: Plan de Potenciamiento DGI
+    file: artifacts/knowledge/gn/kb/kb_gn_plan_potenciamiento_dgi.md
+    status: published
+  - urn: urn:gn:kb:ris-agua-saneamiento
+    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-agua-saneamiento.md
+    status: published
+  - urn: urn:gn:kb:ris-agua-saneamiento-p02
+    title: Requisitos de Información SNI — Agua, Saneamiento, Riego y Residuos - Parte
+      02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-agua-saneamiento--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-cultura-deporte-turismo
+    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-cultura-deporte-turismo.md
+    status: published
+  - urn: urn:gn:kb:ris-cultura-deporte-turismo-p02
+    title: Requisitos de Información SNI — Arte, Cultura, Patrimonio, Deporte y Turismo
+      - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-cultura-deporte-turismo--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-educacion
+    title: Requisitos de Información SNI — Infraestructura Educacional
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-educacion.md
+    status: published
+  - urn: urn:gn:kb:ris-educacion-p02
+    title: Requisitos de Información SNI — Infraestructura Educacional - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-educacion--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-energia-comunicaciones
+    title: Requisitos de Información SNI — Energía, Electrificación y Comunicaciones
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-energia-comunicaciones.md
+    status: published
+  - urn: urn:gn:kb:ris-equipamiento-social
+    title: Requisitos de Información SNI — Equipamiento Social y Comunitario
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-equipamiento-social.md
+    status: published
+  - urn: urn:gn:kb:ris-genericos
+    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
+      Empresas Públicas)
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-genericos.md
+    status: published
+  - urn: urn:gn:kb:ris-genericos-p02
+    title: Requisitos de Información SNI — Iniciativas Genéricas (Programas, Proyectos,
+      Empresas Públicas) - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-genericos--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-salud
+    title: Requisitos de Información SNI — Infraestructura de Salud
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-salud.md
+    status: published
+  - urn: urn:gn:kb:ris-seguridad-justicia
+    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-seguridad-justicia.md
+    status: published
+  - urn: urn:gn:kb:ris-seguridad-justicia-p02
+    title: Requisitos de Información SNI — Seguridad, Justicia e Infraestructura Policial
+      - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-seguridad-justicia--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-transporte
+    title: 'Requisitos de Información SNI — Transporte: Aéreo, Ferroviario, Portuario
+      y Conexión'
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-transporte.md
+    status: published
+  - urn: urn:gn:kb:ris-vialidad
+    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-vialidad.md
+    status: published
+  - urn: urn:gn:kb:ris-vialidad-p02
+    title: Requisitos de Información SNI — Vialidad Urbana, Rural y Peatonal - Parte
+      02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-vialidad--p02.md
+    status: published
+  - urn: urn:gn:kb:ris-vivienda-urbanismo
+    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-vivienda-urbanismo.md
+    status: published
+  - urn: urn:gn:kb:ris-vivienda-urbanismo-p02
+    title: Requisitos de Información SNI — Vivienda, Urbanismo y Espacios Públicos
+      - Parte 02
+    file: artifacts/knowledge/gn/kb/ipr/ris/ris-vivienda-urbanismo--p02.md
+    status: published
+  - urn: urn:gn:kb:selector-ipr
+    title: Selector de Vías de Financiamiento para Iniciativas Públicas Regionales
+      (IPR)
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_011_selector_ipr.md
+    status: published
+  - urn: urn:gn:kb:ssot-actos-admin
+    title: SSOT — Actos administrativos
+    file: artifacts/knowledge/gn/ssot/ssot-actos-admin.md
+    status: published
+  - urn: urn:gn:kb:ssot-convenios
+    title: SSOT — Convenios GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-convenios.md
+    status: published
+  - urn: urn:gn:kb:ssot-dgi
+    title: SSOT — DGI (Gestión Institucional)
+    file: artifacts/knowledge/gn/ssot/ssot-dgi.md
+    status: published
+  - urn: urn:gn:kb:ssot-ecosistema
+    title: SSOT — Ecosistema institucional GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-ecosistema.md
+    status: published
+  - urn: urn:gn:kb:ssot-ipr-lifecycle
+    title: SSOT — Ciclo de vida IPR
+    file: artifacts/knowledge/gn/ssot/ssot-ipr-lifecycle.md
+    status: published
+  - urn: urn:gn:kb:ssot-legal
+    title: SSOT — Marco normativo GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-legal.md
+    status: published
+  - urn: urn:gn:kb:ssot-master
+    title: SSOT GORE Ñuble — Índice Maestro
+    file: artifacts/knowledge/gn/ssot/ssot-master.md
+    status: published
+  - urn: urn:gn:kb:ssot-mecanismos
+    title: SSOT — Reglas operativas por mecanismo de financiamiento
+    file: artifacts/knowledge/gn/ssot/ssot-mecanismos.md
+    status: published
+  - urn: urn:gn:kb:ssot-mecanismos-p02
+    title: SSOT — Reglas operativas por mecanismo de financiamiento - Parte 02
+    file: artifacts/knowledge/gn/ssot/ssot-mecanismos--p02.md
+    status: published
+  - urn: urn:gn:kb:ssot-operaciones
+    title: SSOT — Procesos operativos GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-operaciones.md
+    status: published
+  - urn: urn:gn:kb:ssot-organica
+    title: SSOT — Estructura orgánica GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-organica.md
+    status: published
+  - urn: urn:gn:kb:ssot-presupuesto
+    title: SSOT — Presupuesto GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-presupuesto.md
+    status: published
+  - urn: urn:gn:kb:ssot-relaciones-dominio
+    title: SSOT — Relaciones de dominio
+    file: artifacts/knowledge/gn/ssot/ssot-relaciones-dominio.md
+    status: published
+  - urn: urn:gn:kb:ssot-relaciones-dominio-p02
+    title: SSOT — Relaciones de dominio - Parte 02
+    file: artifacts/knowledge/gn/ssot/ssot-relaciones-dominio--p02.md
+    status: published
+  - urn: urn:gn:kb:ssot-rendiciones
+    title: SSOT — Rendiciones SISREC
+    file: artifacts/knowledge/gn/ssot/ssot-rendiciones.md
+    status: published
+  - urn: urn:gn:kb:ssot-tde
+    title: SSOT — Transformación Digital del Estado (TDE)
+    file: artifacts/knowledge/gn/ssot/ssot-tde.md
+    status: published
+  - urn: urn:gn:kb:ssot-territorio
+    title: SSOT — Territorio GORE Ñuble
+    file: artifacts/knowledge/gn/ssot/ssot-territorio.md
+    status: published
+  - urn: urn:gn:kb:transferencia-ppr
+    title: Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas
+    file: artifacts/knowledge/gn/kb/ipr/kb_gn_001_transferencia_ppr.md
+    status: published
+  - urn: urn:gn:kb:vision-desarrollo-nuble
+    title: Visión de Desarrollo GORE Ñuble
+    file: artifacts/knowledge/gn/kb/kb_gn_013_vision_desarrollo_nuble.md
+    status: published
+  - urn: urn:kora:kb:agentskills-runtime-extension
+    title: KORA/Agentskills-Runtime-Extension v1.0.0
+    file: runtime/agentskills-runtime-extension.md
+    status: publicado
+  - urn: urn:kora:kb:autoria-spec
+    title: Especificacion de Autoria de Artefactos Agenticos v1.1.0
+    file: serialization/autoria-spec.md
+    status: publicado
+  - urn: urn:kora:kb:cat-agent-coalgebra
+    title: The Agent as F-Coalgebra
+    file: artifacts/knowledge/kora/categorical-foundations/01-agent-coalgebra.md
+    status: published
+  - urn: urn:kora:kb:cat-audit-invariants
+    title: Audit Invariants for the KORA Knowledge Layer
+    file: artifacts/knowledge/kora/categorical-foundations/06-audit-invariants.md
+    status: published
+  - urn: urn:kora:kb:cat-behavioral-preservation
+    title: Behavioral Preservation in KORA
+    file: artifacts/knowledge/kora/categorical-foundations/07-behavioral-preservation.md
+    status: published
+  - urn: urn:kora:kb:cat-discovery-presheaf
+    title: The Discovery Presheaf Psh(F)
+    file: artifacts/knowledge/kora/categorical-foundations/04-discovery-presheaf.md
+    status: published
+  - urn: urn:kora:kb:cat-ecosystem-2cat
+    title: 'The 2-Category Eco: Interoperability of Agents'
+    file: artifacts/knowledge/kora/categorical-foundations/03-ecosystem-2cat.md
+    status: published
+  - urn: urn:kora:kb:cat-foundations
+    title: Categorical Foundations for KORA
+    file: artifacts/knowledge/kora/categorical-foundations/00-foundations.md
+    status: published
+  - urn: urn:kora:kb:cat-fxsl-bridge
+    title: Bridge from FXSL/Cat to the KORA Formal Layer
+    file: artifacts/knowledge/kora/categorical-foundations/08-fxsl-cat-bridge.md
+    status: published
+  - urn: urn:kora:kb:cat-governance-lattice
+    title: 'Governance as Lattice: Precedence, Transformation, and Spec Hierarchy'
+    file: artifacts/knowledge/kora/categorical-foundations/05-governance-lattice.md
+    status: published
+  - urn: urn:kora:kb:cat-governance-lattice-p02
+    title: 'Governance as Lattice: Precedence, Transformation, and Spec Hierarchy
+      - Parte 02'
+    file: artifacts/knowledge/kora/categorical-foundations/05-governance-lattice--p02.md
+    status: published
+  - urn: urn:kora:kb:cat-skill-algebra
+    title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget'
+    file: artifacts/knowledge/kora/categorical-foundations/02-skill-algebra.md
+    status: published
+  - urn: urn:kora:kb:cat-skill-algebra-p02
+    title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget - Parte 02'
+    file: artifacts/knowledge/kora/categorical-foundations/02-skill-algebra--p02.md
+    status: published
+  - urn: urn:kora:kb:claude-code-runtime-extension
+    title: KORA/Claude-Code-Runtime-Extension v1.0.0
+    file: runtime/claude-code-runtime-extension.md
+    status: publicado
+  - urn: urn:kora:kb:codex-runtime-extension
+    title: KORA/Codex-Runtime-Extension v1.0.0
+    file: runtime/codex-runtime-extension.md
+    status: publicado
+  - urn: urn:kora:kb:gemini-runtime-extension
+    title: KORA/Gemini-Runtime-Extension v1.0.0
+    file: runtime/gemini-runtime-extension.md
+    status: publicado
+  - urn: urn:kora:kb:gobernanza
+    title: KORA/Gobernanza v4.3.0
+    file: governance/gobernanza.md
+    status: publicado
+  - urn: urn:kora:kb:harness-spec
+    title: KORA/Harness-Spec v1.0.0
+    file: ontology/harness-spec.md
+    status: publicado
+  - urn: urn:kora:kb:hub-agentes
+    title: Hub de Agentes TDE
+    file: artifacts/knowledge/kora/sys/hub_agentes.md
+    status: published
+  - urn: urn:kora:kb:knowledge-spec
+    title: KORA/Knowledge-Spec v1.1.0
+    file: serialization/knowledge-spec.md
+    status: publicado
+  - urn: urn:kora:kb:md-spec
+    title: KORA/MD v8.1.0
+    file: serialization/md-spec.md
+    status: publicado
+  - urn: urn:kora:kb:pipeline-ingesta
+    title: Pipeline de Ingesta — Infraestructura de Transformacion de Artefactos v1.0.0
+    file: artifacts/knowledge/kora/sys/pipeline-ingesta.md
+    status: published
+  - urn: urn:kora:kb:runtime-spec-md
+    title: KORA/Runtime-Spec v3.7.0
+    file: runtime/runtime-spec-md.md
+    status: publicado
+  - urn: urn:kora:kb:test-strategy
+    title: Estrategia de Pruebas KB TDE (wikiguias)
+    file: artifacts/knowledge/kora/sys/test_strategy.md
+    status: published
+  - urn: urn:kora:kb:transmutation-spec
+    title: KORA/Transmutation-Spec v1.0.0
+    file: runtime/transmutation-spec.md
+    status: publicado
+  - urn: urn:kora:kb:workflow-wikiguias
+    title: TDE-WORKFLOW-WIKIGUIAS-029
+    file: artifacts/knowledge/kora/sys/workflow_wikiguias.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus'
+    file: artifacts/knowledge/korvo/dan-koe-filosofia-creador.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p02
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 02'
+    file: artifacts/knowledge/korvo/dan-koe-filosofia-creador--p02.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p03
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 03'
+    file: artifacts/knowledge/korvo/dan-koe-filosofia-creador--p03.md
+    status: published
+  - urn: urn:korvo:kb:dan-koe-filosofia-creador-p04
+    title: 'Creator Philosophy: Dan Koe — Synthesized Corpus - Parte 04'
+    file: artifacts/knowledge/korvo/dan-koe-filosofia-creador--p04.md
+    status: published
+  - urn: urn:korvo:kb:manual-de-vida
+    title: Manual de Vida
+    file: artifacts/knowledge/korvo/manual-de-vida.md
+    status: published
+  - urn: urn:korvo:kb:manual-de-vida-p02
+    title: Manual de Vida - Parte 02
+    file: artifacts/knowledge/korvo/manual-de-vida--p02.md
+    status: published
+  - urn: urn:legal:kb:acoso-laboral
+    title: Acoso Laboral y Sexual en el Ámbito Médico
+    file: artifacts/knowledge/legal/trabajo-medico/acoso_laboral.md
+    status: published
+  - urn: urn:legal:kb:certificados-tramites-post-constitucion
+    title: Certificados y Tramites Post-Constitucion en el RES
+    file: artifacts/knowledge/legal/empresa-en-un-dia/certificados-tramites-post-constitucion.md
+    status: published
+  - urn: urn:legal:kb:confianza-legitima
+    title: Confianza Legítima en Contratas Médicas
+    file: artifacts/knowledge/legal/trabajo-medico/confianza_legitima.md
+    status: published
+  - urn: urn:legal:kb:contratacion-publica
+    title: Contratación Pública de Servicios Médicos en Chile
+    file: artifacts/knowledge/legal/trabajo-medico/contratacion_publica.md
+    status: published
+  - urn: urn:legal:kb:deberes-prohibiciones
+    title: Deberes, Prohibiciones e Incompatibilidades en el Trabajo Médico
+    file: artifacts/knowledge/legal/trabajo-medico/deberes_prohibiciones.md
+    status: published
+  - urn: urn:legal:kb:derechos-especiales
+    title: 'Derechos Especiales: Liberación de Guardia e Incentivo al Retiro'
+    file: artifacts/knowledge/legal/trabajo-medico/derechos_especiales.md
+    status: published
+  - urn: urn:legal:kb:eirl-empresa-individual
+    title: Empresa Individual de Responsabilidad Limitada (E.I.R.L.)
+    file: artifacts/knowledge/legal/empresa-en-un-dia/eirl-empresa-individual.md
+    status: published
+  - urn: urn:legal:kb:feriados-permisos
+    title: Feriados, Permisos y Comisiones
+    file: artifacts/knowledge/legal/trabajo-medico/feriados_permisos.md
+    status: published
+  - urn: urn:legal:kb:firma-electronica-empresas
+    title: Firma Electronica Avanzada en el Registro de Empresas y Sociedades
+    file: artifacts/knowledge/legal/empresa-en-un-dia/firma-electronica-empresas.md
+    status: published
+  - urn: urn:legal:kb:formacion-especialistas
+    title: Formación de Especialistas, PAO y Comisiones de Estudio
+    file: artifacts/knowledge/legal/trabajo-medico/formacion_especialistas.md
+    status: published
+  - urn: urn:legal:kb:index
+    title: Índice Global - Legislación Trabajo Médico Chile
+    file: artifacts/knowledge/legal/trabajo-medico/index.md
+    status: published
+  - urn: urn:legal:kb:ingreso-carrera
+    title: Ingreso a la Carrera y Vida Laboral Médica
+    file: artifacts/knowledge/legal/trabajo-medico/ingreso_carrera.md
+    status: published
+  - urn: urn:legal:kb:intro-estatutos
+    title: Introducción y Estatutos Jurídicos - Trabajo Médico Chile
+    file: artifacts/knowledge/legal/trabajo-medico/intro_estatutos.md
+    status: published
+  - urn: urn:legal:kb:jornada-calificaciones
+    title: Jornada de Trabajo y Calificaciones (Trabajo Médico)
+    file: artifacts/knowledge/legal/trabajo-medico/jornada_calificaciones.md
+    status: published
+  - urn: urn:legal:kb:legislacion-ia-chile
+    title: Análisis de la Legislación de Inteligencia Artificial en Chile
+    file: artifacts/knowledge/legal/trabajo-medico/legislacion_ia_chile.md
+    status: published
+  - urn: urn:legal:kb:ley-15076
+    title: 'Ley 15.076: Estatuto de los Profesionales Funcionarios de la Salud'
+    file: artifacts/knowledge/legal/trabajo-medico/ley_15076.md
+    status: published
+  - urn: urn:legal:kb:ley-19664
+    title: 'Ley 19.664: Normas Especiales para Profesionales Funcionarios de Servicios
+      de Salud'
+    file: artifacts/knowledge/legal/trabajo-medico/ley_19664.md
+    status: published
+  - urn: urn:legal:kb:ley-20659-regimen-simplificado
+    title: Ley 20.659 — Regimen Simplificado Constitucion Sociedades
+    file: artifacts/knowledge/legal/empresa-en-un-dia/ley-20659-regimen-simplificado.md
+    status: published
+  - urn: urn:legal:kb:ley-21643
+    title: 'Ley 21.643: Prevención y Sanción de Acoso y Violencia en el Trabajo'
+    file: artifacts/knowledge/legal/trabajo-medico/ley_21643.md
+    status: published
+  - urn: urn:legal:kb:ley-21658-segdig
+    title: 'Ley N° 21.658: Creación de la Secretaría de Gobierno Digital'
+    file: artifacts/knowledge/legal/trabajo-medico/ley_21658_segdig.md
+    status: published
+  - urn: urn:legal:kb:ley-21719-datos-personales
+    title: Ley N° 21.719 de Protección de Datos Personales
+    file: artifacts/knowledge/legal/trabajo-medico/ley_21719_datos_personales.md
+    status: published
+  - urn: urn:legal:kb:ley-ia-chile-texto-aprobado-camara
+    title: Ley que Regula los Sistemas de Inteligencia Artificial — Texto Aprobado
+      Cámara (Boletines 15.869-19 y 16.821-19)
+    file: artifacts/knowledge/legal/trabajo-medico/ley-ia-chile-texto-aprobado-camara.md
+    status: published
+  - urn: urn:legal:kb:marco-legal-sociedades-chile
+    title: Marco Legal Complementario — Sociedades en Chile
+    file: artifacts/knowledge/legal/empresa-en-un-dia/marco-legal-sociedades-chile.md
+    status: published
+  - urn: urn:legal:kb:maternidad
+    title: Protección a la Maternidad y Paternidad
+    file: artifacts/knowledge/legal/trabajo-medico/maternidad.md
+    status: published
+  - urn: urn:legal:kb:patente-comercial-res
+    title: Patente Comercial — Modulo Tu Empresa en un Dia
+    file: artifacts/knowledge/legal/empresa-en-un-dia/patente-comercial-res.md
+    status: published
+  - urn: urn:legal:kb:registro-empresas-sociedades
+    title: Registro de Empresas y Sociedades (RES) — Guia Operativa
+    file: artifacts/knowledge/legal/empresa-en-un-dia/registro-empresas-sociedades.md
+    status: published
+  - urn: urn:legal:kb:reglamento-ley-20659
+    title: Reglamento de la Ley N° 20.659 — Decreto N° 83 (2021)
+    file: artifacts/knowledge/legal/empresa-en-un-dia/reglamento-ley-20659.md
+    status: published
+  - urn: urn:legal:kb:remuneraciones
+    title: Remuneraciones y Asignaciones — Trabajo Médico Chile
+    file: artifacts/knowledge/legal/trabajo-medico/remuneraciones.md
+    status: published
+  - urn: urn:legal:kb:responsabilidad-admin
+    title: Responsabilidad Administrativa
+    file: artifacts/knowledge/legal/trabajo-medico/responsabilidad_admin.md
+    status: published
+  - urn: urn:legal:kb:sociedad-anonima-cerrada
+    title: Sociedad Anonima Cerrada (S.A.) y Sociedad Anonima de Garantia Reciproca
+      (S.A.G.R.)
+    file: artifacts/knowledge/legal/empresa-en-un-dia/sociedad-anonima-cerrada.md
+    status: published
+  - urn: urn:legal:kb:sociedad-colectiva-comercial
+    title: Sociedad Colectiva Comercial
+    file: artifacts/knowledge/legal/empresa-en-un-dia/sociedad-colectiva-comercial.md
+    status: published
+  - urn: urn:legal:kb:sociedad-comandita
+    title: Sociedad en Comandita Simple y Sociedad en Comandita por Acciones
+    file: artifacts/knowledge/legal/empresa-en-un-dia/sociedad-comandita.md
+    status: published
+  - urn: urn:legal:kb:sociedad-por-acciones
+    title: Sociedad por Acciones (SpA)
+    file: artifacts/knowledge/legal/empresa-en-un-dia/sociedad-por-acciones.md
+    status: published
+  - urn: urn:legal:kb:sociedad-responsabilidad-limitada
+    title: Sociedad de Responsabilidad Limitada (Ltda.)
+    file: artifacts/knowledge/legal/empresa-en-un-dia/sociedad-responsabilidad-limitada.md
+    status: published
+  - urn: urn:legal:kb:terminacion
+    title: Terminación de la Relación Laboral y Funcionaria
+    file: artifacts/knowledge/legal/trabajo-medico/terminacion.md
+    status: published
+  - urn: urn:ops:kb:arquitectura-stack-kora
+    title: Arquitectura del stack KORA — Estado operacional
+    file: artifacts/knowledge/ops/arquitectura-stack-kora.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw'
+    file: artifacts/knowledge/ops/deploy-agente-kora-en-openclaw.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p02
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 02'
+    file: artifacts/knowledge/ops/deploy-agente-kora-en-openclaw--p02.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p03
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 03'
+    file: artifacts/knowledge/ops/deploy-agente-kora-en-openclaw--p03.md
+    status: published
+  - urn: urn:ops:kb:deploy-agente-kora-en-openclaw-p04
+    title: 'Tutorial: Desplegar un agente KORA en OpenClaw - Parte 04'
+    file: artifacts/knowledge/ops/deploy-agente-kora-en-openclaw--p04.md
+    status: published
+  - urn: urn:ops:kb:federacion-kora-v2
+    title: Federación KORA v2 — Comunicación cross-gateway y storage compartido
+    file: artifacts/knowledge/ops/federacion-kora-v2.md
+    status: published
+  - urn: urn:ops:kb:principios-transmutacion-kora-openclaw
+    title: Principios de transmutacion KORA → OpenClaw
+    file: artifacts/knowledge/ops/principios-transmutacion-kora-openclaw.md
+    status: published
+  - urn: urn:ops:kb:principios-transmutacion-kora-openclaw-p02
+    title: Principios de transmutacion KORA → OpenClaw - Parte 02
+    file: artifacts/knowledge/ops/principios-transmutacion-kora-openclaw--p02.md
+    status: published
+  - urn: urn:ops:kb:tres-generaciones-agentes-kora
+    title: Tres generaciones del ecosistema de agentes KORA
+    file: artifacts/knowledge/ops/tres-generaciones-agentes-kora.md
+    status: published
+  - urn: urn:ops:kb:ux-telegram-openclaw
+    title: Configuración de comportamiento de agentes OpenClaw
+    file: artifacts/knowledge/ops/ux-telegram-openclaw.md
+    status: published
+  - urn: urn:pro:kb:mba-personal-kaufman
+    title: MBA Personal — Modelos Mentales de Negocios
+    file: artifacts/knowledge/pro/mba-personal-kaufman.md
+    status: published
+  - urn: urn:pro:kb:mba-personal-kaufman-p02
+    title: MBA Personal — Modelos Mentales de Negocios - Parte 02
+    file: artifacts/knowledge/pro/mba-personal-kaufman--p02.md
+    status: published
+  - urn: urn:pro:kb:mba-personal-kaufman-p03
+    title: MBA Personal — Modelos Mentales de Negocios - Parte 03
+    file: artifacts/knowledge/pro/mba-personal-kaufman--p03.md
+    status: published
+  - urn: urn:salud:kb:bok-medicina-emergencia
+    title: Body of Knowledge diferencial de Medicina de Emergencia
+    file: artifacts/knowledge/salud/urgencia/bok-medicina-emergencia.md
+    status: published
+  - urn: urn:salud:kb:dbt-oxford-adaptations-a
+    title: The Oxford Handbook of DBT — Adaptations (Part A)
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-adaptations-a.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-adaptations-b
+    title: The Oxford Handbook of DBT — Adaptations (Part B)
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-adaptations-b.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-clinical-a
+    title: The Oxford Handbook of DBT — Clinical Applications (Part A)
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-clinical-a.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-clinical-b
+    title: The Oxford Handbook of DBT — Clinical Applications (Part B)
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-clinical-b.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-evidence
+    title: The Oxford Handbook of DBT — Evidence Base
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-evidence.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-implementation
+    title: The Oxford Handbook of DBT — Implementation
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-implementation.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-introduction
+    title: The Oxford Handbook of DBT — Introduction
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-introduction.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-overview
+    title: The Oxford Handbook of Dialectical Behaviour Therapy — Overview
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-overview.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-structure
+    title: The Oxford Handbook of DBT — Structure of Treatment
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-structure.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-theoretical
+    title: The Oxford Handbook of DBT — Theoretical Underpinnings
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-theoretical.md
+    status: draft
+  - urn: urn:salud:kb:dbt-oxford-training
+    title: The Oxford Handbook of DBT — Training and Conclusion
+    file: artifacts/knowledge/salud/dbt/dbt-oxford-training.md
+    status: draft
+  - urn: urn:salud:kb:firs-framework-integrado-razonamiento-salud
+    title: FIRS — Framework Integrado de Razonamiento en Salud
+    file: artifacts/knowledge/salud/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general
+    title: Gestión de Redes Asistenciales — Marco General
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p02
+    title: Gestión de Redes Asistenciales — Marco General - Parte 02
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p03
+    title: Gestión de Redes Asistenciales — Marco General - Parte 03
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p04
+    title: Gestión de Redes Asistenciales — Marco General - Parte 04
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p05
+    title: Gestión de Redes Asistenciales — Marco General - Parte 05
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p06
+    title: Gestión de Redes Asistenciales — Marco General - Parte 06
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p06.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p07
+    title: Gestión de Redes Asistenciales — Marco General - Parte 07
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p07.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p08
+    title: Gestión de Redes Asistenciales — Marco General - Parte 08
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p08.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-general-p09
+    title: Gestión de Redes Asistenciales — Marco General - Parte 09
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/01-gestion-redes-general--p09.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-herramientas
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/05-herramientas-anexos.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-herramientas-p02
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos - Parte 02
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/05-herramientas-anexos--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-herramientas-p03
+    title: Gestión de Redes Asistenciales — Herramientas y Anexos - Parte 03
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/05-herramientas-anexos--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-indice
+    title: Gestión de Redes Asistenciales — Índice General
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/00-indice.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental
+    title: Gestión de Redes — Salud Mental y Adicciones
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p02
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 02
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p03
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 03
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p04
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 04
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p05
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 05
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-salud-mental-p06
+    title: Gestión de Redes — Salud Mental y Adicciones - Parte 06
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/04-salud-mental--p06.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/02-unidades-asistenciales.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p02
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 02
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/02-unidades-asistenciales--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p03
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 03
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/02-unidades-asistenciales--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-unidades-p04
+    title: Gestión de Redes Asistenciales — Gestión por Tipo de Unidad - Parte 04
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/02-unidades-asistenciales--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias
+    title: Gestión de Redes Asistenciales — Red de Urgencias
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p02
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 02
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias--p02.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p03
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 03
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias--p03.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p04
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 04
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias--p04.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p05
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 05
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias--p05.md
+    status: published
+  - urn: urn:salud:kb:gestion-redes-urgencias-p06
+    title: Gestión de Redes Asistenciales — Red de Urgencias - Parte 06
+    file: artifacts/knowledge/salud/salubrista/gestion-redes/03-urgencias--p06.md
+    status: published
+  - urn: urn:salud:kb:hodom-decreto-exento-31-2024
+    title: Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización
+      Domiciliaria
+    file: artifacts/knowledge/salud/hodom/normativa/02-decreto-exento-31-2024-aprueba-norma-tecnica.md
+    status: published
+  - urn: urn:salud:kb:hodom-direccion-tecnica
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria
+    file: artifacts/knowledge/salud/hodom/director/01-manual-direccion-tecnica.md
+    status: published
+  - urn: urn:salud:kb:hodom-direccion-tecnica-p02
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria - Parte 02
+    file: artifacts/knowledge/salud/hodom/director/01-manual-direccion-tecnica--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-direccion-tecnica-p03
+    title: Direccion Tecnica en Hospitalizacion Domiciliaria - Parte 03
+    file: artifacts/knowledge/salud/hodom/director/01-manual-direccion-tecnica--p03.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad
+    file: artifacts/knowledge/salud/hodom/director/02-manual-alta-complejidad.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p02
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 02
+    file: artifacts/knowledge/salud/hodom/director/02-manual-alta-complejidad--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p03
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 03
+    file: artifacts/knowledge/salud/hodom/director/02-manual-alta-complejidad--p03.md
+    status: published
+  - urn: urn:salud:kb:hodom-manual-alta-complejidad-p04
+    title: Manual de Hospitalizacion Domiciliaria de Alta Complejidad - Parte 04
+    file: artifacts/knowledge/salud/hodom/director/02-manual-alta-complejidad--p04.md
+    status: published
+  - urn: urn:salud:kb:hodom-norma-tecnica-2024
+    title: Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización
+      Domiciliaria
+    file: artifacts/knowledge/salud/hodom/normativa/03-norma-tecnica-hodom-2024.md
+    status: published
+  - urn: urn:salud:kb:hodom-reglamento-ds1-2022
+    title: Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización
+      Domiciliaria
+    file: artifacts/knowledge/salud/hodom/normativa/01-reglamento-hodom-ds1-2022.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026
+    file: artifacts/knowledge/salud/hodom/director/03-situacion-chile-2026.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p02
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      02
+    file: artifacts/knowledge/salud/hodom/director/03-situacion-chile-2026--p02.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p03
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      03
+    file: artifacts/knowledge/salud/hodom/director/03-situacion-chile-2026--p03.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p04
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      04
+    file: artifacts/knowledge/salud/hodom/director/03-situacion-chile-2026--p04.md
+    status: published
+  - urn: urn:salud:kb:hodom-situacion-chile-2026-p05
+    title: Situacion de la Hospitalizacion Domiciliaria en Chile 2024-2026 - Parte
+      05
+    file: artifacts/knowledge/salud/hodom/director/03-situacion-chile-2026--p05.md
+    status: published
+  - urn: urn:salud:kb:me-cefalea-convulsiones
+    title: Cefalea y Convulsiones
+    file: artifacts/knowledge/salud/med-emergencia/cefalea-convulsiones.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia
+    title: Compromiso de Conciencia
+    file: artifacts/knowledge/salud/med-emergencia/compromiso-conciencia.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia-p02
+    title: Compromiso de Conciencia - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/compromiso-conciencia--p02.md
+    status: published
+  - urn: urn:salud:kb:me-compromiso-conciencia-p03
+    title: Compromiso de Conciencia - Parte 03
+    file: artifacts/knowledge/salud/med-emergencia/compromiso-conciencia--p03.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico
+    title: Déficit Neurológico
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p02
+    title: Déficit Neurológico - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico--p02.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p03
+    title: Déficit Neurológico - Parte 03
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico--p03.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p04
+    title: Déficit Neurológico - Parte 04
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico--p04.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p05
+    title: Déficit Neurológico - Parte 05
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico--p05.md
+    status: published
+  - urn: urn:salud:kb:me-deficit-neurologico-p06
+    title: Déficit Neurológico - Parte 06
+    file: artifacts/knowledge/salud/med-emergencia/deficit-neurologico--p06.md
+    status: published
+  - urn: urn:salud:kb:me-disnea
+    title: Disnea Aguda
+    file: artifacts/knowledge/salud/med-emergencia/disnea.md
+    status: published
+  - urn: urn:salud:kb:me-disnea-p02
+    title: Disnea Aguda - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/disnea--p02.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-abdominal
+    title: Dolor Abdominal en Urgencia
+    file: artifacts/knowledge/salud/med-emergencia/dolor-abdominal.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-abdominal-p02
+    title: Dolor Abdominal en Urgencia - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/dolor-abdominal--p02.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-toracico
+    title: Dolor Torácico No Traumático
+    file: artifacts/knowledge/salud/med-emergencia/dolor-toracico.md
+    status: published
+  - urn: urn:salud:kb:me-dolor-toracico-p02
+    title: Dolor Torácico No Traumático - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/dolor-toracico--p02.md
+    status: published
+  - urn: urn:salud:kb:me-evaluacion-primaria
+    title: INTRODUCCIÓN
+    file: artifacts/knowledge/salud/med-emergencia/evaluacion-primaria.md
+    status: published
+  - urn: urn:salud:kb:me-fiebre-sin-foco
+    title: Unidad 3 "Fiebre sin foco evidente"
+    file: artifacts/knowledge/salud/med-emergencia/fiebre-sin-foco.md
+    status: published
+  - urn: urn:salud:kb:me-fiebre-sin-foco-p02
+    title: Unidad 3 "Fiebre sin foco evidente" - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/fiebre-sin-foco--p02.md
+    status: published
+  - urn: urn:salud:kb:me-hemorragia-digestiva
+    title: Hemorragia digestiva
+    file: artifacts/knowledge/salud/med-emergencia/hemorragia-digestiva.md
+    status: published
+  - urn: urn:salud:kb:me-hemorragia-digestiva-p02
+    title: Hemorragia digestiva - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/hemorragia-digestiva--p02.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-gastrointestinales
+    title: Unidad 4 "Infecciones gastrointestinales"
+    file: artifacts/knowledge/salud/med-emergencia/infecciones-gastrointestinales.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-altas
+    title: Unidad "Infecciones Respiratorias Altas y afecciones otorrinolaringológicas"
+    file: artifacts/knowledge/salud/med-emergencia/infecciones-respiratorias-altas.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-altas-p02
+    title: Unidad "Infecciones Respiratorias Altas y afecciones otorrinolaringológicas"
+      - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/infecciones-respiratorias-altas--p02.md
+    status: published
+  - urn: urn:salud:kb:me-infecciones-respiratorias-bajas
+    title: Unidad 5 " Infecciones respiratorias bajas"
+    file: artifacts/knowledge/salud/med-emergencia/infecciones-respiratorias-bajas.md
+    status: published
+  - urn: urn:salud:kb:me-mareo-vertigo
+    title: Mareo y Vértigo
+    file: artifacts/knowledge/salud/med-emergencia/mareo-vertigo.md
+    status: published
+  - urn: urn:salud:kb:me-perfil-urgenciologo
+    title: Perfil diferencial del medico emergenciologo
+    file: artifacts/knowledge/salud/med-emergencia/perfil-urgenciologo.md
+    status: published
+  - urn: urn:salud:kb:me-razonamiento-clinico
+    title: razonamiento-clinico.md
+    file: artifacts/knowledge/salud/med-emergencia/razonamiento-clinico.md
+    status: published
+  - urn: urn:salud:kb:me-sincope
+    title: Síncope
+    file: artifacts/knowledge/salud/med-emergencia/sincope.md
+    status: published
+  - urn: urn:salud:kb:me-sincope-p02
+    title: Síncope - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/sincope--p02.md
+    status: published
+  - urn: urn:salud:kb:me-sintomas-urinarios
+    title: Unidad 7 "Síntomas Urinarios"
+    file: artifacts/knowledge/salud/med-emergencia/sintomas-urinarios.md
+    status: published
+  - urn: urn:salud:kb:me-tec-leve
+    title: Golpe en la cabeza
+    file: artifacts/knowledge/salud/med-emergencia/tec-leve.md
+    status: published
+  - urn: urn:salud:kb:me-toc-body-of-knowledge
+    title: toc-body-of-knowledge.md
+    file: artifacts/knowledge/salud/med-emergencia/toc-body-of-knowledge.md
+    status: published
+  - urn: urn:salud:kb:me-traumatismos-frecuentes
+    title: Unidad 8 "Traumatismos frecuentes"
+    file: artifacts/knowledge/salud/med-emergencia/traumatismos-frecuentes.md
+    status: published
+  - urn: urn:salud:kb:me-traumatismos-frecuentes-p02
+    title: Unidad 8 "Traumatismos frecuentes" - Parte 02
+    file: artifacts/knowledge/salud/med-emergencia/traumatismos-frecuentes--p02.md
+    status: published
+  - urn: urn:salud:kb:med-emergencia
+    title: Body of Knowledge — Medicina de Emergencia
+    file: artifacts/knowledge/salud/med-emergencia-placeholder.md
+    status: published
+  - urn: urn:sii:kb:faq-activos-digitales
+    title: Activos digitales — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-activos-digitales.md
+    status: published
+  - urn: urn:sii:kb:faq-actualizacion-de-informacion
+    title: Actualización de información — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-actualizacion-de-informacion.md
+    status: published
+  - urn: urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia
+    title: Acuerdos Anticipados de Precios de Transferencia — Preguntas Frecuentes
+      SII
+    file: artifacts/knowledge/sii/kb/faq-acuerdos-anticipados-de-precios-de-transferencia.md
+    status: published
+  - urn: urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices
+    title: Avalúos y Contribuciones de Bienes Raíces — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-avaluos-y-contribuciones-de-bienes-raices.md
+    status: published
+  - urn: urn:sii:kb:faq-beneficios-tributarios
+    title: Beneficios Tributarios — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-beneficios-tributarios.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-de-honorarios-electronicas
+    title: Boletas de Honorarios Electrónicas — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-boletas-de-honorarios-electronicas.md
+    status: published
+  - urn: urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios
+    title: Boletas Electrónicas de Ventas y Servicios — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-boletas-electronicas-de-ventas-y-servicios.md
+    status: published
+  - urn: urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos
+    title: Clave tributaria, mandatario digital y representantes electrónicos — Preguntas
+      Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-clave-tributaria-mandatario-digital-y-representantes-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos
+    title: Clave Tributaria y Representantes electrónicos — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-clave-tributaria-y-representantes-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-declaracion-de-renta
+    title: Declaración de renta — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-declaracion-de-renta.md
+    status: published
+  - urn: urn:sii:kb:faq-declaraciones-juradas
+    title: Declaraciones juradas — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-declaraciones-juradas.md
+    status: published
+  - urn: urn:sii:kb:faq-factura-electronica
+    title: Factura Electrónica — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-factura-electronica.md
+    status: published
+  - urn: urn:sii:kb:faq-herencias
+    title: Herencias — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-herencias.md
+    status: published
+  - urn: urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor
+    title: Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto valor — Preguntas
+      Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor.md
+    status: published
+  - urn: urn:sii:kb:faq-impuestos-mensuales
+    title: Impuestos mensuales — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-impuestos-mensuales.md
+    status: published
+  - urn: urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones
+    title: Infracciones, Pago de giros y Condonaciones — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-infracciones-pago-de-giros-y-condonaciones.md
+    status: published
+  - urn: urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales
+    title: IVA a los Servicios Profesionales y Culturales — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-iva-a-los-servicios-profesionales-y-culturales.md
+    status: published
+  - urn: urn:sii:kb:faq-libros-contables-electronicos
+    title: Libros contables electrónicos — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-libros-contables-electronicos.md
+    status: published
+  - urn: urn:sii:kb:faq-otros-impuestos
+    title: Otros impuestos — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-otros-impuestos.md
+    status: published
+  - urn: urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes
+    title: Peticiones Administrativas y Otras Solicitudes — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-peticiones-administrativas-y-otras-solicitudes.md
+    status: published
+  - urn: urn:sii:kb:faq-preguntas-generales
+    title: Preguntas Generales — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-preguntas-generales.md
+    status: published
+  - urn: urn:sii:kb:faq-rut-e-inicio-de-actividades
+    title: RUT e Inicio de actividades — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-rut-e-inicio-de-actividades.md
+    status: published
+  - urn: urn:sii:kb:faq-situacion-tributaria
+    title: Situación Tributaria — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-situacion-tributaria.md
+    status: published
+  - urn: urn:sii:kb:faq-tasacion-fiscal-de-vehiculos
+    title: Tasación Fiscal de Vehículos — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-tasacion-fiscal-de-vehiculos.md
+    status: published
+  - urn: urn:sii:kb:faq-termino-de-giro
+    title: Término de giro — Preguntas Frecuentes SII
+    file: artifacts/knowledge/sii/kb/faq-termino-de-giro.md
+    status: published
+  - urn: urn:sii:kb:index-documentos-derivados
+    title: Documentos Derivados SII — Índice
+    file: artifacts/knowledge/sii/kb/index-documentos-derivados.md
+    status: published
+  - urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
+    title: Decreto 10 — Norma Técnica de Documentos y Expedientes Electrónicos
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-10-documentos-expedientes-electronicos.md
+    status: published
+  - urn: urn:tde:kb:decreto-11-plataformas-electronicas
+    title: Decreto 11 — Norma Técnica de Calidad y Funcionamiento de Plataformas Electrónicas
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-11-plataformas-electronicas.md
+    status: published
+  - urn: urn:tde:kb:decreto-12-interoperabilidad
+    title: Decreto 12 — Norma Técnica de Interoperabilidad
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-12-interoperabilidad.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p02
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 02
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p02.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p03
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 03
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p03.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p04
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 04
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p04.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p05
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 05
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p05.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p06
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 06
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p06.md
+    status: published
+  - urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p07
+    title: Decreto Supremo N° 4 — Reglamento de Procedimientos Administrativos Electrónicos
+      - Parte 07
+    file: artifacts/knowledge/tde/regulacion/decreto-4-procedimientos-electronicos--p07.md
+    status: published
+  - urn: urn:tde:kb:decreto-7-norma-seguridad-informacion
+    title: Decreto 7 — Norma Técnica de Seguridad de la Información y Ciberseguridad
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-7-norma-seguridad-informacion.md
+    status: published
+  - urn: urn:tde:kb:decreto-8-norma-notificaciones
+    title: Decreto 8 — Norma Técnica de Notificaciones
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-8-norma-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:decreto-9-norma-autenticacion
+    title: Decreto 9 — Norma Técnica de Autenticación
+    file: artifacts/knowledge/tde/lineamientos-normas/decreto-9-norma-autenticacion.md
+    status: published
+  - urn: urn:tde:kb:estandares-apertura-reutilizacion-datos-abiertos
+    title: Estándares para la apertura y reutilización de Datos Abiertos
+    file: artifacts/knowledge/tde/lineamientos-estandares/estandares-apertura-reutilizacion-datos-abiertos.md
+    status: published
+  - urn: urn:tde:kb:estrategia-capacitaciones-transformacion-digital
+    title: Estrategia de Capacitaciones para la Transformación Digital del Estado
+    file: artifacts/knowledge/tde/estrategias/estrategia-capacitaciones-transformacion-digital.md
+    status: published
+  - urn: urn:tde:kb:estrategia-datos-administracion-estado
+    title: Estrategia de Datos de la Administración del Estado
+    file: artifacts/knowledge/tde/estrategias/estrategia-datos-administracion-estado.md
+    status: published
+  - urn: urn:tde:kb:estrategia-gobierno-digital-2030
+    title: Estrategia de Gobierno Digital 2030
+    file: artifacts/knowledge/tde/estrategias/estrategia-gobierno-digital-2030.md
+    status: published
+  - urn: urn:tde:kb:estrategia-identidad-digital
+    title: Estrategia de Identidad Digital
+    file: artifacts/knowledge/tde/estrategias/estrategia-identidad-digital.md
+    status: published
+  - urn: urn:tde:kb:glosario-plataforma-simple
+    title: Glosario — Plataforma SIMPLE
+    file: artifacts/knowledge/tde/plataformas-manuales/glosario-plataforma-simple.md
+    status: published
+  - urn: urn:tde:kb:guia-calidad-web
+    title: 'Guía de uso: Instrumento de evaluación de calidad en sitios web y servicios
+      digitales del Estado'
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-calidad-web.md
+    status: published
+  - urn: urn:tde:kb:guia-introductoria-anonimizacion-datos
+    title: Guía introductoria a la anonimización de datos
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-introductoria-anonimizacion-datos.md
+    status: published
+  - urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025
+    title: Guía Metodológica del Sistema de Transformación Digital 2025
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025.md
+    status: published
+  - urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025-p02
+    title: Guía Metodológica del Sistema de Transformación Digital 2025 - Parte 02
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-metodologica-sistema-transformacion-digital-2025--p02.md
+    status: published
+  - urn: urn:tde:kb:guia-rapida-cpat
+    title: Guía rápida CPAT
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-rapida-cpat.md
+    status: published
+  - urn: urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital
+    title: 'Guía Técnica: Marco para las Inversiones y el Gasto en Gobierno Digital
+      (EVALTIC)'
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-tecnica-evaltic-inversiones-gobierno-digital.md
+    status: published
+  - urn: urn:tde:kb:guia-tecnica-marco-gestion-datos
+    title: 'Guía Técnica: aplicación del Marco de Referencia de Gestión de Datos del
+      Estado (MGDE)'
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-tecnica-marco-gestion-datos.md
+    status: published
+  - urn: urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes
+    title: Guía Técnica de Metadatos para Documentos y Expedientes Electrónicos
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-tecnica-metadatos-documentos-expedientes.md
+    status: published
+  - urn: urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad.md
+    status: published
+  - urn: urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad-p02
+    title: Guía Técnica de Seguridad de la Información y Ciberseguridad - Parte 02
+    file: artifacts/knowledge/tde/lineamientos-guias/guia-tecnica-seguridad-informacion-ciberseguridad--p02.md
+    status: published
+  - urn: urn:tde:kb:guia-voz-y-tono
+    title: Guía de Voz y Tono — Wiki de Plataformas
+    file: artifacts/knowledge/tde/plataformas-manuales/guia-voz-y-tono.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p02
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 02
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p02.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p03
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 03
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p03.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p04
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 04
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p04.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p05
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 05
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p05.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p06
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 06
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p06.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p07
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 07
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p07.md
+    status: published
+  - urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p08
+    title: Ley N° 19.880 — Bases de los Procedimientos Administrativos - Parte 08
+    file: artifacts/knowledge/tde/regulacion/ley-19880-bases-procedimientos-administrativos--p08.md
+    status: published
+  - urn: urn:tde:kb:ley-21180-transformacion-digital-estado
+    title: Ley N° 21.180 — Transformación Digital del Estado
+    file: artifacts/knowledge/tde/regulacion/ley-21180-transformacion-digital-estado.md
+    status: published
+  - urn: urn:tde:kb:ley-21658
+    title: Ley N° 21.658 — Crea la Secretaría de Gobierno Digital en la Subsecretaría
+      de Hacienda
+    file: artifacts/knowledge/tde/regulacion/ley-21658.md
+    status: published
+  - urn: urn:tde:kb:manual-atencion-ciudadana-notificaciones
+    title: Manual de Atención Ciudadana — Plataforma de Notificaciones
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-atencion-ciudadana-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:manual-coordinadora-transformacion-digital
+    title: Manual del Coordinador/a de Transformación Digital (CTD)
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-coordinadora-transformacion-digital.md
+    status: published
+  - urn: urn:tde:kb:manual-inicio-notificaciones-electronicas
+    title: Manual de Inicio — Plataforma de Notificaciones Electrónicas del Estado
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-inicio-notificaciones-electronicas.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-claveunica
+    title: Manual de Integración — ClaveÚnica
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-integracion-claveunica.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-notificaciones
+    title: Manual de Integración — Plataforma de Notificaciones del Estado
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-integracion-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:manual-integracion-notificaciones-p02
+    title: Manual de Integración — Plataforma de Notificaciones del Estado - Parte
+      02
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-integracion-notificaciones--p02.md
+    status: published
+  - urn: urn:tde:kb:manual-uso-boton-claveunica
+    title: 'Manual de uso: Botón ClaveÚnica'
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-uso-boton-claveunica.md
+    status: published
+  - urn: urn:tde:kb:manual-uso-simple-saas
+    title: 'Manual de uso: SIMPLE en modalidad SaaS'
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-uso-simple-saas.md
+    status: published
+  - urn: urn:tde:kb:manual-usuario-institucional-notificaciones
+    title: 'Manual de usuario institucional: Plataforma de Notificaciones del Estado
+      (CasillaÚnica)'
+    file: artifacts/knowledge/tde/plataformas-manuales/manual-usuario-institucional-notificaciones.md
+    status: published
+  - urn: urn:tde:kb:metodologia-gestion-proyectos
+    title: Metodología para la Gestión de Proyectos TIC
+    file: artifacts/knowledge/tde/lineamientos-guias/metodologia-gestion-proyectos.md
+    status: published
+  - urn: urn:tde:kb:orientaciones-basicas-gestion-tic
+    title: Orientaciones Básicas para la Gestión de las TIC
+    file: artifacts/knowledge/tde/lineamientos-guias/orientaciones-basicas-gestion-tic.md
+    status: published
+  - urn: urn:tde:kb:recomendaciones-diseno-servicios-estado
+    title: Recomendaciones para el Diseño de Servicios en el Estado
+    file: artifacts/knowledge/tde/plataformas-manuales/recomendaciones-diseno-servicios-estado.md
+    status: published
+  - urn: urn:tde:kb:recomendaciones-tecnicas-cloud-publica
+    title: Recomendaciones Técnicas para la Adquisición de Servicios de Cloud Pública
+      en los OAE
+    file: artifacts/knowledge/tde/lineamientos-guias/recomendaciones-tecnicas-cloud-publica.md
+    status: published
+  - urn: urn:tde:kb:registro-actividades-tratamiento
+    title: Registro de Actividades de Tratamiento (RAT) — SGD
+    file: artifacts/knowledge/tde/proteccion-datos/registro-actividades-tratamiento.md
+    status: published
+  - urn: urn:tde:kb:terminos-condiciones-claveunica
+    title: 'Términos y Condiciones: integración y uso del Sistema de ClaveÚnica'
+    file: artifacts/knowledge/tde/plataformas-terminos/terminos-condiciones-claveunica.md
+    status: published
+  Documents: []
+  Other:
+  - urn: urn:gn:artefacto:digitrans
+    title: AGENT.md
+    file: artifacts/agents/gn/digitrans/AGENT.md
+    status: activo
+  - urn: urn:gn:artefacto:goreologo
+    title: AGENT.md
+    file: artifacts/agents/gn/goreologo/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:atomize
+    title: Atomize — Productor canonico de la familia `atomic`
+    file: artifacts/skills/kora/atomize/SKILL.md
+    status: activo
+  - urn: urn:kora:artefacto:clawforge
+    title: AGENT.md
+    file: artifacts/agents/kora/clawforge/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:curator
+    title: AGENT.md
+    file: artifacts/agents/kora/curator/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:custodio
+    title: AGENT.md
+    file: artifacts/agents/kora/custodio/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:forgemaster
+    title: AGENT.md
+    file: artifacts/agents/kora/forgemaster/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:guardian
+    title: AGENT.md
+    file: artifacts/agents/kora/guardian/AGENT.md
+    status: activo

@@ -37,7 +37,7 @@ def write_atomic_acceptance_review(path: Path, bundle_root: str, *, decision: st
 
 class AtomizeCliTests(unittest.TestCase):
     def test_review_atomic_acceptance_blocks_publish_ready_when_quality_fails(self):
-        review_script = ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
+        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
 
         with tempfile.TemporaryDirectory() as tmp:
             tmpdir = Path(tmp)
@@ -109,7 +109,7 @@ class AtomizeCliTests(unittest.TestCase):
             self.assertIn("## Semantic Fidelity Packet", review_body)
 
     def test_prepare_atomic_fidelity_review_prioritizes_tension_samples(self):
-        review_script = ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py"
+        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py"
         fixture_dir = FIXTURES / "atomize" / "multifile-negation-conflict"
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -433,8 +433,8 @@ class AtomizeCliTests(unittest.TestCase):
                 self.assertEqual(lint_kora_markdown_parts(frontmatter, body, path=artifact_path), [])
 
     def test_promote_atomic_segmented_bundle_moves_all_files(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         slug = f"test-atomize-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -534,10 +534,10 @@ class AtomizeCliTests(unittest.TestCase):
             self.assertEqual(lint_kora_markdown_parts(frontmatter, body, path=artifact_path), [])
 
     def test_publish_atomic_wrapper_requires_fresh_accepted_review(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
-        review_script = ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
-        publish_script = ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "publish_atomic.py"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
+        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
+        publish_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "publish_atomic.py"
         slug = f"test-acceptance-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -610,8 +610,8 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_promote_atomic_requires_acceptance_review(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         slug = f"test-promote-missing-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -640,8 +640,8 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_promote_atomic_rejects_stale_acceptance_review(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         slug = f"test-promote-stale-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -675,8 +675,8 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_promote_atomic_accepts_fresh_review(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         slug = f"test-promote-fresh-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -709,8 +709,8 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_promote_atomic_accepts_explicit_review_override(self):
-        review_dir = ROOT / "KNOWLEDGE" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
-        published_dir = ROOT / "KNOWLEDGE" / "kora" / "atomic"
+        review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
+        published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         slug = f"test-promote-override-{uuid4().hex[:10]}"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -743,7 +743,7 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_review_atomic_acceptance_records_bundle_risk_summary(self):
-        review_script = ROOT / "SKILLS" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
+        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
         fixture_dir = FIXTURES / "atomize" / "multifile-negation-conflict"
 
         with tempfile.TemporaryDirectory() as tmp:

@@ -5,15 +5,25 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-AGENTS_ROOT = ROOT / "AGENTS" if (ROOT / "AGENTS").exists() else ROOT / "agents"
-KNOWLEDGE_ROOT = ROOT / "KNOWLEDGE" if (ROOT / "KNOWLEDGE").exists() else ROOT / "knowledge"
-SCRIPTS_DIR = ROOT / "scripts"
-SCRIPT_PATH = SCRIPTS_DIR / "kora"
+
+# Topologia v5 (reorg 2026-04-18): artifacts/ agrupa agents/skills/knowledge;
+# toolchain/ reemplaza scripts/. Se mantiene fallback para forks historicos.
+_new_artifacts = ROOT / "artifacts"
+if _new_artifacts.exists():
+    AGENTS_ROOT = _new_artifacts / "agents"
+    KNOWLEDGE_ROOT = _new_artifacts / "knowledge"
+else:
+    AGENTS_ROOT = ROOT / "artifacts" / "agents" if (ROOT / "artifacts" / "agents").exists() else ROOT / "agents"
+    KNOWLEDGE_ROOT = ROOT / "artifacts" / "knowledge" if (ROOT / "artifacts" / "knowledge").exists() else ROOT / "knowledge"
+
+TOOLCHAIN_DIR = ROOT / "toolchain" if (ROOT / "toolchain").exists() else ROOT / "scripts"
+SCRIPTS_DIR = TOOLCHAIN_DIR  # alias backwards-compat
+SCRIPT_PATH = TOOLCHAIN_DIR / "kora"
 FIXTURES = ROOT / "tests" / "fixtures"
 GENERATED_DOCS = ROOT / "docs" / "generated"
 
-if str(SCRIPTS_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS_DIR))
+if str(TOOLCHAIN_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLCHAIN_DIR))
 
 
 def run_cli(*args, check=True):
@@ -34,7 +44,7 @@ def has_productive_workspaces():
     """Return True si existen workspaces de agente en AGENTS/{ns}/{name}/ productivos.
 
     En la arquitectura v8 (pipeline descentralizado), todos los workspaces
-    pueden estar en staging (`AGENTS/_FRAGUA/INBOX/`) durante reprocesamiento
+    pueden estar en staging (`artifacts/agents/_FRAGUA/INBOX/`) durante reprocesamiento
     del fleet. Tests que presumen fleet productivo deben skip cuando el
     estado no los tiene.
     """

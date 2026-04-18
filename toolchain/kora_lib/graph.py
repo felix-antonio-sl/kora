@@ -1,0 +1,447 @@
+from dataclasses import dataclass
+from functools import lru_cache
+import json
+import os
+import re
+
+from .catalog import load_catalog
+from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
+from .artifacts import load_yaml_safe
+from .workspaces import (
+    _is_workspace_deprecated,
+    extract_cm_refs,
+    extract_declared_tool_headings,
+    extract_workspace_tokens,
+    iter_agent_workspaces,
+    iter_skill_entrypoints,
+)
+
+FORMAL_TRACE_PATTERN = re.compile(r"formal/([0-9]{2})")
+_PLACEHOLDER_TOOL_NAMES = {"firma", "parametros", "parameters", "signature"}
+
+
+@dataclass(frozen=True)
+class GraphEdge:
+    kind: str
+    source: object
+    target: str
+    fragment: str = ""
+
+
+_deprecated_dirs_skipped = 0
+
+
+def iter_repository_files():
+    global _deprecated_dirs_skipped
+    _deprecated_dirs_skipped = 0
+    for root, dirs, files in os.walk(KORA_ROOT):
+        root_path = KORA_ROOT / os.path.relpath(root, KORA_ROOT)
+        filtered = []
+        for directory in sorted(dirs):
+            if directory in IGNORED_DIRS:
+                continue
+            dir_path = root_path / directory
+            if root_path.parent == AGENTS_ROOT and _is_workspace_deprecated(dir_path):
+                _deprecated_dirs_skipped += 1
+                continue
+            filtered.append(directory)
+        dirs[:] = filtered
+        for file_name in sorted(files):
+            file_path = os.path.join(root, file_name)
+            path = KORA_ROOT / os.path.relpath(file_path, KORA_ROOT)
+            if file_name in IGNORED_FILES and path.parent == KORA_ROOT:
+                continue
+            yield path
+
+
+def get_deprecated_dirs_skipped():
+    return _deprecated_dirs_skipped
+
+
+@lru_cache(maxsize=1)
+def build_formal_trace_lookup():
+    lookup = {}
+    formal_root = KNOWLEDGE_ROOT / "kora" / "categorical-foundations"
+    if not formal_root.exists():
+        return lookup
+
+    for file_path in sorted(formal_root.glob("*.md")):
+        doc, _err = load_yaml_safe(file_path)
+        urn = doc.get("_manifest", {}).get("urn") if isinstance(doc, dict) else None
+        prefix = file_path.name.split("-", 1)[0]
+        if urn and re.fullmatch(r"[0-9]{2}", prefix):
+            lookup[prefix] = urn
+    return lookup
+
+
+def collect_urn_edges(file_path, content):
+    edges = []
+    in_code_block = False
+    formal_lookup = build_formal_trace_lookup()
+    for line in content.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
+        if stripped.lower().startswith("**incorrecto"):
+            continue
+        if "Traces to:" in line:
+            for doc_id in FORMAL_TRACE_PATTERN.findall(line):
+                if doc_id in formal_lookup:
+                    edges.append(GraphEdge("TracesTo", file_path, formal_lookup[doc_id]))
+        for found in URN_REF_PATTERN.findall(line):
+            base_urn, _, fragment = found.partition("#")
+            edges.append(GraphEdge("XRef", file_path, base_urn, fragment))
+    return edges
+
+
+def collect_workspace_edges(file_path):
+    edges = []
+    if file_path.name == "AGENT.md":
+        content = file_path.read_text(encoding="utf-8")
+        doc, _ = load_yaml_safe(file_path)
+        if not isinstance(doc, dict):
+            doc = {}
+
+        skill_entries = doc.get("artefacto", {}).get("skills", []) or doc.get("agent", {}).get("skills", []) or []
+        skill_refs = set(extract_cm_refs(file_path))
+        for item in skill_entries:
+            if isinstance(item, dict):
+                skill_id = item.get("id")
+                if isinstance(skill_id, str) and skill_id:
+                    skill_refs.add(skill_id)
+        for cm_ref in sorted(skill_refs):
+            edges.append(GraphEdge("InvokesSkill", file_path, cm_ref))
+
+        for workspace_ref in sorted(extract_workspace_tokens(content, self_workspace=f"{file_path.parent.parent.name}/{file_path.parent.name}")):
+            namespace, name = workspace_ref.split("/", 1)
+            edges.append(GraphEdge("RoutesToAgent", file_path, f"{namespace}/{name}"))
+
+        tool_entries = (
+            doc.get("artefacto", {}).get("interfaz", {}).get("tools", [])
+            or doc.get("agent", {}).get("interface", {}).get("tools", [])
+            or []
+        )
+        for entry in tool_entries:
+            if not isinstance(entry, dict):
+                continue
+            tool_name = str(entry.get("name", "")).strip()
+            if not tool_name or tool_name.lower() in _PLACEHOLDER_TOOL_NAMES:
+                continue
+            edges.append(GraphEdge("DeclaresTool", file_path, tool_name))
+
+        allowed_tools = (
+            doc.get("artefacto", {}).get("interfaz", {}).get("permissions", {}).get("allow", [])
+            or doc.get("agent", {}).get("interface", {}).get("permissions", {}).get("allow", [])
+            or []
+        )
+        for tool_name in sorted(
+            {
+                item.strip()
+                for item in allowed_tools
+                if isinstance(item, str) and item.strip() and item.strip().lower() not in _PLACEHOLDER_TOOL_NAMES
+            }
+        ):
+            edges.append(GraphEdge("AllowsTool", file_path, tool_name))
+
+        allowed_kb = (
+            doc.get("artefacto", {}).get("contexto", {}).get("knowledge", {}).get("allowed_kb", [])
+            or doc.get("agent", {}).get("context", {}).get("kb_refs", [])
+            or []
+        )
+        for kb_urn in sorted({item for item in allowed_kb if isinstance(item, str) and item}):
+            edges.append(GraphEdge("AllowsKB", file_path, kb_urn))
+    elif file_path.name == "AGENTS.md":
+        for cm_ref in sorted(extract_cm_refs(file_path)):
+            edges.append(GraphEdge("InvokesSkill", file_path, cm_ref))
+        content = file_path.read_text(encoding="utf-8")
+        for namespace, name in sorted(set(AGENT_ROUTE_PATTERN.findall(content))):
+            edges.append(GraphEdge("RoutesToAgent", file_path, f"{namespace}/{name}"))
+    elif file_path.name == "TOOLS.md":
+        _, valid_tools, _ = extract_declared_tool_headings(file_path)
+        for tool_name in sorted(valid_tools):
+            edges.append(GraphEdge("DeclaresTool", file_path, tool_name))
+    elif file_path.name == "config.json":
+        config_data = json.loads(file_path.read_text(encoding="utf-8"))
+        for kb_urn in config_data.get("allowed_kb", []):
+            edges.append(GraphEdge("AllowsKB", file_path, kb_urn))
+        for tool_name in config_data.get("tools", {}).get("allow", []):
+            edges.append(GraphEdge("AllowsTool", file_path, tool_name))
+    return edges
+
+
+def build_reference_graph():
+    edges = []
+    scanned_files = 0
+    for file_path in iter_repository_files():
+        if file_path.suffix not in (".yml", ".yaml", ".md", ".json"):
+            continue
+        try:
+            content = file_path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        scanned_files += 1
+        edges.extend(collect_urn_edges(file_path, content))
+        try:
+            edges.extend(collect_workspace_edges(file_path))
+        except Exception as exc:
+            rel_path = file_path.relative_to(KORA_ROOT)
+            raise RuntimeError(f"Failed to collect workspace edges from {rel_path}: {exc}") from exc
+    return scanned_files, edges
+
+
+def workspace_node_id(namespace, name):
+    return f"workspace:{namespace}/{name}"
+
+
+def tool_node_id(tool_name):
+    return f"tool:{tool_name}"
+
+
+def skill_symbol_from_path(path):
+    if path.name == "SKILL.md":
+        return path.parent.name
+    return path.stem
+
+
+def classify_catalog_node_kind(entry):
+    urn = entry.get("urn", "")
+    file_path = entry.get("file", "")
+    if ":skill:" in urn:
+        return "skill"
+    # Specs viven en las 4 capas de gobernanza (reorg v5) o en specs/ (legacy)
+    if any(file_path.startswith(f"{layer}/")
+           for layer in ("governance", "ontology", "serialization", "runtime", "specs")):
+        return "spec"
+    if ":kb:" in urn:
+        return "knowledge"
+    return "artifact"
+
+
+def build_graph_payload():
+    catalog = load_catalog()
+    if not catalog or "Catalog" not in catalog:
+        print("Error: Catalog not found or invalid. Run 'kora index' first.")
+        raise SystemExit(1)
+
+    nodes = {}
+    edges_payload = []
+    path_to_urn = {}
+    workspace_skill_urns = {}
+
+    for category, items in catalog["Catalog"].items():
+        for item in items:
+            urn = item["urn"]
+            rel_path = item["file"]
+            abs_path = KORA_ROOT / rel_path
+            node_kind = classify_catalog_node_kind(item)
+            parts = urn.split(":")
+            nodes[urn] = {
+                "id": urn,
+                "kind": node_kind,
+                "category": category,
+                "urn": urn,
+                "title": item.get("title"),
+                "path": rel_path,
+                "namespace": parts[1] if len(parts) > 1 else None,
+            }
+            path_to_urn[str(abs_path)] = urn
+            if node_kind == "skill":
+                workspace_skill_urns[(str(abs_path.parent.parent if abs_path.name == "SKILL.md" else abs_path.parent), skill_symbol_from_path(abs_path))] = urn
+
+    for workspace_dir in iter_agent_workspaces():
+        namespace = workspace_dir.parent.name
+        name = workspace_dir.name
+        node_id = workspace_node_id(namespace, name)
+        nodes[node_id] = {
+            "id": node_id,
+            "kind": "workspace",
+            "workspace": f"{namespace}/{name}",
+            "namespace": namespace,
+            "path": str(workspace_dir.relative_to(KORA_ROOT)),
+        }
+        for artifact_path in sorted(workspace_dir.glob("*.md")):
+            artifact_urn = path_to_urn.get(str(artifact_path))
+            if artifact_urn:
+                edges_payload.append(
+                    {
+                        "kind": "ContainsArtifact",
+                        "source": node_id,
+                        "target": artifact_urn,
+                    }
+                )
+        config_urn = path_to_urn.get(str(workspace_dir / "config.json"))
+        if config_urn:
+            edges_payload.append(
+                {
+                    "kind": "ContainsArtifact",
+                    "source": node_id,
+                    "target": config_urn,
+                }
+            )
+        for skill_path in iter_skill_entrypoints(workspace_dir / "skills"):
+            skill_urn = path_to_urn.get(str(skill_path))
+            if skill_urn:
+                edges_payload.append(
+                    {
+                        "kind": "ContainsSkill",
+                        "source": node_id,
+                        "target": skill_urn,
+                    }
+                )
+
+    scanned_files, raw_edges = build_reference_graph()
+    for edge in raw_edges:
+        source_path = edge.source
+        source_urn = path_to_urn.get(str(source_path))
+        source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.parent.name)
+        if source_path.name == "config.json":
+            source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.name)
+        elif source_path.name in {"AGENT.md", "TOOLS.md", "AGENTS.md", "SOUL.md", "USER.md"}:
+            source_workspace = workspace_node_id(source_path.parent.parent.name, source_path.parent.name)
+
+        if edge.kind in {"XRef", "TracesTo"}:
+            target_id = edge.target
+            if edge.target.startswith("urn:") and edge.target not in nodes:
+                nodes[target_id] = {
+                    "id": target_id,
+                    "kind": "artifact",
+                    "urn": edge.target,
+                }
+            edges_payload.append(
+                {
+                    "kind": edge.kind,
+                    "source": source_urn or f"file:{source_path.relative_to(KORA_ROOT)}",
+                    "target": target_id,
+                    "fragment": edge.fragment or None,
+                    "source_path": str(source_path.relative_to(KORA_ROOT)),
+                }
+            )
+        elif edge.kind == "InvokesSkill":
+            target_id = workspace_skill_urns.get((str(source_path.parent), edge.target))
+            if not target_id:
+                skill_file = source_path.parent / "skills" / f"{edge.target}.md"
+                extended_entrypoint = source_path.parent / "skills" / edge.target / "SKILL.md"
+                target_id = path_to_urn.get(
+                    str(skill_file),
+                    path_to_urn.get(str(extended_entrypoint), f"missing-skill:{source_path.parent.name}/{edge.target}"),
+                )
+            edges_payload.append(
+                {
+                    "kind": edge.kind,
+                    "source": source_urn or f"file:{source_path.relative_to(KORA_ROOT)}",
+                    "target": target_id,
+                    "source_path": str(source_path.relative_to(KORA_ROOT)),
+                }
+            )
+        elif edge.kind == "RoutesToAgent":
+            namespace, name = edge.target.split("/", 1)
+            edges_payload.append(
+                {
+                    "kind": edge.kind,
+                    "source": workspace_node_id(source_path.parent.parent.name, source_path.parent.name),
+                    "target": workspace_node_id(namespace, name),
+                    "source_path": str(source_path.relative_to(KORA_ROOT)),
+                }
+            )
+        elif edge.kind in {"DeclaresTool", "AllowsTool"}:
+            target_id = tool_node_id(edge.target)
+            if target_id not in nodes:
+                nodes[target_id] = {
+                    "id": target_id,
+                    "kind": "tool",
+                    "name": edge.target,
+                }
+            edges_payload.append(
+                {
+                    "kind": edge.kind,
+                    "source": source_workspace,
+                    "target": target_id,
+                    "source_path": str(source_path.relative_to(KORA_ROOT)),
+                }
+            )
+        elif edge.kind == "AllowsKB":
+            edges_payload.append(
+                {
+                    "kind": edge.kind,
+                    "source": workspace_node_id(source_path.parent.parent.name, source_path.parent.name)
+                    if source_path.name != "config.json"
+                    else workspace_node_id(source_path.parent.parent.name, source_path.parent.name),
+                    "target": edge.target,
+                    "source_path": str(source_path.relative_to(KORA_ROOT)),
+                }
+            )
+
+    # Layer 0: Knowledge relations (from frontmatter relations field)
+    _RELATION_EDGE_KINDS = {"cites": "Cites", "depends": "DependsOn", "supersedes": "Supersedes", "refines": "Refines"}
+    for node in nodes.values():
+        if node.get("kind") != "knowledge":
+            continue
+        node_path = KORA_ROOT / node.get("path", "")
+        if not node_path.exists():
+            continue
+        try:
+            fm, _err = load_yaml_safe(node_path)
+        except Exception:
+            continue
+        if not isinstance(fm, dict):
+            continue
+        relations = fm.get("relations", {})
+        if not isinstance(relations, dict):
+            continue
+        for rel_type, edge_kind in _RELATION_EDGE_KINDS.items():
+            targets = relations.get(rel_type, [])
+            if isinstance(targets, str):
+                targets = [targets]
+            if not isinstance(targets, list):
+                continue
+            for target_urn in targets:
+                edges_payload.append({
+                    "kind": edge_kind,
+                    "source": node["id"],
+                    "target": target_urn,
+                    "layer": "knowledge",
+                })
+
+    edge_kind_counts = {}
+    for item in edges_payload:
+        edge_kind_counts[item["kind"]] = edge_kind_counts.get(item["kind"], 0) + 1
+
+    node_kind_counts = {}
+    for item in nodes.values():
+        node_kind_counts[item["kind"]] = node_kind_counts.get(item["kind"], 0) + 1
+
+    return {
+        "meta": {
+            "scanned_files": scanned_files,
+            "node_count": len(nodes),
+            "edge_count": len(edges_payload),
+        },
+        "node_kind_counts": dict(sorted(node_kind_counts.items())),
+        "edge_kind_counts": dict(sorted(edge_kind_counts.items())),
+        "nodes": sorted(nodes.values(), key=lambda item: (item["kind"], item["id"])),
+        "edges": sorted(
+            edges_payload,
+            key=lambda item: (item["kind"], item["source"], item["target"]),
+        ),
+    }
+
+
+def cmd_graph(json_output=False):
+    payload = build_graph_payload()
+    if json_output:
+        print(json.dumps(payload, indent=2, ensure_ascii=False))
+        return
+
+    print("=== KORA Graph ===")
+    print(f"  Nodes: {payload['meta']['node_count']}")
+    print(f"  Edges: {payload['meta']['edge_count']}")
+    print(f"  Scanned files: {payload['meta']['scanned_files']}")
+    print("Node kinds:")
+    for kind, count in payload["node_kind_counts"].items():
+        print(f"  {kind}: {count}")
+    print("Edge kinds:")
+    for kind, count in payload["edge_kind_counts"].items():
+        print(f"  {kind}: {count}")

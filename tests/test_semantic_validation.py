@@ -395,7 +395,7 @@ class SemanticValidationTests(unittest.TestCase):
             schemas_dir = temp_root / "schemas"
             schemas_dir.mkdir()
             (schemas_dir / "kora-artefacto.json").write_text(
-                (ROOT / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
+                (ROOT / "serialization" / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
                 encoding="utf-8",
             )
             frontmatter = {
@@ -463,7 +463,7 @@ class SemanticValidationTests(unittest.TestCase):
             schemas_dir = temp_root / "schemas"
             schemas_dir.mkdir()
             (schemas_dir / "kora-artefacto.json").write_text(
-                (ROOT / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
+                (ROOT / "serialization" / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
                 encoding="utf-8",
             )
             frontmatter = {
@@ -867,13 +867,13 @@ class SemanticValidationTests(unittest.TestCase):
         self.assertTrue(formal_section_exists(targets["05"]["path"], "1.2"))
 
     def test_validate_traces_semantics_flags_missing_section_anchor(self):
-        failures = validate_traces_semantics(ROOT / "specs" / "dummy.md", "Traces to: formal/05 (Bounded Lattice)\n")
+        failures = validate_traces_semantics(ROOT / "governance" / "dummy.md", "Traces to: formal/05 (Bounded Lattice)\n")
         self.assertEqual(failures, ["Traces to carece de ancla de seccion formal"])
 
     def test_validate_traces_semantics_flags_fxsl_direct_support(self):
         failures = validate_traces_semantics(
-            ROOT / "specs" / "dummy.md",
-            "Traces to: formal/05 §1.2 (Bounded Lattice), KNOWLEDGE/fxsl/cat/audit-patterns.md\n",
+            ROOT / "governance" / "dummy.md",
+            "Traces to: formal/05 §1.2 (Bounded Lattice), artifacts/knowledge/fxsl/cat/audit-patterns.md\n",
         )
         self.assertEqual(
             failures,
@@ -882,7 +882,7 @@ class SemanticValidationTests(unittest.TestCase):
 
     def test_validate_traces_semantics_accepts_real_trace(self):
         failures = validate_traces_semantics(
-            ROOT / "specs" / "dummy.md",
+            ROOT / "governance" / "dummy.md",
             "Traces to: formal/05 §1.2 (Bounded Lattice)\n",
         )
         self.assertEqual(failures, [])

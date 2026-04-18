@@ -1,0 +1,152 @@
+# Chapter 6 The Dynamic Aspect of Systems
+The expert may, in the process of explaining some idea or description of a behavior,
+suddenly reach for pad and draw sketches of what he/she does, and say “it has to look
+like this” or “I know just by looking at the chart if something is wrong.”
+Firlej and Helens (1991)
+Continuing with modeling our case study, in this chapter we further discuss process issues, such as
+execution order and how to specify that processes are sequential, concurrent, or alternative. These issues
+are related to the system's dynamic aspect and to its operational semantics.
+## 6.1 Exiting in Case of Light Severity
+Recall that the ACR system specification stipulates:
+Within seconds of a moderate-to-severe crash, the OnStar module will send a message …
+Hence, if Crash Severity is light, we wish to model that the Automatic Crash Responding process is
+exited and the system finished its execution. To do this, in Fig. 6.1, we add to Vehicle Occupants Group a
+third state, uninjured, which is also final. Using a condition link (an instrument link with the control
+modifier c next to its circle end) we connect the state light of Crash Severity with a new subprocess,
+Exiting, which changes the state of Vehicle Occupants Group to uninjured. In this case, the execution of
+the system terminates. The semantics of the condition link is that if the object to which the link is attached
+exists, or if the state to which the link is attached is the current object state, then the process executes,
+otherwise the process is skipped. The condition instrument link semantics is weaker than that of the (non-
+condition) instrument link. The semantics of the latter is that if the linked object does not exist (or is not
+at the required state), then the execution of the system stops, waiting for the instrument to become
+existent (or at the required state).
+## 6.2 Message Creating and Sending
+We continue with modeling what happens in case Crash Severity Measuring has changed Crash Severity
+from none to moderate or severe, based on the following text:
+Within seconds of a moderate to severe crash, the OnStar module will send a message to the
+OnStar Call Center (OCC) through a cellular connection, informing the advisor that a crash has
+occurred. Based on the message received, the advisor sends help as needed.
+
+D. Dori, Model-Based Systems Engineering with OPM and SysML, DOI 10.1007/978-1-4939-3295-5_ 6
+
+The Dynamic Aspect of Systems
+### Figure 6.1
+Crash Severity Measuring has determined that Crash Severity is light, so Exiting changes the state of
+Vehicle Occupants Group to uninjured
+According to this description, following Crash Severity Measuring, as a result of a crash whose Crash
+Severity is moderate or severe, a message is created and then sent via the OnStar Call Center to the
+advisor, who sends help based on the message. Accordingly, as Fig. 6.2 shows, we add three subsequent
+subprocesses: Message Creating, Message Sending, and Help Sending. The following OPL sentence
+expresses the XOR relation between the condition links from the moderate and severe states of Crash
+Severity to Message Creating.
+Message Creating occurs if Crash Severity is exactly one of moderate or severe.
+As we recall, the model fact representation OPM principle states that an OPM element needs to appear
+in at least one OPD in order for it to be represented. Based on this principle and in order to simplify the
+OPD, the environmental process Crashing, which appeared in Fig. 6.1, has been removed from Fig. 6.2.
+This enables us to add objects mentioned in the text that are relevant here: the OnStar Call Center and the
+Cellular System, which are parts of the ACR System (in addition to the Vehicle), as well as the Advisor
+and the Message.
+
+## 6.3 Process Execution Order: The Timeline OPM Principle
+Figure 6.2 shows that if the Crash Severity attribute of Vehicle has a value of moderate or severe, the
+Message Creating process creates Message within the scope of the Automatic Crash Responding process.
+Message Creating requires both OnStar Call Center and Cellular System as instruments.
+### Figure 6.2
+Message Creating, Message Sending and Help Sending are added as three sequential subprocesses
+along with the objects OnStar Call Center, Cellular System, Message, and Advisor
+The five subprocesses in Fig. 6.2 are arranged by their execution order (the timeline perspective) from
+top to bottom. This is based on the following timeline OPM principle.
+The Timeline OPM Principle
+The timeline within an in-zoomed process is directed by default from the top of the in-zoomed
+process ellipse to its bottom.
+
+The Dynamic Aspect of Systems
+The timeline OPM principle is followed by default, unless there is indication to deviate from the
+timeline. Indications to deviate from the top-to-bottom timeline within an in-zoomed process include
+internal events within the scope of the process which can cause loops.
+The top-most point of the process ellipse serves as a reference point, so a process whose reference
+point is higher than its peer starts earlier. If the reference points of two or more processes are at the same
+height (within some tolerance), these processes start simultaneously.
+According to the timeline OPM principle, Crash Severity Measuring is executed first, followed by
+Exiting (in case of light Crash Severity) or, in case of moderate Crash Severity or severe Crash Severity,
+by Message Creating, followed by Message Sending and Help Sending.
+## 6.4 Help Is on the Way!
+We go on to model the following text, which describes what happens when the Advisor gets the Message.
+A voice connection between the advisor and the vehicle occupants is established. The advisor
+then can conference in 911 dispatch or a public safety answering point (PSAP), which determines
+if emergency services are necessary, and if so, is it ambulance, helicopter, or both. If there is no
+response from the occupants, the advisor can provide the emergency dispatcher with the crash
+information from the SDM that reveals the severity of the crash. The dispatcher can identify what
+emergency services may be appropriate. Using the Global Positioning System (GPS) satellite,
+OnStar advisors are able to tell emergency workers the location of the vehicle.
+This description covers a lot of ground and includes a number of new processes, including Voice
+Connection Attempting, Public Aid Conferencing, Crash Information Providing, and Emergency Service
+Dispatching.
+Figure 6.3 shows Help Sending in-zoomed. Voice Connection Attempting creates Voice Connection,
+which can be impossible (if the passengers do not respond or there is no cellular connection; not
+modeled) or established. If Voice Connection is impossible, the Advisor informs the Emergency
+Dispatcher about the value of the Crash Severity and location via the Severity & Location Informing
+process. The Emergency Dispatcher is a generalization of 911 Dispatch and Public Safety Answering
+Point.
+If Voice Connection is established, the conferencing involves Passenger Inquiring by the Advisor and
+the Emergency Dispatcher. Either Passenger Inquiring or Severity & Location Informing determines the
+Required Emergency Service, which can be none, ambulance, helicopter, or ambulance & helicopter.
+This decision is used for Emergency Service Dispatching, which, if needed, sends the appropriate
+Emergency Workers Group, an environmental object, on its way to help, changing the state of Vehicle
+Occupants Group to being helped.
+
+## 6.5 Scenarios: Threads of Execution
+Figure 6.4 shows a specific tread of execution of Help Sending, which can be traced by following the
+state of each object. Voice Connection Attempting creates Voice Connection at state established, leading
+to Passenger Inquiring. If this process creates Required Emergency Service at state none, Exiting takes
+place, otherwise Emergency Service Dispatching takes place. Either way, the Vehicle Occupants Group
+transition to the state of being helped.
+### Figure 6.3
+Help Sending is in-zoomed, exposing four subprocesses that culminate in the Vehicle Occupant Group at the
+state of being helped. (Note: in this and in the next OPD the c of the condition link is drawn inside the circle)
+
+The Dynamic Aspect of Systems
+### Figure 6.4
+Help Sending executed, showing a specific thread of execution in progress. It can be traced by following the
+state of each object
+## 6.6 Summary
+The condition link semantics is that if the object to which the link is attached exists, or if the
+state to which the link is attached is the current object state, then the process executes, otherwise
+it is skipped.
+The XOR relation between procedural links indicates that exactly one of the possible interactions
+denoted by these links materializes.
+XOR is denoted graphically by a common point from which all the XOR'ed links originate or at
+which they terminate, and a dashed arc through these links whose center is the common links'
+point.
+The timeline OPM principle stipulates that the timeline within the context of an in-zoomed
+process is directed by default from the top of the in-zoomed process ellipse to its bottom.
+
+The subprocess execution order is determined by the height of the top subprocess ellipse points,
+such that the one at the top starts first.
+If the top ellipse point of two or more subprocesses is at the same height, within a predefined
+tolerance, they start simultaneously. This is the way to model process synchronization.
+## 6.7 Problems
+Let us consider the OPD in Fig. 6.5. It the OPD obtained by zooming into the Baggage Handling process
+in SD in Fig. 2.5, called “SD1 – Baggage Handling in-zoomed”.
+### Figure 6.5
+SD1 – Baggage Handling in-zoomed, the OPD obtained by zooming into the Baggage Handling process in
+SD in Fig.
+## 2.5 Baggage Handling includes (1) origin baggage handling—airline personnel checking-in a
+passenger’s baggage and loading it onto the aircraft at the originating airport, (2) destination
+baggage handling—unloading it at destination airport, and (3) returning it to the passenger
+1. 2. Model all the enablers—agents and instruments—of the Baggage Handling process.
+Identify the three subprocesses specified in the frame above. Which subprocess appears in the
+OPD but not in the description above?
+
+3. 4. 5. 6. 7. 8. The Dynamic Aspect of Systems
+What is the appropriate structural link between Passenger and Baggage that would be consistent
+with SD (Fig. 2.5)? Add it to the model.
+Baggage Location is an attribute of Baggage whose values (attribute states) are the various
+possible locations of Baggage. What are the four Baggage Location values in the model? What
+is the initial state and what is the final state? How can you tell?
+Add to Baggage a second attribute, called Baggage Holder, with three values: passenger,
+security, and airline.
+Show how subprocesses of Baggage Handling change the value of Baggage Holder.
+How does Origin Baggage Handling change the state of Baggage Location?
+What is the semantics of the dashed arc between the arrows from Origin Baggage Handling to
+aircraft and other?
