@@ -1,8 +1,24 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:opl-es
-version: 2.0.0
-status: published
+version: 2.1.0-ampliada.4
+status: draft-publishable
+source_base: "ssot/opm-opl-es.md (v2.0.0)"
+derived_from:
+  - ssot/opm-opl-es.md
+  - ssot-v2-draft/opm-opl-es-merge-ready.md
+  - opl-merge-ready-desde-paso-0.md
+  - ssot-decisiones-axiomaticas.md
+  - ssot-v2-draft/opm-visual-es-v2-merge-ready.md
+  - ssot-v2-draft/opm-iso-19450-es-merge-ready.md
+  - ssot-v2-draft/metodologia-opm-es-merge-ready.md
+scope: >
+  Versión íntegra y publicable de OPL-ES con la gramática completa, las
+  plantillas canónicas para hechos del modelo, la composición inter-modelo,
+  la referencia externa de cosas y la separación entre etiqueta visible de OPD
+  e identidad persistente ya integradas en el cuerpo del documento. A
+  diferencia del merge-ready, esta versión se presenta como texto completo
+  listo para reemplazar a `ssot/opm-opl-es.md` cuando se decida publicar v2.
 tags:
 - opm
 - opl
@@ -12,6 +28,8 @@ tags:
 - i18n
 - bimodal
 - localization
+- v2
+- ampliada
 lang: es
 extensions:
   kora:
@@ -26,10 +44,14 @@ relations:
 ---
 
 
-# OPL-ES — Lenguaje Objeto-Proceso en Español
+# OPL-ES — Lenguaje Objeto-Proceso en Español (versión ampliada v2)
 
 
 Especificación completa de la gramática OPL en español, diseñada para que herramientas de modelado OPM generen y analicen sentencias OPL en español manteniendo equivalencia semántica total con la forma inglesa de referencia.
+
+Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: composición inter-modelo explícita, referencia externa de cosas, separación entre etiqueta visible de OPD e identidad persistente y ampliaciones mínimas de soporte de herramienta para modelos compuestos.
+
+Sustituye, cuando se publique, al archivo `ssot/opm-opl-es.md`.
 
 Referencia de núcleo: `urn:fxsl:kb:opm-es`.
 
@@ -233,6 +255,7 @@ Verbos fijos de la gramática, conjugados en tercera persona singular del presen
 | D8 | State s of Object is final. | Estado `s` de **Objeto** es final. |
 | D9 | State s of Object is default. | Estado `s` de **Objeto** es por defecto. |
 | D10 | State s of Object is initial and final. | Estado `s` de **Objeto** es inicial y final. |
+| D13 | State s of Object is declared current. | Estado `s` de **Objeto** es declarado `Current`. |
 
 ### 3.4 Nota sobre procesos persistentes
 
@@ -438,7 +461,19 @@ Nota: en SE1, SE3 y SE4, "etiqueta" es la forma definida por el modelador en esp
 |----|--------|--------|
 | CX4 | SD is refined by in-zooming Process in SD1. | SD se refina por descomposición de *Proceso* en SD1. |
 
-### 10.4 Plegado y Recomposición
+Las etiquetas visibles de OPD (`SD`, `SD1`, `SD1.1`, etc.) son referencias humanas de navegación. No constituyen por sí mismas la identidad persistente del OPD. Toda oración de refinamiento entre OPDs debe mapearse a un identificador persistente recuperable en la serialización del modelo, por ejemplo un URI o handle persistente declarado por la implementación.
+
+### 10.4 Composición inter-modelo
+
+| ID | OPL-EN | OPL-ES |
+|----|--------|--------|
+| CM1 | SD1.1 is a sub-model view of Subsystem Model. | SD1.1 es una vista de sub-modelo de Modelo Subsistema. |
+| CM2 | SD1.1 references sub-model Subsystem Model from SD1. | SD1.1 referencia el sub-modelo Modelo Subsistema desde SD1. |
+| CM3 | Thing in SD1.1 is an external reference to Thing of owner model Main Model. | **Cosa** en SD1.1 es referencia externa a **Cosa** del modelo propietario Modelo Principal. |
+
+Estas oraciones no reemplazan la gramática del hecho interno del modelo. Describen la composición entre modelos y la referencia externa de elementos a través de fronteras de modelo.
+
+### 10.5 Plegado y Recomposición
 
 | ID | OPL-EN | OPL-ES |
 |----|--------|--------|
@@ -598,7 +633,7 @@ Para implementadores de herramientas. Reglas aplicadas en secuencia sobre una se
 | R17 | Artículo en instanciación | is an instance of | es una instancia de |
 | R18 | Artículo en especialización (sg.) | is a | es un/una |
 | R19 | Secuencia | in that sequence | en esa secuencia |
-| R20 | Designación de estado | is initial / is final / is default | es inicial / es final / es por defecto |
+| R20 | Designación de estado | is initial / is final / is default / is declared current | es inicial / es final / es por defecto / es declarado `Current` |
 | R21 | Nombres de entidad | (sin cambio — definidos por el modelador) | (sin cambio) |
 
 **Nota para analizadores**: el verbo principal (R1) es el ancla léxica para detectar el idioma de la sentencia. Un analizador puede determinar EN vs ES verificando si el primer verbo conjugado pertenece al conjunto EN o ES.
@@ -714,7 +749,9 @@ SD se refina por descomposición de *Preparar Empanadas* en SD1.
 
 ## 17. Adaptaciones de la EBNF al español
 
-La EBNF de esta capa textual define la superficie canónica de OPL en español. Frente a la formulación inglesa de referencia, requiere las siguientes adaptaciones:
+La EBNF de esta capa textual define la superficie canónica de OPL en español. Frente a la formulación inglesa de referencia, requiere las siguientes adaptaciones.
+
+Esta sección es **explicativa**: describe cómo se obtienen las producciones ES partiendo de las EN de referencia, usando nombres de no-terminales con espacios por legibilidad (por ejemplo `identificador de proceso`). La forma **normativa** y mecanizable vive en el Apéndice A, donde los no-terminales se escriben en snake_case (por ejemplo `identificador_de_proceso`). Cuando exista cualquier divergencia entre §17 y Apéndice A, prevalece el Apéndice.
 
 ### 17.1 Terminales Léxicos
 
@@ -764,9 +801,11 @@ Las reglas de producción de alto nivel no cambian. En OPL-ES se sustituyen los 
 
 ## Apéndice A. Gramática formal OPL-ES completa
 
-Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa base para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES.
+### A.0 Alcance del apéndice
 
-## A.1 Estructura del documento
+Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa base para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES. Todos los no-terminales del apéndice se escriben en snake_case; cualquier forma con espacios que aparezca en §17 es explicativa y no normativa.
+
+### A.1 Estructura del documento
 
 ```ebnf
 parrafo_opl_es = oracion_opl_es, { salto_de_linea, oracion_opl_es } ;
@@ -777,7 +816,7 @@ oracion_formal_opl_es = oracion_de_descripcion_de_cosa
  | oracion_de_gestion_de_contexto ;
 ```
 
-## A.2 Declaraciones base
+### A.2 Declaraciones base
 
 ```ebnf
 digito_no_cero = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
@@ -810,7 +849,7 @@ nombre_de_valor = nombre | entero_positivo ;
 clausula_de_rango = " es ", nombre_de_valor | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
 ```
 
-## A.3 Identificadores
+### A.3 Identificadores
 
 ```ebnf
 identificador_de_objeto = nombre_singular_de_objeto, [ " en ", unidad_de_medida ], [ clausula_de_rango ] ;
@@ -837,8 +876,10 @@ clase_de_objeto = identificador_de_objeto ;
 clase_de_proceso = identificador_de_proceso ;
 objeto_especial = identificador_de_objeto ;
 objeto_con_estado = identificador_de_objeto, " en ", identificador_de_estado ;
-opd_padre = nombre ;
-opd_hijo = nombre ;
+nombre_de_modelo = nombre ;
+etiqueta_visible_de_opd = nombre ;
+opd_padre = etiqueta_visible_de_opd ;
+opd_hijo = etiqueta_visible_de_opd ;
 identificador_de_proceso_activo = identificador_de_proceso ;
 max_duracion_unidades_tiempo = nombre_de_valor, " unidades-tiempo" ;
 min_duracion_unidades_tiempo = nombre_de_valor, " unidades-tiempo" ;
@@ -854,6 +895,9 @@ lista_de_procesos_instancia = lista_de_procesos ;
 lista_de_objetos_con_estado = objeto_con_estado, { ", ", objeto_con_estado }, [ " y ", objeto_con_estado ] ;
 etiqueta_directa = expresion_de_etiqueta ;
 etiqueta_nula_definida_por_usuario = expresion_de_etiqueta ;
+
+(* La identidad persistente del OPD no forma parte de la superficie oracional.
+   Debe preservarse en el metadato asociado a la serialización. *)
 ```
 
 Convenciones:
@@ -863,7 +907,7 @@ Convenciones:
 - nombres de estado: en minúscula;
 - etiquetas: frases breves en minúscula.
 
-## A.4 Oraciones de descripción de cosas
+### A.4 Oraciones de descripción de cosas
 
 ```ebnf
 oracion_de_descripcion_de_cosa = oracion_de_propiedad_generica
@@ -871,27 +915,29 @@ oracion_de_descripcion_de_cosa = oracion_de_propiedad_generica
  | oracion_de_estados_iniciales
  | oracion_de_estados_finales
  | oracion_de_estado_por_defecto
+ | oracion_de_estado_current
  | oracion_de_tipo_de_dato ;
 
 oracion_de_tipo_de_dato =
  identificador_de_objeto, " es de tipo ", identificador_de_tipo ;
 
-oracion_de_propiedad_generica = identificador_de_cosa, " es ", [esencia], [afiliacion], [perseverancia] ;
-oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados | "..., y otros estados" ;
+oracion_de_propiedad_generica = identificador_de_cosa, " es ", ( esencia | afiliacion | perseverancia ) ;
+oracion_de_enumeracion_de_estados = identificador_de_objeto, " puede estar ", lista_de_estados, [", y otros estados"] ;
 oracion_de_estados_iniciales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es inicial" ;
 oracion_de_estados_finales = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es final" ;
 oracion_de_estado_por_defecto = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es por defecto" ;
+oracion_de_estado_current = "Estado ", identificador_de_estado, " de ", identificador_de_objeto, " es declarado `Current`" ;
 esencia = "física" | "informacional" ;
 afiliacion = "ambiental" | "sistémica" ;
 perseverancia = "persistente" | "transitoria" ;
 ```
 
-Esencia: `Física` o `Informacional`. Afiliación: `Sistémica` o `Ambiental`. Perseverancia: `Persistente` o `Transitoria`.
+Esencia: `física` o `informacional`. Afiliación: `sistémica` o `ambiental`. Perseverancia: `persistente` o `transitoria`. (La glosa mantiene los valores en minúscula tal como los emiten las plantillas D1–D4, D11, D12; los backticks marcan que se trata de tokens canónicos del lenguaje, no de glosas en lenguaje natural.)
 
-## A.5 Oraciones procedimentales
+### A.5 Oraciones procedimentales
 
 ```ebnf
-oracion_procedimental = oracion_transformadora | oracion_habilitadora | oracion_de_control ;
+oracion_procedimental = oracion_transformadora | oracion_habilitadora | oracion_de_invocacion | oracion_de_control ;
 oracion_transformadora = oracion_de_consumo | oracion_de_resultado | oracion_de_efecto | oracion_de_cambio ;
 
 oracion_de_consumo = identificador_de_proceso, " consume ", objeto_con_opcion_de_estado ;
@@ -911,7 +957,7 @@ oracion_habilitadora = oracion_de_agente | oracion_de_instrumento ;
 oracion_de_agente = objeto_con_opcion_de_estado, " maneja ", identificador_de_proceso ;
 oracion_de_instrumento = identificador_de_proceso, " requiere ", objeto_con_opcion_de_estado ;
 
-oracion_de_control = oracion_de_evento | oracion_de_condicion | oracion_de_invocacion | oracion_de_excepcion ;
+oracion_de_control = oracion_de_evento | oracion_de_condicion | oracion_de_excepcion ;
 oracion_de_evento = oracion_de_evento_de_consumo | oracion_de_evento_de_efecto
  | oracion_de_evento_de_agente | oracion_de_evento_de_instrumento ;
 oracion_de_evento_de_consumo = objeto_con_opcion_de_estado, " inicia ", identificador_de_proceso,
@@ -940,7 +986,7 @@ cadena_etiqueta = nombre ;
 
 Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
 
-## A.6 Oraciones de condición
+### A.6 Oraciones de condición
 
 ```ebnf
 oracion_de_condicion = oracion_transformadora_condicional | oracion_habilitadora_condicional ;
@@ -1000,7 +1046,7 @@ oracion_de_instrumento_condicional = ( identificador_de_proceso, " ocurre si ",
  identificador_de_estado, ", de lo contrario ", identificador_de_proceso, " se omite" ) ;
 ```
 
-## A.7 Producciones adicionales
+### A.7 Producciones adicionales
 
 ```ebnf
 (* --- Restricciones de expresión para multiplicidad --- *)
@@ -1042,7 +1088,7 @@ lista_de_objetos_generales = " un ", identificador_de_objeto,
  [ { " un ", identificador_de_objeto } ], " y un ", identificador_de_objeto ;
 ```
 
-## A.8 Oraciones estructurales
+### A.8 Oraciones estructurales
 
 ```ebnf
 oracion_estructural = oracion_de_enlace_estructural_etiquetado | oracion_de_agregacion
@@ -1127,7 +1173,7 @@ etiqueta_nula_bidireccional = " se relacionan"
 
 ```
 
-## A.9 Oraciones de estructuras fundamentales
+### A.9 Oraciones de estructuras fundamentales
 
 ```ebnf
 oracion_de_agregacion = oracion_de_agregacion_objeto | oracion_de_agregacion_proceso ;
@@ -1174,11 +1220,20 @@ operador = identificador_de_proceso ;
 rasgo = atributo | operador ;
 ```
 
-## A.10 Oraciones de gestión de contexto
+### A.10 Oraciones de gestión de contexto
 
 ```ebnf
 oracion_de_gestion_de_contexto = oracion_de_despliegue | oracion_de_plegado
- | oracion_de_descomposicion | oracion_de_recomposicion ;
+ | oracion_de_descomposicion | oracion_de_recomposicion
+ | oracion_de_composicion_intermodelo | oracion_de_referencia_externa ;
+
+oracion_de_composicion_intermodelo =
+  opd_hijo, " es una vista de sub-modelo de ", nombre_de_modelo
+ | opd_hijo, " referencia el sub-modelo ", nombre_de_modelo, " desde ", opd_padre ;
+
+oracion_de_referencia_externa =
+  identificador_de_objeto, " en ", opd_hijo, " es referencia externa a ",
+  identificador_de_objeto, " del modelo propietario ", nombre_de_modelo ;
 
 (* --- Oraciones de despliegue (unfolding) --- *)
 
@@ -1221,8 +1276,8 @@ oracion_de_despliegue_proceso_exhibidor = identificador_de_proceso, " desde ", o
 (* --- Oraciones de plegado (folding) --- *)
 
 oracion_de_plegado = oracion_de_plegado_objeto | oracion_de_plegado_proceso ;
-oracion_de_plegado_objeto = identificador_de_objeto, " se pliega en ", opd_hijo ;
-oracion_de_plegado_proceso = identificador_de_proceso, " se pliega en ", opd_hijo ;
+oracion_de_plegado_objeto = identificador_de_objeto, " se pliega en ", opd_padre ;
+oracion_de_plegado_proceso = identificador_de_proceso, " se pliega en ", opd_padre ;
 
 (* --- Oraciones de descomposición (in-zooming) --- *)
 
@@ -1297,8 +1352,14 @@ A nivel de superficie textual, una implementación operativa DEBERÍA además pe
 
 1. Elegir idioma OPL a nivel de usuario/modelo sin alterar el OPD subyacente
 2. Mostrar todas las sentencias o solo las de esencia no predeterminada
-3. Alternar numeración, alias y visualización de unidades sin afectar la semántica
+3. Alternar numeración y, cuando la implementación proyecte rótulos computacionales o decoraciones de la capa visual, alias y visualización de unidades sin afectar la semántica del OPL subyacente
 4. Regenerar el párrafo OPL completo al cambiar idioma, manteniendo invariantes de ida y vuelta
+5. Asociar cada referencia visible a OPD (`SD`, `SD1`, `SD1.1`, etc.) con un identificador persistente recuperable en la serialización
+6. Mantener el OPL local autocontenido de cada modelo individual cuando existan sub-modelos
+7. Emitir la composición inter-modelo mediante oraciones explícitas o metadatos equivalentes, sin colapsar el compuesto en un único árbol textual implícito
+8. Preservar la frontera entre modelo propietario y modelo consumidor cuando una cosa aparezca como referencia externa
+
+En modelos compuestos, la especificación textual global no debe inferirse únicamente desde la navegación visible del árbol OPD. Debe conservar explícitamente la frontera entre modelos individuales y el vínculo entre etiqueta visible de OPD e identificador persistente.
 
 ### 18.3 Compatibilidad Semántica
 
