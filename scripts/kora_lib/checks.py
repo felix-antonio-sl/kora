@@ -719,6 +719,9 @@ def _check_skill_structure(path_filter=None):
         for child in skill_dir.iterdir():
             if not child.is_dir() or child.name.startswith("."):
                 continue
+            # _BUILD/ es output de transmutacion (gitignored), exento
+            if child.name == "_BUILD":
+                continue
             if child.name in CANONICAL_SUBDIRS:
                 present_canonical.add(child.name)
             elif child.name == "skills":
@@ -861,6 +864,286 @@ def _check_autoria_conformance(path_filter=None):
     return diags
 
 
+def _check_fidelidad_agentskills(path_filter=None):
+    """Verifica que cada habilidad productiva se proyecta a agentskills.io sin perdida.
+
+    Autoria-spec §5.5: las habilidades DEBEN ser transmutables byte-identical
+    a paquetes agentskills.io-compatibles. Este check ejecuta la proyeccion
+    en dry-run y verifica que no hay diagnostico de dominio ni perdida en
+    ejes no-sigma (sigma acepta perdida cuando excede sigma_max).
+    """
+    from .artifacts import load_yaml_safe
+    from .config import KORA_ROOT, SKILLS_ROOT
+    from .transmute import _transmute_skill_to_agentskills
+
+    diags = []
+    if not SKILLS_ROOT.exists():
+        return diags
+
+    def iter_productive_skills():
+        for entry in sorted(SKILLS_ROOT.iterdir()):
+            if not entry.is_dir() or entry.name.startswith((".", "_")):
+                continue
+            direct = entry / "SKILL.md"
+            if direct.exists():
+                yield direct
+                continue
+            for sub in sorted(entry.iterdir()):
+                if not sub.is_dir() or sub.name.startswith((".", "_")):
+                    continue
+                candidate = sub / "SKILL.md"
+                if candidate.exists():
+                    yield candidate
+
+    for skill_md in iter_productive_skills():
+        fm, err = load_yaml_safe(skill_md)
+        if err or not isinstance(fm, dict):
+            continue
+        forma = (fm.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+        if forma != "habilidad":
+            continue
+
+        rel = str(skill_md.relative_to(KORA_ROOT))
+        try:
+            _target_dir, summary = _transmute_skill_to_agentskills(skill_md, dry_run=True)
+        except ValueError as exc:
+            diags.append(Diagnostic(
+                check_id="fidelidad-agentskills",
+                severity="high",
+                scope="artifact",
+                path=rel,
+                message=f"Proyeccion a agentskills.io falla: {exc}",
+                fix_hint="Ajusta vector_ontologico al dominio de habilidad (autoria-spec §5.1)",
+            ))
+            continue
+
+        # Perdida solo aceptable en sigma; en ejes estructurales es bug
+        losses = summary.get("loss_by_axis", {})
+        structural_losses = {ax: loss for ax, loss in losses.items() if loss and ax != "sigma"}
+        if structural_losses:
+            diags.append(Diagnostic(
+                check_id="fidelidad-agentskills",
+                severity="high",
+                scope="artifact",
+                path=rel,
+                message=f"Proyeccion con perdida estructural: {structural_losses}",
+                fix_hint="Vector fuera de dominio de habilidad; ajustar o marcar como no-habilidad",
+            ))
+
+        # Frontmatter debe tener nombre o name
+        has_name = bool(fm.get("nombre") or fm.get("name"))
+        has_desc = bool(fm.get("descripcion") or fm.get("description"))
+        if not has_name:
+            diags.append(Diagnostic(
+                check_id="fidelidad-agentskills",
+                severity="medium",
+                scope="artifact",
+                path=rel,
+                message="Habilidad sin campo 'nombre' (es) ni 'name' (en) — proyeccion emitira SKILL.md sin name",
+                fix_hint="Agrega 'nombre: <slug>' al frontmatter",
+            ))
+        if not has_desc:
+            diags.append(Diagnostic(
+                check_id="fidelidad-agentskills",
+                severity="medium",
+                scope="artifact",
+                path=rel,
+                message="Habilidad sin campo 'descripcion' (es) ni 'description' (en) — proyeccion emitira SKILL.md sin description",
+                fix_hint="Agrega 'descripcion: <linea>' al frontmatter",
+            ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+def _check_coalgebra_conformance(path_filter=None):
+    """Verifica termination del FSM declarado en artefacto.plan.fsm (autoria-spec v1.1 §3.5).
+
+    Solo aplica cuando el artefacto declara plan.fsm. Opcional por defecto;
+    obligatorio cuando extensions.kora.verificacion_coalgebraica es true.
+
+    Invariantes verificadas:
+      - FSM bien formado: estados, inicial, terminales, transiciones presentes.
+      - inicial existe en estados declarados.
+      - todos los terminales existen en estados.
+      - todos los targets de transiciones estan en estados.
+      - termination: desde inicial todo camino alcanza un terminal (no hay
+        ciclos sin salida a terminal).
+      - sub_coalgebra_segura (si presente): cerrada bajo transiciones.
+    """
+    import os
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
+
+    diags = []
+
+    def iter_productive_artifacts():
+        if AGENTS_ROOT.exists():
+            for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+                if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+                    continue
+                for ws_dir in sorted(ns_dir.iterdir()):
+                    if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                        continue
+                    am = ws_dir / "AGENT.md"
+                    if am.exists():
+                        yield am
+        if SKILLS_ROOT.exists():
+            for entry in sorted(SKILLS_ROOT.iterdir()):
+                if not entry.is_dir() or entry.name.startswith((".", "_")):
+                    continue
+                direct = entry / "SKILL.md"
+                if direct.exists():
+                    yield direct
+                    continue
+                for sub in sorted(entry.iterdir()):
+                    if not sub.is_dir() or sub.name.startswith((".", "_")):
+                        continue
+                    candidate = sub / "SKILL.md"
+                    if candidate.exists():
+                        yield candidate
+
+    for artifact_path in iter_productive_artifacts():
+        frontmatter, err = load_yaml_safe(artifact_path)
+        if err or not isinstance(frontmatter, dict):
+            continue
+        artefacto = frontmatter.get("artefacto")
+        if not isinstance(artefacto, dict):
+            continue
+        plan = artefacto.get("plan") or {}
+        fsm = plan.get("fsm") if isinstance(plan, dict) else None
+        strict_required = (
+            (frontmatter.get("extensions") or {}).get("kora", {}).get("verificacion_coalgebraica") is True
+        )
+
+        rel = str(artifact_path.relative_to(KORA_ROOT))
+        scope_kind = "workspace" if artifact_path.name == "AGENT.md" else "artifact"
+
+        if not isinstance(fsm, dict):
+            if strict_required:
+                diags.append(Diagnostic(
+                    check_id="coalgebra-conformance",
+                    severity="high",
+                    scope=scope_kind,
+                    path=rel,
+                    message="verificacion_coalgebraica=true pero artefacto.plan.fsm ausente",
+                    fix_hint="Declara plan.fsm con {inicial, terminales, transiciones} segun autoria-spec §3.5",
+                ))
+            continue
+
+        inicial = fsm.get("inicial")
+        terminales = fsm.get("terminales") or []
+        transiciones = fsm.get("transiciones") or {}
+        estados_list = plan.get("estados") or []
+        estados_ids = set()
+        for s in estados_list:
+            if isinstance(s, dict) and "id" in s:
+                estados_ids.add(s["id"])
+
+        if not isinstance(inicial, str) or inicial not in estados_ids:
+            diags.append(Diagnostic(
+                check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                message=f"plan.fsm.inicial '{inicial}' no esta en plan.estados",
+                fix_hint="Agrega el estado inicial a plan.estados con su id correspondiente",
+            ))
+            continue
+        if not isinstance(terminales, list) or not terminales:
+            diags.append(Diagnostic(
+                check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                message="plan.fsm.terminales esta vacio — todo FSM debe tener al menos un terminal",
+                fix_hint="Declara al menos un estado terminal en plan.fsm.terminales",
+            ))
+            continue
+        missing_terminals = [t for t in terminales if t not in estados_ids]
+        if missing_terminals:
+            diags.append(Diagnostic(
+                check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                message=f"plan.fsm.terminales contiene ids no declarados en plan.estados: {missing_terminals}",
+                fix_hint="Registra los ids como entradas en plan.estados",
+            ))
+            continue
+        # Verifica targets en estados
+        bad_targets = []
+        for src, targets in transiciones.items():
+            if src not in estados_ids:
+                bad_targets.append(f"source '{src}' no en plan.estados")
+                continue
+            if not isinstance(targets, list):
+                continue
+            for t in targets:
+                if t not in estados_ids:
+                    bad_targets.append(f"transicion '{src} -> {t}' apunta a estado no declarado")
+        if bad_targets:
+            diags.append(Diagnostic(
+                check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                message=f"plan.fsm.transiciones invalidas: {'; '.join(bad_targets[:5])}",
+                fix_hint="Corrige ids en transiciones o agrega estados faltantes",
+            ))
+            continue
+
+        # Termination: BFS desde inicial, cada estado visitado debe poder
+        # alcanzar un terminal. Detectamos estados "atrapados" en ciclos sin
+        # salida.
+        terminal_set = set(terminales)
+        reachable = {inicial}
+        frontier = [inicial]
+        while frontier:
+            s = frontier.pop()
+            for t in transiciones.get(s, []) or []:
+                if t not in reachable:
+                    reachable.add(t)
+                    frontier.append(t)
+        # Para cada estado alcanzable, verificar que puede alcanzar un terminal
+        def can_reach_terminal(start):
+            seen = {start}
+            stack = [start]
+            while stack:
+                s = stack.pop()
+                if s in terminal_set:
+                    return True
+                for t in transiciones.get(s, []) or []:
+                    if t not in seen:
+                        seen.add(t)
+                        stack.append(t)
+            return False
+        trapped = [s for s in reachable if not can_reach_terminal(s)]
+        if trapped:
+            diags.append(Diagnostic(
+                check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                message=f"FSM no termina: estados sin camino a terminal: {trapped[:5]}",
+                fix_hint="Agrega transicion hacia un estado terminal o declara el estado como terminal",
+            ))
+            continue
+
+        # Sub-coalgebra safety: closed under transitions
+        sub_safe = artefacto.get("invariantes", {}).get("sub_coalgebra_segura")
+        if isinstance(sub_safe, list) and sub_safe:
+            sub_set = set(sub_safe)
+            missing = [s for s in sub_safe if s not in estados_ids]
+            if missing:
+                diags.append(Diagnostic(
+                    check_id="coalgebra-conformance", severity="medium", scope=scope_kind, path=rel,
+                    message=f"sub_coalgebra_segura lista estados no declarados: {missing}",
+                ))
+                continue
+            escapes = []
+            for s in sub_safe:
+                for t in transiciones.get(s, []) or []:
+                    if t not in sub_set:
+                        escapes.append(f"{s} -> {t}")
+            if escapes:
+                diags.append(Diagnostic(
+                    check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
+                    message=f"sub_coalgebra_segura no cerrada bajo transiciones: {escapes[:3]}",
+                    fix_hint="Agrega estados destino a la sub-coalgebra o remueve la transicion",
+                ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 # ---------------------------------------------------------------------------
 # Registration — wire up all built-in checks
 # ---------------------------------------------------------------------------
@@ -941,6 +1224,20 @@ def _register_builtins():
               spec_ref="autoria-spec §3, §6", depends=("catalog-exists",), phase="verify"),
         _check_autoria_conformance,
         _fix_autoria_conformance,
+    )
+    register_check(
+        Check("coalgebra-conformance",
+              "Artefactos con plan.fsm declarado verifican termination y sub-coalgebra de safety cerrada",
+              scope="artifact", severity="high", enforcement="eval",
+              spec_ref="autoria-spec §3.5; harness-spec §4; ICAS Part IV", depends=("catalog-exists",), phase="verify"),
+        _check_coalgebra_conformance,
+    )
+    register_check(
+        Check("fidelidad-agentskills",
+              "Habilidades productivas se transmutan byte-identical a agentskills.io sin perdida estructural",
+              scope="artifact", severity="high", enforcement="eval",
+              spec_ref="autoria-spec §5.5", depends=("catalog-exists",), phase="verify"),
+        _check_fidelidad_agentskills,
     )
 
 

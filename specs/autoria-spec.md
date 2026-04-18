@@ -25,7 +25,7 @@ relations:
     - "urn:kora:kb:skill-overlay-spec"
 ---
 
-# Especificacion de Autoria de Artefactos Agenticos v1.0.0
+# Especificacion de Autoria de Artefactos Agenticos v1.1.0
 
 ## 1. Definicion
 
@@ -209,6 +209,64 @@ dimensiones. Cuales son obligatorias y cuales no depende de
 
 El campo `perfil` es descriptivo puro — no tiene peso ontologico. Sirve
 para documentacion humana y descubrimiento.
+
+### 3.5 Shape coalgebraico (opcional, v1.1+)
+
+Un artefacto **PUEDE** declarar estructura coalgebraica explicita bajo
+`artefacto.plan.fsm` (free monad serializable) y `artefacto.interfaz.polinomio`
+(interface functor como polynomial P(U) = Σ_{p ∈ Positions} U^{Directions(p)}).
+
+Cuando presentes, estos campos **DEBEN** cumplir:
+
+- `plan.fsm.estados`: lista de estados con id unico.
+- `plan.fsm.inicial`: id de estado inicial (DEBE estar en `estados`).
+- `plan.fsm.terminales`: lista no vacia de ids terminales (DEBEN estar en `estados`).
+- `plan.fsm.transiciones`: mapa `{estado_id: [estado_id_siguiente, ...]}`.
+- **Invariante de termination**: desde `inicial`, TODOS los caminos deben
+  poder alcanzar un terminal en finitos pasos (no hay ciclos infinitos
+  sin salida). Esto materializa Π monotonicity + termination de `harness-spec §4`.
+
+- `interfaz.polinomio.posiciones`: lista de posiciones (inputs disponibles).
+- `interfaz.polinomio.direcciones`: mapa `{posicion: [direccion, ...]}` (outputs por input).
+
+- `invariantes.sub_coalgebra_segura` (opcional): lista de estados FSM
+  cuyo cierre bajo transiciones permanece en la sub-coalgebra — materializa
+  la "sub-coalgebra de safety cerrada" de Part IV del ICAS-BoK.
+
+Ejemplo minimo:
+
+```yaml
+artefacto:
+  plan:
+    estado_inicial: "S-START"
+    estado_terminal: "S-END"
+    estados: [...]
+    fsm:
+      inicial: "S-START"
+      terminales: ["S-END", "S-ABORT"]
+      transiciones:
+        "S-START": ["S-WORK", "S-ABORT"]
+        "S-WORK": ["S-END", "S-ABORT"]
+        "S-END": []
+        "S-ABORT": []
+  interfaz:
+    herramientas: [...]
+    polinomio:
+      posiciones: ["read", "write", "ask"]
+      direcciones:
+        read: ["content", "not-found"]
+        write: ["ok", "conflict"]
+        ask: ["answer"]
+  invariantes:
+    sub_coalgebra_segura: ["S-START", "S-WORK", "S-END"]
+```
+
+El check `coalgebra-conformance` (§13) verifica termination del FSM
+cuando `plan.fsm` esta declarado; no hace nada si el campo esta ausente
+(opcional por compatibilidad con shape v1.0).
+
+Estos campos son **opcionales en v1.1** y **obligatorios** para
+artefactos que declaren `extensions.kora.verificacion_coalgebraica: true`.
 
 ## 4. Los tres atlas y el vector ontologico
 

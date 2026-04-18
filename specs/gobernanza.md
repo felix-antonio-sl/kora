@@ -189,6 +189,39 @@ Reglas:
 3. No se acepta nuevo shape anterior a `autoria-spec`.
 4. Transiciones inversas del lifecycle son invalidas; retirados no son reactivables (emitir uno nuevo con `supersedes`).
 
+### 5.1 Lifecycle a escala: olas
+
+Una **ola** es una sub-categoria del pipeline de promocion que agrupa
+artefactos que se canonizan juntos. Formalmente, una ola es un objeto del
+functor de lifecycle:
+
+```
+Ola_k : Staging -> Productivo
+```
+
+Cada ola declara:
+
+- **perimetro**: conjunto de URNs candidatos a promover.
+- **invariante de cierre**: que condiciones debe satisfacer un artefacto
+  para cerrar la ola (ej. `kora check --strict` verde, tests verdes,
+  shape de autoria-spec vigente).
+- **deuda residual**: lo que queda fuera del perimetro y debe absorber
+  la ola siguiente.
+
+El functor de transicion `Ola_k -> Ola_{k+1}` tiene como dominio la
+deuda residual declarada de la ola anterior: cada ola comienza con el
+objeto que la anterior no pudo comprimir.
+
+#### Registro de olas
+
+| Ola | Estado | Perimetro | Deuda residual |
+|-----|--------|-----------|-----------------|
+| ola-1 | cerrada (2026-04-18) | 7 workspaces meta-kora/dev + toolchain a-autoria + atomize acceptance gate | fidelidad-agentskills; coalgebra-conformance; multiagente; 21 agentes INBOX; 7 skills INBOX |
+| ola-2 | abierta | fidelidad-agentskills + coalgebra-conformance + batch-promote + dedup staging (ejecutado 2026-04-18) | qa_budget enriched; multiagente-spec; wrapper frontier runtimes |
+
+Esta tabla es la vista materializada del morfismo `Ola_k -> Ola_{k+1}`;
+actualizarla es parte de cerrar una ola.
+
 ## 6. Extensiones
 
 Una extension de namespace agrega restricciones a un target o ecosistema

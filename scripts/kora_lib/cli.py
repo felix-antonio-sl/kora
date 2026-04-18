@@ -8,7 +8,7 @@ from .commands import cmd_migrate, cmd_stats_json, cmd_sync_docs
 from .graph import cmd_graph
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
-from .promote import cmd_promote
+from .promote import cmd_promote, cmd_deprecate, cmd_promote_cohort
 from .transmute import cmd_transmute, cmd_ingest, SUPPORTED_TARGETS
 from .validation import cmd_lint_md, cmd_validate
 
@@ -93,14 +93,26 @@ def main():
     p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from KNOWLEDGE/ artifacts")
     p_kb_graph.add_argument("--json", action="store_true", help="Write graph as JSON to docs/generated/")
     p_kb_graph.add_argument("--check-cycles", action="store_true", help="Exit non-zero if cycles exist in depends graph")
+    p_kb_graph.add_argument("--orphans", action="store_true", help="Emit orphan classification report to docs/generated/kb-orphans.md")
 
     p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from drafts/ to KNOWLEDGE/")
-    p_promote.add_argument("path", help="Path to the draft artifact to promote")
+    p_promote.add_argument("path", nargs="?", default=None, help="Path to the draft artifact to promote (omitir si se usa --cohort)")
     p_promote.add_argument(
         "--review",
         default=None,
         help="Optional acceptance review path for atomic bundles; ignored for non-atomic families",
     )
+    p_promote.add_argument(
+        "--cohort",
+        default=None,
+        help="Batch-promote all drafts in KNOWLEDGE/_SCRIPTORIUM/REVIEW/{ns}/ as a cohort",
+    )
+
+    p_deprecate = subparsers.add_parser("deprecate", help="Dual de promote: marca artefacto productivo como deprecado o retirado")
+    p_deprecate.add_argument("path", help="Path al artefacto productivo (AGENT.md / SKILL.md / KNOWLEDGE archivo)")
+    p_deprecate.add_argument("--supersedes", default=None, help="URN del artefacto que lo reemplaza (validado contra catalogo)")
+    p_deprecate.add_argument("--force", action="store_true", help="Deprecar incluso si hay dependientes activos")
+    p_deprecate.add_argument("--retire", action="store_true", help="Transicion deprecado -> retirado (solo regimen agentico)")
 
     p_transmute = subparsers.add_parser("transmute", help="Proyecta KORA IR a runtime target con matriz de preservacion")
     p_transmute.add_argument("--target", required=True, choices=SUPPORTED_TARGETS,
@@ -157,9 +169,16 @@ def main():
     elif args.command == "atomize":
         cmd_atomize(input_path=args.input_path, slug=args.slug, output=args.output)
     elif args.command == "kb-graph":
-        cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles)
+        cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles, orphans=args.orphans)
     elif args.command == "promote":
-        cmd_promote(args.path, review_path_str=args.review)
+        if args.cohort:
+            cmd_promote_cohort(args.cohort)
+        else:
+            if not args.path:
+                parser.error("promote: path is required unless --cohort is used")
+            cmd_promote(args.path, review_path_str=args.review)
+    elif args.command == "deprecate":
+        cmd_deprecate(args.path, supersedes=args.supersedes, force=args.force, retire=args.retire)
     elif args.command == "transmute":
         cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
     elif args.command == "ingest":

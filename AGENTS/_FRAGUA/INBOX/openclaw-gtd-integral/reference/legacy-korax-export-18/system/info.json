@@ -1,9 +1,0 @@
-{
-  "openclaw_version": "OpenClaw 2026.4.1 (da64a97)",
-  "node_version": "v22.22.1",
-  "os": "Linux clawdbot-hetzner 6.8.0-100-generic #100-Ubuntu SMP PREEMPT_DYNAMIC Tue Jan 13 16:40:06 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
-  "python_version": "Python 3.12.3",
-  "home": "/home/clawdbot",
-  "openclaw_root": "/home/clawdbot/.openclaw",
-  "workspace": "/home/clawdbot/clawd"
-}

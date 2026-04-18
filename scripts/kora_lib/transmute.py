@@ -28,6 +28,16 @@ from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
 # fidelity ∈ {full, partial, none}
 
 PRESERVATION_MATRIX = {
+    "agentskills": {
+        # Solo habilidades (forma_material: habilidad) se proyectan aqui.
+        # Dominio acotado al de habilidad en autoria-spec §5.1.
+        "domain": {"pi": [0,1,2], "mu": [0,1], "xi": [0,1,2], "lambda": [0], "phi": [0,1], "sigma_max": [3,3,3,3,3]},
+        "pi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (None, "none", "agentskills.io no soporta Π=3 en habilidad portable")},
+        "mu":      {0: (0, "full"), 1: (1, "full"), 2: (None, "none", "habilidades no tienen memoria persistente en agentskills.io")},
+        "xi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (None, "none"), 4: (None, "none")},
+        "lambda":  {0: (0, "full"), 1: (None, "none"), 2: (None, "none"), 3: (None, "none")},
+        "phi":     {0: (0, "full"), 1: (1, "full"), 2: (None, "none"), 3: (None, "none"), 4: (None, "none")},
+    },
     "claude-code": {
         "domain": {"pi": [0,1,2,3], "mu": [0,1,2], "xi": [0,1,2,3,4], "lambda": [0,1,2], "phi": [0,1,2,3], "sigma_max": [3,2,3,2,1]},
         "pi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (2, "partial", "fixed-points se aplanan al FSM plano")},
@@ -67,6 +77,7 @@ TARGET_ADAPTERS = {
     "openclaw": "transmute-openclaw",
     "codex": "transmute-codex",
     "gemini": "transmute-gemini",
+    "agentskills": None,  # proyeccion directa sin LLM (byte-identical)
 }
 
 SUPPORTED_TARGETS = tuple(PRESERVATION_MATRIX.keys())
@@ -101,12 +112,18 @@ def _build_target_path(ns: str, name: str, target: str) -> Path:
 
 
 def _get_harness_vector(frontmatter: dict) -> dict:
-    """Extrae harness_vector del IR. Falla si no esta declarado (requerido por v2)."""
-    vector = frontmatter.get("extensions", {}).get("kora", {}).get("harness_vector")
+    """Extrae el vector ontologico PMI × LFS del IR.
+
+    Acepta ambos nombres por compatibilidad:
+      - `vector_ontologico` (canonico en autoria-spec v1.0+, glosario es)
+      - `harness_vector` (legacy pre-unificacion)
+    """
+    kora_ext = frontmatter.get("extensions", {}).get("kora", {})
+    vector = kora_ext.get("vector_ontologico") or kora_ext.get("harness_vector")
     if not isinstance(vector, dict):
         raise ValueError(
-            "Missing extensions.kora.harness_vector. "
-            "Run `kora migrate --profile v2-agentfile` to auto-derive."
+            "Missing extensions.kora.vector_ontologico. "
+            "Run `kora migrate --perfil a-autoria` to normalize shape."
         )
     return vector
 
@@ -257,22 +274,227 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
 
 
 # ---------------------------------------------------------------------------
+# Proyeccion directa a agentskills.io (byte-identical, sin LLM)
+# ---------------------------------------------------------------------------
+
+# autoria-spec §5.5 — mapeo canonico de renames es → en
+AGENTSKILLS_FIELD_RENAMES = {
+    "nombre": "name",
+    "descripcion": "description",
+}
+AGENTSKILLS_SUBDIR_RENAMES = {
+    "referencias": "references",
+    "recursos": "assets",
+    # scripts se preserva (mismo nombre en ambos regimenes)
+}
+AGENTSKILLS_SECTION_RENAMES = {
+    "Recursos": "Resources",
+    "Referencias": "References",
+    # Scripts se preserva
+}
+
+
+def _resolve_skill_path(skill_ref: str) -> Path:
+    """Resuelve ref 'ns/nombre' o 'nombre' a SKILL.md productivo."""
+    parts = skill_ref.strip().split("/")
+    if len(parts) == 2:
+        ns, name = parts
+        skill_md = SKILLS_ROOT / ns / name / "SKILL.md"
+    elif len(parts) == 1:
+        name = parts[0]
+        skill_md = SKILLS_ROOT / name / "SKILL.md"
+    else:
+        raise ValueError(f"Skill ref must be 'ns/nombre' or 'nombre', got: {skill_ref}")
+    if not skill_md.is_file():
+        raise ValueError(f"SKILL.md not found: {skill_md}")
+    return skill_md
+
+
+def _build_agentskills_target_path(skill_md_path: Path) -> Path:
+    """Output vive en {skill_dir}/_BUILD/agentskills/."""
+    return skill_md_path.parent / "_BUILD" / "agentskills"
+
+
+def _project_skill_frontmatter(frontmatter: dict) -> dict:
+    """Proyecta frontmatter KORA (es) a agentskills.io (en). autoria-spec §5.5.
+
+    - Remueve extensions.kora (overlay KORA no se exporta).
+    - Remueve _manifest (no es parte del estandar externo).
+    - Renombra nombre->name, descripcion->description.
+    - Preserva allowed-tools si existe.
+    """
+    out = {}
+    name = frontmatter.get("nombre") or frontmatter.get("name")
+    description = frontmatter.get("descripcion") or frontmatter.get("description")
+    if name:
+        out["name"] = name
+    if description:
+        out["description"] = description
+    allowed_tools = frontmatter.get("allowed-tools")
+    if allowed_tools is not None:
+        out["allowed-tools"] = allowed_tools
+    return out
+
+
+def _project_skill_body(body: str) -> str:
+    """Proyecta body markdown: renombra secciones KORA a estandar externo."""
+    import re
+    for es_section, en_section in AGENTSKILLS_SECTION_RENAMES.items():
+        # Solo renombra headings exactos ## o ### para evitar reemplazos en prosa
+        body = re.sub(
+            rf"^(#{{2,3}}\s+){re.escape(es_section)}(\s*)$",
+            rf"\1{en_section}\2",
+            body,
+            flags=re.MULTILINE,
+        )
+    return body
+
+
+def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) -> tuple[Path, dict]:
+    """Proyecta un SKILL.md + subdirs a agentskills.io byte-identical.
+
+    Retorna (target_dir, summary_dict).
+    """
+    import yaml
+
+    frontmatter, body = load_markdown_parts(skill_md_path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {skill_md_path}")
+
+    # Validar que es habilidad
+    forma = (
+        (frontmatter.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+    )
+    if forma != "habilidad":
+        raise ValueError(
+            f"agentskills target solo aplica a forma_material=habilidad, "
+            f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
+        )
+
+    # Proyectar vector (verifica dominio)
+    vector = _get_harness_vector(frontmatter)
+    projected, detail = _project_vector(vector, "agentskills")
+
+    target_dir = _build_agentskills_target_path(skill_md_path)
+    source_skill_dir = skill_md_path.parent
+
+    projected_fm = _project_skill_frontmatter(frontmatter)
+    projected_body = _project_skill_body(body)
+
+    summary = {
+        "source": str(skill_md_path.relative_to(KORA_ROOT)),
+        "target_dir": str(target_dir.relative_to(KORA_ROOT)),
+        "projected_vector": projected,
+        "loss_by_axis": {ax: d.get("loss") for ax, d in detail.items() if d.get("loss")},
+        "subdirs_renamed": {},
+        "body_sections_renamed": list(AGENTSKILLS_SECTION_RENAMES.keys()),
+    }
+
+    if dry_run:
+        return target_dir, summary
+
+    # Materializar output
+    target_dir.mkdir(parents=True, exist_ok=True)
+    out_skill_md = target_dir / "SKILL.md"
+    content = "---\n" + yaml.safe_dump(projected_fm, sort_keys=False, allow_unicode=True) + "---\n" + projected_body
+    out_skill_md.write_text(content, encoding="utf-8")
+
+    # Copiar subdirs con renames
+    for entry in source_skill_dir.iterdir():
+        if not entry.is_dir() or entry.name.startswith((".", "_")):
+            continue
+        src_name = entry.name
+        dst_name = AGENTSKILLS_SUBDIR_RENAMES.get(src_name, src_name)
+        if dst_name != src_name:
+            summary["subdirs_renamed"][src_name] = dst_name
+        dst_dir = target_dir / dst_name
+        dst_dir.mkdir(parents=True, exist_ok=True)
+        for item in entry.rglob("*"):
+            if item.is_file():
+                rel = item.relative_to(entry)
+                dst_file = dst_dir / rel
+                dst_file.parent.mkdir(parents=True, exist_ok=True)
+                dst_file.write_bytes(item.read_bytes())
+
+    # Emit _transmutation.yml para skills
+    source_hash = _sha256(skill_md_path)
+    manifest = {
+        "transmutation": {
+            "source_urn": frontmatter.get("_manifest", {}).get("urn", ""),
+            "source_version": frontmatter.get("version", "0.0.0"),
+            "source_path": str(skill_md_path.relative_to(KORA_ROOT)),
+            "source_hash": source_hash,
+            "target": "agentskills",
+            "functor": "T_agentskills_v1.0",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "source_vector": {
+                "pi": vector.get("pi"), "mu": vector.get("mu"), "xi": vector.get("xi"),
+                "lambda": vector.get("lambda"), "phi": vector.get("phi"), "sigma": vector.get("sigma"),
+            },
+            "structural_preservation": {
+                "composition": "preserved",
+                "identity": "preserved",
+                "semantic_body": "preserved",
+            },
+            "projections": detail,
+            "field_renames": AGENTSKILLS_FIELD_RENAMES,
+            "subdir_renames": summary["subdirs_renamed"],
+            "section_renames": AGENTSKILLS_SECTION_RENAMES,
+            "bisimulation_claim": "byte-identical-modulo-renames",
+            "references": {
+                "autoria_spec": "urn:kora:kb:autoria-spec",
+                "transmutation_spec": "urn:kora:kb:transmutation-spec",
+            },
+        }
+    }
+    yml_path = target_dir / "_transmutation.yml"
+    yml_path.write_text(yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True), encoding="utf-8")
+
+    return target_dir, summary
+
+
+# ---------------------------------------------------------------------------
 # CLI commands
 # ---------------------------------------------------------------------------
 
 def cmd_transmute(target: str, agent: str, dry_run: bool = False):
-    """Transmuta un agente IR al runtime target.
+    """Transmuta un artefacto IR al runtime target.
 
-    Pasos:
-    1. Resuelve AGENT.md del agente.
-    2. Valida que existe harness_vector (v2 del agentfile-spec).
-    3. Proyecta el vector al dominio del runtime (puede fallar si fuera de dominio).
-    4. Prepara {workspace}/_BUILD/{target}/.
-    5. Emite _transmutation.yml con estructura completa.
-    6. Reporta pasos siguientes (invocar adapter skill o LLM manual).
+    Para target=agentskills, el artefacto DEBE ser una habilidad productiva
+    (SKILL.md en SKILLS/{ns}/{name}/ con forma_material: habilidad). La
+    proyeccion es byte-identical (sin LLM) segun autoria-spec §5.5.
+
+    Para otros targets (claude-code, codex, gemini, openclaw), el artefacto
+    es un AGENT.md y la compilacion final requiere un adapter skill o LLM.
     """
     if target not in SUPPORTED_TARGETS:
         raise ValueError(f"Unknown target: {target}. Supported: {SUPPORTED_TARGETS}")
+
+    # Target agentskills: proyeccion de habilidad
+    if target == "agentskills":
+        skill_md_path = _resolve_skill_path(agent)
+        print(f"=== KORA Transmutation: {agent} → agentskills.io ===\n")
+        print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
+        if dry_run:
+            target_dir, summary = _transmute_skill_to_agentskills(skill_md_path, dry_run=True)
+            print(f"  [dry-run] Would emit: {target_dir.relative_to(KORA_ROOT)}/")
+            print(f"  [dry-run] Projected vector: {summary['projected_vector']}")
+            return
+        target_dir, summary = _transmute_skill_to_agentskills(skill_md_path, dry_run=False)
+        print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
+        if summary["loss_by_axis"]:
+            print(f"  Perdidas declaradas:")
+            for ax, loss in summary["loss_by_axis"].items():
+                if loss:
+                    print(f"    - {ax}: {loss}")
+        else:
+            print(f"  Perdidas declaradas: ninguna")
+        if summary["subdirs_renamed"]:
+            print(f"  Subdirs renombrados:")
+            for src, dst in summary["subdirs_renamed"].items():
+                print(f"    {src}/ -> {dst}/")
+        print(f"\n  Proyeccion byte-identical completada.")
+        return
 
     agent_md_path = _resolve_agent_path(agent)
     ns, name = agent.strip().split("/")

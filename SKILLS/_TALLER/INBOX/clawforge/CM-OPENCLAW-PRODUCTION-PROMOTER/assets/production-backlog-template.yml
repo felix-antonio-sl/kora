@@ -1,8 +1,0 @@
-promotion_backlog:
-  target_mode: "assisted-prod"
-  readiness: "partial"
-  eligible_now: false
-  P0: []
-  P1: []
-  P2: []
-  exit_criteria: []

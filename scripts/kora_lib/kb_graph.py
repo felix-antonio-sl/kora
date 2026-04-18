@@ -14,16 +14,21 @@ from .config import KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
 
 
 def collect_knowledge_nodes():
-    """Walk KNOWLEDGE/ and collect all artifacts with valid _manifest."""
+    """Walk KNOWLEDGE/ and collect all artifacts with valid _manifest.
+
+    Excluye KNOWLEDGE/_SCRIPTORIUM/ (staging pre-categorial) — sus artefactos
+    no forman parte del grafo de conocimiento publicado.
+    """
     nodes = []
-    # Scan KNOWLEDGE/ and specs/ for knowledge artifacts
     scan_roots = [KNOWLEDGE_ROOT]
     specs_dir = KORA_ROOT / "specs"
     if specs_dir.exists():
         scan_roots.append(specs_dir)
 
     for scan_root in scan_roots:
-        for root, _dirs, files in os.walk(scan_root):
+        for root, dirs, files in os.walk(scan_root):
+            # Poda: no descender en _SCRIPTORIUM/
+            dirs[:] = [d for d in dirs if d != "_SCRIPTORIUM"]
             for fname in sorted(files):
                 if not fname.endswith(".md") or fname == "README.md":
                     continue
@@ -51,6 +56,9 @@ def collect_knowledge_nodes():
                     "tags": frontmatter.get("tags", []),
                     "file": rel_path,
                     "relations": frontmatter.get("relations", {}),
+                    "orphan_intencional": (
+                        (frontmatter.get("extensions") or {}).get("kora", {}).get("orphan_intencional") is True
+                    ),
                 })
     return nodes
 
@@ -90,7 +98,30 @@ def build_graph(nodes):
         by_relation_type[rt] = by_relation_type.get(rt, 0) + 1
 
     connected_urns = {e["from"] for e in edges} | {e["to"] for e in edges}
-    orphan_nodes = sum(1 for n in nodes if n["urn"] not in connected_urns)
+
+    # Clasificacion de huerfanos (sin cites/depends/supersedes/refines
+    # entrantes ni salientes) en tres clases functorialmente distintas:
+    #   - root: spec constitucional (namespace kora + tag spec sin relations salientes
+    #     hacia nodos no-constitucionales) — legitimos por ser el arranque del grafo.
+    #   - intencional: el autor declaro orphan_intencional=true en extensions.kora.
+    #   - real: huerfano que requiere curacion.
+    CONSTITUTIONAL_URNS = {
+        "urn:kora:kb:gobernanza",
+        "urn:kora:kb:harness-spec",
+        "urn:kora:kb:md-spec",
+    }
+    orphans_root = []
+    orphans_intencional = []
+    orphans_real = []
+    for n in nodes:
+        if n["urn"] in connected_urns:
+            continue
+        if n["urn"] in CONSTITUTIONAL_URNS:
+            orphans_root.append(n["urn"])
+        elif n.get("orphan_intencional"):
+            orphans_intencional.append(n["urn"])
+        else:
+            orphans_real.append({"urn": n["urn"], "file": n.get("file", ""), "namespace": n["namespace"]})
 
     broken_edges = [e for e in edges if e["to"] not in node_urns and not is_historical_urn(e["to"])]
 
@@ -125,7 +156,10 @@ def build_graph(nodes):
         "total_edges": len(edges),
         "by_namespace": dict(sorted(by_namespace.items(), key=lambda x: -x[1])),
         "by_relation_type": by_relation_type,
-        "orphan_nodes": orphan_nodes,
+        "orphan_nodes": len(orphans_root) + len(orphans_intencional) + len(orphans_real),
+        "orphans_root": len(orphans_root),
+        "orphans_intencional": len(orphans_intencional),
+        "orphans_real": len(orphans_real),
         "broken_edges": len(broken_edges),
         "cycles_in_depends": cycles,
     }
@@ -145,6 +179,9 @@ def build_graph(nodes):
         "nodes": clean_nodes,
         "edges": edges,
         "broken_edges": broken_edges,
+        "orphans_root": orphans_root,
+        "orphans_intencional": orphans_intencional,
+        "orphans_real": orphans_real,
         "stats": stats,
     }
 
@@ -163,7 +200,10 @@ def render_kb_graph_markdown(graph):
         f"|--------|-------|",
         f"| Nodes | {stats['total_nodes']} |",
         f"| Edges | {stats['total_edges']} |",
-        f"| Orphan nodes | {stats['orphan_nodes']} |",
+        f"| Orphan nodes (total) | {stats['orphan_nodes']} |",
+        f"| Orphans — root (constitutional) | {stats.get('orphans_root', 0)} |",
+        f"| Orphans — intencional | {stats.get('orphans_intencional', 0)} |",
+        f"| Orphans — real (require curation) | {stats.get('orphans_real', 0)} |",
         f"| Broken edges | {stats['broken_edges']} |",
         f"| Cycles in depends | {stats['cycles_in_depends']} |",
         "",
@@ -211,7 +251,47 @@ def render_kb_graph_markdown(graph):
     return "\n".join(lines)
 
 
-def cmd_kb_graph(json_output=False, check_cycles=False):
+def render_orphans_markdown(graph):
+    """Render a markdown report of orphan classification."""
+    stats = graph["stats"]
+    lines = [
+        "# KORA Knowledge Graph — Orphans Classification",
+        "",
+        f"Generated: {__import__('datetime').datetime.now().isoformat()}",
+        "",
+        "## Summary",
+        "",
+        f"| Class | Count | Meaning |",
+        f"|-------|-------|---------|",
+        f"| Root (constitutional) | {stats['orphans_root']} | Specs raíz del grafo (gobernanza, harness-spec, md-spec) |",
+        f"| Intencional | {stats['orphans_intencional']} | Declarados con `extensions.kora.orphan_intencional: true` |",
+        f"| Real | {stats['orphans_real']} | Requieren curacion (agregar `cites`/`depends` o marcar intencional) |",
+        "",
+    ]
+    if graph.get("orphans_root"):
+        lines += ["## Root (constitutional)", ""]
+        for urn in graph["orphans_root"]:
+            lines.append(f"- `{urn}`")
+        lines.append("")
+    if graph.get("orphans_intencional"):
+        lines += ["## Intencional", ""]
+        for urn in graph["orphans_intencional"]:
+            lines.append(f"- `{urn}`")
+        lines.append("")
+    if graph.get("orphans_real"):
+        lines += [
+            "## Real — requieren curacion",
+            "",
+            "| URN | Namespace | File |",
+            "|-----|-----------|------|",
+        ]
+        for n in sorted(graph["orphans_real"], key=lambda x: (x["namespace"], x["urn"])):
+            lines.append(f"| `{n['urn']}` | {n['namespace']} | `{n['file']}` |")
+        lines.append("")
+    return "\n".join(lines)
+
+
+def cmd_kb_graph(json_output=False, check_cycles=False, orphans=False):
     nodes = collect_knowledge_nodes()
     graph = build_graph(nodes)
 
@@ -224,11 +304,18 @@ def cmd_kb_graph(json_output=False, check_cycles=False):
         md_path.write_text(render_kb_graph_markdown(graph), encoding="utf-8")
         print(f"Knowledge graph written to {out_path} and {md_path}")
 
+    if orphans:
+        GENERATED_DOCS_DIR.mkdir(parents=True, exist_ok=True)
+        orphans_md = GENERATED_DOCS_DIR / "kb-orphans.md"
+        orphans_md.write_text(render_orphans_markdown(graph), encoding="utf-8")
+        print(f"Orphan classification written to {orphans_md}")
+
     stats = graph["stats"]
     print(f"\n=== KORA Knowledge Graph ===")
     print(f"  Nodes: {stats['total_nodes']}")
     print(f"  Edges: {stats['total_edges']}")
-    print(f"  Orphan nodes (no relations): {stats['orphan_nodes']}")
+    print(f"  Orphans: {stats['orphan_nodes']} "
+          f"(root={stats['orphans_root']}, intencional={stats['orphans_intencional']}, real={stats['orphans_real']})")
     print(f"  Broken edges: {stats['broken_edges']}")
     print(f"  Cycles in depends: {stats['cycles_in_depends']}")
 
