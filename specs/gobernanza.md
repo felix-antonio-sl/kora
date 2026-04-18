@@ -4,18 +4,22 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones"
-version: "4.2.0"
-status: published
+    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion"
+version: "4.3.0"
+status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
   cites:
     - "urn:kora:kb:md-spec"
+    - "urn:kora:kb:harness-spec"
+    - "urn:kora:kb:autoria-spec"
 ---
 
-# KORA/Gobernanza v4.2.0
+# KORA/Gobernanza v4.3.0
 
 ## 1. Definicion
 
@@ -26,37 +30,53 @@ uso de extensiones.
 
 Principio rector:
 
-> KORA es `AGENT.md` + capacidades portables + transmutacion.
+> KORA es **vector ontologico PMI × LFS** (`harness-spec`) + **shape unificado de autoria** (`autoria-spec`) + **transmutacion funtorial** (`transmutation-spec`).
 
-Todo lo legacy existe solo como compatibilidad residual.
+Desde v4.3, el ecosistema no acepta shapes anteriores: agentes y habilidades se escriben con la misma serializacion, discriminada por `atlas.forma_material`.
 
-## 2. Canon de diseno
+### 1.1 Canon de diseno
 
 KORA **DEBE** operar con estas prioridades:
 
 1. una sola fuente de verdad por objeto,
-2. semantica concentrada en el IR canonico,
-3. capacidades reutilizables y portables por defecto,
-4. runtime y outputs siempre derivados,
-5. legado confinado a importacion, mirror o bootstrap residual.
+2. semantica concentrada en el IR canonico (vector PMI × LFS),
+3. shape unificado de autoria para todo artefacto agentico productivo,
+4. runtime y outputs siempre derivados.
 
 Corolarios:
 
-1. `AGENT.md` es el centro del sistema.
-2. `SKILL.md` portable es el formato preferido de capacidad.
-3. Los outputs de transmutacion (`_BUILD/` por workspace) y los workspaces runtime son derivados.
-4. El formato legacy de 5 archivos y los `CM-*` no son el futuro del sistema;
-   son perfiles de compatibilidad mientras existan consumidores.
+1. El vector ontologico `harness_vector` es el centro del sistema.
+2. `autoria-spec` es la unica serializacion de autoria productiva (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
+3. Los outputs de transmutacion (`_BUILD/` por workspace) y los archivos runtime son derivados regenerables.
+4. Specs anteriores (`agentfile-spec`, `skill-overlay-spec`, bundles `CM-*`, workspace legacy de 5-6 archivos) estan **retiradas**; se migran en una sola pasada (§10).
+
+## 2. Definiciones
+
+| Termino | Definicion |
+|---------|------------|
+| Canon | Conjunto de reglas normativas que KORA impone sin excepcion. |
+| Capa | Nivel categorico de la arquitectura KORA: ontologia, serializacion, runtime, distribucion (§3.1). |
+| Regimen URN | Gramatica de identidad para un tipo de artefacto (§4.3). |
+| Fuente primaria | Archivo autoritativo que define un objeto KORA (§4). |
+| Derivado | Artefacto regenerable desde su fuente primaria via funtor declarado (ej. transmutacion). |
+| Mirror | Copia de una fuente primaria bajo una serializacion alternativa; subordinada y regenerable. |
+| Extension de namespace | Spec que estrecha el canon para un ecosistema concreto sin relajarlo (§6). |
+| Lifecycle | Maquina de estados de un artefacto (§5). |
+| Kind estructural | Valor de `_manifest.type`; enum cerrado (§4.2). |
+| Enforcement | Nivel de verificacion mecanica de una regla (§7). |
 
 ## 3. Taxonomia de specs y precedencia
 
 Cuando dos reglas parezcan contradecirse, prevalece esta jerarquia:
 
-1. `gobernanza.md`
-2. `md-spec.md`
-3. specs canonicas de dominio
-4. extensiones de namespace
-5. README, plantillas, artefactos generados
+1. `gobernanza.md` — constitucion.
+2. `harness-spec.md` — ontologia PMI × LFS.
+3. `md-spec.md` — formato base KORA/MD y perfil prescriptivo de specs.
+4. specs canonicas de serializacion (`autoria-spec`, `knowledge-spec`) y de runtime (`runtime-spec-md`, `transmutation-spec`, runtime-extensions).
+5. extensiones de namespace.
+6. README, plantillas, artefactos generados.
+
+Esta jerarquia se desarrolla en cuatro **capas categoricas** (§3.1) y una **regla de especializacion** (§3.4).
 
 ### 3.1 Separacion ontologia / serializacion / runtime / distribucion
 
@@ -65,8 +85,8 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
 | **Ontologia** | Que *es* un artefacto agentico (espacio PMI × LFS) | `harness-spec` |
-| **Serializacion** | Como se *escribe* el artefacto (shapes de authoring) | `agentfile-spec`, `skill-overlay-spec`, futuras |
-| **Runtime** | Como se *ejecuta* en un target concreto | `runtime-spec-md`, runtime-extensions |
+| **Serializacion** | Como se *escribe* el artefacto (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
+| **Runtime** | Como se *ejecuta* en un target concreto | `runtime-spec-md`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
 
 **Principio**: KORA IR canoniza **ontologia** (PMI × LFS). Las
@@ -81,31 +101,23 @@ proyectadas*. La distribucion es *meta-encaje*.
 
 **Capa de serializacion**:
 
-- `agentfile-spec.md` — shape de authoring para vectores con Π≥2, Μ≥2.
-- `skill-overlay-spec.md` — shape de authoring para vectores con Π≤2, Μ≤1.
-
-**Capa de base** (formato y tejido):
-
-- `md-spec.md` — formato KORA/MD usado por las serializaciones.
+- `autoria-spec.md` — shape unificado de authoring para todo artefacto agentico productivo (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
+- `md-spec.md` — formato KORA/MD base usado por el frontmatter + body.
 - `knowledge-spec.md` — tejido relacional y pipeline de conocimiento.
 
 **Capa de runtime**:
 
 - `runtime-spec-md.md` — contrato generico.
 - `transmutation-spec.md` — leyes functoriales de proyeccion IR → runtime.
-- `openclaw-runtime-extension.md` — proyeccion a OpenClaw.
-- Futuras: `claude-code-runtime-extension`, `codex-runtime-extension`, `gemini-runtime-extension`.
+- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md` — proyecciones a runtimes concretos.
 
-### 3.3 Perfiles de compatibilidad legacy
+### 3.3 Ruptura con formatos anteriores
 
-La compatibilidad legacy sigue existiendo, pero ya no como centro del mapa
-normativo. Vive absorbida dentro de las specs canonicas:
-
-- compatibilidad de workspace legacy dentro de `agentfile-spec v2 §13`
-- compatibilidad de skills `CM-*` dentro de `skill-overlay-spec v2 §5.5`
-- compatibilidad de outputs antiguos dentro de `runtime-spec §13`
-
-Si una regla legacy choca con una regla canonica, la regla canonica prevalece.
+Las specs `agentfile-spec` y `skill-overlay-spec` (v2.0.0) fueron
+**retiradas** y absorbidas por `autoria-spec`. No hay coexistencia
+transitoria: artefactos pre-existentes se migran en una sola pasada
+(`kora migrate --perfil a-autoria`) y el toolchain rechaza shapes
+anteriores.
 
 ### 3.4 Regla de especializacion
 
@@ -113,86 +125,69 @@ Entre specs del mismo nivel prevalece la más especifica para el objeto que
 gobierna:
 
 - `harness-spec` para vector ontologico PMI × LFS.
-- `agentfile-spec` para shape de authoring de `AGENT.md`.
-- `skill-overlay-spec` para shape de authoring de `SKILL.md`.
+- `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
+- `autoria-spec` para shape de todo artefacto agentico productivo.
+- `knowledge-spec` para tejido relacional y pipeline de conocimiento.
 - `transmutation-spec` para leyes de proyeccion IR → runtime.
 - `runtime-spec-md` + extensions para encaje en runtime concreto.
-- los perfiles legacy solo para interpretar mirrors o imports residuales.
 
 ## 4. Identidad y fuente de verdad
 
 Todo objeto KORA **DEBE** tener una fuente primaria:
 
-- agente moderno: `AGENT.md`
-- capacidad portable: `SKILL.md`
-- output target: artefacto derivado en `{workspace}/_BUILD/{target}/`
-- artefacto legacy: entrypoint legacy solo cuando no existe equivalente moderno
+- artefacto agentico productivo: `AGENT.md` (cuando `forma_material ∈ {subagente, agente-propiamente-tal, agente-plataforma}`) o `SKILL.md` (cuando `forma_material = habilidad`), conforme a `autoria-spec`.
+- artefacto de conocimiento: archivo KORA/MD conforme a `md-spec` + `knowledge-spec`.
+- spec: archivo bajo `specs/` conforme a `md-spec` perfil `spec` (§5.6.2).
+- output target: artefacto derivado en `{workspace}/_BUILD/{target}/`, regenerable desde la fuente primaria.
 
-### 4.1 Regla de mirrors
+### 4.1 Regla de mirrors y outputs derivados
 
-Un mirror **PUEDE** existir solo si:
+Un artefacto derivado (output de transmutacion, cache, vista materializada) **PUEDE** existir solo si:
 
 1. la fuente primaria está clara,
-2. el mirror no contradice la primaria,
-3. el mirror puede regenerarse o reconciliarse.
+2. el derivado no contradice la primaria,
+3. el derivado puede regenerarse desde la primaria sin perdida declarada mas alla de la prevista por `transmutation-spec`.
 
-Si conviven `AGENT.md` y archivos legacy, `AGENT.md` es la autoridad.
+Los outputs derivados **NO DEBEN** tratarse como autoridad: si divergen, prevalece la fuente primaria y el derivado se regenera.
 
 ### 4.2 Manifest kind
 
 `_manifest.type` expresa el kind estructural del componente. Los kinds
-reservados siguen siendo:
+reservados son:
 
-- `bootstrap_agents`
-- `bootstrap_soul`
-- `bootstrap_user`
-- `bootstrap_tools`
-- `bootstrap_config`
-- `lazy_load_endofunctor`
-- `runtime_extension`
-- `transmutation_record`
+- `artefacto` — artefacto agentico productivo (conforme a `autoria-spec`).
+- `runtime_extension` — extension de runtime.
+- `transmutation_record` — registro de transmutacion.
 
 ### 4.3 Regimenes de URN
 
-KORA distingue tres regimenes de identidad URN. El regimen elegido determina
-forma del URN y ubicacion de la version:
+KORA distingue **dos regimenes** de identidad URN:
 
-| Regimen            | Patron                                  | Version                      | Uso                                                      |
-| ------------------ | --------------------------------------- | ---------------------------- | -------------------------------------------------------- |
-| Conceptual         | `urn:{ns}:kb:{id}`                      | campo `version` fuera del URN | artefactos KORA/MD (knowledge, specs, meta)             |
-| Agentfile          | `urn:{ns}:agent:{id}`                   | campo `version` fuera del URN | agentes modernos (`AGENT.md`)                           |
-| Ejecutable legacy  | `urn:{ns}:{kind}:{id}:{version}`        | incorporada en el URN         | bootstrap artifacts y skills `CM-*` (compat)            |
-
-`{kind}` en el regimen ejecutable legacy es uno de los `_manifest.type`
-listados en §4.2 (p. ej. `agent-bootstrap`, `skill`, `lazy_load_endofunctor`).
+| Regimen | Patron | Version | Uso |
+| ------- | ------ | ------- | --- |
+| Conceptual | `urn:{ns}:kb:{id}` | campo `version` fuera del URN | artefactos KORA/MD (knowledge, specs, meta) |
+| Artefacto agentico | `urn:{ns}:artefacto:{id}` | campo `version` fuera del URN | todo artefacto conforme a `autoria-spec` (habilidad, subagente, agente-propiamente-tal, agente-plataforma) |
 
 Reglas:
 
-1. El regimen conceptual es preferido para artefactos descriptivos nuevos.
-2. El regimen Agentfile es canonico para agentes modernos.
-3. El regimen ejecutable legacy **NO DEBE** usarse para componentes nuevos;
-   solo persiste en componentes de compatibilidad explicitamente declarados.
-4. Referencias a artefactos conceptuales y Agentfile en `relations`, `depends`,
-   `cites` o body **DEBEN** usar la forma sin version; la resolucion de version
-   es responsabilidad del catalogo y del runtime.
-5. Un mismo componente **NO DEBE** declarar URN en dos regimenes
-   simultaneamente; la migracion entre regimenes obliga a emitir un
-   `supersedes` explicito.
+1. Ambos regimenes llevan la version **fuera** del URN, en el campo `version` del frontmatter.
+2. Referencias en `relations`, `depends`, `cites` o body **DEBEN** usar la forma sin version; la resolucion de version es responsabilidad del catalogo y del runtime.
+3. Un mismo componente **NO DEBE** declarar URN en dos regimenes simultaneamente; la migracion entre regimenes obliga a emitir un `supersedes` explicito.
+4. Los regimenes anteriores (`urn:{ns}:agent:{id}`, `urn:{ns}:skill:{id}:{version}`, y ejecutable legacy con version embebida) estan **retirados**. Artefactos que los usaban se migran en una sola pasada.
 
 ## 5. Lifecycle y deprecacion
 
 KORA distingue:
 
-- artefactos conceptuales: `draft -> published -> deprecated`
-- artefactos ejecutables: `draft -> active -> deprecated -> retired`
+- artefactos conceptuales: `borrador -> publicado -> deprecado`
+- artefactos agenticos productivos: `borrador -> activo -> deprecado -> retirado`
 
 Reglas:
 
-1. Lo legacy nuevo **NO DEBE** expandirse.
-2. Toda nueva capacidad **DEBERIA** nacer portable.
-3. Todo nuevo agente **DEBERIA** nacer en `AGENT.md`.
-4. Si un artefacto legacy se mantiene, debe declararse compatibilidad, no
-   canon.
+1. Toda nueva capacidad nace conforme a `autoria-spec`.
+2. Todo nuevo artefacto agentico declara `forma_material` y `arnes_categorico`.
+3. No se acepta nuevo shape anterior a `autoria-spec`.
+4. Transiciones inversas del lifecycle son invalidas; retirados no son reactivables (emitir uno nuevo con `supersedes`).
 
 ## 6. Extensiones
 
@@ -204,7 +199,7 @@ Reglas:
 1. Una extension **DEBE** depender de una spec base o canonica.
 2. Una extension **PUEDE** estrechar reglas.
 3. Una extension **NO DEBE** relajar el canon por omision.
-4. La extension sigue siendo capa 6 aunque viva dentro de `specs/`.
+4. La extension vive en nivel 5 de precedencia (§3 lista jerarquica) aunque resida dentro de `specs/`.
 
 ## 7. Enforcement
 
@@ -226,11 +221,12 @@ Reglas:
 
 Los invariantes constitucionales son:
 
-1. `AGENT.md` es el canon del agente.
-2. Las capacidades portables son la forma preferida de skill.
-3. Legacy es compatibilidad, no centro.
-4. Runtime y output siempre son derivados.
-5. Ninguna spec de compatibilidad puede recentralizar el sistema.
+1. El vector ontologico PMI × LFS (`harness-spec`) es la fuente de verdad de todo artefacto agentico.
+2. `autoria-spec` es la unica serializacion productiva: habilidades, subagentes, agentes y agentes de plataforma comparten envelope y se discriminan por `atlas.forma_material`.
+3. `md-spec` es el formato base de todo artefacto KORA/MD y define el perfil prescriptivo de las specs.
+4. Runtime y output siempre son derivados; se regeneran desde la fuente primaria.
+5. Ninguna capa inferior recentraliza el sistema sobre la ontologia.
+6. No hay regimen URN con version embebida. Solo dos regimenes: conceptual (`urn:{ns}:kb:{id}`) y artefacto agentico (`urn:{ns}:artefacto:{id}`).
 
 ## 9. Validacion
 
@@ -246,10 +242,9 @@ Checks minimos:
 
 ## 10. Migracion
 
-Contrato vigente v4:
+Contrato vigente v4.3:
 
-- KORA se declara modern-first.
-- `agentfile-spec`, `skill-overlay-spec` y `runtime-spec` son el centro.
-- la compatibilidad legacy queda absorbida dentro de esas specs canonicas.
-- La tarea de migracion ya no es "soportar ambos mundos igual", sino absorber
-  el mundo legacy dentro del canon moderno y luego disiparlo.
+- KORA unifica authoring en `autoria-spec`.
+- `agentfile-spec` y `skill-overlay-spec` fueron retiradas — absorbidas por `autoria-spec`.
+- Migracion forzada en una sola pasada: `kora migrate --perfil a-autoria`.
+- El toolchain rechaza shapes anteriores tras la migracion.

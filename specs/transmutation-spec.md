@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-04-17"
     source: "harness-spec v1.0 + runtime-spec-md v3.7 + ICAS corpus 02-preservacion, 06-adjunciones, 09-efectos"
 version: "1.0.0"
-status: published
+status: publicado
 tags: [spec, transmutacion, functor, proyeccion, preservacion, bisimulacion, runtime]
 lang: es
 extensions: {}
@@ -15,8 +15,7 @@ relations:
     - "urn:kora:kb:harness-spec"
     - "urn:kora:kb:runtime-spec-md"
   cites:
-    - "urn:kora:kb:agentfile-spec"
-    - "urn:kora:kb:skill-overlay-spec"
+    - "urn:kora:kb:autoria-spec"
     - "urn:fxsl:kb:icas-preservacion"
     - "urn:fxsl:kb:icas-efectos"
 ---
@@ -452,8 +451,7 @@ Checks obligatorios:
 ## 12. Relacion con otras specs
 
 - `harness-spec`: ontologia fuente, define espacio IR.
-- `agentfile-spec v2.0`: serializacion de entrada (lo que se transmuta).
-- `skill-overlay-spec v2.0`: idem, para skills.
+- `autoria-spec`: serializacion de entrada unificada (lo que se transmuta, para las cuatro formas materiales).
 - `runtime-spec-md`: contrato generico de runtime.
 - Runtime-extensions (`openclaw-`, `claude-code-`, `codex-`, `gemini-`):
   cada una declara matriz de preservacion + encaje.

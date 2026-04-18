@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-04-17"
     source: "harness-spec v1.0; transmutation-spec v1.0; Codex skill-creator oficial (~/.codex/skills/.system/skill-creator/SKILL.md); OpenAI Codex CLI docs 2026.4"
 version: "1.0.0"
-status: published
+status: publicado
 tags: [spec, runtime, codex, extension, transmutacion, proyeccion]
 lang: es
 extensions:
@@ -208,9 +208,10 @@ disclosure:
 3. **Bundled resources** (`scripts/`, `references/`, `assets/`): bajo
    demanda, unlimited.
 
-Skills KORA proyectados a Codex **DEBEN** respetar este patron. El check
-`skill-structure` (ya definido en `skill-overlay-spec §8`) incluye verificar
-que body ≤ 500 lineas y description ≥ 100 words pero ≤ 500.
+Habilidades KORA proyectadas a Codex **DEBEN** respetar este patron. Los
+checks `progressive-disclosure` y `fidelidad-agentskills` (definidos en
+`autoria-spec §5.1, §5.5, §14`) verifican que body ≤ 500 lineas y que la
+transmutacion a paquete agentskills.io-compatible es sintacticamente valida.
 
 ## 8. Protocolo ACP
 

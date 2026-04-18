@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-04-17"
     source: "harness-spec v1.0; transmutation-spec v1.0; Gemini CLI docs + agentskills-upstream/GEMINI.md; ClawHub publishing constraints"
 version: "1.0.0"
-status: published
+status: publicado
 tags: [spec, runtime, gemini, extension, transmutacion, proyeccion, clawhub]
 lang: es
 extensions:

@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-04-17"
     source: "harness-spec v1.0; transmutation-spec v1.0; revisión docs oficiales Claude Code (claude.ai/code) y marketplace de plugins"
 version: "1.0.0"
-status: published
+status: publicado
 tags: [spec, runtime, claude-code, extension, transmutacion, proyeccion]
 lang: es
 extensions:

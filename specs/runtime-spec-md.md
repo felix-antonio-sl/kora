@@ -6,14 +6,16 @@ _manifest:
     created_at: "2026-03-08"
     source: "contrato minimo de runtime para el sistema moderno; v3.7 agrega §13 Compatibilidad con outputs antiguos para materializar la absorcion declarada en gobernanza §3.2"
 version: "3.7.0"
-status: published
+status: publicado
 tags: [spec, runtime, deployment, equivalence]
 lang: es
 extensions: {}
 relations:
   cites:
     - "urn:kora:kb:gobernanza"
-    - "urn:kora:kb:agentfile-spec"
+    - "urn:kora:kb:autoria-spec"
+    - "urn:kora:kb:harness-spec"
+    - "urn:kora:kb:transmutation-spec"
 ---
 
 # KORA/Runtime-Spec v3.7.0
@@ -24,7 +26,7 @@ relations:
 enforcement fuera del prompt, routing, budget y frontera entre fuente y estado
 operativo.
 
-No gobierna el IR del agente; eso pertenece a `agentfile-spec`.
+No gobierna el IR del artefacto; eso pertenece a `autoria-spec`.
 
 ## 2. Invariantes runtime
 
@@ -164,9 +166,7 @@ convertir lo legacy en camino canonico.
    compatibilidad, no como pipeline canonico.
 4. Los outputs legacy **NO DEBEN** emitirse con `_transmutation.yml` del
    regimen moderno — eso es exclusivo del pipeline canonico.
-5. La coexistencia prolongada entre workspace legacy y `AGENT.md` es
-   deuda declarada (`agentfile-spec §13.1`) y **NO DEBE** reflejarse
-   como divergencia en `BUILD/`.
+5. No hay coexistencia prolongada: `autoria-spec §13` establece migracion forzada en una sola pasada. Divergencias entre `_BUILD/` y shape de autoria son invalidas.
 
 ### 13.3 Prohibiciones
 

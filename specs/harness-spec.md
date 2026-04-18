@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-04-17"
     source: "ICAS-BoK corpus-categorico-arquitecto-sistemas-categorial-agentico; HCAI Foundations (Xu 2025); Shneiderman 2D framework; Libkind-Spivak Poly; revisión de docs oficiales Claude Code, Codex, Gemini, OpenClaw"
 version: "1.0.0"
-status: published
+status: publicado
 tags: [spec, ontologia, arnés, pmi-lfs, agentico, hcai, constitucion]
 lang: es
 extensions: {}
@@ -31,7 +31,7 @@ categorico y alineamiento HCAI.
 
 No es una spec de serializacion. No describe cómo se escribe un agente en
 Markdown, ni como se ejecuta en un runtime. Esos son concerns de otras specs
-(`agentfile-spec`, `skill-overlay-spec`, `runtime-spec-md`).
+(`autoria-spec`, `runtime-spec-md`).
 
 Esta spec define **el espacio ontologico**. Las serializaciones son *shapes* de
 authoring que proyectan sobre este espacio. Los runtimes son *fibras* que
@@ -313,27 +313,24 @@ Checks obligatorios sobre el vector ontologico:
 
 ## 10. Relacion con otras specs
 
-### 10.1 Specs de serializacion (consumidoras)
+### 10.1 Spec de serializacion (consumidora)
 
-Estas specs gobiernan **shapes de authoring** que proyectan sobre el vector
-ontologico:
+`autoria-spec` es la unica serializacion de authoring para todo
+artefacto agentico productivo. Cubre las cuatro formas materiales
+(habilidad, subagente, agente-propiamente-tal, agente-plataforma) con
+el mismo envelope; el subset del shape que aplica es condicional por
+`atlas.forma_material`.
 
-- `agentfile-spec`: serializacion para Π≥2, Μ≥2, Ξ≥2 (agentes productivos).
-- `skill-overlay-spec`: serializacion para Π∈{1,2}, Μ∈{0,1}, Ξ∈{1,2} (skills y delegados).
-- Futuras: `platform-agent-spec` (agentes always-on), `archetype-spec` (arquetipos).
-
-Cada serializacion declara su **dominio de proyeccion** (que region del
-espacio ontologico cubre) y su **mapeo de campos** (como sus campos derivan
-del vector ontologico).
+Cada forma material declara su **dominio de proyeccion** (que region
+del espacio ontologico cubre) y su **mapeo de campos** (como sus
+campos derivan del vector ontologico). Ver `autoria-spec §4, §5, §6`.
 
 ### 10.2 Specs de runtime (proyectoras)
 
 Estas specs definen functores `T_R: Espacio → Ideal_R`:
 
 - `runtime-spec-md`: contrato generico.
-- `openclaw-runtime-extension`: proyeccion a OpenClaw.
-- Futuras: `claude-code-runtime-extension`, `codex-runtime-extension`,
-  `gemini-runtime-extension`.
+- `claude-code-runtime-extension`, `codex-runtime-extension`, `gemini-runtime-extension`, `openclaw-runtime-extension`: proyecciones a runtimes concretos.
 
 Cada runtime-extension declara:
 - Subconjunto del espacio ontologico que soporta.
@@ -370,20 +367,14 @@ en `_transmutation.yml`.
 
 ### 12.2 Que migrar desde pre-v1
 
-Los workspaces existentes no tienen `harness_vector`. Migracion:
+Los artefactos pre-existentes se migran en una sola pasada con
+`kora migrate --perfil a-autoria`. La migracion:
 
-1. **Auto-derivacion heuristica** — `kora migrate --profile pmi-lfs` infiere
-   vector desde campos legacy (coalgebra, plan, fibers, etc.).
-2. **Declaracion manual** — el autor completa o corrige el vector derivado.
-3. **Compatibilidad residual** — las serializaciones legacy siguen siendo
-   validas durante la transicion; el vector ontologico se agrega como
-   extension adicional.
+1. Deriva heuristicamente el `vector_ontologico` desde campos anteriores.
+2. Reemite el frontmatter conforme a `autoria-spec`.
+3. Reescribe el URN al regimen unico `urn:{ns}:artefacto:{id}`.
+4. El autor revisa y corrige el vector derivado; el toolchain emite
+   `TODO` en campos no derivables.
 
-### 12.3 Que se depreca
-
-- Uso de "coalgebra" como perfil descriptivo (sin estructura coalgebraica
-  formal). Renombrable a `agent_profile` en serializaciones futuras.
-- Objeto `fibers` como contenedor heterogeneo. Sus 5 subcampos migran a
-  ubicaciones distintas (ver `agentfile-spec v2.0` §migracion).
-- Campo `safety` como dimension monolitica. Se bifurca en safety estructural
-  (derivable) + Σ normativa (declarable).
+No hay compatibilidad residual: el toolchain rechaza shapes anteriores
+tras la migracion (ver `gobernanza §3.3`).

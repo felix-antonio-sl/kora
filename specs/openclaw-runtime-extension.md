@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-23"
     source: "runtime-spec-md v3.7.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas; v1.1.0 alinea con transmutation-spec v1.0 y harness-spec v1.0 — incorpora matriz de preservacion por eje, dominio de soporte, ACP como meta-runtime"
 version: "1.1.0"
-status: published
+status: publicado
 tags: [spec, runtime, openclaw, extension, transmutacion, deploy, acp]
 lang: es
 extensions:

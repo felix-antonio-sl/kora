@@ -4,30 +4,43 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-09"
-    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.0.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales, acota reglas 7-8 por regimen, reformula regla 10"
-version: "7.1.0"
-status: published
-tags: [spec, markdown, conocimiento, rag, koraficacion, fidelidad, atomic]
+    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`, restaurando cristalizacion, RFC 2119, Traces to, patron regla+ejemplo+traza e invariantes de consistencia interna, auto-suficiencia y no-circularidad"
+version: "8.0.0"
+status: publicado
+tags: [markdown, conocimiento, rag, koraficacion, fidelidad, atomic, prescriptivo, cristalizacion, rfc2119]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
-  cites:
+  depends:
     - "urn:kora:kb:gobernanza"
+  cites:
+    - "urn:kora:kb:05-governance-lattice"
 ---
 
-# KORA/MD v7.1.0
+# KORA/MD v8.0.0
 
 ## 1. Definicion
 
-KORA/MD es el formato de artefactos descriptivos del ecosistema KORA. Gobierna conocimiento, no workspaces, ni runtime, ni configuracion operativa.
+KORA/MD es el formato base de artefactos textuales del ecosistema KORA. Gobierna dos regimenes pragmaticos sobre un mismo envelope:
 
-KORA/MD optimiza almacenamiento, indexacion y recuperacion para humanos y LLMs via RAG sin sacrificar verdad factual.
+- **Descriptivo** — artefactos que describen hechos, procedimientos o referencias (conocimiento, manuales, corpus, notas).
+- **Prescriptivo** — artefactos que gobiernan comportamientos, contratos y validaciones (specs, protocolos, workflows normativos).
+
+Ambos regimenes comparten frontmatter (§3.1), gramatica estructural (§5.1-§5.4), topologia de direccionamiento (§4), preservacion de verdad (§5.5) y ciclo de koraficacion (§6). El regimen se declara via `familia documental` (§5.6); el perfil `spec` agrega invariantes prescriptivos especificos (§5.6.2).
+
+KORA/MD optimiza almacenamiento, indexacion y recuperacion para humanos y LLMs via RAG sin sacrificar verdad factual, y preserva la fuerza normativa de las specs sin ambiguedad.
 
 ### 1.1 Alcance y audiencia
 
-Aplica a leyes, manuales, guias, corpus de conocimiento, notas tecnicas y cualquier artefacto cuyo objetivo sea describir hechos, procedimientos o referencias.
+Regimen **descriptivo**: leyes (como corpus de referencia), manuales, guias, corpus de conocimiento, notas tecnicas, catalogos.
 
-La audiencia primaria son runtimes y pipelines de recuperacion. La audiencia secundaria son humanos que curan el corpus.
+Regimen **prescriptivo**: specs constitucionales, protocolos, workflows normativos, contratos de API, politicas.
+
+La audiencia primaria son runtimes, pipelines de recuperacion y agentes que consumen ley operativa. La audiencia secundaria son humanos que curan el corpus, diseñan, auditan o evolucionan el ecosistema.
+
+Todo documento `spec` de KORA **DEBE** redactarse conforme a esta especificacion bajo el perfil `spec` (§5.6.2). Un documento descriptivo **NO DEBE** gobernarse por los invariantes prescriptivos del perfil `spec`.
 
 ## 2. Definiciones
 
@@ -38,7 +51,7 @@ La audiencia primaria son runtimes y pipelines de recuperacion. La audiencia sec
 | Chunk RAG               | Unidad primaria de recuperacion delimitada por `##`                                                        |
 | Skeleton                | Estructura del documento: titulo, headings, tablas, listas, jerarquia                                      |
 | Meat                    | Hechos atomicos que deben preservarse: cifras, fechas, condiciones, excepciones, referencias, dependencias |
-| Fat                     | Retorica, hedging, transiciones y relleno editorial que debe eliminarse                                    |
+| Fat                     | Retorica, hedging, transiciones y relleno editorial eliminable                                             |
 | Realizacion superficial | Eleccion de la forma final visible del conocimiento: heading, prosa, lista o tabla                         |
 | Labelese                | Salida que suena a serializacion de campos: `Asunto`, `Contenido`, `Tipo`, `Path`, etc.                    |
 | FS                      | Fidelity Score. Porcentaje de hechos preservados o comprimidos sin perdida semantica                       |
@@ -46,6 +59,14 @@ La audiencia primaria son runtimes y pipelines de recuperacion. La audiencia sec
 | SSOT                    | Un hecho, un lugar                                                                                         |
 | Proposicion atomica     | Hecho verificable minimo autocontenido, con tipo, texto comprimido y ancla de fuente resoluble             |
 | Productor canonico      | Herramienta autorizada para generar artefactos de una familia con garantia de invariantes                  |
+| Documento `spec`        | Artefacto agentico de familia documental `spec`: define lo que debe ser (reglas, contratos, validaciones). Alias historico: "documento prescriptivo". |
+| Keyword (RFC 2119)      | Palabra reservada que fija fuerza normativa: DEBE, NO DEBE, DEBERIA, NO DEBERIA, PUEDE. Enum cerrado.      |
+| Regla                   | Oracion con keyword RFC 2119 y semantica operativa univoca                                                 |
+| Cristalizacion          | Proceso `Decisiones + Practicas + Restricciones -> regla explicita con una sola lectura valida`            |
+| Rationale               | Explicacion auxiliar no normativa sobre motivacion; no introduce obligaciones                              |
+| Traces to               | Puente entre una regla operacional y su justificacion en la Formal Layer oficial                           |
+| Auto-suficiencia        | Propiedad de una regla que puede entenderse con su propio contexto local, sin lectura telepatica del repo  |
+| No-circularidad         | Propiedad de una regla que no se justifica solo remitiendo a otra regla igual de opaca                     |
 
 ## 3. Anatomia del documento
 
@@ -65,7 +86,7 @@ _manifest:
     created_at: "{YYYY-MM-DD}"
     source: "{referencia}"
 version: "{semver}"
-status: draft|published|deprecated
+status: borrador|publicado|deprecado  # valores en espanol; ejecutables agregan `activo` y `retirado`
 tags: [{tag1}, {tag2}, {tag3}]
 lang: "{iso-639-1}"
 extensions: {}
@@ -80,13 +101,13 @@ Reglas:
 4. `tags` **DEBE** contener al menos 3 tags semanticos.
 5. `lang` describe el idioma del cuerpo.
 6. `source` describe la procedencia humana o documental del conocimiento.
-7. Cuando el artefacto reside bajo `KNOWLEDGE/`, el namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `KNOWLEDGE/`. Enforcement: lint. Los artefactos que viven fuera de `KNOWLEDGE/` (specs en `specs/`, workspaces en `AGENTS/`, capacidades en `SKILLS/`, outputs en `BUILD/`) derivan su namespace de la topologia declarada por la spec canonica que los gobierna; para ellos esta regla no aplica.
-8. El valor de `status` **DEBE** respetar el regimen de lifecycle correspondiente (`gobernanza §5`):
-   - artefactos descriptivos (KORA/MD en `KNOWLEDGE/` y specs): `draft -> published -> deprecated`.
-   - artefactos ejecutables (workspaces agente, skills, bootstrap): `draft -> active -> deprecated -> retired`.
+7. Cuando el artefacto reside bajo `KNOWLEDGE/`, el namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `KNOWLEDGE/`. Enforcement: lint. Los artefactos que viven fuera de `KNOWLEDGE/` (specs en `specs/`, workspaces en `AGENTS/`, habilidades en `SKILLS/`, outputs en `BUILD/`) derivan su namespace de la topologia declarada por la spec canonica que los gobierna; para ellos esta regla no aplica.
+8. El valor de `status` **DEBE** respetar el regimen de lifecycle correspondiente (`gobernanza §5`), declarado en idioma español:
+   - artefactos descriptivos (KORA/MD en `KNOWLEDGE/` y specs): `borrador -> publicado -> deprecado`.
+   - artefactos agenticos productivos (toda `forma_material` de `autoria-spec`: habilidad, subagente, agente-propiamente-tal, agente-plataforma): `borrador -> activo -> deprecado -> retirado`.
    Las transiciones inversas son invalidas en ambos regimenes.
-9. `KNOWLEDGE/` solo acepta artefactos con `status: published` o `status: deprecated`. Artefactos con `status: draft` **DEBEN** residir en `KNOWLEDGE/_SCRIPTORIUM/INBOX/` (material pre-categorial) o `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` (drafts en revision). Enforcement: schema.
-10. La transicion a `status: published` (o `status: active` para ejecutables) **DEBE** pasar por `kora promote` u otro procedimiento equivalente que verifique verificacion mecanica (§6.10), verificacion de fidelidad (§6.11) y ausencia de conflictos de namespace (regla 7).
+9. `KNOWLEDGE/` solo acepta artefactos con `status: publicado` o `status: deprecado`. Artefactos con `status: borrador` **DEBEN** residir en `KNOWLEDGE/_SCRIPTORIUM/INBOX/` (material pre-categorial) o `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` (drafts en revision). Enforcement: schema.
+10. La transicion a `status: publicado` (o `status: activo` para ejecutables) **DEBE** pasar por `kora promote` u otro procedimiento equivalente que verifique verificacion mecanica (§6.10), verificacion de fidelidad (§6.11) y ausencia de conflictos de namespace (regla 7).
 11. Cuando `source` referencia archivos del monorepo, la ruta **DEBERIA** ser resoluble desde la raiz del repo. Enforcement: manual.
 
 ### 3.2 Capa 2: Cuerpo de conocimiento
@@ -321,11 +342,11 @@ Contraejemplos de mala realizacion superficial:
 
 La compresion **NO DEBE** sacrificar contenido informativo.
 
-Traces to: formal/05 §2.2 (Koraficacion Functor K)
+Traces to: `urn:kora:kb:05-governance-lattice` §2.2 (Koraficacion Functor K)
 
 Regla acida:
 
-- si al eliminar texto cambia solo tono o fluidez, debe eliminarse
+- si al eliminar texto cambia solo tono o fluidez, **DEBE** eliminarse
 - si al eliminar texto desaparece una condicion, umbral, excepcion, fecha, cifra, dependencia o referencia, **NO DEBE** eliminarse
 
 Metafora operativa:
@@ -351,7 +372,7 @@ spec). `knowledge-spec §3` referencia esta tabla como autoridad.
 
 | Familia      | Invariantes                                                                                                                 |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `spec`       | Documenta reglas y contratos; precedencia declarada al inicio; URN `urn:{ns}:kb:{id}`; reside en `specs/`, no en `KNOWLEDGE/` |
+| `spec`       | Familia prescriptiva. Invariantes completos en §5.6.2 (cristalizacion, RFC 2119, `Traces to:`, patron regla+ejemplo+traza, consistencia interna, auto-suficiencia, no-circularidad, enforcement declarado). URN `urn:{ns}:kb:{id}`; reside en `specs/`, no en `KNOWLEDGE/`. |
 | `guide`      | Manual o guia operativa; prosa tecnica controlada; ejemplos concretos vinculados a headings; `## Resumen` recomendado        |
 | `normative`  | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
 | `glossary`   | Buckets recuperables; sin duplicados no resueltos; alias explicitos                                                          |
@@ -360,7 +381,7 @@ spec). `knowledge-spec §3` referencia esta tabla como autoridad.
 | `cq_catalog` | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento; subperfil de `catalog`            |
 | `inventory`  | Puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada                               |
 | `organigram` | Dependencias estructurales explicitas; no headings-campo para representar jerarquia                                         |
-| `atomic`     | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales; dedup multi-source permitido; conflicto semantico entre fuentes -> tipo `tension`; limite operativo 5.000 palabras y 200 proposiciones por artefacto; si excede, segmentar y generar artefacto indice |
+| `atomic`     | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion tiene ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y al menos una fuente resoluble; enum cerrado de tipos (`§5.6.1`); FS=100% sobre cifras/fechas/excepciones originales **y sobre la particion semantica relevante del documento**: no se permite colapsar hechos distinguibles en una proposicion mas general solo para bajar conteo; dedup multi-source permitido solo para equivalencia semantica real; conflicto semantico entre fuentes -> tipo `tension`; referencia operativa de ~15.000 caracteres por artefacto y maximo duro de 200 proposiciones; si el corte estructural lo exige, se permite quedar levemente por debajo o por encima de la referencia |
 | `note`       | Nota tecnica compacta; al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante                |
 
 Clasificacion de familia:
@@ -413,9 +434,146 @@ Reglas:
 2. El tipo **DEBE** pertenecer al enum cerrado.
 3. El texto **DEBE** ser autocontenido y preservar cifras, fechas, nombres propios, leyes y decretos sin compresion destructiva.
 4. Cada proposicion **DEBE** tener al menos una fuente resoluble.
-5. Si dos fuentes afirman el mismo hecho, se dedup en una sola proposicion con cita multiple.
-6. Si dos fuentes se contradicen sobre el mismo hecho, **NO** se dedup: se emite una proposicion `tension` que nombra ambas posiciones.
-7. Extensiones del frontmatter **DEBEN** declarar `extensions.kora.family: atomic` y, cuando aplique, `extensions.kora.atomic.source_corpus`, `extensions.kora.atomic.n_propositions` y `extensions.kora.atomic.producer`.
+5. La compresion **NO DEBE** fusionar afirmaciones semanticamente distintas aunque pertenezcan al mismo parrafo, ejemplo o argumento. Si una fuente contiene varios hechos distinguibles y reutilizables, **DEBEN** emitirse como proposiciones separadas.
+6. Eliminar paratexto irrelevante (blurbs, copyright, TOC, boilerplate editorial) **ES OBLIGATORIO**, pero esa eliminacion **NO CUENTA** como licencia para comprimir el contenido sustantivo del cuerpo del documento.
+7. Si dos fuentes afirman el mismo hecho, se dedup en una sola proposicion con cita multiple.
+8. Si dos fuentes se contradicen sobre el mismo hecho, **NO** se dedup: se emite una proposicion `tension` que nombra ambas posiciones.
+9. Extensiones del frontmatter **DEBEN** declarar `extensions.kora.family: atomic` y, cuando aplique, `extensions.kora.atomic.source_corpus`, `extensions.kora.atomic.n_propositions` y `extensions.kora.atomic.producer`.
+
+### 5.6.2 Perfil `spec`: invariantes prescriptivos
+
+La familia `spec` absorbe el contrato prescriptivo del ecosistema KORA. Todo documento `spec` **DEBE** cumplir, ademas del contrato base de KORA/MD, los invariantes de esta seccion.
+
+#### 5.6.2.1 Proceso de cristalizacion
+
+La cristalizacion transforma decisiones, practicas y restricciones implicitas en reglas explicitas con una sola lectura valida.
+
+Traces to: `urn:kora:kb:05-governance-lattice` §2.3 (Crystallization Functor C)
+
+Entrada:
+
+- decisiones de diseño
+- practicas existentes
+- restricciones tecnicas, organizacionales o legales
+
+Salida:
+
+- documento prescriptivo con reglas explicitas, rationale y validacion
+
+Propiedades del funtor de cristalizacion:
+
+1. **Cristalizador** — lo implicito se vuelve regla explicita.
+2. **Formalizador** — cada regla queda con una lectura operativa univoca.
+3. **Desambiguador** — el hedging y la vaguedad se eliminan.
+4. **Ejemplificador** — las reglas complejas se anclan con `Correcto:` / `Incorrecto:`.
+
+#### 5.6.2.2 Lenguaje de obligacion (RFC 2119)
+
+Keywords normativas permitidas (enum cerrado):
+
+- **DEBE**
+- **NO DEBE**
+- **DEBERIA**
+- **NO DEBERIA**
+- **PUEDE**
+
+Reglas:
+
+1. Toda obligacion importante en un documento `spec` **DEBE** usar una keyword RFC 2119.
+2. El hedging normativo ("probablemente", "seria bueno", "idealmente") **NO DEBE** reemplazar una keyword.
+3. Las keywords en español **DEBEN** escribirse en mayusculas.
+4. La equivalencia inglesa (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY) **PUEDE** aparecer en la primera mencion, no en todas.
+
+#### 5.6.2.3 Convencion de trazabilidad
+
+Una regla con justificacion formal oficial **DEBERIA** incluir una linea:
+
+```markdown
+Traces to: `urn:kora:kb:{slug}` §{seccion} ({teorema})
+```
+
+Reglas:
+
+1. `Traces to:` **DEBE** apuntar solo a la Formal Layer oficial (`KNOWLEDGE/kora/categorical-foundations/`), usando el URN canonico del artefacto formal (`urn:kora:kb:{slug}`) seguido del numero de seccion y, opcionalmente, el nombre del teorema.
+2. No se admite path relativo (`formal/05`) ni alias no resolubles: la identidad del artefacto formal se expresa por URN (`gobernanza §4.3`).
+3. Una regla pragmatica **NO DEBE** fingir respaldo formal: si la justificacion es pragmatica, se usa `Rationale:`.
+4. `Rationale:` **PUEDE** explicar motivos conceptuales o pragmaticos, pero **NO DEBE** introducir obligaciones nuevas.
+5. La ausencia de `Traces to:` no debilita la fuerza normativa de una regla.
+
+Traces to: `urn:kora:kb:05-governance-lattice` §3.2 (Traceability Functor)
+
+Rationale: el URN canonico es identidad estable (Yoneda); los paths relativos mezclan identidad con ubicacion fisica y se rompen al reorganizar la Formal Layer.
+
+#### 5.6.2.4 Elementos retoricos normativos
+
+El perfil `spec` admite tres elementos retoricos normativos adicionales a los tipograficos de §5.2:
+
+| Elemento                    | Uso permitido                             | Funcion prohibida               |
+| --------------------------- | ----------------------------------------- | ------------------------------- |
+| `Correcto:` / `Incorrecto:` | anclar la interpretacion de una regla     | decoracion                      |
+| `Rationale:`                | registrar motivacion no normativa         | introducir deberes nuevos       |
+| Tabla de validacion         | checks y enforcement declarativo          | listado estetico sin criterio   |
+
+#### 5.6.2.5 Prosa explicativa admisible
+
+La prosa explicativa en un documento `spec` **PUEDE** existir solo cuando cumple una de estas cuatro funciones normativas (lista exhaustiva):
+
+1. justificar una regla
+2. prevenir ambiguedad
+3. contextualizar una restriccion
+4. advertir un limite del enforcement
+
+Prosa que no satisface ninguna de estas cuatro funciones es grasa y **DEBE** eliminarse conforme a §5.3.
+
+#### 5.6.2.6 Patron obligatorio: regla + ejemplo + traza
+
+Toda regla con mas de una condicion, alcance no obvio, o riesgo de interpretacion divergente **DEBE** seguir este patron:
+
+1. Regla normativa con keyword RFC 2119.
+2. `Correcto:` / `Incorrecto:` cuando la regla admita mala lectura.
+3. `Traces to:` si la regla tiene respaldo formal oficial; `Rationale:` si la justificacion es pragmatica.
+
+Reglas:
+
+1. La ausencia de `Traces to:` no debilita la fuerza normativa.
+2. `Rationale:` **NO DEBE** introducir obligaciones nuevas.
+3. Un ejemplo **NO DEBE** reemplazar la regla; la ancla.
+
+Ejemplo:
+
+```markdown
+Toda regla pragmatica **DEBE** declararse con keyword explicita.
+
+Correcto: `La herramienta declara su nivel de enforcement en tabla de validacion.`
+Incorrecto: `Seria bueno indicar como se verifica.`
+Rationale: La auditabilidad requiere distinguir schema, lint, runtime y manual.
+```
+
+#### 5.6.2.7 Invariantes prescriptivos
+
+Ademas de los invariantes generales de §7, un documento `spec` **DEBE** cumplir:
+
+1. **Consistencia interna** — no contiene reglas incompatibles entre si sin una clausula de precedencia o excepcion explicita.
+2. **Auto-suficiencia de la regla** — toda regla importante puede entenderse con su propio contexto local, sin depender de una lectura telepatica del repositorio. (Esta invariante es a nivel de *regla*; §7.2 es a nivel de *chunk `##`*.)
+3. **No-circularidad** — una regla **NO DEBE** justificarse solo remitiendo a otra regla igual de opaca. Si depende de otra, la dependencia **DEBE** aclarar que agrega o restringe.
+4. **Preservacion de idioma y anglicismos** — el documento mantiene idioma consistente. Los anglicismos **PUEDEN** usarse si nombran terminos tecnicos inevitables, pero **NO DEBEN** reemplazar una regla ya expresable en español.
+5. **Enforcement declarado** — toda tabla de validacion **DEBE** incluir columna `Enforcement` con valor de `gobernanza §7` (`schema`, `lint`, `runtime`, `eval`, `manual`).
+
+#### 5.6.2.8 Template esqueleto minimo
+
+Todo documento `spec` nuevo **DEBERIA** arrancar desde este esqueleto. Las sub-reglas marcadas con **DEBE** dentro del esqueleto son obligatorias independientemente del caracter recomendatorio del template:
+
+1. `## 1. Definicion` (incluye alcance y audiencia).
+2. `## 2. Definiciones` de terminos usados normativamente.
+3. `## 3-N. Secciones normativas` numeradas secuencialmente.
+4. `## N+1. Invariantes`.
+5. `## N+2. Validacion` (tabla con `Enforcement` obligatoria).
+6. `## N+3. Ejemplos` (opcional).
+7. `## N+4. Migracion` — **DEBE** incluirse en major bumps; opcional en minor/patch. En major bumps documenta: (1) que cambio, (2) que migrar, (3) que se depreca.
+
+#### 5.6.2.9 Invariante de auto-declaracion
+
+El propio documento `spec` **DEBE** declarar al inicio su **precedencia** en la jerarquia de specs, conforme a `gobernanza §3.4` (regla de especializacion). La declaracion **PUEDE** ser el frontmatter `relations.depends` o una seccion `## Precedencia` explicita.
 
 ## 6. Koraficacion
 
@@ -431,7 +589,7 @@ KNOWLEDGE/_SCRIPTORIUM/INBOX/  ->  KNOWLEDGE/_SCRIPTORIUM/REVIEW/  ->  KNOWLEDGE
 
 La koraficacion es la transformacion `DocHumano -> KORA/MD`.
 
-Traces to: formal/05 §2.2 (Koraficacion Functor K)
+Traces to: `urn:kora:kb:05-governance-lattice` §2.2 (Koraficacion Functor K)
 
 Propiedades:
 
@@ -445,9 +603,9 @@ Propiedades:
 
 ### 6.3 Estrategia de ejecucion
 
-La implementacion concreta puede usar trabajo manual, una o multiples pasadas LLM, siempre que el resultado satisfaga esta spec.
+La implementacion concreta **PUEDE** usar trabajo manual, una o multiples pasadas LLM, siempre que el resultado satisfaga esta spec.
 
-Cuando una familia tiene productor canonico declarado (`knowledge-spec §12`), la generacion de artefactos **DEBERIA** delegarse al productor; la edicion manual posterior **DEBE** marcarse explicitamente para inhibir sobreescrituras.
+Cuando una familia tiene productor canonico declarado (`knowledge-spec §12`), la generacion de artefactos **DEBE** delegarse al productor; no existe una via alternativa soportada de emision para esa familia. La edicion manual posterior **DEBE** marcarse explicitamente para inhibir sobreescrituras.
 
 ### 6.4 Evaluacion del input
 
@@ -472,9 +630,10 @@ Para documentos grandes:
 
 Para familia `atomic`, segmentacion operativa:
 
-4. Si el artefacto atomic supera 5.000 palabras o 200 proposiciones, **DEBE** emitirse un artefacto `atomic-{slug}-index` y N artefactos `atomic-{slug}-{NN}`.
-5. El indice **DEBE** contener tabla `Segmento | Rango Pxxx | Dominios` y resolver URNs a cada segmento.
-6. Los IDs `Pxxx` **DEBEN** ser unicos a traves del indice + todos los segmentos (numeracion global).
+4. Si el artefacto atomic supera 200 proposiciones, **DEBE** emitirse un artefacto `atomic-{slug}-index` y N artefactos `atomic-{slug}-{NN}`.
+5. La referencia de segmentacion para familia `atomic` es ~15.000 caracteres por artefacto, pero **NO** es un limite rigido: el corte **DEBE** hacerse en la frontera estructural mas cercana que preserve coherencia tematica.
+6. El indice **DEBE** contener tabla `Segmento | Rango Pxxx | Dominios` y resolver URNs a cada segmento.
+7. Los IDs `Pxxx` **DEBEN** ser unicos a traves del indice + todos los segmentos (numeracion global).
 
 ### 6.6 Transformacion
 
@@ -563,8 +722,9 @@ Proceso minimo:
    - ausencia de dumping estructural
    - naturalidad tecnica minima: la salida no incurre en ningun antipatron de `§5.4.2` (heading truncado, heading-campo, lista que reemplaza frase simple, tabla como pseudo-dump)
 6. Si `FS < 100%`, la koraficacion falla.
-7. Si `CR < 1.5`, debe reducirse redundancia restante o justificarse por alta densidad informacional.
+7. Si `CR < 1.5`, **DEBE** reducirse redundancia restante o justificarse por alta densidad informacional.
 8. Si la calidad de superficie falla, la koraficacion falla aunque `FS=100%`.
+9. En familia `atomic`, una reduccion fuerte del numero de proposiciones respecto del inventario inicial de hechos **DEBE** justificarse mediante dedup real o descarte de paratexto; no es valida si proviene de fusionar hechos distinguibles.
 
 ### 6.12 Registro en catalogo
 
@@ -596,6 +756,10 @@ La compresion maxima **NO DEBE** producir headings truncados, chunks primarios p
 
 En artefactos `atomic`, la unicidad global de IDs y la resolubilidad de fuentes son invariantes; violarlos invalida la familia.
 
+### 7.7 Integridad del perfil prescriptivo `spec`
+
+En artefactos `spec`, los invariantes de §5.6.2.7 (consistencia interna, auto-suficiencia de regla, no-circularidad, preservacion de idioma, enforcement declarado) son constitutivos del perfil; violarlos invalida el caracter prescriptivo del documento.
+
 ## 8. Versionado
 
 - correccion editorial sin cambio semantico: patch
@@ -621,17 +785,44 @@ En artefactos `atomic`, la unicidad global de IDs y la resolubilidad de fuentes 
 | Catalogo derivado         | El artefacto es indexable y regenerable por CLI             | lint        | Corregir manifest o indexador             |
 | Namespace-directorio      | Namespace URN coincide con subdirectorio bajo `KNOWLEDGE/`  | lint        | Migrar artefacto o corregir URN           |
 | Status por directorio     | `KNOWLEDGE/` solo contiene `published` o `deprecated`       | schema      | Mover a `KNOWLEDGE/_SCRIPTORIUM/REVIEW/` o publicar |
-| Lifecycle status          | Transicion de status cumple protocolo auditoria             | manual      | Completar auditoria antes de publicar     |
+| Lifecycle status          | Transicion de status pasa por `kora promote` y verificaciones §3.1 regla 10 | manual | Ejecutar `kora promote` con verificaciones §6.10 y §6.11 |
 | Indice atomic             | `atomic` tiene `## Indice de fuentes` no vacio              | lint        | Completar indice                          |
 | Proposiciones atomic      | Cada entry tiene ID Pxxx + tipo + texto + ≥1 fuente         | lint        | Reparar entry                             |
 | Tipos atomic              | Cada tipo pertenece al enum cerrado (`§5.6.1`)              | schema      | Corregir tipo                             |
 | Unicidad Pxxx             | IDs Pxxx unicos en artefacto y en conjunto segmentado       | lint        | Renumerar o consolidar                    |
-| Segmentacion atomic       | Artefacto ≤5.000 palabras y ≤200 props o existe `-index`    | lint        | Segmentar o declarar indice               |
+| Segmentacion atomic       | Maximo duro de 200 props; referencia blanda ~15.000 caracteres con corte estructural coherente | lint/manual | Segmentar o declarar indice si corresponde |
 | Dedup atomic              | Multi-source solo si hechos equivalentes; conflicto -> `tension` | manual  | Reclasificar proposicion                  |
+| Keyword explicita (spec)  | Familia `spec`: toda obligacion importante usa keyword RFC 2119 | lint        | Reescribir regla con keyword              |
+| Trazabilidad oficial (spec) | `Traces to:` referencia solo Formal Layer oficial         | lint        | Corregir o degradar a `Rationale:`        |
+| Patron de regla (spec)    | Reglas complejas que admitan mala lectura incluyen `Correcto:/Incorrecto:`; toda regla con justificacion disponible incluye `Traces to:` (si es formal) o `Rationale:` (si es pragmatica) | manual | Completar regla conforme §5.6.2.6 |
+| Consistencia interna (spec) | No hay contradicciones no resueltas                       | manual      | Reescribir o introducir precedencia       |
+| Auto-suficiencia de regla (spec) | Reglas se entienden sin contexto omitido critico     | manual      | Reescribir regla                          |
+| No-circularidad (spec)    | Referencias normativas no forman bucles opacos              | manual      | Aclarar dependencia                       |
+| Enforcement declarado (spec) | Toda tabla de validacion incluye columna `Enforcement`   | lint        | Completar tabla                           |
+| Template prescriptivo (spec) | Documento sigue esqueleto §5.6.2.8                       | manual      | Reestructurar secciones                   |
+| Migracion en major (spec) | Major bumps incluyen seccion `## Migracion`                 | lint        | Agregar seccion                           |
 
 ## 10. Migracion
 
 Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bumps anteriores no fueron documentados en seccion dedicada.
+
+### 10.0 Contrato vigente v8
+
+- Todo el contrato v7.1 se preserva sin quiebres en el regimen descriptivo.
+- md-spec admite regimen dual: **descriptivo** y **prescriptivo**. Ambos comparten envelope, gramatica y koraficacion; el perfil `spec` (§5.6.2) agrega invariantes prescriptivos.
+- Absorbe organicamente el contrato de la retirada `spec-md v5.2.0`:
+  - §5.6.2.1 proceso de cristalizacion (funtor C) con Traces to formal/05 §2.3.
+  - §5.6.2.2 keywords RFC 2119 como enum cerrado + obligatoriedad.
+  - §5.6.2.3 convencion `Traces to:` / `Rationale:` formalizada.
+  - §5.6.2.4 elementos retoricos normativos (`Correcto:/Incorrecto:`, `Rationale:`, tabla de validacion).
+  - §5.6.2.5 cuatro funciones validas para prosa explicativa en spec.
+  - §5.6.2.6 patron obligatorio regla + ejemplo + traza.
+  - §5.6.2.7 invariantes prescriptivos (consistencia interna, auto-suficiencia de regla, no-circularidad, idioma, enforcement declarado).
+  - §5.6.2.8 template esqueleto minimo con seccion Migracion obligatoria en major bumps.
+  - §5.6.2.9 auto-declaracion de precedencia.
+- §2 agrega siete terminos prescriptivos (documento prescriptivo, regla, cristalizacion, rationale, traces to, auto-suficiencia, no-circularidad).
+- §7 agrega §7.7 integridad del perfil prescriptivo.
+- §9 agrega 9 checks especificos para perfil `spec`.
 
 ### 10.1 Contrato vigente v7
 
@@ -667,8 +858,21 @@ Cambios v7.1:
 - Los archivos en `atomize/raw/` permanecen pre-canonicos hasta ser re-procesados por el productor canonico de la familia `atomic`; su persistencia en ese estado es deuda declarada.
 - Los outputs legacy de `atomize` con formato `_ATOMIC_GRAPH.md` plano **DEBEN** regenerarse con el productor canonico antes de ingresar a `KNOWLEDGE/`.
 
-### 10.4 Que se depreca
+### 10.4 Que se depreca (v6 → v7)
 
 - El formato plano `_ATOMIC_GRAPH.md` sin frontmatter queda deprecado como artefacto publicable. Se mantiene solo como salida operativa temporal dentro de `atomize/raw/atomize-out/`.
+
+### 10.5 Que migrar desde v7.1 (a v8.0)
+
+- Artefactos existentes en `specs/` se reclasifican al perfil `spec` (§5.6.2). No cambia URN ni version del artefacto (cambia version de md-spec, no de la spec consumidora).
+- Specs que contenian reglas sin keyword RFC 2119 o sin el patron regla+ejemplo+traza **DEBEN** auditarse. El check `Patron de regla (spec)` es `manual`; el check `Keyword explicita (spec)` es `lint`.
+- Specs que usaban `Traces to:` hacia paths relativos o hacia artefactos fuera de la Formal Layer oficial **DEBEN** corregirse a URN de Formal Layer oficial o degradarse a `Rationale:`.
+- Specs sin columna `Enforcement` en tablas de validacion **DEBEN** completarla.
+- Las referencias colgadas a `urn:kora:kb:spec-md` (retirada) se migran a `urn:kora:kb:md-spec` en una sola pasada; el contrato prescriptivo ahora vive aqui.
+
+### 10.6 Que se depreca (v7.1 → v8.0)
+
+- Nada del regimen descriptivo se depreca; el contrato v7.1 se preserva integro.
+- La spec `spec-md v5.2.0` (retirada en el commit `4c35d31`, 2026-04-16) queda formalmente absorbida. Su URN `urn:kora:kb:spec-md` **NO DEBE** usarse; referencias residuales se migran a `urn:kora:kb:md-spec`.
 
 Toda futura transicion major **DEBE** documentar aqui: (1) que cambio, (2) que migrar, y (3) que se depreca.

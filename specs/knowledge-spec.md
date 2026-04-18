@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.1.0; v1.1 delega taxonomia de tipos a md-spec §5.6 como fuente unica"
-version: "1.1.0"
-status: published
-tags: [spec, knowledge, categoria, grafo, pipeline, namespace, artefacto]
+    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.3.0; v1.2 alinea con autoria-spec unificada"
+version: "1.2.0"
+status: publicado
+tags: [knowledge, categoria, grafo, pipeline, namespace, artefacto]
 lang: es
 extensions: {}
 relations:
@@ -51,7 +51,7 @@ Gobierna:
 | Nodo de conocimiento | Artefacto publicado o en proceso con `_manifest.urn`. |
 | Morfismo | Relacion tipada entre nodos. |
 | Namespace | Subcategoria editorial y semantica dentro del corpus. |
-| Artefacto publicado | Nodo con `status: published`, recuperable por el ecosistema. |
+| Artefacto publicado | Nodo con `status: publicado`, recuperable por el ecosistema. |
 | Crudo | Material sin normalizar que aun no debe consumirse como ley o conocimiento estable. |
 | Grafo derivado | Vista materializada de `KnowCat` para consulta, auditoria y routing. |
 
@@ -122,8 +122,8 @@ Topologia canonica:
 
 ```
 KNOWLEDGE/_SCRIPTORIUM/INBOX/   <- material crudo, pre-categorial, sin URN asignado
-KNOWLEDGE/_SCRIPTORIUM/REVIEW/  <- drafts con URN provisional, status: draft, listos para auditar
-KNOWLEDGE/{ns}/...              <- productivo con status: published o deprecated
+KNOWLEDGE/_SCRIPTORIUM/REVIEW/  <- borradores con URN provisional, status: borrador, listos para auditar
+KNOWLEDGE/{ns}/...              <- productivo con status: publicado o deprecado
 ```
 
 El pipeline canonicamente es:
@@ -133,18 +133,18 @@ El pipeline canonicamente es:
    namespace KORA).
 2. **normalize** — el curador (humano o skill canonico) convierte el crudo
    a artefacto KORA/MD conforme a `md-spec`; el resultado pasa a
-   `_SCRIPTORIUM/REVIEW/` con `status: draft` y URN provisional.
+   `_SCRIPTORIUM/REVIEW/` con `status: borrador` y URN provisional.
 3. **enrich** — se agregan `relations`, `tags` y `provenance`.
 4. **publish** — `kora promote` mueve de `REVIEW/` a `KNOWLEDGE/{ns}/...`
-   cambiando `status: draft -> published`.
+   cambiando `status: borrador -> publicado`.
 5. **graph** — `kora index` + `kora kb-graph` materializan los morfismos
    derivados.
 
 Reglas:
 
-1. Un artefacto con `status: published` o `status: deprecated` **NO PUEDE**
+1. Un artefacto con `status: publicado` o `status: deprecado` **NO PUEDE**
    residir en `_SCRIPTORIUM/`.
-2. Un artefacto con `status: draft` **NO PUEDE** residir en
+2. Un artefacto con `status: borrador` **NO PUEDE** residir en
    `KNOWLEDGE/{ns}/...` productivo.
 3. Los subdirectorios de `INBOX/` son **pre-categoriales**: no implican
    namespace KORA. El namespace se asigna en `REVIEW/` como URN
@@ -201,8 +201,7 @@ Plan minimo:
 - `md-spec` gobierna formato y perfiles; esta spec gobierna el tejido
   relacional.
 - `gobernanza` decide precedencia; `knowledge-spec` **NO** la reescribe.
-- `agentfile-spec`, `skill-overlay-spec` y `runtime-spec` consumen conocimiento
-  a traves de `allowed_kb`, routing o metadata de conocimiento.
+- `autoria-spec` y `runtime-spec` consumen conocimiento a traves de `conocimiento_permitido`, routing o metadata de conocimiento.
 
 ## 12. Productores canonicos de familia
 
@@ -213,10 +212,12 @@ esa familia cumpliendo sus invariantes.
 ### 12.1 Principio
 
 Una familia **PUEDE** declararse con productor canonico cuando la generacion
-del artefacto se beneficia de determinismo mecanico. En ese caso:
+del artefacto se beneficia de un workflow gobernado, regenerable y verificable.
+En ese caso:
 
 1. El productor garantiza el cumplimiento de los invariantes de la familia
-   (`md-spec §5.6`).
+   (`md-spec §5.6`) y constituye la unica ruta soportada de emision para esa
+   familia.
 2. La autoria editorial se ejerce sobre el corpus fuente, no sobre el artefacto
    generado.
 3. La regeneracion **PUEDE** hacerse bajo demanda sin alterar la identidad
@@ -226,25 +227,37 @@ del artefacto se beneficia de determinismo mecanico. En ese caso:
 
 | Familia  | Productor canonico            | Output                                          | Namespace fijo |
 | -------- | ----------------------------- | ----------------------------------------------- | -------------- |
-| `atomic` | `urn:kora:skill:atomize:1.0.0` | `KNOWLEDGE/_SCRIPTORIUM/REVIEW/atomic-{slug}.md` | `kora`         |
+| `atomic` | `urn:kora:skill:atomize:1.0.0` | `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-{slug}.md` | `kora`         |
 
 ### 12.3 Reglas operativas
 
 1. Un artefacto de familia con productor canonico **DEBERIA** ser regenerable
    desde el corpus fuente declarado en
-   `extensions.kora.{family}.source_corpus` (o campo equivalente).
+   `extensions.kora.{family}.source_corpus` (o campo equivalente), pero solo
+   si la regeneracion sigue cumpliendo `md-spec §6.11` y `FS=100%`.
 2. Si el artefacto se edita a mano despues de generarse, **DEBE** declararse
    `extensions.kora.{family}.hand_edited: true` para que el productor no lo
    sobreescriba en la siguiente corrida.
-3. El productor canonico **DEBE** emitir artefactos con `status: draft` en
+3. El productor canonico **DEBE** emitir artefactos con `status: borrador` en
    `KNOWLEDGE/_SCRIPTORIUM/REVIEW/`; la promocion a `KNOWLEDGE/{ns}/...` pasa
    por `kora promote`, sujeta a los checks de `md-spec §6.10` y `§6.11` y a
    la coherencia de namespace (`md-spec §3.1` regla 7).
 4. El productor canonico **DEBE** declararse en su salida mediante
    `extensions.kora.{family}.producer: urn:...`.
-5. Una familia con productor canonico **PUEDE** tambien aceptar edicion
-   manual. En ese caso, el productor funciona como generador de baseline,
-   no como unico emisor valido.
+5. Una familia con productor canonico **PUEDE** aceptar reparacion manual
+   posterior sobre artefactos ya emitidos por el productor. Esa reparacion es
+   excepcional y verificable; **NO** constituye una ruta alternativa de
+   generacion.
+6. En la familia `atomic`, `atomize` es la unica ruta soportada para emitir
+   nuevos artefactos de familia. Ningun scaffold mecanico, wrapper auxiliar o
+   segmentacion automatica fuera de `atomize` **PUEDE** tratarse como opcion
+   equivalente.
+7. En la familia `atomic`, una corrida de `atomize` que colapsa, omite o mezcla
+   hechos del cuerpo sustantivo del documento **NO** satisface la spec aunque el
+   archivo lintee.
+
+Nota operativa: publicar un `atomic` que actue como `scaffold semantico degradado`
+viola esta spec aunque el archivo lintee.
 
 ### 12.4 Aislamiento de responsabilidades
 
