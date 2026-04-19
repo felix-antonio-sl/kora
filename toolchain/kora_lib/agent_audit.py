@@ -13,13 +13,13 @@ from .workspaces import iter_agent_workspaces, iter_skill_entrypoints
 
 DOMAIN_SUBGROUPS = ("gn", "pro", "salud", "fxsl", "korvo")
 BASELINE_SPECS = [
-    "specs/gobernanza.md",
-    "specs/md-spec.md",
-    "specs/knowledge-spec.md",
-    "specs/agentfile-spec.md",
-    "specs/skill-overlay-spec.md",
-    "specs/runtime-spec-md.md",
-    "specs/openclaw-runtime-extension.md",
+    "governance/gobernanza.md",
+    "ontology/harness-spec.md",
+    "serialization/autoria-spec.md",
+    "serialization/md-spec.md",
+    "serialization/knowledge-spec.md",
+    "runtime/runtime-spec-md.md",
+    "runtime/multiagente-spec.md",
 ]
 
 SEMANTIC_RUNTIME_CAPABILITIES = {
@@ -579,7 +579,7 @@ def render_agent_audit_markdown(payload):
     lines = [
         "# Agent Audit",
         "",
-        "Este documento es generado por `scripts/kora sync-docs`. No editar a mano.",
+        "Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a mano.",
         "",
         "## Resumen global",
         "",

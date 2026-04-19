@@ -1,10 +1,9 @@
 ---
 _nota: |
-  Este documento NO es auto-generado por `scripts/kora sync-docs`.
+  Este documento NO es auto-generado por `python3 toolchain/kora sync-docs`.
   Producido por `polymath` operando con el skill `arquitecto-categorico`
-  (ICAS-BoK). Conservar entre corridas de sync-docs — el pipeline no
-  lo regenera. Si `sync-docs` empieza a sobreescribirlo, moverlo a
-  `docs/analisis/` o agregar exclusion.
+  (ICAS-BoK). Se conserva en `docs/reports/` como analisis historico y
+  debe permanecer fuera de `docs/generated/`.
 producido_por: polymath + SKILLS/arquitecto-categorico
 fecha: 2026-04-16
 modo: audit + model

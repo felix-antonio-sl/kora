@@ -96,7 +96,7 @@ def render_fxsl_cat_ledger_markdown(payload):
     lines = [
         "# FXSL/Cat Absorption Ledger",
         "",
-        "Este documento es generado por `scripts/kora sync-docs`. Resume el estado institucional de `KNOWLEDGE/fxsl/cat`.",
+        "Este documento es generado por `python3 toolchain/kora sync-docs`. Resume el estado institucional de `artifacts/knowledge/fxsl/cat`.",
         "",
         "## Resumen",
         "",

@@ -121,6 +121,21 @@ class AgentAuditTests(unittest.TestCase):
         self.assertIn("top_false_greens", payload["global_summary"])
         self.assertIn("salud", payload["cohorts"]["domains"]["subgroups"])
 
+    def test_build_agent_audit_payload_uses_v5_baseline_specs(self):
+        payload = build_agent_audit_payload()
+        self.assertEqual(
+            payload["baseline_specs"],
+            [
+                "governance/gobernanza.md",
+                "ontology/harness-spec.md",
+                "serialization/autoria-spec.md",
+                "serialization/md-spec.md",
+                "serialization/knowledge-spec.md",
+                "runtime/runtime-spec-md.md",
+                "runtime/multiagente-spec.md",
+            ],
+        )
+
     def test_sync_docs_generates_agent_audit_docs(self):
         run_cli("sync-docs")
         payload = json.loads((GENERATED_DOCS / "agent-audit.json").read_text(encoding="utf-8"))
@@ -128,6 +143,7 @@ class AgentAuditTests(unittest.TestCase):
         self.assertIn("cohorts", payload)
         self.assertIn("meta-kora", payload["cohorts"])
         self.assertIn("## Cohorte meta-kora", markdown)
+        self.assertIn("`python3 toolchain/kora sync-docs`", markdown)
 
 
 if __name__ == "__main__":

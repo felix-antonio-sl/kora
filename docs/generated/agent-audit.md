@@ -1,10 +1,10 @@
 # Agent Audit
 
-Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
+Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-04-18
+- Fecha: 2026-04-19
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 10
 - Reglas aun no institucionalizadas: 0

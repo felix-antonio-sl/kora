@@ -478,7 +478,7 @@ def render_operating_core_markdown(payload):
     lines = [
         "# KORA Operating Core Contracts",
         "",
-        "Este documento es generado por `scripts/kora sync-docs`. No editar a mano.",
+        "Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a mano.",
         "",
         "## Resumen",
         "",

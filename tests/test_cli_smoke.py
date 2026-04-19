@@ -48,6 +48,18 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertGreater(payload["total_catalog_entries"], 0)
         self.assertIn("Entradas totales de catalogo", markdown)
 
+    def test_docs_generated_stays_materialized_only(self):
+        self.assertFalse((GENERATED_DOCS / "evaluacion-categorica-2026-04-16.md").exists())
+
+    def test_docs_readme_matches_v5_topology_and_commands(self):
+        content = (ROOT / "docs" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("`governance/`", content)
+        self.assertIn("`artifacts/`", content)
+        self.assertIn("`toolchain/`", content)
+        self.assertIn("python3 toolchain/kora sync-docs", content)
+        self.assertNotIn("1. `specs/`", content)
+        self.assertNotIn("5. `scripts/` y schemas aplicables", content)
+
     def test_sync_docs_generates_repo_graph_operating_core_and_fxsl_cat_ledger(self):
         run_cli("sync-docs")
         graph_payload = json.loads((GENERATED_DOCS / "repo-graph.json").read_text(encoding="utf-8"))

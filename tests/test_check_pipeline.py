@@ -46,6 +46,28 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         result = run_cli("check", "--phase", "verify")
         self.assertIn("Checks run:", result.stdout)
 
+    def test_catalog_exists_fix_hint_uses_toolchain_entrypoint(self):
+        from unittest.mock import patch
+        from kora_lib.checks import _check_catalog_exists
+
+        with patch("kora_lib.catalog.load_catalog", return_value=None):
+            diags = _check_catalog_exists()
+
+        self.assertEqual(len(diags), 1)
+        self.assertEqual(diags[0].path, "docs/generated/catalog.yml")
+        self.assertEqual(diags[0].fix_hint, "python3 toolchain/kora index")
+
+    def test_lint_md_fix_hint_uses_toolchain_entrypoint(self):
+        from unittest.mock import patch
+        from kora_lib.checks import _check_lint_md
+
+        fake_issues = {"issues": [("artifacts/knowledge/kora/example.md", "mock lint failure")]}
+        with patch("kora_lib.validation.lint_markdown_paths", return_value=fake_issues):
+            diags = _check_lint_md()
+
+        self.assertEqual(len(diags), 1)
+        self.assertEqual(diags[0].fix_hint, "python3 toolchain/kora lint-md --fix")
+
 
 class CheckAlgebraTests(unittest.TestCase):
     """Tests for categorical properties of the check algebra."""

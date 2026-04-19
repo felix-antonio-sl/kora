@@ -242,9 +242,9 @@ def _check_catalog_exists(path_filter=None):
             check_id="catalog-exists",
             severity="critical",
             scope="repo",
-            path="catalog/catalog_master_kora.yml",
+            path="docs/generated/catalog.yml",
             message="Catalog not found or invalid. Run 'kora index' first.",
-            fix_hint="python3 scripts/kora index",
+            fix_hint="python3 toolchain/kora index",
         )]
     return []
 
@@ -363,7 +363,7 @@ def _check_lint_md(path_filter=None):
                 scope="artifact",
                 path=str(rel_path),
                 message=failure,
-                fix_hint="python3 scripts/kora lint-md --fix",
+                fix_hint="python3 toolchain/kora lint-md --fix",
             ))
         elif isinstance(issue, dict):
             diags.append(Diagnostic(
@@ -372,7 +372,7 @@ def _check_lint_md(path_filter=None):
                 scope="artifact",
                 path=issue.get("path", ""),
                 message=issue.get("message", str(issue)),
-                fix_hint="python3 scripts/kora lint-md --fix",
+                fix_hint="python3 toolchain/kora lint-md --fix",
             ))
     return diags
 
