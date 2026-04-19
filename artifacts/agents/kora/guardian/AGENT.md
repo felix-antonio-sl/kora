@@ -236,17 +236,22 @@ artefacto:
 
 ## Behavior
 
-1. STATE: S-DISPATCHER -> ACT: CM-SPEC-CLASSIFIER: clasificar solicitud fundacional y spec objetivo. -> Trans: IF terminar [prioridad 1] -> S-END. IF governance [prioridad 2] -> S-GOVERNANCE. IF validation [prioridad 3] -> S-VALIDATION. IF ambiguo [prioridad 4] -> S-DISPATCHER.
-2. STATE: S-GOVERNANCE -> ACT: CM-SPEC-GUARD: emitir criterio normativo seguro sobre cambios fundacionales. -> Trans: IF criterio_emitido [prioridad 1] -> S-END. IF requiere_validacion_repo [prioridad 2] -> S-VALIDATION. IF cambio [prioridad 3] -> S-DISPATCHER.
-3. STATE: S-VALIDATION -> ACT: CM-SPEC-AUDITOR: contrastar specs fundacionales con el estado visible del repo. -> Trans: IF validacion_completa [prioridad 1] -> S-END. IF contradiccion_normativa [prioridad 2] -> S-GOVERNANCE. IF cambio [prioridad 3] -> S-DISPATCHER.
+Capacidades reutilizables promovidas:
+
+- `urn:kora:artefacto:context-manager`
+
+1. STATE: S-DISPATCHER -> ACT: clasificar solicitud fundacional y spec objetivo. -> Trans: IF terminar [prioridad 1] -> S-END. IF governance [prioridad 2] -> S-GOVERNANCE. IF validation [prioridad 3] -> S-VALIDATION. IF ambiguo [prioridad 4] -> S-DISPATCHER.
+2. STATE: S-GOVERNANCE -> ACT: emitir criterio normativo seguro sobre cambios fundacionales. -> Trans: IF criterio_emitido [prioridad 1] -> S-END. IF requiere_validacion_repo [prioridad 2] -> S-VALIDATION. IF cambio [prioridad 3] -> S-DISPATCHER.
+3. STATE: S-VALIDATION -> ACT: contrastar specs fundacionales con el estado visible del repo. -> Trans: IF validacion_completa [prioridad 1] -> S-END. IF contradiccion_normativa [prioridad 2] -> S-GOVERNANCE. IF cambio [prioridad 3] -> S-DISPATCHER.
 4. STATE: S-END -> ACT: emitir resumen final con criterio, riesgos y siguientes pasos. -> Trans: [terminal].
 
 ## Context
 
-- CM-CONTEXT-MANAGER: comparar solicitud actual con la tarea normativa en curso y detectar desvio relevante.
+- `urn:kora:artefacto:context-manager`: comparar solicitud actual con la tarea normativa en curso y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
 - Retencion entre turnos: spec_objetivo (spec bajo analisis), fase_normativa (governance|validation), hallazgos_pendientes (contradicciones o brechas no resueltas del turno previo).
+- Capacidades absorbidas: clasificacion spec-first, guardia normativa y auditoria fundacional viven en el cuerpo operativo del agente.
 
 ## Style
 

@@ -93,8 +93,8 @@ artefacto:
       - condicion: ambiguo
         destino: S-DISPATCHER
         prioridad: 11
-      accion: 'CM-INTENT-CLASSIFIER: clasificar solicitud, tipo de artefacto y modo
-        de trabajo'
+      accion: 'Aplicar urn:kora:artefacto:intent-classifier para clasificar solicitud,
+        tipo de artefacto y modo de trabajo'
     - id: S-DESIGN
       transiciones:
       - condicion: plan_aprobado AND tipo=descriptivo
@@ -109,7 +109,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 4
-      accion: 'CM-ARTIFACT-DESIGNER: producir plan estructural y clasificacion normativa'
+      accion: 'Producir plan estructural y clasificacion normativa del artefacto'
     - id: S-KORAFICATE
       transiciones:
       - condicion: artefacto_generado
@@ -121,7 +121,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'CM-KORAFICATOR: transformar fuente descriptiva a KORA/MD'
+      accion: 'Transformar fuente descriptiva a KORA/MD preservando fidelidad'
     - id: S-CRYSTALLIZE
       transiciones:
       - condicion: artefacto_generado
@@ -133,7 +133,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'CM-CRYSTALLIZER: transformar decisiones implicitas en KORA/Spec-MD'
+      accion: 'Transformar decisiones implicitas en KORA/Spec-MD'
     - id: S-AUDIT
       transiciones:
       - condicion: validacion_ok
@@ -151,7 +151,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 5
-      accion: 'CM-ARTIFACT-AUDITOR: verificar conformidad del artefacto'
+      accion: 'Verificar conformidad, trazabilidad y calidad del artefacto'
     - id: S-EDIT
       transiciones:
       - condicion: edicion_completa
@@ -163,7 +163,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'CM-ARTIFACT-EDITOR: aplicar cambios controlados preservando invariantes'
+      accion: 'Aplicar cambios controlados preservando invariantes'
     - id: S-REPAIR
       transiciones:
       - condicion: fix_aplicado
@@ -175,7 +175,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'CM-ARTIFACT-SURGEON: aplicar fix minimo sin romper referencias'
+      accion: 'Aplicar fix minimo sin romper referencias ni trazas'
     - id: S-IMPROVE
       transiciones:
       - condicion: mejora_aplicada
@@ -187,7 +187,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'CM-ARTIFACT-OPTIMIZER: proponer y aplicar mejoras aprobadas'
+      accion: 'Proponer y aplicar mejoras aprobadas sobre el artefacto'
     - id: S-DEPRECATE
       transiciones:
       - condicion: deprecacion_completa
@@ -196,7 +196,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 2
-      accion: 'CM-ARTIFACT-DEPRECATOR: deprecar artefacto y preparar migracion'
+      accion: 'Deprecar artefacto y preparar migracion si aplica'
     - id: S-GUIDED
       transiciones:
       - condicion: ciclo_completo
@@ -217,7 +217,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 6
-      accion: 'CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints del modo guiado'
+      accion: 'Consolidar checkpoints del modo guiado via urn:kora:artefacto:lifecycle-orchestrator'
     - id: S-END
       transiciones:
       - condicion: '[terminal]'
@@ -469,9 +469,15 @@ artefacto:
 
 ## Behavior
 
+Capacidades reutilizables promovidas:
+
+- `urn:kora:artefacto:context-manager`
+- `urn:kora:artefacto:intent-classifier`
+- `urn:kora:artefacto:lifecycle-orchestrator`
+
 ### Despacho (S-DISPATCHER)
 
-CM-INTENT-CLASSIFIER clasifica cada solicitud en una de las ramas de la FSM. Criterios de clasificacion:
+`urn:kora:artefacto:intent-classifier` clasifica cada solicitud en una de las ramas de la FSM. Criterios de clasificacion:
 
 - Si el operador dice "nuevo artefacto" o provee fuente raw sin artefacto destino -> `nuevo_artefacto`. El modo (guiado/libre) se determina por preferencia explicita del operador o por default libre.
 - Si provee fuente raw con artefacto destino identificado -> `koraficiar` (descriptivo) o `cristalizar` (prescriptivo).
@@ -498,7 +504,7 @@ Cuando un check de co-induccion falla, la accion se ejecuta antes de emitir outp
 
 **Modo libre**: el operador tiene un intent claro. El curator clasifica y ejecuta directamente la rama correspondiente de la FSM.
 
-**Modo guiado**: CM-LIFECYCLE-ORCHESTRATOR dirige al operador por las fases del ciclo (DESIGN -> KORAFICATE/CRYSTALLIZE -> AUDIT), con checkpoints entre cada fase. El operador puede interrumpir para tomar control manual de cualquier fase.
+**Modo guiado**: `urn:kora:artefacto:lifecycle-orchestrator` consolida checkpoints entre DESIGN, KORAFICATE/CRYSTALLIZE y AUDIT. El operador puede interrumpir para tomar control manual de cualquier fase.
 
 ## Context
 
@@ -508,7 +514,7 @@ Antes de responder en una sesion nueva, leer MEMORY.md (decisiones durables) y m
 
 ### Deteccion de desvio
 
-CM-CONTEXT-MANAGER compara la solicitud actual con la tarea en curso. Si detecta desvio relevante o cambio radical -> S-DISPATCHER.
+`urn:kora:artefacto:context-manager` compara la solicitud actual con la tarea en curso. Si detecta desvio relevante o cambio radical -> S-DISPATCHER.
 
 ### Retencion inter-turno
 

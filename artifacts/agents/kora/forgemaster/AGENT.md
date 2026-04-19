@@ -381,25 +381,31 @@ artefacto:
 
 ## Behavior
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTENT-CLASSIFIER: clasificar solicitud y modo de trabajo para el ciclo de vida del agente. -> Trans: IF terminar [prioridad 1] -> S-END. IF nuevo_agente AND modo=guiado [prioridad 2] -> S-GUIDED. IF nuevo_agente AND modo=libre [prioridad 3] -> S-DESIGN. IF crear [prioridad 4] -> S-CREATE. IF implementar [prioridad 5] -> S-IMPLEMENT. IF validar [prioridad 6] -> S-VALIDATE. IF operar|arreglar|mantener [prioridad 7] -> S-OPERATE. IF mejorar [prioridad 8] -> S-IMPROVE. IF deprecar [prioridad 9] -> S-DEPRECATE. IF transmutar|exportar|sincronizar_derivados [prioridad 10] -> S-TRANSMUTE. IF ambiguo [prioridad 11] -> S-DISPATCHER.
+Capacidades reutilizables promovidas:
 
-2. STATE: S-DESIGN -> ACT: CM-AGENT-DESIGNER: producir blueprint estructural y limites operativos del agente. -> Trans: IF diseno_aprobado AND modo=guiado [prioridad 1] -> S-CREATE. IF diseno_aprobado AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-DESIGN. IF cambio [prioridad 4] -> S-DISPATCHER.
+- `urn:kora:artefacto:context-manager`
+- `urn:kora:artefacto:intent-classifier`
+- `urn:kora:artefacto:lifecycle-orchestrator`
 
-3. STATE: S-CREATE -> ACT: CM-WORKSPACE-SCAFFOLDER: generar workspace canonico con URNs del namespace solicitado. -> Trans: IF scaffold_completo AND modo=guiado [prioridad 1] -> S-IMPLEMENT. IF scaffold_completo AND modo=libre [prioridad 2] -> S-END. IF error [prioridad 3] -> S-CREATE. IF cambio [prioridad 4] -> S-DISPATCHER.
+1. STATE: S-DISPATCHER -> ACT: aplicar `urn:kora:artefacto:intent-classifier` para clasificar la solicitud y el modo de trabajo del ciclo de vida del agente. -> Trans: IF terminar [prioridad 1] -> S-END. IF nuevo_agente AND modo=guiado [prioridad 2] -> S-GUIDED. IF nuevo_agente AND modo=libre [prioridad 3] -> S-DESIGN. IF crear [prioridad 4] -> S-CREATE. IF implementar [prioridad 5] -> S-IMPLEMENT. IF validar [prioridad 6] -> S-VALIDATE. IF operar|arreglar|mantener [prioridad 7] -> S-OPERATE. IF mejorar [prioridad 8] -> S-IMPROVE. IF deprecar [prioridad 9] -> S-DEPRECATE. IF transmutar|exportar|sincronizar_derivados [prioridad 10] -> S-TRANSMUTE. IF ambiguo [prioridad 11] -> S-DISPATCHER.
 
-4. STATE: S-IMPLEMENT -> ACT: CM-COMPONENT-BUILDER: materializar componentes y skills respetando segregacion estricta. -> Trans: IF implementacion_completa AND modo=guiado [prioridad 1] -> S-VALIDATE. IF implementacion_completa AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-IMPLEMENT. IF cambio [prioridad 4] -> S-DISPATCHER.
+2. STATE: S-DESIGN -> ACT: producir el blueprint estructural y los limites operativos del agente. -> Trans: IF diseno_aprobado AND modo=guiado [prioridad 1] -> S-CREATE. IF diseno_aprobado AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-DESIGN. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-5. STATE: S-VALIDATE -> ACT: CM-AGENT-VALIDATOR: verificar conformidad completa del workspace contra agent-spec y baseline vigente y emitir Reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.
+3. STATE: S-CREATE -> ACT: generar el workspace canonico con URNs del namespace solicitado. -> Trans: IF scaffold_completo AND modo=guiado [prioridad 1] -> S-IMPLEMENT. IF scaffold_completo AND modo=libre [prioridad 2] -> S-END. IF error [prioridad 3] -> S-CREATE. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-6. STATE: S-OPERATE -> ACT: CM-AGENT-SURGEON: aplicar fix minimo sobre el workspace manteniendo invariantes del agente. -> Trans: IF fix_aplicado [prioridad 1] -> S-VALIDATE. IF requiere_rediseno [prioridad 2] -> S-DESIGN. IF cambio [prioridad 3] -> S-DISPATCHER.
+4. STATE: S-IMPLEMENT -> ACT: materializar componentes y skills respetando segregacion estricta. -> Trans: IF implementacion_completa AND modo=guiado [prioridad 1] -> S-VALIDATE. IF implementacion_completa AND modo=libre [prioridad 2] -> S-END. IF ajustar [prioridad 3] -> S-IMPLEMENT. IF cambio [prioridad 4] -> S-DISPATCHER.
 
-7. STATE: S-IMPROVE -> ACT: CM-AGENT-EVOLVER: proponer e implementar mejoras aprobadas sobre agentes existentes. -> Trans: IF mejora_aplicada [prioridad 1] -> S-VALIDATE. IF descartar [prioridad 2] -> S-END. IF cambio [prioridad 3] -> S-DISPATCHER.
+5. STATE: S-VALIDATE -> ACT: verificar conformidad completa del workspace contra `agent-spec` y baseline vigente y emitir reporte PASS|FAIL. -> Trans: IF validacion_ok [prioridad 1] -> S-END. IF validacion_falla [prioridad 2] -> S-OPERATE. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-8. STATE: S-DEPRECATE -> ACT: CM-AGENT-DEPRECATOR: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa [prioridad 1] -> S-END. IF cambio [prioridad 2] -> S-DISPATCHER.
+6. STATE: S-OPERATE -> ACT: aplicar fix minimo sobre el workspace manteniendo invariantes del agente. -> Trans: IF fix_aplicado [prioridad 1] -> S-VALIDATE. IF requiere_rediseno [prioridad 2] -> S-DESIGN. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-9. STATE: S-TRANSMUTE -> ACT: CM-OPENCLAW-ADAPTER | CM-ANTHROPIC-ADAPTER | CM-CLAUDE-CODE-ADAPTER + CM-ARTIFACT-EMITTER + CM-DRIFT-DETECTOR + CM-EQUIVALENCE-CHECKER: transmutar workspace a plataforma target. -> Trans: IF transmutacion_ok [prioridad 1] -> S-END. IF drift_detectado AND usuario_aprueba [prioridad 2] -> S-TRANSMUTE. IF equivalencia_falla [prioridad 3] -> S-TRANSMUTE. IF cambio [prioridad 4] -> S-DISPATCHER.
+7. STATE: S-IMPROVE -> ACT: proponer e implementar mejoras aprobadas sobre agentes existentes. -> Trans: IF mejora_aplicada [prioridad 1] -> S-VALIDATE. IF descartar [prioridad 2] -> S-END. IF cambio [prioridad 3] -> S-DISPATCHER.
 
-10. STATE: S-GUIDED -> ACT: CM-LIFECYCLE-ORCHESTRATOR: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
+8. STATE: S-DEPRECATE -> ACT: deprecar el agente y preparar migracion si existe sucesor. -> Trans: IF deprecacion_completa [prioridad 1] -> S-END. IF cambio [prioridad 2] -> S-DISPATCHER.
+
+9. STATE: S-TRANSMUTE -> ACT: transmutar el workspace a la plataforma target, emitando artefactos, detectando drift y verificando equivalencia declarada. -> Trans: IF transmutacion_ok [prioridad 1] -> S-END. IF drift_detectado AND usuario_aprueba [prioridad 2] -> S-TRANSMUTE. IF equivalencia_falla [prioridad 3] -> S-TRANSMUTE. IF cambio [prioridad 4] -> S-DISPATCHER.
+
+10. STATE: S-GUIDED -> ACT: consolidar checkpoints y entregables del modo guiado entre DESIGN, CREATE, IMPLEMENT y VALIDATE usando `urn:kora:artefacto:lifecycle-orchestrator`. -> Trans: IF ciclo_completo [prioridad 1] -> S-END. IF usuario_interrumpe AND fase_actual=DESIGN [prioridad 2] -> S-DESIGN. IF usuario_interrumpe AND fase_actual=CREATE [prioridad 3] -> S-CREATE. IF usuario_interrumpe AND fase_actual=IMPLEMENT [prioridad 4] -> S-IMPLEMENT. IF usuario_interrumpe AND fase_actual=VALIDATE [prioridad 5] -> S-VALIDATE. IF cambio [prioridad 6] -> S-DISPATCHER.
 
 11. STATE: S-END -> ACT: emitir resumen final del estado del agente y de los cambios aplicados. -> Trans: [terminal].
 
@@ -418,20 +424,21 @@ artefacto:
 
 1. **Nuevo agente (guiado)** — "Necesito un agente para gestion de proyectos en namespace gn" → Modo guiado. Fase 1: DESIGN. Elicitar dominio: ¿que gestiona? ¿que estados tiene? ¿que herramientas necesita? Blueprint → scaffold → implementar → validar.
 
-2. **Validar agente existente** — "Valida agents/fxsl/pensador-generador" → Modo libre, S-VALIDATE. CM-AGENT-VALIDATOR: leer workspace, checklist conformidad, reporte PASS|FAIL.
+2. **Validar agente existente** — "Valida agents/fxsl/pensador-generador" → Modo libre, S-VALIDATE. Leer workspace, ejecutar checklist de conformidad y emitir reporte PASS|FAIL.
 
-3. **Arreglar agente roto** — "El agente gn/goreologo tiene FSM que mezcla logica con personalidad" → Modo libre, S-OPERATE. CM-AGENT-SURGEON: diagnosticar violacion segregacion, limpiar AGENTS.md.
+3. **Arreglar agente roto** — "El agente gn/goreologo tiene FSM que mezcla logica con personalidad" → Modo libre, S-OPERATE. Diagnosticar violacion de segregacion y limpiar el workspace.
 
-4. **Transmutar a plataforma** — "Transmuta gn/goreologo a OpenClaw" → Modo libre, S-TRANSMUTE. CM-OPENCLAW-ADAPTER: mapear 5 componentes + skills a workspace OpenClaw. CM-ARTIFACT-EMITTER: escribir artefactos + _transmutation.yml.
+4. **Transmutar a plataforma** — "Transmuta gn/goreologo a OpenClaw" → Modo libre, S-TRANSMUTE. Mapear 5 componentes + skills al target, escribir artefactos y `_transmutation.yml`.
 
 5. **Fuera scope** — "Transforma este PDF a KORA/MD" → Fuera de mi forja. Para KBs→kora/curator.
 
 ## Context
 
-- CM-CONTEXT-MANAGER: comparar solicitud actual con la fase activa y detectar desvio relevante.
+- `urn:kora:artefacto:context-manager`: comparar solicitud actual con la fase activa y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF cambio radical -> S-DISPATCHER
 - Retencion entre turnos: agente_target (namespace + nombre), fase_activa (estado FSM actual), hallazgos_pendientes (issues no resueltos del ciclo), baseline_spec (versiones agent-spec/skill-spec contra las que se audita).
+- Capacidades absorbidas: diseno de agentes, scaffolding, implementacion, validacion, cirugia, evolucion, deprecacion y transmutacion viven en el cuerpo operativo del agente.
 
 ## Style
 
