@@ -74,7 +74,7 @@ def build_graph(nodes):
         relations = node.get("relations", {})
         if not isinstance(relations, dict):
             continue
-        for rel_type in ("cites", "depends", "supersedes", "refines"):
+        for rel_type in ("cites", "depends", "supersedes", "refines", "traces_requirements"):
             targets = relations.get(rel_type, [])
             if isinstance(targets, str):
                 targets = [targets]
@@ -101,7 +101,7 @@ def build_graph(nodes):
 
     connected_urns = {e["from"] for e in edges} | {e["to"] for e in edges}
 
-    # Clasificacion de huerfanos (sin cites/depends/supersedes/refines
+    # Clasificacion de huerfanos (sin cites/depends/supersedes/refines/traces_requirements
     # entrantes ni salientes) en tres clases functorialmente distintas:
     #   - root: spec constitucional (namespace kora + tag spec sin relations salientes
     #     hacia nodos no-constitucionales) — legitimos por ser el arranque del grafo.

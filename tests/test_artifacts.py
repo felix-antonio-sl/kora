@@ -185,6 +185,25 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in required_terms:
             self.assertIn(term, content)
 
+    def test_knowledge_spec_declares_requirement_trace_relation(self):
+        content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
+        required_terms = (
+            "traces_requirements",
+            "Requirement",
+            "TracesRequirement",
+        )
+        for term in required_terms:
+            self.assertIn(term, content)
+
+    def test_h_minor_artifacts_exist(self):
+        required_paths = (
+            ROOT / "artifacts" / "knowledge" / "kora" / "sys" / "requirement-traceability-model.md",
+            ROOT / "artifacts" / "knowledge" / "kora" / "sys" / "catalogo-patrones-skills.md",
+            ROOT / "artifacts" / "knowledge" / "kora" / "sys" / "modelo-organizacional-kora.md",
+        )
+        for path in required_paths:
+            self.assertTrue(path.exists(), str(path))
+
     def test_atomize_skill_is_runtime_agnostic_and_llm_first(self):
         content = (ROOT / "artifacts" / "skills" / "kora" / "atomize" / "SKILL.md").read_text(encoding="utf-8")
         required_terms = (

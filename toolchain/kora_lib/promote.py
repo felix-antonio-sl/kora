@@ -314,7 +314,7 @@ def _find_reverse_dependents(target_urn: str):
         relations = n.get("relations") or {}
         if not isinstance(relations, dict):
             continue
-        for rel_type in ("cites", "depends", "supersedes", "refines"):
+        for rel_type in ("cites", "depends", "supersedes", "refines", "traces_requirements"):
             targets = relations.get(rel_type) or []
             if isinstance(targets, str):
                 targets = [targets]

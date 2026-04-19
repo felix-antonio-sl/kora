@@ -53,6 +53,8 @@ class KoraCliSmokeTests(unittest.TestCase):
         graph_payload = json.loads((GENERATED_DOCS / "repo-graph.json").read_text(encoding="utf-8"))
         contracts_payload = json.loads((GENERATED_DOCS / "operating-core-contracts.json").read_text(encoding="utf-8"))
         contracts_markdown = (GENERATED_DOCS / "operating-core-contracts.md").read_text(encoding="utf-8")
+        wiring_payload = json.loads((GENERATED_DOCS / "agent-wiring.json").read_text(encoding="utf-8"))
+        wiring_markdown = (GENERATED_DOCS / "agent-wiring-mermaid.md").read_text(encoding="utf-8")
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
         audit_payload = json.loads((GENERATED_DOCS / "agent-audit.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
@@ -75,6 +77,8 @@ class KoraCliSmokeTests(unittest.TestCase):
                 {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},
             )
         self.assertIn("## Auditoria meta-kora", contracts_markdown)
+        self.assertIn("```mermaid", wiring_markdown)
+        self.assertIn("routes", wiring_payload)
         self.assertIn("promoted", ledger_payload["status_counts"])
         self.assertIn("meta-kora", audit_payload["cohorts"])
         self.assertIn("domains", audit_payload["cohorts"])

@@ -181,6 +181,38 @@ class GraphInvariantTests(unittest.TestCase):
         graph = build_graph(nodes)
         self.assertEqual(graph["broken_edges"], [])
 
+    def test_kb_graph_emits_traces_requirement_edges(self):
+        nodes = [
+            {
+                "urn": "urn:kora:kb:requirement-traceability-model",
+                "namespace": "kora",
+                "status": "published",
+                "version": "1.0.0",
+                "tags": ["note"],
+                "file": "artifacts/knowledge/kora/sys/requirement-traceability-model.md",
+                "relations": {"traces_requirements": ["urn:kora:kb:req-demo"]},
+            },
+            {
+                "urn": "urn:kora:kb:req-demo",
+                "namespace": "kora",
+                "status": "published",
+                "version": "1.0.0",
+                "tags": ["requirement"],
+                "file": "artifacts/knowledge/kora/sys/req-demo.md",
+                "relations": {},
+            },
+        ]
+
+        graph = build_graph(nodes)
+        self.assertIn(
+            {
+                "from": "urn:kora:kb:requirement-traceability-model",
+                "to": "urn:kora:kb:req-demo",
+                "type": "traces_requirements",
+            },
+            graph["edges"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

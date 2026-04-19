@@ -375,7 +375,13 @@ def build_graph_payload():
             )
 
     # Layer 0: Knowledge relations (from frontmatter relations field)
-    _RELATION_EDGE_KINDS = {"cites": "Cites", "depends": "DependsOn", "supersedes": "Supersedes", "refines": "Refines"}
+    _RELATION_EDGE_KINDS = {
+        "cites": "Cites",
+        "depends": "DependsOn",
+        "supersedes": "Supersedes",
+        "refines": "Refines",
+        "traces_requirements": "TracesRequirement",
+    }
     for node in nodes.values():
         if node.get("kind") != "knowledge":
             continue

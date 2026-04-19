@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.3.0; v1.2 alinea con autoria-spec unificada"
-version: "1.2.0"
+    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.3.0; v1.2 alinea con autoria-spec unificada; v1.3 agrega requirements trazables y productor canonico atomic"
+version: "1.3.0"
 status: publicado
 tags: [knowledge, categoria, grafo, pipeline, namespace, artefacto]
 lang: es
@@ -16,7 +16,7 @@ relations:
     - "urn:kora:kb:md-spec"
 ---
 
-# KORA/Knowledge-Spec v1.1.0
+# KORA/Knowledge-Spec v1.3.0
 
 ## 1. Definicion
 
@@ -52,6 +52,7 @@ Gobierna:
 | Morfismo | Relacion tipada entre nodos. |
 | Namespace | Subcategoria editorial y semantica dentro del corpus. |
 | Artefacto publicado | Nodo con `status: publicado`, recuperable por el ecosistema. |
+| Requirement | Predicado, constraint u obligacion que un sistema o artefacto debe satisfacer; en KORA se publica como nodo direccionable por URN, no como texto flotante. |
 | Crudo | Material sin normalizar que aun no debe consumirse como ley o conocimiento estable. |
 | Grafo derivado | Vista materializada de `KnowCat` para consulta, auditoria y routing. |
 
@@ -88,6 +89,7 @@ Las relaciones se declaran en el campo raiz `relations` reservado por
 | `depends` | Necesita que otro artefacto exista para interpretarse correctamente. |
 | `supersedes` | Reemplaza semanticamente a otro artefacto. |
 | `refines` | Especializa o precisa otro artefacto sin reemplazarlo. |
+| `traces_requirements` | Declara que el artefacto implementa, satisface, verifica o realiza requirements publicados. En el grafo derivado se materializa como edge `TracesRequirement`. |
 
 ### 4.2 Reglas
 
@@ -95,7 +97,9 @@ Las relaciones se declaran en el campo raiz `relations` reservado por
 2. `supersedes` **NO DEBE** usarse como sinonimo de "menciona".
 3. `refines` **NO DEBE** contradecir el artefacto refinado; si lo reemplaza,
    corresponde `supersedes`.
-4. La precedencia normativa entre specs **NO** se decide aqui; se decide solo en
+4. `traces_requirements` **DEBE** apuntar a nodos cuyo cuerpo o metadatos explicitan
+   que son requirements, obligations, constraints o predicates normativos equivalentes.
+5. La precedencia normativa entre specs **NO** se decide aqui; se decide solo en
    `gobernanza`.
 
 ## 5. Namespaces
@@ -161,6 +165,7 @@ Usos canonicos:
 - detectar huerfanos,
 - calcular dependencias transitivas,
 - alimentar `allowed_kb` y routing de agentes,
+- materializar trazabilidad vertical requirement -> implementacion/verificacion,
 - auditar supersesion y drift editorial.
 
 ## 8. Invariantes
@@ -172,7 +177,9 @@ Los invariantes del sistema de conocimiento son:
 3. la precedencia normativa no se autodeclara en cada artefacto,
 4. un nodo no puede estar simultaneamente supersedido y fuente primaria del
    mismo contrato sin explicitar migracion,
-5. lo crudo no se consume como ley publicada.
+5. lo crudo no se consume como ley publicada,
+6. toda `TracesRequirement` del grafo debe provenir de `relations.traces_requirements`
+   y apuntar a requirements direccionables.
 
 ## 9. Validacion
 
@@ -182,6 +189,7 @@ Checks minimos:
 | --- | --- | --- |
 | URN valido | `_manifest.urn` presente y resoluble | lint |
 | `relations` valido | shape correcto y URNs conocidos | lint |
+| `TracesRequirement` valido | targets resolubles y semanticamente requirement | lint/graph |
 | Lifecycle coherente | `status` consistente con estado del pipeline | lint/manual |
 | Huerfano critico | artefacto esperado sin relaciones de entrada o salida | graph/manual |
 | Supersesion limpia | `supersedes` sin loops absurdos | graph |

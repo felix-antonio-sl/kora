@@ -1,12 +1,12 @@
 {
   "meta": {
-    "scanned_files": 683,
-    "node_count": 658,
-    "edge_count": 3225
+    "scanned_files": 693,
+    "node_count": 667,
+    "edge_count": 3315
   },
   "node_kind_counts": {
-    "artifact": 21,
-    "knowledge": 506,
+    "artifact": 26,
+    "knowledge": 510,
     "skill": 84,
     "spec": 17,
     "tool": 23,
@@ -15,14 +15,16 @@
   "edge_kind_counts": {
     "AllowsKB": 173,
     "AllowsTool": 46,
-    "Cites": 482,
+    "Cites": 494,
     "ContainsArtifact": 7,
     "ContainsSkill": 84,
     "DeclaresTool": 46,
     "DependsOn": 69,
     "InvokesSkill": 84,
+    "Refines": 1,
     "RoutesToAgent": 3,
-    "XRef": 2231
+    "TracesRequirement": 1,
+    "XRef": 2307
   },
   "nodes": [
     {
@@ -51,6 +53,24 @@
       "urn": "urn:gn:artefacto:goreologo",
       "title": "AGENT.md",
       "path": "artifacts/agents/gn/goreologo/AGENT.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:artefacto:intake",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:gn:artefacto:intake",
+      "title": "Intake",
+      "path": "artifacts/skills/gn/intake/SKILL.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:artefacto:synthesizer",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:gn:artefacto:synthesizer",
+      "title": "Synthesizer",
+      "path": "artifacts/skills/gn/synthesizer/SKILL.md",
       "namespace": "gn"
     },
     {
@@ -92,6 +112,15 @@
       "namespace": "kora"
     },
     {
+      "id": "urn:kora:artefacto:context-manager",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:kora:artefacto:context-manager",
+      "title": "Context Manager",
+      "path": "artifacts/skills/kora/context-manager/SKILL.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:artefacto:curator",
       "kind": "artifact",
       "category": "Other",
@@ -125,6 +154,24 @@
       "urn": "urn:kora:artefacto:guardian",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/guardian/AGENT.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:intent-classifier",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:kora:artefacto:intent-classifier",
+      "title": "Intent Classifier",
+      "path": "artifacts/skills/kora/intent-classifier/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:lifecycle-orchestrator",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:kora:artefacto:lifecycle-orchestrator",
+      "title": "Lifecycle Orchestrator",
+      "path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -2566,12 +2613,30 @@
       "namespace": "kora"
     },
     {
+      "id": "urn:kora:kb:catalogo-patrones-skills",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:catalogo-patrones-skills",
+      "title": "Catalogo de patrones de skills en KORA",
+      "path": "artifacts/knowledge/kora/sys/catalogo-patrones-skills.md",
+      "namespace": "kora"
+    },
+    {
       "id": "urn:kora:kb:hub-agentes",
       "kind": "knowledge",
       "category": "Knowledge",
       "urn": "urn:kora:kb:hub-agentes",
       "title": "Hub de Agentes TDE",
       "path": "artifacts/knowledge/kora/sys/hub_agentes.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:modelo-organizacional-kora",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:modelo-organizacional-kora",
+      "title": "Modelo organizacional de KORA",
+      "path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md",
       "namespace": "kora"
     },
     {
@@ -2590,6 +2655,24 @@
       "urn": "urn:kora:kb:pipeline-ingesta",
       "title": "Pipeline de Ingesta — Infraestructura de Transformacion de Artefactos v1.0.0",
       "path": "artifacts/knowledge/kora/sys/pipeline-ingesta.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "title": "Requirement — el grafo de KORA debe materializar trazas de requirement",
+      "path": "artifacts/knowledge/kora/sys/req-knowledge-graph-must-materialize-traces.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:requirement-traceability-model",
+      "kind": "knowledge",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:requirement-traceability-model",
+      "title": "Modelo de trazabilidad de requirements en KORA",
+      "path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md",
       "namespace": "kora"
     },
     {
@@ -5549,7 +5632,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:knowledge-spec",
-      "title": "KORA/Knowledge-Spec v1.1.0",
+      "title": "KORA/Knowledge-Spec v1.3.0",
       "path": "serialization/knowledge-spec.md",
       "namespace": "kora"
     },
@@ -8709,6 +8792,24 @@
     },
     {
       "kind": "Cites",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:autoria-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:knowledge-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
       "source": "urn:kora:kb:hub-agentes",
       "target": "urn:kora:kb:workflow-wikiguias",
       "layer": "knowledge"
@@ -8729,6 +8830,36 @@
       "kind": "Cites",
       "source": "urn:kora:kb:hub-agentes",
       "target": "urn:tde:kb:guia-tecnica-marco-gestion-datos",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:gobernanza",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:harness-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:multiagente-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:procesos-spec",
       "layer": "knowledge"
     },
     {
@@ -8759,6 +8890,30 @@
       "kind": "Cites",
       "source": "urn:kora:kb:pipeline-ingesta",
       "target": "urn:kora:kb:spec-md",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "target": "urn:kora:kb:knowledge-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:knowledge-spec",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:procesos-spec",
       "layer": "knowledge"
     },
     {
@@ -11647,6 +11802,12 @@
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
     },
     {
+      "kind": "Refines",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:knowledge-spec",
+      "layer": "knowledge"
+    },
+    {
       "kind": "RoutesToAgent",
       "source": "workspace:kora/clawforge",
       "target": "workspace:kora/forgemaster",
@@ -11663,6 +11824,12 @@
       "source": "workspace:kora/forgemaster",
       "target": "workspace:kora/curator",
       "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "TracesRequirement",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "layer": "knowledge"
     },
     {
       "kind": "XRef",
@@ -15146,6 +15313,55 @@
     {
       "kind": "XRef",
       "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:intake",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:intake",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:digitrans",
       "target": "urn:tde:kb:decreto-10-documentos-expedientes-electronicos",
       "fragment": null,
       "source_path": "artifacts/agents/gn/digitrans/AGENT.md"
@@ -15427,6 +15643,34 @@
       "kind": "XRef",
       "source": "urn:gn:artefacto:goreologo",
       "target": "urn:gn:artefacto:goreologo",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:goreologo",
+      "target": "urn:gn:artefacto:intake",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:goreologo",
+      "target": "urn:gn:artefacto:intake",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:goreologo",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:goreologo",
+      "target": "urn:gn:artefacto:synthesizer",
       "fragment": null,
       "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
     },
@@ -15961,6 +16205,48 @@
       "target": "urn:gn:kb:vision-desarrollo-nuble",
       "fragment": null,
       "source_path": "artifacts/agents/gn/goreologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:intake",
+      "target": "urn:gn:artefacto:digitrans",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/intake/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:intake",
+      "target": "urn:gn:artefacto:goreologo",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/intake/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:intake",
+      "target": "urn:gn:artefacto:intake",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/intake/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:synthesizer",
+      "target": "urn:gn:artefacto:digitrans",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/synthesizer/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:synthesizer",
+      "target": "urn:gn:artefacto:goreologo",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/synthesizer/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:gn:artefacto:synthesizer",
+      "target": "urn:gn:artefacto:synthesizer",
+      "fragment": null,
+      "source_path": "artifacts/skills/gn/synthesizer/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -19367,6 +19653,48 @@
     {
       "kind": "XRef",
       "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:clawforge",
       "target": "urn:kora:kb:agent-spec-md",
       "fragment": null,
       "source_path": "artifacts/agents/kora/clawforge/AGENT.md"
@@ -19429,8 +19757,106 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:clawforge",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:curator",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:custodio",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:forgemaster",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:context-manager",
+      "target": "urn:kora:artefacto:guardian",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:artefacto:curator",
       "target": "urn:kora:artefacto:curator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/curator/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curator",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
       "fragment": null,
       "source_path": "artifacts/agents/kora/curator/AGENT.md"
     },
@@ -19486,7 +19912,35 @@
     {
       "kind": "XRef",
       "source": "urn:kora:artefacto:custodio",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/custodio/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:custodio",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/custodio/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:custodio",
       "target": "urn:kora:artefacto:custodio",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/custodio/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:custodio",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/custodio/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:custodio",
+      "target": "urn:kora:artefacto:intent-classifier",
       "fragment": null,
       "source_path": "artifacts/agents/kora/custodio/AGENT.md"
     },
@@ -19549,7 +20003,49 @@
     {
       "kind": "XRef",
       "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
       "target": "urn:kora:artefacto:forgemaster",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:forgemaster",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
       "fragment": null,
       "source_path": "artifacts/agents/kora/forgemaster/AGENT.md"
     },
@@ -19682,6 +20178,20 @@
     {
       "kind": "XRef",
       "source": "urn:kora:artefacto:guardian",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:guardian",
+      "target": "urn:kora:artefacto:context-manager",
+      "fragment": null,
+      "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:guardian",
       "target": "urn:kora:artefacto:guardian",
       "fragment": null,
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
@@ -19734,6 +20244,69 @@
       "target": "urn:kora:kb:swarm-spec-md",
       "fragment": null,
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:intent-classifier",
+      "target": "urn:kora:artefacto:clawforge",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:intent-classifier",
+      "target": "urn:kora:artefacto:curator",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:intent-classifier",
+      "target": "urn:kora:artefacto:custodio",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:intent-classifier",
+      "target": "urn:kora:artefacto:forgemaster",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:intent-classifier",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:lifecycle-orchestrator",
+      "target": "urn:kora:artefacto:clawforge",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:lifecycle-orchestrator",
+      "target": "urn:kora:artefacto:curator",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:lifecycle-orchestrator",
+      "target": "urn:kora:artefacto:forgemaster",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:lifecycle-orchestrator",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md"
     },
     {
       "kind": "XRef",
@@ -20318,6 +20891,34 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:autoria-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/catalogo-patrones-skills.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:catalogo-patrones-skills",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/catalogo-patrones-skills.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/catalogo-patrones-skills.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:catalogo-patrones-skills",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/catalogo-patrones-skills.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:kb:claude-code-runtime-extension",
       "target": "urn:kora:kb:claude-code-runtime-extension",
       "fragment": null,
@@ -20780,6 +21381,48 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:cat-ecosystem-2cat",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:modelo-organizacional-kora",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:multiagente-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:modelo-organizacional-kora",
+      "target": "urn:kora:kb:procesos-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/modelo-organizacional-kora.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:kora:kb:multiagente-spec",
       "target": "urn:agengai:kb:openclaw-runtime-extension",
       "fragment": null,
@@ -21141,6 +21784,62 @@
       "target": "urn:kora:kb:runtime-spec-md",
       "fragment": null,
       "source_path": "ontology/qa-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/req-knowledge-graph-must-materialize-traces.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "target": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/req-knowledge-graph-must-materialize-traces.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:cat-governance-lattice",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:procesos-spec",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:req-knowledge-graph-must-materialize-traces",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:requirement-traceability-model",
+      "target": "urn:kora:kb:requirement-traceability-model",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/kora/sys/requirement-traceability-model.md"
     },
     {
       "kind": "XRef",

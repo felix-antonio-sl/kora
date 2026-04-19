@@ -1,4 +1,5 @@
 import json
+import re
 
 from .agent_audit import write_agent_audit_docs
 from .artifacts import load_yaml_safe
@@ -112,6 +113,114 @@ def write_generated_graph_docs():
     return payload, json_path
 
 
+def _mermaid_id(value):
+    return re.sub(r"[^A-Za-z0-9_]", "_", value)
+
+
+def build_agent_wiring_payload(graph_payload=None):
+    if graph_payload is None:
+        graph_payload = build_graph_payload()
+
+    workspace_nodes = {
+        node["id"]: node
+        for node in graph_payload["nodes"]
+        if node.get("kind") == "workspace"
+    }
+    skill_nodes = {
+        node["id"]: node
+        for node in graph_payload["nodes"]
+        if node.get("kind") == "skill"
+    }
+
+    routes = []
+    skill_invocations = []
+    for edge in graph_payload["edges"]:
+        if edge["kind"] == "RoutesToAgent":
+            source = edge["source"]
+            target = edge["target"]
+            if source in workspace_nodes and target in workspace_nodes:
+                routes.append(
+                    {
+                        "from": workspace_nodes[source]["workspace"],
+                        "to": workspace_nodes[target]["workspace"],
+                        "source_path": edge.get("source_path"),
+                    }
+                )
+        elif edge["kind"] == "InvokesSkill":
+            source = edge["source"]
+            target = edge["target"]
+            if target in skill_nodes:
+                skill_name = target.split(":")[3] if target.startswith("urn:") else target
+                if source.startswith("urn:"):
+                    source_parts = source.split(":")
+                    source_name = f"{source_parts[1]}/{source_parts[3]}"
+                else:
+                    source_name = source
+                skill_invocations.append(
+                    {
+                        "from": source_name,
+                        "to": skill_name,
+                        "source_path": edge.get("source_path"),
+                    }
+                )
+
+    routes.sort(key=lambda item: (item["from"], item["to"]))
+    skill_invocations.sort(key=lambda item: (item["from"], item["to"]))
+
+    lines = ["flowchart LR"]
+    if routes:
+        lines.append('  subgraph Fleet["Productive Agent Fleet"]')
+        for route in routes:
+            src_id = _mermaid_id(route["from"])
+            dst_id = _mermaid_id(route["to"])
+            lines.append(f'    {src_id}["{route["from"]}"] -->|handoff| {dst_id}["{route["to"]}"]')
+        lines.append("  end")
+    if skill_invocations:
+        lines.append('  subgraph Skills["Invoked Skills"]')
+        for inv in skill_invocations:
+            src_id = _mermaid_id(f'ws_{inv["from"]}')
+            dst_id = _mermaid_id(f'skill_{inv["to"]}')
+            lines.append(f'    {src_id}["{inv["from"]}"] -.->|invokes| {dst_id}["{inv["to"]}"]')
+        lines.append("  end")
+
+    return {
+        "workspaces": sorted(node["workspace"] for node in workspace_nodes.values()),
+        "routes": routes,
+        "skill_invocations": skill_invocations,
+        "mermaid": "\n".join(lines) + "\n",
+    }
+
+
+def render_agent_wiring_markdown(payload):
+    lines = [
+        "# KORA Agent Wiring",
+        "",
+        "Vista materializada del wiring operativo del fleet productivo.",
+        "",
+        f"- Workspaces: {len(payload['workspaces'])}",
+        f"- RoutesToAgent: {len(payload['routes'])}",
+        f"- InvokesSkill: {len(payload['skill_invocations'])}",
+        "",
+        "## Wiring Diagram",
+        "",
+        "```mermaid",
+        payload["mermaid"].rstrip(),
+        "```",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def write_generated_agent_wiring_docs(graph_payload):
+    GENERATED_DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    payload = build_agent_wiring_payload(graph_payload)
+    json_path = GENERATED_DOCS_DIR / "agent-wiring.json"
+    md_path = GENERATED_DOCS_DIR / "agent-wiring-mermaid.md"
+    json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    md_path.write_text(render_agent_wiring_markdown(payload), encoding="utf-8")
+    return payload, json_path, md_path
+
+
 def write_generated_operating_core_docs():
     GENERATED_DOCS_DIR.mkdir(parents=True, exist_ok=True)
     payload = build_operating_core_payload()
@@ -126,6 +235,7 @@ def sync_generated_docs():
     stats_payload = compute_stats_payload()
     stats_json_path, stats_md_path = write_generated_stats_docs(stats_payload)
     graph_payload, graph_json_path = write_generated_graph_docs()
+    wiring_payload, wiring_json_path, wiring_md_path = write_generated_agent_wiring_docs(graph_payload)
     contracts_payload, contracts_json_path, contracts_md_path = write_generated_operating_core_docs()
     fxsl_payload, fxsl_json_path, fxsl_md_path = write_fxsl_cat_ledger_docs(GENERATED_DOCS_DIR)
     audit_payload, audit_json_path, audit_md_path = write_agent_audit_docs(GENERATED_DOCS_DIR)
@@ -143,6 +253,11 @@ def sync_generated_docs():
             "payload": contracts_payload,
             "json_path": contracts_json_path,
             "md_path": contracts_md_path,
+        },
+        "agent_wiring": {
+            "payload": wiring_payload,
+            "json_path": wiring_json_path,
+            "md_path": wiring_md_path,
         },
         "fxsl_cat": {
             "payload": fxsl_payload,

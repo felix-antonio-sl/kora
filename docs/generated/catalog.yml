@@ -1454,6 +1454,10 @@ Catalog:
     title: 'Skills as Free Algebra: The Adjunction Free ⊣ Forget - Parte 02'
     file: artifacts/knowledge/kora/categorical-foundations/02-skill-algebra--p02.md
     status: published
+  - urn: urn:kora:kb:catalogo-patrones-skills
+    title: Catalogo de patrones de skills en KORA
+    file: artifacts/knowledge/kora/sys/catalogo-patrones-skills.md
+    status: publicado
   - urn: urn:kora:kb:claude-code-runtime-extension
     title: KORA/Claude-Code-Runtime-Extension v1.0.0
     file: runtime/claude-code-runtime-extension.md
@@ -1479,7 +1483,7 @@ Catalog:
     file: artifacts/knowledge/kora/sys/hub_agentes.md
     status: published
   - urn: urn:kora:kb:knowledge-spec
-    title: KORA/Knowledge-Spec v1.1.0
+    title: KORA/Knowledge-Spec v1.3.0
     file: serialization/knowledge-spec.md
     status: publicado
   - urn: urn:kora:kb:mastra-runtime-extension
@@ -1489,6 +1493,10 @@ Catalog:
   - urn: urn:kora:kb:md-spec
     title: KORA/MD v8.1.0
     file: serialization/md-spec.md
+    status: publicado
+  - urn: urn:kora:kb:modelo-organizacional-kora
+    title: Modelo organizacional de KORA
+    file: artifacts/knowledge/kora/sys/modelo-organizacional-kora.md
     status: publicado
   - urn: urn:kora:kb:multiagente-spec
     title: KORA/Multiagente-Spec v1.0.0
@@ -1509,6 +1517,14 @@ Catalog:
   - urn: urn:kora:kb:qa-spec
     title: KORA/QA-Spec v1.0.0
     file: ontology/qa-spec.md
+    status: publicado
+  - urn: urn:kora:kb:req-knowledge-graph-must-materialize-traces
+    title: Requirement — el grafo de KORA debe materializar trazas de requirement
+    file: artifacts/knowledge/kora/sys/req-knowledge-graph-must-materialize-traces.md
+    status: publicado
+  - urn: urn:kora:kb:requirement-traceability-model
+    title: Modelo de trazabilidad de requirements en KORA
+    file: artifacts/knowledge/kora/sys/requirement-traceability-model.md
     status: publicado
   - urn: urn:kora:kb:risk-register-spec
     title: KORA/Risk-Register-Spec v1.0.0
@@ -2503,6 +2519,14 @@ Catalog:
     title: AGENT.md
     file: artifacts/agents/gn/goreologo/AGENT.md
     status: activo
+  - urn: urn:gn:artefacto:intake
+    title: Intake
+    file: artifacts/skills/gn/intake/SKILL.md
+    status: activo
+  - urn: urn:gn:artefacto:synthesizer
+    title: Synthesizer
+    file: artifacts/skills/gn/synthesizer/SKILL.md
+    status: activo
   - urn: urn:kora:artefacto:atomize
     title: Atomize — Productor canonico de la familia `atomic`
     file: artifacts/skills/kora/atomize/SKILL.md
@@ -2510,6 +2534,10 @@ Catalog:
   - urn: urn:kora:artefacto:clawforge
     title: AGENT.md
     file: artifacts/agents/kora/clawforge/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:context-manager
+    title: Context Manager
+    file: artifacts/skills/kora/context-manager/SKILL.md
     status: activo
   - urn: urn:kora:artefacto:curator
     title: AGENT.md
@@ -2526,4 +2554,12 @@ Catalog:
   - urn: urn:kora:artefacto:guardian
     title: AGENT.md
     file: artifacts/agents/kora/guardian/AGENT.md
+    status: activo
+  - urn: urn:kora:artefacto:intent-classifier
+    title: Intent Classifier
+    file: artifacts/skills/kora/intent-classifier/SKILL.md
+    status: activo
+  - urn: urn:kora:artefacto:lifecycle-orchestrator
+    title: Lifecycle Orchestrator
+    file: artifacts/skills/kora/lifecycle-orchestrator/SKILL.md
     status: activo
