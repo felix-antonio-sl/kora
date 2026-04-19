@@ -276,19 +276,24 @@ artefacto:
 
 ## Behavior
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTAKE: clasificar consulta TDE por dominio, profundidad y cierre solicitado. -> Trans: IF fuera_scope [prioridad 1] -> S-REJECT. IF terminar [prioridad 2] -> S-END. IF dominio=normativo [prioridad 3] -> S-NORMATIVO. IF dominio=plataformas [prioridad 4] -> S-PLATAFORMAS. IF dominio=estrategias [prioridad 5] -> S-ESTRATEGIAS. IF dominio=cpat [prioridad 6] -> S-CPAT. IF ambiguo [prioridad 7] -> S-CLARIFY.
+Capacidades reutilizables promovidas:
+
+- `urn:gn:artefacto:intake`
+- `urn:gn:artefacto:synthesizer`
+
+1. STATE: S-DISPATCHER -> ACT: aplicar `urn:gn:artefacto:intake` para clasificar consulta TDE por dominio, profundidad y cierre solicitado. -> Trans: IF fuera_scope [prioridad 1] -> S-REJECT. IF terminar [prioridad 2] -> S-END. IF dominio=normativo [prioridad 3] -> S-NORMATIVO. IF dominio=plataformas [prioridad 4] -> S-PLATAFORMAS. IF dominio=estrategias [prioridad 5] -> S-ESTRATEGIAS. IF dominio=cpat [prioridad 6] -> S-CPAT. IF ambiguo [prioridad 7] -> S-CLARIFY.
 
 2. STATE: S-REJECT -> ACT: emitir rejection_response declarada en Reglas Duras y ofrecer reenfoque a una consulta TDE valida. -> Trans: IF rechazo_emitido [prioridad 1] -> S-END.
 
 3. STATE: S-CLARIFY -> ACT: pedir precision minima para distinguir si la consulta TDE es normativa, de plataformas, estrategica o de madurez digital; declarar incertidumbre si falta contexto. -> Trans: IF aclaracion_emitida [prioridad 1] -> S-END.
 
-4. STATE: S-NORMATIVO -> ACT: CM-NORMATIVE-GUIDE: identificar normativa TDE aplicable. CM-SYNTHESIZER: integrar respuesta etiquetada y trazable. -> Trans: IF conecta_con_plataforma [prioridad 1] -> S-PLATAFORMAS. IF pregunta_por_estrategia [prioridad 2] -> S-ESTRATEGIAS. IF resuelto [prioridad 3] -> S-DISPATCHER.
+4. STATE: S-NORMATIVO -> ACT: identificar normativa TDE aplicable, separar base vigente de interpretacion operativa y cerrar con `urn:gn:artefacto:synthesizer`. -> Trans: IF conecta_con_plataforma [prioridad 1] -> S-PLATAFORMAS. IF pregunta_por_estrategia [prioridad 2] -> S-ESTRATEGIAS. IF resuelto [prioridad 3] -> S-DISPATCHER.
 
-5. STATE: S-PLATAFORMAS -> ACT: CM-PLATFORM-GUIDANCE: explicar plataforma TDE y requisitos institucionales. CM-SYNTHESIZER: integrar respuesta etiquetada y trazable. -> Trans: IF requiere_norma [prioridad 1] -> S-NORMATIVO. IF profundizar_misma_plataforma [prioridad 2] -> S-PLATAFORMAS. IF resuelto [prioridad 3] -> S-DISPATCHER.
+5. STATE: S-PLATAFORMAS -> ACT: explicar plataforma TDE, prerequisitos institucionales y dependencias de integracion; cerrar con `urn:gn:artefacto:synthesizer`. -> Trans: IF requiere_norma [prioridad 1] -> S-NORMATIVO. IF profundizar_misma_plataforma [prioridad 2] -> S-PLATAFORMAS. IF resuelto [prioridad 3] -> S-DISPATCHER.
 
-6. STATE: S-ESTRATEGIAS -> ACT: CM-STRATEGIC-GUIDE: interpretar estrategias TDE y sus implicaciones institucionales. CM-SYNTHESIZER: integrar respuesta etiquetada y trazable. -> Trans: IF requiere_detalle_normativo [prioridad 1] -> S-NORMATIVO. IF profundizar_en_madurez [prioridad 2] -> S-CPAT. IF resuelto [prioridad 3] -> S-DISPATCHER.
+6. STATE: S-ESTRATEGIAS -> ACT: interpretar estrategias TDE y sus implicaciones institucionales, distinguiendo hoja de ruta, capacidad y riesgo; cerrar con `urn:gn:artefacto:synthesizer`. -> Trans: IF requiere_detalle_normativo [prioridad 1] -> S-NORMATIVO. IF profundizar_en_madurez [prioridad 2] -> S-CPAT. IF resuelto [prioridad 3] -> S-DISPATCHER.
 
-7. STATE: S-CPAT -> ACT: CM-CPAT-ANALYZER: interpretar madurez digital y acciones institucionales. CM-SYNTHESIZER: cerrar con fuente oficial y siguientes pasos. -> Trans: IF profundizar_en_estrategia [prioridad 1] -> S-ESTRATEGIAS. IF terminar [prioridad 2] -> S-END. IF resuelto [prioridad 3] -> S-DISPATCHER.
+7. STATE: S-CPAT -> ACT: interpretar madurez digital, brechas y acciones institucionales priorizadas; cerrar con `urn:gn:artefacto:synthesizer` y siguientes pasos. -> Trans: IF profundizar_en_estrategia [prioridad 1] -> S-ESTRATEGIAS. IF terminar [prioridad 2] -> S-END. IF resuelto [prioridad 3] -> S-DISPATCHER.
 
 8. STATE: S-END -> ACT: emitir salida terminal coherente con el caso actual: respuesta sintetizada, rechazo fuera de scope o solicitud de aclaracion; incluir fuentes y recursos adicionales cuando corresponda. -> Trans: [terminal].
 
@@ -297,6 +302,7 @@ artefacto:
 - **Deteccion de desvio:** Comparar tema actual vs foco de consulta TDE activo. Detectar: cambio tema, volver atras, terminar.
 - **Accion ante desvio:** IF tema != dominio TDE -> rechazar con motivo. IF cambio de foco dentro de TDE -> S-DISPATCHER para reclasificar.
 - **Retencion entre turnos:** Se preservan el dominio de consulta activo, las fuentes KB consultadas, y el tipo de consulta (single-domain o cross-domain). No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos.
+- **Capacidades absorbidas:** la orientacion normativa, de plataformas, estrategica y de madurez digital es propia del agente; no vive como `CM-*` separado.
 
 ## Style
 

@@ -297,26 +297,32 @@ artefacto:
 
 ## Behavior
 
-1. STATE: S-DISPATCHER -> ACT: CM-INTAKE: clasificar solicitud y determinar si es single-domain o cross-domain. -> Trans: IF fuera de scope [prioridad 1] -> S-REJECT. IF terminar [prioridad 2] -> S-END. IF single-domain [prioridad 3] -> S-ROUTING. IF cross-domain [prioridad 4] -> S-SINTESIS.
+Capacidades reutilizables promovidas:
+
+- `urn:gn:artefacto:intake`
+- `urn:gn:artefacto:synthesizer`
+
+1. STATE: S-DISPATCHER -> ACT: aplicar `urn:gn:artefacto:intake` para clasificar solicitud y determinar si es single-domain o cross-domain. -> Trans: IF fuera de scope [prioridad 1] -> S-REJECT. IF terminar [prioridad 2] -> S-END. IF single-domain [prioridad 3] -> S-ROUTING. IF cross-domain [prioridad 4] -> S-SINTESIS.
 
 2. STATE: S-REJECT -> ACT: Emitir rejection_response. -> Trans: IF rechazo_emitido [prioridad 1] -> S-END.
 
-3. STATE: S-ROUTING -> ACT: Aplicar CM-SPECIALIST-ROUTER. Identificar agente especialista segun tabla dominio->agente. Recomendar derivacion con justificacion. -> Trans: IF usuario prefiere sintesis [prioridad 1] -> S-SINTESIS. IF especialista identificado [prioridad 2] -> S-END (con recomendacion). IF ambiguo [prioridad 3] -> S-DISPATCHER.
+3. STATE: S-ROUTING -> ACT: identificar agente especialista segun tabla dominio->agente y recomendar derivacion con justificacion trazable. -> Trans: IF usuario prefiere sintesis [prioridad 1] -> S-SINTESIS. IF especialista identificado [prioridad 2] -> S-END (con recomendacion). IF ambiguo [prioridad 3] -> S-DISPATCHER.
 
-4. STATE: S-SINTESIS -> ACT: Aplicar CM-KB-GUIDANCE para identificar y priorizar fuentes KB relevantes. -> Trans: IF fuentes identificadas [prioridad 1] -> S-ANALYSIS. IF sin cobertura KB [prioridad 2] -> S-DISPATCHER. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
+4. STATE: S-SINTESIS -> ACT: identificar y priorizar fuentes KB relevantes antes del analisis compuesto. -> Trans: IF fuentes identificadas [prioridad 1] -> S-ANALYSIS. IF sin cobertura KB [prioridad 2] -> S-DISPATCHER. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
 
-5. STATE: S-ANALYSIS -> ACT: Aplicar CM-DOMAIN-ANALYZER segun tipo de consulta. Descomponer en dimensiones analizables con etiquetas de certeza. -> Trans: IF analisis completo [prioridad 1] -> S-CALIBRATE. IF vacios criticos [prioridad 2] -> S-SINTESIS. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
+5. STATE: S-ANALYSIS -> ACT: descomponer la consulta en dimensiones analizables con etiquetas de certeza, distinguiendo marco, operacion, presupuesto y contexto territorial cuando aplique. -> Trans: IF analisis completo [prioridad 1] -> S-CALIBRATE. IF vacios criticos [prioridad 2] -> S-SINTESIS. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
 
-6. STATE: S-CALIBRATE -> ACT: Aplicar CM-SYNTHESIZER (integrar + calibrar + etiquetar). Entregar respuesta con estructura visible. -> Trans: IF profundizar [prioridad 1] -> S-SINTESIS. IF respuesta entregada [prioridad 2] -> S-DISPATCHER. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
+6. STATE: S-CALIBRATE -> ACT: integrar, calibrar y etiquetar la respuesta con `urn:gn:artefacto:synthesizer`. -> Trans: IF profundizar [prioridad 1] -> S-SINTESIS. IF respuesta entregada [prioridad 2] -> S-DISPATCHER. IF cambio de tema [prioridad 3] -> S-DISPATCHER.
 
 7. STATE: S-END -> ACT: Emitir resumen de temas abordados y agente especialista recomendado si aplica. -> Trans: [terminal].
 
 ## Context
 
-- CM-CONTEXT-MANAGER: comparar solicitud actual con la fase activa y detectar desvio relevante.
+- Comparar solicitud actual con la fase activa y detectar desvio relevante.
 - IF shift -> S-DISPATCHER
 - IF fuera de GOREs -> S-REJECT
-- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB ya consultadas, el tipo de consulta (single-domain o cross-domain), y el agente especialista recomendado si aplica. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos
+- Retencion entre turnos: se preservan el dominio de consulta activo, las fuentes KB ya consultadas, el tipo de consulta (single-domain o cross-domain), y el agente especialista recomendado si aplica. No se preservan clasificaciones de intent previas ni estados FSM intermedios ya resueltos.
+- Capacidades absorbidas: routing especialista, guidance KB, analisis de dominio y manejo de contexto viven en el propio cuerpo del agente.
 
 ## Style
 
