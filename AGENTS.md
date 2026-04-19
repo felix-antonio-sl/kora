@@ -1,161 +1,201 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+This file provides guidance to Codex (Codex.ai/code) when working with code in
+this repository.
 
 Guia operativa para agentes que trabajen dentro de este repositorio.
 
 ## Que Es Este Repo
 
-KORA es un monorepo gobernado por specs y soportado por una capa formal categorial. No es un proyecto de aplicacion tradicional: el activo principal es la consistencia entre conocimiento, specs, workspaces y toolchain.
+KORA es un monorepo gobernado por specs y soportado por una capa formal
+categorial. No es un proyecto de aplicacion tradicional: el activo principal es
+la consistencia entre ley, ontologia, serializacion, runtimes, artefactos y
+toolchain.
 
-## Arquitectura
+## Historia Relevante
+
+Antes del `2026-04-18`, el repo usaba una topologia legacy con `specs/`,
+`AGENTS/`, `SKILLS/`, `KNOWLEDGE/`, `schemas/` y `scripts/`. La reorg v5 movio
+esa estructura a capas explicitas y a `artifacts/` + `toolchain/`.
+
+Mapa rapido de traduccion:
+
+| Legacy | Actual |
+|--------|--------|
+| `specs/` | `governance/`, `ontology/`, `serialization/`, `runtime/` |
+| `KNOWLEDGE/` | `artifacts/knowledge/` |
+| `AGENTS/` | `artifacts/agents/` |
+| `SKILLS/` | `artifacts/skills/` |
+| `schemas/` | `serialization/schemas/` |
+| `scripts/` | `toolchain/` |
+| `catalog/catalog_master_kora.yml` | `docs/generated/catalog.yml` |
+
+Si encuentras referencias legacy en handoffs viejos, comentarios o helpers de
+compatibilidad, tratarlas como contexto historico, no como topologia vigente.
+
+## Arquitectura Actual
 
 | Capa | Path | Rol | Git |
 |------|------|-----|-----|
-| Constitucion | `specs/` | Reglas de gobernanza, precedencia, identidad, formatos (8 specs) | tracked |
-| Conocimiento | `KNOWLEDGE/` | Artefactos publicados por namespace (`kora/`, `fxsl/`, `gn/`, `salud/`, etc.) | tracked |
-| Workspaces IR | `AGENTS/` | Workspaces agente ejecutables — IR canonico (5 componentes + skills/) | tracked |
-| Skills | `SKILLS/` | Libreria de skills agentskills.io-compatible (`data-modeling/`, `ux-design/`, etc.) | tracked |
-| Perfiles | `AGENTS/_perfiles/` | Specs de personalidad/comportamiento (input al IR, no workspaces) | tracked |
-| Pipeline | `OPERATIONS/` | Pipeline de conocimiento: `inbox/` y `drafts/` tracked; `source/` y `build/` gitignored | parcial |
-| Build | `BUILD/` | Outputs de transmutacion de agentes a plataformas (Codex, openclaw, gemini, codex) | gitignored |
-| Toolchain | `scripts/kora` | CLI Python que indexa, valida, migra, genera docs y transmuta | tracked |
-| Schemas | `schemas/` | JSON Schemas para validacion de `config.json` y bootstrap artifacts | tracked |
+| Constitucion | `governance/` | Reglas meta y precedencia | tracked |
+| Ontologia | `ontology/` | Modelo de artefactos, calidad, procesos y riesgo | tracked |
+| Serializacion | `serialization/` | Shapes de authoring y schemas | tracked |
+| Runtime | `runtime/` | Proyecciones, runtime extensions y multiagente | tracked |
+| Knowledge | `artifacts/knowledge/` | Artefactos KORA/MD publicados + staging | tracked |
+| Agentes | `artifacts/agents/` | Artefactos agenticos productivos + staging | tracked |
+| Skills | `artifacts/skills/` | Skills productivas + staging | tracked |
+| Toolchain | `toolchain/kora` y `toolchain/kora_lib/` | CLI Python soportada | tracked |
+| Tests | `tests/` | Verificacion ejecutable | tracked |
+| Docs derivadas | `docs/generated/` | Vistas materializadas regenerables | tracked |
 
-Pipeline de conocimiento: `OPERATIONS/source/` (gitignored) -> `OPERATIONS/drafts/` (tracked) -> `KNOWLEDGE/` (tracked). Usar `python3 scripts/kora intake` para ver estado de absorcion.
+Pipelines activos:
 
-Pipeline de agentes: `AGENTS/{ns}/{name}/` (IR) -> `python3 scripts/kora transmute --target {Codex,openclaw,...}` -> `BUILD/{target}/` (gitignored).
+- `artifacts/knowledge/_SCRIPTORIUM/INBOX/ -> REVIEW/ -> artifacts/knowledge/{ns}/...`
+- `artifacts/agents/_FRAGUA/INBOX/ -> REVIEW/ -> artifacts/agents/{ns}/{name}/`
+- `artifacts/skills/_TALLER/INBOX/ -> REVIEW/ -> artifacts/skills/{ns}/{name}/`
 
 ## Source Of Truth
 
 - El source of truth es el filesystem con manifests validos.
-- `catalog/catalog_master_kora.yml` es una vista materializada generada por `python3 scripts/kora index`. No es autoritativa.
-- No escribas conteos a mano en docs publicas. Usa `python3 scripts/kora sync-docs`.
-- No tomes `README.md` o docs antiguos como autoridad si contradicen la CLI o las specs vigentes.
+- `docs/generated/catalog.yml` es derivado de `python3 toolchain/kora index`.
+  No es autoritativo.
+- `docs/generated/*` es materializado y regenerable. No escribas conteos a
+  mano.
+- No tomes `README.md`, handoffs viejos o wrappers legacy como autoridad si
+  contradicen la CLI actual o las specs vigentes.
 
 ## Precedencia
 
-1. `specs/gobernanza.md`
-2. `specs/spec-md.md` y `specs/md-spec.md`
-3. `specs/agent-spec-md.md`, `specs/skill-spec-md.md`, `specs/runtime-spec-md.md`, `specs/swarm-spec-md.md`
-4. extensiones de namespace
+1. `governance/gobernanza.md`
+2. `ontology/harness-spec.md`
+3. `serialization/autoria-spec.md`, `serialization/md-spec.md`,
+   `serialization/knowledge-spec.md`
+4. `runtime/runtime-spec-md.md`, `runtime/transmutation-spec.md`,
+   `runtime/multiagente-spec.md` y `runtime/*-runtime-extension.md`
+5. extensiones y artefactos de namespace
 
 ## Formal Layer
 
-- La unica Formal Layer oficial es `KNOWLEDGE/kora/categorical-foundations/`.
-- `KNOWLEDGE/fxsl/cat/` es corpus auxiliar.
+- La unica Formal Layer oficial es
+  `artifacts/knowledge/kora/categorical-foundations/`.
+- `artifacts/knowledge/fxsl/cat/` es corpus auxiliar.
 - `Traces to:` solo puede apuntar a documentos de la Formal Layer oficial.
-- Si una idea viene de `fxsl/cat` y no ha sido absorbida formalmente, usala como `Rationale:`, no como traza oficial.
+- Si una idea viene de `fxsl/cat` y no ha sido absorbida formalmente, usala
+  como `Rationale:` o apoyo editorial, no como traza oficial.
 
-## Identidad URN
+## Modelo Actual De Artefactos
 
-Dos regimenes distintos:
+No asumas el workspace legacy de 5 archivos (`AGENTS.md`, `TOOLS.md`, `SOUL.md`,
+`USER.md`, `config.json`) como forma canonica actual.
 
-- **Conceptual** (`urn:{ns}:kb:{id}` + campo `version`): artefactos de conocimiento publicados en `KNOWLEDGE/`.
-- **Ejecutable** (`urn:{ns}:agent-bootstrap:{id}:{version}` o `skill:{id}:{version}`): workspaces y skills en `AGENTS/`.
+Hoy la unidad productiva principal es:
 
-El `kind` del manifest (`bootstrap_config`, `bootstrap_agents`, etc.) es ortogonal al URN.
+- `AGENT.md` para agentes en `artifacts/agents/{ns}/{name}/`
+- `SKILL.md` para skills en `artifacts/skills/{ns}/{name}/`
 
-## Modelo Del Workspace
+Ambos siguen el shape unificado de `serialization/autoria-spec.md`, con
+frontmatter `_manifest`, `version` fuera del URN y payload bajo `artefacto:`.
 
-Todo workspace agente KORA se compone de:
+Fibras adjuntas posibles:
 
-- `AGENTS.md`: behavior (secciones canonicas: 1. FSM, 2. Reglas Duras, 3. Co-induccion, 4. Contexto Multi-turno, 5. Wiring)
-- `TOOLS.md`: interfaz semantica declarada
-- `SOUL.md` y `USER.md`: estado/contexto
-- `config.json`: security + runtime envelope (validado contra `schemas/kora-agent-config-schema.json`)
-- `skills/`: capacidades lazy-load
+- `skills/`
+- `memoria/`
+- `MEMORY.md`
+- `_BUILD/`
+- `scripts/`
+- `referencias/`
+- `recursos/`
 
-Convenciones duras:
-
-- `TOOLS.md` y `config.json.tools.allow` deben coincidir exactamente.
-- `config.json.runtime_capabilities` contiene permisos crudos del runtime.
-- `sub_agents.max_concurrent` es ausente o `>= 1`; nunca `0`.
-- los skills usan identidad `urn:{namespace}:skill:{id}:{version}`.
-- la grammar canonica de skill degenerado es `Proposito`, `Input/Output`, `Procedimiento`, `Signature Output`.
+Antes de editar, inspecciona el directorio concreto. No proyectes a ciegas un
+shape viejo sobre un artefacto productivo nuevo.
 
 ## Toolchain CLI
 
-Entrypoint: `scripts/kora` (Python 3, deps en `requirements.txt`: PyYAML, jsonschema, pytest, openpyxl, requests).
+Entrypoint soportado: `toolchain/kora` (Python 3).
 
-Modulos en `scripts/kora_lib/`: `cli.py` (argparse), `config.py` (paths y constantes), `catalog.py` (index/resolve), `validation.py` (validate/lint-md), `audit.py` (health), `graph.py` (grafo categorial), `migration.py` (codemods), `reports.py` (stats/sync-docs), `intake.py` (pipeline), `workspaces.py` (iteradores de workspaces/skills), `artifacts.py` (load/dump YAML frontmatter), `contracts.py` (operating core), `fxsl_cat.py` (ledger fxsl), `agent_audit.py` (audit por cohort).
-
-### Comandos
+Comandos utiles:
 
 ```bash
-# Indexar catalogo (siempre antes de health/validate/stats)
-python3 scripts/kora index
-
-# Resolver URN a path
-python3 scripts/kora resolve "urn:kora:kb:agent-spec-md"
-
-# Salud del repo (broken URNs, routes, fragments)
-python3 scripts/kora health --strict
-
-# Validar workspaces contra spec
-python3 scripts/kora validate --profile strict
-python3 scripts/kora validate --profile strict --cohort meta-kora   # solo un cohort
-
-# Lint de artefactos KORA/MD publicados
-python3 scripts/kora lint-md                    # todo KNOWLEDGE/ + drafts/
-python3 scripts/kora lint-md KNOWLEDGE/gn/      # path especifico
-python3 scripts/kora lint-md --fix              # auto-fix seguro antes de lint
-
-# Stats y grafo
-python3 scripts/kora stats --json
-python3 scripts/kora graph --json
-
-# Migracion de deuda legacy
-python3 scripts/kora migrate --profile transitional
-python3 scripts/kora migrate --profile transitional --dry-run
-python3 scripts/kora migrate --profile transitional --cohort domains
-
-# Pipeline de absorcion
-python3 scripts/kora intake
-
-# Regenerar docs publicas
-python3 scripts/kora sync-docs
+python3 toolchain/kora index
+python3 toolchain/kora resolve "urn:kora:kb:harness-spec"
+python3 toolchain/kora check --strict
+python3 toolchain/kora check --list
+python3 toolchain/kora health --strict
+python3 toolchain/kora validate --profile strict
+python3 toolchain/kora lint-md
+python3 toolchain/kora stats --json
+python3 toolchain/kora graph --json
+python3 toolchain/kora kb-graph --json --orphans
+python3 toolchain/kora transmute --help
+python3 toolchain/kora ingest --help
+python3 toolchain/kora sync-docs
 ```
 
-Cohorts disponibles para `--cohort`: `meta-kora`, `dev`, `ops`, `domains`.
+Regla operativa: la maintenance gate por defecto es `python3 toolchain/kora check --strict`.
+Usa `health`, `validate`, `lint-md`, `migrate`, `promote` o `deprecate` cuando
+necesites una fase puntual, no como reemplazo de la gate unificada.
 
-Outputs generados en `docs/generated/`: `repo-stats`, `repo-graph`, `operating-core-contracts`, `fxsl-cat-ledger`, `agent-audit` (formatos `.json` y `.md`).
+## Tests
 
-### Tests
+Suite completa:
 
 ```bash
-# Suite completa
 python3 -m unittest discover -s tests
-
-# Un test individual
-python3 -m unittest tests.test_cli_smoke
-python3 -m unittest tests.test_cli_smoke.KoraCliSmokeTests.test_health_strict_is_green
-
-# Solo validacion semantica
-python3 -m unittest tests.test_semantic_validation
 ```
 
-Los tests usan `tests/common.py` que provee `run_cli()` (subprocess al entrypoint `scripts/kora`) y paths estandar (`ROOT`, `AGENTS_ROOT`, `FIXTURES`, `GENERATED_DOCS`). Fixtures en `tests/fixtures/`.
+Tests puntuales:
 
-Suites existentes: `test_cli_smoke` (smoke de todos los comandos CLI), `test_artifacts` (load/validate de fixtures), `test_semantic_validation` (reglas semanticas profundas), `test_graph_invariants` (invariantes del grafo categorial), `test_operating_core_scenarios` (contratos del nucleo), `test_agent_audit` (audit por cohort).
+```bash
+python3 -m unittest tests.test_cli_smoke
+python3 -m unittest tests.test_semantic_validation
+python3 -m unittest tests.test_check_pipeline
+```
+
+`tests/common.py` ya modela la reorg v5:
+
+- deriva `TOOLCHAIN_DIR` con fallback legacy a `scripts/`
+- usa `docs/generated/` como raiz de salidas materializadas
+- expone helpers de portabilidad como `canonical_path()`
+
+Suites actuales:
+
+- `test_cli_smoke`
+- `test_artifacts`
+- `test_semantic_validation`
+- `test_graph_invariants`
+- `test_operating_core_scenarios`
+- `test_agent_audit`
+- `test_check_pipeline`
+- `test_atomize`
+- `test_autoria_validate`
+- `test_migrate_autoria`
 
 ## Secuencia De Trabajo
 
-Cuando cambies specs, workspaces o knowledge estructural:
+Cuando cambies specs, toolchain, artefactos estructurales o docs operativas:
 
 1. aplica cambios
-2. `python3 scripts/kora migrate --profile transitional` si hubo deuda legacy
-3. `python3 scripts/kora index`
-4. `python3 scripts/kora health --strict`
-5. `python3 scripts/kora validate --profile strict`
-6. `python3 scripts/kora sync-docs`
-7. `python3 -m unittest discover -s tests`
+2. `python3 toolchain/kora index`
+3. `python3 toolchain/kora check --strict`
+4. `python3 -m unittest discover -s tests`
+5. `python3 toolchain/kora kb-graph --json --orphans` si tocaste knowledge o relaciones
+6. `python3 toolchain/kora sync-docs` si realmente quieres regenerar `docs/generated/`
+
+Si la tarea requiere migracion explicita:
+
+```bash
+python3 toolchain/kora migrate --profile a-autoria
+python3 toolchain/kora migrate --profile a-autoria --cohort meta-kora --dry-run
+```
 
 ## Notas Practicas
 
-- usa `python3 scripts/kora graph --json` cuando necesites auditar nodos y morfismos del repo, no inferirlos a mano.
-- usa `docs/generated/operating-core-contracts.*` para ver el contrato operativo extraido del nucleo sin releer workspace por workspace.
-- si agregas una nueva regla absoluta, debe tener enforcement razonable o bajar a `DEBERIA`.
-- si corriges `fxsl/cat`, hazlo para eliminar ruido auditivo o preparar absorcion formal, no para darle autoridad normativa directa.
-- `OPERATIONS/` es local-only (gitignored). No asumas que existe en un clone fresco.
-- los artefactos KORA/MD usan YAML frontmatter (`---`) con `_manifest.urn` obligatorio.
+- Usa `python3 toolchain/kora transmute --help` para verificar targets vivos.
+- Usa `python3 toolchain/kora check --list` para verificar el registry actual de checks.
+- No asumas que las cifras de handoffs viejos siguen vigentes; vuelvelas a medir.
+- `docs/generated/*` se modifica al correr ciertos comandos. No mezcles esas
+  salidas en un cambio si no forman parte del objetivo.
+- El directorio `scripts/` raiz es residual; la toolchain viva esta en
+  `toolchain/`.
+- Si corriges `artifacts/knowledge/fxsl/cat/`, hazlo para reducir ruido o
+  preparar absorcion formal, no para darle autoridad normativa directa.

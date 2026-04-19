@@ -1,162 +1,165 @@
 # KORA
 
-Monorepo de especificaciones, conocimiento y workspaces de agentes gobernados por una capa formal categorial y una toolchain ejecutable.
+Monorepo de gobernanza, ontologia, serializacion, runtimes y artefactos
+agenticos. No es una aplicacion tradicional: el activo principal es la
+coherencia entre specs, knowledge, agentes, skills y toolchain.
 
-## Que Es
+## Historia corta
 
-KORA organiza el ecosistema en cuatro estratos:
+- Hasta la reorg v5 del `2026-04-18`, el repo usaba una topologia legacy con
+  `specs/`, `AGENTS/`, `SKILLS/`, `KNOWLEDGE/`, `schemas/` y `scripts/`.
+- La reorg v5 hizo visibles en el filesystem las capas constitucionales y movio
+  los artefactos productivos a `artifacts/` y la CLI a `toolchain/`.
+- El cierre estructural del `2026-04-19` agrego `qa-spec`, `procesos-spec`,
+  `risk-register-spec`, `multiagente-spec` y el target `mastra`.
+- Si encuentras rutas legacy en handoffs viejos o wrappers de compatibilidad,
+  tratarlas como historia o fallback, no como topologia actual.
 
-- `specs/`: ley operativa del sistema.
-- `KNOWLEDGE/`: artefactos descriptivos KORA/MD.
-- `AGENTS/`: workspaces ejecutables KORA.
-- `scripts/`: CLI oficial y utilitarios auxiliares. La frontera operativa esta documentada en `scripts/README.md`.
+## Composicion actual
 
-Ademas, el repo opera sobre un pipeline de transformacion de artefactos:
+| Capa | Path | Rol |
+|------|------|-----|
+| Constitucion | `governance/` | Precedencia y reglas meta del sistema |
+| Ontologia | `ontology/` | Modelo canonico de artefactos y procesos |
+| Serializacion | `serialization/` | Shapes de authoring y schemas JSON |
+| Runtime | `runtime/` | Proyecciones, transmutacion y extensiones por plataforma |
+| Artefactos | `artifacts/` | Knowledge, agentes y skills productivos o en staging |
+| Toolchain | `toolchain/` | CLI `kora`, `kora_lib/`, checks y utilitarios soportados |
+| Tests | `tests/` | Suite ejecutable del repo |
+| Docs derivadas | `docs/generated/` | Vistas materializadas regenerables |
+| Handoffs y memoria | `docs/reports/`, `docs/plans/` | Evidencia historica y documentos operativos |
 
-- `OPERATIONS/inbox/`: bandeja de entrada operacional local.
-- `OPERATIONS/source/`: insumos fuente aun no publicados.
-- `OPERATIONS/drafts/`: artefactos transformados en prepublicacion.
-- `KNOWLEDGE/`: conocimiento publicado.
-- `OPERATIONS/build/`: evidencia tecnica de corridas; no forma parte de la base de conocimiento.
-
-La Formal Layer oficial vive en `KNOWLEDGE/kora/categorical-foundations/`. El corpus `KNOWLEDGE/fxsl/cat/` permanece como material auxiliar y solo entra a la ley operativa por absorcion formal explicita.
-
-## Arquitectura
+Topologia rapida:
 
 ```text
 kora/
-  specs/                        constitucion y specs derivadas
-  KNOWLEDGE/                    KBs por namespace
-    kora/categorical-foundations/   formal layer oficial (00-08)
-    fxsl/cat/                       corpus categorial auxiliar
-  AGENTS/                       workspaces de agentes por namespace
-  catalog/                      vista materializada del grafo de artefactos
-  docs/                         capa documental auxiliar (ver docs/README.md)
-    generated/                 salidas vivas generadas por la CLI
-    plans/                     planes, blueprints y handoffs
-    reports/                   evidencia y reportes de corridas
-  schemas/                      contratos JSON para bootstrap y config
-  scripts/                      CLI oficial + soporte acotado + legacy
-  OPERATIONS/                   superficies operacionales locales no portables
-    inbox/                      cola operacional de ingesta
-    source/                     insumos fuente
-    drafts/                     prepublicacion
-    build/                      evidencia tecnica de procesos
-  KNOWLEDGE/                    conocimiento publicado
+  governance/
+  ontology/
+  serialization/
+    schemas/
+  runtime/
+  artifacts/
+    knowledge/
+    agents/
+    skills/
+  toolchain/
+    kora
+    kora_lib/
+  tests/
+  docs/
+    generated/
+    reports/
+    plans/
 ```
 
-## Pipeline Operativo
+## Artefactos y staging
 
-El ciclo normal de incorporacion de artefactos es:
+Los pipelines activos viven bajo `artifacts/`:
 
-```text
-OPERATIONS/inbox/ -> OPERATIONS/source/ -> OPERATIONS/drafts/ -> KNOWLEDGE/
-                                         \-> OPERATIONS/build/   (evidencia tecnica paralela)
-```
+- Knowledge:
+  `artifacts/knowledge/_SCRIPTORIUM/INBOX/ -> REVIEW/ -> artifacts/knowledge/{ns}/...`
+- Agentes:
+  `artifacts/agents/_FRAGUA/INBOX/ -> REVIEW/ -> artifacts/agents/{ns}/{name}/`
+- Skills:
+  `artifacts/skills/_TALLER/INBOX/ -> REVIEW/ -> artifacts/skills/{ns}/{name}/`
 
-Semantica de cada etapa:
+Los directorios de staging son pre-categoriales: no representan namespace
+canonico hasta que el artefacto se promueve.
 
-- `OPERATIONS/inbox/`: activa trabajo pendiente o registra una corrida operacional.
-- `OPERATIONS/source/`: conserva materia prima o insumo semiestructurado.
-- `OPERATIONS/drafts/`: contiene artefactos ya transformados pero aun no promovidos.
-- `KNOWLEDGE/`: contiene artefactos publicados y catalogables.
-- `OPERATIONS/build/`: guarda locks, projections, reports y evidence; queda fuera de `index`, `graph` y `health` por diseno.
+## Source Of Truth
 
-`OPERATIONS/` es local-only: queda fuera del clone portable de KORA y se excluye via `.gitignore`.
+- El source of truth es el filesystem con manifests validos.
+- `docs/generated/catalog.yml` es una vista materializada generada por
+  `python3 toolchain/kora index`. No es autoritativa.
+- `docs/generated/*` es derivado y regenerable. No escribas conteos a mano.
+- Si `README.md`, handoffs viejos o wrappers legacy contradicen a la CLI actual
+  o a las specs vigentes, manda la CLI actual y las specs.
 
-## Gobernanza
+## Specs vivas
 
-La precedencia normativa es:
+Las capas visibles en el repo son:
 
-1. `specs/gobernanza.md`
-2. `specs/spec-md.md` y `specs/md-spec.md`
-3. `specs/agent-spec-md.md`, `specs/skill-spec-md.md`, `specs/runtime-spec-md.md`, `specs/swarm-spec-md.md`
-4. extensiones de namespace
+- `governance/gobernanza.md`
+- `ontology/harness-spec.md`
+- `ontology/qa-spec.md`
+- `ontology/procesos-spec.md`
+- `ontology/risk-register-spec.md`
+- `serialization/autoria-spec.md`
+- `serialization/md-spec.md`
+- `serialization/knowledge-spec.md`
+- `runtime/runtime-spec-md.md`
+- `runtime/transmutation-spec.md`
+- `runtime/multiagente-spec.md`
+- `runtime/*-runtime-extension.md`
 
-Reglas clave del nuevo regimen:
+La Formal Layer oficial vive en
+`artifacts/knowledge/kora/categorical-foundations/`. El corpus
+`artifacts/knowledge/fxsl/cat/` sigue siendo auxiliar.
 
-- `Traces to:` solo puede apuntar a `KNOWLEDGE/kora/categorical-foundations/`.
-- `Rationale:` absorbe apoyo no normativo o pragmatica operativa.
-- `TOOLS.md` declara interfaz semantica.
-- `config.json.tools.allow` debe coincidir exactamente con esa interfaz.
-- `config.json.runtime_capabilities` contiene permisos crudos del runtime.
-- el catalogo no es source of truth; es una vista derivada del filesystem y sus manifests.
+## CLI base
 
-## Rol De Docs
+Entrypoint soportado: `python3 toolchain/kora`.
 
-`docs/` no es fuente canonica del sistema. Su rol es documental:
-
-- `docs/generated/` contiene artefactos derivados y regenerables.
-- `docs/plans/` contiene planes, blueprints y handoffs de trabajo.
-- `docs/reports/` contiene reportes de corridas o evidencia historica.
-
-La convencion completa vive en [`docs/README.md`](docs/README.md).
-
-## Valor De Directorios Base
-
-Estos directorios no cumplen el mismo papel. Su valor dentro del repo es distinto:
-
-- `specs/`: constitucion operativa de KORA. Aqui vive la ley del sistema: precedencia, grammar, agent spec, skill spec, runtime spec y swarm spec. Si otro artefacto contradice `specs/`, manda `specs/`.
-- `catalog/`: indice materializado del repo. Su valor es operativo: resolver URNs, alimentar stats, graph, health y docs generadas. Es critico para observabilidad y tooling, pero sigue siendo derivado del filesystem y sus manifests.
-- `schemas/`: contratos mecanicos minimos para bootstrap y config. Su valor es de enforcement estructural: permiten validar forma, envelope y campos obligatorios antes de entrar a validaciones semanticas mas profundas.
-- `scripts/`: toolchain ejecutable del monorepo. Su valor es convertir la ley y el filesystem en operaciones reales: indexar, resolver, validar, auditar, generar docs e intake. La convencion de su superficie soportada vive en `scripts/README.md`.
-- `tests/`: verificador ejecutable del sistema. Su valor es institucionalizar supuestos y detectar drift, regresiones o falsos verdes del tooling. Si `specs/` define la ley, `tests/` verifica que la implementacion siga obedeciendola.
-
-Lectura rapida:
-
-- `specs/` define
-- `schemas/` restringe
-- `scripts/` opera
-- `catalog/` indexa
-- `tests/` verifica
-- `docs/` explica
-
-## Comandos
+Comandos base:
 
 ```bash
-python3 scripts/kora index
-python3 scripts/kora resolve "urn:kora:kb:agent-spec-md"
-python3 scripts/kora health --strict
-python3 scripts/kora validate --profile strict
-python3 scripts/kora stats --json
-python3 scripts/kora graph --json
-python3 scripts/kora migrate --profile transitional
-python3 scripts/kora sync-docs
-python3 scripts/kora intake
+python3 toolchain/kora index
+python3 toolchain/kora resolve "urn:kora:kb:harness-spec"
+python3 toolchain/kora check --strict
+python3 toolchain/kora check --list
+python3 toolchain/kora stats --json
+python3 toolchain/kora graph --json
+python3 toolchain/kora kb-graph --json --orphans
+python3 toolchain/kora transmute --help
+python3 toolchain/kora ingest --help
+python3 toolchain/kora sync-docs
 ```
 
-## Flujo Recomendado
+La maintenance gate por defecto ya no es una secuencia manual de `health` y
+`validate`: el punto de entrada recomendado es `check --strict`, que compone
+los checks activos del repo. Los subcomandos especializados (`health`,
+`validate`, `lint-md`, `migrate`, `promote`, `deprecate`) siguen existiendo y
+se usan cuando la tarea lo requiere.
 
-Despues de cambios estructurales:
+## Runtimes target
 
-1. `python3 scripts/kora migrate --profile transitional`
-2. `python3 scripts/kora index`
-3. `python3 scripts/kora health --strict`
-4. `python3 scripts/kora validate --profile strict`
-5. `python3 scripts/kora sync-docs`
+Segun `python3 toolchain/kora transmute --help`, los targets soportados hoy son:
 
-## Metricas Vivas
+- `agentskills`
+- `claude-code`
+- `codex`
+- `gemini`
+- `mastra`
+- `openclaw`
 
-No mantengas conteos a mano. Las metricas actuales se generan desde el catalogo vivo:
+## Verificacion minima
 
-- [`docs/generated/repo-stats.md`](docs/generated/repo-stats.md)
-- [`docs/generated/repo-stats.json`](docs/generated/repo-stats.json)
-- [`docs/generated/repo-graph.json`](docs/generated/repo-graph.json)
-- [`docs/generated/operating-core-contracts.json`](docs/generated/operating-core-contracts.json)
-- [`docs/generated/operating-core-contracts.md`](docs/generated/operating-core-contracts.md)
-- [`docs/generated/fxsl-cat-ledger.json`](docs/generated/fxsl-cat-ledger.json)
-- [`docs/generated/fxsl-cat-ledger.md`](docs/generated/fxsl-cat-ledger.md)
-
-Regeneracion:
+Despues de cambios estructurales o documentales relevantes:
 
 ```bash
-python3 scripts/kora index
-python3 scripts/kora sync-docs
+python3 toolchain/kora index
+python3 toolchain/kora check --strict
+python3 -m unittest discover -s tests
+python3 toolchain/kora kb-graph --json --orphans
 ```
+
+Usa `python3 toolchain/kora sync-docs` solo cuando quieras regenerar
+explicitamente salidas publicas en `docs/generated/`.
+
+## Notas practicas
+
+- No asumas que `scripts/` raiz es la toolchain viva; hoy es solo residuo de
+  compatibilidad.
+- No asumas el layout pre-v5 (`specs/`, `AGENTS/`, `SKILLS/`, `KNOWLEDGE/`,
+  `schemas/`) como actual.
+- No mantengas snapshots numericos a mano en docs generales; obtenlos con la
+  CLI.
+- Si necesitas la forma real del repo, inspecciona el arbol y no un handoff
+  historico aislado.
 
 ## Pruebas
 
-La suite minima del auditor categorial vive en `tests/` y se ejecuta con:
+La suite se ejecuta con:
 
 ```bash
 python3 -m unittest discover -s tests
