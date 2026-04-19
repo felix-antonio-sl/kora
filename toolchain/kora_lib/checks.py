@@ -396,7 +396,7 @@ def _check_kb_graph_cycles(path_filter=None):
             check_id="kb-graph-cycles",
             severity="high",
             scope="repo",
-            path="KNOWLEDGE/",
+            path="artifacts/knowledge/",
             message=f"{graph['stats']['cycles_in_depends']} cycle(s) in depends graph",
         ))
     for edge in graph.get("broken_edges", []):
@@ -412,9 +412,9 @@ def _check_kb_graph_cycles(path_filter=None):
 
 
 def _check_knowledge_zone(path_filter=None):
-    """Verify all files in KNOWLEDGE/{ns}/ (productivo) have valid _manifest.
+    """Verify all files in artifacts/knowledge/{ns}/ (productivo) have valid _manifest.
 
-    Excluye KNOWLEDGE/_SCRIPTORIUM/ (staging pre-categorial) del check: el
+    Excluye artifacts/knowledge/_SCRIPTORIUM/ (staging pre-categorial) del check: el
     SCRIPTORIUM acepta material crudo sin frontmatter.
     """
     import os
@@ -457,8 +457,8 @@ def _check_knowledge_zone(path_filter=None):
                         severity="high",
                         scope="artifact",
                         path=rel,
-                        message="File in KNOWLEDGE/{ns}/ lacks _manifest frontmatter",
-                        fix_hint="Add KORA/MD frontmatter or move to KNOWLEDGE/_SCRIPTORIUM/INBOX/",
+                        message="File in artifacts/knowledge/{ns}/ lacks _manifest frontmatter",
+                        fix_hint="Add KORA/MD frontmatter or move to artifacts/knowledge/_SCRIPTORIUM/INBOX/",
                     ))
             elif not fname.startswith("."):
                 rel = str(fpath.relative_to(KORA_ROOT))
@@ -467,8 +467,8 @@ def _check_knowledge_zone(path_filter=None):
                     severity="medium",
                     scope="artifact",
                     path=rel,
-                    message=f"Non-markdown file in KNOWLEDGE/{{ns}}/: {fname}",
-                    fix_hint="Move to KNOWLEDGE/_SCRIPTORIUM/INBOX/",
+                    message=f"Non-markdown file in artifacts/knowledge/{{ns}}/: {fname}",
+                    fix_hint="Move to artifacts/knowledge/_SCRIPTORIUM/INBOX/",
                 ))
 
     if path_filter:
@@ -700,11 +700,11 @@ def _check_skill_structure(path_filter=None):
         for entry in sorted(SKILLS_ROOT.iterdir()):
             if not entry.is_dir() or entry.name.startswith((".", "_")):
                 continue
-            # Directo: SKILLS/{name}/SKILL.md
+            # Directo: artifacts/skills/{name}/SKILL.md
             if (entry / "SKILL.md").exists():
                 yield entry
                 continue
-            # Con namespace: SKILLS/{ns}/{name}/SKILL.md
+            # Con namespace: artifacts/skills/{ns}/{name}/SKILL.md
             for sub in sorted(entry.iterdir()):
                 if not sub.is_dir() or sub.name.startswith((".", "_")):
                     continue
@@ -735,7 +735,7 @@ def _check_skill_structure(path_filter=None):
                     scope="artifact",
                     path=rel,
                     message="Habilidad productiva anida 'skills/' — composicionalidad debe declararse en extensions.kora.componible_con (autoria-spec §9)",
-                    fix_hint="Extrae sub-habilidades a SKILLS/{name}/ top-level y referencialas via componible_con",
+                    fix_hint="Extrae sub-habilidades a artifacts/skills/{ns}/{name}/ y referencialas via componible_con",
                 ))
             else:
                 diags.append(Diagnostic(
@@ -1403,7 +1403,7 @@ def _register_builtins():
         _check_workspace_validity,
     )
     register_check(
-        Check("knowledge-zone", "KNOWLEDGE/ contains only valid KORA/MD artifacts",
+        Check("knowledge-zone", "artifacts/knowledge/ contains only valid KORA/MD artifacts",
               scope="artifact", severity="high", enforcement="lint",
               spec_ref="knowledge-spec §3.1, §8.1", phase="verify"),
         _check_knowledge_zone,

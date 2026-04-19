@@ -110,8 +110,8 @@ def main():
     
     for ext in extensions:
         for file_path in base_dir.rglob(f'*{ext}'):
-            # Skip .git and scripts to not break ourselves
-            if '.git' in str(file_path) or 'scripts/kora_transmuter' in str(file_path):
+            # Skip .git and the frozen one-shot itself to not break ourselves
+            if '.git' in str(file_path) or 'toolchain/legacy_migration/kora_transmuter' in str(file_path):
                 continue
                 
             changed, count = process_file(file_path)

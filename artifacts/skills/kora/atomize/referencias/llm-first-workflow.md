@@ -55,13 +55,13 @@ posterior: lint, promotion, index y chequeos de integridad.
 12. Pasar `quality-gates.md`.
 13. Pasar `semantic-fidelity-review.md` con un packet de muestras.
 14. Escribir los drafts directamente en
-   `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/`.
+   `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/`.
 15. Escribir una acceptance review persistente:
-   - `python3 SKILLS/kora/atomize/scripts/review_atomic_acceptance.py <path> --decision accept --summary "..."`
+   - `python3 artifacts/skills/kora/atomize/scripts/review_atomic_acceptance.py <path> --decision accept --summary "..."`
    - esto debe dejar `atomic-<slug>-review.md` junto al bundle
 16. Ejecutar validacion mecanica al final:
-   - `python3 scripts/kora lint-md <path-o-dir>`
-   - `python3 SKILLS/kora/atomize/scripts/publish_atomic.py <draft-o-index>`
+   - `python3 toolchain/kora lint-md <path-o-dir>`
+   - `python3 artifacts/skills/kora/atomize/scripts/publish_atomic.py <draft-o-index>`
 
 ## Heuristicas de calidad
 
@@ -84,9 +84,9 @@ posterior: lint, promotion, index y chequeos de integridad.
 `atomize` es el productor canonico de la familia `atomic` y la unica ruta
 soportada para emitir nuevos artefactos de esa familia.
 
-- `python3 scripts/kora atomize ...` es la superficie mecanica del mismo
+- `python3 toolchain/kora atomize ...` es la superficie mecanica del mismo
   productor canonico.
-- `SKILLS/kora/atomize/scripts/atomize.py` es el wrapper portable del skill
+- `artifacts/skills/kora/atomize/scripts/atomize.py` es el wrapper portable del skill
   para esa misma superficie.
 - Ninguna de esas superficies constituye un modo degradado alternativo.
 

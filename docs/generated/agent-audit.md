@@ -4,10 +4,12 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 
 ## Resumen global
 
-- Fecha: 2026-04-19
 - Cohortes auditadas: meta-kora, dev, ops, domains
+- Cobertura manual: partial
 - Reglas absorbidas sin hallazgos manuales: 10
 - Reglas aun no institucionalizadas: 0
+- Limite: La auditoria manual cubre heuristicas focalizadas sobre AGENTS.md, TOOLS.md, config.json y skills.
+- Limite: No reemplaza validate/check ni certifica cobertura total del corpus normativo.
 
 ## Top 5 deudas sistemicas
 

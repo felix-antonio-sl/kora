@@ -576,7 +576,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     """Transmuta un artefacto IR al runtime target.
 
     Para target=agentskills, el artefacto DEBE ser una habilidad productiva
-    (SKILL.md en SKILLS/{ns}/{name}/ con forma_material: habilidad). La
+    (SKILL.md en artifacts/skills/{ns}/{name}/ con forma_material: habilidad). La
     proyeccion es byte-identical (sin LLM) segun autoria-spec §5.5.
 
     Para otros targets (claude-code, codex, gemini, mastra, openclaw), el artefacto
@@ -801,7 +801,7 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
 
 
 def _lift_codex_skill(file_path: Path):
-    """Eleva un skill Codex a SKILLS/_TALLER/INBOX/."""
+    """Eleva un skill Codex a artifacts/skills/_TALLER/INBOX/."""
     frontmatter, body = load_markdown_parts(file_path)
     if not isinstance(frontmatter, dict):
         raise ValueError(f"No YAML frontmatter in {file_path}")
@@ -858,7 +858,7 @@ def _lift_codex_skill(file_path: Path):
 
 
 def _lift_openclaw_workspace(workspace_dir: Path):
-    """Eleva un workspace OpenClaw completo a AGENTS/_FRAGUA/INBOX/."""
+    """Eleva un workspace OpenClaw completo a artifacts/agents/_FRAGUA/INBOX/."""
     agent_id = workspace_dir.name
     vector = dict(DEFAULT_VECTORS_BY_FROM["openclaw"])
 
@@ -958,7 +958,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
             raise ValueError(f"File not found: {file_path}")
         print(f"  Source: {file_path}")
         if dry_run:
-            print(f"  [dry-run] Would lift to AGENTS/_FRAGUA/INBOX/{file_path.stem}/AGENT.md")
+            print(f"  [dry-run] Would lift to artifacts/agents/_FRAGUA/INBOX/{file_path.stem}/AGENT.md")
             return
         result = _lift_claude_code_subagent(file_path, namespace=namespace)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")
@@ -971,7 +971,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
             raise ValueError(f"File not found: {file_path}")
         print(f"  Source: {file_path}")
         if dry_run:
-            print(f"  [dry-run] Would lift skill to SKILLS/_TALLER/INBOX/")
+            print(f"  [dry-run] Would lift skill to artifacts/skills/_TALLER/INBOX/")
             return
         result = _lift_codex_skill(file_path)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")
@@ -984,7 +984,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
             raise ValueError(f"Workspace not found: {ws_path}")
         print(f"  Source: {ws_path}")
         if dry_run:
-            print(f"  [dry-run] Would lift workspace to AGENTS/_FRAGUA/INBOX/{ws_path.name}/")
+            print(f"  [dry-run] Would lift workspace to artifacts/agents/_FRAGUA/INBOX/{ws_path.name}/")
             return
         result = _lift_openclaw_workspace(ws_path)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")

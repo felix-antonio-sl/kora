@@ -92,7 +92,7 @@ Each registry is a set of Skill metadata records.
 | R_local(A) | agents/{ns}/{name}/skills/ | Skills in agent A's workspace |
 | R_federated(ns) | skills/{ns}/ | Federated Skills for namespace ns |
 | R_global | skills/ (all namespaces) | All federated Skills |
-| R_catalog | catalog/catalog_master_kora.yml | All indexed Skills in monorepo |
+| R_catalog | docs/generated/catalog.yml | All indexed Skills in monorepo |
 
 **Inclusion chain:**
 

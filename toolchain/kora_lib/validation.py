@@ -1334,7 +1334,12 @@ def validate_traces_semantics(path, text):
     for line in text.splitlines():
         if not line.strip().startswith("Traces to:"):
             continue
-        if "KNOWLEDGE/fxsl/cat" in line or "knowledge/fxsl/cat" in line or "urn:fxsl:" in line:
+        if (
+            "artifacts/knowledge/fxsl/cat" in line
+            or "KNOWLEDGE/fxsl/cat" in line
+            or "knowledge/fxsl/cat" in line
+            or "urn:fxsl:" in line
+        ):
             failures.append("Traces to referencia corpus FXSL auxiliar en vez de la formal layer oficial")
         doc_refs = TRACES_TO_DOC_PATTERN.findall(line)
         section_refs = TRACES_TO_SECTION_PATTERN.findall(line)
@@ -1477,12 +1482,28 @@ def validate_workspaces(profile="transitional", cohort=None, emit=True):
 
     # Load autoria universal schema for AGENT.md workspaces if available.
     autoria_schema = None
-    autoria_schema_path = KORA_ROOT / "schemas" / "kora-artefacto.json"
+    autoria_schema_path = KORA_ROOT / "serialization" / "schemas" / "kora-artefacto.json"
+    autoria_schema_error = None
     if autoria_schema_path.exists():
         try:
-            autoria_schema, _ = load_yaml_safe(autoria_schema_path)
-        except Exception:
-            pass
+            autoria_schema, autoria_schema_error = load_yaml_safe(autoria_schema_path)
+            if not autoria_schema:
+                autoria_schema_error = autoria_schema_error or f"Could not load schema from {autoria_schema_path}"
+        except Exception as exc:
+            autoria_schema_error = str(exc)
+    else:
+        autoria_schema_error = f"Schema not found: {autoria_schema_path}"
+
+    if profile == "strict" and autoria_schema is None:
+        report_issue(
+            autoria_schema_path.relative_to(KORA_ROOT),
+            "autoria_schema_missing",
+            autoria_schema_error or f"Could not load schema from {autoria_schema_path}",
+            workspace=None,
+            severity="high",
+        )
+        issue_counts["autoria_schema_missing"] += 1
+        global_failures += 1
 
     for workspace_dir in active_workspaces:
         rel_workspace = workspace_dir.relative_to(KORA_ROOT)

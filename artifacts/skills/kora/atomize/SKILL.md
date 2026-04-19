@@ -113,12 +113,12 @@ La referencia de segmentacion es `~15.000` caracteres por artefacto, pero no
 es un limite fijo: el corte debe hacerse lo mas cerca posible de ese tamaño
 sin romper la estructura del contenido.
 
-Al promover via `kora promote`, el artefacto migra a `KNOWLEDGE/kora/atomic/`
+Al promover via `kora promote`, el artefacto migra a `artifacts/knowledge/kora/atomic/`
 con `status: published`.
 
 **Modo unico de operacion:**
 - `atomize` es el unico productor soportado para emitir artefactos `atomic`.
-- El skill y `python3 scripts/kora atomize ...` son dos superficies del mismo
+- El skill y `python3 toolchain/kora atomize ...` son dos superficies del mismo
   productor canonico; no son modos semanticos alternativos.
 - Ningun scaffold, wrapper auxiliar o salida degradada cuenta como opcion
   equivalente para publicar familia `atomic`.
@@ -276,17 +276,17 @@ Regla corta: `lint OK` no equivale a `atomizacion buena`.
 - FS=100% sobre cifras, fechas, excepciones, nombres propios y referencias
   legales, y sobre la particion semantica relevante del cuerpo sustantivo.
 - IDs `Pxxx` unicos (globalmente en conjunto segmentado).
-- `status: draft` en `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/`.
+- `status: draft` en `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/`.
 
 ## Retrocompatibilidad
 
 El CLI integrado del repo **NO** expone un modo `--legacy`. El formato plano
 `_ATOMIC_GRAPH.md` sigue deprecado por `md-spec §10.4` y queda fuera del flujo
-canonico soportado por `scripts/kora`.
+canonico soportado por `toolchain/kora`.
 
 ## Relacion con otros artefactos
 
-- Citado por: `specs/knowledge-spec.md §12.2` como productor canonico de
+- Citado por: `serialization/knowledge-spec.md §12.2` como productor canonico de
   familia `atomic`.
 - Consume invariantes de: `specs/md-spec.md §5.6` y `§5.6.1`.
 - Pipeline de publicacion: atomize -> `KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/`

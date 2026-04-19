@@ -20,7 +20,7 @@ INTERNAL_REF_PATTERN = re.compile(r"\[->\s*([^\]]+)\]")
 URN_REF_PATTERN = re.compile(r"\[[^\]]+\]\((urn:[^)]+)\)")
 MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 BARE_URN_PATTERN = re.compile(r"urn:[A-Za-z0-9:_\-\.#]+")
-LOCAL_PATH_PATTERN = re.compile(r"(?m)(^|[\s`])(staging/|domains/|source/|sources/|drafts/|build/|OPERATIONS/|KNOWLEDGE/|knowledge/|\.\./)")
+LOCAL_PATH_PATTERN = re.compile(r"(?m)(^|[\s`])(staging/|domains/|source/|sources/|drafts/|build/|OPERATIONS/|artifacts/knowledge/|KNOWLEDGE/|knowledge/|\.\./)")
 KODA_RESIDUE_HEADING_TITLES = {
     "id",
     "version",

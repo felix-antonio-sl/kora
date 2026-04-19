@@ -209,7 +209,7 @@ Los archivos en ` **NO DEBEN** eliminarse tras la publicacion del artefacto. Sir
 El subcomando `kora intake` **DEBE** reportar el estado de cada archivo en ` cruzando con ` y `
 
 ```bash
-scripts/kora intake
+python3 toolchain/kora intake
 ```
 
 Output esperado:
@@ -268,7 +268,7 @@ La estructura de directorios en ` y ` **DEBE** espejar la de ` El namespace y su
 
 | Check | Criterio | Accion si falla |
 | --- | --- | --- |
-| Zonas excluidas | `inbox/`, `, ` no aparecen en catalogo | Verificar exclusion en `scripts/kora` |
+| Zonas excluidas | `inbox/`, `, ` no aparecen en catalogo | Verificar exclusion en `toolchain/kora` |
 | Provenance valida | Todo artefacto publicado tiene `provenance.source` que resuelve a un archivo existente en ` | Corregir provenance o restaurar source |
 | Status coherente | Artefactos en ` tienen `status: draft`; en ` tienen `status: published` | Corregir status |
 | Espejado de namespace | Ruta relativa post-zona es identica entre source/, drafts/ y knowledge/ | Reorganizar directorios |

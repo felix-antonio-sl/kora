@@ -1,9 +1,9 @@
 """Promote a draft artifact from staging to productivo.
 
 Pipeline descentralizado (v8):
-- Knowledge: KNOWLEDGE/_SCRIPTORIUM/REVIEW/{ns}/... → KNOWLEDGE/{ns}/...
-- Agent: AGENTS/_FRAGUA/REVIEW/{name}/ → AGENTS/{ns}/{name}/
-- Skill: SKILLS/_TALLER/REVIEW/{name}/ → SKILLS/{name}/
+- Knowledge: artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/... -> artifacts/knowledge/{ns}/...
+- Agent: artifacts/agents/_FRAGUA/REVIEW/{name}/ -> artifacts/agents/{ns}/{name}/
+- Skill: artifacts/skills/_TALLER/REVIEW/{name}/ -> artifacts/skills/{ns}/{name}/
 
 El promote functor:
 1. Verifies the artifact has valid _manifest with status: draft
@@ -109,7 +109,7 @@ def validate_atomic_acceptance_review(draft_path, *, review_path=None, bundle_pa
 
 
 def cmd_promote_cohort(namespace: str):
-    """Batch promote: todos los drafts en KNOWLEDGE/_SCRIPTORIUM/REVIEW/{ns}/.
+    """Batch promote: todos los drafts en artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/.
 
     Itera archivos .md en review/{ns}/ y sus subdirectorios; para cada draft
     con status: draft, ejecuta cmd_promote. Acumula resultados; aborta al
@@ -194,8 +194,8 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
 
     # Verify the file is in SCRIPTORIUM/REVIEW/
     if review_root not in draft_path.parents and draft_path.parent != review_root:
-        print(f"ERROR: {draft_path_str} no esta en KNOWLEDGE/_SCRIPTORIUM/REVIEW/")
-        print(f"  Ubicacion esperada: KNOWLEDGE/_SCRIPTORIUM/REVIEW/{{ns}}/...")
+        print(f"ERROR: {draft_path_str} no esta en artifacts/knowledge/_SCRIPTORIUM/REVIEW/")
+        print(f"  Ubicacion esperada: artifacts/knowledge/_SCRIPTORIUM/REVIEW/{{ns}}/...")
         raise SystemExit(1)
 
     if not draft_path.exists():
@@ -287,7 +287,7 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
         print(f"PROMOTED: {promoted_urn}")
         print(f"  {source_rel} → {dest_rel}")
         print(f"  status: draft → published")
-    print(f"\nRun 'python3 scripts/kora index' to update the catalog.")
+    print(f"\nRun 'python3 toolchain/kora index' to update the catalog.")
 
 
 # ---------------------------------------------------------------------------
@@ -401,4 +401,4 @@ def cmd_deprecate(path_str: str, *, supersedes: str = None, force: bool = False,
     print(f"  file: {path.relative_to(KORA_ROOT) if KORA_ROOT in path.parents else path}")
     if active_dependents:
         print(f"  WARNING: {len(active_dependents)} dependent(s) still reference this artifact")
-    print(f"\nRun 'python3 scripts/kora index' to update the catalog.")
+    print(f"\nRun 'python3 toolchain/kora index' to update the catalog.")

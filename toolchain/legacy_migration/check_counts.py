@@ -6,7 +6,7 @@ KORA_ROOT = Path(__file__).resolve().parent.parent
 
 yaml_files = list(KORA_ROOT.rglob("*.yml")) + list(KORA_ROOT.rglob("*.yaml"))
 yaml_files = [
-    f for f in yaml_files if ".git" not in str(f) and "scripts/" not in str(f)
+    f for f in yaml_files if ".git" not in str(f) and "toolchain/legacy_migration/" not in str(f)
 ]
 
 indexed = 0

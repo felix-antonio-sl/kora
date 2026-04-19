@@ -120,6 +120,7 @@ class AgentAuditTests(unittest.TestCase):
         self.assertIn("top_systemic_debts", payload["global_summary"])
         self.assertIn("top_false_greens", payload["global_summary"])
         self.assertIn("salud", payload["cohorts"]["domains"]["subgroups"])
+        self.assertEqual(payload["methodology"]["coverage_mode"], "partial")
 
     def test_build_agent_audit_payload_uses_v5_baseline_specs(self):
         payload = build_agent_audit_payload()
@@ -142,7 +143,9 @@ class AgentAuditTests(unittest.TestCase):
         markdown = (GENERATED_DOCS / "agent-audit.md").read_text(encoding="utf-8")
         self.assertIn("cohorts", payload)
         self.assertIn("meta-kora", payload["cohorts"])
+        self.assertEqual(payload["methodology"]["coverage_mode"], "partial")
         self.assertIn("## Cohorte meta-kora", markdown)
+        self.assertIn("Cobertura manual: partial", markdown)
         self.assertIn("`python3 toolchain/kora sync-docs`", markdown)
 
 

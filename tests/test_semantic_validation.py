@@ -392,8 +392,8 @@ class SemanticValidationTests(unittest.TestCase):
             temp_root = Path(tmpdir)
             workspace = temp_root / "agents" / "test" / "sample"
             workspace.mkdir(parents=True)
-            schemas_dir = temp_root / "schemas"
-            schemas_dir.mkdir()
+            schemas_dir = temp_root / "serialization" / "schemas"
+            schemas_dir.mkdir(parents=True)
             (schemas_dir / "kora-artefacto.json").write_text(
                 (ROOT / "serialization" / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
                 encoding="utf-8",
@@ -454,14 +454,15 @@ class SemanticValidationTests(unittest.TestCase):
             self.assertTrue(result["ok"], result["issues"])
             self.assertEqual(result["workspace_invalid"], 0)
             self.assertEqual(result["issues"], [])
+            self.assertEqual(result["bootstrap_validated"], 1)
 
     def test_validate_workspaces_flags_autoria_agent_missing_descripcion(self):
         with TemporaryDirectory() as tmpdir:
             temp_root = Path(tmpdir)
             workspace = temp_root / "agents" / "test" / "sample"
             workspace.mkdir(parents=True)
-            schemas_dir = temp_root / "schemas"
-            schemas_dir.mkdir()
+            schemas_dir = temp_root / "serialization" / "schemas"
+            schemas_dir.mkdir(parents=True)
             (schemas_dir / "kora-artefacto.json").write_text(
                 (ROOT / "serialization" / "schemas" / "kora-artefacto.json").read_text(encoding="utf-8"),
                 encoding="utf-8",
@@ -521,6 +522,68 @@ class SemanticValidationTests(unittest.TestCase):
             categories = {issue["category"] for issue in result["issues"]}
             self.assertIn("envelope-descripcion-requerida", categories)
             self.assertFalse(result["ok"])
+
+    def test_validate_workspaces_strict_fails_if_autoria_schema_missing(self):
+        with TemporaryDirectory() as tmpdir:
+            temp_root = Path(tmpdir)
+            workspace = temp_root / "agents" / "test" / "sample"
+            workspace.mkdir(parents=True)
+            frontmatter = {
+                "_manifest": {
+                    "urn": "urn:test:artefacto:sample",
+                    "type": "artefacto",
+                    "provenance": {
+                        "created_by": "test",
+                        "created_at": "2026-04-18",
+                        "source": "fixture",
+                    },
+                },
+                "version": "1.0.0",
+                "status": "activo",
+                "nombre": "Sample",
+                "descripcion": "Fixture valida salvo por schema ausente.",
+                "tags": ["sample"],
+                "lang": "es",
+                "extensions": {
+                    "kora": {
+                        "vector_ontologico": {"pi": 2, "mu": 1, "xi": 2, "lambda": 0, "phi": 2, "sigma": [2, 1, 2, 2, 1]},
+                        "presentacion": "estado-primario",
+                        "atlas": {"arnes_categorico": "persona", "forma_material": "agente-propiamente-tal"},
+                        "entornos_objetivo": ["codex"],
+                    }
+                },
+                "artefacto": {
+                    "perfil": {
+                        "dominio": ["pruebas"],
+                        "disparadores": ["caso de validacion"],
+                        "salidas": ["resultado"],
+                    },
+                    "plan": {
+                        "estado_inicial": "S-DISPATCHER",
+                        "estado_terminal": "S-END",
+                        "estados": [{"id": "S-DISPATCHER", "accion": "clasificar"}, {"id": "S-END", "accion": "cerrar"}],
+                    },
+                    "interfaz": {"tools": [], "permissions": {"allow": [], "deny": []}},
+                    "contexto": {"memory": {"mode": "session"}},
+                    "invariantes": {
+                        "reglas_duras": ["consistencia con dominio declarado"],
+                        "compromisos_eticos": {
+                            "safety_norm": "Alta; fixture no debe inducir dano.",
+                            "fairness": "Media; aplica criterio uniforme.",
+                            "transparency": "Alta; explicita supuestos.",
+                            "accountability": "Alta; deja trazabilidad del caso.",
+                            "sustainability": "Media; fixture simple y mantenible.",
+                        },
+                    },
+                },
+            }
+            dump_yaml_frontmatter_and_body(workspace / "AGENT.md", frontmatter, "# Sample\n")
+            with patch.object(validation_module, "KORA_ROOT", temp_root), \
+                 patch.object(validation_module, "iter_agent_workspaces", return_value=[workspace]):
+                result = validation_module.validate_workspaces(profile="strict", emit=False)
+            self.assertFalse(result["ok"])
+            self.assertEqual(result["global_failures"], 1)
+            self.assertIn("autoria_schema_missing", result["issue_counts"])
 
     def test_agentfile_dimensions_reads_autoria_dimensions(self):
         from kora_lib import config as config_module

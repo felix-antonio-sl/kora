@@ -1,9 +1,9 @@
 """Intake report para el pipeline descentralizado (v8).
 
 Muestra el estado de los tres staging areas:
-- AGENTS/_FRAGUA/{INBOX,REVIEW}
-- SKILLS/_TALLER/{INBOX,REVIEW}
-- KNOWLEDGE/_SCRIPTORIUM/{INBOX,REVIEW}
+- artifacts/agents/_FRAGUA/{INBOX,REVIEW}
+- artifacts/skills/_TALLER/{INBOX,REVIEW}
+- artifacts/knowledge/_SCRIPTORIUM/{INBOX,REVIEW}
 
 El pipeline centralizado en OPERATIONS/ fue eliminado en v8; cada tipo de
 artefacto tiene su propio pipeline local. Los subdirectorios de INBOX/ son
@@ -61,9 +61,9 @@ def _report_staging_area(label: str, root: Path):
 
 def cmd_intake():
     print("=== KORA Intake Status (pipeline descentralizado v8) ===")
-    _report_staging_area("Agentes (AGENTS/_FRAGUA)", FRAGUA_ROOT)
-    _report_staging_area("Skills (SKILLS/_TALLER)", TALLER_ROOT)
-    _report_staging_area("Knowledge (KNOWLEDGE/_SCRIPTORIUM)", SCRIPTORIUM_ROOT)
+    _report_staging_area("Agentes (artifacts/agents/_FRAGUA)", FRAGUA_ROOT)
+    _report_staging_area("Skills (artifacts/skills/_TALLER)", TALLER_ROOT)
+    _report_staging_area("Knowledge (artifacts/knowledge/_SCRIPTORIUM)", SCRIPTORIUM_ROOT)
 
     # Detalle SCRIPTORIUM/INBOX: reporta sources no trackeados por catalogo
     scriptorium_inbox = SCRIPTORIUM_ROOT / "INBOX"
@@ -89,7 +89,7 @@ def cmd_intake():
                 artifact, _ = load_yaml_safe(file_path)
                 if artifact and isinstance(artifact, dict) and "_manifest" in artifact:
                     prov_source = provenance_source_from_artifact(artifact)
-                    if prov_source and prov_source.startswith(("source/", "KNOWLEDGE/_SCRIPTORIUM/")):
+                    if prov_source and prov_source.startswith(("source/", "artifacts/knowledge/_SCRIPTORIUM/", "KNOWLEDGE/_SCRIPTORIUM/")):
                         src_path = KORA_ROOT / prov_source
                         if not src_path.exists():
                             orphans.append((item.get("file", ""), prov_source))

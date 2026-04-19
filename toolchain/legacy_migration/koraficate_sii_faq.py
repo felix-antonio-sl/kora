@@ -7,7 +7,7 @@ convierte HTML->Markdown, aplica compresion mecanica y genera artefactos KORA/MD
 en KNOWLEDGE/sii/kb/.
 
 Uso:
-    python3 scripts/koraficate_sii_faq.py [--dry-run] [--max-per-group N]
+    python3 toolchain/legacy_migration/koraficate_sii_faq.py [--dry-run] [--max-per-group N]
 """
 
 import json

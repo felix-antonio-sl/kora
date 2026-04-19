@@ -1,74 +1,11 @@
-# Scripts de KORA
+# Toolchain KORA
 
-Este directorio mezcla toolchain activa, soporte de namespace y utilitarios historicos. No todo lo que vive en `scripts/` forma parte del core operativo del repo.
+- `python3 toolchain/kora` es el unico entrypoint soportado.
+- `toolchain/kora_lib/` contiene la implementacion viva de la CLI.
+- `toolchain/kora.bat` y `toolchain/kora.ps1` son wrappers de conveniencia.
+- `toolchain/legacy_migration/` concentra one-shots y migradores historicos.
+- `toolchain/sync_openclaw_docs_mirror.py` sigue soportado como excepcion operativa puntual.
 
-Las superficies operacionales locales (`inbox/`, `source/`, `drafts/`, `build/`) viven fisicamente bajo `OPERATIONS/` en la raiz del repo y quedan fuera del clone portable via `.gitignore`.
+Regla: si un flujo debe vivir institucionalmente, entra por `toolchain/kora`, deja logica reusable en `toolchain/kora_lib/` y gana cobertura en `tests/`.
 
-## Core Soportado
-
-- `kora`: entrypoint oficial de la CLI del monorepo.
-- `kora.bat`, `kora.ps1`: wrappers del entrypoint para otros shells.
-- `kora_lib/`: implementacion soportada de `index`, `resolve`, `health`, `validate`, `stats`, `graph`, `migrate`, `sync-docs` e `intake`.
-
-Estos artefactos son la superficie estable que debe funcionar en cualquier clon del repo.
-
-## Soporte Acotado
-
-- `sync_openclaw_docs_mirror.py`: mirror operativo para `KNOWLEDGE/agengai/openclaw/documentacion-oficial`. Esta coleccion es una excepcion explicita y soportada dentro del repo, aunque el script siga requiriendo root upstream explicito por CLI o variables de entorno.
-
-Estos scripts pueden seguir siendo utiles, pero no deben confundirse con la CLI base del repo.
-
-## Excepcion Soportada
-
-- `KNOWLEDGE/agengai/openclaw/documentacion-oficial/` es una excepcion institucional del repo.
-- Su mecanismo de sincronizacion soportado es `scripts/sync_openclaw_docs_mirror.py`.
-- Esta excepcion no convierte el resto de utilitarios de `scripts/` en superficie core.
-
-### Automatizacion del mirror
-
-Desde 2026-03-17, el mirror se sincroniza automaticamente tras cada `git pull` en el repo upstream gracias a un hook `post-merge` instalado en `_workspaces/openclaw/.git/hooks/post-merge`.
-
-- **Trigger:** `git pull` exitoso en `_workspaces/openclaw/`
-- **Accion:** ejecuta `python3 scripts/sync_openclaw_docs_mirror.py --source-repo $HOME/Developer/_workspaces/openclaw`
-- **Limitacion:** el hook vive en `.git/hooks/` (no versionado por git). Si se reclona el repo upstream, debe reinstalarse manualmente:
-
-```bash
-cat > ~/Developer/_workspaces/openclaw/.git/hooks/post-merge << 'HOOK'
-#!/usr/bin/env bash
-KORA_ROOT="$HOME/Developer/kora"
-SYNC_SCRIPT="$KORA_ROOT/scripts/sync_openclaw_docs_mirror.py"
-SOURCE_REPO="$HOME/Developer/_workspaces/openclaw"
-if [ -f "$SYNC_SCRIPT" ]; then
-    echo "[kora-mirror] Sincronizando docs OpenClaw → KORA..."
-    python3 "$SYNC_SCRIPT" --source-repo "$SOURCE_REPO" 2>&1 | tail -5
-    echo "[kora-mirror] Sync completado."
-fi
-HOOK
-chmod +x ~/Developer/_workspaces/openclaw/.git/hooks/post-merge
-```
-
-## Utilitarios Ad-Hoc
-
-- `source_mapper.py`: generador de mapeo de fuentes para trabajo editorial y de migracion.
-- `telegraph_audit_repair.py`: reparador puntual de estilo/prosa.
-- `check_counts.py`: conteo rapido de manifests YAML.
-- `kora_transmuter.py`: codemod masivo de URNs de una fase previa.
-
-Estos scripts no deben asumirse como entrypoints estables ni como parte del flujo recomendado del monorepo.
-
-## Legacy Congelado
-
-- `legacy_migration/`: scripts de migracion historica.
-- `file_movement_map.json`: insumo de la migracion historica.
-
-Su funcion es trazabilidad y soporte de migraciones pasadas. No son la toolchain actual y no deben usarse como base para automatizacion nueva.
-
-## Regla Operativa
-
-Si un flujo necesita ser soportado de forma institucional:
-
-1. debe exponerse via `scripts/kora`
-2. debe vivir en `scripts/kora_lib/`
-3. debe tener cobertura de pruebas
-
-Si no cumple esas tres condiciones, tratelo como soporte acotado, ad-hoc o legacy.
+Si no cumple eso, tratalo como legado o soporte acotado.

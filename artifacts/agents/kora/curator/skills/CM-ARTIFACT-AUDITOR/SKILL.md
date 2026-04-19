@@ -31,7 +31,7 @@ Valida artefactos de conocimiento existentes contra la spec correspondiente. Gen
 
 ## Procedimiento
 1. Cargar el baseline desde `references/audit-stack.md` para fijar spec rectora, pipeline y soporte mecanico disponible.
-2. Si la auditoria requiere comprobacion mecanica reproducible sobre un path local, usar `scripts/audit_artifact.py` como envoltorio del stack en `scripts/kora_lib/validation.py`.
+2. Si la auditoria requiere comprobacion mecanica reproducible sobre un path local, usar `scripts/audit_artifact.py` como envoltorio del stack en `toolchain/kora_lib/validation.py`.
 3. **Leer y Clasificar**
    - Leer artefacto completo (frontmatter + cuerpo).
    - Clasificar tipo: descriptivo(KORA/MD) o prescriptivo(KORA/Spec-MD).

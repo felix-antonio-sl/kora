@@ -246,7 +246,7 @@ def ensure_guardian_workspace():
     """Scaffold minimal guardian workspace (v7 legacy).
 
     En v8 (pipeline descentralizado), si guardian vive en staging
-    `AGENTS/_FRAGUA/INBOX/guardian/`, NO se re-scaffoldea productivo;
+    `artifacts/agents/_FRAGUA/INBOX/guardian/`, NO se re-scaffoldea productivo;
     queda como deuda de promocion. Esta funcion se conserva solo por
     compatibilidad con `kora migrate --profile transitional` antiguo.
     """
@@ -593,7 +593,7 @@ AUTORIA_SUBDIR_RENAMES = {
 # Artefactos que NO se migran (dependencias en flight, gestionados a mano).
 # Se listan como rutas relativas a KORA_ROOT.
 AUTORIA_MIGRATION_SKIPLIST = (
-    "SKILLS/kora/atomize",  # Felix trabaja la linea atomize por separado.
+    "artifacts/skills/kora/atomize",  # Felix trabaja la linea atomize por separado.
 )
 
 
@@ -922,23 +922,23 @@ def _autoria_purge_legacy_scaffolds(workspace_dir, dry_run=False):
             removed.append(scaffold_path)
     # skills/ legacy subdir (material embebido v1) — si existe, NO lo borramos
     # aqui; es un path productivo de v1 que el autor revisa manualmente para
-    # promover a SKILLS/{ns}/{name}/.
+    # promover a artifacts/skills/{ns}/{name}/.
     return removed
 
 
 def _iter_productive_skill_files():
-    """Yield SKILL.md paths bajo SKILLS/{ns}/{name}/ y SKILLS/{name}/ productivos."""
+    """Yield SKILL.md paths bajo artifacts/skills/{ns}/{name}/ y artifacts/skills/{name}/ productivos."""
     if not SKILLS_ROOT.exists():
         return
     for entry in sorted(SKILLS_ROOT.iterdir()):
         if not entry.is_dir() or entry.name.startswith(("_", ".")):
             continue
-        # Caso A: SKILLS/{name}/SKILL.md (top-level productivo)
+        # Caso A: artifacts/skills/{name}/SKILL.md (top-level productivo)
         direct = entry / "SKILL.md"
         if direct.exists():
             yield direct
             continue
-        # Caso B: SKILLS/{ns}/{name}/SKILL.md
+        # Caso B: artifacts/skills/{ns}/{name}/SKILL.md
         for sub in sorted(entry.iterdir()):
             if not sub.is_dir() or sub.name.startswith(("_", ".")):
                 continue
@@ -959,7 +959,7 @@ def migrate_to_autoria(dry_run=False, cohort=None):
     """Perfil a-autoria: migracion forzada de todo el corpus productivo.
 
     Idempotente: segunda corrida = sin cambios.
-    Alcance: AGENTS/{ns}/{name}/AGENT.md, SKILLS/{ns}/{name}/SKILL.md.
+    Alcance: artifacts/agents/{ns}/{name}/AGENT.md, artifacts/skills/{ns}/{name}/SKILL.md.
     NO toca staging (_FRAGUA/, _TALLER/, _SCRIPTORIUM/) ni artefactos en
     AUTORIA_MIGRATION_SKIPLIST.
     """
@@ -973,7 +973,7 @@ def migrate_to_autoria(dry_run=False, cohort=None):
         changed_paths.extend(_autoria_rename_subdirs(workspace_dir, dry_run=dry_run))
         changed_paths.extend(_autoria_purge_legacy_scaffolds(workspace_dir, dry_run=dry_run))
 
-    # Cohort no aplica a SKILLS/ — son portables.
+    # Cohort no aplica a artifacts/skills/ — son portables.
     for skill_path in _iter_productive_skill_files():
         if _is_skipped_for_autoria(skill_path.parent):
             continue

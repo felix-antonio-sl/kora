@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter, defaultdict
-from datetime import date
 from pathlib import Path
 
 from .config import GENERATED_DOCS_DIR, KORA_ROOT
@@ -33,7 +32,7 @@ AGENT_RULES = {
     "agent.fsm_pseudostate_destination": {
         "label": "Destino de control no declarado",
         "severity": "P1",
-        "spec_rule": "agentfile-spec legacy-compat profile",
+        "spec_rule": "serialization/autoria-spec.md § artefacto.plan",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La FSM solo admite estados declarados `S-*` o `[terminal]`; pseudoestados rompen cierre y verificabilidad.",
@@ -41,7 +40,7 @@ AGENT_RULES = {
     "agent.missing_transition_precedence": {
         "label": "Precedencia de transiciones no declarada",
         "severity": "P1",
-        "spec_rule": "agentfile-spec legacy-compat profile",
+        "spec_rule": "serialization/autoria-spec.md § artefacto.plan",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "Ramas simultaneas sin precedencia dejan el determinismo del agente en estado implícito.",
@@ -49,7 +48,7 @@ AGENT_RULES = {
     "tools.policy_leakage": {
         "label": "Policy operativa filtrada en TOOLS.md",
         "severity": "P2",
-        "spec_rule": "agentfile-spec legacy-compat profile",
+        "spec_rule": "serialization/autoria-spec.md § artefacto.interfaz / runtime/runtime-spec-md.md",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "TOOLS.md gobierna interfaz semántica; confirmaciones y restricciones operativas pertenecen a config o runtime.",
@@ -57,7 +56,7 @@ AGENT_RULES = {
     "config.semantic_runtime_capability": {
         "label": "Facultad semántica en runtime_capabilities",
         "severity": "P2",
-        "spec_rule": "runtime-spec-md + agentfile legacy-compat profile",
+        "spec_rule": "runtime/runtime-spec-md.md / serialization/autoria-spec.md",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "runtime_capabilities debe contener permisos crudos del runtime, no facultades abstractas del agente.",
@@ -68,7 +67,7 @@ SKILL_RULES = {
     "skill.state_variable_leak": {
         "label": "Skill degenerado recibe o emite estado FSM",
         "severity": "P1",
-        "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
+        "spec_rule": "serialization/autoria-spec.md § habilidades degeneradas",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "Un skill degenerado no debe codificar variables de estado del agente ni decidir transiciones.",
@@ -76,7 +75,7 @@ SKILL_RULES = {
     "skill.transition_classifier_leak": {
         "label": "Skill degenerado clasifica transiciones o continuidad FSM",
         "severity": "P1",
-        "spec_rule": "skill-overlay-spec legacy-compat profile / agentfile-spec",
+        "spec_rule": "serialization/autoria-spec.md § habilidades degeneradas",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La transición del agente pertenece a AGENTS.md; el skill solo puede producir señal semántica, no control efectivo.",
@@ -84,7 +83,7 @@ SKILL_RULES = {
     "skill.agent_phase_orchestration": {
         "label": "Skill orquesta fases del agente",
         "severity": "P1",
-        "spec_rule": "skill-overlay-spec legacy-compat profile, Orquestacion de fases del agente",
+        "spec_rule": "serialization/autoria-spec.md § habilidades degeneradas",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "El control secuencial del ciclo del agente no debe vivir dentro del CM degenerado.",
@@ -92,7 +91,7 @@ SKILL_RULES = {
     "skill.operational_skill_composition": {
         "label": "Skill compone otro skill operativamente",
         "severity": "P2",
-        "spec_rule": "skill-overlay-spec legacy-compat profile, Composicion inter-componente operativa",
+        "spec_rule": "serialization/autoria-spec.md § habilidades degeneradas",
         "closure_type": "agent_fix",
         "enforcement_candidate": "lint",
         "why": "La FSM debe poseer el routing efectivo; un CM no debe mandar a ejecutar otro CM.",
@@ -100,7 +99,7 @@ SKILL_RULES = {
     "skill.relaxes_hard_rule": {
         "label": "Skill relaja o reinterpreta una regla dura del bootstrap",
         "severity": "P1",
-        "spec_rule": "agentfile-spec / skill-overlay legacy-compat profile",
+        "spec_rule": "governance/gobernanza.md / serialization/autoria-spec.md",
         "closure_type": "agent_fix",
         "enforcement_candidate": "manual",
         "why": "Si una regla dura debe cambiar, se modifica en AGENTS.md o en la spec; no en el skill.",
@@ -532,13 +531,17 @@ def build_agent_audit_payload():
         cohorts[cohort_name] = build_cohort_payload(cohort_name, workspaces)
 
     return {
-        "generated_at": date.today().isoformat(),
         "baseline_specs": list(BASELINE_SPECS),
         "methodology": {
             "cohort_order": ["meta-kora", "dev", "ops", "domains"],
+            "coverage_mode": "partial",
             "rules": [
                 "No marcar como hallazgo algo ya aceptado explícitamente por la spec vigente o detectado por validate.",
                 "No tratar template drift como prioridad salvo que produzca ambigüedad operacional real.",
+            ],
+            "coverage_limits": [
+                "La auditoria manual cubre heuristicas focalizadas sobre AGENTS.md, TOOLS.md, config.json y skills.",
+                "No reemplaza validate/check ni certifica cobertura total del corpus normativo.",
             ],
         },
         "cohorts": cohorts,
@@ -583,10 +586,12 @@ def render_agent_audit_markdown(payload):
         "",
         "## Resumen global",
         "",
-        f"- Fecha: {payload['generated_at']}",
         f"- Cohortes auditadas: {', '.join(payload['methodology']['cohort_order'])}",
+        f"- Cobertura manual: {payload['methodology']['coverage_mode']}",
         f"- Reglas absorbidas sin hallazgos manuales: {len(payload['global_summary']['rules_absorbed'])}",
         f"- Reglas aun no institucionalizadas: {len(payload['global_summary']['rules_not_institutionalized'])}",
+        f"- Limite: {payload['methodology']['coverage_limits'][0]}",
+        f"- Limite: {payload['methodology']['coverage_limits'][1]}",
         "",
         "## Top 5 deudas sistemicas",
         "",

@@ -1,6 +1,6 @@
 """Knowledge graph materialization for KORA.
 
-Reads all artifacts in KNOWLEDGE/, extracts their URNs, relations, and metadata,
+Reads all artifacts in artifacts/knowledge/, extracts their URNs, relations, and metadata,
 and produces a typed directed graph (nodes + edges) as JSON.
 """
 
@@ -14,9 +14,9 @@ from .config import KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
 
 
 def collect_knowledge_nodes():
-    """Walk KNOWLEDGE/ and collect all artifacts with valid _manifest.
+    """Walk artifacts/knowledge/ and collect all artifacts with valid _manifest.
 
-    Excluye KNOWLEDGE/_SCRIPTORIUM/ (staging pre-categorial) — sus artefactos
+    Excluye artifacts/knowledge/_SCRIPTORIUM/ (staging pre-categorial) — sus artefactos
     no forman parte del grafo de conocimiento publicado.
     """
     from .config import SPEC_ROOTS
@@ -194,8 +194,6 @@ def render_kb_graph_markdown(graph):
     lines = [
         "# KORA Knowledge Graph",
         "",
-        f"Generated: {__import__('datetime').datetime.now().isoformat()}",
-        "",
         "## Summary",
         "",
         f"| Metric | Value |",
@@ -258,8 +256,6 @@ def render_orphans_markdown(graph):
     stats = graph["stats"]
     lines = [
         "# KORA Knowledge Graph — Orphans Classification",
-        "",
-        f"Generated: {__import__('datetime').datetime.now().isoformat()}",
         "",
         "## Summary",
         "",

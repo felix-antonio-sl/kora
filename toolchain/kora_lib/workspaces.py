@@ -56,9 +56,9 @@ def _is_workspace_deprecated(workspace_dir):
 
 
 def iter_agent_workspaces(cohort=None, include_deprecated=False):
-    """Descubre workspaces agente en AGENTS/{ns}/{name}/ productivos.
+    """Descubre workspaces agente en artifacts/agents/{ns}/{name}/ productivos.
 
-    Excluye el staging area `AGENTS/_FRAGUA/` (cualquier subdir empezando
+    Excluye el staging area `artifacts/agents/_FRAGUA/` (cualquier subdir empezando
     con `_` se considera staging o metadata, no workspace productivo).
     """
     agents_root = AGENTS_ROOT

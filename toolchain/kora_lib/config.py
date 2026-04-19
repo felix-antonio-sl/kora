@@ -243,7 +243,7 @@ def _discover_productive_workspaces():
     """Deriva los workspaces productivos desde el filesystem.
 
     Un workspace es productivo si:
-      - vive en AGENTS/{ns}/{name}/ (ns no empieza con "_"),
+      - vive en artifacts/agents/{ns}/{name}/ (ns no empieza con "_"),
       - contiene AGENT.md,
       - AGENT.md declara status: activo.
 

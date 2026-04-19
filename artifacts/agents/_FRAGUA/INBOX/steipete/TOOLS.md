@@ -82,7 +82,7 @@ _manifest:
 - **Cuando usar:** Cuando una referencia KB necesita resolucion a archivo fisico.
 - **Cuando NO usar:** Para recursos fuera de KORA.
 - **Descripcion funcional:** Resuelve URN KORA a ruta de archivo.
-- **Notas:** Usa infraestructura `scripts/kora resolve`.
+- **Notas:** Usa infraestructura `python3 toolchain/kora resolve`.
 
 
 # Federacion kora — derivacion inter-agente

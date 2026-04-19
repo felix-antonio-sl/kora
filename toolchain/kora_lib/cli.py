@@ -42,7 +42,7 @@ def main():
     p_lint_md.add_argument(
         "paths",
         nargs="*",
-        help="Markdown file or directory to lint. Defaults to KNOWLEDGE/ and the operational drafts/ zone.",
+        help="Markdown file or directory to lint. Defaults to artifacts/knowledge/ and the tracked staging zones.",
     )
     p_lint_md.add_argument(
         "--max-lines-per-h2",
@@ -88,14 +88,14 @@ def main():
     p_atomize = subparsers.add_parser("atomize", help="Productor canonico md-spec para artefactos KORA/MD de familia atomic")
     p_atomize.add_argument("input_path", help="Archivo o carpeta con el corpus fuente")
     p_atomize.add_argument("--slug", default=None, help="Slug del artefacto atomic")
-    p_atomize.add_argument("--output", default=None, help="Directorio de salida; por defecto usa KNOWLEDGE/_SCRIPTORIUM/REVIEW/kora/atomic/")
+    p_atomize.add_argument("--output", default=None, help="Directorio de salida; por defecto usa artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/")
 
-    p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from KNOWLEDGE/ artifacts")
+    p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from artifacts/knowledge/ artifacts")
     p_kb_graph.add_argument("--json", action="store_true", help="Write graph as JSON to docs/generated/")
     p_kb_graph.add_argument("--check-cycles", action="store_true", help="Exit non-zero if cycles exist in depends graph")
     p_kb_graph.add_argument("--orphans", action="store_true", help="Emit orphan classification report to docs/generated/kb-orphans.md")
 
-    p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from drafts/ to KNOWLEDGE/")
+    p_promote = subparsers.add_parser("promote", help="Promote a draft artifact from artifacts/knowledge/_SCRIPTORIUM/REVIEW/ to artifacts/knowledge/")
     p_promote.add_argument("path", nargs="?", default=None, help="Path to the draft artifact to promote (omitir si se usa --cohort)")
     p_promote.add_argument(
         "--review",
@@ -105,7 +105,7 @@ def main():
     p_promote.add_argument(
         "--cohort",
         default=None,
-        help="Batch-promote all drafts in KNOWLEDGE/_SCRIPTORIUM/REVIEW/{ns}/ as a cohort",
+        help="Batch-promote all drafts in artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/ as a cohort",
     )
 
     p_deprecate = subparsers.add_parser("deprecate", help="Dual de promote: marca artefacto productivo como deprecado o retirado")

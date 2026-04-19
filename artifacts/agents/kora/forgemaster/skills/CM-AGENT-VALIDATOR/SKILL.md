@@ -30,7 +30,7 @@ Valida un workspace KORA completo contra agent-spec-md v8.7.0 §10, skill-spec-m
 
 ## Procedimiento
 1. Cargar el baseline normativo desde `references/validation-stack.md` para fijar spec rectora, schemas y soporte de auditoria disponibles.
-2. Si se requiere verificacion mecanica detallada del workspace, usar `scripts/validate_workspace.py` como envoltorio reproducible del stack existente en `scripts/kora_lib/`.
+2. Si se requiere verificacion mecanica detallada del workspace, usar `scripts/validate_workspace.py` como envoltorio reproducible del stack existente en `toolchain/kora_lib/`.
 3. **GRAMATICA DE BEHAVIOR (agent-spec-md §4.1):** `AGENTS.md` contiene FSM, Reglas Duras, Co-induccion, Contexto Multi-turno y Wiring en orden canonico; `Comportamiento Operativo` solo puede aparecer como extension posterior controlada.
 4. **FSM CANONICA (agent-spec-md §4.2-§4.3):** Estados `S-*`, transiciones explicitas, determinismo declarado, `S-DISPATCHER` y `S-END` presentes.
 5. **TOPOLOGIA OBLIGATORIA (agent-spec-md §3):** Existen los 5 componentes base y el directorio `skills/`.

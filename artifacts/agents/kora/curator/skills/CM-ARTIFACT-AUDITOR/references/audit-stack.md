@@ -11,10 +11,10 @@ Recursos del repo ya disponibles para auditoria de artefactos KORA:
 - `specs/md-spec.md`
 - `specs/spec-md.md`
 - `specs/gobernanza.md`
-- `KNOWLEDGE/kora/sys/pipeline-ingesta.md`
-- `scripts/kora_lib/validation.py`
-- `scripts/kora_lib/artifacts.py`
-- `scripts/kora_lib/catalog.py`
+- `artifacts/knowledge/kora/sys/pipeline-ingesta.md`
+- `toolchain/kora_lib/validation.py`
+- `toolchain/kora_lib/artifacts.py`
+- `toolchain/kora_lib/catalog.py`
 - `tests/test_artifacts.py`
 - `tests/test_semantic_validation.py`
 

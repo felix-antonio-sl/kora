@@ -1,5 +1,4 @@
 {
-  "generated_at": "2026-04-19",
   "baseline_specs": [
     "governance/gobernanza.md",
     "ontology/harness-spec.md",
@@ -16,9 +15,14 @@
       "ops",
       "domains"
     ],
+    "coverage_mode": "partial",
     "rules": [
       "No marcar como hallazgo algo ya aceptado explícitamente por la spec vigente o detectado por validate.",
       "No tratar template drift como prioridad salvo que produzca ambigüedad operacional real."
+    ],
+    "coverage_limits": [
+      "La auditoria manual cubre heuristicas focalizadas sobre AGENTS.md, TOOLS.md, config.json y skills.",
+      "No reemplaza validate/check ni certifica cobertura total del corpus normativo."
     ]
   },
   "cohorts": {
@@ -30,7 +34,7 @@
         "cohort": "meta-kora",
         "workspace_valid": 4,
         "workspace_invalid": 0,
-        "bootstrap_validated": 0,
+        "bootstrap_validated": 4,
         "global_failures": 0,
         "issue_counts": {},
         "issues": [],
@@ -105,7 +109,7 @@
         "cohort": "domains",
         "workspace_valid": 2,
         "workspace_invalid": 0,
-        "bootstrap_validated": 0,
+        "bootstrap_validated": 2,
         "global_failures": 0,
         "issue_counts": {},
         "issues": [],
