@@ -1300,6 +1300,85 @@ def _check_coalgebra_conformance(path_filter=None):
 
 
 # ---------------------------------------------------------------------------
+# Portabilidad: detecta paths literales no portables en tests y toolchain
+# ---------------------------------------------------------------------------
+
+_NONPORTABLE_PATH_PATTERNS = (
+    # literales tipicos que rompen en otra plataforma o usuario
+    "/tmp/", "/var/folders/", "/Users/", "/home/", "/private/var/",  # portable-exempt
+)
+_PORTABILITY_SCAN_DIRS = ("tests", "toolchain")
+_PORTABILITY_EXEMPT_TAG = "portable-exempt"
+# subarboles explicitamente excluidos del scan (scripts one-shot historicos
+# cuya funcion ya se ejecuto y que viven en el repo como archivo arqueologico)
+_PORTABILITY_EXCLUDED_SUBTREES = (
+    "toolchain/legacy_migration",
+)
+
+
+def _check_portabilidad_tests(path_filter=None):
+    """Scan tests/ y toolchain/ en busca de paths literales no portables.
+
+    Motivacion categorica: una asercion o valor literal que encodea un path
+    especifico de plataforma rompe el funtor `Run : Environment -> Result`
+    (viola naturalidad respecto a isomorfismos de entorno). Todo path
+    observable debe pasar por un normalizador canonico o vivir en un
+    tempfile.
+
+    Excepcion: lineas con comentario `# portable-exempt` al final son
+    ignoradas (escape hatch para cadenas descriptivas o URLs que contienen
+    substrings similares por coincidencia).
+    """
+    from .config import KORA_ROOT
+    diags = []
+    excluded_paths = tuple(KORA_ROOT / s for s in _PORTABILITY_EXCLUDED_SUBTREES)
+    for rel_dir in _PORTABILITY_SCAN_DIRS:
+        base = KORA_ROOT / rel_dir
+        if not base.exists():
+            continue
+        for py_file in base.rglob("*.py"):
+            if any(ex in py_file.parents or py_file == ex for ex in excluded_paths):
+                continue
+            try:
+                text = py_file.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError):
+                continue
+            in_docstring = False  # heuristica: contar """ y ''' como toggles
+            for lineno, line in enumerate(text.splitlines(), start=1):
+                # detectar aperturas/cierres de triple-quote en esta linea
+                triple_dq = line.count('"""')
+                triple_sq = line.count("'''")
+                was_in_docstring = in_docstring
+                # toggle por cada triple detectado (aproximacion suficiente
+                # para codigo estandar; no maneja raw strings mixtos)
+                if (triple_dq + triple_sq) % 2 == 1:
+                    in_docstring = not in_docstring
+                # si la linea entra, pasa por o sale de un docstring, saltarla
+                if was_in_docstring or in_docstring:
+                    continue
+                if _PORTABILITY_EXEMPT_TAG in line:
+                    continue
+                stripped = line.lstrip()
+                if stripped.startswith("#"):
+                    continue
+                for pat in _NONPORTABLE_PATH_PATTERNS:
+                    if pat in line:
+                        rel = str(py_file.relative_to(KORA_ROOT))
+                        diags.append(Diagnostic(
+                            check_id="portabilidad-tests",
+                            severity="medium",
+                            scope="repo",
+                            path=f"{rel}:{lineno}",
+                            message=f"Path literal no portable: '{pat}' en codigo fuente",
+                            fix_hint="Usar tempfile.TemporaryDirectory() / pathlib o marcar con '# portable-exempt' si es string descriptivo",
+                        ))
+                        break
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+# ---------------------------------------------------------------------------
 # Registration — wire up all built-in checks
 # ---------------------------------------------------------------------------
 
@@ -1407,6 +1486,13 @@ def _register_builtins():
               scope="workspace", severity="high", enforcement="eval",
               spec_ref="mastra-runtime-extension §3, §8", depends=("catalog-exists",), phase="verify"),
         _check_fidelidad_mastra,
+    )
+    register_check(
+        Check("portabilidad-tests",
+              "Codigo de tests/ y toolchain/ no contiene paths literales no portables",
+              scope="repo", severity="medium", enforcement="lint",
+              spec_ref="CLAUDE.md §Portabilidad", phase="lint"),
+        _check_portabilidad_tests,
     )
 
 

@@ -460,6 +460,10 @@ Catalog:
     title: FORJADOR — Agente Forjador de Agentes OpenClaw
     file: artifacts/knowledge/agengai/openclaw/specs-legacy/forjador-openclaw.md
     status: published
+  - urn: urn:agengai:kb:namespace-curation-map
+    title: AGENGAI/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/agengai/namespace-curation-map.md
+    status: publicado
   - urn: urn:agengai:kb:openclaw-integration
     title: OpenClaw Integration Guide
     file: artifacts/knowledge/agengai/openclaw-integration.md
@@ -469,7 +473,7 @@ Catalog:
     file: artifacts/knowledge/agengai/openclaw/specs-legacy/openclaw-manual-integral.md
     status: published
   - urn: urn:agengai:kb:openclaw-runtime-extension
-    title: AGENGAI/OpenClaw-Runtime-Extension v1.1.0
+    title: AGENGAI/OpenClaw-Runtime-Extension v1.2.0
     file: runtime/openclaw-runtime-extension.md
     status: publicado
   - urn: urn:agengai:kb:openclaw-skills-manual
@@ -728,6 +732,10 @@ Catalog:
     title: 'MultiCategory: Multi-Model Query Processing'
     file: artifacts/knowledge/fxsl/cat/multicategory-multimodel-query-processing.md
     status: published
+  - urn: urn:fxsl:kb:namespace-curation-map
+    title: FXSL/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/fxsl/namespace-curation-map.md
+    status: publicado
   - urn: urn:fxsl:kb:opcloud-tutorial-visual-observations
     title: Observaciones visuales de los tutoriales OPCloud
     file: artifacts/knowledge/fxsl/opm/opcloud-tutorial-visual-observations.md
@@ -1212,6 +1220,10 @@ Catalog:
     title: Introducción a la Gestión Pública (Waissbluth) - Parte 03
     file: artifacts/knowledge/gn/kb/core/gestion/kb_gn_mw_waissbluth--p03.md
     status: published
+  - urn: urn:gn:kb:namespace-curation-map
+    title: GN/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/gn/namespace-curation-map.md
+    status: publicado
   - urn: urn:gn:kb:nuble-250
     title: Agenda Estratégica Ñuble 250
     file: artifacts/knowledge/gn/kb/kb_gn_056_nuble250.md
@@ -1394,7 +1406,7 @@ Catalog:
     file: runtime/agentskills-runtime-extension.md
     status: publicado
   - urn: urn:kora:kb:autoria-spec
-    title: Especificacion de Autoria de Artefactos Agenticos v1.1.0
+    title: Especificacion de Autoria de Artefactos Agenticos v1.2.0
     file: serialization/autoria-spec.md
     status: publicado
   - urn: urn:kora:kb:cat-agent-coalgebra
@@ -1455,11 +1467,11 @@ Catalog:
     file: runtime/gemini-runtime-extension.md
     status: publicado
   - urn: urn:kora:kb:gobernanza
-    title: KORA/Gobernanza v4.3.0
+    title: KORA/Gobernanza v4.4.0
     file: governance/gobernanza.md
     status: publicado
   - urn: urn:kora:kb:harness-spec
-    title: KORA/Harness-Spec v1.0.0
+    title: KORA/Harness-Spec v1.1.0
     file: ontology/harness-spec.md
     status: publicado
   - urn: urn:kora:kb:hub-agentes
@@ -1470,16 +1482,40 @@ Catalog:
     title: KORA/Knowledge-Spec v1.1.0
     file: serialization/knowledge-spec.md
     status: publicado
+  - urn: urn:kora:kb:mastra-runtime-extension
+    title: KORA/Mastra-Runtime-Extension v1.0.0
+    file: runtime/mastra-runtime-extension.md
+    status: publicado
   - urn: urn:kora:kb:md-spec
     title: KORA/MD v8.1.0
     file: serialization/md-spec.md
+    status: publicado
+  - urn: urn:kora:kb:multiagente-spec
+    title: KORA/Multiagente-Spec v1.0.0
+    file: runtime/multiagente-spec.md
+    status: publicado
+  - urn: urn:kora:kb:namespace-curation-map
+    title: KORA/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/kora/namespace-curation-map.md
     status: publicado
   - urn: urn:kora:kb:pipeline-ingesta
     title: Pipeline de Ingesta — Infraestructura de Transformacion de Artefactos v1.0.0
     file: artifacts/knowledge/kora/sys/pipeline-ingesta.md
     status: published
+  - urn: urn:kora:kb:procesos-spec
+    title: KORA/Procesos-Spec v1.0.0
+    file: ontology/procesos-spec.md
+    status: publicado
+  - urn: urn:kora:kb:qa-spec
+    title: KORA/QA-Spec v1.0.0
+    file: ontology/qa-spec.md
+    status: publicado
+  - urn: urn:kora:kb:risk-register-spec
+    title: KORA/Risk-Register-Spec v1.0.0
+    file: ontology/risk-register-spec.md
+    status: publicado
   - urn: urn:kora:kb:runtime-spec-md
-    title: KORA/Runtime-Spec v3.7.0
+    title: KORA/Runtime-Spec v3.8.0
     file: runtime/runtime-spec-md.md
     status: publicado
   - urn: urn:kora:kb:test-strategy
@@ -1487,7 +1523,7 @@ Catalog:
     file: artifacts/knowledge/kora/sys/test_strategy.md
     status: published
   - urn: urn:kora:kb:transmutation-spec
-    title: KORA/Transmutation-Spec v1.0.0
+    title: KORA/Transmutation-Spec v1.1.0
     file: runtime/transmutation-spec.md
     status: publicado
   - urn: urn:kora:kb:workflow-wikiguias
@@ -1518,6 +1554,10 @@ Catalog:
     title: Manual de Vida - Parte 02
     file: artifacts/knowledge/korvo/manual-de-vida--p02.md
     status: published
+  - urn: urn:korvo:kb:namespace-curation-map
+    title: KORVO/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/korvo/namespace-curation-map.md
+    status: publicado
   - urn: urn:legal:kb:acoso-laboral
     title: Acoso Laboral y Sexual en el Ámbito Médico
     file: artifacts/knowledge/legal/trabajo-medico/acoso_laboral.md
@@ -1616,6 +1656,10 @@ Catalog:
     title: Protección a la Maternidad y Paternidad
     file: artifacts/knowledge/legal/trabajo-medico/maternidad.md
     status: published
+  - urn: urn:legal:kb:namespace-curation-map
+    title: LEGAL/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/legal/namespace-curation-map.md
+    status: publicado
   - urn: urn:legal:kb:patente-comercial-res
     title: Patente Comercial — Modulo Tu Empresa en un Dia
     file: artifacts/knowledge/legal/empresa-en-un-dia/patente-comercial-res.md
@@ -1713,6 +1757,10 @@ Catalog:
     title: MBA Personal — Modelos Mentales de Negocios - Parte 03
     file: artifacts/knowledge/pro/mba-personal-kaufman--p03.md
     status: published
+  - urn: urn:pro:kb:namespace-curation-map
+    title: PRO/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/pro/namespace-curation-map.md
+    status: publicado
   - urn: urn:salud:kb:bok-medicina-emergencia
     title: Body of Knowledge diferencial de Medicina de Emergencia
     file: artifacts/knowledge/salud/urgencia/bok-medicina-emergencia.md
@@ -2093,6 +2141,10 @@ Catalog:
     title: Body of Knowledge — Medicina de Emergencia
     file: artifacts/knowledge/salud/med-emergencia-placeholder.md
     status: published
+  - urn: urn:salud:kb:namespace-curation-map
+    title: SALUD/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/salud/namespace-curation-map.md
+    status: publicado
   - urn: urn:sii:kb:faq-activos-digitales
     title: Activos digitales — Preguntas Frecuentes SII
     file: artifacts/knowledge/sii/kb/faq-activos-digitales.md
@@ -2200,6 +2252,10 @@ Catalog:
     title: Documentos Derivados SII — Índice
     file: artifacts/knowledge/sii/kb/index-documentos-derivados.md
     status: published
+  - urn: urn:sii:kb:namespace-curation-map
+    title: SII/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/sii/namespace-curation-map.md
+    status: publicado
   - urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
     title: Decreto 10 — Norma Técnica de Documentos y Expedientes Electrónicos
     file: artifacts/knowledge/tde/lineamientos-normas/decreto-10-documentos-expedientes-electronicos.md
@@ -2412,6 +2468,10 @@ Catalog:
     title: Metodología para la Gestión de Proyectos TIC
     file: artifacts/knowledge/tde/lineamientos-guias/metodologia-gestion-proyectos.md
     status: published
+  - urn: urn:tde:kb:namespace-curation-map
+    title: TDE/Namespace-Curation-Map v1.0.0
+    file: artifacts/knowledge/tde/namespace-curation-map.md
+    status: publicado
   - urn: urn:tde:kb:orientaciones-basicas-gestion-tic
     title: Orientaciones Básicas para la Gestión de las TIC
     file: artifacts/knowledge/tde/lineamientos-guias/orientaciones-basicas-gestion-tic.md

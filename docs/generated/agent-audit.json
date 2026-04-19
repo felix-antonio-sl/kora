@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18",
+  "generated_at": "2026-04-19",
   "baseline_specs": [
     "specs/gobernanza.md",
     "specs/md-spec.md",
@@ -28,47 +28,20 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "meta-kora",
-        "workspace_valid": 0,
-        "workspace_invalid": 4,
+        "workspace_valid": 4,
+        "workspace_invalid": 0,
         "bootstrap_validated": 0,
         "global_failures": 0,
-        "issue_counts": {
-          "agentfile_schema": 4
-        },
-        "issues": [
-          {
-            "path": "AGENTS/kora/curator/AGENT.md",
-            "workspace": "AGENTS/kora/curator",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          },
-          {
-            "path": "AGENTS/kora/custodio/AGENT.md",
-            "workspace": "AGENTS/kora/custodio",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          },
-          {
-            "path": "AGENTS/kora/forgemaster/AGENT.md",
-            "workspace": "AGENTS/kora/forgemaster",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          },
-          {
-            "path": "AGENTS/kora/guardian/AGENT.md",
-            "workspace": "AGENTS/kora/guardian",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          }
-        ],
-        "ok": false
+        "issue_counts": {},
+        "issues": [],
+        "ok": true
       },
       "summary": {
         "findings_total": 0,
         "p1": 0,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": false
+        "strict_validate_green": true
       },
       "findings": [],
       "repeated_findings": [],
@@ -130,35 +103,20 @@
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 0,
-        "workspace_invalid": 2,
+        "workspace_valid": 2,
+        "workspace_invalid": 0,
         "bootstrap_validated": 0,
         "global_failures": 0,
-        "issue_counts": {
-          "agentfile_schema": 2
-        },
-        "issues": [
-          {
-            "path": "AGENTS/gn/digitrans/AGENT.md",
-            "workspace": "AGENTS/gn/digitrans",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          },
-          {
-            "path": "AGENTS/gn/goreologo/AGENT.md",
-            "workspace": "AGENTS/gn/goreologo",
-            "category": "agentfile_schema",
-            "message": "'name' is a required property"
-          }
-        ],
-        "ok": false
+        "issue_counts": {},
+        "issues": [],
+        "ok": true
       },
       "summary": {
         "findings_total": 0,
         "p1": 0,
         "p2": 0,
         "p3": 0,
-        "strict_validate_green": false
+        "strict_validate_green": true
       },
       "findings": [],
       "repeated_findings": [],

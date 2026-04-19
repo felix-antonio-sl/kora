@@ -1,3 +1,11 @@
+# KORA runtime requirements
+#
+# Python target: >= 3.11 (probado en 3.12 y 3.13)
+# OS soportado: Linux (Ubuntu 24.04+) y macOS (13+)
+# OS fuera de alcance: Windows nativo (usar WSL si es imprescindible)
+#
+# Ver CLAUDE.md §Portabilidad para la politica formal.
+
 PyYAML>=6.0
 jsonschema>=4.0
 pytest>=8.0

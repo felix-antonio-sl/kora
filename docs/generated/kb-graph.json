@@ -1,6 +1,18 @@
 {
   "nodes": [
     {
+      "urn": "urn:tde:kb:namespace-curation-map",
+      "namespace": "tde",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "tde"
+      ]
+    },
+    {
       "urn": "urn:tde:kb:glosario-plataforma-simple",
       "namespace": "tde",
       "status": "published",
@@ -759,6 +771,18 @@
         "open-data",
         "datos",
         "gobernanza"
+      ]
+    },
+    {
+      "urn": "urn:gn:kb:namespace-curation-map",
+      "namespace": "gn",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "gn"
       ]
     },
     {
@@ -2787,6 +2811,30 @@
       ]
     },
     {
+      "urn": "urn:pro:kb:namespace-curation-map",
+      "namespace": "pro",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "pro"
+      ]
+    },
+    {
+      "urn": "urn:agengai:kb:namespace-curation-map",
+      "namespace": "agengai",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "agengai"
+      ]
+    },
+    {
       "urn": "urn:agengai:kb:openclaw-integration",
       "namespace": "agengai",
       "status": "published",
@@ -3207,6 +3255,18 @@
         "kora",
         "manual-openclaw",
         "apendices"
+      ]
+    },
+    {
+      "urn": "urn:legal:kb:namespace-curation-map",
+      "namespace": "legal",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "legal"
       ]
     },
     {
@@ -3689,6 +3749,18 @@
       ]
     },
     {
+      "urn": "urn:fxsl:kb:namespace-curation-map",
+      "namespace": "fxsl",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "fxsl"
+      ]
+    },
+    {
       "urn": "urn:fxsl:kb:procrastination-sirois-p02",
       "namespace": "fxsl",
       "status": "published",
@@ -3899,8 +3971,8 @@
     {
       "urn": "urn:fxsl:kb:manual-metodologico-opm-es",
       "namespace": "fxsl",
-      "status": "published",
-      "version": "4.0.0",
+      "status": "draft-publishable",
+      "version": "4.1.0-ampliada.4",
       "tags": [
         "opm",
         "methodology",
@@ -3915,14 +3987,16 @@
         "error-handling",
         "quantitative",
         "simulation",
-        "executable-modeling"
+        "executable-modeling",
+        "v2",
+        "ampliada"
       ]
     },
     {
       "urn": "urn:fxsl:kb:opm-es",
       "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
+      "status": "draft-publishable",
+      "version": "2.1.0-ampliada.4",
       "tags": [
         "opm",
         "fundamentos",
@@ -3930,14 +4004,16 @@
         "modelado-conceptual",
         "representacion-bimodal",
         "mbse",
-        "opl-es"
+        "opl-es",
+        "v2",
+        "ampliada"
       ]
     },
     {
       "urn": "urn:fxsl:kb:opl-es",
       "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
+      "status": "draft-publishable",
+      "version": "2.1.0-ampliada.4",
       "tags": [
         "opm",
         "opl",
@@ -3946,19 +4022,23 @@
         "grammar",
         "i18n",
         "bimodal",
-        "localization"
+        "localization",
+        "v2",
+        "ampliada"
       ]
     },
     {
       "urn": "urn:fxsl:kb:opd-es",
       "namespace": "fxsl",
-      "status": "published",
-      "version": "2.0.0",
+      "status": "draft-publishable",
+      "version": "2.3.0-ampliada.3",
       "tags": [
         "opm",
         "especificacion-visual",
         "gramatica-grafica",
-        "opd"
+        "opd",
+        "v2",
+        "ampliada"
       ]
     },
     {
@@ -5014,6 +5094,18 @@
       ]
     },
     {
+      "urn": "urn:sii:kb:namespace-curation-map",
+      "namespace": "sii",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "sii"
+      ]
+    },
+    {
       "urn": "urn:sii:kb:faq-activos-digitales",
       "namespace": "sii",
       "status": "published",
@@ -5407,1768 +5499,15 @@
       ]
     },
     {
-      "urn": "urn:agengai:kb:openclaw-skills-ops",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
+      "urn": "urn:korvo:kb:namespace-curation-map",
+      "namespace": "korvo",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
-        "openclaw",
-        "skills",
-        "lifecycle",
-        "clawhub",
-        "gating",
-        "configuracion",
-        "agentes"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:metodologia-modelamiento-opm-protocolo",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "0.1.0",
-      "tags": [
-        "opm",
-        "methodology",
-        "protocol",
-        "modeling-workflow",
-        "heuristics",
-        "validation"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "methodology",
-        "system-modeling",
-        "sd-construction",
-        "refinement",
-        "complexity-management",
-        "modeling-protocol",
-        "spec"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-applied-system-modeling",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "system-diagram",
-        "sd-method",
-        "worked-examples",
-        "natural-systems",
-        "social-systems",
-        "applied-mbse",
-        "mobileye",
-        "problem-occurrence"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-canonical-example",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "canonical-example",
-        "worked-example",
-        "autonomous-vehicle",
-        "manufacturing",
-        "complete-methodology",
-        "all-constructs"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-complexity-management",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "complexity-management",
-        "refinement",
-        "abstraction",
-        "in-zooming",
-        "unfolding",
-        "opd-tree",
-        "system-map"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-corpus-architecture",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "0.1.0",
-      "tags": [
-        "opm",
-        "corpus-architecture",
-        "ssot",
+        "namespace-map",
+        "kb-graph",
         "curation",
-        "information-architecture",
-        "artifact-boundaries"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-dynamic-behavior",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "dynamic-aspect",
-        "procedural-links",
-        "transforming-links",
-        "enabling-links",
-        "control-flow",
-        "eca",
-        "logical-operators",
-        "event-links",
-        "condition-links"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-mbse-acr-tutorial",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "tutorial",
-        "acr",
-        "automatic-crash-response",
-        "mbse-history",
-        "worked-example",
-        "modeling-walkthrough"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-mbse-foundations",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "mbse",
-        "conceptual-modeling",
-        "systems-engineering",
-        "ontology",
-        "objects",
-        "processes",
-        "minimal-ontology"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-opcloud-operational-guide",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "0.1.0",
-      "tags": [
-        "opcloud",
-        "opm",
-        "tutorial",
-        "operational-guide",
-        "workflow",
-        "modeling-tool"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-opl-bimodal",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "opl",
-        "bimodal",
-        "text-graphics",
-        "simulation",
-        "metamodel",
-        "tesperanto"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-opl-es-practical-companion",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "0.1.0",
-      "tags": [
-        "opm",
-        "opl-es",
-        "spanish",
-        "companion",
-        "worked-example",
-        "implementation-notes"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-sd-wizard",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "system-diagram",
-        "wizard",
-        "protocol",
-        "sd-construction",
-        "checklist"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opm-structural-relations",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "structural-relations",
-        "aggregation",
-        "exhibition",
-        "generalization",
-        "classification",
-        "states",
-        "participation-constraints",
-        "forks"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:sysml-foundations-diagrams",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "sysml",
-        "uml",
-        "diagrams",
-        "systems-modeling",
-        "block-definition",
-        "activity",
-        "sequence",
-        "requirements",
-        "parametric"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-01",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-02",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-03",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-04",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-05",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-06",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-07",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-08",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-09",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-10",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-11",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-12",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-13",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-14",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-15",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-16",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-17",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-18",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-19",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-20",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-21",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-22",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-23",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-24",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-25",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-26",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-27",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-28",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-29",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-30",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-31",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-32",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-index",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-01",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-02",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-03",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-04",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-05",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-06",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-07",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-08",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-09",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-10",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-11",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-12",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-13",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-14",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-15",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-16",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-17",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-18",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-19",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-20",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-21",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-22",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-23",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-24",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-25",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-26",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-27",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-28",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-29",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-30",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-31",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-32",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-33",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-34",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-35",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-36",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-37",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-38",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-39",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-40",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-41",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-42",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-43",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-44",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-45",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-46",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-47",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-48",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-49",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-50",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-51",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-52",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-53",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-54",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-55",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-56",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-57",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-58",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-59",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-60",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-61",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-62",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-63",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-64",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-65",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-66",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-67",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-68",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-69",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-70",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-71",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-72",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-73",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-74",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-75",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-76",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-77",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-78",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-79",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-80",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-81",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:atomic-opm-libro-rebuilt-index",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "atomic",
-        "knowledge",
-        "opm-libro-rebuilt"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-actos-admin",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.1.1",
-      "tags": [
-        "ssot",
-        "actos-administrativos",
-        "aprobacion",
-        "visacion",
-        "toma-razon",
-        "decretos"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-convenios",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.2.0",
-      "tags": [
-        "ssot",
-        "convenios",
-        "acuerdos",
-        "estados",
-        "cuotas",
-        "transferencias"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-dgi",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.1.0",
-      "tags": [
-        "ssot",
-        "dgi",
-        "indicadores",
-        "iniciativas",
-        "reportes",
-        "senales"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-ecosistema",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.1.1",
-      "tags": [
-        "ssot",
-        "ecosistema",
-        "actores-externos",
-        "leyes",
-        "planificacion",
-        "probidad",
-        "seremias"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-ipr-lifecycle",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.2.1",
-      "tags": [
-        "ssot",
-        "ipr",
-        "ciclo-vida",
-        "fases",
-        "estados",
-        "tracks",
-        "evaluacion"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-legal",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.1.0",
-      "tags": [
-        "ssot",
-        "legal",
-        "normativo",
-        "glosas",
-        "loc-gore",
-        "presupuestos"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-master",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.5.0",
-      "tags": [
-        "ssot",
-        "gore-nuble",
-        "reconciliacion",
-        "fundamentos",
-        "indice"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-mecanismos",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.1.1",
-      "tags": [
-        "ssot",
-        "mecanismos",
-        "tracks",
-        "fril",
-        "frpd",
-        "subv8",
-        "c33",
-        "ppr",
-        "sni",
-        "evaluacion"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-operaciones",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.1",
-      "tags": [
-        "ssot",
-        "operaciones",
-        "alertas",
-        "compromisos",
-        "problemas",
-        "hitos",
-        "reuniones"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-organica",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.3.1",
-      "tags": [
-        "ssot",
-        "organica",
-        "divisiones",
-        "estructura-gore",
-        "jerarquia"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-presupuesto",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.4.1",
-      "tags": [
-        "ssot",
-        "presupuesto",
-        "clasificador",
-        "subtitulos",
-        "umbrales",
-        "ciclo"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-relaciones-dominio",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "2.0.0",
-      "tags": [
-        "ssot",
-        "relaciones",
-        "dominio",
-        "ipr",
-        "convenio",
-        "resolucion",
-        "morfismos",
-        "categorico"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-rendiciones",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.2.1",
-      "tags": [
-        "ssot",
-        "rendiciones",
-        "sisrec",
-        "cgr",
-        "sla",
-        "estados"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-tde",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "ssot",
-        "tde",
-        "transformacion-digital",
-        "fea",
-        "gesdoc",
-        "interoperabilidad",
-        "clave-unica"
-      ]
-    },
-    {
-      "urn": "urn:gn:kb:ssot-territorio",
-      "namespace": "_SCRIPTORIUM",
-      "status": "draft",
-      "version": "1.0.0",
-      "tags": [
-        "ssot",
-        "territorio",
-        "provincias",
-        "comunas",
-        "nuble"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:opm-methodology-glossary",
-      "namespace": "_SCRIPTORIUM",
-      "status": "published",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "glossary",
-        "methodology"
-      ]
-    },
-    {
-      "urn": "urn:fxsl:kb:opcloud-tutorial-videos",
-      "namespace": "_SCRIPTORIUM",
-      "status": "published",
-      "version": "1.0.0",
-      "tags": [
-        "opcloud",
-        "opm",
-        "tutorial",
-        "modelado",
-        "youtube",
-        "video-course"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:opm-youtube-cheatsheet",
-      "namespace": "_SCRIPTORIUM",
-      "status": "published",
-      "version": "1.0.0",
-      "tags": [
-        "opm",
-        "cheatsheet",
-        "methodology"
+        "korvo"
       ]
     },
     {
@@ -7342,6 +5681,18 @@
         "urgencias",
         "body-of-knowledge",
         "indice"
+      ]
+    },
+    {
+      "urn": "urn:salud:kb:namespace-curation-map",
+      "namespace": "salud",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "salud"
       ]
     },
     {
@@ -8653,6 +7004,18 @@
       ]
     },
     {
+      "urn": "urn:kora:kb:namespace-curation-map",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "namespace-map",
+        "kb-graph",
+        "curation",
+        "kora"
+      ]
+    },
+    {
       "urn": "urn:kora:kb:cat-foundations",
       "namespace": "kora",
       "status": "published",
@@ -8862,16 +7225,132 @@
       ]
     },
     {
-      "urn": "urn:kora:kb:autoria-spec",
+      "urn": "urn:kora:kb:gobernanza",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "4.4.0",
+      "tags": [
+        "gobernanza",
+        "constitucion",
+        "precedencia",
+        "identidad",
+        "enforcement"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:harness-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.1.0",
+      "tags": [
+        "spec",
+        "ontologia",
+        "arnés",
+        "pmi-lfs",
+        "agentico",
+        "hcai",
+        "constitucion"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:procesos-spec",
       "namespace": "kora",
       "status": "publicado",
       "version": "1.0.0",
+      "tags": [
+        "spec",
+        "procesos",
+        "toolchain",
+        "functor",
+        "invariantes",
+        "lifecycle"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:qa-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "quality-attributes",
+        "enriched",
+        "qa-budget",
+        "sigma",
+        "risk-ready"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:risk-register-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "riesgo",
+        "kleisli",
+        "qa",
+        "governance",
+        "writer"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:autoria-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.2.0",
       "tags": [
         "autoria",
         "artefacto-agentico",
         "serializacion",
         "proyeccion",
         "unificada"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:knowledge-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.2.0",
+      "tags": [
+        "knowledge",
+        "categoria",
+        "grafo",
+        "pipeline",
+        "namespace",
+        "artefacto"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:md-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "8.1.0",
+      "tags": [
+        "markdown",
+        "conocimiento",
+        "rag",
+        "koraficacion",
+        "fidelidad",
+        "atomic",
+        "prescriptivo",
+        "cristalizacion",
+        "rfc2119"
+      ]
+    },
+    {
+      "urn": "urn:kora:kb:agentskills-runtime-extension",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "runtime",
+        "agentskills",
+        "extension",
+        "transmutacion",
+        "proyeccion",
+        "byte-identical"
       ]
     },
     {
@@ -8918,69 +7397,40 @@
       ]
     },
     {
-      "urn": "urn:kora:kb:gobernanza",
-      "namespace": "kora",
-      "status": "publicado",
-      "version": "4.3.0",
-      "tags": [
-        "gobernanza",
-        "constitucion",
-        "precedencia",
-        "identidad",
-        "enforcement"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:harness-spec",
+      "urn": "urn:kora:kb:mastra-runtime-extension",
       "namespace": "kora",
       "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "spec",
-        "ontologia",
-        "arnés",
-        "pmi-lfs",
-        "agentico",
-        "hcai",
-        "constitucion"
+        "runtime",
+        "mastra",
+        "extension",
+        "workflow",
+        "mcp",
+        "transmutacion"
       ]
     },
     {
-      "urn": "urn:kora:kb:knowledge-spec",
+      "urn": "urn:kora:kb:multiagente-spec",
       "namespace": "kora",
       "status": "publicado",
-      "version": "1.2.0",
+      "version": "1.0.0",
       "tags": [
-        "knowledge",
-        "categoria",
-        "grafo",
-        "pipeline",
-        "namespace",
-        "artefacto"
-      ]
-    },
-    {
-      "urn": "urn:kora:kb:md-spec",
-      "namespace": "kora",
-      "status": "publicado",
-      "version": "8.0.0",
-      "tags": [
-        "markdown",
-        "conocimiento",
-        "rag",
-        "koraficacion",
-        "fidelidad",
-        "atomic",
-        "prescriptivo",
-        "cristalizacion",
-        "rfc2119"
+        "spec",
+        "runtime",
+        "multiagente",
+        "coreografia",
+        "sheaf",
+        "acp",
+        "openclaw"
       ]
     },
     {
       "urn": "urn:agengai:kb:openclaw-runtime-extension",
       "namespace": "kora",
       "status": "publicado",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "tags": [
         "spec",
         "runtime",
@@ -8995,7 +7445,7 @@
       "urn": "urn:kora:kb:runtime-spec-md",
       "namespace": "kora",
       "status": "publicado",
-      "version": "3.7.0",
+      "version": "3.8.0",
       "tags": [
         "spec",
         "runtime",
@@ -9007,7 +7457,7 @@
       "urn": "urn:kora:kb:transmutation-spec",
       "namespace": "kora",
       "status": "publicado",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "transmutacion",
@@ -9020,6 +7470,766 @@
     }
   ],
   "edges": [
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-10-documentos-expedientes-electronicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-11-plataformas-electronicas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-12-interoperabilidad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p06",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-4-procedimientos-electronicos-p07",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-8-norma-notificaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:decreto-9-norma-autenticacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:estandares-apertura-reutilizacion-datos-abiertos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:estrategia-capacitaciones-transformacion-digital",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:estrategia-datos-administracion-estado",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:estrategia-gobierno-digital-2030",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:estrategia-identidad-digital",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:glosario-plataforma-simple",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-calidad-web",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-introductoria-anonimizacion-datos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-rapida-cpat",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:guia-voz-y-tono",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p06",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p07",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p08",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-21180-transformacion-digital-estado",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:ley-21658",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-atencion-ciudadana-notificaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-coordinadora-transformacion-digital",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-inicio-notificaciones-electronicas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-integracion-claveunica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-integracion-notificaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-integracion-notificaciones-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-uso-boton-claveunica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-uso-simple-saas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:manual-usuario-institucional-notificaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:metodologia-gestion-proyectos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:orientaciones-basicas-gestion-tic",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:recomendaciones-diseno-servicios-estado",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:recomendaciones-tecnicas-cloud-publica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:registro-actividades-tratamiento",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:tde:kb:terminos-condiciones-claveunica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:tde:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:bpmn-actos-administrativos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:bpmn-cies-sitia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:bpmn-geoespacial-ide",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:comunicaciones-oc",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:cuentas-publicas-2021-2024",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:dictamenes-cgr-gore",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:erd-nuble-2024-2030",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:estrategia-gestion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:estrategia-gestion-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:estructura-estado-chile",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:flujos-aprobacion-documentos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-ipr-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-ipr-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-ipr-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-prpto",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-prpto-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-prpto-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-prpto-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gestion-rendiciones-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:gore-ideal",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:guia-comunicaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:guia-programas-directos-gore-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p06",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p07",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p08",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p09",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p10",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p11",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p12",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p13",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:indicadores-nuble-p14",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:instructivo-subvencion-8-2025-sts-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:intro-gores-nuble",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:lean6-gestion-core",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:lean6-gestion-core-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-partida-31",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-partida-31-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-partida-31-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-partida-31-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ley-presupuestos-2026-partida-31-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:loc-gore-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-compras-contrataciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-compras-contrataciones-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-flota-servicios-generales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-flota-servicios-generales-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-gestion-personas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-gestion-personas-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-gestion-personas-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-induccion-gore-nuble-2026",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-inventarios-activo-fijo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-inventarios-activo-fijo-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-inventarios-activo-fijo-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-operacional-dgi",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:manual-tesoreria",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:marco-legal-gores-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:marco-legal-gores-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:meyer-estructura-organizacional",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:meyer-estructura-organizacional-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:modelos-actos-juridicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:modernizacion-estado-waissbluth",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:modernizacion-estado-waissbluth-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:modernizacion-estado-waissbluth-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:nuble-250",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:organigrama",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:organigrama-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:plan-potenciamiento-dgi",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-agua-saneamiento",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-agua-saneamiento-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-cultura-deporte-turismo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-cultura-deporte-turismo-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-educacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-educacion-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-energia-comunicaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-equipamiento-social",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-genericos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-genericos-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-salud",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-seguridad-justicia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-seguridad-justicia-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-transporte",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-vialidad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-vialidad-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-vivienda-urbanismo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ris-vivienda-urbanismo-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:selector-ipr",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:ssot-relaciones-dominio-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:gn:kb:vision-desarrollo-nuble",
+      "type": "cites"
+    },
+    {
+      "from": "urn:gn:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
     {
       "from": "urn:gn:kb:marco-legal-gores",
       "to": "urn:gn:kb:loc-gore",
@@ -9216,6 +8426,191 @@
       "type": "cites"
     },
     {
+      "from": "urn:pro:kb:namespace-curation-map",
+      "to": "urn:pro:kb:mba-personal-kaufman",
+      "type": "cites"
+    },
+    {
+      "from": "urn:pro:kb:namespace-curation-map",
+      "to": "urn:pro:kb:mba-personal-kaufman-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:pro:kb:namespace-curation-map",
+      "to": "urn:pro:kb:mba-personal-kaufman-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:pro:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:00-fundamentos-previos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:00-toc",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:01-arquitectura-gateway",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:02-agente-unidad-fundamental",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:03-sesiones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:04-modelos-failover",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:05-memoria",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:06-multi-agent-routing",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:07-aislamiento-seguridad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:08-patrones-multitenant",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:09-sub-agentes",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:10-sub-agentes-anidados",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:11-comunicacion-inter-sesion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:12-heartbeats",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:13-cron-jobs",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:14-cron-vs-heartbeat",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:15-hooks",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:16-webhooks",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:17-lobster",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:18-modelo-seguridad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:19-operaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:20-patrones-diseno",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:21-decisiones-arquitectura",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:22-multi-gateway-docker-federation",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:apendices",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:cheatsheet",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:cheatsheet-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:forjador-especialista-openclaw",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:forjador-openclaw",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:openclaw-integration",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:salubrista-openclaw-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:agengai:kb:skills-anthropic",
+      "type": "cites"
+    },
+    {
+      "from": "urn:agengai:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
       "from": "urn:agengai:kb:openclaw-skills-manual",
       "to": "urn:agengai:kb:openclaw-manual-integral",
       "type": "cites"
@@ -9224,6 +8619,76 @@
       "from": "urn:agengai:kb:openclaw-manual-integral",
       "to": "urn:agengai:kb:openclaw-skills-manual",
       "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:certificados-tramites-post-constitucion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:eirl-empresa-individual",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:firma-electronica-empresas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:ley-21658-segdig",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:ley-21719-datos-personales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:marco-legal-sociedades-chile",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:patente-comercial-res",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:reglamento-ley-20659",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:sociedad-anonima-cerrada",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:sociedad-colectiva-comercial",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:sociedad-comandita",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:sociedad-por-acciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:legal:kb:sociedad-responsabilidad-limitada",
+      "type": "cites"
+    },
+    {
+      "from": "urn:legal:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
     },
     {
       "from": "urn:legal:kb:index",
@@ -9324,6 +8789,266 @@
       "from": "urn:legal:kb:registro-empresas-sociedades",
       "to": "urn:legal:kb:ley-20659-regimen-simplificado",
       "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:action-primary-key",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:algebraic-model-management",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:audit-patterns",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:categorical-data-structures",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:chapter0-operador-solitario",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:chapter0-operador-solitario-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:cognitive-toolkit",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:data-access-layers",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-address-guidance",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-namespace",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-readme",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-rules",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-tensiones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:fx-uom-model",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-adjunciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-comparacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-composicion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-composicion-estructura",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-extension",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-higher-categories",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-identidad-relacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-infraestructura",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-lifecycle",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-patrones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-procesos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-protocolos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-sintesis",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-tiempo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-topoi",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:icas-universales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:metodologia-modelamiento-opm-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:metodologia-modelamiento-opm-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:metodologia-modelamiento-opm-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:multicategory-multimodel-query-processing",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opcloud-tutorial-visual-observations-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-dynamic-behavior-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-dynamic-behavior-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-iso-19450-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-iso-19450-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-iso-19450-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:opm-iso-19450-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:procrastination-sirois",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:procrastination-sirois-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:stack-llm-arquitectura",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:stack-llm-arquitectura-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:swarm-ops-metodologia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:fxsl:kb:xanpan-agents-metodologia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:fxsl:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
     },
     {
       "from": "urn:fxsl:kb:opm-complexity-management",
@@ -9551,6 +9276,171 @@
       "type": "cites"
     },
     {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-activos-digitales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-actualizacion-de-informacion",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-beneficios-tributarios",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-declaracion-de-renta",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-declaraciones-juradas",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-factura-electronica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-herencias",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-impuestos-mensuales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-libros-contables-electronicos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-otros-impuestos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-preguntas-generales",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-situacion-tributaria",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:faq-termino-de-giro",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:sii:kb:index-documentos-derivados",
+      "type": "cites"
+    },
+    {
+      "from": "urn:sii:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:korvo:kb:dan-koe-filosofia-creador",
+      "type": "cites"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:korvo:kb:dan-koe-filosofia-creador-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:korvo:kb:dan-koe-filosofia-creador-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:korvo:kb:dan-koe-filosofia-creador-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:korvo:kb:manual-de-vida-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:korvo:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
       "from": "urn:ops:kb:arquitectura-stack-kora",
       "to": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "type": "cites"
@@ -9679,6 +9569,176 @@
       "from": "urn:ops:kb:ux-telegram-openclaw",
       "to": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:bok-medicina-emergencia",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p06",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p07",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p08",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-general-p09",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-herramientas-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-salud-mental-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-salud-mental-p06",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-unidades-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-unidades-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-unidades-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-urgencias-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:gestion-redes-urgencias-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-decreto-exento-31-2024",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-direccion-tecnica",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-direccion-tecnica-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-direccion-tecnica-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-manual-alta-complejidad",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-manual-alta-complejidad-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-manual-alta-complejidad-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-manual-alta-complejidad-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-norma-tecnica-2024",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-reglamento-ds1-2022",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-situacion-chile-2026",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-situacion-chile-2026-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-situacion-chile-2026-p03",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-situacion-chile-2026-p04",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:salud:kb:hodom-situacion-chile-2026-p05",
+      "type": "cites"
+    },
+    {
+      "from": "urn:salud:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
     },
     {
       "from": "urn:salud:kb:me-cefalea-convulsiones",
@@ -9991,6 +10051,21 @@
       "type": "cites"
     },
     {
+      "from": "urn:kora:kb:namespace-curation-map",
+      "to": "urn:kora:kb:cat-governance-lattice-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:namespace-curation-map",
+      "to": "urn:kora:kb:cat-skill-algebra-p02",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:namespace-curation-map",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
       "from": "urn:kora:kb:cat-agent-coalgebra",
       "to": "urn:kora:kb:cat-foundations",
       "type": "depends"
@@ -10151,101 +10226,6 @@
       "type": "cites"
     },
     {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:md-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:harness-spec",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "supersedes"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:skill-overlay-spec",
-      "type": "supersedes"
-    },
-    {
-      "from": "urn:kora:kb:claude-code-runtime-extension",
-      "to": "urn:kora:kb:harness-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:claude-code-runtime-extension",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:claude-code-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:claude-code-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:codex-runtime-extension",
-      "to": "urn:kora:kb:harness-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:codex-runtime-extension",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:codex-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:codex-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:gemini-runtime-extension",
-      "to": "urn:kora:kb:harness-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:gemini-runtime-extension",
-      "to": "urn:kora:kb:gobernanza",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:gemini-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
-      "from": "urn:kora:kb:gemini-runtime-extension",
-      "to": "urn:kora:kb:runtime-spec-md",
-      "type": "depends"
-    },
-    {
       "from": "urn:kora:kb:gobernanza",
       "to": "urn:kora:kb:md-spec",
       "type": "cites"
@@ -10253,11 +10233,36 @@
     {
       "from": "urn:kora:kb:gobernanza",
       "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gobernanza",
+      "to": "urn:kora:kb:qa-spec",
       "type": "cites"
     },
     {
       "from": "urn:kora:kb:gobernanza",
       "to": "urn:kora:kb:autoria-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:procesos-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:risk-register-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:harness-spec",
+      "to": "urn:kora:kb:multiagente-spec",
       "type": "cites"
     },
     {
@@ -10291,6 +10296,181 @@
       "type": "depends"
     },
     {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:cat-foundations",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:cat-governance-lattice",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:cat-audit-invariants",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:cat-behavioral-preservation",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:fxsl:kb:icas-procesos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:knowledge-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:procesos-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:fxsl:kb:icas-enriquecimiento",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:fxsl:kb:icas-calidad-riesgo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:fxsl:kb:icas-safety-alignment",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:qa-spec",
+      "to": "urn:kora:kb:md-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:cat-foundations",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:cat-audit-invariants",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:cat-behavioral-preservation",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:fxsl:kb:icas-calidad-riesgo",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:risk-register-spec",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:md-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:agentfile-spec",
+      "type": "supersedes"
+    },
+    {
+      "from": "urn:kora:kb:autoria-spec",
+      "to": "urn:kora:kb:skill-overlay-spec",
+      "type": "supersedes"
+    },
+    {
       "from": "urn:kora:kb:knowledge-spec",
       "to": "urn:kora:kb:gobernanza",
       "type": "cites"
@@ -10302,12 +10482,177 @@
     },
     {
       "from": "urn:kora:kb:md-spec",
-      "to": "urn:kora:kb:05-governance-lattice",
+      "to": "urn:kora:kb:cat-governance-lattice",
       "type": "cites"
     },
     {
       "from": "urn:kora:kb:md-spec",
       "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:agentskills-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:agentskills-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:agentskills-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:agentskills-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:agentskills-runtime-extension",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:claude-code-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:codex-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:gemini-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:mastra-runtime-extension",
+      "to": "urn:kora:kb:multiagente-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:cat-ecosystem-2cat",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:cat-behavioral-preservation",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:cat-governance-lattice",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:fxsl:kb:icas-protocolos",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:fxsl:kb:icas-topoi",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:agengai:kb:openclaw-runtime-extension",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:multiagente-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
       "type": "depends"
     },
     {
@@ -10328,6 +10673,11 @@
     {
       "from": "urn:agengai:kb:openclaw-runtime-extension",
       "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
+      "from": "urn:agengai:kb:openclaw-runtime-extension",
+      "to": "urn:kora:kb:multiagente-spec",
       "type": "depends"
     },
     {
@@ -10343,6 +10693,16 @@
     {
       "from": "urn:kora:kb:runtime-spec-md",
       "to": "urn:kora:kb:harness-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:runtime-spec-md",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:runtime-spec-md",
+      "to": "urn:kora:kb:multiagente-spec",
       "type": "cites"
     },
     {
@@ -10353,6 +10713,11 @@
     {
       "from": "urn:kora:kb:transmutation-spec",
       "to": "urn:kora:kb:autoria-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:transmutation-spec",
+      "to": "urn:kora:kb:multiagente-spec",
       "type": "cites"
     },
     {
@@ -10376,57 +10741,36 @@
       "type": "depends"
     }
   ],
-  "broken_edges": [
-    {
-      "from": "urn:ops:kb:principios-transmutacion-kora-openclaw-p02",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:pipeline-ingesta",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "cites"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:agentfile-spec",
-      "type": "supersedes"
-    },
-    {
-      "from": "urn:kora:kb:autoria-spec",
-      "to": "urn:kora:kb:skill-overlay-spec",
-      "type": "supersedes"
-    },
-    {
-      "from": "urn:kora:kb:md-spec",
-      "to": "urn:kora:kb:05-governance-lattice",
-      "type": "cites"
-    }
-  ],
+  "broken_edges": [],
+  "orphans_root": [],
+  "orphans_intencional": [],
+  "orphans_real": [],
   "stats": {
-    "total_nodes": 654,
-    "total_edges": 271,
+    "total_nodes": 521,
+    "total_edges": 654,
     "by_namespace": {
-      "_SCRIPTORIUM": 149,
-      "gn": 129,
-      "salud": 93,
-      "fxsl": 88,
-      "tde": 55,
-      "legal": 35,
-      "agengai": 34,
-      "sii": 26,
-      "kora": 26,
+      "gn": 130,
+      "salud": 94,
+      "fxsl": 89,
+      "tde": 56,
+      "legal": 36,
+      "agengai": 35,
+      "kora": 33,
+      "sii": 27,
       "ops": 10,
-      "korvo": 6,
-      "pro": 3
+      "korvo": 7,
+      "pro": 4
     },
     "by_relation_type": {
-      "cites": 195,
-      "depends": 74,
+      "cites": 544,
+      "depends": 108,
       "supersedes": 2
     },
-    "orphan_nodes": 444,
-    "broken_edges": 5,
+    "orphan_nodes": 0,
+    "orphans_root": 0,
+    "orphans_intencional": 0,
+    "orphans_real": 0,
+    "broken_edges": 0,
     "cycles_in_depends": 0
   }
 }

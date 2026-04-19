@@ -1,7 +1,9 @@
 """Tests for the unified check pipeline and check algebra properties."""
 
 import re
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 from common import run_cli, ROOT
 from kora_lib.graph import GraphEdge
@@ -175,8 +177,10 @@ class PromoteSmokeTests(unittest.TestCase):
     """Smoke tests for promote command."""
 
     def test_promote_rejects_nonexistent_file(self):
-        result = run_cli("promote", "/tmp/nonexistent.md", check=False)
-        self.assertNotEqual(result.returncode, 0)
+        with tempfile.TemporaryDirectory() as tmp:
+            nonexistent = Path(tmp) / "nonexistent.md"
+            result = run_cli("promote", str(nonexistent), check=False)
+            self.assertNotEqual(result.returncode, 0)
 
     def test_promote_rejects_file_outside_drafts(self):
         result = run_cli("promote", "KNOWLEDGE/kora/sys/pipeline-ingesta.md", check=False)

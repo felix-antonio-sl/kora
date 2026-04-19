@@ -769,10 +769,10 @@ class SemanticValidationTests(unittest.TestCase):
             "tags": ["a", "b", "c"],
             "lang": "es",
         }
-        body = "# Demo\n\n## Tema\n\nFuente: knowledge/domains/gn/foo.md y file:///tmp/bar.md\n"
+        body = "# Demo\n\n## Tema\n\nFuente: knowledge/domains/gn/foo.md y file:///example/bar.md\n"
         fixed = auto_fix_published_kora_markdown_parts(frontmatter, body)
         self.assertNotIn("knowledge/domains/gn/foo.md", fixed)
-        self.assertNotIn("file:///tmp/bar.md", fixed)
+        self.assertNotIn("file:///example/bar.md", fixed)
 
     def test_auto_fix_published_kora_markdown_parts_adds_primary_summary_when_missing(self):
         frontmatter = {

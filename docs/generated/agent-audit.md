@@ -4,7 +4,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 
 ## Resumen global
 
-- Fecha: 2026-04-18
+- Fecha: 2026-04-19
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Reglas absorbidas sin hallazgos manuales: 10
 - Reglas aun no institucionalizadas: 0
@@ -24,7 +24,7 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 ## Cohorte meta-kora
 
 - Workspaces auditados: 4
-- `validate --profile strict` verde: no
+- `validate --profile strict` verde: si
 - Hallazgos manuales: 0
 - P1: 0 | P2: 0 | P3: 0
 
@@ -75,7 +75,7 @@ Hallazgos repetidos:
 ## Cohorte domains
 
 - Workspaces auditados: 2
-- `validate --profile strict` verde: no
+- `validate --profile strict` verde: si
 - Hallazgos manuales: 0
 - P1: 0 | P2: 0 | P3: 0
 

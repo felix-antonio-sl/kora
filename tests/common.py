@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -38,6 +39,33 @@ def run_cli(*args, check=True):
 
 def load_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def canonical_path(path):
+    """Normalizador canonico de paths — colapsa isomorfismos de plataforma.
+
+    En macOS, tempfile.TemporaryDirectory entrega paths bajo /var/folders/...
+    que son symlinks a /private/var/folders/...; los CLI internos de KORA
+    canonizan via Path.resolve() antes de imprimir, por lo que toda
+    comparacion entre rutas observadas y rutas construidas debe pasar por
+    este normalizador. En Linux es idempotente.
+
+    Acepta str o Path; devuelve str con la forma canonica.
+    """
+    return str(Path(os.fspath(path)).resolve())
+
+
+def assert_path_in_output(test_case, output, path, msg=None):
+    """Asercion portable: la representacion canonica de `path` aparece en `output`.
+
+    Reemplaza el antipatron assertIn(str(path), output), que falla en macOS
+    cuando el CLI canonizo `/var/...` a `/private/var/...` pero el test
+    construyo la cadena esperada sin resolve.
+    """
+    canonical = canonical_path(path)
+    if canonical not in output:
+        detail = msg or f"canonical path not found in output: {canonical!r}"
+        test_case.fail(f"{detail}\n--- output ---\n{output}")
 
 
 def has_productive_workspaces():

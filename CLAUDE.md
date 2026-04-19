@@ -295,6 +295,38 @@ Cuando ingestas un artefacto foraneo:
 - Usa `docs/generated/operating-core-contracts.*` para contrato operativo sin releer workspace por workspace.
 - Si corriges `fxsl/cat`, hazlo para eliminar ruido o preparar absorcion formal, no para darle autoridad normativa directa.
 
+## Portabilidad
+
+**Alcance oficial**: Linux (Ubuntu 24.04+) y macOS (13+). Python >= 3.11,
+probado en 3.12. Windows nativo queda **fuera de alcance** (WSL es
+best-effort, sin garantias).
+
+**Mecanismos de aseguramiento**:
+
+1. **CI matriz** (`.github/workflows/ci.yml`): cada push a master y cada PR
+   corre `kora check --strict` + `unittest discover` + verificacion kb-graph
+   en `ubuntu-latest` y `macos-latest`. Sin verde en ambos, no hay merge.
+2. **Check `portabilidad-tests`** (severidad medium, fase lint): escanea
+   `tests/` y `toolchain/` en busca de paths literales no portables (`/tmp/`,
+   `/var/folders/`, `/Users/`, `/home/`, `/private/var/`). El subarbol
+   `toolchain/legacy_migration/` esta explicitamente excluido (scripts
+   one-shot historicos).
+3. **Helpers canonicos en `tests/common.py`**: `canonical_path(p)` y
+   `assert_path_in_output(self, output, path)` aplican `Path.resolve()` a
+   ambos lados antes de comparar — necesario porque macOS convierte
+   `/var/folders/...` → `/private/var/folders/...` cuando el CLI canoniza.
+4. **Runtime guard**: `toolchain/kora` aborta con exit 2 si detecta Python
+   < 3.11.
+
+**Regla para tests**: toda asercion que compare output del CLI con un path
+construido en el test debe pasar por `assert_path_in_output` (o
+`canonical_path` manual). Comparar `str(path)` con stdout es anti-patron —
+funciona en Linux y falla en macOS por symlinks de tempdir.
+
+**Escape hatch**: una linea con `# portable-exempt` al final queda excluida
+del check. Usar solo para strings descriptivos o URLs que contienen
+substrings coincidentes, no para path literales operativos.
+
 ## Estado del fleet
 
 - 7 workspaces productivos migrados a `autoria-spec v1.0` (commit `84dc1bb`, 2026-04-18): kora/{guardian, curator, custodio, forgemaster, clawforge}, gn/{goreologo, digitrans}. URN `urn:{ns}:artefacto:{id}` + shape `artefacto.*` + scaffolds legacy purgados. Residual (deuda de autoria humana): 8 `descripcion` faltante en AGENT.md (ver `kora check` con `autoria-conformance`).

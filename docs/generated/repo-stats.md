@@ -8,30 +8,30 @@ Este documento es generado por `scripts/kora sync-docs`. No editar a mano.
 - Workspaces deprecated: 0
 - Workspaces incompletos: 0
 - Artefactos bootstrap de agente: 0
-- Entradas totales de catalogo: 599
+- Entradas totales de catalogo: 615
 
 ## Catalogo por categoria
 
 | Categoria | Conteo |
 |-----------|--------|
 | Agents | 0 |
-| Skills | 85 |
-| Knowledge | 507 |
+| Skills | 84 |
+| Knowledge | 523 |
 | Documents | 0 |
-| Other | 7 |
+| Other | 8 |
 
 ## Catalogo por namespace
 
 | Namespace | Entradas |
 |-----------|----------|
-| gn | 143 |
-| kora | 103 |
-| salud | 93 |
-| fxsl | 89 |
-| tde | 55 |
-| agengai | 36 |
-| legal | 35 |
-| sii | 26 |
+| gn | 144 |
+| kora | 110 |
+| salud | 94 |
+| fxsl | 90 |
+| tde | 56 |
+| agengai | 37 |
+| legal | 36 |
+| sii | 27 |
 | ops | 10 |
-| korvo | 6 |
-| pro | 3 |
+| korvo | 7 |
+| pro | 4 |

@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from uuid import uuid4
 
-from common import FIXTURES, ROOT, run_cli
+from common import FIXTURES, ROOT, assert_path_in_output, run_cli
 from kora_lib.artifacts import load_markdown_parts
 from kora_lib.atomize import _build_source_docs, _deduplicate_candidates, _extract_candidates
 from kora_lib.promote import _atomic_bundle_paths
@@ -52,7 +52,7 @@ class AtomizeCliTests(unittest.TestCase):
                         family: atomic
                         atomic:
                           producer: urn:kora:artefacto:atomize
-                          source_corpus: /tmp/fuente.md
+                          source_corpus: ./fuente.md
                           n_propositions: 1
                           segmented: false
                           segment_role: single
@@ -64,7 +64,7 @@ class AtomizeCliTests(unittest.TestCase):
                     ## Resumen
 
                     - Productor canonico: `urn:kora:artefacto:atomize`
-                    - Corpus fuente: `/tmp/fuente.md`
+                    - Corpus fuente: `./fuente.md`
                     - Proposiciones: `1`
                     - Fuentes: `1`
                     - Segmentado: `no`
@@ -366,7 +366,7 @@ class AtomizeCliTests(unittest.TestCase):
             ## Resumen
 
             - Productor canonico: `urn:kora:artefacto:atomize`
-            - Corpus fuente: `/tmp/fuente.md`
+            - Corpus fuente: `./fuente.md`
             - Proposiciones: `1`
             - Fuentes: `1`
             - Segmentado: `no`
@@ -388,7 +388,7 @@ class AtomizeCliTests(unittest.TestCase):
                     "family": "atomic",
                     "atomic": {
                         "producer": "urn:kora:artefacto:atomize",
-                        "source_corpus": "/tmp/fuente.md",
+                        "source_corpus": "fuente.md",
                         "n_propositions": 1,
                         "segmented": False,
                         "segment_role": "single",
@@ -732,7 +732,7 @@ class AtomizeCliTests(unittest.TestCase):
                 write_atomic_acceptance_review(review_path, f"atomic-{slug}")
 
                 promoted = run_cli("promote", str(artifact_path), "--review", str(review_path))
-                self.assertIn(f"ACCEPTANCE REVIEW: {review_path}", promoted.stdout)
+                assert_path_in_output(self, promoted.stdout, review_path, msg="ACCEPTANCE REVIEW path missing")
                 self.assertIn("PROMOTED:", promoted.stdout)
                 self.assertTrue((published_dir / f"atomic-{slug}.md").exists())
                 self.assertFalse(artifact_path.exists())
