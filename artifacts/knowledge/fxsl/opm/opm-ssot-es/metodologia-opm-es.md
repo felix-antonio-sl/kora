@@ -349,7 +349,7 @@ Aplica cuando los subprocesos tienen un orden fijo y predefinido.
 
 Aplica cuando los subprocesos son independientes y PUEDEN ocurrir en cualquier orden.
 
-**Cuatro pares de despliegue-plegado** (uno por cada relación estructural fundamental de §7.2). Estos pares son operaciones de refinamiento-abstracción sobre relaciones estructurales; no debe confundirse su conteo con los **cuatro mecanismos ontológicos** enumerados en §8.1 (descomposición, despliegue, expresión de estados, composición inter-modelo por sub-modelo), que categorizan las operaciones de toda la capa base y pertenecen a un nivel taxonómico distinto:
+**Cuatro pares de despliegue-plegado** (uno por cada relación estructural fundamental de §7.2). Estos pares son operaciones de refinamiento-abstracción sobre relaciones estructurales; no debe confundirse su conteo con los **cuatro pares canónicos** enumerados en §8.1 (tres intra-modelo y uno inter-modelo), que categorizan las operaciones de toda la capa base y pertenecen a un nivel taxonómico distinto:
 
 | Relación | Despliegue | Plegado |
 |----------|------------|---------|
@@ -480,7 +480,7 @@ Cada modelo OPM individual tiene su propio árbol OPD. Cuando existen sub-modelo
 
 **Resumen operativo del árbol:** la regla canónica de integridad del árbol vive en `opm-visual-es`. Metodológicamente, quien modela DEBE tratar los OPDs hoja como única clase eliminable y DEBERÍA usar OPDs de vista solo como artefactos de navegación, no como nodos de refinamiento.
 
-**Mapa del Sistema:** vista anclada al árbol que muestra el contenido de cada OPD como índice navegable. Esencial para navegación en modelos complejos. El modelador DEBERÍA generarlo para modelos con más de 10 OPDs (ver §16).
+**Mapa del Sistema:** vista anclada al árbol que muestra el contenido de cada OPD como índice navegable mediante miniaturas o equivalentes de vista. No constituye refinamiento ni reabre el contrato OPD⇄OPL local: durante su uso, el foco metodológico es navegación, no lectura textual del modelo. Esencial para navegación en modelos complejos. El modelador DEBERÍA generarlo para modelos con más de 10 OPDs (ver §16).
 
 **OPD Último:** representación plana obtenida por aplanamiento recursivo del árbol OPD local. Es útil para uso automatizado, pero no sustituye la identidad persistente ni la estructura explícita de referencias entre modelos.
 
@@ -574,7 +574,9 @@ Las capacidades de gobernanza de esta subsección pertenecen al manual metodoló
 |-------|---------------|
 | Ninguno | Sin restricción terminológica |
 | Sugerir | Sugiere término estándar; el modelador puede ignorar |
-| Aplicar | Impide términos no estandarizados |
+| Forzar | Impide confirmar términos no estandarizados sin elegir una forma canónica |
+
+Toda sustitución motivada por ontología organizacional DEBE ser trazable como política de normalización o como metadato reversible. No debe confundirse con estilado ni con corrección ortográfica silenciosa.
 
 **Clasificación de informatividad del modelo:** Las sentencias OPPL se clasifican en: Definición, Estructural, Procedimental, Meta, Desconocida. Métricas: nivel informativo, puntaje ponderado, promedio INF, total de sentencias OPPL. El modelador DEBERÍA ejecutar clasificación periódicamente para identificar enlaces de precedencia faltantes y procesos sin entradas/salidas.
 
@@ -726,9 +728,9 @@ Un estado PUEDE ser simultáneamente inicial y final, modelando objetos que reto
 
 Todo atributo cuantitativo DEBERÍA declarar unidad de medida y tipo de dato como parte de su especificación, independientemente de si el modelo se simula. En la superficie visual o computacional, la convención recomendada es: nombre del atributo seguido de unidad entre corchetes y alias entre llaves: `Pressure [kPa] {p}`, `Height [in] {h}`, `Cost [$] {c}`. La serialización textual canónica de OPL-ES puede proyectar esa misma información sin reproducir necesariamente esa decoración literal.
 
-**Tipos válidos:** integer, float, string, character, boolean. El tipo restringe los valores admisibles del atributo y permite validación de rangos.
+**Tipos válidos:** boolean, string, integer, float, double, short, long, enumerated. El tipo restringe los valores admisibles del atributo y permite validación de rangos.
 
-**Rangos:** El modelador DEBERÍA asignar rangos a atributos con dominio acotado. Convención canónica del corpus: intervalos con `..` y delimitadores de inclusión/exclusión, por ejemplo `[0..100]`, `(0..*)`, `[1..10], [20..30]`.
+**Rangos:** El modelador DEBERÍA asignar rangos a atributos con dominio acotado. Convención canónica del corpus: intervalos con `..` y delimitadores de inclusión/exclusión, por ejemplo `[0..100]`, `(0..*)`, `[1..10], [20..30]`. Cuando un atributo hereda un rango desde una plantilla o clase, una ocurrencia más concreta PUEDE restringirlo mediante un sub-rango compatible; NO DEBERÍA ampliarlo silenciosamente sin declarar override explícito.
 
 ## 10 Control de Flujo Avanzado
 
@@ -860,7 +862,7 @@ El modelador PUEDE especificar una distribución de duración en la propiedad de
 
 Cuando se implemente el modelo en una herramienta con soporte computacional, el modelador DEBE seguir este patrón de 5 pasos:
 
-1. **Definir objetos** con atributos computacionales (tipo: `integer`, `float`, `string`, `character`, `boolean`)
+1. **Definir objetos** con atributos computacionales (tipo: `boolean`, `string`, `integer`, `float`, `double`, `short`, `long` o `enumerated`)
 2. **Asignar alias** a cada atributo computacional (ej.: `x1`, `y1`) para uso en fórmulas
 3. **Crear proceso de cálculo** representado con llaves `{}` en el OPD, indicando naturaleza computacional
 4. **Definir fórmula** usando los alias (ej.: `pendiente = (y2-y1)/(x2-x1)`)
@@ -870,7 +872,7 @@ Cuando se implemente el modelo en una herramienta con soporte computacional, el 
 
 ### 12.5 Validación de Rangos
 
-El modelador DEBERÍA asignar rangos a atributos computacionales para validación durante simulación. Sintaxis canónica: `[incluido..incluido]`, `(exclusivo..exclusivo)` y combinaciones mixtas cuando corresponda. Múltiples rangos: `[1..10], [20..30]`. El sistema valida automáticamente que los valores permanezcan en rangos válidos.
+El modelador DEBERÍA asignar rangos a atributos computacionales para validación durante simulación. Sintaxis canónica: `[incluido..incluido]`, `(exclusivo..exclusivo)` y combinaciones mixtas cuando corresponda. Múltiples rangos: `[1..10], [20..30]`. `*` puede usarse como extremo abierto. El sistema valida automáticamente que los valores permanezcan en rangos válidos, distinguiendo entre la declaración persistente del rango y el valor concreto de runtime.
 
 ### 12.6 Flujo de Simulación con Entrada de Usuario
 

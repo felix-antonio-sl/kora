@@ -593,7 +593,7 @@ Dentro de un proceso descompuesto, la invocación se determina por posición ver
 
 ### 10.1 Mecanismos de refinamiento y abstracción
 
-Esta versión amplía la tabla vigente de cuatro mecanismos a cinco, incluyendo composición inter-modelo.
+Esta versión amplía el esquema vigente de tres pares intra-modelo a cuatro pares canónicos, añadiendo composición inter-modelo.
 
 | Par | Refinamiento | Abstracción |
 |---|---|---|
@@ -602,7 +602,7 @@ Esta versión amplía la tabla vigente de cuatro mecanismos a cinco, incluyendo 
 | Comportamiento | Descomposición (`in-zooming`) | Recomposición (`out-zooming`) |
 | Composición inter-modelo | Sub-model referenciado | Desconexión de sub-model |
 
-**Regla V-242**: La composición inter-modelo por sub-model es un mecanismo de refinamiento explícito. Se distingue de los cuatro mecanismos clásicos porque cruza la frontera del modelo OPM como unidad de serialización, introduce identidad persistente de vínculo y requiere gobernanza propia documentada en §23.
+**Regla V-242**: La composición inter-modelo por sub-model es un mecanismo de refinamiento explícito. Se añade a los tres mecanismos clásicos intra-modelo porque cruza la frontera del modelo OPM como unidad de serialización, introduce identidad persistente de vínculo y requiere gobernanza propia documentada en §23.
 
 **Regla V-243**: Operaciones como `bring connected things`, `bring links between selected entities` o equivalentes son operadores derivados que materializan enlaces o cosas ya existentes en el modelo sobre un OPD distinto. No constituyen mecanismos de refinamiento ontológico y se regulan en §26.
 
@@ -678,7 +678,7 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 **Regla V-95**: La **esencia** (física/informacional) no cambia a través del refinamiento. Es una propiedad estática de la cosa.
 
-**Regla V-96**: La **perseverancia** (estática/dinámica) no cambia a través del refinamiento. Está determinada por el tipo: los objetos son persistentes, los procesos son transitorios.
+**Regla V-96**: La **perseverancia** (persistente/transitoria) no cambia a través del refinamiento. Está determinada por el tipo: los objetos son persistentes, los procesos son transitorios.
 
 **Regla V-97**: Los **nombres** no cambian a través del refinamiento. La convención de capitalización se mantiene consistente en todos los OPDs del modelo.
 
@@ -886,7 +886,7 @@ Raíz en un objeto. Muestra su elaboración por refinamiento (exhibición, agreg
 | Categoría | Definición |
 |---|---|
 | OPD jerárquico | Nace por refinamiento de una cosa del modelo (in-zooming u unfolding). Participa del árbol por relación padre-hijo derivada de refinamiento. |
-| OPD de vista anclada | Vive en el árbol por posición, pero no por refinamiento. Incluye: `Subsystem Model View` (§23), `System Map`, `Requirement View` (§19.7) y otras vistas tipificadas por la implementación. |
+| OPD de vista anclada | Vive en el árbol por posición, pero no por refinamiento. Incluye: `Vista de Sub-modelo` (§23), `Mapa del Sistema` como índice navegable por miniaturas o equivalentes, `Vista de Requisitos` (§19.7) y otras vistas tipificadas por la implementación. |
 | OPD de vista ad hoc | Colección editorial transitoria no anclada al árbol jerárquico ni a una vista tipificada. No participa de refinamiento. |
 
 **Regla V-244**: Las tres categorías admiten reglas distintas de creación, eliminación y navegación. La implementación debe declarar en su metadato a qué categoría pertenece cada OPD del modelo.
@@ -928,14 +928,14 @@ La política de denominación del corpus no vive en esta capa. Los nombres canó
 En la capa visual solo aplican las siguientes reglas de rotulado:
 
 - el rótulo debe ser legible dentro del contenedor visual sin introducir ambigüedad geométrica;
-- un alias PUEDE mostrarse entre paréntesis o llaves junto al nombre para referencia compacta en visualizaciones o anotaciones;
+- un alias decorativo PUEDE mostrarse entre paréntesis junto al nombre para referencia compacta en visualizaciones o anotaciones;
 - el texto del estado siempre se renderiza dentro del objeto propietario, nunca como entidad flotante.
 
 **Regla V-47**: La unicidad nominal se evalúa a nivel de modelo, pero toda apariencia visual DEBE renderizarse sin ambigüedad respecto de la cosa a la que refiere.
 
 **Regla V-121**: La convención léxica concreta del nombre del proceso se hereda de la capa textual activa del corpus; esta capa visual no introduce una política paralela.
 
-**Regla V-122**: Una cosa puede mostrar un **alias** breve junto al nombre, entre paréntesis o llaves, por ejemplo `Turbojet Engine System (tes)` o `Pressure {p}`. La decisión de definir ese alias y su política de uso no pertenecen a esta capa visual. Cuando el alias se escribe entre llaves `{alias}`, adquiere significado de binding computacional y se regula por §20 (capa computacional).
+**Regla V-122**: Una cosa puede mostrar un **alias** breve junto al nombre entre paréntesis, por ejemplo `Sistema de Turborreactor (str)`. La decisión de definir ese alias y su política de uso no pertenecen a esta capa visual. Las llaves `{alias}` se reservan exclusivamente al binding computacional regulado por §20.
 
 **Regla V-48**: [Eliminada — contenido absorbido por V-4. Toda referencia externa a V-48 debe redirigirse a V-4.]
 
@@ -999,7 +999,7 @@ La implementación puede materializar la marca de proceso activo por cualquiera 
 - contorno reforzado en color reservado;
 - halo externo reservado.
 
-**Regla V-132**: El canal visual reservado al proceso activo no puede coincidir exactamente con el canal del refinable definido por V-33 y V-69. Si una implementación usa ambos como contornos reforzados, DEBE diferenciar color, halo o badge auxiliar.
+**Regla V-132**: El canal visual reservado al proceso activo no puede coincidir exactamente con el canal del refinable definido por V-33 y V-69. Si una implementación usa ambos como contornos reforzados, DEBE diferenciar color, halo o distintivo auxiliar.
 
 ### 17.2 Estado actual
 
@@ -1019,7 +1019,7 @@ La implementación puede materializar la marca de proceso activo por cualquiera 
 
 **Regla V-137**: La implementación puede distinguir, además del estado activo, otros estados operacionales del proceso durante simulación, como suspendido esperando input o completado recientemente. Si lo hace, debe usar marcas reservadas distintas de las de §17.1 y §17.2.
 
-**Regla V-138**: Un proceso suspendido esperando input externo no puede ser visualmente indistinguible de un proceso inactivo si el artefacto se presenta como snapshot de simulación. Debe exhibir una marca propia o un badge de modo equivalente.
+**Regla V-138**: Un proceso suspendido esperando input externo no puede ser visualmente indistinguible de un proceso inactivo si el artefacto se presenta como snapshot de simulación. Debe exhibir una marca propia o un distintivo de modo equivalente.
 
 ### 17.5 Modos de simulación
 
@@ -1077,7 +1077,7 @@ Esta subsección desarrolla las consecuencias del régimen cross-model para el r
 
 **Regla V-252**: Toda cosa cuya existencia pueda ser referenciada desde otro modelo DEBE exponer un URI o handle persistente en la serialización del modelo propietario.
 
-**Regla V-253**: La atenuación cromática, el badge de procedencia, el nombre alias o cualquier otra marca visual aplicada a una cosa en tanto que referencia externa son parte de la gramática de vista de §23, no de la gramática nuclear §1.1b.
+**Regla V-253**: La atenuación cromática, el distintivo de procedencia, el nombre alias o cualquier otra marca visual aplicada a una cosa en tanto que referencia externa son parte de la gramática de vista de §23, no de la gramática nuclear §1.1b.
 
 ---
 
@@ -1099,11 +1099,11 @@ Los estereotipos son extensiones tipadas que se aplican a una cosa OPM existente
 
 ### 19.2 Sintaxis visible
 
-**Regla V-144**: La representación visual canónica de un estereotipo en canvas usa prefijo ASCII `<<Nombre>>` embebido en el rótulo visible de la cosa o, alternativamente, un badge visible que preserve el mismo contenido textual en el canon-diagrama.
+**Regla V-144**: La representación visual canónica de un estereotipo en canvas usa prefijo ASCII `<<Nombre>>` embebido en el rótulo visible de la cosa o, alternativamente, un distintivo visible que preserve el mismo contenido textual en el canon-diagrama.
 
 **Regla V-145**: La representación textual canónica en OPL puede usar comillas angulares `«Nombre»`. Las formas `<< >>` y `« »` se consideran equivalentes de superficie siempre que remitan al mismo estereotipo.
 
-**Regla V-146**: Un artefacto canónico no puede ocultar por completo la condición estereotipada de una cosa. Si el prefijo se omite del rótulo visible por razones de layout, el estereotipo debe persistir mediante badge, icono o metadato explícito de export ligado a la cosa.
+**Regla V-146**: Un artefacto canónico no puede ocultar por completo la condición estereotipada de una cosa. Si el prefijo se omite del rótulo visible por razones de layout, el estereotipo debe persistir mediante distintivo, icono o metadato explícito de export ligado a la cosa.
 
 ### 19.3 Propiedades forzadas y estructura derivada
 
@@ -1141,11 +1141,11 @@ Los estereotipos son extensiones tipadas que se aplican a una cosa OPM existente
 
 **Regla V-157**: El conjunto `Satisfied Requirement Set` se admite como colección especializada de requisitos. Si la implementación permite marcarla como ordenada, esa propiedad debe quedar serializada y ser recuperable en el canon-documento.
 
-### 19.7 Requirement Views
+### 19.7 Vistas de Requisitos (`Requirement Views`)
 
-**Regla V-254**: Las `Requirement Views` son OPDs derivados por filtrado semántico desde el modelo. Se clasifican como OPD de vista anclada según V-114 (§15.4) y participan del árbol en esa categoría.
+**Regla V-254**: Las `Vistas de Requisitos` (`Requirement Views`) son OPDs derivados por filtrado semántico desde el modelo. Se clasifican como OPD de vista anclada según V-114 (§15.4) y participan del árbol en esa categoría.
 
-**Regla V-255**: Las `Requirement Views` son read-only respecto al contenido OPM que proyectan. Editar sus elementos debe redirigirse a los OPDs jerárquicos fuente del modelo.
+**Regla V-255**: Las `Vistas de Requisitos` (`Requirement Views`) son de solo lectura respecto al contenido OPM que proyectan. Editar sus elementos debe redirigirse a los OPDs jerárquicos fuente del modelo.
 
 ---
 
@@ -1177,11 +1177,12 @@ Esta sección formaliza la capa mediante la cual el modelo OPM incorpora binding
 - escalar numérico;
 - cadena textual;
 - disyunción textual;
+- intervalo o lista de intervalos cuando el dominio permitido deba hacerse visible;
 - estructura multilínea.
 
 **Regla V-165**: Un objeto no debe exhibir más de un slot de valor primario por defecto salvo que la plantilla computacional lo declare explícitamente.
 
-**Regla V-166**: Cuando un objeto combine estados cualitativos y slot de valor, ambos deben poder distinguirse por al menos uno de los siguientes canales: **posición** (el slot de valor se coloca separado del cluster de estados), **rotulado** (prefijo o etiqueta explícita del slot) o **estilo auxiliar** (marca gráfica distintiva reservada al slot). Se recomienda **posición** como canal preferente; la implementación DEBE declarar qué canal usa y no puede dejar la distinción enteramente a inferencia contextual.
+**Regla V-166**: Cuando un objeto combine estados cualitativos y slot de valor, ambos deben poder distinguirse por al menos uno de los siguientes canales: **posición** (el slot de valor se coloca separado del cluster de estados), **rotulado** (prefijo o etiqueta explícita del slot) o **estilo auxiliar** (marca gráfica distintiva reservada al slot). Se recomienda **posición** como canal preferente; la implementación DEBE declarar qué canal usa y no puede dejar la distinción enteramente a inferencia contextual. Si el slot exhibe un rango permitido, los delimitadores `[]` / `()` y la coma entre intervalos forman parte del token visible y no deben normalizarse ni colapsarse como simple valor de runtime.
 
 ### 20.4 Proceso ejecutable
 
@@ -1216,11 +1217,11 @@ No se exige embutir el cuerpo del código en el formato de intercambio; sí se e
 
 **Regla V-173**: Un proceso que obtiene input desde usuario, API, broker o middleware externo sigue siendo proceso OPM. La condición de externidad se expresa por su contrato computacional, no por una clase gráfica distinta de la elipse.
 
-**Regla V-174**: Las integraciones externas como URL, MQTT o ROS pueden materializarse mediante estereotipo, badge o metadato de export, pero la gramática nuclear mínima sigue siendo el proceso ejecutable `()` enlazado a cosas OPM.
+**Regla V-174**: Las integraciones externas como URL, MQTT o ROS pueden materializarse mediante estereotipo, distintivo o metadato de export, pero la gramática nuclear mínima sigue siendo el proceso ejecutable `()` enlazado a cosas OPM.
 
 ### 20.8 Gemelo digital y referencias externas
 
-**Regla V-175**: Cuando una cosa OPM represente un gemelo digital o una entidad enlazada a un sistema externo, esa condición debe ser recuperable en el modelo mediante estereotipo, alias, badge o metadato canónico. No puede depender solo de convenciones de color o de interfaz.
+**Regla V-175**: Cuando una cosa OPM represente un gemelo digital o una entidad enlazada a un sistema externo, esa condición debe ser recuperable en el modelo mediante estereotipo, alias, distintivo o metadato canónico. No puede depender solo de convenciones de color o de interfaz.
 
 ---
 
@@ -1249,11 +1250,13 @@ Un quinto modo, runtime, queda regulado por §17.
 
 ### 21.3 Notas y anotaciones meta
 
-**Regla V-204**: Las notas libres, sticky notes y anotaciones meta pueden coexistir sobre el canvas, pero no pertenecen a la gramática OPM nuclear. Si la implementación permite exportarlas, debe marcarlas como contenido meta del autor y no como hecho del modelo.
+**Regla V-204**: Las notas libres, sticky notes y anotaciones meta pueden coexistir sobre el canvas, pero no pertenecen a la gramática OPM nuclear. Si la implementación permite exportarlas, debe marcarlas como contenido meta del autor y no como hecho del modelo. Si además reserva una morfología por defecto para ellas, esa morfología DEBE permanecer fuera de los canales semánticos de OPM y puede combinar, por ejemplo, fondo amarillo pálido, pin rojo y anclaje discontinuo corto, siempre que esa combinación no sea reutilizable por estados, enlaces, validaciones o simulación.
 
 ### 21.4 Búsqueda y navegación
 
 **Regla V-205**: El resaltado de búsqueda o navegación, si existe, debe usar un canal reservado distinto de las marcas de simulación y de refinamiento. Su ausencia no invalida el modelo, pero su presencia no debe confundirse con actividad o designación.
+
+El `Mapa del Sistema` pertenece a esta misma familia de navegación: puede usar miniaturas de OPDs, flechas meta o marcadores de navegación propios de la vista, siempre que esos elementos no se presenten como enlaces OPM ni como contenido del modelo.
 
 ### 21.5 Tutorial y preferencias de asistencia
 
@@ -1328,23 +1331,23 @@ Esta sección amplía la noción de modelo OPM para admitir composición por ref
 
 ### 23.3 Vista de sub-modelo
 
-**Regla V-180**: Una vista de sub-modelo anclada al árbol se identifica como `SDx.y: <Nombre> Subsystem Model View` o equivalente declarado. El token `SDx.y` en este patrón es **etiqueta visible interna al árbol del modelo propietario**, no identidad persistente del OPD (V-247 a V-249): las referencias externas al sub-modelo o a sus OPDs deben seguir usando el identificador persistente declarado por V-248. Esta clase de vista participa del árbol por posición, pero no equivale a refinamiento ordinario. Se clasifica como OPD de vista anclada según V-114 (§15.4).
+**Regla V-180**: Una vista de sub-modelo anclada al árbol se identifica como `SDx.y: <Nombre> Vista de Sub-modelo` o equivalente declarado. El token `SDx.y` en este patrón es **etiqueta visible interna al árbol del modelo propietario**, no identidad persistente del OPD (V-247 a V-249): las referencias externas al sub-modelo o a sus OPDs deben seguir usando el identificador persistente declarado por V-248. Esta clase de vista participa del árbol por posición, pero no equivale a refinamiento ordinario. Se clasifica como OPD de vista anclada según V-114 (§15.4).
 
 **Regla V-181**: La vista de sub-modelo constituye una categoría distinta del OPD jerárquico ordinario y de la vista ad hoc no anclada. La implementación debe diferenciar estas tres categorías en su metadato de árbol y de export, conforme a V-114.
 
 ### 23.4 Lectura desde el padre
 
-**Regla V-182**: Cuando un sub-modelo se visualiza desde el árbol del padre, la implementación puede presentarlo en modo read-only o equivalente. Esa condición pertenece a la gramática de vista, no al contenido del OPD.
+**Regla V-182**: Cuando un sub-modelo se visualiza desde el árbol del padre, la implementación puede presentarlo en modo de solo lectura o equivalente. Esa condición pertenece a la gramática de vista, no al contenido del OPD.
 
-**Regla V-183**: El nodo del árbol del padre que referencia un sub-modelo debe llevar un badge o indicador explícito de vínculo externo. El mismo vínculo debe ser visible en la pestaña, breadcrumb o metadato del documento.
+**Regla V-183**: El nodo del árbol del padre que referencia un sub-modelo debe llevar un distintivo o indicador explícito de vínculo externo. El mismo vínculo debe ser visible en la pestaña, ruta de navegación o metadato del documento.
 
 ### 23.5 Apariencias cross-model
 
 **Regla V-184**: Una cosa visible dentro de un sub-modelo que también aparece en el modelo padre es **referencia externa a la misma existencia compartida** (V-123, §18.7). No es existencia-espejo ni entidad duplicada. La existencia pertenece al modelo propietario original y la aparición en el sub-modelo es apariencia local de una referencia externa.
 
-**Regla V-185**: Si la implementación usa atenuación cromática, alias forzado o badges para indicar procedencia cross-model, esos indicadores se clasifican como gramática de vista de §23 y no como semántica nuclear de §1.1b. La atenuación cromática es marca epistémica local ("esta cosa es referencia, no propiedad de este modelo"), no propiedad de la cosa.
+**Regla V-185**: Si la implementación usa atenuación cromática, alias forzado o distintivos para indicar procedencia cross-model, esos indicadores se clasifican como gramática de vista de §23 y no como semántica nuclear de §1.1b. La atenuación cromática es marca epistémica local ("esta cosa es referencia, no propiedad de este modelo"), no propiedad de la cosa.
 
-**Regla V-256**: La sincronización de cambios entre modelo propietario y sub-modelo referenciador se rige por el ciclo de carga (`loaded and synchronized`, `loaded and unsynchronized`, `unloaded`) declarado por la implementación. Todos esos estados son propiedades de la **referencia**, no de la cosa subyacente.
+**Regla V-256**: La sincronización de cambios entre modelo propietario y sub-modelo referenciador se rige por el ciclo de carga (`cargado y sincronizado`, `cargado y no sincronizado`, `no cargado`) declarado por la implementación. Todos esos estados son propiedades de la **referencia**, no de la cosa subyacente.
 
 ### 23.6 Excepción controlada a V-46
 
@@ -1380,7 +1383,7 @@ Esta sección regula cómo una implementación puede comunicar invalidez, advert
 
 **Regla V-219**: En ausencia de declaración contraria, esta adaptación adopta la política de **canvas limpio**: la validación no deja marcas persistentes sobre el OPD estático una vez cerrado el diálogo o panel de validación. El resultado de validación vive en vistas auxiliares, no en la gramática nuclear del diagrama.
 
-**Regla V-220**: Si una implementación opta por dejar badges persistentes de validación sobre el canvas, debe declararlos como gramática de vista separada y no puede mezclarlos con designaciones de estado, actividad de simulación o afordances de edición.
+**Regla V-220**: Si una implementación opta por dejar distintivos persistentes de validación sobre el canvas, debe declararlos como gramática de vista separada y no puede mezclarlos con designaciones de estado, actividad de simulación o afordances de edición.
 
 ### 24.3 Edición en curso
 
@@ -1429,7 +1432,7 @@ La exportación canónica fija qué artefactos constituyen evidencia normativa d
 
 ### 25.4 Canon-documento
 
-**Regla V-229**: El canon-documento puede incluir portada, URL, índice, árbol de OPDs, diagramas, OPL, diccionario de elementos, diccionario de relaciones y vistas derivadas. Su estructura exacta debe declararse por perfil.
+**Regla V-229**: El canon-documento puede incluir portada, URL, índice, árbol de OPDs, diagramas, OPL, diccionario de elementos, diccionario de relaciones y vistas derivadas, incluido el `Mapa del Sistema`. Su estructura exacta debe declararse por perfil.
 
 **Regla V-230**: Los listados textuales del canon-documento pueden extender el cromatismo de clase a nombres fuera del grafo, siempre que el propio perfil lo declare y no contradiga el canon-diagrama.
 
@@ -1597,7 +1600,7 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-93 | Enlaces entre elementos internos del OPD hijo son visibles normalmente |
 | V-94 | Enlaces que no tocan contenedor ni internos son invisibles en OPD hijo |
 | V-95 | Esencia (física/informacional) no cambia a través del refinamiento |
-| V-96 | Perseverancia (estática/dinámica) no cambia a través del refinamiento |
+| V-96 | Perseverancia (persistente/transitoria) no cambia a través del refinamiento |
 | V-97 | Nombres no cambian a través del refinamiento |
 | V-98 | Consistencia de hechos: un OPD no puede contradecir a otro OPD |
 | V-99 | Importancia proporcional al OPD más alto donde aparece la cosa |
@@ -1650,9 +1653,9 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-141 | Snapshot de runtime declarado explícitamente en export |
 | V-142 | Estereotipo: prefijo textual, propiedades forzadas, estructura derivada, entidades derivadas, restricciones |
 | V-143 | Estereotipos declaran aplicabilidad (objeto/proceso/ambos) |
-| V-144 | Sintaxis canvas: `<<Nombre>>` en rótulo o badge equivalente |
+| V-144 | Sintaxis canvas: `<<Nombre>>` en rótulo o distintivo equivalente |
 | V-145 | Sintaxis OPL: `«Nombre»`; `<< >>` y `« »` equivalentes |
-| V-146 | Estereotipo no puede ocultarse; badge/icono/metadato si se omite del rótulo |
+| V-146 | Estereotipo no puede ocultarse; distintivo/icono/metadato si se omite del rótulo |
 | V-147 | Propiedades forzadas recuperables en OPL o metadato canónico |
 | V-148 | Remoción de estereotipo sin residuos ambiguos |
 | V-149 | Descomposición canónica trazable como estructura derivada |
@@ -1680,18 +1683,18 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-171 | Cuerpo de código no en canvas, pero reflejado por `()` y metadato |
 | V-172 | Si canon-documento omite código: tooltip, tabla o referencia persistente recuperable |
 | V-173 | Proceso que obtiene input externo sigue siendo proceso OPM (elipse) |
-| V-174 | Integraciones externas: estereotipo/badge/metadato, no clase gráfica distinta |
-| V-175 | Gemelo digital recuperable en modelo por estereotipo/alias/badge/metadato |
+| V-174 | Integraciones externas: estereotipo/distintivo/metadato, no clase gráfica distinta |
+| V-175 | Gemelo digital recuperable en modelo por estereotipo/alias/distintivo/metadato |
 | V-176 | Modelo OPM puede referenciar otros como sub-modelos (grafo DAG) |
 | V-177 | Cada sub-modelo conserva OPL autocontenida |
 | V-178 | Modelo padre declara explícitamente cada sub-modelo |
 | V-179 | Sub-modelo declara su origen simétricamente |
-| V-180 | `SDx.y: <Nombre> Subsystem Model View`; vista anclada |
+| V-180 | `SDx.y: <Nombre> Vista de Sub-modelo`; vista anclada |
 | V-181 | Tres categorías (jerárquico/vista anclada/vista ad hoc) diferenciadas en metadato |
-| V-182 | Sub-modelo desde padre puede presentarse read-only |
-| V-183 | Nodo del árbol del padre con badge de vínculo externo |
+| V-182 | Sub-modelo desde padre puede presentarse en solo lectura |
+| V-183 | Nodo del árbol del padre con distintivo de vínculo externo |
 | V-184 | Cross-model = referencia externa a existencia compartida (no espejo) |
-| V-185 | Atenuación/alias/badges de procedencia: gramática de vista de §23 |
+| V-185 | Atenuación/alias/distintivos de procedencia: gramática de vista de §23 |
 | V-186 | Vista de sub-modelo puede no tener proceso sistémico único (V-46) |
 | V-187 | Export declara inclusión de sub-modelos no cargados |
 | V-188 | Portabilidad requiere esquema de resolución explícito |
@@ -1726,7 +1729,7 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-217 | Canon normaliza estilado autoral; capa editable persiste en canvas |
 | V-218 | Familias de validación: invalidez/advertencia/unicidad/contención/sugerencia |
 | V-219 | Política canvas limpio: sin marcas persistentes de validación en OPD |
-| V-220 | Badges persistentes (opcionales) como gramática de vista, no mezclada |
+| V-220 | Distintivos persistentes (opcionales) como gramática de vista, no mezclada |
 | V-221 | Marcador `×` roja durante edición inválida, no en canon |
 | V-222 | Conflicto de unicidad nominal resuelto explícitamente, no silenciosamente |
 | V-223 | Metodología y sugerencias son vistas derivadas, no OPD canónico |
@@ -1748,7 +1751,7 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-239 | Cinco familias canónicas de enlace |
 | V-240 | Invocación con firma `Proceso→Proceso` como familia autónoma |
 | V-241 | Categorías adicionales son extensiones de implementación, no canónicas |
-| V-242 | Sub-model como quinto mecanismo de refinamiento |
+| V-242 | Sub-model como cuarto par canónico de refinamiento-abstracción |
 | V-243 | Bring y operaciones auxiliares como operadores derivados (§26) |
 | V-244 | Tres categorías de OPD con reglas distintas de creación/eliminación/navegación |
 | V-245 | Eliminabilidad diferenciada por categoría de OPD |
@@ -1760,9 +1763,9 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-251 | Clausura OPD↔OPL local; compuesto como DAG de modelos autocontenidos |
 | V-252 | URI/handle persistente obligatorio para cosa referenciable cross-model |
 | V-253 | Marcas cross-model son gramática de vista (§23), no nuclear |
-| V-254 | `Requirement Views` son OPDs de vista anclada (V-114) |
-| V-255 | `Requirement Views` son read-only sobre OPDs fuente |
-| V-256 | Ciclo de carga cross-model (synchronized/unsynchronized/unloaded) es propiedad de la referencia |
+| V-254 | `Vistas de Requisitos` (`Requirement Views`) son OPDs de vista anclada (V-114) |
+| V-255 | `Vistas de Requisitos` (`Requirement Views`) son de solo lectura sobre OPDs fuente |
+| V-256 | Ciclo de carga cross-model (`cargado y sincronizado`/`cargado y no sincronizado`/`no cargado`) es propiedad de la referencia |
 | V-257 | Operación auxiliar inter-OPD: materializa apariencias existentes, sin crear semántica |
 | V-258 | `Bring connected things` filtrada por familia y conectividad directa |
 | V-259 | Canon-diagrama indistinguible: Bring vs OPD manual |
@@ -1780,7 +1783,7 @@ Las seis decisiones axiomáticas documentadas en `ssot-decisiones-axiomaticas.md
 | Decisión | Cláusulas donde se aplica |
 |---|---|
 | D1 Apariencia cross-model = existencia compartida por identificador persistente (`URI` o `handle`) | V-123 reescrita (§16.3); V-184; V-185; V-252; V-253; V-256 |
-| D2 Sub-model como quinto mecanismo | V-64 reescrita (§18.1); V-242 (§10.1); §23 completa |
+| D2 Sub-model como cuarto par canónico | V-64 reescrita (§18.1); V-242 (§10.1); §23 completa |
 | D3 Bring como operador derivado | V-243 (§10.1); §26 completa (V-257..V-263) |
 | D4 Invocación como familia autónoma dentro de las cinco familias canónicas | V-239; V-240; V-241 (§3.0) |
 | D5 V-114 tres categorías de OPD | V-114 reescrita (§15.4); V-244; V-245; V-113 revisada; V-180; V-181; V-254 |
@@ -1801,7 +1804,7 @@ Las seis decisiones axiomáticas documentadas en `ssot-decisiones-axiomaticas.md
 3. **V-123 reescrita**: apariencia ya no subsume a referencia externa; serialización cross-model usa URI o handle persistente.
 4. **V-53 y V-54 reescritas**: marcas de proceso activo y estado actual ya no fijadas a una forma única; implementaciones declaran canal reservado.
 5. **V-63 ampliada**: colores informativos también para triángulos; topología interna obliga.
-6. **§10.1 ampliada a cinco mecanismos**: sub-model es mecanismo explícito, no vista.
+6. **§10.1 ampliada a cuatro pares canónicos**: sub-model es mecanismo explícito, no vista.
 7. **§3.0 taxonomía declarada**: invocación es familia autónoma, no habilitación.
 8. **§15.5 identidad persistente**: `SDx.y` deja de ser referencia estable.
 

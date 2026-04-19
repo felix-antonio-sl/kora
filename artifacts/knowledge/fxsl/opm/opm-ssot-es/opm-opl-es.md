@@ -552,7 +552,7 @@ Anotación `Pr=p` en cada enlace del abanico. Suma de probabilidades = 1. Notaci
 | (ninguno) | 1..1 | (default) | (por defecto) |
 | + | 1..* | at least one | al menos un/una |
 
-Rango parametrizado: `qmín..qmáx`. Restricciones con =, ≠, <, ≤, ≥, ∈. Sin cambio sintáctico entre EN y ES (notación matemática universal).
+Rango parametrizado base: `qmín..qmáx`. Cuando el rango se emite como estado o como valor visible del atributo, esta adaptación admite intervalos con delimitadores de inclusión y exclusión: `[qmín..qmáx]`, `(qmín..qmáx]`, `[qmín..qmáx)` y `(qmín..qmáx)`, además de listas de intervalos separadas por comas y `*` como extremo abierto. Restricciones con =, ≠, <, ≤, ≥, ∈. Sin cambio sintáctico entre EN y ES (notación matemática universal).
 
 **Ejemplo de multiplicidad parametrizada**:
 
@@ -822,7 +822,9 @@ oracion_formal_opl_es = oracion_de_descripcion_de_cosa
 digito_no_cero = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
 digito_decimal = '0' | digito_no_cero ;
 entero_positivo = digito_no_cero, {digito_decimal} ;
-nombre = letra, {caracter_de_cadena} ;
+nombre_simple = letra, {caracter_de_cadena} ;
+nombre = nombre_simple, { " ", nombre_simple } ;
+segmento_etiqueta_opd = "SD", [entero_positivo] ;
 palabra_capitalizada = letra_mayuscula, {caracter_de_cadena} ;
 palabra_no_capitalizada = letra_minuscula, {caracter_de_cadena} ;
 frase_no_capitalizada = palabra_no_capitalizada, { " ", palabra_no_capitalizada } ;
@@ -842,11 +844,18 @@ singular_inferior = "un" | "una" | "un opcional" | "una opcional" | "al menos un
 singular_superior = "exactamente un" | "exactamente una" ;
 plural_inferior = "al menos dos" ;
 plural_superior = "dos o más" ;
-limite_de_participacion = entero_positivo | nombre ;
+limite_de_participacion = entero_positivo | nombre_simple ;
 prefijo = "unsigned " | "signed " ;
-unidad_de_medida = nombre ;
-nombre_de_valor = nombre | entero_positivo ;
-clausula_de_rango = " es ", nombre_de_valor | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
+unidad_de_medida = nombre_simple ;
+numero_decimal = [ "-" ], ( "0" | entero_positivo ), [ ".", digito_decimal, {digito_decimal} ] ;
+nombre_de_valor = nombre_simple | numero_decimal ;
+limite_de_rango = nombre_de_valor | "*" ;
+delimitador_inferior_de_rango = "[" | "(" ;
+delimitador_superior_de_rango = "]" | ")" ;
+intervalo_de_rango = delimitador_inferior_de_rango, limite_de_rango, "..", limite_de_rango, delimitador_superior_de_rango ;
+expresion_de_rango = intervalo_de_rango, { ", ", intervalo_de_rango } ;
+clausula_de_rango = " es ", ( nombre_de_valor | expresion_de_rango )
+ | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
 ```
 
 ### A.3 Identificadores
@@ -877,7 +886,7 @@ clase_de_proceso = identificador_de_proceso ;
 objeto_especial = identificador_de_objeto ;
 objeto_con_estado = identificador_de_objeto, " en ", identificador_de_estado ;
 nombre_de_modelo = nombre ;
-etiqueta_visible_de_opd = nombre ;
+etiqueta_visible_de_opd = segmento_etiqueta_opd, { ".", entero_positivo } ;
 opd_padre = etiqueta_visible_de_opd ;
 opd_hijo = etiqueta_visible_de_opd ;
 identificador_de_proceso_activo = identificador_de_proceso ;
@@ -1312,9 +1321,8 @@ oracion_de_descomposicion_objeto_en_nuevo_diagrama = ( identificador_de_objeto, 
  " se descompone en ", opd_hijo, " en ", lista_de_objetos, ", en esa secuencia",
  [", así como ", lista_de_procesos_en_zoom] ) ;
 
-lista_de_objetos_en_zoom = identificador_de_objeto, [ { ", ", identificador_de_objeto } ], " y ", identificador_de_objeto,
- ", en esa secuencia" ;
-lista_de_procesos_en_zoom = identificador_de_proceso, [ { ", ", identificador_de_proceso } ] ;
+lista_de_objetos_en_zoom = lista_de_objetos ;
+lista_de_procesos_en_zoom = lista_de_procesos ;
 
 (* --- Oraciones de recomposición (out-zooming) --- *)
 

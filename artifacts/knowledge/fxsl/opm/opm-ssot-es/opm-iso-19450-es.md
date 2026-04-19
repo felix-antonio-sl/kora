@@ -47,7 +47,7 @@ relations:
 
 Lenguaje conceptual compacto y metodología para modelar sistemas y representar conocimiento. Esta edición presenta una adaptación canónica en español técnico natural de OPM y adopta **OPL-ES** como forma textual canónica del corpus.
 
-Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: modelo compuesto por referencia, quinto mecanismo explícito de composición inter-modelo, separación entre identidad persistente y etiquetas visibles de navegación, y cláusulas de referencia externa para cosas y OPDs citables.
+Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: modelo compuesto por referencia, mecanismo explícito de composición inter-modelo como cuarto par canónico de refinamiento-abstracción, separación entre identidad persistente y etiquetas visibles de navegación, y cláusulas de referencia externa para cosas y OPDs citables.
 
 Sustituye, cuando se publique, al archivo `ssot/opm-iso-19450-es.md`.
 
@@ -149,7 +149,7 @@ La tabla siguiente consolida el glosario operativo de esta capa. Los términos b
 | 3.47 | Enlace de salida (output link) | Enlace desde un proceso transformador hacia el estado de destino (salida) de un objeto. Forma parte del par de efecto con estado especificado junto con el enlace de entrada (3.27) |
 | 3.48 | Recomposición de objeto | Inverso de la descomposición de objeto |
 | 3.49 | Recomposición de proceso | Inverso de la descomposición de proceso |
-| 3.50 | Perseverancia | Propiedad: estática para objeto, dinámica para proceso |
+| 3.50 | Perseverancia | Propiedad: persistente para objeto, transitoria para proceso |
 | 3.51 | Poscondición | Condición que resulta de la finalización exitosa de un proceso |
 | 3.52 | Conjunto posterior al proceso | Objetos que permanecen o resultan tras completar un proceso |
 | 3.53 | Precondición | Condición para iniciar un proceso |
@@ -334,7 +334,7 @@ Todas las cosas tienen tres propiedades genéricas:
 
 | Propiedad | Valores | Convención |
 |---|---|---|
-| Perseverancia | estática (objeto) / dinámica (proceso) | determinada por el tipo |
+| Perseverancia | persistente (objeto) / transitoria (proceso) | determinada por el tipo |
 | Esencia | física / informacional | la informacional es el valor por defecto |
 | Afiliación | sistémica / ambiental | la sistémica es el valor por defecto |
 
@@ -358,7 +358,7 @@ Cuatro designaciones califican estados en esta adaptación: **inicial** (estado 
 
 ### Valores de atributos
 
-Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del atributo. Puede especificarse unidad de medida. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §14.
+Un atributo es un objeto que caracteriza una cosa. Sus valores son estados del atributo. Puede especificarse unidad de medida. También puede declararse un dominio permitido como intervalo simple o como lista de intervalos. Su realización textual canónica pertenece a [OPL-ES](urn:fxsl:kb:opl-es) §14.
 
 ---
 
@@ -600,7 +600,7 @@ La multiplicidad restringe el número de instancias de objeto asociadas a un enl
 | sin símbolo | 1..1 |
 | `+` | 1..* |
 
-La sintaxis de rango es `qmín..qmáx`. Pueden usarse varios rangos separados por comas y expresiones aritméticas con `+`, `-`, `*`, `/`, `(`, `)`. Las restricciones usan `=`, `≠`, `<`, `≤`, `≥`, llaves para conjuntos y el operador `∈`.
+La sintaxis base de rango es `qmín..qmáx`. Cuando el rango se declara explícitamente en una superficie visible o textual, esta adaptación admite delimitadores de inclusión y exclusión: `[qmín..qmáx]`, `(qmín..qmáx]`, `[qmín..qmáx)` y `(qmín..qmáx)`. Pueden usarse varios intervalos separados por comas y `*` como extremo abierto. Las restricciones usan `=`, `≠`, `<`, `≤`, `≥`, llaves para conjuntos y el operador `∈`.
 
 **Los nombres de parámetros deben ser únicos en todo el modelo.**
 
@@ -608,7 +608,7 @@ La sintaxis de rango es `qmín..qmáx`. Pueden usarse varios rangos separados po
 
 **Declaración de tipo:** un objeto puede declarar tipo computacional. Los tipos comunes incluyen `boolean`, `string`, `integer`, `float`, `double`, `short`, `long` y `enumerated`.
 
-La realización textual canónica de multiplicidades, restricciones y tipos vive en `opm-opl-es` §12.
+La realización textual canónica de multiplicidades, restricciones, tipos y rangos vive en `opm-opl-es` §12.
 
 ---
 
