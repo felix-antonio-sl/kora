@@ -9,7 +9,7 @@ from .graph import cmd_graph
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
 from .promote import cmd_promote, cmd_deprecate, cmd_promote_cohort
-from .transmute import cmd_transmute, cmd_ingest, cmd_roundtrip_check, cmd_deploy_status, SUPPORTED_TARGETS
+from .transmute import cmd_transmute, cmd_ingest, cmd_roundtrip_check, cmd_deploy_status, cmd_record_invocation, SUPPORTED_TARGETS
 from .validation import cmd_lint_md, cmd_validate
 
 
@@ -129,6 +129,15 @@ def main():
 
     subparsers.add_parser("deploy-status", help="Compara hash IR vs hash deployado en runtimes locales")
 
+    p_record = subparsers.add_parser("record-invocation", help="Registra invocacion, retrieval, lead time y verified_at")
+    p_record.add_argument("--agent-urn", required=True)
+    p_record.add_argument("--input-text", required=True)
+    p_record.add_argument("--output-text", required=True)
+    p_record.add_argument("--eval-result", required=True)
+    p_record.add_argument("--retrieval-urn", action="append", default=[])
+    p_record.add_argument("--verified-path", action="append", default=[])
+    p_record.add_argument("--source-path", action="append", default=[])
+
     p_ingest = subparsers.add_parser("ingest", help="Ingesta inversa Lift_R — eleva artefacto runtime foraneo a KORA IR")
     p_ingest.add_argument("--from", dest="from_runtime", required=True,
                           choices=("claude-code", "codex", "gemini", "openclaw"),
@@ -192,6 +201,16 @@ def main():
         cmd_roundtrip_check(agent_ref=args.agent, target=args.target)
     elif args.command == "deploy-status":
         cmd_deploy_status()
+    elif args.command == "record-invocation":
+        cmd_record_invocation(
+            agent_urn=args.agent_urn,
+            input_text=args.input_text,
+            output_text=args.output_text,
+            eval_result=args.eval_result,
+            retrieval_urns=args.retrieval_urn,
+            verified_paths=args.verified_path,
+            source_paths=args.source_path,
+        )
     elif args.command == "ingest":
         cmd_ingest(from_runtime=args.from_runtime, file=args.file,
                    workspace=args.workspace, namespace=args.namespace,

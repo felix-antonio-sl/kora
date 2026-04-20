@@ -174,6 +174,10 @@ class KoraCliSmokeTests(unittest.TestCase):
         result = run_cli("deploy-status", "--help", check=False)
         self.assertIn("usage:", result.stdout.lower())
 
+    def test_record_invocation_subcommand_exists(self):
+        result = run_cli("record-invocation", "--help", check=False)
+        self.assertIn("usage:", result.stdout.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

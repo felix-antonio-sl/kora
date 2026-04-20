@@ -1,4 +1,5 @@
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -98,6 +99,65 @@ class UrgenciologoSkeletonTests(unittest.TestCase):
                 report = transmute_module.build_deploy_status_report(claude_agents_dir=claude_dir)
             statuses = {item["agent"]: item for item in report["agents"]}
             self.assertEqual(statuses["salud/urgenciologo"]["claude-code"]["status"], "stale")
+
+    def test_record_invocation_updates_verified_at_and_lead_time(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            kb_path = tmp / "dolor-toracico.md"
+            kb_path.write_text(
+                "---\n_manifest:\n  urn: urn:salud:kb:me-dolor-toracico\n  provenance:\n    created_by: test\n    created_at: '2026-04-20'\n    source: fixture\nversion: 1.0.0\nstatus: published\nlang: es\nextensions:\n  kora:\n    shard_index: 1\n    shard_count: 1\n    shard_root_urn: urn:salud:kb:me-dolor-toracico\n---\n\n# Dolor toracico\n",
+                encoding="utf-8",
+            )
+            invocations = tmp / "invocations.jsonl"
+            retrieval = tmp / "retrieval.jsonl"
+            lead_time = tmp / "lead-time.jsonl"
+            fixed_commit_ts = datetime(2026, 4, 20, 12, 0, tzinfo=timezone.utc)
+            with patch.object(transmute_module, "_git_last_commit_ts", return_value=fixed_commit_ts):
+                transmute_module.record_invocation(
+                    agent_urn="urn:salud:artefacto:urgenciologo",
+                    input_text="pregunta",
+                    output_text="respuesta",
+                    eval_result="baseline",
+                    retrieval_urns=["urn:salud:kb:me-dolor-toracico"],
+                    verified_paths=[kb_path],
+                    source_paths=[kb_path],
+                    invocations_path=invocations,
+                    retrieval_path=retrieval,
+                    lead_time_path=lead_time,
+                )
+            updated_frontmatter, _ = load_markdown_parts(kb_path)
+            verified_at = ((updated_frontmatter.get("extensions") or {}).get("kora") or {}).get("verified_at")
+            self.assertTrue(verified_at, updated_frontmatter)
+            self.assertTrue(lead_time.exists(), lead_time)
+            self.assertIn('"eval_result": "baseline"', lead_time.read_text(encoding="utf-8"))
+
+    def test_stamp_verified_at_preserves_existing_shard_siblings(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            shard1 = tmp / "dolor-toracico.md"
+            shard2 = tmp / "dolor-toracico--p02.md"
+            content = (
+                "---\n"
+                "_manifest:\n"
+                "  urn: urn:salud:kb:me-dolor-toracico\n"
+                "  provenance:\n"
+                "    created_by: test\n"
+                "    created_at: '2026-04-20'\n"
+                "    source: fixture\n"
+                "version: 1.0.0\n"
+                "status: published\n"
+                "lang: es\n"
+                "extensions:\n"
+                "  kora:\n"
+                "    shard_index: 1\n"
+                "    shard_count: 2\n"
+                "    shard_root_urn: urn:salud:kb:me-dolor-toracico\n"
+                "---\n\n# Titulo\n"
+            )
+            shard1.write_text(content, encoding="utf-8")
+            shard2.write_text(content.replace("shard_index: 1", "shard_index: 2"), encoding="utf-8")
+            transmute_module.stamp_verified_at(shard1, timestamp=datetime(2026, 4, 20, 15, 0, tzinfo=timezone.utc))
+            self.assertTrue(shard2.exists(), shard2)
 
 
 if __name__ == "__main__":

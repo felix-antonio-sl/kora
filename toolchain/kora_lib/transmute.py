@@ -12,6 +12,7 @@ Funciones principales:
 
 import json
 import hashlib
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -226,6 +227,55 @@ def append_retrieval_record(record: dict, path: Path | None = None) -> Path:
     return target
 
 
+def append_lead_time_record(record: dict, path: Path | None = None) -> Path:
+    """Append lead-time evidence to docs/generated/lead-time.jsonl."""
+    target = path or (KORA_ROOT / "docs" / "generated" / "lead-time.jsonl")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        **record,
+    }
+    with target.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    return target
+
+
+def _git_last_commit_ts(path: Path) -> datetime | None:
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", "--", str(path)],
+            cwd=str(KORA_ROOT),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except Exception:
+        return None
+    value = (result.stdout or "").strip()
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def stamp_verified_at(path: Path, timestamp: datetime | None = None) -> Path:
+    frontmatter, body = load_markdown_parts(path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {path}")
+    ts = (timestamp or datetime.now(timezone.utc)).isoformat()
+    extensions = frontmatter.setdefault("extensions", {})
+    kora_ext = extensions.setdefault("kora", {})
+    kora_ext["verified_at"] = ts
+    content = "---\n"
+    content += yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
+    content += "\n---\n\n"
+    content += body.rstrip() + "\n"
+    path.write_text(content, encoding="utf-8")
+    return path
+
+
 def append_invocation_record(record: dict, path: Path | None = None, retrieval_path: Path | None = None) -> Path:
     """Append a canary/runtime invocation record to docs/generated/invocations.jsonl."""
     target = path or (KORA_ROOT / "docs" / "generated" / "invocations.jsonl")
@@ -247,6 +297,56 @@ def append_invocation_record(record: dict, path: Path | None = None, retrieval_p
             path=retrieval_path,
         )
     return target
+
+
+def record_invocation(
+    *,
+    agent_urn: str,
+    input_text: str,
+    output_text: str,
+    eval_result: str,
+    retrieval_urns: list[str] | None = None,
+    verified_paths: list[Path] | None = None,
+    source_paths: list[Path] | None = None,
+    invocations_path: Path | None = None,
+    retrieval_path: Path | None = None,
+    lead_time_path: Path | None = None,
+) -> Path:
+    retrieval_urns = retrieval_urns or []
+    verified_paths = verified_paths or []
+    source_paths = source_paths or []
+    input_hash = "sha256:" + hashlib.sha256(input_text.encode()).hexdigest()
+    output_hash = "sha256:" + hashlib.sha256(output_text.encode()).hexdigest()
+    invocation_path = append_invocation_record(
+        {
+            "agent_urn": agent_urn,
+            "input_hash": input_hash,
+            "output_hash": output_hash,
+            "eval_result": eval_result,
+            "retrieval_urns": retrieval_urns,
+        },
+        path=invocations_path,
+        retrieval_path=retrieval_path,
+    )
+    event_ts = datetime.now(timezone.utc)
+    for path in verified_paths:
+        stamp_verified_at(Path(path), timestamp=event_ts)
+    for path in source_paths:
+        commit_ts = _git_last_commit_ts(Path(path))
+        if commit_ts is None:
+            continue
+        append_lead_time_record(
+            {
+                "agent_urn": agent_urn,
+                "source_path": str(path),
+                "source_commit_ts": commit_ts.isoformat(),
+                "observed_ts": event_ts.isoformat(),
+                "lead_time_seconds": max(0.0, (event_ts - commit_ts).total_seconds()),
+                "eval_result": eval_result,
+            },
+            path=lead_time_path,
+        )
+    return invocation_path
 
 
 def _extract_provenance_value(text: str, label: str) -> str:
@@ -318,6 +418,28 @@ def cmd_deploy_status():
         print(f"  {key}: {value}")
     if report["summary"]["stale"] > 0:
         raise SystemExit(1)
+
+
+def cmd_record_invocation(
+    *,
+    agent_urn: str,
+    input_text: str,
+    output_text: str,
+    eval_result: str,
+    retrieval_urns: list[str] | None = None,
+    verified_paths: list[str] | None = None,
+    source_paths: list[str] | None = None,
+):
+    record_invocation(
+        agent_urn=agent_urn,
+        input_text=input_text,
+        output_text=output_text,
+        eval_result=eval_result,
+        retrieval_urns=retrieval_urns or [],
+        verified_paths=[KORA_ROOT / path for path in (verified_paths or [])],
+        source_paths=[KORA_ROOT / path for path in (source_paths or [])],
+    )
+    print("Invocation recorded.")
 
 
 def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,

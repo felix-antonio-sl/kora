@@ -22,10 +22,10 @@ extensions:
     shard_index: 1
     shard_count: 2
     shard_root_urn: urn:salud:kb:me-dolor-toracico
+    verified_at: '2026-04-20T14:59:40.860422+00:00'
 ---
 
 # Dolor Torácico No Traumático
-
 
 Este artículo introduce el dolor torácico no traumático, que es cualquier dolor en el tórax anterior, desde las clavículas hasta el reborde costal y la línea axilar anterior, sin origen traumático evidente.
 

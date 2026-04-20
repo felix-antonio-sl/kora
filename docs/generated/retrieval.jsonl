@@ -1,2 +1,5 @@
 {"ts": "2026-04-20T14:48:30.824690+00:00", "agent_urn": "urn:salud:artefacto:urgenciologo", "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"], "input_hash": "sha256:dcef956542930a77513140866cd60132746bed67a4fa91c1bfcc68a18d4bc0ee"}
 {"ts": "2026-04-20T14:48:30.825006+00:00", "agent_urn": "urn:salud:artefacto:urgenciologo", "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"], "input_hash": "sha256:dcef956542930a77513140866cd60132746bed67a4fa91c1bfcc68a18d4bc0ee"}
+{"ts": "2026-04-20T14:56:59.508396+00:00", "agent_urn": "urn:salud:artefacto:urgenciologo", "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"], "input_hash": "sha256:dcef956542930a77513140866cd60132746bed67a4fa91c1bfcc68a18d4bc0ee"}
+{"ts": "2026-04-20T14:57:25.783282+00:00", "agent_urn": "urn:salud:artefacto:urgenciologo", "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"], "input_hash": "sha256:dcef956542930a77513140866cd60132746bed67a4fa91c1bfcc68a18d4bc0ee"}
+{"ts": "2026-04-20T14:59:40.860138+00:00", "agent_urn": "urn:salud:artefacto:urgenciologo", "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"], "input_hash": "sha256:dcef956542930a77513140866cd60132746bed67a4fa91c1bfcc68a18d4bc0ee"}
