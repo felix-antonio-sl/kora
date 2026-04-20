@@ -19,6 +19,7 @@ from pathlib import Path
 import yaml
 
 from .artifacts import load_markdown_parts, dump_yaml_frontmatter_and_body
+from .catalog import build_catalog_lookup, get_reference_entry, load_catalog
 from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
 
 
@@ -299,6 +300,73 @@ def append_invocation_record(record: dict, path: Path | None = None, retrieval_p
     return target
 
 
+def _collect_knowledge_contract(frontmatter: dict) -> dict:
+    kora_ext = (frontmatter.get("extensions") or {}).get("kora") or {}
+    artefacto = frontmatter.get("artefacto") or {}
+    contexto = artefacto.get("contexto") or {}
+    knowledge = contexto.get("knowledge") or {}
+    agent = frontmatter.get("agent") or {}
+    legacy_knowledge = agent.get("knowledge") or {}
+
+    allowed_urns = []
+    for bucket in (
+        kora_ext.get("conocimiento_permitido") or [],
+        knowledge.get("allowed_kb") or [],
+        legacy_knowledge.get("allowed_kb") or [],
+        agent.get("context", {}).get("kb_refs") or [],
+    ):
+        if not isinstance(bucket, list):
+            continue
+        for urn in bucket:
+            if isinstance(urn, str) and urn and urn not in allowed_urns:
+                allowed_urns.append(urn)
+
+    routes = {}
+    for route_map in (
+        knowledge.get("kb_routes") or {},
+        legacy_knowledge.get("kb_routes") or {},
+    ):
+        if not isinstance(route_map, dict):
+            continue
+        for route_name, urn in route_map.items():
+            if isinstance(route_name, str) and isinstance(urn, str) and urn:
+                routes[route_name] = urn
+                if urn not in allowed_urns:
+                    allowed_urns.append(urn)
+
+    catalog = load_catalog()
+    resolved_paths = {}
+    unresolved_urns = []
+    route_entries = {}
+    if catalog and "Catalog" in catalog:
+        known_urns, urn_to_entry = build_catalog_lookup(catalog)
+        for urn in allowed_urns:
+            entry = get_reference_entry(urn, urn_to_entry) if urn in known_urns or get_reference_entry(urn, urn_to_entry) else None
+            if entry:
+                resolved_paths[urn] = str(entry["file"].relative_to(KORA_ROOT))
+            else:
+                resolved_paths[urn] = None
+                unresolved_urns.append(urn)
+        for route_name, urn in routes.items():
+            route_entries[route_name] = {
+                "urn": urn,
+                "path": resolved_paths.get(urn),
+            }
+    else:
+        for urn in allowed_urns:
+            resolved_paths[urn] = None
+        unresolved_urns = list(allowed_urns)
+        for route_name, urn in routes.items():
+            route_entries[route_name] = {"urn": urn, "path": None}
+
+    return {
+        "allowed_urns": allowed_urns,
+        "routes": route_entries,
+        "resolved_paths": resolved_paths,
+        "unresolved_urns": unresolved_urns,
+    }
+
+
 def record_invocation(
     *,
     agent_urn: str,
@@ -450,6 +518,7 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
     """Emite _transmutation.yml conforme transmutation-spec §6."""
     adapter = _resolve_adapter_skill(target)
     presentation = frontmatter.get("extensions", {}).get("kora", {}).get("presentation", "state-primary")
+    knowledge_contract = _collect_knowledge_contract(frontmatter)
 
     manifest = {
         "transmutation": {
@@ -501,6 +570,7 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
                     if target != "openclaw"
                     else "urn:agengai:kb:openclaw-runtime-extension",
             },
+            "knowledge_contract": knowledge_contract,
         }
     }
 
@@ -568,12 +638,33 @@ def _emit_claude_code_bundle(
         "color": runtime_ext.get("color", "gray"),
         "max_turns": runtime_ext.get("max_turns", 12),
     }
+    knowledge_contract = transmutation.get("knowledge_contract", {})
+    knowledge_lines = [
+        "## Knowledge Contract",
+        "",
+    ]
+    for urn in knowledge_contract.get("allowed_urns", []):
+        path = (knowledge_contract.get("resolved_paths") or {}).get(urn)
+        if path:
+            knowledge_lines.append(f"- `{urn}` -> `{path}`")
+        else:
+            knowledge_lines.append(f"- `{urn}` -> `(unresolved)`")
+    if knowledge_contract.get("routes"):
+        knowledge_lines.extend(["", "### KB Routes", ""])
+        for route_name, item in sorted((knowledge_contract.get("routes") or {}).items()):
+            route_path = item.get("path")
+            if route_path:
+                knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `{route_path}`")
+            else:
+                knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `(unresolved)`")
     metadata_lines = [
         "## Provenance",
         "",
         f"- Source URN: `{transmutation.get('source_urn', '')}`",
         f"- Source Hash: `{transmutation.get('source_hash', '')}`",
         f"- Transmuted At: `{transmutation.get('timestamp', '')}`",
+        "",
+        *knowledge_lines,
         "",
         "## Instructions",
         "",

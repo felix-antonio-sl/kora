@@ -35,6 +35,22 @@ class UrgenciologoSkeletonTests(unittest.TestCase):
         self.assertIn("- Read", content)
         self.assertIn("- Grep", content)
         self.assertIn("- Glob", content)
+        self.assertIn("## Knowledge Contract", content)
+        self.assertIn("urn:salud:kb:me-dolor-toracico", content)
+        self.assertIn("artifacts/knowledge/salud/med-emergencia/dolor-toracico.md", content)
+
+    def test_transmute_yml_contains_resolved_knowledge_contract(self):
+        result = run_cli("transmute", "--target", "claude-code", "--agent", "salud/urgenciologo", check=False)
+        target_dir = ROOT / "artifacts" / "agents" / "salud" / "urgenciologo" / "_BUILD" / "claude-code"
+        manifest_path = target_dir / "_transmutation.yml"
+        self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
+        self.assertTrue(manifest_path.exists(), manifest_path)
+        manifest = manifest_path.read_text(encoding="utf-8")
+        self.assertIn("knowledge_contract:", manifest)
+        self.assertIn("allowed_urns:", manifest)
+        self.assertIn("routes:", manifest)
+        self.assertIn("urn:salud:kb:me-dolor-toracico", manifest)
+        self.assertIn("artifacts/knowledge/salud/med-emergencia/dolor-toracico.md", manifest)
 
     def test_append_invocation_record_writes_jsonl(self):
         self.assertTrue(
