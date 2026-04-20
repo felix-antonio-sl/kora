@@ -1,6 +1,7 @@
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from common import ROOT, run_cli
 from kora_lib.artifacts import load_markdown_parts
@@ -52,6 +53,51 @@ class UrgenciologoSkeletonTests(unittest.TestCase):
             )
             content = log_path.read_text(encoding="utf-8")
             self.assertIn('"agent_urn": "urn:salud:artefacto:urgenciologo"', content)
+
+    def test_append_invocation_record_can_emit_retrieval_jsonl(self):
+        with TemporaryDirectory() as tmpdir:
+            generated_dir = Path(tmpdir)
+            invocations_path = generated_dir / "invocations.jsonl"
+            retrieval_path = generated_dir / "retrieval.jsonl"
+            transmute_module.append_invocation_record(
+                {
+                    "agent_urn": "urn:salud:artefacto:urgenciologo",
+                    "input_hash": "sha256:in",
+                    "output_hash": "sha256:out",
+                    "eval_result": "baseline",
+                    "retrieval_urns": ["urn:salud:kb:me-dolor-toracico"],
+                },
+                path=invocations_path,
+                retrieval_path=retrieval_path,
+            )
+            self.assertTrue(retrieval_path.exists(), retrieval_path)
+            retrieval_content = retrieval_path.read_text(encoding="utf-8")
+            self.assertIn('"urn:salud:kb:me-dolor-toracico"', retrieval_content)
+
+    def test_build_deploy_status_report_detects_stale_claude_bundle(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            repo_root = tmp / "repo"
+            agents_root = repo_root / "artifacts" / "agents" / "salud" / "urgenciologo"
+            agents_root.mkdir(parents=True)
+            agent_path = agents_root / "AGENT.md"
+            agent_path.write_text(
+                "---\n_manifest:\n  urn: urn:salud:artefacto:urgenciologo\n  type: artefacto\n  provenance:\n    created_by: test\n    created_at: '2026-04-20'\n    source: fixture\nversion: 1.0.0\nstatus: activo\nnombre: Urgenciologo\ndescripcion: fixture\nlang: es\nextensions:\n  kora:\n    vector_ontologico:\n      pi: 2\n      mu: 1\n      xi: 2\n      lambda: 0\n      phi: 1\n      sigma: [2,1,2,1,1]\n    presentacion: estado-primario\n    atlas:\n      arnes_categorico: persona\n      forma_material: agente-propiamente-tal\n    entornos_objetivo: [claude-code]\nartefacto:\n  plan:\n    estado_inicial: S-DISPATCHER\n    estado_terminal: S-END\n    estados:\n      - id: S-DISPATCHER\n        accion: x\n      - id: S-END\n        accion: y\n  perfil:\n    descripcion: fixture\n    dominio: [x]\n    disparadores: [x]\n    salidas: [x]\n  interfaz:\n    tools: []\n    permissions:\n      allow: []\n      deny: []\n  contexto:\n    memory:\n      mode: session\n  invariantes:\n    reglas_duras: [x]\n    compromisos_eticos:\n      safety_norm: Alta\n      fairness: Media\n      transparency: Alta\n      accountability: Alta\n      sustainability: Media\n---\n# Urgenciologo\n",
+                encoding="utf-8",
+            )
+            claude_dir = tmp / "claude"
+            claude_dir.mkdir()
+            deployed = claude_dir / "urgenciologo.md"
+            deployed.write_text(
+                "---\nname: urgenciologo\ndescription: fixture\ntools: [Read]\nmodel: opus\ncolor: red\nmax_turns: 12\n---\n\n## Provenance\n\n- Source URN: `urn:salud:artefacto:urgenciologo`\n- Source Hash: `sha256:stale`\n- Transmuted At: `2026-04-20T00:00:00+00:00`\n",
+                encoding="utf-8",
+            )
+            with patch.object(transmute_module, "KORA_ROOT", repo_root), patch.object(
+                transmute_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ):
+                report = transmute_module.build_deploy_status_report(claude_agents_dir=claude_dir)
+            statuses = {item["agent"]: item for item in report["agents"]}
+            self.assertEqual(statuses["salud/urgenciologo"]["claude-code"]["status"], "stale")
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ from .graph import cmd_graph
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
 from .promote import cmd_promote, cmd_deprecate, cmd_promote_cohort
-from .transmute import cmd_transmute, cmd_ingest, cmd_roundtrip_check, SUPPORTED_TARGETS
+from .transmute import cmd_transmute, cmd_ingest, cmd_roundtrip_check, cmd_deploy_status, SUPPORTED_TARGETS
 from .validation import cmd_lint_md, cmd_validate
 
 
@@ -127,6 +127,8 @@ def main():
                               help="Runtime target (solo agentskills en v1.0)")
     p_roundtrip.add_argument("--agent", required=True, help="Skill reference (ns/nombre o nombre)")
 
+    subparsers.add_parser("deploy-status", help="Compara hash IR vs hash deployado en runtimes locales")
+
     p_ingest = subparsers.add_parser("ingest", help="Ingesta inversa Lift_R — eleva artefacto runtime foraneo a KORA IR")
     p_ingest.add_argument("--from", dest="from_runtime", required=True,
                           choices=("claude-code", "codex", "gemini", "openclaw"),
@@ -188,6 +190,8 @@ def main():
         cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
     elif args.command == "roundtrip-check":
         cmd_roundtrip_check(agent_ref=args.agent, target=args.target)
+    elif args.command == "deploy-status":
+        cmd_deploy_status()
     elif args.command == "ingest":
         cmd_ingest(from_runtime=args.from_runtime, file=args.file,
                    workspace=args.workspace, namespace=args.namespace,

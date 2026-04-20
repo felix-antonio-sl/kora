@@ -234,7 +234,7 @@ mapean vectores a implementaciones runtime actuales.
 | Skill estandar (agentskills.io) | Claude Code, Codex, Gemini | Π=1-2, Μ=0, Ξ=1-2, Λ=0, Φ=1 |
 | Subagente | Claude Code Task, Codex agent mode | Π=2, Μ=1, Ξ=2, Λ=0, Φ=1 |
 | Agente propiamente tal | Claude Code persona, Codex session | Π=2, Μ=2, Ξ=2-3, Λ=0-1, Φ=1-2 |
-| Agente de plataforma | OpenClaw fleet, Hermes | Π=2, Μ=3, Ξ=3-4, Λ=1-2, Φ=1-2 |
+| Agente de plataforma | OpenClaw fleet | Π=2, Μ=3, Ξ=3-4, Λ=1-2, Φ=1-2 |
 
 La declaracion de forma material preferida es **metadata de encaje**, no parte
 del IR canonico.

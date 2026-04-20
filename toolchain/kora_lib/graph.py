@@ -147,12 +147,18 @@ def collect_workspace_edges(file_path):
             edges.append(GraphEdge("AllowsTool", file_path, tool_name))
 
         allowed_kb = (
-            doc.get("artefacto", {}).get("contexto", {}).get("knowledge", {}).get("allowed_kb", [])
+            doc.get("extensions", {}).get("kora", {}).get("conocimiento_permitido", [])
+            or doc.get("artefacto", {}).get("contexto", {}).get("knowledge", {}).get("allowed_kb", [])
+            or doc.get("artefacto", {}).get("contexto", {}).get("knowledge", {}).get("allowed_kb", [])
             or doc.get("agent", {}).get("context", {}).get("kb_refs", [])
             or []
         )
         for kb_urn in sorted({item for item in allowed_kb if isinstance(item, str) and item}):
             edges.append(GraphEdge("AllowsKB", file_path, kb_urn))
+
+        composable = doc.get("extensions", {}).get("kora", {}).get("componible_con", []) or []
+        for workspace_ref in sorted({item for item in composable if isinstance(item, str) and item.startswith("urn:")}):
+            edges.append(GraphEdge("XRef", file_path, workspace_ref))
     elif file_path.name == "AGENTS.md":
         for cm_ref in sorted(extract_cm_refs(file_path)):
             edges.append(GraphEdge("InvokesSkill", file_path, cm_ref))

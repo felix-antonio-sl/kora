@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-08"
     source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5"
-version: "4.4.0"
+version: "4.5.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -20,7 +20,7 @@ relations:
     - "urn:kora:kb:autoria-spec"
 ---
 
-# KORA/Gobernanza v4.4.0
+# KORA/Gobernanza v4.5.0
 
 ## 1. Definicion
 
@@ -257,6 +257,56 @@ Reglas:
 1. Una regla sin enforcement explicito se interpreta como `manual`.
 2. El repo **NO DEBE** prometer enforcement mecanico inexistente.
 3. El canon **NO DEBE** degradarse para acomodar tooling atrasado.
+
+## 8. Decisiones HITL vigentes
+
+### 8.1 `_perfiles` no es regimen formal
+
+`_perfiles` **NO** constituye una categoria ontologica canonica ni una forma
+material valida de `autoria-spec`.
+
+Reglas:
+
+1. Todo material de perfiles vive como draft de referencia bajo
+   `artifacts/agents/_FRAGUA/INBOX/perfiles/`.
+2. Ese material queda fuera de productivo, fuera de transmutacion y fuera de
+   cualquier promesa de shape canonico.
+3. Si un perfil debe volverse agente o skill real, se absorbe a una forma
+   material valida conforme a `autoria-spec`; no se eleva `_perfiles` como
+   regimen propio.
+
+### 8.2 Hermes queda bloqueado
+
+`Hermes` **NO** es runtime target vigente de KORA.
+
+Reglas:
+
+1. No se agrega `hermes` a `transmute`, matrices de preservacion ni
+   `entornos_objetivo`.
+2. Toda mencion a Hermes fuera de docs historicas se interpreta como bloqueada
+   hasta que exista una decision HITL nueva mas una `runtime-extension`
+   dedicada.
+3. Mientras ese contrato no exista, el critical path de runtimes es:
+   `claude-code`, `codex`, `gemini`, `mastra`, `openclaw`, `agentskills`.
+
+### 8.3 Freeze formal hasta cierre de Fase 3
+
+Hasta cerrar la Fase 3 del plan HITL de usina KORA, las specs:
+
+- `ontology/harness-spec.md`
+- `serialization/autoria-spec.md`
+- `runtime/transmutation-spec.md`
+
+quedan en **freeze formal**.
+
+Reglas:
+
+1. Solo se permiten correcciones de verdad necesarias para sostener artefactos
+   productivos, checks o transmutaciones ya en curso.
+2. No se permiten expansiones doctrinales, nuevos regimenes ni nuevos runtimes
+   durante el freeze.
+3. Todo cambio a esas tres specs debe justificarse como fix puntual, no como
+   rediseño conceptual.
 
 ## 8. Invariantes
 

@@ -340,6 +340,70 @@ def _check_workspace_validity(path_filter=None):
     return diags
 
 
+def _check_bundle_coherence(path_filter=None):
+    """Verify declarative AGENT.md deps resolve and point to productive artifacts."""
+    from .artifacts import load_yaml_safe
+    from .catalog import build_catalog_lookup, get_reference_entry, load_catalog, urn_is_known
+    from .config import KORA_ROOT
+    from .workspaces import iter_agent_workspaces
+
+    doc = load_catalog()
+    if not doc or "Catalog" not in doc:
+        return []
+
+    known_urns, urn_to_entry = build_catalog_lookup(doc)
+    diags = []
+
+    def _is_productive_entry(entry: dict | None) -> bool:
+        if not entry:
+            return False
+        rel_path = str(entry["file"].relative_to(KORA_ROOT))
+        return not any(marker in rel_path for marker in ("/_FRAGUA/", "/_TALLER/", "/_SCRIPTORIUM/"))
+
+    for workspace_dir in iter_agent_workspaces():
+        agent_md = workspace_dir / "AGENT.md"
+        frontmatter, _ = load_yaml_safe(agent_md)
+        if not isinstance(frontmatter, dict):
+            continue
+        kora_ext = (frontmatter.get("extensions") or {}).get("kora") or {}
+        deps = []
+        for field_name in ("conocimiento_permitido", "componible_con"):
+            values = kora_ext.get(field_name) or []
+            if isinstance(values, list):
+                for urn in values:
+                    if isinstance(urn, str) and urn:
+                        deps.append((field_name, urn))
+        if not deps:
+            continue
+
+        rel = str(agent_md.relative_to(KORA_ROOT))
+        for field_name, urn in deps:
+            if not urn_is_known(urn, known_urns):
+                diags.append(Diagnostic(
+                    check_id="bundle-coherence",
+                    severity="high",
+                    scope="workspace",
+                    path=rel,
+                    message=f"{field_name} declara URN inexistente: {urn}",
+                    fix_hint="Corrige el URN o elimina la referencia",
+                ))
+                continue
+            entry = get_reference_entry(urn, urn_to_entry)
+            if not _is_productive_entry(entry):
+                diags.append(Diagnostic(
+                    check_id="bundle-coherence",
+                    severity="high",
+                    scope="workspace",
+                    path=rel,
+                    message=f"{field_name} apunta a artefacto no productivo: {urn}",
+                    fix_hint="Promueve el artefacto objetivo o cambia la referencia a uno productivo",
+                ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 def _check_lint_md(path_filter=None):
     """Lint published KORA/MD artifacts."""
     from .config import KNOWLEDGE_ROOT
@@ -1401,6 +1465,12 @@ def _register_builtins():
               scope="workspace", severity="high", enforcement="schema",
               spec_ref="autoria-spec §3, §6; legacy-compat profile", depends=("catalog-exists",), phase="verify"),
         _check_workspace_validity,
+    )
+    register_check(
+        Check("bundle-coherence", "AGENT.md declarative deps resolve to productive artifacts",
+              scope="workspace", severity="high", enforcement="lint",
+              spec_ref="autoria-spec §9, §16", depends=("catalog-exists",), phase="verify"),
+        _check_bundle_coherence,
     )
     register_check(
         Check("knowledge-zone", "artifacts/knowledge/ contains only valid KORA/MD artifacts",

@@ -70,7 +70,7 @@ def iter_agent_workspaces(cohort=None, include_deprecated=False):
         if not namespace_dir.is_dir() or namespace_dir.name.startswith("."):
             continue
         if namespace_dir.name.startswith("_"):
-            # Staging areas (_FRAGUA, _perfiles si llegara) quedan fuera del
+            # Draft refs y staging (_FRAGUA, INBOX/perfiles si llegara) quedan fuera del
             # descubrimiento productivo.
             continue
         for workspace_dir in sorted(namespace_dir.iterdir()):

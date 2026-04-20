@@ -5632,7 +5632,7 @@
       "kind": "spec",
       "category": "Knowledge",
       "urn": "urn:kora:kb:gobernanza",
-      "title": "KORA/Gobernanza v4.4.0",
+      "title": "KORA/Gobernanza v4.5.0",
       "path": "governance/gobernanza.md",
       "namespace": "kora"
     },

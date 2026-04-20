@@ -166,6 +166,14 @@ class KoraCliSmokeTests(unittest.TestCase):
         result = run_cli("transmute", "--target", "claude-code", "--agent", "kora/curator")
         self.assertIn("Manifest:", result.stdout)
 
+    def test_check_registry_includes_bundle_coherence(self):
+        result = run_cli("check", "--list")
+        self.assertIn("bundle-coherence", result.stdout)
+
+    def test_deploy_status_subcommand_exists(self):
+        result = run_cli("deploy-status", "--help", check=False)
+        self.assertIn("usage:", result.stdout.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

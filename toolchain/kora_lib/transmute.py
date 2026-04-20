@@ -213,7 +213,20 @@ def _resolve_adapter_skill(target: str) -> Path | None:
     return skill_md if skill_md.is_file() else None
 
 
-def append_invocation_record(record: dict, path: Path | None = None) -> Path:
+def append_retrieval_record(record: dict, path: Path | None = None) -> Path:
+    """Append retrieval evidence to docs/generated/retrieval.jsonl."""
+    target = path or (KORA_ROOT / "docs" / "generated" / "retrieval.jsonl")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        **record,
+    }
+    with target.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    return target
+
+
+def append_invocation_record(record: dict, path: Path | None = None, retrieval_path: Path | None = None) -> Path:
     """Append a canary/runtime invocation record to docs/generated/invocations.jsonl."""
     target = path or (KORA_ROOT / "docs" / "generated" / "invocations.jsonl")
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -223,7 +236,88 @@ def append_invocation_record(record: dict, path: Path | None = None) -> Path:
     }
     with target.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    retrieval_urns = record.get("retrieval_urns")
+    if isinstance(retrieval_urns, list) and retrieval_urns:
+        append_retrieval_record(
+            {
+                "agent_urn": record.get("agent_urn", ""),
+                "retrieval_urns": retrieval_urns,
+                "input_hash": record.get("input_hash", ""),
+            },
+            path=retrieval_path,
+        )
     return target
+
+
+def _extract_provenance_value(text: str, label: str) -> str:
+    prefix = f"- {label}: `"
+    for line in text.splitlines():
+        if line.startswith(prefix) and line.endswith("`"):
+            return line[len(prefix):-1]
+    return ""
+
+
+def build_deploy_status_report(
+    claude_agents_dir: Path | None = None,
+    openclaw_workspaces_dir: Path | None = None,
+) -> dict:
+    from .workspaces import iter_agent_workspaces
+
+    claude_dir = Path(claude_agents_dir or Path.home() / ".claude" / "agents").expanduser()
+    openclaw_dir = Path(openclaw_workspaces_dir or Path.home() / "openclaw-fleet" / "workspaces").expanduser()
+
+    agents = []
+    summary = {"ok": 0, "stale": 0, "missing": 0, "unsupported": 0}
+
+    for workspace_dir in iter_agent_workspaces():
+        agent_md = workspace_dir / "AGENT.md"
+        frontmatter, _ = load_markdown_parts(agent_md)
+        if not isinstance(frontmatter, dict):
+            continue
+        current_hash = _sha256(agent_md)
+        targets = ((frontmatter.get("extensions") or {}).get("kora") or {}).get("entornos_objetivo") or []
+        item = {"agent": f"{workspace_dir.parent.name}/{workspace_dir.name}"}
+
+        for target in targets:
+            if target == "claude-code":
+                deployed_path = claude_dir / f"{workspace_dir.name}.md"
+                if not deployed_path.exists():
+                    status = {"status": "missing", "path": str(deployed_path)}
+                else:
+                    text = deployed_path.read_text(encoding="utf-8")
+                    deployed_hash = _extract_provenance_value(text, "Source Hash")
+                    status = {
+                        "status": "ok" if deployed_hash == current_hash else "stale",
+                        "path": str(deployed_path),
+                        "source_hash": deployed_hash,
+                        "current_hash": current_hash,
+                    }
+                item[target] = status
+                summary[status["status"]] += 1
+            elif target == "openclaw":
+                deployed_path = openclaw_dir / workspace_dir.name
+                status = {"status": "missing" if not deployed_path.exists() else "unsupported", "path": str(deployed_path)}
+                item[target] = status
+                summary[status["status"]] += 1
+        agents.append(item)
+
+    return {"summary": summary, "agents": agents}
+
+
+def cmd_deploy_status():
+    report = build_deploy_status_report()
+    print("=== KORA Deploy Status ===\n")
+    for item in report["agents"]:
+        print(f"[{item['agent']}]")
+        for target, status in item.items():
+            if target == "agent":
+                continue
+            print(f"  - {target}: {status['status']} ({status['path']})")
+    print("\nSummary:")
+    for key, value in report["summary"].items():
+        print(f"  {key}: {value}")
+    if report["summary"]["stale"] > 0:
+        raise SystemExit(1)
 
 
 def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
