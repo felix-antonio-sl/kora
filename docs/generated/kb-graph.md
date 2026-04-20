@@ -1,7 +1,5 @@
 # KORA Knowledge Graph
 
-Generated: 2026-04-20T08:43:12.345720
-
 ## Summary
 
 | Metric | Value |

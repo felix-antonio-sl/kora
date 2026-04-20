@@ -4,7 +4,6 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 
 ## Resumen global
 
-- Fecha: 2026-04-20
 - Cohortes auditadas: meta-kora, dev, ops, domains
 - Cobertura manual: partial
 - Reglas absorbidas sin hallazgos manuales: 10
