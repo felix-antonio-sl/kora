@@ -4,11 +4,11 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 
 ## Resumen
 
-- Agent workspaces activos: 7
+- Agent workspaces activos: 8
 - Workspaces deprecated: 0
 - Workspaces incompletos: 0
 - Artefactos bootstrap de agente: 0
-- Entradas totales de catalogo: 625
+- Entradas totales de catalogo: 626
 
 ## Catalogo por categoria
 
@@ -18,7 +18,7 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 | Skills | 84 |
 | Knowledge | 527 |
 | Documents | 0 |
-| Other | 14 |
+| Other | 15 |
 
 ## Catalogo por namespace
 
@@ -26,7 +26,7 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 |-----------|----------|
 | gn | 146 |
 | kora | 118 |
-| salud | 94 |
+| salud | 95 |
 | fxsl | 90 |
 | tde | 56 |
 | agengai | 37 |

@@ -35,7 +35,7 @@ A las 9 a.m. un domingo, ingresa una paciente de 26 años con dolor torácico, s
 
 En urgencias, casos como este son comunes. Se plantean preguntas sobre diagnósticos diferenciales, cómo descartar un infarto u otra patología grave, y las intervenciones más importantes al diagnosticar un infarto.
 
-El enfoque se centrará en el síndrome coronario agudo, dejando los diagnósticos diferenciales como material complementario.
+El enfoque se centrará en la estratificación inicial del dolor torácico no traumático y el descarte de diagnósticos tiempo-dependientes, usando el síndrome coronario agudo como eje prioritario pero no único.
 
 ## Definición y Epidemiología
 

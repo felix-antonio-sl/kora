@@ -4,9 +4,9 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 
 ## Resumen
 
-- Workspaces cubiertos: 7
-- Estados declarados: 76
-- Tools semanticas declaradas: 46
+- Workspaces cubiertos: 8
+- Estados declarados: 80
+- Tools semanticas declaradas: 48
 - Handoffs declarados: 8
 
 ## Auditoria meta-kora
@@ -38,3 +38,4 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 |-----------|---------|-------|----------|
 | gn/digitrans | 10 | 2 | 0 |
 | gn/goreologo | 9 | 2 | 1 |
+| salud/urgenciologo | 4 | 2 | 0 |

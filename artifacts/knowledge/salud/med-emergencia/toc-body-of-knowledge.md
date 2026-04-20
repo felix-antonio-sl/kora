@@ -16,6 +16,8 @@ lang: es
 relations:
   depends:
   - urn:salud:kb:med-emergencia
+  cites:
+  - urn:salud:kb:me-dolor-toracico
 extensions:
   kora:
     shard_index: 1

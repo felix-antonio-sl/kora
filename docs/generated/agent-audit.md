@@ -76,7 +76,7 @@ Hallazgos repetidos:
 
 ## Cohorte domains
 
-- Workspaces auditados: 2
+- Workspaces auditados: 3
 - `validate --profile strict` verde: si
 - Hallazgos manuales: 0
 - P1: 0 | P2: 0 | P3: 0
@@ -113,7 +113,7 @@ Hallazgos repetidos:
 
 ### Subgrupo salud
 
-- Workspaces: 0
+- Workspaces: 1
 - Hallazgos: 0
 
 | Workspace | Regla | Sev | Evidencia | Fix minimo | Cierre |

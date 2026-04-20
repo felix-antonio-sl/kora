@@ -6,7 +6,8 @@
     "kora/curator",
     "kora/custodio",
     "kora/forgemaster",
-    "kora/guardian"
+    "kora/guardian",
+    "salud/urgenciologo"
   ],
   "routes": [
     {

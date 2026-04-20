@@ -574,13 +574,39 @@
           "skill_05": "artifacts/agents/gn/goreologo/skills/CM-SPECIALIST-ROUTER.md",
           "skill_06": "artifacts/agents/gn/goreologo/skills/CM-SYNTHESIZER.md"
         }
+      },
+      {
+        "workspace": "salud/urgenciologo",
+        "state_names": [
+          "S-ASSESS",
+          "S-DISPATCHER",
+          "S-END",
+          "S-VALIDATE"
+        ],
+        "tool_names": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "tools_allow": [
+          "catalog_resolve",
+          "kb_route"
+        ],
+        "skill_refs": [],
+        "handoff_targets": [],
+        "route_targets": [],
+        "sub_agents": [],
+        "evidence_lines": [],
+        "allowed_kb_count": 5,
+        "sources": {
+          "agent": "artifacts/agents/salud/urgenciologo/AGENT.md"
+        }
       }
     ]
   },
   "totals": {
-    "workspaces": 7,
-    "states": 76,
-    "tools": 46,
+    "workspaces": 8,
+    "states": 80,
+    "tools": 48,
     "handoffs": 8
   },
   "meta_kora": {

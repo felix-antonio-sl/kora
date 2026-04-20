@@ -103,13 +103,13 @@
     },
     "domains": {
       "name": "domains",
-      "workspace_count": 2,
+      "workspace_count": 3,
       "validate_strict": {
         "profile": "strict",
         "cohort": "domains",
-        "workspace_valid": 2,
+        "workspace_valid": 3,
         "workspace_invalid": 0,
-        "bootstrap_validated": 2,
+        "bootstrap_validated": 3,
         "global_failures": 0,
         "issue_counts": {},
         "issues": [],
@@ -136,7 +136,7 @@
           "repeated_findings": []
         },
         "salud": {
-          "workspace_count": 0,
+          "workspace_count": 1,
           "findings": [],
           "repeated_findings": []
         },

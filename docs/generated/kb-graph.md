@@ -5,7 +5,7 @@
 | Metric | Value |
 |--------|-------|
 | Nodes | 525 |
-| Edges | 668 |
+| Edges | 669 |
 | Orphan nodes (total) | 0 |
 | Orphans — root (constitutional) | 0 |
 | Orphans — intencional | 0 |
@@ -33,7 +33,7 @@
 
 | Type | Count |
 |------|-------|
-| cites | 556 |
+| cites | 557 |
 | depends | 108 |
 | refines | 1 |
 | traces_requirements | 1 |

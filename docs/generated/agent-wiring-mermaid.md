@@ -2,7 +2,7 @@
 
 Vista materializada del wiring operativo del fleet productivo.
 
-- Workspaces: 7
+- Workspaces: 8
 - RoutesToAgent: 3
 - InvokesSkill: 84
 

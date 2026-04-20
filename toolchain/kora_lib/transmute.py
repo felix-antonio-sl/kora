@@ -10,6 +10,7 @@ Funciones principales:
   a KORA IR.
 """
 
+import json
 import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
@@ -212,6 +213,19 @@ def _resolve_adapter_skill(target: str) -> Path | None:
     return skill_md if skill_md.is_file() else None
 
 
+def append_invocation_record(record: dict, path: Path | None = None) -> Path:
+    """Append a canary/runtime invocation record to docs/generated/invocations.jsonl."""
+    target = path or (KORA_ROOT / "docs" / "generated" / "invocations.jsonl")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        **record,
+    }
+    with target.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    return target
+
+
 def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
                              ns: str, name: str, version: str,
                              source_hash: str, frontmatter: dict,
@@ -280,6 +294,85 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
         encoding="utf-8",
     )
     return yml_path
+
+
+def _collect_interface_tool_names(frontmatter: dict) -> list[str]:
+    interface = frontmatter.get("artefacto", {}).get("interfaz", {})
+    tools = interface.get("tools") or []
+    names = []
+    for item in tools:
+        if isinstance(item, dict):
+            name = item.get("name")
+        elif isinstance(item, str):
+            name = item
+        else:
+            name = None
+        if isinstance(name, str) and name and name not in names:
+            names.append(name)
+    return names or ["Read"]
+
+
+def _project_claude_code_tools(frontmatter: dict) -> list[str]:
+    semantic_tools = _collect_interface_tool_names(frontmatter)
+    projected = []
+    mapping = {
+        "catalog_resolve": "Read",
+        "kb_route": "Grep",
+    }
+    for semantic in semantic_tools:
+        runtime_tool = mapping.get(semantic)
+        if runtime_tool and runtime_tool not in projected:
+            projected.append(runtime_tool)
+    for default_tool in ("Read", "Grep", "Glob"):
+        if default_tool not in projected:
+            projected.append(default_tool)
+    return projected
+
+
+def _emit_claude_code_bundle(
+    target_dir: Path,
+    name: str,
+    frontmatter: dict,
+    body: str,
+    transmutation_path: Path,
+) -> Path:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    runtime_ext = (
+        frontmatter.get("artefacto", {})
+        .get("contexto", {})
+        .get("runtime_extensions", {})
+        .get("claude_code", {})
+    )
+    bundle_frontmatter = {
+        "name": name,
+        "description": frontmatter.get("descripcion", name),
+        "tools": _project_claude_code_tools(frontmatter),
+        "model": runtime_ext.get("model", "opus"),
+        "color": runtime_ext.get("color", "gray"),
+        "max_turns": runtime_ext.get("max_turns", 12),
+    }
+    metadata_lines = [
+        "## Provenance",
+        "",
+        f"- Source URN: `{transmutation.get('source_urn', '')}`",
+        f"- Source Hash: `{transmutation.get('source_hash', '')}`",
+        f"- Transmuted At: `{transmutation.get('timestamp', '')}`",
+        "",
+        "## Instructions",
+        "",
+        body.strip(),
+        "",
+    ]
+    bundle_path = target_dir / f"{name}.md"
+    bundle_path.write_text(
+        "---\n"
+        + yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+        + "\n---\n\n"
+        + "\n".join(metadata_lines),
+        encoding="utf-8",
+    )
+    return bundle_path
 
 
 # ---------------------------------------------------------------------------
@@ -662,6 +755,8 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     if dry_run:
         print(f"\n  [dry-run] Would create: {target_dir}/")
         print(f"  [dry-run] Would emit: {target_dir}/_transmutation.yml")
+        if target == "claude-code":
+            print(f"  [dry-run] Would emit bundle: {target_dir}/{name}.md")
         return
 
     # Crear y emitir
@@ -671,6 +766,11 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
         source_hash, frontmatter, vector, projected, detail
     )
     print(f"  Manifest: {yml_path.relative_to(KORA_ROOT)}")
+
+    bundle_path = None
+    if target == "claude-code":
+        bundle_path = _emit_claude_code_bundle(target_dir, name, frontmatter, body, yml_path)
+        print(f"  Bundle: {bundle_path.relative_to(KORA_ROOT)}")
 
     print(f"\n  Transmutacion preparada.")
     print(f"  Proximo paso: compilar AGENT.md → artefactos {target}")

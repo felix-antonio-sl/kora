@@ -1,30 +1,30 @@
 {
   "meta": {
-    "scanned_files": 695,
-    "node_count": 668,
-    "edge_count": 3316
+    "scanned_files": 697,
+    "node_count": 670,
+    "edge_count": 3344
   },
   "node_kind_counts": {
-    "artifact": 27,
+    "artifact": 28,
     "knowledge": 510,
     "skill": 84,
     "spec": 17,
     "tool": 23,
-    "workspace": 7
+    "workspace": 8
   },
   "edge_kind_counts": {
-    "AllowsKB": 173,
-    "AllowsTool": 46,
-    "Cites": 494,
-    "ContainsArtifact": 7,
+    "AllowsKB": 178,
+    "AllowsTool": 48,
+    "Cites": 495,
+    "ContainsArtifact": 8,
     "ContainsSkill": 84,
-    "DeclaresTool": 46,
+    "DeclaresTool": 48,
     "DependsOn": 69,
     "InvokesSkill": 84,
     "Refines": 1,
     "RoutesToAgent": 3,
     "TracesRequirement": 1,
-    "XRef": 2308
+    "XRef": 2325
   },
   "nodes": [
     {
@@ -217,6 +217,15 @@
       "id": "urn:kora:kb:swarm-spec-md",
       "kind": "artifact",
       "urn": "urn:kora:kb:swarm-spec-md"
+    },
+    {
+      "id": "urn:salud:artefacto:urgenciologo",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:salud:artefacto:urgenciologo",
+      "title": "Urgenciologo",
+      "path": "artifacts/agents/salud/urgenciologo/AGENT.md",
+      "namespace": "salud"
     },
     {
       "id": "urn:agengai:kb:00-fundamentos-previos",
@@ -5880,6 +5889,13 @@
       "workspace": "kora/guardian",
       "namespace": "kora",
       "path": "artifacts/agents/kora/guardian"
+    },
+    {
+      "id": "workspace:salud/urgenciologo",
+      "kind": "workspace",
+      "workspace": "salud/urgenciologo",
+      "namespace": "salud",
+      "path": "artifacts/agents/salud/urgenciologo"
     }
   ],
   "edges": [
@@ -6922,6 +6938,36 @@
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
     },
     {
+      "kind": "AllowsKB",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:kb:me-evaluacion-primaria",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:kb:me-razonamiento-clinico",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:kb:me-toc-body-of-knowledge",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "AllowsKB",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:kb:med-emergencia",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
       "kind": "AllowsTool",
       "source": "workspace:gn/digitrans",
       "target": "tool:catalog_resolve",
@@ -7196,6 +7242,18 @@
       "source": "workspace:kora/guardian",
       "target": "tool:spec_consult",
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:salud/urgenciologo",
+      "target": "tool:catalog_resolve",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "AllowsTool",
+      "source": "workspace:salud/urgenciologo",
+      "target": "tool:kb_route",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
     },
     {
       "kind": "Cites",
@@ -9497,6 +9555,12 @@
     },
     {
       "kind": "Cites",
+      "source": "urn:salud:kb:me-toc-body-of-knowledge",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "layer": "knowledge"
+    },
+    {
+      "kind": "Cites",
       "source": "urn:salud:kb:namespace-curation-map",
       "target": "urn:salud:kb:bok-medicina-emergencia",
       "layer": "knowledge"
@@ -10197,6 +10261,11 @@
       "target": "urn:kora:artefacto:guardian"
     },
     {
+      "kind": "ContainsArtifact",
+      "source": "workspace:salud/urgenciologo",
+      "target": "urn:salud:artefacto:urgenciologo"
+    },
+    {
       "kind": "ContainsSkill",
       "source": "workspace:gn/digitrans",
       "target": "urn:gn:skill:digitrans-cpat-analyzer:2.0.0"
@@ -10891,6 +10960,18 @@
       "source": "workspace:kora/guardian",
       "target": "tool:spec_consult",
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salud/urgenciologo",
+      "target": "tool:catalog_resolve",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "DeclaresTool",
+      "source": "workspace:salud/urgenciologo",
+      "target": "tool:kb_route",
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
     },
     {
       "kind": "DependsOn",
@@ -24043,6 +24124,118 @@
     },
     {
       "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:artefacto:urgenciologo",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-evaluacion-primaria",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-evaluacion-primaria",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-evaluacion-primaria",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-razonamiento-clinico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-razonamiento-clinico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-razonamiento-clinico",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-toc-body-of-knowledge",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-toc-body-of-knowledge",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:me-toc-body-of-knowledge",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:med-emergencia",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:med-emergencia",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:artefacto:urgenciologo",
+      "target": "urn:salud:kb:med-emergencia",
+      "fragment": null,
+      "source_path": "artifacts/agents/salud/urgenciologo/AGENT.md"
+    },
+    {
+      "kind": "XRef",
       "source": "urn:salud:kb:bok-medicina-emergencia",
       "target": "urn:salud:kb:bok-medicina-emergencia",
       "fragment": null,
@@ -25923,6 +26116,13 @@
       "target": "urn:salud:kb:med-emergencia",
       "fragment": null,
       "source_path": "artifacts/knowledge/salud/med-emergencia/tec-leve.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:salud:kb:me-toc-body-of-knowledge",
+      "target": "urn:salud:kb:me-dolor-toracico",
+      "fragment": null,
+      "source_path": "artifacts/knowledge/salud/med-emergencia/toc-body-of-knowledge.md"
     },
     {
       "kind": "XRef",

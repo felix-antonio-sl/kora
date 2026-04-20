@@ -2567,3 +2567,7 @@ Catalog:
     title: Lifecycle Orchestrator
     file: artifacts/skills/kora/lifecycle-orchestrator/SKILL.md
     status: activo
+  - urn: urn:salud:artefacto:urgenciologo
+    title: Urgenciologo
+    file: artifacts/agents/salud/urgenciologo/AGENT.md
+    status: activo
