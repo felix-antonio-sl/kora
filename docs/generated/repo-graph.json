@@ -1,11 +1,11 @@
 {
   "meta": {
-    "scanned_files": 693,
-    "node_count": 667,
-    "edge_count": 3315
+    "scanned_files": 695,
+    "node_count": 668,
+    "edge_count": 3316
   },
   "node_kind_counts": {
-    "artifact": 26,
+    "artifact": 27,
     "knowledge": 510,
     "skill": 84,
     "spec": 17,
@@ -24,7 +24,7 @@
     "Refines": 1,
     "RoutesToAgent": 3,
     "TracesRequirement": 1,
-    "XRef": 2307
+    "XRef": 2308
   },
   "nodes": [
     {
@@ -154,6 +154,15 @@
       "urn": "urn:kora:artefacto:guardian",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/guardian/AGENT.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "title": "Copiloto de Urgencia Turno",
+      "path": "artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -20244,6 +20253,13 @@
       "target": "urn:kora:kb:swarm-spec-md",
       "fragment": null,
       "source_path": "artifacts/agents/kora/guardian/AGENT.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "target": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md"
     },
     {
       "kind": "XRef",

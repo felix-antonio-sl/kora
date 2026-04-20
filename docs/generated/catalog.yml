@@ -2555,6 +2555,10 @@ Catalog:
     title: AGENT.md
     file: artifacts/agents/kora/guardian/AGENT.md
     status: activo
+  - urn: urn:kora:artefacto:hsc-copiloto-urgencia-turno
+    title: Copiloto de Urgencia Turno
+    file: artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md
+    status: activo
   - urn: urn:kora:artefacto:intent-classifier
     title: Intent Classifier
     file: artifacts/skills/kora/intent-classifier/SKILL.md
