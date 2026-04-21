@@ -724,6 +724,11 @@ def _build_agentskills_target_path(skill_md_path: Path) -> Path:
     return skill_md_path.parent / "_BUILD" / "agentskills"
 
 
+def _build_claude_code_skill_target_path(skill_md_path: Path) -> Path:
+    """Output vive en {skill_dir}/_BUILD/claude-code/."""
+    return skill_md_path.parent / "_BUILD" / "claude-code"
+
+
 def _project_skill_frontmatter(frontmatter: dict) -> dict:
     """Proyecta frontmatter KORA (es) a agentskills.io (en). autoria-spec §5.5.
 
@@ -743,6 +748,139 @@ def _project_skill_frontmatter(frontmatter: dict) -> dict:
     if allowed_tools is not None:
         out["allowed-tools"] = allowed_tools
     return out
+
+
+def _project_skill_frontmatter_to_claude_code(frontmatter: dict, skill_name: str) -> dict:
+    """Project a KORA skill to Claude Code skill frontmatter.
+
+    Official Claude Code skills use a SKILL.md file with lightweight frontmatter.
+    The only fields we emit by default are the ones that map cleanly and are
+    documented as stable: `name` and `description`.
+    """
+    description = frontmatter.get("descripcion") or frontmatter.get("description") or skill_name
+    return {
+        "name": skill_name,
+        "description": description,
+    }
+
+
+def _emit_claude_code_skill_bundle(
+    target_dir: Path,
+    skill_name: str,
+    frontmatter: dict,
+    body: str,
+    transmutation_path: Path,
+) -> Path:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    bundle_dir = target_dir / skill_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_frontmatter = _project_skill_frontmatter_to_claude_code(frontmatter, skill_name)
+
+    knowledge_contract = transmutation.get("knowledge_contract", {})
+    knowledge_lines = []
+    allowed_urns = knowledge_contract.get("allowed_urns") or []
+    if allowed_urns:
+        knowledge_lines.extend(["", "## Knowledge Contract", ""])
+        for urn in allowed_urns:
+            path = (knowledge_contract.get("resolved_paths") or {}).get(urn)
+            if path:
+                knowledge_lines.append(f"- `{urn}` -> `{path}`")
+            else:
+                knowledge_lines.append(f"- `{urn}` -> `(unresolved)`")
+        routes = knowledge_contract.get("routes") or {}
+        if routes:
+            knowledge_lines.extend(["", "### KB Routes", ""])
+            for route_name, item in sorted(routes.items()):
+                route_path = item.get("path")
+                if route_path:
+                    knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `{route_path}`")
+                else:
+                    knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `(unresolved)`")
+
+    content = "---\n"
+    content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+    content += "\n---\n\n"
+    content += body.rstrip()
+    if knowledge_lines:
+        content += "\n" + "\n".join(knowledge_lines)
+    content += "\n"
+
+    out_skill_md = bundle_dir / "SKILL.md"
+    out_skill_md.write_text(content, encoding="utf-8")
+    return out_skill_md
+
+
+def _transmute_skill_to_claude_code(skill_md_path: Path, dry_run: bool = False) -> tuple[Path, dict]:
+    """Project a KORA skill to Claude Code skill layout.
+
+    Target layout follows Claude Code official skill docs:
+    ~/.claude/skills/<skill-name>/SKILL.md
+    represented here as:
+    {skill_dir}/_BUILD/claude-code/<skill-name>/SKILL.md
+    """
+    frontmatter, body = load_markdown_parts(skill_md_path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {skill_md_path}")
+
+    forma = (
+        (frontmatter.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+    )
+    if forma != "habilidad":
+        raise ValueError(
+            f"claude-code skill target solo aplica a forma_material=habilidad, "
+            f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
+        )
+
+    vector = _get_harness_vector(frontmatter)
+    projected, detail = _project_vector(vector, "claude-code")
+    target_dir = _build_claude_code_skill_target_path(skill_md_path)
+    skill_name = skill_md_path.parent.name
+
+    summary = {
+        "source": str(skill_md_path.relative_to(KORA_ROOT)),
+        "target_dir": str(target_dir.relative_to(KORA_ROOT)),
+        "bundle_path": str((target_dir / skill_name / "SKILL.md").relative_to(KORA_ROOT)),
+        "projected_vector": projected,
+        "loss_by_axis": {ax: d.get("loss") for ax, d in detail.items() if d.get("loss")},
+    }
+    if dry_run:
+        return target_dir, summary
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    source_hash = _sha256(skill_md_path)
+    yml_path = _emit_transmutation_yml(
+        target_dir,
+        skill_md_path,
+        "claude-code",
+        skill_md_path.parent.parent.name,
+        skill_name,
+        frontmatter.get("version", "0.0.0"),
+        source_hash,
+        frontmatter,
+        vector,
+        projected,
+        detail,
+    )
+    bundle_path = _emit_claude_code_skill_bundle(target_dir, skill_name, frontmatter, body, yml_path)
+
+    # Copy supporting files following Claude skill layout.
+    for entry in skill_md_path.parent.iterdir():
+        if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):
+            continue
+        if entry.is_dir():
+            dst_dir = bundle_path.parent / entry.name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            for item in entry.rglob("*"):
+                if item.is_file():
+                    rel = item.relative_to(entry)
+                    dst_file = dst_dir / rel
+                    dst_file.parent.mkdir(parents=True, exist_ok=True)
+                    dst_file.write_bytes(item.read_bytes())
+        elif entry.is_file():
+            (bundle_path.parent / entry.name).write_bytes(entry.read_bytes())
+
+    return target_dir, summary
 
 
 def _project_skill_body(body: str) -> str:
@@ -1010,6 +1148,26 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
                 print(f"    {src}/ -> {dst}/")
         print(f"\n  Proyeccion byte-identical completada.")
         return
+
+    if target == "claude-code":
+        try:
+            skill_md_path = _resolve_skill_path(agent)
+        except ValueError:
+            skill_md_path = None
+        if skill_md_path is not None:
+            print(f"=== KORA Transmutation: {agent} -> claude-code skill ===\n")
+            print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
+            if dry_run:
+                target_dir, summary = _transmute_skill_to_claude_code(skill_md_path, dry_run=True)
+                print(f"  [dry-run] Would emit: {target_dir.relative_to(KORA_ROOT)}/")
+                print(f"  [dry-run] Would emit bundle: {summary['bundle_path']}")
+                return
+            target_dir, summary = _transmute_skill_to_claude_code(skill_md_path, dry_run=False)
+            print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
+            print(f"  Manifest: {target_dir.relative_to(KORA_ROOT) / '_transmutation.yml'}")
+            print(f"  Bundle: {summary['bundle_path']}")
+            print(f"\n  Proyeccion skill -> Claude Code completada.")
+            return
 
     agent_md_path = _resolve_agent_path(agent)
     ns, name = agent.strip().split("/")
