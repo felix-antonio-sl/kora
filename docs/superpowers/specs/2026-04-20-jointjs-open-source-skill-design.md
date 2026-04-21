@@ -18,8 +18,7 @@ La skill debe ser **semi Claude Code-first**:
 Incluido:
 
 - skill nueva bajo `artifacts/skills/kora/jointjs-open-source/`
-- `SKILL.md` compacto con reglas duras y workflow de consulta en vivo
-- `agents/openai.yaml` para discovery en Claude Code
+- `SKILL.md` compacto en shape productiva KORA (`autoria-spec`)
 - orientación para consultas, implementación, integración y debugging
 - política explícita para distinguir JointJS OSS de JointJS+
 
@@ -36,7 +35,6 @@ Excluido:
 Se elige una skill **live-docs puro** con bundle mínimo:
 
 - `SKILL.md`
-- `agents/openai.yaml`
 
 No se agregan `references/` con contenido técnico de JointJS porque eso
 introduciría drift y rompería el contrato principal de la skill: consultar la
@@ -65,7 +63,6 @@ Justificación:
 La skill debe contener solo:
 
 - `SKILL.md`
-- `agents/openai.yaml`
 
 No debe contener:
 
@@ -198,20 +195,11 @@ Secciones mínimas:
 
 No hace falta una teoría extensa de diagramming ni de la historia del producto.
 
-## `agents/openai.yaml`
-
-Debe expresar:
-
-- display name legible
-- short description enfocada en JointJS OSS + consulta live-docs
-- default prompt que enfatice consulta obligatoria a docs oficial
-
 ## Testing y validación
 
 La skill queda aceptable si:
 
 - su `SKILL.md` es compacto y claro
-- `openai.yaml` refleja fielmente el contrato
 - el texto deja explícita la obligación de consultar docs viva
 - se distingue JointJS OSS de JointJS+
 - no se introduce corpus local técnico de JointJS
@@ -230,4 +218,3 @@ La skill queda aceptable si:
 Si este diseño queda aprobado, el siguiente paso es implementar la skill en:
 
 - `artifacts/skills/kora/jointjs-open-source/SKILL.md`
-- `artifacts/skills/kora/jointjs-open-source/agents/openai.yaml`

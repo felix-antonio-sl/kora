@@ -2,20 +2,19 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Crear una skill compacta para Claude Code especializada en JointJS open-source, con consulta obligatoria a la documentación oficial viva antes de responder o implementar.
+**Goal:** Crear una skill KORA productiva para Claude Code especializada en JointJS open-source, con consulta obligatoria a la documentación oficial viva antes de responder o implementar.
 
-**Architecture:** La skill vivirá en `artifacts/skills/kora/jointjs-open-source/` con solo `SKILL.md` y `agents/openai.yaml`. El contenido técnico de JointJS no se replica localmente; el `SKILL.md` solo codifica el workflow live-docs, las reglas duras OSS vs Plus y el contrato de salida.
+**Architecture:** La skill vivirá en `artifacts/skills/kora/jointjs-open-source/` como artefacto productivo KORA con un único `SKILL.md`. El contenido técnico de JointJS no se replica localmente; el `SKILL.md` solo codifica el workflow live-docs, las reglas duras OSS vs Plus y el contrato de salida.
 
-**Tech Stack:** Markdown, YAML, skill-creator scripts (`init_skill.py`, `generate_openai_yaml.py`, `quick_validate.py`).
+**Tech Stack:** Markdown, YAML frontmatter KORA, `toolchain/kora`, `quick_validate.py` como referencia auxiliar.
 
 ---
 
-### Task 1: Scaffold y metadata de la skill
+### Task 1: Scaffold y validación base
 
 **Files:**
 - Create: `artifacts/skills/kora/jointjs-open-source/SKILL.md`
-- Create: `artifacts/skills/kora/jointjs-open-source/agents/openai.yaml`
-- Test: validar con `quick_validate.py`
+- Test: validar con `kora check --strict`
 
 - [ ] **Step 1: Scaffold con el inicializador canónico**
 
@@ -33,7 +32,6 @@ python3 /Users/felixsanhueza/.codex/skills/.system/skill-creator/scripts/init_sk
 Expected:
 - Se crea `artifacts/skills/kora/jointjs-open-source/`
 - Se crea `SKILL.md`
-- Se crea `agents/openai.yaml`
 
 - [ ] **Step 2: Verificar el scaffold**
 
@@ -45,7 +43,6 @@ find artifacts/skills/kora/jointjs-open-source -maxdepth 3 -type f | sort
 
 Expected:
 - `artifacts/skills/kora/jointjs-open-source/SKILL.md`
-- `artifacts/skills/kora/jointjs-open-source/agents/openai.yaml`
 
 - [ ] **Step 3: Validar formato base**
 
@@ -134,51 +131,25 @@ python3 /Users/felixsanhueza/.codex/skills/.system/skill-creator/scripts/quick_v
 Expected:
 - `Skill is valid!`
 
-### Task 3: Ajustar `agents/openai.yaml` y verificar el bundle final
+### Task 3: Verificar la skill final en el repo
 
 **Files:**
-- Modify: `artifacts/skills/kora/jointjs-open-source/agents/openai.yaml`
-- Test: revalidar el skill
+- Verify: `artifacts/skills/kora/jointjs-open-source/SKILL.md`
+- Verify: `docs/generated/catalog.yml`
 
-- [ ] **Step 1: Verificar metadata UI**
-
-Open `agents/openai.yaml` and ensure it contains:
-
-```yaml
-interface:
-  display_name: "JointJS OSS Specialist"
-  short_description: "Implementa y depura JointJS OSS con docs oficiales."
-  default_prompt: "Usa $jointjs-open-source para resolver esto con JointJS open-source consultando primero la documentación oficial viva."
-```
-
-- [ ] **Step 2: Regenerar `openai.yaml` si hace falta**
+- [ ] **Step 1: Validar skill final**
 
 Run:
 
 ```bash
-python3 /Users/felixsanhueza/.codex/skills/.system/skill-creator/scripts/generate_openai_yaml.py \
-  /Users/felixsanhueza/Developer/kora/artifacts/skills/kora/jointjs-open-source \
-  --interface display_name="JointJS OSS Specialist" \
-  --interface short_description="Implementa y depura JointJS OSS con docs oficiales." \
-  --interface default_prompt="Usa $jointjs-open-source para resolver esto con JointJS open-source consultando primero la documentación oficial viva."
+python3 toolchain/kora index
+python3 toolchain/kora check --strict
 ```
 
 Expected:
-- `agents/openai.yaml` actualizado con la metadata final
+- la nueva skill entra limpia al catálogo y el strict queda verde
 
-- [ ] **Step 3: Validar skill final**
-
-Run:
-
-```bash
-python3 /Users/felixsanhueza/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
-  /Users/felixsanhueza/Developer/kora/artifacts/skills/kora/jointjs-open-source
-```
-
-Expected:
-- `Skill is valid!`
-
-- [ ] **Step 4: Verificar árbol final**
+- [ ] **Step 2: Verificar árbol final**
 
 Run:
 
@@ -188,14 +159,12 @@ find artifacts/skills/kora/jointjs-open-source -maxdepth 3 -type f | sort
 
 Expected:
 - `artifacts/skills/kora/jointjs-open-source/SKILL.md`
-- `artifacts/skills/kora/jointjs-open-source/agents/openai.yaml`
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 3: Commit**
 
 ```bash
 git add \
   docs/superpowers/plans/2026-04-20-jointjs-open-source-skill.md \
-  artifacts/skills/kora/jointjs-open-source/SKILL.md \
-  artifacts/skills/kora/jointjs-open-source/agents/openai.yaml
+  artifacts/skills/kora/jointjs-open-source/SKILL.md
 git commit -m "feat(skills): agrega skill jointjs open-source"
 ```
