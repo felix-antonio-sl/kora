@@ -1,11 +1,11 @@
 {
   "meta": {
-    "scanned_files": 697,
-    "node_count": 670,
-    "edge_count": 3344
+    "scanned_files": 698,
+    "node_count": 671,
+    "edge_count": 3345
   },
   "node_kind_counts": {
-    "artifact": 28,
+    "artifact": 29,
     "knowledge": 510,
     "skill": 84,
     "spec": 17,
@@ -24,7 +24,7 @@
     "Refines": 1,
     "RoutesToAgent": 3,
     "TracesRequirement": 1,
-    "XRef": 2325
+    "XRef": 2326
   },
   "nodes": [
     {
@@ -172,6 +172,15 @@
       "urn": "urn:kora:artefacto:intent-classifier",
       "title": "Intent Classifier",
       "path": "artifacts/skills/kora/intent-classifier/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:jointjs-open-source",
+      "kind": "artifact",
+      "category": "Other",
+      "urn": "urn:kora:artefacto:jointjs-open-source",
+      "title": "JointJS Open-Source",
+      "path": "artifacts/skills/kora/jointjs-open-source/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -20376,6 +20385,13 @@
       "target": "urn:kora:artefacto:intent-classifier",
       "fragment": null,
       "source_path": "artifacts/skills/kora/intent-classifier/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:jointjs-open-source",
+      "target": "urn:kora:artefacto:jointjs-open-source",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/jointjs-open-source/SKILL.md"
     },
     {
       "kind": "XRef",

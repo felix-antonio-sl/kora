@@ -2563,6 +2563,10 @@ Catalog:
     title: Intent Classifier
     file: artifacts/skills/kora/intent-classifier/SKILL.md
     status: activo
+  - urn: urn:kora:artefacto:jointjs-open-source
+    title: JointJS Open-Source
+    file: artifacts/skills/kora/jointjs-open-source/SKILL.md
+    status: activo
   - urn: urn:kora:artefacto:lifecycle-orchestrator
     title: Lifecycle Orchestrator
     file: artifacts/skills/kora/lifecycle-orchestrator/SKILL.md

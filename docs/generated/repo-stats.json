@@ -8,12 +8,12 @@
     "Skills": 84,
     "Knowledge": 527,
     "Documents": 0,
-    "Other": 15
+    "Other": 16
   },
-  "total_catalog_entries": 626,
+  "total_catalog_entries": 627,
   "by_namespace": {
     "gn": 146,
-    "kora": 118,
+    "kora": 119,
     "salud": 95,
     "fxsl": 90,
     "tde": 56,
