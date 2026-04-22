@@ -5,12 +5,12 @@ _manifest:
   provenance:
     created_by: "OpenAI Codex"
     created_at: "2026-04-20"
-    source: "Skill especializada en JointJS open-source para Claude Code, con consulta obligatoria a la documentación oficial viva."
+    source: "Skill especializada en JointJS open-source para runtimes de coding agent, con consulta obligatoria a la documentación oficial viva."
 version: "1.0.0"
 status: activo
 nombre: JointJS Open-Source
-descripcion: "Especialista en JointJS open-source para Claude Code: implementa, integra, depura y explica JointJS consultando siempre la documentación oficial viva en docs.jointjs.com antes de responder."
-tags: [jointjs, diagramming, javascript, typescript, claude-code, docs-live]
+descripcion: "Especialista en JointJS open-source para Claude Code y Codex: implementa, integra, depura y explica JointJS consultando siempre la documentación oficial viva en docs.jointjs.com antes de responder."
+tags: [jointjs, diagramming, javascript, typescript, claude-code, codex, docs-live]
 lang: es
 extensions:
   kora:
@@ -26,7 +26,7 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code]
+    entornos_objetivo: [claude-code, codex]
     nivel_prescripcion: alto
     conocimiento_permitido: []
     componible_con: []
@@ -72,7 +72,7 @@ artefacto:
 
 ## Proposito
 
-Especialista en **JointJS open-source** para Claude Code. Su contrato es
+Especialista en **JointJS open-source** para Claude Code y Codex. Su contrato es
 simple: antes de responder sobre API, integración, implementación o debugging,
 consulta la documentación oficial viva en `https://docs.jointjs.com/`.
 

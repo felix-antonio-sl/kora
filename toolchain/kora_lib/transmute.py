@@ -729,6 +729,11 @@ def _build_claude_code_skill_target_path(skill_md_path: Path) -> Path:
     return skill_md_path.parent / "_BUILD" / "claude-code"
 
 
+def _build_codex_skill_target_path(skill_md_path: Path) -> Path:
+    """Output vive en {skill_dir}/_BUILD/codex/."""
+    return skill_md_path.parent / "_BUILD" / "codex"
+
+
 def _project_skill_frontmatter(frontmatter: dict) -> dict:
     """Proyecta frontmatter KORA (es) a agentskills.io (en). autoria-spec §5.5.
 
@@ -757,6 +762,15 @@ def _project_skill_frontmatter_to_claude_code(frontmatter: dict, skill_name: str
     The only fields we emit by default are the ones that map cleanly and are
     documented as stable: `name` and `description`.
     """
+    description = frontmatter.get("descripcion") or frontmatter.get("description") or skill_name
+    return {
+        "name": skill_name,
+        "description": description,
+    }
+
+
+def _project_skill_frontmatter_to_codex(frontmatter: dict, skill_name: str) -> dict:
+    """Project a KORA skill to Codex skill frontmatter."""
     description = frontmatter.get("descripcion") or frontmatter.get("description") or skill_name
     return {
         "name": skill_name,
@@ -804,6 +818,27 @@ def _emit_claude_code_skill_bundle(
     content += body.rstrip()
     if knowledge_lines:
         content += "\n" + "\n".join(knowledge_lines)
+    content += "\n"
+
+    out_skill_md = bundle_dir / "SKILL.md"
+    out_skill_md.write_text(content, encoding="utf-8")
+    return out_skill_md
+
+
+def _emit_codex_skill_bundle(
+    target_dir: Path,
+    skill_name: str,
+    frontmatter: dict,
+    body: str,
+) -> Path:
+    bundle_dir = target_dir / skill_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_frontmatter = _project_skill_frontmatter_to_codex(frontmatter, skill_name)
+
+    content = "---\n"
+    content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+    content += "\n---\n\n"
+    content += body.rstrip()
     content += "\n"
 
     out_skill_md = bundle_dir / "SKILL.md"
@@ -870,6 +905,81 @@ def _transmute_skill_to_claude_code(skill_md_path: Path, dry_run: bool = False) 
             continue
         if entry.is_dir():
             dst_dir = bundle_path.parent / entry.name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            for item in entry.rglob("*"):
+                if item.is_file():
+                    rel = item.relative_to(entry)
+                    dst_file = dst_dir / rel
+                    dst_file.parent.mkdir(parents=True, exist_ok=True)
+                    dst_file.write_bytes(item.read_bytes())
+        elif entry.is_file():
+            (bundle_path.parent / entry.name).write_bytes(entry.read_bytes())
+
+    return target_dir, summary
+
+
+def _transmute_skill_to_codex(skill_md_path: Path, dry_run: bool = False) -> tuple[Path, dict]:
+    """Project a KORA skill to Codex skill layout.
+
+    Target layout follows Codex skill conventions:
+    ~/.codex/skills/<skill-name>/SKILL.md
+    represented here as:
+    {skill_dir}/_BUILD/codex/<skill-name>/SKILL.md
+    """
+    frontmatter, body = load_markdown_parts(skill_md_path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {skill_md_path}")
+
+    forma = (
+        (frontmatter.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+    )
+    if forma != "habilidad":
+        raise ValueError(
+            f"codex skill target solo aplica a forma_material=habilidad, "
+            f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
+        )
+
+    vector = _get_harness_vector(frontmatter)
+    projected, detail = _project_vector(vector, "codex")
+    target_dir = _build_codex_skill_target_path(skill_md_path)
+    skill_name = skill_md_path.parent.name
+
+    summary = {
+        "source": str(skill_md_path.relative_to(KORA_ROOT)),
+        "target_dir": str(target_dir.relative_to(KORA_ROOT)),
+        "bundle_path": str((target_dir / skill_name / "SKILL.md").relative_to(KORA_ROOT)),
+        "projected_vector": projected,
+        "loss_by_axis": {ax: d.get("loss") for ax, d in detail.items() if d.get("loss")},
+        "subdirs_renamed": {},
+    }
+    if dry_run:
+        return target_dir, summary
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    source_hash = _sha256(skill_md_path)
+    yml_path = _emit_transmutation_yml(
+        target_dir,
+        skill_md_path,
+        "codex",
+        skill_md_path.parent.parent.name,
+        skill_name,
+        frontmatter.get("version", "0.0.0"),
+        source_hash,
+        frontmatter,
+        vector,
+        projected,
+        detail,
+    )
+    bundle_path = _emit_codex_skill_bundle(target_dir, skill_name, frontmatter, body)
+
+    for entry in skill_md_path.parent.iterdir():
+        if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):
+            continue
+        if entry.is_dir():
+            dst_name = AGENTSKILLS_SUBDIR_RENAMES.get(entry.name, entry.name)
+            if dst_name != entry.name:
+                summary["subdirs_renamed"][entry.name] = dst_name
+            dst_dir = bundle_path.parent / dst_name
             dst_dir.mkdir(parents=True, exist_ok=True)
             for item in entry.rglob("*"):
                 if item.is_file():
@@ -1117,7 +1227,12 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     (SKILL.md en artifacts/skills/{ns}/{name}/ con forma_material: habilidad). La
     proyeccion es byte-identical (sin LLM) segun autoria-spec §5.5.
 
-    Para otros targets (claude-code, codex, gemini, mastra, openclaw), el artefacto
+    Para target=claude-code o target=codex, si `agent` resuelve a una skill
+    productiva se usa el fast-path skill->runtime. Para otros targets, o si no
+    hay skill resoluble, el artefacto es un AGENT.md y la compilacion final
+    requiere un adapter skill o LLM.
+
+    Para otros targets (gemini, mastra, openclaw), el artefacto
     es un AGENT.md y la compilacion final requiere un adapter skill o LLM.
     """
     if target not in SUPPORTED_TARGETS:
@@ -1167,6 +1282,30 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
             print(f"  Manifest: {target_dir.relative_to(KORA_ROOT) / '_transmutation.yml'}")
             print(f"  Bundle: {summary['bundle_path']}")
             print(f"\n  Proyeccion skill -> Claude Code completada.")
+            return
+
+    if target == "codex":
+        try:
+            skill_md_path = _resolve_skill_path(agent)
+        except ValueError:
+            skill_md_path = None
+        if skill_md_path is not None:
+            print(f"=== KORA Transmutation: {agent} -> codex skill ===\n")
+            print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
+            if dry_run:
+                target_dir, summary = _transmute_skill_to_codex(skill_md_path, dry_run=True)
+                print(f"  [dry-run] Would emit: {target_dir.relative_to(KORA_ROOT)}/")
+                print(f"  [dry-run] Would emit bundle: {summary['bundle_path']}")
+                return
+            target_dir, summary = _transmute_skill_to_codex(skill_md_path, dry_run=False)
+            print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
+            print(f"  Manifest: {target_dir.relative_to(KORA_ROOT) / '_transmutation.yml'}")
+            print(f"  Bundle: {summary['bundle_path']}")
+            if summary["subdirs_renamed"]:
+                print(f"  Subdirs renombrados:")
+                for src, dst in summary["subdirs_renamed"].items():
+                    print(f"    {src}/ -> {dst}/")
+            print(f"\n  Proyeccion skill -> Codex completada.")
             return
 
     agent_md_path = _resolve_agent_path(agent)
@@ -1306,7 +1445,7 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
         },
         "version": "1.0.0",
         "name": name,
-        "status": "draft",
+        "status": "borrador",
         "tags": ["ingested", "claude-code", namespace],
         "lang": "es",
         "extensions": {
@@ -1399,7 +1538,7 @@ def _lift_codex_skill(file_path: Path):
                 },
                 "ingested_from": "codex",
                 "lifecycle": {
-                    "status": "draft",
+                    "status": "borrador",
                     "created": datetime.now().strftime("%Y-%m-%d"),
                 },
             },
@@ -1450,7 +1589,7 @@ def _lift_openclaw_workspace(workspace_dir: Path):
         },
         "version": "1.0.0",
         "name": agent_id,
-        "status": "draft",
+        "status": "borrador",
         "tags": ["ingested", "openclaw"],
         "lang": "es",
         "extensions": {
