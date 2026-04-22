@@ -1,0 +1,185 @@
+# Local Machine Inventory — dev
+
+Fecha: 2026-04-22
+Policy: high-confidence candidates only; originals remain in place; this manifest is a staging pointer for future KORA processing.
+Total candidates: 177
+
+## Source Paths
+
+- `/Users/felixsanhueza/Developer/_workspaces/agente-moltbot/output/tools/llm-task.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/GEMINI.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/agents/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/business-growth/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/c-level-advisor/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/docs/guides/agent-skills-for-codex.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/docs/guides/best-claude-code-plugins.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/docs/guides/gemini-cli-skills-guide.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/docs/skills/engineering/llm-cost-optimizer.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/playwright-pro/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/self-improving-agent/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/senior-ml-engineer/references/llm_integration_guide.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/senior-prompt-engineer/references/agentic_system_design.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering-team/senior-prompt-engineer/references/llm_evaluation_frameworks.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering/agenthub/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/engineering/autoresearch-agent/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/finance/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/marketing-skill/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/product-team/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/project-management/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/ra-qm-team/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/standards/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/claude-skills/templates/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/help/gpt54-codex-agentic-parity-maintainers.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/help/gpt54-codex-agentic-parity.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/plugins/codex-harness.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/providers/litellm.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/providers/vllm.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/reference/templates/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/tools/gemini-search.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs/tools/llm-task.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/extensions/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/extensions/acpx/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/qa/scenarios/models/claude-cli-provider-capabilities-subscription.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/qa/scenarios/models/claude-cli-provider-capabilities.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/qa/scenarios/models/codex-harness-no-meta-leak.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/qa/scenarios/workspace/medium-game-plan-codex-harness.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/scripts/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/skills/model-usage/references/codexbar-cli.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/agents/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/agents/pi-embedded-runner/run/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/agents/tools/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/channels/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/gateway/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/gateway/protocol/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/gateway/server-methods/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/plugin-sdk/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/src/plugins/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/test/helpers/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/test/helpers/channels/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/ui/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/vendor/a2ui/.gemini/GEMINI.md`
+- `/Users/felixsanhueza/Developer/_workspaces/openclaw/vendor/a2ui/specification/0.8/eval/GEMINI.md`
+- `/Users/felixsanhueza/Developer/_workspaces/pca/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/khn/.venv/lib/python3.14/site-packages/graphify/skill-codex.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/providers/litellm.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/providers/vllm.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/reference/templates/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/tools/gemini-search.md`
+- `/Users/felixsanhueza/Developer/khn/raw/agengai/openclaw/documentacion-oficial/tools/llm-task.md`
+- `/Users/felixsanhueza/Developer/khn/raw/fxsl/xanpan/stack-llm-arquitectura.md`
+- `/Users/felixsanhueza/Developer/koda/.claude/worktrees/busy-shaw/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/koda/.claude/worktrees/friendly-jones/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/koda/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/koda/docs/STACK_AGENTES_LLM.md`
+- `/Users/felixsanhueza/Developer/koda/skills/finance/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/koda/staging/doc_oficial_codex.md`
+- `/Users/felixsanhueza/Developer/korvo/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/bhi-gestion/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/goreos/.dmux/worktrees/dmux-1773518520471/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/goreos/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/hd-dt/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/hdos-app/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/hsc/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/nuble_ai_oc/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/help/gpt54-codex-agentic-parity-maintainers.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/help/gpt54-codex-agentic-parity.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/plugins/codex-harness.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/providers/litellm.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/providers/vllm.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/reference/templates/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/tools/gemini-search.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/docs/openclaw/tools/llm-task.md`
+- `/Users/felixsanhueza/Developer/projects/openclaw-fleet/workspaces/steipete/docs/2026-04-13-codex-steipete-report.md`
+- `/Users/felixsanhueza/Developer/projects/opm-model-app/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/opmodel/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/projects/opmodel/docs/opl-first/16-llm-mediated-renderer-adr.md`
+- `/Users/felixsanhueza/Developer/projects/opmodel/docs/opl-first/17-llm-mediated-modeling-orchestrator-adr.md`
+- `/Users/felixsanhueza/Developer/projects/opmodel/node_modules/.bun/bun-types@1.3.10/node_modules/bun-types/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/vps_clawdbot_hetzner/clawdbot_src/CLAUDE.md`
+- `/Users/felixsanhueza/Developer/vps_clawdbot_hetzner/clawdbot_src/docs/tools/llm-task.md`
+- `/Users/felixsanhueza/Developer/vps_clawdbot_hetzner/clawdbot_src/skills/model-usage/references/codexbar-cli.md`
+- `/Users/felixsanhueza/Developer/vps_clawdbot_hetzner/clawdbot_src/vendor/a2ui/.gemini/GEMINI.md`
+- `/Users/felixsanhueza/Developer/vps_clawdbot_hetzner/clawdbot_src/vendor/a2ui/specification/0.8/eval/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/02_Biblioteca/ML, AI and DL books/Books/LLM Engineers Handbook.pdf`
+- `/Users/felixsanhueza/Downloads/03_Proyectos-IA/cursor-ai/cursor_gemini_tde_ai.md`
+- `/Users/felixsanhueza/Downloads/03_Proyectos-IA/frameworks/framework/knowledge/fundamentos_teoricos/LLM_Arquitectura/LLM_4_capas_resumen.md`
+- `/Users/felixsanhueza/Downloads/03_Proyectos-IA/frameworks/framework/knowledge/fundamentos_teoricos/LLM_Arquitectura/LLM_APIs_arquitectura.md`
+- `/Users/felixsanhueza/Downloads/El Manual de Operaciones de gemini-cli.md`
+- `/Users/felixsanhueza/Downloads/El Manual de Operaciones de gemini-cli.pdf`
+- `/Users/felixsanhueza/Downloads/Felix's landscape (Current).llms.txt`
+- `/Users/felixsanhueza/Downloads/Framework Integrado de Salud gemini.docx`
+- `/Users/felixsanhueza/Downloads/The-Complete-Guide-to-Building-Skill-for-Claude.pdf`
+- `/Users/felixsanhueza/Downloads/clawdbot-2026.1.24/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot-2026.1.24/docs/tools/llm-task.md`
+- `/Users/felixsanhueza/Downloads/clawdbot-2026.1.24/skills/model-usage/references/codexbar-cli.md`
+- `/Users/felixsanhueza/Downloads/clawdbot-2026.1.24/vendor/a2ui/.gemini/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot-2026.1.24/vendor/a2ui/specification/0.8/eval/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/.openclaw/sandboxes/agent-main-0d71ad7a/skills/model-usage/references/codexbar-cli.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/providers/litellm.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/providers/vllm.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/tools/gemini-search.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/tools/llm-task.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/zh-CN/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/zh-CN/providers/litellm.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/clawmaster/knowledge/openclaw-docs/zh-CN/tools/llm-task.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/medico-urgencias/_legacy/sgh-tools/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/medico-urgencias/_legacy/sgh-tools/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/medico-urgencias/_legacy/sgh-tools/urgencista/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/medico-urgencias/_legacy/sgh-tools/urgencista/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026 a las 3_12_14 UTC-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 1_38_31 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_18_01 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_18_48 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_19_16 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_35_22 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_41_54 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_48_30 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_53_04 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_59_25 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_59_35 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_59_46 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 2_59_57 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 3_00_06 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 3_02_49 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 3_02_55 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 3_02_56 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/agents/salubrista-hah/inbox/catastro drive hodom/Exportación de Gemini (6 de marzo de 2026, 3_05_32 GMT-3).docx`
+- `/Users/felixsanhueza/Downloads/clawdbot/clawd/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/.gemini/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/AGENTS/fxsl/arquitecto-automatizacion-organizacional/skills/CM-LLM-ENGINEERING.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial/providers/claude-max-api-proxy.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial/providers/litellm.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial/providers/vllm.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial/tools/gemini-search.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/agengai/openclaw/documentacion-oficial/tools/llm-task.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/dev/agentic-engineering-praxis.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/dev/agentic-tooling-inventory/cli/claude-code.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/dev/agentic-tooling-inventory/cli/codex-cli.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/dev/agentic-tooling-inventory/cli/gemini-cli.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/kora/KNOWLEDGE/fxsl/xanpan/stack-llm-arquitectura.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/leychile-sdk/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/sgh-tools/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/sgh-tools/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/sgh-tools/urgencista/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/clawdbot/projects/sgh-tools/urgencista/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/cli-hsc/sgh-tools/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/cli-hsc/sgh-tools/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/cli-hsc/sgh-tools/urgencista/CLAUDE.md`
+- `/Users/felixsanhueza/Downloads/cli-hsc/sgh-tools/urgencista/GEMINI.md`
+- `/Users/felixsanhueza/Downloads/files/stack-llm-v1-arquitectura.md`
+- `/Users/felixsanhueza/Downloads/openai_codex.md`
+- `/Users/felixsanhueza/Downloads/stack-agentes-llm-propuesta.docx`
+- `/Users/felixsanhueza/Downloads/stack_claude.md`
+- `/Users/felixsanhueza/Downloads/stack_gemini.md`
