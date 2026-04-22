@@ -28,6 +28,7 @@ from kora_lib.validation import (
     formal_section_exists,
     lint_published_kora_markdown,
     normalize_angle_bracket_urls,
+    should_enforce_published_kora_markdown,
     validate_agents_canonical_structure,
     validate_agents_semantics,
     validate_coinduction_minimum,
@@ -741,6 +742,51 @@ class SemanticValidationTests(unittest.TestCase):
             failures = lint_published_kora_markdown(path)
             self.assertTrue(any("oversized_primary_chunk" in item for item in failures))
 
+    def test_should_enforce_published_kora_markdown_accepts_canonical_spanish_statuses(self):
+        published = {
+            "_manifest": {"urn": "urn:kora:kb:test-publicado"},
+            "status": "publicado",
+        }
+        deprecated = {
+            "_manifest": {"urn": "urn:kora:kb:test-deprecado"},
+            "status": "deprecado",
+        }
+        draft = {
+            "_manifest": {"urn": "urn:kora:kb:test-borrador"},
+            "status": "borrador",
+        }
+
+        self.assertTrue(should_enforce_published_kora_markdown(published, Path("published.md")))
+        self.assertTrue(should_enforce_published_kora_markdown(deprecated, Path("deprecated.md")))
+        self.assertFalse(should_enforce_published_kora_markdown(draft, Path("draft.md")))
+
+    def test_lint_published_kora_markdown_accepts_publicado_as_published_like(self):
+        with TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "bad-publicado.md"
+            path.write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:kora:kb:test-publicado"
+                    version: "1.0.0"
+                    status: publicado
+                    tags: [a, b, c]
+                    lang: es
+                    ---
+
+                    # Demo
+
+                    ## Resumen
+
+                    Texto con <a id="x"></a>.
+                    """
+                ),
+                encoding="utf-8",
+            )
+            failures = lint_published_kora_markdown(path)
+            self.assertTrue(any("html_raw" in item for item in failures), failures)
+
     def test_auto_fix_published_kora_markdown_parts_removes_html_and_semanticizes_refs(self):
         frontmatter = {
             "_manifest": {"urn": "urn:kora:kb:test-fix"},
@@ -1341,6 +1387,27 @@ class DeprecatedFilterTests(unittest.TestCase):
             config.write_text(
                 '{"_manifest": {"urn": "urn:test:agent-bootstrap:x-config:1.0.0", '
                 '"type": "bootstrap_config", "status": "deprecated"}}',
+                encoding="utf-8",
+            )
+            self.assertTrue(_is_workspace_deprecated(workspace))
+
+    def test_is_workspace_deprecated_reads_canonical_status_from_agent_md(self):
+        from kora_lib.workspaces import _is_workspace_deprecated
+
+        with TemporaryDirectory() as tmpdir:
+            workspace = Path(tmpdir)
+            (workspace / "AGENT.md").write_text(
+                textwrap.dedent(
+                    """\
+                    ---
+                    _manifest:
+                      urn: "urn:test:artefacto:demo"
+                    version: "1.0.0"
+                    status: deprecado
+                    lang: es
+                    ---
+                    """
+                ),
                 encoding="utf-8",
             )
             self.assertTrue(_is_workspace_deprecated(workspace))

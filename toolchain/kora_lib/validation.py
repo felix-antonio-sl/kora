@@ -33,6 +33,13 @@ from .config import (
     TRACES_TO_SECTION_PATTERN,
     USER_FORBIDDEN_PATTERNS,
     SCRIPTORIUM_ROOT,
+    SPEC_ROOTS,
+)
+from .lifecycle import (
+    is_deprecated_status,
+    is_draft_status,
+    is_published_status,
+    read_declared_status,
 )
 from .workspaces import (
     extract_cm_refs,
@@ -381,10 +388,10 @@ def should_enforce_published_kora_markdown(frontmatter, path):
     urn = frontmatter.get("_manifest", {}).get("urn", "")
     if not (isinstance(urn, str) and ":kb:" in urn):
         return False
-    status = frontmatter.get("status")
-    if status == "published":
+    status = read_declared_status(frontmatter)
+    if is_published_status(status) or is_deprecated_status(status):
         return True
-    if status != "draft":
+    if not is_draft_status(status):
         return False
     review_root = (SCRIPTORIUM_ROOT / "REVIEW").resolve()
     try:
@@ -1841,7 +1848,7 @@ def auto_fix_markdown_paths(paths, max_lines_per_h2=None, emit=True):
 
 
 def cmd_lint_md(paths=None, max_lines_per_h2=None, fix=False):
-    target_paths = paths or [KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT / "REVIEW"]
+    target_paths = paths or [KNOWLEDGE_ROOT, *SPEC_ROOTS, SCRIPTORIUM_ROOT / "REVIEW"]
     if fix:
         auto_fix_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)
     result = lint_markdown_paths(target_paths, max_lines_per_h2=max_lines_per_h2, emit=True)

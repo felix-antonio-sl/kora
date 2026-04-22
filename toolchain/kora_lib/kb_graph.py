@@ -11,6 +11,49 @@ from pathlib import Path
 from .artifacts import load_yaml_safe
 from .catalog import canonicalize_urn_reference, is_historical_urn
 from .config import KNOWLEDGE_ROOT, KORA_ROOT, GENERATED_DOCS_DIR
+from .lifecycle import read_declared_status
+
+
+_REQUIREMENT_HINTS = {
+    "constraint",
+    "obligation",
+    "obligacion",
+    "predicate",
+    "predicado",
+    "requirement",
+    "requerimiento",
+    "requisito",
+}
+
+
+def _frontmatter_declares_requirement(frontmatter):
+    if not isinstance(frontmatter, dict):
+        return False
+
+    tags = {
+        str(tag).strip().lower()
+        for tag in (frontmatter.get("tags") or [])
+        if isinstance(tag, str) and tag.strip()
+    }
+    if tags & _REQUIREMENT_HINTS:
+        return True
+
+    kora_ext = (frontmatter.get("extensions") or {}).get("kora") or {}
+    if isinstance(kora_ext, dict) and isinstance(kora_ext.get("requirement"), dict):
+        return True
+
+    urn = str((frontmatter.get("_manifest") or {}).get("urn", ""))
+    if urn.split(":")[-1].startswith("req-"):
+        return True
+
+    body = str(frontmatter.get("_md_body", ""))
+    if any(
+        marker in body
+        for marker in ("## Requirement", "## Requisito", "## Obligacion", "## Constraint", "## Predicate")
+    ):
+        return True
+
+    return False
 
 
 def collect_knowledge_nodes():
@@ -53,11 +96,12 @@ def collect_knowledge_nodes():
                 nodes.append({
                     "urn": urn,
                     "namespace": namespace,
-                    "status": frontmatter.get("status", "unknown"),
+                    "status": read_declared_status(frontmatter, default="unknown"),
                     "version": frontmatter.get("version", ""),
                     "tags": frontmatter.get("tags", []),
                     "file": rel_path,
                     "relations": frontmatter.get("relations", {}),
+                    "is_requirement": _frontmatter_declares_requirement(frontmatter),
                     "orphan_intencional": (
                         (frontmatter.get("extensions") or {}).get("kora", {}).get("orphan_intencional") is True
                     ),

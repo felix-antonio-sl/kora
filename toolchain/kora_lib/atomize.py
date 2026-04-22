@@ -1040,7 +1040,7 @@ def _atomic_frontmatter(slug: str, corpus_path: Path, proposition_count: int, se
             },
         },
         "version": "1.0.0",
-        "status": "draft",
+        "status": "borrador",
         "tags": ["atomic", "knowledge", slug],
         "lang": "es",
         "extensions": {

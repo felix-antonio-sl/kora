@@ -4,7 +4,7 @@ import json
 import os
 import re
 
-from .catalog import load_catalog
+from .catalog import classify_catalog_category, load_catalog
 from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
 from .workspaces import (
@@ -214,14 +214,15 @@ def skill_symbol_from_path(path):
 
 def classify_catalog_node_kind(entry):
     urn = entry.get("urn", "")
-    file_path = entry.get("file", "")
-    if ":skill:" in urn:
-        return "skill"
+    rel_path = entry.get("file", "")
     # Specs viven en las 4 capas de gobernanza (reorg v5) o en specs/ (legacy)
-    if any(file_path.startswith(f"{layer}/")
+    if any(rel_path.startswith(f"{layer}/")
            for layer in ("governance", "ontology", "serialization", "runtime", "specs")):
         return "spec"
-    if ":kb:" in urn:
+    category = classify_catalog_category(urn, rel_path)
+    if category == "Skills":
+        return "skill"
+    if category == "Knowledge":
         return "knowledge"
     return "artifact"
 

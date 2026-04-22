@@ -250,6 +250,7 @@ def _discover_productive_workspaces():
     Retorna dict {ns: tuple(ns/name, ...)} agrupado por namespace.
     """
     from .artifacts import load_yaml_safe
+    from .lifecycle import canonicalize_status
 
     agents_root = AGENTS_ROOT
     if not agents_root.exists():
@@ -269,7 +270,8 @@ def _discover_productive_workspaces():
             fm, err = load_yaml_safe(agent_md)
             if err or not isinstance(fm, dict):
                 continue
-            if fm.get("status") not in ("activo", "publicado"):
+            status = canonicalize_status(fm.get("status"))
+            if status not in ("activo", "publicado"):
                 continue
             workspaces.append(f"{ns}/{ws_dir.name}")
         if workspaces:

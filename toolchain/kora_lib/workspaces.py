@@ -13,6 +13,7 @@ from .config import (
     SKILL_REQUIRED_HEADINGS,
     TOOL_IDENTIFIER_PATTERN,
 )
+from .lifecycle import is_deprecated_status, is_retired_status, read_declared_status
 
 WORKSPACE_REF_PATTERN = re.compile(r"\b([a-z0-9-]+/[A-Za-z0-9_-]+)\b")
 EXPLICIT_ID_PATTERN_TEMPLATE = r"\bID:\s*{fragment}\b"
@@ -42,17 +43,19 @@ def workspace_in_cohort(workspace_dir, cohort=None):
 
 
 def _is_workspace_deprecated(workspace_dir):
-    config_path = workspace_dir / "config.json"
-    if not config_path.exists():
-        return False
-    try:
-        import json
-
-        with open(config_path, "r", encoding="utf-8") as handle:
-            data = json.load(handle)
-        return data.get("_manifest", {}).get("status") == "deprecated"
-    except Exception:
-        return False
+    for candidate in (workspace_dir / "AGENT.md", workspace_dir / "config.json"):
+        if not candidate.exists():
+            continue
+        try:
+            data, err = load_yaml_safe(candidate)
+        except Exception:
+            continue
+        if err or not isinstance(data, dict):
+            continue
+        status = read_declared_status(data)
+        if is_deprecated_status(status) or is_retired_status(status):
+            return True
+    return False
 
 
 def iter_agent_workspaces(cohort=None, include_deprecated=False):

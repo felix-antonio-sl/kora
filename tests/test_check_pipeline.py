@@ -24,6 +24,7 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertIn("urn-integrity", result.stdout)
         self.assertIn("knowledge-zone", result.stdout)
         self.assertIn("lint-md", result.stdout)
+        self.assertIn("traces-requirements-semantics", result.stdout)
         self.assertIn("autoria-conformance", result.stdout)
 
     def test_check_strict_exit_status_matches_diagnostics(self):
@@ -67,6 +68,30 @@ class CheckPipelineSmokeTests(unittest.TestCase):
 
         self.assertEqual(len(diags), 1)
         self.assertEqual(diags[0].fix_hint, "python3 toolchain/kora lint-md --fix")
+
+    def test_traces_requirements_semantics_rejects_non_requirement_targets(self):
+        from kora_lib.checks import _check_traces_requirements_semantics
+
+        nodes = [
+            {
+                "urn": "urn:kora:kb:trace-model",
+                "file": "artifacts/knowledge/kora/sys/trace-model.md",
+                "relations": {"traces_requirements": ["urn:kora:kb:not-a-requirement"]},
+                "is_requirement": False,
+            },
+            {
+                "urn": "urn:kora:kb:not-a-requirement",
+                "file": "artifacts/knowledge/kora/sys/not-a-requirement.md",
+                "relations": {},
+                "is_requirement": False,
+            },
+        ]
+
+        with patch("kora_lib.kb_graph.collect_knowledge_nodes", return_value=nodes):
+            diags = _check_traces_requirements_semantics()
+
+        self.assertEqual(len(diags), 1)
+        self.assertIn("non-requirement node", diags[0].message)
 
 
 class CheckAlgebraTests(unittest.TestCase):

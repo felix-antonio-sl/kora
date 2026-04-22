@@ -3,6 +3,7 @@ import re
 import unittest
 
 from common import AGENTS_ROOT, GENERATED_DOCS, ROOT, has_productive_workspaces, run_cli
+from kora_lib.catalog import load_catalog
 from kora_lib.config import OPERATING_CORE_COHORTS
 
 
@@ -36,6 +37,18 @@ class KoraCliSmokeTests(unittest.TestCase):
     def test_migrate_is_idempotent_on_clean_repo(self):
         result = run_cli("migrate", "--profile", "transitional")
         self.assertIn("Changed paths: 0", result.stdout)
+
+    def test_index_classifies_unified_artefacto_urns_by_materialization(self):
+        run_cli("index")
+        catalog = load_catalog()
+        self.assertIn(
+            "urn:kora:artefacto:guardian",
+            {item["urn"] for item in catalog["Catalog"]["Agents"]},
+        )
+        self.assertIn(
+            "urn:kora:artefacto:atomize",
+            {item["urn"] for item in catalog["Catalog"]["Skills"]},
+        )
 
     def test_sync_docs_generates_live_stats_files(self):
         run_cli("sync-docs")

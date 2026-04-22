@@ -25,7 +25,7 @@ def compute_stats_payload():
         if not get_workspace_missing_files(workspace, AGENT_REQUIRED_FILES)
     ]
 
-    bootstrap_count = len(doc["Catalog"].get("Agents", []))
+    agent_artifact_count = len(doc["Catalog"].get("Agents", []))
 
     total = 0
     category_counts = {}
@@ -46,7 +46,7 @@ def compute_stats_payload():
         "agent_workspaces": len(complete_workspaces),
         "deprecated_workspaces": deprecated_count,
         "incomplete_workspaces": len(workspaces) - len(complete_workspaces),
-        "agent_bootstrap_artifacts": bootstrap_count,
+        "agent_bootstrap_artifacts": agent_artifact_count,
         "catalog_counts": category_counts,
         "total_catalog_entries": total,
         "by_namespace": dict(sorted(ns_counts.items(), key=lambda item: -item[1])),
@@ -64,7 +64,7 @@ def render_stats_markdown(payload):
         f"- Agent workspaces activos: {payload['agent_workspaces']}",
         f"- Workspaces deprecated: {payload['deprecated_workspaces']}",
         f"- Workspaces incompletos: {payload['incomplete_workspaces']}",
-        f"- Artefactos bootstrap de agente: {payload['agent_bootstrap_artifacts']}",
+        f"- Artefactos de agente catalogados: {payload['agent_bootstrap_artifacts']}",
         f"- Entradas totales de catalogo: {payload['total_catalog_entries']}",
         "",
         "## Catalogo por categoria",

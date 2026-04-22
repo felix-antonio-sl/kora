@@ -182,7 +182,7 @@ def build_minimal_skill_content(
             "type": "lazy_load_endofunctor",
         },
         "version": version,
-        "status": "published",
+        "status": "publicado",
         "lang": "es",
     }
     body = f"""# {skill_name}

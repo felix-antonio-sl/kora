@@ -6,9 +6,9 @@ Pipeline descentralizado (v8):
 - Skill: artifacts/skills/_TALLER/REVIEW/{name}/ -> artifacts/skills/{ns}/{name}/
 
 El promote functor:
-1. Verifies the artifact has valid _manifest with status: draft
+1. Verifies the artifact has valid _manifest with status: borrador
 2. Runs lint checks on the artifact
-3. Changes status: draft -> published
+3. Changes status: borrador -> publicado
 4. Moves the file to productivo (mirroring REVIEW/ subpath when aplica)
 5. Triggers kora index to update the catalog
 
@@ -21,6 +21,7 @@ from pathlib import Path
 
 from .artifacts import dump_yaml_frontmatter_and_body
 from .config import KORA_ROOT, KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT
+from .lifecycle import canonicalize_status, is_draft_status
 from .validation import lint_kora_markdown_parts, load_markdown_parts, resolve_document_family
 
 ATOMIC_ACCEPTANCE_REVIEW_TYPE = "atomic_acceptance"
@@ -109,10 +110,10 @@ def validate_atomic_acceptance_review(draft_path, *, review_path=None, bundle_pa
 
 
 def cmd_promote_cohort(namespace: str):
-    """Batch promote: todos los drafts en artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/.
+    """Batch promote: todos los borradores en artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/.
 
-    Itera archivos .md en review/{ns}/ y sus subdirectorios; para cada draft
-    con status: draft, ejecuta cmd_promote. Acumula resultados; aborta al
+    Itera archivos .md en review/{ns}/ y sus subdirectorios; para cada borrador
+    con status borrador/draft, ejecuta cmd_promote. Acumula resultados; aborta al
     primer fallo para preservar composicion (no promueve parcialmente).
     """
     review_root = (SCRIPTORIUM_ROOT / "REVIEW").resolve()
@@ -145,7 +146,7 @@ def cmd_promote_cohort(namespace: str):
         print(f"No draft candidates found for cohort '{namespace}' in {review_root}")
         return
 
-    # Filtra por status: draft (skip bundle variants que ya fueron promovidas
+    # Filtra por status: borrador (skip bundle variants que ya fueron promovidas
     # por su index/primer archivo — cmd_promote maneja bundle de atomic)
     draft_files = []
     seen_bundle_roots = set()
@@ -156,7 +157,7 @@ def cmd_promote_cohort(namespace: str):
             continue
         if not isinstance(fm, dict):
             continue
-        if fm.get("status") != "draft":
+        if not is_draft_status(fm.get("status")):
             continue
         # Dedup bundle de atomic: solo procesa el archivo index (o el primer
         # archivo del bundle); cmd_promote procesa todos los segmentos a la vez.
@@ -239,10 +240,10 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
             print(f"ERROR: Cannot parse frontmatter in {bundle_path}")
             raise SystemExit(1)
 
-        bundle_status = bundle_frontmatter.get("status", "")
-        if bundle_status != "draft":
-            print(f"ERROR: Expected status: draft, found status: {bundle_status}")
-            print(f"  Only draft artifacts can be promoted.")
+        bundle_status = canonicalize_status(bundle_frontmatter.get("status", ""))
+        if bundle_status != "borrador":
+            print(f"ERROR: Expected status: borrador, found status: {bundle_status or '(missing)'}")
+            print(f"  Only draft/borrador artifacts can be promoted.")
             raise SystemExit(1)
 
         failures = lint_kora_markdown_parts(bundle_frontmatter, bundle_body, path=bundle_path)
@@ -266,7 +267,7 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
             print(f"WARNING: Target already exists: {dest_path.relative_to(KORA_ROOT)}")
             print(f"  This will overwrite the existing file.")
 
-        bundle_frontmatter["status"] = "published"
+        bundle_frontmatter["status"] = "publicado"
         dest_path.parent.mkdir(parents=True, exist_ok=True)
         dump_yaml_frontmatter_and_body(dest_path, bundle_frontmatter, bundle_body, lint_guard=False)
         bundle_path.unlink()
@@ -286,7 +287,7 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
     for promoted_urn, source_rel, dest_rel in promoted_pairs:
         print(f"PROMOTED: {promoted_urn}")
         print(f"  {source_rel} → {dest_rel}")
-        print(f"  status: draft → published")
+        print(f"  status: borrador → publicado")
     print(f"\nRun 'python3 toolchain/kora index' to update the catalog.")
 
 
@@ -353,7 +354,7 @@ def cmd_deprecate(path_str: str, *, supersedes: str = None, force: bool = False,
         print(f"ERROR: No _manifest.urn in {path_str}")
         raise SystemExit(1)
 
-    current_status = frontmatter.get("status", "")
+    current_status = canonicalize_status(frontmatter.get("status", ""))
     # Regimen por urn kind
     is_agentic = ":artefacto:" in urn
     transitions = _AGENTIC_DEPRECATION if is_agentic else _CONCEPTUAL_DEPRECATION

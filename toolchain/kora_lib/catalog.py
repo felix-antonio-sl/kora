@@ -14,6 +14,11 @@ from .config import (
     RETIRED_KB_URNS,
     ROOT_IGNORED_DIRS,
 )
+from .lifecycle import (
+    is_deprecated_status,
+    is_retired_status,
+    read_declared_status,
+)
 
 
 def load_catalog():
@@ -79,6 +84,27 @@ def build_catalog_lookup(doc):
     return known_urns, urn_to_entry
 
 
+def classify_catalog_category(urn, file_path):
+    rel_path = str(file_path).replace("\\", "/")
+    parts = urn.split(":")
+    obj_type = parts[2] if len(parts) >= 3 else "unknown"
+
+    if obj_type in ("agent", "agent-bootstrap"):
+        return "Agents"
+    if obj_type == "skill":
+        return "Skills"
+    if obj_type == "artefacto":
+        if rel_path.startswith("artifacts/skills/") or rel_path.endswith("/SKILL.md"):
+            return "Skills"
+        if rel_path.startswith("artifacts/agents/") or rel_path.endswith("/AGENT.md"):
+            return "Agents"
+    if obj_type in ("kb", "core", "domain"):
+        return "Knowledge"
+    if obj_type in ("doc", "sys", "ref", "tool"):
+        return "Documents"
+    return "Other"
+
+
 def cmd_index():
     print(f"Indexing KORA Monorepo at {KORA_ROOT}...")
 
@@ -131,12 +157,9 @@ def cmd_index():
             ):
                 manifest = doc["_manifest"]
                 urn = manifest["urn"]
-                status = manifest.get(
-                    "status",
-                    doc.get("status", doc.get("Status", "published")),
-                )
+                status = read_declared_status(doc, default="publicado")
 
-                if status == "deprecated":
+                if is_deprecated_status(status) or is_retired_status(status):
                     deprecated_count += 1
                     continue
 
@@ -150,19 +173,8 @@ def cmd_index():
                     "status": status,
                 }
 
-                parts = urn.split(":")
-                obj_type = parts[2] if len(parts) >= 3 else "unknown"
-
-                if obj_type in ("agent", "agent-bootstrap"):
-                    catalog["Catalog"]["Agents"].append(entry)
-                elif obj_type == "skill":
-                    catalog["Catalog"]["Skills"].append(entry)
-                elif obj_type in ("kb", "core", "domain"):
-                    catalog["Catalog"]["Knowledge"].append(entry)
-                elif obj_type in ("doc", "sys", "ref", "tool"):
-                    catalog["Catalog"]["Documents"].append(entry)
-                else:
-                    catalog["Catalog"]["Other"].append(entry)
+                category = classify_catalog_category(urn, rel_path)
+                catalog["Catalog"][category].append(entry)
 
                 count += 1
 
@@ -181,7 +193,7 @@ def cmd_index():
 
     summary = f"Successfully indexed {count} artifacts into {CATALOG_PATH.relative_to(KORA_ROOT)}!"
     if deprecated_count:
-        summary += f" ({deprecated_count} deprecated skipped)"
+        summary += f" ({deprecated_count} deprecated/retired skipped)"
     print(summary)
 
 

@@ -406,14 +406,14 @@ def _check_bundle_coherence(path_filter=None):
 
 def _check_lint_md(path_filter=None):
     """Lint published KORA/MD artifacts."""
-    from .config import KNOWLEDGE_ROOT
+    from .config import KORA_ROOT, KNOWLEDGE_ROOT, SPEC_ROOTS, SCRIPTORIUM_ROOT
     from .validation import lint_markdown_paths
 
-    target_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
-    if not target_paths:
-        target_paths = [KNOWLEDGE_ROOT]
+    target_paths = [KNOWLEDGE_ROOT, *SPEC_ROOTS, SCRIPTORIUM_ROOT / "REVIEW"]
     if path_filter:
-        target_paths = [KNOWLEDGE_ROOT / path_filter] if (KNOWLEDGE_ROOT / path_filter).exists() else target_paths
+        candidate = KORA_ROOT / path_filter
+        if candidate.exists():
+            target_paths = [candidate]
 
     result = lint_markdown_paths(target_paths, emit=False)
     diags = []
@@ -443,10 +443,9 @@ def _check_lint_md(path_filter=None):
 
 def _fix_lint_md(diagnostics):
     """Auto-fix lint issues."""
-    from .config import KNOWLEDGE_ROOT
+    from .config import KNOWLEDGE_ROOT, SPEC_ROOTS, SCRIPTORIUM_ROOT
     from .validation import auto_fix_markdown_paths
-    target_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
-    auto_fix_markdown_paths(target_paths or [KNOWLEDGE_ROOT], emit=False)
+    auto_fix_markdown_paths([KNOWLEDGE_ROOT, *SPEC_ROOTS, SCRIPTORIUM_ROOT / "REVIEW"], emit=False)
 
 
 def _check_kb_graph_cycles(path_filter=None):
@@ -580,6 +579,7 @@ def _check_spec_traces(path_filter=None):
 def _check_supersedes_consistency(path_filter=None):
     """If A supersedes B, B must have status: deprecated."""
     from .kb_graph import collect_knowledge_nodes
+    from .lifecycle import is_deprecated_status
     nodes = collect_knowledge_nodes()
     urn_to_status = {n["urn"]: n.get("status", "") for n in nodes if "urn" in n}
     diags = []
@@ -592,15 +592,52 @@ def _check_supersedes_consistency(path_filter=None):
             targets = [targets]
         for target_urn in (targets or []):
             target_status = urn_to_status.get(target_urn, "")
-            if target_status and target_status != "deprecated":
+            if target_status and not is_deprecated_status(target_status):
                 diags.append(Diagnostic(
                     check_id="supersedes-consistency",
                     severity="medium",
                     scope="artifact",
                     path=node.get("file", node["urn"]),
-                    message=f"Supersedes {target_urn} but target has status '{target_status}', expected 'deprecated'",
-                    fix_hint=f"Set status: deprecated in {target_urn}",
+                    message=f"Supersedes {target_urn} but target has status '{target_status}', expected 'deprecado'",
+                    fix_hint=f"Set status: deprecado in {target_urn}",
                 ))
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+def _check_traces_requirements_semantics(path_filter=None):
+    """Verify traces_requirements targets point to requirement-like nodes."""
+    from .kb_graph import collect_knowledge_nodes
+
+    nodes = collect_knowledge_nodes()
+    node_by_urn = {n["urn"]: n for n in nodes if "urn" in n}
+    diags = []
+
+    for node in nodes:
+        relations = node.get("relations", {})
+        if not isinstance(relations, dict):
+            continue
+        targets = relations.get("traces_requirements", [])
+        if isinstance(targets, str):
+            targets = [targets]
+        if not isinstance(targets, list):
+            continue
+        for target_urn in targets:
+            target = node_by_urn.get(target_urn)
+            if not target:
+                continue
+            if target.get("is_requirement") is True:
+                continue
+            diags.append(Diagnostic(
+                check_id="traces-requirements-semantics",
+                severity="high",
+                scope="artifact",
+                path=node.get("file", node["urn"]),
+                message=f"traces_requirements points to non-requirement node: {target_urn}",
+                fix_hint="Mark the target as a requirement or replace traces_requirements with cites/depends",
+            ))
+
     if path_filter:
         diags = [d for d in diags if d.path.startswith(path_filter)]
     return diags
@@ -1490,6 +1527,12 @@ def _register_builtins():
               scope="repo", severity="high", enforcement="lint",
               spec_ref="knowledge-spec §4.3, §7.3", depends=("knowledge-zone",), phase="graph"),
         _check_kb_graph_cycles,
+    )
+    register_check(
+        Check("traces-requirements-semantics", "traces_requirements targets are requirement-like nodes",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="knowledge-spec §4.2, §8.6", depends=("knowledge-zone",), phase="graph"),
+        _check_traces_requirements_semantics,
     )
     register_check(
         Check("spec-traces", "Traces to: lines point to existing formal layer docs",

@@ -9,7 +9,7 @@ from uuid import uuid4
 
 from common import FIXTURES, ROOT, assert_path_in_output, run_cli
 from kora_lib.artifacts import load_markdown_parts
-from kora_lib.atomize import _build_source_docs, _deduplicate_candidates, _extract_candidates
+from kora_lib.atomize import _atomic_frontmatter, _build_source_docs, _deduplicate_candidates, _extract_candidates
 from kora_lib.promote import _atomic_bundle_paths
 from kora_lib.validation import _collect_atomic_bundle_paths
 from kora_lib.validation import lint_kora_markdown_parts, parse_atomic_propositions
@@ -36,6 +36,14 @@ def write_atomic_acceptance_review(path: Path, bundle_root: str, *, decision: st
 
 
 class AtomizeCliTests(unittest.TestCase):
+    def test_atomic_frontmatter_uses_canonical_status_and_producer(self):
+        frontmatter = _atomic_frontmatter("demo", Path("source.txt"), 1, False, "single")
+        self.assertEqual(frontmatter["status"], "borrador")
+        self.assertEqual(
+            frontmatter["extensions"]["kora"]["atomic"]["producer"],
+            "urn:kora:artefacto:atomize",
+        )
+
     def test_review_atomic_acceptance_blocks_publish_ready_when_quality_fails(self):
         review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
 
