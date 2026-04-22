@@ -5,7 +5,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-22"
     source: "Memoria operativa compacta de la auditoría del server hetzner2897261."
-version: "1.0.0"
+version: "1.1.0"
 status: publicado
 tags: [operational-memory, auditoria, hetzner, entrega]
 lang: es
@@ -26,22 +26,22 @@ relations:
 |------|--------|
 | Repo path | `/home/felix/kora` |
 | Branch | `master` |
-| HEAD | `4f5ddbc` |
+| HEAD | `39c4cf4` |
 | `check --strict` | 18/18 verde |
 | `deploy-status` | 1 ok / 7 missing / 0 stale |
-| `unittest discover` | 323 corridos / 1 falla / 2 skipped |
+| `unittest discover` | 323 corridos / 0 fallas / 2 skipped |
 | `claude` en PATH | no detectado |
 | JointJS bundle | generado |
 | JointJS skill instalada | sí |
-| Drift local | `tests/fixtures/canarios/urgenciologo-baseline.md` |
+| Drift local | `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-test-acceptance-review.md` |
 
 ## Invariantes
 
 1. No hay stales en deploy.
 2. Sí hay fleet Claude incompleto.
-3. La entrega del server no es “verde total” hasta reparar `test_atomize.py`.
-4. La línea JointJS no debe tocarse antes de cerrar la falla de atomize si el objetivo es sanear entrega.
+3. La entrega del server está verde a nivel checks/tests, pero no necesariamente a nivel runtime Claude.
+4. El drift local del server hoy vive en `_SCRIPTORIUM/REVIEW/atomic/`, no en `tests/fixtures/canarios/`.
 
 ## Próximo paso recomendado
 
-Entrar directo por el test roto de `atomize`.
+Entrar por validación runtime real de Claude y saneamiento del draft atomic residual.

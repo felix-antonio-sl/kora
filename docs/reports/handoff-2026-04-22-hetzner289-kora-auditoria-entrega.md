@@ -5,7 +5,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-22"
     source: "Auditoría e inventario del estado actual de KORA en el servidor hetzner2897261 para continuidad operativa."
-version: "1.0.0"
+version: "1.1.0"
 status: publicado
 tags: [handoff, auditoria, inventario, hetzner, entrega, server]
 lang: es
@@ -29,13 +29,13 @@ Se auditó el servidor `hetzner2897261` y el resultado es:
 - host accesible por SSH
 - repo `kora` presente en `/home/felix/kora`
 - branch `master`
-- `HEAD == origin/master == 4f5ddbc`
+- `HEAD == origin/master == 39c4cf4`
 - `check --strict` verde (`18/18`)
 - `deploy-status` sin stales (`1 ok`, `7 missing`)
 - bundle de `jointjs-open-source` generado en `_BUILD/claude-code/`
 - skill instalada en `~/.claude/skills/jointjs-open-source/SKILL.md`
-- **falla 1 test** en `python3 -m unittest discover -s tests`
-- existe drift local no commiteado: `tests/fixtures/canarios/urgenciologo-baseline.md`
+- `python3 -m unittest discover -s tests` vuelve a verde
+- existe drift local no commiteado: `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-test-acceptance-review.md`
 
 ## Inventario factual
 
@@ -65,21 +65,21 @@ Se auditó el servidor `hetzner2897261` y el resultado es:
 En `/home/felix/kora`:
 
 - branch: `master`
-- HEAD: `4f5ddbc`
-- `origin/master`: `4f5ddbc`
+- HEAD: `39c4cf4`
+- `origin/master`: `39c4cf4`
 
 Commits visibles en punta:
 
+- `39c4cf4` — `chore(docs): regenera generated/ tras canario-spec v1.0.0`
+- `7790908` — `feat(canario): formaliza verificacion runtime de artefactos agenticos`
+- `e07bb9a` — `docs(reports): agrega auditoria hetzner289`
 - `4f5ddbc` — `chore(docs): regenera kb-graph y repo-graph con sync-docs`
 - `6ff75a8` — `test(kb-graph): rescata regression guard de determinismo`
-- `18b9e92` — `docs(reports): agrega handoff skill jointjs`
-- `b4db0f1` — `feat(transmute): soporta skill a claude code`
-- `1b7352f` — `docs(plan): alinea spec skill jointjs con shape kora`
 
 Importante:
 
-- el server está **por delante** del checkout local desde el que veníamos trabajando antes del `fetch/ff-only`
-- se verificó eso y el checkout local quedó fast-forward a `4f5ddbc` antes de escribir este handoff
+- el server estaba por delante del checkout local previo
+- se verificó eso y el checkout local quedó fast-forward a `39c4cf4` antes de reemitir esta auditoría
 
 ## Verificación corrida en server
 
@@ -131,19 +131,12 @@ python3 -m unittest discover -s tests
 Resultado:
 
 - `Ran 323 tests`
-- `FAILED (failures=1, skipped=2)`
-
-Fallo concreto:
-
-- `test_publish_atomic_wrapper_requires_fresh_accepted_review`
-- archivo: `tests/test_atomize.py`
-- síntoma: `review_path.exists()` devuelve `False`
+- `OK (skipped=2)`
 
 Interpretación:
 
-- la entrega del server **no está verde** a nivel suite completa
-- el bloqueo no es de toolchain base ni de la línea `jointjs`; es del flujo
-  `atomize/publish_atomic`
+- la entrega del server volvió a verde a nivel suite completa
+- el fallo observado en la auditoría previa ya no está presente
 
 ## Estado de la línea JointJS
 
@@ -167,32 +160,32 @@ Conclusión práctica:
 
 ## Estado de entrega que el server debe tener en cuenta
 
-1. **La entrega no está totalmente verde**
-   mientras exista el fallo de `test_atomize.py`.
+1. **La entrega está verde a nivel checks y suite**
+   pero no todavía a nivel validación runtime real de Claude.
 
-2. **No asumir que JointJS es el problema**
-   La línea JointJS parece sana; la falla observada es de `atomize/publish_atomic`.
+2. **No asumir que JointJS está probado end-to-end**
+   La línea JointJS parece sana a nivel de bundle e instalación, pero no quedó
+   demostrada todavía una invocación real del skill usando Claude en ese host.
 
 3. **No asumir que Claude está operativo**
    solo porque existe `~/.claude/skills/jointjs-open-source/SKILL.md`.
    Hay que verificar binario/configuración real de `claude`.
 
-4. **No commitear `tests/fixtures/canarios/urgenciologo-baseline.md`**
-   sin decidir si es fixture canónica o residuo de trabajo.
+4. **No commitear `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-test-acceptance-review.md`**
+   sin decidir si es evidencia canónica o residuo de la corrida de tests.
 
 ## Pendientes concretos
 
-1. Diagnosticar y reparar la falla de `test_publish_atomic_wrapper_requires_fresh_accepted_review`
-2. Decidir destino de `tests/fixtures/canarios/urgenciologo-baseline.md`
-3. Verificar si `claude` debe instalarse o si solo falta PATH/config en el server
-4. Recién después retomar continuidad funcional de la skill JointJS o abrir el siguiente gap (`skill -> codex`)
+1. Decidir destino de `artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-test-acceptance-review.md`
+2. Verificar si `claude` debe instalarse o si solo falta PATH/config en el server
+3. Probar invocación real de la skill `jointjs-open-source`
+4. Recién después abrir el siguiente gap (`skill -> codex`)
 
 ## Recomendación de orden
 
 Orden más sano para el server:
 
-1. arreglar `test_atomize.py`
-2. limpiar/decidir `tests/fixtures/canarios/`
-3. verificar runtime `claude`
-4. probar la skill `jointjs-open-source` instalada
-5. seguir con el próximo runtime o siguiente fase
+1. decidir el destino del artefacto atomic suelto en `_SCRIPTORIUM/REVIEW/`
+2. verificar runtime `claude`
+3. probar la skill `jointjs-open-source` instalada
+4. seguir con el próximo runtime o siguiente fase
