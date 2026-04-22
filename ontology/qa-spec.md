@@ -256,6 +256,10 @@ en el IR canónico destruiria composicionalidad semantica.
    degradacion de calidad y no como cambio estructural del IR.
 5. `risk-register-spec` materializa H13 sobre la moneda definida aqui; esta
    spec sigue siendo la autoridad sobre el enrichment y los cambios de base.
+6. `canario-spec` define el instrumento runtime que verifica
+   observacionalmente los compromisos declarados aqui; un `pasa-estricto`
+   en canario equivale a evidencia empirica de que `sigma_min` y demas
+   floors se sostienen en la invocacion productiva.
 
 ## 8. Invariantes
 

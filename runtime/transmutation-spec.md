@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-17"
     source: "harness-spec v1.1 + runtime-spec-md v3.8 + ICAS corpus 02-preservacion, 06-adjunciones, 09-efectos"
-version: "1.1.0"
+version: "1.2.0"
 status: publicado
 tags: [spec, transmutacion, functor, proyeccion, preservacion, bisimulacion, runtime]
 lang: es
@@ -329,7 +329,50 @@ preservation_matrix:
     sustainability: { max_supported: 1, enforcement: "declarative" }
 ```
 
-### 7.2 Uso operativo
+### 7.3 Trace fidelity por runtime
+
+Dimension auxiliar de la matriz que declara **cuanta evidencia auditable
+deja el runtime** de las decisiones internas del artefacto (tool calls,
+lecturas de KB, paths de razonamiento). Sin esta dimension, un canario
+puede parecer correcto estructuralmente pero no permitir verificar que
+efectivamente consumio el knowledge contract declarado.
+
+Valores posibles:
+
+| Valor | Semantica | Implicacion para canarios |
+|-------|-----------|----------------------------|
+| `alta` | El runtime persiste automaticamente los tool calls y decisiones en un sitio estable accesible por el operador sin pasos extra. | Canario cierra gate estricto sin ritual de captura. |
+| `media` | El runtime persiste la traza pero requiere accion del operador (expandir UI, instalar hook, leer JSONL) para capturarla de forma estable. | Canario requiere hook u otro mecanismo de captura; sin el, cierra solo `parcial`. |
+| `baja` | El runtime no persiste la traza; solo queda lo que el operador copie durante la ejecucion. | Canario imposible de verificar fuera de la sesion viva; evidencia efimera. |
+| `nula` | El runtime no expone los tool calls internos al operador. | Canario no puede cerrar gate de trazabilidad; solo gate funcional. |
+
+Cada runtime-extension declara su valor en la seccion de matriz con la
+forma:
+
+```yaml
+trace_fidelity:
+  level: alta | media | baja | nula
+  capture_mechanism: "descripcion del path / hook / log"
+  notes: "particularidades operativas"
+```
+
+Inventario vigente al `2026-04-22` (declarado en cada runtime-extension;
+aqui solo resumen):
+
+| Runtime | Nivel | Mecanismo de captura |
+|---------|-------|----------------------|
+| claude-code | `media` | hook `SubagentStop` + JSONL `~/.claude/projects/*/` |
+| codex | pendiente | por documentar en `codex-runtime-extension.md` |
+| gemini | pendiente | por documentar en `gemini-runtime-extension.md` |
+| openclaw | pendiente | log `journalctl --user` + session jsonl del agente |
+| mastra | pendiente | logs server-side |
+| agentskills | N/A | meta-runtime, hereda del target |
+
+Los runtimes marcados `pendiente` tienen deuda de documentacion abierta:
+su valor debe completarse antes de que un canario en ese runtime pueda
+cerrar gate estricto de trazabilidad.
+
+### 7.4 Uso operativo
 
 Cuando `kora transmute --target claude-code --agent X`:
 
@@ -338,6 +381,9 @@ Cuando `kora transmute --target claude-code --agent X`:
 3. Proyecta cada eje.
 4. Emite artefacto target + `_transmutation.yml`.
 5. Documenta cada perdida.
+6. Propaga `trace_fidelity` del runtime al bloque `metadata` del
+   `_transmutation.yml` para que el canario que consuma ese artefacto
+   sepa que nivel de evidencia puede exigir.
 
 Si algun eje no tiene entrada en la matriz o el vector excede el dominio,
 **falla con mensaje claro** indicando que el IR excede capacidad del target.

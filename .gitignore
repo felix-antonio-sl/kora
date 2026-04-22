@@ -3,6 +3,9 @@
 __pycache__/
 *.pyc
 
+# Trazas locales del hook SubagentStop — efimeras, no commiteables
+.claude/trace/
+
 # Archivos pesados
 *.tar.gz
 *.tar.bz2

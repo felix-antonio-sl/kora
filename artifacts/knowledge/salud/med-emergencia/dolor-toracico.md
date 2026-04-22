@@ -27,6 +27,8 @@ extensions:
 
 # Dolor Torácico No Traumático
 
+<!-- kora-canario-marker: 2026-04-22-dolor-toracico-baseline-v1 -->
+
 Este artículo introduce el dolor torácico no traumático, que es cualquier dolor en el tórax anterior, desde las clavículas hasta el reborde costal y la línea axilar anterior, sin origen traumático evidente.
 
 ## Caso Clínico

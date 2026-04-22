@@ -85,7 +85,7 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
-| **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec` |
+| **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec`, `canario-spec` |
 | **Serializacion** | Como se *escribe* el artefacto (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
 | **Runtime** | Como se *ejecuta* en un target concreto y como compone multiagente | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
@@ -102,6 +102,7 @@ proyectadas*. La distribucion es *meta-encaje*.
 - `qa-spec.md` — semantica enriquecida de quality attributes y `qa_budget`.
 - `procesos-spec.md` — procesos del toolchain como funtores declarados.
 - `risk-register-spec.md` — registro de riesgo como composicion Kleisli.
+- `canario-spec.md` — contrato ejecutable de verificacion runtime por artefacto.
 
 **Capa de serializacion**:
 
@@ -131,6 +132,7 @@ gobierna:
 
 - `harness-spec` para vector ontologico PMI × LFS.
 - `qa-spec` para quality attributes, floors derivados de `Σ` y `qa_budget`.
+- `canario-spec` para verificacion runtime ejecutable por artefacto proyectado.
 - `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
 - `autoria-spec` para shape de todo artefacto agentico productivo.
 - `knowledge-spec` para tejido relacional y pipeline de conocimiento.

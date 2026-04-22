@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-17"
     source: "harness-spec v1.0; transmutation-spec v1.0; revisión docs oficiales Claude Code (claude.ai/code) y marketplace de plugins"
-version: "1.0.0"
+version: "1.1.0"
 status: publicado
 tags: [spec, runtime, claude-code, extension, transmutacion, proyeccion]
 lang: es
@@ -284,3 +284,81 @@ Checks aplicables:
 - Approval modes: plan (default) / accept / review.
 - Dominio completo: Π ≤ 2, Μ ≤ 2, Ξ ≤ 2, Λ ≤ 1, Φ ≤ 2, Σ variable.
 - Ingesta inversa disponible para subagentes (`Lift` parcial).
+
+## 12. Ciclo de actualizacion y trazas
+
+Capturado desde ejecucion real del canario `urgenciologo` el `2026-04-22`.
+Restricciones del runtime que afectan el ciclo KORA→Claude Code y que no son
+deducibles leyendo el runtime-spec generico.
+
+### 12.1 Registry refresh
+
+Claude Code lee el directorio `~/.claude/agents/` **solo al iniciar la sesion**.
+Un subagente transmutado por `kora transmute --target claude-code` no queda
+disponible para sesiones ya abiertas. Consecuencias:
+
+1. `/clear` limpia el contexto de conversacion pero **no** recarga subagents
+   desde disco.
+2. Para probar un subagente recien transmutado, el operador debe iniciar una
+   sesion nueva (`claude` o `cld` desde shell), no continuar la sesion actual.
+3. Si un canario depende de un subagente recien transmutado y se ejecuta en
+   la misma sesion que lo produjo, el `Agent` tool devuelve
+   `Agent type '<name>' not found`.
+
+El contrato operativo del canario debe incluir "paso 0: sesion nueva" cuando
+la cadena es `transmute → invocar canario`.
+
+### 12.2 Trace fidelity: `media`
+
+Claude Code persiste la conversacion en un JSONL de sesion
+(`~/.claude/projects/<project-slug>/<session-id>.jsonl`) que contiene todos
+los tool calls incluidos los del subagente. Sin embargo, la UI colapsa el
+output del `Agent`/`Task` tool a un resumen `Done (N tool uses · N tokens ·
+Ns)`. Si el operador no expande el bloque, la traza no se conserva en el
+transcript rendered.
+
+Fidelidad de traza: **`media`** segun la taxonomia de
+`transmutation-spec §7.3`.
+
+La traza completa **si** esta disponible via hook `SubagentStop`, que recibe
+en stdin JSON:
+
+```json
+{
+  "session_id": "...",
+  "transcript_path": "/home/<user>/.claude/projects/.../session.jsonl",
+  "hook_event_name": "SubagentStop",
+  "agent_type": "<subagent-name>"
+}
+```
+
+El hook de referencia de KORA vive en
+`.claude/hooks/dump-subagent.sh` y vuelca a `.claude/trace/`:
+
+- `{TS}_{agent}_{session}.main.jsonl` — transcript del main.
+- `{TS}_{agent}_{session}.subagent-N.jsonl` — transcript(s) del subagente
+  con los tool calls internos. Claude Code persiste estos en
+  `~/.claude/projects/<project-slug>/<session>/subagents/agent-<id>.jsonl`
+  (jsonl anidado, un archivo por subagente invocado).
+- `{TS}_{agent}_{session}.meta.json` — metadata del evento.
+
+El hallazgo clave (`2026-04-22`): los `tool_use` del subagente **no** estan
+en el jsonl del main, estan solo en el jsonl anidado en
+`<session>/subagents/`. Un canario que inspeccione unicamente el
+`transcript_path` recibido en el payload del hook no ve los Read del
+subagente. La fidelidad real requiere recoger el directorio hermano.
+
+Los canarios deben contar con el hook activo (deploying `dump-subagent.sh`
+o equivalente) para considerar evidencia de `Read` sobre un KB como
+verificada.
+
+### 12.3 Consecuencias para canarios
+
+1. El primer paso del contrato de un canario en Claude Code es constatar
+   que el subagente este registrado (`Agent` tool sin error previo al
+   prompt productivo).
+2. El segundo paso es constatar que el hook `SubagentStop` esta instalado
+   (directorio `.claude/trace/` existe y el canario previo dejo archivo).
+3. La evidencia de tool calls es **obligatoria** para cerrar el criterio
+   de trazabilidad al KB: sin ella, el canario cierra solo como `parcial`.
+
