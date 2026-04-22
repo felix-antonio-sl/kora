@@ -1,7 +1,5 @@
 # KORA Knowledge Graph — Orphans Classification
 
-Generated: 2026-04-18T22:08:26.532613
-
 ## Summary
 
 | Class | Count | Meaning |

@@ -5,9 +5,9 @@
     "edge_count": 3352
   },
   "node_kind_counts": {
-    "artifact": 29,
+    "artifact": 21,
     "knowledge": 510,
-    "skill": 84,
+    "skill": 92,
     "spec": 18,
     "tool": 23,
     "workspace": 8
@@ -40,7 +40,7 @@
     {
       "id": "urn:gn:artefacto:digitrans",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:gn:artefacto:digitrans",
       "title": "AGENT.md",
       "path": "artifacts/agents/gn/digitrans/AGENT.md",
@@ -49,28 +49,10 @@
     {
       "id": "urn:gn:artefacto:goreologo",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:gn:artefacto:goreologo",
       "title": "AGENT.md",
       "path": "artifacts/agents/gn/goreologo/AGENT.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:artefacto:intake",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:gn:artefacto:intake",
-      "title": "Intake",
-      "path": "artifacts/skills/gn/intake/SKILL.md",
-      "namespace": "gn"
-    },
-    {
-      "id": "urn:gn:artefacto:synthesizer",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:gn:artefacto:synthesizer",
-      "title": "Synthesizer",
-      "path": "artifacts/skills/gn/synthesizer/SKILL.md",
       "namespace": "gn"
     },
     {
@@ -94,36 +76,18 @@
       "urn": "urn:kora:agent-bootstrap:guardian-user:1.0.0"
     },
     {
-      "id": "urn:kora:artefacto:atomize",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:atomize",
-      "title": "Atomize — Productor canonico de la familia `atomic`",
-      "path": "artifacts/skills/kora/atomize/SKILL.md",
-      "namespace": "kora"
-    },
-    {
       "id": "urn:kora:artefacto:clawforge",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:kora:artefacto:clawforge",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/clawforge/AGENT.md",
       "namespace": "kora"
     },
     {
-      "id": "urn:kora:artefacto:context-manager",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:context-manager",
-      "title": "Context Manager",
-      "path": "artifacts/skills/kora/context-manager/SKILL.md",
-      "namespace": "kora"
-    },
-    {
       "id": "urn:kora:artefacto:curator",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:kora:artefacto:curator",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/curator/AGENT.md",
@@ -132,7 +96,7 @@
     {
       "id": "urn:kora:artefacto:custodio",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:kora:artefacto:custodio",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/custodio/AGENT.md",
@@ -141,7 +105,7 @@
     {
       "id": "urn:kora:artefacto:forgemaster",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:kora:artefacto:forgemaster",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/forgemaster/AGENT.md",
@@ -150,46 +114,10 @@
     {
       "id": "urn:kora:artefacto:guardian",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:kora:artefacto:guardian",
       "title": "AGENT.md",
       "path": "artifacts/agents/kora/guardian/AGENT.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
-      "title": "Copiloto de Urgencia Turno",
-      "path": "artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:artefacto:intent-classifier",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:intent-classifier",
-      "title": "Intent Classifier",
-      "path": "artifacts/skills/kora/intent-classifier/SKILL.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:artefacto:jointjs-open-source",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:jointjs-open-source",
-      "title": "JointJS Open-Source",
-      "path": "artifacts/skills/kora/jointjs-open-source/SKILL.md",
-      "namespace": "kora"
-    },
-    {
-      "id": "urn:kora:artefacto:lifecycle-orchestrator",
-      "kind": "artifact",
-      "category": "Other",
-      "urn": "urn:kora:artefacto:lifecycle-orchestrator",
-      "title": "Lifecycle Orchestrator",
-      "path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -230,7 +158,7 @@
     {
       "id": "urn:salud:artefacto:urgenciologo",
       "kind": "artifact",
-      "category": "Other",
+      "category": "Agents",
       "urn": "urn:salud:artefacto:urgenciologo",
       "title": "Urgenciologo",
       "path": "artifacts/agents/salud/urgenciologo/AGENT.md",
@@ -4827,6 +4755,24 @@
       "namespace": "tde"
     },
     {
+      "id": "urn:gn:artefacto:intake",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:artefacto:intake",
+      "title": "Intake",
+      "path": "artifacts/skills/gn/intake/SKILL.md",
+      "namespace": "gn"
+    },
+    {
+      "id": "urn:gn:artefacto:synthesizer",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:gn:artefacto:synthesizer",
+      "title": "Synthesizer",
+      "path": "artifacts/skills/gn/synthesizer/SKILL.md",
+      "namespace": "gn"
+    },
+    {
       "id": "urn:gn:skill:digitrans-cpat-analyzer:2.0.0",
       "kind": "skill",
       "category": "Skills",
@@ -4933,6 +4879,60 @@
       "title": "CM-SYNTHESIZER",
       "path": "artifacts/agents/gn/goreologo/skills/CM-SYNTHESIZER.md",
       "namespace": "gn"
+    },
+    {
+      "id": "urn:kora:artefacto:atomize",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:atomize",
+      "title": "Atomize — Productor canonico de la familia `atomic`",
+      "path": "artifacts/skills/kora/atomize/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:context-manager",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:context-manager",
+      "title": "Context Manager",
+      "path": "artifacts/skills/kora/context-manager/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:hsc-copiloto-urgencia-turno",
+      "title": "Copiloto de Urgencia Turno",
+      "path": "artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:intent-classifier",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:intent-classifier",
+      "title": "Intent Classifier",
+      "path": "artifacts/skills/kora/intent-classifier/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:jointjs-open-source",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:jointjs-open-source",
+      "title": "JointJS Open-Source",
+      "path": "artifacts/skills/kora/jointjs-open-source/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:lifecycle-orchestrator",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:lifecycle-orchestrator",
+      "title": "Lifecycle Orchestrator",
+      "path": "artifacts/skills/kora/lifecycle-orchestrator/SKILL.md",
+      "namespace": "kora"
     },
     {
       "id": "urn:kora:skill:clawforge-agent-deployer:1.2.0",

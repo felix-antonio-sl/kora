@@ -1469,6 +1469,10 @@ Catalog:
     title: KORA/Agentskills-Runtime-Extension v1.0.0
     file: runtime/agentskills-runtime-extension.md
     status: publicado
+  - urn: urn:kora:kb:atomic-test-acceptance-3bcd9888f8
+    title: Atomic test-acceptance-3bcd9888f8
+    file: artifacts/knowledge/kora/atomic/atomic-test-acceptance-3bcd9888f8.md
+    status: publicado
   - urn: urn:kora:kb:autoria-spec
     title: Especificacion de Autoria de Artefactos Agenticos v1.2.0
     file: serialization/autoria-spec.md

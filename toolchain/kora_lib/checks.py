@@ -406,10 +406,11 @@ def _check_bundle_coherence(path_filter=None):
 
 def _check_lint_md(path_filter=None):
     """Lint published KORA/MD artifacts."""
-    from .config import KORA_ROOT, KNOWLEDGE_ROOT, SPEC_ROOTS, SCRIPTORIUM_ROOT
+    from .config import KORA_ROOT, KNOWLEDGE_ROOT, SPEC_ROOTS
     from .validation import lint_markdown_paths
 
-    target_paths = [KNOWLEDGE_ROOT, *SPEC_ROOTS, SCRIPTORIUM_ROOT / "REVIEW"]
+    knowledge_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
+    target_paths = [*(knowledge_paths or [KNOWLEDGE_ROOT]), *SPEC_ROOTS]
     if path_filter:
         candidate = KORA_ROOT / path_filter
         if candidate.exists():
@@ -443,9 +444,10 @@ def _check_lint_md(path_filter=None):
 
 def _fix_lint_md(diagnostics):
     """Auto-fix lint issues."""
-    from .config import KNOWLEDGE_ROOT, SPEC_ROOTS, SCRIPTORIUM_ROOT
+    from .config import KNOWLEDGE_ROOT, SPEC_ROOTS
     from .validation import auto_fix_markdown_paths
-    auto_fix_markdown_paths([KNOWLEDGE_ROOT, *SPEC_ROOTS, SCRIPTORIUM_ROOT / "REVIEW"], emit=False)
+    knowledge_paths = [child for child in KNOWLEDGE_ROOT.iterdir() if child.is_dir() and not child.name.startswith("_")]
+    auto_fix_markdown_paths([*(knowledge_paths or [KNOWLEDGE_ROOT]), *SPEC_ROOTS], emit=False)
 
 
 def _check_kb_graph_cycles(path_filter=None):

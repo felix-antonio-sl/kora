@@ -2,13 +2,13 @@
   "agent_workspaces": 8,
   "deprecated_workspaces": 0,
   "incomplete_workspaces": 0,
-  "agent_bootstrap_artifacts": 0,
+  "agent_bootstrap_artifacts": 8,
   "catalog_counts": {
-    "Agents": 0,
-    "Skills": 84,
+    "Agents": 8,
+    "Skills": 92,
     "Knowledge": 528,
     "Documents": 0,
-    "Other": 16
+    "Other": 0
   },
   "total_catalog_entries": 628,
   "by_namespace": {

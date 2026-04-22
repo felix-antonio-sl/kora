@@ -15,7 +15,7 @@
     {
       "urn": "urn:tde:kb:glosario-plataforma-simple",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -25,7 +25,7 @@
     {
       "urn": "urn:tde:kb:guia-voz-y-tono",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -38,7 +38,7 @@
     {
       "urn": "urn:tde:kb:manual-atencion-ciudadana-notificaciones",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -50,7 +50,7 @@
     {
       "urn": "urn:tde:kb:manual-coordinadora-transformacion-digital",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -70,7 +70,7 @@
     {
       "urn": "urn:tde:kb:manual-inicio-notificaciones-electronicas",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -83,7 +83,7 @@
     {
       "urn": "urn:tde:kb:manual-integracion-claveunica",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -96,7 +96,7 @@
     {
       "urn": "urn:tde:kb:manual-integracion-notificaciones-p02",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -109,7 +109,7 @@
     {
       "urn": "urn:tde:kb:manual-integracion-notificaciones",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -122,7 +122,7 @@
     {
       "urn": "urn:tde:kb:manual-uso-boton-claveunica",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -136,7 +136,7 @@
     {
       "urn": "urn:tde:kb:manual-uso-simple-saas",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -150,7 +150,7 @@
     {
       "urn": "urn:tde:kb:manual-usuario-institucional-notificaciones",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -164,7 +164,7 @@
     {
       "urn": "urn:tde:kb:recomendaciones-diseno-servicios-estado",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -176,7 +176,7 @@
     {
       "urn": "urn:tde:kb:estrategia-capacitaciones-transformacion-digital",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -190,7 +190,7 @@
     {
       "urn": "urn:tde:kb:estrategia-datos-administracion-estado",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -205,7 +205,7 @@
     {
       "urn": "urn:tde:kb:estrategia-gobierno-digital-2030",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -221,7 +221,7 @@
     {
       "urn": "urn:tde:kb:estrategia-identidad-digital",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -236,7 +236,7 @@
     {
       "urn": "urn:tde:kb:registro-actividades-tratamiento",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -248,7 +248,7 @@
     {
       "urn": "urn:tde:kb:decreto-10-documentos-expedientes-electronicos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -263,7 +263,7 @@
     {
       "urn": "urn:tde:kb:decreto-11-plataformas-electronicas",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -279,7 +279,7 @@
     {
       "urn": "urn:tde:kb:decreto-12-interoperabilidad",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -294,7 +294,7 @@
     {
       "urn": "urn:tde:kb:decreto-7-norma-seguridad-informacion",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -308,7 +308,7 @@
     {
       "urn": "urn:tde:kb:decreto-8-norma-notificaciones",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -323,7 +323,7 @@
     {
       "urn": "urn:tde:kb:decreto-9-norma-autenticacion",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -338,7 +338,7 @@
     {
       "urn": "urn:tde:kb:guia-calidad-web",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -351,7 +351,7 @@
     {
       "urn": "urn:tde:kb:guia-introductoria-anonimizacion-datos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -365,7 +365,7 @@
     {
       "urn": "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025-p02",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -379,7 +379,7 @@
     {
       "urn": "urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -393,7 +393,7 @@
     {
       "urn": "urn:tde:kb:guia-rapida-cpat",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -406,7 +406,7 @@
     {
       "urn": "urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -420,7 +420,7 @@
     {
       "urn": "urn:tde:kb:guia-tecnica-marco-gestion-datos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -435,7 +435,7 @@
     {
       "urn": "urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -449,7 +449,7 @@
     {
       "urn": "urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad-p02",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -463,7 +463,7 @@
     {
       "urn": "urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -477,7 +477,7 @@
     {
       "urn": "urn:tde:kb:metodologia-gestion-proyectos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -491,7 +491,7 @@
     {
       "urn": "urn:tde:kb:orientaciones-basicas-gestion-tic",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -504,7 +504,7 @@
     {
       "urn": "urn:tde:kb:recomendaciones-tecnicas-cloud-publica",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -516,7 +516,7 @@
     {
       "urn": "urn:tde:kb:terminos-condiciones-claveunica",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -530,7 +530,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p02",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -543,7 +543,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p03",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -556,7 +556,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p04",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -569,7 +569,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p05",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -582,7 +582,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p06",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -595,7 +595,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos-p07",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -608,7 +608,7 @@
     {
       "urn": "urn:tde:kb:decreto-4-procedimientos-electronicos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -621,7 +621,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p02",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -635,7 +635,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p03",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -649,7 +649,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p04",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -663,7 +663,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p05",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -677,7 +677,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p06",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -691,7 +691,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p07",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -705,7 +705,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p08",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -719,7 +719,7 @@
     {
       "urn": "urn:tde:kb:ley-19880-bases-procedimientos-administrativos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -733,7 +733,7 @@
     {
       "urn": "urn:tde:kb:ley-21180-transformacion-digital-estado",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -748,7 +748,7 @@
     {
       "urn": "urn:tde:kb:ley-21658",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -762,7 +762,7 @@
     {
       "urn": "urn:tde:kb:estandares-apertura-reutilizacion-datos-abiertos",
       "namespace": "tde",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tde",
@@ -788,7 +788,7 @@
     {
       "urn": "urn:gn:kb:bpmn-actos-administrativos",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "actos-administrativos",
@@ -801,7 +801,7 @@
     {
       "urn": "urn:gn:kb:bpmn-cies-sitia",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "seguridad-publica",
@@ -814,7 +814,7 @@
     {
       "urn": "urn:gn:kb:bpmn-geoespacial-ide",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "geoespacial",
@@ -828,7 +828,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -847,7 +847,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -866,7 +866,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p04",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -885,7 +885,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p05",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -904,7 +904,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p06",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -923,7 +923,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p07",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -942,7 +942,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p08",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -961,7 +961,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p09",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -980,7 +980,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p10",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -999,7 +999,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p11",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -1018,7 +1018,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p12",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -1037,7 +1037,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p13",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -1056,7 +1056,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble-p14",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -1075,7 +1075,7 @@
     {
       "urn": "urn:gn:kb:indicadores-nuble",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "indicadores",
@@ -1094,7 +1094,7 @@
     {
       "urn": "urn:gn:kb:intro-gores-nuble",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gore-nuble",
@@ -1107,7 +1107,7 @@
     {
       "urn": "urn:gn:kb:organigrama-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gore-nuble",
@@ -1120,7 +1120,7 @@
     {
       "urn": "urn:gn:kb:organigrama",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gore-nuble",
@@ -1133,7 +1133,7 @@
     {
       "urn": "urn:gn:kb:erd-nuble-2024-2030",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "estrategia-regional",
@@ -1146,7 +1146,7 @@
     {
       "urn": "urn:gn:kb:estructura-estado-chile",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "estado-chile",
@@ -1160,7 +1160,7 @@
     {
       "urn": "urn:gn:kb:comunicaciones-oc",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "comunicaciones",
@@ -1173,7 +1173,7 @@
     {
       "urn": "urn:gn:kb:cuentas-publicas-2021-2024",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "cuentas-publicas",
@@ -1186,7 +1186,7 @@
     {
       "urn": "urn:gn:kb:vision-desarrollo-nuble",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gore-nuble",
@@ -1199,7 +1199,7 @@
     {
       "urn": "urn:gn:kb:flujos-aprobacion-documentos",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "aprobaciones",
@@ -1212,7 +1212,7 @@
     {
       "urn": "urn:gn:kb:manual-induccion-gore-nuble-2026",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "induccion",
@@ -1225,7 +1225,7 @@
     {
       "urn": "urn:gn:kb:gestion-prpto-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "presupuesto",
@@ -1238,7 +1238,7 @@
     {
       "urn": "urn:gn:kb:gestion-prpto-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "presupuesto",
@@ -1251,7 +1251,7 @@
     {
       "urn": "urn:gn:kb:gestion-prpto-p04",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "presupuesto",
@@ -1264,7 +1264,7 @@
     {
       "urn": "urn:gn:kb:gestion-prpto",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "presupuesto",
@@ -1277,7 +1277,7 @@
     {
       "urn": "urn:gn:kb:gestion-rendiciones-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "rendiciones",
@@ -1293,7 +1293,7 @@
     {
       "urn": "urn:gn:kb:gestion-rendiciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "rendiciones",
@@ -1309,7 +1309,7 @@
     {
       "urn": "urn:gn:kb:guia-comunicaciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "comunicaciones",
@@ -1322,7 +1322,7 @@
     {
       "urn": "urn:gn:kb:loc-gore-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "loc-gore",
@@ -1336,7 +1336,7 @@
     {
       "urn": "urn:gn:kb:loc-gore",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "loc-gore",
@@ -1350,7 +1350,7 @@
     {
       "urn": "urn:gn:kb:estrategia-gestion-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-publica",
@@ -1363,7 +1363,7 @@
     {
       "urn": "urn:gn:kb:estrategia-gestion",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-publica",
@@ -1376,7 +1376,7 @@
     {
       "urn": "urn:gn:kb:nuble-250",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "nuble-250",
@@ -1389,7 +1389,7 @@
     {
       "urn": "urn:gn:kb:modelos-actos-juridicos",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "actos-juridicos",
@@ -1402,7 +1402,7 @@
     {
       "urn": "urn:gn:kb:dictamenes-cgr-gore",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dictamenes-cgr",
@@ -1415,7 +1415,7 @@
     {
       "urn": "urn:gn:kb:marco-legal-gores-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "marco-legal",
@@ -1430,7 +1430,7 @@
     {
       "urn": "urn:gn:kb:marco-legal-gores-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "marco-legal",
@@ -1445,7 +1445,7 @@
     {
       "urn": "urn:gn:kb:marco-legal-gores",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "marco-legal",
@@ -1460,7 +1460,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1474,7 +1474,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1488,7 +1488,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31-p04",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1502,7 +1502,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31-p05",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1516,7 +1516,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-partida-31",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1530,7 +1530,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-glosas-gore",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1543,7 +1543,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-normas-generales",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ley-presupuestos-2026",
@@ -1557,7 +1557,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1573,7 +1573,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1589,7 +1589,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-gore-nuble-p04",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1605,7 +1605,7 @@
     {
       "urn": "urn:gn:kb:ley-presupuestos-2026-gore-nuble",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "presupuesto",
@@ -1621,7 +1621,7 @@
     {
       "urn": "urn:gn:kb:gore-ideal",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gore-nuble",
@@ -1634,7 +1634,7 @@
     {
       "urn": "urn:gn:kb:convenios-estados-fases",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "convenios",
@@ -1650,7 +1650,7 @@
     {
       "urn": "urn:gn:kb:ecosistema-instituciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ecosistema",
@@ -1666,7 +1666,7 @@
     {
       "urn": "urn:gn:kb:manual-operacional-dgi",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dgi",
@@ -1679,7 +1679,7 @@
     {
       "urn": "urn:gn:kb:mecanismos-matriz-decision",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "mecanismos",
@@ -1698,7 +1698,7 @@
     {
       "urn": "urn:gn:kb:plan-potenciamiento-dgi",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dgi",
@@ -1711,7 +1711,7 @@
     {
       "urn": "urn:gn:kb:manual-compras-contrataciones-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "compras",
@@ -1724,7 +1724,7 @@
     {
       "urn": "urn:gn:kb:manual-compras-contrataciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "compras",
@@ -1737,7 +1737,7 @@
     {
       "urn": "urn:gn:kb:manual-contabilidad",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "contabilidad",
@@ -1750,7 +1750,7 @@
     {
       "urn": "urn:gn:kb:manual-flota-servicios-generales-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "flota-vehicular",
@@ -1763,7 +1763,7 @@
     {
       "urn": "urn:gn:kb:manual-flota-servicios-generales",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "flota-vehicular",
@@ -1776,7 +1776,7 @@
     {
       "urn": "urn:gn:kb:manual-gestion-personas-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-personas",
@@ -1789,7 +1789,7 @@
     {
       "urn": "urn:gn:kb:manual-gestion-personas-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-personas",
@@ -1802,7 +1802,7 @@
     {
       "urn": "urn:gn:kb:manual-gestion-personas",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-personas",
@@ -1815,7 +1815,7 @@
     {
       "urn": "urn:gn:kb:manual-inventarios-activo-fijo-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "inventarios",
@@ -1828,7 +1828,7 @@
     {
       "urn": "urn:gn:kb:manual-inventarios-activo-fijo-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "inventarios",
@@ -1841,7 +1841,7 @@
     {
       "urn": "urn:gn:kb:manual-inventarios-activo-fijo",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "inventarios",
@@ -1854,7 +1854,7 @@
     {
       "urn": "urn:gn:kb:manual-tesoreria",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tesoreria",
@@ -1867,7 +1867,7 @@
     {
       "urn": "urn:gn:kb:lean6-gestion-core-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "lean-six-sigma",
@@ -1883,7 +1883,7 @@
     {
       "urn": "urn:gn:kb:lean6-gestion-core",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "lean-six-sigma",
@@ -1899,7 +1899,7 @@
     {
       "urn": "urn:gn:kb:meyer-estructura-organizacional-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "estructura-organizacional",
@@ -1914,7 +1914,7 @@
     {
       "urn": "urn:gn:kb:meyer-estructura-organizacional",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "estructura-organizacional",
@@ -1929,7 +1929,7 @@
     {
       "urn": "urn:gn:kb:modernizacion-estado-waissbluth-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-publica",
@@ -1946,7 +1946,7 @@
     {
       "urn": "urn:gn:kb:modernizacion-estado-waissbluth-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-publica",
@@ -1963,7 +1963,7 @@
     {
       "urn": "urn:gn:kb:modernizacion-estado-waissbluth",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "gestion-publica",
@@ -1980,7 +1980,7 @@
     {
       "urn": "urn:gn:kb:transferencia-ppr",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "transferencia",
@@ -1995,7 +1995,7 @@
     {
       "urn": "urn:gn:kb:selector-ipr",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "selector",
@@ -2012,7 +2012,7 @@
     {
       "urn": "urn:gn:kb:gestion-ipr-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "gestion-ipr",
@@ -2027,7 +2027,7 @@
     {
       "urn": "urn:gn:kb:gestion-ipr-p03",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "gestion-ipr",
@@ -2042,7 +2042,7 @@
     {
       "urn": "urn:gn:kb:gestion-ipr-p04",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "gestion-ipr",
@@ -2057,7 +2057,7 @@
     {
       "urn": "urn:gn:kb:gestion-ipr",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "gestion-ipr",
@@ -2072,7 +2072,7 @@
     {
       "urn": "urn:gn:kb:guia-idi-sni-sts",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "idi",
@@ -2089,7 +2089,7 @@
     {
       "urn": "urn:gn:kb:guia-programas-directos-gore-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "programas-ppr",
@@ -2105,7 +2105,7 @@
     {
       "urn": "urn:gn:kb:guia-programas-directos-gore",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "programas-ppr",
@@ -2121,7 +2121,7 @@
     {
       "urn": "urn:gn:kb:guia-fril-2025-sts",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "fril",
@@ -2136,7 +2136,7 @@
     {
       "urn": "urn:gn:kb:guia-frpd-nuble",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "frpd",
@@ -2151,7 +2151,7 @@
     {
       "urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "subvencion-8pct",
@@ -2168,7 +2168,7 @@
     {
       "urn": "urn:gn:kb:instructivo-subvencion-8-2025-sts",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "subvencion-8pct",
@@ -2185,7 +2185,7 @@
     {
       "urn": "urn:gn:kb:guia-circular-33-sts",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "circular-33",
@@ -2201,7 +2201,7 @@
     {
       "urn": "urn:gn:kb:ris-agua-saneamiento-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2218,7 +2218,7 @@
     {
       "urn": "urn:gn:kb:ris-agua-saneamiento",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2235,7 +2235,7 @@
     {
       "urn": "urn:gn:kb:ris-cultura-deporte-turismo-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2254,7 +2254,7 @@
     {
       "urn": "urn:gn:kb:ris-cultura-deporte-turismo",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2273,7 +2273,7 @@
     {
       "urn": "urn:gn:kb:ris-educacion-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2288,7 +2288,7 @@
     {
       "urn": "urn:gn:kb:ris-educacion",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2303,7 +2303,7 @@
     {
       "urn": "urn:gn:kb:ris-energia-comunicaciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2320,7 +2320,7 @@
     {
       "urn": "urn:gn:kb:ris-equipamiento-social",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2336,7 +2336,7 @@
     {
       "urn": "urn:gn:kb:ris-genericos-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2353,7 +2353,7 @@
     {
       "urn": "urn:gn:kb:ris-genericos",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2370,7 +2370,7 @@
     {
       "urn": "urn:gn:kb:ris-salud",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2387,7 +2387,7 @@
     {
       "urn": "urn:gn:kb:ris-seguridad-justicia-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2406,7 +2406,7 @@
     {
       "urn": "urn:gn:kb:ris-seguridad-justicia",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2425,7 +2425,7 @@
     {
       "urn": "urn:gn:kb:ris-transporte",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2442,7 +2442,7 @@
     {
       "urn": "urn:gn:kb:ris-vialidad-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2460,7 +2460,7 @@
     {
       "urn": "urn:gn:kb:ris-vialidad",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2478,7 +2478,7 @@
     {
       "urn": "urn:gn:kb:ris-vivienda-urbanismo-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2496,7 +2496,7 @@
     {
       "urn": "urn:gn:kb:ris-vivienda-urbanismo",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ris",
@@ -2514,7 +2514,7 @@
     {
       "urn": "urn:gn:kb:ssot-actos-admin",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "ssot",
@@ -2528,7 +2528,7 @@
     {
       "urn": "urn:gn:kb:ssot-convenios",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "ssot",
@@ -2542,7 +2542,7 @@
     {
       "urn": "urn:gn:kb:ssot-dgi",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "ssot",
@@ -2556,7 +2556,7 @@
     {
       "urn": "urn:gn:kb:ssot-ecosistema",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "ssot",
@@ -2571,7 +2571,7 @@
     {
       "urn": "urn:gn:kb:ssot-ipr-lifecycle",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.1",
       "tags": [
         "ssot",
@@ -2586,7 +2586,7 @@
     {
       "urn": "urn:gn:kb:ssot-legal",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "ssot",
@@ -2600,7 +2600,7 @@
     {
       "urn": "urn:gn:kb:ssot-master",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.5.0",
       "tags": [
         "ssot",
@@ -2613,7 +2613,7 @@
     {
       "urn": "urn:gn:kb:ssot-mecanismos-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "ssot",
@@ -2631,7 +2631,7 @@
     {
       "urn": "urn:gn:kb:ssot-mecanismos",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "ssot",
@@ -2649,7 +2649,7 @@
     {
       "urn": "urn:gn:kb:ssot-operaciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "ssot",
@@ -2664,7 +2664,7 @@
     {
       "urn": "urn:gn:kb:ssot-organica",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.3.1",
       "tags": [
         "ssot",
@@ -2677,7 +2677,7 @@
     {
       "urn": "urn:gn:kb:ssot-presupuesto",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.4.1",
       "tags": [
         "ssot",
@@ -2691,7 +2691,7 @@
     {
       "urn": "urn:gn:kb:ssot-relaciones-dominio-p02",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "ssot",
@@ -2707,7 +2707,7 @@
     {
       "urn": "urn:gn:kb:ssot-relaciones-dominio",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "ssot",
@@ -2723,7 +2723,7 @@
     {
       "urn": "urn:gn:kb:ssot-rendiciones",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.1",
       "tags": [
         "ssot",
@@ -2737,7 +2737,7 @@
     {
       "urn": "urn:gn:kb:ssot-tde",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ssot",
@@ -2752,7 +2752,7 @@
     {
       "urn": "urn:gn:kb:ssot-territorio",
       "namespace": "gn",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ssot",
@@ -2765,7 +2765,7 @@
     {
       "urn": "urn:pro:kb:mba-personal-kaufman-p02",
       "namespace": "pro",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "modelos-mentales",
@@ -2781,7 +2781,7 @@
     {
       "urn": "urn:pro:kb:mba-personal-kaufman-p03",
       "namespace": "pro",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "modelos-mentales",
@@ -2797,7 +2797,7 @@
     {
       "urn": "urn:pro:kb:mba-personal-kaufman",
       "namespace": "pro",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "modelos-mentales",
@@ -2837,7 +2837,7 @@
     {
       "urn": "urn:agengai:kb:openclaw-integration",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "openclaw",
@@ -2850,7 +2850,7 @@
     {
       "urn": "urn:agengai:kb:skills-anthropic",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "anthropic",
@@ -2863,21 +2863,21 @@
     {
       "urn": "urn:agengai:kb:forjador-especialista-openclaw",
       "namespace": "agengai",
-      "status": "unknown",
+      "status": "publicado",
       "version": "",
       "tags": []
     },
     {
       "urn": "urn:agengai:kb:forjador-openclaw",
       "namespace": "agengai",
-      "status": "unknown",
+      "status": "publicado",
       "version": "",
       "tags": []
     },
     {
       "urn": "urn:agengai:kb:openclaw-skills-manual",
       "namespace": "agengai",
-      "status": "draft",
+      "status": "borrador",
       "version": "2.2.0",
       "tags": [
         "openclaw",
@@ -2895,7 +2895,7 @@
     {
       "urn": "urn:agengai:kb:openclaw-manual-integral",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "1.3.0",
       "tags": [
         "openclaw",
@@ -2911,7 +2911,7 @@
     {
       "urn": "urn:agengai:kb:salubrista-openclaw-spec",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "openclaw",
@@ -2923,7 +2923,7 @@
     {
       "urn": "urn:agengai:kb:00-fundamentos-previos",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -2936,7 +2936,7 @@
     {
       "urn": "urn:agengai:kb:00-toc",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -2948,7 +2948,7 @@
     {
       "urn": "urn:agengai:kb:01-arquitectura-gateway",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -2961,7 +2961,7 @@
     {
       "urn": "urn:agengai:kb:02-agente-unidad-fundamental",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -2974,7 +2974,7 @@
     {
       "urn": "urn:agengai:kb:03-sesiones",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -2986,7 +2986,7 @@
     {
       "urn": "urn:agengai:kb:04-modelos-failover",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -2999,7 +2999,7 @@
     {
       "urn": "urn:agengai:kb:05-memoria",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3011,7 +3011,7 @@
     {
       "urn": "urn:agengai:kb:06-multi-agent-routing",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3024,7 +3024,7 @@
     {
       "urn": "urn:agengai:kb:07-aislamiento-seguridad",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3037,7 +3037,7 @@
     {
       "urn": "urn:agengai:kb:08-patrones-multitenant",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3050,7 +3050,7 @@
     {
       "urn": "urn:agengai:kb:09-sub-agentes",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3063,7 +3063,7 @@
     {
       "urn": "urn:agengai:kb:10-sub-agentes-anidados",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3076,7 +3076,7 @@
     {
       "urn": "urn:agengai:kb:11-comunicacion-inter-sesion",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3089,7 +3089,7 @@
     {
       "urn": "urn:agengai:kb:12-heartbeats",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3101,7 +3101,7 @@
     {
       "urn": "urn:agengai:kb:13-cron-jobs",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3114,7 +3114,7 @@
     {
       "urn": "urn:agengai:kb:14-cron-vs-heartbeat",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3127,7 +3127,7 @@
     {
       "urn": "urn:agengai:kb:15-hooks",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3139,7 +3139,7 @@
     {
       "urn": "urn:agengai:kb:16-webhooks",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3151,7 +3151,7 @@
     {
       "urn": "urn:agengai:kb:17-lobster",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3163,7 +3163,7 @@
     {
       "urn": "urn:agengai:kb:18-modelo-seguridad",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3176,7 +3176,7 @@
     {
       "urn": "urn:agengai:kb:19-operaciones",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3188,7 +3188,7 @@
     {
       "urn": "urn:agengai:kb:20-patrones-diseno",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3201,7 +3201,7 @@
     {
       "urn": "urn:agengai:kb:21-decisiones-arquitectura",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3214,7 +3214,7 @@
     {
       "urn": "urn:agengai:kb:22-multi-gateway-docker-federation",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3227,7 +3227,7 @@
     {
       "urn": "urn:agengai:kb:cheatsheet-p02",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3238,7 +3238,7 @@
     {
       "urn": "urn:agengai:kb:cheatsheet",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "kora",
@@ -3249,7 +3249,7 @@
     {
       "urn": "urn:agengai:kb:apendices",
       "namespace": "agengai",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -3272,7 +3272,7 @@
     {
       "urn": "urn:legal:kb:acoso-laboral",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3286,7 +3286,7 @@
     {
       "urn": "urn:legal:kb:confianza-legitima",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3300,7 +3300,7 @@
     {
       "urn": "urn:legal:kb:contratacion-publica",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3314,7 +3314,7 @@
     {
       "urn": "urn:legal:kb:deberes-prohibiciones",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3327,7 +3327,7 @@
     {
       "urn": "urn:legal:kb:derechos-especiales",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3342,7 +3342,7 @@
     {
       "urn": "urn:legal:kb:feriados-permisos",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3355,7 +3355,7 @@
     {
       "urn": "urn:legal:kb:formacion-especialistas",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3370,7 +3370,7 @@
     {
       "urn": "urn:legal:kb:index",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3383,7 +3383,7 @@
     {
       "urn": "urn:legal:kb:ingreso-carrera",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3396,7 +3396,7 @@
     {
       "urn": "urn:legal:kb:intro-estatutos",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3410,7 +3410,7 @@
     {
       "urn": "urn:legal:kb:jornada-calificaciones",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3424,7 +3424,7 @@
     {
       "urn": "urn:legal:kb:legislacion-ia-chile",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3437,7 +3437,7 @@
     {
       "urn": "urn:legal:kb:ley-ia-chile-texto-aprobado-camara",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "inteligencia-artificial",
@@ -3455,7 +3455,7 @@
     {
       "urn": "urn:legal:kb:ley-15076",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3469,7 +3469,7 @@
     {
       "urn": "urn:legal:kb:ley-19664",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3483,7 +3483,7 @@
     {
       "urn": "urn:legal:kb:ley-21643",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3497,7 +3497,7 @@
     {
       "urn": "urn:legal:kb:ley-21658-segdig",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gobierno-digital",
@@ -3510,7 +3510,7 @@
     {
       "urn": "urn:legal:kb:ley-21719-datos-personales",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3523,7 +3523,7 @@
     {
       "urn": "urn:legal:kb:maternidad",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3538,7 +3538,7 @@
     {
       "urn": "urn:legal:kb:remuneraciones",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3551,7 +3551,7 @@
     {
       "urn": "urn:legal:kb:responsabilidad-admin",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3564,7 +3564,7 @@
     {
       "urn": "urn:legal:kb:terminacion",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "derecho-administrativo",
@@ -3579,7 +3579,7 @@
     {
       "urn": "urn:legal:kb:certificados-tramites-post-constitucion",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "certificados",
@@ -3592,7 +3592,7 @@
     {
       "urn": "urn:legal:kb:eirl-empresa-individual",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "eirl",
@@ -3604,7 +3604,7 @@
     {
       "urn": "urn:legal:kb:firma-electronica-empresas",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "firma-electronica-avanzada",
@@ -3618,7 +3618,7 @@
     {
       "urn": "urn:legal:kb:ley-20659-regimen-simplificado",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "regimen-simplificado",
@@ -3632,7 +3632,7 @@
     {
       "urn": "urn:legal:kb:marco-legal-sociedades-chile",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "marco-legal",
@@ -3647,7 +3647,7 @@
     {
       "urn": "urn:legal:kb:patente-comercial-res",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "patente-comercial",
@@ -3660,7 +3660,7 @@
     {
       "urn": "urn:legal:kb:registro-empresas-sociedades",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "registro-empresas-sociedades",
@@ -3674,7 +3674,7 @@
     {
       "urn": "urn:legal:kb:reglamento-ley-20659",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "reglamento",
@@ -3689,7 +3689,7 @@
     {
       "urn": "urn:legal:kb:sociedad-anonima-cerrada",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sociedad-anonima",
@@ -3702,7 +3702,7 @@
     {
       "urn": "urn:legal:kb:sociedad-colectiva-comercial",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sociedad-colectiva",
@@ -3714,7 +3714,7 @@
     {
       "urn": "urn:legal:kb:sociedad-comandita",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sociedad-comandita",
@@ -3726,7 +3726,7 @@
     {
       "urn": "urn:legal:kb:sociedad-por-acciones",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sociedad-por-acciones",
@@ -3739,7 +3739,7 @@
     {
       "urn": "urn:legal:kb:sociedad-responsabilidad-limitada",
       "namespace": "legal",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sociedad-limitada",
@@ -3763,7 +3763,7 @@
     {
       "urn": "urn:fxsl:kb:procrastination-sirois-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "procrastination",
@@ -3778,7 +3778,7 @@
     {
       "urn": "urn:fxsl:kb:procrastination-sirois",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "procrastination",
@@ -3793,7 +3793,7 @@
     {
       "urn": "urn:fxsl:kb:opcloud-tutorial-visual-observations-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3807,7 +3807,7 @@
     {
       "urn": "urn:fxsl:kb:opcloud-tutorial-visual-observations",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3821,7 +3821,7 @@
     {
       "urn": "urn:fxsl:kb:opm-complexity-management",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3837,7 +3837,7 @@
     {
       "urn": "urn:fxsl:kb:opm-dynamic-behavior-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3855,7 +3855,7 @@
     {
       "urn": "urn:fxsl:kb:opm-dynamic-behavior-p03",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3873,7 +3873,7 @@
     {
       "urn": "urn:fxsl:kb:opm-dynamic-behavior",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3891,7 +3891,7 @@
     {
       "urn": "urn:fxsl:kb:opm-mbse-acr-tutorial",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3906,7 +3906,7 @@
     {
       "urn": "urn:fxsl:kb:opm-mbse-foundations",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3922,7 +3922,7 @@
     {
       "urn": "urn:fxsl:kb:opm-opl-bimodal",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3937,7 +3937,7 @@
     {
       "urn": "urn:fxsl:kb:opm-structural-relations",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "opm",
@@ -3954,7 +3954,7 @@
     {
       "urn": "urn:fxsl:kb:sysml-foundations-diagrams",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sysml",
@@ -4044,7 +4044,7 @@
     {
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "3.5.1",
       "tags": [
         "opm",
@@ -4067,7 +4067,7 @@
     {
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm-p03",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "3.5.1",
       "tags": [
         "opm",
@@ -4090,7 +4090,7 @@
     {
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm-p04",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "3.5.1",
       "tags": [
         "opm",
@@ -4113,7 +4113,7 @@
     {
       "urn": "urn:fxsl:kb:metodologia-modelamiento-opm",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "3.5.1",
       "tags": [
         "opm",
@@ -4136,7 +4136,7 @@
     {
       "urn": "urn:fxsl:kb:opm-iso-19450-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "opm",
@@ -4151,7 +4151,7 @@
     {
       "urn": "urn:fxsl:kb:opm-iso-19450-p03",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "opm",
@@ -4166,7 +4166,7 @@
     {
       "urn": "urn:fxsl:kb:opm-iso-19450-p04",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "opm",
@@ -4181,7 +4181,7 @@
     {
       "urn": "urn:fxsl:kb:opm-iso-19450-p05",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "opm",
@@ -4196,7 +4196,7 @@
     {
       "urn": "urn:fxsl:kb:opm-iso-19450",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "opm",
@@ -4211,7 +4211,7 @@
     {
       "urn": "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "allan-kelly",
@@ -4226,7 +4226,7 @@
     {
       "urn": "urn:fxsl:kb:chapter0-operador-solitario-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4240,7 +4240,7 @@
     {
       "urn": "urn:fxsl:kb:chapter0-operador-solitario",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4254,7 +4254,7 @@
     {
       "urn": "urn:fxsl:kb:stack-llm-arquitectura-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4271,7 +4271,7 @@
     {
       "urn": "urn:fxsl:kb:stack-llm-arquitectura",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4288,7 +4288,7 @@
     {
       "urn": "urn:fxsl:kb:swarm-ops-metodologia",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4302,7 +4302,7 @@
     {
       "urn": "urn:fxsl:kb:xanpan-agents-metodologia",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "xanpan",
@@ -4317,7 +4317,7 @@
     {
       "urn": "urn:fxsl:kb:action-primary-key",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4331,7 +4331,7 @@
     {
       "urn": "urn:fxsl:kb:algebraic-databases",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4345,7 +4345,7 @@
     {
       "urn": "urn:fxsl:kb:algebraic-model-management",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4359,7 +4359,7 @@
     {
       "urn": "urn:fxsl:kb:audit-patterns",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4373,7 +4373,7 @@
     {
       "urn": "urn:fxsl:kb:categorical-data-structures",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4388,7 +4388,7 @@
     {
       "urn": "urn:fxsl:kb:categorical-systems-theory",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4403,7 +4403,7 @@
     {
       "urn": "urn:fxsl:kb:coalgebras",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4418,7 +4418,7 @@
     {
       "urn": "urn:fxsl:kb:cognitive-toolkit",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4431,7 +4431,7 @@
     {
       "urn": "urn:fxsl:kb:constraint-logic",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4445,7 +4445,7 @@
     {
       "urn": "urn:fxsl:kb:cql-data-integration",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4459,7 +4459,7 @@
     {
       "urn": "urn:fxsl:kb:data-access-layers",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4473,7 +4473,7 @@
     {
       "urn": "urn:fxsl:kb:data-lakes-ct",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4487,7 +4487,7 @@
     {
       "urn": "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4501,7 +4501,7 @@
     {
       "urn": "urn:fxsl:kb:formal-framework-data-lakes-ct",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4515,7 +4515,7 @@
     {
       "urn": "urn:fxsl:kb:formal-framework-multimodel-data-transformations",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4529,7 +4529,7 @@
     {
       "urn": "urn:fxsl:kb:kb-category",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.1.0",
       "tags": [
         "category-theory",
@@ -4543,7 +4543,7 @@
     {
       "urn": "urn:fxsl:kb:mathematical-modelling",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4557,7 +4557,7 @@
     {
       "urn": "urn:fxsl:kb:mbse-consistency",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4572,7 +4572,7 @@
     {
       "urn": "urn:fxsl:kb:multicategory-multimodel-query-processing",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4586,7 +4586,7 @@
     {
       "urn": "urn:fxsl:kb:schema-evolution",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -4600,7 +4600,7 @@
     {
       "urn": "urn:fxsl:kb:seven-sketches",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "category-theory",
@@ -4614,7 +4614,7 @@
     {
       "urn": "urn:fxsl:kb:unified-multimodel",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "category-theory",
@@ -4627,7 +4627,7 @@
     {
       "urn": "urn:fxsl:kb:unified-representation-transformation-multimodel",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -4641,7 +4641,7 @@
     {
       "urn": "urn:fxsl:kb:icas-sintesis",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sintesis",
@@ -4656,7 +4656,7 @@
     {
       "urn": "urn:fxsl:kb:icas-composicion",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "composicion",
@@ -4671,7 +4671,7 @@
     {
       "urn": "urn:fxsl:kb:icas-preservacion",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "funtor",
@@ -4686,7 +4686,7 @@
     {
       "urn": "urn:fxsl:kb:icas-comparacion",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "transformacion-natural",
@@ -4700,7 +4700,7 @@
     {
       "urn": "urn:fxsl:kb:icas-identidad-relacion",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "yoneda",
@@ -4715,7 +4715,7 @@
     {
       "urn": "urn:fxsl:kb:icas-universales",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "limite",
@@ -4731,7 +4731,7 @@
     {
       "urn": "urn:fxsl:kb:icas-adjunciones",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "adjuncion",
@@ -4745,7 +4745,7 @@
     {
       "urn": "urn:fxsl:kb:icas-composicion-estructura",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "monoidal",
@@ -4759,7 +4759,7 @@
     {
       "urn": "urn:fxsl:kb:icas-enriquecimiento",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "enriched-category",
@@ -4773,7 +4773,7 @@
     {
       "urn": "urn:fxsl:kb:icas-higher-categories",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "2-categoria",
@@ -4787,7 +4787,7 @@
     {
       "urn": "urn:fxsl:kb:icas-efectos",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "monada",
@@ -4802,7 +4802,7 @@
     {
       "urn": "urn:fxsl:kb:icas-extension",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "kan-extension",
@@ -4816,7 +4816,7 @@
     {
       "urn": "urn:fxsl:kb:icas-interaccion",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "polynomial",
@@ -4831,7 +4831,7 @@
     {
       "urn": "urn:fxsl:kb:icas-topoi",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "topos",
@@ -4846,7 +4846,7 @@
     {
       "urn": "urn:fxsl:kb:icas-safety-alignment",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "safety",
@@ -4861,7 +4861,7 @@
     {
       "urn": "urn:fxsl:kb:icas-escala",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "operad",
@@ -4875,7 +4875,7 @@
     {
       "urn": "urn:fxsl:kb:icas-agencia",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "free-monad",
@@ -4890,7 +4890,7 @@
     {
       "urn": "urn:fxsl:kb:icas-protocolos",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "session-type",
@@ -4905,7 +4905,7 @@
     {
       "urn": "urn:fxsl:kb:icas-tiempo",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sheaf-temporal",
@@ -4919,7 +4919,7 @@
     {
       "urn": "urn:fxsl:kb:icas-lifecycle",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "recursion-composicional",
@@ -4933,7 +4933,7 @@
     {
       "urn": "urn:fxsl:kb:icas-procesos",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "requirements",
@@ -4948,7 +4948,7 @@
     {
       "urn": "urn:fxsl:kb:icas-calidad-riesgo",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "quality-attributes",
@@ -4962,7 +4962,7 @@
     {
       "urn": "urn:fxsl:kb:icas-patrones",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "patron",
@@ -4976,7 +4976,7 @@
     {
       "urn": "urn:fxsl:kb:icas-infraestructura",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "IaC",
@@ -4990,7 +4990,7 @@
     {
       "urn": "urn:fxsl:kb:fx-rules",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5002,7 +5002,7 @@
     {
       "urn": "urn:fxsl:kb:fx-tensiones",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5014,7 +5014,7 @@
     {
       "urn": "urn:fxsl:kb:fx-address-guidance",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5027,7 +5027,7 @@
     {
       "urn": "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol-p02",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ontology",
@@ -5043,7 +5043,7 @@
     {
       "urn": "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "ontology",
@@ -5059,7 +5059,7 @@
     {
       "urn": "urn:fxsl:kb:fx-namespace",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5071,7 +5071,7 @@
     {
       "urn": "urn:fxsl:kb:fx-readme",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5083,7 +5083,7 @@
     {
       "urn": "urn:fxsl:kb:fx-uom-model",
       "namespace": "fxsl",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "fxsl",
@@ -5108,7 +5108,7 @@
     {
       "urn": "urn:sii:kb:faq-activos-digitales",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5119,7 +5119,7 @@
     {
       "urn": "urn:sii:kb:faq-actualizacion-de-informacion",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5130,7 +5130,7 @@
     {
       "urn": "urn:sii:kb:faq-acuerdos-anticipados-de-precios-de-transferencia",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5141,7 +5141,7 @@
     {
       "urn": "urn:sii:kb:faq-avaluos-y-contribuciones-de-bienes-raices",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5152,7 +5152,7 @@
     {
       "urn": "urn:sii:kb:faq-beneficios-tributarios",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5163,7 +5163,7 @@
     {
       "urn": "urn:sii:kb:faq-boletas-de-honorarios-electronicas",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5174,7 +5174,7 @@
     {
       "urn": "urn:sii:kb:faq-boletas-electronicas-de-ventas-y-servicios",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5185,7 +5185,7 @@
     {
       "urn": "urn:sii:kb:faq-clave-tributaria-mandatario-digital-y-representantes-electronicos",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5196,7 +5196,7 @@
     {
       "urn": "urn:sii:kb:faq-clave-tributaria-y-representantes-electronicos",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5207,7 +5207,7 @@
     {
       "urn": "urn:sii:kb:faq-declaracion-de-renta",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5218,7 +5218,7 @@
     {
       "urn": "urn:sii:kb:faq-declaraciones-juradas",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5229,7 +5229,7 @@
     {
       "urn": "urn:sii:kb:faq-factura-electronica",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5240,7 +5240,7 @@
     {
       "urn": "urn:sii:kb:faq-herencias",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5251,7 +5251,7 @@
     {
       "urn": "urn:sii:kb:faq-impuesto-a-aviones-helicopteros-yates-y-vehiculos-de-alto-valor",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5262,7 +5262,7 @@
     {
       "urn": "urn:sii:kb:faq-impuestos-mensuales",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5273,7 +5273,7 @@
     {
       "urn": "urn:sii:kb:faq-infracciones-pago-de-giros-y-condonaciones",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5284,7 +5284,7 @@
     {
       "urn": "urn:sii:kb:faq-iva-a-los-servicios-profesionales-y-culturales",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5295,7 +5295,7 @@
     {
       "urn": "urn:sii:kb:faq-libros-contables-electronicos",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5306,7 +5306,7 @@
     {
       "urn": "urn:sii:kb:faq-otros-impuestos",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5317,7 +5317,7 @@
     {
       "urn": "urn:sii:kb:faq-peticiones-administrativas-y-otras-solicitudes",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5328,7 +5328,7 @@
     {
       "urn": "urn:sii:kb:faq-preguntas-generales",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5339,7 +5339,7 @@
     {
       "urn": "urn:sii:kb:faq-rut-e-inicio-de-actividades",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5350,7 +5350,7 @@
     {
       "urn": "urn:sii:kb:faq-situacion-tributaria",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5361,7 +5361,7 @@
     {
       "urn": "urn:sii:kb:faq-tasacion-fiscal-de-vehiculos",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5372,7 +5372,7 @@
     {
       "urn": "urn:sii:kb:faq-termino-de-giro",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5383,7 +5383,7 @@
     {
       "urn": "urn:sii:kb:index-documentos-derivados",
       "namespace": "sii",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "sii",
@@ -5397,7 +5397,7 @@
     {
       "urn": "urn:korvo:kb:dan-koe-filosofia-creador-p02",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "personal-development",
@@ -5414,7 +5414,7 @@
     {
       "urn": "urn:korvo:kb:dan-koe-filosofia-creador-p03",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "personal-development",
@@ -5431,7 +5431,7 @@
     {
       "urn": "urn:korvo:kb:dan-koe-filosofia-creador-p04",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "personal-development",
@@ -5448,7 +5448,7 @@
     {
       "urn": "urn:korvo:kb:dan-koe-filosofia-creador",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "personal-development",
@@ -5465,7 +5465,7 @@
     {
       "urn": "urn:korvo:kb:manual-de-vida-p02",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "manual-de-vida",
@@ -5483,7 +5483,7 @@
     {
       "urn": "urn:korvo:kb:manual-de-vida",
       "namespace": "korvo",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "manual-de-vida",
@@ -5513,7 +5513,7 @@
     {
       "urn": "urn:ops:kb:arquitectura-stack-kora",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "arquitectura",
@@ -5528,7 +5528,7 @@
     {
       "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw-p02",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "deploy",
@@ -5545,7 +5545,7 @@
     {
       "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw-p03",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "deploy",
@@ -5562,7 +5562,7 @@
     {
       "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw-p04",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "deploy",
@@ -5579,7 +5579,7 @@
     {
       "urn": "urn:ops:kb:deploy-agente-kora-en-openclaw",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.2.0",
       "tags": [
         "deploy",
@@ -5596,7 +5596,7 @@
     {
       "urn": "urn:ops:kb:federacion-kora-v2",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "federacion",
@@ -5612,7 +5612,7 @@
     {
       "urn": "urn:ops:kb:principios-transmutacion-kora-openclaw-p02",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "principios",
@@ -5625,7 +5625,7 @@
     {
       "urn": "urn:ops:kb:principios-transmutacion-kora-openclaw",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "principios",
@@ -5638,7 +5638,7 @@
     {
       "urn": "urn:ops:kb:tres-generaciones-agentes-kora",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "arquitectura",
@@ -5655,7 +5655,7 @@
     {
       "urn": "urn:ops:kb:ux-telegram-openclaw",
       "namespace": "ops",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.0",
       "tags": [
         "telegram",
@@ -5674,7 +5674,7 @@
     {
       "urn": "urn:salud:kb:med-emergencia",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "medicina-emergencia",
@@ -5698,7 +5698,7 @@
     {
       "urn": "urn:salud:kb:me-cefalea-convulsiones",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "cefalea",
@@ -5711,7 +5711,7 @@
     {
       "urn": "urn:salud:kb:me-compromiso-conciencia-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "conciencia",
@@ -5724,7 +5724,7 @@
     {
       "urn": "urn:salud:kb:me-compromiso-conciencia-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "conciencia",
@@ -5737,7 +5737,7 @@
     {
       "urn": "urn:salud:kb:me-compromiso-conciencia",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "conciencia",
@@ -5750,7 +5750,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5763,7 +5763,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5776,7 +5776,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5789,7 +5789,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico-p05",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5802,7 +5802,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico-p06",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5815,7 +5815,7 @@
     {
       "urn": "urn:salud:kb:me-deficit-neurologico",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "deficit-neurologico",
@@ -5828,7 +5828,7 @@
     {
       "urn": "urn:salud:kb:me-disnea-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "disnea",
@@ -5841,7 +5841,7 @@
     {
       "urn": "urn:salud:kb:me-disnea",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "disnea",
@@ -5854,7 +5854,7 @@
     {
       "urn": "urn:salud:kb:me-dolor-abdominal-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dolor-abdominal",
@@ -5867,7 +5867,7 @@
     {
       "urn": "urn:salud:kb:me-dolor-abdominal",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dolor-abdominal",
@@ -5880,7 +5880,7 @@
     {
       "urn": "urn:salud:kb:me-dolor-toracico-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dolor-toracico",
@@ -5893,7 +5893,7 @@
     {
       "urn": "urn:salud:kb:me-dolor-toracico",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "dolor-toracico",
@@ -5906,7 +5906,7 @@
     {
       "urn": "urn:salud:kb:me-evaluacion-primaria",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "evaluacion",
@@ -5919,7 +5919,7 @@
     {
       "urn": "urn:salud:kb:me-fiebre-sin-foco-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "fiebre",
@@ -5932,7 +5932,7 @@
     {
       "urn": "urn:salud:kb:me-fiebre-sin-foco",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "fiebre",
@@ -5945,7 +5945,7 @@
     {
       "urn": "urn:salud:kb:me-hemorragia-digestiva-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "hemorragia",
@@ -5958,7 +5958,7 @@
     {
       "urn": "urn:salud:kb:me-hemorragia-digestiva",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "hemorragia",
@@ -5971,7 +5971,7 @@
     {
       "urn": "urn:salud:kb:me-infecciones-gastrointestinales",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "infeccion",
@@ -5984,7 +5984,7 @@
     {
       "urn": "urn:salud:kb:me-infecciones-respiratorias-altas-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "infeccion",
@@ -5998,7 +5998,7 @@
     {
       "urn": "urn:salud:kb:me-infecciones-respiratorias-altas",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "infeccion",
@@ -6012,7 +6012,7 @@
     {
       "urn": "urn:salud:kb:me-infecciones-respiratorias-bajas",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "neumonia",
@@ -6025,7 +6025,7 @@
     {
       "urn": "urn:salud:kb:me-mareo-vertigo",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "mareo",
@@ -6038,7 +6038,7 @@
     {
       "urn": "urn:salud:kb:me-perfil-urgenciologo",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "perfil",
@@ -6052,7 +6052,7 @@
     {
       "urn": "urn:salud:kb:me-razonamiento-clinico",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "razonamiento-clinico",
@@ -6066,7 +6066,7 @@
     {
       "urn": "urn:salud:kb:me-sincope-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sincope",
@@ -6079,7 +6079,7 @@
     {
       "urn": "urn:salud:kb:me-sincope",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "sincope",
@@ -6092,7 +6092,7 @@
     {
       "urn": "urn:salud:kb:me-sintomas-urinarios",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "urinario",
@@ -6105,7 +6105,7 @@
     {
       "urn": "urn:salud:kb:me-tec-leve",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "tec",
@@ -6118,7 +6118,7 @@
     {
       "urn": "urn:salud:kb:me-toc-body-of-knowledge",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "toc",
@@ -6130,7 +6130,7 @@
     {
       "urn": "urn:salud:kb:me-traumatismos-frecuentes-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "trauma",
@@ -6143,7 +6143,7 @@
     {
       "urn": "urn:salud:kb:me-traumatismos-frecuentes",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "trauma",
@@ -6156,7 +6156,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-adaptations-a",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6170,7 +6170,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-adaptations-b",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6184,7 +6184,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-clinical-a",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6200,7 +6200,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-clinical-b",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6214,7 +6214,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-evidence",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6230,7 +6230,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-implementation",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6246,7 +6246,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-introduction",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6260,7 +6260,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-overview",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6275,7 +6275,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-structure",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6290,7 +6290,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-theoretical",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6307,7 +6307,7 @@
     {
       "urn": "urn:salud:kb:dbt-oxford-training",
       "namespace": "salud",
-      "status": "draft",
+      "status": "borrador",
       "version": "1.0.0",
       "tags": [
         "dbt",
@@ -6322,7 +6322,7 @@
     {
       "urn": "urn:salud:kb:firs-framework-integrado-razonamiento-salud",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "razonamiento-clinico",
@@ -6339,7 +6339,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-indice",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6354,7 +6354,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6370,7 +6370,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6386,7 +6386,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6402,7 +6402,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p05",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6418,7 +6418,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p06",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6434,7 +6434,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p07",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6450,7 +6450,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p08",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6466,7 +6466,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general-p09",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6482,7 +6482,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-general",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6498,7 +6498,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-unidades-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6513,7 +6513,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-unidades-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6528,7 +6528,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-unidades-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6543,7 +6543,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-unidades",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6558,7 +6558,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6575,7 +6575,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6592,7 +6592,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6609,7 +6609,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias-p05",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6626,7 +6626,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias-p06",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6643,7 +6643,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-urgencias",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6660,7 +6660,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6676,7 +6676,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6692,7 +6692,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6708,7 +6708,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental-p05",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6724,7 +6724,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental-p06",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6740,7 +6740,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-salud-mental",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6756,7 +6756,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-herramientas-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6772,7 +6772,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-herramientas-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6788,7 +6788,7 @@
     {
       "urn": "urn:salud:kb:gestion-redes-herramientas",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "gestion-redes",
@@ -6804,14 +6804,14 @@
     {
       "urn": "urn:salud:kb:bok-medicina-emergencia",
       "namespace": "salud",
-      "status": "unknown",
+      "status": "publicado",
       "version": "",
       "tags": []
     },
     {
       "urn": "urn:salud:kb:hodom-direccion-tecnica-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6824,7 +6824,7 @@
     {
       "urn": "urn:salud:kb:hodom-direccion-tecnica-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6837,7 +6837,7 @@
     {
       "urn": "urn:salud:kb:hodom-direccion-tecnica",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6850,7 +6850,7 @@
     {
       "urn": "urn:salud:kb:hodom-manual-alta-complejidad-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "hodom",
@@ -6863,7 +6863,7 @@
     {
       "urn": "urn:salud:kb:hodom-manual-alta-complejidad-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "hodom",
@@ -6876,7 +6876,7 @@
     {
       "urn": "urn:salud:kb:hodom-manual-alta-complejidad-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "hodom",
@@ -6889,7 +6889,7 @@
     {
       "urn": "urn:salud:kb:hodom-manual-alta-complejidad",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.1.1",
       "tags": [
         "hodom",
@@ -6902,7 +6902,7 @@
     {
       "urn": "urn:salud:kb:hodom-situacion-chile-2026-p02",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6915,7 +6915,7 @@
     {
       "urn": "urn:salud:kb:hodom-situacion-chile-2026-p03",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6928,7 +6928,7 @@
     {
       "urn": "urn:salud:kb:hodom-situacion-chile-2026-p04",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6941,7 +6941,7 @@
     {
       "urn": "urn:salud:kb:hodom-situacion-chile-2026-p05",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6954,7 +6954,7 @@
     {
       "urn": "urn:salud:kb:hodom-situacion-chile-2026",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6967,7 +6967,7 @@
     {
       "urn": "urn:salud:kb:hodom-reglamento-ds1-2022",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6980,7 +6980,7 @@
     {
       "urn": "urn:salud:kb:hodom-decreto-exento-31-2024",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -6993,7 +6993,7 @@
     {
       "urn": "urn:salud:kb:hodom-norma-tecnica-2024",
       "namespace": "salud",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.1",
       "tags": [
         "hodom",
@@ -7018,7 +7018,7 @@
     {
       "urn": "urn:kora:kb:cat-foundations",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7030,7 +7030,7 @@
     {
       "urn": "urn:kora:kb:cat-agent-coalgebra",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7043,7 +7043,7 @@
     {
       "urn": "urn:kora:kb:cat-skill-algebra-p02",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7057,7 +7057,7 @@
     {
       "urn": "urn:kora:kb:cat-skill-algebra",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7071,7 +7071,7 @@
     {
       "urn": "urn:kora:kb:cat-ecosystem-2cat",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7085,7 +7085,7 @@
     {
       "urn": "urn:kora:kb:cat-discovery-presheaf",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7099,7 +7099,7 @@
     {
       "urn": "urn:kora:kb:cat-governance-lattice-p02",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7114,7 +7114,7 @@
     {
       "urn": "urn:kora:kb:cat-governance-lattice",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7129,7 +7129,7 @@
     {
       "urn": "urn:kora:kb:cat-audit-invariants",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7144,7 +7144,7 @@
     {
       "urn": "urn:kora:kb:cat-behavioral-preservation",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7159,7 +7159,7 @@
     {
       "urn": "urn:kora:kb:cat-fxsl-bridge",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "category-theory",
@@ -7186,7 +7186,7 @@
     {
       "urn": "urn:kora:kb:hub-agentes",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -7212,7 +7212,7 @@
     {
       "urn": "urn:kora:kb:pipeline-ingesta",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "1.0.0",
       "tags": [
         "pipeline",
@@ -7252,7 +7252,7 @@
     {
       "urn": "urn:kora:kb:test-strategy",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",
@@ -7265,7 +7265,7 @@
     {
       "urn": "urn:kora:kb:workflow-wikiguias",
       "namespace": "kora",
-      "status": "published",
+      "status": "publicado",
       "version": "2.0.0",
       "tags": [
         "kora",

@@ -28,6 +28,8 @@ from kora_lib.validation import (
     formal_section_exists,
     lint_published_kora_markdown,
     normalize_angle_bracket_urls,
+    resolve_document_family,
+    resolve_max_lines_per_h2,
     should_enforce_published_kora_markdown,
     validate_agents_canonical_structure,
     validate_agents_semantics,
@@ -786,6 +788,22 @@ class SemanticValidationTests(unittest.TestCase):
             )
             failures = lint_published_kora_markdown(path)
             self.assertTrue(any("html_raw" in item for item in failures), failures)
+
+    def test_resolve_document_family_infers_bok_from_urn_and_tags(self):
+        frontmatter = {
+            "_manifest": {
+                "urn": "urn:salud:kb:bok-demo",
+                "tags": ["body-of-knowledge"],
+            }
+        }
+        self.assertEqual(resolve_document_family(frontmatter), "bok")
+
+    def test_resolve_max_lines_per_h2_uses_spec_family_threshold(self):
+        frontmatter = {
+            "_manifest": {"urn": "urn:kora:kb:demo-spec"},
+            "extensions": {"kora": {"family": "spec"}},
+        }
+        self.assertEqual(resolve_max_lines_per_h2(frontmatter), 450)
 
     def test_auto_fix_published_kora_markdown_parts_removes_html_and_semanticizes_refs(self):
         frontmatter = {

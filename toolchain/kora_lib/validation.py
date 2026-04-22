@@ -149,6 +149,8 @@ FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "omega": 120,
     "faq": 120,
     "atomic": 400,
+    "bok": 1000,
+    "spec": 450,
 }
 FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "generic": 320,
@@ -160,6 +162,8 @@ FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "omega": 320,
     "faq": 800,
     "atomic": 1000000,
+    "bok": 1000000,
+    "spec": 1000000,
 }
 FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
     "generic": 10,
@@ -171,6 +175,8 @@ FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
     "omega": 10,
     "faq": 50,
     "atomic": 1000,
+    "bok": 40,
+    "spec": 24,
 }
 
 
@@ -360,6 +366,21 @@ def resolve_document_family(frontmatter):
         for ns_key, ns_val in extensions.items():
             if isinstance(ns_val, dict) and ns_val.get("family"):
                 return str(ns_val["family"])
+    manifest = frontmatter.get("_manifest", {})
+    manifest_urn = str(manifest.get("urn", "")) if isinstance(manifest, dict) else ""
+    tags = set()
+    for source in (
+        frontmatter.get("tags"),
+        manifest.get("tags") if isinstance(manifest, dict) else None,
+    ):
+        if isinstance(source, list):
+            tags.update(
+                str(tag).strip().lower()
+                for tag in source
+                if isinstance(tag, str) and tag.strip()
+            )
+    if ":kb:bok-" in manifest_urn or {"body-of-knowledge", "bok"} & tags:
+        return "bok"
     return "generic"
 
 
