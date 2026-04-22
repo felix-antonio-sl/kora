@@ -1,14 +1,14 @@
 {
   "meta": {
-    "scanned_files": 697,
-    "node_count": 671,
-    "edge_count": 3345
+    "scanned_files": 698,
+    "node_count": 672,
+    "edge_count": 3352
   },
   "node_kind_counts": {
     "artifact": 29,
     "knowledge": 510,
     "skill": 84,
-    "spec": 17,
+    "spec": 18,
     "tool": 23,
     "workspace": 8
   },
@@ -24,7 +24,7 @@
     "Refines": 1,
     "RoutesToAgent": 3,
     "TracesRequirement": 1,
-    "XRef": 2326
+    "XRef": 2333
   },
   "nodes": [
     {
@@ -5607,6 +5607,15 @@
       "urn": "urn:kora:kb:autoria-spec",
       "title": "Especificacion de Autoria de Artefactos Agenticos v1.2.0",
       "path": "serialization/autoria-spec.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:kb:canario-spec",
+      "kind": "spec",
+      "category": "Knowledge",
+      "urn": "urn:kora:kb:canario-spec",
+      "title": "KORA/Canario-Spec v1.0.0",
+      "path": "ontology/canario-spec.md",
       "namespace": "kora"
     },
     {
@@ -20525,6 +20534,55 @@
       "target": "urn:kora:kb:transmutation-spec",
       "fragment": null,
       "source_path": "serialization/autoria-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:autoria-spec",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:canario-spec",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:qa-spec",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:runtime-spec-md",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:kb:canario-spec",
+      "target": "urn:kora:kb:transmutation-spec",
+      "fragment": null,
+      "source_path": "ontology/canario-spec.md"
     },
     {
       "kind": "XRef",

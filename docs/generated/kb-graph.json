@@ -7289,6 +7289,20 @@
       ]
     },
     {
+      "urn": "urn:kora:kb:canario-spec",
+      "namespace": "kora",
+      "status": "publicado",
+      "version": "1.0.0",
+      "tags": [
+        "spec",
+        "canario",
+        "verificacion-runtime",
+        "gate",
+        "propagacion",
+        "trazabilidad"
+      ]
+    },
+    {
       "urn": "urn:kora:kb:harness-spec",
       "namespace": "kora",
       "status": "publicado",
@@ -7408,7 +7422,7 @@
       "urn": "urn:kora:kb:claude-code-runtime-extension",
       "namespace": "kora",
       "status": "publicado",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "tags": [
         "spec",
         "runtime",
@@ -7508,7 +7522,7 @@
       "urn": "urn:kora:kb:transmutation-spec",
       "namespace": "kora",
       "status": "publicado",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "tags": [
         "spec",
         "transmutacion",
@@ -10372,6 +10386,36 @@
       "type": "cites"
     },
     {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:autoria-spec",
+      "type": "cites"
+    },
+    {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:gobernanza",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:harness-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:qa-spec",
+      "type": "depends"
+    },
+    {
+      "from": "urn:kora:kb:canario-spec",
+      "to": "urn:kora:kb:runtime-spec-md",
+      "type": "depends"
+    },
+    {
       "from": "urn:kora:kb:harness-spec",
       "to": "urn:kora:kb:qa-spec",
       "type": "cites"
@@ -10872,14 +10916,14 @@
   "orphans_intencional": [],
   "orphans_real": [],
   "stats": {
-    "total_nodes": 525,
-    "total_edges": 669,
+    "total_nodes": 526,
+    "total_edges": 675,
     "by_namespace": {
       "gn": 130,
       "salud": 94,
       "fxsl": 89,
       "tde": 56,
-      "kora": 37,
+      "kora": 38,
       "legal": 36,
       "agengai": 35,
       "sii": 27,
@@ -10888,8 +10932,8 @@
       "pro": 4
     },
     "by_relation_type": {
-      "cites": 557,
-      "depends": 108,
+      "cites": 559,
+      "depends": 112,
       "refines": 1,
       "traces_requirements": 1,
       "supersedes": 2

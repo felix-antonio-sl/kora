@@ -4,8 +4,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Nodes | 525 |
-| Edges | 669 |
+| Nodes | 526 |
+| Edges | 675 |
 | Orphan nodes (total) | 0 |
 | Orphans — root (constitutional) | 0 |
 | Orphans — intencional | 0 |
@@ -21,7 +21,7 @@
 | salud | 94 |
 | fxsl | 89 |
 | tde | 56 |
-| kora | 37 |
+| kora | 38 |
 | legal | 36 |
 | agengai | 35 |
 | sii | 27 |
@@ -33,8 +33,8 @@
 
 | Type | Count |
 |------|-------|
-| cites | 557 |
-| depends | 108 |
+| cites | 559 |
+| depends | 112 |
 | refines | 1 |
 | traces_requirements | 1 |
 | supersedes | 2 |
@@ -49,12 +49,12 @@
 | `urn:salud:kb:med-emergencia` | 35 |
 | `urn:salud:kb:namespace-curation-map` | 34 |
 | `urn:agengai:kb:namespace-curation-map` | 33 |
-| `urn:kora:kb:runtime-spec-md` | 28 |
+| `urn:kora:kb:runtime-spec-md` | 30 |
 | `urn:sii:kb:namespace-curation-map` | 27 |
-| `urn:kora:kb:harness-spec` | 25 |
-| `urn:kora:kb:gobernanza` | 20 |
+| `urn:kora:kb:harness-spec` | 26 |
+| `urn:kora:kb:gobernanza` | 21 |
 | `urn:kora:kb:knowledge-spec` | 17 |
 | `urn:legal:kb:index` | 17 |
-| `urn:kora:kb:autoria-spec` | 16 |
+| `urn:kora:kb:autoria-spec` | 17 |
 | `urn:kora:kb:multiagente-spec` | 16 |
-| `urn:gn:kb:ssot-master` | 14 |
+| `urn:kora:kb:qa-spec` | 15 |

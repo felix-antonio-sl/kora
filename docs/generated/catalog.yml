@@ -1409,6 +1409,10 @@ Catalog:
     title: Especificacion de Autoria de Artefactos Agenticos v1.2.0
     file: serialization/autoria-spec.md
     status: publicado
+  - urn: urn:kora:kb:canario-spec
+    title: KORA/Canario-Spec v1.0.0
+    file: ontology/canario-spec.md
+    status: publicado
   - urn: urn:kora:kb:cat-agent-coalgebra
     title: The Agent as F-Coalgebra
     file: artifacts/knowledge/kora/categorical-foundations/01-agent-coalgebra.md
