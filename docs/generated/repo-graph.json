@@ -1,13 +1,13 @@
 {
   "meta": {
-    "scanned_files": 698,
-    "node_count": 672,
-    "edge_count": 3352
+    "scanned_files": 702,
+    "node_count": 673,
+    "edge_count": 3362
   },
   "node_kind_counts": {
     "artifact": 21,
     "knowledge": 510,
-    "skill": 92,
+    "skill": 93,
     "spec": 18,
     "tool": 23,
     "workspace": 8
@@ -24,7 +24,7 @@
     "Refines": 1,
     "RoutesToAgent": 3,
     "TracesRequirement": 1,
-    "XRef": 2333
+    "XRef": 2343
   },
   "nodes": [
     {
@@ -4896,6 +4896,15 @@
       "urn": "urn:kora:artefacto:context-manager",
       "title": "Context Manager",
       "path": "artifacts/skills/kora/context-manager/SKILL.md",
+      "namespace": "kora"
+    },
+    {
+      "id": "urn:kora:artefacto:curation-conductor",
+      "kind": "skill",
+      "category": "Skills",
+      "urn": "urn:kora:artefacto:curation-conductor",
+      "title": "Curation Conductor",
+      "path": "artifacts/skills/kora/curation-conductor/SKILL.md",
       "namespace": "kora"
     },
     {
@@ -19904,6 +19913,76 @@
       "target": "urn:kora:artefacto:guardian",
       "fragment": null,
       "source_path": "artifacts/skills/kora/context-manager/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:artefacto:atomize",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:artefacto:curation-conductor",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:artefacto:intent-classifier",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:artefacto:lifecycle-orchestrator",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:autoria-spec",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:gobernanza",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:harness-spec",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:knowledge-spec",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:md-spec",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
+    },
+    {
+      "kind": "XRef",
+      "source": "urn:kora:artefacto:curation-conductor",
+      "target": "urn:kora:kb:pipeline-ingesta",
+      "fragment": null,
+      "source_path": "artifacts/skills/kora/curation-conductor/SKILL.md"
     },
     {
       "kind": "XRef",

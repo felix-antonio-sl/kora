@@ -8,14 +8,14 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 - Workspaces deprecated: 0
 - Workspaces incompletos: 0
 - Artefactos de agente catalogados: 8
-- Entradas totales de catalogo: 628
+- Entradas totales de catalogo: 629
 
 ## Catalogo por categoria
 
 | Categoria | Conteo |
 |-----------|--------|
 | Agents | 8 |
-| Skills | 92 |
+| Skills | 93 |
 | Knowledge | 528 |
 | Documents | 0 |
 | Other | 0 |
@@ -25,7 +25,7 @@ Este documento es generado por `python3 toolchain/kora sync-docs`. No editar a m
 | Namespace | Entradas |
 |-----------|----------|
 | gn | 146 |
-| kora | 120 |
+| kora | 121 |
 | salud | 95 |
 | fxsl | 90 |
 | tde | 56 |

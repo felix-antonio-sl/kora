@@ -102,6 +102,10 @@ Catalog:
     title: Context Manager
     file: artifacts/skills/kora/context-manager/SKILL.md
     status: activo
+  - urn: urn:kora:artefacto:curation-conductor
+    title: Curation Conductor
+    file: artifacts/skills/kora/curation-conductor/SKILL.md
+    status: activo
   - urn: urn:kora:artefacto:hsc-copiloto-urgencia-turno
     title: Copiloto de Urgencia Turno
     file: artifacts/skills/kora/hsc-copiloto-urgencia-turno/SKILL.md
@@ -1468,10 +1472,6 @@ Catalog:
   - urn: urn:kora:kb:agentskills-runtime-extension
     title: KORA/Agentskills-Runtime-Extension v1.0.0
     file: runtime/agentskills-runtime-extension.md
-    status: publicado
-  - urn: urn:kora:kb:atomic-test-acceptance-3bcd9888f8
-    title: Atomic test-acceptance-3bcd9888f8
-    file: artifacts/knowledge/kora/atomic/atomic-test-acceptance-3bcd9888f8.md
     status: publicado
   - urn: urn:kora:kb:autoria-spec
     title: Especificacion de Autoria de Artefactos Agenticos v1.2.0
