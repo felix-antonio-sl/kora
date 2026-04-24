@@ -2,7 +2,7 @@
 
 | Señal del input | Naturaleza | Familia / Veredicto | Funtor | Productor / Ruta | Zona inicial | Gate de salida |
 |---|---|---|---|---|---|---|
-| Documento descriptivo legible y orientado a lectura humana | descriptivo | KB normal | F | curación guiada | INBOX o REVIEW | listo para promote si pasa validación |
+| Documento descriptivo legible y orientado a lectura humana | descriptivo | KB normal | F | knowledge-curator | INBOX o REVIEW | listo para promote si pasa validación |
 | Corpus denso, multi-source o de alta granularidad factual | descriptivo | atomic | F | atomize | INBOX | acceptance review + promote |
 | Reglas, restricciones, contratos, workflow normativo | prescriptivo | reroute a spec | G | salir del pipeline de knowledge y derivar a authoring prescriptivo | fuera de knowledge | no promote en `artifacts/knowledge/` |
 | Draft existente con shape correcto pero dudas de calidad | depende | misma familia | depende | repair guiado | REVIEW | revalidar readiness |

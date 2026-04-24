@@ -37,6 +37,7 @@ extensions:
       - "urn:kora:kb:pipeline-ingesta"
     componible_con:
       - "urn:kora:artefacto:atomize"
+      - "urn:kora:artefacto:knowledge-curator"
       - "urn:kora:artefacto:intent-classifier"
       - "urn:kora:artefacto:lifecycle-orchestrator"
 artefacto:
@@ -118,7 +119,7 @@ lugar de curarlo como knowledge publicado.
    - repair sobre publicado
 5. Elegir productor o ruta:
    - `atomic` -> usar `atomize`
-   - `KB normal` -> curación guiada descriptiva
+   - `KB normal` -> usar `knowledge-curator`
 6. Ejecutar o acompañar el tramo correspondiente.
 7. Correr validaciones y gates.
 8. Declarar outcome operativo y siguiente paso.

@@ -28,7 +28,7 @@
 
 5. **Selección de productor**
    - `atomic` -> `atomize`
-   - `KB normal` -> curación guiada descriptiva
+   - `KB normal` -> `knowledge-curator`
 
 6. **Validación**
    - lint/shape
