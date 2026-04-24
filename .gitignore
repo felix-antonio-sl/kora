@@ -13,6 +13,10 @@ __pycache__/
 
 # _BUILD/ — outputs de transmutacion dentro de workspaces (regenerables por target)
 **/_BUILD/
+
+# Docs materializadas por toolchain; regenerables con `python3 toolchain/kora index`,
+# `python3 toolchain/kora kb-graph --json --orphans` y comandos relacionados.
+docs/generated/*
 # Vestigios v7 (ya eliminados; salvaguardia si reaparecen)
 /BUILD/
 /OPERATIONS/
