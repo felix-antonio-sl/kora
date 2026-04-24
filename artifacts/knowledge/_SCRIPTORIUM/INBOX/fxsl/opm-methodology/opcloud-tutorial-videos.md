@@ -6,12 +6,13 @@ _manifest:
     created_at: "2026-03-12"
     source: "opcloud videos"
 version: "1.0.0"
-status: published
+status: borrador
 tags: [opcloud, opm, tutorial, modelado, youtube, video-course]
 lang: en
 extensions:
-  family: tutorial
-  video_count: 50
+  kora:
+    family: tutorial
+    video_count: 50
 ---
 
 # OPCloud Tutorial Videos

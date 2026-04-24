@@ -1,1 +1,1 @@
-../../../KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12b-safety-alignment.md
+../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12b-safety-alignment.md

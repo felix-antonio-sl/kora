@@ -1,1 +1,1 @@
-../../../KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12-topoi.md
+../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/12-topoi.md

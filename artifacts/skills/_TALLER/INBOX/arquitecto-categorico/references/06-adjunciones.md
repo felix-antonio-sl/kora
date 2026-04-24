@@ -1,1 +1,1 @@
-../../../KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/06-adjunciones.md
+../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/06-adjunciones.md

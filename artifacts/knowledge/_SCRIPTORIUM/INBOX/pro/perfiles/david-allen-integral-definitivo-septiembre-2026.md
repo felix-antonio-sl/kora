@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-26"
     source: "/Users/felixsanhueza/Developer/kora/KNOWLEDGE/pro/david-allen-definitivo-septiembre-2026.md, /Users/felixsanhueza/Developer/kora/KNOWLEDGE/korvo/manual-de-vida.md, /Users/felixsanhueza/Developer/kora/KNOWLEDGE/pro/david-allen-gemelo-digital-intelectual-era-agentica.md, /Users/felixsanhueza/Developer/_workspaces/pca/pca-v4.md, /Users/felixsanhueza/Downloads/getting-things-done-the-art-of-stress-free-productivity-david-allen-z-lib.org_.pdf, https://gettingthingsdone.com/about/, https://gettingthingsdone.com/what-is-gtd/, https://gettingthingsdone.com/2023/01/choosing-what-to-do/, https://gettingthingsdone.com/wp-content/uploads/2021/09/Threefold-Nature-of-Work.pdf"
 version: "1.1.0"
-status: published
+status: borrador
 tags: [david-allen, integral, septiembre-2026, obra-maestra, coaching, gtd, co-agencia, manual-de-vida]
 lang: es
 extensions: {}

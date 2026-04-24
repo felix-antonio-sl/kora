@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-23"
-    source: "artifacts/knowledge/_SCRIPTORIUM/INBOX/korax-v2-primitivo/ — snapshot historico del agente korax v2.0 bajo el regimen legacy agentfile v1 (bootstrap_agents/bootstrap_user/SOUL/TOOLS); incluye AGENTS.md, config.json, SOUL.md, TOOLS.md, USER.md, skills/"
+    source: "artifacts/agents/_FRAGUA/INBOX/korax-v2-primitivo/ — snapshot historico del agente korax v2.0 bajo el regimen legacy agentfile v1 (bootstrap_agents/bootstrap_user/SOUL/TOOLS); incluye AGENTS.md, config.json, SOUL.md, TOOLS.md, USER.md, skills/"
 version: "2.0.0"
 status: borrador
 tags: [korax, v2-primitivo, snapshot, agentfile-v1, legacy, korvo]
@@ -28,7 +28,7 @@ Esta nota existe por trazabilidad historica. El artefacto agentico productivo es
 
 ## Contenido original
 
-El material fuente vive en `artifacts/knowledge/_SCRIPTORIUM/INBOX/korax-v2-primitivo/`:
+El material fuente vive en `artifacts/agents/_FRAGUA/INBOX/korax-v2-primitivo/`:
 
 - `AGENTS.md` — workflow y FSM WF-KORAX (13 estados + modificador `delegation_scope`).
 - `SOUL.md` — identidad, tono, paradigma operativo.

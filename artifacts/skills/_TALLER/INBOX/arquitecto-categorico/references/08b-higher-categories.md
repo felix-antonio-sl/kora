@@ -1,1 +1,1 @@
-../../../KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08b-higher-categories.md
+../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/08b-higher-categories.md

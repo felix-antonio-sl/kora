@@ -1,1 +1,1 @@
-../../../KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/15-tiempo.md
+../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/15-tiempo.md

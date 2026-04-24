@@ -1,17 +1,20 @@
 ---
 _manifest:
-  urn: urn:kora:kb:opm-youtube-cheatsheet
+  urn: urn:fxsl:kb:opm-youtube-cheatsheet
   provenance:
     created_by: FS
     created_at: '2026-03-08'
     source: knowledge/kora/opm-methodology/opm_youtube.md
 version: 1.0.0
-status: published
+status: borrador
 tags:
   - opm
   - cheatsheet
   - methodology
 lang: es
+extensions:
+  kora:
+    family: guide
 ---
 
 # Cheat Sheet Exhaustiva y Avanzada de OPM (Object Process Methodology)

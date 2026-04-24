@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-26"
     source: "/Users/felixsanhueza/Developer/kora/KNOWLEDGE/dev/agentic-engineering-praxis.md, /Users/felixsanhueza/Developer/kora/KNOWLEDGE/dev/peter-steinberger-gemelo-digital-intelectual.md, https://steipete.me/posts/2025/optimal-ai-development-workflow, https://steipete.me/posts/just-talk-to-it, https://steipete.me/posts/2025/shipping-at-inference-speed, https://steipete.me/posts/2025/mcp-best-practices, https://github.com/steipete/steipete, https://github.com/openclaw/openclaw"
 version: "1.1.0"
-status: published
+status: borrador
 tags: [peter-steinberger, steipete, ingenieria-agentica, workflow, software-production, openclaw]
 lang: es
 extensions: {}

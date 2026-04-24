@@ -6,7 +6,7 @@ _manifest:
     created_at: "2026-03-26"
     source: "/Users/felixsanhueza/Developer/kora/KNOWLEDGE/fxsl/xanpan/allan-kelly-gemelo-digital-intelectual.md, /Users/felixsanhueza/Developer/kora/KNOWLEDGE/fxsl/xanpan/xanpan-agents-metodologia.md, /Users/felixsanhueza/Developer/kora/KNOWLEDGE/fxsl/xanpan/swarm-ops-metodologia.md"
 version: "1.0.0"
-status: published
+status: borrador
 tags: [allan-kelly, gemelo-digital, era-agentica, ingenieria-agentica, xanpan, agentes-ia, perfil-contrafactual]
 lang: es
 extensions: {}
