@@ -108,10 +108,6 @@ artefacto:
       accountability: "Alta; registro de rutas de sucesion aplicadas."
       sustainability: "Alta; no compite con sucesores activos."
     sub_coalgebra_segura: [S-DISPATCHER, S-REDIRECT, S-END]
-  composicion:
-    sub_agentes: []
-    delegacion:
-      max_depth: 1
 ---
 
 # Clawstack

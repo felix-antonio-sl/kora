@@ -30,6 +30,22 @@ extensions:
     nivel_prescripcion: medio
     conocimiento_permitido: []
     componible_con: []
+artefacto:
+  perfil:
+    descripcion: "Habilidad UX para auditar y disenar flujos, formularios, navegacion y accesibilidad usando heuristicas y patrones verificables."
+    dominio:
+      - experiencia de usuario
+      - accesibilidad WCAG
+      - arquitectura de informacion
+    salidas:
+      - auditorias UX
+      - flujos de usuario
+      - recomendaciones accionables por componente
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # UX Design

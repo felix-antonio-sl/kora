@@ -31,8 +31,24 @@ extensions:
     conocimiento_permitido:
       - "urn:kora:kb:autoria-spec"
       - "urn:kora:kb:transmutation-spec"
-      - "urn:kora:kb:openclaw-runtime-extension"
+      - "urn:agengai:kb:openclaw-runtime-extension"
     componible_con: []
+artefacto:
+  perfil:
+    descripcion: "Habilidad de transmutacion que proyecta artefactos KORA/MD a workspaces OpenClaw completos con bootstrap, config y trazabilidad."
+    dominio:
+      - transmutacion de runtime
+      - OpenClaw
+      - workspaces agenticos
+    salidas:
+      - workspace OpenClaw
+      - config de runtime
+      - registro _transmutation.yml
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # Transmute OpenClaw

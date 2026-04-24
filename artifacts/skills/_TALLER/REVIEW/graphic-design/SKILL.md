@@ -31,6 +31,22 @@ extensions:
     conocimiento_permitido: []
     componible_con:
       - "urn:kora:artefacto:ux-design"
+artefacto:
+  perfil:
+    descripcion: "Habilidad de diseno grafico para construir identidades visuales sistemicas, design tokens y guias de marca coherentes."
+    dominio:
+      - identidad visual
+      - sistemas de marca
+      - design tokens
+    salidas:
+      - brand specs
+      - design tokens
+      - assets SVG
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # Graphic Design — Identidad Visual Sistemica

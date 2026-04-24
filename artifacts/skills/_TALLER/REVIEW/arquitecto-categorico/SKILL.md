@@ -15,7 +15,7 @@ lang: es
 extensions:
   kora:
     vector_ontologico:
-      pi: 3
+      pi: 2
       mu: 0
       xi: 2
       lambda: 0
@@ -38,6 +38,22 @@ extensions:
       - "urn:fxsl:kb:icas-adjunciones"
     componible_con:
       - "urn:kora:artefacto:data-modeling"
+artefacto:
+  perfil:
+    descripcion: "Habilidad de arquitectura categorial para modelar, auditar, migrar, componer y formalizar sistemas agenticos o de software con teoria de categorias."
+    dominio:
+      - arquitectura categorial
+      - composicion de sistemas
+      - auditoria de invariantes
+    salidas:
+      - modelos categoriales
+      - auditorias de composicion
+      - planes de migracion con trazabilidad formal
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # Arquitecto Categorico de Sistemas Agenticos

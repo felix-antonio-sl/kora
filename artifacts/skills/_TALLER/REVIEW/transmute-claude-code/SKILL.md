@@ -33,6 +33,22 @@ extensions:
       - "urn:kora:kb:transmutation-spec"
       - "urn:kora:kb:claude-code-runtime-extension"
     componible_con: []
+artefacto:
+  perfil:
+    descripcion: "Habilidad de transmutacion que proyecta artefactos KORA/MD a archivos Claude Code preservando fidelidad y registrando perdidas."
+    dominio:
+      - transmutacion de runtime
+      - Claude Code
+      - proof-carrying projection
+    salidas:
+      - archivo Markdown Claude Code
+      - registro _transmutation.yml
+      - diagnostico de fidelidad
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # Transmute Claude Code

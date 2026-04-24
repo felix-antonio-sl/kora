@@ -31,6 +31,22 @@ extensions:
     conocimiento_permitido: []
     componible_con:
       - "urn:kora:artefacto:arquitecto-categorico"
+artefacto:
+  perfil:
+    descripcion: "Habilidad de modelado de datos para convertir requerimientos en ERDs, data dictionaries, modelos logicos/fisicos y DDL documentado."
+    dominio:
+      - modelado conceptual de datos
+      - normalizacion relacional
+      - diseno fisico de bases de datos
+    salidas:
+      - ERDs
+      - data dictionaries
+      - DDL para PostgreSQL o SQL Server
+  interfaz:
+    herramientas: []
+    permisos:
+      allow: []
+      deny: []
 ---
 
 # Data Modeling
