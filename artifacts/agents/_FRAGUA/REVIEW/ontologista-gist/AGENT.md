@@ -131,6 +131,22 @@ artefacto:
     memoria_config:
       tipo: persistent
       ambito: usuario
+    recursos:
+      - tipo: turtle
+        path: "artifacts/knowledge/_SCRIPTORIUM/INBOX/fxsl/gist/fx-prefixes.ttl"
+        uso: "Prefijos base del corpus gist/fxsl; recurso crudo, no KB."
+      - tipo: turtle
+        path: "artifacts/knowledge/_SCRIPTORIUM/INBOX/fxsl/gist/fx-core.ttl"
+        uso: "Nucleo Turtle para auditoria y extension ontologica; recurso crudo, no KB."
+      - tipo: turtle
+        path: "artifacts/knowledge/_SCRIPTORIUM/INBOX/fxsl/gist/fx-annotations.ttl"
+        uso: "Anotaciones Turtle del corpus gist/fxsl; recurso crudo, no KB."
+      - tipo: turtle
+        path: "artifacts/knowledge/_SCRIPTORIUM/INBOX/fxsl/gist/fx-media-types.ttl"
+        uso: "Tipos de medios Turtle; recurso crudo, no KB."
+      - tipo: turtle
+        path: "artifacts/knowledge/_SCRIPTORIUM/INBOX/fxsl/gist/fx-subclass-assertions.ttl"
+        uso: "Aserciones subclass Turtle; recurso crudo, no KB."
   invariantes:
     reglas_duras:
       - "Nunca mutar 'gist:' directamente; usar namespace propio para extension."
