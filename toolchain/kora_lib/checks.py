@@ -578,6 +578,79 @@ def _check_spec_traces(path_filter=None):
     return diags
 
 
+def _check_formal_trace_discipline(path_filter=None):
+    """Verify `Traces to:` URNs stay inside the official KORA Formal Layer.
+
+    `Rationale:` may cite auxiliary corpora such as FXSL/ICAS. `Traces to:` is
+    reserved for formal traceability to `artifacts/knowledge/kora/categorical-foundations/`.
+    """
+    import re
+    from .catalog import build_catalog_lookup, load_catalog, urn_is_known
+    from .config import KORA_ROOT
+
+    doc = load_catalog()
+    known_urns, urn_to_entry = build_catalog_lookup(doc) if doc else (set(), {})
+    scan_roots = (
+        "governance",
+        "ontology",
+        "serialization",
+        "runtime",
+        "artifacts/skills",
+        "artifacts/agents",
+        "artifacts/knowledge/kora",
+    )
+    excluded_markers = ("/_SCRIPTORIUM/", "/_TALLER/INBOX/", "/_FRAGUA/INBOX/")
+    trace_pattern = re.compile(r"Traces to:\s*(.+)")
+    urn_pattern = re.compile(r"urn:[a-z0-9\-]+:[a-z0-9\-]+:[A-Za-z0-9_.\-{}]+")
+    formal_prefix = "artifacts/knowledge/kora/categorical-foundations/"
+    diags = []
+
+    for rel_root in scan_roots:
+        root = KORA_ROOT / rel_root
+        if not root.exists():
+            continue
+        for md_path in sorted(root.rglob("*.md")):
+            rel = str(md_path.relative_to(KORA_ROOT))
+            if any(marker in f"/{rel}" for marker in excluded_markers):
+                continue
+            if path_filter and not rel.startswith(path_filter):
+                continue
+            try:
+                text = md_path.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError):
+                continue
+            for line_no, line in enumerate(text.splitlines(), start=1):
+                match = trace_pattern.search(line)
+                if not match:
+                    continue
+                for urn in urn_pattern.findall(match.group(1)):
+                    if "{" in urn or "}" in urn or urn.endswith("-"):
+                        continue
+                    if not urn_is_known(urn, known_urns):
+                        diags.append(Diagnostic(
+                            check_id="formal-trace-discipline",
+                            severity="medium",
+                            scope="artifact",
+                            path=rel,
+                            message=f"line {line_no}: Traces to unresolved URN {urn}",
+                            fix_hint="Use a resolvable Formal Layer URN or move this citation to Rationale.",
+                        ))
+                        continue
+                    entry = urn_to_entry.get(urn)
+                    target_rel = str(entry["file"].relative_to(KORA_ROOT)) if entry else ""
+                    if not target_rel.startswith(formal_prefix):
+                        diags.append(Diagnostic(
+                            check_id="formal-trace-discipline",
+                            severity="medium",
+                            scope="artifact",
+                            path=rel,
+                            message=f"line {line_no}: Traces to {urn}, outside official Formal Layer",
+                            fix_hint="Trace to urn:kora:kb:cat-* (or another URN under categorical-foundations) and cite auxiliary material as Rationale.",
+                        ))
+
+    return diags
+
+
 def _check_supersedes_consistency(path_filter=None):
     """If A supersedes B, B must have status: deprecated."""
     from .kb_graph import collect_knowledge_nodes
@@ -1541,6 +1614,12 @@ def _register_builtins():
               scope="artifact", severity="medium", enforcement="lint",
               spec_ref="gobernanza §5.1", phase="verify"),
         _check_spec_traces,
+    )
+    register_check(
+        Check("formal-trace-discipline", "Traces to: URNs stay inside the official KORA Formal Layer",
+              scope="artifact", severity="medium", enforcement="lint",
+              spec_ref="md-spec §5.6.2.3; cat-fxsl-bridge §3", depends=("catalog-exists",), phase="verify"),
+        _check_formal_trace_discipline,
     )
     register_check(
         Check("supersedes-consistency", "Supersedes targets must be deprecated",

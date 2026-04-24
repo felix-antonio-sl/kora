@@ -2,7 +2,7 @@
 
 Especificacion conceptual completa para una skill KORA que subsume el ICAS-BoK (Integrated Categorical Agentic Systems Engineering Body of Knowledge).
 
-Fuente: corpus categorico `/KNOWLEDGE/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/` (23 archivos, ~360KB).
+Fuente: corpus categorico `artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/` (24 archivos, ~360KB).
 
 ---
 

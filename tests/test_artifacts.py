@@ -285,6 +285,40 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in rejected_terms:
             self.assertNotIn(term, content)
 
+    def test_arquitecto_categorico_uses_formal_trace_discipline(self):
+        skill_path = ROOT / "artifacts" / "skills" / "_TALLER" / "REVIEW" / "arquitecto-categorico" / "SKILL.md"
+        doc, err = load_yaml_safe(skill_path)
+        self.assertIsNone(err)
+        allowed = set(doc["extensions"]["kora"]["conocimiento_permitido"])
+        expected_icas = {
+            "urn:fxsl:kb:icas-sintesis",
+            "urn:fxsl:kb:icas-composicion",
+            "urn:fxsl:kb:icas-preservacion",
+            "urn:fxsl:kb:icas-comparacion",
+            "urn:fxsl:kb:icas-identidad-relacion",
+            "urn:fxsl:kb:icas-universales",
+            "urn:fxsl:kb:icas-adjunciones",
+            "urn:fxsl:kb:icas-composicion-estructura",
+            "urn:fxsl:kb:icas-enriquecimiento",
+            "urn:fxsl:kb:icas-higher-categories",
+            "urn:fxsl:kb:icas-efectos",
+            "urn:fxsl:kb:icas-extension",
+            "urn:fxsl:kb:icas-interaccion",
+            "urn:fxsl:kb:icas-topoi",
+            "urn:fxsl:kb:icas-safety-alignment",
+            "urn:fxsl:kb:icas-escala",
+            "urn:fxsl:kb:icas-agencia",
+            "urn:fxsl:kb:icas-protocolos",
+            "urn:fxsl:kb:icas-tiempo",
+            "urn:fxsl:kb:icas-lifecycle",
+            "urn:fxsl:kb:icas-procesos",
+            "urn:fxsl:kb:icas-calidad-riesgo",
+            "urn:fxsl:kb:icas-patrones",
+            "urn:fxsl:kb:icas-infraestructura",
+        }
+        self.assertTrue(expected_icas.issubset(allowed))
+        self.assertNotIn("Traces to: urn:fxsl", doc["_md_body"])
+
     def test_harness_spec_canonizes_ontology(self):
         content = (ROOT / "ontology" / "harness-spec.md").read_text(encoding="utf-8")
         required_terms = (

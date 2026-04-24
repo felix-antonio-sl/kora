@@ -25,6 +25,7 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertIn("knowledge-zone", result.stdout)
         self.assertIn("lint-md", result.stdout)
         self.assertIn("traces-requirements-semantics", result.stdout)
+        self.assertIn("formal-trace-discipline", result.stdout)
         self.assertIn("autoria-conformance", result.stdout)
 
     def test_check_strict_exit_status_matches_diagnostics(self):

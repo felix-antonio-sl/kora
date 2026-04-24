@@ -29,6 +29,13 @@ extensions:
     entornos_objetivo: [claude-code, codex]
     nivel_prescripcion: medio
     conocimiento_permitido:
+      - "urn:kora:kb:cat-foundations"
+      - "urn:kora:kb:cat-agent-coalgebra"
+      - "urn:kora:kb:cat-skill-algebra"
+      - "urn:kora:kb:cat-ecosystem-2cat"
+      - "urn:kora:kb:cat-audit-invariants"
+      - "urn:kora:kb:cat-behavioral-preservation"
+      - "urn:kora:kb:cat-fxsl-bridge"
       - "urn:fxsl:kb:icas-sintesis"
       - "urn:fxsl:kb:icas-composicion"
       - "urn:fxsl:kb:icas-preservacion"
@@ -36,6 +43,23 @@ extensions:
       - "urn:fxsl:kb:icas-identidad-relacion"
       - "urn:fxsl:kb:icas-universales"
       - "urn:fxsl:kb:icas-adjunciones"
+      - "urn:fxsl:kb:icas-composicion-estructura"
+      - "urn:fxsl:kb:icas-enriquecimiento"
+      - "urn:fxsl:kb:icas-higher-categories"
+      - "urn:fxsl:kb:icas-efectos"
+      - "urn:fxsl:kb:icas-extension"
+      - "urn:fxsl:kb:icas-interaccion"
+      - "urn:fxsl:kb:icas-topoi"
+      - "urn:fxsl:kb:icas-safety-alignment"
+      - "urn:fxsl:kb:icas-escala"
+      - "urn:fxsl:kb:icas-agencia"
+      - "urn:fxsl:kb:icas-protocolos"
+      - "urn:fxsl:kb:icas-tiempo"
+      - "urn:fxsl:kb:icas-lifecycle"
+      - "urn:fxsl:kb:icas-procesos"
+      - "urn:fxsl:kb:icas-calidad-riesgo"
+      - "urn:fxsl:kb:icas-patrones"
+      - "urn:fxsl:kb:icas-infraestructura"
     componible_con:
       - "urn:kora:artefacto:data-modeling"
 artefacto:
@@ -132,7 +156,11 @@ Principios que el arquitecto categorico internaliza. Cada uno tiene raiz en el c
 4. **Materializar**: emitir schema, diagrama o spec formal.
 5. **Trazar**: referenciar documentos del corpus que fundamentan decisiones.
 
-Docs primarios: `urn:fxsl:kb:icas-sintesis`, `urn:fxsl:kb:icas-composicion`, `urn:fxsl:kb:icas-identidad-relacion`, `urn:fxsl:kb:icas-universales`.
+Trazas formales primarias: `urn:kora:kb:cat-foundations`,
+`urn:kora:kb:cat-audit-invariants`, `urn:kora:kb:cat-fxsl-bridge`.
+Rationale ICAS: `urn:fxsl:kb:icas-sintesis`,
+`urn:fxsl:kb:icas-composicion`, `urn:fxsl:kb:icas-identidad-relacion`,
+`urn:fxsl:kb:icas-universales`.
 
 ### Workflow `audit`
 
@@ -143,7 +171,10 @@ Docs primarios: `urn:fxsl:kb:icas-sintesis`, `urn:fxsl:kb:icas-composicion`, `ur
 5. **Proponer**: correccion con justificacion categorica.
 6. **Trazar**: documentos que fundamentan cada hallazgo.
 
-Docs primarios: `urn:fxsl:kb:icas-preservacion`, `urn:fxsl:kb:icas-comparacion`.
+Trazas formales primarias: `urn:kora:kb:cat-audit-invariants`,
+`urn:kora:kb:cat-behavioral-preservation`, `urn:kora:kb:cat-fxsl-bridge`.
+Rationale ICAS: `urn:fxsl:kb:icas-preservacion`,
+`urn:fxsl:kb:icas-comparacion`.
 
 ### Workflow `migrate`
 
@@ -154,7 +185,10 @@ Docs primarios: `urn:fxsl:kb:icas-preservacion`, `urn:fxsl:kb:icas-comparacion`.
 5. **Plan**: secuencia operativa derivada de la adjuncion.
 6. **Trazar**: documentos que fundamentan la adjuncion.
 
-Docs primarios: `urn:fxsl:kb:icas-preservacion`, `urn:fxsl:kb:icas-adjunciones`.
+Trazas formales primarias: `urn:kora:kb:cat-foundations`,
+`urn:kora:kb:cat-audit-invariants`, `urn:kora:kb:cat-fxsl-bridge`.
+Rationale ICAS: `urn:fxsl:kb:icas-preservacion`,
+`urn:fxsl:kb:icas-adjunciones`.
 
 ### Workflow `compose`
 
@@ -192,7 +226,6 @@ Detalle completo y mapa ICAS-BoK en `referencias/icas-bok-indice.md`.
 
 - `referencias/icas-bok-indice.md`: 24 documentos del corpus con `usar cuando` y capitulos del libro.
 - `referencias/axiomas-por-parte.md`: axioma rector de cada una de las 13 partes del ICAS-BoK.
-- `referencias/patrones-vs-construcciones.md`: mapping patrones de diseno <-> construcciones universales.
 
 El corpus fuente vive en `artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/` y es direccionable por URN `urn:fxsl:kb:icas-*`. Esta skill consulta el corpus bajo demanda; NO duplica su contenido.
 
@@ -202,7 +235,12 @@ El corpus fuente vive en `artifacts/knowledge/fxsl/cat/corpus-categorico-arquite
 - Un funtor propuesto **DEBE** declarar faithfulness y fullness.
 - Una adjuncion **DEBE** nombrar ambos lados y verificar la isomorfia de hom-sets.
 - Un hallazgo en modo `audit` **DEBE** clasificarse por propiedad violada, no por preferencia estetica.
-- Toda recomendacion **DEBE** incluir `Traces to: urn:fxsl:kb:icas-...` al corpus que la fundamenta.
+- Toda recomendacion normativa **DEBE** incluir `Traces to:
+  urn:kora:kb:cat-...` hacia la Formal Layer oficial cuando exista fundamento
+  promovido.
+- El corpus ICAS/FXSL **DEBE** citarse como `Rationale:` o apoyo editorial,
+  no como `Traces to:`, salvo que la regla local pida solo orientacion no
+  normativa.
 - La skill **NO DEBE** inventar teoremas: si el resultado no esta en el corpus, se declara como hipotesis no respaldada.
 
 ## Salida Esperada
