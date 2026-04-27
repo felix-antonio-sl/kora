@@ -22,7 +22,6 @@ WORKSPACES = [
     "fxsl/ingeniero-sistemas-composicional",
     "fxsl/neriomath",
     "fxsl/ontologista-gist",
-    "fxsl/opm-specialist",
     "fxsl/pensador-generador",
     "gn/ar-virtual",
     "gn/asesor-juridico",

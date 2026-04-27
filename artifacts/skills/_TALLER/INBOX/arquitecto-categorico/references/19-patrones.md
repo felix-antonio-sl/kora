@@ -1,1 +1,0 @@
-../../../../../knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/19-patrones.md

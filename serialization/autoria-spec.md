@@ -728,7 +728,7 @@ extensions:
   kora:
     componible_con:
       - "urn:kora:artefacto:atomizar"
-      - "urn:kora:artefacto:arquitecto-categorico"
+      - "urn:kora:artefacto:cat-thinking"
 ```
 
 ### 9.1 Semantica categorica

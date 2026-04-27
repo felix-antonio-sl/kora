@@ -273,13 +273,6 @@
     "type": "agents"
   },
   {
-    "urn": "urn:kora:agent:arquitecto-categorico:1.4.0",
-    "workspace": "fxsl",
-    "old_path": "agents/arquitecto-categorico/agent_arquitecto_categorico.yaml",
-    "new_path": "agents/arquitecto-categorico/agent_arquitecto_categorico.yaml",
-    "type": "agents"
-  },
-  {
     "urn": "urn:kora:agent:arquitecto-sistemas-informacion:1.0.0",
     "workspace": "fxsl",
     "old_path": "agents/arquitecto-sistemas-informacion/agent_arquitecto_sistemas_informacion.yaml",

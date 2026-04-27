@@ -22,7 +22,6 @@ AGENTS_MAPPING = {
     # 3. ARCHITECTURE
     "arquitecto-sistemas-informacion": "architecture",
     "arquitecto-automatizacion-organizacional": "architecture",
-    "arquitecto-categorico": "architecture",
     "arquitecto-orko": "architecture",
     "ontologista-gist": "architecture",
     "cartographer": "architecture",

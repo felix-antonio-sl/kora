@@ -214,7 +214,7 @@ Regiones nombradas del espacio con fundamento categorico.
 | Arnés | Π | Μ | Ξ | Λ | Φ | Σ dominante | Ejemplo |
 |-------|---|---|---|---|---|-------------|---------|
 | **Utilidad** | 1 | 0 | 1 | 0 | 1 | bajo | skill trivial |
-| **Disciplina** | 2 | 0 | 1-2 | 0 | 1 | medio | `arquitecto-categorico` |
+| **Disciplina** | 2 | 0 | 1-2 | 0 | 1 | medio | `cat-thinking` |
 | **Delegado** | 2 | 1 | 2 | 0 | 1 | medio | subagente Task |
 | **Persona** | 2 | 2 | 2-3 | 0-1 | 1-2 | alto | `polymath` |
 | **Orquestador** | 2-3 | 2 | 4 | 1-2 | 2 | alto | `kora/forgemaster` |

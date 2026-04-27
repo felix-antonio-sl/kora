@@ -285,8 +285,8 @@ class ArtifactFixtureTests(unittest.TestCase):
         for term in rejected_terms:
             self.assertNotIn(term, content)
 
-    def test_arquitecto_categorico_uses_formal_trace_discipline(self):
-        skill_path = ROOT / "artifacts" / "skills" / "_TALLER" / "REVIEW" / "arquitecto-categorico" / "SKILL.md"
+    def test_cat_thinking_uses_icas_corpus_and_no_fxsl_traces(self):
+        skill_path = ROOT / "artifacts" / "skills" / "kora" / "cat-thinking" / "SKILL.md"
         doc, err = load_yaml_safe(skill_path)
         self.assertIsNone(err)
         allowed = set(doc["extensions"]["kora"]["conocimiento_permitido"])
@@ -789,34 +789,19 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("PRAXIS (B1-B4)", agents)
         self.assertNotIn("VINDICATE", agents)
 
-    def test_opm_specialist_uses_neutral_intent_classification_and_clarify_state(self):
-        ws = AGENTS_ROOT / "fxsl" / "opm-specialist"
-        if not ws.is_dir():
-            self.skipTest("fxsl/opm-specialist no productivo — en staging")
-        agents = (ws / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "TOOLS.md").read_text(encoding="utf-8")
-        classifier = (AGENTS_ROOT / "fxsl" / "opm-specialist" / "skills" / "CM-INTENT-CLASSIFIER.md").read_text(encoding="utf-8")
-        self.assertIn("S-CLARIFY", agents)
-        self.assertNotIn("IF ambiguo -> ACT: clarificar. -> S-DISPATCHER", agents)
-        self.assertNotIn("REFINE_DRAFT", agents)
-        self.assertIn("IF other fails -> S-DISPATCHER", agents)
-        self.assertIn("scope_status=fuera_scope", agents)
-        self.assertIn("cierre_solicitado", agents)
-        self.assertIn("claridad=ambigua", agents)
-        self.assertIn("modo_consulta=concepto", agents)
-        self.assertIn("IF resuelto [prioridad 3] -> S-END", agents)
-        self.assertNotIn("## Saludo", soul)
-        self.assertNotIn("## Estilo", soul)
-        self.assertNotIn("## Ejemplos", soul)
-        self.assertIn("**Parametros:**", tools)
-        self.assertIn("**Descripcion funcional:**", tools)
-        self.assertNotIn("FSM de opm-specialist", classifier)
-        self.assertIn("modo_consulta", classifier)
-        self.assertIn("scope_status", classifier)
-        self.assertIn("claridad", classifier)
-        self.assertIn("cierre_solicitado", classifier)
-        self.assertNotIn("terminar|fuera_scope|ambiguo", classifier)
+    def test_modelamiento_opm_declares_canonical_ssot(self):
+        skill_path = ROOT / "artifacts" / "skills" / "kora" / "modelamiento-opm" / "SKILL.md"
+        doc, err = load_yaml_safe(skill_path)
+        self.assertIsNone(err)
+        allowed = set(doc["extensions"]["kora"]["conocimiento_permitido"])
+        expected = {
+            "urn:fxsl:kb:opm-es",
+            "urn:fxsl:kb:opd-es",
+            "urn:fxsl:kb:opl-es",
+            "urn:fxsl:kb:manual-metodologico-opm-es",
+        }
+        self.assertTrue(expected.issubset(allowed))
+        self.assertIn("Bimodalidad", doc["_md_body"])
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "runtime" / "runtime-spec-md.md").read_text(encoding="utf-8")
