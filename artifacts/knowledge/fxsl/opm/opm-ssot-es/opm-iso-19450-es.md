@@ -1,9 +1,13 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:opm-es
-version: 2.1.0-ampliada.4
-status: draft-publishable
-source_base: "ssot/opm-iso-19450-es.md (v2.0.0)"
+  provenance:
+    created_by: kora/curator
+    created_at: '2026-04-27'
+    source: "Consolidacion SSOT OPM v3.0.0: nucleo conceptual canonico del corpus OPM-ES en cuatro capas (semantica/visual/textual/metodologica)."
+version: 3.0.0
+status: published
+source_base: "ssot/opm-iso-19450-es.md (v2.0.0); opm-iso-19450-es.md (v2.1.0-ampliada.4)"
 derived_from:
   - ssot/opm-iso-19450-es.md
   - ssot-v2-draft/opm-iso-19450-es-merge-ready.md
@@ -42,14 +46,14 @@ relations:
 ---
 
 
-# OPM — Núcleo conceptual (versión ampliada v2)
+# OPM — Núcleo conceptual (v3.0.0)
 
 
 Lenguaje conceptual compacto y metodología para modelar sistemas y representar conocimiento. Esta edición presenta una adaptación canónica en español técnico natural de OPM y adopta **OPL-ES** como forma textual canónica del corpus.
 
-Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: modelo compuesto por referencia, mecanismo explícito de composición inter-modelo como cuarto par canónico de refinamiento-abstracción, separación entre identidad persistente y etiquetas visibles de navegación, y cláusulas de referencia externa para cosas y OPDs citables.
+Esta versión integra los ajustes de la línea `merge-ready`: modelo compuesto por referencia, mecanismo explícito de composición inter-modelo como cuarto par canónico de refinamiento-abstracción, separación entre identidad persistente y etiquetas visibles de navegación, y cláusulas de referencia externa para cosas y OPDs citables.
 
-Sustituye, cuando se publique, al archivo `ssot/opm-iso-19450-es.md`.
+Es la **capa semántica canónica** del corpus OPM-ES en KORA (v3.0.0). Reemplaza a la línea `ssot/` legacy, ya removida del repositorio.
 
 OPM ofrece dos modalidades semánticamente equivalentes:
 

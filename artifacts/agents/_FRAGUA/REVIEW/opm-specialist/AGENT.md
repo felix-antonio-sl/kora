@@ -28,8 +28,10 @@ extensions:
       metafora_relacional: centro-de-control
     entornos_objetivo: [claude-code, codex]
     conocimiento_permitido:
-      - "urn:fxsl:kb:opm-iso-19450"
+      - "urn:fxsl:kb:opm-es"
+      - "urn:fxsl:kb:opd-es"
       - "urn:fxsl:kb:opl-es"
+      - "urn:fxsl:kb:manual-metodologico-opm-es"
     componible_con:
       - "urn:fxsl:artefacto:ingeniero-sistemas-composicional"
       - "urn:fxsl:artefacto:ontologista-gist"

@@ -1,9 +1,13 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:opl-es
-version: 2.1.0-ampliada.4
-status: draft-publishable
-source_base: "ssot/opm-opl-es.md (v2.0.0)"
+  provenance:
+    created_by: kora/curator
+    created_at: '2026-04-27'
+    source: "Consolidacion SSOT OPM v3.0.0: capa textual canonica del corpus OPM-ES (gramatica OPL en espanol)."
+version: 3.0.0
+status: published
+source_base: "ssot/opm-opl-es.md (v2.0.0); opm-opl-es.md (v2.1.0-ampliada.4)"
 derived_from:
   - ssot/opm-opl-es.md
   - ssot-v2-draft/opm-opl-es-merge-ready.md
@@ -44,14 +48,14 @@ relations:
 ---
 
 
-# OPL-ES — Lenguaje Objeto-Proceso en Español (versión ampliada v2)
+# OPL-ES — Lenguaje Objeto-Proceso en Español (v3.0.0)
 
 
 Especificación completa de la gramática OPL en español, diseñada para que herramientas de modelado OPM generen y analicen sentencias OPL en español manteniendo equivalencia semántica total con la forma inglesa de referencia.
 
-Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: composición inter-modelo explícita, referencia externa de cosas, separación entre etiqueta visible de OPD e identidad persistente y ampliaciones mínimas de soporte de herramienta para modelos compuestos.
+Esta versión integra los ajustes de la línea `merge-ready`: composición inter-modelo explícita, referencia externa de cosas, separación entre etiqueta visible de OPD e identidad persistente y ampliaciones mínimas de soporte de herramienta para modelos compuestos.
 
-Sustituye, cuando se publique, al archivo `ssot/opm-opl-es.md`.
+Es la **capa textual canónica** del corpus OPM-ES en KORA (v3.0.0). Reemplaza a la línea `ssot/` legacy, ya removida del repositorio.
 
 Referencia de núcleo: `urn:fxsl:kb:opm-es`.
 
@@ -799,13 +803,11 @@ Las reglas de producción de alto nivel no cambian. En OPL-ES se sustituyen los 
 
 ---
 
-## Apéndice A. Gramática formal OPL-ES completa
-
-### A.0 Alcance del apéndice
+## Apéndice A.0 — Gramática formal OPL-ES completa: alcance del apéndice
 
 Este apéndice reúne la EBNF completa de OPL-ES. Se traslada aquí desde la capa base para eliminar solapamiento editorial: la semántica del hecho sigue perteneciendo a `opm-es`, pero la definición formal de su superficie textual canónica pertenece a OPL-ES. Todos los no-terminales del apéndice se escriben en snake_case; cualquier forma con espacios que aparezca en §17 es explicativa y no normativa.
 
-### A.1 Estructura del documento
+## A.1 Estructura del documento
 
 ```ebnf
 parrafo_opl_es = oracion_opl_es, { salto_de_linea, oracion_opl_es } ;
@@ -816,7 +818,7 @@ oracion_formal_opl_es = oracion_de_descripcion_de_cosa
  | oracion_de_gestion_de_contexto ;
 ```
 
-### A.2 Declaraciones base
+## A.2 Declaraciones base
 
 ```ebnf
 digito_no_cero = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
@@ -858,7 +860,7 @@ clausula_de_rango = " es ", ( nombre_de_valor | expresion_de_rango )
  | " varía de ", nombre_de_valor, " a ", nombre_de_valor ;
 ```
 
-### A.3 Identificadores
+## A.3 Identificadores
 
 ```ebnf
 identificador_de_objeto = nombre_singular_de_objeto, [ " en ", unidad_de_medida ], [ clausula_de_rango ] ;
@@ -916,7 +918,7 @@ Convenciones:
 - nombres de estado: en minúscula;
 - etiquetas: frases breves en minúscula.
 
-### A.4 Oraciones de descripción de cosas
+## A.4 Oraciones de descripción de cosas
 
 ```ebnf
 oracion_de_descripcion_de_cosa = oracion_de_propiedad_generica
@@ -943,7 +945,7 @@ perseverancia = "persistente" | "transitoria" ;
 
 Esencia: `física` o `informacional`. Afiliación: `sistémica` o `ambiental`. Perseverancia: `persistente` o `transitoria`. (La glosa mantiene los valores en minúscula tal como los emiten las plantillas D1–D4, D11, D12; los backticks marcan que se trata de tokens canónicos del lenguaje, no de glosas en lenguaje natural.)
 
-### A.5 Oraciones procedimentales
+## A.5 Oraciones procedimentales
 
 ```ebnf
 oracion_procedimental = oracion_transformadora | oracion_habilitadora | oracion_de_invocacion | oracion_de_control ;
@@ -995,7 +997,7 @@ cadena_etiqueta = nombre ;
 
 Las variantes XOR y OR usan `exactamente uno de` y `al menos uno de`. Las oraciones de condición siguen el patrón `ocurre si ... en cuyo caso ... de lo contrario ... se omite`.
 
-### A.6 Oraciones de condición
+## A.6 Oraciones de condición
 
 ```ebnf
 oracion_de_condicion = oracion_transformadora_condicional | oracion_habilitadora_condicional ;
@@ -1055,7 +1057,7 @@ oracion_de_instrumento_condicional = ( identificador_de_proceso, " ocurre si ",
  identificador_de_estado, ", de lo contrario ", identificador_de_proceso, " se omite" ) ;
 ```
 
-### A.7 Producciones adicionales
+## A.7 Producciones adicionales
 
 ```ebnf
 (* --- Restricciones de expresión para multiplicidad --- *)
@@ -1097,7 +1099,7 @@ lista_de_objetos_generales = " un ", identificador_de_objeto,
  [ { " un ", identificador_de_objeto } ], " y un ", identificador_de_objeto ;
 ```
 
-### A.8 Oraciones estructurales
+## A.8 Oraciones estructurales
 
 ```ebnf
 oracion_estructural = oracion_de_enlace_estructural_etiquetado | oracion_de_agregacion
@@ -1182,7 +1184,7 @@ etiqueta_nula_bidireccional = " se relacionan"
 
 ```
 
-### A.9 Oraciones de estructuras fundamentales
+## A.9 Oraciones de estructuras fundamentales
 
 ```ebnf
 oracion_de_agregacion = oracion_de_agregacion_objeto | oracion_de_agregacion_proceso ;
@@ -1229,7 +1231,7 @@ operador = identificador_de_proceso ;
 rasgo = atributo | operador ;
 ```
 
-### A.10 Oraciones de gestión de contexto
+## A.10 Oraciones de gestión de contexto
 
 ```ebnf
 oracion_de_gestion_de_contexto = oracion_de_despliegue | oracion_de_plegado

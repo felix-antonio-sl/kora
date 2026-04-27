@@ -1,9 +1,13 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:opd-es
-version: 2.3.0-ampliada.3
-status: draft-publishable
-source_base: "ssot/opm-visual-es.md (v2.0.0)"
+  provenance:
+    created_by: kora/curator
+    created_at: '2026-04-27'
+    source: "Consolidacion SSOT OPM v3.0.0: capa visual canonica del corpus OPM-ES (gramatica grafica del OPD)."
+version: 3.0.0
+status: published
+source_base: "ssot/opm-visual-es.md (v2.0.0); opm-visual-es.md (v2.3.0-ampliada.3)"
 derived_from:
   - ssot/opm-visual-es.md
   - ssot-v2-draft/opm-visual-es-v2-merge-ready.md
@@ -41,13 +45,13 @@ relations:
 ---
 
 
-# OPD — Gramática visual de OPM (versión ampliada v2)
+# OPD — Gramática visual de OPM (v3.0.0)
 
 Reglas completas para construir y evaluar cualquier OPD (Diagrama Objeto‑Proceso, Object-Process Diagram) conforme a esta adaptación española del corpus OPM. Este documento opera primariamente a nivel de **tipo y representación**: define las primitivas, composiciones válidas, restricciones y reglas de precedencia que gobiernan la capa gráfica de OPM, e incluye las convenciones visuales de ejecución, simulación, instanciación, estereotipos, composición inter-modelo, validación y exportación canónica cuando afectan la forma visible del OPD.
 
 Referencia de núcleo: `urn:fxsl:kb:opm-es`.
 
-Esta versión ampliada integra los resultados del análisis de corpus OPCloud contra la v1 y aplica las decisiones axiomáticas D1..D6 documentadas en `ssot-decisiones-axiomaticas.md`. Sustituye, cuando se publique, al archivo `ssot/opm-visual-es.md`.
+Esta versión integra los resultados del análisis de corpus OPCloud contra la v1 y aplica las decisiones axiomáticas D1..D6 documentadas en `ssot-decisiones-axiomaticas.md`. Es la **capa visual canónica** del corpus OPM-ES en KORA (v3.0.0). Reemplaza a la línea `ssot/` legacy, ya removida del repositorio.
 
 ---
 
@@ -98,7 +102,7 @@ Convenciones léxicas: los términos **contorno**, **borde** y **línea** se usa
 
 La capa visual de OPM se construye con un vocabulario cerrado de formas, contornos, sombreados, decoraciones de extremo y marcas textuales. Ningún elemento fuera de este vocabulario es válido en un OPD conforme.
 
-### 1.1 Formas cerradas (cosas)
+## 1.1 Formas cerradas (cosas)
 
 | Forma | Entidad que representa |
 |---|---|
@@ -106,7 +110,7 @@ La capa visual de OPM se construye con un vocabulario cerrado de formas, contorn
 | Elipse | Proceso |
 | Rectángulo redondeado (EN: rountangle) | Estado (siempre contenido dentro de un objeto) |
 
-### 1.1b Esquema de colores canónico (informativo)
+## 1.1b Esquema de colores canónico (informativo)
 
 Los colores no codifican semántica por sí mismos; la semántica se fija por forma, contorno y sombreado. El siguiente esquema de colores es solo una convención de referencia del corpus:
 
@@ -120,7 +124,7 @@ Los colores no codifican semántica por sí mismos; la semántica se fija por fo
 
 **Regla V-63 (ampliada)**: Los colores son informativos, no normativos, tanto para bordes y líneas como para las decoraciones internas de los símbolos estructurales. Una implementación puede emplear azul, negro u otra paleta legible, siempre que preserve sin ambigüedad la topología semántica del símbolo (ver §1.7 y V-128).
 
-### 1.2 Atributos de contorno
+## 1.2 Atributos de contorno
 
 | Contorno | Codifica |
 |---|---|
@@ -133,7 +137,7 @@ Los colores no codifican semántica por sí mismos; la semántica se fija por fo
 
 **Regla V-71**: El tipo de contorno (sólido o punteado) persiste en todos los niveles de refinamiento. Un objeto ambiental mantiene contorno discontinuo en el OPD padre y en todos los OPDs hijo donde aparezca como externo.
 
-### 1.3 Atributos de profundidad (sombreado)
+## 1.3 Atributos de profundidad (sombreado)
 
 | Profundidad | Codifica |
 |---|---|
@@ -150,7 +154,7 @@ La sombra es un canal semántico reservado. Su presencia o ausencia codifica ese
 
 **Regla V-127**: Si una implementación usa reforzadores de canvas para hacer más visible la fisicidad en edición, esos reforzadores deben diferenciarse perceptualmente de la sombra semántica y no pueden persistir en el canon-diagrama.
 
-### 1.4 Producto cartesiano: las ocho representaciones de cosa
+## 1.4 Producto cartesiano: las ocho representaciones de cosa
 
 Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
@@ -169,7 +173,7 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 **Regla V-2**: La perseverancia no es visual — se infiere del tipo: los objetos son persistentes, los procesos son transitorios.
 
-### 1.5 Decoraciones de extremo de enlace
+## 1.5 Decoraciones de extremo de enlace
 
 | Decoración | Nombre (ES) | Nombre técnico (EN) | Uso |
 |---|---|---|---|
@@ -185,7 +189,7 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 
 **Regla V-191**: Los handles de edición y puntos de anclaje UI no pueden ser visualmente idénticos a las piruletas de §1.5 en el canon-diagrama. Si la implementación los usa en edición, debe distinguirlos por color reservado a UI, posición o tamaño.
 
-### 1.6 Marcas textuales sobre enlaces
+## 1.6 Marcas textuales sobre enlaces
 
 | Marca | Significado |
 |---|---|
@@ -197,7 +201,7 @@ Toda cosa OPM se renderiza como Forma x Contorno x Profundidad:
 | Texto itálico sobre el eje | Etiqueta (tag) de enlace estructural |
 | Texto sobre enlace procedimental | Etiqueta de ruta (path label) |
 
-### 1.7 Símbolos triangulares (relaciones estructurales fundamentales)
+## 1.7 Símbolos triangulares (relaciones estructurales fundamentales)
 
 | Símbolo topológico | Relación |
 |---|---|
@@ -218,7 +222,7 @@ La distinción normativa entre las cuatro relaciones estructurales fundamentales
 
 **Regla V-131**: Los símbolos estructurales importados desde otra implementación OPM deben preservar, como mínimo, su topología interna. La retipificación cromática es admisible; la pérdida de interior distinguible no lo es.
 
-### 1.8 Indicadores auxiliares
+## 1.8 Indicadores auxiliares
 
 | Indicador | Representación | Significado |
 |---|---|---|
@@ -232,11 +236,11 @@ La distinción normativa entre las cuatro relaciones estructurales fundamentales
 
 **Regla V-193**: Los triángulos o indicadores estructurales compactados que representen relaciones adicionales hacia cosas ausentes deben quedar anclados geométricamente a la cosa visible correspondiente. Un triángulo flotante sin anclaje visible no es conforme en el canon-diagrama.
 
-### 1.9 Estructura atómica del OPD
+## 1.9 Estructura atómica del OPD
 
 **Regla V-60**: Todo OPD se compone de constructos OPD. Un constructo OPD consiste de un conjunto de cosas (2 o más cosas) y un conjunto de enlaces (1 o más enlaces). El átomo mínimo es el constructo básico: exactamente 1 enlace conectando exactamente 2 cosas. Un constructo estructural básico conecta 2 objetos mediante 1 enlace estructural. Un constructo procedimental básico conecta 1 proceso y 1 objeto mediante 1 enlace procedimental.
 
-### 1.10 Anatomía formal de un enlace
+## 1.10 Anatomía formal de un enlace
 
 **Regla V-61**: Todo enlace consiste de tres componentes: origen (cosa o estado de origen), destino (cosa o estado de destino) y conector. El conector se compone de línea (la línea visible), símbolo (decoración de extremo) y, opcionalmente, etiqueta textual y etiqueta de ruta. Origen y destino son cosas enlazadas; cada una exhibe símbolo (decoración visual) y multiplicidad (cardinalidad).
 
@@ -589,9 +593,7 @@ Dentro de un proceso descompuesto, la invocación se determina por posición ver
 
 ---
 
-## 10. Gestión de contexto y refinamiento
-
-### 10.1 Mecanismos de refinamiento y abstracción
+## 10.1 Gestión de contexto y refinamiento — Mecanismos de refinamiento y abstracción
 
 Esta versión amplía el esquema vigente de tres pares intra-modelo a cuatro pares canónicos, añadiendo composición inter-modelo.
 
@@ -606,17 +608,17 @@ Esta versión amplía el esquema vigente de tres pares intra-modelo a cuatro par
 
 **Regla V-243**: Operaciones como `bring connected things`, `bring links between selected entities` o equivalentes son operadores derivados que materializan enlaces o cosas ya existentes en el modelo sobre un OPD distinto. No constituyen mecanismos de refinamiento ontológico y se regulan en §26.
 
-### 10.2 Despliegue en el mismo diagrama
+## 10.2 Despliegue en el mismo diagrama
 
 El refinable y los refinadores comparten OPD, unidos por enlaces estructurales fundamentales.
 
-### 10.3 Descomposición en nuevo diagrama (`in-zooming`)
+## 10.3 Descomposición en nuevo diagrama (`in-zooming`)
 
 **Regla V-33**: El refinable aparece con contorno grueso tanto en el OPD padre como en el OPD hijo.
 
 **Regla V-62**: La descomposición en nuevo diagrama (`in-zooming`) se ejecuta en dos fases: (1) Mostrar Contenido — muestra el contenido interno del refinable, produciendo un OPD semidescompuesto; (2) Refinar Enlaces — refina los enlaces del OPD padre distribuyéndolos a los subprocesos, produciendo el OPD hijo (SDn+1). La recomposición (`out-zooming`) es el inverso: (1) Abstraer Enlaces — abstrae los enlaces de los subprocesos; (2) Ocultar Contenido — oculta el contenido interno, restaurando el OPD padre (SDn).
 
-### 10.3b Contenedor y elementos externos
+## 10.3b Contenedor y elementos externos
 
 Al crear un OPD hijo por descomposición (`in-zooming`) o despliegue (`unfolding`), los elementos del OPD padre se clasifican en internos y externos:
 
@@ -634,17 +636,17 @@ Al crear un OPD hijo por descomposición (`in-zooming`) o despliegue (`unfolding
 
 **Regla V-85**: Objetos externos — creados en el SD u otro OPD superior — existen independientemente del refinamiento y son referenciables desde cualquier OPD del modelo.
 
-### 10.4 Descomposición de proceso
+## 10.4 Descomposición de proceso
 
 **Regla V-34**: La elipse del proceso refinable se agranda para contener los subprocesos como elipses menores.
 
 **Regla V-35**: La línea temporal fluye de arriba hacia abajo. La posición vertical determina la secuencia de ejecución.
 
-### 10.5 Descomposición de objeto
+## 10.5 Descomposición de objeto
 
 El rectángulo del objeto refinable se agranda para mostrar objetos constituyentes.
 
-### 10.6 Supresión de estados
+## 10.6 Supresión de estados
 
 Para simplificar un OPD, se pueden ocultar estados no relevantes. Se indica con el símbolo de supresión (`...` en un rectángulo redondeado en la esquina inferior derecha del objeto).
 
@@ -658,11 +660,11 @@ Para simplificar un OPD, se pueden ocultar estados no relevantes. Se indica con 
 
 **Regla V-90**: Expresión de estados: los estados suprimidos en el OPD padre (SDn) se revelan en el OPD hijo (SDn+1) vinculados a subprocesos específicos. Este es el mecanismo inverso de la supresión.
 
-### 10.7 Simplificación de OPD
+## 10.7 Simplificación de OPD
 
 Un subconjunto de subprocesos puede reagruparse en un nuevo proceso compacto mediante recomposición, generando un OPD simplificado con menos niveles.
 
-### 10.8 Visibilidad de enlaces en OPD hijo
+## 10.8 Visibilidad de enlaces en OPD hijo
 
 **Regla V-91**: Los enlaces **estructurales** al contenedor son visibles en el OPD hijo; definen la estructura del despliegue o de la descomposición.
 
@@ -672,7 +674,7 @@ Un subconjunto de subprocesos puede reagruparse en un nuevo proceso compacto med
 
 **Regla V-94**: Los enlaces que no tocan el contenedor ni ningún elemento interno del OPD hijo son invisibles en ese OPD.
 
-### 10.9 Propiedades invariantes entre niveles
+## 10.9 Propiedades invariantes entre niveles
 
 Las siguientes propiedades son inmutables a través de todos los niveles de refinamiento:
 
@@ -686,17 +688,17 @@ Las siguientes propiedades son inmutables a través de todos los niveles de refi
 
 **Regla V-99**: **Importancia proporcional**: la importancia relativa de una cosa es proporcional al OPD más alto de la jerarquía donde aparece. Cosas que aparecen en SD son más importantes que las que aparecen solo en SDn.
 
-### 10.10 Prohibición de refinamiento cíclico
+## 10.10 Prohibición de refinamiento cíclico
 
 **Regla V-100**: No se puede refinar una cosa desde dentro de su propio árbol de refinamiento. El chequeo es **transitivo**: se verifica toda la cadena de ancestros del OPD. Esto previene loops infinitos en la jerarquía de OPDs.
 
-### 10.11 Instancias visuales entre OPDs
+## 10.11 Instancias visuales entre OPDs
 
 **Regla V-101**: Instancia visual ≠ instancia lógica. Una instancia visual es la misma entidad del modelo mostrada en un OPD diferente (misma identidad, diferente vista). Una instancia lógica es una relación de clasificación o herencia (entidad diferente).
 
 **Regla V-102**: No se puede crear una instancia visual entre tipos diferentes: un objeto no puede ser instancia visual de un proceso, ni viceversa.
 
-### 10.12 Semi-plegado (compresión parcial de estructura)
+## 10.12 Semi-plegado (compresión parcial de estructura)
 
 El semi-plegado es un mecanismo de visualización intermedio entre el plegado completo y el despliegue completo de una relación estructural. Permite mostrar la existencia de refinadores sin expandirlos completamente. No existe plantilla OPL-ES canónica para el semi-plegado; su expresión es exclusivamente visual.
 
@@ -1710,6 +1712,11 @@ Las operaciones auxiliares son gestos de la herramienta sobre un OPD activo que 
 | V-198 | Smart-guides en canal UI reservado, no patrón discontinuo |
 | V-199 | Auto-ajuste de viewport en export evita símbolos huérfanos recortados |
 | V-200 | Cuatro modos de canvas: estático/edición/navegación/modal + runtime |
+
+## Índice de reglas — V-201 a V-263 (v2: canon-diagrama, requisitos, sub-modelo y operaciones auxiliares)
+
+| Regla | Resumen |
+|---|---|
 | V-201 | Solo estático-exportable es base de conformidad |
 | V-202 | Handles y chrome UI omitidos en canon |
 | V-203 | UI en canal reservado, no ambiguo respecto a §1/§2/§3/§8/§10/§17/§19/§20/§23 |

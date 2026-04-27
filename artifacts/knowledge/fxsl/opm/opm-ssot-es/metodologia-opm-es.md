@@ -1,9 +1,13 @@
 ---
 _manifest:
   urn: urn:fxsl:kb:manual-metodologico-opm-es
-version: 4.1.0-ampliada.4
-status: draft-publishable
-source_base: "ssot/metodologia-opm-es.md (v4.0.0)"
+  provenance:
+    created_by: kora/curator
+    created_at: '2026-04-27'
+    source: "Consolidacion SSOT OPM v3.0.0: capa procedimental canonica del corpus OPM-ES (manual metodologico de modelado)."
+version: 3.0.0
+status: published
+source_base: "ssot/metodologia-opm-es.md (v4.0.0); metodologia-opm-es.md (v4.1.0-ampliada.4)"
 derived_from:
   - ssot/metodologia-opm-es.md
   - ssot-v2-draft/metodologia-opm-es-merge-ready.md
@@ -53,11 +57,11 @@ relations:
 ---
 
 
-# Manual metodológico de OPM (versión ampliada v2)
+# Manual metodológico de OPM (v3.0.0)
 
-Esta versión ampliada integra en un solo texto publicable los ajustes ya consolidados en la copia `merge-ready`: taxonomía revisada de mecanismos, organización del árbol OPD y del modelo compuesto, tipología fuerte de vistas, ejecución compuesta sin asumir un árbol global único e invariantes adicionales para identidad persistente y referencias inter-modelo.
+Esta versión integra los ajustes de la línea `merge-ready`: taxonomía revisada de mecanismos, organización del árbol OPD y del modelo compuesto, tipología fuerte de vistas, ejecución compuesta sin asumir un árbol global único e invariantes adicionales para identidad persistente y referencias inter-modelo.
 
-Sustituye, cuando se publique, al archivo `ssot/metodologia-opm-es.md`.
+Es la **capa procedimental canónica** del corpus OPM-ES en KORA (v3.0.0). Reemplaza a la línea `ssot/` legacy, ya removida del repositorio.
 
 ## 1 Alcance y contrato editorial
 
