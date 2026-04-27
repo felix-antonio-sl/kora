@@ -1,0 +1,124 @@
+# Wizard SD — del proposito a las cosas iniciales
+
+Condensado operativo del wizard de System Diagram del manual metodologico (`urn:fxsl:kb:manual-metodologico-opm-es`). Es la receta canonica para construir el OPD de nivel cero.
+
+## Paso 0 — Verificar aplicabilidad de OPM
+
+Antes de modelar, confirmar que el sistema tiene **funcion transformadora identificable**. Pregunta clave:
+
+> "¿Que cosa cambia, se crea o se destruye por la accion del sistema?"
+
+Si la respuesta es nula o solo describe estructura estatica, OPM no es la herramienta adecuada. Sugerir alternativa (`data-modeling`, `ontologista-gist`, BPMN, etc.) y abortar.
+
+## Paso 1 — Identificar el proposito
+
+Una sola frase: **"Este sistema sirve para ___"**. Ejemplos:
+
+- "transformar agua y cafe molido en cafe hecho"
+- "diagnosticar pacientes en urgencia"
+- "convertir solicitudes ciudadanas en resoluciones administrativas"
+
+El proposito es la **funcion principal**, no una descripcion de estructura.
+
+## Paso 2 — Nominalizar la funcion como proceso central
+
+La funcion → un proceso del SD. Convencion de nombre: gerundio o sustantivo derivado de verbo activo.
+
+| Funcion | Proceso |
+|---------|---------|
+| transformar agua y cafe en cafe hecho | Hacer Cafe |
+| diagnosticar pacientes | Diagnosticar |
+| convertir solicitudes en resoluciones | Resolver Solicitud |
+
+Una sola idea por proceso. Si necesitas varios verbos, probablemente son sub-procesos para una iteracion posterior de in-zooming.
+
+## Paso 3 — Identificar transformees
+
+Las cosas que **cambian** por la accion del proceso. Tres patrones:
+
+### 3a. Consumo / Produccion
+
+El proceso consume una cosa y produce otra distinta.
+
+- *Hacer Cafe* consume *Agua* y *Cafe Molido*; produce *Cafe Hecho*.
+
+### 3b. Cambio de estado
+
+Una misma cosa pasa de estado A a estado B por la accion del proceso.
+
+- *Diagnosticar* afecta *Paciente*: pasa de *no-diagnosticado* a *diagnosticado*.
+
+### 3c. Creacion / Destruccion
+
+El proceso crea o destruye una cosa que antes no existia / dejara de existir.
+
+- *Resolver Solicitud* crea *Resolucion Administrativa*.
+
+## Paso 4 — Identificar enablers
+
+Cosas necesarias para que el proceso ocurra **pero que no son consumidas ni transformadas**:
+
+- **Agent** (humano u organizacional): quien dispara el proceso.
+  - *Persona* manipula *Hacer Cafe*.
+  - *Medico* manipula *Diagnosticar*.
+  - *Funcionario* manipula *Resolver Solicitud*.
+
+- **Instrument** (herramienta, dispositivo, sistema externo):
+  - *Hacer Cafe* usa *Cafetera*.
+  - *Diagnosticar* usa *Historia Clinica*.
+  - *Resolver Solicitud* usa *Sistema Documental*.
+
+OPM exige que `agent` sea humano u organizacion. Si lo que activa el proceso es una maquina, va como `instrument`, no `agent`.
+
+## Paso 5 — Conectar con links procedurales
+
+Tipos canonicos (de `opl-es` y `opd-es`):
+
+| Link | Cuando | OPL-ES |
+|------|--------|--------|
+| consumption | proceso consume objeto entero | `<Proceso> consume <Objeto>.` |
+| result | proceso produce objeto nuevo | `<Proceso> produce <Objeto>.` |
+| effect | proceso cambia estado de objeto | `<Proceso> afecta <Objeto>.` |
+| agent | humano/organizacion activa el proceso | `<Agente> manipula <Proceso>.` |
+| instrument | herramienta requerida sin consumirse | `<Proceso> usa <Instrumento>.` |
+| condition | precondicion habilitante | `<Proceso> ocurre cuando <Objeto> esta en <estado>.` |
+
+Validar contra `opd-es` que cada link respete su gramatica visual (V-* aplicables).
+
+## Paso 6 — Bimodalidad
+
+Para cada hecho del SD, emitir la sentencia OPL-ES correspondiente. Si una sentencia OPL no se puede formular sin ambiguedad, el OPD esta mal construido.
+
+Ejemplo minimo (cafetera):
+
+```
+SD del sistema Hacer Cafe.
+
+Cafe Hecho es un objeto.
+Agua es un objeto.
+Cafe Molido es un objeto.
+Persona es un objeto.
+Cafetera es un objeto.
+Hacer Cafe es un proceso.
+
+Hacer Cafe consume Agua y Cafe Molido.
+Hacer Cafe produce Cafe Hecho.
+Persona manipula Hacer Cafe.
+Hacer Cafe usa Cafetera.
+```
+
+## Paso 7 — Decidir si el SD basta
+
+Tres criterios:
+
+1. **Suficiencia de detalle**: ¿el SD responde la pregunta del usuario? Si si → entregar; si no → refinar.
+2. **Audiencia**: ¿el destinatario necesita ver sub-procesos? Si si → in-zooming.
+3. **Validez**: pasar al estado `validar-modelo` antes de cualquier refinement.
+
+## Anti-patrones del SD
+
+- SD con **mas de un proceso central**: senal de que la funcion no esta bien identificada. Refinar el proposito.
+- SD **sin transformee**: si nada cambia, OPM no aplica.
+- SD con **agent no humano**: si activa una maquina, es instrument.
+- SD con **mas de 7±2 cosas visibles**: senal de que necesitas in-zooming inmediato.
+- SD que **describe estructura sin proceso**: usar otra herramienta (ERD, OWL).
