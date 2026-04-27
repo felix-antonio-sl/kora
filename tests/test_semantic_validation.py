@@ -1000,7 +1000,7 @@ class SemanticValidationTests(unittest.TestCase):
     def test_validate_traces_semantics_flags_fxsl_direct_support(self):
         failures = validate_traces_semantics(
             ROOT / "governance" / "dummy.md",
-            "Traces to: formal/05 §1.2 (Bounded Lattice), artifacts/knowledge/fxsl/cat/audit-patterns.md\n",
+            "Traces to: formal/05 §1.2 (Bounded Lattice), artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/18-calidad-riesgo.md\n",
         )
         self.assertEqual(
             failures,

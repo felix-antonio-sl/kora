@@ -20,18 +20,18 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Algebraic databases, profunctors, bimodules | urn:fxsl:kb:algebraic-databases |
-| Multi-model, Grothendieck, schema cat | urn:fxsl:kb:unified-multimodel |
-| Data lakes, zones, categorical framework | urn:fxsl:kb:data-lakes-ct |
-| CQL, provenance, data integration | urn:fxsl:kb:cql-data-integration |
-| Categorical Systems Theory, lenses, wiring | urn:fxsl:kb:categorical-systems-theory |
-| Schema evolution, versions, migration | urn:fxsl:kb:schema-evolution |
-| DAL, SQL/NoSQL, APIs, repos, ORMs | urn:fxsl:kb:data-access-layers |
-| CT approaches databases (survey) | urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases |
-| Formal framework DL CT | urn:fxsl:kb:formal-framework-data-lakes-ct |
-| Formal framework multimodel transformations | urn:fxsl:kb:formal-framework-multimodel-data-transformations |
-| Multicategory multimodel query processing | urn:fxsl:kb:multicategory-multimodel-query-processing |
-| Unified representation transformation multimodel | urn:fxsl:kb:unified-representation-transformation-multimodel |
+| Algebraic databases, profunctors, bimodules | urn:kora:kb:cat-foundations |
+| Multi-model, Grothendieck, schema cat | urn:kora:kb:cat-discovery-presheaf |
+| Data lakes, zones, categorical framework | urn:kora:kb:cat-discovery-presheaf |
+| CQL, provenance, data integration | urn:kora:kb:cat-audit-invariants |
+| Categorical Systems Theory, lenses, wiring | urn:kora:kb:cat-behavioral-preservation |
+| Schema evolution, versions, migration | urn:kora:kb:cat-audit-invariants |
+| DAL, SQL/NoSQL, APIs, repos, ORMs | urn:kora:kb:cat-audit-invariants |
+| CT approaches databases (survey) | urn:kora:kb:cat-foundations |
+| Formal framework DL CT | urn:kora:kb:cat-discovery-presheaf |
+| Formal framework multimodel transformations | urn:kora:kb:cat-discovery-presheaf |
+| Multicategory multimodel query processing | urn:kora:kb:cat-discovery-presheaf |
+| Unified representation transformation multimodel | urn:kora:kb:cat-discovery-presheaf |
 
 ## web_search
 

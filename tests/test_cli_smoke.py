@@ -104,7 +104,8 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertIn("## Auditoria meta-kora", contracts_markdown)
         self.assertIn("```mermaid", wiring_markdown)
         self.assertIn("routes", wiring_payload)
-        self.assertIn("promoted", ledger_payload["status_counts"])
+        self.assertEqual(ledger_payload["meta"]["entry_count"], 0)
+        self.assertEqual(ledger_payload["status_counts"], {})
         self.assertIn("meta-kora", audit_payload["cohorts"])
         self.assertIn("domains", audit_payload["cohorts"])
 

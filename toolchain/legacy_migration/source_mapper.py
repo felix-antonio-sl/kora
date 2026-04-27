@@ -379,38 +379,9 @@ GN_FROM_YAML = [
 GN_MAPPINGS = GN_WITH_SOURCE + GN_FROM_YAML
 
 # ---------------------------------------------------------------------------
-# FXSL — 24 YMLs + 6 MDs = 30 files total
+# FXSL — remaining curated files after fxsl/cat root-note removal
 # ---------------------------------------------------------------------------
 FXSL_MAPPINGS = [
-    # cat — 23 YMLs
-    (
-        f"{FXSL_BASE}/cat/seven-sketches.yml",
-        None,
-        "FROM_SOURCE",
-        "Book: Seven Sketches in Compositionality (Fong & Spivak); Zotero academic paper",
-    ),
-    (f"{FXSL_BASE}/cat/action-primary-key.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/algebraic-databases.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/algebraic-model-management.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/audit-patterns.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/categorical-data-structures.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/categorical-systems-theory.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/coalgebras.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/cognitive-toolkit.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/constraint-logic.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/cql-data-integration.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/data-access-layers.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/data-lakes-ct.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/exploring-category-theoretic-approaches-to-databases.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/formal-framework-data-lakes-ct.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/formal-framework-multimodel-data-transformations.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/kb-category.yml", None, "FROM_SOURCE", "Zotero academic paper; likely fx_ctfp (Category Theory for Programmers)"),
-    (f"{FXSL_BASE}/cat/mathematical-modelling.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/mbse-consistency.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/multicategory-multimodel-query-processing.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/schema-evolution.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/unified-multimodel.yml", None, "FROM_SOURCE", "Zotero academic paper"),
-    (f"{FXSL_BASE}/cat/unified-representation-transformation-multimodel.yml", None, "FROM_SOURCE", "Zotero academic paper"),
     # gist — 1 YAML + 4 MDs
     (f"{FXSL_BASE}/gist/fx-guide-onto-gist-001-audit-protocol.yml", None, "FROM_YAML", "Already in YAML format"),
     (f"{FXSL_BASE}/gist/fx-address-guidance.md", None, "FROM_YAML", "Already in markdown format"),

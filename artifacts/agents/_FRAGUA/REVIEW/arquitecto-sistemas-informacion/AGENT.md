@@ -28,16 +28,11 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex]
     conocimiento_permitido:
-      - "urn:fxsl:kb:algebraic-databases"
-      - "urn:fxsl:kb:unified-multimodel"
-      - "urn:fxsl:kb:data-lakes-ct"
-      - "urn:fxsl:kb:cql-data-integration"
-      - "urn:fxsl:kb:categorical-systems-theory"
-      - "urn:fxsl:kb:schema-evolution"
-      - "urn:fxsl:kb:data-access-layers"
-      - "urn:fxsl:kb:exploring-category-theoretic-approaches-to-databases"
-      - "urn:fxsl:kb:formal-framework-data-lakes-ct"
-      - "urn:fxsl:kb:formal-framework-multimodel-data-transformations"
+      - "urn:kora:kb:cat-foundations"
+      - "urn:kora:kb:cat-skill-algebra"
+      - "urn:kora:kb:cat-discovery-presheaf"
+      - "urn:kora:kb:cat-audit-invariants"
+      - "urn:kora:kb:cat-behavioral-preservation"
     componible_con:
       - "urn:kora:artefacto:arquitecto-categorico"
       - "urn:kora:artefacto:data-modeling"

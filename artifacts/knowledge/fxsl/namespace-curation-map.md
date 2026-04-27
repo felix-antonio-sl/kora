@@ -12,7 +12,10 @@ _manifest:
     - version: "1.1.0"
       date: "2026-04-27"
       change: "Reemplaza shards legacy de OPM (opm-iso-19450-p02..p05, metodologia-modelamiento-opm-p02..p04) por URNs canonicas SSOT v3.0.0 (opm-es, opd-es, opl-es, manual-metodologico-opm-es). Remueve opm-dynamic-behavior* y opcloud-tutorial-visual-observations* (eliminados del corpus productivo)."
-version: "1.1.0"
+    - version: "1.2.0"
+      date: "2026-04-27"
+      change: "Remueve del mapa de curacion las citas a notas raiz eliminadas de fxsl/cat."
+version: "1.2.0"
 status: publicado
 tags: [namespace-map, kb-graph, curation, fxsl]
 lang: es
@@ -23,15 +26,9 @@ relations:
   depends:
     - "urn:kora:kb:knowledge-spec"
   cites:
-    - "urn:fxsl:kb:action-primary-key"
-    - "urn:fxsl:kb:algebraic-model-management"
     - "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual"
-    - "urn:fxsl:kb:audit-patterns"
-    - "urn:fxsl:kb:categorical-data-structures"
     - "urn:fxsl:kb:chapter0-operador-solitario"
     - "urn:fxsl:kb:chapter0-operador-solitario-p02"
-    - "urn:fxsl:kb:cognitive-toolkit"
-    - "urn:fxsl:kb:data-access-layers"
     - "urn:fxsl:kb:fx-address-guidance"
     - "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol"
     - "urn:fxsl:kb:fx-guide-onto-gist-001-audit-protocol-p02"
@@ -57,7 +54,6 @@ relations:
     - "urn:fxsl:kb:icas-topoi"
     - "urn:fxsl:kb:icas-universales"
     - "urn:fxsl:kb:manual-metodologico-opm-es"
-    - "urn:fxsl:kb:multicategory-multimodel-query-processing"
     - "urn:fxsl:kb:opd-es"
     - "urn:fxsl:kb:opl-es"
     - "urn:fxsl:kb:opm-es"

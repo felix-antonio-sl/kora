@@ -4,50 +4,7 @@ from pathlib import Path
 from .config import KNOWLEDGE_ROOT, KORA_ROOT, LEGACY_FXSL_SIGNALS
 
 
-PROMOTED_FXSL_TARGETS = {
-    "audit-patterns": ["urn:kora:kb:cat-audit-invariants"],
-    "constraint-logic": ["urn:kora:kb:cat-audit-invariants"],
-    "kb-category": ["urn:kora:kb:cat-audit-invariants"],
-    "schema-evolution": [
-        "urn:kora:kb:cat-audit-invariants",
-        "urn:kora:kb:cat-behavioral-preservation",
-    ],
-    "coalgebras": ["urn:kora:kb:cat-behavioral-preservation"],
-    "categorical-systems-theory": ["urn:kora:kb:cat-behavioral-preservation"],
-    "action-primary-key": ["urn:kora:kb:cat-behavioral-preservation"],
-    "algebraic-databases": [
-        "urn:kora:kb:cat-foundations",
-        "urn:kora:kb:cat-skill-algebra",
-    ],
-    "seven-sketches": [
-        "urn:kora:kb:cat-foundations",
-        "urn:kora:kb:cat-skill-algebra",
-    ],
-    "mbse-consistency": [
-        "urn:kora:kb:cat-ecosystem-2cat",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-    "mathematical-modelling": [
-        "urn:kora:kb:cat-ecosystem-2cat",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-    "data-lakes-ct": [
-        "urn:kora:kb:cat-discovery-presheaf",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-    "unified-multimodel": [
-        "urn:kora:kb:cat-discovery-presheaf",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-    "unified-representation-transformation-multimodel": [
-        "urn:kora:kb:cat-discovery-presheaf",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-    "formal-framework-multimodel-data-transformations": [
-        "urn:kora:kb:cat-discovery-presheaf",
-        "urn:kora:kb:cat-audit-invariants",
-    ],
-}
+PROMOTED_FXSL_TARGETS = {}
 
 
 def classify_fxsl_cat_file(path):

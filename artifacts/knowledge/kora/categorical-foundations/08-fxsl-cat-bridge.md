@@ -35,11 +35,11 @@ relations:
 
 ## Purpose
 
-This document records how the legacy FXSL categorical corpus is absorbed into the official KORA formal layer. It is not a replacement for the source notes in `artifacts/knowledge/fxsl/cat/`; it is the canonical bridge that explains which concepts were promoted, where they now live, and how they should be cited from KORA documents.
+This document records how the retired FXSL categorical root-note corpus was absorbed into the official KORA formal layer. It is the canonical bridge that explains which concepts were promoted, where they now live, and how they should be cited from KORA documents.
 
 ## 1. Bridge Rule
 
-**Rule.** When a concept exists both in `artifacts/knowledge/fxsl/cat/` and in the KORA formal layer, KORA documents should cite the KORA formal-layer document for canonical formal traceability and the FXSL note as supporting source material.
+**Rule.** When a concept from the retired FXSL/Cat root notes exists in the KORA formal layer, KORA documents should cite the KORA formal-layer document for canonical formal traceability.
 
 ## 2. Promoted Themes
 
@@ -59,10 +59,10 @@ Use the following order:
 
 ## 4. Legacy Status
 
-The FXSL corpus remains:
-- valid as descriptive mathematical knowledge
-- useful as a source of examples and legacy terminology
-- non-canonical for KORA traceability once a concept has been promoted into documents 00-08
+The retired FXSL/Cat root-note corpus remains:
+- absorbed as source provenance for documents 00-08
+- non-canonical for KORA traceability
+- absent from the productive catalog after retirement
 
 ## 5. Migration Guidance
 
@@ -74,4 +74,4 @@ When bridging a legacy concept:
 
 ## 6. Result
 
-The practical consequence of this bridge is simple: the FXSL corpus remains searchable and reusable, but the official mathematical backbone for KORA now extends through documents 00-08, with 06 and 07 carrying the promoted audit and behavioral machinery.
+The practical consequence of this bridge is simple: the retired FXSL/Cat root notes no longer participate in the productive catalog, and the official mathematical backbone for KORA now extends through documents 00-08, with 06 and 07 carrying the promoted audit and behavioral machinery.

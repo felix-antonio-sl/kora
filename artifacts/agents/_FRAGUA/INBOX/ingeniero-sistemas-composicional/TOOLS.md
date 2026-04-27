@@ -20,8 +20,8 @@ _manifest:
 
 | Topic | URN |
 |-------|-----|
-| Categorical Systems Theory, lenses, wiring | urn:fxsl:kb:categorical-systems-theory |
-| MBSE, S2ML, consistency | urn:fxsl:kb:mbse-consistency |
+| Categorical Systems Theory, lenses, wiring | urn:kora:kb:cat-behavioral-preservation |
+| MBSE, S2ML, consistency | urn:kora:kb:cat-ecosystem-2cat |
 
 ## web_search
 

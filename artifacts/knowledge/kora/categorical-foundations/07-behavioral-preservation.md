@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: FS
     created_at: '2026-03-08'
-    source: "FXSL categorical behavior corpus (coalgebras, categorical-systems-theory, action-primary-key, schema-evolution) consolidated into the KORA formal layer"
+    source: "Retired FXSL categorical behavior root notes (coalgebras, categorical-systems-theory, action-primary-key, schema-evolution) consolidated into the KORA formal layer"
 version: 1.0.0
 status: published
 tags:

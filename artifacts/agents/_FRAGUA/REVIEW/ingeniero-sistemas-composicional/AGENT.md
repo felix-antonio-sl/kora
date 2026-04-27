@@ -28,8 +28,9 @@ extensions:
       metafora_relacional: centro-de-control
     entornos_objetivo: [claude-code, codex]
     conocimiento_permitido:
-      - "urn:fxsl:kb:categorical-systems-theory"
-      - "urn:fxsl:kb:mbse-consistency"
+      - "urn:kora:kb:cat-behavioral-preservation"
+      - "urn:kora:kb:cat-ecosystem-2cat"
+      - "urn:kora:kb:cat-audit-invariants"
       - "urn:fxsl:kb:icas-sintesis"
       - "urn:fxsl:kb:icas-composicion"
     componible_con:
