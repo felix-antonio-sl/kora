@@ -16,6 +16,11 @@ relations:
   depends:
     - "urn:kora:kb:knowledge-spec"
   cites:
+    - "urn:salud:kb:salubrista"
+    - "urn:salud:kb:salubrista-atlas-integrado"
+    - "urn:salud:kb:salubrista-body-of-knowledge"
+    - "urn:salud:kb:perfil-salubrista-copiloto-estrategico"
+    - "urn:salud:kb:perfil-salubrista-hospitalizacion-integrada"
     - "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
     - "urn:salud:kb:gestion-redes-general-p02"
     - "urn:salud:kb:gestion-redes-general-p03"

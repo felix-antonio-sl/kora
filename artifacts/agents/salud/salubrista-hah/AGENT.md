@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-23'
     source: Migracion desde artifacts/agents/_FRAGUA/INBOX/salubrista-hah/AGENT.md
       (legacy agentfile v1 con IDENTITY.md) a shape unified autoria-spec v1.2
-version: 2.0.0
+version: 2.1.0
 status: activo
 nombre: Salubrista HAH
 descripcion: Salubrista especializado en hospitalizacion integrada (intrahospitalaria
@@ -45,6 +45,10 @@ extensions:
     - claude-code
     - openclaw
     conocimiento_permitido:
+    - urn:salud:kb:salubrista
+    - urn:salud:kb:salubrista-atlas-integrado
+    - urn:salud:kb:salubrista-body-of-knowledge
+    - urn:salud:kb:perfil-salubrista-hospitalizacion-integrada
     - urn:salud:kb:hodom-reglamento-ds1-2022
     - urn:salud:kb:hodom-decreto-exento-31-2024
     - urn:salud:kb:hodom-norma-tecnica-2024
@@ -60,6 +64,7 @@ extensions:
     - urn:salud:kb:firs-framework-integrado-razonamiento-salud
     componible_con:
     - urn:salud:artefacto:salubrista
+    - urn:salud:artefacto:hospitalizacion-domiciliaria
     harness_vector:
       pi: 0
       mu: 0
@@ -266,6 +271,9 @@ artefacto:
       si excede ese baseline, declarar como inferencia y verificar.'
     - 'Fuera de scope: prescripcion directa, diagnostico clinico individual, reemplazo
       de conduccion estrategica humana.'
+    - 'Skill_HODOM: para consultas de hospitalizacion domiciliaria, direccion tecnica,
+      criterios de ingreso/egreso, camas virtuales o escalamiento, activar
+      urn:salud:artefacto:hospitalizacion-domiciliaria'
     compromisos_eticos:
       safety_norm: Alta; seguridad del paciente en transiciones y domicilio.
       fairness: Alta; equidad en acceso a HD por territorio.
