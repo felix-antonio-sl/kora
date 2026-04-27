@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-27"
     source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es)."
 version: "1.0.0"
-status: borrador
+status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal para construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) sobre cualquier sistema, anclada a la SSOT canonica de cuatro capas."
 tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual]
@@ -18,9 +18,9 @@ extensions:
       pi: 2
       mu: 0
       xi: 1
-      lambda: 1
+      lambda: 0
       phi: 1
-      sigma: [1, 2, 3, 2, 1]
+      sigma: [1, 1, 3, 1, 0]
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
