@@ -5,7 +5,7 @@ _manifest:
     created_by: FS
     created_at: '2026-04-15'
     source: EM Model, ACGME, ABEM, CanMEDS — TOC del body of knowledge diferencial
-version: 1.0.0
+version: 1.1.0
 status: published
 tags:
 - toc
@@ -17,6 +17,10 @@ relations:
   depends:
   - urn:salud:kb:med-emergencia
   cites:
+  - urn:salud:kb:me-body-of-knowledge-diferencial
+  - urn:salud:kb:me-perfil-urgenciologo
+  - urn:salud:kb:me-razonamiento-clinico
+  - urn:salud:kb:me-evaluacion-primaria
   - urn:salud:kb:me-dolor-toracico
 extensions:
   kora:

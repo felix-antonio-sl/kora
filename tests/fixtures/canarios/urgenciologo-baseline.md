@@ -39,11 +39,33 @@ con sudoración y náuseas. FC 98, PA 165/95, SatO2 96% aire ambiente.
 
 El subagent declara acceso únicamente a estas rutas de `artifacts/knowledge/salud/med-emergencia/`:
 
-- `urn:salud:kb:med-emergencia` → `med-emergencia-placeholder.md`
+- `urn:salud:kb:med-emergencia` → `med-emergencia/index.md`
+- `urn:salud:kb:me-atlas-integrado` → `atlas-integrado.md`
+- `urn:salud:kb:me-body-of-knowledge-diferencial` → `body-of-knowledge-diferencial.md`
 - `urn:salud:kb:me-toc-body-of-knowledge` → `toc-body-of-knowledge.md`
 - `urn:salud:kb:me-razonamiento-clinico` → `razonamiento-clinico.md`
 - `urn:salud:kb:me-evaluacion-primaria` → `evaluacion-primaria.md`
+- `urn:salud:kb:me-sincope` → `sincope.md`
 - `urn:salud:kb:me-dolor-toracico` → `dolor-toracico.md`
+- `urn:salud:kb:me-disnea` → `disnea.md`
+- `urn:salud:kb:me-tec-leve` → `tec-leve.md`
+- `urn:salud:kb:me-compromiso-conciencia` → `compromiso-conciencia.md`
+- `urn:salud:kb:me-mareo-vertigo` → `mareo-vertigo.md`
+- `urn:salud:kb:me-deficit-neurologico` → `deficit-neurologico.md`
+- `urn:salud:kb:me-cefalea-convulsiones` → `cefalea-convulsiones.md`
+- `urn:salud:kb:me-dolor-abdominal` → `dolor-abdominal.md`
+- `urn:salud:kb:me-fiebre-sin-foco` → `fiebre-sin-foco.md`
+- `urn:salud:kb:me-hemorragia-digestiva` → `hemorragia-digestiva.md`
+- `urn:salud:kb:me-infecciones-gastrointestinales` → `infecciones-gastrointestinales.md`
+- `urn:salud:kb:me-infecciones-respiratorias-altas` → `infecciones-respiratorias-altas.md`
+- `urn:salud:kb:me-infecciones-respiratorias-bajas` → `infecciones-respiratorias-bajas.md`
+- `urn:salud:kb:me-sintomas-urinarios` → `sintomas-urinarios.md`
+- `urn:salud:kb:me-traumatismos-frecuentes` → `traumatismos-frecuentes.md`
+
+Nota 2026-04-27: este contrato fue ampliado desde la astilla inicial de
+`dolor-toracico` hacia el corpus integrado de presentaciones publicadas. La
+evaluacion baseline de 2026-04-22 que sigue abajo conserva evidencia historica
+del canario original de dolor toracico.
 
 ## Gate binario
 

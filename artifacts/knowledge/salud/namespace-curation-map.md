@@ -16,7 +16,6 @@ relations:
   depends:
     - "urn:kora:kb:knowledge-spec"
   cites:
-    - "urn:salud:kb:bok-medicina-emergencia"
     - "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
     - "urn:salud:kb:gestion-redes-general-p02"
     - "urn:salud:kb:gestion-redes-general-p03"

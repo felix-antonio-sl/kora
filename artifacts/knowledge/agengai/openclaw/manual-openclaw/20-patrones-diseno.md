@@ -161,7 +161,7 @@ Cron (7 AM) ──────────────────────�
 
 - **Tiers:**
 
-- **Tier 1 — Persistentes** (`agents.list[]`): goreologo, medico-urgencias, arquitecto-gore → sesiones long-lived, contexto acumulado
+- **Tier 1 — Persistentes** (`agents.list[]`): goreologo, urgenciologo, arquitecto-gore → sesiones long-lived, contexto acumulado
 - **Tier 2 — On-demand** (`sessions_spawn`): tareas específicas → aisladas, model-selectable, auto-archive
 
 - ---
