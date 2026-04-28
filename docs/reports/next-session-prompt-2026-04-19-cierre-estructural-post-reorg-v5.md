@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:next-session-prompt-2026-04-19-cierre-estructural-post-reorg-v5"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Prompt de continuidad posterior al cierre estructural post-reorg v5."
 version: "1.0.0"
@@ -27,7 +27,7 @@ Copiar y pegar el siguiente bloque como primer mensaje de la proxima sesion.
 ## Prompt a pegar
 
 ```text
-Encarnate en artifacts/skills/_TALLER/INBOX/arquitecto-categorico y opera
+Encarnate en artifacts/skills/_TALLER/INBOX/cat-thinking y opera
 sobre KORA (/home/felix/kora, rama master, actualizada al commit de cierre
 estructural del 2026-04-19 o posterior).
 

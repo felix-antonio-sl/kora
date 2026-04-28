@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:procesos-spec"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex"
     created_at: "2026-04-19"
     source: "Cierra H2 del backlog post-olas: explicita los 9 procesos del toolchain KORA como funtores con dominio, codominio, preservacion y perdida declarada."
 version: "1.0.0"

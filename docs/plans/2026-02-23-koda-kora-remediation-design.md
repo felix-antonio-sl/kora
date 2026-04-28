@@ -392,5 +392,5 @@ Al completar las 5 fases, `gobernanza.md` debe actualizarse para reconocer:
 - Fong & Spivak, "Seven Sketches in Compositionality" — fundamentos
 - Fukada, 2024. "Action is the Primary Key" — memoria episódica categórica
 - KB interna: `/knowledge/domains/cat/` (23 artefactos)
-- Agente: Arquitecto Categórico v4 (`/fxsl/agents/arquitecto-categorico-v4/`)
+- Agente: Arquitecto Categórico v4 (`/fxsl/agents/cat-thinking-v4/`)
 - Manual OpenClaw: `/knowledge/foundations/core/kora/manual-openclaw/` (25 capítulos)

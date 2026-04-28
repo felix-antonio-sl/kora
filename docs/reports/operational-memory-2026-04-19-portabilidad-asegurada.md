@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:operational-memory-2026-04-19-portabilidad-asegurada"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Memoria operativa compacta del bloque de portabilidad asegurada."
 version: "1.0.0"

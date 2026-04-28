@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:mastra-runtime-extension"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex"
     created_at: "2026-04-19"
     source: "runtime-spec-md v3.8.0 + transmutation-spec v1.1.0 + documentacion oficial de Mastra sobre agents, workflows, snapshots, runtime context y MCP (consultada 2026-04-19)."
 version: "1.0.0"

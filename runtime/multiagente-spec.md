@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:multiagente-spec"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex"
     created_at: "2026-04-19"
     source: "Cierra H5 del backlog post-olas: formaliza coreografia multiagente como sheaf operacional para OpenClaw + ACP y otros runtimes que proyecten ejecucion distribuida."
 version: "1.0.0"

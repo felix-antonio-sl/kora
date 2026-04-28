@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:operational-memory-2026-04-18-ola2-remediacion-profunda"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-18"
     source: "Memoria operativa del cierre de ola-2 remediación profunda. Snapshot de estado + invariantes + comandos."
 version: "1.0.0"

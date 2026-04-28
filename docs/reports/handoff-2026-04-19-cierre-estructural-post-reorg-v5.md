@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:handoff-2026-04-19-cierre-estructural-post-reorg-v5"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Cierre estructural posterior al reorg v5: consolida H6, H5, H2, H13, H23 y H7 en master."
 version: "1.0.0"

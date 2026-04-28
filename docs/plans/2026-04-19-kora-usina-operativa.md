@@ -57,7 +57,7 @@ Auditoria inicial: strict 17/17 verde, 302 tests OK, 525 nodos KB sin huerfanos.
 | # | Tarea | Criterio cierre |
 |---|-------|-----------------|
 | 2.1 | Comando/vista de catalogo | `python3 toolchain/kora agents --list --with-deps` o `docs/generated/agent-index.md` legible: nombre, URN, hash, skills usadas, knowledge citado, runtime targets soportados |
-| 2.2 | Promover 3-5 workspaces | Por demanda real, desde `_FRAGUA/INBOX`. Candidatos: `polymath`, `opm-specialist`, `salubrista`, `steipete`, `forjador-openclaw`. No inventario muerto |
+| 2.2 | Promover 3-5 workspaces | Por demanda real, desde `_FRAGUA/INBOX`. Candidatos: `polymath`, `modelamiento-opm`, `salubrista`, `steipete`, `forjador-openclaw`. No inventario muerto |
 | 2.3 | Check `bundle-coherence` | Nuevo check: AGENT.md declara deps `knowledge:` y `skills:` por URN; el check verifica existencia + productivo (no staging). Sumar al strict |
 | 2.4 | Test de composicion viva | Un agente promovido usando una skill promovida que cita un knowledge promovido. Los tres transitaron staging → productivo en fases 1-2 |
 

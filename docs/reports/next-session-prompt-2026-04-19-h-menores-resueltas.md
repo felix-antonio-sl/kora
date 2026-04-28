@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:next-session-prompt-2026-04-19-h-menores-resueltas"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Prompt autocontenido para retomar KORA despues del cierre de H9 H17 H20 H22."
 version: "1.0.0"
@@ -24,7 +24,7 @@ Copiar el bloque en `<prompt>` como mensaje inicial de la proxima sesion sobre
 `/home/felix/kora`.
 
 <prompt>
-Encarnate en artifacts/skills/_TALLER/INBOX/arquitecto-categorico y opera
+Encarnate en artifacts/skills/_TALLER/INBOX/cat-thinking y opera
 sobre KORA (/home/felix/kora, rama master, HEAD posterior al cierre de H9 H17
 H20 H22 del 2026-04-19).
 

@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:operational-memory-2026-04-19-h-menores-resueltas"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Memoria operativa compacta del cierre de H9 H17 H20 H22."
 version: "1.0.0"

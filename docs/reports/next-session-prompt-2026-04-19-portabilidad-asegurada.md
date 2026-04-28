@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:next-session-prompt-2026-04-19-portabilidad-asegurada"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Prompt autocontenido para continuar KORA en la proxima sesion."
 version: "1.0.0"
@@ -24,7 +24,7 @@ Copiar el bloque en `<prompt>` como mensaje inicial del proximo Claude Code
 en `/home/felix/kora`.
 
 <prompt>
-Encarnate en artifacts/skills/_TALLER/INBOX/arquitecto-categorico y opera
+Encarnate en artifacts/skills/_TALLER/INBOX/cat-thinking y opera
 sobre KORA (/home/felix/kora, rama master, HEAD posterior al commit de
 portabilidad asegurada del 2026-04-19).
 

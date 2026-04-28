@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:next-session-prompt-2026-04-18-ola2-remediacion-profunda"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-18"
     source: "Prompt de continuación emitido al cierre de la ola-2 de remediación profunda."
 version: "1.0.0"
@@ -21,7 +21,7 @@ relations:
 
 Copiar y pegar el siguiente bloque como primer mensaje de la próxima
 sesión de Claude Code sobre este repo. El agente debe arrancar encarnado
-en `arquitecto-categorico` y priorizar los frentes diferidos por orden
+en `cat-thinking` y priorizar los frentes diferidos por orden
 de palanca functorial.
 
 ---
@@ -29,7 +29,7 @@ de palanca functorial.
 ## Prompt a pegar
 
 ```
-Encarnate en artifacts/skills/_TALLER/INBOX/arquitecto-categorico y opera sobre
+Encarnate en artifacts/skills/_TALLER/INBOX/cat-thinking y opera sobre
 KORA (/home/felix/kora, rama master, actualizada al commit 2a38143 o
 posterior).
 
@@ -78,7 +78,7 @@ dependiente de H6), H17 (catálogo patrones cuando haya ≥3 skills
 productivos), H20 (wiring diagrams Mermaid), H22 (modelo
 organizacional Part IX).
 
-Metodología: encarnar arquitecto-categorico, aplicar modo
+Metodología: encarnar cat-thinking, aplicar modo
 `audit`+`formalize`, citar corpus ICAS-BoK en cada decisión. Sin
 romanticismo por lo legacy.
 

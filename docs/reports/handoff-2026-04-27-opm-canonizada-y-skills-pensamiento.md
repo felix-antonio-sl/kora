@@ -86,7 +86,7 @@ OpenClaw consume el bundle agentskills via fleet gateway; el target `openclaw` d
 - 15 archivos del cluster `REVIEW/fxsl/opm/` eliminados (subsumidos por SSOT v3.0.0).
 - 22 notas raiz `fxsl/cat/*.md` retiradas (consolidadas en `kora/categorical-foundations/`).
 - `namespace-curation-map.md` v1.2.0 con citas limpias.
-- `opm-specialist/AGENT.md` (REVIEW) y 2 agentes mas (`arquitecto-sistemas-informacion`, `ingeniero-sistemas-composicional`) actualizados a las URNs canonicas correspondientes.
+- `modelamiento-opm/AGENT.md` (REVIEW) y 2 agentes mas (`arquitecto-sistemas-informacion`, `ingeniero-sistemas-composicional`) actualizados a las URNs canonicas correspondientes.
 
 ## Decisiones operativas
 
@@ -134,7 +134,7 @@ OpenClaw consume el bundle agentskills via fleet gateway; el target `openclaw` d
 
 ### Inmediatos (proxima sesion sugerida)
 
-1. **Vincular agentes consumidores** a las skills nuevas: `polymath`, `arquitecto-sistemas-informacion`, `ingeniero-sistemas-composicional`, `arquitecto-categorico` (cuando se promueva), `opm-specialist` (cuando se promueva). Cada uno puede declarar `componible_con: [urn:kora:artefacto:cat-thinking, urn:kora:artefacto:modelamiento-opm]` segun el caso.
+1. **Vincular agentes consumidores** a las skills nuevas: `polymath`, `arquitecto-sistemas-informacion`, `ingeniero-sistemas-composicional`, `cat-thinking` (cuando se promueva), `modelamiento-opm` (cuando se promueva). Cada uno puede declarar `componible_con: [urn:kora:artefacto:cat-thinking, urn:kora:artefacto:modelamiento-opm]` segun el caso.
 2. **Probar las skills en uso real** sobre un caso concreto del operador (no el ejemplo cafetera ni el ORM didactico). Medir si las citas a URNs producen razonamiento util.
 
 ### Mediano plazo
@@ -152,13 +152,13 @@ OpenClaw consume el bundle agentskills via fleet gateway; el target `openclaw` d
 1. La SSOT OPM v3.0.0 es estable; cualquier ajuste editorial futuro va a v3.x manteniendo URNs.
 2. El corpus ICAS-BoK (24 piezas v1.0.0) se considera estable; si hay revisiones, van a v1.x.
 3. El operador NO pidio procesar `opm-libro-curado/` ni `opm-methodology/` en esta sesion: estan deliberadamente fuera del alcance.
-4. La skill `cat-thinking` se construyo SIN consultar el `arquitecto-categorico` legacy (en REVIEW): el operador lo pidio explicitamente.
+4. La skill `cat-thinking` se construyo SIN consultar el `cat-thinking` legacy (en REVIEW): el operador lo pidio explicitamente.
 5. Los agentes en _FRAGUA modificados como cascada del retiro de `fxsl/cat/` (arquitecto-sistemas-informacion, ingeniero-sistemas-composicional) siguen en REVIEW; las modificaciones son consistentes con productivo pero no se promovieron.
 6. El subdir `_SCRIPTORIUM/INBOX/model-based-systems-engineering-opm/` permanece untracked (material legacy en cuarentena, no se tomó decisión de incluirlo).
 
 ## Riesgos
 
-1. **`arquitecto-categorico` (en REVIEW) sigue existiendo** y podria confundir a un agente que busque "skill para pensar categorialmente" antes de encontrar `cat-thinking`. Recomendacion: cuando se decida promote/discard de `arquitecto-categorico`, documentar la relacion con `cat-thinking` (¿deprecar uno? ¿mantener ambos con dominios distintos?).
+1. **`cat-thinking` (en REVIEW) sigue existiendo** y podria confundir a un agente que busque "skill para pensar categorialmente" antes de encontrar `cat-thinking`. Recomendacion: cuando se decida promote/discard de `cat-thinking`, documentar la relacion con `cat-thinking` (¿deprecar uno? ¿mantener ambos con dominios distintos?).
 2. **Las URNs `urn:kora:kb:cat-*`** que ahora citan los 2 agentes _FRAGUA estan en `kora/categorical-foundations/`, pero esa Formal Layer fue construida desde las notas raiz `fxsl/cat` que retiramos. Si la Formal Layer requiere reedicion, los agentes pueden quedar con citas obsoletas. Probabilidad baja, pero documentado.
 3. **`status: borrador` en agentes _FRAGUA** modificados como cascada: si alguien intenta `kora promote` sin re-revisar, los agentes entrarian con shape autoria-spec antiguo. Recomendacion: forzar re-revision antes de cualquier promote de esos 2 agentes.
 4. **OpenClaw deploy real no verificado**: las transmutaciones a agentskills son byte-identical y consumibles, pero no instale los bundles en el fleet OpenClaw. Eso es responsabilidad del operador con `openclaw skill install` o equivalente.
@@ -182,7 +182,7 @@ working tree            → limpio (salvo INBOX/model-based-systems-engineering-
 Una proxima sesion deberia comenzar por:
 
 1. `kora index && kora check --strict` para detectar deudas heredadas (mismo patron que aprendimos esta sesion).
-2. Decision sobre el destino de `arquitecto-categorico` (REVIEW): deprecar a favor de `cat-thinking`, mantener con dominio distinto, o reescribir.
+2. Decision sobre el destino de `cat-thinking` (REVIEW): deprecar a favor de `cat-thinking`, mantener con dominio distinto, o reescribir.
 3. Promote selectivo de los 12 agentes + 6 skills en REVIEW que cumplen criterios de audit.
 4. Probar las skills nuevas en un caso real del operador y registrar feedback en este handoff o en uno nuevo.
 

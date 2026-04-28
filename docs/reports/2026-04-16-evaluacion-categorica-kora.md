@@ -1,10 +1,10 @@
 ---
 _nota: |
   Este documento NO es auto-generado por `python3 toolchain/kora sync-docs`.
-  Producido por `polymath` operando con el skill `arquitecto-categorico`
+  Producido por `polymath` operando con el skill `cat-thinking`
   (ICAS-BoK). Se conserva en `docs/reports/` como analisis historico y
   debe permanecer fuera de `docs/generated/`.
-producido_por: polymath + SKILLS/arquitecto-categorico
+producido_por: polymath + SKILLS/cat-thinking
 fecha: 2026-04-16
 modo: audit + model
 alcance: monorepo KORA completo
@@ -12,7 +12,7 @@ alcance: monorepo KORA completo
 
 # Evaluacion e Inventario Categorico de KORA
 
-> **Axioma de diseño** (skill `arquitecto-categorico`):
+> **Axioma de diseño** (skill `cat-thinking`):
 > arquitectura = composicion correcta de partes que **preservan estructura**.
 > Todo lo que no compone, no preserva o no es universal es deuda arquitectonica
 > con nombre categorico.
@@ -34,7 +34,7 @@ donde no.
   canon, fuente de verdad por objeto, invariantes, y legacy como compatibilidad
   residual. Eso es raro y valioso — la mayoria de monorepos no tiene esto.
 - **Hallazgo critico**: `SKILLS/` es **pseudo-portable**. Solo 4 SKILL.md son
-  realmente top-level (`arquitecto-categorico`, `data-modeling`,
+  realmente top-level (`cat-thinking`, `data-modeling`,
   `graphic-design`, `ux-design`). Los 186+ bundles `CM-*` viven duplicados
   1:1 en `AGENTS/{ns}/{agent}/skills/` y en `SKILLS/{ns}/{agent}/CM-*/`. El
   funtor `overlay : AGENTS → SKILLS` es un **embedding diagonal**, no un
@@ -162,7 +162,7 @@ Un agente en KORA tiene **dos formatos activos**:
 | **Coexistencia dual** | **20** | `AGENT.md` gana (§4 gobernanza) | ambos |
 
 Las 6 dimensiones del Agentfile mapean directamente al skill
-`arquitecto-categorico`:
+`cat-thinking`:
 
 | Dimension | Construccion categorica | Doc ICAS |
 |-----------|------------------------|----------|
@@ -202,7 +202,7 @@ portable es el formato preferido de capacidad."
 find SKILLS -maxdepth 2 -name "SKILL.md"
   → SKILLS/ux-design/SKILL.md
   → SKILLS/data-modeling/SKILL.md
-  → SKILLS/arquitecto-categorico/SKILL.md
+  → SKILLS/cat-thinking/SKILL.md
   → SKILLS/graphic-design/SKILL.md
 
 find SKILLS -name "SKILL.md" | wc -l
@@ -243,7 +243,7 @@ Lectura categorica:
 
 **Diagnostico**: la capa SKILLS/ mezcla dos cosas que deben separarse.
 
-1. **Skills portables** (agnosticas de agente): `arquitecto-categorico`,
+1. **Skills portables** (agnosticas de agente): `cat-thinking`,
    `data-modeling`, `graphic-design`, `ux-design`, mas cualquier futura.
    Viven `SKILLS/<nombre>/SKILL.md` — sin namespace.
 2. **Bundles de capacidad de agente** (antes `CM-*`): viven DENTRO del
@@ -501,7 +501,7 @@ critico — los WARN no interrumpen el index.
   bundles agent-bound.
 - **Gana**: claridad categorica. El funtor `SKILLS` es genuinamente
   embedding; deja de ser diagonal. Las 4 skills portables reales
-  (`arquitecto-categorico`, `data-modeling`, etc.) se destacan en vez de
+  (`cat-thinking`, `data-modeling`, etc.) se destacan en vez de
   perderse entre 190 CMs.
 - **Riesgo**: cualquier consumidor externo (openclaw-fleet, transmute
   outputs) que referencie `SKILLS/{ns}/{agent}/` debe reapuntar. Auditar
@@ -678,7 +678,7 @@ operacional.
 
 ## Apendice · Metodo y trazabilidad
 
-- **Skill utilizado**: `SKILLS/arquitecto-categorico/SKILL.md`, modos
+- **Skill utilizado**: `SKILLS/cat-thinking/SKILL.md`, modos
   `audit` (secciones 2-3) + `model` (seccion 5).
 - **Corpus citado**:
   - `references/01-composicion` — composicion, asociatividad, identidad.
@@ -697,7 +697,7 @@ operacional.
 - **No se modifico** ningun artefacto de KORA (specs, knowledge, agents,
   skills, catalog). Solo lectura + este reporte.
 
-## Self-check (skill arquitecto-categorico)
+## Self-check (skill cat-thinking)
 
 - [x] Axioma de diseño evaluado (compone / preserva / es universal) en
       cada hallazgo.

@@ -1,7 +1,7 @@
 # Source Mapping — KORA Phase 1
 # Generated: 2026-02-24
-# Total entries: 208 (175 YAML KBs + 33 non-YAML files in fxsl/gist, fxsl/mbt, kora/)
-# Strategy counts: FROM_SOURCE: 79, FROM_YAML: 129
+# Total entries: 202 (174 YAML KBs + 28 non-YAML files in fxsl/mbt, kora/)
+# Strategy counts: FROM_SOURCE: 79, FROM_YAML: 123
 # Coverage: TDE 93%, FXSL 77%, GN 26%, Gov 56%, Mgmt 50%, Legal 10%, Orko 0%, Kora 0%
 
 mappings:
@@ -391,26 +391,6 @@ mappings:
     strategy: FROM_YAML
     notes: No clear single-source document found in wikiguias corpus
   fxsl:
-  - kb: knowledge/fxsl/gist/fx-guide-onto-gist-001-audit-protocol.yml
-    source: null
-    strategy: FROM_YAML
-    notes: Already in YAML format
-  - kb: knowledge/fxsl/gist/fx-address-guidance.md
-    source: null
-    strategy: FROM_YAML
-    notes: Already in markdown format
-  - kb: knowledge/fxsl/gist/fx-namespace.md
-    source: null
-    strategy: FROM_YAML
-    notes: Already in markdown format
-  - kb: knowledge/fxsl/gist/fx-readme.md
-    source: null
-    strategy: FROM_YAML
-    notes: Already in markdown format
-  - kb: knowledge/fxsl/gist/fx-uom-model.md
-    source: null
-    strategy: FROM_YAML
-    notes: Already in markdown format
   - kb: knowledge/fxsl/mbt/fx-rules.md
     source: null
     strategy: FROM_YAML

@@ -110,7 +110,7 @@ Se está ejecutando un plan de 5 fases para eliminar la deuda técnica entre KOD
 | Directorio | Agentes |
 |------------|---------|
 | `agents/core/` | taskmaster, transformer, smith, orquestador-generico, architect, guardian |
-| `agents/architecture/` | ~10 agentes (arquitecto-categorico, omega, cartographer, etc.) |
+| `agents/architecture/` | ~10 agentes (cat-thinking, omega, cartographer, etc.) |
 | `agents/qa_ops/` | agentes de QA y operaciones |
 | `agents/domain/` | agentes de dominio específico |
 | `agents/engineering/` | agentes de ingeniería |

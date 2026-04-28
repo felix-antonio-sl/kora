@@ -201,7 +201,7 @@ Ninguna metrica sin owner ni accion asociada. Si Felix no la usa, se borra.
 
 Candidatos con demanda real conocida:
 - `polymath` (analisis estructural, documentos largos)
-- `opm-specialist` (OPM/ISO 19450)
+- `modelamiento-opm` (OPM/ISO 19450)
 - `salubrista` (sistemas de salud)
 - `steipete` (coordinacion dev)
 - `forjador-openclaw` (fleet ops)

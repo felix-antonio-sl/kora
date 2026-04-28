@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:risk-register-spec"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex"
     created_at: "2026-04-19"
     source: "Cierra H13 del backlog post-olas: formaliza el risk register como composicion Kleisli sobre el enrichment de calidad fijado por qa-spec."
 version: "1.0.0"

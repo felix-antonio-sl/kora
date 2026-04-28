@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:operational-memory-2026-04-19-cierre-estructural-post-reorg-v5"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Memoria operativa compacta del cierre estructural posterior al reorg v5."
 version: "1.0.0"

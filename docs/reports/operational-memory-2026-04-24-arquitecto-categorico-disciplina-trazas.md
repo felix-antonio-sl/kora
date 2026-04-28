@@ -1,24 +1,24 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:operational-memory-2026-04-24-arquitecto-categorico-disciplina-trazas"
+  urn: "urn:kora:kb:operational-memory-2026-04-24-cat-thinking-disciplina-trazas"
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-24"
-    source: "Memoria operativa compacta del cierre de disciplina de trazas formales para arquitecto-categorico."
+    source: "Memoria operativa compacta del cierre de disciplina de trazas formales para cat-thinking."
 version: "1.0.0"
 status: publicado
-tags: [operational-memory, arquitecto-categorico, formal-layer, trazas]
+tags: [operational-memory, cat-thinking, formal-layer, trazas]
 lang: es
 extensions:
   kora:
     family: note
 relations:
   cites:
-    - "urn:kora:kb:handoff-2026-04-24-arquitecto-categorico-disciplina-trazas"
-    - "urn:kora:kb:next-session-prompt-2026-04-24-arquitecto-categorico-disciplina-trazas"
+    - "urn:kora:kb:handoff-2026-04-24-cat-thinking-disciplina-trazas"
+    - "urn:kora:kb:next-session-prompt-2026-04-24-cat-thinking-disciplina-trazas"
 ---
 
-# Memoria operativa - arquitecto-categorico y trazas formales
+# Memoria operativa - cat-thinking y trazas formales
 
 ## Snapshot
 
@@ -26,7 +26,7 @@ relations:
 |------|--------|
 | Repo | `/home/felix/kora` |
 | Branch de cierre | `master` |
-| Skill objetivo | `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico` |
+| Skill objetivo | `artifacts/skills/_TALLER/REVIEW/cat-thinking` |
 | Decision central | `Traces to:` solo hacia Formal Layer KORA |
 | ICAS/FXSL | permitido como `Rationale:` auxiliar |
 | Check nuevo | `formal-trace-discipline` |
@@ -40,7 +40,7 @@ relations:
    `artifacts/knowledge/kora/categorical-foundations/`.
 2. `artifacts/knowledge/fxsl/cat/` no debe aparecer como destino normativo de
    `Traces to:`.
-3. `arquitecto-categorico` puede usar ICAS/FXSL como corpus auxiliar bajo
+3. `cat-thinking` puede usar ICAS/FXSL como corpus auxiliar bajo
    `Rationale:`.
 4. El corpus ICAS declarado para el skill contiene 24 URNs `urn:fxsl:kb:icas-*`.
 5. `check --strict` incluye ahora `formal-trace-discipline`.

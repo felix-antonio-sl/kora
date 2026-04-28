@@ -2,12 +2,12 @@
 _manifest:
   urn: "urn:kora:kb:handoff-2026-04-19-portabilidad-asegurada"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-19"
     source: "Cierre del bloque de portabilidad: mecanismos de aseguramiento Linux x macOS instalados sobre el cierre estructural previo."
 version: "1.0.0"
 status: publicado
-tags: [handoff, portabilidad, ci, check, arquitecto-categorico]
+tags: [handoff, portabilidad, ci, check, cat-thinking]
 lang: es
 extensions:
   kora:

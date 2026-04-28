@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:handoff-2026-04-18-ola2-remediacion-profunda"
   provenance:
-    created_by: "Claude Opus 4.7 (encarnando arquitecto-categorico)"
+    created_by: "Claude Opus 4.7 (encarnando cat-thinking)"
     created_at: "2026-04-18"
     source: "Cierre de la remediación profunda post-auditoría ICAS-BoK: 15 frentes ejecutados en dos commits (2812c09 arranque + 2a38143 profunda)."
 version: "1.0.0"
@@ -28,7 +28,7 @@ relations:
 ## Resumen ejecutivo
 
 Sesión del **18 de abril de 2026** (cuarta ola del día, encarnando
-`arquitecto-categorico` en modo `audit` + `formalize`) ejecuta una
+`cat-thinking` en modo `audit` + `formalize`) ejecuta una
 **auditoría categorial profunda** del ICAS-BoK completo aplicado a KORA
 y remedia **15 de 23 hallazgos** en dos commits atómicos y coherentes.
 

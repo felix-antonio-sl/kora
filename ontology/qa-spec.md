@@ -2,7 +2,7 @@
 _manifest:
   urn: "urn:kora:kb:qa-spec"
   provenance:
-    created_by: "OpenAI Codex (encarnando arquitecto-categorico)"
+    created_by: "OpenAI Codex"
     created_at: "2026-04-18"
     source: "Cierre H6 del backlog post-olas: formaliza quality attributes enriquecidos y el puente entre Σ discreto, qa_budget operativo y budgets runtime, alineado con Part VI del ICAS-BoK."
 version: "1.0.0"

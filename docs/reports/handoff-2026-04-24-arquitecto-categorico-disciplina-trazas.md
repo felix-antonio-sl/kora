@@ -1,31 +1,31 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:handoff-2026-04-24-arquitecto-categorico-disciplina-trazas"
+  urn: "urn:kora:kb:handoff-2026-04-24-cat-thinking-disciplina-trazas"
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-24"
-    source: "Cierre de remediacion categorial para arquitecto-categorico y disciplina de trazas formales."
+    source: "Cierre de remediacion categorial para cat-thinking y disciplina de trazas formales."
 version: "1.0.0"
 status: publicado
-tags: [handoff, arquitecto-categorico, formal-layer, trazas, toolchain]
+tags: [handoff, cat-thinking, formal-layer, trazas, toolchain]
 lang: es
 extensions:
   kora:
     family: note
 relations:
   cites:
-    - "urn:kora:kb:operational-memory-2026-04-24-arquitecto-categorico-disciplina-trazas"
-    - "urn:kora:kb:next-session-prompt-2026-04-24-arquitecto-categorico-disciplina-trazas"
+    - "urn:kora:kb:operational-memory-2026-04-24-cat-thinking-disciplina-trazas"
+    - "urn:kora:kb:next-session-prompt-2026-04-24-cat-thinking-disciplina-trazas"
     - "urn:kora:kb:cat-fxsl-bridge"
     - "urn:kora:kb:cat-audit-invariants"
 ---
 
-# Handoff explicito - arquitecto-categorico y disciplina de trazas
+# Handoff explicito - cat-thinking y disciplina de trazas
 
 ## Estado actual
 
 La remediacion solicitada quedo aplicada en `master` para elevar el cumplimiento
-categorial de `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico`.
+categorial de `artifacts/skills/_TALLER/REVIEW/cat-thinking`.
 
 La sesion previa tambien dejo una limpieza estructural ya commiteada y empujada:
 
@@ -61,10 +61,10 @@ corpus auxiliar:
 
 ## Artefactos modificados
 
-- `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico/SKILL.md`
-- `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico/referencias/icas-bok-indice.md`
-- `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico/referencias/skill-arquitecto-categorico-spec.md`
-- `artifacts/skills/_TALLER/REVIEW/arquitecto-categorico/referencias/skill-arquitecto-categorico-structure.md`
+- `artifacts/skills/_TALLER/REVIEW/cat-thinking/SKILL.md`
+- `artifacts/skills/_TALLER/REVIEW/cat-thinking/referencias/icas-bok-indice.md`
+- `artifacts/skills/_TALLER/REVIEW/cat-thinking/referencias/skill-cat-thinking-spec.md`
+- `artifacts/skills/_TALLER/REVIEW/cat-thinking/referencias/skill-cat-thinking-structure.md`
 - `artifacts/knowledge/kora/categorical-foundations/03-ecosystem-2cat.md`
 - `artifacts/knowledge/kora/categorical-foundations/08-fxsl-cat-bridge.md`
 - `toolchain/kora_lib/checks.py`
@@ -90,7 +90,7 @@ Resultados observados:
 
 ## Pendientes
 
-1. Si se desea llevar `arquitecto-categorico` a productivo, ejecutar el flujo de
+1. Si se desea llevar `cat-thinking` a productivo, ejecutar el flujo de
   promocion normal desde `_TALLER/REVIEW/`.
 2. Revisar si otros documentos fuera del alcance del check deben adoptar
   explicitamente la misma convencion editorial.

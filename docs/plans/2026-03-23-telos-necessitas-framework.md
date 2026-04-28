@@ -2,7 +2,7 @@
 
 > Fecha: 2026-03-23
 > Estado: diseño completo, pendiente implementación
-> Participantes: pensador-generador (diseño conceptual), guardian (evaluación normativa), arquitecto-categorico (fundamento formal)
+> Participantes: pensador-generador (diseño conceptual), guardian (evaluación normativa), cat-thinking (fundamento formal)
 
 ## 1. Problema
 
@@ -70,7 +70,7 @@ Observable pasivo, no input de decisión. Asintótico: nunca alcanza cierre tota
 
 **Razón:** La spec (agent-spec-md §4.4.2) restringe secciones H2 de SOUL.md pero no subsecciones. La identidad de un agente incluye su razón de existir. No se necesita archivo nuevo ni spec bump.
 
-**Tensión formal documentada:** Categorialmente, T (finalidad) es un parámetro de c (transición), no una fibra de U (estado). Se co-loca con U_phen por economía operativa. El arquitecto-categorico documentó esta controlled violation — ver §7 de este documento.
+**Tensión formal documentada:** Categorialmente, T (finalidad) es un parámetro de c (transición), no una fibra de U (estado). Se co-loca con U_phen por economía operativa. El cat-thinking documentó esta controlled violation — ver §7 de este documento.
 
 ### ¿Dónde vive NECESSITAS?
 
@@ -112,7 +112,7 @@ Observable pasivo, no input de decisión. Asintótico: nunca alcanza cierre tota
 3. Migración gradual y aditiva
 4. Cuando sea universal: cristalizar en agent-spec-md como DEBERÍA → DEBE
 
-## 6. Fundamento categórico (arquitecto-categorico)
+## 6. Fundamento categórico (cat-thinking)
 
 ### Modelo formal
 

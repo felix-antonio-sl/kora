@@ -1,21 +1,21 @@
 ---
 _manifest:
-  urn: "urn:kora:kb:next-session-prompt-2026-04-24-arquitecto-categorico-disciplina-trazas"
+  urn: "urn:kora:kb:next-session-prompt-2026-04-24-cat-thinking-disciplina-trazas"
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-24"
-    source: "Prompt breve de continuacion posterior al cierre de disciplina de trazas formales para arquitecto-categorico."
+    source: "Prompt breve de continuacion posterior al cierre de disciplina de trazas formales para cat-thinking."
 version: "1.0.0"
 status: publicado
-tags: [next-session-prompt, arquitecto-categorico, formal-layer, trazas]
+tags: [next-session-prompt, cat-thinking, formal-layer, trazas]
 lang: es
 extensions:
   kora:
     family: note
 relations:
   cites:
-    - "urn:kora:kb:handoff-2026-04-24-arquitecto-categorico-disciplina-trazas"
-    - "urn:kora:kb:operational-memory-2026-04-24-arquitecto-categorico-disciplina-trazas"
+    - "urn:kora:kb:handoff-2026-04-24-cat-thinking-disciplina-trazas"
+    - "urn:kora:kb:operational-memory-2026-04-24-cat-thinking-disciplina-trazas"
 ---
 
 # Prompt de continuacion
@@ -25,8 +25,8 @@ Copiar este bloque como mensaje inicial de la proxima sesion:
 <prompt>
 Trabaja sobre `/home/felix/kora` en `master`, continuando desde:
 
-- `docs/reports/handoff-2026-04-24-arquitecto-categorico-disciplina-trazas.md`
-- `docs/reports/operational-memory-2026-04-24-arquitecto-categorico-disciplina-trazas.md`
+- `docs/reports/handoff-2026-04-24-cat-thinking-disciplina-trazas.md`
+- `docs/reports/operational-memory-2026-04-24-cat-thinking-disciplina-trazas.md`
 
 Primero verifica:
 
@@ -42,11 +42,11 @@ Contrato esperado:
 
 - `check --strict` incluye `formal-trace-discipline` y pasa verde.
 - La suite completa pasa verde.
-- `arquitecto-categorico` mantiene `Traces to:` solo hacia
+- `cat-thinking` mantiene `Traces to:` solo hacia
   `urn:kora:kb:cat-*`; ICAS/FXSL se usa como `Rationale:`.
 
 Siguiente linea razonable: decidir si se promueve
-`artifacts/skills/_TALLER/REVIEW/arquitecto-categorico` a productivo o si antes
+`artifacts/skills/_TALLER/REVIEW/cat-thinking` a productivo o si antes
 se amplia la disciplina de trazas a otros scopes.
 
 Linea de limpieza segura pendiente: eliminar `.pyc` trackeados en `toolchain/`,
