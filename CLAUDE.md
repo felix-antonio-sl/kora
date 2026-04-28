@@ -63,12 +63,36 @@ artifacts/skills/_TALLER/INBOX/         -> REVIEW/ -> artifacts/skills/{ns}/{nam
 Los staging areas son pre-categoriales: no representan namespace canonico hasta
 la promocion.
 
+## Skills Core Canonicas
+
+Skills nucleares invocables desde cualquier agente o sesion. Son la entrada
+recomendada para producir o mantener artefactos KORA-conformes:
+
+| URN | Cuando |
+|-----|--------|
+| `urn:kora:artefacto:artifact-curator` | ciclo de vida general de artefactos KORA (knowledge, spec, skill, agente) |
+| `urn:kora:artefacto:kora-skills` | construir / auditar / evolucionar habilidades |
+| `urn:kora:artefacto:kora-agents` | construir / auditar / evolucionar subagentes y agentes-pt |
+| `urn:kora:artefacto:mente-omega` | razonamiento estructural-discursivo (pentamotor Φ Ψ Ξ Δ Σ) |
+| `urn:kora:artefacto:cat-thinking` | enmarque categorial (24 piezas ICAS-BoK) |
+| `urn:kora:artefacto:atomize` | productor canonico de la familia documental `atomic` |
+| `urn:kora:artefacto:knowledge-curator` | ruta KB normal descriptiva en REVIEW |
+| `urn:kora:artefacto:curation-conductor` | flujo knowledge end-to-end |
+
+Personas disponibles (agentes-pt en `artifacts/agents/{ns}/{name}/`):
+
+- `urn:dev:artefacto:steipete` (Peter Steinberger clon — direccion de ejecucion)
+- `urn:fxsl:artefacto:allan-kelly` (arquitectura organizacional human-agent)
+- `urn:pro:artefacto:david-allen` (claridad operable integral, GTD)
+
 ## Canon Semantico
 
 - La ontologia autoritativa vive en `ontology/harness-spec.md`.
 - El vector ontologico `extensions.kora.vector_ontologico` es fuente de verdad
   para artefactos agenticos.
 - El shape unificado de authoring vive en `serialization/autoria-spec.md`.
+- La metodologia pre-transmutacion (Req → Blueprint → IR canonico) vive en
+  `serialization/agent-skill-construction-spec.md`.
 - La Formal Layer oficial vive en
   `artifacts/knowledge/kora/categorical-foundations/`.
 - `artifacts/knowledge/fxsl/cat/` sigue siendo corpus auxiliar.
@@ -106,7 +130,7 @@ con fibras adjuntas opcionales (`skills/`, `memoria/`, `MEMORY.md`, `_BUILD/`,
 
 Entrypoint soportado: `python3 toolchain/kora`.
 
-Subcomandos vivos en este snapshot:
+Subcomandos vivos en este snapshot (verifica con `python3 toolchain/kora --help`):
 
 - `index`
 - `resolve`
@@ -124,6 +148,8 @@ Subcomandos vivos en este snapshot:
 - `deprecate`
 - `transmute`
 - `roundtrip-check`
+- `deploy-status`
+- `record-invocation`
 - `ingest`
 - `check`
 
@@ -148,16 +174,19 @@ puntuales o diagnosticos finos.
 
 ## Runtimes Target
 
-Segun `python3 toolchain/kora transmute --help`, hoy existen estos targets:
+Segun `python3 toolchain/kora transmute --help`, hoy existen siete targets:
 
 - `agentskills`
 - `claude-code`
 - `codex`
 - `gemini`
 - `mastra`
+- `opencode`
 - `openclaw`
 
-No asumas una lista mas corta tomada de documentos previos a `2026-04-19`.
+Cada uno tiene su `runtime/{nombre}-runtime-extension.md` con dominio +
+matriz de preservacion. No asumas una lista mas corta tomada de documentos
+previos a `2026-04-28`.
 
 ## Tests
 
@@ -174,18 +203,26 @@ python3 -m unittest discover -s tests
 - helpers de portabilidad como `canonical_path()` y
   `assert_path_in_output()`
 
-Suites presentes:
+Suites presentes (`ls tests/test_*.py` para snapshot autoritativo):
 
-- `test_cli_smoke`
-- `test_artifacts`
-- `test_semantic_validation`
-- `test_graph_invariants`
-- `test_operating_core_scenarios`
 - `test_agent_audit`
-- `test_check_pipeline`
+- `test_artifacts`
 - `test_atomize`
 - `test_autoria_validate`
+- `test_check_pipeline`
+- `test_cli_smoke`
+- `test_curation_conductor_skill`
+- `test_graph_invariants`
+- `test_kb_graph_rendering`
+- `test_knowledge_curator_skill`
 - `test_migrate_autoria`
+- `test_openclaw_kora_live_repo`
+- `test_operating_core_scenarios`
+- `test_salubrista_hodom`
+- `test_semantic_validation`
+- `test_skill_transmute_claude`
+- `test_skill_transmute_codex`
+- `test_urgenciologo_skeleton`
 
 ## Secuencia De Trabajo
 
@@ -208,12 +245,19 @@ python3 toolchain/kora migrate --profile a-autoria --cohort meta-kora --dry-run
 Si la tarea es proyectar a runtime:
 
 ```bash
-python3 toolchain/kora transmute --target codex --agent kora/curator --dry-run
-python3 toolchain/kora transmute --target mastra --agent kora/curator --dry-run
+python3 toolchain/kora transmute --target opencode --agent dev/steipete --dry-run
+python3 toolchain/kora transmute --target codex --agent kora/custodio --dry-run
+python3 toolchain/kora transmute --target agentskills --agent kora/mente-omega --dry-run
 ```
 
 ## Notas Practicas
 
+- Antes de tocar nada, lee el handoff mas reciente bajo
+  `docs/reports/handoff-*.md` por fecha descendente: es el snapshot vivo del
+  repo (estado, decisiones canonicas, pendientes, supuestos, riesgos).
+- `docs/start-prompt.md` (URN `urn:kora:kb:start-prompt`) es el bootstrap
+  copiable para sesiones nuevas; cita las specs, skills core y comandos de
+  verificacion inicial.
 - No asumas que `scripts/` raiz describe la toolchain viva. Hoy es residual.
 - No asumas que `toolchain/README.md` esta mas fresco que la CLI. Verifica con
   `--help` y con el arbol real.

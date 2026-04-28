@@ -85,6 +85,7 @@ Las capas visibles en el repo son:
 - `ontology/procesos-spec.md`
 - `ontology/risk-register-spec.md`
 - `serialization/autoria-spec.md`
+- `serialization/agent-skill-construction-spec.md`
 - `serialization/md-spec.md`
 - `serialization/knowledge-spec.md`
 - `runtime/runtime-spec-md.md`
@@ -123,14 +124,19 @@ se usan cuando la tarea lo requiere.
 
 ## Runtimes target
 
-Segun `python3 toolchain/kora transmute --help`, los targets soportados hoy son:
+Segun `python3 toolchain/kora transmute --help`, los siete targets soportados
+hoy son:
 
 - `agentskills`
 - `claude-code`
 - `codex`
 - `gemini`
 - `mastra`
+- `opencode`
 - `openclaw`
+
+Cada uno tiene su `runtime/{nombre}-runtime-extension.md` con dominio + matriz
+de preservacion.
 
 ## Verificacion minima
 
@@ -148,6 +154,9 @@ explicitamente salidas publicas en `docs/generated/`.
 
 ## Notas practicas
 
+- Antes de operar, leer el handoff mas reciente bajo
+  `docs/reports/handoff-*.md` por fecha descendente. Bootstrap copiable en
+  `docs/start-prompt.md`.
 - No asumas que `scripts/` raiz es la toolchain viva; hoy es solo residuo de
   compatibilidad.
 - No asumas el layout pre-v5 (`specs/`, `AGENTS/`, `SKILLS/`, `KNOWLEDGE/`,
