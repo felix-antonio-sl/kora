@@ -1,0 +1,182 @@
+# OPCloud sandbox graphics download inventory
+
+- Base URL: https://opcloud-sandbox.web.app/
+- Generated at UTC: 2026-04-28T03:17:49Z
+- Downloaded files: 157
+- Download errors: 0
+
+## html_entry (1)
+- `mirror_static/index.html` | 54181 bytes | `96c4b685636d2af7` | https://opcloud-sandbox.web.app/
+
+## style_bundle (1)
+- `mirror_static/styles.4e77ba1f976bae6e.css` | 570675 bytes | `9b321c97b20d07d0` | https://opcloud-sandbox.web.app/styles.4e77ba1f976bae6e.css
+
+## script_bundle (5)
+- `mirror_static/assets/workers/typings-worker.js` | 4116 bytes | `fb349ef3d885c7af` | https://opcloud-sandbox.web.app/assets/workers/typings-worker.js
+- `mirror_static/main.d9176050fd6f9943.js` | 21963040 bytes | `74dc8c0a333ff304` | https://opcloud-sandbox.web.app/main.d9176050fd6f9943.js
+- `mirror_static/polyfills.5336622b9feb4652.js` | 1383170 bytes | `6d0e85e5bffe2701` | https://opcloud-sandbox.web.app/polyfills.5336622b9feb4652.js
+- `mirror_static/runtime.880ef43bea70a15e.js` | 14696 bytes | `29f524596af14315` | https://opcloud-sandbox.web.app/runtime.880ef43bea70a15e.js
+- `mirror_static/scripts.8153de010e3d945e.js` | 6110542 bytes | `3c43caedc6f2bde8` | https://opcloud-sandbox.web.app/scripts.8153de010e3d945e.js
+
+## graphic_asset (136)
+- `mirror_static/assets/SVG/CSVoff.svg` | 2699 bytes | `c2ab76d04c38451e` | https://opcloud-sandbox.web.app/assets/SVG/CSVoff.svg
+- `mirror_static/assets/SVG/CSVon.svg` | 2605 bytes | `298e5ffa5f4c5abe` | https://opcloud-sandbox.web.app/assets/SVG/CSVon.svg
+- `mirror_static/assets/SVG/Condition_In_Out.svg` | 7399 bytes | `38f46f3e06476fd3` | https://opcloud-sandbox.web.app/assets/SVG/Condition_In_Out.svg
+- `mirror_static/assets/SVG/Event_In_Out.svg` | 3137 bytes | `844b78fb93afa37c` | https://opcloud-sandbox.web.app/assets/SVG/Event_In_Out.svg
+- `mirror_static/assets/SVG/ExpressHalo.svg` | 1156 bytes | `ba1585ce861c1a73` | https://opcloud-sandbox.web.app/assets/SVG/ExpressHalo.svg
+- `mirror_static/assets/SVG/In_Out_Link_Pair.svg` | 7081 bytes | `f7d837a646e6679a` | https://opcloud-sandbox.web.app/assets/SVG/In_Out_Link_Pair.svg
+- `mirror_static/assets/SVG/Input_Link_Pair.svg` | 6852 bytes | `8d478c02115fa9f3` | https://opcloud-sandbox.web.app/assets/SVG/Input_Link_Pair.svg
+- `mirror_static/assets/SVG/Output_Link_pair.svg` | 6865 bytes | `e5ffb3ef1323d7e3` | https://opcloud-sandbox.web.app/assets/SVG/Output_Link_pair.svg
+- `mirror_static/assets/SVG/addConnected.svg` | 1250 bytes | `d1b716b3585e761d` | https://opcloud-sandbox.web.app/assets/SVG/addConnected.svg
+- `mirror_static/assets/SVG/addStates.svg` | 945 bytes | `ea79322257740314` | https://opcloud-sandbox.web.app/assets/SVG/addStates.svg
+- `mirror_static/assets/SVG/arrow.svg` | 172 bytes | `344f9b9e506af872` | https://opcloud-sandbox.web.app/assets/SVG/arrow.svg
+- `mirror_static/assets/SVG/autosave.svg` | 2855 bytes | `1ac496135a5bfb82` | https://opcloud-sandbox.web.app/assets/SVG/autosave.svg
+- `mirror_static/assets/SVG/computation.svg` | 751 bytes | `fa700d6d2378d2c3` | https://opcloud-sandbox.web.app/assets/SVG/computation.svg
+- `mirror_static/assets/SVG/currentState.svg` | 343 bytes | `ac960d0f52405e00` | https://opcloud-sandbox.web.app/assets/SVG/currentState.svg
+- `mirror_static/assets/SVG/customCursor.svg` | 601 bytes | `2ee24dd3a4ea887e` | https://opcloud-sandbox.web.app/assets/SVG/customCursor.svg
+- `mirror_static/assets/SVG/defaultState.svg` | 473 bytes | `3cf280b2f4438d17` | https://opcloud-sandbox.web.app/assets/SVG/defaultState.svg
+- `mirror_static/assets/SVG/delete.svg` | 1284 bytes | `ae9df65e24fd5389` | https://opcloud-sandbox.web.app/assets/SVG/delete.svg
+- `mirror_static/assets/SVG/deleteFunction.svg` | 853 bytes | `4bf354457e60e5c9` | https://opcloud-sandbox.web.app/assets/SVG/deleteFunction.svg
+- `mirror_static/assets/SVG/editAlias.svg` | 3838 bytes | `7147b57c03d073c4` | https://opcloud-sandbox.web.app/assets/SVG/editAlias.svg
+- `mirror_static/assets/SVG/editUnits.svg` | 4025 bytes | `94db415ecbdd9487` | https://opcloud-sandbox.web.app/assets/SVG/editUnits.svg
+- `mirror_static/assets/SVG/example.svg` | 2221 bytes | `9debfab2da7eaed5` | https://opcloud-sandbox.web.app/assets/SVG/example.svg
+- `mirror_static/assets/SVG/folder.svg` | 992 bytes | `c327cb133b3a69c3` | https://opcloud-sandbox.web.app/assets/SVG/folder.svg
+- `mirror_static/assets/SVG/greenIndicator.svg` | 153 bytes | `d6df07eab0dacf65` | https://opcloud-sandbox.web.app/assets/SVG/greenIndicator.svg
+- `mirror_static/assets/SVG/inzoom.svg` | 1011 bytes | `7e369c8842c7d5c2` | https://opcloud-sandbox.web.app/assets/SVG/inzoom.svg
+- `mirror_static/assets/SVG/links/procedural/agent.svg` | 412 bytes | `8fe6379c54f9a97a` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/agent.svg
+- `mirror_static/assets/SVG/links/procedural/agentCondition.svg` | 788 bytes | `85ecaca8679c9b0a` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/agentCondition.svg
+- `mirror_static/assets/SVG/links/procedural/agentConditionNegation.svg` | 871 bytes | `a509e2413d00fcf0` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/agentConditionNegation.svg
+- `mirror_static/assets/SVG/links/procedural/agentEvent.svg` | 820 bytes | `e184ad557df3d8b0` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/agentEvent.svg
+- `mirror_static/assets/SVG/links/procedural/agentNegation.svg` | 492 bytes | `21e08ec6767a7b42` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/agentNegation.svg
+- `mirror_static/assets/SVG/links/procedural/bidirectionalRelation.svg` | 540 bytes | `36df939fe18f2d4c` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/bidirectionalRelation.svg
+- `mirror_static/assets/SVG/links/procedural/consumption.svg` | 524 bytes | `95f796bc09866df7` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/consumption.svg
+- `mirror_static/assets/SVG/links/procedural/consumptionCondition.svg` | 865 bytes | `5ac03275285f727a` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/consumptionCondition.svg
+- `mirror_static/assets/SVG/links/procedural/consumptionConditionNegation.svg` | 948 bytes | `5a0b12d3cda0aa05` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/consumptionConditionNegation.svg
+- `mirror_static/assets/SVG/links/procedural/consumptionEvent.svg` | 899 bytes | `70a4551912137222` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/consumptionEvent.svg
+- `mirror_static/assets/SVG/links/procedural/consumptionNegation.svg` | 606 bytes | `cc2305eb2fecce35` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/consumptionNegation.svg
+- `mirror_static/assets/SVG/links/procedural/effect.svg` | 797 bytes | `573821bccfcc29e3` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/effect.svg
+- `mirror_static/assets/SVG/links/procedural/effectCondition.svg` | 1182 bytes | `3f6de1c1a94681e6` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/effectCondition.svg
+- `mirror_static/assets/SVG/links/procedural/effectConditionNegation.svg` | 1265 bytes | `228621d47a476c40` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/effectConditionNegation.svg
+- `mirror_static/assets/SVG/links/procedural/effectEvent.svg` | 1216 bytes | `61d22107a9134708` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/effectEvent.svg
+- `mirror_static/assets/SVG/links/procedural/effectNegation.svg` | 886 bytes | `988c2e8a97092d28` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/effectNegation.svg
+- `mirror_static/assets/SVG/links/procedural/instrument.svg` | 541 bytes | `1b8993a1c1cd7d00` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/instrument.svg
+- `mirror_static/assets/SVG/links/procedural/instrumentCondition.svg` | 917 bytes | `43d6389b8467d0b6` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/instrumentCondition.svg
+- `mirror_static/assets/SVG/links/procedural/instrumentConditionNegation.svg` | 1000 bytes | `174caa4c926ddfca` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/instrumentConditionNegation.svg
+- `mirror_static/assets/SVG/links/procedural/instrumentEvent.svg` | 951 bytes | `f4196c867d39c566` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/instrumentEvent.svg
+- `mirror_static/assets/SVG/links/procedural/instrumentNegation.svg` | 621 bytes | `a8f1e1741a35fbc2` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/instrumentNegation.svg
+- `mirror_static/assets/SVG/links/procedural/invocation.svg` | 528 bytes | `0ac0e6a02dd96b2b` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/invocation.svg
+- `mirror_static/assets/SVG/links/procedural/overtimeexception.svg` | 431 bytes | `978a4d90b59c9166` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/overtimeexception.svg
+- `mirror_static/assets/SVG/links/procedural/result.svg` | 531 bytes | `ad6c5b0cea9d1256` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/result.svg
+- `mirror_static/assets/SVG/links/procedural/underOver.svg` | 645 bytes | `7e7746693882f89a` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/underOver.svg
+- `mirror_static/assets/SVG/links/procedural/underTime.svg` | 536 bytes | `4d1a59bb97ad9db7` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/underTime.svg
+- `mirror_static/assets/SVG/links/procedural/unidirectionalRelation.svg` | 535 bytes | `3d698ed87642d8ad` | https://opcloud-sandbox.web.app/assets/SVG/links/procedural/unidirectionalRelation.svg
+- `mirror_static/assets/SVG/links/structural/aggregation.svg` | 316 bytes | `bb3ce98239258f34` | https://opcloud-sandbox.web.app/assets/SVG/links/structural/aggregation.svg
+- `mirror_static/assets/SVG/links/structural/classification.svg` | 551 bytes | `7996260f22f45ea5` | https://opcloud-sandbox.web.app/assets/SVG/links/structural/classification.svg
+- `mirror_static/assets/SVG/links/structural/exhibition.svg` | 400 bytes | `8ff02fe8271d59f6` | https://opcloud-sandbox.web.app/assets/SVG/links/structural/exhibition.svg
+- `mirror_static/assets/SVG/links/structural/generalization.svg` | 358 bytes | `296df5d3e4d32c8a` | https://opcloud-sandbox.web.app/assets/SVG/links/structural/generalization.svg
+- `mirror_static/assets/SVG/lock.svg` | 3257 bytes | `1eb6ef81e80bf4f6` | https://opcloud-sandbox.web.app/assets/SVG/lock.svg
+- `mirror_static/assets/SVG/newLogo.svg` | 4597 bytes | `2153763ca512a55f` | https://opcloud-sandbox.web.app/assets/SVG/newLogo.svg
+- `mirror_static/assets/SVG/notesActive.svg` | 2720 bytes | `e22f6878d4af8993` | https://opcloud-sandbox.web.app/assets/SVG/notesActive.svg
+- `mirror_static/assets/SVG/notesDeactive.svg` | 2791 bytes | `eaf7017181d29c9f` | https://opcloud-sandbox.web.app/assets/SVG/notesDeactive.svg
+- `mirror_static/assets/SVG/questionmark.svg` | 2014 bytes | `a947d61f598178ac` | https://opcloud-sandbox.web.app/assets/SVG/questionmark.svg
+- `mirror_static/assets/SVG/rangeState.svg` | 505 bytes | `457197540f6876cc` | https://opcloud-sandbox.web.app/assets/SVG/rangeState.svg
+- `mirror_static/assets/SVG/redx.png` | 81690 bytes | `e04637309c45bace` | https://opcloud-sandbox.web.app/assets/SVG/redx.png
+- `mirror_static/assets/SVG/regFile.svg` | 2225 bytes | `58c66173cfc8168a` | https://opcloud-sandbox.web.app/assets/SVG/regFile.svg
+- `mirror_static/assets/SVG/regFileStereotypeG.svg` | 4449 bytes | `9cd05cc41f312ef4` | https://opcloud-sandbox.web.app/assets/SVG/regFileStereotypeG.svg
+- `mirror_static/assets/SVG/regFileStereotypeNonG.svg` | 1699 bytes | `ac87f3f4828477a0` | https://opcloud-sandbox.web.app/assets/SVG/regFileStereotypeNonG.svg
+- `mirror_static/assets/SVG/round-checkbox.svg` | 298 bytes | `bb5db4fc73cadfb6` | https://opcloud-sandbox.web.app/assets/SVG/round-checkbox.svg
+- `mirror_static/assets/SVG/sharedFolder.svg` | 994 bytes | `92d7f03a1691d623` | https://opcloud-sandbox.web.app/assets/SVG/sharedFolder.svg
+- `mirror_static/assets/SVG/sim.svg` | 860 bytes | `d0dcdedaad39d5fe` | https://opcloud-sandbox.web.app/assets/SVG/sim.svg
+- `mirror_static/assets/SVG/stateTypeHalo.svg` | 364 bytes | `23f77b5292561020` | https://opcloud-sandbox.web.app/assets/SVG/stateTypeHalo.svg
+- `mirror_static/assets/SVG/styleElement.svg` | 1348 bytes | `0e5eba08f3c5ce63` | https://opcloud-sandbox.web.app/assets/SVG/styleElement.svg
+- `mirror_static/assets/SVG/supressHalo.svg` | 1336 bytes | `9522dfc14235fcce` | https://opcloud-sandbox.web.app/assets/SVG/supressHalo.svg
+- `mirror_static/assets/SVG/template.svg` | 2207 bytes | `8b5d4923beb9d261` | https://opcloud-sandbox.web.app/assets/SVG/template.svg
+- `mirror_static/assets/SVG/timeDuration.svg` | 7152 bytes | `2da3ea71550b94b1` | https://opcloud-sandbox.web.app/assets/SVG/timeDuration.svg
+- `mirror_static/assets/SVG/toolbar/modelWizard.svg` | 3743 bytes | `67f34c1640014b42` | https://opcloud-sandbox.web.app/assets/SVG/toolbar/modelWizard.svg
+- `mirror_static/assets/SVG/unfold.svg` | 1182 bytes | `46d84193b9c1fae9` | https://opcloud-sandbox.web.app/assets/SVG/unfold.svg
+- `mirror_static/assets/SVG/updateComputationalProcess.svg` | 1627 bytes | `c9f8d0a25727ffac` | https://opcloud-sandbox.web.app/assets/SVG/updateComputationalProcess.svg
+- `mirror_static/assets/SVG/url.svg` | 738 bytes | `30b1726237fcf61b` | https://opcloud-sandbox.web.app/assets/SVG/url.svg
+- `mirror_static/assets/SVG/verFile.svg` | 2260 bytes | `617baa35fba94e31` | https://opcloud-sandbox.web.app/assets/SVG/verFile.svg
+- `mirror_static/assets/gifs/add_requirement.gif` | 234277 bytes | `aadd4934e9d088e5` | https://opcloud-sandbox.web.app/assets/gifs/add_requirement.gif
+- `mirror_static/assets/gifs/add_states.gif` | 139014 bytes | `7b69527634a85f42` | https://opcloud-sandbox.web.app/assets/gifs/add_states.gif
+- `mirror_static/assets/gifs/affiliation.gif` | 257518 bytes | `96ec72f88959d138` | https://opcloud-sandbox.web.app/assets/gifs/affiliation.gif
+- `mirror_static/assets/gifs/attach_requirement_stereotype.gif` | 443843 bytes | `574494e0b3db83e2` | https://opcloud-sandbox.web.app/assets/gifs/attach_requirement_stereotype.gif
+- `mirror_static/assets/gifs/auto_format.gif` | 607746 bytes | `d742c8b525cc910b` | https://opcloud-sandbox.web.app/assets/gifs/auto_format.gif
+- `mirror_static/assets/gifs/bring_connected_things.gif` | 593015 bytes | `93c24437cf0e0518` | https://opcloud-sandbox.web.app/assets/gifs/bring_connected_things.gif
+- `mirror_static/assets/gifs/computation.gif` | 356855 bytes | `1ea4731bd84c5f88` | https://opcloud-sandbox.web.app/assets/gifs/computation.gif
+- `mirror_static/assets/gifs/create_requirement_view.gif` | 1201841 bytes | `0bfe109a3bbb164c` | https://opcloud-sandbox.web.app/assets/gifs/create_requirement_view.gif
+- `mirror_static/assets/gifs/create_view.gif` | 2070623 bytes | `b855f77e573f8c15` | https://opcloud-sandbox.web.app/assets/gifs/create_view.gif
+- `mirror_static/assets/gifs/de_magnifying.gif` | 1430536 bytes | `ae4e7bdf23f534be` | https://opcloud-sandbox.web.app/assets/gifs/de_magnifying.gif
+- `mirror_static/assets/gifs/destating.gif` | 471133 bytes | `35103277ecb46fa5` | https://opcloud-sandbox.web.app/assets/gifs/destating.gif
+- `mirror_static/assets/gifs/digital_twin.gif` | 343837 bytes | `aba63ed50243c9f7` | https://opcloud-sandbox.web.app/assets/gifs/digital_twin.gif
+- `mirror_static/assets/gifs/draggable_things.gif` | 1859807 bytes | `71a1cae141bf8bf6` | https://opcloud-sandbox.web.app/assets/gifs/draggable_things.gif
+- `mirror_static/assets/gifs/essence.gif` | 206875 bytes | `0a6427796526bfc7` | https://opcloud-sandbox.web.app/assets/gifs/essence.gif
+- `mirror_static/assets/gifs/find_things.gif` | 891037 bytes | `2af73ff76f2a2f36` | https://opcloud-sandbox.web.app/assets/gifs/find_things.gif
+- `mirror_static/assets/gifs/handle_navigator.gif` | 2928907 bytes | `e7b5cfeadbd112b0` | https://opcloud-sandbox.web.app/assets/gifs/handle_navigator.gif
+- `mirror_static/assets/gifs/hyperlink_url.gif` | 1234795 bytes | `04f8e297b3a0602a` | https://opcloud-sandbox.web.app/assets/gifs/hyperlink_url.gif
+- `mirror_static/assets/gifs/in_diagram_inzoom.gif` | 1365402 bytes | `f596be1f5d4091c3` | https://opcloud-sandbox.web.app/assets/gifs/in_diagram_inzoom.gif
+- `mirror_static/assets/gifs/magnify.gif` | 995012 bytes | `796719a8eb5239d3` | https://opcloud-sandbox.web.app/assets/gifs/magnify.gif
+- `mirror_static/assets/gifs/model_chat_button.gif` | 1040670 bytes | `501f1b795cbbe62c` | https://opcloud-sandbox.web.app/assets/gifs/model_chat_button.gif
+- `mirror_static/assets/gifs/model_chat_handle.gif` | 1177975 bytes | `7f7cf50721f2b766` | https://opcloud-sandbox.web.app/assets/gifs/model_chat_handle.gif
+- `mirror_static/assets/gifs/opd_tree_menu.gif` | 1524155 bytes | `e7e48e330b310bca` | https://opcloud-sandbox.web.app/assets/gifs/opd_tree_menu.gif
+- `mirror_static/assets/gifs/opl_pane.gif` | 4726376 bytes | `18482ae70a65ed64` | https://opcloud-sandbox.web.app/assets/gifs/opl_pane.gif
+- `mirror_static/assets/gifs/remove_time_duration.gif` | 144270 bytes | `24f117514ba9f3c2` | https://opcloud-sandbox.web.app/assets/gifs/remove_time_duration.gif
+- `mirror_static/assets/gifs/set_time_duration.gif` | 785849 bytes | `c498bf5fbf332239` | https://opcloud-sandbox.web.app/assets/gifs/set_time_duration.gif
+- `mirror_static/assets/gifs/set_units.gif` | 1007106 bytes | `98f7be1544646efe` | https://opcloud-sandbox.web.app/assets/gifs/set_units.gif
+- `mirror_static/assets/gifs/state_set_time_duration.gif` | 1068982 bytes | `69312e727df48b96` | https://opcloud-sandbox.web.app/assets/gifs/state_set_time_duration.gif
+- `mirror_static/assets/gifs/suppress_single_state.gif` | 392021 bytes | `b0aa62e611668d1a` | https://opcloud-sandbox.web.app/assets/gifs/suppress_single_state.gif
+- `mirror_static/assets/gifs/suppress_states.gif` | 317543 bytes | `884517c0ce24af9e` | https://opcloud-sandbox.web.app/assets/gifs/suppress_states.gif
+- `mirror_static/assets/gifs/thing_autoresize.gif` | 387928 bytes | `27b4e806768691c4` | https://opcloud-sandbox.web.app/assets/gifs/thing_autoresize.gif
+- `mirror_static/assets/gifs/thing_inzooming.gif` | 850289 bytes | `a233e9116851876d` | https://opcloud-sandbox.web.app/assets/gifs/thing_inzooming.gif
+- `mirror_static/assets/gifs/thing_tree_view.gif` | 566048 bytes | `9a2996d8fdf46a90` | https://opcloud-sandbox.web.app/assets/gifs/thing_tree_view.gif
+- `mirror_static/assets/gifs/toggle_mark_things.gif` | 1799761 bytes | `97276e826370ba13` | https://opcloud-sandbox.web.app/assets/gifs/toggle_mark_things.gif
+- `mirror_static/assets/gifs/toggle_navigator.gif` | 244905 bytes | `982d5149c19f511d` | https://opcloud-sandbox.web.app/assets/gifs/toggle_navigator.gif
+- `mirror_static/assets/gifs/toggle_notes.gif` | 2121834 bytes | `eeab04d872834405` | https://opcloud-sandbox.web.app/assets/gifs/toggle_notes.gif
+- `mirror_static/assets/gifs/toggle_range_type.gif` | 447123 bytes | `6b3c24489ed46389` | https://opcloud-sandbox.web.app/assets/gifs/toggle_range_type.gif
+- `mirror_static/assets/gifs/toggle_requirement.gif` | 414121 bytes | `e866ce4a72943bf5` | https://opcloud-sandbox.web.app/assets/gifs/toggle_requirement.gif
+- `mirror_static/assets/gifs/toggle_single_requirement.gif` | 813998 bytes | `eb2ec47a197a6955` | https://opcloud-sandbox.web.app/assets/gifs/toggle_single_requirement.gif
+- `mirror_static/assets/gifs/unfolding.gif` | 1133313 bytes | `8fdd2086fe93ff48` | https://opcloud-sandbox.web.app/assets/gifs/unfolding.gif
+- `mirror_static/assets/gifs/update_computation.gif` | 416506 bytes | `76797eb3df442b28` | https://opcloud-sandbox.web.app/assets/gifs/update_computation.gif
+- `mirror_static/assets/icons/OPM_Links/Agents.png` | 832 bytes | `00ed19a0ca9eb4d6` | https://opcloud-sandbox.web.app/assets/icons/OPM_Links/Agents.png
+- `mirror_static/assets/icons/OPM_Links/Consumptions.png` | 1182 bytes | `b1fa320319748475` | https://opcloud-sandbox.web.app/assets/icons/OPM_Links/Consumptions.png
+- `mirror_static/assets/icons/OPM_Links/Effects.png` | 1412 bytes | `0e14324c47c2c7e1` | https://opcloud-sandbox.web.app/assets/icons/OPM_Links/Effects.png
+- `mirror_static/assets/icons/OPM_Links/Instruments.png` | 861 bytes | `1754c4c50c3493cb` | https://opcloud-sandbox.web.app/assets/icons/OPM_Links/Instruments.png
+- `mirror_static/assets/icons/OPM_Links/Structrial.png` | 2246 bytes | `585f10f7f031a9b7` | https://opcloud-sandbox.web.app/assets/icons/OPM_Links/Structrial.png
+- `mirror_static/assets/icons/essenceAffil/AffilObject.JPG` | 6308 bytes | `bde86a81623cec90` | https://opcloud-sandbox.web.app/assets/icons/essenceAffil/AffilObject.JPG
+- `mirror_static/assets/icons/essenceAffil/AffilProcess.JPG` | 8385 bytes | `ca5479bcc811c155` | https://opcloud-sandbox.web.app/assets/icons/essenceAffil/AffilProcess.JPG
+- `mirror_static/assets/icons/essenceAffil/EssObject.JPG` | 6281 bytes | `1b1bac57131085e6` | https://opcloud-sandbox.web.app/assets/icons/essenceAffil/EssObject.JPG
+- `mirror_static/assets/icons/essenceAffil/EssProcess.jpg` | 8825 bytes | `6933d5f6e9255bea` | https://opcloud-sandbox.web.app/assets/icons/essenceAffil/EssProcess.jpg
+- `mirror_static/assets/icons/expand_more-24px.svg` | 182 bytes | `fe0ef658114738f0` | https://opcloud-sandbox.web.app/assets/icons/expand_more-24px.svg
+- `mirror_static/assets/icons/key-icon.png` | 190 bytes | `a6f5736757207fcb` | https://opcloud-sandbox.web.app/assets/icons/key-icon.png
+- `mirror_static/assets/icons/pin.png` | 237610 bytes | `2b3da9d3cd7f244e` | https://opcloud-sandbox.web.app/assets/icons/pin.png
+- `mirror_static/assets/icons/select_arrow.png` | 236 bytes | `440bfee4878ba8b2` | https://opcloud-sandbox.web.app/assets/icons/select_arrow.png
+- `mirror_static/assets/icons/token-icon.png` | 165 bytes | `9f0ae4d5380001f5` | https://opcloud-sandbox.web.app/assets/icons/token-icon.png
+- `mirror_static/assets/icons/toolbar-icons-material.png` | 4247 bytes | `7448afb175d4f46e` | https://opcloud-sandbox.web.app/assets/icons/toolbar-icons-material.png
+- `mirror_static/assets/icons/toolbar-icons-modern.png` | 11794 bytes | `cfa6e9c7b56398fd` | https://opcloud-sandbox.web.app/assets/icons/toolbar-icons-modern.png
+- `mirror_static/favicon_new.ico` | 11758 bytes | `995046f97188c8ef` | https://opcloud-sandbox.web.app/favicon_new.ico
+- `mirror_static/select_arrow.a4ed714c584e5393.png` | 236 bytes | `440bfee4878ba8b2` | https://opcloud-sandbox.web.app/select_arrow.a4ed714c584e5393.png
+
+## font_asset (11)
+- `mirror_static/assets/fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf` | 121204 bytes | `a6b42354fc79d6d9` | https://opcloud-sandbox.web.app/assets/fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf
+- `mirror_static/assets/fonts/Alegreya_Sans/AlegreyaSans-Light.ttf` | 117848 bytes | `ff720fb962fa10ed` | https://opcloud-sandbox.web.app/assets/fonts/Alegreya_Sans/AlegreyaSans-Light.ttf
+- `mirror_static/assets/fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf` | 119016 bytes | `2056cd2af61bd953` | https://opcloud-sandbox.web.app/assets/fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf
+- `mirror_static/assets/fonts/Averia_Libre/AveriaLibre-Bold.ttf` | 112228 bytes | `e7ccad4ace9d02ac` | https://opcloud-sandbox.web.app/assets/fonts/Averia_Libre/AveriaLibre-Bold.ttf
+- `mirror_static/assets/fonts/Averia_Libre/AveriaLibre-Light.ttf` | 108192 bytes | `579381d88569c002` | https://opcloud-sandbox.web.app/assets/fonts/Averia_Libre/AveriaLibre-Light.ttf
+- `mirror_static/assets/fonts/Averia_Libre/AveriaLibre-Regular.ttf` | 108468 bytes | `7d7d55d45cb38e2a` | https://opcloud-sandbox.web.app/assets/fonts/Averia_Libre/AveriaLibre-Regular.ttf
+- `mirror_static/assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf` | 161748 bytes | `0312269650316e08` | https://opcloud-sandbox.web.app/assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf
+- `mirror_static/assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf` | 160748 bytes | `3c8dc0ab1183367c` | https://opcloud-sandbox.web.app/assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf
+- `mirror_static/assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf` | 161524 bytes | `d5cbe10cfb954e6d` | https://opcloud-sandbox.web.app/assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf
+- `mirror_static/assets/icons/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2` | 47576 bytes | `7b5115124509aca2` | https://opcloud-sandbox.web.app/assets/icons/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2
+- `mirror_static/assets/icons/toolbar-icons-dark.woff` | 3532 bytes | `2c45bbb30bc4cdce` | https://opcloud-sandbox.web.app/assets/icons/toolbar-icons-dark.woff
+
+## asset_reference_fallback (2)
+- `mirror_static/assets/OPM_Links/StructuralAgg.png` | 54181 bytes | `96c4b685636d2af7` | https://opcloud-sandbox.web.app/assets/OPM_Links/StructuralAgg.png
+- `mirror_static/logo.png` | 54181 bytes | `96c4b685636d2af7` | https://opcloud-sandbox.web.app/logo.png
+
+## data_or_config (1)
+- `mirror_static/assets/config/edx.config.json` | 135 bytes | `ba9da73f5463cfe1` | https://opcloud-sandbox.web.app/assets/config/edx.config.json
+
+## Dynamic asset patterns not directly enumerable
+- `mirror_static/main.d9176050fd6f9943.js`: `assets/SVG/${handle.svg}.svg`
+- `mirror_static/main.d9176050fd6f9943.js`: `assets/SVG/toolbar/{{textAutoFormatHandle.svg}}.svg\`
+- `mirror_static/main.d9176050fd6f9943.js`: `assets/SVG/toolbar/{{userInputHandle.svg}}.svg\`
