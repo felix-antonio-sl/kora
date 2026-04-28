@@ -31,8 +31,9 @@ extensions:
     conocimiento_permitido: []
     componible_con:
       - "urn:kora:artefacto:clawforge"
-      - "urn:kora:artefacto:curator"
-      - "urn:kora:artefacto:forgemaster"
+      - "urn:kora:artefacto:artifact-curator"
+      - "urn:kora:artefacto:kora-agents"
+      - "urn:kora:artefacto:kora-skills"
 artefacto:
   perfil:
     dominio: [kora, guided, checkpoints]
