@@ -1,4 +1,4 @@
-"""Tests para el schema universal + validador funcional de autoria-spec v1.0.
+"""Tests para el schema universal + validador funcional de autoria-spec v1.2.
 
 Cubre dos capas:
 

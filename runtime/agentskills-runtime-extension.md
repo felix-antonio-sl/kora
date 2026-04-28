@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-18"
-    source: "autoria-spec v1.1 §5.5; transmutation-spec v1.0; matriz de proyeccion implementada en toolchain/kora_lib/transmute.py (commit 2812c09)."
+    source: "autoria-spec v1.2 §5.5; transmutation-spec v1.2; matriz de proyeccion implementada en toolchain/kora_lib/transmute.py."
 version: "1.0.0"
 status: publicado
 tags: [spec, runtime, agentskills, extension, transmutacion, proyeccion, byte-identical]
@@ -40,7 +40,7 @@ glosarios (espanol canonico vs ingles estandar).
 Gobierna:
 
 1. Proyeccion `T_{agentskills}: KORA_IR → Agentskills` segun
-   `transmutation-spec v1.0`.
+   `transmutation-spec v1.2`.
 2. Rename functorial de campos (es → en) — ver §3.
 3. Rename functorial de subdirs y secciones — ver §4.
 4. Dominio acotado a `forma_material: habilidad` (no aplica a
@@ -142,14 +142,24 @@ Emitido junto al paquete. Contiene:
 - `transmutation.source_hash`: sha256 del SKILL.md fuente (para detectar drift).
 - `transmutation.source_vector`: vector IR completo.
 - `transmutation.projections`: proyeccion por eje con fidelity declarada.
+- `transmutation.metadata.trace_fidelity`: `heredada` del runtime consumidor.
 - `transmutation.field_renames`: mapa §4.1.
 - `transmutation.subdir_renames`: mapa §4.2 aplicado (solo los que ocurrieron).
 - `transmutation.section_renames`: mapa §4.3.
-- `transmutation.structural_preservation`:
-  - `composition: preserved`
-  - `identity: preserved`
-  - `semantic_body: preserved`
+- `transmutation.structural_preservation`: las 8 leyes de
+  `transmutation-spec` con `status` y `evidence`.
+- `transmutation.projection_preservation.semantic_body`: preservacion del body
+  modulo renames declarados.
 - `transmutation.bisimulation_claim: byte-identical-modulo-renames`.
+
+### 6.1 Trace fidelity
+
+```yaml
+trace_fidelity:
+  level: heredada
+  capture_mechanism: "meta-runtime; hereda del runtime que ejecuta el paquete"
+  notes: "agentskills no ejecuta por si mismo"
+```
 
 ## 7. Verificacion
 

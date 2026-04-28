@@ -315,10 +315,10 @@ Mapeo:
 | `TOOLS.md` | `agent.interface.allowed_tools` |
 | `HEARTBEAT.md` | `extensions.openclaw.heartbeat_enabled: true` |
 | `BOOT.md` | `agent.plan.initial_state` (derivado) |
-| `MEMORY.md` + `memory/` | proyecta a `harness_vector.mu: 2-3` segun size/frequency |
+| `MEMORY.md` + `memory/` | proyecta a `vector_ontologico.mu: 2-3` segun size/frequency |
 | `skills/` | `agent.composition.sub_skills[]` + cada skill ingestado separadamente |
 
-Default `harness_vector` para workspaces OpenClaw ingestados:
+Default `vector_ontologico` para workspaces OpenClaw ingestados:
 `(Π=2, Μ=3, Ξ=3, Λ=1, Φ=2, Σ=[2,2,2,2,1])`. El autor ajusta.
 
 ## 12. Validacion
@@ -334,7 +334,16 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 | Vector dentro del dominio | Vector IR ∈ `D_{openclaw}` (maximo dominio de los 4) | lint |
 | Repo KORA vivo | `KORA_REPO` clonado y actualizado, montado RO en `/home/node/repos/kora` | preflight |
 
-## 13. Contrato vigente v1.2.1
+## 13. Trace fidelity
+
+```yaml
+trace_fidelity:
+  level: pendiente
+  capture_mechanism: "journalctl --user + session jsonl por especificar"
+  notes: "no cerrar verificacion estricta de trazabilidad hasta completar mecanismo estable"
+```
+
+## 14. Contrato vigente v1.2.1
 
 - OpenClaw soporta **todos** los arneses: {Utilidad, Disciplina, Delegado,
   Persona, Orquestador, Servicio}.
@@ -346,9 +355,9 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 - Agentes KORA desplegados en OpenClaw leen `artifacts/knowledge/**` desde un
   clon local vivo y actualizado de KORA montado read-only.
 
-## 14. Migracion
+## 15. Migracion
 
-### 14.1 Cambios v1.0.1 → v1.1.0
+### 15.1 Cambios v1.0.1 → v1.1.0
 
 - Adopta formato de `transmutation-spec v1.0` (matriz de preservacion por
   eje).
@@ -358,13 +367,13 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 - Alinea metadata runtime con campos estandar.
 - Documenta campos nuevos: `acp_*`, `reload_mode`, `runtime_context_cap`.
 
-### 14.2 Compatibilidad
+### 15.2 Compatibilidad
 
 Las reglas v1.0.1 (native-first, topologia, runtime state boundary) se
 mantienen. La nueva estructura agrega explicitud; no rompe transmutaciones
 existentes.
 
-### 14.3 Cambios v1.2.0 → v1.2.1
+### 15.3 Cambios v1.2.0 → v1.2.1
 
 - Generaliza el patron aprendido en `salud/urgenciologo`: los agentes OpenClaw
   KORA se despliegan con `KORA_REPO` local actualizado.

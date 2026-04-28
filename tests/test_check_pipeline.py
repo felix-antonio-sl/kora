@@ -27,6 +27,10 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertIn("traces-requirements-semantics", result.stdout)
         self.assertIn("formal-trace-discipline", result.stdout)
         self.assertIn("autoria-conformance", result.stdout)
+        self.assertIn("construction-source-primary", result.stdout)
+        self.assertIn("construction-vector-fit", result.stdout)
+        self.assertIn("construction-knowledge-explicit", result.stdout)
+        self.assertIn("construction-authoring-shape", result.stdout)
 
     def test_check_strict_exit_status_matches_diagnostics(self):
         result = run_cli("check", "--strict", check=False)
@@ -93,6 +97,57 @@ class CheckPipelineSmokeTests(unittest.TestCase):
 
         self.assertEqual(len(diags), 1)
         self.assertIn("non-requirement node", diags[0].message)
+
+    def test_construction_checks_reject_non_current_shape(self):
+        from kora_lib.checks import _check_construction_authoring_shape, _check_construction_vector_fit
+
+        artifact = (
+            ROOT / "artifacts" / "agents" / "demo" / "draft" / "AGENT.md",
+            "artifacts/agents/demo/draft/AGENT.md",
+            {
+                "_manifest": {"urn": "urn:kora:artefacto:draft"},
+                "status": "activo",
+                "agent": {},
+                "extensions": {
+                    "kora": {
+                        "atlas": {"forma_material": "agente-propiamente-tal"},
+                        "harness_vector": {"pi": 1, "mu": 1, "xi": 1, "lambda": 0, "phi": 1, "sigma": [1]},
+                        "vector_ontologico": {"pi": 1, "mu": 1, "xi": 1, "lambda": 0, "phi": 1, "sigma": [1]},
+                    }
+                },
+            },
+        )
+
+        with patch("kora_lib.checks._iter_construction_artifacts", return_value=[artifact]):
+            shape_diags = _check_construction_authoring_shape()
+            vector_diags = _check_construction_vector_fit()
+
+        self.assertTrue(any("artefacto" in d.message for d in shape_diags))
+        self.assertTrue(any("harness_vector" in d.message for d in vector_diags))
+
+    def test_construction_knowledge_requires_urns(self):
+        from kora_lib.checks import _check_construction_knowledge_explicit
+
+        artifact = (
+            ROOT / "artifacts" / "skills" / "demo" / "bad-kb" / "SKILL.md",
+            "artifacts/skills/demo/bad-kb/SKILL.md",
+            {
+                "_manifest": {"urn": "urn:kora:artefacto:bad-kb"},
+                "status": "activo",
+                "extensions": {
+                    "kora": {
+                        "atlas": {"forma_material": "habilidad"},
+                        "conocimiento_permitido": ["serialization/autoria-spec.md"],
+                    }
+                },
+            },
+        )
+
+        with patch("kora_lib.checks._iter_construction_artifacts", return_value=[artifact]):
+            diags = _check_construction_knowledge_explicit()
+
+        self.assertEqual(len(diags), 1)
+        self.assertIn("no-URN", diags[0].message)
 
 
 class CheckAlgebraTests(unittest.TestCase):

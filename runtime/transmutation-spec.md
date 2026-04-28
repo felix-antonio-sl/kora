@@ -21,7 +21,7 @@ relations:
     - "urn:fxsl:kb:icas-efectos"
 ---
 
-# KORA/Transmutation-Spec v1.1.0
+# KORA/Transmutation-Spec v1.2.0
 
 ## 1. Definicion
 
@@ -192,15 +192,25 @@ Cada transmutacion emite un artefacto de evidencia en la salida:
 {workspace}/_BUILD/{target}/_transmutation.yml
 ```
 
-### 6.1 Contenido obligatorio
+## 6.1 Contenido obligatorio
 
 ```yaml
 transmutation:
+  metadata:
+    trace_fidelity:
+      level: media
+      capture_mechanism: "hook SubagentStop + JSONL ~/.claude/projects/*/"
+      notes: "requiere captura operatoria estable para evidencia de tool calls"
+    evidence_level: "mechanical-projection-plus-declared-laws"
+    schema: "serialization/schemas/kora-transmutation-schema.json"
+
   # Identificacion
-  source_urn: "urn:kora:agent:polymath"
+  source_urn: "urn:kora:artefacto:polymath"
   source_version: "2.0.0"
+  source_path: "artifacts/agents/kora/polymath/AGENT.md"
+  source_hash: "sha256:..."
   target: claude-code
-  functor: T_claude_code_v1.2
+  functor: T_claude-code_v1.0
   timestamp: "2026-04-17T14:23:45Z"
   
   # Vector IR fuente
@@ -211,18 +221,34 @@ transmutation:
     lambda: 1
     phi: 2
     sigma: [2, 2, 2, 2, 1]
-    presentation: state-primary
+    presentacion: estado-primario
   
   # Preservacion estructural (obligatoria)
   structural_preservation:
-    composition: preserved
-    identity: preserved
-    xi_naturality: preserved
-    safety_closure: preserved
-    kleisli_composition: preserved
-    pi_monotonicity: preserved
-    mu_monotonicity: preserved
-    xi_monotonicity: preserved
+    composition:
+      status: preserved
+      evidence: "domain-check + preservation-matrix"
+    identity:
+      status: preserved
+      evidence: "source_urn/source_hash retained in manifest"
+    xi_naturality:
+      status: declared
+      evidence: "requires runtime review"
+    safety_closure:
+      status: declared
+      evidence: "source IR must pass coalgebra/vector checks before strict runtime verification"
+    kleisli_composition:
+      status: declared
+      evidence: "risk/effect composition not fully mechanized in transmute"
+    pi_monotonicity:
+      status: preserved
+      evidence: "axis projection is <= source or equal"
+    mu_monotonicity:
+      status: preserved
+      evidence: "axis projection is <= source or equal"
+    xi_monotonicity:
+      status: preserved
+      evidence: "axis projection is <= source or equal"
   
   # Proyeccion por eje
   projections:
@@ -260,28 +286,30 @@ transmutation:
   
   # Referencias
   references:
-    source_artifact: "AGENTS/kora/polymath/AGENT.md"
-    target_artifact: "AGENTS/kora/polymath/_BUILD/claude-code/polymath.md"
+    source_artifact: "artifacts/agents/kora/polymath/AGENT.md"
+    target_artifact: "artifacts/agents/kora/polymath/_BUILD/claude-code/polymath.md"
     runtime_extension_spec: "urn:kora:kb:claude-code-runtime-extension"
 ```
 
-### 6.2 Contenido opcional
+## 6.2 Contenido opcional
 
 - `metadata.warnings[]` — advertencias operativas.
 - `metadata.environment` — info del entorno (toolchain version, deps).
 - `ingest_hint` — si el target admite `Lift_R`, puntero a como elevar de vuelta.
 
-### 6.3 Validacion del artifact
+## 6.3 Validacion del artifact
 
 El archivo `_transmutation.yml` debe validarse contra un schema JSON
-(`schemas/kora-transmutation-schema.json`). Checks:
+(`serialization/schemas/kora-transmutation-schema.json`). Checks:
 
 - Estructura correcta.
 - `source_urn` resuelve.
 - Cada componente de `projections` tiene `projected_to` y `fidelity`.
 - Si `fidelity: partial`, `losses` estan declaradas.
-- `structural_preservation` tiene las 8 filas obligatorias y todas estan en
-  `preserved` (si alguna fallara, la transmutacion no debio emitirse).
+- `metadata.trace_fidelity` declara el nivel de evidencia auditable del runtime.
+- `structural_preservation` tiene las 8 filas obligatorias. Cada fila declara
+  `status` y `evidence`; solo las filas mecanicamente verificadas deben usar
+  `status: preserved`.
 
 ## 7. Matriz de preservacion por runtime
 
@@ -333,25 +361,27 @@ preservation_matrix:
 
 Dimension auxiliar de la matriz que declara **cuanta evidencia auditable
 deja el runtime** de las decisiones internas del artefacto (tool calls,
-lecturas de KB, paths de razonamiento). Sin esta dimension, un canario
-puede parecer correcto estructuralmente pero no permitir verificar que
+lecturas de KB, paths de razonamiento). Sin esta dimension, una verificacion
+runtime puede parecer correcta estructuralmente pero no permitir verificar que
 efectivamente consumio el knowledge contract declarado.
 
 Valores posibles:
 
-| Valor | Semantica | Implicacion para canarios |
+| Valor | Semantica | Implicacion para verificacion |
 |-------|-----------|----------------------------|
-| `alta` | El runtime persiste automaticamente los tool calls y decisiones en un sitio estable accesible por el operador sin pasos extra. | Canario cierra gate estricto sin ritual de captura. |
-| `media` | El runtime persiste la traza pero requiere accion del operador (expandir UI, instalar hook, leer JSONL) para capturarla de forma estable. | Canario requiere hook u otro mecanismo de captura; sin el, cierra solo `parcial`. |
-| `baja` | El runtime no persiste la traza; solo queda lo que el operador copie durante la ejecucion. | Canario imposible de verificar fuera de la sesion viva; evidencia efimera. |
-| `nula` | El runtime no expone los tool calls internos al operador. | Canario no puede cerrar gate de trazabilidad; solo gate funcional. |
+| `alta` | El runtime persiste automaticamente los tool calls y decisiones en un sitio estable accesible por el operador sin pasos extra. | La verificacion puede cerrar gate estricto sin ritual de captura. |
+| `media` | El runtime persiste la traza pero requiere accion del operador (expandir UI, instalar hook, leer JSONL) para capturarla de forma estable. | Requiere hook u otro mecanismo de captura; sin el, cierra solo `parcial`. |
+| `baja` | El runtime no persiste la traza; solo queda lo que el operador copie durante la ejecucion. | No puede verificarse fuera de la sesion viva; evidencia efimera. |
+| `nula` | El runtime no expone los tool calls internos al operador. | No puede cerrar gate de trazabilidad; solo gate funcional. |
+| `pendiente` | La runtime-extension aun no cerro declaracion de mecanismo. | No puede cerrar gate estricto. |
+| `heredada` | Meta-runtime que no ejecuta directamente; hereda del runtime consumidor. | La verificacion debe mirar el runtime efectivo. |
 
 Cada runtime-extension declara su valor en la seccion de matriz con la
 forma:
 
 ```yaml
 trace_fidelity:
-  level: alta | media | baja | nula
+  level: alta | media | baja | nula | pendiente | heredada
   capture_mechanism: "descripcion del path / hook / log"
   notes: "particularidades operativas"
 ```
@@ -369,8 +399,8 @@ aqui solo resumen):
 | agentskills | N/A | meta-runtime, hereda del target |
 
 Los runtimes marcados `pendiente` tienen deuda de documentacion abierta:
-su valor debe completarse antes de que un canario en ese runtime pueda
-cerrar gate estricto de trazabilidad.
+su valor debe completarse antes de cerrar una verificacion estricta de
+trazabilidad en ese runtime.
 
 ### 7.4 Uso operativo
 
@@ -382,8 +412,8 @@ Cuando `kora transmute --target claude-code --agent X`:
 4. Emite artefacto target + `_transmutation.yml`.
 5. Documenta cada perdida.
 6. Propaga `trace_fidelity` del runtime al bloque `metadata` del
-   `_transmutation.yml` para que el canario que consuma ese artefacto
-   sepa que nivel de evidencia puede exigir.
+   `_transmutation.yml` para que la verificacion runtime sepa que nivel de
+   evidencia puede exigir.
 
 Si algun eje no tiene entrada en la matriz o el vector excede el dominio,
 **falla con mensaje claro** indicando que el IR excede capacidad del target.
@@ -487,7 +517,7 @@ Checks obligatorios:
 |-------|-----------|----------|-------------|
 | `transmutation-yml-emitted` | Todo output target tiene `_transmutation.yml` | high | lint |
 | `source-urn-resolves` | `source_urn` del yaml resuelve en catalogo KORA | high | lint |
-| `structural-preservation-complete` | Las 8 leyes de §3 estan en `structural_preservation` y todas preservadas | high | schema |
+| `structural-preservation-complete` | Las 8 leyes de §3 estan en `structural_preservation` con `status` y `evidence` | high | schema |
 | `projection-declaration-complete` | Cada uno de los 6 ejes tiene entrada en `projections` | high | schema |
 | `losses-declared-when-partial` | Si `fidelity: partial`, `losses` declarado con razon | high | schema |
 | `matrix-present-per-runtime` | El runtime-extension tiene matriz de preservacion | high | lint |
@@ -500,7 +530,7 @@ Checks obligatorios:
 - `harness-spec`: ontologia fuente, define espacio IR.
 - `autoria-spec`: serializacion de entrada unificada (lo que se transmuta, para las cuatro formas materiales).
 - `runtime-spec-md`: contrato generico de runtime.
-- Runtime-extensions (`openclaw-`, `claude-code-`, `codex-`, `gemini-`):
+- Runtime-extensions (`agentskills-`, `claude-code-`, `codex-`, `gemini-`, `mastra-`, `openclaw-`):
   cada una declara matriz de preservacion + encaje.
 - `gobernanza`: precedencia; la transmutacion produce outputs derivados
   (§3 gobernanza).
@@ -513,12 +543,14 @@ Checks obligatorios:
 
 ## 14. Migracion
 
-### 14.1 Contrato vigente v1.0
+### 14.1 Contrato vigente v1.2.0
 
 - Transmutacion es functor, `_transmutation.yml` es evidencia obligatoria.
 - Leyes estructurales (§3) obligatorias para todos los runtimes.
 - Perdida declarada por eje con matriz de preservacion explicita.
 - Ingesta inversa disponible cuando runtime soporta `Lift_R`.
+- El manifiesto distingue preservacion mecanicamente verificada de preservacion
+  declarada/manual y propaga `metadata.trace_fidelity`.
 
 ### 14.2 Estado pre-v1.0
 

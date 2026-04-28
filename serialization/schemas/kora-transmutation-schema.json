@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KORA Transmutation Manifest Schema",
+  "description": "Valida _transmutation.yml como evidencia de proyeccion T_R: IR -> Runtime_R. El manifiesto distingue preservacion verificada mecanicamente de leyes declaradas/manuales.",
+  "type": "object",
+  "required": ["transmutation"],
+  "additionalProperties": false,
+  "properties": {
+    "transmutation": {
+      "type": "object",
+      "required": [
+        "metadata",
+        "source_urn",
+        "source_version",
+        "source_path",
+        "source_hash",
+        "target",
+        "functor",
+        "timestamp",
+        "source_vector",
+        "structural_preservation",
+        "projections",
+        "bisimulation_claim",
+        "references"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "required": ["trace_fidelity", "evidence_level", "schema"],
+          "additionalProperties": true,
+          "properties": {
+            "trace_fidelity": {
+              "type": "object",
+              "required": ["level", "capture_mechanism", "notes"],
+              "additionalProperties": false,
+              "properties": {
+                "level": {
+                  "enum": ["alta", "media", "baja", "nula", "pendiente", "heredada"]
+                },
+                "capture_mechanism": { "type": "string", "minLength": 1 },
+                "notes": { "type": "string" }
+              }
+            },
+            "evidence_level": { "type": "string", "minLength": 1 },
+            "schema": { "const": "serialization/schemas/kora-transmutation-schema.json" }
+          }
+        },
+        "source_urn": {
+          "type": "string",
+          "pattern": "^urn:[a-z][a-z0-9-]*:(artefacto|kb):[a-z0-9][a-z0-9-]*$"
+        },
+        "source_version": { "type": ["string", "number"] },
+        "source_path": { "type": "string", "minLength": 1 },
+        "source_hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "target": {
+          "enum": ["agentskills", "claude-code", "codex", "gemini", "mastra", "openclaw"]
+        },
+        "functor": {
+          "type": "string",
+          "pattern": "^T_[a-z0-9-]+_v[0-9]+\\.[0-9]+$"
+        },
+        "adapter_skill": {
+          "type": ["string", "null"]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_vector": {
+          "type": "object",
+          "required": ["pi", "mu", "xi", "lambda", "phi", "sigma", "presentacion"],
+          "additionalProperties": false,
+          "properties": {
+            "pi": { "type": "integer", "minimum": 0, "maximum": 3 },
+            "mu": { "type": "integer", "minimum": 0, "maximum": 3 },
+            "xi": { "type": "integer", "minimum": 0, "maximum": 4 },
+            "lambda": { "type": "integer", "minimum": 0, "maximum": 3 },
+            "phi": { "type": "integer", "minimum": 0, "maximum": 4 },
+            "sigma": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+            },
+            "presentacion": {
+              "enum": ["estado-primario", "accion-primaria"]
+            }
+          }
+        },
+        "structural_preservation": {
+          "type": "object",
+          "required": [
+            "composition",
+            "identity",
+            "xi_naturality",
+            "safety_closure",
+            "kleisli_composition",
+            "pi_monotonicity",
+            "mu_monotonicity",
+            "xi_monotonicity"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "composition": { "$ref": "#/$defs/preservationEvidence" },
+            "identity": { "$ref": "#/$defs/preservationEvidence" },
+            "xi_naturality": { "$ref": "#/$defs/preservationEvidence" },
+            "safety_closure": { "$ref": "#/$defs/preservationEvidence" },
+            "kleisli_composition": { "$ref": "#/$defs/preservationEvidence" },
+            "pi_monotonicity": { "$ref": "#/$defs/preservationEvidence" },
+            "mu_monotonicity": { "$ref": "#/$defs/preservationEvidence" },
+            "xi_monotonicity": { "$ref": "#/$defs/preservationEvidence" }
+          }
+        },
+        "projections": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["projected_to", "fidelity"],
+            "additionalProperties": true,
+            "properties": {
+              "projected_to": {
+                "type": ["integer", "array", "null"],
+                "items": { "type": "integer" }
+              },
+              "fidelity": { "enum": ["full", "partial", "none"] },
+              "loss": { "type": "string" },
+              "losses": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "bisimulation_claim": { "type": "string", "minLength": 1 },
+        "bisimulation_scope": { "type": "string" },
+        "bisimulation_evidence": { "type": "string" },
+        "references": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "preservationEvidence": {
+      "type": "object",
+      "required": ["status", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": ["preserved", "declared", "manual", "failed"]
+        },
+        "evidence": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

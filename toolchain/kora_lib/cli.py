@@ -68,8 +68,8 @@ def main():
         default="transitional",
         help=(
             "Migration profile. "
-            "a-autoria: forced one-pass migration to autoria-spec v1.0 (idempotent). "
-            "v2-agentfile: auto-derive harness_vector from legacy shape."
+            "a-autoria: forced one-pass migration to autoria-spec v1.2 (idempotent). "
+            "v2-agentfile: auto-derive vector_ontologico from legacy shape."
         ),
     )
     p_migrate.add_argument("--dry-run", action="store_true", help="Report only; do not write files")

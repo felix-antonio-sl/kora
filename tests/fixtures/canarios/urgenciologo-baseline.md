@@ -67,7 +67,7 @@ Nota 2026-04-27: este contrato fue ampliado desde la astilla inicial de
 evaluacion baseline de 2026-04-22 que sigue abajo conserva evidencia historica
 del canario original de dolor toracico.
 
-## Gate binario
+## Gate multinivel
 
 | # | Criterio | Pregunta operacional |
 |---|----------|----------------------|
@@ -83,12 +83,12 @@ basta.
 
 ## Evaluación baseline 2026-04-22 (segunda corrida — con hook activo)
 
-| # | Veredicto | Nota |
+| # | Nivel | Nota |
 |---|-----------|------|
-| 1 | pasa | Output cita explícitamente los tres paths en sección "Rutas KB utilizadas" y referencia inline a secciones del KB ("del KB `dolor-toracico`, sección Caracterización"). Tool calls reales constatados vía `.claude/trace/` (hook SubagentStop): 3 `Read` sobre `dolor-toracico.md`, `evaluacion-primaria.md`, `razonamiento-clinico.md`. |
-| 2 | pasa | Estructura "Paso 2 — ABCUDE en paralelo" anterior a "Paso 4 — Diferencial priorizado por amenaza". Precedencia clínica del ABC antes del diferencial confirmada. |
-| 3 | pasa | Sospecha fundamentada, diferenciales tiempo-dependientes (5 ordenados por daño × probabilidad × tiempo-dependencia), umbrales cuantificados, disposición estratificada por escenario A/B/C, paso 6 de reevaluación y documentación. |
-| 4 | pasa | Sección "Limitación de cobertura (honestidad epistémica)" enumera qué no está en el KB y remite a guías externas (GES IAM Chile, ESC, AHA/ACC) para contenidos fuera de alcance. |
+| 1 | pasa-estricto | Output cita explícitamente los tres paths en sección "Rutas KB utilizadas" y referencia inline a secciones del KB ("del KB `dolor-toracico`, sección Caracterización"). Tool calls reales constatados vía `.claude/trace/` (hook SubagentStop): 3 `Read` sobre `dolor-toracico.md`, `evaluacion-primaria.md`, `razonamiento-clinico.md`. |
+| 2 | pasa-estricto | Estructura "Paso 2 — ABCUDE en paralelo" anterior a "Paso 4 — Diferencial priorizado por amenaza". Precedencia clínica del ABC antes del diferencial confirmada. |
+| 3 | pasa-estricto | Sospecha fundamentada, diferenciales tiempo-dependientes (5 ordenados por daño × probabilidad × tiempo-dependencia), umbrales cuantificados, disposición estratificada por escenario A/B/C, paso 6 de reevaluación y documentación. |
+| 4 | pasa-estricto | Sección "Limitación de cobertura (honestidad epistémica)" enumera qué no está en el KB y remite a guías externas (GES IAM Chile, ESC, AHA/ACC) para contenidos fuera de alcance. |
 
 Estado global: **pasa-estricto**. Los cuatro criterios se satisfacen con
 evidencia de tool calls. El gate de trazabilidad al KB queda cerrado con

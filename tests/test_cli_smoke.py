@@ -148,7 +148,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         """Profile v2-agentfile esta disponible y es idempotente tras primera corrida."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        # Primera corrida ya deberia haber poblado harness_vector; segunda es idempotente
+        # Primera corrida ya deberia haber poblado vector_ontologico; segunda es idempotente
         result = run_cli("migrate", "--profile", "v2-agentfile")
         # Idempotente si ya se aplico
         self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)

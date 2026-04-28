@@ -37,19 +37,6 @@ extensions:
     - claude-code
     - codex
     verificacion_coalgebraica: true
-    harness_vector:
-      pi: 0
-      mu: 0
-      xi: 1
-      lambda: 0
-      phi: 0
-      sigma:
-      - 1
-      - 1
-      - 1
-      - 1
-      - 1
-    presentation: state-primary
 nombre: Digitrans
 artefacto:
   plan:

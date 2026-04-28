@@ -142,7 +142,7 @@ Reglas:
 
 ## 12. Migracion
 
-Contrato vigente v3.7.0:
+Contrato vigente v3.8.0:
 
 - runtime queda reducido a invariantes runtime,
 - absorbe la compilacion concreta del IR,

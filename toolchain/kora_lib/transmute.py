@@ -1,6 +1,6 @@
 """Transmutation orchestrator: proyecta KORA IR a un runtime target.
 
-Implementa el functor T_R: KORA_IR → Runtime_R de transmutation-spec v1.0,
+Implementa el functor T_R: KORA_IR → Runtime_R de transmutation-spec v1.2,
 usando las matrices de preservacion declaradas en cada runtime-extension.
 
 Funciones principales:
@@ -94,6 +94,46 @@ TARGET_ADAPTERS = {
 
 SUPPORTED_TARGETS = tuple(PRESERVATION_MATRIX.keys())
 
+PRESENTACION_MAP = {
+    "estado-primario": "estado-primario",
+    "accion-primaria": "accion-primaria",
+    "state-primary": "estado-primario",
+    "action-primary": "accion-primaria",
+}
+
+TRACE_FIDELITY_BY_TARGET = {
+    "claude-code": {
+        "level": "media",
+        "capture_mechanism": "hook SubagentStop + JSONL ~/.claude/projects/*/",
+        "notes": "requiere captura operatoria estable para evidencia de tool calls",
+    },
+    "codex": {
+        "level": "pendiente",
+        "capture_mechanism": "por documentar en codex-runtime-extension",
+        "notes": "no cerrar verificacion estricta de trazabilidad hasta completar runtime-extension",
+    },
+    "gemini": {
+        "level": "pendiente",
+        "capture_mechanism": "por documentar en gemini-runtime-extension",
+        "notes": "no cerrar verificacion estricta de trazabilidad hasta completar runtime-extension",
+    },
+    "mastra": {
+        "level": "pendiente",
+        "capture_mechanism": "logs server-side por especificar",
+        "notes": "no cerrar verificacion estricta de trazabilidad hasta completar runtime-extension",
+    },
+    "openclaw": {
+        "level": "pendiente",
+        "capture_mechanism": "journalctl --user + session jsonl por especificar",
+        "notes": "no cerrar verificacion estricta de trazabilidad hasta completar runtime-extension",
+    },
+    "agentskills": {
+        "level": "heredada",
+        "capture_mechanism": "meta-runtime; hereda del runtime que ejecuta el paquete",
+        "notes": "agentskills no ejecuta por si mismo",
+    },
+}
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -123,11 +163,11 @@ def _build_target_path(ns: str, name: str, target: str) -> Path:
     return AGENTS_ROOT / ns / name / "_BUILD" / target
 
 
-def _get_harness_vector(frontmatter: dict) -> dict:
+def _get_vector_ontologico(frontmatter: dict) -> dict:
     """Extrae el vector ontologico PMI × LFS del IR.
 
     Acepta ambos nombres por compatibilidad:
-      - `vector_ontologico` (canonico en autoria-spec v1.0+, glosario es)
+      - `vector_ontologico` (canonico en autoria-spec)
       - `harness_vector` (legacy pre-unificacion)
     """
     kora_ext = frontmatter.get("extensions", {}).get("kora", {})
@@ -138,6 +178,86 @@ def _get_harness_vector(frontmatter: dict) -> dict:
             "Run `kora migrate --perfil a-autoria` to normalize shape."
         )
     return vector
+
+
+def _get_harness_vector(frontmatter: dict) -> dict:
+    """Alias legacy para callers internos antiguos."""
+    return _get_vector_ontologico(frontmatter)
+
+
+def _get_presentacion(frontmatter: dict) -> str:
+    """Extrae la presentacion canonica, aceptando el nombre legacy."""
+    kora_ext = frontmatter.get("extensions", {}).get("kora", {})
+    raw = kora_ext.get("presentacion") or kora_ext.get("presentation") or "estado-primario"
+    return PRESENTACION_MAP.get(raw, raw)
+
+
+def _trace_fidelity_for_target(target: str) -> dict:
+    return dict(TRACE_FIDELITY_BY_TARGET.get(target, {
+        "level": "pendiente",
+        "capture_mechanism": "runtime no registrado",
+        "notes": "declaracion faltante",
+    }))
+
+
+def _structural_preservation_record(target: str) -> dict:
+    """Evidencia minima honesta: separar lo verificado de lo declarado."""
+    return {
+        "composition": {
+            "status": "preserved",
+            "evidence": "domain-check + preservation-matrix",
+        },
+        "identity": {
+            "status": "preserved",
+            "evidence": "source_urn/source_hash retained in manifest",
+        },
+        "xi_naturality": {
+            "status": "declared",
+            "evidence": f"requires runtime review for {target}",
+        },
+        "safety_closure": {
+            "status": "declared",
+            "evidence": "source IR must pass coalgebra/vector checks before strict runtime verification",
+        },
+        "kleisli_composition": {
+            "status": "declared",
+            "evidence": "risk/effect composition not fully mechanized in transmute",
+        },
+        "pi_monotonicity": {
+            "status": "preserved",
+            "evidence": "axis projection is <= source or equal",
+        },
+        "mu_monotonicity": {
+            "status": "preserved",
+            "evidence": "axis projection is <= source or equal",
+        },
+        "xi_monotonicity": {
+            "status": "preserved",
+            "evidence": "axis projection is <= source or equal",
+        },
+    }
+
+
+def _validate_transmutation_manifest(manifest: dict) -> None:
+    """Valida el manifiesto contra el schema publicado si jsonschema existe."""
+    schema_path = KORA_ROOT / "serialization" / "schemas" / "kora-transmutation-schema.json"
+    if not schema_path.is_file():
+        raise ValueError(f"Missing transmutation schema: {schema_path.relative_to(KORA_ROOT)}")
+    try:
+        import jsonschema
+    except ImportError as exc:
+        raise ValueError("jsonschema is required to validate _transmutation.yml") from exc
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    jsonschema.Draft202012Validator(schema).validate(manifest)
+
+
+def _write_transmutation_manifest(path: Path, manifest: dict) -> Path:
+    _validate_transmutation_manifest(manifest)
+    path.write_text(
+        yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    return path
 
 
 def _project_axis(axis_name: str, value, matrix: dict):
@@ -533,11 +653,16 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
                              projections_detail: dict):
     """Emite _transmutation.yml conforme transmutation-spec §6."""
     adapter = _resolve_adapter_skill(target)
-    presentation = frontmatter.get("extensions", {}).get("kora", {}).get("presentation", "state-primary")
+    presentacion = _get_presentacion(frontmatter)
     knowledge_contract = _collect_knowledge_contract(frontmatter)
 
     manifest = {
         "transmutation": {
+            "metadata": {
+                "trace_fidelity": _trace_fidelity_for_target(target),
+                "evidence_level": "mechanical-projection-plus-declared-laws",
+                "schema": "serialization/schemas/kora-transmutation-schema.json",
+            },
             # Identificacion
             "source_urn": frontmatter.get("_manifest", {}).get("urn", ""),
             "source_version": version,
@@ -556,20 +681,11 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
                 "lambda": vector.get("lambda"),
                 "phi": vector.get("phi"),
                 "sigma": vector.get("sigma"),
-                "presentation": presentation,
+                "presentacion": presentacion,
             },
 
             # Preservacion estructural (obligatoria - transmutation-spec §3.2)
-            "structural_preservation": {
-                "composition": "preserved",
-                "identity": "preserved",
-                "xi_naturality": "preserved",
-                "safety_closure": "preserved",
-                "kleisli_composition": "preserved",
-                "pi_monotonicity": "preserved",
-                "mu_monotonicity": "preserved",
-                "xi_monotonicity": "preserved",
-            },
+            "structural_preservation": _structural_preservation_record(target),
 
             # Proyeccion por eje
             "projections": projections_detail,
@@ -577,6 +693,7 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
             # Claim de bisimulacion
             "bisimulation_claim": "equivalent-modulo-projections",
             "bisimulation_scope": f"observaciones soportadas por {target}",
+            "bisimulation_evidence": "bounded-by-preservation-matrix",
 
             # Referencias
             "references": {
@@ -595,11 +712,7 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
         )
 
     yml_path = target_dir / "_transmutation.yml"
-    yml_path.write_text(
-        yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True),
-        encoding="utf-8",
-    )
-    return yml_path
+    return _write_transmutation_manifest(yml_path, manifest)
 
 
 def _collect_interface_tool_names(frontmatter: dict) -> list[str]:
@@ -887,7 +1000,7 @@ def _transmute_skill_to_claude_code(skill_md_path: Path, dry_run: bool = False) 
             f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
         )
 
-    vector = _get_harness_vector(frontmatter)
+    vector = _get_vector_ontologico(frontmatter)
     projected, detail = _project_vector(vector, "claude-code")
     target_dir = _build_claude_code_skill_target_path(skill_md_path)
     skill_name = skill_md_path.parent.name
@@ -959,7 +1072,7 @@ def _transmute_skill_to_codex(skill_md_path: Path, dry_run: bool = False) -> tup
             f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
         )
 
-    vector = _get_harness_vector(frontmatter)
+    vector = _get_vector_ontologico(frontmatter)
     projected, detail = _project_vector(vector, "codex")
     target_dir = _build_codex_skill_target_path(skill_md_path)
     skill_name = skill_md_path.parent.name
@@ -1049,7 +1162,7 @@ def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) 
         )
 
     # Proyectar vector (verifica dominio)
-    vector = _get_harness_vector(frontmatter)
+    vector = _get_vector_ontologico(frontmatter)
     projected, detail = _project_vector(vector, "agentskills")
 
     target_dir = _build_agentskills_target_path(skill_md_path)
@@ -1097,6 +1210,11 @@ def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) 
     source_hash = _sha256(skill_md_path)
     manifest = {
         "transmutation": {
+            "metadata": {
+                "trace_fidelity": _trace_fidelity_for_target("agentskills"),
+                "evidence_level": "byte-identical-projection-plus-declared-laws",
+                "schema": "serialization/schemas/kora-transmutation-schema.json",
+            },
             "source_urn": frontmatter.get("_manifest", {}).get("urn", ""),
             "source_version": frontmatter.get("version", "0.0.0"),
             "source_path": str(skill_md_path.relative_to(KORA_ROOT)),
@@ -1107,17 +1225,21 @@ def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) 
             "source_vector": {
                 "pi": vector.get("pi"), "mu": vector.get("mu"), "xi": vector.get("xi"),
                 "lambda": vector.get("lambda"), "phi": vector.get("phi"), "sigma": vector.get("sigma"),
+                "presentacion": _get_presentacion(frontmatter),
             },
-            "structural_preservation": {
-                "composition": "preserved",
-                "identity": "preserved",
-                "semantic_body": "preserved",
+            "structural_preservation": _structural_preservation_record("agentskills"),
+            "projection_preservation": {
+                "semantic_body": {
+                    "status": "preserved",
+                    "evidence": "body projected with heading/subdir renames only",
+                },
             },
             "projections": detail,
             "field_renames": AGENTSKILLS_FIELD_RENAMES,
             "subdir_renames": summary["subdirs_renamed"],
             "section_renames": AGENTSKILLS_SECTION_RENAMES,
             "bisimulation_claim": "byte-identical-modulo-renames",
+            "bisimulation_evidence": "filesystem diff modulo declared renames",
             "references": {
                 "autoria_spec": "urn:kora:kb:autoria-spec",
                 "transmutation_spec": "urn:kora:kb:transmutation-spec",
@@ -1125,7 +1247,7 @@ def _transmute_skill_to_agentskills(skill_md_path: Path, dry_run: bool = False) 
         }
     }
     yml_path = target_dir / "_transmutation.yml"
-    yml_path.write_text(yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    _write_transmutation_manifest(yml_path, manifest)
 
     return target_dir, summary
 
@@ -1342,7 +1464,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     print(f"  Version: {version}")
 
     # Vector IR
-    vector = _get_harness_vector(frontmatter)
+    vector = _get_vector_ontologico(frontmatter)
     print(f"  Vector IR: Π={vector['pi']} Μ={vector['mu']} Ξ={vector['xi']} "
           f"Λ={vector['lambda']} Φ={vector['phi']} Σ={vector['sigma']}")
 
@@ -1450,13 +1572,14 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
     if max_turns and isinstance(max_turns, int) and max_turns >= 10:
         vector["pi"] = 2  # plan ramificado para multi-turn largo
 
-    # Construir AGENT.md v2 en _FRAGUA/INBOX/
+    # Construir AGENT.md canonico en _FRAGUA/INBOX/
     fragua_path = AGENTS_ROOT / "_FRAGUA" / "INBOX" / name / "AGENT.md"
     fragua_path.parent.mkdir(parents=True, exist_ok=True)
 
     new_frontmatter = {
         "_manifest": {
-            "urn": f"urn:{namespace}:agent:{name}",
+            "urn": f"urn:{namespace}:artefacto:{name}",
+            "type": "artefacto",
             "provenance": {
                 "created_by": "kora-ingest",
                 "created_at": datetime.now().strftime("%Y-%m-%d"),
@@ -1464,19 +1587,21 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
             },
         },
         "version": "1.0.0",
-        "name": name,
         "status": "borrador",
+        "nombre": name,
+        "descripcion": description[:200] if len(description) > 200 else description,
         "tags": ["ingested", "claude-code", namespace],
         "lang": "es",
         "extensions": {
             "kora": {
-                "harness_vector": vector,
-                "presentation": "state-primary",
+                "vector_ontologico": vector,
+                "presentacion": "estado-primario",
                 "atlas": {
-                    "harness_name": "persona" if vector["mu"] >= 2 else "delegado",
-                    "form": "agent-proper" if vector["mu"] >= 2 else "subagent",
-                    "hcai_metaphor": "control-center" if vector["phi"] >= 2 else "supertool",
+                    "arnes_categorico": "persona" if vector["mu"] >= 2 else "delegado",
+                    "forma_material": "agente-propiamente-tal" if vector["mu"] >= 2 else "subagente",
+                    "metafora_relacional": "centro-de-control" if vector["phi"] >= 2 else "superherramienta",
                 },
+                "entornos_objetivo": ["claude-code"],
                 "ingested_from": "claude-code",
             },
             "claude_code": {
@@ -1488,26 +1613,26 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
                 "effort": effort,
             },
         },
-        "agent": {
-            "profile": {
-                "description": description[:200] if len(description) > 200 else description,
-                "domain": [namespace],
-                "narrative": description,
+        "artefacto": {
+            "perfil": {
+                "descripcion": description[:200] if len(description) > 200 else description,
+                "dominio": [namespace],
+                "narrativa": description,
             },
             "plan": {
-                "initial_state": "S-START",
-                "terminal_state": "S-END",
-                "states": [
-                    {"id": "S-START", "act": "Entry state derived from ingestion. Review body for FSM."},
-                    {"id": "S-END", "act": "Terminal.", "transitions": "terminal"},
+                "estado_inicial": "S-START",
+                "estado_terminal": "S-END",
+                "estados": [
+                    {"id": "S-START", "accion": "Estado de entrada derivado de ingestion. Revisar body para FSM."},
+                    {"id": "S-END", "accion": "Terminal.", "transiciones": "terminal"},
                 ],
             },
-            "interface": {"tools": [], "permissions": {"allow": []}},
-            "context": {
-                "memory_config": {"mode": "persistent" if memory == "user" else "session"},
+            "interfaz": {"tools": [], "permissions": {"allow": []}},
+            "contexto": {
+                "memoria_config": {"mode": "persistent" if memory == "user" else "session"},
             },
-            "invariants": {
-                "ethical_commitments": {
+            "invariantes": {
+                "compromisos_eticos": {
                     "safety_norm": "TODO — revisar tras ingestion",
                     "fairness": "TODO",
                     "transparency": "TODO",
@@ -1524,8 +1649,8 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
     return fragua_path
 
 
-def _lift_codex_skill(file_path: Path):
-    """Eleva un skill Codex a artifacts/skills/_TALLER/INBOX/."""
+def _lift_codex_skill(file_path: Path, from_runtime: str = "codex", namespace: str = "kora"):
+    """Eleva un skill runtime a artifacts/skills/_TALLER/INBOX/."""
     frontmatter, body = load_markdown_parts(file_path)
     if not isinstance(frontmatter, dict):
         raise ValueError(f"No YAML frontmatter in {file_path}")
@@ -1533,35 +1658,62 @@ def _lift_codex_skill(file_path: Path):
     name = frontmatter.get("name", file_path.stem)
     description = frontmatter.get("description", "")
 
-    vector = dict(DEFAULT_VECTORS_BY_FROM["codex"])
+    vector = dict(DEFAULT_VECTORS_BY_FROM[from_runtime])
 
     taller_path = SKILLS_ROOT / "_TALLER" / "INBOX" / name / "SKILL.md"
     taller_path.parent.mkdir(parents=True, exist_ok=True)
 
     new_frontmatter = {
         "_manifest": {
-            "urn": f"urn:kora:skill:{name}:1.0.0",
-            "type": "lazy_load_endofunctor",
+            "urn": f"urn:{namespace}:artefacto:{name}",
+            "type": "artefacto",
+            "provenance": {
+                "created_by": "kora-ingest",
+                "created_at": datetime.now().strftime("%Y-%m-%d"),
+                "source": str(file_path),
+            },
         },
-        "name": name,
-        "description": description,
-        "allowed-tools": frontmatter.get("allowed-tools", "Read"),
+        "version": "1.0.0",
+        "status": "borrador",
+        "nombre": name,
+        "descripcion": description,
+        "tags": ["ingested", from_runtime, namespace],
+        "lang": "es",
         "extensions": {
             "kora": {
-                "harness_vector": vector,
-                "presentation": "state-primary",
-                "skill_freedom": "medium",
+                "vector_ontologico": vector,
+                "presentacion": "estado-primario",
                 "atlas": {
-                    "harness_name": "disciplina" if vector["pi"] >= 2 else "utilidad",
-                    "form": "skill-standard",
-                    "hcai_metaphor": "supertool",
+                    "arnes_categorico": "disciplina" if vector["pi"] >= 2 else "utilidad",
+                    "forma_material": "habilidad",
+                    "metafora_relacional": "superherramienta",
                 },
-                "ingested_from": "codex",
-                "lifecycle": {
-                    "status": "borrador",
-                    "created": datetime.now().strftime("%Y-%m-%d"),
-                },
+                "entornos_objetivo": [from_runtime],
+                "nivel_prescripcion": "medio",
+                "ingested_from": from_runtime,
             },
+            from_runtime.replace("-", "_"): {
+                "allowed_tools": frontmatter.get("allowed-tools", "Read"),
+            },
+        },
+        "artefacto": {
+            "perfil": {
+                "descripcion": description,
+                "dominio": [namespace],
+                "disparadores": [],
+                "salidas": [],
+            },
+            "plan": {
+                "estado_inicial": "S-START",
+                "estado_terminal": "S-END",
+                "estados": [
+                    {"id": "S-START", "accion": "Ejecutar habilidad."},
+                    {"id": "S-END", "accion": "Terminal.", "transiciones": "terminal"},
+                ],
+            },
+            "interfaz": {"tools": [], "permissions": {"allow": []}},
+            "contexto": {},
+            "invariantes": {"reglas_duras": []},
         },
     }
 
@@ -1600,7 +1752,8 @@ def _lift_openclaw_workspace(workspace_dir: Path):
 
     new_frontmatter = {
         "_manifest": {
-            "urn": f"urn:kora:agent:{agent_id}",
+            "urn": f"urn:kora:artefacto:{agent_id}",
+            "type": "artefacto",
             "provenance": {
                 "created_by": "kora-ingest",
                 "created_at": datetime.now().strftime("%Y-%m-%d"),
@@ -1608,19 +1761,21 @@ def _lift_openclaw_workspace(workspace_dir: Path):
             },
         },
         "version": "1.0.0",
-        "name": agent_id,
         "status": "borrador",
+        "nombre": agent_id,
+        "descripcion": description or f"OpenClaw agent {agent_id}",
         "tags": ["ingested", "openclaw"],
         "lang": "es",
         "extensions": {
             "kora": {
-                "harness_vector": vector,
-                "presentation": "state-primary",
+                "vector_ontologico": vector,
+                "presentacion": "estado-primario",
                 "atlas": {
-                    "harness_name": "servicio",
-                    "form": "platform-agent",
-                    "hcai_metaphor": "control-center",
+                    "arnes_categorico": "servicio",
+                    "forma_material": "agente-plataforma",
+                    "metafora_relacional": "centro-de-control",
                 },
+                "entornos_objetivo": ["openclaw"],
                 "ingested_from": "openclaw",
             },
             "openclaw": {
@@ -1628,25 +1783,25 @@ def _lift_openclaw_workspace(workspace_dir: Path):
                 "workspace_path": f"workspaces/{agent_id}/",
             },
         },
-        "agent": {
-            "profile": {
-                "description": description or f"OpenClaw agent {agent_id}",
-                "domain": ["openclaw-fleet"],
+        "artefacto": {
+            "perfil": {
+                "descripcion": description or f"OpenClaw agent {agent_id}",
+                "dominio": ["openclaw-fleet"],
             },
             "plan": {
-                "initial_state": "S-START",
-                "terminal_state": "S-END",
-                "states": [
-                    {"id": "S-START", "act": "Entry."},
-                    {"id": "S-END", "act": "Terminal.", "transitions": "terminal"},
+                "estado_inicial": "S-START",
+                "estado_terminal": "S-END",
+                "estados": [
+                    {"id": "S-START", "accion": "Entry."},
+                    {"id": "S-END", "accion": "Terminal.", "transiciones": "terminal"},
                 ],
             },
-            "interface": {"tools": [], "permissions": {"allow": []}},
-            "context": {
-                "memory_config": {"mode": "ambient", "storage": f"{workspace_dir}/memory/"},
+            "interfaz": {"tools": [], "permissions": {"allow": []}},
+            "contexto": {
+                "memoria_config": {"mode": "ambient", "storage": f"{workspace_dir}/memory/"},
             },
-            "invariants": {
-                "ethical_commitments": {
+            "invariantes": {
+                "compromisos_eticos": {
                     "safety_norm": "TODO — revisar tras ingestion",
                     "fairness": "TODO",
                     "transparency": "TODO",
@@ -1697,7 +1852,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
         if dry_run:
             print(f"  [dry-run] Would lift skill to artifacts/skills/_TALLER/INBOX/")
             return
-        result = _lift_codex_skill(file_path)
+        result = _lift_codex_skill(file_path, from_runtime=from_runtime, namespace=namespace)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")
 
     elif from_runtime == "openclaw":
@@ -1718,7 +1873,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
                          f"Supported: claude-code, codex, gemini, openclaw")
 
     print(f"\n  Ingest preparado. El artefacto en staging requiere:")
-    print(f"    1. Completar campos TODO en invariants/ethical_commitments.")
-    print(f"    2. Ajustar harness_vector si heuristica fue imprecisa.")
+    print(f"    1. Completar campos TODO en artefacto.invariantes.compromisos_eticos.")
+    print(f"    2. Ajustar vector_ontologico si la heuristica fue imprecisa.")
     print(f"    3. Revisar plan FSM (auto-generado como stub).")
-    print(f"    4. Promover con `kora promote` cuando este listo.")
+    print(f"    4. Pasar por REVIEW y publicar segun el pipeline _FRAGUA/_TALLER vigente.")

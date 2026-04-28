@@ -201,7 +201,16 @@ extensions:
    solicitud o tenant.
 4. Los checkpoints humanos **DEBEN** preservar `session_id` y budget vigente.
 
-## 10. Contrato vigente
+## 10. Trace fidelity
+
+```yaml
+trace_fidelity:
+  level: pendiente
+  capture_mechanism: "logs server-side por especificar"
+  notes: "no cerrar verificacion estricta de trazabilidad hasta completar mecanismo estable"
+```
+
+## 11. Contrato vigente
 
 `mastra-runtime-extension v1.0.0` habilita:
 

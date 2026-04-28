@@ -259,15 +259,24 @@ Mapeo:
 | Campo Codex | Destino KORA IR |
 |--------------|------------------|
 | `name` | `_manifest.urn` slug |
-| `description` | `agent.profile.description` + `_manifest.provenance.source` |
+| `description` | `artefacto.perfil.descripcion` + `_manifest.provenance.source` |
 | `metadata.short-description` | atlas descriptivo |
-| body content | `agent.plan` (heuristico) |
+| body content | `artefacto.plan` (heuristico) |
 | `scripts/`, `references/`, `assets/` | preservados tal cual (cross-runtime) |
 | `agents/openai.yaml` | `extensions.codex.ui_metadata` |
 
-Default `harness_vector` para skills ingestados: `(Π=2, Μ=0, Ξ=1, Λ=0,
+Default `vector_ontologico` para skills ingestados: `(Π=2, Μ=0, Ξ=1, Λ=0,
 Φ=1, Σ=[1,1,2,1,0])`. El autor debe ajustar si el skill tiene
 caracteristicas distintas.
+
+### 11.1 Trace fidelity
+
+```yaml
+trace_fidelity:
+  level: pendiente
+  capture_mechanism: "por documentar en codex-runtime-extension"
+  notes: "no cerrar verificacion estricta de trazabilidad hasta completar mecanismo estable"
+```
 
 ## 12. Validacion
 
@@ -280,7 +289,7 @@ caracteristicas distintas.
 | Skill freedom declarado | `skill_freedom` presente si Codex target | lint |
 | UI metadata consistente | `agents/openai.yaml` coincide con SKILL.md si presente | lint |
 
-## 13. Contrato vigente v1
+## 13. Contrato vigente v1.0.0
 
 - Codex soporta {Utilidad, Disciplina, Delegado} completos.
 - Soporta {Persona} parcial (session-resumable, no cross-session transparente).

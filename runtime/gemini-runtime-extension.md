@@ -241,8 +241,17 @@ Skills Gemini elevables:
 kora ingest --from gemini --file path/to/SKILL.md
 ```
 
-Mapeo analogo al de Codex/Claude Code. Default `harness_vector` para
+Mapeo analogo al de Codex/Claude Code. Default `vector_ontologico` para
 skills ingestados: `(Π=2, Μ=0, Ξ=1, Λ=0, Φ=1, Σ=[1,1,2,1,0])`.
+
+### 11.1 Trace fidelity
+
+```yaml
+trace_fidelity:
+  level: pendiente
+  capture_mechanism: "por documentar en gemini-runtime-extension"
+  notes: "no cerrar verificacion estricta de trazabilidad hasta completar mecanismo estable"
+```
 
 ## 12. Validacion
 
@@ -254,7 +263,7 @@ skills ingestados: `(Π=2, Μ=0, Ξ=1, Λ=0, Φ=1, Σ=[1,1,2,1,0])`.
 | plugin.json valido | Schema minimo cumplido | schema |
 | Progressive disclosure | Body ≤ 500 lineas | lint |
 
-## 13. Contrato vigente v1
+## 13. Contrato vigente v1.0.0
 
 - Gemini CLI soporta {Utilidad, Disciplina, Delegado} completos.
 - Soporta {Persona} parcial (session-limited).

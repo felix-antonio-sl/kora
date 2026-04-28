@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "KORA Agentfile Frontmatter Schema v2",
-  "description": "Validates the YAML frontmatter of an AGENT.md file per agentfile-spec v2.0.0. Acepta shape v1 (legacy con coalgebra/fibers/safety) durante transicion, requiere extensions.kora.harness_vector en v2.",
+  "title": "KORA Agentfile Frontmatter Schema v2 (LEGACY COMPAT ONLY)",
+  "description": "Schema historico para compatibilidad/migracion de agentfile-spec v2.0.0. No es authoring canonico productivo; el shape vigente es serialization/schemas/kora-artefacto.json + autoria-spec. Acepta shape v1/v2 legacy con extensions.kora.harness_vector para permitir migracion a extensions.kora.vector_ontologico.",
   "type": "object",
   "required": ["_manifest", "version", "name", "status", "tags", "lang", "extensions", "agent"],
   "properties": {

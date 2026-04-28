@@ -431,11 +431,10 @@ def derive_harness_vector_from_legacy(frontmatter, agent_path):
 
 
 def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
-    """Agrega extensions.kora.harness_vector derivado al AGENT.md si falta.
+    """Agrega extensions.kora.vector_ontologico derivado al AGENT.md si falta.
 
-    No altera el shape v1 (coalgebra/fibers/safety) — solo agrega el vector
-    ontologico declarativo. El renombrado coalgebra→profile y disolucion de
-    fibers queda como paso manual posterior.
+    Compatibilidad historica: si encuentra harness_vector/presentation, los
+    normaliza al glosario vigente en vez de reintroducir overlays legacy.
     """
     agent_path = workspace_dir / "AGENT.md"
     if not agent_path.exists():
@@ -448,14 +447,31 @@ def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
     extensions = frontmatter.setdefault("extensions", {})
     kora_ext = extensions.setdefault("kora", {})
 
-    # Si ya existe harness_vector, no sobreescribir
-    if "harness_vector" in kora_ext:
-        return []
+    changed = False
 
-    # Derivar y agregar
-    vector = derive_harness_vector_from_legacy(frontmatter, agent_path)
-    kora_ext["harness_vector"] = vector
-    kora_ext.setdefault("presentation", "state-primary")
+    if "vector_ontologico" not in kora_ext:
+        if isinstance(kora_ext.get("harness_vector"), dict):
+            kora_ext["vector_ontologico"] = kora_ext.pop("harness_vector")
+        else:
+            kora_ext["vector_ontologico"] = derive_harness_vector_from_legacy(frontmatter, agent_path)
+        changed = True
+    elif "harness_vector" in kora_ext:
+        del kora_ext["harness_vector"]
+        changed = True
+
+    if "presentation" in kora_ext:
+        raw_presentation = kora_ext.pop("presentation")
+        kora_ext.setdefault(
+            "presentacion",
+            AUTORIA_PRESENTACION_MAP.get(raw_presentation, raw_presentation),
+        )
+        changed = True
+    elif "presentacion" not in kora_ext:
+        kora_ext["presentacion"] = "estado-primario"
+        changed = True
+
+    if not changed:
+        return []
 
     if not dry_run:
         dump_yaml_frontmatter_and_body(agent_path, frontmatter, body)
@@ -464,7 +480,7 @@ def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
 
 
 # ---------------------------------------------------------------------------
-# Perfil a-autoria: migracion forzada a autoria-spec v1.0 (una pasada,
+# Perfil a-autoria: migracion forzada a autoria-spec v1.2 (una pasada,
 # idempotente). Ver specs/autoria-spec.md §13.
 # ---------------------------------------------------------------------------
 
@@ -863,7 +879,7 @@ def _autoria_sweep_urn_refs(value):
 
 
 def migrate_artifact_to_autoria(path, dry_run=False):
-    """Migra un AGENT.md o SKILL.md en sitio a autoria-spec v1.0.
+    """Migra un AGENT.md o SKILL.md en sitio a autoria-spec v1.2.
 
     Idempotente: si ya esta migrado, no hace cambios.
     Retorna lista con el path si cambio.
@@ -983,7 +999,7 @@ def migrate_to_autoria(dry_run=False, cohort=None):
 
 
 def migrate_agents(profile="transitional", dry_run=False, cohort=None):
-    # Perfil a-autoria: ruptura forzada a autoria-spec v1.0. No scaffoldea
+    # Perfil a-autoria: ruptura forzada a autoria-spec v1.2. No scaffoldea
     # legacy (SOUL/USER/AGENTS.md). Idempotente. Ver spec §13.
     if profile == "a-autoria":
         return migrate_to_autoria(dry_run=dry_run, cohort=cohort)
@@ -995,7 +1011,7 @@ def migrate_agents(profile="transitional", dry_run=False, cohort=None):
         changed_paths.extend(scaffolded)
         newly_scaffolded.update(scaffolded)
 
-    # Perfil v2-agentfile: auto-derivar harness_vector en cada workspace
+    # Perfil v2-agentfile: auto-derivar vector_ontologico en cada workspace
     if profile == "v2-agentfile":
         for workspace_dir in iter_agent_workspaces(cohort=cohort):
             changed_paths.extend(migrate_to_v2_agentfile(workspace_dir, dry_run=dry_run))

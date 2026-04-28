@@ -61,19 +61,6 @@ extensions:
     - urn:gn:artefacto:asesor-juridico
     - urn:gn:artefacto:gestor-ipr-360
     - urn:gn:artefacto:dgi-virtual
-    harness_vector:
-      pi: 0
-      mu: 0
-      xi: 1
-      lambda: 0
-      phi: 0
-      sigma:
-      - 1
-      - 1
-      - 1
-      - 1
-      - 1
-    presentation: state-primary
   claude_code:
     model: opus
     color: purple

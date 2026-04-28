@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion"
 version: "4.6.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
@@ -47,10 +47,10 @@ KORA **DEBE** operar con estas prioridades:
 
 Corolarios:
 
-1. El vector ontologico `harness_vector` es el centro del sistema.
+1. El vector ontologico `vector_ontologico` es el centro del sistema.
 2. `autoria-spec` es la unica serializacion de autoria productiva (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
 3. Los outputs de transmutacion (`_BUILD/` por workspace) y los archivos runtime son derivados regenerables.
-4. Specs anteriores (`agentfile-spec`, `skill-overlay-spec`, bundles `CM-*`, workspace legacy de 5-6 archivos) estan **retiradas**; se migran en una sola pasada (§10).
+4. Specs y shapes anteriores estan **retirados**; se migran en una sola pasada (§11).
 
 ## 2. Definiciones
 
@@ -86,7 +86,7 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
-| **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec`, `canario-spec` |
+| **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec` |
 | **Serializacion** | Como se *escribe* el artefacto y como se construye su fuente primaria | `autoria-spec`, `agent-skill-construction-spec`, `md-spec`, `knowledge-spec` |
 | **Runtime** | Como se *ejecuta* en un target concreto y como compone multiagente | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
@@ -103,12 +103,11 @@ proyectadas*. La distribucion es *meta-encaje*.
 - `qa-spec.md` — semantica enriquecida de quality attributes y `qa_budget`.
 - `procesos-spec.md` — procesos del toolchain como funtores declarados.
 - `risk-register-spec.md` — registro de riesgo como composicion Kleisli.
-- `canario-spec.md` — contrato ejecutable de verificacion runtime por artefacto.
 
 **Capa de serializacion**:
 
 - `autoria-spec.md` — shape unificado de authoring para todo artefacto agentico productivo (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
-- `agent-skill-construction-spec.md` — metodologia pre-transmutacion para convertir requerimientos, drafts o fuentes legacy en `AGENT.md`/`SKILL.md` conformes a `autoria-spec`.
+- `agent-skill-construction-spec.md` — metodologia pre-transmutacion para convertir requerimientos, drafts o insumos de staging en `AGENT.md`/`SKILL.md` conformes a `autoria-spec`.
 - `md-spec.md` — formato KORA/MD base usado por el frontmatter + body.
 - `knowledge-spec.md` — tejido relacional y pipeline de conocimiento.
 
@@ -134,7 +133,6 @@ gobierna:
 
 - `harness-spec` para vector ontologico PMI × LFS.
 - `qa-spec` para quality attributes, floors derivados de `Σ` y `qa_budget`.
-- `canario-spec` para verificacion runtime ejecutable por artefacto proyectado.
 - `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
 - `autoria-spec` para shape de todo artefacto agentico productivo.
 - `agent-skill-construction-spec` para proceso de construccion de agentes y skills antes de transmutar a runtimes.
@@ -186,7 +184,7 @@ Reglas:
 1. Ambos regimenes llevan la version **fuera** del URN, en el campo `version` del frontmatter.
 2. Referencias en `relations`, `depends`, `cites` o body **DEBEN** usar la forma sin version; la resolucion de version es responsabilidad del catalogo y del runtime.
 3. Un mismo componente **NO DEBE** declarar URN en dos regimenes simultaneamente; la migracion entre regimenes obliga a emitir un `supersedes` explicito.
-4. Los regimenes anteriores (`urn:{ns}:agent:{id}`, `urn:{ns}:skill:{id}:{version}`, y ejecutable legacy con version embebida) estan **retirados**. Artefactos que los usaban se migran en una sola pasada.
+4. Los regimenes anteriores (`urn:{ns}:agent:{id}`, `urn:{ns}:skill:{id}:{version}`, y ejecutable con version embebida) estan **retirados**. Artefactos que los usaban se migran en una sola pasada.
 
 ## 5. Lifecycle y deprecacion
 
@@ -313,7 +311,7 @@ Reglas:
 3. Todo cambio a esas tres specs debe justificarse como fix puntual, no como
    rediseño conceptual.
 
-## 8. Invariantes
+## 9. Invariantes
 
 Los invariantes constitucionales son:
 
@@ -324,21 +322,21 @@ Los invariantes constitucionales son:
 5. Ninguna capa inferior recentraliza el sistema sobre la ontologia.
 6. No hay regimen URN con version embebida. Solo dos regimenes: conceptual (`urn:{ns}:kb:{id}`) y artefacto agentico (`urn:{ns}:artefacto:{id}`).
 
-## 9. Validacion
+## 10. Validacion
 
 Checks minimos:
 
 | Check | Condicion | Enforcement |
 | --- | --- | --- |
 | Canon claro | Cada objeto tiene fuente primaria | lint/manual |
-| Legacy acotado | No se expande lo legacy como camino por defecto | manual |
+| Formatos retirados acotados | No se expanden formatos retirados como camino por defecto | manual |
 | Mirror limpio | Los mirrors no contradicen la fuente primaria | lint/manual |
 | Extension monotona | Las extensiones no relajan el canon | manual |
 | Kind valido | `_manifest.type` usa taxonomia reservada | lint |
 
-## 10. Migracion
+## 11. Migracion
 
-Contrato vigente v4.4:
+Contrato vigente v4.6.0:
 
 - KORA unifica authoring en `autoria-spec`.
 - `agentfile-spec` y `skill-overlay-spec` fueron retiradas — absorbidas por `autoria-spec`.

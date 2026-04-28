@@ -20,6 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable, Optional
 import json
+import re
 
 
 # ---------------------------------------------------------------------------
@@ -764,11 +765,11 @@ def _check_agentfile_dimensions(path_filter=None):
                 agent = fm.get("agent", {})
                 if not isinstance(agent, dict):
                     continue
-                legacy_dims = {"coalgebra", "plan", "interface", "fibers", "composition", "safety"}
-                present = set(agent.keys()) & legacy_dims
-                missing = legacy_dims - present
-                message = f"AGENT.md missing legacy dimensions: {', '.join(sorted(missing))}"
-                fix_hint = "Add the missing legacy agent.* dimensions to AGENT.md frontmatter"
+                previous_dims = {"coalgebra", "plan", "interface", "fibers", "composition", "safety"}
+                present = set(agent.keys()) & previous_dims
+                missing = previous_dims - present
+                message = f"AGENT.md missing prior-shape dimensions: {', '.join(sorted(missing))}"
+                fix_hint = "Add the missing prior-shape agent.* dimensions to AGENT.md frontmatter"
             if missing:
                 rel = str(agentfile.relative_to(KORA_ROOT))
                 diags.append(Diagnostic(
@@ -796,7 +797,7 @@ def _check_tools_config_coherence(path_filter=None):
         config_json = ws_dir / "config.json"
         if not tools_md.exists() or not config_json.exists():
             continue
-        # Skip if AGENT.md exists (agentfile supersedes legacy)
+        # Skip if AGENT.md exists (agentfile supersedes prior scaffold)
         if (ws_dir / "AGENT.md").exists():
             continue
 
@@ -851,7 +852,7 @@ def _check_skill_structure(path_filter=None):
     - Si existe alguno de esos subdirs, el SKILL.md menciona `## Recursos`.
     - No hay anidamiento `skills/CM-*` en habilidades productivas `activo`.
 
-    Excluye skills en staging (_TALLER/) y bundles legacy CM-* (exentos).
+    Excluye skills en staging (_TALLER/) y bundles historicos CM-* (exentos).
 
     Los nombres en ingles (`references/`, `assets/`, `## Resources`) son
     proyecciones del transmutor a agentskills.io (autoria-spec §5.5) y no
@@ -885,7 +886,7 @@ def _check_skill_structure(path_filter=None):
                 if not sub.is_dir() or sub.name.startswith((".", "_")):
                     continue
                 if sub.name.startswith("CM-"):
-                    continue  # perfil legacy, exento
+                    continue  # perfil historico, exento
                 if (sub / "SKILL.md").exists():
                     yield sub
 
@@ -904,7 +905,7 @@ def _check_skill_structure(path_filter=None):
             if child.name in CANONICAL_SUBDIRS:
                 present_canonical.add(child.name)
             elif child.name == "skills":
-                # Anidamiento de sub-skills solo permitido en CM-* legacy
+                # Anidamiento de sub-skills solo permitido en CM-* historicos
                 diags.append(Diagnostic(
                     check_id="skill-structure",
                     severity="medium",
@@ -981,7 +982,7 @@ def _fix_autoria_conformance(diagnostics):
 
 
 def _check_autoria_conformance(path_filter=None):
-    """Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.0.
+    """Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.2.
 
     Morfismo: cada artefacto se proyecta sobre atlas.forma_material y se
     compone con el functor R de reglas (pullback). Implementacion vive en
@@ -1147,6 +1148,590 @@ def _check_vector_laws(path_filter=None):
     return diags
 
 
+def _check_spec_procedure_coherence(path_filter=None):
+    """Repo-level guard for spec titles, section numbering and live CLI examples."""
+    from .config import KORA_ROOT
+
+    diags = []
+    spec_roots = [
+        KORA_ROOT / "governance",
+        KORA_ROOT / "ontology",
+        KORA_ROOT / "serialization",
+        KORA_ROOT / "runtime",
+    ]
+
+    forbidden = {
+        "python3 toolchain/kora promover": "No existe CLI productiva `promover`; documenta procedimiento manual o implementa comando.",
+        "--artefacto": "El CLI vivo de transmute usa `--agent`.",
+        "Contrato vigente v4.4": "Contrato stale en gobernanza; debe coincidir con version vigente.",
+        "Contrato vigente v3.7.0": "Contrato stale en runtime-spec-md; debe coincidir con version vigente.",
+    }
+
+    for root in spec_roots:
+        if not root.exists():
+            continue
+        for path in sorted(root.rglob("*.md")):
+            if path_filter and not str(path.relative_to(KORA_ROOT)).startswith(path_filter):
+                continue
+            text = path.read_text(encoding="utf-8")
+            rel = str(path.relative_to(KORA_ROOT))
+
+            if text.startswith("---"):
+                parts = text.split("---", 2)
+                if len(parts) == 3:
+                    try:
+                        import yaml
+                        frontmatter = yaml.safe_load(parts[1]) or {}
+                    except Exception:
+                        frontmatter = {}
+                    version = str(frontmatter.get("version", "")).strip()
+                    h1 = next((line for line in parts[2].splitlines() if line.startswith("# ")), "")
+                    match = re.search(r"\bv(\d+\.\d+(?:\.\d+)?)\b", h1)
+                    if version and match and version != match.group(1):
+                        diags.append(Diagnostic(
+                            check_id="spec-procedure-coherence",
+                            severity="medium",
+                            scope="repo",
+                            path=rel,
+                            message=f"Version frontmatter ({version}) no coincide con H1 ({match.group(1)})",
+                            fix_hint="Alinea el H1 con frontmatter.version o bumpea ambos explicitamente.",
+                        ))
+
+            seen_sections = {}
+            for section in re.findall(r"(?m)^##\s+(\d+)\.\s+", text):
+                if section in seen_sections:
+                    diags.append(Diagnostic(
+                        check_id="spec-procedure-coherence",
+                        severity="medium",
+                        scope="repo",
+                        path=rel,
+                        message=f"Seccion numerada duplicada: ## {section}.",
+                        fix_hint="Renumerar secciones para restaurar orden editorial.",
+                    ))
+                else:
+                    seen_sections[section] = True
+
+            for needle, hint in forbidden.items():
+                if needle in text:
+                    diags.append(Diagnostic(
+                        check_id="spec-procedure-coherence",
+                        severity="medium",
+                        scope="repo",
+                        path=rel,
+                        message=f"Procedimiento o contrato obsoleto: {needle}",
+                        fix_hint=hint,
+                    ))
+
+    schema = KORA_ROOT / "serialization" / "schemas" / "kora-transmutation-schema.json"
+    if not schema.is_file():
+        diags.append(Diagnostic(
+            check_id="spec-procedure-coherence",
+            severity="medium",
+            scope="repo",
+            path=str(schema.relative_to(KORA_ROOT)),
+            message="transmutation-spec declara schema de _transmutation.yml pero el archivo no existe",
+            fix_hint="Agregar serialization/schemas/kora-transmutation-schema.json",
+        ))
+
+    return diags
+
+
+def _iter_construction_artifacts(path_filter=None):
+    """Yield current AGENT.md/SKILL.md artifacts in the construction gate scope."""
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
+
+    candidates = []
+
+    def add_productive_agents():
+        if not AGENTS_ROOT.exists():
+            return
+        for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+            if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+                continue
+            for ws_dir in sorted(ns_dir.iterdir()):
+                if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                    continue
+                agent_md = ws_dir / "AGENT.md"
+                if agent_md.exists():
+                    candidates.append(agent_md)
+
+    def add_productive_skills():
+        if not SKILLS_ROOT.exists():
+            return
+        for entry in sorted(SKILLS_ROOT.iterdir()):
+            if not entry.is_dir() or entry.name.startswith((".", "_")):
+                continue
+            direct = entry / "SKILL.md"
+            if direct.exists():
+                candidates.append(direct)
+                continue
+            for sub in sorted(entry.iterdir()):
+                if not sub.is_dir() or sub.name.startswith((".", "_")):
+                    continue
+                skill_md = sub / "SKILL.md"
+                if skill_md.exists():
+                    candidates.append(skill_md)
+
+    add_productive_agents()
+    add_productive_skills()
+
+    # When a path filter targets staging or a concrete subtree, include it so
+    # the next draft agent/skill can be checked before promotion.
+    if path_filter:
+        root = (KORA_ROOT / path_filter).resolve()
+        if root.exists():
+            if root.is_file() and root.name in {"AGENT.md", "SKILL.md"}:
+                candidates.append(root)
+            elif root.is_dir():
+                candidates.extend(root.rglob("AGENT.md"))
+                candidates.extend(root.rglob("SKILL.md"))
+
+    seen = set()
+    for path in candidates:
+        try:
+            rel = str(path.relative_to(KORA_ROOT))
+        except ValueError:
+            continue
+        if path in seen:
+            continue
+        seen.add(path)
+        if path_filter and not rel.startswith(path_filter):
+            continue
+        frontmatter, err = load_yaml_safe(path)
+        if err or not isinstance(frontmatter, dict):
+            continue
+        if frontmatter.get("status") in {"deprecado", "retirado"}:
+            continue
+        yield path, rel, frontmatter
+
+
+def _construction_scope(path: str) -> str:
+    return "workspace" if path.endswith("/AGENT.md") else "artifact"
+
+
+def _kora_ext(frontmatter: dict) -> dict:
+    return (frontmatter.get("extensions") or {}).get("kora") or {}
+
+
+def _forma_material(frontmatter: dict) -> str | None:
+    return ((_kora_ext(frontmatter).get("atlas") or {}).get("forma_material"))
+
+
+def _vector(frontmatter: dict) -> dict:
+    return _kora_ext(frontmatter).get("vector_ontologico") or {}
+
+
+def _emit_construction(diags, check_id, rel, message, fix_hint="", severity="medium"):
+    diags.append(Diagnostic(
+        check_id=check_id,
+        severity=severity,
+        scope=_construction_scope(rel),
+        path=rel,
+        message=message,
+        fix_hint=fix_hint,
+    ))
+
+
+def _check_construction_source_primary(path_filter=None):
+    """construction-source-primary: primary source file matches material form."""
+    diags = []
+    for path, rel, fm in _iter_construction_artifacts(path_filter):
+        forma = _forma_material(fm)
+        if "_BUILD" in path.parts:
+            _emit_construction(
+                diags,
+                "construction-source-primary",
+                rel,
+                "Fuente primaria no puede vivir bajo _BUILD/; _BUILD es derivado.",
+                "Mueve la fuente a artifacts/agents/{ns}/{id}/AGENT.md o artifacts/skills/{ns}/{id}/SKILL.md.",
+                severity="high",
+            )
+        if path.name == "SKILL.md" and forma != "habilidad":
+            _emit_construction(
+                diags,
+                "construction-source-primary",
+                rel,
+                f"SKILL.md debe declarar forma_material=habilidad; encontrado {forma!r}.",
+                "Ajusta atlas.forma_material o materializa como AGENT.md.",
+                severity="high",
+            )
+        if path.name == "AGENT.md" and forma == "habilidad":
+            _emit_construction(
+                diags,
+                "construction-source-primary",
+                rel,
+                "AGENT.md no debe declarar forma_material=habilidad.",
+                "Materializa habilidades como artifacts/skills/{ns}/{id}/SKILL.md.",
+                severity="high",
+            )
+        urn = ((fm.get("_manifest") or {}).get("urn"))
+        if not isinstance(urn, str) or ":artefacto:" not in urn:
+            _emit_construction(
+                diags,
+                "construction-source-primary",
+                rel,
+                f"_manifest.urn debe usar regimen artefacto; encontrado {urn!r}.",
+                "Usa urn:{ns}:artefacto:{id}.",
+                severity="high",
+            )
+    return diags
+
+
+def _check_construction_vector_fit(path_filter=None):
+    """construction-vector-fit: canonical vector exists and fits material-form domain."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        kora = _kora_ext(fm)
+        forma = _forma_material(fm)
+        vec = _vector(fm)
+        for retired_key in ("harness_vector", "presentation"):
+            if retired_key in kora:
+                _emit_construction(
+                    diags,
+                    "construction-vector-fit",
+                    rel,
+                    f"Overlay KORA contiene clave retirada {retired_key!r}.",
+                    "Corre `python3 toolchain/kora migrate --profile a-autoria` y conserva solo vector_ontologico/presentacion.",
+                    severity="high",
+                )
+        if not isinstance(vec, dict):
+            _emit_construction(
+                diags,
+                "construction-vector-fit",
+                rel,
+                "Falta extensions.kora.vector_ontologico.",
+                "Declara los 6 ejes PMI x LFS antes de construir o transmutar.",
+                severity="high",
+            )
+            continue
+        pi, mu, xi, lam = vec.get("pi"), vec.get("mu"), vec.get("xi"), vec.get("lambda")
+        if forma == "habilidad" and not (
+            isinstance(mu, int) and mu <= 1 and isinstance(lam, int) and lam == 0
+        ):
+            _emit_construction(
+                diags,
+                "construction-vector-fit",
+                rel,
+                f"habilidad requiere mu<=1 y lambda=0; encontrado mu={mu!r}, lambda={lam!r}.",
+                "Baja la forma a habilidad solo si no necesita memoria/escala, o materializa como agente.",
+                severity="high",
+            )
+        if forma == "subagente" and isinstance(lam, int) and lam > 0:
+            _emit_construction(
+                diags,
+                "construction-vector-fit",
+                rel,
+                f"subagente no debe operar a escala sociotecnica lambda={lam}.",
+                "Sube a agente-propiamente-tal si requiere escala organizacional.",
+                severity="high",
+            )
+        if forma == "agente-plataforma" and not (isinstance(mu, int) and mu == 3):
+            _emit_construction(
+                diags,
+                "construction-vector-fit",
+                rel,
+                f"agente-plataforma requiere materia ambiental mu=3; encontrado {mu!r}.",
+                "Usa agente-propiamente-tal si no hay servicio/fleet always-on.",
+                severity="high",
+            )
+        if forma == "habilidad" and any(isinstance(v, int) and v > bound for v, bound in ((pi, 2), (xi, 2))):
+            _emit_construction(
+                diags,
+                "construction-vector-fit",
+                rel,
+                f"habilidad excede dominio portable pi<=2, xi<=2; encontrado pi={pi!r}, xi={xi!r}.",
+                "Reduce el vector o promueve forma material.",
+                severity="high",
+            )
+    return diags
+
+
+def _check_construction_knowledge_explicit(path_filter=None):
+    """construction-knowledge-explicit: knowledge contract uses resolvable URNs."""
+    from .catalog import build_catalog_lookup, load_catalog, urn_is_known
+
+    doc = load_catalog()
+    known_urns, _urn_to_entry = build_catalog_lookup(doc) if doc else (set(), {})
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        allowed = _kora_ext(fm).get("conocimiento_permitido")
+        if allowed is None:
+            continue
+        if not isinstance(allowed, list):
+            _emit_construction(
+                diags,
+                "construction-knowledge-explicit",
+                rel,
+                "conocimiento_permitido debe ser lista de URNs.",
+                "Usa una lista YAML de URNs resolubles o [] si no usa KB.",
+                severity="high",
+            )
+            continue
+        for item in allowed:
+            if not isinstance(item, str) or not item.startswith("urn:"):
+                _emit_construction(
+                    diags,
+                    "construction-knowledge-explicit",
+                    rel,
+                    f"conocimiento_permitido contiene entrada no-URN: {item!r}.",
+                    "Reemplaza paths por URNs resolubles del catalogo.",
+                    severity="high",
+                )
+                continue
+            if known_urns and not urn_is_known(item, known_urns):
+                _emit_construction(
+                    diags,
+                    "construction-knowledge-explicit",
+                    rel,
+                    f"URN de conocimiento no resuelve en catalogo: {item}",
+                    "Corre `python3 toolchain/kora index` o corrige el URN.",
+                    severity="high",
+                )
+    return diags
+
+
+def _transition_targets(transitions):
+    if not isinstance(transitions, list):
+        return []
+    targets = []
+    for transition in transitions:
+        if isinstance(transition, dict):
+            target = transition.get("destino") or transition.get("target")
+            if isinstance(target, str):
+                targets.append(target)
+    return targets
+
+
+def _check_construction_fsm_valid(path_filter=None):
+    """construction-fsm-valid: finite-state plans have coherent references."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        kora = _kora_ext(fm)
+        plan = ((fm.get("artefacto") or {}).get("plan") or {})
+        fsm = plan.get("fsm") if isinstance(plan, dict) else None
+        if kora.get("verificacion_coalgebraica") is True and not isinstance(fsm, dict):
+            _emit_construction(
+                diags,
+                "construction-fsm-valid",
+                rel,
+                "verificacion_coalgebraica=true requiere artefacto.plan.fsm.",
+                "Declara plan.fsm o desactiva la verificacion coalgebraica.",
+                severity="high",
+            )
+        machine = fsm if isinstance(fsm, dict) else plan
+        if not isinstance(machine, dict):
+            continue
+        states = machine.get("estados") or machine.get("states")
+        if not isinstance(states, list) or not states:
+            continue
+        state_ids = set()
+        transitions_by_state = {}
+        for state in states:
+            if isinstance(state, str):
+                state_ids.add(state)
+            elif isinstance(state, dict):
+                sid = state.get("id")
+                if isinstance(sid, str):
+                    state_ids.add(sid)
+                    raw_transitions = state.get("transiciones") or state.get("transitions")
+                    if isinstance(raw_transitions, list):
+                        transitions_by_state[sid] = _transition_targets(raw_transitions)
+        if not transitions_by_state:
+            continue
+        initial = machine.get("estado_inicial") or machine.get("initial_state")
+        terminal = machine.get("estado_terminal") or machine.get("terminal_state")
+        terminals = set(machine.get("terminales") or machine.get("terminals") or [])
+        if isinstance(terminal, str):
+            terminals.add(terminal)
+        if isinstance(initial, str) and initial not in state_ids:
+            _emit_construction(
+                diags,
+                "construction-fsm-valid",
+                rel,
+                f"estado_inicial {initial!r} no existe en estados.",
+                "Agrega el estado inicial o corrige la referencia.",
+                severity="high",
+            )
+        missing_terminals = sorted(t for t in terminals if t not in state_ids)
+        if missing_terminals:
+            _emit_construction(
+                diags,
+                "construction-fsm-valid",
+                rel,
+                f"terminales inexistentes: {missing_terminals}.",
+                "Agrega estados terminales o corrige estado_terminal/terminales.",
+                severity="high",
+            )
+        for sid, targets in transitions_by_state.items():
+            missing = sorted(t for t in targets if t not in state_ids)
+            if missing:
+                _emit_construction(
+                    diags,
+                    "construction-fsm-valid",
+                    rel,
+                    f"estado {sid!r} transiciona a estados inexistentes: {missing}.",
+                    "Corrige destino/target de transiciones.",
+                    severity="high",
+                )
+        reverse = {sid: set() for sid in state_ids}
+        for sid, targets in transitions_by_state.items():
+            for target in targets:
+                if target in reverse:
+                    reverse[target].add(sid)
+        reachable_to_terminal = set(terminals & state_ids)
+        stack = list(reachable_to_terminal)
+        while stack:
+            current = stack.pop()
+            for previous in reverse.get(current, set()):
+                if previous not in reachable_to_terminal:
+                    reachable_to_terminal.add(previous)
+                    stack.append(previous)
+        stuck = sorted(sid for sid in transitions_by_state if sid not in reachable_to_terminal)
+        if terminals and stuck:
+            _emit_construction(
+                diags,
+                "construction-fsm-valid",
+                rel,
+                f"estados sin camino a terminal: {stuck}.",
+                "Agrega salida finita hacia estado_terminal o declara deuda antes de transmutar.",
+                severity="high",
+            )
+    return diags
+
+
+def _check_construction_interface_typed(path_filter=None):
+    """construction-interface-typed: interface has observable tools/permissions/protocols."""
+    diags = []
+    observable_keys = {"tools", "herramientas", "permissions", "permisos", "protocolos", "entradas", "salidas"}
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        interfaz = ((fm.get("artefacto") or {}).get("interfaz") or {})
+        if not isinstance(interfaz, dict):
+            _emit_construction(
+                diags,
+                "construction-interface-typed",
+                rel,
+                "artefacto.interfaz debe ser objeto con capacidades observables.",
+                "Declara herramientas/permisos/protocolos de interfaz.",
+                severity="high",
+            )
+            continue
+        if not any(key in interfaz for key in observable_keys):
+            _emit_construction(
+                diags,
+                "construction-interface-typed",
+                rel,
+                "interfaz no declara tools/herramientas, permissions/permisos ni protocolos.",
+                "Explicita capacidades observables antes de construir/transmutar.",
+                severity="medium",
+            )
+    return diags
+
+
+def _check_construction_risk_declared(path_filter=None):
+    """construction-risk-declared: non-trivial risk has invariants, QA or risk register."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        forma = _forma_material(fm)
+        vec = _vector(fm)
+        sigma = vec.get("sigma") if isinstance(vec, dict) else None
+        high_sigma = isinstance(sigma, list) and any(isinstance(v, int) and v >= 3 for v in sigma)
+        needs_risk_surface = forma in {"agente-propiamente-tal", "agente-plataforma"} or high_sigma
+        if not needs_risk_surface:
+            continue
+        artefacto = fm.get("artefacto") or {}
+        contexto = artefacto.get("contexto") or {}
+        has_surface = any(
+            bool(value)
+            for value in (
+                artefacto.get("invariantes"),
+                contexto.get("qa_budget"),
+                contexto.get("risk_register"),
+            )
+        )
+        if not has_surface:
+            _emit_construction(
+                diags,
+                "construction-risk-declared",
+                rel,
+                "riesgo no trivial sin invariantes, qa_budget ni risk_register.",
+                "Declara reglas duras y, si aplica, qa_budget/risk_register.",
+                severity="medium",
+            )
+    return diags
+
+
+def _check_construction_runtime_separation(path_filter=None):
+    """construction-runtime-separation: runtime outputs never become source."""
+    diags = []
+    for path, rel, fm in _iter_construction_artifacts(path_filter):
+        if "_BUILD" in path.parts:
+            _emit_construction(
+                diags,
+                "construction-runtime-separation",
+                rel,
+                "Artefacto fuente ubicado bajo _BUILD/.",
+                "_BUILD/ solo contiene derivados regenerables; mueve la fuente al workspace productivo o staging.",
+                severity="high",
+            )
+        source = (((fm.get("_manifest") or {}).get("provenance") or {}).get("source") or "")
+        if isinstance(source, str) and "_BUILD/" in source:
+            _emit_construction(
+                diags,
+                "construction-runtime-separation",
+                rel,
+                "_manifest.provenance.source apunta a _BUILD/ derivado.",
+                "Apunta a requerimiento, draft, knowledge o fuente primaria, no a output runtime.",
+                severity="medium",
+            )
+    return diags
+
+
+def _check_construction_categorical_minimality(path_filter=None):
+    """construction-categorical-minimality: light guard against obvious over-formalization."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        forma = _forma_material(fm)
+        vec = _vector(fm)
+        mu, xi, lam = vec.get("mu"), vec.get("xi"), vec.get("lambda")
+        if forma == "habilidad" and any(isinstance(v, int) and v > limit for v, limit in ((mu, 1), (xi, 2), (lam, 0))):
+            _emit_construction(
+                diags,
+                "construction-categorical-minimality",
+                rel,
+                f"habilidad parece sobre-formalizada para su forma: mu={mu!r}, xi={xi!r}, lambda={lam!r}.",
+                "Usa la forma mas baja suficiente o promueve materialmente con justificacion.",
+                severity="medium",
+            )
+    return diags
+
+
+def _check_construction_authoring_shape(path_filter=None):
+    """construction-authoring-shape: artifacts use the current autoria envelope."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        artefacto = fm.get("artefacto")
+        if not isinstance(artefacto, dict):
+            _emit_construction(
+                diags,
+                "construction-authoring-shape",
+                rel,
+                "Falta top-level `artefacto` conforme a autoria-spec.",
+                "Materializa el insumo en el envelope unificado de autoria-spec.",
+                severity="high",
+            )
+        if "agent" in fm:
+            _emit_construction(
+                diags,
+                "construction-authoring-shape",
+                rel,
+                "Top-level `agent` no es fuente de autoria vigente.",
+                "Traduce la fuente a `artefacto` antes de promocionar o transmutar.",
+                severity="high",
+            )
+    return diags
+
+
 def _check_fidelidad_agentskills(path_filter=None):
     """Verifica que cada habilidad productiva se proyecta a agentskills.io sin perdida.
 
@@ -1249,7 +1834,7 @@ def _check_fidelidad_mastra(path_filter=None):
     """
     from .artifacts import load_yaml_safe
     from .config import AGENTS_ROOT, KORA_ROOT
-    from .transmute import _get_harness_vector, _project_vector
+    from .transmute import _get_vector_ontologico, _project_vector
 
     diags = []
     if not AGENTS_ROOT.exists():
@@ -1271,7 +1856,7 @@ def _check_fidelidad_mastra(path_filter=None):
             rel = str(agent_md.relative_to(KORA_ROOT))
 
             try:
-                vector = _get_harness_vector(fm)
+                vector = _get_vector_ontologico(fm)
                 _project_vector(vector, "mastra")
             except ValueError as exc:
                 diags.append(Diagnostic(
@@ -1575,7 +2160,7 @@ def _register_builtins():
     register_check(
         Check("workspace-validity", "Workspaces validate against schema + semantics",
               scope="workspace", severity="high", enforcement="schema",
-              spec_ref="autoria-spec §3, §6; legacy-compat profile", depends=("catalog-exists",), phase="verify"),
+              spec_ref="autoria-spec §3, §6; compat profile", depends=("catalog-exists",), phase="verify"),
         _check_workspace_validity,
     )
     register_check(
@@ -1636,7 +2221,7 @@ def _register_builtins():
     register_check(
         Check("tools-config-coherence", "TOOLS.md and config.json tools.allow match",
               scope="workspace", severity="medium", enforcement="lint",
-              spec_ref="agentfile-spec legacy-compat profile", depends=("catalog-exists",), phase="verify"),
+              spec_ref="agentfile-spec compat profile", depends=("catalog-exists",), phase="verify"),
         _check_tools_config_coherence,
     )
     register_check(
@@ -1647,7 +2232,7 @@ def _register_builtins():
     )
     register_check(
         Check("autoria-conformance",
-              "Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.0 (universal + fibra por forma material)",
+              "Artefactos productivos (AGENT.md + SKILL.md) conforman a autoria-spec v1.2 (universal + fibra por forma material)",
               scope="artifact", severity="high", enforcement="schema",
               spec_ref="autoria-spec §3, §6", depends=("catalog-exists",), phase="verify"),
         _check_autoria_conformance,
@@ -1666,6 +2251,76 @@ def _register_builtins():
               scope="artifact", severity="high", enforcement="schema",
               spec_ref="harness-spec §4.1", depends=("catalog-exists",), phase="verify"),
         _check_vector_laws,
+    )
+    register_check(
+        Check("construction-source-primary",
+              "Construccion agentica materializa AGENT.md/SKILL.md como fuente primaria segun forma material",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="agent-skill-construction-spec §1, §3.8, §5.2", phase="verify"),
+        _check_construction_source_primary,
+    )
+    register_check(
+        Check("construction-vector-fit",
+              "Vector ontologico canonico encaja con el dominio de realizabilidad de la forma material",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="agent-skill-construction-spec §3.2-§3.3; harness-spec §4.1", phase="verify"),
+        _check_construction_vector_fit,
+    )
+    register_check(
+        Check("construction-knowledge-explicit",
+              "Contrato de conocimiento usa URNs resolubles y no paths duros",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="agent-skill-construction-spec §3.4", depends=("catalog-exists",), phase="verify"),
+        _check_construction_knowledge_explicit,
+    )
+    register_check(
+        Check("construction-fsm-valid",
+              "FSM de construccion declara estados, terminales y transiciones coherentes",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="agent-skill-construction-spec §3.5", phase="verify"),
+        _check_construction_fsm_valid,
+    )
+    register_check(
+        Check("construction-interface-typed",
+              "Interfaz declara capacidades observables, herramientas, permisos o protocolos",
+              scope="artifact", severity="medium", enforcement="manual",
+              spec_ref="agent-skill-construction-spec §3.6", phase="verify"),
+        _check_construction_interface_typed,
+    )
+    register_check(
+        Check("construction-risk-declared",
+              "Riesgo no trivial queda cubierto por invariantes, qa_budget o risk_register",
+              scope="artifact", severity="medium", enforcement="manual",
+              spec_ref="agent-skill-construction-spec §3.7", phase="verify"),
+        _check_construction_risk_declared,
+    )
+    register_check(
+        Check("construction-runtime-separation",
+              "Construccion mantiene IR fuente separado de outputs runtime derivados",
+              scope="artifact", severity="high", enforcement="manual",
+              spec_ref="agent-skill-construction-spec §1.1, §2.2, §3.8", phase="verify"),
+        _check_construction_runtime_separation,
+    )
+    register_check(
+        Check("construction-categorical-minimality",
+              "Forma material usa la lectura categorial mas debil suficiente",
+              scope="artifact", severity="medium", enforcement="manual",
+              spec_ref="agent-skill-construction-spec §2.3, §3.3", phase="verify"),
+        _check_construction_categorical_minimality,
+    )
+    register_check(
+        Check("construction-authoring-shape",
+              "Construccion usa el envelope vigente de autoria-spec",
+              scope="artifact", severity="high", enforcement="manual",
+              spec_ref="agent-skill-construction-spec §4, §6", phase="verify"),
+        _check_construction_authoring_shape,
+    )
+    register_check(
+        Check("spec-procedure-coherence",
+              "Specs vigentes alinean version/H1, numeracion y comandos CLI vivos",
+              scope="repo", severity="medium", enforcement="lint",
+              spec_ref="gobernanza §10; transmutation-spec §6.3; autoria-spec §8.3", phase="verify"),
+        _check_spec_procedure_coherence,
     )
     register_check(
         Check("fidelidad-agentskills",

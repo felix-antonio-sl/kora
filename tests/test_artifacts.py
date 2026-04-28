@@ -325,7 +325,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             "v1.1.0",
             "PMI × LFS",
             "constitucion ontologica",
-            "harness_vector",
+            "vector_ontologico",
             "free monad",
             "cofree comonad",
             # 6 ejes
@@ -378,11 +378,12 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_transmutation_spec_defines_functor_laws(self):
         content = (ROOT / "runtime" / "transmutation-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.1.0",
+            "v1.2.0",
             "functor",
             "preservacion",
             "bisimulacion",
             "_transmutation.yml",
+            "trace_fidelity",
             "matriz de preservacion",
             "fidelidad",
             "source_vector",

@@ -39,19 +39,6 @@ extensions:
     - claude-code
     - codex
     verificacion_coalgebraica: true
-    harness_vector:
-      pi: 0
-      mu: 0
-      xi: 1
-      lambda: 0
-      phi: 0
-      sigma:
-      - 1
-      - 1
-      - 1
-      - 1
-      - 1
-    presentation: state-primary
 nombre: Curator
 artefacto:
   plan:
@@ -93,8 +80,8 @@ artefacto:
       - condicion: ambiguo
         destino: S-DISPATCHER
         prioridad: 11
-      accion: 'Aplicar urn:kora:artefacto:intent-classifier para clasificar solicitud,
-        tipo de artefacto y modo de trabajo'
+      accion: Aplicar urn:kora:artefacto:intent-classifier para clasificar solicitud,
+        tipo de artefacto y modo de trabajo
     - id: S-DESIGN
       transiciones:
       - condicion: plan_aprobado AND tipo=descriptivo
@@ -109,7 +96,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 4
-      accion: 'Producir plan estructural y clasificacion normativa del artefacto'
+      accion: Producir plan estructural y clasificacion normativa del artefacto
     - id: S-KORAFICATE
       transiciones:
       - condicion: artefacto_generado
@@ -121,7 +108,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'Transformar fuente descriptiva a KORA/MD preservando fidelidad'
+      accion: Transformar fuente descriptiva a KORA/MD preservando fidelidad
     - id: S-CRYSTALLIZE
       transiciones:
       - condicion: artefacto_generado
@@ -133,7 +120,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'Transformar decisiones implicitas en KORA/Spec-MD'
+      accion: Transformar decisiones implicitas en KORA/Spec-MD
     - id: S-AUDIT
       transiciones:
       - condicion: validacion_ok
@@ -151,7 +138,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 5
-      accion: 'Verificar conformidad, trazabilidad y calidad del artefacto'
+      accion: Verificar conformidad, trazabilidad y calidad del artefacto
     - id: S-EDIT
       transiciones:
       - condicion: edicion_completa
@@ -163,7 +150,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'Aplicar cambios controlados preservando invariantes'
+      accion: Aplicar cambios controlados preservando invariantes
     - id: S-REPAIR
       transiciones:
       - condicion: fix_aplicado
@@ -175,7 +162,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'Aplicar fix minimo sin romper referencias ni trazas'
+      accion: Aplicar fix minimo sin romper referencias ni trazas
     - id: S-IMPROVE
       transiciones:
       - condicion: mejora_aplicada
@@ -187,7 +174,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 3
-      accion: 'Proponer y aplicar mejoras aprobadas sobre el artefacto'
+      accion: Proponer y aplicar mejoras aprobadas sobre el artefacto
     - id: S-DEPRECATE
       transiciones:
       - condicion: deprecacion_completa
@@ -196,7 +183,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 2
-      accion: 'Deprecar artefacto y preparar migracion si aplica'
+      accion: Deprecar artefacto y preparar migracion si aplica
     - id: S-GUIDED
       transiciones:
       - condicion: ciclo_completo
@@ -217,7 +204,7 @@ artefacto:
       - condicion: cambio
         destino: S-DISPATCHER
         prioridad: 6
-      accion: 'Consolidar checkpoints del modo guiado via urn:kora:artefacto:lifecycle-orchestrator'
+      accion: Consolidar checkpoints del modo guiado via urn:kora:artefacto:lifecycle-orchestrator
     - id: S-END
       transiciones:
       - condicion: '[terminal]'

@@ -1,6 +1,6 @@
 """Tests para el perfil `a-autoria` de `kora migrate`.
 
-Cubre las reglas de `autoria-spec v1.0 §13`:
+Cubre las reglas de `autoria-spec v1.2 §13`:
 - URN rename de agent/skill -> artefacto (con extraccion de version embebida).
 - `_manifest.type: artefacto`.
 - Renames envelope: name->nombre, description->descripcion, status ingles->espanol.

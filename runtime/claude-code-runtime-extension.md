@@ -23,7 +23,7 @@ relations:
     - "urn:kora:kb:gobernanza"
 ---
 
-# KORA/Claude-Code-Runtime-Extension v1.0.0
+# KORA/Claude-Code-Runtime-Extension v1.1.0
 
 ## 1. Definicion
 
@@ -245,22 +245,22 @@ kora ingest --from claude-code --file ~/.claude/agents/polymath.md --namespace k
 | `description` | `_manifest.provenance.source` + `agent.profile.description` |
 | `tools` | `agent.interface.allowed_tools` |
 | `model` | `extensions.claude_code.model` |
-| `memory: user` | proyecta a `harness_vector.mu: 2` |
-| `memory: none/absent` | proyecta a `harness_vector.mu: 0` si Task subagent, `1` si default |
+| `memory: user` | proyecta a `vector_ontologico.mu: 2` |
+| `memory: none/absent` | proyecta a `vector_ontologico.mu: 0` si Task subagent, `1` si default |
 | `effort` | `extensions.claude_code.effort` |
 | `color` | `extensions.claude_code.color` |
-| `max_turns` | `extensions.claude_code.max_turns` + influye `harness_vector.mu` (≤5 efimero, >5 persistente si memory:user) |
+| `max_turns` | `extensions.claude_code.max_turns` + influye `vector_ontologico.mu` (≤5 efimero, >5 persistente si memory:user) |
 | Body markdown | `agent.profile` + `agent.plan` (derivado) |
 
 ### 9.2 Limitaciones
 
 - No todos los campos shape v2 son derivables automaticamente del archivo
   Claude Code.
-- `harness_vector.pi` se infiere heuristicamente del body (ramificacion
+- `vector_ontologico.pi` se infiere heuristicamente del body (ramificacion
   explicita).
-- `harness_vector.sigma` se asigna valores por defecto
+- `vector_ontologico.sigma` se asigna valores por defecto
   `[1, 1, 2, 1, 0]` — el autor debe ajustar.
-- `harness_vector.phi` default 1 (instrumental) — ajustar si
+- `vector_ontologico.phi` default 1 (instrumental) — ajustar si
   colaborativo/hibrido.
 - Adjuncion `Lift ⊣ T` es aproximada; no hay round-trip exacto.
 
@@ -276,7 +276,7 @@ Checks aplicables:
 | Matriz de preservacion vigente | Valor de matriz coincide con runtime version | manual |
 | Plugin schema conforme | Si transmuta a plugin, `plugin.json` valido | lint |
 
-## 11. Contrato vigente v1
+## 11. Contrato vigente v1.1.0
 
 - Claude Code soporta {Utilidad, Disciplina, Delegado, Persona} del atlas A.
 - NO soporta {Servicio} — usar OpenClaw para Μ=3.
@@ -287,7 +287,7 @@ Checks aplicables:
 
 ## 12. Ciclo de actualizacion y trazas
 
-Capturado desde ejecucion real del canario `urgenciologo` el `2026-04-22`.
+Capturado desde ejecucion real del piloto `urgenciologo` el `2026-04-22`.
 Restricciones del runtime que afectan el ciclo KORA→Claude Code y que no son
 deducibles leyendo el runtime-spec generico.
 
@@ -301,12 +301,12 @@ disponible para sesiones ya abiertas. Consecuencias:
    desde disco.
 2. Para probar un subagente recien transmutado, el operador debe iniciar una
    sesion nueva (`claude` o `cld` desde shell), no continuar la sesion actual.
-3. Si un canario depende de un subagente recien transmutado y se ejecuta en
-   la misma sesion que lo produjo, el `Agent` tool devuelve
+3. Si una prueba runtime depende de un subagente recien transmutado y se
+   ejecuta en la misma sesion que lo produjo, el `Agent` tool devuelve
    `Agent type '<name>' not found`.
 
-El contrato operativo del canario debe incluir "paso 0: sesion nueva" cuando
-la cadena es `transmute → invocar canario`.
+El contrato operativo de verificacion debe incluir "paso 0: sesion nueva"
+cuando la cadena es `transmute → invocar artefacto`.
 
 ### 12.2 Trace fidelity: `media`
 
@@ -344,21 +344,20 @@ El hook de referencia de KORA vive en
 
 El hallazgo clave (`2026-04-22`): los `tool_use` del subagente **no** estan
 en el jsonl del main, estan solo en el jsonl anidado en
-`<session>/subagents/`. Un canario que inspeccione unicamente el
+`<session>/subagents/`. Una verificacion que inspeccione unicamente el
 `transcript_path` recibido en el payload del hook no ve los Read del
 subagente. La fidelidad real requiere recoger el directorio hermano.
 
-Los canarios deben contar con el hook activo (deploying `dump-subagent.sh`
+Las verificaciones deben contar con el hook activo (deploying `dump-subagent.sh`
 o equivalente) para considerar evidencia de `Read` sobre un KB como
 verificada.
 
-### 12.3 Consecuencias para canarios
+### 12.3 Consecuencias para verificacion
 
-1. El primer paso del contrato de un canario en Claude Code es constatar
+1. El primer paso del contrato de verificacion en Claude Code es constatar
    que el subagente este registrado (`Agent` tool sin error previo al
    prompt productivo).
 2. El segundo paso es constatar que el hook `SubagentStop` esta instalado
-   (directorio `.claude/trace/` existe y el canario previo dejo archivo).
+   (directorio `.claude/trace/` existe y la ejecucion previa dejo archivo).
 3. La evidencia de tool calls es **obligatoria** para cerrar el criterio
-   de trazabilidad al KB: sin ella, el canario cierra solo como `parcial`.
-
+   de trazabilidad al KB: sin ella, la verificacion cierra solo como `parcial`.

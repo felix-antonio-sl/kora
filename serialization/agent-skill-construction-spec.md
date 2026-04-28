@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "OpenAI Codex"
     created_at: "2026-04-28"
-    source: "Cristalizacion KORA-native del metodo de construccion de agentes y skills, inspirada por artifacts/agents/_FRAGUA/INBOX/guide_core_005_koda-agent-spec_koda.yml y guide_core_006_koda-agent-construct_koda.yml, reinterpretada desde autoria-spec, harness-spec y cat-thinking."
+    source: "Cristalizacion KORA-native del metodo de construccion de agentes y skills desde autoria-spec, harness-spec y cat-thinking."
 version: "1.0.0"
 status: publicado
 tags: [spec, construccion-agentica, autoria, pre-transmutacion, categorial]
@@ -26,7 +26,6 @@ relations:
     - "urn:kora:kb:runtime-spec-md"
     - "urn:kora:kb:multiagente-spec"
     - "urn:kora:kb:transmutation-spec"
-    - "urn:kora:kb:canario-spec"
     - "urn:kora:kb:cat-agent-coalgebra"
     - "urn:kora:kb:cat-skill-algebra"
     - "urn:kora:kb:cat-behavioral-preservation"
@@ -54,10 +53,9 @@ La decision canonica es:
 > La construccion agentica en KORA produce IR canonico primero; los runtimes son
 > proyecciones posteriores.
 
-Esta spec no importa el formato KODA `agent.yaml`. Toma de KODA solo las
-decisiones estructurales que siguen siendo validas en KORA: fuente declarativa,
-maquina de estados, cartografia explicita de conocimiento, limites de
-seguridad y validacion antes de despliegue.
+Esta spec no eleva ningun formato externo o historico como fuente productiva.
+Los insumos previos a KORA pueden informar el diseno, pero la salida
+autoritativa siempre es IR canonico conforme a `autoria-spec`.
 
 ### 1.1 Alcance
 
@@ -72,7 +70,7 @@ No gobierna:
 
 1. proyeccion a Claude Code, Codex, OpenClaw, Gemini, Mastra o agentskills,
 2. despliegue, hosting o operacion runtime,
-3. formato externo KODA como fuente productiva,
+3. formatos externos o historicos como fuente productiva,
 4. docs generadas o `_BUILD/` como autoridad.
 
 ### 1.2 Precedencia
@@ -158,8 +156,6 @@ ICAS-BoK local vive en:
 artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/
 ```
 
-Rutas legacy como `KNOWLEDGE/fxsl/cat/...` **NO DEBEN** usarse como path vivo.
-
 ## 3. Metodo de construccion
 
 ### 3.1 Fase A: Intake
@@ -231,8 +227,8 @@ Correcto: `conocimiento_permitido: ["urn:kora:kb:autoria-spec"]`.
 
 Incorrecto: `conocimiento_permitido: ["serialization/autoria-spec.md"]`.
 
-Rationale: KODA acierta al exigir cartografia explicita de conocimiento; en
-KORA esa cartografia se materializa como URNs resolubles por catalogo derivado.
+Rationale: en KORA la cartografia de conocimiento se materializa como URNs
+resolubles por catalogo derivado.
 
 ### 3.5 Fase E: Nucleo conductual
 
@@ -282,7 +278,7 @@ Cuando el riesgo es no trivial, el constructor **DEBERIA** agregar:
 
 1. `artefacto.contexto.qa_budget` para pisos operativos,
 2. `artefacto.contexto.risk_register` para amenazas y mitigaciones,
-3. canario o criterio de verificacion runtime si habra transmutacion.
+3. criterio de verificacion runtime si habra transmutacion.
 
 Correcto: una skill de curaduria declara que no publica conocimiento sin URN
 resoluble.
@@ -308,24 +304,21 @@ El body **DEBE** explicar solo lo que ayude a operar el artefacto. Detalle
 voluminoso debe moverse a `referencias/` o `recursos/` cuando la forma material
 lo permita.
 
-## 4. Traduccion de KODA a KORA
+## 4. Absorcion de insumos
 
-Los archivos KODA en `_FRAGUA/INBOX` son fuentes historicas o insumos de
-diseño, no autoridad normativa. La traduccion permitida es:
+Los materiales en `_FRAGUA/INBOX` o `_TALLER/INBOX` son insumos de diseno, no
+autoridad normativa. La absorcion valida conserva intencion, conocimiento,
+estado, interfaz y riesgo, pero materializa esos elementos solo en el shape de
+`autoria-spec`.
 
-| Decision KODA | Traduccion KORA |
-| --- | --- |
-| `agent.yaml` como source code | `AGENT.md`/`SKILL.md` conforme a `autoria-spec` |
-| required namespaces | `artefacto.{perfil,plan,interfaz,contexto,composicion,invariantes}` |
-| KODA runtime instructions | runtime-extension o transmutacion, no body fuente |
-| explicit knowledge cartography | `conocimiento_permitido` + URNs resolubles |
-| state machine | `artefacto.plan` y `plan.fsm` si aplica |
-| private cognitive models | skills internas, `referencias/` o procedimientos no expuestos |
-| minimum guard set | `invariantes`, `qa_budget`, `risk_register`, permisos de `interfaz` |
-| validation checklist | `kora check --strict`, tests y canarios segun alcance |
+Reglas:
 
-Regla: un constructor **PUEDE** inspirarse en KODA, pero **NO DEBE** copiar sus
-namespaces, runtime preamble ni catalogo legacy como shape productivo KORA.
+1. Un insumo externo **PUEDE** conservarse como referencia historica o evidencia
+   de requerimientos.
+2. Un insumo externo **NO DEBE** promocionarse copiando su envelope,
+   namespaces, preambulos runtime ni catalogos como shape KORA productivo.
+3. Toda perdida de semantica durante la absorcion **DEBE** declararse como
+   descarte justificado, riesgo o deuda residual.
 
 ## 5. Validacion
 
@@ -351,8 +344,8 @@ Si toco knowledge o relaciones, **DEBE** revisar:
 python3 toolchain/kora kb-graph --json --orphans
 ```
 
-Si el cierre incluye runtime, la transmutacion y canario aplicables **DEBEN**
-ejecutarse despues de que el IR fuente pase los gates anteriores.
+Si el cierre incluye runtime, la transmutacion aplicable **DEBE** ejecutarse
+despues de que el IR fuente pase los gates anteriores.
 
 ### 5.2 Tabla de checks
 
@@ -366,7 +359,7 @@ ejecutarse despues de que el IR fuente pase los gates anteriores.
 | `construction-risk-declared` | riesgos no triviales tienen mitigacion o deuda | manual |
 | `construction-runtime-separation` | no hay `_BUILD/` ni runtime output como fuente | manual |
 | `construction-categorical-minimality` | usa la lectura categorial mas debil suficiente | manual |
-| `construction-koda-no-copy` | no copia namespaces KODA como shape KORA | manual |
+| `construction-authoring-shape` | el artefacto usa `artefacto` y no un envelope externo | lint |
 
 ### 5.3 Criterio de cierre
 
@@ -385,7 +378,7 @@ Un artefacto queda listo para transmutacion si:
 | Antipatron | Falla | Correccion |
 | --- | --- | --- |
 | runtime-first | el output target suplanta IR | crear fuente `AGENT.md`/`SKILL.md` y transmutar despues |
-| YAML transplantado | KODA se copia como shape KORA | traducir a `autoria-spec` |
+| fuente transplantada | se copia un envelope externo como shape KORA | traducir a `autoria-spec` |
 | KB por path | knowledge queda no resoluble por URN | usar `conocimiento_permitido` |
 | vector decorativo | PMI x LFS no deriva del comportamiento | rehacer enmarque categorial |
 | skill inflada | una habilidad contiene corpus entero | mover detalle a `referencias/` |
@@ -403,11 +396,11 @@ Reglas:
    la sola aparicion de esta spec.
 2. La proxima reconstruccion o promocion de material en `_FRAGUA/` o
    `_TALLER/` **DEBERIA** usar esta spec como gate de diseño.
-3. Material KODA en `_FRAGUA/INBOX` **PUEDE** conservarse como fuente historica,
-   pero no debe promocionarse sin traduccion a `autoria-spec`.
-4. Specs, skills o agentes que todavia remitan a shape legacy **DEBERIAN**
-   reescribir esas referencias hacia esta spec y `autoria-spec` cuando se
-   toquen por mantenimiento.
+3. Material en staging **PUEDE** conservarse como fuente historica, pero no debe
+   promocionarse sin absorcion a `autoria-spec`.
+4. Specs, skills o agentes que todavia remitan a shapes retirados **DEBERIAN**
+   reescribir esas referencias hacia `autoria-spec` cuando se toquen por
+   mantenimiento.
 
 ## 8. Relacion con otras specs
 
@@ -418,5 +411,3 @@ Reglas:
   declaran.
 - `multiagente-spec` gobierna handoffs y coreografia cuando `xi>=3`.
 - `transmutation-spec` empieza cuando el IR fuente ya es valido.
-- `canario-spec` verifica que la proyeccion runtime conserva contrato
-  observable.

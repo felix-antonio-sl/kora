@@ -1,4 +1,4 @@
-"""Validacion funcional de artefactos conformes a autoria-spec v1.0.
+"""Validacion funcional de artefactos conformes a autoria-spec v1.2.
 
 Marco categorial
 ----------------

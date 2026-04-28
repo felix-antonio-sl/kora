@@ -158,7 +158,7 @@ enriched en `[0,1]^5`, junto al puente hacia `qa_budget`, se gobierna por
 Un artefacto agentico se define por:
 
 ```yaml
-harness_vector:
+vector_ontologico:
   pi: 2              # 0..3
   mu: 2              # 0..3
   xi: 2              # 0..4
@@ -281,7 +281,7 @@ cambios de base autorizados.
 
 ## 7. Invariantes del IR canonico
 
-1. **Canonicidad ontologica**: el vector `harness_vector` es la
+1. **Canonicidad ontologica**: el vector `vector_ontologico` es la
    representacion autoritativa del artefacto. Toda serializacion es derivada.
 2. **Inmutabilidad del nucleo bajo cambio de runtime**: cambiar el target no
    altera el vector; altera solo la metadata de encaje.
@@ -291,12 +291,12 @@ cambios de base autorizados.
 5. **Preservacion bajo transmutacion**: `T_R` preserva estructura functorial
    o declara perdida (ver `transmutation-spec`).
 
-## 8. Presentacion: state-primary vs action-primary
+## 8. Presentacion: estado-primario vs accion-primaria
 
 Meta-dimension ortogonal a los 6 ejes. Eleccion de presentacion del artefacto:
 
-- **state-primary**: indexado por estado `U`, coalgebra `α: U → F(U)`.
-- **action-primary**: indexado por morfismo/evento, funtor `Idx: Episodio → Accion`.
+- **estado-primario**: indexado por estado `U`, coalgebra `α: U → F(U)`.
+- **accion-primaria**: indexado por morfismo/evento, funtor `Idx: Episodio → Accion`.
 
 Ambas presentaciones son equivalentes modulo anamorfismo/catamorfismo
 (dualidad `09-efectos`, Fukada en `14-agencia`). El artefacto declara una
@@ -305,7 +305,7 @@ como canonica; la dual es recuperable.
 ```yaml
 extensions:
   kora:
-    presentation: state-primary  # o action-primary
+    presentacion: estado-primario  # o accion-primaria
 ```
 
 ## 9. Validacion
@@ -314,15 +314,15 @@ Checks obligatorios sobre el vector ontologico:
 
 | Check | Condicion | Severity | Enforcement |
 |-------|-----------|----------|-------------|
-| `harness-vector-present` | `extensions.kora.harness_vector` existe y tiene 6 componentes | high | schema |
-| `harness-vector-range` | Valores en rango: Π∈{0..3}, Μ∈{0..3}, Ξ∈{0..4}, Λ∈{0..3}, Φ∈{0..4}, Σ={[v1..v5], vᵢ∈{0..3}} | high | schema |
+| `vector-ontologico-presente` | `extensions.kora.vector_ontologico` existe y tiene 6 componentes | high | schema |
+| `vector-ontologico-rango` | Valores en rango: Π∈{0..3}, Μ∈{0..3}, Ξ∈{0..4}, Λ∈{0..3}, Φ∈{0..4}, Σ={[v1..v5], vᵢ∈{0..3}} | high | schema |
 | `pi-mu-consistency` | Π≥3 ⟹ Μ≥1 | high | lint |
 | `xi-composition-consistency` | Ξ=4 ⟹ Λ≥1 | high | lint |
 | `phi-memory-consistency` | Φ≥2 ⟹ Μ≥1 | high | lint |
 | `sigma-accountability-transparency` | `Σ.accountability≥2 ⟹ Σ.transparency≥2` | medium | lint |
 | `lambda-societal-sigma` | `Λ=3 ⟹ Σ.i≥2 ∀i` | medium | lint |
 | `safety-closure` | Si `Μ≥1` y `Ξ≥2`, la sub-coalgebra de safety estructural cierra | medium | manual |
-| `presentation-declared` | `extensions.kora.presentation` ∈ {state-primary, action-primary} | low | lint |
+| `presentacion-declarada` | `extensions.kora.presentacion` ∈ {estado-primario, accion-primaria} | low | lint |
 
 ## 10. Relacion con otras specs
 
@@ -374,7 +374,7 @@ en `_transmutation.yml`.
 
 ## 12. Migracion
 
-### 12.1 Contrato vigente v1.0
+### 12.1 Contrato vigente v1.1.0
 
 - KORA IR canoniza ontologia PMI × LFS.
 - Seis ejes cardinales + meta-dimension de presentacion.
@@ -387,7 +387,7 @@ en `_transmutation.yml`.
 Los artefactos pre-existentes se migran en una sola pasada con
 `kora migrate --perfil a-autoria`. La migracion:
 
-1. Deriva heuristicamente el `vector_ontologico` desde campos anteriores.
+1. Deriva heuristicamente el `vector_ontologico` desde campos anteriores (`harness_vector` legacy incluido).
 2. Reemite el frontmatter conforme a `autoria-spec`.
 3. Reescribe el URN al regimen unico `urn:{ns}:artefacto:{id}`.
 4. El autor revisa y corrige el vector derivado; el toolchain emite

@@ -612,7 +612,7 @@ La transmutacion renombra:
 Esta proyeccion es functorial y se ejecuta por:
 
 ```bash
-python3 toolchain/kora transmute --artefacto ns/nombre --target agentskills
+python3 toolchain/kora transmute --agent ns/nombre --target agentskills
 ```
 
 Check `fidelidad-agentskills`: genera paquete agentskills.io candidato y
@@ -710,14 +710,21 @@ que referencia al anterior via `supersedes`.
 Razon: descender perderia estructura (memoria, composicion, workspace)
 de forma no functorial, rompiendo trazabilidad.
 
-### 8.3 Herramienta de promocion
+### 8.3 Procedimiento de promocion
 
-```bash
-python3 toolchain/kora promover --artefacto ns/nombre --a-forma subagente
-```
+No hay CLI productiva para cambiar forma material. La promocion entre formas es
+un cambio mayor de IR y se hace como procedimiento revisado:
 
-Genera shape expandido con campos nuevos como `TODO` para revision
-humana. No commitea automaticamente.
+1. crear rama o staging en `_FRAGUA/REVIEW/` o `_TALLER/REVIEW/`,
+2. preservar `_manifest.urn`,
+3. bumpear version major,
+4. expandir el shape hasta satisfacer la matriz de §6,
+5. correr `python3 toolchain/kora check --strict`,
+6. documentar la promocion en `provenance.source` o historial de version.
+
+El comando `python3 toolchain/kora promote` vigente aplica al pipeline de
+knowledge `_SCRIPTORIUM`; **NO** promueve forma material de artefactos
+agenticos.
 
 ## 9. Composicion (`componible_con`)
 
