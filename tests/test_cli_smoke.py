@@ -153,21 +153,21 @@ class KoraCliSmokeTests(unittest.TestCase):
         # Idempotente si ya se aplico
         self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)
 
-    def test_transmute_accepts_all_five_targets(self):
-        """Los 5 runtime targets (claude-code, codex, gemini, mastra, openclaw) aceptan --target."""
+    def test_transmute_accepts_all_six_targets(self):
+        """Los 6 runtime targets (claude-code, codex, gemini, mastra, opencode, openclaw) aceptan --target."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        for target in ("claude-code", "codex", "gemini", "mastra", "openclaw"):
+        for target in ("claude-code", "codex", "gemini", "mastra", "opencode", "openclaw"):
             result = run_cli("transmute", "--target", target, "--agent", "kora/custodio", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)
             self.assertIn("Vector IR:", result.stdout)
 
     def test_ingest_subcommand_exists(self):
-        """El subcomando `kora ingest` existe y acepta los 4 runtimes fuente."""
+        """El subcomando `kora ingest` existe y acepta los 5 runtimes fuente."""
         result = run_cli("ingest", "--help", check=False)
         self.assertIn("--from", result.stdout)
-        for rt in ("claude-code", "codex", "gemini", "openclaw"):
+        for rt in ("claude-code", "codex", "gemini", "opencode", "openclaw"):
             self.assertIn(rt, result.stdout)
 
     def test_transmute_out_of_domain_fails(self):

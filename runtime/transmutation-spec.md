@@ -27,7 +27,7 @@ relations:
 
 `transmutation-spec` define las **leyes functoriales de la transmutacion**
 desde el IR canonico de KORA (espacio PMI × LFS de `harness-spec`) hacia
-runtimes concretos (Claude Code, Codex, OpenClaw, Gemini, Mastra, agentskills.io).
+runtimes concretos (Claude Code, Codex, OpenClaw, Gemini, Mastra, OpenCode, agentskills.io).
 
 ### 1.1 Objetivo
 
@@ -530,7 +530,7 @@ Checks obligatorios:
 - `harness-spec`: ontologia fuente, define espacio IR.
 - `autoria-spec`: serializacion de entrada unificada (lo que se transmuta, para las cuatro formas materiales).
 - `runtime-spec-md`: contrato generico de runtime.
-- Runtime-extensions (`agentskills-`, `claude-code-`, `codex-`, `gemini-`, `mastra-`, `openclaw-`):
+- Runtime-extensions (`agentskills-`, `claude-code-`, `codex-`, `gemini-`, `mastra-`, `opencode-`, `openclaw-`):
   cada una declara matriz de preservacion + encaje.
 - `gobernanza`: precedencia; la transmutacion produce outputs derivados
   (§3 gobernanza).

@@ -827,6 +827,7 @@ espacio `(arnes_categorico, forma_material)`. Ejemplos:
 | Claude Code | fiel | fiel | fiel | no soportado |
 | Codex | fiel | fiel (budget) | parcial | no soportado |
 | Gemini | fiel | fiel (budget) | parcial | no soportado |
+| OpenCode | fiel | fiel | parcial | no soportado |
 | OpenClaw | fiel | fiel | fiel | fiel (unico) |
 
 `fiel` = dominio de preservacion completa. `parcial` = proyeccion con

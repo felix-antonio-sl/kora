@@ -116,7 +116,7 @@ proyectadas*. La distribucion es *meta-encaje*.
 - `runtime-spec-md.md` — contrato generico.
 - `multiagente-spec.md` — ley de coreografia multiagente y handoffs.
 - `transmutation-spec.md` — leyes functoriales de proyeccion IR → runtime.
-- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md`, `mastra-runtime-extension.md` — proyecciones a runtimes concretos.
+- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md`, `mastra-runtime-extension.md`, `opencode-runtime-extension.md` — proyecciones a runtimes concretos.
 
 ### 3.3 Ruptura con formatos anteriores
 
@@ -290,7 +290,7 @@ Reglas:
    hasta que exista una decision HITL nueva mas una `runtime-extension`
    dedicada.
 3. Mientras ese contrato no exista, el critical path de runtimes es:
-   `claude-code`, `codex`, `gemini`, `mastra`, `openclaw`, `agentskills`.
+   `claude-code`, `codex`, `gemini`, `mastra`, `opencode`, `openclaw`, `agentskills`.
 
 ### 8.3 Freeze formal hasta cierre de Fase 3
 

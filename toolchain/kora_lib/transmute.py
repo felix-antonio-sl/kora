@@ -81,6 +81,14 @@ PRESERVATION_MATRIX = {
         "lambda":  {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "society-in-the-loop requiere gobernanza externa")},
         "phi":     {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial"), 4: (None, "none", "co-evolutivo no soportado")},
     },
+    "opencode": {
+        "domain": {"pi": [0,1,2,3], "mu": [0,1,2], "xi": [0,1,2,3,4], "lambda": [0,1,2], "phi": [0,1,2,3], "sigma_max": [3,2,2,2,1]},
+        "pi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "fixed-points acotados por campo `steps` del agente")},
+        "mu":      {0: (0, "full"), 1: (1, "full"), 2: (2, "partial", "sessions con jerarquia parent/child pero sin memory:user transparente"), 3: (None, "none", "OpenCode CLI/TUI sincrono, no daemon always-on")},
+        "xi":      {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (3, "partial", "subagent @mention + Task tool con permission gates"), 4: (3, "partial", "operad dinamica completa requiere wrapper aplicativo")},
+        "lambda":  {0: (0, "full"), 1: (1, "full"), 2: (1, "partial", "ecosystem colapsa a organizacional"), 3: (None, "none", "society-in-the-loop no soportado")},
+        "phi":     {0: (0, "full"), 1: (1, "full"), 2: (2, "full", "permission system con `ask` materializa HOTL granular"), 3: (2, "partial", "hybrid cognition completa requiere wrapper aplicativo"), 4: (None, "none", "co-evolutivo no soportado")},
+    },
 }
 
 TARGET_ADAPTERS = {
@@ -89,6 +97,7 @@ TARGET_ADAPTERS = {
     "codex": "transmute-codex",
     "gemini": "transmute-gemini",
     "mastra": "transmute-mastra",
+    "opencode": "transmute-opencode",
     "agentskills": None,  # proyeccion directa sin LLM (byte-identical)
 }
 
@@ -126,6 +135,11 @@ TRACE_FIDELITY_BY_TARGET = {
         "level": "pendiente",
         "capture_mechanism": "journalctl --user + session jsonl por especificar",
         "notes": "no cerrar verificacion estricta de trazabilidad hasta completar runtime-extension",
+    },
+    "opencode": {
+        "level": "pendiente",
+        "capture_mechanism": "session id + child sessions navigation (parent/child)",
+        "notes": "OpenCode mantiene jerarquia de sessions; mecanismo estable de exportacion para audit pendiente",
     },
     "agentskills": {
         "level": "heredada",
@@ -1842,7 +1856,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
         result = _lift_claude_code_subagent(file_path, namespace=namespace)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")
 
-    elif from_runtime in ("codex", "gemini"):
+    elif from_runtime in ("codex", "gemini", "opencode"):
         if not file:
             raise ValueError(f"--file required for {from_runtime} ingest")
         file_path = Path(file).expanduser().resolve()
@@ -1852,6 +1866,10 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
         if dry_run:
             print(f"  [dry-run] Would lift skill to artifacts/skills/_TALLER/INBOX/")
             return
+        # opencode skills son agentskills.io-compatible (frontmatter name + description),
+        # mismo lift que codex/gemini. Para opencode agents (.md con mode), pendiente
+        # un lifter dedicado en v1.1 — usar `_lift_claude_code_subagent` como fallback
+        # si el frontmatter declara `mode`.
         result = _lift_codex_skill(file_path, from_runtime=from_runtime, namespace=namespace)
         print(f"  Lifted to: {result.relative_to(KORA_ROOT)}")
 
@@ -1870,7 +1888,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
 
     else:
         raise ValueError(f"Unknown source runtime: {from_runtime}. "
-                         f"Supported: claude-code, codex, gemini, openclaw")
+                         f"Supported: claude-code, codex, gemini, opencode, openclaw")
 
     print(f"\n  Ingest preparado. El artefacto en staging requiere:")
     print(f"    1. Completar campos TODO en artefacto.invariantes.compromisos_eticos.")

@@ -140,9 +140,9 @@ def main():
 
     p_ingest = subparsers.add_parser("ingest", help="Ingesta inversa Lift_R — eleva artefacto runtime foraneo a KORA IR")
     p_ingest.add_argument("--from", dest="from_runtime", required=True,
-                          choices=("claude-code", "codex", "gemini", "openclaw"),
+                          choices=("claude-code", "codex", "gemini", "opencode", "openclaw"),
                           help="Runtime fuente del artefacto foraneo")
-    p_ingest.add_argument("--file", help="Path al archivo del artefacto (claude-code / codex / gemini)")
+    p_ingest.add_argument("--file", help="Path al archivo del artefacto (claude-code / codex / gemini / opencode)")
     p_ingest.add_argument("--workspace", help="Path al workspace (openclaw)")
     p_ingest.add_argument("--namespace", default="kora", help="Namespace KORA destino (default: kora)")
     p_ingest.add_argument("--dry-run", action="store_true", help="Reportar sin escribir")
