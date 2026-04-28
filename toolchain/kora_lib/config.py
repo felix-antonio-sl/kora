@@ -310,6 +310,16 @@ DEPRECATED_URN_ALIASES = {
     "urn:kora:kb:swarm-spec-md": "urn:kora:kb:agentfile-spec",
     "urn:kora:kb:05-governance-lattice": "urn:kora:kb:cat-governance-lattice",
     "urn:kora:kb:transmutation-spec": "urn:kora:kb:runtime-spec-md",
+    "urn:salud:artefacto:salubrista-hah": "urn:salud:artefacto:salubrista",
+    "urn:salud:kb:firs-framework-integrado-razonamiento-salud": "urn:salud:artefacto:firs-razonamiento-sanitario",
+    "urn:salud:kb:perfil-salubrista-copiloto-estrategico": "urn:salud:artefacto:salubrista",
+    "urn:salud:kb:perfil-salubrista-hospitalizacion-integrada": "urn:salud:artefacto:hospitalizacion-domiciliaria",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias": "urn:salud:kb:salubrista-fuente-salud-publica-global",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p02": "urn:salud:kb:salubrista-fuente-salud-publica-global",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p03": "urn:salud:kb:salubrista-fuente-salud-publica-global",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p04": "urn:salud:kb:salubrista-fuente-salud-publica-global",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p05": "urn:salud:kb:salubrista-fuente-salud-publica-global",
+    "urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p06": "urn:salud:kb:salubrista-fuente-salud-publica-global",
 }
 RETIRED_KB_URNS = frozenset({
     "urn:kora:kb:agentfile-spec",

@@ -6,8 +6,8 @@ _manifest:
     created_at: '2026-04-23'
     source: artifacts/agents/_FRAGUA/INBOX/perfiles/salubrista.md — perfil conceptual
       del salubrista como copiloto estrategico humano-agente
-version: 1.0.0
-status: publicado
+version: 1.1.0
+status: deprecado
 tags:
 - perfil
 - salubrista
@@ -21,6 +21,9 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:salud:kb:perfil-salubrista-copiloto-estrategico
+relations:
+  superseded_by:
+  - urn:salud:artefacto:salubrista
 ---
 
 # Perfil del Salubrista: Copiloto Estrategico Humano-Agente
@@ -47,4 +50,6 @@ Este perfil fusiona en una sola identidad profesional cinco dimensiones:
 
 ## 4. Relacion con el agente productivo
 
-Este perfil describe la figura conceptual. El artefacto agentico operativo es `urn:salud:artefacto:salubrista` en `artifacts/agents/_FRAGUA/REVIEW/salubrista/AGENT.md`.
+Deprecado como KB. Este perfil describe personalidad, rol y contrato de
+colaboracion, por lo que pertenece al artefacto agentico, no al corpus de
+conocimiento. El artefacto operativo vigente es `urn:salud:artefacto:salubrista`.

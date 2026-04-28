@@ -5,8 +5,8 @@ _manifest:
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
-    source: "Skill salubrista HODOM consolidada desde corpus salud/hodom, gestion-redes y perfil de hospitalizacion integrada."
-version: "1.0.0"
+    source: "Skill salubrista HODOM consolidada desde corpus salud/salubrista/hodom, gestion-redes, fuentes fisicas salubrista y skill hospitalista."
+version: "1.1.0"
 status: activo
 nombre: Hospitalizacion Domiciliaria
 descripcion: "Skill para activar modo hospitalista a domicilio: HODOM/HaH, direccion tecnica HD, criterios de ingreso-egreso, continuidad hospital-domicilio, capacidad virtual, seguridad, normativa y escalamiento."
@@ -32,11 +32,12 @@ extensions:
       - "urn:salud:kb:salubrista"
       - "urn:salud:kb:salubrista-atlas-integrado"
       - "urn:salud:kb:salubrista-body-of-knowledge"
-      - "urn:salud:kb:perfil-salubrista-hospitalizacion-integrada"
+      - "urn:salud:kb:salubrista-fuentes-base-curadas"
+      - "urn:salud:kb:salubrista-fuente-management-engineering"
+      - "urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss"
       - "urn:salud:kb:gestion-redes-general"
       - "urn:salud:kb:gestion-redes-unidades"
       - "urn:salud:kb:gestion-redes-herramientas"
-      - "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
       - "urn:salud:kb:hodom-reglamento-ds1-2022"
       - "urn:salud:kb:hodom-decreto-exento-31-2024"
       - "urn:salud:kb:hodom-norma-tecnica-2024"
@@ -44,8 +45,9 @@ extensions:
       - "urn:salud:kb:hodom-manual-alta-complejidad"
       - "urn:salud:kb:hodom-situacion-chile-2026"
     componible_con:
+      - "urn:salud:artefacto:firs-razonamiento-sanitario"
+      - "urn:salud:artefacto:hospitalista"
       - "urn:salud:artefacto:salubrista"
-      - "urn:salud:artefacto:salubrista-hah"
 artefacto:
   perfil:
     dominio: [hodom, hospitalizacion-domiciliaria, hospital-at-home, direccion-tecnica, gestion-camas, continuidad]
@@ -71,6 +73,7 @@ artefacto:
       - fijar-escala-y-decision
       - recuperar-normativa
       - recuperar-operacion
+      - coordinar-hospitalista
       - evaluar-seguridad-y-continuidad
       - proponer-salida
       - salida-hodom-trazable
@@ -89,7 +92,8 @@ artefacto:
       - "No tratar HD/HODOM como atencion domiciliaria ambulatoria."
       - "Antes de recomendar HODOM, verificar estabilidad clinica, domicilio apto, cuidador/red de apoyo, consentimiento, cobertura y capacidad de reingreso."
       - "Priorizar DS 1/2022, DE 31/2024 y Norma Tecnica HD 2024 para cumplimiento normativo."
-      - "Distinguir caso individual, programa, establecimiento y red; usar FIRS si la escala no esta clara."
+      - "Activar hospitalista si la decision depende de capacidad intrahospitalaria, altas, boarding, reingresos o continuidad de red."
+      - "Distinguir caso individual, programa, establecimiento y red; activar la skill FIRS si la escala no esta clara."
       - "Declarar cuando una afirmacion normativa requiere verificacion vigente."
       - "No reemplazar direccion tecnica, criterio medico tratante ni conduccion estrategica humana."
     compromisos_eticos:
@@ -129,9 +133,11 @@ gestion de camas virtuales, seguridad, continuidad y escalamiento.
 3. Recuperar normativa HODOM si hay cumplimiento, direccion tecnica o requisitos.
 4. Recuperar gestion-redes unidades/herramientas si hay flujo, camas, KPI,
    infraestructura, interoperabilidad o implementacion.
-5. Recuperar FIRS cuando la respuesta mezcle decision clinica, gestion y
+5. Activar la skill Hospitalista cuando la decision dependa de altas, capacidad
+   intrahospitalaria, boarding, reingreso o continuidad de red.
+6. Activar la skill FIRS cuando la respuesta mezcle decision clinica, gestion y
    politica sanitaria.
-6. Entregar salida con:
+7. Entregar salida con:
    - sintesis;
    - corpus usado;
    - criterios o requisitos;

@@ -1,0 +1,84 @@
+---
+_manifest:
+  urn: urn:salud:kb:salubrista-fuente-publihealth-oxford-alias-p03
+  type: knowledge
+  provenance:
+    created_by: Codex GPT-5
+    created_at: '2026-04-27'
+    source: Duplicado fisico preservado del atomizado publihealth; deprecado a favor
+      de la fuente canonica Oxford.
+version: 1.0.0
+status: deprecado
+nombre: Fuente duplicada publihealth Oxford
+descripcion: Alias fisico deprecado de la fuente Oxford Textbook of Global Public
+  Health ya canonizada como salud-publica-global.
+tags:
+- salubrista
+- fuente
+- duplicado
+- salud-publica-global
+lang: es
+relations:
+  superseded_by:
+  - urn:salud:kb:salubrista-fuente-salud-publica-global
+extensions:
+  kora:
+    family: source-alias
+    duplicate_of: urn:salud:kb:salubrista-fuente-salud-publica-global
+    shard_index: 3
+    shard_count: 6
+    shard_root_urn: urn:salud:kb:salubrista-fuente-publihealth-oxford-alias
+---
+
+# El Codice de las Corrientes Vivas - Parte 03
+
+## Water pollution
+
+- [P108] **HECHO** — 40% world population lacks clean drinking water; ~60% lacks adequate waste disposal
+
+## Other pollutants
+
+- [P109] **HECHO** — nanoparticles (1 billionth metre) increasingly used in foods/drugs/cosmetics; reported serious damage to lung/liver/brain cells
+
+## Climate change
+
+- [P110] **HECHO** — from mid-1970s climate change contributed ~150K deaths + ~5M DALYs/year, mainly via malnutrition/diarrhoea/malaria (WHO)
+- [P111] **HECHO** — climate change health pathways: heat waves, reduced cold deaths, increased natural disasters, changed vector-borne disease distribution, disaster/malnutrition risks
+
+## Rescuing the environment
+
+- [P112] **HECHO** — 2017: US President Trump refused to endorse Paris Accord on Climate Change
+
+## Occupational health
+
+- [P113] **HECHO** — ILO annual estimates: >2M work-related deaths, >300M work-related diseases, ~3.7M fatal/non-fatal work-related injuries globally
+- [P114] **HECHO** — 12M serious injuries among young workers in 2011
+- [P115] **HECHO** — informal/part-time workers = ≥50% global workforce; lack benefits, vulnerable to injury + limited healthcare access
+
+## Provision of and access to healthcare
+
+- [P116] **HECHO** — ACA (Affordable Care Act) under Obama extended coverage; Trump/Republican Congress undermined it → 13M Americans lost coverage
+
+## Bioterrorism and war
+
+- [P117] **HECHO** — biological weapons history extends centuries; Middle Ages: plague corpses catapulted into besieged castles
+
+## Ethics in public health
+
+- [P118] **HECHO** — emphasis on public health ethics post-WWII (Nazi Germany violations); Declaration of Helsinki, Belmont Report, CIOMS promulgated ethical guidelines + institutional review boards worldwide
+
+## Public health interventions
+
+- [P119] **DEFINICION** — public health interventions = 4 categories: social/biological/environmental, behavioural, political, structural
+- [P120] **HECHO** — improved standard of living (clean water, safe waste disposal) = greatest impact strategy for public health
+- [P121] **HECHO** — immunization = most cost-effective biological intervention; requires minimal behavioural change, usually single action series
+- [P122] **HECHO** — smallpox vaccine available >150 years before elimination; key = "search and contain" strategy + political will + funding
+- [P123] **HECHO** — DOTS for TB reduces transmission + MDR-TB development; successfully implemented in persisting countries
+- [P124] **HECHO** — "treatment as prevention" = mantra of HIV/AIDS control
+- [P125] **HECHO** — antismoking campaigns (US/Britain) + one-child policy (China) demonstrate community norm change is possible
+- [P126] **HECHO** — China 2013: strong anti-pollution measures (especially stopping coal); air quality greatly improved
+
+## Private support of public health
+
+- [P127] **HECHO** — Rockefeller Foundation: first US public health school (Johns Hopkins); International Health Commission (1913); China Medical Board (1914); Peking Union Medical College (1921)
+- [P128] **TENSION** — Gates Foundation massive HIV/malaria/TB funding has positive impact but influences public health priorities; some argue strong infrastructure in developing countries would have greater impact than disease-specific funding

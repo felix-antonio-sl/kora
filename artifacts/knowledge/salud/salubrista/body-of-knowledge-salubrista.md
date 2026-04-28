@@ -4,7 +4,7 @@ _manifest:
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
-    source: "Sintesis canonica desde gestion-redes, FIRS, perfiles salubristas y corpus HODOM."
+    source: "Sintesis canonica desde gestion-redes, HODOM y fuentes base fisicas del corpus salubrista."
 version: "1.0.0"
 status: published
 tags: [salubrista, body-of-knowledge, salud-publica, gestion-redes, hospitalista, hodom]
@@ -15,9 +15,10 @@ relations:
     - "urn:salud:kb:salubrista-atlas-integrado"
   cites:
     - "urn:salud:kb:gestion-redes-indice"
-    - "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
-    - "urn:salud:kb:perfil-salubrista-copiloto-estrategico"
-    - "urn:salud:kb:perfil-salubrista-hospitalizacion-integrada"
+    - "urn:salud:kb:salubrista-fuentes-base-curadas"
+    - "urn:salud:kb:salubrista-fuente-salud-publica-global"
+    - "urn:salud:kb:salubrista-fuente-management-engineering"
+    - "urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss"
     - "urn:salud:kb:hodom-reglamento-ds1-2022"
     - "urn:salud:kb:hodom-direccion-tecnica"
     - "urn:salud:kb:hodom-manual-alta-complejidad"
@@ -49,8 +50,9 @@ Toda inferencia debe declarar escala:
 | Territorio | inequidad, carga, acceso | perder capacidad operativa |
 | Nacional | politica, financiamiento, regulacion | sobreprometer implementacion local |
 
-FIRS es la pieza de control para evitar saltos indebidos entre caso clinico,
-programa, establecimiento y poblacion.
+El control de saltos indebidos entre caso clinico, programa, establecimiento y
+poblacion pertenece a la skill `urn:salud:artefacto:firs-razonamiento-sanitario`,
+no al corpus de conocimiento.
 
 ## 2. Salud Publica Aplicada A Decision
 
@@ -181,3 +183,37 @@ La salida preferida del salubrista debe contener:
 6. indicadores y umbrales;
 7. decision humana requerida;
 8. vacios o verificaciones pendientes.
+
+## 13. Fuentes Base Curadas
+
+La base cruda integrada al corpus aporta tres lentes que no deben duplicarse:
+
+1. salud publica global: determinantes, inequidad, transicion epidemiologica,
+   sindemias, clima, resistencia antimicrobiana, salud mental, envejecimiento,
+   violencia, migracion e intervenciones estructurales;
+2. management engineering: variabilidad, simulacion de eventos discretos,
+   teoria de colas, pooling, capacidad reservada, load leveling, bottlenecks,
+   forecasting, BI, PCA, clustering y teoria de juegos;
+3. continuidad post-aguda y LTSS: home health, hospital-at-home, cuidado de
+   larga duracion, equipos interdisciplinarios, direccion medica, transiciones,
+   readmisiones, 4M/5M geriatricas y derechos del paciente.
+
+Estas fuentes son insumo curado, no autoridad directa por si mismas. Toda
+recomendacion debe bajar al nodo canonico aplicable: gestion-redes para diseno
+operativo, HODOM para normativa chilena de hospitalizacion domiciliaria, y
+skill FIRS para control epistemico.
+
+## 14. Regla Anti-Redundancia
+
+El corpus considera duplicacion como defecto critico. Por eso:
+
+- el atomizado `publihealth.md` se trata como alias editorial del atomizado
+  Oxford y no como segunda evidencia;
+- las copias `*.source.txt` de KB publicada son procedencia, no nuevos nodos;
+- el conocimiento legacy hospitalista se conserva solo como modo interno de
+  `salubrista` y skill HODOM;
+- una salida debe citar la fuente productiva mas especifica, no repetir todos
+  los nodos relacionados;
+- si una afirmacion depende de norma, tarifa, cobertura, fecha o regulacion
+  vigente, debe verificarse contra fuente oficial actual antes de presentarse
+  como valida.

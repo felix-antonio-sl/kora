@@ -7,14 +7,12 @@ _manifest:
     created_at: '2026-04-23'
     source: Migracion desde artifacts/agents/_FRAGUA/INBOX/salubrista-hah/AGENT.md
       (legacy agentfile v1 con IDENTITY.md) a shape unified autoria-spec v1.2
-version: 2.1.0
-status: activo
+version: 2.2.0
+status: deprecado
 nombre: Salubrista HAH
-descripcion: Salubrista especializado en hospitalizacion integrada (intrahospitalaria
-  + domiciliaria). Cubre gestion de camas y capacidad, continuidad del cuidado, hospitalizacion
-  domiciliaria, direccion tecnica HD y cumplimiento normativo (DS 1/2022, DE 31/2024,
-  Norma Tecnica HD 2024). Copiloto del conductor humano con continuidad asistencial
-  explicita.
+descripcion: Deprecado; sus capacidades de hospitalizacion integrada y HODOM quedan
+  subsumidas en urn:salud:artefacto:salubrista mediante los modos hospitalista y
+  hospitalista a domicilio, apoyados por la skill urn:salud:artefacto:hospitalizacion-domiciliaria.
 tags:
 - persona
 - salubrista-hah
@@ -22,6 +20,10 @@ tags:
 - hospitalizacion-integrada
 - hospitalizacion-domiciliaria
 lang: es
+relations:
+  superseded_by:
+  - urn:salud:artefacto:salubrista
+  - urn:salud:artefacto:hospitalizacion-domiciliaria
 extensions:
   kora:
     vector_ontologico:

@@ -7,8 +7,8 @@ _manifest:
     source: artifacts/agents/_FRAGUA/INBOX/perfiles/salubrista-hosp-hodom.md — perfil
       conceptual del salubrista especializado en hospitalizacion integrada (intrahospitalaria
       + domiciliaria)
-version: 1.0.0
-status: publicado
+version: 1.1.0
+status: deprecado
 tags:
 - perfil
 - salubrista
@@ -23,8 +23,9 @@ extensions:
     shard_count: 1
     shard_root_urn: urn:salud:kb:perfil-salubrista-hospitalizacion-integrada
 relations:
-  cites:
-  - urn:salud:kb:perfil-salubrista-copiloto-estrategico
+  superseded_by:
+  - urn:salud:artefacto:salubrista
+  - urn:salud:artefacto:hospitalizacion-domiciliaria
 ---
 
 # Perfil del Salubrista en Hospitalizacion Integrada
@@ -61,4 +62,7 @@ Disenar, gestionar, implementar y evaluar sistemas de hospitalizacion integrados
 
 ## 4. Relacion con el agente productivo
 
-El artefacto agentico operativo vive en `urn:salud:artefacto:salubrista-hah` (`artifacts/agents/_FRAGUA/REVIEW/salubrista-hah/AGENT.md`).
+Deprecado como KB. El perfil de hospitalizacion integrada contiene modo de
+activacion, personalidad funcional y contrato operativo; por eso queda
+subsumido por `urn:salud:artefacto:salubrista` y por la skill
+`urn:salud:artefacto:hospitalizacion-domiciliaria`.

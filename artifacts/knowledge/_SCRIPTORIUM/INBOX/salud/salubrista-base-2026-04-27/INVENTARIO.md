@@ -5,7 +5,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
     source: "Reconstruccion del inventario salubrista tras poda accidental de dossier untracked; fuentes recuperadas desde KORA vigente."
-version: "0.2.0"
+version: "0.3.0"
 status: borrador
 tags: [salubrista, salud-publica, gestion-redes, hodom, hah, inventario, inbox, reconstruido]
 lang: es
@@ -21,7 +21,9 @@ relations:
     - "urn:salud:kb:gestion-redes-urgencias"
     - "urn:salud:kb:gestion-redes-salud-mental"
     - "urn:salud:kb:gestion-redes-herramientas"
-    - "urn:salud:kb:firs-framework-integrado-razonamiento-salud"
+    - "urn:salud:kb:salubrista-fuente-salud-publica-global"
+    - "urn:salud:kb:salubrista-fuente-management-engineering"
+    - "urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss"
     - "urn:salud:kb:hodom-reglamento-ds1-2022"
     - "urn:salud:kb:hodom-decreto-exento-31-2024"
     - "urn:salud:kb:hodom-norma-tecnica-2024"
@@ -86,14 +88,17 @@ definitivo:
 1. `salud/salubrista` productivo entrega el esqueleto de rol generalista:
    epidemiologia aplicada, vigilancia, diagnostico situacional, gestion de
    redes, evaluacion, politica sanitaria y diseno de servicios.
-2. `salud/salubrista-hah` entrega el modulo especializado HODOM/HaH:
-   continuidad hospital-domicilio, camas/capacidad, direccion tecnica HD y
-   cumplimiento normativo.
-3. `gestion-redes` + `FIRS` son el nucleo de conocimiento mas maduro.
-4. `HODOM` publicado cubre normativa y direccion tecnica; las fuentes crudas
+2. El antiguo `salud/salubrista-hah` entrega el linaje especializado HODOM/HaH
+   que fue subsumido por `salud/salubrista` v3.0.0: continuidad
+   hospital-domicilio, camas/capacidad, direccion tecnica HD y cumplimiento
+   normativo.
+3. `gestion-redes` + fuentes fisicas curadas son el nucleo de conocimiento
+   salubrista; FIRS fue desacoplado como skill de razonamiento.
+4. `HODOM` publicado cubre normativa y direccion tecnica bajo
+   `artifacts/knowledge/salud/salubrista/hodom/`; las fuentes crudas
    HaH no recuperadas eran enriquecimiento, no unico soporte canonico.
-5. Las fuentes crudas de salud publica global y gestion sanitaria siguen
-   disponibles, pero deben curarse antes de volverse KB canonica.
+5. Las fuentes crudas de salud publica global, management engineering y PAC/LTSS
+   ya fueron promovidas fisicamente dentro de `salud/salubrista/fuentes/`.
 
 Riesgo residual: la perdida de las 6 fuentes no versionadas reduce evidencia
 auxiliar para HaH y perfil narrativo, pero no elimina los KB publicados que
@@ -123,8 +128,9 @@ consumen los agentes actuales.
 | Cumplimiento KORA | Alto | Manifestos validos y agentes productivos activos |
 | Dominio | Media-Alta | Buen modelo de conducta; no es fuente primaria |
 
-Uso recomendado: tomar `salubrista` como base y absorber `salubrista-hah` como
-modulo especializado.
+Uso recomendado: tomar `salubrista` como base. `salubrista-hah` ya no debe
+operar como agente separado; su contenido se conserva como fuente y queda
+materializado como modo interno + skill HODOM.
 
 ### 2. Workspaces staging legacy
 
@@ -160,10 +166,10 @@ salud mental, KPIs, BPMN, FHIR/HL7, plantillas y simulacion.
 
 Uso recomendado: nucleo obligatorio del salubrista definitivo.
 
-### 4. KB publicada: FIRS
+### 4. Razonamiento operativo: FIRS
 
 **Archivo**:
-`fuentes/kb-publicada/salubrista/framework-razonamiento-clinico-epidemiologico-gestion/firs-framework-integrado.source.txt`.
+`artifacts/skills/salud/firs-razonamiento-sanitario/SKILL.md`.
 
 **Contenido**: razonamiento clinico, epidemiologico y de gestion sanitaria;
 separacion micro/meso/macro; clinical epidemiology; systems thinking; VBHC,
@@ -172,14 +178,15 @@ HRO, calidad y seguridad.
 | Dimension | Evaluacion | Razon |
 |---|---|---|
 | Documental | Alta | Documento unico y estructurado |
-| Cumplimiento KORA | Alto | URN publicado |
-| Dominio | Alta | Guardrail epistemico para evitar cruces de nivel indebidos |
+| Cumplimiento KORA | Alto | Skill activa con referencia fuente preservada |
+| Dominio | Metodo, no corpus | Guardrail epistemico para evitar cruces de nivel indebidos |
 
-Uso recomendado: marco de razonamiento y control de inferencias.
+Uso recomendado: activar como skill cuando la respuesta cruce niveles de
+analisis o mezcle evidencia clinica, epidemiologica y operacional.
 
 ### 5. KB publicada: HODOM / HaH
 
-**Archivos**: `fuentes/kb-publicada/hodom/**`.
+**Archivos**: `artifacts/knowledge/salud/salubrista/hodom/**`.
 
 **Contenido**: DS 1/2022, Decreto Exento 31/2024, Norma Tecnica HD 2024,
 direccion tecnica HD, modelo de alta complejidad y situacion Chile 2026.
@@ -203,28 +210,30 @@ continuidad hospital-domicilio, camas, transiciones o direccion tecnica HD.
 | Dimension | Evaluacion | Razon |
 |---|---|---|
 | Documental | Media-Alta | Claros y reutilizables |
-| Cumplimiento KORA | Alto | Publicados |
-| Dominio | Media | Identidad y scope; no evidencia primaria |
+| Cumplimiento KORA | Deprecado como KB | Subsumidos por agente y skill |
+| Dominio | No corpus | Identidad, scope y modo de activacion; no evidencia primaria |
 
-Uso recomendado: voz, rol, limites y posicionamiento.
+Uso recomendado: no consumir como conocimiento. El contenido operativo vive en
+`urn:salud:artefacto:salubrista` y
+`urn:salud:artefacto:hospitalizacion-domiciliaria`.
 
 ### 7. Fuentes crudas salubrista
 
-**Archivos**:
+**Archivos canonicos publicados**:
 
-- `fuentes/fuentes-crudas/salubrista/Oxford Textbook of Global Public Health.source.txt`
-- `fuentes/fuentes-crudas/salubrista/publihealth.source.txt`
-- `fuentes/fuentes-crudas/salubrista/healthcare management engineering.source.txt`
-- `fuentes/fuentes-crudas/salubrista/Post-Acute Care and Long-Term Services: Evolution to Value-Based Care.source.txt`
+- `artifacts/knowledge/salud/salubrista/fuentes/salud-publica-global.md`
+- `artifacts/knowledge/salud/salubrista/fuentes/management-engineering-sanitario.md`
+- `artifacts/knowledge/salud/salubrista/fuentes/continuidad-post-aguda-ltss.md`
+- `artifacts/knowledge/salud/salubrista/fuentes/duplicados/publihealth-oxford-alias.source.txt`
 
 | Dimension | Evaluacion | Razon |
 |---|---|---|
-| Documental | Media-Baja | Atomizadas o sintetizadas, pero raw INBOX |
-| Cumplimiento KORA | Bajo | Sin manifesto/relaciones canonicas propias |
+| Documental | Media-Alta | Atomizadas, con manifesto y procedencia |
+| Cumplimiento KORA | Alto salvo alias | Tres nodos publicados; `publihealth` no indexado por duplicacion |
 | Dominio | Alta potencial | Valiosas si se curan selectivamente |
 
-Uso recomendado: promover piezas seleccionadas, no montar completas sin
-revision de procedencia y utilidad.
+Uso recomendado: consumir como fuentes canonicas del corpus salubrista, con
+`publihealth` solo como evidencia de alias redundante.
 
 ### 8. Docs operativos y runtime
 
@@ -242,17 +251,18 @@ Uso recomendado: guiar arquitectura, transmutacion y decisiones de despliegue.
 
 1. Reponer o reacopiar las 6 fuentes no recuperadas si existen fuera de este
    repo.
-2. Decidir si `salubrista-hah` queda como agente separado o modulo interno.
+2. Decision tomada: `salubrista-hah` queda como modulo interno de `salubrista`
+   y no como agente productivo separado.
 3. Resolver politica de lectura de shards `gestion-redes`.
-4. Curar fuentes crudas de salud publica y PAC/LTSS antes de convertirlas en KB
-   productiva.
+4. Mantener `publihealth` como alias no indexado; no convertirlo en segunda KB.
 5. Preparar contrato OpenClaw usando KB montada desde clon KORA vivo.
 
 ## Decision curatorial inicial
 
 1. Base: `salud/salubrista`.
-2. Modulo especializado: HODOM/HaH desde `salud/salubrista-hah`.
-3. Nucleo obligatorio: `gestion-redes` + `FIRS`.
+2. Modulo especializado: HODOM/HaH dentro de `salud/salubrista` mediante la
+   skill `urn:salud:artefacto:hospitalizacion-domiciliaria`.
+3. Nucleo obligatorio: `gestion-redes` + fuentes fisicas del corpus.
 4. Knowledge condicionado: HODOM/HaH por trigger.
-5. Fuentes crudas: solo despues de curacion/promocion.
-6. Runtime: OpenClaw debe montar KB desde `$KORA_REPO/artifacts/knowledge/salud/...`.
+5. Metodo condicionado: FIRS como skill, no como KB.
+6. Runtime: OpenClaw debe montar KB desde `$KORA_REPO/artifacts/knowledge/salud/salubrista/...`.
