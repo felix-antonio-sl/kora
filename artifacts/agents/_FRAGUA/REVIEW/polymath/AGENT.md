@@ -29,7 +29,7 @@ extensions:
     entornos_objetivo: [claude-code, codex, openclaw]
     conocimiento_permitido: []
     componible_con:
-      - "urn:kora:artefacto:curator"
+      - "urn:kora:artefacto:artifact-curator"
   claude_code:
     model: opus
     color: purple
