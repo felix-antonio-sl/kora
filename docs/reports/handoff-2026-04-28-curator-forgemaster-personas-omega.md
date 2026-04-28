@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-28"
-    source: "Sesion 2026-04-28: refactor profundo de curator/forgemaster como skills + cristalizacion mente-omega/steipete/allan-kelly/david-allen como agentes y skills KORA-puros."
-version: "1.0.0"
+    source: "Sesion 2026-04-28: refactor profundo de curator/forgemaster como skills + cristalizacion mente-omega/steipete/allan-kelly/david-allen como agentes y skills KORA-puros. v1.1 incorpora la integracion de OpenCode como septimo runtime target (commit 688e831)."
+version: "1.1.0"
 status: publicado
-tags: [handoff, kora-skills, kora-agents, curator, forgemaster, mente-omega, steipete, allan-kelly, david-allen, autoria-spec, agent-skill-construction-spec]
+tags: [handoff, kora-skills, kora-agents, curator, forgemaster, mente-omega, steipete, allan-kelly, david-allen, opencode, autoria-spec, agent-skill-construction-spec, transmutation-spec]
 lang: es
 extensions:
   kora:
@@ -18,15 +18,27 @@ relations:
     - "urn:kora:kb:harness-spec"
     - "urn:kora:kb:autoria-spec"
     - "urn:kora:kb:agent-skill-construction-spec"
+    - "urn:kora:kb:transmutation-spec"
+    - "urn:kora:kb:opencode-runtime-extension"
 ---
 
-# Handoff 2026-04-28 — curator/forgemaster como skills + personas mente-omega/steipete/allan-kelly/david-allen
+# Handoff 2026-04-28 — curator/forgemaster como skills + personas mente-omega/steipete/allan-kelly/david-allen + opencode runtime
 
 ## Estado actual
 
 Repo KORA con **ciclo de vida agentico completo en skills + 3 personas
-canonizadas**. Strict 30/30 verde, suite 329/329, 14 URNs nuevos
-resuelven, 101 archivos tocados.
+canonizadas + OpenCode como septimo runtime target**. Strict 30/30
+verde, suite 329/329, 15 URNs productivos nuevos resuelven (14 del
+bloque agentico + 1 spec runtime), 108 archivos tocados, 5 commits
+en `master` push a `origin`:
+
+```
+688e831  feat(runtime): add opencode runtime target
+e37649f  docs(kora): handoff 2026-04-28 curator/forgemaster + personas omega
+750169b  feat(kora): mente-omega skill + steipete/allan-kelly/david-allen personas
+26d04e0  feat(kora): trinity of artifact lifecycle skills
+8507e2d  refactor(kora): retire legacy curator and forgemaster agents
+```
 
 ### Trinidad de ciclo de vida (skills nuevas en `artifacts/skills/kora/`)
 
@@ -109,11 +121,82 @@ Compromisos eticos completos. Memoria persistente
   operating core de 2.
 - `tests/test_cli_smoke.py`: sample de transmute movido a `kora/custodio`.
   Expectativas `total_workspaces`/`operating_core` actualizadas a 2.
+  `test_transmute_accepts_all_six_targets` (era `_five_`) y
+  `test_ingest_subcommand_exists` extendidos con `opencode`.
 - `tests/test_artifacts.py` y `tests/test_operating_core_scenarios.py`:
   ~14 tests acoplados al curator/forgemaster legacy eliminados; tests
   compartidos reducidos a `custodio` + `guardian`.
 - Skills hermanas (`intent-classifier`, `lifecycle-orchestrator`,
   `context-manager`): `componible_con` apunta ahora a las skills nuevas.
+
+### OpenCode como septimo runtime target
+
+Se incorpora **OpenCode** (https://opencode.ai/docs/) como septimo
+target alongside claude-code, codex, gemini, mastra, openclaw y
+agentskills. Spec nueva: `runtime/opencode-runtime-extension.md` v1.0.0
+(URN `urn:kora:kb:opencode-runtime-extension`, status `publicado`,
+family `spec`, 428 lineas).
+
+**Dominio de proyeccion:**
+
+| Eje | Dominio OpenCode |
+|---|---|
+| Π | 0-3 (Π=3 partial, acotado por campo `steps`) |
+| Μ | 0-1 full, 2 partial (sessions parent/child sin `memory: user` transparente), 3 none |
+| Ξ | 0-2 full, 3 partial (subagent `@mention` + Task tool con permission gates), 4 partial |
+| Λ | 0-1 full, 2 partial, 3 none |
+| Φ | 0-2 full (permission `ask` materializa HOTL granular), 3 partial, 4 none |
+| Σ | safety_norm 3, fairness 2, transparency 2, accountability 2, sustainability 1 |
+
+**Formas materiales soportadas:**
+
+| Forma material | Fidelidad | Ubicacion runtime |
+|---|---|---|
+| `habilidad` | fiel | `.opencode/skills/{name}/SKILL.md` (compat `.claude/skills/`, `.agents/skills/`) |
+| `subagente` | fiel | `.opencode/agents/{name}.md` con `mode: subagent` |
+| `agente-propiamente-tal` | parcial | `.opencode/agents/{name}.md` con `mode: primary` o `all` |
+| `agente-plataforma` | no soportado | OpenCode CLI/TUI sincrono, no daemon |
+
+**Toolchain extendido:**
+
+- `transmute.py`: `PRESERVATION_MATRIX["opencode"]`,
+  `TARGET_ADAPTERS["opencode"]`, `TRACE_FIDELITY_BY_TARGET["opencode"]`.
+- `cli.py`: `kora ingest --from {claude-code,codex,gemini,opencode,openclaw}`.
+- `kora transmute --target` reconoce `opencode` automaticamente
+  (derivado de `PRESERVATION_MATRIX.keys()`).
+
+**Coordinacion de specs (fix puntual de listas, dentro de Fase 3 freeze):**
+
+- `gobernanza §3.2` y `§8.2`: `opencode-runtime-extension` agregado a
+  runtime-extensions canonicas y al critical-path de runtimes.
+- `transmutation-spec §1` y `§12`: OpenCode listado entre runtimes
+  soportados.
+- `autoria-spec §12`: matriz de realizabilidad gana fila OpenCode
+  (`fiel/fiel/parcial/no-soportado`).
+
+**Rasgos distintivos:**
+
+- **Skills byte-identical cross-runtime**: una habilidad KORA
+  transmutada a agentskills.io vive directamente en `.opencode/skills/`
+  o `.claude/skills/` sin paso adicional. OpenCode descubre desde cwd
+  hasta git worktree root.
+- **Permission system granular** por key (`read`, `edit`, `bash`,
+  `skill`, `task`, `external_directory`, etc.) con `allow|deny|ask` +
+  patrones glob. Materializa HOTL mas fino que Codex approval modes.
+- **`mode: all`** es OpenCode-especifico: agente que opera como
+  primary o subagent segun contexto. Proyecta ambivalente al IR.
+- **Built-in agents** (`build`, `plan`, `general`, `explore`, system
+  hidden `compaction`/`title`/`summary`): runtime-nativos, NO se
+  transmutan desde KORA IR.
+- **Sessions jerarquicas** parent/child con navegacion (`session_child_*`)
+  para flujos multi-agente.
+
+**Lift status:**
+
+| Tipo | Estado | Mecanismo |
+|---|---|---|
+| Skill OpenCode → KORA IR | v1.0 disponible | `_lift_codex_skill` (compat agentskills.io) |
+| Agente OpenCode → KORA IR | pendiente v1.1 | Lifter dedicado para `.md` con `mode`/`permission`/`prompt` |
 
 ## Decisiones canonicas
 
@@ -124,6 +207,9 @@ Compromisos eticos completos. Memoria persistente
 | 3 personas como `agente-propiamente-tal` separados de sus skills | Composicion vs anidamiento: la skill encarna la tecnica, el agente aporta identidad/voz/memoria/limites. Reusable por otros agentes. |
 | Agente OpenClaw fleet NO modificado | Fuera del alcance KORA. Las fuentes IR creadas son lo que esos workspaces transmutarian via `kora transmute --target openclaw`. La decision de archivar/fusionar/divergir queda al `forjador-openclaw`. |
 | `lint-md` strict aplicado al perfil David Allen al promoverlo | Operadores KORA-puros: knowledge productivo cumple `md-spec §5` sin excepciones. |
+| OpenCode integrado como fix puntual (no rediseño) dentro del freeze formal de Fase 3 | Cambios solo enumerativos en gobernanza/transmutation-spec/autoria-spec (listas de runtime-extensions y matriz de realizabilidad). Sin tocar leyes ni regimenes URN. La nueva spec runtime es aditiva. |
+| `mode: all` de OpenCode proyecta ambivalente al IR | Es el unico runtime con esta primitiva. La transmutacion decide segun uso real (subagente o agente-propiamente-tal); la ingesta inversa (`Lift_opencode`) preserva el `mode: all` en `extensions.opencode.mode` para retomar luego. |
+| Built-in agents OpenCode no se transmutan desde IR | `build`, `plan`, `general`, `explore`, `compaction`, `title`, `summary` son runtime-nativos. Si un artefacto KORA cumple su funcion, se proyecta como agente custom adicional. |
 
 ## Pendientes
 
@@ -193,6 +279,8 @@ listas en KORA.
 | Skills nuevas sin probar en runtime real | Media | El IR pasa todos los gates de construccion; falta evidencia de uso real con un agente invocador. Primer test: invocar `mente-omega` desde `steipete` o `polymath`. |
 | URN `urn:kora:artefacto:curator` reaparece en otro contexto sin coordinacion | Baja | Si Felix lo reusa, debe coordinar con esta decision (es reasignacion legitima, no resurreccion). |
 | Agente vestigial polymath (en _FRAGUA/REVIEW) con `componible_con` actualizado pero sin promocion | Baja | El draft sigue en REVIEW; la actualizacion lo deja listo para futuras decisiones. |
+| Bug pre-existente en `_project_axis` reporta `comment` (3er elemento de tupla) como `loss` en matriz codex/gemini/opencode | Baja | No bloqueante para checks; afecta solo legibilidad del dry-run. Limpieza pendiente cuando se toque transmute.py |
+| Lift de agents OpenCode (`mode`/`permission`/`prompt`) usa lifter de skill como fallback | Baja | Pendiente lifter dedicado v1.1; mientras tanto, agents OpenCode se ingestan manualmente o via skill-lifter con TODO en el frontmatter |
 
 ## Comandos de continuidad
 
@@ -210,15 +298,23 @@ python3 toolchain/kora resolve urn:kora:artefacto:mente-omega
 python3 toolchain/kora resolve urn:dev:artefacto:steipete
 python3 toolchain/kora resolve urn:fxsl:artefacto:allan-kelly
 python3 toolchain/kora resolve urn:pro:artefacto:david-allen
+python3 toolchain/kora resolve urn:kora:kb:opencode-runtime-extension
 
 # Probar transmutacion (dry-run) cuando se vaya a desplegar
 python3 toolchain/kora transmute --target openclaw --agent dev/steipete --dry-run
+python3 toolchain/kora transmute --target opencode --agent dev/steipete --dry-run
 python3 toolchain/kora transmute --target agentskills --agent kora/mente-omega --dry-run
+
+# Verificar que los 7 targets aparecen en CLI help
+python3 toolchain/kora transmute --help
+python3 toolchain/kora ingest --help
 ```
 
 ## Artefactos relevantes (resumen completo)
 
-### Creados (14 nuevos URNs)
+### Creados (15 URNs productivos)
+
+Skills agenticos (7):
 
 ```
 urn:kora:artefacto:artifact-curator   skill (kora)
@@ -228,23 +324,60 @@ urn:kora:artefacto:mente-omega        skill (kora)
 urn:dev:artefacto:ship-discipline     skill (dev)
 urn:fxsl:artefacto:cell-design        skill (fxsl)
 urn:pro:artefacto:gtd-flow            skill (pro)
-urn:dev:artefacto:steipete            agente (dev)
-urn:fxsl:artefacto:allan-kelly        agente (fxsl)
-urn:pro:artefacto:david-allen         agente (pro)
 ```
 
-Promovidos (2 knowledge):
+Agentes persona (3):
+
+```
+urn:dev:artefacto:steipete            agente-propiamente-tal (dev)
+urn:fxsl:artefacto:allan-kelly        agente-propiamente-tal (fxsl)
+urn:pro:artefacto:david-allen         agente-propiamente-tal (pro)
+```
+
+Spec runtime (1):
+
+```
+urn:kora:kb:opencode-runtime-extension   spec runtime (kora)
+```
+
+Knowledge promovido a productivo (2, status: borrador → publicado):
+
 ```
 urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio
 urn:pro:kb:david-allen-integral-definitivo-septiembre-2026
 ```
 
+Handoff master (1):
+
+```
+urn:kora:kb:handoff-2026-04-28-curator-forgemaster-personas-omega
+```
+
 ### Retirados (3 URNs)
 
 ```
-urn:kora:artefacto:curator                    (agente-propiamente-tal v3.0.0)
-urn:kora:artefacto:forgemaster                (agente-propiamente-tal v2.0.0)
+urn:kora:artefacto:curator                       (agente-propiamente-tal v3.0.0)
+urn:kora:artefacto:forgemaster                   (agente-propiamente-tal v2.0.0)
 urn:omega:kb:mente-omega-arquitectura-cognitiva  (knowledge note REVIEW)
 ```
 
 URNs `curator` y `forgemaster` quedan libres para reasignacion futura.
+
+### Topologia de runtimes soportados (post-sesion)
+
+KORA proyecta a **7 targets** mediante `kora transmute --target`:
+
+```
+agentskills    meta-runtime byte-identical
+claude-code    Anthropic Claude Code CLI
+codex          OpenAI Codex CLI
+gemini         Google Gemini CLI
+mastra         Mastra agent framework
+opencode       OpenCode CLI multi-provider (incorporado en esta sesion)
+openclaw       OpenClaw fleet (unico que soporta Mu=3 / agente-plataforma)
+```
+
+Cada target tiene su `runtime-extension` con dominio + matriz de
+preservacion. Los 7 patrones siguen estructura paralela (definicion,
+formas materiales, matriz por eje, dimension runtime-ortogonal,
+metadata de encaje, lift inverso, validacion).
