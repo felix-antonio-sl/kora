@@ -17,8 +17,6 @@ __pycache__/
 # Docs materializadas por toolchain; regenerables con `python3 toolchain/kora index`,
 # `python3 toolchain/kora kb-graph --json --orphans` y comandos relacionados.
 docs/generated/*
-docs/reports/opcloud-sandbox-graphics-audit/mirror*/
-opcloud-opm-meta-screenshot.png
 # Vestigios v7 (ya eliminados; salvaguardia si reaparecen)
 /BUILD/
 /OPERATIONS/
