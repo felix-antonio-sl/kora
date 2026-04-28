@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5"
-version: "4.5.0"
+    source: "refactor modern-first: AGENT.md canonico, capacidades portables, legacy como compatibilidad; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec y redefine agentfile/skill-overlay como serializaciones; v4.3 unifica autoria en autoria-spec, retira agentfile-spec y skill-overlay-spec, reduce regimenes URN a dos, limpia residuos pre-unificacion; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion"
+version: "4.6.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -18,9 +18,10 @@ relations:
     - "urn:kora:kb:harness-spec"
     - "urn:kora:kb:qa-spec"
     - "urn:kora:kb:autoria-spec"
+    - "urn:kora:kb:agent-skill-construction-spec"
 ---
 
-# KORA/Gobernanza v4.5.0
+# KORA/Gobernanza v4.6.0
 
 ## 1. Definicion
 
@@ -86,7 +87,7 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
 | **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec`, `canario-spec` |
-| **Serializacion** | Como se *escribe* el artefacto (shape unificado de authoring) | `autoria-spec`, `md-spec`, `knowledge-spec` |
+| **Serializacion** | Como se *escribe* el artefacto y como se construye su fuente primaria | `autoria-spec`, `agent-skill-construction-spec`, `md-spec`, `knowledge-spec` |
 | **Runtime** | Como se *ejecuta* en un target concreto y como compone multiagente | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
 
@@ -107,6 +108,7 @@ proyectadas*. La distribucion es *meta-encaje*.
 **Capa de serializacion**:
 
 - `autoria-spec.md` — shape unificado de authoring para todo artefacto agentico productivo (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
+- `agent-skill-construction-spec.md` — metodologia pre-transmutacion para convertir requerimientos, drafts o fuentes legacy en `AGENT.md`/`SKILL.md` conformes a `autoria-spec`.
 - `md-spec.md` — formato KORA/MD base usado por el frontmatter + body.
 - `knowledge-spec.md` — tejido relacional y pipeline de conocimiento.
 
@@ -135,6 +137,7 @@ gobierna:
 - `canario-spec` para verificacion runtime ejecutable por artefacto proyectado.
 - `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
 - `autoria-spec` para shape de todo artefacto agentico productivo.
+- `agent-skill-construction-spec` para proceso de construccion de agentes y skills antes de transmutar a runtimes.
 - `knowledge-spec` para tejido relacional y pipeline de conocimiento.
 - `transmutation-spec` para leyes de proyeccion IR → runtime.
 - `multiagente-spec` para coherencia de protocolos distribuidos y handoffs.
