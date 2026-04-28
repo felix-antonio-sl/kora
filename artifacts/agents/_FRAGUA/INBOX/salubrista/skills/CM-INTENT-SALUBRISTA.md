@@ -7,7 +7,7 @@ _manifest:
 # CM-INTENT-SALUBRISTA
 
 ## Proposito
-Clasificar semanticamente la solicitud del usuario para un agente salubrista orientado a analisis, gestion, diseno, implementacion, evaluacion y vigilancia. Determina escala operativa, tipo de tarea y si conviene derivacion especializada a la extension `salud/salubrista-hah`, sin decidir transiciones FSM ni continuidad conversacional.
+Clasificar semanticamente la solicitud del usuario para un agente salubrista orientado a analisis, gestion, diseno, implementacion, evaluacion y vigilancia. Determina escala operativa, tipo de tarea y si el caso debe resolverse como analisis general o continuidad asistencial, sin decidir transiciones FSM ni continuidad conversacional.
 
 ## Input/Output
 - **Input:** consulta: string
@@ -28,8 +28,7 @@ Clasificar semanticamente la solicitud del usuario para un agente salubrista ori
 3. IDENTIFICAR la escala principal: unidad / establecimiento / red / territorio / nacional / multi.
 4. IDENTIFICAR el objeto operativo: programa, servicio, unidad, establecimiento, red, territorio, politica, evento, tablero, otro.
 5. DETECTAR especializacion:
-   - IF foco dominante = hospitalizacion integrada, continuidad hospital-domicilio, capacidad de camas con componente HD, direccion tecnica HD o normativa HD -> `derivacion_especializada = salubrista_hah`
-   - ELSE `derivacion_especializada = null`
+   - `derivacion_especializada = null`
 6. IF `intencion_primaria = product`, IDENTIFICAR `tipo_producto`:
    - `gap_map`
    - `risk_map`
@@ -46,7 +45,7 @@ Clasificar semanticamente la solicitud del usuario para un agente salubrista ori
 | intencion_primaria | string | `epi` / `system` / `design` / `implementation` / `evaluation` / `vigilance` / `product` / `report` / `end` / `clarify` |
 | objeto | string | Unidad operativa del problema |
 | tipo_producto | string? | `gap_map` / `risk_map` / `monitoring_dashboard` / `policy_brief` / `decision_scenarios` |
-| derivacion_especializada | string? | `salubrista_hah` si conviene encaminar a la extension heredada |
+| derivacion_especializada | string? | `null` en esta version; la continuidad asistencial se resuelve dentro del mismo agente |
 | escalas_secundarias | string[] | Escalas adicionales si el problema es multi-nivel |
 | clarificacion_requerida | bool | True si la consulta es ambigua |
 | motivo_ambiguedad | string? | Solo si clarificacion_requerida = true |
