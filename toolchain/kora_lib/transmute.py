@@ -367,6 +367,22 @@ def _collect_knowledge_contract(frontmatter: dict) -> dict:
     }
 
 
+def _collect_openclaw_kora_repo_access(frontmatter: dict) -> dict:
+    """Return the live KORA clone access contract for OpenClaw builds."""
+    openclaw_ext = (frontmatter.get("extensions") or {}).get("openclaw") or {}
+    return {
+        "required": bool(openclaw_ext.get("kora_repo_required", True)),
+        "host_env": openclaw_ext.get("kora_repo_env", "KORA_REPO"),
+        "default_host_path": openclaw_ext.get("kora_repo_default", str(KORA_ROOT)),
+        "container_mount": openclaw_ext.get("kora_repo_mount", "/" + "home/node/repos/kora"),
+        "mode": openclaw_ext.get("knowledge_mount_mode", "ro"),
+        "sync_strategy": openclaw_ext.get(
+            "knowledge_mount_strategy", "bind_mount_live_kora_clone"
+        ),
+        "knowledge_root": "artifacts/knowledge",
+    }
+
+
 def record_invocation(
     *,
     agent_urn: str,
@@ -573,6 +589,10 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
             "knowledge_contract": knowledge_contract,
         }
     }
+    if target == "openclaw":
+        manifest["transmutation"]["kora_repo_access"] = _collect_openclaw_kora_repo_access(
+            frontmatter
+        )
 
     yml_path = target_dir / "_transmutation.yml"
     yml_path.write_text(

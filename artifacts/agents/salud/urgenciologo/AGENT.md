@@ -120,6 +120,12 @@ extensions:
     reload_mode: hybrid
     heartbeat_enabled: false
     stuck_session_warn_ms: 300000
+    kora_repo_required: true
+    kora_repo_env: KORA_REPO
+    kora_repo_default: /home/felix/kora
+    kora_repo_mount: /home/node/repos/kora
+    knowledge_mount_strategy: bind_mount_live_kora_clone
+    knowledge_mount_mode: ro
 artefacto:
   plan:
     estado_inicial: S-DISPATCHER

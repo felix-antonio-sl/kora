@@ -43,6 +43,7 @@ extensions:
       metafora_relacional: centro-de-control
     entornos_objetivo:
     - claude-code
+    - codex
     - openclaw
     conocimiento_permitido:
     - urn:salud:kb:salubrista
@@ -86,9 +87,35 @@ extensions:
     color: green
     memory: user
     effort: high
+  codex:
+    model: gpt-5.4
+    memory: session
+    effort: high
   openclaw:
+    agent_id: salubrista
+    workspace_path: workspaces/salubrista/
     bot_handler: telegram
+    token_file: secrets/telegram-salubrista.token
+    model_primary: anthropic/claude-opus-4-6
+    model_fallbacks: []
+    compaction_model: anthropic/claude-opus-4-6
+    responses_server_compaction: true
+    runtime_context_cap: 272000
     acp_compliant: true
+    acp_backend: openclaw
+    acp_default_delegate: claude
+    acp_allowed_agents:
+    - claude
+    - codex
+    reload_mode: hybrid
+    heartbeat_enabled: false
+    stuck_session_warn_ms: 300000
+    kora_repo_required: true
+    kora_repo_env: KORA_REPO
+    kora_repo_default: /home/felix/kora
+    kora_repo_mount: /home/node/repos/kora
+    knowledge_mount_strategy: bind_mount_live_kora_clone
+    knowledge_mount_mode: ro
     activation_modes:
     - salubrista
     - hospitalista

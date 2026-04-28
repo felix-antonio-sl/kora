@@ -413,7 +413,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_openclaw_extension_declares_acp_meta_runtime(self):
         content = (ROOT / "runtime" / "openclaw-runtime-extension.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.2.0",
+            "v1.2.1",
             "meta-runtime",
             "ACP",
             "acp_backend",

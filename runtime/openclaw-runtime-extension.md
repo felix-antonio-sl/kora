@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "OpenAI"
     created_at: "2026-03-23"
-    source: "runtime-spec-md v3.8.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas; v1.1.0 alinea con transmutation-spec v1.0 y harness-spec v1.0 — incorpora matriz de preservacion por eje, dominio de soporte, ACP como meta-runtime; v1.2.0 se ancla a multiagente-spec como ley de coreografia"
-version: "1.2.0"
+    source: "runtime-spec-md v3.8.0, OpenClaw baseline; v1.0.1 agrega relations estandarizadas; v1.1.0 alinea con transmutation-spec v1.0 y harness-spec v1.0 — incorpora matriz de preservacion por eje, dominio de soporte, ACP como meta-runtime; v1.2.0 se ancla a multiagente-spec como ley de coreografia; v1.2.1 fija acceso a KB via clon local vivo de KORA para despliegues OpenClaw KORA."
+version: "1.2.1"
 status: publicado
 tags: [spec, runtime, openclaw, extension, transmutacion, deploy, acp]
 lang: es
@@ -26,7 +26,7 @@ relations:
     - "urn:kora:kb:gobernanza"
 ---
 
-# AGENGAI/OpenClaw-Runtime-Extension v1.2.0
+# AGENGAI/OpenClaw-Runtime-Extension v1.2.1
 
 ## 1. Definicion
 
@@ -43,6 +43,7 @@ Gobierna:
 3. Topologia de output `artifacts/agents/{ns}/{agent}/_BUILD/openclaw/`.
 4. Frontera entre artefactos derivados y estado operativo mutable.
 5. Encaje con ACP (OpenClaw como meta-runtime multi-backend).
+6. Acceso read-only al repo KORA local actualizado como fuente de conocimiento.
 
 ### 1.2 Rol distintivo de OpenClaw
 
@@ -217,6 +218,13 @@ extensions:
     # Heartbeat
     heartbeat_enabled: true
     stuck_session_warn_ms: 300000
+    # KORA live clone
+    kora_repo_required: true
+    kora_repo_env: "KORA_REPO"
+    kora_repo_default: "/home/felix/kora"
+    kora_repo_mount: "/home/node/repos/kora"
+    knowledge_mount_strategy: "bind_mount_live_kora_clone"
+    knowledge_mount_mode: "ro"
 ```
 
 ## 8. ACP como meta-runtime
@@ -264,6 +272,29 @@ Obligatorias:
 6. Las 8 leyes estructurales de `transmutation-spec §3.2` se preservan.
 7. Si el vector IR declara Μ=3 (ambiental), OpenClaw lo realiza; no requiere
    pérdida.
+8. En despliegues KORA, el host DEBE tener un clon local actualizado de KORA y
+   montarlo read-only en `/home/node/repos/kora`; los corpus de
+   `artifacts/knowledge/**` se leen desde ese clon, no desde copias sueltas.
+
+### 10.1 Contrato de repo KORA vivo
+
+Todo agente KORA transmutado a OpenClaw asume:
+
+```yaml
+kora_repo_access:
+  required: true
+  host_env: KORA_REPO
+  default_host_path: /home/felix/kora
+  container_mount: /home/node/repos/kora
+  mode: ro
+  sync_strategy: bind_mount_live_kora_clone
+  knowledge_root: artifacts/knowledge
+```
+
+El deploy puede exponer aliases ergonomicos como
+`/home/node/knowledge/{namespace}/{corpus}`, pero esos aliases deben apuntar al
+mismo clon KORA. Si no existe clon local actualizado, el `platform_contract`
+debe declararlo como fallback o freeze auditado; no es el modo normal.
 
 ## 11. Ingesta inversa (`Lift_{openclaw}`)
 
@@ -301,8 +332,9 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 | ACP metadata | Si artefacto es ACP-compliant, `acp_backend` declarado | lint |
 | Matriz coherente | Valor de matriz coincide con version OpenClaw runtime | manual |
 | Vector dentro del dominio | Vector IR ∈ `D_{openclaw}` (maximo dominio de los 4) | lint |
+| Repo KORA vivo | `KORA_REPO` clonado y actualizado, montado RO en `/home/node/repos/kora` | preflight |
 
-## 13. Contrato vigente v1.1
+## 13. Contrato vigente v1.2.1
 
 - OpenClaw soporta **todos** los arneses: {Utilidad, Disciplina, Delegado,
   Persona, Orquestador, Servicio}.
@@ -311,6 +343,8 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 - Dominio completo: Π ≤ 3, Μ ≤ 3, Ξ ≤ 4, Λ ≤ 3 (Λ=3 parcial), Φ ≤ 3.
 - Integracion con Telegram, systemd, ACP dispatch.
 - Hot-reload de workspace files via `gateway.reload.mode: hybrid`.
+- Agentes KORA desplegados en OpenClaw leen `artifacts/knowledge/**` desde un
+  clon local vivo y actualizado de KORA montado read-only.
 
 ## 14. Migracion
 
@@ -329,3 +363,12 @@ Default `harness_vector` para workspaces OpenClaw ingestados:
 Las reglas v1.0.1 (native-first, topologia, runtime state boundary) se
 mantienen. La nueva estructura agrega explicitud; no rompe transmutaciones
 existentes.
+
+### 14.3 Cambios v1.2.0 → v1.2.1
+
+- Generaliza el patron aprendido en `salud/urgenciologo`: los agentes OpenClaw
+  KORA se despliegan con `KORA_REPO` local actualizado.
+- El conocimiento autorizado se resuelve desde
+  `$KORA_REPO/artifacts/knowledge/**` mediante bind mount read-only.
+- `_transmutation.yml` puede declarar `kora_repo_access` como contrato de
+  preflight para despliegue.

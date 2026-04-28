@@ -6,8 +6,8 @@ _manifest:
     created_at: '2026-03-22'
     source: Experiencia operacional desplegando korax v3.4.0, steipete v1.5.1 y salubrista-hah
       v1.0.0 en Hetzner
-    updated_at: '2026-03-23'
-version: 1.1.0
+    updated_at: '2026-04-28'
+version: 1.2.0
 status: published
 tags:
 - principios
@@ -177,20 +177,28 @@ Red compartida `kora-federation` (bridge) conecta los containers del stack. El g
 
 ---
 
-## P8 — Knowledge como volumen compartido read-only
+## P8 — Knowledge desde clon KORA vivo read-only
 
-Las KBs se montan como volumen RO compartido por todos los gateways. **No van en el bootstrap** — serian decenas de KB de chars que se inyectan en cada turno, quemando tokens sin necesidad.
+Los agentes OpenClaw de KORA se despliegan en maquinas que tienen el repo KORA
+clonado y actualizado. Ese clon es la fuente normal para las KBs; no se
+mantiene una copia paralela en `/srv/kora/knowledge` salvo fallback o freeze
+auditado.
 
+```bash
+KORA_REPO=/home/felix/kora
+$KORA_REPO -> /home/node/repos/kora:ro
+$KORA_REPO/artifacts/knowledge/{namespace}/{corpus}
+  -> /home/node/knowledge/{namespace}/{corpus}:ro  # alias opcional
 ```
-/srv/kora/knowledge/ ← directorio compartido
-├── korvo/ ← KBs de korax (manual-de-vida, filosofia)
-├── dev/ ← KBs de steipete (praxis, tooling)
-└── agengai/openclaw/ ← corpus OpenClaw (19M, sin frontmatter KORA)
-```
 
-Montado como `/home/node/ en cada container. El agente lee las KBs bajo demanda via filesystem, no las carga en cada turno.
+El `platform_contract` debe declarar `sync_strategy:
+bind_mount_live_kora_clone`, el path relativo dentro del repo y el mount
+read-only. El agente lee KBs bajo demanda via filesystem; no las carga en cada
+turno ni las copia al bootstrap.
 
-**Excepcion:** un agente puede tener KBs criticas que SI necesitan estar en bootstrap (ej: un agente de emergencia medica que debe tener el protocolo disponible sin latencia de lectura). Pero eso es la excepcion, no la regla.
+**Excepcion:** un agente puede tener fragmentos criticos en bootstrap si el
+riesgo operacional lo exige, pero el corpus autoritativo sigue siendo
+`$KORA_REPO/artifacts/knowledge/**`.
 
 ---
 

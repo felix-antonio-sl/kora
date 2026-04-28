@@ -44,7 +44,7 @@ Contrato esperado: `salubrista` compone las skills
 `artifacts/knowledge/salud/salubrista`; FIRS y perfiles deprecados no son KB
 autorizada.
 
-Siguiente linea razonable: transmutar `salubrista` a OpenClaw usando el clon
-local de KORA como KB disponible, o limpiar de forma separada los restos de
-staging `_FRAGUA/INBOX/salubrista`.
+Siguiente linea razonable: desplegar/verificar la transmutacion OpenClaw de
+`salubrista` usando el clon local de KORA como KB disponible, o limpiar de
+forma separada los restos de staging `_FRAGUA/INBOX/salubrista`.
 </prompt>
