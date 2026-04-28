@@ -122,7 +122,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         for cohort_items in payload["cohorts"].values():
             all_core.update(item["workspace"] for item in cohort_items)
         # Garantia: los 4 meta-kora operating core siempre viven en la cohort kora
-        self.assertTrue({"kora/guardian", "kora/forgemaster", "kora/curator", "kora/custodio"}.issubset(all_core))
+        self.assertTrue({"kora/guardian", "kora/custodio"}.issubset(all_core))
 
     def test_meta_kora_audit_is_materialized_with_explicit_status(self):
         payload = build_operating_core_payload()
@@ -161,7 +161,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
 
     def test_operating_core_contracts_do_not_include_noise_tokens_as_handoffs(self):
         noise_tokens = {"agentes/LLM", "modelo/provider", "formal/01", "formal/02", "pass/fail", "meat/fat"}
-        for workspace in ("kora/forgemaster", "kora/curator"):
+        for workspace in ("kora/custodio", "kora/guardian"):
             contract = load_workspace_contract(workspace)
             self.assertTrue(noise_tokens.isdisjoint(contract.handoff_targets), msg=f"noise leaked into {workspace}")
 

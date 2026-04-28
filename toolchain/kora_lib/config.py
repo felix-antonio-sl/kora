@@ -214,8 +214,6 @@ COHORT_NAMESPACE_GROUPS = {
 }
 META_KORA_AUDIT_WORKSPACES = (
     "kora/guardian",
-    "kora/forgemaster",
-    "kora/curator",
     "kora/custodio",
 )
 COHORT_WORKSPACE_OVERRIDES = {
@@ -225,14 +223,6 @@ META_KORA_STATUS = {
     "kora/guardian": {
         "status": "operating_core",
         "reason": "Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional.",
-    },
-    "kora/forgemaster": {
-        "status": "operating_core",
-        "reason": "Nucleo operativo: disena, crea, valida y entrega handoff al custodio.",
-    },
-    "kora/curator": {
-        "status": "operating_core",
-        "reason": "Nucleo operativo: korafica, audita y entrega handoff al custodio.",
     },
     "kora/custodio": {
         "status": "operating_core",

@@ -89,8 +89,8 @@ class KoraCliSmokeTests(unittest.TestCase):
             sum(len(workspaces) for workspaces in OPERATING_CORE_COHORTS.values()),
         )
         self.assertEqual(set(contracts_payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["total_workspaces"], 4)
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 4)
+        self.assertEqual(contracts_payload["meta_kora"]["summary"]["total_workspaces"], 2)
+        self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 2)
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["auxiliary"], 0)
         self.assertIn(
             "kora/guardian",
@@ -158,7 +158,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
         for target in ("claude-code", "codex", "gemini", "mastra", "openclaw"):
-            result = run_cli("transmute", "--target", target, "--agent", "kora/curator", "--dry-run")
+            result = run_cli("transmute", "--target", target, "--agent", "kora/custodio", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)
             self.assertIn("Vector IR:", result.stdout)
@@ -177,7 +177,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         # Claude Code no soporta Mu=3 (ambient always-on). Por ahora el fleet promovido
         # tiene Mu<=2, por lo que no dispara el error. Smoke: verifica que el sistema
         # emite un `_transmutation.yml` con estructura completa tras transmute real.
-        result = run_cli("transmute", "--target", "claude-code", "--agent", "kora/curator")
+        result = run_cli("transmute", "--target", "claude-code", "--agent", "kora/custodio")
         self.assertIn("Manifest:", result.stdout)
 
     def test_check_registry_includes_bundle_coherence(self):
