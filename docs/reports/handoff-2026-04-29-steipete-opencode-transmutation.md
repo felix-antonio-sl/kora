@@ -34,7 +34,7 @@ Ambos agentes fueron ajustados para evitar lenguaje de clon/impersonation,
 declarar API observable, registrar riesgos y no afirmar seguridad
 coalgebraica verificable sin `plan.fsm` formal.
 
-`dev/steipete` quedo transmutado a:
+`dev/steipete` y `fxsl/allan-kelly` quedaron transmutados a:
 
 - `claude-code`
 - `codex`
@@ -45,6 +45,7 @@ Sus skills composables productivas tambien quedaron transmutadas a esos cuatro
 targets:
 
 - `dev/ship-discipline`
+- `fxsl/cell-design`
 - `kora/mente-omega`
 - `kora/cat-thinking`
 - `kora/artifact-curator`
@@ -112,10 +113,27 @@ Agente `steipete`:
 - `artifacts/agents/dev/steipete/_BUILD/openclaw/config/openclaw.json5`
 - `artifacts/agents/dev/steipete/_BUILD/openclaw/DEPLOY.md`
 
+Agente `allan-kelly`:
+
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/claude-code/allan-kelly.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/codex/allan-kelly.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/opencode/agents/allan-kelly.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/AGENTS.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/SOUL.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/IDENTITY.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/USER.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/TOOLS.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/BOOT.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/workspace/MEMORY.md`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/config/openclaw.json5`
+- `artifacts/agents/fxsl/allan-kelly/_BUILD/openclaw/DEPLOY.md`
+
 Skills `steipete`:
 
 - `artifacts/skills/dev/ship-discipline/_BUILD/{claude-code,codex,opencode}/ship-discipline/SKILL.md`
 - `artifacts/skills/dev/ship-discipline/_BUILD/openclaw/skills/ship-discipline/SKILL.md`
+- `artifacts/skills/fxsl/cell-design/_BUILD/{claude-code,codex,opencode}/cell-design/SKILL.md`
+- `artifacts/skills/fxsl/cell-design/_BUILD/openclaw/skills/cell-design/SKILL.md`
 - `artifacts/skills/kora/mente-omega/_BUILD/{claude-code,codex,opencode}/mente-omega/SKILL.md`
 - `artifacts/skills/kora/mente-omega/_BUILD/openclaw/skills/mente-omega/SKILL.md`
 - `artifacts/skills/kora/cat-thinking/_BUILD/{claude-code,codex,opencode}/cat-thinking/SKILL.md`

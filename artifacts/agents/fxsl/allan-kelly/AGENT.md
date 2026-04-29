@@ -26,7 +26,7 @@ extensions:
       arnes_categorico: persona
       forma_material: agente-propiamente-tal
       metafora_relacional: centro-de-control
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo: [claude-code, codex, opencode, openclaw]
     conocimiento_permitido:
       - "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual"
       - "urn:kora:kb:gobernanza"

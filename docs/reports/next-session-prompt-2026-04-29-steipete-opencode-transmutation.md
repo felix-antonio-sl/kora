@@ -38,11 +38,13 @@ python3 -m unittest discover -s tests
 
 Contrato esperado: `30/30 OK` y suite completa verde.
 
-Luego continua con la validacion runtime real de `dev/steipete`:
+Luego continua con la validacion runtime real de `dev/steipete` y
+`fxsl/allan-kelly`:
 
 1. revisar/instalar `artifacts/agents/dev/steipete/_BUILD/claude-code/steipete.md`
 2. probar `artifacts/agents/dev/steipete/_BUILD/codex/steipete.md`
 3. cargar `artifacts/agents/dev/steipete/_BUILD/opencode/agents/steipete.md`
 4. sincronizar `artifacts/agents/dev/steipete/_BUILD/openclaw/workspace/` en OpenClaw y correr doctor
-5. reportar cualquier drift entre runtime real y `_transmutation.yml`
+5. repetir el mismo flujo con `artifacts/agents/fxsl/allan-kelly/_BUILD/`
+6. reportar cualquier drift entre runtime real y `_transmutation.yml`
 </prompt>

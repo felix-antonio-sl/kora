@@ -31,6 +31,7 @@ relations:
 | Agente dev | `artifacts/agents/dev/steipete/AGENT.md` |
 | Agente fxsl | `artifacts/agents/fxsl/allan-kelly/AGENT.md` |
 | Skill nuclear | `artifacts/skills/dev/ship-discipline/SKILL.md` |
+| Skill nuclear fxsl | `artifacts/skills/fxsl/cell-design/SKILL.md` |
 | Toolchain principal | `toolchain/kora_lib/transmute.py` |
 | Handoff rector | `docs/reports/handoff-2026-04-29-steipete-opencode-transmutation.md` |
 
@@ -42,15 +43,17 @@ relations:
    como patch listo salvo autorizacion explicita.
 3. `opencode` forma parte del regimen de transmutacion y del schema de
    authoring KORA.
-4. `kora transmute` para agentes debe emitir artefacto material, no solo
+4. `steipete` y `allan-kelly` declaran `claude-code`, `codex`, `opencode`
+   y `openclaw` como entornos objetivo.
+5. `kora transmute` para agentes debe emitir artefacto material, no solo
    `_transmutation.yml`, para:
    - `claude-code`: `{name}.md`
    - `codex`: `{name}.md`
    - `opencode`: `agents/{name}.md`
    - `openclaw`: `workspace/*.md`, `config/openclaw.json5`, `DEPLOY.md`
-5. `kora transmute` para skills productivas soporta `openclaw` y emite
+6. `kora transmute` para skills productivas soporta `openclaw` y emite
    `skills/{name}/SKILL.md`.
-6. `review_atomic_acceptance.py` y `promote.py` comparten la regla: solo
+7. `review_atomic_acceptance.py` y `promote.py` comparten la regla: solo
    sufijos numericos cortos `-NN` o `-NNN` son segmentos atomic; sufijos
    numericos largos pueden ser parte del slug.
 
