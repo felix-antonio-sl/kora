@@ -30,7 +30,10 @@ ATOMIC_ACCEPTANCE_REVIEW_TYPE = "atomic_acceptance"
 def _atomic_bundle_root(stem):
     if stem.endswith("-index"):
         return stem[:-6]
-    return re.sub(r"-\d+$", "", stem)
+    # Segmented atomic bundles use short numeric suffixes (`-01`, `-100`).
+    # Long numeric suffixes can be part of caller-provided slugs and must be
+    # preserved so review paths remain stable.
+    return re.sub(r"-\d{2,3}$", "", stem)
 
 
 def default_atomic_review_path(draft_path):

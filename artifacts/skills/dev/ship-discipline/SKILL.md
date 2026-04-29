@@ -55,7 +55,7 @@ artefacto:
       - "el contexto del modelo se esta ensuciando y hay que podar"
     salidas:
       - "estimacion de blast radius con topologia recomendada"
-      - "loop cerrado: build + test + lint + integracion + commit atomico"
+      - "loop cerrado: build + test + lint + integracion + patch listo; commit atomico solo con autorizacion explicita"
       - "repo agent-friendly conforme al checklist"
       - "decision delegacion humano/agente declarada"
       - "context hygiene aplicada"
@@ -74,11 +74,56 @@ artefacto:
     permisos: "Lectura/escritura sobre el repositorio target; ejecucion de build, test, lint, git via Bash."
     protocolos:
       entrada: "intent del operador sobre cambio de codigo + contexto del repo"
-      salida: "blast radius estimado + topologia + cambio aplicado + loop cerrado + commit"
+      salida: "blast radius estimado + topologia + cambio aplicado + loop cerrado + patch listo o commit autorizado"
+    api_observable:
+      entradas:
+        - nombre: intent_de_cambio
+          tipo: texto-estructurado
+          obligatorio: true
+        - nombre: contexto_repo
+          tipo: texto-o-ruta
+          obligatorio: false
+      salidas:
+        - nombre: blast_radius
+          tipo: texto-estructurado
+        - nombre: topologia_recomendada
+          tipo: texto
+        - nombre: loop_closure
+          tipo: texto-estructurado
+        - nombre: decision_commit
+          tipo: texto
+      invariantes_io:
+        - "blast radius precede cambios no triviales"
+        - "salida distingue patch listo de commit autorizado"
+        - "commit atomico y comandos destructivos requieren autorizacion explicita"
+  contexto:
+    risk_register:
+      - risk_id: sd-unauthorized-commit
+        category: accountability
+        source: loop-closure
+        trigger: "se interpreta commit atomico como parte obligatoria del loop sin autorizacion del operador"
+        likelihood: 0.30
+        impact: 0.70
+        sigma_exposure: [0.20, 0.00, 0.20, 0.50, 0.10]
+        mitigation: "default patch listo; commit solo con autorizacion explicita o protocolo de repo"
+        residual_sigma_floor: [0.67, 0.33, 0.67, 0.67, 0.33]
+        owner: agente-invocador
+        status: mitigated
+      - risk_id: sd-destructive-command
+        category: safety
+        source: bash-git-filesystem
+        trigger: "comando destructivo o cambio irreversible durante ejecucion"
+        likelihood: 0.25
+        impact: 0.85
+        sigma_exposure: [0.50, 0.00, 0.20, 0.40, 0.10]
+        mitigation: "pedir confirmacion explicita antes de ejecutar o recomendar el comando"
+        residual_sigma_floor: [0.67, 0.33, 0.67, 0.67, 0.33]
+        owner: agente-invocador
+        status: mitigated
   invariantes:
     reglas_duras:
       - "Estimar blast radius ANTES de ejecutar: cuantos archivos toca, cuanto cuesta revertir, puedo cerrar el loop solo, el contexto ayuda o ensucia."
-      - "Loop closure: nada esta hecho hasta que compila + tests pasan + se integra + commit atomico. Sin excepciones."
+      - "Loop closure: nada esta hecho hasta que compila + tests pasan + se integra + patch listo. Commit atomico solo con autorizacion explicita del operador o protocolo del repo."
       - "Ship beats perfect: software util hoy > plan ideal hipotetico. La perfeccion ceremonial es enemiga del envio."
       - "Architecture over implementation: invertir tiempo del humano en dependencias, schema, boundaries; delegar implementacion."
       - "Less is more: cada capa, wrapper, MCP permanente, subagente debe justificar existencia. Cortar lo ceremonial."
@@ -86,6 +131,8 @@ artefacto:
       - "Context cost: todo lo que entra al contexto compite por atencion. Poda, resume, simplifica."
       - "Lo irreducible humano no se delega: taste, product judgement, architecture, dependency choice, schema evolution, software feel, frontera entre suficiente y mal hecho."
       - "Cuando subes a CLI/MCP/tooling reusable, sube tambien el rigor: defaults, versionado, errores recuperables, logging, help, tests, release."
+      - "Commit atomico no es permiso implicito: si el operador no lo autorizo, entregar patch listo y comando sugerido."
+      - "Comandos destructivos requieren confirmacion explicita."
       - "La skill NO escribe codigo de dominio: aporta disciplina y arquitectura de la actividad. El conocimiento del campo lo aporta el agente o el humano."
 ---
 
@@ -109,7 +156,7 @@ correccion.
 - el agente va a modificar codigo y se necesita decidir topologia
   (secuencial cuidadoso, paralelo moderado, maximo paralelismo).
 - una tarea cambia archivos y antes de declararla hecha debe cerrar el
-  loop (build + test + lint + integracion + commit).
+  loop (build + test + lint + integracion + patch listo).
 - se va a estructurar un repositorio para que sea agent-friendly o se
   detecta que un repo existente penaliza a los agentes.
 - hay que distinguir lo que delegar a agentes vs lo irreducible humano.
@@ -146,7 +193,7 @@ Antes de ejecutar cualquier cambio no trivial:
 | Nivel | Criterio | Ruta |
 |---|---|---|
 | **Bajo** | 1-3 archivos, reversible, sin deps cruzadas | Ejecutar directo |
-| **Medio** | 4-10 archivos, reversible, algunas deps | Tests + commit atomico |
+| **Medio** | 4-10 archivos, reversible, algunas deps | Tests + patch listo; commit si esta autorizado |
 | **Alto** | 10+ archivos, potencialmente irreversible, multiples deps | Plan antes de ejecutar + validacion humana |
 
 3. Documentar la estimacion en una linea antes de actuar.
@@ -194,7 +241,7 @@ Una tarea **NO** esta lista hasta que:
 3. **Lint** — corregir warnings criticos.
 4. **Integracion** — sin romper imports, tipos, deps existentes.
 5. **Feel** — la solucion se siente correcta al usarla.
-6. **Commit atomico** — un cambio = un commit, mensaje descriptivo.
+6. **Patch listo** — un cambio coherente, verificable y listo para commit; crear commit solo si esta autorizado.
 
 Detalle en `referencias/loop-closure-checklist.md`.
 
@@ -205,14 +252,14 @@ Reportar:
 - blast radius estimado y topologia elegida,
 - cambio aplicado con paths,
 - loop cerrado (build/test/lint/integracion verde),
-- commit hash o referencia,
+- patch listo o commit hash autorizado,
 - siguiente paso si la tarea es multi-incremento.
 
 ## Reglas Duras
 
 1. **Blast radius antes de exec**.
 2. **Loop closure obligatorio**: build + test + lint + integracion +
-   commit atomico.
+   patch listo; commit atomico solo con autorizacion explicita.
 3. **Ship beats perfect**: util hoy > ideal hipotetico.
 4. **Architecture over implementation**: humano en deps/schema/boundaries.
 5. **Less is more**: cada capa justifica existencia.
@@ -263,5 +310,5 @@ Reportar:
 - blast radius estimado con topologia,
 - decision de delegacion humano/agente declarada,
 - cambio aplicado,
-- loop cerrado con evidencia (build verde, tests verdes, commit),
+- loop cerrado con evidencia (build verde, tests verdes, patch listo o commit autorizado),
 - siguiente paso operativo.

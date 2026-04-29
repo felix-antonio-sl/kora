@@ -57,7 +57,7 @@
           "pattern": "^sha256:[a-f0-9]{64}$"
         },
         "target": {
-          "enum": ["agentskills", "claude-code", "codex", "gemini", "mastra", "openclaw"]
+          "enum": ["agentskills", "claude-code", "codex", "gemini", "mastra", "opencode", "openclaw"]
         },
         "functor": {
           "type": "string",

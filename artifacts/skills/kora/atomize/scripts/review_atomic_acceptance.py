@@ -24,7 +24,9 @@ def _bundle_root_name(path: Path) -> str:
         stem = stem[:-7]
     if stem.endswith("-index"):
         return stem[:-6]
-    return re.sub(r"-\d+$", "", stem)
+    # Atomic bundle segments are emitted as short numeric suffixes
+    # (`-01`, `-100`). Long numeric slug tails must remain part of identity.
+    return re.sub(r"-\d{2,3}$", "", stem)
 
 
 def _default_review_path(path: Path) -> Path:

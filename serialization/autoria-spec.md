@@ -136,7 +136,7 @@ extensions:
       arnes_categorico: persona
       forma_material: agente-propiamente-tal
       metafora_relacional: centro-de-control
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo: [claude-code, codex, opencode, openclaw]
     nivel_prescripcion: medio
     conocimiento_permitido:
       - "urn:kora:kb:..."
@@ -999,7 +999,7 @@ extensions:
       arnes_categorico: utilidad
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
+    entornos_objetivo: [claude-code, codex, gemini, mastra, opencode, openclaw]
     nivel_prescripcion: medio
     conocimiento_permitido:
       - "urn:kora:kb:md-spec"

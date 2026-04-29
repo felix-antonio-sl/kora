@@ -829,6 +829,433 @@ def _emit_claude_code_bundle(
     return bundle_path
 
 
+def _agent_knowledge_lines(transmutation: dict) -> list[str]:
+    knowledge_contract = transmutation.get("knowledge_contract", {})
+    knowledge_lines = [
+        "## Knowledge Contract",
+        "",
+    ]
+    for urn in knowledge_contract.get("allowed_urns", []):
+        path = (knowledge_contract.get("resolved_paths") or {}).get(urn)
+        if path:
+            knowledge_lines.append(f"- `{urn}` -> `{path}`")
+        else:
+            knowledge_lines.append(f"- `{urn}` -> `(unresolved)`")
+    if knowledge_contract.get("routes"):
+        knowledge_lines.extend(["", "### KB Routes", ""])
+        for route_name, item in sorted((knowledge_contract.get("routes") or {}).items()):
+            route_path = item.get("path")
+            if route_path:
+                knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `{route_path}`")
+            else:
+                knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `(unresolved)`")
+    return knowledge_lines
+
+
+def _agent_projection_lines(transmutation: dict) -> list[str]:
+    source_vector = transmutation.get("source_vector") or {}
+    projections = transmutation.get("projections") or {}
+    lines = [
+        "## Runtime Projection",
+        "",
+        f"- Target: `{transmutation.get('target', '')}`",
+        f"- Functor: `{transmutation.get('functor', '')}`",
+        f"- Source vector: `{source_vector}`",
+    ]
+    losses = []
+    for axis, detail in projections.items():
+        if isinstance(detail, dict) and detail.get("loss"):
+            losses.append(f"{axis}: {detail['loss']}")
+    if losses:
+        lines.append(f"- Declared losses: `{'; '.join(losses)}`")
+    else:
+        lines.append("- Declared losses: `none`")
+    return lines
+
+
+def _agent_provenance_lines(transmutation: dict) -> list[str]:
+    return [
+        "## Provenance",
+        "",
+        f"- Source URN: `{transmutation.get('source_urn', '')}`",
+        f"- Source Hash: `{transmutation.get('source_hash', '')}`",
+        f"- Transmuted At: `{transmutation.get('timestamp', '')}`",
+    ]
+
+
+def _emit_codex_agent_bundle(
+    target_dir: Path,
+    name: str,
+    frontmatter: dict,
+    body: str,
+    transmutation_path: Path,
+) -> Path:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    bundle_frontmatter = {
+        "name": name,
+        "description": frontmatter.get("descripcion", name),
+        "runtime": "codex",
+        "source_urn": transmutation.get("source_urn", ""),
+    }
+    content_lines = [
+        *_agent_provenance_lines(transmutation),
+        "",
+        *_agent_projection_lines(transmutation),
+        "",
+        *_agent_knowledge_lines(transmutation),
+        "",
+        "## Instructions",
+        "",
+        body.strip(),
+        "",
+    ]
+    bundle_path = target_dir / f"{name}.md"
+    bundle_path.write_text(
+        "---\n"
+        + yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+        + "\n---\n\n"
+        + "\n".join(content_lines),
+        encoding="utf-8",
+    )
+    return bundle_path
+
+
+def _opencode_agent_mode(frontmatter: dict) -> str:
+    forma = (
+        (frontmatter.get("extensions") or {})
+        .get("kora", {})
+        .get("atlas", {})
+        .get("forma_material")
+    )
+    if forma == "subagente":
+        return "subagent"
+    return "primary"
+
+
+def _emit_opencode_agent_bundle(
+    target_dir: Path,
+    name: str,
+    frontmatter: dict,
+    body: str,
+    transmutation_path: Path,
+) -> Path:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    opencode_ext = (frontmatter.get("extensions") or {}).get("opencode") or {}
+    bundle_frontmatter = {
+        "name": name,
+        "description": frontmatter.get("descripcion", name),
+        "mode": opencode_ext.get("mode", _opencode_agent_mode(frontmatter)),
+        "source_urn": transmutation.get("source_urn", ""),
+        "permission": opencode_ext.get(
+            "permission",
+            {"bash": "ask", "edit": "ask", "webfetch": "deny", "external_directory": "deny"},
+        ),
+    }
+    if opencode_ext.get("model"):
+        bundle_frontmatter["model"] = opencode_ext["model"]
+
+    content_lines = [
+        *_agent_provenance_lines(transmutation),
+        "",
+        *_agent_projection_lines(transmutation),
+        "",
+        *_agent_knowledge_lines(transmutation),
+        "",
+        "## Instructions",
+        "",
+        body.strip(),
+        "",
+    ]
+    bundle_dir = target_dir / "agents"
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_path = bundle_dir / f"{name}.md"
+    bundle_path.write_text(
+        "---\n"
+        + yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+        + "\n---\n\n"
+        + "\n".join(content_lines),
+        encoding="utf-8",
+    )
+    return bundle_path
+
+
+def _list_to_markdown(items) -> str:
+    if not isinstance(items, list) or not items:
+        return "- none"
+    return "\n".join(f"- {item}" for item in items)
+
+
+def _tool_names_from_items(items) -> list[str]:
+    if not isinstance(items, list):
+        return []
+    names = []
+    for item in items:
+        if isinstance(item, str):
+            name = item
+        elif isinstance(item, dict):
+            name = item.get("name") or item.get("nombre") or item.get("tool")
+        else:
+            name = None
+        if isinstance(name, str) and name and name not in names:
+            names.append(name)
+    return names
+
+
+def _stringify_markdown_value(value) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, (dict, list)):
+        return yaml.safe_dump(value, sort_keys=False, allow_unicode=True).strip()
+    return str(value)
+
+
+def _emit_openclaw_agent_workspace(
+    target_dir: Path,
+    name: str,
+    frontmatter: dict,
+    body: str,
+    transmutation_path: Path,
+) -> list[Path]:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    artefacto = frontmatter.get("artefacto") or {}
+    perfil = artefacto.get("perfil") or {}
+    plan = artefacto.get("plan") or {}
+    interfaz = artefacto.get("interfaz") or {}
+    contexto = artefacto.get("contexto") or {}
+    composicion = artefacto.get("composicion") or {}
+    invariantes = artefacto.get("invariantes") or {}
+    openclaw_ext = (frontmatter.get("extensions") or {}).get("openclaw") or {}
+    tool_names = _tool_names_from_items(interfaz.get("herramientas"))
+
+    workspace_dir = target_dir / "workspace"
+    config_dir = target_dir / "config"
+    workspace_dir.mkdir(parents=True, exist_ok=True)
+    config_dir.mkdir(parents=True, exist_ok=True)
+
+    emitted: list[Path] = []
+
+    agents_md = workspace_dir / "AGENTS.md"
+    agents_md.write_text(
+        "\n".join(
+            [
+                f"# {name}",
+                "",
+                *_agent_provenance_lines(transmutation),
+                "",
+                *_agent_projection_lines(transmutation),
+                "",
+                *_agent_knowledge_lines(transmutation),
+                "",
+                "## Plan",
+                "",
+                f"- Initial state: `{plan.get('estado_inicial', '')}`",
+                f"- Terminal state: `{plan.get('estado_terminal', '')}`",
+                "",
+                "### States",
+                "",
+                _list_to_markdown(plan.get("estados")),
+                "",
+                "## Interface",
+                "",
+                f"- Tools: `{', '.join(tool_names)}`",
+                f"- Permissions: {_stringify_markdown_value(interfaz.get('permisos'))}",
+                "",
+                "## Instructions",
+                "",
+                body.strip(),
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(agents_md)
+
+    soul_md = workspace_dir / "SOUL.md"
+    identity = contexto.get("identity") or {}
+    soul_md.write_text(
+        "\n".join(
+            [
+                f"# {name} Soul",
+                "",
+                _stringify_markdown_value(perfil.get("descripcion") or frontmatter.get("descripcion", "")),
+                "",
+                "## Identity",
+                "",
+                f"- Paradigm: {_stringify_markdown_value(identity.get('paradigm'))}",
+                f"- Tone: {_stringify_markdown_value(identity.get('tone'))}",
+                "",
+                "## Domain",
+                "",
+                _list_to_markdown(perfil.get("dominio")),
+                "",
+                "## Hard Rules",
+                "",
+                _list_to_markdown(invariantes.get("reglas_duras")),
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(soul_md)
+
+    identity_md = workspace_dir / "IDENTITY.md"
+    atlas = ((frontmatter.get("extensions") or {}).get("kora") or {}).get("atlas") or {}
+    identity_md.write_text(
+        "\n".join(
+            [
+                f"# {name} Identity",
+                "",
+                f"- URN: `{transmutation.get('source_urn', '')}`",
+                f"- Version: `{frontmatter.get('version', '')}`",
+                f"- Status: `{frontmatter.get('status', '')}`",
+                f"- Categorical harness: `{atlas.get('arnes_categorico', '')}`",
+                f"- Material form: `{atlas.get('forma_material', '')}`",
+                f"- Relational metaphor: `{atlas.get('metafora_relacional', '')}`",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(identity_md)
+
+    user_md = workspace_dir / "USER.md"
+    operator = contexto.get("operator") or {}
+    user_md.write_text(
+        "\n".join(
+            [
+                f"# {name} User Context",
+                "",
+                f"- Role: {_stringify_markdown_value(operator.get('role'))}",
+                f"- Context: {_stringify_markdown_value(operator.get('context'))}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(user_md)
+
+    tools_md = workspace_dir / "TOOLS.md"
+    protocols = interfaz.get("protocolos") or {}
+    tools_md.write_text(
+        "\n".join(
+            [
+                f"# {name} Tools",
+                "",
+                "## Allowed Tools",
+                "",
+                _list_to_markdown(tool_names),
+                "",
+                "## Permissions",
+                "",
+                _stringify_markdown_value(interfaz.get("permisos")),
+                "",
+                "## IO Protocol",
+                "",
+                f"- Input: {_stringify_markdown_value(protocols.get('entrada'))}",
+                f"- Output: {_stringify_markdown_value(protocols.get('salida'))}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(tools_md)
+
+    boot_md = workspace_dir / "BOOT.md"
+    boot_md.write_text(
+        "\n".join(
+            [
+                f"# {name} Boot",
+                "",
+                f"Start in `{plan.get('estado_inicial', '')}`.",
+                "",
+                "## Triggers",
+                "",
+                _list_to_markdown(perfil.get("disparadores")),
+                "",
+                "## Expected Outputs",
+                "",
+                _list_to_markdown(perfil.get("salidas")),
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(boot_md)
+
+    memory_md = workspace_dir / "MEMORY.md"
+    memory_md.write_text(
+        "\n".join(
+            [
+                f"# {name} Memory",
+                "",
+                "This file is a declarative memory contract emitted from KORA IR.",
+                "",
+                "## Memory Config",
+                "",
+                yaml.safe_dump(contexto.get("memoria_config") or {}, sort_keys=False, allow_unicode=True).strip() or "{}",
+                "",
+                "## Risk Register",
+                "",
+                yaml.safe_dump(contexto.get("risk_register") or [], sort_keys=False, allow_unicode=True).strip() or "[]",
+                "",
+                "## Composition",
+                "",
+                yaml.safe_dump(composicion, sort_keys=False, allow_unicode=True).strip() or "{}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(memory_md)
+
+    config_path = config_dir / "openclaw.json5"
+    config = {
+        "agent": {
+            "id": openclaw_ext.get("agent_id", name),
+            "urn": transmutation.get("source_urn", ""),
+            "workspace_path": f"workspaces/{name}/",
+        },
+        "runtime": {
+            "bot_handler": openclaw_ext.get("bot_handler"),
+            "acp_compliant": bool(openclaw_ext.get("acp_compliant", True)),
+            "kora_repo_access": transmutation.get("kora_repo_access", {}),
+        },
+    }
+    config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    emitted.append(config_path)
+
+    deploy_md = target_dir / "DEPLOY.md"
+    deploy_md.write_text(
+        "\n".join(
+            [
+                f"# Deploy {name} to OpenClaw",
+                "",
+                "Generated KORA build artifact. Runtime state, credentials, sessions, pairing stores and caches are not included.",
+                "",
+                "## Source",
+                "",
+                f"- Manifest: `{transmutation_path.relative_to(KORA_ROOT)}`",
+                f"- Workspace: `{workspace_dir.relative_to(KORA_ROOT)}`",
+                f"- Config: `{config_path.relative_to(KORA_ROOT)}`",
+                "",
+                "## Manual Sync",
+                "",
+                f"Copy `workspace/` contents into the target OpenClaw workspace for `{name}` and apply `config/openclaw.json5` through the gateway policy you use in production.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    emitted.append(deploy_md)
+
+    return emitted
+
+
 # ---------------------------------------------------------------------------
 # Proyeccion directa a agentskills.io (byte-identical, sin LLM)
 # ---------------------------------------------------------------------------
@@ -879,6 +1306,16 @@ def _build_claude_code_skill_target_path(skill_md_path: Path) -> Path:
 def _build_codex_skill_target_path(skill_md_path: Path) -> Path:
     """Output vive en {skill_dir}/_BUILD/codex/."""
     return skill_md_path.parent / "_BUILD" / "codex"
+
+
+def _build_opencode_skill_target_path(skill_md_path: Path) -> Path:
+    """Output vive en {skill_dir}/_BUILD/opencode/."""
+    return skill_md_path.parent / "_BUILD" / "opencode"
+
+
+def _build_openclaw_skill_target_path(skill_md_path: Path) -> Path:
+    """Output vive en {skill_dir}/_BUILD/openclaw/."""
+    return skill_md_path.parent / "_BUILD" / "openclaw"
 
 
 def _project_skill_frontmatter(frontmatter: dict) -> dict:
@@ -986,6 +1423,52 @@ def _emit_codex_skill_bundle(
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += body.rstrip()
+    content += "\n"
+
+    out_skill_md = bundle_dir / "SKILL.md"
+    out_skill_md.write_text(content, encoding="utf-8")
+    return out_skill_md
+
+
+def _emit_opencode_skill_bundle(
+    target_dir: Path,
+    skill_name: str,
+    frontmatter: dict,
+    body: str,
+) -> Path:
+    bundle_dir = target_dir / skill_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_frontmatter = _project_skill_frontmatter(frontmatter)
+    bundle_frontmatter["name"] = skill_name
+    projected_body = _project_skill_body(body)
+
+    content = "---\n"
+    content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+    content += "\n---\n\n"
+    content += projected_body.rstrip()
+    content += "\n"
+
+    out_skill_md = bundle_dir / "SKILL.md"
+    out_skill_md.write_text(content, encoding="utf-8")
+    return out_skill_md
+
+
+def _emit_openclaw_skill_bundle(
+    target_dir: Path,
+    skill_name: str,
+    frontmatter: dict,
+    body: str,
+) -> Path:
+    bundle_dir = target_dir / "skills" / skill_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+    bundle_frontmatter = _project_skill_frontmatter(frontmatter)
+    bundle_frontmatter["name"] = skill_name
+    projected_body = _project_skill_body(body)
+
+    content = "---\n"
+    content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
+    content += "\n---\n\n"
+    content += projected_body.rstrip()
     content += "\n"
 
     out_skill_md = bundle_dir / "SKILL.md"
@@ -1137,6 +1620,164 @@ def _transmute_skill_to_codex(skill_md_path: Path, dry_run: bool = False) -> tup
         elif entry.is_file():
             (bundle_path.parent / entry.name).write_bytes(entry.read_bytes())
 
+    return target_dir, summary
+
+
+def _transmute_skill_to_opencode(skill_md_path: Path, dry_run: bool = False) -> tuple[Path, dict]:
+    """Project a KORA skill to OpenCode skill layout.
+
+    OpenCode discovers project skills at `.opencode/skills/<skill-name>/SKILL.md`.
+    KORA materializes the equivalent bundle under:
+      {skill_dir}/_BUILD/opencode/<skill-name>/SKILL.md
+
+    The bundle is agentskills.io-compatible: KORA `referencias/` becomes
+    `references/`, `recursos/` becomes `assets/`, and `scripts/` is preserved.
+    """
+    frontmatter, body = load_markdown_parts(skill_md_path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {skill_md_path}")
+
+    forma = (
+        (frontmatter.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+    )
+    if forma != "habilidad":
+        raise ValueError(
+            f"opencode skill target solo aplica a forma_material=habilidad, "
+            f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
+        )
+
+    vector = _get_vector_ontologico(frontmatter)
+    projected, detail = _project_vector(vector, "opencode")
+    target_dir = _build_opencode_skill_target_path(skill_md_path)
+    skill_name = skill_md_path.parent.name
+
+    summary = {
+        "source": str(skill_md_path.relative_to(KORA_ROOT)),
+        "target_dir": str(target_dir.relative_to(KORA_ROOT)),
+        "bundle_path": str((target_dir / skill_name / "SKILL.md").relative_to(KORA_ROOT)),
+        "projected_vector": projected,
+        "loss_by_axis": {ax: d.get("loss") for ax, d in detail.items() if d.get("loss")},
+        "subdirs_renamed": {},
+    }
+    if dry_run:
+        return target_dir, summary
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    source_hash = _sha256(skill_md_path)
+    yml_path = _emit_transmutation_yml(
+        target_dir,
+        skill_md_path,
+        "opencode",
+        skill_md_path.parent.parent.name,
+        skill_name,
+        frontmatter.get("version", "0.0.0"),
+        source_hash,
+        frontmatter,
+        vector,
+        projected,
+        detail,
+    )
+    bundle_path = _emit_opencode_skill_bundle(target_dir, skill_name, frontmatter, body)
+
+    for entry in skill_md_path.parent.iterdir():
+        if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):
+            continue
+        if entry.is_dir():
+            dst_name = AGENTSKILLS_SUBDIR_RENAMES.get(entry.name, entry.name)
+            if dst_name != entry.name:
+                summary["subdirs_renamed"][entry.name] = dst_name
+            dst_dir = bundle_path.parent / dst_name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            for item in entry.rglob("*"):
+                if item.is_file():
+                    rel = item.relative_to(entry)
+                    dst_file = dst_dir / rel
+                    dst_file.parent.mkdir(parents=True, exist_ok=True)
+                    dst_file.write_bytes(item.read_bytes())
+        elif entry.is_file():
+            (bundle_path.parent / entry.name).write_bytes(entry.read_bytes())
+
+    # Keep yml_path referenced for parity with other skill transmuters.
+    _ = yml_path
+    return target_dir, summary
+
+
+def _transmute_skill_to_openclaw(skill_md_path: Path, dry_run: bool = False) -> tuple[Path, dict]:
+    """Project a KORA skill to OpenClaw skill layout.
+
+    OpenClaw workspaces discover skills under `skills/<skill-name>/SKILL.md`.
+    KORA materializes the standalone bundle under:
+      {skill_dir}/_BUILD/openclaw/skills/<skill-name>/SKILL.md
+
+    The bundle is agentskills.io-compatible: KORA `referencias/` becomes
+    `references/`, `recursos/` becomes `assets/`, and `scripts/` is preserved.
+    """
+    frontmatter, body = load_markdown_parts(skill_md_path)
+    if not isinstance(frontmatter, dict):
+        raise ValueError(f"No YAML frontmatter in {skill_md_path}")
+
+    forma = (
+        (frontmatter.get("extensions") or {}).get("kora", {}).get("atlas", {}).get("forma_material")
+    )
+    if forma != "habilidad":
+        raise ValueError(
+            f"openclaw skill target solo aplica a forma_material=habilidad, "
+            f"pero {skill_md_path.relative_to(KORA_ROOT)} es '{forma}'"
+        )
+
+    vector = _get_vector_ontologico(frontmatter)
+    projected, detail = _project_vector(vector, "openclaw")
+    target_dir = _build_openclaw_skill_target_path(skill_md_path)
+    skill_name = skill_md_path.parent.name
+
+    summary = {
+        "source": str(skill_md_path.relative_to(KORA_ROOT)),
+        "target_dir": str(target_dir.relative_to(KORA_ROOT)),
+        "bundle_path": str((target_dir / "skills" / skill_name / "SKILL.md").relative_to(KORA_ROOT)),
+        "projected_vector": projected,
+        "loss_by_axis": {ax: d.get("loss") for ax, d in detail.items() if d.get("loss")},
+        "subdirs_renamed": {},
+    }
+    if dry_run:
+        return target_dir, summary
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    source_hash = _sha256(skill_md_path)
+    yml_path = _emit_transmutation_yml(
+        target_dir,
+        skill_md_path,
+        "openclaw",
+        skill_md_path.parent.parent.name,
+        skill_name,
+        frontmatter.get("version", "0.0.0"),
+        source_hash,
+        frontmatter,
+        vector,
+        projected,
+        detail,
+    )
+    bundle_path = _emit_openclaw_skill_bundle(target_dir, skill_name, frontmatter, body)
+
+    for entry in skill_md_path.parent.iterdir():
+        if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):
+            continue
+        if entry.is_dir():
+            dst_name = AGENTSKILLS_SUBDIR_RENAMES.get(entry.name, entry.name)
+            if dst_name != entry.name:
+                summary["subdirs_renamed"][entry.name] = dst_name
+            dst_dir = bundle_path.parent / dst_name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            for item in entry.rglob("*"):
+                if item.is_file():
+                    rel = item.relative_to(entry)
+                    dst_file = dst_dir / rel
+                    dst_file.parent.mkdir(parents=True, exist_ok=True)
+                    dst_file.write_bytes(item.read_bytes())
+        elif entry.is_file():
+            (bundle_path.parent / entry.name).write_bytes(entry.read_bytes())
+
+    # Keep yml_path referenced for parity with other skill transmuters.
+    _ = yml_path
     return target_dir, summary
 
 
@@ -1383,12 +2024,12 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     (SKILL.md en artifacts/skills/{ns}/{name}/ con forma_material: habilidad). La
     proyeccion es byte-identical (sin LLM) segun autoria-spec §5.5.
 
-    Para target=claude-code o target=codex, si `agent` resuelve a una skill
-    productiva se usa el fast-path skill->runtime. Para otros targets, o si no
+    Para target=claude-code, target=codex, target=opencode u target=openclaw,
+    si `agent` resuelve a una skill productiva se usa el fast-path skill->runtime. Para otros targets, o si no
     hay skill resoluble, el artefacto es un AGENT.md y la compilacion final
     requiere un adapter skill o LLM.
 
-    Para otros targets (gemini, mastra, openclaw), el artefacto
+    Para otros targets (gemini, mastra), el artefacto
     es un AGENT.md y la compilacion final requiere un adapter skill o LLM.
     """
     if target not in SUPPORTED_TARGETS:
@@ -1464,6 +2105,54 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
             print(f"\n  Proyeccion skill -> Codex completada.")
             return
 
+    if target == "opencode":
+        try:
+            skill_md_path = _resolve_skill_path(agent)
+        except ValueError:
+            skill_md_path = None
+        if skill_md_path is not None:
+            print(f"=== KORA Transmutation: {agent} -> opencode skill ===\n")
+            print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
+            if dry_run:
+                target_dir, summary = _transmute_skill_to_opencode(skill_md_path, dry_run=True)
+                print(f"  [dry-run] Would emit: {target_dir.relative_to(KORA_ROOT)}/")
+                print(f"  [dry-run] Would emit bundle: {summary['bundle_path']}")
+                return
+            target_dir, summary = _transmute_skill_to_opencode(skill_md_path, dry_run=False)
+            print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
+            print(f"  Manifest: {target_dir.relative_to(KORA_ROOT) / '_transmutation.yml'}")
+            print(f"  Bundle: {summary['bundle_path']}")
+            if summary["subdirs_renamed"]:
+                print(f"  Subdirs renombrados:")
+                for src, dst in summary["subdirs_renamed"].items():
+                    print(f"    {src}/ -> {dst}/")
+            print(f"\n  Proyeccion skill -> OpenCode completada.")
+            return
+
+    if target == "openclaw":
+        try:
+            skill_md_path = _resolve_skill_path(agent)
+        except ValueError:
+            skill_md_path = None
+        if skill_md_path is not None:
+            print(f"=== KORA Transmutation: {agent} -> openclaw skill ===\n")
+            print(f"  Source: {skill_md_path.relative_to(KORA_ROOT)}")
+            if dry_run:
+                target_dir, summary = _transmute_skill_to_openclaw(skill_md_path, dry_run=True)
+                print(f"  [dry-run] Would emit: {target_dir.relative_to(KORA_ROOT)}/")
+                print(f"  [dry-run] Would emit bundle: {summary['bundle_path']}")
+                return
+            target_dir, summary = _transmute_skill_to_openclaw(skill_md_path, dry_run=False)
+            print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
+            print(f"  Manifest: {target_dir.relative_to(KORA_ROOT) / '_transmutation.yml'}")
+            print(f"  Bundle: {summary['bundle_path']}")
+            if summary["subdirs_renamed"]:
+                print(f"  Subdirs renombrados:")
+                for src, dst in summary["subdirs_renamed"].items():
+                    print(f"    {src}/ -> {dst}/")
+            print(f"\n  Proyeccion skill -> OpenClaw completada.")
+            return
+
     agent_md_path = _resolve_agent_path(agent)
     ns, name = agent.strip().split("/")
 
@@ -1517,6 +2206,14 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
         print(f"  [dry-run] Would emit: {target_dir}/_transmutation.yml")
         if target == "claude-code":
             print(f"  [dry-run] Would emit bundle: {target_dir}/{name}.md")
+        elif target == "codex":
+            print(f"  [dry-run] Would emit bundle: {target_dir}/{name}.md")
+        elif target == "opencode":
+            print(f"  [dry-run] Would emit agent: {target_dir}/agents/{name}.md")
+        elif target == "openclaw":
+            print(f"  [dry-run] Would emit workspace: {target_dir}/workspace/")
+            print(f"  [dry-run] Would emit config: {target_dir}/config/openclaw.json5")
+            print(f"  [dry-run] Would emit deploy guide: {target_dir}/DEPLOY.md")
         return
 
     # Crear y emitir
@@ -1531,10 +2228,25 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     if target == "claude-code":
         bundle_path = _emit_claude_code_bundle(target_dir, name, frontmatter, body, yml_path)
         print(f"  Bundle: {bundle_path.relative_to(KORA_ROOT)}")
+    elif target == "codex":
+        bundle_path = _emit_codex_agent_bundle(target_dir, name, frontmatter, body, yml_path)
+        print(f"  Bundle: {bundle_path.relative_to(KORA_ROOT)}")
+    elif target == "opencode":
+        bundle_path = _emit_opencode_agent_bundle(target_dir, name, frontmatter, body, yml_path)
+        print(f"  Agent: {bundle_path.relative_to(KORA_ROOT)}")
+    elif target == "openclaw":
+        emitted = _emit_openclaw_agent_workspace(target_dir, name, frontmatter, body, yml_path)
+        print(f"  Workspace: {(target_dir / 'workspace').relative_to(KORA_ROOT)}/")
+        print(f"  Config: {(target_dir / 'config' / 'openclaw.json5').relative_to(KORA_ROOT)}")
+        print(f"  Deploy: {(target_dir / 'DEPLOY.md').relative_to(KORA_ROOT)}")
+        print(f"  Files: {len(emitted)}")
 
     print(f"\n  Transmutacion preparada.")
-    print(f"  Proximo paso: compilar AGENT.md → artefactos {target}")
-    print(f"  (el adapter skill o un LLM lee AGENT.md + _transmutation.yml y produce el output)")
+    if target in {"claude-code", "codex", "opencode", "openclaw"}:
+        print(f"  Artefactos {target} emitidos desde AGENT.md + _transmutation.yml.")
+    else:
+        print(f"  Proximo paso: compilar AGENT.md → artefactos {target}")
+        print(f"  (el adapter skill o un LLM lee AGENT.md + _transmutation.yml y produce el output)")
 
 
 # ---------------------------------------------------------------------------

@@ -138,7 +138,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "enum": ["claude-code", "codex", "gemini", "mastra", "openclaw"]
+                "enum": ["claude-code", "codex", "gemini", "mastra", "opencode", "openclaw"]
               }
             },
 

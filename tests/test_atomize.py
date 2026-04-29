@@ -546,7 +546,7 @@ class AtomizeCliTests(unittest.TestCase):
         published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
         review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
         publish_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "publish_atomic.py"
-        slug = f"test-acceptance-{uuid4().hex[:10]}"
+        slug = "test-acceptance-1234567890"
 
         review_dir.mkdir(parents=True, exist_ok=True)
         published_dir.mkdir(parents=True, exist_ok=True)
