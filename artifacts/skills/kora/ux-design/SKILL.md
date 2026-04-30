@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-23"
     source: "Migracion desde artifacts/skills/_TALLER/INBOX/ux-design/SKILL.md (legacy skill-overlay v1) a shape unified autoria-spec v1.2"
 version: "1.0.0"
-status: borrador
+status: activo
 nombre: ux-design
 descripcion: "Evalua y mejora la experiencia de usuario aplicando heuristicas de Nielsen, flujos de tarea, accesibilidad WCAG 2.2 AA, arquitectura de informacion y patrones UX institucionales. Usar al auditar UX, disenar formularios, mejorar navegacion o revisar accesibilidad."
 tags: [ux, usabilidad, accesibilidad, wcag, disciplina]

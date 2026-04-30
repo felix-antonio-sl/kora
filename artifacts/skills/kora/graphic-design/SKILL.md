@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-23"
     source: "Migracion desde artifacts/skills/_TALLER/INBOX/graphic-design/SKILL.md (legacy overlay v1, 353 lineas) a shape unified v1.2"
 version: "1.0.0"
-status: borrador
+status: activo
 nombre: graphic-design
 descripcion: "Disena identidades visuales como sistemas coherentes y transformables. Define operadores visuales (color, tipografia, grilla, forma, espaciado, iconografia, marca) y reglas de composicion que garantizan consistencia y escalabilidad. Produce brand specs, design tokens ejecutables (JSON + CSS + Tailwind) y assets SVG."
 tags: [graphic-design, identidad-visual, design-tokens, disciplina, marca]

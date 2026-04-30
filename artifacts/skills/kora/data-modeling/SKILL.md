@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-23"
     source: "Migracion desde artifacts/skills/_TALLER/INBOX/data-modeling/SKILL.md (legacy overlay v1, 537 lineas en ingles) a shape unified v1.2 en espanol con compresion estructural y detalle canonico movido a referencias/"
 version: "1.0.0"
-status: borrador
+status: activo
 nombre: data-modeling
 descripcion: "Modela datos con Entity-Relationship Diagrams (ERDs), data dictionaries y modelos conceptual/logico/fisico. Produce schemas documentados, ERDs en Mermaid y DDL para PostgreSQL o SQL Server. Usar al disenar bases de datos, auditar modelos o generar data dictionaries."
 tags: [data-modeling, erd, schema, disciplina, bases-de-datos]
@@ -30,7 +30,7 @@ extensions:
     nivel_prescripcion: medio
     conocimiento_permitido: []
     componible_con:
-      - "urn:kora:artefacto:arquitecto-categorico"
+      - "urn:kora:artefacto:cat-thinking"
 artefacto:
   perfil:
     descripcion: "Habilidad de modelado de datos para convertir requerimientos en ERDs, data dictionaries, modelos logicos/fisicos y DDL documentado."
