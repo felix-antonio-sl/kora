@@ -1298,6 +1298,10 @@ def _iter_construction_artifacts(path_filter=None):
         seen.add(path)
         if path_filter and not rel.startswith(path_filter):
             continue
+        # _BUILD/ contiene derivados regenerables por target (gitignored, transmutation-spec).
+        # No es fuente primaria — auditarlo como tal genera falsos positivos masivos.
+        if "_BUILD" in path.parts:
+            continue
         frontmatter, err = load_yaml_safe(path)
         if err or not isinstance(frontmatter, dict):
             continue
