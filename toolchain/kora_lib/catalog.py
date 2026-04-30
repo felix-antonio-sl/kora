@@ -146,7 +146,12 @@ def cmd_index():
 
             doc, err = load_yaml_safe(file_path)
             if err:
-                print(f"[WARN] Error parsing {file_path.relative_to(KORA_ROOT)}: {err}")
+                # "No YAML frontmatter found" es un no-evento: muchos .md
+                # auxiliares (READMEs locales, AGENTS.md raíz, etc.) no tienen
+                # ni necesitan frontmatter. La validacion estructural es de
+                # lint-md, no del indexador.
+                if err != "No YAML frontmatter found":
+                    print(f"[WARN] Error parsing {file_path.relative_to(KORA_ROOT)}: {err}")
                 continue
 
             if (

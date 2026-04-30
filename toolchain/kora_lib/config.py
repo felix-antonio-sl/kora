@@ -68,6 +68,12 @@ IGNORED_DIRS = {
     ".venv",
     "__pycache__",
     "_backups",
+    # Subdirs canonicos auxiliares de skills/agentes (autoria-spec §15.3,
+    # skill-overlay v1.2): markdown auxiliar sin URN propio, no catalogable.
+    "referencias",
+    "recursos",
+    "references",  # legacy CM-* (ingles)
+    "assets",      # legacy CM-* (ingles)
 }
 # Directorios al raíz del repo que se ignoran explícitamente (distintos de
 # los ignored-by-name porque aquí el match es por path absoluto al raíz).
