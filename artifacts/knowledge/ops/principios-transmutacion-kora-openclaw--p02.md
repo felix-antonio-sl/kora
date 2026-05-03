@@ -23,7 +23,7 @@ extensions:
     shard_root_urn: urn:ops:kb:principios-transmutacion-kora-openclaw
 relations:
   cites:
-  - urn:kora:kb:agent-spec-md
+  - urn:kora:kb:autoria-spec
   - urn:ops:kb:deploy-agente-kora-en-openclaw
   - urn:ops:kb:federacion-kora-v2
   - urn:ops:kb:ux-telegram-openclaw
@@ -172,4 +172,4 @@ Referencia completa: `urn:ops:kb:ux-telegram-openclaw`.
 - Federación cross-gateway: `urn:ops:kb:federacion-kora-v2`
 - Config UX Telegram: `urn:ops:kb:ux-telegram-openclaw`
 - Documentacion oficial OpenClaw: `
-- Spec de agentes KORA: `urn:kora:kb:agent-spec-md`
+- Spec de agentes KORA: `urn:kora:kb:autoria-spec`

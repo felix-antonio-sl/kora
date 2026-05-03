@@ -23,7 +23,7 @@ extensions:
     shard_root_urn: urn:kora:kb:pipeline-ingesta
 relations:
   cites:
-  - urn:kora:kb:agent-spec-md
+  - urn:kora:kb:autoria-spec
   - urn:kora:kb:md-spec
   - urn:kora:kb:spec-md
 ---
@@ -39,10 +39,10 @@ Este documento define la infraestructura operativa que soporta la ejecucion de l
 
 Este pipeline **DEBE** aplicarse a todo documento externo que ingrese al monorepo KORA para ser transformado en un artefacto de conocimiento. Gobierna la trazabilidad, el ciclo de vida y la organizacion fisica de los archivos durante la transformacion.
 
-**NO DEBE** aplicarse a agentes (gobernados por [agent-spec-md](urn:kora:kb:agent-spec-md) §12), specs fundacionales (residen en `specs/`), ni skills (residen en `skills/`).
+**NO DEBE** aplicarse a agentes (gobernados por [autoria-spec](urn:kora:kb:autoria-spec) §12), specs fundacionales (residen en `specs/`), ni skills (residen en `skills/`).
 
 **Correcto:** `Usar este pipeline para transformar un PDF de normativa en un artefacto KORA/MD publicado.`
-**Incorrecto:** `Usar este pipeline para crear un nuevo agente KORA (ver agent-spec-md §12).`
+**Incorrecto:** `Usar este pipeline para crear un nuevo agente KORA (ver autoria-spec §12).`
 
 ---
 
