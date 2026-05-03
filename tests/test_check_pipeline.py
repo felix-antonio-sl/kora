@@ -227,7 +227,10 @@ class CheckAlgebraTests(unittest.TestCase):
         for c in all_checks():
             self.assertIn(c.scope, valid, f"Check {c.id} has invalid scope {c.scope}")
 
-    def test_urn_integrity_accepts_bootstrap_alias_and_retired_targets(self):
+    def test_urn_integrity_flags_alias_to_retired_and_unknown(self):
+        """Bootstrap aliases and retired URNs cited directly remain accepted;
+        deprecated aliases that resolve to retired URNs are flagged HIGH so
+        the catalog cannot quietly carry obsolete references."""
         from kora_lib.checks import _check_urn_integrity
 
         fake_doc = {"_manifest": {"urn": "urn:kora:catalog:master:2.0.0"}, "Catalog": {}}
@@ -250,8 +253,13 @@ class CheckAlgebraTests(unittest.TestCase):
         ), patch("kora_lib.graph.build_reference_graph", return_value=(1, fake_edges)):
             diags = _check_urn_integrity()
 
-        self.assertEqual(len(diags), 1)
-        self.assertEqual(diags[0].message, "Broken URN reference: urn:kora:kb:definitely-missing")
+        messages = [d.message for d in diags]
+        self.assertEqual(len(diags), 2, f"expected 2 diagnostics, got: {messages}")
+        alias_diag = next(d for d in diags if "agent-spec-md" in d.message)
+        self.assertIn("RETIRED", alias_diag.message)
+        self.assertEqual(alias_diag.severity, "high")
+        unknown_diag = next(d for d in diags if "definitely-missing" in d.message)
+        self.assertEqual(unknown_diag.message, "Broken URN reference: urn:kora:kb:definitely-missing")
 
 
 class KbGraphSmokeTests(unittest.TestCase):

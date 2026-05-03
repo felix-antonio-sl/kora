@@ -253,7 +253,12 @@ def _check_catalog_exists(path_filter=None):
 def _check_urn_integrity(path_filter=None):
     """Verify all URN references resolve to existing catalog entries."""
     from .catalog import build_catalog_lookup, get_reference_entry, load_catalog, urn_is_known
-    from .config import AGENTS_ROOT, KORA_ROOT
+    from .config import (
+        AGENTS_ROOT,
+        DEPRECATED_URN_ALIASES,
+        KORA_ROOT,
+        RETIRED_KB_URNS,
+    )
     from .graph import build_reference_graph
     from .workspaces import fragment_exists
 
@@ -263,6 +268,10 @@ def _check_urn_integrity(path_filter=None):
 
     known_urns, urn_to_entry = build_catalog_lookup(doc)
     _scanned, edges = build_reference_graph()
+    aliases_to_retired = {
+        alias for alias, canonical in DEPRECATED_URN_ALIASES.items()
+        if canonical in RETIRED_KB_URNS
+    }
     diags = []
 
     for edge in edges:
@@ -277,6 +286,21 @@ def _check_urn_integrity(path_filter=None):
                         message=f"Non-URN entry in allowed_kb: '{edge.target}'",
                         fix_hint="Replace with valid URN or remove",
                     ))
+                continue
+            if edge.target in aliases_to_retired:
+                canonical = DEPRECATED_URN_ALIASES[edge.target]
+                diags.append(Diagnostic(
+                    check_id="urn-integrity",
+                    severity="high",
+                    scope="artifact",
+                    path=str(edge.source.relative_to(KORA_ROOT)),
+                    message=(
+                        f"Deprecated alias points to retired URN: "
+                        f"{edge.target} -> {canonical} (RETIRED). "
+                        "Migrate to current spec."
+                    ),
+                    fix_hint="Replace with the live URN that supersedes it",
+                ))
                 continue
             if not urn_is_known(edge.target, known_urns):
                 diags.append(Diagnostic(
