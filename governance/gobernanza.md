@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion"
-version: "4.6.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional que distingue host primary y secondaries"
+version: "4.7.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
 lang: es
@@ -19,9 +19,10 @@ relations:
     - "urn:kora:kb:qa-spec"
     - "urn:kora:kb:autoria-spec"
     - "urn:kora:kb:agent-skill-construction-spec"
+    - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v4.6.0
+# KORA/Gobernanza v4.7.0
 
 ## 1. Definicion
 
@@ -342,3 +343,21 @@ Contrato vigente v4.6.0:
 - `agentfile-spec` y `skill-overlay-spec` fueron retiradas — absorbidas por `autoria-spec`.
 - Migracion forzada en una sola pasada: `kora migrate --perfil a-autoria`.
 - El toolchain rechaza shapes anteriores tras la migracion.
+
+## 12. Identidad operacional por host
+
+Desde v4.7 el corpus distingue **host primary** (SSOT operacional, unica
+maquina autorizada para pushear a `origin/master`) y **hosts secondary**
+(replicas read-mostly que trabajan via Pull Requests). La doctrina detallada
+vive en `governance/host-roles.md` (`urn:kora:kb:host-roles`).
+
+Reglas resumidas:
+
+1. Existe a lo mas **un** host `primary` por instalacion del corpus.
+2. El rol del host se declara en un marker local fuera del repositorio
+   (`~/.kora/host.yml`); ausencia se interpreta como `secondary`.
+3. La transferencia de rol entre maquinas **DEBE** registrarse como nueva
+   version de `host-roles.md`.
+
+Esta capa es operacional, no ontologica: no altera el canon de `harness-spec`
+ni de `autoria-spec`, solo gobierna la disciplina del filesystem como SSOT.

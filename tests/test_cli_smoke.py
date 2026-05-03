@@ -192,6 +192,17 @@ class KoraCliSmokeTests(unittest.TestCase):
         result = run_cli("record-invocation", "--help", check=False)
         self.assertIn("usage:", result.stdout.lower())
 
+    def test_host_subcommand_reports_role(self):
+        result = run_cli("host", check=False)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("role:", result.stdout)
+        self.assertIn("marker:", result.stdout)
+
+    def test_install_hooks_subcommand_exists(self):
+        result = run_cli("install-hooks", "--help", check=False)
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("usage:", result.stdout.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

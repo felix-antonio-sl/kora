@@ -6,6 +6,7 @@ from .catalog import cmd_index, cmd_resolve
 from .checks import run_checks, run_fixes, all_checks, CheckResult
 from .commands import cmd_migrate, cmd_stats_json, cmd_sync_docs
 from .graph import cmd_graph
+from .host import cmd_host, cmd_install_hooks, warn_if_secondary
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
 from .promote import cmd_promote, cmd_deprecate, cmd_promote_cohort
@@ -160,6 +161,10 @@ def main():
                          help="List all registered checks without running them")
     p_check.add_argument("--strict", action="store_true", help="Exit non-zero if any check fails")
 
+    p_host = subparsers.add_parser("host", help="Show host role (primary/secondary) per urn:kora:kb:host-roles")
+    p_host.add_argument("--verbose", "-v", action="store_true", help="Show actual hostname/machine_id even if matching marker")
+    subparsers.add_parser("install-hooks", help="Install KORA versioned git hooks for this clone")
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -175,6 +180,7 @@ def main():
     elif args.command == "stats":
         cmd_stats_json(json_output=args.json)
     elif args.command == "migrate":
+        warn_if_secondary("migrate")
         cmd_migrate(profile=args.profile, dry_run=args.dry_run, cohort=args.cohort)
     elif args.command == "sync-docs":
         cmd_sync_docs()
@@ -187,6 +193,7 @@ def main():
     elif args.command == "kb-graph":
         cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles, orphans=args.orphans)
     elif args.command == "promote":
+        warn_if_secondary("promote")
         if args.cohort:
             cmd_promote_cohort(args.cohort)
         else:
@@ -194,6 +201,7 @@ def main():
                 parser.error("promote: path is required unless --cohort is used")
             cmd_promote(args.path, review_path_str=args.review)
     elif args.command == "deprecate":
+        warn_if_secondary("deprecate")
         cmd_deprecate(args.path, supersedes=args.supersedes, force=args.force, retire=args.retire)
     elif args.command == "transmute":
         cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
@@ -245,5 +253,9 @@ def main():
                 print(f"  Total diagnostics: {len(result.diagnostics)}")
             if args.strict and not result.ok:
                 raise SystemExit(1)
+    elif args.command == "host":
+        cmd_host(verbose=args.verbose)
+    elif args.command == "install-hooks":
+        cmd_install_hooks()
     else:
         parser.print_help()

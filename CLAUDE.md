@@ -12,6 +12,23 @@ tradicional: el trabajo importante aqui es mantener coherentes la
 constitucion, la ontologia, la serializacion, los runtimes, los artefactos y
 la toolchain.
 
+## Identidad Operacional Por Host
+
+KORA distingue **host primary** (SSOT operacional, unico autorizado para
+pushear a `origin/master`) y **hosts secondary** (replicas read-mostly que
+trabajan en ramas feature y proponen cambios via PR).
+
+- Doctrina: `governance/host-roles.md` (`urn:kora:kb:host-roles` v1.1.0)
+- Marker local (fuera del repo): `~/.kora/host.yml`
+- Default si el marker no existe: `secondary`
+- Verificacion rapida: `python3 toolchain/kora host`
+- Hooks locales: `python3 toolchain/kora install-hooks`
+
+Host primary canonico al `2026-05-03`: `hetzner2897261`. Antes de operar en
+otra maquina, leer `governance/host-roles.md` y revisar el marker. `master`
+en GitHub esta protegida (no force-push, no delete, linear history). Instalar
+hooks locales para bloquear push directo a `master` desde secondaries.
+
 ## Historia Operativa Minima
 
 - Hasta la reorg v5 del `2026-04-18`, el repo usaba topologia legacy:
