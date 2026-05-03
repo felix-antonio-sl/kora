@@ -28,7 +28,7 @@ extensions:
 
 ## Naturaleza del artefacto
 
-Registro conceptual del agente **AGENT-FORMULADOR-IPR-V1.2.0** del GORE Nuble (fecha original 2025-07-17, status `Refined`). El artefacto original vive como YAML monolitico agentfile v1 pre-unified. Su sucesor productivo es `urn:gn:artefacto:gestor-ipr-360`, que expandio el alcance al ciclo completo de IPR (360 grados).
+Registro conceptual del agente **AGENT-FORMULADOR-IPR-V1.2.0** del GORE Nuble (fecha original 2025-07-17, status `Refined`). El artefacto original vive como YAML monolitico agentfile v1 pre-unified. Su sucesor fue reubicado a staging en `artifacts/agents/_FRAGUA/INBOX/gn/gestor-ipr-360/AGENT.md`, con alcance expandido al ciclo completo de IPR (360 grados).
 
 ## Rol declarado
 

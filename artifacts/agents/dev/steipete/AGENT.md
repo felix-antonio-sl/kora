@@ -235,7 +235,8 @@ operativa esta destilada como skill en
   → usar `urn:kora:artefacto:mente-omega`.
 - diseno organizacional / human-agent cells → usar agente
   `urn:fxsl:artefacto:allan-kelly`.
-- claridad personal / GTD → usar agente `urn:pro:artefacto:david-allen`.
+- claridad personal / GTD → usar el agente en staging
+  `artifacts/agents/_FRAGUA/INBOX/david-allen/AGENT.md`.
 - ciclo de vida de artefactos KORA puro → usar
   `urn:kora:artefacto:artifact-curator`.
 

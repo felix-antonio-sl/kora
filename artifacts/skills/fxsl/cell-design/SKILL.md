@@ -122,8 +122,8 @@ preguntas tecnicas como preguntas de diseno organizacional.
 - enmarque categorial puro → usar `urn:kora:artefacto:cat-thinking`.
 - disciplina de envio de codigo → usar
   `urn:dev:artefacto:ship-discipline`.
-- claridad personal del operador (GTD) → usar
-  `urn:pro:artefacto:gtd-flow`.
+- claridad personal del operador (GTD) → usar la skill en staging
+  `artifacts/skills/_TALLER/INBOX/gtd-flow/SKILL.md`.
 - construccion de artefactos KORA → usar
   `urn:kora:artefacto:kora-agents` o `kora-skills`.
 

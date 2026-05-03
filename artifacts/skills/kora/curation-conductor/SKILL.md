@@ -35,11 +35,7 @@ extensions:
       - "urn:kora:kb:md-spec"
       - "urn:kora:kb:knowledge-spec"
       - "urn:kora:kb:pipeline-ingesta"
-    componible_con:
-      - "urn:kora:artefacto:atomize"
-      - "urn:kora:artefacto:knowledge-curator"
-      - "urn:kora:artefacto:intent-classifier"
-      - "urn:kora:artefacto:lifecycle-orchestrator"
+    componible_con: []
 artefacto:
   perfil:
     dominio: [knowledge-curation, family-selection, pipeline-orchestration]

@@ -39,12 +39,8 @@ extensions:
       - "urn:kora:kb:risk-register-spec"
       - "urn:kora:kb:transmutation-spec"
     componible_con:
-      - "urn:kora:artefacto:intent-classifier"
-      - "urn:kora:artefacto:lifecycle-orchestrator"
       - "urn:kora:artefacto:cat-thinking"
       - "urn:kora:artefacto:curation-conductor"
-      - "urn:kora:artefacto:knowledge-curator"
-      - "urn:kora:artefacto:atomize"
       - "urn:kora:artefacto:kora-skills"
       - "urn:kora:artefacto:kora-agents"
 artefacto:
@@ -138,10 +134,11 @@ Anclaje normativo:
 
 - pipeline knowledge end-to-end ya definido por el operador → usar
   `urn:kora:artefacto:curation-conductor` directamente.
-- ruta KB normal descriptiva en `_SCRIPTORIUM/REVIEW` → usar
-  `urn:kora:artefacto:knowledge-curator`.
-- familia documental `atomic` → usar `urn:kora:artefacto:atomize`
-  (productor canonico, knowledge-spec §12).
+- ruta KB normal descriptiva en `_SCRIPTORIUM/REVIEW` → usar la skill en
+  staging `artifacts/skills/_TALLER/INBOX/knowledge-curator/SKILL.md`.
+- familia documental `atomic` → usar la skill en staging
+  `artifacts/skills/_TALLER/INBOX/atomize/SKILL.md`
+  (productor en revalidacion, knowledge-spec §12).
 - enmarque categorial profundo previo al diseno → usar
   `urn:kora:artefacto:cat-thinking` y volver con la lectura.
 - transmutacion a runtime concreto → la skill prepara el IR; la
@@ -151,9 +148,10 @@ Anclaje normativo:
 
 ### Estado inicial: `triaje`
 
-Clasificar la solicitud combinando el dispatch que aporte
-`urn:kora:artefacto:intent-classifier` (cuando este disponible en el
-agente invocador) con la tabla local de `referencias/dispatcher-table.md`.
+Clasificar la solicitud combinando el dispatch que aporte la skill en staging
+`artifacts/skills/_TALLER/INBOX/intent-classifier/SKILL.md` (cuando este
+disponible en el agente invocador) con la tabla local de
+`referencias/dispatcher-table.md`.
 Producir tres campos minimos:
 
 1. **intent** — uno de: `koraficar`, `cristalizar`, `disenar`, `auditar`,
@@ -162,7 +160,8 @@ Producir tres campos minimos:
    `knowledge-atomic`, `spec`, `skill`, `subagente`,
    `agente-propiamente-tal`, `agente-plataforma`, `desconocido`.
 3. **modo** — `libre` (ejecutar directo) o `guiado` (consolidar
-   checkpoints via `urn:kora:artefacto:lifecycle-orchestrator`).
+   checkpoints via la skill en staging
+   `artifacts/skills/_TALLER/INBOX/lifecycle-orchestrator/SKILL.md`).
 
 Salida: si el intent o el tipo no se pueden determinar con confianza
 suficiente, emitir `outcome: blocked` con clarificacion solicitada y
@@ -319,12 +318,12 @@ Adjuntar siempre:
 
 | Composable con | Cuando |
 | --- | --- |
-| `urn:kora:artefacto:intent-classifier` | dispatch inicial cuando el agente invocador tiene taxonomia local de capacidades |
-| `urn:kora:artefacto:lifecycle-orchestrator` | modo guiado con checkpoints inter-fase visibles |
+| `intent-classifier` (staging: `artifacts/skills/_TALLER/INBOX/intent-classifier/SKILL.md`) | dispatch inicial cuando el agente invocador tiene taxonomia local de capacidades |
+| `lifecycle-orchestrator` (staging: `artifacts/skills/_TALLER/INBOX/lifecycle-orchestrator/SKILL.md`) | modo guiado con checkpoints inter-fase visibles |
 | `urn:kora:artefacto:cat-thinking` | enmarque categorial obligatorio para arquitectura, composicion o riesgo no obvio |
 | `urn:kora:artefacto:curation-conductor` | flujo knowledge end-to-end con clasificacion abierta de familia |
-| `urn:kora:artefacto:knowledge-curator` | ruta descriptiva KB normal, draft → REVIEW |
-| `urn:kora:artefacto:atomize` | familia atomic; productor canonico unico |
+| `knowledge-curator` (staging: `artifacts/skills/_TALLER/INBOX/knowledge-curator/SKILL.md`) | ruta descriptiva KB normal, draft → REVIEW |
+| `atomize` (staging: `artifacts/skills/_TALLER/INBOX/atomize/SKILL.md`) | familia atomic; productor en revalidacion |
 
 ## Recursos
 

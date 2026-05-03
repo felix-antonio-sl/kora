@@ -200,8 +200,8 @@ operativa esta destilada como skill en `urn:fxsl:artefacto:cell-design`.
 - razonamiento estructural-discursivo abstracto sin componente
   organizacional → usar `urn:kora:artefacto:mente-omega`.
 - disciplina de envio de codigo → usar agente `urn:dev:artefacto:steipete`.
-- claridad personal del operador (GTD) → usar agente
-  `urn:pro:artefacto:david-allen`.
+- claridad personal del operador (GTD) → usar el agente en staging
+  `artifacts/agents/_FRAGUA/INBOX/david-allen/AGENT.md`.
 - construccion de artefactos KORA puros → usar
   `urn:kora:artefacto:kora-agents` o `kora-skills`.
 

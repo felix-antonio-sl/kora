@@ -49,8 +49,6 @@ extensions:
       - "urn:kora:artefacto:artifact-curator"
       - "urn:kora:artefacto:kora-skills"
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:intent-classifier"
-      - "urn:kora:artefacto:lifecycle-orchestrator"
 artefacto:
   perfil:
     dominio:
@@ -166,9 +164,9 @@ Anclaje normativo:
 
 ### Estado inicial: `triaje`
 
-Clasificar la solicitud combinando, cuando esta disponible, la salida de
-`urn:kora:artefacto:intent-classifier` con la tabla local de
-`referencias/dispatcher-table.md`. Producir tres campos:
+Clasificar la solicitud combinando, cuando esta disponible, la salida de la
+skill en staging `artifacts/skills/_TALLER/INBOX/intent-classifier/SKILL.md`
+con la tabla local de `referencias/dispatcher-table.md`. Producir tres campos:
 
 1. **intent** — uno de: `disenar`, `mantener`, `mejorar`, `evolucionar`,
    `auditar`, `deprecar`, `ambiguo`.
@@ -177,7 +175,8 @@ Clasificar la solicitud combinando, cuando esta disponible, la salida de
    `habilidad`, devolver handoff a `artifact-curator` con outcome
    `rerouted`.
 3. **modo** — `libre` (ejecutar directo) o `guiado` (consolidar
-   checkpoints via `urn:kora:artefacto:lifecycle-orchestrator`).
+   checkpoints via la skill en staging
+   `artifacts/skills/_TALLER/INBOX/lifecycle-orchestrator/SKILL.md`).
 
 Si la combinacion es ambigua, emitir `outcome: blocked` con
 clarificacion solicitada y detener el workflow.
@@ -353,8 +352,8 @@ Adjuntar siempre:
 | --- | --- |
 | `urn:kora:artefacto:artifact-curator` | el operador entra por el ciclo de vida general; kora-agents recibe handoff cuando la forma material cae en agente |
 | `urn:kora:artefacto:kora-skills` | rama hermana para `forma_material: habilidad`; recibe handoff cuando se pide construir una skill |
-| `urn:kora:artefacto:intent-classifier` | dispatch inicial cuando el agente invocador tiene taxonomia local de capacidades |
-| `urn:kora:artefacto:lifecycle-orchestrator` | modo guiado con checkpoints inter-fase visibles |
+| `intent-classifier` (staging: `artifacts/skills/_TALLER/INBOX/intent-classifier/SKILL.md`) | dispatch inicial cuando el agente invocador tiene taxonomia local de capacidades |
+| `lifecycle-orchestrator` (staging: `artifacts/skills/_TALLER/INBOX/lifecycle-orchestrator/SKILL.md`) | modo guiado con checkpoints inter-fase visibles |
 | `urn:kora:artefacto:cat-thinking` | enmarque categorial obligatorio para arquitectura, delegacion, materia ambiental o riesgo no obvio |
 
 ## Recursos
