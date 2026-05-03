@@ -29,6 +29,22 @@ otra maquina, leer `governance/host-roles.md` y revisar el marker. `master`
 en GitHub esta protegida (no force-push, no delete, linear history). Instalar
 hooks locales para bloquear push directo a `master` desde secondaries.
 
+## Reconstruccion Meta-KORA
+
+Decision vigente al `2026-05-03`: el stack meta-KORA historico
+(`kora/custodio`, `kora/guardian`, `kora/clawforge`, curator/forgemaster y
+skills como `artifact-curator`, `curation-conductor`, `knowledge-curator`,
+`kora-agents` y `kora-skills`) debe reconstruirse desde cero.
+
+Fuente canonica:
+`artifacts/knowledge/kora/sys/meta-kora-rebuild-directive.md`
+(`urn:kora:kb:meta-kora-rebuild-directive`).
+
+No uses esos artefactos existentes como fuente de diseno, runtime, blueprint,
+transmutacion ni prompt operativo. Para la nueva generacion, partir de specs
+vigentes (`gobernanza`, `harness-spec`, `autoria-spec`,
+`agent-skill-construction-spec`) y crear IR fresco en staging.
+
 ## Historia Operativa Minima
 
 - Hasta la reorg v5 del `2026-04-18`, el repo usaba topologia legacy:
@@ -82,19 +98,15 @@ la promocion.
 
 ## Skills Core Canonicas
 
-Skills nucleares invocables desde cualquier agente o sesion. Son la entrada
-recomendada para producir o mantener artefactos KORA-conformes:
+Mientras meta-KORA esta en reconstruccion, no invoques la generacion historica
+de curator/conductor/kora-agents/kora-skills. Las piezas core disponibles para
+trabajo no-meta siguen siendo:
 
 | URN | Cuando |
 |-----|--------|
-| `urn:kora:artefacto:artifact-curator` | ciclo de vida general de artefactos KORA (knowledge, spec, skill, agente) |
-| `urn:kora:artefacto:kora-skills` | construir / auditar / evolucionar habilidades |
-| `urn:kora:artefacto:kora-agents` | construir / auditar / evolucionar subagentes y agentes-pt |
 | `urn:kora:artefacto:mente-omega` | razonamiento estructural-discursivo (pentamotor Φ Ψ Ξ Δ Σ) |
 | `urn:kora:artefacto:cat-thinking` | enmarque categorial (24 piezas ICAS-BoK) |
 | `urn:kora:artefacto:atomize` | productor canonico de la familia documental `atomic` |
-| `urn:kora:artefacto:knowledge-curator` | ruta KB normal descriptiva en REVIEW |
-| `urn:kora:artefacto:curation-conductor` | flujo knowledge end-to-end |
 
 Personas disponibles (agentes-pt en `artifacts/agents/{ns}/{name}/`):
 
@@ -263,7 +275,7 @@ Si la tarea es proyectar a runtime:
 
 ```bash
 python3 toolchain/kora transmute --target opencode --agent dev/steipete --dry-run
-python3 toolchain/kora transmute --target codex --agent kora/custodio --dry-run
+python3 toolchain/kora transmute --target codex --agent dev/steipete --dry-run
 python3 toolchain/kora transmute --target agentskills --agent kora/mente-omega --dry-run
 ```
 

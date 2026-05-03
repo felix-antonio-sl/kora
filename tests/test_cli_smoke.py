@@ -44,7 +44,7 @@ class KoraCliSmokeTests(unittest.TestCase):
             {item["urn"] for item in catalog["Catalog"]["Agents"]},
         )
         self.assertIn(
-            "urn:kora:artefacto:artifact-curator",
+            "urn:kora:artefacto:cat-thinking",
             {item["urn"] for item in catalog["Catalog"]["Skills"]},
         )
         indexed_files = {
@@ -99,7 +99,7 @@ class KoraCliSmokeTests(unittest.TestCase):
                 {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
             )
         else:
-            self.assertEqual(contracts_payload["meta_kora"]["summary"].get("staged"), 2)
+            self.assertEqual(contracts_payload["meta_kora"]["summary"].get("rebuild_required"), 2)
             self.assertFalse(any(item["in_operating_core"] for item in contracts_payload["meta_kora"]["workspaces"]))
         for workspace in OPERATING_CORE_COHORTS["domain_canary"]:
             self.assertIn(
@@ -163,7 +163,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
         for target in ("claude-code", "codex", "gemini", "mastra", "opencode", "openclaw"):
-            result = run_cli("transmute", "--target", target, "--agent", "kora/custodio", "--dry-run")
+            result = run_cli("transmute", "--target", target, "--agent", "dev/steipete", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)
             self.assertIn("Vector IR:", result.stdout)
@@ -182,7 +182,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         # Claude Code no soporta Mu=3 (ambient always-on). Por ahora el fleet promovido
         # tiene Mu<=2, por lo que no dispara el error. Smoke: verifica que el sistema
         # emite un `_transmutation.yml` con estructura completa tras transmute real.
-        result = run_cli("transmute", "--target", "claude-code", "--agent", "kora/custodio")
+        result = run_cli("transmute", "--target", "claude-code", "--agent", "dev/steipete")
         self.assertIn("Manifest:", result.stdout)
 
     def test_check_registry_includes_bundle_coherence(self):

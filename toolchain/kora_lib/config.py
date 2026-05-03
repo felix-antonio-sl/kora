@@ -227,12 +227,12 @@ COHORT_WORKSPACE_OVERRIDES = {
 }
 META_KORA_STATUS = {
     "kora/guardian": {
-        "status": "staged",
-        "reason": "Reubicado a _FRAGUA/INBOX durante la revalidacion del fleet; conserva rol meta-kora pero no integra el nucleo productivo.",
+        "status": "rebuild_required",
+        "reason": "Generacion historica retirada como fuente; debe reconstruirse desde cero segun urn:kora:kb:meta-kora-rebuild-directive.",
     },
     "kora/custodio": {
-        "status": "staged",
-        "reason": "Reubicado a _FRAGUA/INBOX durante la revalidacion del fleet; conserva rol meta-kora pero no integra el nucleo productivo.",
+        "status": "rebuild_required",
+        "reason": "Generacion historica retirada como fuente; debe reconstruirse desde cero segun urn:kora:kb:meta-kora-rebuild-directive.",
     },
 }
 def _discover_productive_workspaces():

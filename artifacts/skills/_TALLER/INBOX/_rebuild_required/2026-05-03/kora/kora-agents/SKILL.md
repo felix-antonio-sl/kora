@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-28"
     source: "Cristalizacion como skill del agente forgemaster legacy v2.0.0. Especializa el proceso de creacion, mantenimiento, mejora y evolucion de agentes KORA (subagente, agente-propiamente-tal, agente-plataforma) bajo el dominio de habilidad de autoria-spec v1.2 y el proceso de agent-skill-construction-spec v1.0. La memoria persistente y el acoplamiento colaborativo del agente legacy quedan en el invocador; la skill aporta el metodo."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: kora-agents
 descripcion: "Conduce la creacion, mantenimiento, mejora, evolucion y deprecacion de agentes KORA (forma_material: subagente, agente-propiamente-tal, agente-plataforma) preservando vector ontologico, dominio de proyeccion, FSM coalgebraica y compromisos eticos antes de cualquier transmutacion runtime."
 tags: [forgemaster, agentes, diseno-agentico, coalgebra, evolucion, autoria-spec, construction-spec]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
     nivel_prescripcion: alto
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido:
       - "urn:kora:kb:gobernanza"
       - "urn:kora:kb:harness-spec"

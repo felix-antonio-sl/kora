@@ -476,91 +476,36 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("atlas.forma_material", autoria_spec)
         self.assertIn("urn:{ns}:artefacto:{id}", governance)
 
-    def test_meta_core_agents_keep_control_layer_compact(self):
-        workspace_dirs = (
-            agent_workspace_path("kora/custodio"),
-            agent_workspace_path("kora/guardian"),
+    def test_meta_kora_rebuild_directive_is_materialized(self):
+        path = ROOT / "artifacts" / "knowledge" / "kora" / "sys" / "meta-kora-rebuild-directive.md"
+        doc, err = load_yaml_safe(path)
+        self.assertIsNone(err)
+        self.assertEqual(doc["_manifest"]["urn"], "urn:kora:kb:meta-kora-rebuild-directive")
+        self.assertIn("No deben usarse como fuente", doc["_md_body"])
+
+    def test_retired_meta_agents_do_not_resolve_as_staged_workspaces(self):
+        from kora_lib.workspaces import find_agent_workspace
+
+        for workspace_ref in ("kora/custodio", "kora/guardian", "kora/clawforge"):
+            self.assertIsNone(find_agent_workspace(workspace_ref, include_staging=True), workspace_ref)
+
+    def test_rebuild_required_meta_skills_are_not_productive(self):
+        retired_root = (
+            ROOT
+            / "artifacts"
+            / "skills"
+            / "_TALLER"
+            / "INBOX"
+            / "_rebuild_required"
+            / "2026-05-03"
+            / "kora"
         )
-        for workspace_dir in workspace_dirs:
-            self.assertTrue((workspace_dir / "AGENT.md").exists(), workspace_dir.as_posix())
-            self.assertFalse((workspace_dir / "AGENTS.md").exists(), workspace_dir.as_posix())
-            self.assertFalse((workspace_dir / "SOUL.md").exists(), workspace_dir.as_posix())
-            self.assertFalse((workspace_dir / "TOOLS.md").exists(), workspace_dir.as_posix())
-
-    def test_meta_context_managers_do_not_encode_fsm_destinations(self):
-        files = tuple(
-            path
-            for path in (
-                AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-CONTEXT-MANAGER.md",
-                agent_workspace_path("kora/custodio") / "skills" / "CM-CONTEXT-MANAGER.md",
-            )
-            if path.exists()
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("estado_destino", content)
-        self.assertNotIn("estado_fsm", content)
-        self.assertNotIn("estado_actual: FSMState", content)
-        self.assertNotIn("S-DISPATCHER", content)
-        self.assertNotIn("S-END", content)
-        self.assertNotIn("la FSM debe volver a despachar", content)
-        self.assertIn("requiere_revision_de_foco", content)
-
-    def test_meta_intent_classifiers_do_not_receive_fsm_state(self):
-        files = tuple(
-            path
-            for path in (
-                AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
-                agent_workspace_path("kora/custodio") / "skills" / "CM-INTENT-CLASSIFIER.md",
-            )
-            if path.exists()
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertNotIn("FSMState", content)
-        self.assertNotIn("|END)", content)
-        self.assertIn("cierre_solicitado", content)
-
-    def test_custodio_scope_excludes_agent_and_kb_mutation(self):
-        custodio = agent_workspace_path("kora/custodio")
-        agents = (custodio / "AGENT.md").read_text(encoding="utf-8")
-        surgeon = (
-            custodio / "skills" / "CM-SURGEON.md"
-        ).read_text(encoding="utf-8")
-        evolution = (
-            custodio / "skills" / "CM-EVOLUCION-PLANNER.md"
-        ).read_text(encoding="utf-8")
-        self.assertIn("excluyendo `AGENTS/`, specs fundacionales y contenido KB", agents)
-        self.assertIn("sin intervenir `AGENTS/`, specs fundacionales ni contenido KB", surgeon)
-        self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", evolution)
-
-    def test_custodio_soul_avoids_operational_policy_leakage(self):
-        self.assertFalse((agent_workspace_path("kora/custodio") / "SOUL.md").exists())
-
-    def test_meta_core_tools_stay_semantic(self):
-        custodio_tools = (agent_workspace_path("kora/custodio") / "AGENT.md").read_text(encoding="utf-8")
-        self.assertNotIn("Implementacion:", custodio_tools)
-
-    def test_custodio_operational_skills_use_semantic_tools(self):
-        custodio = agent_workspace_path("kora/custodio")
-        files = (
-            custodio / "skills" / "CM-HEALTH-INSPECTOR.md",
-            custodio / "skills" / "CM-CATALOG-STEWARD.md",
-            custodio / "skills" / "CM-INGESTA-STEWARD.md",
-            custodio / "skills" / "CM-EVOLUCION-PLANNER.md",
-        )
-        content = "\n".join(path.read_text(encoding="utf-8") for path in files)
-        self.assertIn("repo_health", content)
-        self.assertIn("catalog_sync", content)
-        self.assertIn("urn_resolve", content)
-        self.assertIn("intake_pipeline", content)
-        self.assertNotIn("`scripts/kora health`", content)
-        self.assertNotIn("`scripts/kora index`", content)
-        self.assertNotIn("`scripts/kora intake`", content)
-        self.assertNotIn("`git status`", content)
-
-    def test_guardian_runtime_capabilities_drop_analysis(self):
-        content = (agent_workspace_path("kora/guardian") / "AGENT.md").read_text(encoding="utf-8")
-        self.assertNotIn('"analysis"', content)
-        self.assertNotIn("runtime_capabilities", content)
+        for name in ("artifact-curator", "curation-conductor", "kora-agents", "kora-skills"):
+            self.assertFalse((ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md").exists())
+            doc, err = load_yaml_safe(retired_root / name / "SKILL.md")
+            self.assertIsNone(err)
+            self.assertEqual(doc["status"], "retirado")
+            self.assertFalse(doc["extensions"]["kora"]["rebuild"]["current_is_source"])
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
         agent = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")

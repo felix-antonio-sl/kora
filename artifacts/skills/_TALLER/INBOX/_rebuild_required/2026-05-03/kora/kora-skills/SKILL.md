@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-28"
     source: "Skill hermana de kora-agents para la rama de habilidad. Especializa el proceso de creacion, mantenimiento, mejora y evolucion de skills KORA bajo el dominio de habilidad de autoria-spec v1.2 y el proceso de agent-skill-construction-spec v1.0."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: kora-skills
 descripcion: "Conduce la creacion, mantenimiento, mejora, evolucion y deprecacion de skills KORA (forma_material: habilidad) preservando vector ontologico, dominio de proyeccion, fidelidad agentskills y nivel de prescripcion antes de cualquier transmutacion runtime."
 tags: [kora-skills, habilidad, diseno-de-skills, evolucion, autoria-spec, construction-spec, agentskills]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
     nivel_prescripcion: alto
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido:
       - "urn:kora:kb:gobernanza"
       - "urn:kora:kb:harness-spec"

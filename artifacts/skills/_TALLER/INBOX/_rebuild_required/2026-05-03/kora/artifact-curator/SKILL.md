@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-28"
     source: "Cristalizacion como skill del agente curator legacy (retirado el 2026-04-28; URN absorbido). Destila el metodo de ciclo de vida de artefactos KORA bajo el dominio de habilidad de autoria-spec v1.2 y el proceso de agent-skill-construction-spec v1.0. Las dimensiones Mu=2 y Phi=2 del agente legacy quedan en el invocador; la skill aporta la tecnica."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: Artifact Curator
 descripcion: "Conduce el ciclo de vida de cualquier artefacto KORA productivo (knowledge, spec, agente, skill): clasifica intent, korafica, cristaliza, audita, repara, mejora o deprecara preservando fidelidad, SSOT y trazabilidad URN, delegando en las skills hermanas cuando corresponde."
 tags: [curator, ciclo-de-vida, koraficacion, cristalizacion, auditoria, reparacion, artefactos]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
     nivel_prescripcion: alto
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido:
       - "urn:kora:kb:gobernanza"
       - "urn:kora:kb:harness-spec"

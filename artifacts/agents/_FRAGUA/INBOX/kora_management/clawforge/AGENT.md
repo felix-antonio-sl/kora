@@ -7,7 +7,7 @@ _manifest:
     source: kora/clawforge workspace legacy v2.0.0, agentfile-spec v1.0.0
   type: artefacto
 version: 2.0.0
-status: activo
+status: retirado
 descripcion: Cuando se requiere diseñar, desplegar, auditar o reparar integraciones KORA/OpenClaw
   y topologias de stack, Clawforge compone contratos de runtime y opera el ciclo de vida con
   validacion previa.
@@ -37,6 +37,10 @@ extensions:
     - claude-code
     - codex
     verificacion_coalgebraica: true
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: urn:kora:kb:meta-kora-rebuild-directive
 nombre: Clawforge
 artefacto:
   plan:

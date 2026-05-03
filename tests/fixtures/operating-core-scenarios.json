@@ -89,11 +89,12 @@
       "total_workspaces": 2,
       "operating_core": 0,
       "auxiliary": 0,
-      "staged": 2
+      "staged": 0,
+      "rebuild_required": 2
     },
     "statuses": {
-      "kora/guardian": "staged",
-      "kora/custodio": "staged"
+      "kora/guardian": "rebuild_required",
+      "kora/custodio": "rebuild_required"
     }
   },
   "meta_auxiliary_scenarios": []

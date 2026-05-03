@@ -124,6 +124,19 @@ def _artifact_urn_for_workspace_ref(workspace_ref):
     return f"urn:{namespace}:artefacto:{name}"
 
 
+def _requires_fresh_rebuild(doc):
+    rebuild = (
+        doc.get("extensions", {})
+        .get("kora", {})
+        .get("rebuild", {})
+        if isinstance(doc, dict)
+        else {}
+    )
+    if not isinstance(rebuild, dict):
+        return False
+    return rebuild.get("required") is True and rebuild.get("current_is_source") is False
+
+
 @lru_cache(maxsize=None)
 def _find_staged_agent_workspace(workspace_ref):
     target_urn = _artifact_urn_for_workspace_ref(workspace_ref)
@@ -137,6 +150,9 @@ def _find_staged_agent_workspace(workspace_ref):
             continue
         urn = doc.get("_manifest", {}).get("urn")
         if urn != target_urn:
+            continue
+        status = read_declared_status(doc)
+        if is_deprecated_status(status) or is_retired_status(status) or _requires_fresh_rebuild(doc):
             continue
         workspace_dir = agent_path.parent
         rel = workspace_dir.relative_to(AGENTS_ROOT).as_posix()

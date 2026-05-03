@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-23"
     source: "Skill ejecutora para la curacion descriptiva de artefactos de conocimiento KORA; implementa la ruta KB normal orquestada por curation-conductor y por el agente curator."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: Knowledge Curator
 descripcion: "Implementa la ruta descriptiva KB normal del pipeline de knowledge KORA: diseña draft, korafica o repara, audita y deja un artefacto en REVIEW con outcome operativo explicito."
 tags: [knowledge, curator, koraficacion, review, audit, repair]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex]
     nivel_prescripcion: alto
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido:
       - "urn:kora:kb:gobernanza"
       - "urn:kora:kb:harness-spec"

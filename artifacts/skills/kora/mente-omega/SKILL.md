@@ -31,7 +31,6 @@ extensions:
     conocimiento_permitido: []
     componible_con:
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:artifact-curator"
 artefacto:
   perfil:
     dominio:
@@ -122,8 +121,8 @@ Phi (Φ), Psi (Ψ), Xi (Ξ), Delta (Δ), Sigma (Σ).
 - problemas operacionales con respuesta directa (clase-1) donde el
   pentamotor introduce ceremonia innecesaria.
 - pensamiento categorial puro → usar `urn:kora:artefacto:cat-thinking`.
-- ciclo de vida de artefactos KORA → usar
-  `urn:kora:artefacto:artifact-curator` (puede componer con esta).
+- ciclo de vida meta-KORA → leer `urn:kora:kb:meta-kora-rebuild-directive`
+  y crear IR fresco en staging.
 
 ## Workflow — el Pentamotor
 
@@ -289,7 +288,7 @@ La jerarquia no es fija. Se reconfigura segun la tarea:
 | Composable con | Cuando |
 |---|---|
 | `urn:kora:artefacto:cat-thinking` | la lectura categorial es la herramienta correcta para reformular el problema antes de aplicar el pentamotor |
-| `urn:kora:artefacto:artifact-curator` | el artefacto cognitivo producido por mente-omega entra al ciclo de vida KORA |
+| `urn:kora:kb:meta-kora-rebuild-directive` | el artefacto cognitivo afecta la reconstruccion meta-KORA |
 | skills de dominio (`ship-discipline`, `cell-design`, `gtd-flow`) | mente-omega aporta arquitectura cognitiva; la skill de dominio aporta el metodo operativo del campo |
 
 ## Recursos

@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-23"
     source: "Skill conductora del proceso de curación de artefactos de conocimiento KORA de comienzo a fin."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: Curation Conductor
 descripcion: "Determina y acompaña el proceso de curación de artefactos de conocimiento KORA de comienzo a fin: clasifica input, elige familia, funtor, staging, productor, validaciones y readiness de promote."
 tags: [curation, knowledge, pipeline, kora, review, promote]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex]
     nivel_prescripcion: alto
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido:
       - "urn:kora:kb:gobernanza"
       - "urn:kora:kb:harness-spec"

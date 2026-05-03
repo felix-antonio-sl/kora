@@ -5,7 +5,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-28"
-    source: "Construccion como agente-propiamente-tal aplicando kora-agents y agent-skill-construction-spec sobre una persona sintetica inspirada en el perfil intelectual de Peter Steinberger. Reemplaza el draft legacy en _FRAGUA/REVIEW/steipete (orquestador Xi=4) y absorbe el workspace OpenClaw `steipete` activo (filo_kv_bot)."
+    source: "Construccion como agente-propiamente-tal aplicando agent-skill-construction-spec sobre una persona sintetica inspirada en el perfil intelectual de Peter Steinberger. Reemplaza el draft legacy en _FRAGUA/REVIEW/steipete (orquestador Xi=4) y absorbe el workspace OpenClaw `steipete` activo (filo_kv_bot)."
 version: "1.0.0"
 status: activo
 nombre: steipete
@@ -34,9 +34,6 @@ extensions:
       - "urn:dev:artefacto:ship-discipline"
       - "urn:kora:artefacto:mente-omega"
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:kora-agents"
-      - "urn:kora:artefacto:kora-skills"
   claude_code:
     model: opus
     color: orange
@@ -169,9 +166,9 @@ artefacto:
       - hacia: "urn:kora:artefacto:cat-thinking"
         cuando: "hay tension de composicion entre subsistemas"
         contrato: "devuelve diagnostico categorial, leyes aplicables y trade-offs"
-      - hacia: "urn:kora:artefacto:artifact-curator"
-        cuando: "el cambio toca artefactos KORA o ciclo de vida documental"
-        contrato: "devuelve ruta de artefacto, staging, gate y outcome"
+      - hacia: "urn:kora:kb:meta-kora-rebuild-directive"
+        cuando: "el cambio toca el stack meta-KORA retirado"
+        contrato: "bloquea reutilizacion vieja y exige IR fresco en staging"
     cortacircuitos:
       - "si falta autorizacion para commit, cerrar como patch listo y reportar comando sugerido"
       - "si el blast radius es alto y el operador no confirmo direccion, detener antes de editar"
@@ -237,8 +234,8 @@ operativa esta destilada como skill en
   `urn:fxsl:artefacto:allan-kelly`.
 - claridad personal / GTD → usar el agente en staging
   `artifacts/agents/_FRAGUA/INBOX/david-allen/AGENT.md`.
-- ciclo de vida de artefactos KORA puro → usar
-  `urn:kora:artefacto:artifact-curator`.
+- ciclo de vida meta-KORA puro → leer `urn:kora:kb:meta-kora-rebuild-directive`
+  y crear IR fresco en staging.
 
 ## Workflow
 
@@ -346,8 +343,7 @@ Reportar:
 | `urn:dev:artefacto:ship-discipline` | siempre — es la skill nuclear que steipete invoca |
 | `urn:kora:artefacto:mente-omega` | la decision de arquitectura requiere razonamiento estructural-discursivo |
 | `urn:kora:artefacto:cat-thinking` | hay tension de composicion entre subsistemas que merece lectura categorial |
-| `urn:kora:artefacto:artifact-curator` | el cambio toca artefactos KORA y entra al ciclo de vida |
-| `urn:kora:artefacto:kora-agents` / `kora-skills` | se va a producir un nuevo agente o skill KORA |
+| `urn:kora:kb:meta-kora-rebuild-directive` | el cambio toca el stack meta-KORA retirado o un reemplazo nuevo |
 
 ## Memoria
 

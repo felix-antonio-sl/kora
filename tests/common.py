@@ -114,6 +114,7 @@ def has_agent_workspace(workspace_ref, *, include_staging=True):
 
 def _find_staged_skill_dir(ns, name):
     from kora_lib.artifacts import load_yaml_safe
+    from kora_lib.lifecycle import is_deprecated_status, is_retired_status, read_declared_status
 
     target_urn = f"urn:{ns}:artefacto:{name}"
     if not TALLER_ROOT.exists():
@@ -126,6 +127,14 @@ def _find_staged_skill_dir(ns, name):
         if err or not isinstance(doc, dict):
             continue
         if doc.get("_manifest", {}).get("urn") != target_urn:
+            continue
+        status = read_declared_status(doc)
+        rebuild = doc.get("extensions", {}).get("kora", {}).get("rebuild", {})
+        if (
+            is_deprecated_status(status)
+            or is_retired_status(status)
+            or (isinstance(rebuild, dict) and rebuild.get("required") is True and rebuild.get("current_is_source") is False)
+        ):
             continue
         rel = skill_path.parent.relative_to(SKILLS_ROOT).as_posix()
         direct_namespaced = rel.endswith(f"/{ns}/{name}")

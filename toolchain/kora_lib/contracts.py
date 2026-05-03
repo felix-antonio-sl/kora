@@ -444,7 +444,13 @@ def build_operating_core_payload():
         "cohorts": {},
         "totals": {"workspaces": 0, "states": 0, "tools": 0, "handoffs": 0},
         "meta_kora": {
-            "summary": {"total_workspaces": 0, "operating_core": 0, "auxiliary": 0, "staged": 0},
+            "summary": {
+                "total_workspaces": 0,
+                "operating_core": 0,
+                "auxiliary": 0,
+                "staged": 0,
+                "rebuild_required": 0,
+            },
             "workspaces": [],
         },
     }
@@ -502,6 +508,7 @@ def render_operating_core_markdown(payload):
             f"- Meta agentes en nucleo operativo endurecido: {meta_summary['operating_core']}",
             f"- Meta agentes auxiliares explicitamente descopados: {meta_summary['auxiliary']}",
             f"- Meta agentes en staging/revalidacion: {meta_summary.get('staged', 0)}",
+            f"- Meta agentes con reconstruccion requerida: {meta_summary.get('rebuild_required', 0)}",
             "",
             "| Workspace | Estatus | Estados | Skills | Tools | Handoffs | Motivo |",
             "|-----------|---------|---------|--------|-------|----------|--------|",

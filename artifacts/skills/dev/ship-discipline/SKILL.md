@@ -33,9 +33,6 @@ extensions:
     componible_con:
       - "urn:kora:artefacto:mente-omega"
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:kora-skills"
-      - "urn:kora:artefacto:kora-agents"
 artefacto:
   perfil:
     dominio:
@@ -168,8 +165,8 @@ correccion.
 - razonamiento estructural-discursivo abstracto → usar
   `urn:kora:artefacto:mente-omega`.
 - enmarque categorial puro → usar `urn:kora:artefacto:cat-thinking`.
-- ciclo de vida de artefactos KORA → usar
-  `urn:kora:artefacto:artifact-curator` y sus hermanas.
+- ciclo de vida meta-KORA → leer `urn:kora:kb:meta-kora-rebuild-directive`
+  y crear IR fresco en staging.
 - diseno de celulas humano-agente organizacionales → usar
   `urn:fxsl:artefacto:cell-design`.
 
@@ -288,8 +285,7 @@ Reportar:
 |---|---|
 | `urn:kora:artefacto:mente-omega` | la decision de arquitectura requiere razonamiento estructural-discursivo previo |
 | `urn:kora:artefacto:cat-thinking` | la composicion del repo o la integracion entre subsistemas tensiona y se necesita lectura categorial |
-| `urn:kora:artefacto:artifact-curator` | el cambio toca artefactos KORA y debe pasar por su ciclo de vida |
-| `urn:kora:artefacto:kora-skills` / `kora-agents` | se va a producir un nuevo agente o skill KORA |
+| `urn:kora:kb:meta-kora-rebuild-directive` | se va a producir o reemplazar una pieza meta-KORA |
 
 ## Recursos
 

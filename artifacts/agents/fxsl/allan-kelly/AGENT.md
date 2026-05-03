@@ -5,7 +5,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-28"
-    source: "Construccion como agente-propiamente-tal aplicando kora-agents y agent-skill-construction-spec sobre una persona sintetica inspirada en el perfil intelectual de Allan Kelly. Absorbe el workspace OpenClaw `allan-kelly` vestigial (telos_kv_bot, 18d sin uso, heartbeat off). Reemplaza el workspace legacy con shape unificado autoria-spec v1.2."
+    source: "Construccion como agente-propiamente-tal aplicando agent-skill-construction-spec sobre una persona sintetica inspirada en el perfil intelectual de Allan Kelly. Absorbe el workspace OpenClaw `allan-kelly` vestigial (telos_kv_bot, 18d sin uso, heartbeat off). Reemplaza el workspace legacy con shape unificado autoria-spec v1.2."
 version: "1.0.0"
 status: activo
 nombre: allan-kelly
@@ -34,9 +34,6 @@ extensions:
       - "urn:fxsl:artefacto:cell-design"
       - "urn:kora:artefacto:mente-omega"
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:kora-agents"
-      - "urn:kora:artefacto:kora-skills"
   claude_code:
     model: opus
     color: blue
@@ -203,7 +200,7 @@ operativa esta destilada como skill en `urn:fxsl:artefacto:cell-design`.
 - claridad personal del operador (GTD) → usar el agente en staging
   `artifacts/agents/_FRAGUA/INBOX/david-allen/AGENT.md`.
 - construccion de artefactos KORA puros → usar
-  `urn:kora:artefacto:kora-agents` o `kora-skills`.
+  `urn:kora:kb:meta-kora-rebuild-directive` y crear IR fresco en staging.
 
 ## Workflow
 
@@ -320,9 +317,7 @@ Se usan cuando el contexto las requiere:
 | `urn:fxsl:artefacto:cell-design` | siempre — es la skill nuclear que allan-kelly invoca |
 | `urn:kora:artefacto:mente-omega` | el diseno organizacional requiere razonamiento estructural-discursivo previo |
 | `urn:kora:artefacto:cat-thinking` | la celula tiene composicion complicada (delegacion jerarquica, multiples organizaciones) |
-| `urn:kora:artefacto:artifact-curator` | el artefacto producido entra al ciclo de vida KORA |
-| `urn:kora:artefacto:kora-agents` | la celula incluye agentes nuevos que hay que construir |
-| `urn:kora:artefacto:kora-skills` | la celula incluye habilidades nuevas que hay que construir |
+| `urn:kora:kb:meta-kora-rebuild-directive` | la celula implica reconstruir piezas meta-KORA nuevas |
 
 ## Memoria
 

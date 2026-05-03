@@ -54,9 +54,13 @@ Si strict no pasa, diagnostica antes de avanzar; no normalices la deuda.
 
 Cuando vayas a producir artefactos:
 
-- Habilidades nuevas: usa la skill urn:kora:artefacto:kora-skills.
-- Subagentes / agentes-pt / agentes-plataforma: urn:kora:artefacto:kora-agents.
-- Conocimiento descriptivo (notas, guias, atomic): urn:kora:artefacto:artifact-curator.
+- Meta-KORA esta en reconstruccion: no uses los artefactos viejos
+  `artifact-curator`, `kora-skills`, `kora-agents`, `knowledge-curator`,
+  `curation-conductor`, `kora/custodio`, `kora/guardian` ni `kora/clawforge`
+  como fuente o runtime. Lee `urn:kora:kb:meta-kora-rebuild-directive`.
+- Habilidades nuevas, agentes nuevos y knowledge no-atomic: partir de specs
+  vigentes y crear IR fresco en staging.
+- Conocimiento `atomic`: usa `urn:kora:artefacto:atomize`.
 - Pensamiento estructural-discursivo: urn:kora:artefacto:mente-omega.
 - Lectura categorial: urn:kora:artefacto:cat-thinking.
 
@@ -87,14 +91,9 @@ Reglas duras del repo (sin excepciones):
 
 | URN | Cuando |
 |-----|--------|
-| `urn:kora:artefacto:artifact-curator` | ciclo de vida general de artefactos KORA |
-| `urn:kora:artefacto:kora-skills` | construir / auditar / evolucionar habilidades |
-| `urn:kora:artefacto:kora-agents` | construir / auditar / evolucionar agentes |
 | `urn:kora:artefacto:mente-omega` | razonamiento estructural-discursivo (pentamotor Φ Ψ Ξ Δ Σ) |
 | `urn:kora:artefacto:cat-thinking` | enmarque categorial (24 piezas ICAS-BoK) |
 | `urn:kora:artefacto:atomize` | familia atomic productor canonico |
-| `urn:kora:artefacto:knowledge-curator` | KB normal descriptivo en REVIEW |
-| `urn:kora:artefacto:curation-conductor` | flujo knowledge end-to-end |
 
 ## Personas disponibles (agentes-pt persona)
 

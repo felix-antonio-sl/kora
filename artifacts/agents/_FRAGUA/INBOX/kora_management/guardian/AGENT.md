@@ -7,7 +7,7 @@ _manifest:
     source: kora/guardian workspace legacy v1.0.0, agentfile-spec v1.0.0
   type: artefacto
 version: 1.0.0
-status: activo
+status: retirado
 descripcion: Cuando se requiere criterio normativo o validacion fundacional del toolchain
   KORA, Guardian audita specs vigentes y emite precedencia conservadora para cambios del nucleo.
 tags:
@@ -36,6 +36,10 @@ extensions:
     - claude-code
     - codex
     verificacion_coalgebraica: true
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: urn:kora:kb:meta-kora-rebuild-directive
 nombre: Guardian
 artefacto:
   plan:

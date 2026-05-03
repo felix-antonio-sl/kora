@@ -1,38 +1,35 @@
 import unittest
-from pathlib import Path
 
 from common import ROOT
+from kora_lib.artifacts import load_yaml_safe
 
 
 class CurationConductorSkillTests(unittest.TestCase):
-    def test_curation_conductor_skill_exists(self):
+    def test_curation_conductor_is_removed_from_productive_skills(self):
         skill_path = ROOT / "artifacts" / "skills" / "kora" / "curation-conductor" / "SKILL.md"
-        self.assertTrue(skill_path.exists(), skill_path)
+        self.assertFalse(skill_path.exists(), skill_path)
 
-    def test_curation_conductor_references_exist(self):
-        base = ROOT / "artifacts" / "skills" / "kora" / "curation-conductor" / "referencias"
-        self.assertTrue((base / "process-map.md").exists())
-        self.assertTrue((base / "family-decision-table.md").exists())
-
-    def test_curation_conductor_declares_atomic_as_specialized_route(self):
-        skill_path = ROOT / "artifacts" / "skills" / "kora" / "curation-conductor" / "SKILL.md"
-        text = skill_path.read_text(encoding="utf-8")
-        self.assertIn("No usar `atomic` como curación universal.", text)
-        self.assertIn("`atomic` -> usar `atomize`", text)
-
-    def test_curation_conductor_reroutes_spec_like_inputs(self):
-        skill_path = ROOT / "artifacts" / "skills" / "kora" / "curation-conductor" / "SKILL.md"
-        process_path = (
+    def test_curation_conductor_is_quarantined_for_rebuild(self):
+        skill_path = (
             ROOT
             / "artifacts"
             / "skills"
+            / "_TALLER"
+            / "INBOX"
+            / "_rebuild_required"
+            / "2026-05-03"
             / "kora"
             / "curation-conductor"
-            / "referencias"
-            / "process-map.md"
+            / "SKILL.md"
         )
-        self.assertIn("reroute", skill_path.read_text(encoding="utf-8"))
-        self.assertIn("rerouted_to_spec", process_path.read_text(encoding="utf-8"))
+        doc, err = load_yaml_safe(skill_path)
+        self.assertIsNone(err)
+        self.assertEqual(doc["status"], "retirado")
+        self.assertEqual(
+            doc["extensions"]["kora"]["rebuild"]["directive"],
+            "urn:kora:kb:meta-kora-rebuild-directive",
+        )
+        self.assertFalse(doc["extensions"]["kora"]["rebuild"]["current_is_source"])
 
 
 if __name__ == "__main__":

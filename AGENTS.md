@@ -29,6 +29,22 @@ otra maquina, leer `governance/host-roles.md` y revisar el marker. `master`
 en GitHub esta protegida (no force-push, no delete, linear history) y el hook
 local bloquea push directo a `master` desde hosts secondary.
 
+## Reconstruccion Meta-KORA
+
+Decision vigente al `2026-05-03`: el stack meta-KORA historico
+(`kora/custodio`, `kora/guardian`, `kora/clawforge`, curator/forgemaster y
+skills como `artifact-curator`, `curation-conductor`, `knowledge-curator`,
+`kora-agents` y `kora-skills`) debe reconstruirse desde cero.
+
+Fuente canonica de esta decision:
+`artifacts/knowledge/kora/sys/meta-kora-rebuild-directive.md`
+(`urn:kora:kb:meta-kora-rebuild-directive`).
+
+No uses esos artefactos existentes como fuente de diseno, runtime, blueprint,
+transmutacion ni prompt operativo. Para producir la siguiente generacion, partir
+de specs vigentes (`gobernanza`, `harness-spec`, `autoria-spec`,
+`agent-skill-construction-spec`) y crear artefactos nuevos en staging.
+
 ## Historia Relevante
 
 Antes del `2026-04-18`, el repo usaba una topologia legacy con `specs/`,

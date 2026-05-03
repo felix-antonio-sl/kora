@@ -250,7 +250,12 @@ def ensure_guardian_workspace():
     queda como deuda de promocion. Esta funcion se conserva solo por
     compatibilidad con `kora migrate --profile transitional` antiguo.
     """
+    from .config import META_KORA_STATUS
     from .workspaces import find_agent_workspace
+
+    if META_KORA_STATUS.get("kora/guardian", {}).get("status") == "rebuild_required":
+        # Guardian debe reconstruirse desde cero; no reactivar scaffold legacy.
+        return []
 
     if find_agent_workspace("kora/guardian", include_staging=True) is not None:
         # Guardian esta en staging — no re-scaffoldear productivo.

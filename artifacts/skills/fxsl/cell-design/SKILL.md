@@ -33,8 +33,6 @@ extensions:
     componible_con:
       - "urn:kora:artefacto:mente-omega"
       - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:kora-agents"
 artefacto:
   perfil:
     dominio:
@@ -124,8 +122,8 @@ preguntas tecnicas como preguntas de diseno organizacional.
   `urn:dev:artefacto:ship-discipline`.
 - claridad personal del operador (GTD) → usar la skill en staging
   `artifacts/skills/_TALLER/INBOX/gtd-flow/SKILL.md`.
-- construccion de artefactos KORA → usar
-  `urn:kora:artefacto:kora-agents` o `kora-skills`.
+- construccion de piezas meta-KORA → leer
+  `urn:kora:kb:meta-kora-rebuild-directive` y crear IR fresco en staging.
 
 ## Workflow
 
@@ -315,8 +313,7 @@ NO HACER bajo ninguna circunstancia:
 |---|---|
 | `urn:kora:artefacto:mente-omega` | el diseno organizacional requiere razonamiento estructural-discursivo previo |
 | `urn:kora:artefacto:cat-thinking` | la celula tiene composicion complicada y se necesita lectura categorial |
-| `urn:kora:artefacto:artifact-curator` | el artefacto producido entra al ciclo de vida KORA |
-| `urn:kora:artefacto:kora-agents` | la celula incluye agentes nuevos que hay que construir |
+| `urn:kora:kb:meta-kora-rebuild-directive` | la celula incluye piezas meta-KORA nuevas o reemplazos |
 
 ## Recursos
 

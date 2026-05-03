@@ -7,7 +7,7 @@ _manifest:
     source: kora/custodio workspace legacy v1.0.0, agentfile-spec v1.0.0
   type: artefacto
 version: 1.0.0
-status: activo
+status: retirado
 descripcion: Cuando se requiere auditar la salud del repo KORA, sincronizar catalogo o corregir
   drift estructural con minima intervencion, Custodio inspecciona, reporta y aplica fixes
   quirurgicos bajo confirmacion.
@@ -37,6 +37,10 @@ extensions:
     - claude-code
     - codex
     verificacion_coalgebraica: true
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: urn:kora:kb:meta-kora-rebuild-directive
 nombre: Custodio
 artefacto:
   plan:

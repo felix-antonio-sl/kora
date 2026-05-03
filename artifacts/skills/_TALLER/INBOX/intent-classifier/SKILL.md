@@ -7,7 +7,7 @@ _manifest:
     created_at: "2026-04-18"
     source: "Promocion del patron comun de CM-INTENT-CLASSIFIER en agentes productivos kora durante H2-artifacts."
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: Intent Classifier
 descripcion: "Clasificador reusable de intencion para agentes KORA: ubica la solicitud en la capacidad correcta del dominio y distingue modo guiado/libre cuando aplica."
 tags: [kora, intent, clasificacion, dispatch]
@@ -28,6 +28,10 @@ extensions:
       metafora_relacional: supertool
     entornos_objetivo: [claude-code, codex]
     nivel_prescripcion: medio
+    rebuild:
+      required: true
+      current_is_source: false
+      directive: "urn:kora:kb:meta-kora-rebuild-directive"
     conocimiento_permitido: []
     componible_con:
       - "urn:kora:artefacto:clawforge"
