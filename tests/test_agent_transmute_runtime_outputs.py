@@ -1,6 +1,6 @@
 import unittest
 
-from common import ROOT, run_cli
+from common import agent_workspace_path, run_cli
 
 
 class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
@@ -10,7 +10,7 @@ class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
         self.assertIn("Manifest:", result.stdout)
         self.assertIn("Bundle:", result.stdout)
 
-        target_dir = ROOT / "artifacts" / "agents" / "kora" / "custodio" / "_BUILD" / "codex"
+        target_dir = agent_workspace_path("kora/custodio") / "_BUILD" / "codex"
         self.assertTrue((target_dir / "_transmutation.yml").exists())
         bundle_path = target_dir / "custodio.md"
         self.assertTrue(bundle_path.exists(), bundle_path)
@@ -24,7 +24,7 @@ class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
         self.assertIn("Manifest:", result.stdout)
         self.assertIn("Agent:", result.stdout)
 
-        target_dir = ROOT / "artifacts" / "agents" / "kora" / "custodio" / "_BUILD" / "opencode"
+        target_dir = agent_workspace_path("kora/custodio") / "_BUILD" / "opencode"
         self.assertTrue((target_dir / "_transmutation.yml").exists())
         bundle_path = target_dir / "agents" / "custodio.md"
         self.assertTrue(bundle_path.exists(), bundle_path)
@@ -38,7 +38,7 @@ class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
         self.assertIn("Manifest:", result.stdout)
         self.assertIn("Workspace:", result.stdout)
 
-        target_dir = ROOT / "artifacts" / "agents" / "kora" / "custodio" / "_BUILD" / "openclaw"
+        target_dir = agent_workspace_path("kora/custodio") / "_BUILD" / "openclaw"
         self.assertTrue((target_dir / "_transmutation.yml").exists())
         for rel in (
             "workspace/AGENTS.md",

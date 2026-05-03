@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
-from common import AGENTS_ROOT, ROOT, has_productive_workspaces, run_cli
+from common import AGENTS_ROOT, ROOT, agent_workspace_path, has_agent_workspace, has_productive_workspaces, run_cli
 from kora_lib.catalog import build_catalog_lookup, load_catalog, urn_is_known
 from kora_lib.config import DEPRECATED_URN_ALIASES, OPERATING_CORE_COHORTS
 from kora_lib.graph import build_reference_graph
@@ -36,8 +36,6 @@ class GraphInvariantTests(unittest.TestCase):
         # mas workspaces desde _FRAGUA/INBOX/.
         self.assertGreater(self.scanned_files, 500)
         self.assertTrue(any(edge.kind == "XRef" for edge in self.edges))
-        self.assertTrue(any(edge.kind == "RoutesToAgent" for edge in self.edges))
-        self.assertTrue(any(edge.kind == "InvokesSkill" for edge in self.edges))
 
     def test_every_traces_to_targets_official_formal_layer(self):
         for edge in self.edges:
@@ -63,7 +61,7 @@ class GraphInvariantTests(unittest.TestCase):
             elif workspace_exists_from_urn(edge.target):
                 parts = edge.target.split(":")
                 target_file = "AGENT.md" if len(parts) > 2 and parts[2] == "artefacto" else "AGENTS.md"
-                target_path = AGENTS_ROOT / parts[1] / parts[3] / target_file
+                target_path = agent_workspace_path(f"{parts[1]}/{parts[3]}") / target_file
                 self.assertTrue(
                     fragment_exists(target_path, edge.fragment),
                     msg=f"Broken workspace fragment {edge.target}#{edge.fragment}",
@@ -75,9 +73,7 @@ class GraphInvariantTests(unittest.TestCase):
         for edge in self.edges:
             if edge.kind != "RoutesToAgent":
                 continue
-            namespace, name = edge.target.split("/", 1)
-            target_dir = AGENTS_ROOT / namespace / name
-            self.assertTrue(target_dir.is_dir(), msg=f"Broken route {edge.target}")
+            self.assertTrue(has_agent_workspace(edge.target), msg=f"Broken route {edge.target}")
 
     def test_every_invoked_skill_exists_in_workspace(self):
         for edge in self.edges:

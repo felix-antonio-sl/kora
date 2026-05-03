@@ -7,12 +7,15 @@ import os
 from pathlib import Path
 from uuid import uuid4
 
-from common import FIXTURES, ROOT, assert_path_in_output, run_cli
+from common import FIXTURES, ROOT, assert_path_in_output, run_cli, skill_artifact_dir
 from kora_lib.artifacts import load_markdown_parts
 from kora_lib.atomize import _atomic_frontmatter, _build_source_docs, _deduplicate_candidates, _extract_candidates
 from kora_lib.promote import _atomic_bundle_paths
 from kora_lib.validation import _collect_atomic_bundle_paths
 from kora_lib.validation import lint_kora_markdown_parts, parse_atomic_propositions
+
+
+ATOMIZE_DIR = skill_artifact_dir("kora", "atomize")
 
 
 def write_atomic_acceptance_review(path: Path, bundle_root: str, *, decision: str = "accept", publish_ready: bool = True):
@@ -45,7 +48,7 @@ class AtomizeCliTests(unittest.TestCase):
         )
 
     def test_review_atomic_acceptance_blocks_publish_ready_when_quality_fails(self):
-        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
+        review_script = ATOMIZE_DIR / "scripts" / "review_atomic_acceptance.py"
 
         with tempfile.TemporaryDirectory() as tmp:
             tmpdir = Path(tmp)
@@ -117,7 +120,7 @@ class AtomizeCliTests(unittest.TestCase):
             self.assertIn("## Semantic Fidelity Packet", review_body)
 
     def test_prepare_atomic_fidelity_review_prioritizes_tension_samples(self):
-        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py"
+        review_script = ATOMIZE_DIR / "scripts" / "prepare_atomic_fidelity_review.py"
         fixture_dir = FIXTURES / "atomize" / "multifile-negation-conflict"
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -544,8 +547,8 @@ class AtomizeCliTests(unittest.TestCase):
     def test_publish_atomic_wrapper_requires_fresh_accepted_review(self):
         review_dir = ROOT / "artifacts" / "knowledge" / "_SCRIPTORIUM" / "REVIEW" / "kora" / "atomic"
         published_dir = ROOT / "artifacts" / "knowledge" / "kora" / "atomic"
-        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
-        publish_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "publish_atomic.py"
+        review_script = ATOMIZE_DIR / "scripts" / "review_atomic_acceptance.py"
+        publish_script = ATOMIZE_DIR / "scripts" / "publish_atomic.py"
         slug = "test-acceptance-1234567890"
 
         review_dir.mkdir(parents=True, exist_ok=True)
@@ -751,7 +754,7 @@ class AtomizeCliTests(unittest.TestCase):
                     path.unlink(missing_ok=True)
 
     def test_review_atomic_acceptance_records_bundle_risk_summary(self):
-        review_script = ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py"
+        review_script = ATOMIZE_DIR / "scripts" / "review_atomic_acceptance.py"
         fixture_dir = FIXTURES / "atomize" / "multifile-negation-conflict"
 
         with tempfile.TemporaryDirectory() as tmp:

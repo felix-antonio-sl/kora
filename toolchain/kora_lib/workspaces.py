@@ -1,4 +1,5 @@
 import re
+from functools import lru_cache
 
 from .artifacts import load_yaml_safe
 from .config import (
@@ -8,6 +9,7 @@ from .config import (
     COHORT_NAMESPACE_GROUPS,
     COHORT_WORKSPACE_OVERRIDES,
     CM_REF_PATTERN,
+    FRAGUA_ROOT,
     KORA_ROOT,
     SKILL_MANIFEST_TYPE,
     SKILL_REQUIRED_HEADINGS,
@@ -81,6 +83,7 @@ def iter_agent_workspaces(cohort=None, include_deprecated=False):
                 workspace_dir.is_dir()
                 and not workspace_dir.name.startswith(".")
                 and not workspace_dir.name.startswith("_")
+                and (workspace_dir / "AGENT.md").is_file()
                 and workspace_in_cohort(workspace_dir, cohort=cohort)
             ):
                 if not include_deprecated and _is_workspace_deprecated(workspace_dir):
@@ -113,7 +116,53 @@ def iter_markdown_headings(content):
         yield level, stripped[level:].strip()
 
 
-def workspace_ref_exists(workspace_ref):
+def _artifact_urn_for_workspace_ref(workspace_ref):
+    try:
+        namespace, name = workspace_ref.split("/", 1)
+    except ValueError:
+        return None
+    return f"urn:{namespace}:artefacto:{name}"
+
+
+@lru_cache(maxsize=None)
+def _find_staged_agent_workspace(workspace_ref):
+    target_urn = _artifact_urn_for_workspace_ref(workspace_ref)
+    if not target_urn or not FRAGUA_ROOT.exists():
+        return None
+    namespace, name = workspace_ref.split("/", 1)
+    candidates = []
+    for agent_path in sorted(FRAGUA_ROOT.glob("**/AGENT.md")):
+        doc, err = load_yaml_safe(agent_path)
+        if err or not isinstance(doc, dict):
+            continue
+        urn = doc.get("_manifest", {}).get("urn")
+        if urn != target_urn:
+            continue
+        workspace_dir = agent_path.parent
+        rel = workspace_dir.relative_to(AGENTS_ROOT).as_posix()
+        direct_namespaced = rel.endswith(f"/{namespace}/{name}")
+        candidates.append((0 if direct_namespaced else 1, len(rel), workspace_dir))
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda item: (item[0], item[1], item[2].as_posix()))[0][2]
+
+
+def find_agent_workspace(workspace_ref, include_staging=False):
+    try:
+        namespace, name = workspace_ref.split("/", 1)
+    except ValueError:
+        return None
+    productive = AGENTS_ROOT / namespace / name
+    if (productive / "AGENT.md").is_file():
+        return productive
+    if include_staging:
+        return _find_staged_agent_workspace(workspace_ref)
+    return None
+
+
+def workspace_ref_exists(workspace_ref, include_staging=True):
+    if find_agent_workspace(workspace_ref, include_staging=include_staging) is not None:
+        return True
     try:
         namespace, name = workspace_ref.split("/", 1)
     except ValueError:
@@ -282,9 +331,9 @@ def workspace_exists_from_urn(urn):
     match = WORKSPACE_BOOTSTRAP_URN_PATTERN.fullmatch(base_urn)
     if match:
         namespace, workspace_name = match.groups()
-        return (AGENTS_ROOT / namespace / workspace_name).is_dir()
+        return find_agent_workspace(f"{namespace}/{workspace_name}", include_staging=True) is not None
     match = WORKSPACE_ARTEFACT_URN_PATTERN.fullmatch(base_urn)
     if match:
         namespace, workspace_name = match.groups()
-        return (AGENTS_ROOT / namespace / workspace_name).is_dir()
+        return find_agent_workspace(f"{namespace}/{workspace_name}", include_staging=True) is not None
     return False

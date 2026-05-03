@@ -1,6 +1,17 @@
 import unittest
 
-from common import AGENTS_ROOT, FIXTURES, GENERATED_DOCS, ROOT, has_productive_workspaces, load_json, run_cli
+from common import (
+    AGENTS_ROOT,
+    FIXTURES,
+    GENERATED_DOCS,
+    ROOT,
+    agent_workspace_path,
+    has_agent_workspace,
+    has_productive_workspace,
+    has_productive_workspaces,
+    load_json,
+    run_cli,
+)
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.catalog import build_catalog_lookup, load_catalog
 from kora_lib.contracts import build_operating_core_payload, load_workspace_contract
@@ -35,9 +46,8 @@ def assert_terms_present(test_case, haystack, terms, label):
 
 def assert_workspace_refs_resolve(test_case, refs, label):
     for ref in refs:
-        namespace, name = ref.split("/", 1)
         test_case.assertTrue(
-            (AGENTS_ROOT / namespace / name).is_dir(),
+            has_agent_workspace(ref),
             msg=f"invalid {label}: {ref}",
         )
 
@@ -83,8 +93,7 @@ def assert_contract_supports_scenario(test_case, contract, scenario):
 
 
 def _workspace_exists(workspace_ref):
-    ns, name = workspace_ref.split("/", 1)
-    return (AGENTS_ROOT / ns / name).is_dir()
+    return has_agent_workspace(workspace_ref)
 
 
 def _require_workspaces(test_case, *refs):
@@ -105,9 +114,12 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         run_cli("sync-docs")
         payload = load_json(GENERATED_DOCS / "operating-core-contracts.json")
         self.assertIn("cohorts", payload)
-        self.assertIn("kora", payload["cohorts"])
-        self.assertIn("gn/goreologo", {item["workspace"] for item in payload["cohorts"]["domain_canary"]})
-        self.assertIn("gn/digitrans", {item["workspace"] for item in payload["cohorts"]["domain_canary"]})
+        from kora_lib.config import OPERATING_CORE_COHORTS
+
+        self.assertEqual(set(payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))
+        for cohort_name, workspaces in OPERATING_CORE_COHORTS.items():
+            materialized = {item["workspace"] for item in payload["cohorts"][cohort_name]}
+            self.assertTrue(set(workspaces).issubset(materialized))
 
     def test_operating_core_payload_matches_declared_core(self):
         payload = build_operating_core_payload()
@@ -121,8 +133,7 @@ class OperatingCoreScenarioTests(unittest.TestCase):
         all_core = set()
         for cohort_items in payload["cohorts"].values():
             all_core.update(item["workspace"] for item in cohort_items)
-        # Garantia: los 4 meta-kora operating core siempre viven en la cohort kora
-        self.assertTrue({"kora/guardian", "kora/custodio"}.issubset(all_core))
+        self.assertEqual(all_core, set().union(*[set(items) for items in OPERATING_CORE_COHORTS.values()]))
 
     def test_meta_kora_audit_is_materialized_with_explicit_status(self):
         payload = build_operating_core_payload()
@@ -182,11 +193,10 @@ class OperatingCoreScenarioTests(unittest.TestCase):
             self.assertTrue(all(urn.startswith("urn:") for urn in contract.allowed_kb), msg=f"{workspace} has non-URN allowed_kb")
 
     def test_domain_canary_agent_urns_resolve_via_cli(self):
-        _require_workspaces(self, "gn/goreologo", "gn/digitrans")
-        manifest_paths = (
-            AGENTS_ROOT / "gn" / "goreologo" / "AGENT.md",
-            AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md",
-        )
+        refs = [ref for ref in ("gn/goreologo", "gn/digitrans") if has_productive_workspace(ref)]
+        if not refs:
+            self.skipTest("domain canaries estan en staging; el catalogo solo resuelve artefactos productivos")
+        manifest_paths = tuple(agent_workspace_path(ref, include_staging=False) / "AGENT.md" for ref in refs)
         for path in manifest_paths:
             urn = load_manifest_urn(path)
             result = run_cli("resolve", urn)

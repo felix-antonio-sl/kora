@@ -159,12 +159,15 @@ def _sha256(path: Path) -> str:
 
 
 def _resolve_agent_path(agent_ref: str) -> Path:
+    from .workspaces import find_agent_workspace
+
     parts = agent_ref.strip().split("/")
     if len(parts) != 2:
         raise ValueError(f"Agent ref must be 'namespace/name', got: {agent_ref}")
-    ns, name = parts
-    agent_dir = AGENTS_ROOT / ns / name
-    if not agent_dir.is_dir():
+    agent_dir = find_agent_workspace(agent_ref, include_staging=True)
+    if agent_dir is None:
+        ns, name = parts
+        agent_dir = AGENTS_ROOT / ns / name
         raise ValueError(f"Agent directory not found: {agent_dir}")
     agent_md = agent_dir / "AGENT.md"
     if not agent_md.is_file():
@@ -172,9 +175,9 @@ def _resolve_agent_path(agent_ref: str) -> Path:
     return agent_md
 
 
-def _build_target_path(ns: str, name: str, target: str) -> Path:
+def _build_target_path(agent_dir: Path, target: str) -> Path:
     """Output vive en {workspace}/_BUILD/{target}/ segun gobernanza §3.2 y runtime-spec-md."""
-    return AGENTS_ROOT / ns / name / "_BUILD" / target
+    return agent_dir / "_BUILD" / target
 
 
 def _get_vector_ontologico(frontmatter: dict) -> dict:
@@ -2191,7 +2194,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     print(f"  Hash: {source_hash[:20]}...")
 
     # Target dir
-    target_dir = _build_target_path(ns, name, target)
+    target_dir = _build_target_path(agent_md_path.parent, target)
     print(f"  Output: {target_dir.relative_to(KORA_ROOT)}/")
 
     # Adapter

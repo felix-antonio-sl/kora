@@ -5,7 +5,7 @@ from functools import lru_cache
 
 from .artifacts import load_yaml_safe
 from .config import AGENTS_ROOT, KORA_ROOT, META_KORA_AUDIT_WORKSPACES, META_KORA_STATUS, OPERATING_CORE_COHORTS
-from .workspaces import extract_cm_refs, extract_workspace_tokens, iter_skill_entrypoints
+from .workspaces import extract_cm_refs, extract_workspace_tokens, find_agent_workspace, iter_skill_entrypoints
 
 
 STATE_LINE_PATTERN = re.compile(r"^\d+\.\s+STATE:\s+(S-[A-Z0-9-]+)\s*(?:->|→)\s*ACT:\s*(.+)$")
@@ -76,6 +76,9 @@ def build_contract_summary(contract):
 
 
 def workspace_dir_from_ref(workspace_ref):
+    resolved = find_agent_workspace(workspace_ref, include_staging=True)
+    if resolved is not None:
+        return resolved
     namespace, name = workspace_ref.split("/", 1)
     return AGENTS_ROOT / namespace / name
 
@@ -441,7 +444,7 @@ def build_operating_core_payload():
         "cohorts": {},
         "totals": {"workspaces": 0, "states": 0, "tools": 0, "handoffs": 0},
         "meta_kora": {
-            "summary": {"total_workspaces": 0, "operating_core": 0, "auxiliary": 0},
+            "summary": {"total_workspaces": 0, "operating_core": 0, "auxiliary": 0, "staged": 0},
             "workspaces": [],
         },
     }
@@ -470,6 +473,7 @@ def build_operating_core_payload():
         item["in_operating_core"] = workspace_ref in core_workspaces
         payload["meta_kora"]["workspaces"].append(item)
         payload["meta_kora"]["summary"]["total_workspaces"] += 1
+        payload["meta_kora"]["summary"].setdefault(item["status"], 0)
         payload["meta_kora"]["summary"][item["status"]] += 1
     return payload
 
@@ -497,6 +501,7 @@ def render_operating_core_markdown(payload):
             f"- Meta agentes auditados: {meta_summary['total_workspaces']}",
             f"- Meta agentes en nucleo operativo endurecido: {meta_summary['operating_core']}",
             f"- Meta agentes auxiliares explicitamente descopados: {meta_summary['auxiliary']}",
+            f"- Meta agentes en staging/revalidacion: {meta_summary.get('staged', 0)}",
             "",
             "| Workspace | Estatus | Estados | Skills | Tools | Handoffs | Motivo |",
             "|-----------|---------|---------|--------|-------|----------|--------|",

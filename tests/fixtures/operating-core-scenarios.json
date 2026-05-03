@@ -87,12 +87,13 @@
   "meta_kora": {
     "summary": {
       "total_workspaces": 2,
-      "operating_core": 2,
-      "auxiliary": 0
+      "operating_core": 0,
+      "auxiliary": 0,
+      "staged": 2
     },
     "statuses": {
-      "kora/guardian": "operating_core",
-      "kora/custodio": "operating_core"
+      "kora/guardian": "staged",
+      "kora/custodio": "staged"
     }
   },
   "meta_auxiliary_scenarios": []

@@ -4,7 +4,15 @@ from tempfile import TemporaryDirectory
 
 import jsonschema
 
-from common import AGENTS_ROOT, FIXTURES, ROOT, has_productive_workspaces, load_json
+from common import (
+    AGENTS_ROOT,
+    FIXTURES,
+    ROOT,
+    agent_workspace_path,
+    has_productive_workspaces,
+    load_json,
+    skill_artifact_dir,
+)
 from kora_lib.artifacts import load_yaml_safe
 from kora_lib.config import AGENT_REQUIRED_FILES
 from kora_lib.reports import compute_stats_payload, render_stats_markdown
@@ -175,7 +183,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
         required_terms = (
             "## 12. Productores canonicos de familia",
-            "urn:kora:artefacto:atomize",
+            "artifacts/skills/_TALLER/INBOX/atomize/SKILL.md",
             "artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-",
             "hand_edited",
             "unica ruta soportada",
@@ -205,7 +213,8 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertTrue(path.exists(), str(path))
 
     def test_atomize_skill_is_runtime_agnostic_and_llm_first(self):
-        content = (ROOT / "artifacts" / "skills" / "kora" / "atomize" / "SKILL.md").read_text(encoding="utf-8")
+        atomize_dir = skill_artifact_dir("kora", "atomize")
+        content = (atomize_dir / "SKILL.md").read_text(encoding="utf-8")
         required_terms = (
             "Claude Code",
             "Codex",
@@ -242,22 +251,22 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
         required_paths = (
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "atomize.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "validate_atomic.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "check_atomic_bundle.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_quality.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "prepare_atomic_fidelity_review.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "review_atomic_acceptance.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "scripts" / "publish_atomic.py",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "llm-first-workflow.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "atomic-output-contract.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "plaintext-book-recovery.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-opm-libro.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-ocr-procedure.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-multifile-dedup.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "golden-case-multifile-tension.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "quality-gates.md",
-            ROOT / "artifacts" / "skills" / "kora" / "atomize" / "referencias" / "semantic-fidelity-review.md",
+            atomize_dir / "scripts" / "atomize.py",
+            atomize_dir / "scripts" / "validate_atomic.py",
+            atomize_dir / "scripts" / "check_atomic_bundle.py",
+            atomize_dir / "scripts" / "review_atomic_quality.py",
+            atomize_dir / "scripts" / "prepare_atomic_fidelity_review.py",
+            atomize_dir / "scripts" / "review_atomic_acceptance.py",
+            atomize_dir / "scripts" / "publish_atomic.py",
+            atomize_dir / "referencias" / "llm-first-workflow.md",
+            atomize_dir / "referencias" / "atomic-output-contract.md",
+            atomize_dir / "referencias" / "plaintext-book-recovery.md",
+            atomize_dir / "referencias" / "golden-case-opm-libro.md",
+            atomize_dir / "referencias" / "golden-case-ocr-procedure.md",
+            atomize_dir / "referencias" / "golden-case-multifile-dedup.md",
+            atomize_dir / "referencias" / "golden-case-multifile-tension.md",
+            atomize_dir / "referencias" / "quality-gates.md",
+            atomize_dir / "referencias" / "semantic-fidelity-review.md",
         )
         for path in required_paths:
             self.assertTrue(path.exists(), str(path))
@@ -469,8 +478,8 @@ class ArtifactFixtureTests(unittest.TestCase):
 
     def test_meta_core_agents_keep_control_layer_compact(self):
         workspace_dirs = (
-            AGENTS_ROOT / "kora" / "custodio",
-            AGENTS_ROOT / "kora" / "guardian",
+            agent_workspace_path("kora/custodio"),
+            agent_workspace_path("kora/guardian"),
         )
         for workspace_dir in workspace_dirs:
             self.assertTrue((workspace_dir / "AGENT.md").exists(), workspace_dir.as_posix())
@@ -483,6 +492,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             path
             for path in (
                 AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-CONTEXT-MANAGER.md",
+                agent_workspace_path("kora/custodio") / "skills" / "CM-CONTEXT-MANAGER.md",
             )
             if path.exists()
         )
@@ -500,6 +510,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             path
             for path in (
                 AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INTENT-CLASSIFIER.md",
+                agent_workspace_path("kora/custodio") / "skills" / "CM-INTENT-CLASSIFIER.md",
             )
             if path.exists()
         )
@@ -509,30 +520,32 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("cierre_solicitado", content)
 
     def test_custodio_scope_excludes_agent_and_kb_mutation(self):
-        agents = (AGENTS_ROOT / "kora" / "custodio" / "AGENT.md").read_text(encoding="utf-8")
+        custodio = agent_workspace_path("kora/custodio")
+        agents = (custodio / "AGENT.md").read_text(encoding="utf-8")
         surgeon = (
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-SURGEON.md"
+            custodio / "skills" / "CM-SURGEON.md"
         ).read_text(encoding="utf-8")
         evolution = (
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md"
+            custodio / "skills" / "CM-EVOLUCION-PLANNER.md"
         ).read_text(encoding="utf-8")
         self.assertIn("excluyendo `AGENTS/`, specs fundacionales y contenido KB", agents)
         self.assertIn("sin intervenir `AGENTS/`, specs fundacionales ni contenido KB", surgeon)
         self.assertIn("fuera de `AGENTS/`, specs fundacionales y contenido KB", evolution)
 
     def test_custodio_soul_avoids_operational_policy_leakage(self):
-        self.assertFalse((AGENTS_ROOT / "kora" / "custodio" / "SOUL.md").exists())
+        self.assertFalse((agent_workspace_path("kora/custodio") / "SOUL.md").exists())
 
     def test_meta_core_tools_stay_semantic(self):
-        custodio_tools = (AGENTS_ROOT / "kora" / "custodio" / "AGENT.md").read_text(encoding="utf-8")
+        custodio_tools = (agent_workspace_path("kora/custodio") / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn("Implementacion:", custodio_tools)
 
     def test_custodio_operational_skills_use_semantic_tools(self):
+        custodio = agent_workspace_path("kora/custodio")
         files = (
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-HEALTH-INSPECTOR.md",
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-CATALOG-STEWARD.md",
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-INGESTA-STEWARD.md",
-            AGENTS_ROOT / "kora" / "custodio" / "skills" / "CM-EVOLUCION-PLANNER.md",
+            custodio / "skills" / "CM-HEALTH-INSPECTOR.md",
+            custodio / "skills" / "CM-CATALOG-STEWARD.md",
+            custodio / "skills" / "CM-INGESTA-STEWARD.md",
+            custodio / "skills" / "CM-EVOLUCION-PLANNER.md",
         )
         content = "\n".join(path.read_text(encoding="utf-8") for path in files)
         self.assertIn("repo_health", content)
@@ -545,12 +558,12 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("`git status`", content)
 
     def test_guardian_runtime_capabilities_drop_analysis(self):
-        content = (AGENTS_ROOT / "kora" / "guardian" / "AGENT.md").read_text(encoding="utf-8")
+        content = (agent_workspace_path("kora/guardian") / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn('"analysis"', content)
         self.assertNotIn("runtime_capabilities", content)
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
-        agent = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
+        agent = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn("urn:gov:kb:intro-tde", agent)
         self.assertNotIn("urn:gov:kb:lexicon-wikiguias", agent)
         self.assertNotIn("urn:gov:kb:datosgob", agent)
@@ -562,24 +575,25 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertNotIn("urn:orko:kb:orko-metodologia", agent)
 
     def test_digitrans_bootstrap_matches_current_agent_spec(self):
-        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
-        intake = (AGENTS_ROOT / "gn" / "digitrans" / "skills" / "CM-INTAKE.md").read_text(encoding="utf-8")
+        digitrans = agent_workspace_path("gn/digitrans")
+        agents = (digitrans / "AGENT.md").read_text(encoding="utf-8")
+        intake = (digitrans / "skills" / "CM-INTAKE.md").read_text(encoding="utf-8")
         self.assertIn("[prioridad 1]", agents)
         self.assertIn("dominio=normativo", agents)
         self.assertIn("S-REJECT", agents)
         self.assertIn("S-CLARIFY", agents)
         self.assertNotIn("REFINE_DRAFT_INTERNALLY", agents)
         self.assertNotIn("-> CONTEXT_SHIFT", agents)
-        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "SOUL.md").exists())
-        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "USER.md").exists())
-        self.assertFalse((AGENTS_ROOT / "gn" / "digitrans" / "TOOLS.md").exists())
+        self.assertFalse((digitrans / "SOUL.md").exists())
+        self.assertFalse((digitrans / "USER.md").exists())
+        self.assertFalse((digitrans / "TOOLS.md").exists())
         self.assertIn("artefacto:", agents)
         self.assertIn("interfaz:", agents)
         self.assertNotIn("lista para enrutar a S-", intake)
         self.assertIn("cierre_solicitado", intake)
 
     def test_digitrans_dispatcher_exits_scope_and_ambiguity_without_self_loop(self):
-        agents = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
+        agents = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")
         self.assertNotIn("IF fuera_scope [prioridad 1] -> S-DISPATCHER", agents)
         self.assertNotIn("IF ambiguo [prioridad 7] -> S-DISPATCHER", agents)
         self.assertIn("IF fuera_scope [prioridad 1] -> S-REJECT", agents)
@@ -587,7 +601,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("IF tema != dominio TDE -> rechazar con motivo", agents)
 
     def test_digitrans_tools_route_docdigital_and_pisee_explicitly(self):
-        agent = (AGENTS_ROOT / "gn" / "digitrans" / "AGENT.md").read_text(encoding="utf-8")
+        agent = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")
         self.assertIn("urn:tde:kb:manual-coordinadora-transformacion-digital", agent)
         self.assertIn("urn:tde:kb:decreto-12-interoperabilidad", agent)
 

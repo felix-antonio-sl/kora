@@ -29,10 +29,8 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertIn("Validation complete!", result.stdout)
 
     def test_resolve_artifact_urn_returns_expected_path(self):
-        if not has_productive_workspaces():
-            self.skipTest("Sin workspaces productivos — guardian en staging.")
-        result = run_cli("resolve", "urn:kora:artefacto:guardian")
-        self.assertIn(str((AGENTS_ROOT / "kora" / "guardian" / "AGENT.md").resolve()), result.stdout)
+        result = run_cli("resolve", "urn:dev:artefacto:steipete")
+        self.assertIn(str((AGENTS_ROOT / "dev" / "steipete" / "AGENT.md").resolve()), result.stdout)
 
     def test_migrate_is_idempotent_on_clean_repo(self):
         result = run_cli("migrate", "--profile", "transitional")
@@ -42,13 +40,19 @@ class KoraCliSmokeTests(unittest.TestCase):
         run_cli("index")
         catalog = load_catalog()
         self.assertIn(
-            "urn:kora:artefacto:guardian",
+            "urn:dev:artefacto:steipete",
             {item["urn"] for item in catalog["Catalog"]["Agents"]},
         )
         self.assertIn(
-            "urn:kora:artefacto:atomize",
+            "urn:kora:artefacto:artifact-curator",
             {item["urn"] for item in catalog["Catalog"]["Skills"]},
         )
+        indexed_files = {
+            item["file"]
+            for items in catalog["Catalog"].values()
+            for item in items
+        }
+        self.assertFalse(any("/_FRAGUA/" in path or "/_TALLER/" in path for path in indexed_files))
 
     def test_sync_docs_generates_live_stats_files(self):
         run_cli("sync-docs")
@@ -83,19 +87,20 @@ class KoraCliSmokeTests(unittest.TestCase):
         ledger_payload = json.loads((GENERATED_DOCS / "fxsl-cat-ledger.json").read_text(encoding="utf-8"))
         audit_payload = json.loads((GENERATED_DOCS / "agent-audit.json").read_text(encoding="utf-8"))
         self.assertGreater(graph_payload["meta"]["node_count"], 0)
-        self.assertIn("kora", contracts_payload["cohorts"])
         self.assertEqual(
             contracts_payload["totals"]["workspaces"],
             sum(len(workspaces) for workspaces in OPERATING_CORE_COHORTS.values()),
         )
         self.assertEqual(set(contracts_payload["cohorts"].keys()), set(OPERATING_CORE_COHORTS.keys()))
         self.assertEqual(contracts_payload["meta_kora"]["summary"]["total_workspaces"], 2)
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["operating_core"], 2)
-        self.assertEqual(contracts_payload["meta_kora"]["summary"]["auxiliary"], 0)
-        self.assertIn(
-            "kora/guardian",
-            {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
-        )
+        if "kora" in OPERATING_CORE_COHORTS:
+            self.assertIn(
+                "kora/guardian",
+                {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
+            )
+        else:
+            self.assertEqual(contracts_payload["meta_kora"]["summary"].get("staged"), 2)
+            self.assertFalse(any(item["in_operating_core"] for item in contracts_payload["meta_kora"]["workspaces"]))
         for workspace in OPERATING_CORE_COHORTS["domain_canary"]:
             self.assertIn(
                 workspace,
@@ -123,7 +128,7 @@ class KoraCliSmokeTests(unittest.TestCase):
         if has_productive_workspaces():
             for kind in ("artifact", "workspace", "skill"):
                 self.assertIn(kind, payload["node_kind_counts"])
-            for kind in ("XRef", "InvokesSkill", "RoutesToAgent", "DeclaresTool", "AllowsTool", "AllowsKB"):
+            for kind in ("XRef", "DeclaresTool", "AllowsTool", "AllowsKB"):
                 self.assertIn(kind, payload["edge_kind_counts"])
             self.assertTrue(
                 any(kind in payload["edge_kind_counts"] for kind in ("TracesTo", "Cites")),

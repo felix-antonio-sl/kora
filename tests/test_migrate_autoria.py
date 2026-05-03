@@ -308,15 +308,19 @@ class TestWorkspaceScaffoldPurge(unittest.TestCase):
 class TestSkiplist(unittest.TestCase):
     def test_atomize_is_skipped(self):
         self.assertIn("artifacts/skills/kora/atomize", AUTORIA_MIGRATION_SKIPLIST)
+        self.assertIn("artifacts/skills/_TALLER/INBOX/atomize", AUTORIA_MIGRATION_SKIPLIST)
         from kora_lib.config import KORA_ROOT
         self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "artifacts/skills/kora/atomize"))
         self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "artifacts/skills/kora/atomize/SKILL.md"))
+        self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "artifacts/skills/_TALLER/INBOX/atomize"))
+        self.assertTrue(_is_skipped_for_autoria(KORA_ROOT / "artifacts/skills/_TALLER/INBOX/atomize/SKILL.md"))
         self.assertFalse(_is_skipped_for_autoria(KORA_ROOT / "artifacts/skills/kora/other"))
 
     def test_migrate_skips_atomize(self):
         paths = migrate_to_autoria(dry_run=True)
         for path in paths:
             self.assertNotIn("artifacts/skills/kora/atomize", str(path))
+            self.assertNotIn("artifacts/skills/_TALLER/INBOX/atomize", str(path))
 
 
 class TestRealCorpusDryRunIdempotency(unittest.TestCase):

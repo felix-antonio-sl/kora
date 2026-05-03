@@ -250,9 +250,9 @@ def ensure_guardian_workspace():
     queda como deuda de promocion. Esta funcion se conserva solo por
     compatibilidad con `kora migrate --profile transitional` antiguo.
     """
-    from .config import FRAGUA_ROOT
-    staging_guardian = FRAGUA_ROOT / "INBOX" / "guardian"
-    if staging_guardian.exists():
+    from .workspaces import find_agent_workspace
+
+    if find_agent_workspace("kora/guardian", include_staging=True) is not None:
         # Guardian esta en staging — no re-scaffoldear productivo.
         return []
 
@@ -610,6 +610,7 @@ AUTORIA_SUBDIR_RENAMES = {
 # Se listan como rutas relativas a KORA_ROOT.
 AUTORIA_MIGRATION_SKIPLIST = (
     "artifacts/skills/kora/atomize",  # Felix trabaja la linea atomize por separado.
+    "artifacts/skills/_TALLER/INBOX/atomize",  # Ubicacion vigente tras re-stage v8.
 )
 
 

@@ -227,12 +227,12 @@ COHORT_WORKSPACE_OVERRIDES = {
 }
 META_KORA_STATUS = {
     "kora/guardian": {
-        "status": "operating_core",
-        "reason": "Nucleo operativo constitucional: gobierna coherencia de specs, precedencia y validacion fundacional.",
+        "status": "staged",
+        "reason": "Reubicado a _FRAGUA/INBOX durante la revalidacion del fleet; conserva rol meta-kora pero no integra el nucleo productivo.",
     },
     "kora/custodio": {
-        "status": "operating_core",
-        "reason": "Nucleo operativo: cierra salud, catalogo e ingesta del repo.",
+        "status": "staged",
+        "reason": "Reubicado a _FRAGUA/INBOX durante la revalidacion del fleet; conserva rol meta-kora pero no integra el nucleo productivo.",
     },
 }
 def _discover_productive_workspaces():

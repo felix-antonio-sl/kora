@@ -12,9 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 _new_artifacts = ROOT / "artifacts"
 if _new_artifacts.exists():
     AGENTS_ROOT = _new_artifacts / "agents"
+    SKILLS_ROOT = _new_artifacts / "skills"
     KNOWLEDGE_ROOT = _new_artifacts / "knowledge"
 else:
     AGENTS_ROOT = ROOT / "artifacts" / "agents" if (ROOT / "artifacts" / "agents").exists() else ROOT / "agents"
+    SKILLS_ROOT = ROOT / "artifacts" / "skills" if (ROOT / "artifacts" / "skills").exists() else ROOT / "skills"
     KNOWLEDGE_ROOT = ROOT / "artifacts" / "knowledge" if (ROOT / "artifacts" / "knowledge").exists() else ROOT / "knowledge"
 
 TOOLCHAIN_DIR = ROOT / "toolchain" if (ROOT / "toolchain").exists() else ROOT / "scripts"
@@ -25,6 +27,10 @@ GENERATED_DOCS = ROOT / "docs" / "generated"
 
 if str(TOOLCHAIN_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLCHAIN_DIR))
+
+
+FRAGUA_ROOT = AGENTS_ROOT / "_FRAGUA"
+TALLER_ROOT = SKILLS_ROOT / "_TALLER"
 
 
 def run_cli(*args, check=True):
@@ -82,6 +88,62 @@ def has_productive_workspaces():
         if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
             continue
         for ws_dir in ns_dir.iterdir():
-            if ws_dir.is_dir() and not ws_dir.name.startswith((".", "_")):
+            if ws_dir.is_dir() and not ws_dir.name.startswith((".", "_")) and (ws_dir / "AGENT.md").is_file():
                 return True
     return False
+
+
+def has_productive_workspace(workspace_ref):
+    namespace, name = workspace_ref.split("/", 1)
+    return (AGENTS_ROOT / namespace / name / "AGENT.md").is_file()
+
+
+def agent_workspace_path(workspace_ref, *, include_staging=True):
+    from kora_lib.workspaces import find_agent_workspace
+
+    resolved = find_agent_workspace(workspace_ref, include_staging=include_staging)
+    if resolved is not None:
+        return resolved
+    namespace, name = workspace_ref.split("/", 1)
+    return AGENTS_ROOT / namespace / name
+
+
+def has_agent_workspace(workspace_ref, *, include_staging=True):
+    return (agent_workspace_path(workspace_ref, include_staging=include_staging) / "AGENT.md").is_file()
+
+
+def _find_staged_skill_dir(ns, name):
+    from kora_lib.artifacts import load_yaml_safe
+
+    target_urn = f"urn:{ns}:artefacto:{name}"
+    if not TALLER_ROOT.exists():
+        return None
+    candidates = []
+    for skill_path in sorted(TALLER_ROOT.glob("**/SKILL.md")):
+        if "_BUILD" in skill_path.parts:
+            continue
+        doc, err = load_yaml_safe(skill_path)
+        if err or not isinstance(doc, dict):
+            continue
+        if doc.get("_manifest", {}).get("urn") != target_urn:
+            continue
+        rel = skill_path.parent.relative_to(SKILLS_ROOT).as_posix()
+        direct_namespaced = rel.endswith(f"/{ns}/{name}")
+        candidates.append((0 if direct_namespaced else 1, len(rel), skill_path.parent))
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda item: (item[0], item[1], item[2].as_posix()))[0][2]
+
+
+def skill_artifact_dir(ns, name, *, include_staging=True):
+    productive = SKILLS_ROOT / ns / name
+    if (productive / "SKILL.md").is_file():
+        return productive
+    direct = SKILLS_ROOT / name
+    if (direct / "SKILL.md").is_file():
+        return direct
+    if include_staging:
+        staged = _find_staged_skill_dir(ns, name)
+        if staged is not None:
+            return staged
+    return productive
