@@ -101,7 +101,7 @@ Reglas:
 4. `tags` **DEBE** contener al menos 3 tags semanticos.
 5. `lang` describe el idioma del cuerpo.
 6. `source` describe la procedencia humana o documental del conocimiento.
-7. Cuando el artefacto reside bajo `artifacts/knowledge/`, el namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `artifacts/knowledge/`. Enforcement: lint. Los artefactos que viven fuera de `artifacts/knowledge/` (specs en `specs/`, workspaces en `artifacts/agents/`, habilidades en `artifacts/skills/`, outputs en `BUILD/`) derivan su namespace de la topologia declarada por la spec canonica que los gobierna; para ellos esta regla no aplica.
+7. Cuando el artefacto reside bajo `artifacts/knowledge/`, el namespace en el URN **DEBE** coincidir con el primer subdirectorio bajo `artifacts/knowledge/`. Enforcement: lint. Los artefactos que viven fuera de `artifacts/knowledge/` (specs en `governance/`, `ontology/`, `serialization/` o `runtime/`; workspaces en `artifacts/agents/`; habilidades en `artifacts/skills/`; outputs en `BUILD/`) derivan su namespace de la topologia declarada por la spec canonica que los gobierna; para ellos esta regla no aplica.
 8. El valor de `status` **DEBE** respetar el regimen de lifecycle correspondiente (`gobernanza §5`), declarado en idioma español:
    - artefactos descriptivos (KORA/MD en `artifacts/knowledge/` y specs): `borrador -> publicado -> deprecado`.
    - artefactos agenticos productivos (toda `forma_material` de `autoria-spec`: habilidad, subagente, agente-propiamente-tal, agente-plataforma): `borrador -> activo -> deprecado -> retirado`.
@@ -372,7 +372,7 @@ spec). `knowledge-spec §3` referencia esta tabla como autoridad.
 
 | Familia      | Invariantes                                                                                                                 |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `spec`       | Familia prescriptiva. Invariantes completos en §5.6.2 (cristalizacion, RFC 2119, `Traces to:`, patron regla+ejemplo+traza, consistencia interna, auto-suficiencia, no-circularidad, enforcement declarado). URN `urn:{ns}:kb:{id}`; reside en `specs/`, no en `artifacts/knowledge/`. |
+| `spec`       | Familia prescriptiva. Invariantes completos en §5.6.2 (cristalizacion, RFC 2119, `Traces to:`, patron regla+ejemplo+traza, consistencia interna, auto-suficiencia, no-circularidad, enforcement declarado). URN `urn:{ns}:kb:{id}`; reside en las capas normativas (`governance/`, `ontology/`, `serialization/`, `runtime/`), no en `artifacts/knowledge/`. |
 | `guide`      | Manual o guia operativa; prosa tecnica controlada; ejemplos concretos vinculados a headings; `## Resumen` recomendado        |
 | `normative`  | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto |
 | `glossary`   | Buckets recuperables; sin duplicados no resueltos; alias explicitos                                                          |
@@ -835,7 +835,7 @@ Esta seccion se establece a partir de v6.3.0. Los breaking changes de major bump
 
 Cambios v7.1:
 
-- §3.1 regla 7 se acota a artefactos que residen bajo `artifacts/knowledge/`; artefactos en `specs/`, `artifacts/agents/`, `artifacts/skills/` o `BUILD/` derivan namespace de su spec canonica correspondiente.
+- §3.1 regla 7 se acota a artefactos que residen bajo `artifacts/knowledge/`; artefactos en las capas normativas (`governance/`, `ontology/`, `serialization/`, `runtime/`), `artifacts/agents/`, `artifacts/skills/` o `BUILD/` derivan namespace de su spec canonica correspondiente.
 - §3.1 regla 8 distingue lifecycle descriptivo (`draft -> published -> deprecated`) vs ejecutable (`draft -> active -> deprecated -> retired`) segun `gobernanza §5`.
 - §3.1 regla 10 reapunta al procedimiento `kora promote` y verificaciones §6.10 + §6.11 + regla 7, eliminando referencia a "protocolo de auditoria" inexistente en gobernanza v4.
 - §5.6 fusiona las taxonomias previas de `knowledge-spec §3` ("tipos de artefacto") y `md-spec §5.6` ("familias documentales") en una sola tabla. `knowledge-spec §3` pasa a referenciar esta tabla como autoridad.
@@ -865,7 +865,7 @@ Cambios v7.1:
 
 ### 10.5 Que migrar desde v7.1 (a v8.0)
 
-- Artefactos existentes en `specs/` se reclasifican al perfil `spec` (§5.6.2). No cambia URN ni version del artefacto (cambia version de md-spec, no de la spec consumidora).
+- Artefactos existentes en la topologia legacy `specs/` se reclasifican al perfil `spec` (§5.6.2) y se ubican en la capa normativa vigente que corresponda (`governance/`, `ontology/`, `serialization/` o `runtime/`). No cambia URN ni version del artefacto (cambia version de md-spec, no de la spec consumidora).
 - Specs que contenian reglas sin keyword RFC 2119 o sin el patron regla+ejemplo+traza **DEBEN** auditarse. El check `Patron de regla (spec)` es `manual`; el check `Keyword explicita (spec)` es `lint`.
 - Specs que usaban `Traces to:` hacia paths relativos o hacia artefactos fuera de la Formal Layer oficial **DEBEN** corregirse a URN de Formal Layer oficial o degradarse a `Rationale:`.
 - Specs sin columna `Enforcement` en tablas de validacion **DEBEN** completarla.

@@ -18,7 +18,7 @@ Una Rule es un morfismo en la categoria de Kleisli del monad List[Diagnostic]:
   Rule  = Artifact -> Iterable[Diagnostic]
 La composicion es concatenacion:  (r1 . r2)(a) = r1(a) ++ r2(a).
 
-El schema JSON `schemas/kora-artefacto.json` captura la seccion universal
+El schema JSON `serialization/schemas/kora-artefacto.json` captura la seccion universal
 estructural (tipos, enums cerrados, regex URN). Este modulo captura la
 fibra condicional (reglas que dependen de la forma material).
 

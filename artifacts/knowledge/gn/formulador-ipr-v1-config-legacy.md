@@ -22,6 +22,10 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:gn:kb:formulador-ipr-v1-config-legacy
+relations:
+  cites:
+  - urn:gn:kb:gestion-ipr
+  - urn:gn:kb:ssot-ipr-lifecycle
 ---
 
 # Formulador IPR v1.2.0 — Configuracion Legacy

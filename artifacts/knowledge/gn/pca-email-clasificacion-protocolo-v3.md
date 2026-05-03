@@ -22,6 +22,9 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:gn:kb:pca-email-clasificacion-protocolo-v3
+relations:
+  cites:
+  - urn:korvo:kb:manual-de-vida
 ---
 
 # Protocolo de Clasificación Prospectiva de Email para PCA v3.0

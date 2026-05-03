@@ -9,7 +9,9 @@ version: "3.8.0"
 status: publicado
 tags: [spec, runtime, deployment, equivalence]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
   cites:
     - "urn:kora:kb:gobernanza"

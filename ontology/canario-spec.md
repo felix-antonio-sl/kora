@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-22"
-    source: "Cierre del piloto urgenciologo/claude-code el 2026-04-22; formaliza el patron de canario vivido para que pueda escalarse sin idiosincrasias por artefacto."
-version: "1.0.0"
+    source: "Cierre del piloto urgenciologo/claude-code el 2026-04-22; formaliza el patron de canario vivido para que pueda escalarse sin idiosincrasias por artefacto. v1.1 aclara que canario es evidencia runtime condicional, no cohort productivo ni gate de construccion."
+version: "1.1.0"
 status: publicado
 tags: [spec, canario, verificacion-runtime, gate, propagacion, trazabilidad]
 lang: es
@@ -23,7 +23,7 @@ relations:
     - "urn:kora:kb:autoria-spec"
 ---
 
-# KORA/Canario-Spec v1.0.0
+# KORA/Canario-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -243,6 +243,24 @@ las secciones de propagacion (§5.3) y deuda registrada.
 
 ## 8. Reglas operativas
 
+### 8.0 Alcance operativo
+
+`canario-spec` gobierna evidencia runtime para artefactos que declaran un
+runtime target como endurecido. No gobierna la construccion ni promocion base
+de artefactos agenticos; esa responsabilidad vive en `autoria-spec`,
+`agent-skill-construction-spec`, `transmutation-spec` y la maintenance gate.
+
+Reglas:
+
+1. Un canario **NO ES** un workspace productivo ni una cohorte del operating
+   core. El operating core se deriva del filesystem productivo.
+2. Un artefacto productivo **PUEDE** existir sin canario mientras no declare
+   un runtime target como endurecido.
+3. Un canario **NO DEBE** usarse como sustituto de `check --strict`,
+   `validate`, `lint-md`, `health` ni de la validacion de autoria.
+4. Los fixtures historicos llamados "domain canary" **DEBEN** tratarse como
+   memoria de migracion o muestras de contrato, no como obligacion viva.
+
 ### 8.1 Obligatorias
 
 1. Todo artefacto agentico productivo **DEBE** tener al menos un canario
@@ -318,7 +336,7 @@ las secciones de propagacion (§5.3) y deuda registrada.
 
 ## 12. Migracion
 
-`canario-spec v1.0.0` es aditiva. No exige reescribir artefactos
+`canario-spec v1.1.0` es aditiva. No exige reescribir artefactos
 existentes.
 
 Reglas:

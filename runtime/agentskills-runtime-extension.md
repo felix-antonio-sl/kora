@@ -11,6 +11,7 @@ tags: [spec, runtime, agentskills, extension, transmutacion, proyeccion, byte-id
 lang: es
 extensions:
   kora:
+    family: spec
     precedence_tier: 4
     platform: "agentskills"
     baseline_docs_release: "agentskills.io v1 (estandar abierto externo)"
@@ -166,7 +167,7 @@ trace_fidelity:
 ### 7.1 Check `fidelidad-agentskills`
 
 Implementado en `toolchain/kora_lib/checks.py`. Severity `high`. Itera
-sobre todas las habilidades productivas (`SKILLS/**/SKILL.md` con
+sobre todas las habilidades productivas (`artifacts/skills/**/SKILL.md` con
 `forma_material: habilidad`) y verifica:
 
 1. La proyeccion dry-run no falla por dominio.

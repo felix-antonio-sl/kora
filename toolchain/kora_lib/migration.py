@@ -486,7 +486,7 @@ def migrate_to_v2_agentfile(workspace_dir, dry_run=False):
 
 # ---------------------------------------------------------------------------
 # Perfil a-autoria: migracion forzada a autoria-spec v1.2 (una pasada,
-# idempotente). Ver specs/autoria-spec.md §13.
+# idempotente). Ver serialization/autoria-spec.md §13.
 # ---------------------------------------------------------------------------
 
 AUTORIA_STATUS_MAP = {

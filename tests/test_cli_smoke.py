@@ -101,10 +101,10 @@ class KoraCliSmokeTests(unittest.TestCase):
         else:
             self.assertEqual(contracts_payload["meta_kora"]["summary"].get("rebuild_required"), 2)
             self.assertFalse(any(item["in_operating_core"] for item in contracts_payload["meta_kora"]["workspaces"]))
-        for workspace in OPERATING_CORE_COHORTS["domain_canary"]:
+        for workspace in OPERATING_CORE_COHORTS.get("domain", ()):
             self.assertIn(
                 workspace,
-                {item["workspace"] for item in contracts_payload["cohorts"]["domain_canary"]},
+                {item["workspace"] for item in contracts_payload["cohorts"]["domain"]},
             )
         self.assertIn("## Auditoria meta-kora", contracts_markdown)
         self.assertIn("```mermaid", wiring_markdown)

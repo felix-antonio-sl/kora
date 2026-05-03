@@ -550,28 +550,20 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("urn:tde:kb:manual-coordinadora-transformacion-digital", agent)
         self.assertIn("urn:tde:kb:decreto-12-interoperabilidad", agent)
 
-    def test_pensador_generador_normalizes_control_targets_and_soul(self):
-        ws = AGENTS_ROOT / "fxsl" / "pensador-generador"
-        if not ws.is_dir():
-            self.skipTest("fxsl/pensador-generador no productivo — en staging")
-        agents = (ws / "AGENTS.md").read_text(encoding="utf-8")
-        soul = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "SOUL.md").read_text(encoding="utf-8")
-        tools = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "TOOLS.md").read_text(encoding="utf-8")
-        config = (AGENTS_ROOT / "fxsl" / "pensador-generador" / "config.json").read_text(encoding="utf-8")
-        self.assertNotIn("REFINE_DRAFT", agents)
-        self.assertNotIn("CONTEXT_SHIFT ->", agents)
-        self.assertIn("IF other fails -> S-PRODUCCION", agents)
-        self.assertIn("IF tema != dominio actual -> S-DISPATCHER para reclasificar", agents)
-        self.assertNotIn("## Saludo", soul)
-        self.assertNotIn("## Estilo", soul)
-        self.assertNotIn("## Ejemplos", soul)
-        self.assertIn("## catalog_resolve", tools)
-        self.assertNotIn("## resolve_urn", tools)
-        self.assertIn('"catalog_resolve"', config)
-        self.assertNotIn('"resolve_urn"', config)
-        self.assertNotIn("CONTEXTO (C1-C4)", agents)
-        self.assertNotIn("PRAXIS (B1-B4)", agents)
-        self.assertNotIn("VINDICATE", agents)
+    def test_pensador_generador_stays_staged_in_autoria_shape(self):
+        productive = AGENTS_ROOT / "fxsl" / "pensador-generador"
+        staged = AGENTS_ROOT / "_FRAGUA" / "INBOX" / "pensador-generador"
+
+        self.assertFalse((productive / "AGENT.md").exists())
+        doc, err = load_yaml_safe(staged / "AGENT.md")
+        self.assertIsNone(err)
+        self.assertEqual(doc["_manifest"]["urn"], "urn:fxsl:artefacto:pensador-generador")
+        self.assertEqual(doc["status"], "borrador")
+        self.assertIn("artefacto", doc)
+        self.assertFalse((staged / "AGENTS.md").exists())
+        self.assertFalse((staged / "SOUL.md").exists())
+        self.assertFalse((staged / "TOOLS.md").exists())
+        self.assertFalse((staged / "config.json").exists())
 
     def test_modelamiento_opm_declares_canonical_ssot(self):
         skill_path = ROOT / "artifacts" / "skills" / "kora" / "modelamiento-opm" / "SKILL.md"

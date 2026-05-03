@@ -16,7 +16,7 @@ extensions:
   kora:
     family: atomic
     atomic:
-      producer: urn:kora:skill:atomize:1.0.0
+      producer: urn:kora:artefacto:atomize
       source_corpus: /home/felix/kora/KNOWLEDGE/_SCRIPTORIUM/INBOX/opm-libro.txt
       n_propositions: 60
       segmented: true
@@ -35,7 +35,7 @@ extensions:
 
 ## Resumen
 
-- Productor canonico: `urn:kora:skill:atomize:1.0.0`
+- Productor canonico: `urn:kora:artefacto:atomize`
 - Corpus fuente: `/home/felix/kora/KNOWLEDGE/_SCRIPTORIUM/INBOX/opm-libro.txt`
 - Proposiciones: `60`
 - Fuentes: `1`

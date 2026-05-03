@@ -291,7 +291,7 @@ def _build_operating_core_cohorts():
             continue
         domain_workspaces.extend(workspaces)
     if domain_workspaces:
-        cohorts["domain_canary"] = tuple(domain_workspaces)
+        cohorts["domain"] = tuple(domain_workspaces)
     return cohorts
 
 

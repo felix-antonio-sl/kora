@@ -22,6 +22,8 @@ extensions:
     shard_count: 1
     shard_root_urn: urn:salud:kb:perfil-salubrista-copiloto-estrategico
 relations:
+  cites:
+  - urn:salud:kb:salubrista
   superseded_by:
   - urn:salud:artefacto:salubrista
 ---

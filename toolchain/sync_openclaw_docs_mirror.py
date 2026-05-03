@@ -13,7 +13,7 @@ import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DEST = REPO_ROOT / "KNOWLEDGE/agengai/openclaw/documentacion-oficial"
+DEFAULT_DEST = REPO_ROOT / "artifacts/knowledge/_SCRIPTORIUM/INBOX/agengai/mirror/documentacion-oficial"
 SOURCE_REPO_ENV = "KORA_OPENCLAW_SOURCE_REPO"
 SOURCE_DOCS_ENV = "KORA_OPENCLAW_SOURCE_DOCS"
 DEST_ENV = "KORA_OPENCLAW_DEST"

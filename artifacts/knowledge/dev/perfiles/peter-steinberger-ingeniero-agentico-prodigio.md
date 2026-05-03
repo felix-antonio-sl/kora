@@ -9,7 +9,12 @@ version: "1.1.0"
 status: publicado
 tags: [peter-steinberger, steipete, ingenieria-agentica, workflow, software-production, openclaw]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: note
+relations:
+  cites:
+    - "urn:kora:kb:harness-spec"
 ---
 # Peter Steinberger: canon operativo de ingenieria agentica
 

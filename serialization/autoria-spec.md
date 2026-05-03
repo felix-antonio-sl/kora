@@ -844,7 +844,8 @@ material).
 
 Esta spec es la **unica fuente** de autoria de artefactos agenticos
 productivos. Sus antecesoras `agentfile-spec` y `skill-overlay-spec`
-estan **retiradas** — no estan en `specs/`, no tienen URN resoluble.
+estan **retiradas** — no estan en las capas normativas vigentes, no
+tienen URN resoluble.
 
 Nuevos artefactos **NO PUEDEN** nacer en ninguna forma que no sea la
 de esta spec. No se acepta declaracion implicita de ontologia, no se

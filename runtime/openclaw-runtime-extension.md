@@ -11,6 +11,7 @@ tags: [spec, runtime, openclaw, extension, transmutacion, deploy, acp]
 lang: es
 extensions:
   agengai:
+    family: spec
     extends:
       - "urn:kora:kb:runtime-spec-md"
     precedence_tier: 4

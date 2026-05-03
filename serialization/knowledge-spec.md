@@ -9,7 +9,9 @@ version: "1.3.0"
 status: publicado
 tags: [knowledge, categoria, grafo, pipeline, namespace, artefacto]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
   cites:
     - "urn:kora:kb:gobernanza"
@@ -72,9 +74,10 @@ Reglas:
    `extensions.{namespace}.family` o delegar la clasificacion a los
    mecanismos de `md-spec §5.6` (convencion de directorio, curaduria
    manual, productor canonico).
-4. La familia `spec` vive exclusivamente en `specs/` y no en `artifacts/knowledge/`;
-   las demas familias **PUEDEN** residir en `artifacts/knowledge/` segun su ciclo
-   de publicacion.
+4. La familia `spec` vive exclusivamente en las capas normativas
+   (`governance/`, `ontology/`, `serialization/`, `runtime/`) y no en
+   `artifacts/knowledge/`; las demas familias **PUEDEN** residir en
+   `artifacts/knowledge/` segun su ciclo de publicacion.
 
 ## 4. Morfismos de KnowCat
 

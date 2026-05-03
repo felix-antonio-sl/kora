@@ -9,7 +9,9 @@ version: "1.1.0"
 status: publicado
 tags: [spec, ontologia, arnés, pmi-lfs, agentico, hcai, constitucion]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
   depends:
     - "urn:kora:kb:gobernanza"

@@ -176,27 +176,13 @@ class OperatingCoreScenarioTests(unittest.TestCase):
             contract = load_workspace_contract(workspace)
             self.assertTrue(noise_tokens.isdisjoint(contract.handoff_targets), msg=f"noise leaked into {workspace}")
 
-    def test_domain_canary_sample_kb_urns_are_well_formed(self):
-        for urn in SCENARIOS["domain_canary"]["sample_allowed_kb"]:
-            self.assertTrue(urn.startswith("urn:gn:kb:"), msg=f"unexpected canary KB URN {urn}")
-        for urn in SCENARIOS["secondary_domain_canary"]["sample_allowed_kb"]:
-            self.assertTrue(
-                urn.startswith(("urn:gn:kb:", "urn:tde:kb:", "urn:orko:kb:", "urn:kora:kb:tde:")),
-                msg=f"unexpected secondary canary KB URN {urn}",
-            )
+    def test_productive_domain_agent_urns_resolve_via_cli(self):
+        from kora_lib.config import OPERATING_CORE_COHORTS
 
-    def test_domain_canary_allowed_kb_entries_are_urns(self):
-        _require_workspaces(self, "gn/goreologo", "gn/digitrans")
-        for workspace in ("gn/goreologo", "gn/digitrans"):
-            contract = load_workspace_contract(workspace)
-            self.assertTrue(contract.allowed_kb, msg=f"{workspace} should declare allowed_kb")
-            self.assertTrue(all(urn.startswith("urn:") for urn in contract.allowed_kb), msg=f"{workspace} has non-URN allowed_kb")
-
-    def test_domain_canary_agent_urns_resolve_via_cli(self):
-        refs = [ref for ref in ("gn/goreologo", "gn/digitrans") if has_productive_workspace(ref)]
-        if not refs:
-            self.skipTest("domain canaries estan en staging; el catalogo solo resuelve artefactos productivos")
-        manifest_paths = tuple(agent_workspace_path(ref, include_staging=False) / "AGENT.md" for ref in refs)
+        manifest_paths = tuple(
+            agent_workspace_path(ref, include_staging=False) / "AGENT.md"
+            for ref in OPERATING_CORE_COHORTS.get("domain", ())
+        )
         for path in manifest_paths:
             urn = load_manifest_urn(path)
             result = run_cli("resolve", urn)
@@ -262,7 +248,7 @@ def make_loop_test(loop):
     return test_method
 
 
-def make_canary_support_test(step):
+def make_contract_support_test(step):
     def test_method(self):
         _require_workspaces(self, step["workspace"])
         contract = load_workspace_contract(step["workspace"])
@@ -292,30 +278,11 @@ for loop in SCENARIOS["institutional_loops"]:
         make_loop_test(loop),
     )
 
-setattr(
-    OperatingCoreScenarioTests,
-    "test_domain_canary__goreologo_contract_support",
-    make_canary_support_test(SCENARIOS["domain_canary"]),
-)
-
-setattr(
-    OperatingCoreScenarioTests,
-    "test_domain_canary__digitrans_contract_support",
-    make_canary_support_test(SCENARIOS["secondary_domain_canary"]),
-)
-
-for index, step in enumerate(SCENARIOS["domain_canary"]["core_support"], start=1):
-    setattr(
-        OperatingCoreScenarioTests,
-        f"test_domain_canary__core_support_{index}_{step['workspace'].replace('/', '_')}",
-        make_canary_support_test(step),
-    )
-
 for scenario in SCENARIOS["meta_auxiliary_scenarios"]:
     setattr(
         OperatingCoreScenarioTests,
         f"test_meta_auxiliary__{scenario['workspace'].replace('/', '_')}",
-        make_canary_support_test(scenario),
+        make_contract_support_test(scenario),
     )
 
 

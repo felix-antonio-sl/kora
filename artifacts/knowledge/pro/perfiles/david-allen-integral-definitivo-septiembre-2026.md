@@ -9,7 +9,12 @@ version: "1.1.0"
 status: publicado
 tags: [david-allen, integral, septiembre-2026, obra-maestra, coaching, gtd, co-agencia, manual-de-vida]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: note
+relations:
+  cites:
+    - "urn:korvo:kb:manual-de-vida"
 ---
 # David Allen integral definitivo - septiembre 2026
 

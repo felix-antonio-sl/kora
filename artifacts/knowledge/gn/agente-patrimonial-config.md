@@ -22,6 +22,9 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:gn:kb:agente-patrimonial-config-legacy
+relations:
+  cites:
+  - urn:gn:kb:ssot-master
 ---
 
 # Agente Patrimonial — Configuracion Legacy

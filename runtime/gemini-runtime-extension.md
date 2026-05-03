@@ -11,6 +11,7 @@ tags: [spec, runtime, gemini, extension, transmutacion, proyeccion, clawhub]
 lang: es
 extensions:
   kora:
+    family: spec
     precedence_tier: 4
     platform: "gemini"
     baseline_docs_release: "2026.4"

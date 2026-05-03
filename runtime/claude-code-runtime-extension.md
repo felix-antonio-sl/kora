@@ -11,6 +11,7 @@ tags: [spec, runtime, claude-code, extension, transmutacion, proyeccion]
 lang: es
 extensions:
   kora:
+    family: spec
     precedence_tier: 4
     platform: "claude-code"
     baseline_docs_release: "2026.4"

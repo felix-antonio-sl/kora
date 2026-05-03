@@ -19,6 +19,8 @@ tags:
 - salud-publica-global
 lang: es
 relations:
+  cites:
+  - urn:salud:kb:salubrista-fuente-salud-publica-global
   superseded_by:
   - urn:salud:kb:salubrista-fuente-salud-publica-global
 extensions:

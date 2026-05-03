@@ -9,7 +9,9 @@ version: "1.2.0"
 status: publicado
 tags: [spec, transmutacion, functor, proyeccion, preservacion, bisimulacion, runtime]
 lang: es
-extensions: {}
+extensions:
+  kora:
+    family: spec
 relations:
   depends:
     - "urn:kora:kb:harness-spec"

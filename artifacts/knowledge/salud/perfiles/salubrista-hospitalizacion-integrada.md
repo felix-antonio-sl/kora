@@ -23,6 +23,9 @@ extensions:
     shard_count: 1
     shard_root_urn: urn:salud:kb:perfil-salubrista-hospitalizacion-integrada
 relations:
+  cites:
+  - urn:salud:kb:salubrista
+  - urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss
   superseded_by:
   - urn:salud:artefacto:salubrista
   - urn:salud:artefacto:hospitalizacion-domiciliaria

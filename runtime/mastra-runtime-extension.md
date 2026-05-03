@@ -11,6 +11,7 @@ tags: [spec, runtime, mastra, extension, workflow, mcp, transmutacion]
 lang: es
 extensions:
   kora:
+    family: spec
     precedence_tier: 4
     platform: "mastra"
     baseline_docs_release: "docs oficiales consultadas 2026-04-19"
