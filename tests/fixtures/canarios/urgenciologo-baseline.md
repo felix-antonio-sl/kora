@@ -131,10 +131,14 @@ bloques en la UI.
   `~/.claude/agents/urgenciologo.md` sección Instructions. El output
   actual ya cita paths absolutos, por lo que la deuda es fineza, no
   bloqueante.
-- El canario actual **no** verifica que el subagent rehuse responder
-  fuera del knowledge contract. Para eso hace falta un segundo canario
-  con prompt adversarial (ej. pregunta sobre pediatría o farmacología
-  no-emergencia) y criterio binario "declaró límite / inventó".
+- ~~El canario actual **no** verifica que el subagent rehuse responder
+  fuera del knowledge contract.~~ **Resuelto provisionalmente
+  2026-05-04**: fixture provisionado en
+  `tests/fixtures/canarios/urgenciologo-adversarial-fuera-de-corpus.md`
+  con prompt pediátrico (caso fuera del corpus adulto) y gate de cuatro
+  criterios. Cierre real (`baseline_status`) pendiente de corrida
+  interactiva del operador en sesión nueva — el fixture documenta el
+  lazo Kelly reproducible exacto.
 
 ## Output de referencia 2026-04-22
 
