@@ -5,6 +5,7 @@ from .audit import cmd_health
 from .catalog import cmd_index, cmd_resolve
 from .checks import run_checks, run_fixes, all_checks, CheckResult
 from .commands import cmd_migrate, cmd_stats_json, cmd_sync_docs
+from .deploy import LOCAL_DEPLOY_TARGETS, cmd_deploy_builds
 from .graph import cmd_graph
 from .host import cmd_host, cmd_install_hooks, warn_if_secondary
 from .intake import cmd_intake
@@ -130,6 +131,35 @@ def main():
 
     subparsers.add_parser("deploy-status", help="Compara hash IR vs hash deployado en runtimes locales")
 
+    p_deploy = subparsers.add_parser("deploy-builds", help="Despliega outputs _BUILD a runtimes locales")
+    p_deploy_artifact = p_deploy.add_mutually_exclusive_group(required=True)
+    p_deploy_artifact.add_argument("--agent", help="Agent reference as namespace/name")
+    p_deploy_artifact.add_argument("--skill", help="Skill reference as namespace/name")
+    p_deploy.add_argument(
+        "--target",
+        action="append",
+        required=True,
+        choices=LOCAL_DEPLOY_TARGETS,
+        help=(
+            "Runtime target. Repeat to deploy multiple targets; "
+            "required to avoid accidental broad deploys."
+        ),
+    )
+    p_deploy.add_argument("--home", default=None, help="Home directory for runtime destinations")
+    p_deploy.add_argument(
+        "--openclaw-workspace",
+        default="main",
+        help="OpenClaw workspace for skill deploys (default: main)",
+    )
+    p_deploy_mode = p_deploy.add_mutually_exclusive_group()
+    p_deploy_mode.add_argument("--apply", action="store_true", help="Write files; default is dry-run")
+    p_deploy_mode.add_argument("--dry-run", action="store_true", help="Report without writing files")
+    p_deploy.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Allow replacing existing runtime files whose content differs",
+    )
+
     p_record = subparsers.add_parser("record-invocation", help="Registra invocacion, retrieval, lead time y verified_at")
     p_record.add_argument("--agent-urn", required=True)
     p_record.add_argument("--input-text", required=True)
@@ -209,6 +239,16 @@ def main():
         cmd_roundtrip_check(agent_ref=args.agent, target=args.target)
     elif args.command == "deploy-status":
         cmd_deploy_status()
+    elif args.command == "deploy-builds":
+        cmd_deploy_builds(
+            agent=args.agent,
+            skill=args.skill,
+            targets=args.target,
+            home=args.home,
+            openclaw_workspace=args.openclaw_workspace,
+            dry_run=not args.apply,
+            overwrite=args.overwrite,
+        )
     elif args.command == "record-invocation":
         cmd_record_invocation(
             agent_urn=args.agent_urn,

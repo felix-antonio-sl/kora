@@ -18,9 +18,10 @@ from pathlib import Path
 
 import yaml
 
-from .artifacts import load_markdown_parts, dump_yaml_frontmatter_and_body
+from .artifacts import load_markdown_parts, dump_yaml_frontmatter_and_body, load_yaml_safe
 from .catalog import build_catalog_lookup, get_reference_entry, load_catalog
-from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT
+from .config import AGENTS_ROOT, KORA_ROOT, SKILLS_ROOT, TALLER_ROOT
+from .lifecycle import is_deprecated_status, is_retired_status, read_declared_status
 
 
 # ---------------------------------------------------------------------------
@@ -1280,19 +1281,102 @@ AGENTSKILLS_SECTION_RENAMES = {
 }
 
 
+def _skill_rebuild_requires_fresh_source(doc: dict) -> bool:
+    rebuild = (
+        doc.get("extensions", {})
+        .get("kora", {})
+        .get("rebuild", {})
+        if isinstance(doc, dict)
+        else {}
+    )
+    return (
+        isinstance(rebuild, dict)
+        and rebuild.get("required") is True
+        and rebuild.get("current_is_source") is False
+    )
+
+
+def _assert_active_skill_source(skill_md: Path) -> None:
+    doc, err = load_yaml_safe(skill_md)
+    if err or not isinstance(doc, dict):
+        raise ValueError(f"Invalid SKILL.md frontmatter: {skill_md}")
+    status = read_declared_status(doc)
+    if is_deprecated_status(status) or is_retired_status(status):
+        raise ValueError(f"SKILL.md is not an active source ({status}): {skill_md}")
+    if _skill_rebuild_requires_fresh_source(doc):
+        raise ValueError(
+            "SKILL.md requires fresh rebuild and cannot be used as transmutation source: "
+            f"{skill_md}"
+        )
+
+
+def _resolve_skill_path_candidate(skill_ref: str) -> Path | None:
+    candidate = Path(skill_ref).expanduser()
+    if not candidate.exists():
+        return None
+    skill_md = candidate / "SKILL.md" if candidate.is_dir() else candidate
+    if skill_md.name != "SKILL.md" or not skill_md.is_file():
+        raise ValueError(f"Skill path must point to SKILL.md or its directory: {skill_ref}")
+    _assert_active_skill_source(skill_md)
+    return skill_md
+
+
+def _find_staged_skill_path(ns: str | None, name: str) -> Path | None:
+    if not TALLER_ROOT.exists():
+        return None
+    target_urn = f"urn:{ns}:artefacto:{name}" if ns else None
+    candidates = []
+    for skill_md in sorted(TALLER_ROOT.glob("**/SKILL.md")):
+        if "_BUILD" in skill_md.parts:
+            continue
+        doc, err = load_yaml_safe(skill_md)
+        if err or not isinstance(doc, dict):
+            continue
+        urn = doc.get("_manifest", {}).get("urn")
+        if target_urn:
+            if urn != target_urn:
+                continue
+        elif not isinstance(urn, str) or not urn.endswith(f":artefacto:{name}"):
+            continue
+        status = read_declared_status(doc)
+        if (
+            is_deprecated_status(status)
+            or is_retired_status(status)
+            or _skill_rebuild_requires_fresh_source(doc)
+        ):
+            continue
+        rel = skill_md.parent.relative_to(SKILLS_ROOT).as_posix()
+        direct_namespaced = bool(ns) and rel.endswith(f"/{ns}/{name}")
+        direct_named = rel.endswith(f"/{name}")
+        candidates.append((0 if direct_namespaced else 1 if direct_named else 2, len(rel), skill_md))
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda item: (item[0], item[1], item[2].as_posix()))[0][2]
+
+
 def _resolve_skill_path(skill_ref: str) -> Path:
-    """Resuelve ref 'ns/nombre' o 'nombre' a SKILL.md productivo."""
+    """Resuelve path, ref 'ns/nombre' o 'nombre' a SKILL.md activo."""
+    path_candidate = _resolve_skill_path_candidate(skill_ref)
+    if path_candidate is not None:
+        return path_candidate
+
     parts = skill_ref.strip().split("/")
     if len(parts) == 2:
         ns, name = parts
         skill_md = SKILLS_ROOT / ns / name / "SKILL.md"
     elif len(parts) == 1:
+        ns = None
         name = parts[0]
         skill_md = SKILLS_ROOT / name / "SKILL.md"
     else:
         raise ValueError(f"Skill ref must be 'ns/nombre' or 'nombre', got: {skill_ref}")
-    if not skill_md.is_file():
-        raise ValueError(f"SKILL.md not found: {skill_md}")
+    if skill_md.is_file():
+        _assert_active_skill_source(skill_md)
+        return skill_md
+    staged = _find_staged_skill_path(ns, name)
+    if staged is not None:
+        return staged
+    raise ValueError(f"SKILL.md not found: {skill_md}")
     return skill_md
 
 
