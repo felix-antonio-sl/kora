@@ -489,7 +489,7 @@ class ArtifactFixtureTests(unittest.TestCase):
         for workspace_ref in ("kora/custodio", "kora/guardian", "kora/clawforge"):
             self.assertIsNone(find_agent_workspace(workspace_ref, include_staging=True), workspace_ref)
 
-    def test_rebuild_required_meta_skills_are_not_productive(self):
+    def test_rebuild_required_meta_skills_are_not_used_as_source(self):
         retired_root = (
             ROOT
             / "artifacts"
@@ -500,12 +500,25 @@ class ArtifactFixtureTests(unittest.TestCase):
             / "2026-05-03"
             / "kora"
         )
-        for name in ("artifact-curator", "curation-conductor", "kora-agents", "kora-skills"):
+        for name in ("artifact-curator", "curation-conductor"):
             self.assertFalse((ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md").exists())
             doc, err = load_yaml_safe(retired_root / name / "SKILL.md")
             self.assertIsNone(err)
             self.assertEqual(doc["status"], "retirado")
             self.assertFalse(doc["extensions"]["kora"]["rebuild"]["current_is_source"])
+
+        for name in ("kora-agents", "kora-skills"):
+            productive = ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md"
+            self.assertTrue(productive.exists())
+            product_doc, err = load_yaml_safe(productive)
+            self.assertIsNone(err)
+            self.assertEqual(product_doc["status"], "activo")
+            self.assertNotIn("rebuild", product_doc["extensions"]["kora"])
+
+            legacy_doc, err = load_yaml_safe(retired_root / name / "SKILL.md")
+            self.assertIsNone(err)
+            self.assertEqual(legacy_doc["status"], "retirado")
+            self.assertFalse(legacy_doc["extensions"]["kora"]["rebuild"]["current_is_source"])
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
         agent = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")

@@ -1,9 +1,11 @@
 """Tests for the unified check pipeline and check algebra properties."""
 
 import re
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from uuid import uuid4
 from unittest.mock import patch
 from common import run_cli, ROOT
 from kora_lib.graph import GraphEdge
@@ -296,6 +298,86 @@ class PromoteSmokeTests(unittest.TestCase):
     def test_promote_rejects_file_outside_drafts(self):
         result = run_cli("promote", "KNOWLEDGE/kora/sys/pipeline-ingesta.md", check=False)
         self.assertNotEqual(result.returncode, 0)
+
+    def test_promote_skill_review_to_productive_namespace(self):
+        name = f"test-promote-skill-{uuid4().hex[:10]}"
+        review_dir = ROOT / "artifacts" / "skills" / "_TALLER" / "REVIEW" / name
+        productive_dir = ROOT / "artifacts" / "skills" / "test" / name
+        try:
+            review_dir.mkdir(parents=True)
+            (review_dir / "SKILL.md").write_text(
+                f"""---
+_manifest:
+  urn: "urn:test:artefacto:{name}"
+  type: artefacto
+  provenance:
+    created_by: "test"
+    created_at: "2026-05-04"
+    source: "test fixture"
+version: "0.1.0"
+status: borrador
+nombre: {name}
+descripcion: "Skill fixture para probar promote desde _TALLER/REVIEW a productivo."
+tags: [test, promote]
+lang: es
+extensions:
+  kora:
+    vector_ontologico:
+      pi: 1
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 1
+      sigma: [1, 1, 1, 1, 0]
+    presentacion: accion-primaria
+    atlas:
+      arnes_categorico: disciplina
+      forma_material: habilidad
+      metafora_relacional: supertool
+    entornos_objetivo: [agentskills]
+    nivel_prescripcion: bajo
+    conocimiento_permitido: []
+artefacto:
+  perfil:
+    dominio: [test]
+    disparadores:
+      - "probar promote"
+    salidas:
+      - "fixture promovido"
+  plan:
+    estado_inicial: inicio
+    estado_terminal: cierre
+    estados: [inicio, cierre]
+  interfaz:
+    herramientas: [Read]
+    permisos: "fixture"
+    protocolos:
+      entrada: "fixture"
+      salida: "fixture"
+  invariantes:
+    reglas_duras:
+      - "No usar fuera de tests."
+---
+
+# {name}
+
+## Proposito
+
+Fixture minima para verificar promocion de skills desde REVIEW.
+""",
+                encoding="utf-8",
+            )
+
+            result = run_cli("promote", str(review_dir / "SKILL.md"), check=False)
+            self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
+            self.assertIn("PROMOTED:", result.stdout)
+            self.assertFalse(review_dir.exists())
+            promoted = productive_dir / "SKILL.md"
+            self.assertTrue(promoted.exists(), promoted)
+            self.assertIn("status: activo", promoted.read_text(encoding="utf-8"))
+        finally:
+            shutil.rmtree(review_dir, ignore_errors=True)
+            shutil.rmtree(productive_dir, ignore_errors=True)
 
 
 if __name__ == "__main__":

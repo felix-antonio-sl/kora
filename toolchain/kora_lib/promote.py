@@ -17,11 +17,12 @@ SCRIPTORIUM/REVIEW reemplaza OPERATIONS/drafts/ para knowledge.
 """
 
 import re
+import shutil
 from pathlib import Path
 
 from .artifacts import dump_yaml_frontmatter_and_body
-from .config import KORA_ROOT, KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT
-from .lifecycle import canonicalize_status, is_draft_status
+from .config import KORA_ROOT, KNOWLEDGE_ROOT, SCRIPTORIUM_ROOT, SKILLS_ROOT, TALLER_ROOT
+from .lifecycle import canonicalize_status, is_active_status, is_draft_status
 from .validation import lint_kora_markdown_parts, load_markdown_parts, resolve_document_family
 
 ATOMIC_ACCEPTANCE_REVIEW_TYPE = "atomic_acceptance"
@@ -194,12 +195,18 @@ def cmd_promote_cohort(namespace: str):
 def cmd_promote(draft_path_str, *, review_path_str=None):
     draft_path = Path(draft_path_str).resolve()
     review_root = (SCRIPTORIUM_ROOT / "REVIEW").resolve()
+    skill_review_root = (TALLER_ROOT / "REVIEW").resolve()
     review_path = Path(review_path_str).expanduser().resolve() if review_path_str else None
+
+    if skill_review_root in draft_path.parents or draft_path.parent == skill_review_root:
+        _promote_skill(draft_path)
+        return
 
     # Verify the file is in SCRIPTORIUM/REVIEW/
     if review_root not in draft_path.parents and draft_path.parent != review_root:
-        print(f"ERROR: {draft_path_str} no esta en artifacts/knowledge/_SCRIPTORIUM/REVIEW/")
+        print(f"ERROR: {draft_path_str} no esta en un REVIEW promovible")
         print(f"  Ubicacion esperada: artifacts/knowledge/_SCRIPTORIUM/REVIEW/{{ns}}/...")
+        print(f"  o artifacts/skills/_TALLER/REVIEW/{{name}}/SKILL.md")
         raise SystemExit(1)
 
     if not draft_path.exists():
@@ -292,6 +299,84 @@ def cmd_promote(draft_path_str, *, review_path_str=None):
         print(f"  {source_rel} → {dest_rel}")
         print(f"  status: borrador → publicado")
     print(f"\nRun 'python3 toolchain/kora index' to update the catalog.")
+
+
+def _skill_destination_from_urn(urn: str) -> Path:
+    match = re.fullmatch(r"urn:([a-z0-9-]+):artefacto:([a-z0-9-]+)", urn or "")
+    if not match:
+        raise ValueError(f"Skill URN must be urn:{{ns}}:artefacto:{{name}}, found: {urn!r}")
+    namespace, name = match.groups()
+    return SKILLS_ROOT / namespace / name
+
+
+def _copy_skill_auxiliary_dirs(source_dir: Path, dest_dir: Path) -> None:
+    for child in sorted(source_dir.iterdir()):
+        if child.name in {"SKILL.md", "_BUILD"}:
+            continue
+        if child.is_dir():
+            shutil.copytree(child, dest_dir / child.name)
+        elif child.is_file():
+            shutil.copy2(child, dest_dir / child.name)
+
+
+def _promote_skill(path: Path) -> None:
+    source_dir = path if path.is_dir() else path.parent
+    skill_md = source_dir / "SKILL.md"
+    if not skill_md.exists():
+        print(f"ERROR: SKILL.md not found in {source_dir}")
+        raise SystemExit(1)
+
+    frontmatter, body = load_markdown_parts(skill_md)
+    if not isinstance(frontmatter, dict):
+        print(f"ERROR: Cannot parse frontmatter in {skill_md}")
+        raise SystemExit(1)
+
+    manifest = frontmatter.get("_manifest") or {}
+    urn = manifest.get("urn", "")
+    if not urn:
+        print(f"ERROR: No _manifest.urn found in {skill_md}")
+        raise SystemExit(1)
+
+    current_status = canonicalize_status(frontmatter.get("status", ""))
+    if not (is_draft_status(current_status) or is_active_status(current_status)):
+        print(f"ERROR: Expected status borrador/activo, found status: {current_status or '(missing)'}")
+        raise SystemExit(1)
+
+    failures = lint_kora_markdown_parts(frontmatter, body, path=skill_md)
+    if failures:
+        print(f"ERROR: Lint failures prevent promotion of {skill_md.name}:")
+        for failure in failures[:10]:
+            print(f"  - {failure}")
+        print("\nFix lint issues first, then retry promotion.")
+        raise SystemExit(1)
+
+    try:
+        dest_dir = _skill_destination_from_urn(urn)
+    except ValueError as exc:
+        print(f"ERROR: {exc}")
+        raise SystemExit(1)
+
+    if dest_dir.exists():
+        print(f"ERROR: Target already exists: {dest_dir.relative_to(KORA_ROOT)}")
+        print("  Deprecate or update the productive artifact explicitly before retrying.")
+        raise SystemExit(1)
+
+    dest_dir.mkdir(parents=True, exist_ok=False)
+    promoted_frontmatter = dict(frontmatter)
+    promoted_frontmatter["status"] = "activo"
+    dump_yaml_frontmatter_and_body(
+        dest_dir / "SKILL.md",
+        promoted_frontmatter,
+        body,
+        lint_guard=False,
+    )
+    _copy_skill_auxiliary_dirs(source_dir, dest_dir)
+    shutil.rmtree(source_dir)
+
+    print(f"PROMOTED: {urn}")
+    print(f"  {source_dir.relative_to(KORA_ROOT)} → {dest_dir.relative_to(KORA_ROOT)}")
+    print(f"  status: {current_status} → activo")
+    print("\nRun 'python3 toolchain/kora index' to update the catalog.")
 
 
 # ---------------------------------------------------------------------------

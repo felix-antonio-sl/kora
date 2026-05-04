@@ -1,8 +1,78 @@
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from uuid import uuid4
 
 from common import ROOT, run_cli
+
+
+def write_staged_skill_fixture(name):
+    review_dir = ROOT / "artifacts" / "skills" / "_TALLER" / "REVIEW" / name
+    review_dir.mkdir(parents=True)
+    (review_dir / "SKILL.md").write_text(
+        f"""---
+_manifest:
+  urn: "urn:test:artefacto:{name}"
+  type: artefacto
+  provenance:
+    created_by: "test"
+    created_at: "2026-05-04"
+    source: "test fixture"
+version: "0.1.0"
+status: activo
+nombre: {name}
+descripcion: "Skill fixture para probar transmutacion desde _TALLER/REVIEW."
+tags: [test, transmute]
+lang: es
+extensions:
+  kora:
+    vector_ontologico:
+      pi: 1
+      mu: 0
+      xi: 1
+      lambda: 0
+      phi: 1
+      sigma: [1, 1, 1, 1, 0]
+    presentacion: accion-primaria
+    atlas:
+      arnes_categorico: disciplina
+      forma_material: habilidad
+      metafora_relacional: supertool
+    entornos_objetivo: [agentskills, codex]
+    nivel_prescripcion: bajo
+    conocimiento_permitido: []
+artefacto:
+  perfil:
+    dominio: [test]
+    disparadores:
+      - "probar transmute"
+    salidas:
+      - "fixture transmutado"
+  plan:
+    estado_inicial: inicio
+    estado_terminal: cierre
+    estados: [inicio, cierre]
+  interfaz:
+    herramientas: [Read]
+    permisos: "fixture"
+    protocolos:
+      entrada: "fixture"
+      salida: "fixture"
+  invariantes:
+    reglas_duras:
+      - "No usar fuera de tests."
+---
+
+# {name}
+
+## Proposito
+
+Fixture minima para verificar transmutacion y deploy desde REVIEW.
+""",
+        encoding="utf-8",
+    )
+    return review_dir
 
 
 class DeployBuildsTests(unittest.TestCase):
@@ -228,57 +298,57 @@ class DeployBuildsTests(unittest.TestCase):
             self.assertIn("name: jointjs-open-source", deployed.read_text(encoding="utf-8"))
 
     def test_transmute_staged_review_skill_by_urn_ref(self):
-        result = run_cli(
-            "transmute",
-            "--target",
-            "agentskills",
-            "--agent",
-            "kora/kora-skills",
-            check=False,
-        )
-        self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
-
-        built = (
-            ROOT
-            / "artifacts"
-            / "skills"
-            / "_TALLER"
-            / "REVIEW"
-            / "kora-skills"
-            / "_BUILD"
-            / "agentskills"
-            / "SKILL.md"
-        )
-        self.assertTrue(built.exists(), built)
-        self.assertIn("name: kora-skills", built.read_text(encoding="utf-8"))
-
-    def test_deploy_staged_review_skill_to_temp_home(self):
-        transmute = run_cli(
-            "transmute",
-            "--target",
-            "codex",
-            "--agent",
-            "kora/kora-agents",
-            check=False,
-        )
-        self.assertEqual(transmute.returncode, 0, transmute.stderr or transmute.stdout)
-
-        with tempfile.TemporaryDirectory() as tmp_home:
+        name = f"test-staged-skill-{uuid4().hex[:10]}"
+        review_dir = write_staged_skill_fixture(name)
+        try:
             result = run_cli(
-                "deploy-builds",
-                "--skill",
-                "kora/kora-agents",
+                "transmute",
                 "--target",
-                "codex",
-                "--home",
-                tmp_home,
-                "--apply",
+                "agentskills",
+                "--agent",
+                f"test/{name}",
                 check=False,
             )
             self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
-            deployed = Path(tmp_home) / ".codex" / "skills" / "kora-agents" / "SKILL.md"
-            self.assertTrue(deployed.exists(), deployed)
-            self.assertIn("name: kora-agents", deployed.read_text(encoding="utf-8"))
+
+            built = review_dir / "_BUILD" / "agentskills" / "SKILL.md"
+            self.assertTrue(built.exists(), built)
+            self.assertIn(f"name: {name}", built.read_text(encoding="utf-8"))
+        finally:
+            shutil.rmtree(review_dir, ignore_errors=True)
+
+    def test_deploy_staged_review_skill_to_temp_home(self):
+        name = f"test-staged-skill-{uuid4().hex[:10]}"
+        review_dir = write_staged_skill_fixture(name)
+        try:
+            transmute = run_cli(
+                "transmute",
+                "--target",
+                "codex",
+                "--agent",
+                f"test/{name}",
+                check=False,
+            )
+            self.assertEqual(transmute.returncode, 0, transmute.stderr or transmute.stdout)
+
+            with tempfile.TemporaryDirectory() as tmp_home:
+                result = run_cli(
+                    "deploy-builds",
+                    "--skill",
+                    f"test/{name}",
+                    "--target",
+                    "codex",
+                    "--home",
+                    tmp_home,
+                    "--apply",
+                    check=False,
+                )
+                self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
+                deployed = Path(tmp_home) / ".codex" / "skills" / name / "SKILL.md"
+                self.assertTrue(deployed.exists(), deployed)
+                self.assertIn(f"name: {name}", deployed.read_text(encoding="utf-8"))
+        finally:
+            shutil.rmtree(review_dir, ignore_errors=True)
 
     def test_rebuild_required_skill_path_is_not_transmutable_source(self):
         legacy = (
