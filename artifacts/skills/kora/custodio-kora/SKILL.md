@@ -1,16 +1,27 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:custodio-kora"
+  urn: urn:kora:artefacto:custodio-kora
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-05-03"
-    source: "Diseno desde cero a partir de requerimiento del operador y specs vigentes: gobernanza, harness-spec, autoria-spec y agent-skill-construction-spec. No absorbe el stack meta-KORA historico."
-version: "0.1.0"
+    created_by: OpenAI Codex
+    created_at: '2026-05-03'
+    source: 'Diseno desde cero a partir de requerimiento del operador y specs vigentes:
+      gobernanza, harness-spec, autoria-spec y agent-skill-construction-spec. No absorbe
+      el stack meta-KORA historico.'
+version: 1.0.0
 status: activo
 nombre: custodio-kora
-descripcion: "Custodia normativa de KORA: carga el canon vigente, audita coherencia entre specs, artefactos y toolchain, y propone o aplica mejoras normativas trazables."
-tags: [kora, custodia, normativa, specs, gobernanza, auditoria, mantenimiento, coherencia]
+descripcion: 'Custodia normativa de KORA: carga el canon vigente, audita coherencia
+  entre specs, artefactos y toolchain, y propone o aplica mejoras normativas trazables.'
+tags:
+- kora
+- custodia
+- normativa
+- specs
+- gobernanza
+- auditoria
+- mantenimiento
+- coherencia
 lang: es
 extensions:
   kora:
@@ -20,87 +31,125 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [2, 1, 3, 3, 1]
+      sigma:
+      - 2
+      - 1
+      - 3
+      - 3
+      - 1
     presentacion: estado-primario
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, opencode]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
     nivel_prescripcion: alto
     conocimiento_permitido:
-      - "urn:kora:kb:gobernanza"
-      - "urn:kora:kb:host-roles"
-      - "urn:kora:kb:harness-spec"
-      - "urn:kora:kb:qa-spec"
-      - "urn:kora:kb:procesos-spec"
-      - "urn:kora:kb:risk-register-spec"
-      - "urn:kora:kb:canario-spec"
-      - "urn:kora:kb:autoria-spec"
-      - "urn:kora:kb:agent-skill-construction-spec"
-      - "urn:kora:kb:md-spec"
-      - "urn:kora:kb:knowledge-spec"
-      - "urn:kora:kb:runtime-spec-md"
-      - "urn:kora:kb:multiagente-spec"
-      - "urn:kora:kb:transmutation-spec"
-      - "urn:kora:kb:agentskills-runtime-extension"
-      - "urn:kora:kb:claude-code-runtime-extension"
-      - "urn:kora:kb:codex-runtime-extension"
-      - "urn:kora:kb:gemini-runtime-extension"
-      - "urn:kora:kb:mastra-runtime-extension"
-      - "urn:kora:kb:opencode-runtime-extension"
-      - "urn:agengai:kb:openclaw-runtime-extension"
-      - "urn:kora:kb:meta-kora-rebuild-directive"
+    - urn:kora:kb:gobernanza
+    - urn:kora:kb:host-roles
+    - urn:kora:kb:harness-spec
+    - urn:kora:kb:qa-spec
+    - urn:kora:kb:procesos-spec
+    - urn:kora:kb:risk-register-spec
+    - urn:kora:kb:canario-spec
+    - urn:kora:kb:autoria-spec
+    - urn:kora:kb:agent-skill-construction-spec
+    - urn:kora:kb:md-spec
+    - urn:kora:kb:knowledge-spec
+    - urn:kora:kb:runtime-spec-md
+    - urn:kora:kb:multiagente-spec
+    - urn:kora:kb:transmutation-spec
+    - urn:kora:kb:agentskills-runtime-extension
+    - urn:kora:kb:claude-code-runtime-extension
+    - urn:kora:kb:codex-runtime-extension
+    - urn:kora:kb:gemini-runtime-extension
+    - urn:kora:kb:mastra-runtime-extension
+    - urn:kora:kb:opencode-runtime-extension
+    - urn:agengai:kb:openclaw-runtime-extension
+    - urn:kora:kb:meta-kora-rebuild-directive
     componible_con:
-      - "urn:kora:artefacto:cat-thinking"
-      - "urn:kora:artefacto:modelamiento-opm"
-      - "urn:dev:artefacto:ship-discipline"
+    - urn:kora:artefacto:cat-thinking
+    - urn:kora:artefacto:modelamiento-opm
+    - urn:dev:artefacto:ship-discipline
 artefacto:
   perfil:
-    dominio: [kora, gobernanza, specs, serializacion, ontologia, runtime, toolchain, artefactos]
+    dominio:
+    - kora
+    - gobernanza
+    - specs
+    - serializacion
+    - ontologia
+    - runtime
+    - toolchain
+    - artefactos
     disparadores:
-      - "auditar o mejorar specs KORA, gobernanza, ontologia, serializacion o runtime"
-      - "resolver incoherencias entre specs, artefactos, catalogo derivado, toolchain o tests"
-      - "mantener KORA a punto despues de cambios estructurales o normativos"
-      - "evaluar si una propuesta respeta precedencia, URNs, vector PMI x LFS y shape de autoria"
-      - "preparar cambios normativos con gates ejecutables y deuda residual declarada"
+    - auditar o mejorar specs KORA, gobernanza, ontologia, serializacion o runtime
+    - resolver incoherencias entre specs, artefactos, catalogo derivado, toolchain
+      o tests
+    - mantener KORA a punto despues de cambios estructurales o normativos
+    - evaluar si una propuesta respeta precedencia, URNs, vector PMI x LFS y shape
+      de autoria
+    - preparar cambios normativos con gates ejecutables y deuda residual declarada
     salidas:
-      - "diagnostico normativo priorizado con regla propietaria y evidencia local"
-      - "patch minimo o plan de mejora para specs, artefactos o toolchain"
-      - "matriz de impacto por capa y checks requeridos"
-      - "resultado de gates KORA o lista de bloqueos residuales"
+    - diagnostico normativo priorizado con regla propietaria y evidencia local
+    - patch minimo o plan de mejora para specs, artefactos o toolchain
+    - matriz de impacto por capa y checks requeridos
+    - resultado de gates KORA o lista de bloqueos residuales
   plan:
     estado_inicial: triaje
     estado_terminal: cierre-verificado
     estados:
-      - triaje
-      - cargar-canon
-      - localizar-propietario
-      - diagnosticar-invariantes
-      - disenar-cambio
-      - aplicar-cambio
-      - verificar-gates
-      - cierre-verificado
+    - triaje
+    - cargar-canon
+    - localizar-propietario
+    - diagnosticar-invariantes
+    - disenar-cambio
+    - aplicar-cambio
+    - verificar-gates
+    - cierre-verificado
   interfaz:
-    herramientas: [Read, Grep, Glob, Bash, Write]
-    permisos: "Lectura del canon KORA y escritura acotada a specs, artefactos, tests o toolchain cuando el operador solicita mejora. No publica ni pushea por si misma."
+    herramientas:
+    - Read
+    - Grep
+    - Glob
+    - Bash
+    - Write
+    permisos: Lectura del canon KORA y escritura acotada a specs, artefactos, tests
+      o toolchain cuando el operador solicita mejora. No publica ni pushea por si
+      misma.
     protocolos:
-      entrada: "solicitud de auditoria, mejora normativa, mantenimiento KORA o reparacion de incoherencia"
-      salida: "diagnostico trazable, patch o instrucciones de cambio, comandos de verificacion y deuda residual"
+      entrada: solicitud de auditoria, mejora normativa, mantenimiento KORA o reparacion
+        de incoherencia
+      salida: diagnostico trazable, patch o instrucciones de cambio, comandos de verificacion
+        y deuda residual
   invariantes:
     reglas_duras:
-      - "Resolver y leer las URNs canonicas relevantes antes de emitir diagnostico normativo; no responder de memoria sobre specs."
-      - "Aplicar precedencia estricta: gobernanza > ontologia > serializacion > runtime > extensiones > artefactos > docs derivadas."
-      - "Distinguir capa propietaria de cada regla; no corregir en una capa derivada una contradiccion cuyo dueno esta arriba."
-      - "Tratar `docs/generated/*` como derivado regenerable; no escribir conteos ni catalogos a mano."
-      - "No usar el stack meta-KORA historico como fuente de diseno, blueprint, prompt operativo ni runtime. Solo usar la directiva de reconstruccion como restriccion."
-      - "Toda referencia de conocimiento gobernado debe ser URN resoluble; paths locales son solo ayuda de navegacion."
-      - "No introducir shapes retirados: todo agente o skill nuevo usa `autoria-spec` y regimen `urn:{ns}:artefacto:{id}`."
-      - "No modificar specs para hacer pasar un artefacto defectuoso; primero decidir si falla el artefacto, el check o la norma."
-      - "Cualquier cambio normativo debe declarar impacto, gates ejecutados y deuda residual si no hay cierre completo."
+    - Resolver y leer las URNs canonicas relevantes antes de emitir diagnostico normativo;
+      no responder de memoria sobre specs.
+    - 'Aplicar precedencia estricta: gobernanza > ontologia > serializacion > runtime
+      > extensiones > artefactos > docs derivadas.'
+    - Distinguir capa propietaria de cada regla; no corregir en una capa derivada
+      una contradiccion cuyo dueno esta arriba.
+    - Tratar `docs/generated/*` como derivado regenerable; no escribir conteos ni
+      catalogos a mano.
+    - No usar el stack meta-KORA historico como fuente de diseno, blueprint, prompt
+      operativo ni runtime. Solo usar la directiva de reconstruccion como restriccion.
+    - Toda referencia de conocimiento gobernado debe ser URN resoluble; paths locales
+      son solo ayuda de navegacion.
+    - 'No introducir shapes retirados: todo agente o skill nuevo usa `autoria-spec`
+      y regimen `urn:{ns}:artefacto:{id}`.'
+    - No modificar specs para hacer pasar un artefacto defectuoso; primero decidir
+      si falla el artefacto, el check o la norma.
+    - Cualquier cambio normativo debe declarar impacto, gates ejecutados y deuda residual
+      si no hay cierre completo.
     compromisos_eticos:
-      transparency: "Muy alta; todo hallazgo cita la regla propietaria, el archivo local y el comando o evidencia que lo sostiene."
-      accountability: "Muy alta; la skill debe separar hechos verificados, inferencias y propuestas de cambio."
+      transparency: Muy alta; todo hallazgo cita la regla propietaria, el archivo
+        local y el comando o evidencia que lo sostiene.
+      accountability: Muy alta; la skill debe separar hechos verificados, inferencias
+        y propuestas de cambio.
 ---
 
 # custodio-kora
