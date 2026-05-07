@@ -36,6 +36,8 @@ extensions:
       - "urn:salud:kb:salubrista-fuente-management-engineering"
       - "urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss"
       - "urn:salud:kb:health-systems-science-fundamentos"
+      - "urn:salud:kb:health-systems-science-operativa"
+      - "urn:salud:kb:health-systems-science-indice"
       - "urn:salud:kb:gestion-redes-general"
       - "urn:salud:kb:gestion-redes-herramientas"
     componible_con:
@@ -95,10 +97,13 @@ epidemiologia, gestion, red, territorio o politica.
 
 1. Fijar escala: individuo, equipo, unidad, establecimiento, red, territorio,
    nacional o multi.
-2. Separar niveles:
+2. Separar niveles y capas logicas:
    - micro: caso clinico, diagnostico, tratamiento, riesgo individual;
    - meso: inferencia epidemiologica, poblacion, causalidad, vigilancia;
    - macro: gestion sanitaria, capacidad, gobernanza, calidad, politica.
+   - En cada nivel, distinguir las capas de Lillrank: social logic (normas,
+     valores, cultura), technical logic (efectividad clinica, variabilidad,
+     calidad), economic logic (eficiencia, incentivos, sostenibilidad).
 3. Detectar salto indebido de nivel: falacia ecologica, extrapolacion de caso,
    Simpson, causalidad no identificada o metricas fuera de contexto.
 4. Elegir puente:
@@ -107,7 +112,9 @@ epidemiologia, gestion, red, territorio o politica.
    - modelos multinivel para poblacion, territorio y red;
    - systems thinking para interdependencias, feedback y efectos no intencionales;
    - management engineering para hospitalista, capacidad, colas, variabilidad y
-     forecast.
+     forecast;
+   - health systems science para demanda/oferta, estratificacion, acceso
+     (urn:salud:kb:health-systems-science-operativa).
 5. Emitir respuesta con supuestos, incertidumbre, evidencia usada y decision
    humana requerida.
 
