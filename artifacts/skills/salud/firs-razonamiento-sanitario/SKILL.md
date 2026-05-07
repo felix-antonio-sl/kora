@@ -5,7 +5,7 @@ _manifest:
   provenance:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
-    source: "Transmutacion del antiguo KB urn:salud:kb:firs-framework-integrado-razonamiento-salud a skill operativa de razonamiento."
+    source: "Transmutacion del antiguo KB FIRS (framework integrado de razonamiento en salud) a skill operativa."
 version: "1.0.0"
 status: activo
 nombre: FIRS Razonamiento Sanitario
