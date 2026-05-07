@@ -18,6 +18,9 @@ tags:
 - ux
 - ehr
 lang: es
+relations:
+  cites:
+    - urn:salud:kb:salubrista-body-of-knowledge
 extensions:
   kora:
     shard_index: 1

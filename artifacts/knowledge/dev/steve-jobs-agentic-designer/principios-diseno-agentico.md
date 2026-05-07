@@ -18,6 +18,9 @@ tags:
 - claude-code
 - agentes
 lang: es
+relations:
+  cites:
+    - urn:kora:kb:autoria-spec
 extensions:
   kora:
     shard_index: 1
