@@ -43,6 +43,7 @@ extensions:
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
+      metafora_relacional: supertool
     nivel_prescripcion: alto
     entornos_objetivo:
     - claude-code

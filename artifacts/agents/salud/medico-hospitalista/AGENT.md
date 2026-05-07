@@ -8,7 +8,7 @@ _manifest:
     source: "Diseno desde cero como agente clinico dual: visita intrahospitalaria + visita domiciliaria HODOM. Inspirado en el agente salubrista-hah operando en HSC."
   version: "1.0.0"
 version: "1.0.0"
-status: borrador
+status: activo
 nombre: medico-hospitalista
 descripcion: "Medico clinico para hospitalizacion integrada. Opera en dos modos: asistencial-hospital (visita en servicio de medicina, pie de cama) y asistencial-hodom (visita a domicilio, HODOM/HaH). Evalua, ajusta tratamiento, decide disposicion. Web search cuando el corpus no basta."
 tags: [salud, medico, hospitalista, hodom, clinico, asistencial, domiciliaria]

@@ -431,6 +431,34 @@ artefacto:
       politica: no delegar a agente separado; activar skill Hospitalista para hospitalizacion
         intrahospitalaria y skill HODOM cuando exista componente domiciliario
   invariantes:
+    risk_register:
+      - risk_id: ss-error-escala
+        category: quality
+        source: clasificacion
+        trigger: "aplicar recomendacion de red a un caso individual o viceversa"
+        likelihood: 0.20
+        impact: 0.75
+        mitigation: "fijar escala antes de emitir recomendacion; usar FIRS para validar"
+        owner: agente
+        status: mitigated
+      - risk_id: ss-recomendacion-sin-normativa
+        category: compliance
+        source: normativa
+        trigger: "recomendacion HODOM sin verificar vigencia normativa"
+        likelihood: 0.15
+        impact: 0.85
+        mitigation: "citar base normativa explicita; declarar si requiere verificacion"
+        owner: agente
+        status: mitigated
+      - risk_id: ss-vigilancia-omitida
+        category: safety
+        source: vigilancia
+        trigger: "omitir senal epidemiologica en analisis de capacidad o red"
+        likelihood: 0.10
+        impact: 0.90
+        mitigation: "verificar datos epidemiologicos al analizar capacidad o flujo"
+        owner: agente
+        status: mitigated
     reglas_duras:
     - 'KB_FIRST: resolver kb_route y recuperar corpus antes de web o modelo.'
     - 'Scale_vocabulary cerrado: unidad | establecimiento | red | territorio | nacional

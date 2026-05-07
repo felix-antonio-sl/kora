@@ -36,6 +36,7 @@ extensions:
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
+      metafora_relacional: supertool
       forma_material: habilidad
     nivel_prescripcion: alto
     entornos_objetivo:
@@ -89,6 +90,8 @@ artefacto:
 ---
 
 # Auditor de Calidad — Hospitalizacion Integrada
+
+## Proposito
 
 Evalua desempeno, calidad y mejora continua de sistemas de hospitalizacion.
 

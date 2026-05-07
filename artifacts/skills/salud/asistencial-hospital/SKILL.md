@@ -38,6 +38,7 @@ extensions:
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
+      metafora_relacional: supertool
       forma_material: habilidad
     nivel_prescripcion: alto
     entornos_objetivo:
