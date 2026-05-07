@@ -44,6 +44,8 @@ extensions:
       - "urn:salud:kb:hodom-direccion-tecnica"
       - "urn:salud:kb:hodom-manual-alta-complejidad"
       - "urn:salud:kb:hodom-situacion-chile-2026"
+      - "urn:salud:kb:post-agudo-ltss-indice"
+      - "urn:salud:kb:post-agudo-ltss-transiciones"
     componible_con:
       - "urn:salud:artefacto:firs-razonamiento-sanitario"
       - "urn:salud:artefacto:hospitalista"

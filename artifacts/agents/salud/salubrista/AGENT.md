@@ -68,6 +68,13 @@ extensions:
     - urn:salud:kb:hodom-direccion-tecnica
     - urn:salud:kb:hodom-manual-alta-complejidad
     - urn:salud:kb:hodom-situacion-chile-2026
+    - urn:salud:kb:post-agudo-ltss-indice
+    - urn:salud:kb:post-agudo-ltss-transiciones
+    - urn:salud:kb:management-engineering-ext-indice
+    - urn:salud:kb:management-engineering-ext-capacidad
+    - urn:salud:kb:informatica-medica-indice
+    - urn:salud:kb:informatica-medica-ia
+    - urn:salud:kb:informatica-medica-salud-digital
     componible_con:
     - urn:salud:artefacto:firs-razonamiento-sanitario
     - urn:salud:artefacto:hospitalista
