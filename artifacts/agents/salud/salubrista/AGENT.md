@@ -78,10 +78,13 @@ extensions:
     - urn:salud:kb:health-systems-science-indice
     - urn:salud:kb:health-systems-science-fundamentos
     - urn:salud:kb:health-systems-science-operativa
+    - urn:salud:kb:hodom-operacional-indice
+    - urn:salud:kb:hodom-operacional-indicadores
     componible_con:
     - urn:salud:artefacto:firs-razonamiento-sanitario
     - urn:salud:artefacto:hospitalista
     - urn:salud:artefacto:hospitalizacion-domiciliaria
+    - urn:salud:artefacto:auditor-calidad-hospitalizacion
   claude_code:
     model: opus
     color: green
