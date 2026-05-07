@@ -32,6 +32,9 @@ if str(TOOLCHAIN_DIR) not in sys.path:
 FRAGUA_ROOT = AGENTS_ROOT / "_FRAGUA"
 TALLER_ROOT = SKILLS_ROOT / "_TALLER"
 
+ACTIVE_TARGETS = frozenset({"claude-code", "codex", "openclaw"})
+PAUSED_TARGETS = frozenset({"gemini", "mastra", "opencode", "agentskills"})
+
 
 def run_cli(*args, check=True):
     return subprocess.run(

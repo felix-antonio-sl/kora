@@ -4,8 +4,13 @@ from common import ROOT, run_cli
 
 
 class OpenCodeSkillTransmuteTests(unittest.TestCase):
-    def test_transmute_opencode_accepts_productive_skill(self):
+    def test_transmute_opencode_aborts_as_paused_target(self):
         result = run_cli("transmute", "--target", "opencode", "--agent", "kora/jointjs-open-source", check=False)
+        self.assertNotEqual(result.returncode, 0, result.stderr or result.stdout)
+        self.assertIn("esta en pausa", result.stderr)
+
+    def test_transmute_opencode_with_force_paused_proceeds(self):
+        result = run_cli("transmute", "--target", "opencode", "--agent", "kora/jointjs-open-source", "--force-paused", check=False)
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
         self.assertIn("Manifest:", result.stdout)
         self.assertIn("Bundle:", result.stdout)

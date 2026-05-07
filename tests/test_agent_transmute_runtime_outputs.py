@@ -20,8 +20,13 @@ class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
         self.assertIn("## Instructions", bundle)
         self.assertTrue((target_dir / "steipete" / "agents" / "openai.yaml").exists())
 
-    def test_transmute_opencode_emits_agent_markdown(self):
+    def test_transmute_opencode_aborts_as_paused_target(self):
         result = run_cli("transmute", "--target", "opencode", "--agent", "dev/steipete", check=False)
+        self.assertNotEqual(result.returncode, 0, result.stderr or result.stdout)
+        self.assertIn("esta en pausa", result.stderr)
+
+    def test_transmute_opencode_with_force_paused_proceeds(self):
+        result = run_cli("transmute", "--target", "opencode", "--agent", "dev/steipete", "--force-paused", check=False)
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
         self.assertIn("Manifest:", result.stdout)
         self.assertIn("Agent:", result.stdout)

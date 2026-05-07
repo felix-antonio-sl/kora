@@ -112,6 +112,7 @@ class DeployBuildsTests(unittest.TestCase):
             "opencode",
             "--agent",
             "dev/steipete",
+            "--force-paused",
             check=False,
         )
         self.assertEqual(transmute.returncode, 0, transmute.stderr or transmute.stdout)
@@ -307,6 +308,7 @@ class DeployBuildsTests(unittest.TestCase):
                 "agentskills",
                 "--agent",
                 f"test/{name}",
+                "--force-paused",
                 check=False,
             )
             self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
@@ -368,6 +370,7 @@ class DeployBuildsTests(unittest.TestCase):
             "agentskills",
             "--agent",
             str(legacy),
+            "--force-paused",
             check=False,
         )
         self.assertNotEqual(result.returncode, 0)

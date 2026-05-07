@@ -403,12 +403,10 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_runtime_extensions_declare_preservation_matrix(self):
-        """Cada runtime-extension declara dominio y matriz de preservacion por eje."""
+        """Cada runtime-extension activa declara dominio y matriz de preservacion por eje."""
         for spec_name in (
             "claude-code-runtime-extension.md",
             "codex-runtime-extension.md",
-            "gemini-runtime-extension.md",
-            "mastra-runtime-extension.md",
             "openclaw-runtime-extension.md",
         ):
             content = (ROOT / "runtime" / spec_name).read_text(encoding="utf-8")
@@ -434,7 +432,9 @@ class ArtifactFixtureTests(unittest.TestCase):
             self.assertIn(term, content)
 
     def test_mastra_extension_declares_workflow_and_mcp_surfaces(self):
-        content = (ROOT / "runtime" / "mastra-runtime-extension.md").read_text(encoding="utf-8")
+        path = ROOT / "governance" / "decisiones-archivadas" / "specs-en-pausa" / "mastra-runtime-extension.md"
+        self.assertTrue(path.exists(), f"Archived spec missing: {path}")
+        content = path.read_text(encoding="utf-8")
         required_terms = (
             "v1.0.0",
             "Mastra",
@@ -564,10 +564,11 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertIn("urn:tde:kb:decreto-12-interoperabilidad", agent)
 
     def test_pensador_generador_stays_staged_in_autoria_shape(self):
+        staged = AGENTS_ROOT / "_FRAGUA" / "_archivo" / "2026-05-poda-version-a" / "personas" / "pensador-generador"
         productive = AGENTS_ROOT / "fxsl" / "pensador-generador"
-        staged = AGENTS_ROOT / "_FRAGUA" / "INBOX" / "pensador-generador"
 
         self.assertFalse((productive / "AGENT.md").exists())
+        self.assertTrue((staged / "AGENT.md").exists(), f"Archived agent missing: {staged / 'AGENT.md'}")
         doc, err = load_yaml_safe(staged / "AGENT.md")
         self.assertIsNone(err)
         self.assertEqual(doc["_manifest"]["urn"], "urn:fxsl:artefacto:pensador-generador")

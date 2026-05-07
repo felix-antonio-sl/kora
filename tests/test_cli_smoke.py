@@ -158,15 +158,24 @@ class KoraCliSmokeTests(unittest.TestCase):
         # Idempotente si ya se aplico
         self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)
 
-    def test_transmute_accepts_all_six_targets(self):
-        """Los 6 runtime targets (claude-code, codex, gemini, mastra, opencode, openclaw) aceptan --target."""
+    def test_transmute_accepts_active_targets(self):
+        """Los 3 runtime targets activos (claude-code, codex, openclaw) aceptan --target."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        for target in ("claude-code", "codex", "gemini", "mastra", "opencode", "openclaw"):
+        for target in ("claude-code", "codex", "openclaw"):
             result = run_cli("transmute", "--target", target, "--agent", "dev/steipete", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)
             self.assertIn("Vector IR:", result.stdout)
+
+    def test_transmute_paused_targets_abort_without_force(self):
+        """Los targets en pausa (gemini, mastra, opencode, agentskills) abortan sin --force-paused."""
+        if not has_productive_workspaces():
+            self.skipTest("requires productive workspaces")
+        for target in ("gemini", "mastra", "opencode", "agentskills"):
+            result = run_cli("transmute", "--target", target, "--agent", "dev/steipete", "--dry-run", check=False)
+            self.assertNotEqual(result.returncode, 0, f"Target {target} should abort without --force-paused")
+            self.assertIn("esta en pausa", result.stderr)
 
     def test_ingest_subcommand_exists(self):
         """El subcomando `kora ingest` existe y acepta los 5 runtimes fuente."""
