@@ -75,6 +75,9 @@ extensions:
     - urn:salud:kb:informatica-medica-indice
     - urn:salud:kb:informatica-medica-ia
     - urn:salud:kb:informatica-medica-salud-digital
+    - urn:salud:kb:health-systems-science-indice
+    - urn:salud:kb:health-systems-science-fundamentos
+    - urn:salud:kb:health-systems-science-operativa
     componible_con:
     - urn:salud:artefacto:firs-razonamiento-sanitario
     - urn:salud:artefacto:hospitalista

@@ -42,6 +42,7 @@ extensions:
       - "urn:salud:kb:gestion-redes-herramientas"
       - "urn:salud:kb:management-engineering-ext-indice"
       - "urn:salud:kb:management-engineering-ext-capacidad"
+      - "urn:salud:kb:health-systems-science-operativa"
     componible_con:
       - "urn:salud:artefacto:salubrista"
       - "urn:salud:artefacto:firs-razonamiento-sanitario"

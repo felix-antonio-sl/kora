@@ -35,6 +35,7 @@ extensions:
       - "urn:salud:kb:salubrista-fuente-salud-publica-global"
       - "urn:salud:kb:salubrista-fuente-management-engineering"
       - "urn:salud:kb:salubrista-fuente-continuidad-post-aguda-ltss"
+      - "urn:salud:kb:health-systems-science-fundamentos"
       - "urn:salud:kb:gestion-redes-general"
       - "urn:salud:kb:gestion-redes-herramientas"
     componible_con:
