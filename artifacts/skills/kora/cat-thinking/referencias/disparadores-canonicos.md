@@ -128,5 +128,5 @@ Tabla de routing rapida desde el sintoma practico hacia la pieza del ICAS-BoK qu
 ## Cuando ningun disparador encaja
 
 1. Re-leer la pregunta del usuario y aplicar el protocolo de `reformulacion-categorial.md`.
-2. Si tras reformular ningun disparador encaja, usar `Grep -rn "<vocablo>" artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/`.
+2. Si tras reformular ningun disparador encaja, usar `Grep -rn "<vocablo>" ~/kora/artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/`.
 3. Si tampoco encuentra, declarar que el corpus no cubre el caso. **No inventar**.

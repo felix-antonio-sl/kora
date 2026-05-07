@@ -87,9 +87,9 @@ def _agent_build_operation(target: str, agent_md: Path, home: Path) -> DeployOpe
         destination = home / ".claude" / "agents" / f"{name}.md"
         operation = "file"
     elif target == "codex":
-        source = build_dir / f"{name}.md"
-        destination = home / ".codex" / "agents" / f"{name}.md"
-        operation = "file"
+        source = build_dir / name
+        destination = home / ".codex" / "skills" / name
+        operation = "directory"
     elif target == "opencode":
         source = build_dir / "agents" / f"{name}.md"
         destination = home / ".config" / "opencode" / "agents" / f"{name}.md"

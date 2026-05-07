@@ -5,7 +5,7 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-27"
-    source: "Diseno desde 0 sobre el corpus ICAS-BoK (24 piezas en artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/, todas published v1.0.0)."
+    source: "Diseno desde 0 sobre el corpus ICAS-BoK (24 piezas en ~/kora/artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/, todas published v1.0.0)."
 version: "1.0.0"
 status: activo
 nombre: cat-thinking
@@ -113,7 +113,7 @@ Skill de **pensamiento categorial**. Dota al agente de la capacidad de pensar so
 
 No es una skill de programacion ni de ejecucion. Es una skill **introspectiva**: lee el corpus ICAS-BoK, traduce un problema de ingenieria al vocabulario categorial, localiza el patron canonico que aplica, lo aplica al problema y devuelve un diagnostico/recomendacion trazable a una URN especifica del corpus.
 
-Anclaje canonico: las **24 URNs ICAS-BoK** del corpus en `artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/`. Todas published v1.0.0.
+Anclaje canonico: las **24 URNs ICAS-BoK** del corpus en `~/kora/artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/`. Todas published v1.0.0.
 
 ## Cuando Usar
 

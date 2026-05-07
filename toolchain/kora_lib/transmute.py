@@ -582,14 +582,30 @@ def _extract_provenance_value(text: str, label: str) -> str:
 def build_deploy_status_report(
     claude_agents_dir: Path | None = None,
     openclaw_workspaces_dir: Path | None = None,
+    codex_skills_dir: Path | None = None,
+    opencode_agents_dir: Path | None = None,
 ) -> dict:
     from .workspaces import iter_agent_workspaces
 
     claude_dir = Path(claude_agents_dir or Path.home() / ".claude" / "agents").expanduser()
     openclaw_dir = Path(openclaw_workspaces_dir or Path.home() / "openclaw-fleet" / "workspaces").expanduser()
+    codex_dir = Path(codex_skills_dir or Path.home() / ".codex" / "skills").expanduser()
+    opencode_dir = Path(opencode_agents_dir or Path.home() / ".config" / "opencode" / "agents").expanduser()
 
     agents = []
     summary = {"ok": 0, "stale": 0, "missing": 0, "unsupported": 0}
+
+    def _hash_status(deployed_path: Path) -> dict:
+        if not deployed_path.exists():
+            return {"status": "missing", "path": str(deployed_path)}
+        text = deployed_path.read_text(encoding="utf-8")
+        deployed_hash = _extract_provenance_value(text, "Source Hash")
+        return {
+            "status": "ok" if deployed_hash == current_hash else "stale",
+            "path": str(deployed_path),
+            "source_hash": deployed_hash,
+            "current_hash": current_hash,
+        }
 
     for workspace_dir in iter_agent_workspaces():
         agent_md = workspace_dir / "AGENT.md"
@@ -602,25 +618,18 @@ def build_deploy_status_report(
 
         for target in targets:
             if target == "claude-code":
-                deployed_path = claude_dir / f"{workspace_dir.name}.md"
-                if not deployed_path.exists():
-                    status = {"status": "missing", "path": str(deployed_path)}
-                else:
-                    text = deployed_path.read_text(encoding="utf-8")
-                    deployed_hash = _extract_provenance_value(text, "Source Hash")
-                    status = {
-                        "status": "ok" if deployed_hash == current_hash else "stale",
-                        "path": str(deployed_path),
-                        "source_hash": deployed_hash,
-                        "current_hash": current_hash,
-                    }
-                item[target] = status
-                summary[status["status"]] += 1
+                status = _hash_status(claude_dir / f"{workspace_dir.name}.md")
+            elif target == "codex":
+                status = _hash_status(codex_dir / workspace_dir.name / "SKILL.md")
+            elif target == "opencode":
+                status = _hash_status(opencode_dir / f"{workspace_dir.name}.md")
             elif target == "openclaw":
                 deployed_path = openclaw_dir / workspace_dir.name
                 status = {"status": "missing" if not deployed_path.exists() else "unsupported", "path": str(deployed_path)}
-                item[target] = status
-                summary[status["status"]] += 1
+            else:
+                continue
+            item[target] = status
+            summary[status["status"]] += 1
         agents.append(item)
 
     return {"summary": summary, "agents": agents}
@@ -735,7 +744,7 @@ def _emit_transmutation_yml(target_dir: Path, agent_md_path: Path, target: str,
 
 def _collect_interface_tool_names(frontmatter: dict) -> list[str]:
     interface = frontmatter.get("artefacto", {}).get("interfaz", {})
-    tools = interface.get("tools") or []
+    tools = interface.get("herramientas") or interface.get("tools") or []
     names = []
     for item in tools:
         if isinstance(item, dict):
@@ -749,15 +758,25 @@ def _collect_interface_tool_names(frontmatter: dict) -> list[str]:
     return names or ["Read"]
 
 
+CLAUDE_CODE_NATIVE_TOOLS = {
+    "Read", "Write", "Edit", "MultiEdit", "Bash", "Glob", "Grep",
+    "WebFetch", "WebSearch", "Task", "TodoWrite", "NotebookEdit",
+}
+
+
 def _project_claude_code_tools(frontmatter: dict) -> list[str]:
     semantic_tools = _collect_interface_tool_names(frontmatter)
     projected = []
-    mapping = {
+    semantic_to_native = {
         "catalog_resolve": "Read",
         "kb_route": "Grep",
     }
     for semantic in semantic_tools:
-        runtime_tool = mapping.get(semantic)
+        if semantic in CLAUDE_CODE_NATIVE_TOOLS:
+            if semantic not in projected:
+                projected.append(semantic)
+            continue
+        runtime_tool = semantic_to_native.get(semantic)
         if runtime_tool and runtime_tool not in projected:
             projected.append(runtime_tool)
     for default_tool in ("Read", "Grep", "Glob"):
@@ -775,7 +794,7 @@ def _emit_claude_code_bundle(
 ) -> Path:
     transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
     transmutation = transmutation_payload.get("transmutation", {})
-    runtime_ext = (
+    runtime_ext = (frontmatter.get("extensions") or {}).get("claude_code") or (
         frontmatter.get("artefacto", {})
         .get("contexto", {})
         .get("runtime_extensions", {})
@@ -789,6 +808,9 @@ def _emit_claude_code_bundle(
         "color": runtime_ext.get("color", "gray"),
         "max_turns": runtime_ext.get("max_turns", 12),
     }
+    for optional_key in ("memory", "effort", "permissionMode", "background", "isolation"):
+        if optional_key in runtime_ext:
+            bundle_frontmatter[optional_key] = runtime_ext[optional_key]
     knowledge_contract = transmutation.get("knowledge_contract", {})
     knowledge_lines = [
         "## Knowledge Contract",
@@ -894,14 +916,31 @@ def _emit_codex_agent_bundle(
     body: str,
     transmutation_path: Path,
 ) -> Path:
+    """Emit a Codex skill bundle from an agent IR.
+
+    Codex CLI does not load `~/.codex/agents/`; only skills under
+    `~/.codex/skills/{name}/SKILL.md`. Personas projected to Codex are
+    materialised as skills (skill-shape directory with SKILL.md +
+    agents/openai.yaml). See codex-runtime-extension §2 — Codex does not
+    support cross-session transparent personas; the projection flattens
+    to session-resumable.
+    """
     transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
     transmutation = transmutation_payload.get("transmutation", {})
+    description = frontmatter.get("descripcion", name)
+    short_description = frontmatter.get("nombre") or name
+
     bundle_frontmatter = {
         "name": name,
-        "description": frontmatter.get("descripcion", name),
+        "description": description,
+        "metadata": {"short-description": short_description},
         "runtime": "codex",
         "source_urn": transmutation.get("source_urn", ""),
     }
+
+    bundle_dir = target_dir / name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+
     content_lines = [
         *_agent_provenance_lines(transmutation),
         "",
@@ -914,7 +953,7 @@ def _emit_codex_agent_bundle(
         body.strip(),
         "",
     ]
-    bundle_path = target_dir / f"{name}.md"
+    bundle_path = bundle_dir / "SKILL.md"
     bundle_path.write_text(
         "---\n"
         + yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
@@ -922,6 +961,20 @@ def _emit_codex_agent_bundle(
         + "\n".join(content_lines),
         encoding="utf-8",
     )
+
+    agents_dir = bundle_dir / "agents"
+    agents_dir.mkdir(parents=True, exist_ok=True)
+    openai_yaml = {
+        "interface": {
+            "display_name": short_description,
+            "short_description": description.split(".")[0][:120] if description else short_description,
+        }
+    }
+    (agents_dir / "openai.yaml").write_text(
+        yaml.safe_dump(openai_yaml, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+
     return bundle_path
 
 
@@ -2294,7 +2347,7 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
         if target == "claude-code":
             print(f"  [dry-run] Would emit bundle: {target_dir}/{name}.md")
         elif target == "codex":
-            print(f"  [dry-run] Would emit bundle: {target_dir}/{name}.md")
+            print(f"  [dry-run] Would emit skill: {target_dir}/{name}/SKILL.md")
         elif target == "opencode":
             print(f"  [dry-run] Would emit agent: {target_dir}/agents/{name}.md")
         elif target == "openclaw":

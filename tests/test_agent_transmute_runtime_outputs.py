@@ -4,7 +4,8 @@ from common import agent_workspace_path, run_cli
 
 
 class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
-    def test_transmute_codex_emits_agent_markdown(self):
+    def test_transmute_codex_emits_skill_bundle(self):
+        # Codex CLI does not load ~/.codex/agents/. Personas project as skills.
         result = run_cli("transmute", "--target", "codex", "--agent", "dev/steipete", check=False)
         self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
         self.assertIn("Manifest:", result.stdout)
@@ -12,11 +13,12 @@ class AgentRuntimeOutputTransmuteTests(unittest.TestCase):
 
         target_dir = agent_workspace_path("dev/steipete") / "_BUILD" / "codex"
         self.assertTrue((target_dir / "_transmutation.yml").exists())
-        bundle_path = target_dir / "steipete.md"
+        bundle_path = target_dir / "steipete" / "SKILL.md"
         self.assertTrue(bundle_path.exists(), bundle_path)
         bundle = bundle_path.read_text(encoding="utf-8")
         self.assertIn("runtime: codex", bundle)
         self.assertIn("## Instructions", bundle)
+        self.assertTrue((target_dir / "steipete" / "agents" / "openai.yaml").exists())
 
     def test_transmute_opencode_emits_agent_markdown(self):
         result = run_cli("transmute", "--target", "opencode", "--agent", "dev/steipete", check=False)
