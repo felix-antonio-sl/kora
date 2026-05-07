@@ -81,6 +81,9 @@ extensions:
     - urn:salud:kb:health-systems-science-operativa
     - urn:salud:kb:hodom-operacional-indice
     - urn:salud:kb:hodom-operacional-indicadores
+    - urn:salud:kb:hodom-operacional-iaas
+    - urn:salud:kb:estandares-it-indice
+    - urn:salud:kb:estandares-it-core-cl
     componible_con:
     - urn:salud:artefacto:firs-razonamiento-sanitario
     - urn:salud:artefacto:hospitalista

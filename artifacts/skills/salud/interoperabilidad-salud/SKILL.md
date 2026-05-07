@@ -51,6 +51,10 @@ extensions:
     - urn:salud:kb:informatica-medica-normativa-chilena
     - urn:salud:kb:informatica-medica-ia
     - urn:salud:kb:informatica-medica-salud-digital
+    - urn:salud:kb:estandares-it-indice
+    - urn:salud:kb:estandares-it-core-cl
+    - urn:salud:kb:estandares-it-snomed-ct
+    - urn:salud:kb:estandares-it-receta-electronica
     componible_con:
     - urn:salud:artefacto:salubrista
     - urn:salud:artefacto:seguridad-informacion-salud

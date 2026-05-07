@@ -48,6 +48,8 @@ extensions:
     conocimiento_permitido:
     - urn:salud:kb:informatica-medica-indice
     - urn:salud:kb:informatica-medica-normativa-chilena
+    - urn:salud:kb:estandares-it-indice
+    - urn:salud:kb:estandares-it-receta-electronica
     componible_con:
     - urn:salud:artefacto:salubrista
     - urn:salud:artefacto:interoperabilidad-salud
