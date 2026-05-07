@@ -43,7 +43,7 @@ extensions:
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
-    nivel_prescripcion: guia
+    nivel_prescripcion: alto
     entornos_objetivo:
     - claude-code
     - codex

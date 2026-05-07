@@ -554,13 +554,6 @@ artefacto:
         sintomas_urinarios: urn:salud:kb:me-sintomas-urinarios
         traumatismos_frecuentes: urn:salud:kb:me-traumatismos-frecuentes
         traumatismos_frecuentes_p02: urn:salud:kb:me-traumatismos-frecuentes-p02
-    runtime_extensions:
-  claude_code:
-    model: opus
-    color: red
-    memory: user
-    effort: max
-    max_turns: 20
 ---
 
 # Urgenciologo

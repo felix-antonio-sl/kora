@@ -20,6 +20,10 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:salud:kb:hodom-decreto-exento-31-2024
+relations:
+  cites:
+    - urn:salud:kb:hodom-reglamento-ds1-2022
+    - urn:salud:kb:salubrista
 ---
 
 # Decreto Exento N° 31/2024 que Aprueba la Norma Técnica para Hospitalización Domiciliaria

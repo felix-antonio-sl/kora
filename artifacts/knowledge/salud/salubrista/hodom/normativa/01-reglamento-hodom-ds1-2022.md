@@ -20,6 +20,9 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:salud:kb:hodom-reglamento-ds1-2022
+relations:
+  cites:
+    - urn:salud:kb:salubrista
 ---
 
 # Reglamento de Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria

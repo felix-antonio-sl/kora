@@ -20,6 +20,11 @@ extensions:
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:salud:kb:hodom-norma-tecnica-2024
+relations:
+  cites:
+    - urn:salud:kb:hodom-reglamento-ds1-2022
+    - urn:salud:kb:hodom-decreto-exento-31-2024
+    - urn:salud:kb:salubrista
 ---
 
 # Norma Técnica para Establecimientos que Otorgan Prestaciones de Hospitalización Domiciliaria
