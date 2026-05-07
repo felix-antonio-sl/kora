@@ -1,16 +1,25 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:ux-design"
+  urn: urn:kora:artefacto:ux-design
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-23"
-    source: "Migracion desde artifacts/skills/_TALLER/INBOX/ux-design/SKILL.md (legacy skill-overlay v1) a shape unified autoria-spec v1.2"
-version: "1.0.0"
-status: borrador
+    created_by: FS
+    created_at: '2026-04-23'
+    source: Migracion desde artifacts/skills/_TALLER/INBOX/ux-design/SKILL.md (legacy
+      skill-overlay v1) a shape unified autoria-spec v1.2
+version: 1.0.0
+status: activo
 nombre: ux-design
-descripcion: "Evalua y mejora la experiencia de usuario aplicando heuristicas de Nielsen, flujos de tarea, accesibilidad WCAG 2.2 AA, arquitectura de informacion y patrones UX institucionales. Usar al auditar UX, disenar formularios, mejorar navegacion o revisar accesibilidad."
-tags: [ux, usabilidad, accesibilidad, wcag, disciplina]
+descripcion: Evalua y mejora la experiencia de usuario aplicando heuristicas de Nielsen,
+  flujos de tarea, accesibilidad WCAG 2.2 AA, arquitectura de informacion y patrones
+  UX institucionales. Usar al auditar UX, disenar formularios, mejorar navegacion
+  o revisar accesibilidad.
+tags:
+- ux
+- usabilidad
+- accesibilidad
+- wcag
+- disciplina
 lang: es
 extensions:
   kora:
@@ -20,27 +29,36 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 2, 2, 1, 0]
+      sigma:
+      - 1
+      - 2
+      - 2
+      - 1
+      - 0
     presentacion: estado-primario
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - gemini
     nivel_prescripcion: medio
     conocimiento_permitido: []
     componible_con: []
 artefacto:
   perfil:
-    descripcion: "Habilidad UX para auditar y disenar flujos, formularios, navegacion y accesibilidad usando heuristicas y patrones verificables."
+    descripcion: Habilidad UX para auditar y disenar flujos, formularios, navegacion
+      y accesibilidad usando heuristicas y patrones verificables.
     dominio:
-      - experiencia de usuario
-      - accesibilidad WCAG
-      - arquitectura de informacion
+    - experiencia de usuario
+    - accesibilidad WCAG
+    - arquitectura de informacion
     salidas:
-      - auditorias UX
-      - flujos de usuario
-      - recomendaciones accionables por componente
+    - auditorias UX
+    - flujos de usuario
+    - recomendaciones accionables por componente
   interfaz:
     herramientas: []
     permisos:
