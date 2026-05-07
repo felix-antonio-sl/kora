@@ -785,6 +785,57 @@ def _project_claude_code_tools(frontmatter: dict) -> list[str]:
     return projected
 
 
+def _derive_claude_code_budget(vector: dict | None) -> dict:
+    """Derivacion funtorial T_{claude-code}: vector_ontologico -> {modo, max_turns_floor, effort_default}.
+
+    Implementa la politica de claude-code-runtime-extension §4.1.
+
+    Modo derivado de Mu (materia):
+      - mu=0 -> "skill"     (no aplica budget)
+      - mu=1 -> "subagent"  (piso 10, effort high)
+      - mu=2 -> "persona"   (piso 12, effort high)
+      - mu>=3 -> "out-of-domain" (transmutacion debe fallar fuera de aqui)
+
+    Bonus aditivo al piso por complejidad estructural:
+      - pi=3 (free monad con fixed-points)        -> +3
+      - xi>=3 (interaccion multi-fase coreografiada) -> +3
+
+    Promocion de effort a "max":
+      - si pi=3 OR xi>=3 OR phi>=3, default sube a "max".
+
+    Si vector es None o invalido, se asume modo "persona" conservador.
+    """
+    if not isinstance(vector, dict):
+        return {"modo": "persona", "max_turns_floor": 12, "effort_default": "high"}
+
+    mu = vector.get("mu")
+    pi = vector.get("pi")
+    xi = vector.get("xi")
+    phi = vector.get("phi")
+
+    if mu == 0:
+        return {"modo": "skill", "max_turns_floor": None, "effort_default": None}
+    if mu == 1:
+        modo, floor, effort = "subagent", 10, "high"
+    elif mu == 2:
+        modo, floor, effort = "persona", 12, "high"
+    elif isinstance(mu, int) and mu >= 3:
+        return {"modo": "out-of-domain", "max_turns_floor": None, "effort_default": None}
+    else:
+        modo, floor, effort = "persona", 12, "high"
+
+    bonus = 0
+    if pi == 3:
+        bonus += 3
+    if isinstance(xi, int) and xi >= 3:
+        bonus += 3
+
+    if pi == 3 or (isinstance(xi, int) and xi >= 3) or (isinstance(phi, int) and phi >= 3):
+        effort = "max"
+
+    return {"modo": modo, "max_turns_floor": floor + bonus, "effort_default": effort}
+
+
 def _emit_claude_code_bundle(
     target_dir: Path,
     name: str,
@@ -800,14 +851,32 @@ def _emit_claude_code_bundle(
         .get("runtime_extensions", {})
         .get("claude_code", {})
     )
+    vector = (frontmatter.get("extensions") or {}).get("kora", {}).get("vector_ontologico")
+    derived = _derive_claude_code_budget(vector)
+    derived_floor = derived.get("max_turns_floor")
+    derived_effort = derived.get("effort_default")
+
+    declared_max_turns = runtime_ext.get("max_turns")
+    if isinstance(declared_max_turns, int):
+        if isinstance(derived_floor, int) and declared_max_turns < derived_floor:
+            effective_max_turns = derived_floor
+        else:
+            effective_max_turns = declared_max_turns
+    elif isinstance(derived_floor, int):
+        effective_max_turns = derived_floor
+    else:
+        effective_max_turns = 12
+
     bundle_frontmatter = {
         "name": name,
         "description": frontmatter.get("descripcion", name),
         "tools": _project_claude_code_tools(frontmatter),
         "model": runtime_ext.get("model", "opus"),
         "color": runtime_ext.get("color", "gray"),
-        "max_turns": runtime_ext.get("max_turns", 12),
+        "max_turns": effective_max_turns,
     }
+    if "effort" not in runtime_ext and derived_effort:
+        bundle_frontmatter["effort"] = derived_effort
     for optional_key in ("memory", "effort", "permissionMode", "background", "isolation"):
         if optional_key in runtime_ext:
             bundle_frontmatter[optional_key] = runtime_ext[optional_key]

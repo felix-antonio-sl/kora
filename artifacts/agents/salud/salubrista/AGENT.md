@@ -77,6 +77,7 @@ extensions:
     color: green
     memory: user
     effort: high
+    max_turns: 18
   codex:
     model: gpt-5.4
     memory: session

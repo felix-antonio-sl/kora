@@ -557,7 +557,7 @@ artefacto:
       claude_code:
         model: opus
         color: red
-        max_turns: 12
+        max_turns: 15
 ---
 
 # Urgenciologo

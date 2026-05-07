@@ -2089,6 +2089,114 @@ def _check_coalgebra_conformance(path_filter=None):
 
 
 # ---------------------------------------------------------------------------
+# claude-code-budget-piso: enforce piso funtorial sobre extensions.claude_code
+# ---------------------------------------------------------------------------
+
+def _derive_claude_code_floor(vector: dict) -> tuple[str, int | None]:
+    """Replica reducida de transmute._derive_claude_code_budget para checks.
+
+    Devuelve (modo, piso). Piso None si no aplica (skill o vector invalido).
+    Mantiene logica espejo de claude-code-runtime-extension §4.1.
+    """
+    mu = vector.get("mu") if isinstance(vector, dict) else None
+    pi = vector.get("pi") if isinstance(vector, dict) else None
+    xi = vector.get("xi") if isinstance(vector, dict) else None
+
+    if mu == 0:
+        return "skill", None
+    if mu == 1:
+        modo, floor = "subagent", 10
+    elif mu == 2:
+        modo, floor = "persona", 12
+    elif isinstance(mu, int) and mu >= 3:
+        return "out-of-domain", None
+    else:
+        modo, floor = "persona", 12
+
+    bonus = 0
+    if pi == 3:
+        bonus += 3
+    if isinstance(xi, int) and xi >= 3:
+        bonus += 3
+    return modo, floor + bonus
+
+
+def _check_claude_code_budget_piso(path_filter=None):
+    """Verifica que extensions.claude_code.max_turns declarado >= piso derivado.
+
+    Politica fuente: claude-code-runtime-extension §4.1 (politica funtorial
+    de budget runtime). Aplica solo a artefactos productivos AGENT.md cuyo
+    vector_ontologico cae en el dominio claude-code (mu in {1, 2}).
+    """
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, KORA_ROOT
+
+    diags = []
+    if not AGENTS_ROOT.exists():
+        return diags
+
+    for ns_dir in sorted(AGENTS_ROOT.iterdir()):
+        if not ns_dir.is_dir() or ns_dir.name.startswith((".", "_")):
+            continue
+        for ws_dir in sorted(ns_dir.iterdir()):
+            if not ws_dir.is_dir() or ws_dir.name.startswith((".", "_")):
+                continue
+            am = ws_dir / "AGENT.md"
+            if not am.exists():
+                continue
+            fm, err = load_yaml_safe(am)
+            if err or not isinstance(fm, dict):
+                continue
+
+            kora_ext = (fm.get("extensions") or {}).get("kora") or {}
+            vector = kora_ext.get("vector_ontologico") or kora_ext.get("harness_vector")
+            if not isinstance(vector, dict):
+                continue
+
+            cc_top = (fm.get("extensions") or {}).get("claude_code")
+            cc_ctx = (
+                fm.get("artefacto", {})
+                .get("contexto", {})
+                .get("runtime_extensions", {})
+                .get("claude_code")
+            )
+            cc_top = cc_top if isinstance(cc_top, dict) else {}
+            cc_ctx = cc_ctx if isinstance(cc_ctx, dict) else {}
+            if not cc_top and not cc_ctx:
+                continue
+
+            declared = cc_top.get("max_turns") if "max_turns" in cc_top else cc_ctx.get("max_turns")
+            if not isinstance(declared, int):
+                continue
+
+            modo, floor = _derive_claude_code_floor(vector)
+            if floor is None:
+                continue
+
+            if declared < floor:
+                rel = str(am.relative_to(KORA_ROOT))
+                diags.append(Diagnostic(
+                    check_id="claude-code-budget-piso",
+                    severity="medium",
+                    scope="workspace",
+                    path=rel,
+                    message=(
+                        f"extensions.claude_code.max_turns={declared} < piso derivado "
+                        f"{floor} para modo '{modo}' (vector pi={vector.get('pi')}, "
+                        f"mu={vector.get('mu')}, xi={vector.get('xi')}, phi={vector.get('phi')})"
+                    ),
+                    fix_hint=(
+                        f"Sube max_turns a >= {floor} o ajusta el vector ontologico si "
+                        f"el modo derivado no corresponde"
+                    ),
+                ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+# ---------------------------------------------------------------------------
 # Portabilidad: detecta paths literales no portables en tests y toolchain
 # ---------------------------------------------------------------------------
 
@@ -2370,6 +2478,13 @@ def _register_builtins():
               scope="repo", severity="medium", enforcement="lint",
               spec_ref="CLAUDE.md §Portabilidad", phase="lint"),
         _check_portabilidad_tests,
+    )
+    register_check(
+        Check("claude-code-budget-piso",
+              "extensions.claude_code.max_turns (si declarado) >= piso derivado por politica funtorial",
+              scope="workspace", severity="medium", enforcement="lint",
+              spec_ref="claude-code-runtime-extension §4.1", depends=("vector-laws",), phase="verify"),
+        _check_claude_code_budget_piso,
     )
 
 

@@ -162,6 +162,57 @@ extensions:
 Campos soportados adicionales segun evolucion del runtime — consultar
 documentacion oficial.
 
+### 4.1 Politica funtorial de budget runtime
+
+Los campos `max_turns` y `effort` no son arbitrarios: derivan del
+`vector_ontologico` de manera funtorial. La transmutacion T_{claude-code}
+implementa esta derivacion; el override explicito en `extensions.claude_code`
+puede **subir** los valores derivados pero no bajarlos por debajo del piso.
+
+**Modo derivado de Μ** (componente de materia del vector):
+
+| Μ | Modo runtime | Forma material |
+|---|--------------|----------------|
+| 0 | skill | Skill estandar / command slash (no aplica budget) |
+| 1 | subagent | Subagente Task |
+| 2 | persona | Agente persona principal |
+| 3 | fuera-de-dominio | Transmutacion debe fallar — usar OpenClaw |
+
+**Pisos de `max_turns` por modo**:
+
+| Modo | Piso base | Default `effort` |
+|------|-----------|------------------|
+| skill | N/A | N/A |
+| subagent | 10 | high |
+| persona | 12 | high |
+
+**Bonus aditivo al piso por complejidad estructural**:
+
+- `Π = 3` (free monad con fixed-points / meta-razonamiento): `+3`
+- `Ξ ≥ 3` (interaccion multi-fase coreografiada): `+3`
+
+**Promocion de `effort` a `max`**: si el vector cumple
+`Π = 3 ∨ Ξ ≥ 3 ∨ Φ ≥ 3`, el default de effort sube a `max` (ajustable
+segun modelo: solo Opus 4.6 soporta `max` en el runtime actual).
+
+**Override**: `extensions.claude_code.max_turns` declarado en el AGENT.md
+gana sobre la derivacion, siempre que respete `max_turns ≥ piso_derivado`.
+Esto se enforca con el check `claude-code-budget-piso` (ver §10).
+
+**Aplicacion ilustrativa**:
+
+| Vector | Modo | Piso derivado | Default effort |
+|--------|------|---------------|----------------|
+| Π=2, Μ=1, Ξ=2 | subagent | 10 | high |
+| Π=2, Μ=2, Ξ=2, Φ=2 | persona | 12 | high |
+| Π=2, Μ=2, Ξ=3, Φ=2 | persona | 15 | max |
+| Π=3, Μ=2, Ξ=2, Φ=3 | persona | 15 | max |
+| Π=3, Μ=2, Ξ=3, Φ=3 | persona | 18 | max |
+
+Esta politica garantiza que un agente con plan ramificado profundo o
+acoplamiento humano fuerte no se transmute con un budget tan bajo que
+agote turnos antes de cerrar el ciclo de trabajo.
+
 ## 5. Protocolo ACP (Agent Client Protocol)
 
 Claude Code es un ACP backend (`acp.allowedAgents[]` en openclaw
@@ -274,6 +325,7 @@ Checks aplicables:
 | Vector dentro del dominio | Vector IR ∈ `D_{claude-code}` | lint |
 | `_transmutation.yml` presente | Output target incluye artifact | lint |
 | Metadata runtime completa | `extensions.claude_code.*` coherente | lint |
+| `claude-code-budget-piso` | `extensions.claude_code.max_turns` (si declarado) ≥ piso derivado por §4.1 | lint |
 | Matriz de preservacion vigente | Valor de matriz coincide con runtime version | manual |
 | Plugin schema conforme | Si transmuta a plugin, `plugin.json` valido | lint |
 
