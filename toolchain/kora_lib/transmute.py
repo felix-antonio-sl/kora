@@ -13,6 +13,7 @@ Funciones principales:
 import json
 import hashlib
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -103,6 +104,12 @@ TARGET_ADAPTERS = {
 }
 
 SUPPORTED_TARGETS = tuple(PRESERVATION_MATRIX.keys())
+
+# Targets archivados por la poda KORA version A (2026-05-07).
+# Sus runtime-extensions viven en governance/decisiones-archivadas/specs-en-pausa/.
+# La transmutacion sigue siendo posible con --force-paused, pero emite warning
+# para evitar deploys accidentales hacia runtimes sin compromiso de mantenimiento.
+PAUSED_TARGETS = frozenset({"gemini", "mastra", "opencode", "agentskills"})
 
 PRESENTACION_MAP = {
     "estado-primario": "estado-primario",
@@ -2226,7 +2233,7 @@ def cmd_roundtrip_check(agent_ref: str, target: str = "agentskills"):
 # CLI commands
 # ---------------------------------------------------------------------------
 
-def cmd_transmute(target: str, agent: str, dry_run: bool = False):
+def cmd_transmute(target: str, agent: str, dry_run: bool = False, force_paused: bool = False):
     """Transmuta un artefacto IR al runtime target.
 
     Para target=agentskills, el artefacto DEBE ser una habilidad productiva
@@ -2243,6 +2250,20 @@ def cmd_transmute(target: str, agent: str, dry_run: bool = False):
     """
     if target not in SUPPORTED_TARGETS:
         raise ValueError(f"Unknown target: {target}. Supported: {SUPPORTED_TARGETS}")
+
+    if target in PAUSED_TARGETS:
+        msg = (
+            f"WARNING: target '{target}' esta en pausa por decision organizacional 2026-05-07.\n"
+            f"  Spec archivada en: governance/decisiones-archivadas/specs-en-pausa/{target}-runtime-extension.md\n"
+            f"  Razones de pausa: sin uso productivo registrado, sin cliente nombrado.\n"
+            f"  Para forzar transmutacion: usar --force-paused (con justificacion documentada)."
+        )
+        if not force_paused:
+            print(msg, file=sys.stderr)
+            print(f"\nABORTADO: --force-paused no fue provisto.", file=sys.stderr)
+            sys.exit(1)
+        print(msg, file=sys.stderr)
+        print(f"  --force-paused activo: continuando transmutacion bajo responsabilidad del operador.\n", file=sys.stderr)
 
     # Target agentskills: proyeccion de habilidad
     if target == "agentskills":

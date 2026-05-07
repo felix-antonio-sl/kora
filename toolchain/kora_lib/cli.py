@@ -123,6 +123,8 @@ def main():
                              help="Agent reference as namespace/name (e.g., kora/curator)")
     p_transmute.add_argument("--dry-run", action="store_true",
                              help="Show what would be done without writing files")
+    p_transmute.add_argument("--force-paused", action="store_true",
+                             help="Forzar transmutacion hacia target en pausa (gemini, mastra, opencode, agentskills)")
 
     p_roundtrip = subparsers.add_parser("roundtrip-check", help="Verifica la dualidad T_target ∘ Lift_target ≈ id para una habilidad")
     p_roundtrip.add_argument("--target", default="agentskills", choices=["agentskills"],
@@ -234,7 +236,7 @@ def main():
         warn_if_secondary("deprecate")
         cmd_deprecate(args.path, supersedes=args.supersedes, force=args.force, retire=args.retire)
     elif args.command == "transmute":
-        cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run)
+        cmd_transmute(target=args.target, agent=args.agent, dry_run=args.dry_run, force_paused=args.force_paused)
     elif args.command == "roundtrip-check":
         cmd_roundtrip_check(agent_ref=args.agent, target=args.target)
     elif args.command == "deploy-status":
