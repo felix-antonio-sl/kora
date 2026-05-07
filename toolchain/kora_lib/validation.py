@@ -58,6 +58,23 @@ from .workspaces import (
 )
 
 
+VALID_FAMILIES = frozenset({
+    "spec", "guide", "normative", "glossary", "faq",
+    "catalog", "cq_catalog", "inventory", "organigram",
+    "atomic", "note", "adr",
+    "generic", "source", "source-alias", "bok",
+})
+
+
+VALID_STATUS_VALUES = frozenset({
+    "activo", "active",
+    "publicado", "published",
+    "borrador", "draft",
+    "deprecado", "deprecated",
+    "retirado", "retired",
+})
+
+
 CANONICAL_AGENT_SECTION_PATTERNS = (
     ("## 1. FSM", re.compile(r"^1\.\s+fsm(?:\b|[\s(])")),
     ("## 2. Reglas Duras", re.compile(r"^2\.\s+reglas duras(?:\b|[\s(])")),
@@ -352,6 +369,36 @@ def suggest_primary_chunk_splits(text, max_lines=DEFAULT_MAX_LINES_PER_PRIMARY_C
         if child_h3:
             suggestions.append((lines[start][3:].strip(), child_h3))
     return suggestions
+
+
+def _extract_raw_family(frontmatter):
+    if not isinstance(frontmatter, dict):
+        return None
+    extensions = frontmatter.get("extensions", {})
+    if isinstance(extensions, dict):
+        kora_ext = extensions.get("kora")
+        if isinstance(kora_ext, dict) and kora_ext.get("family"):
+            return str(kora_ext["family"])
+        for ns_key, ns_val in extensions.items():
+            if isinstance(ns_val, dict) and ns_val.get("family"):
+                return str(ns_val["family"])
+    manifest = frontmatter.get("_manifest", {})
+    if isinstance(manifest, dict) and manifest.get("family"):
+        return str(manifest["family"])
+    if frontmatter.get("family"):
+        return str(frontmatter["family"])
+    return None
+
+
+def _extract_raw_status(frontmatter):
+    if not isinstance(frontmatter, dict):
+        return None
+    manifest = frontmatter.get("_manifest", {})
+    if isinstance(manifest, dict) and manifest.get("status"):
+        return str(manifest["status"]).strip().lower()
+    if frontmatter.get("status"):
+        return str(frontmatter["status"]).strip().lower()
+    return None
 
 
 def resolve_document_family(frontmatter):
@@ -1063,6 +1110,18 @@ def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None,
     family = resolve_document_family(frontmatter)
     max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
     failures = []
+
+    raw_family = _extract_raw_family(frontmatter)
+    if raw_family and raw_family not in VALID_FAMILIES:
+        failures.append(
+            f"invalid_family: '{raw_family}' no es familia valida (validas: {', '.join(sorted(VALID_FAMILIES))})"
+        )
+
+    raw_status = _extract_raw_status(frontmatter)
+    if raw_status and raw_status not in VALID_STATUS_VALUES:
+        failures.append(
+            f"invalid_status: '{raw_status}' no es estado valido (validos: {', '.join(sorted(VALID_STATUS_VALUES))})"
+        )
 
     for heading in find_meta_intro_headings(body):
         failures.append(f"meta_intro_heading: heading introductorio no permitido '{heading}'")

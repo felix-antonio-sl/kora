@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # How To Build A Profitable Personal Brand In 30 Days With AI

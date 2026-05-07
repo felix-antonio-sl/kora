@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # You don't need a niche, you need a point of view

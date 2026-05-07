@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # 7 bad habits preventing you from the life you want

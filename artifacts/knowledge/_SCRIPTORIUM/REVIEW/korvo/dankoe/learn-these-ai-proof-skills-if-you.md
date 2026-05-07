@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # Learn these skills for 6-12 months and you're set for life

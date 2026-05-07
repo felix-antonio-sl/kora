@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, adaptations, clinical-populations, sp
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Adaptations (Part B)

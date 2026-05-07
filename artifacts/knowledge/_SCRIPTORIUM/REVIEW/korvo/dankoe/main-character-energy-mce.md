@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # you weren't born to be an NPC

@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # 20-30 Years Old Is The Tutorial Phase, Don't F*ck It Up

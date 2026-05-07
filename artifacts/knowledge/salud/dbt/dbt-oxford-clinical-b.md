@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, validation, in-session-behaviours, cl
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Clinical Applications (Part B)

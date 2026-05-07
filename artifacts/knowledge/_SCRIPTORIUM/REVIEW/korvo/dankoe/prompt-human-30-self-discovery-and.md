@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # Prompt: HUMAN 3.0 Self-Discovery & Metatype Test

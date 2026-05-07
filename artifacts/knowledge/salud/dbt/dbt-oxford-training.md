@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, training, education, intensive-traini
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Training and Conclusion

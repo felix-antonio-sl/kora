@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # Mega Guide: How To Create Your First Hyper-Profitable Digital Product

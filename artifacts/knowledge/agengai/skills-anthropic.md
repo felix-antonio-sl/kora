@@ -16,7 +16,7 @@ tags:
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:agengai:kb:skills-anthropic

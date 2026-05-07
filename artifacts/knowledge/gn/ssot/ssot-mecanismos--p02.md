@@ -21,7 +21,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: ssot
+    family: normative
     bundle: urn:gn:kb:ssot-master
   kora:
     shard_index: 2

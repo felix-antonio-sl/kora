@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, programme-structure, consultation-tea
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Structure of Treatment

@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, biosocial-theory, bpd, invalidating-e
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Theoretical Underpinnings

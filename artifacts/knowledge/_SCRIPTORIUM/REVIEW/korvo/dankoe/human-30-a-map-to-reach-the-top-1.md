@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # HUMAN 3.0 – A Map To Reach The Top 1%

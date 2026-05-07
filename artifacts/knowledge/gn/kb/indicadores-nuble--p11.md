@@ -24,7 +24,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: kb
+    family: note
   kora:
     shard_index: 11
     shard_count: 14

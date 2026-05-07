@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # Full Guide: How I Write About Deep Ideas & Still Go Viral

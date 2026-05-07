@@ -11,7 +11,7 @@ tags: [ssot, territorio, provincias, comunas, nuble]
 lang: es
 extensions:
   gn:
-    family: ssot
+    family: normative
     bundle: "urn:gn:kb:ssot-master"
 ---
 

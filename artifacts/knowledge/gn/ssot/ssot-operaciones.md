@@ -11,7 +11,7 @@ tags: [ssot, operaciones, alertas, compromisos, problemas, hitos, reuniones]
 lang: es
 extensions:
   gn:
-    family: ssot
+    family: normative
     bundle: "urn:gn:kb:ssot-master"
 ---
 

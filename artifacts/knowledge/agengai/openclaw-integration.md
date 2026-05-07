@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: reference
+    family: note
     snapshot_date: '2026-03-14'
     disclaimer: Snapshot versionado. Para info actualizada consultar documentacion
       oficial OpenClaw.

@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # the death of thoughtful creation (& how to get ahead of everyone else)

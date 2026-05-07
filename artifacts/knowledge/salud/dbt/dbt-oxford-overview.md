@@ -18,7 +18,7 @@ tags:
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 relations:
   cites:
   - urn:salud:kb:dbt-oxford-adaptations-a

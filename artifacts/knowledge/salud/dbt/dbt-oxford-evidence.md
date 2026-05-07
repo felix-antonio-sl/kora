@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, evidence-base, rct, meta-analysis, ef
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Evidence Base

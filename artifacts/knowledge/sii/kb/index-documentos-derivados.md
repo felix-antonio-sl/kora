@@ -17,7 +17,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: index
+    family: note
     document_count: 302
     downloaded_count: 299
   kora:

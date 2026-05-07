@@ -11,7 +11,7 @@ tags: [dbt, dialectical-behaviour-therapy, introduction, history, development, d
 lang: en
 extensions:
   kora:
-    family: reference
+    family: note
 ---
 
 # The Oxford Handbook of DBT — Introduction

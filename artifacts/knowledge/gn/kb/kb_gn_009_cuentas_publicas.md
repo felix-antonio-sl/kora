@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: report
+    family: note
   kora:
     shard_index: 1
     shard_count: 1

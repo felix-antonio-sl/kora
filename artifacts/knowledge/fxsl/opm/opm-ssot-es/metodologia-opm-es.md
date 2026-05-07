@@ -44,7 +44,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: specification
+    family: spec
     depends_on:
     - urn:fxsl:kb:opm-es
     - urn:fxsl:kb:opl-es

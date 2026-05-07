@@ -37,7 +37,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: specification
+    family: spec
 relations:
   cites:
   - urn:fxsl:kb:manual-metodologico-opm-es

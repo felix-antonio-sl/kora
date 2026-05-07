@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # Prompt: ConsciousnessAI - 90 Day Plan To Raise Your Consciousness

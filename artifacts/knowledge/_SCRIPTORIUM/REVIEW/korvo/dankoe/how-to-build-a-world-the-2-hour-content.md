@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: article
+    family: note
 ---
 
 # How To Build A World (The 2-Hour Content Ecosystem 2.0)
