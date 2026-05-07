@@ -52,6 +52,8 @@ IFML modela cinco aspectos de la interfaz:
 
 Todos los aspectos se condensan en un unico tipo de diagrama: el **Interaction Flow Diagram**.
 
+<!-- kora-canario-marker: 2026-05-07-ifml-deep-opm-pro-baseline-v1 -->
+
 ## Mapa de artefactos
 
 | Capa | URN | Familia | Cubre |
