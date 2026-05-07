@@ -39,7 +39,7 @@ extensions:
     color: orange
     memory: user
     effort: max
-    max_turns: 15
+    max_turns: 25
   openclaw:
     bot_handler: telegram
     acp_compliant: true

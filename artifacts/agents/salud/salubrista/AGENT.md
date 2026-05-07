@@ -76,8 +76,8 @@ extensions:
     model: opus
     color: green
     memory: user
-    effort: high
-    max_turns: 18
+    effort: max
+    max_turns: 25
   codex:
     model: gpt-5.4
     memory: session

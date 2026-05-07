@@ -2155,11 +2155,9 @@ def _check_claude_code_budget_piso(path_filter=None):
 
             cc_top = (fm.get("extensions") or {}).get("claude_code")
             cc_ctx = (
-                fm.get("artefacto", {})
-                .get("contexto", {})
-                .get("runtime_extensions", {})
-                .get("claude_code")
-            )
+                (fm.get("artefacto") or {}).get("contexto") or {}
+            ).get("runtime_extensions") or {}
+            cc_ctx = cc_ctx.get("claude_code") if isinstance(cc_ctx, dict) else None
             cc_top = cc_top if isinstance(cc_top, dict) else {}
             cc_ctx = cc_ctx if isinstance(cc_ctx, dict) else {}
             if not cc_top and not cc_ctx:

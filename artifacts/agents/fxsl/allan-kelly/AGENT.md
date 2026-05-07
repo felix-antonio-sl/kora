@@ -38,7 +38,8 @@ extensions:
     model: opus
     color: blue
     memory: user
-    max_turns: 20
+    effort: max
+    max_turns: 25
   openclaw:
     bot_handler: telegram
     acp_compliant: true
