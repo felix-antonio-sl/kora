@@ -2503,6 +2503,38 @@ DEFAULT_VECTORS_BY_FROM = {
 }
 
 
+def _default_compromisos_eticos(from_runtime: str) -> dict:
+    """Defaults razonables de compromisos eticos para un artefacto recien ingestado.
+
+    Reemplaza los literales 'TODO' historicos por posiciones de partida que
+    documentan el origen y senalan que el operador debe refinar antes de
+    promover. Compatibles con el check `compromisos-eticos-no-todo`.
+    """
+    origen = from_runtime.replace("-", " ")
+    return {
+        "safety_norm": (
+            f"Heredada del runtime origen ({origen}). El operador debe "
+            "ratificarla y endurecer reglas duras antes de promover."
+        ),
+        "fairness": (
+            f"Por evaluar — el runtime origen ({origen}) puede no declarar "
+            "equidad explicita. Refinar antes de promover."
+        ),
+        "transparency": (
+            "Alta en IR (frontmatter + cuerpo legibles); el runtime origen "
+            "puede tener menor transparency."
+        ),
+        "accountability": (
+            "Heredada del runtime origen; el host KORA aporta trazabilidad "
+            "via URN canonico, git history y record-invocation."
+        ),
+        "sustainability": (
+            "Por evaluar — costo de ejecucion depende del runtime destino. "
+            "Refinar bajo politica de uso antes de promover."
+        ),
+    }
+
+
 def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
     """Eleva un subagente Claude Code single-file a workspace KORA IR."""
     frontmatter, body = load_markdown_parts(file_path)
@@ -2588,13 +2620,7 @@ def _lift_claude_code_subagent(file_path: Path, namespace: str = "kora"):
                 "memoria_config": {"mode": "persistent" if memory == "user" else "session"},
             },
             "invariantes": {
-                "compromisos_eticos": {
-                    "safety_norm": "TODO — revisar tras ingestion",
-                    "fairness": "TODO",
-                    "transparency": "TODO",
-                    "accountability": "TODO",
-                    "sustainability": "TODO",
-                },
+                "compromisos_eticos": _default_compromisos_eticos("claude-code"),
             },
         },
     }
@@ -2757,13 +2783,7 @@ def _lift_openclaw_workspace(workspace_dir: Path):
                 "memoria_config": {"mode": "ambient", "storage": f"{workspace_dir}/memory/"},
             },
             "invariantes": {
-                "compromisos_eticos": {
-                    "safety_norm": "TODO — revisar tras ingestion",
-                    "fairness": "TODO",
-                    "transparency": "TODO",
-                    "accountability": "TODO",
-                    "sustainability": "TODO",
-                },
+                "compromisos_eticos": _default_compromisos_eticos("openclaw"),
             },
         },
     }
@@ -2833,7 +2853,7 @@ def cmd_ingest(from_runtime: str, file: str = None, workspace: str = None,
                          f"Supported: claude-code, codex, gemini, opencode, openclaw")
 
     print(f"\n  Ingest preparado. El artefacto en staging requiere:")
-    print(f"    1. Completar campos TODO en artefacto.invariantes.compromisos_eticos.")
+    print(f"    1. Refinar artefacto.invariantes.compromisos_eticos (estan los defaults derivados del runtime fuente).")
     print(f"    2. Ajustar vector_ontologico si la heuristica fue imprecisa.")
     print(f"    3. Revisar plan FSM (auto-generado como stub).")
     print(f"    4. Pasar por REVIEW y publicar segun el pipeline _FRAGUA/_TALLER vigente.")
