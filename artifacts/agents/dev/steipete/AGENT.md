@@ -26,7 +26,7 @@ extensions:
       arnes_categorico: persona
       forma_material: agente-propiamente-tal
       metafora_relacional: centro-de-control
-    entornos_objetivo: [claude-code, codex, opencode, openclaw]
+    entornos_objetivo: [claude-code, codex, openclaw]
     conocimiento_permitido:
       - "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio"
       - "urn:kora:kb:gobernanza"
