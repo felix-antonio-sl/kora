@@ -203,19 +203,25 @@ puntuales o diagnosticos finos.
 
 ## Runtimes Target
 
-Segun `python3 toolchain/kora transmute --help`, hoy existen siete targets:
+La poda KORA version A (2026-05-07) distingue **3 targets activos** y **4
+archivados en pausa**.
 
-- `agentskills`
-- `claude-code`
-- `codex`
-- `gemini`
-- `mastra`
-- `opencode`
-- `openclaw`
+Targets activos — runtime-extension viva en `runtime/`:
 
-Cada uno tiene su `runtime/{nombre}-runtime-extension.md` con dominio +
-matriz de preservacion. No asumas una lista mas corta tomada de documentos
-previos a `2026-04-28`.
+- `claude-code` → `runtime/claude-code-runtime-extension.md`
+- `codex` → `runtime/codex-runtime-extension.md`
+- `openclaw` → `runtime/openclaw-runtime-extension.md`
+
+Targets archivados — spec resoluble pero sin compromiso de uso productivo:
+
+- `agentskills`, `gemini`, `mastra`, `opencode` → viven en
+  `governance/decisiones-archivadas/specs-en-pausa/`
+
+`python3 toolchain/kora transmute --help` sigue listando los siete por
+compatibilidad. Apuntar la CLI a un target archivado requiere
+`--force-paused`. Las condiciones de desarchivo (cliente nombrado con valor
+validado + capacidad de mantenerla viva) viven en
+`governance/decisiones-archivadas/specs-en-pausa/README.md`.
 
 ## Tests
 
@@ -271,22 +277,32 @@ python3 toolchain/kora migrate --profile a-autoria
 python3 toolchain/kora migrate --profile a-autoria --cohort meta-kora --dry-run
 ```
 
-Si la tarea es proyectar a runtime:
+Si la tarea es proyectar a runtime (targets activos):
 
 ```bash
-python3 toolchain/kora transmute --target opencode --agent dev/steipete --dry-run
+python3 toolchain/kora transmute --target claude-code --agent dev/steipete --dry-run
 python3 toolchain/kora transmute --target codex --agent dev/steipete --dry-run
-python3 toolchain/kora transmute --target agentskills --agent kora/mente-omega --dry-run
+python3 toolchain/kora transmute --target openclaw --agent salud/salubrista --dry-run
 ```
+
+Para apuntar a un target archivado (`agentskills`, `gemini`, `mastra`,
+`opencode`) hay que pasar `--force-paused` y leer primero
+`governance/decisiones-archivadas/specs-en-pausa/README.md`.
 
 ## Notas Practicas
 
-- Antes de tocar nada, lee el handoff mas reciente bajo
-  `docs/reports/handoff-*.md` por fecha descendente: es el snapshot vivo del
+- Antes de tocar nada, lee el handoff mas reciente. Convencion vigente
+  desde la poda version A (2026-05-07):
+  - Handoffs nuevos: `docs/handoffs/YYYY-MM-DD-*.md`
+  - Archivo historico: `docs/reports/handoff-*.md` (no se borra; las refs
+    internas siguen siendo validas)
+  Toma el mas reciente entre ambos directorios — es el snapshot vivo del
   repo (estado, decisiones canonicas, pendientes, supuestos, riesgos).
 - `docs/start-prompt.md` (URN `urn:kora:kb:start-prompt`) es el bootstrap
   copiable para sesiones nuevas; cita las specs, skills core y comandos de
   verificacion inicial.
+- Politica de handoffs vigente: `docs/plans/2026-05-07-politica-handoffs.md`
+  (1 handoff por semana operativa max + excepciones por canario / incidente).
 - No asumas que `scripts/` raiz describe la toolchain viva. Hoy es residual.
 - No asumas que `toolchain/README.md` esta mas fresco que la CLI. Verifica con
   `--help` y con el arbol real.

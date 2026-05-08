@@ -337,7 +337,7 @@ Checks minimos:
 
 ## 11. Migracion
 
-Contrato vigente v4.6.0:
+Contrato establecido en v4.6.0 y vigente bajo v4.7.x:
 
 - KORA unifica authoring en `autoria-spec`.
 - `agentfile-spec` y `skill-overlay-spec` fueron retiradas — absorbidas por `autoria-spec`.
