@@ -91,6 +91,10 @@ extensions:
     - urn:salud:artefacto:auditor-calidad-hospitalizacion
     - urn:salud:artefacto:interoperabilidad-salud
     - urn:salud:artefacto:seguridad-informacion-salud
+    - urn:salud:artefacto:vigilancia-epidemiologica
+    - urn:salud:artefacto:analista-redes
+    - urn:salud:artefacto:constructor-tableros
+    - urn:salud:artefacto:gtd-integral
   claude_code:
     model: opus
     color: green
