@@ -2273,6 +2273,150 @@ def _check_portabilidad_tests(path_filter=None):
     return diags
 
 
+def _check_staging_vs_productive_divergence(path_filter=None):
+    """Detectar items en staging cuyo nombre coincida con un productivo.
+
+    Cobertura:
+    - artifacts/agents/_FRAGUA/{INBOX,REVIEW}/X vs artifacts/agents/{ns}/X/AGENT.md
+    - artifacts/skills/_TALLER/{INBOX,REVIEW}/X  vs artifacts/skills/{ns}/X/SKILL.md
+    - INBOX y REVIEW del mismo nombre simultaneamente (duplicado interno).
+
+    Saltamos directorios de control (`_archivo`, `_BUILD`, `_rebuild_required`,
+    nombres con prefijo `_`) — son metadirectorios reconocidos por la
+    pipeline `INBOX -> REVIEW -> productivo`.
+    """
+    from .config import AGENTS_ROOT, SKILLS_ROOT, KORA_ROOT
+    diags = []
+
+    def _productive_names(root: Path, manifest_name: str) -> set[str]:
+        """Nombres de workspaces productivos (con manifest declarado)."""
+        names = set()
+        if not root.exists():
+            return names
+        for ns_dir in root.iterdir():
+            if not ns_dir.is_dir() or ns_dir.name.startswith("_"):
+                continue
+            for ws_dir in ns_dir.iterdir():
+                if not ws_dir.is_dir():
+                    continue
+                if (ws_dir / manifest_name).exists():
+                    names.add(ws_dir.name)
+        return names
+
+    def _scan(layer_root: Path, staging_root: Path, manifest_name: str, layer_label: str):
+        if not staging_root.exists():
+            return
+        productive = _productive_names(layer_root, manifest_name)
+        per_stage_items: dict[str, set[str]] = {}
+        for stage in ("INBOX", "REVIEW"):
+            stage_dir = staging_root / stage
+            if not stage_dir.exists():
+                per_stage_items[stage] = set()
+                continue
+            items = {
+                p.name for p in stage_dir.iterdir()
+                if p.is_dir() and not p.name.startswith("_")
+            }
+            per_stage_items[stage] = items
+            for item in sorted(items):
+                if item in productive:
+                    diags.append(Diagnostic(
+                        check_id="staging-vs-productive-divergence",
+                        severity="medium",
+                        scope="workspace",
+                        path=str((stage_dir / item).relative_to(KORA_ROOT)),
+                        message=(
+                            f"{layer_label} '{item}' en staging coincide con "
+                            f"productivo en {layer_root.relative_to(KORA_ROOT)}/. "
+                            "Resolver: integrar al productivo o eliminar staging."
+                        ),
+                        fix_hint=(
+                            f"Diff manual + decision: "
+                            f"git rm -r {(stage_dir / item).relative_to(KORA_ROOT)} "
+                            "o promover via kora promote."
+                        ),
+                    ))
+        intersection = per_stage_items.get("INBOX", set()) & per_stage_items.get("REVIEW", set())
+        for item in sorted(intersection):
+            diags.append(Diagnostic(
+                check_id="staging-vs-productive-divergence",
+                severity="medium",
+                scope="workspace",
+                path=str((staging_root / "REVIEW" / item).relative_to(KORA_ROOT)),
+                message=(
+                    f"{layer_label} '{item}' duplicado en INBOX y REVIEW. "
+                    "Pipeline pre-categorial roto."
+                ),
+                fix_hint="Consolidar — uno solo entre INBOX y REVIEW.",
+            ))
+
+    _scan(AGENTS_ROOT, AGENTS_ROOT / "_FRAGUA", "AGENT.md", "Agente")
+    _scan(SKILLS_ROOT, SKILLS_ROOT / "_TALLER", "SKILL.md", "Skill")
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+def _check_compromisos_eticos_no_todo(path_filter=None):
+    """Bloquear publicacion con literales TODO en compromisos_eticos.
+
+    Motivacion: `kora ingest` y `kora transmute` emiten artefactos en staging
+    con campos `compromisos_eticos.{safety_norm,fairness,transparency,
+    accountability,sustainability}` rellenados como literal "TODO" hasta que
+    el operador los completa. Si esos literales sobreviven hasta productivo
+    son drift normativo: el artefacto declara invariantes vacios y igual pasa
+    los checks estructurales.
+    """
+    from .artifacts import load_yaml_safe
+    from .config import AGENTS_ROOT, SKILLS_ROOT, KORA_ROOT
+
+    diags = []
+    productive_paths = []
+    for root, manifest in ((AGENTS_ROOT, "AGENT.md"), (SKILLS_ROOT, "SKILL.md")):
+        if not root.exists():
+            continue
+        for ns_dir in root.iterdir():
+            if not ns_dir.is_dir() or ns_dir.name.startswith("_"):
+                continue
+            for ws_dir in ns_dir.iterdir():
+                if not ws_dir.is_dir():
+                    continue
+                manifest_path = ws_dir / manifest
+                if manifest_path.exists():
+                    productive_paths.append(manifest_path)
+
+    for manifest_path in productive_paths:
+        frontmatter, _err = load_yaml_safe(manifest_path)
+        if not isinstance(frontmatter, dict):
+            continue
+        artefacto = (frontmatter.get("artefacto") or {})
+        invariantes = (artefacto.get("invariantes") or {})
+        compromisos = invariantes.get("compromisos_eticos") or {}
+        if not isinstance(compromisos, dict):
+            continue
+        for campo, valor in compromisos.items():
+            if isinstance(valor, str) and valor.strip().upper().startswith("TODO"):
+                diags.append(Diagnostic(
+                    check_id="compromisos-eticos-no-todo",
+                    severity="high",
+                    scope="artifact",
+                    path=str(manifest_path.relative_to(KORA_ROOT)),
+                    message=(
+                        f"compromisos_eticos.{campo} = 'TODO' literal en "
+                        f"productivo. Stub de ingest/transmute sin completar."
+                    ),
+                    fix_hint=(
+                        f"Editar {manifest_path.relative_to(KORA_ROOT)} y "
+                        f"reemplazar 'TODO' por compromiso real, o degradar a staging."
+                    ),
+                ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 # ---------------------------------------------------------------------------
 # Registration — wire up all built-in checks
 # ---------------------------------------------------------------------------
@@ -2483,6 +2627,20 @@ def _register_builtins():
               scope="workspace", severity="medium", enforcement="lint",
               spec_ref="claude-code-runtime-extension §4.1", depends=("vector-laws",), phase="verify"),
         _check_claude_code_budget_piso,
+    )
+    register_check(
+        Check("staging-vs-productive-divergence",
+              "Items en _FRAGUA/_TALLER staging no comparten nombre con productivos",
+              scope="workspace", severity="medium", enforcement="lint",
+              spec_ref="autoria-spec §13; gobernanza §11", phase="verify"),
+        _check_staging_vs_productive_divergence,
+    )
+    register_check(
+        Check("compromisos-eticos-no-todo",
+              "Productivos no contienen literal 'TODO' en compromisos_eticos",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="autoria-spec §3.7; transmutation-spec §6", phase="verify"),
+        _check_compromisos_eticos_no_todo,
     )
 
 

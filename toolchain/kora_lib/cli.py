@@ -196,6 +196,7 @@ def main():
     p_host = subparsers.add_parser("host", help="Show host role (primary/secondary) per urn:kora:kb:host-roles")
     p_host.add_argument("--verbose", "-v", action="store_true", help="Show actual hostname/machine_id even if matching marker")
     subparsers.add_parser("install-hooks", help="Install KORA versioned git hooks for this clone")
+    subparsers.add_parser("doctor", help="Salud operativa agregada (host + checks + staging + handoffs)")
 
     args = parser.parse_args()
 
@@ -299,5 +300,8 @@ def main():
         cmd_host(verbose=args.verbose)
     elif args.command == "install-hooks":
         cmd_install_hooks()
+    elif args.command == "doctor":
+        from .doctor import cmd_doctor
+        cmd_doctor()
     else:
         parser.print_help()
