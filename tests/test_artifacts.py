@@ -144,7 +144,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v8",
+            "KORA/MD v9",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -160,6 +160,7 @@ class ArtifactFixtureTests(unittest.TestCase):
             "### 5.6.1 Familia `atomic`",
             "productor canonico",
             "Contrato vigente v8",
+            "Contrato vigente v9",
         )
         for term in required_terms:
             self.assertIn(term, content)
@@ -182,12 +183,12 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_knowledge_spec_registers_atomize_as_canonical_producer(self):
         content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "## 12. Productores canonicos de familia",
-            "artifacts/skills/_TALLER/INBOX/atomize/SKILL.md",
-            "artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/atomic-",
+            "## 9. Productores canonicos de familia",
+            "artifacts/skills/kora/atomize/SKILL.md",
+            "urn:kora:artefacto:atomize",
+            "artifacts/knowledge/_SCRIPTORIUM/REVIEW/",
             "hand_edited",
             "unica ruta soportada",
-            "scaffold semantico degradado",
             "FS=100%",
         )
         for term in required_terms:

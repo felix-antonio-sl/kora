@@ -167,7 +167,7 @@ FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "faq": 120,
     "atomic": 400,
     "bok": 1000,
-    "spec": 450,
+    "spec": 500,
 }
 FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "generic": 320,

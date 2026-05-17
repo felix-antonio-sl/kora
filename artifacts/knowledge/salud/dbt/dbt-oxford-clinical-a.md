@@ -1,20 +1,32 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-clinical-a"
+  urn: urn:salud:kb:dbt-oxford-clinical-a
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
-status: draft
-tags: [dbt, dialectical-behaviour-therapy, case-formulation, chain-analysis, emotion-regulation, suicide, self-harm, clinical-applications]
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
+status: publicado
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- case-formulation
+- chain-analysis
+- emotion-regulation
+- suicide
+- self-harm
+- clinical-applications
 lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 2
+    shard_root_urn: urn:salud:kb:dbt-oxford-clinical-a
 ---
 
 # The Oxford Handbook of DBT — Clinical Applications (Part A)
+
 
 ## Case Formulation: Behavioural Analysis and Treatment Planning
 
@@ -208,7 +220,7 @@ Lay out multiple chains (or use a comparison table) to identify recurring elemen
 
 Emotion regulation is central to DBT. Linehan conceptualized problem behaviours (self-harm, suicide attempts) as consequences of dysregulated emotions or direct attempts to avoid/reduce aversive emotional sensations. An entire skills training module addresses emotion regulation (acquisition phase), but strengthening and generalization must occur through individual therapy and phone coaching.
 
-### Dangers of Over-Coaching Distress Tolerance
+## Dangers of Over-Coaching Distress Tolerance
 
 Therapists frequently over-rely on distress tolerance skills during chain/solution analysis and phone coaching. Distraction-based distress tolerance is analogous to treating a broken leg with analgesic: client learns new avoidance methods but fails to gain mastery over experiencing emotions.
 
@@ -220,7 +232,7 @@ Signs of over-reliance on distress tolerance:
 
 When these signs persist, suspect: client failing to solve legitimate problems (accommodation, employment, relationships, finances, legal, health) and not recognizing that accompanying emotions are justified.
 
-### Emotion Theory: Functions and Action Urges
+## Emotion Theory: Functions and Action Urges
 
 Each emotion evolved for a specific situation and prompts a particular adaptive action. The emotion "fits the facts" when the situation matches the evolutionary context.
 
@@ -235,10 +247,10 @@ Each emotion evolved for a specific situation and prompts a particular adaptive 
 | Envy | Another has desired advantage | Reduce discrepancy | Acquire or destroy coveted thing |
 | Jealousy | Risk another may take/destroy possession | Keep precious things safe | Guard jealously; warn off rivals |
 | Disgust | Danger of toxic contamination | Prevent harm from noxious association | Recoil from or repel contaminant |
-| Interest | Stimulus with knowledge/benefit potential | Expand knowledge range | Attend to, explore, pursue |
+| Interest | Stimulus with potential | Expand knowledge range | Attend to, explore, pursue |
 | Surprise | Stimulus contrary to expectations | Allow adjustment to change | (1) Stop; (2) reappraise and assimilate |
 
-### Unique Signature of Each Emotion
+## Unique Signature of Each Emotion
 
 Each emotion has a distinct combination of features across eight domains: temperature, facial expression, breathing, posture, gesture, muscle tone, voice tone, actions in environment.
 
@@ -255,13 +267,13 @@ Two-way maintenance cycle between domains and emotion intensity: coaching client
 | Guilt | Warm | Head tilted down, eyes up | Slower, upper chest | Slightly shrugged | Moderate tension | Restricted, lower, urgent |
 | Disgust | Cool | Curled upper lip, scrunched nose | Breath holding, exaggerated exhale | Twisted, asymmetric | Tensed stomach, gag reflex | Scathing, sneering |
 
-### Three Essential Principles for Emotion Regulation
+## Three Essential Principles for Emotion Regulation
 
 1. **Only one emotion at a time.** Clumping emotions together overwhelms client and prevents down-regulation. Facial expression clues identify dominant emotion.
 2. **Regulate to appropriate level, not elimination.** Emotion "unwarranted by degree" requires adjustment, not eradication. Too much down-regulation invalidates the warranted portion.
 3. **One size does not fit all.** Same physical action may de-intensify one emotion while intensifying another (e.g., lowered shoulders reduces anger but intensifies shame). Do not confuse de-arousal for emotion regulation.
 
-### Discerning Appropriate Emotional Intensity
+## Discerning Appropriate Emotional Intensity
 
 Emotion regulation = thermostat adjustment, not on/off switch. Client must determine:
 1. How much emotion is currently experienced? (0--100 scale)
@@ -274,7 +286,7 @@ Procedure for calibrating intensity:
 4. Down-regulate (or up-regulate) to target level
 5. Problem-solve the warranted portion
 
-### Acting Opposite in Each Domain
+## Acting Opposite in Each Domain
 
 Down-regulation procedure (anger example):
 1. **Temperature:** Cool down (open window, cold drink, cold flannel on wrists/neck)
@@ -288,152 +300,10 @@ Down-regulation procedure (anger example):
 
 Each domain addressed opposite reduces intensity by incremental degrees. Client evaluates effect after each domain, adjusts, re-employs.
 
-### Shaping Protocol for Emotion Regulation Skills
+## Shaping Protocol for Emotion Regulation Skills
 
 1. Employ the skill
 2. Evaluate effect
 3. Adjust approach
 4. Re-employ (re-evaluate, re-adjust)
 5. Continue until close to desired result
-
-### Problem-Solving the Warranted Emotion
-
-After down-regulating to appropriate level, client must address the legitimate source. Ignoring the justified portion means the emotion's message goes unheard and will return with greater urgency. Action plans use DEAR MAN FAST and creative problem-solving for the real-world issue.
-
-### Simultaneous Tracking
-
-Immediate solutions address the moment of target behaviour; longer-term solutions address underlying problems (e.g., loneliness, unemployment). Track parallel progress on diary card or supplementary card. Monitor weekly. Dialectical approach: micro-problems and macro-problems addressed simultaneously.
-
-### Up-Regulating Emotions
-
-Some clients suppress appropriate emotions entirely. Protocol:
-1. Identify situation where appropriate emotional response was absent
-2. Check whether fear of the emotion fits the facts --- if not, apply opposite action to the blocking fear
-3. Instruct client to display features of the appropriate emotion domain by domain
-4. Client replays scenario including the emotional response
-5. Validate legitimate responses
-6. Highlight learning: emotion was experienced and no catastrophe occurred
-7. Shape tolerance of the emotion gradually over repeated practice opportunities
-
-### Regulating Appropriate Sadness
-
-Sadness is often highly valid and must not be prematurely down-regulated.
-
-Protocol for appropriate sadness:
-1. Validate the loss ("sadness fits the facts")
-2. Explain sadness function: (a) conserve resources/prevent further loss; (b) mobilize help
-3. Client takes action to minimize further loss (e.g., text friend, maintain connection)
-4. Be mindful: focus sadness on THIS moment's loss, not all possible future losses
-5. Allow willing tears for ~7 minutes; accept sadness without blocking or adding more
-6. Seek or imagine social support (rehearse telling a friend)
-7. Only after acknowledging and problem-solving, use opposite action for excess: warm up, get moving, seek people, eat, shorten breathing sighs, tense muscles, upright posture
-
-## DBT as a Suicide and Self-Harm Treatment
-
-### Chronic Suicidality in BPD: Scope and Challenge
-
-60--70% of BPD patients attempt suicide at some point; completed suicide risk raised >10x vs. healthy controls. Chronic self-harm includes both suicidal and non-suicidal self-injury (NSSI). No firm evidence of curative pharmacotherapy for BPD or associated self-harm; effective treatment relies on psychotherapy.
-
-NSSI links more strongly to emotion/cognition regulation difficulties; suicidal self-harm associates more with depressive states and hopelessness. Suicidal ideation tends to be chronically present; acute risk fluctuates.
-
-### Risk Factors for Suicide in BPD
-
-- **Impulsivity:** Strongest predictor across psychiatric disorders; biological substrate linked to lower CNS serotonin
-- **Emotion dysregulation and instability:** Pronounced sensitivity to environmental stress
-- **Psychiatric comorbidity:** Rule rather than exception; comorbidity increases suicide attempt severity 10--15x
-- **Interpersonal difficulties:** Difficulty maintaining therapeutic relationships; completed suicide often occurs late in illness after multiple failed treatments
-
-### Clinical Best Practice for Self-Harm Assessment
-
-Comprehensive psychosocial assessment should include:
-- Psychiatric disorder assessment (including personality disorder and substance misuse comorbidity)
-- Risk of repetition and completed suicide
-- Suicide intent, medical lethality, circumstances of current and past episodes
-- Current life difficulties: interpersonal conflicts, loss, trauma, lack of support, financial/work/school problems, health, sexual orientation
-- Risk must be repeatedly re-evaluated (rapid changes due to affective reactivity and impulsivity)
-
-### DBT Treatment Stance on Suicidality
-
-**Core principle:** Suicidal behaviours are disordered behaviours --- not merely symptoms of a psychiatric diagnosis. They can and should be treated directly and immediately, independent of underlying disorder treatment.
-
-**Key departures from standard practice:**
-
-| Standard Approach | DBT Approach |
-|-------------------|-------------|
-| Treat disorder, suicidality resolves | Treat suicidal behaviour directly as top priority |
-| Avoid discussing suicidality to prevent reinforcement | Address systematically in calm, matter-of-fact, non-judgmental manner every session |
-| Hospitalize for safety | Avoid hospitalization when possible; if needed, brief with fixed discharge date |
-| Suicidal behaviour as communication/cry for help | Suicidal behaviour as maladaptive problem-solving; functionally analyse like any behaviour |
-
-**Self-monitoring:** Patient tracks suicidal ideation, urges to self-harm, and self-harm acts daily on diary card.
-
-### Behavioural Chain Analysis for Suicidal Behaviour
-
-DBT conducts moment-to-moment "ideation-to-action" analysis:
-1. Identify predisposing psychological, physiological, and environmental factors
-2. Identify prompting events
-3. Map links: emotions, thoughts, sensations, actions leading to self-harm
-4. Document consequences: others' responses, reinforcing effects
-5. Determine if behaviour is primarily respondent (cued by antecedents) or operant (maintained by consequences)
-
-Chain analyses guide treatment at every stage. Moderately aversive nature of chains may counteract reinforcing effects of discussing self-harm.
-
-### Skills Training as Mechanism of Change
-
-Skills use mediates decrease in suicide attempts over time (Neacsiu, Rizvi, & Linehan, 2010: secondary analysis of 3 RCTs). Skills training necessary for NSSI reduction but possibly not sufficient alone for suicidal behaviour reduction.
-
-**For respondent suicidal behaviour:** Stop eliciting events; teach prevention, coping, and tolerance skills; treat associated disorders.
-**For operant suicidal behaviour:** Do not reinforce; reinforce adaptive responses; validate feelings but not the behaviour.
-
-### Crisis Strategies and Phone Coaching
-
-Suicidal crises expected, especially in early months. Protocols designed to reduce short-term risk without increasing long-term suicidal behaviour risk.
-
-Key elements:
-- Teach distinction between NSSI and suicidal behaviour; different controlling variables and solutions for each
-- Develop safety plan early: high-risk situations/states, self-management skills, environment helpers, professional contacts with numbers
-- Phone coaching: not only for crises but also for skills coaching (decouples therapist contact from suicidal behaviour)
-- **24-hour rule:** No therapist calls for coaching/support in 24 hours following self-harm (exception: basic medical management)
-- Linehan found no correlation between crisis phone calls and self-injuries in DBT patients (vs. positive correlation in TAU)
-
-### Therapeutic Alliance in Suicide Prevention
-
-Strong alliance may be the single factor keeping patient alive at critical moments. Strategies:
-- Collaborative, validating, nurturing environment
-- Early noticeable progress (however small) strengthens alliance
-- Avoid overly ambitious early targets
-- Active use of validation and commitment strategies to counter dropout
-- Continuity of therapeutic relationship essential (frequent therapist changes associated with poorer outcomes)
-
-### DBT for Suicidal Adolescents: Family Approach
-
-Both suicidal and NSSI behaviour strongly linked to family problems in adolescents. DBT-A (Miller, Rathus, & Linehan, 2007) includes all standard DBT modalities with modifications:
-- Parents participate in multi-family skills training groups on equal terms
-- Family therapy sessions address emotion dysregulation dilemmas
-- Parents' intimate knowledge of skills enables generalization support
-
-### Evidence Base: Suicidal and NSSI Behaviour Outcomes
-
-| Study | Design | Population | Key Findings |
-|-------|--------|-----------|-------------|
-| Linehan et al. 1991 | RCT, DBT vs. TAU, 1 year | BPD adults | Significantly fewer parasuicide episodes; gains mainly in first 4 months; maintained 6 months post-treatment |
-| Linehan et al. 2006 | RCT, DBT vs. expert therapy, 1 year | BPD adults | DBT = half the suicide attempt rate; ER visits for suicidality reduced >50%; inpatient admissions for suicidality reduced >70% |
-| Linehan et al. 2015 | RCT, 3-arm: standard DBT vs. DBT skills only vs. DBT without skills, 1 year + 1-year follow-up | BPD adults | Similar improvements in suicide attempt frequency/severity and ideation across all 3 conditions; DBT with skills > DBT without skills for NSSI reduction |
-| McMain et al. 2009, 2012 | RCT, DBT vs. general psychiatric management, 1 year + 2-year follow-up | BPD adults | Both conditions improved significantly and similarly in suicidal/NSSI frequency and severity; gains sustained 2 years post-treatment |
-| Verheul et al. 2003 | RCT, DBT vs. TAU, 1 year | BPD adults | No difference in suicide attempts; significantly greater NSSI decrease for DBT; sustained 6 months post-treatment |
-| Mehlum et al. 2014, 2016 | RCT, DBT-A vs. enhanced usual care, 4 months | Adolescents with BPD features | Significantly reduced self-harm and suicidal ideation; gains early and sustained 1 and 2 years post-treatment |
-| Pistorello et al. 2012 | RCT, DBT vs. optimized TAU, 7--12 months | Suicidal college students with BPD features | Fewer NSSI episodes, lower suicidal ideation, stronger BPD criteria reduction |
-| Koons et al. 2001 | RCT | BPD | Reduced parasuicidal behaviour, anger, depression, hopelessness, dissociation |
-
-### Associated Symptom Reductions
-
-DBT consistently achieves stronger reductions than comparison treatments in:
-- Depressive symptoms (Koons et al. 2001; Mehlum et al. 2014; Pistorello et al. 2012; Turner 2000)
-- Hopelessness (Koons et al. 2001; Mehlum et al. 2014)
-- BPD criteria/borderline symptoms (Mehlum et al. 2014; Pistorello et al. 2012) --- especially in younger populations
-- Anger (Koons et al. 2001; Linehan et al. 1991; Turner 2000)
-- Impulsiveness and emotion dysregulation (Turner 2000)
-
-### Hospitalization: Evidence and Recommendations
-
-No evidence that long-term hospitalization reduces BPD suicide rates. DBT significantly reduces psychiatric inpatient days. If admission unavoidable: brief, crisis-focused, fixed discharge date, clear communication to patient and family. Hospitalization risks reinforcing the behaviour it intends to reduce.

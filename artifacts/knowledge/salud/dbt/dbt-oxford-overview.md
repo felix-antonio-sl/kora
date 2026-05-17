@@ -6,7 +6,7 @@ _manifest:
     date: '2018'
     source: source/salud/dbt/dbt-oxford.md
 version: 1.0.0
-status: draft
+status: publicado
 tags:
 - dbt
 - dialectical-behaviour-therapy
@@ -19,6 +19,9 @@ lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:dbt-oxford-overview
 relations:
   cites:
   - urn:salud:kb:dbt-oxford-adaptations-a
@@ -33,14 +36,13 @@ relations:
   - urn:salud:kb:dbt-oxford-training
 ---
 
-
 # The Oxford Handbook of Dialectical Behaviour Therapy — Overview
 
 Comprehensive reference edited by Michaela A. Swales (Bangor University). 9 sections, 45 chapters, 58 international contributors. Published by Oxford University Press, 2018. Source extraction covers Ch 1-43; Ch 44 (Gaglia) and Ch 45 (Swales) absent from extracted text.
 
 ## Corpus Map
 
-11 KORA/MD artifacts segmented by handbook section. Each artifact is independently retrievable. Source: `source/salud/dbt/dbt-oxford.md` (36,151 lines). Compression ratio: 9.9:1.
+11 KORA/MD artifacts segmented by handbook section. Each artifact is independently retrievable. Source: ` (36,151 lines). Compression ratio: 9.9:1.
 
 | # | URN | Chapters | Scope | Lines |
 |---|-----|----------|-------|-------|

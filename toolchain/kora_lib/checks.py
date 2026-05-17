@@ -502,19 +502,28 @@ def _check_kb_graph_cycles(path_filter=None):
 
 
 def _check_knowledge_zone(path_filter=None):
-    """Verify all files in artifacts/knowledge/{ns}/ (productivo) have valid _manifest.
+    """Verify artefactos en artifacts/knowledge/{ns}/ cumplen las invariantes del pipeline.
 
-    Excluye artifacts/knowledge/_SCRIPTORIUM/ (staging pre-categorial) del check: el
-    SCRIPTORIUM acepta material crudo sin frontmatter.
+    Reglas que aplica (knowledge-spec §3.2, §4.2):
+      1. Todo .md productivo tiene `_manifest` valido (URN + status).
+      2. status pertenece a {publicado, deprecado} (no borrador).
+      3. namespace del URN coincide con el primer subdirectorio bajo
+         artifacts/knowledge/.
+
+    Excluye artifacts/knowledge/_SCRIPTORIUM/ del check: el SCRIPTORIUM acepta
+    material crudo sin frontmatter (knowledge-spec §8.1 r3).
     """
     import os
+    from .artifacts import load_markdown_parts
     from .config import KNOWLEDGE_ROOT, KORA_ROOT, SCRIPTORIUM_ROOT
+    from .lifecycle import canonicalize_status
 
     diags = []
     if not KNOWLEDGE_ROOT.exists():
         return diags
 
     scriptorium = SCRIPTORIUM_ROOT.resolve() if SCRIPTORIUM_ROOT.exists() else None
+    productive_statuses = {"publicado", "deprecado"}
 
     def is_in_scriptorium(path: Path) -> bool:
         if scriptorium is None:
@@ -525,6 +534,18 @@ def _check_knowledge_zone(path_filter=None):
             return False
         return resolved == scriptorium or scriptorium in resolved.parents
 
+    def first_subdir(rel_path: Path) -> str:
+        parts = rel_path.parts
+        # rel_path es relativa a KNOWLEDGE_ROOT; el primer componente es el ns.
+        return parts[0] if parts else ""
+
+    def urn_namespace(urn: str) -> str:
+        # urn:{ns}:{type}:{id} → {ns}
+        if not isinstance(urn, str) or not urn.startswith("urn:"):
+            return ""
+        parts = urn.split(":")
+        return parts[1] if len(parts) >= 3 else ""
+
     for root, dirs, files in os.walk(KNOWLEDGE_ROOT):
         # Poda: no descender en _SCRIPTORIUM/
         dirs[:] = [d for d in dirs if d != "_SCRIPTORIUM"]
@@ -534,6 +555,10 @@ def _check_knowledge_zone(path_filter=None):
                 continue
             if fname == "README.md":
                 continue
+            rel = str(fpath.relative_to(KORA_ROOT))
+            rel_to_knowledge = fpath.relative_to(KNOWLEDGE_ROOT)
+            ns_subdir = first_subdir(rel_to_knowledge)
+
             if fname.endswith(".md"):
                 try:
                     with open(fpath) as f:
@@ -541,7 +566,6 @@ def _check_knowledge_zone(path_filter=None):
                 except Exception:
                     continue
                 if "_manifest:" not in head:
-                    rel = str(fpath.relative_to(KORA_ROOT))
                     diags.append(Diagnostic(
                         check_id="knowledge-zone",
                         severity="high",
@@ -550,8 +574,50 @@ def _check_knowledge_zone(path_filter=None):
                         message="File in artifacts/knowledge/{ns}/ lacks _manifest frontmatter",
                         fix_hint="Add KORA/MD frontmatter or move to artifacts/knowledge/_SCRIPTORIUM/INBOX/",
                     ))
+                    continue
+                # Regla 2 + 3: status-por-directorio y namespace-directorio
+                try:
+                    frontmatter, _body = load_markdown_parts(fpath)
+                except Exception:
+                    continue
+                if not isinstance(frontmatter, dict):
+                    continue
+                manifest = frontmatter.get("_manifest") or {}
+                status = canonicalize_status(
+                    frontmatter.get("status") or manifest.get("status") or ""
+                )
+                if status and status not in productive_statuses:
+                    diags.append(Diagnostic(
+                        check_id="knowledge-zone",
+                        severity="high",
+                        scope="artifact",
+                        path=rel,
+                        message=(
+                            f"status: {status} no es valido en artifacts/knowledge/{ns_subdir}/ "
+                            f"(knowledge-spec §4.2: solo publicado o deprecado)"
+                        ),
+                        fix_hint=(
+                            "Mover a artifacts/knowledge/_SCRIPTORIUM/REVIEW/ o promover con "
+                            "`python3 toolchain/kora promote`."
+                        ),
+                    ))
+                urn = manifest.get("urn", "")
+                urn_ns = urn_namespace(urn)
+                if urn_ns and ns_subdir and urn_ns != ns_subdir:
+                    diags.append(Diagnostic(
+                        check_id="knowledge-zone",
+                        severity="high",
+                        scope="artifact",
+                        path=rel,
+                        message=(
+                            f"namespace del URN ('{urn_ns}') no coincide con subdirectorio "
+                            f"('{ns_subdir}') (knowledge-spec §3.2)"
+                        ),
+                        fix_hint=(
+                            f"Reubicar a artifacts/knowledge/{urn_ns}/ o corregir el URN."
+                        ),
+                    ))
             elif not fname.startswith("."):
-                rel = str(fpath.relative_to(KORA_ROOT))
                 diags.append(Diagnostic(
                     check_id="knowledge-zone",
                     severity="medium",
@@ -2450,26 +2516,26 @@ def _register_builtins():
     register_check(
         Check("knowledge-zone", "artifacts/knowledge/ contains only valid KORA/MD artifacts",
               scope="artifact", severity="high", enforcement="lint",
-              spec_ref="knowledge-spec §3.1, §8.1", phase="verify"),
+              spec_ref="knowledge-spec §3.2, §4.2, §8.1", phase="verify"),
         _check_knowledge_zone,
     )
     register_check(
         Check("lint-md", "KORA/MD artifacts pass structural lint",
               scope="artifact", severity="low", enforcement="lint",
-              spec_ref="md-spec §5", depends=("knowledge-zone",), phase="lint"),
+              spec_ref="md-spec §5, §9", depends=("knowledge-zone",), phase="lint"),
         _check_lint_md,
         _fix_lint_md,
     )
     register_check(
         Check("kb-graph-cycles", "Knowledge graph has no cycles in depends",
               scope="repo", severity="high", enforcement="lint",
-              spec_ref="knowledge-spec §4.3, §7.3", depends=("knowledge-zone",), phase="graph"),
+              spec_ref="knowledge-spec §6.2, §10", depends=("knowledge-zone",), phase="graph"),
         _check_kb_graph_cycles,
     )
     register_check(
         Check("traces-requirements-semantics", "traces_requirements targets are requirement-like nodes",
               scope="artifact", severity="high", enforcement="lint",
-              spec_ref="knowledge-spec §4.2, §8.6", depends=("knowledge-zone",), phase="graph"),
+              spec_ref="knowledge-spec §6.2 r4, §11 inv7", depends=("knowledge-zone",), phase="graph"),
         _check_traces_requirements_semantics,
     )
     register_check(
@@ -2487,7 +2553,7 @@ def _register_builtins():
     register_check(
         Check("supersedes-consistency", "Supersedes targets must be deprecated",
               scope="artifact", severity="medium", enforcement="lint",
-              spec_ref="knowledge-spec §4.3", depends=("knowledge-zone",), phase="graph"),
+              spec_ref="knowledge-spec §6.2 r2, §11 inv4", depends=("knowledge-zone",), phase="graph"),
         _check_supersedes_consistency,
     )
     register_check(

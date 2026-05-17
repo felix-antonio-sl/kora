@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-clinical-b"
+  urn: urn:salud:kb:dbt-oxford-clinical-b
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
-status: draft
-tags: [dbt, dialectical-behaviour-therapy, validation, in-session-behaviours, clinical-applications, therapeutic-strategies]
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
+status: publicado
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- validation
+- in-session-behaviours
+- clinical-applications
+- therapeutic-strategies
 lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:dbt-oxford-clinical-b
 ---
 
 # The Oxford Handbook of DBT — Clinical Applications (Part B)
@@ -132,7 +141,7 @@ Use behavioural theory + biosocial theory. Comprehensiveness varies with context
 
 Pattern recognition: content + vocal tone + facial expression + body posture + known patterns from consultation team. Optimal comprehensiveness = degree required to generate solutions that change behaviour permanently.
 
-Common controlling factors: knowledge/skill deficits; aversive emotions (shame, guilt, disgust) prompting avoidance; reinforcing consequences (attention, sympathy, self-validation); classical conditioning to in-session cues.
+Common controlling factors: deficits; aversive emotions (shame, guilt, disgust) prompting avoidance; reinforcing consequences (attention, sympathy, self-validation); classical conditioning to in-session cues.
 
 ### Implementing Solutions
 

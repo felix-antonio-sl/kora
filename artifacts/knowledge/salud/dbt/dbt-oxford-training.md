@@ -1,17 +1,27 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-training"
+  urn: urn:salud:kb:dbt-oxford-training
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
-status: draft
-tags: [dbt, dialectical-behaviour-therapy, training, education, intensive-training, dissemination, conclusion]
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
+status: publicado
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- training
+- education
+- intensive-training
+- dissemination
+- conclusion
 lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:dbt-oxford-training
 ---
 
 # The Oxford Handbook of DBT — Training and Conclusion

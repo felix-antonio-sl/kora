@@ -803,7 +803,7 @@ class SemanticValidationTests(unittest.TestCase):
             "_manifest": {"urn": "urn:kora:kb:demo-spec"},
             "extensions": {"kora": {"family": "spec"}},
         }
-        self.assertEqual(resolve_max_lines_per_h2(frontmatter), 450)
+        self.assertEqual(resolve_max_lines_per_h2(frontmatter), 500)
 
     def test_auto_fix_published_kora_markdown_parts_removes_html_and_semanticizes_refs(self):
         frontmatter = {

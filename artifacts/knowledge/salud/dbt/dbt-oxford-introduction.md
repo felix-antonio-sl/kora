@@ -1,17 +1,26 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-introduction"
+  urn: urn:salud:kb:dbt-oxford-introduction
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
-status: draft
-tags: [dbt, dialectical-behaviour-therapy, introduction, history, development, distinctive-features]
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
+status: publicado
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- introduction
+- history
+- development
+- distinctive-features
 lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:dbt-oxford-introduction
 ---
 
 # The Oxford Handbook of DBT — Introduction

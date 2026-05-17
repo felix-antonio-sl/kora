@@ -1,17 +1,28 @@
 ---
 _manifest:
-  urn: "urn:salud:kb:dbt-oxford-evidence"
+  urn: urn:salud:kb:dbt-oxford-evidence
   provenance:
-    author: "Michaela A. Swales (ed.)"
-    date: "2018"
-    source: "source/salud/dbt/dbt-oxford.md"
-version: "1.0.0"
-status: draft
-tags: [dbt, dialectical-behaviour-therapy, evidence-base, rct, meta-analysis, effectiveness, outcomes, research]
+    author: Michaela A. Swales (ed.)
+    date: '2018'
+    source: source/salud/dbt/dbt-oxford.md
+version: 1.0.0
+status: publicado
+tags:
+- dbt
+- dialectical-behaviour-therapy
+- evidence-base
+- rct
+- meta-analysis
+- effectiveness
+- outcomes
+- research
 lang: en
 extensions:
   kora:
     family: note
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:salud:kb:dbt-oxford-evidence
 ---
 
 # The Oxford Handbook of DBT — Evidence Base
