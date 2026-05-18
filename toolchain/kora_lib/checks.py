@@ -501,6 +501,165 @@ def _check_kb_graph_cycles(path_filter=None):
     return diags
 
 
+def _collect_relation_edges(relation_type):
+    """Recolecta los edges de un tipo de relacion desde frontmatter publicado.
+
+    Retorna lista de tuplas (source_urn, target_urn, source_file_rel).
+    """
+    from .config import KORA_ROOT
+    from .kb_graph import collect_knowledge_nodes
+
+    edges = []
+    for node in collect_knowledge_nodes():
+        relations = node.get("relations") or {}
+        if not isinstance(relations, dict):
+            continue
+        targets = relations.get(relation_type) or []
+        if isinstance(targets, str):
+            targets = [targets]
+        if not isinstance(targets, list):
+            continue
+        source_urn = node.get("urn")
+        source_file = node.get("file", "")
+        for target in targets:
+            if isinstance(target, str) and source_urn:
+                edges.append((source_urn, target, source_file))
+    return edges
+
+
+def _find_cycles(edges):
+    """Detecta nodos involucrados en ciclos. Algoritmo: DFS con tres-color.
+
+    Retorna conjunto de URNs que pertenecen a algun ciclo.
+    """
+    from collections import defaultdict
+
+    graph = defaultdict(list)
+    nodes = set()
+    for src, tgt, _ in edges:
+        graph[src].append(tgt)
+        nodes.add(src)
+        nodes.add(tgt)
+
+    WHITE, GRAY, BLACK = 0, 1, 2
+    color = {n: WHITE for n in nodes}
+    in_cycle = set()
+
+    def dfs(start):
+        stack = [(start, iter(graph[start]))]
+        path = [start]
+        color[start] = GRAY
+        while stack:
+            node, neighbors = stack[-1]
+            try:
+                nxt = next(neighbors)
+            except StopIteration:
+                color[node] = BLACK
+                stack.pop()
+                path.pop()
+                continue
+            if color.get(nxt, WHITE) == GRAY:
+                # ciclo detectado: marcar todos en el camino desde nxt
+                idx = path.index(nxt) if nxt in path else 0
+                for n in path[idx:]:
+                    in_cycle.add(n)
+                in_cycle.add(nxt)
+            elif color.get(nxt, WHITE) == WHITE:
+                color[nxt] = GRAY
+                path.append(nxt)
+                stack.append((nxt, iter(graph[nxt])))
+    for n in nodes:
+        if color[n] == WHITE:
+            dfs(n)
+    return in_cycle
+
+
+def _check_relations_laws(path_filter=None):
+    """Verifica leyes algebraicas por tipo de relacion (knowledge-spec §6.3).
+
+    Reglas verificadas:
+      - aciclicidad de `supersedes`
+      - aciclicidad de `refines`
+      - antisimetria de `supersedes` (si A->B existe, B->A no debe existir)
+
+    `cites` y `traces_requirements` no tienen estructura de orden y solo
+    requieren resolubilidad (cubierto por `urn-integrity`).
+    `depends` tiene su check dedicado `kb-graph-cycles`.
+    """
+    from .config import KORA_ROOT
+
+    diags = []
+
+    # Aciclicidad de supersedes
+    supersedes_edges = _collect_relation_edges("supersedes")
+    super_cycles = _find_cycles(supersedes_edges)
+    for src, tgt, src_file in supersedes_edges:
+        if src in super_cycles and tgt in super_cycles:
+            try:
+                rel = str(Path(src_file).relative_to(KORA_ROOT)) if src_file else ""
+            except ValueError:
+                rel = str(src_file)
+            diags.append(Diagnostic(
+                check_id="relations-laws",
+                severity="high",
+                scope="artifact",
+                path=rel,
+                message=(
+                    f"`supersedes`: ciclo detectado que incluye {src} -> {tgt} "
+                    "(knowledge-spec §6.3 r1: aciclicidad obligatoria)."
+                ),
+                fix_hint="Corta el ciclo: elimina supersedes que cierre la cadena o reemplaza por cites.",
+            ))
+
+    # Aciclicidad de refines
+    refines_edges = _collect_relation_edges("refines")
+    refines_cycles = _find_cycles(refines_edges)
+    for src, tgt, src_file in refines_edges:
+        if src in refines_cycles and tgt in refines_cycles:
+            try:
+                rel = str(Path(src_file).relative_to(KORA_ROOT)) if src_file else ""
+            except ValueError:
+                rel = str(src_file)
+            diags.append(Diagnostic(
+                check_id="relations-laws",
+                severity="high",
+                scope="artifact",
+                path=rel,
+                message=(
+                    f"`refines`: ciclo detectado que incluye {src} -> {tgt} "
+                    "(knowledge-spec §6.3 r3: aciclicidad obligatoria)."
+                ),
+                fix_hint="Corta el ciclo: elimina refines que cierre la cadena o reemplaza por cites.",
+            ))
+
+    # Antisimetria de supersedes
+    super_pairs = {(src, tgt): src_file for src, tgt, src_file in supersedes_edges}
+    seen_bidirectional = set()
+    for (src, tgt), src_file in super_pairs.items():
+        if (tgt, src) in super_pairs and (src, tgt) not in seen_bidirectional:
+            seen_bidirectional.add((src, tgt))
+            seen_bidirectional.add((tgt, src))
+            try:
+                rel = str(Path(src_file).relative_to(KORA_ROOT)) if src_file else ""
+            except ValueError:
+                rel = str(src_file)
+            diags.append(Diagnostic(
+                check_id="relations-laws",
+                severity="high",
+                scope="artifact",
+                path=rel,
+                message=(
+                    f"`supersedes` no es antisimetrica: {src} <-> {tgt} "
+                    "(knowledge-spec §6.3 r2: A supersedes B implica que B NO supersede A)."
+                ),
+                fix_hint="Decide direccion temporal: solo uno de los dos artefactos sucede al otro.",
+            ))
+
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 def _check_knowledge_zone(path_filter=None):
     """Verify artefactos en artifacts/knowledge/{ns}/ cumplen las invariantes del pipeline.
 
@@ -2581,6 +2740,12 @@ def _register_builtins():
               scope="repo", severity="high", enforcement="lint",
               spec_ref="knowledge-spec §6.2, §10", depends=("knowledge-zone",), phase="graph"),
         _check_kb_graph_cycles,
+    )
+    register_check(
+        Check("relations-laws", "supersedes/refines acyclic; supersedes antisymmetric",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="knowledge-spec §6.3", depends=("knowledge-zone",), phase="graph"),
+        _check_relations_laws,
     )
     register_check(
         Check("traces-requirements-semantics", "traces_requirements targets are requirement-like nodes",

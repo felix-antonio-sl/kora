@@ -722,7 +722,16 @@ def _autoria_migrate_envelope(frontmatter):
 
 
 def _autoria_migrate_manifest(frontmatter):
-    """Rewrite _manifest.urn to artefacto regime, set type=artefacto."""
+    """Rewrite _manifest.urn to artefacto regime, set type=artefacto.
+
+    Tambien mueve `status` y `version` desde `_manifest` al root del
+    frontmatter (autoria-spec §3.1). Cierra los codes
+    `envelope-status-fuera-de-lugar` y `envelope-version-fuera-de-lugar`
+    del validador (adjuncion Check ⊣ Fix sobre envelope).
+
+    Politica de conflicto: si la clave esta en ambos lugares (`_manifest.k`
+    y root.k), prevalece root y se elimina la copia en `_manifest`.
+    """
     manifest = frontmatter.get("_manifest")
     if not isinstance(manifest, dict):
         return False
@@ -739,6 +748,30 @@ def _autoria_migrate_manifest(frontmatter):
     if manifest.get("type") != "artefacto":
         manifest["type"] = "artefacto"
         changed = True
+
+    # Envelope hoist: status y version siempre en root (autoria-spec §3.1).
+    # Politica de conflicto: root prevalece; _manifest.k se elimina sin reescribir root.
+    hoisted = {}
+    for key in ("version", "status"):
+        if key in manifest:
+            value = manifest.pop(key)
+            if frontmatter.get(key) is None:
+                hoisted[key] = value
+            changed = True
+
+    if hoisted:
+        # Reorganiza el dict para preservar orden idiomatico:
+        # _manifest, version, status, resto.
+        existing = {k: frontmatter[k] for k in list(frontmatter.keys()) if k != "_manifest"}
+        frontmatter.clear()
+        frontmatter["_manifest"] = manifest
+        for key in ("version", "status"):
+            if key in hoisted:
+                frontmatter[key] = hoisted[key]
+            elif key in existing:
+                frontmatter[key] = existing.pop(key)
+        frontmatter.update(existing)
+
     return changed
 
 

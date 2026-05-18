@@ -380,5 +380,63 @@ Fixture minima para verificar promocion de skills desde REVIEW.
             shutil.rmtree(productive_dir, ignore_errors=True)
 
 
+class TestRelationsLaws(unittest.TestCase):
+    """Verifica leyes algebraicas declaradas en knowledge-spec §6.3."""
+
+    def test_find_cycles_detects_supersedes_cycle(self):
+        from kora_lib.checks import _find_cycles
+
+        edges = [
+            ("urn:kora:kb:a", "urn:kora:kb:b", "fa"),
+            ("urn:kora:kb:b", "urn:kora:kb:c", "fb"),
+            ("urn:kora:kb:c", "urn:kora:kb:a", "fc"),
+        ]
+        cycles = _find_cycles(edges)
+        self.assertEqual(cycles, {"urn:kora:kb:a", "urn:kora:kb:b", "urn:kora:kb:c"})
+
+    def test_find_cycles_returns_empty_on_dag(self):
+        from kora_lib.checks import _find_cycles
+
+        edges = [
+            ("urn:kora:kb:a", "urn:kora:kb:b", "fa"),
+            ("urn:kora:kb:b", "urn:kora:kb:c", "fb"),
+            ("urn:kora:kb:a", "urn:kora:kb:c", "fac"),
+        ]
+        self.assertEqual(_find_cycles(edges), set())
+
+    def test_check_detects_supersedes_antisymmetry_violation(self):
+        from kora_lib.checks import _check_relations_laws
+
+        # Fixture: supersedes bidireccional (viola antisimetria)
+        fake_edges = [
+            ("urn:kora:kb:x", "urn:kora:kb:y", "x.md"),
+            ("urn:kora:kb:y", "urn:kora:kb:x", "y.md"),
+        ]
+        with patch(
+            "kora_lib.checks._collect_relation_edges",
+            side_effect=lambda rt: fake_edges if rt == "supersedes" else [],
+        ):
+            diags = _check_relations_laws()
+        # Tanto ciclo como antisimetria deben dispararse
+        antisym = [d for d in diags if "antisimetrica" in d.message]
+        self.assertGreaterEqual(len(antisym), 1)
+        self.assertEqual(antisym[0].severity, "high")
+
+    def test_check_detects_refines_cycle(self):
+        from kora_lib.checks import _check_relations_laws
+
+        fake_edges = [
+            ("urn:kora:kb:p", "urn:kora:kb:q", "p.md"),
+            ("urn:kora:kb:q", "urn:kora:kb:p", "q.md"),
+        ]
+        with patch(
+            "kora_lib.checks._collect_relation_edges",
+            side_effect=lambda rt: fake_edges if rt == "refines" else [],
+        ):
+            diags = _check_relations_laws()
+        refines_diags = [d for d in diags if "refines" in d.message]
+        self.assertGreaterEqual(len(refines_diags), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

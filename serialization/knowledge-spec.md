@@ -256,7 +256,42 @@ Las relaciones se declaran en el campo raiz `relations` reservado por
 5. La precedencia normativa entre specs **NO** se decide aqui; se decide
    solo en `gobernanza`.
 
-### 6.3 Composicion y functorialidad
+### 6.3 Leyes algebraicas por tipo de relacion
+
+Cada tipo de relacion define una **subcategoria** de `KnowCat` con leyes
+algebraicas propias. La unica relacion sin estructura de orden es `cites`
+(que admite ciclos y simetria); las demas son ordenes parciales o DAGs
+con propiedades verificables.
+
+| Relacion | Estructura categorial | Aciclica | Transitiva en clausura | Antisimetrica | Enforcement |
+| --- | --- | --- | --- | --- | --- |
+| `cites` | relacion binaria libre | no | no | no | `urn-integrity` |
+| `depends` | DAG estricto | **si** | si (clausura) | no aplica (irreflexiva) | `kb-graph-cycles` |
+| `supersedes` | poset estricto | **si** | si (clausura) | **si** | `relations-laws` |
+| `refines` | preorder estricto | **si** | si (clausura) | no exigida | `relations-laws` |
+| `traces_requirements` | relacion many-to-many | no | no | no | `traces-requirements-semantics` |
+
+Reglas algebraicas:
+
+1. **Aciclicidad de `supersedes`**: ningun ciclo `A --supersedes--> ... --supersedes--> A`.
+   Rationale: un artefacto no se reemplaza a si mismo; la cadena debe
+   terminar en un nodo `deprecado` o `retirado` que no supersede a nada.
+2. **Antisimetria de `supersedes`**: si `A --supersedes--> B`, entonces
+   `B --supersedes--> A` es **invalido**. Rationale: la sucesion es
+   orientada en el tiempo; bidireccionalidad rompe el lifecycle.
+3. **Aciclicidad de `refines`**: ningun ciclo
+   `A --refines--> ... --refines--> A`. Rationale: refinar es especializar;
+   un nodo no se especializa a si mismo via cadena cerrada.
+4. **Composicion de `depends` preserva aciclicidad** (corolario):
+   si `A --depends--> B` y `B --depends--> C`, entonces `C --depends--> A`
+   es invalido. Verificado mecanicamente por `kb-graph-cycles`.
+5. **`cites` y `traces_requirements`** no tienen restricciones de orden;
+   solo se verifica resolubilidad del target (regla 1 de §6.2).
+
+Enforcement: lint via `relations-laws` (aciclicidad y antisimetria), graph
+via `kb-graph-cycles` (DAG de `depends`).
+
+### 6.4 Composicion y functorialidad
 
 `relations` define el grafo dirigido subyacente a `KnowCat`. El catalogo
 materializado por `kora index` actua como **functor** que preserva:

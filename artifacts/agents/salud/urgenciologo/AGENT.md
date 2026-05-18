@@ -39,6 +39,7 @@ extensions:
       - 3
       - 2
     presentacion: estado-primario
+    verificacion_coalgebraica: true
     atlas:
       arnes_categorico: persona
       forma_material: agente-propiamente-tal

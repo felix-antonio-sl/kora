@@ -179,6 +179,85 @@ class TestAgentMigration(unittest.TestCase):
         self.assertNotIn("name", fm)
         self.assertNotIn("description", fm)
 
+    def test_envelope_hoists_status_and_version_from_manifest(self):
+        """Adjuncion Check ⊣ Fix: status/version dentro de _manifest se mueven a root.
+
+        Cierra los codes `envelope-status-fuera-de-lugar` y
+        `envelope-version-fuera-de-lugar` del validador.
+        """
+        from kora_lib.migration import _autoria_migrate_manifest
+
+        # Caso A: ambos campos solo en _manifest, root vacio.
+        fm_a = {
+            "_manifest": {
+                "urn": "urn:kora:artefacto:test-a",
+                "type": "artefacto",
+                "status": "activo",
+                "version": "1.0.0",
+            },
+            "nombre": "test",
+        }
+        changed_a = _autoria_migrate_manifest(fm_a)
+        self.assertTrue(changed_a)
+        self.assertEqual(fm_a.get("status"), "activo")
+        self.assertEqual(fm_a.get("version"), "1.0.0")
+        self.assertNotIn("status", fm_a["_manifest"])
+        self.assertNotIn("version", fm_a["_manifest"])
+
+        # Caso B: conflicto root vs _manifest — root prevalece, _manifest se limpia.
+        fm_b = {
+            "_manifest": {
+                "urn": "urn:kora:artefacto:test-b",
+                "type": "artefacto",
+                "version": "1.0.0",
+            },
+            "version": "2.0.0",
+            "status": "activo",
+        }
+        _autoria_migrate_manifest(fm_b)
+        self.assertEqual(fm_b["version"], "2.0.0")
+        self.assertNotIn("version", fm_b["_manifest"])
+
+        # Caso C: idempotencia. Segunda corrida no cambia nada.
+        fm_c = dict(fm_a)
+        fm_c["_manifest"] = dict(fm_a["_manifest"])
+        changed_c = _autoria_migrate_manifest(fm_c)
+        self.assertFalse(changed_c, "fix . fix = fix (idempotencia)")
+
+    def test_envelope_hoist_reduces_validator_diagnostics(self):
+        """Reduccion: diagnose . fix no contiene los codes envelope-*-fuera-de-lugar."""
+        from kora_lib.autoria_validate import validate
+        from kora_lib.migration import _autoria_migrate_manifest
+
+        fm = {
+            "_manifest": {
+                "urn": "urn:kora:artefacto:reduc",
+                "type": "artefacto",
+                "status": "activo",
+                "version": "1.0.0",
+            },
+            "nombre": "reduc",
+            "descripcion": "test",
+            "lang": "es",
+            "extensions": {"kora": {
+                "atlas": {"forma_material": "habilidad", "arnes_categorico": "utilidad"},
+                "vector_ontologico": {"pi": 1, "mu": 0, "xi": 1, "lambda": 0, "phi": 1, "sigma": [1,1,1,1,0]},
+                "presentacion": "estado-primario",
+                "entornos_objetivo": ["claude-code"],
+                "nivel_prescripcion": "medio",
+            }},
+        }
+        pre_codes = {d.code for d in validate(fm)}
+        self.assertIn("envelope-status-fuera-de-lugar", pre_codes)
+        self.assertIn("envelope-version-fuera-de-lugar", pre_codes)
+
+        _autoria_migrate_manifest(fm)
+        post_codes = {d.code for d in validate(fm)}
+        self.assertNotIn("envelope-status-fuera-de-lugar", post_codes)
+        self.assertNotIn("envelope-version-fuera-de-lugar", post_codes)
+        self.assertNotIn("envelope-status-requerido", post_codes)
+        self.assertNotIn("envelope-version-requerido", post_codes)
+
     def test_kora_overlay_renames(self):
         fm, _, _ = self._write_and_migrate(AGENT_LEGACY_FRONTMATTER)
         kora = fm["extensions"]["kora"]
