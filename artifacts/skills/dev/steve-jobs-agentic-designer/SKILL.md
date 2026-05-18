@@ -8,7 +8,7 @@ _manifest:
     source: Extraido del agente nativo steve-jobs-agentic-designer (~/.claude/agents/steve-jobs-agentic-designer.md).
       7 principios + 7 preguntas letales + 10 anti-patrones + spec de subagentes Claude
       Code.
-  version: 1.0.0
+version: 1.0.0
 status: activo
 nombre: steve-jobs-agentic-designer
 descripcion: Autoridad de diseno para sistemas agenticos. 7 principios, 7 preguntas

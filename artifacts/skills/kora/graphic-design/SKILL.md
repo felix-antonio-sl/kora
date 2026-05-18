@@ -1,16 +1,25 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:graphic-design"
+  urn: urn:kora:artefacto:graphic-design
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-23"
-    source: "Migracion desde artifacts/skills/_TALLER/INBOX/graphic-design/SKILL.md (legacy overlay v1, 353 lineas) a shape unified v1.2"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-23'
+    source: Migracion desde artifacts/skills/_TALLER/INBOX/graphic-design/SKILL.md
+      (legacy overlay v1, 353 lineas) a shape unified v1.2
+version: 1.0.0
 status: activo
 nombre: graphic-design
-descripcion: "Disena identidades visuales como sistemas coherentes y transformables. Define operadores visuales (color, tipografia, grilla, forma, espaciado, iconografia, marca) y reglas de composicion que garantizan consistencia y escalabilidad. Produce brand specs, design tokens ejecutables (JSON + CSS + Tailwind) y assets SVG."
-tags: [graphic-design, identidad-visual, design-tokens, disciplina, marca]
+descripcion: Disena identidades visuales como sistemas coherentes y transformables.
+  Define operadores visuales (color, tipografia, grilla, forma, espaciado, iconografia,
+  marca) y reglas de composicion que garantizan consistencia y escalabilidad. Produce
+  brand specs, design tokens ejecutables (JSON + CSS + Tailwind) y assets SVG.
+tags:
+- graphic-design
+- identidad-visual
+- design-tokens
+- disciplina
+- marca
 lang: es
 extensions:
   kora:
@@ -20,28 +29,36 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 2, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 2
+      - 1
+      - 0
     presentacion: estado-primario
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: medio
     conocimiento_permitido: []
     componible_con:
-      - "urn:kora:artefacto:ux-design"
+    - urn:kora:artefacto:ux-design
 artefacto:
   perfil:
-    descripcion: "Habilidad de diseno grafico para construir identidades visuales sistemicas, design tokens y guias de marca coherentes."
+    descripcion: Habilidad de diseno grafico para construir identidades visuales sistemicas,
+      design tokens y guias de marca coherentes.
     dominio:
-      - identidad visual
-      - sistemas de marca
-      - design tokens
+    - identidad visual
+    - sistemas de marca
+    - design tokens
     salidas:
-      - brand specs
-      - design tokens
-      - assets SVG
+    - brand specs
+    - design tokens
+    - assets SVG
   interfaz:
     herramientas: []
     permisos:

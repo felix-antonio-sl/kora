@@ -1,16 +1,25 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:transmute-openclaw"
+  urn: urn:kora:artefacto:transmute-openclaw
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-23"
-    source: "Migracion desde artifacts/skills/_TALLER/INBOX/transmute-openclaw/SKILL.md (legacy skill-overlay v1) a shape unified autoria-spec v1.2; URN regimen artefacto:"
-version: "2.0.0"
-status: borrador
+    created_by: FS
+    created_at: '2026-04-23'
+    source: 'Migracion desde artifacts/skills/_TALLER/INBOX/transmute-openclaw/SKILL.md
+      (legacy skill-overlay v1) a shape unified autoria-spec v1.2; URN regimen artefacto:'
+version: 2.0.0
+status: activo
 nombre: transmute-openclaw
-descripcion: "Transmuta un AGENT.md KORA a un workspace OpenClaw completo (AGENTS.md, SOUL.md, USER.md, TOOLS.md, config.json, skills/). Compila las 6 dimensiones categoricas del IR al formato nativo de OpenClaw con maxima fidelidad; unico runtime que soporta agente-plataforma."
-tags: [transmutacion, openclaw, proyeccion, runtime, workspace]
+descripcion: Transmuta un AGENT.md KORA a un workspace OpenClaw completo (AGENTS.md,
+  SOUL.md, USER.md, TOOLS.md, config.json, skills/). Compila las 6 dimensiones categoricas
+  del IR al formato nativo de OpenClaw con maxima fidelidad; unico runtime que soporta
+  agente-plataforma.
+tags:
+- transmutacion
+- openclaw
+- proyeccion
+- runtime
+- workspace
 lang: es
 extensions:
   kora:
@@ -20,35 +29,49 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [2, 1, 3, 1, 0]
+      sigma:
+      - 2
+      - 1
+      - 3
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: utilidad
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: alto
     conocimiento_permitido:
-      - "urn:kora:kb:autoria-spec"
-      - "urn:kora:kb:transmutation-spec"
-      - "urn:agengai:kb:openclaw-runtime-extension"
+    - urn:kora:kb:autoria-spec
+    - urn:kora:kb:transmutation-spec
+    - urn:agengai:kb:openclaw-runtime-extension
     componible_con: []
 artefacto:
   perfil:
-    descripcion: "Habilidad de transmutacion que proyecta artefactos KORA/MD a workspaces OpenClaw completos con bootstrap, config y trazabilidad."
+    descripcion: Habilidad de transmutacion que proyecta artefactos KORA/MD a workspaces
+      OpenClaw completos con bootstrap, config y trazabilidad.
     dominio:
-      - transmutacion de runtime
-      - OpenClaw
-      - workspaces agenticos
+    - transmutacion de runtime
+    - OpenClaw
+    - workspaces agenticos
     salidas:
-      - workspace OpenClaw
-      - config de runtime
-      - registro _transmutation.yml
+    - workspace OpenClaw
+    - config de runtime
+    - registro _transmutation.yml
   interfaz:
     herramientas: []
     permisos:
       allow: []
       deny: []
+  invariantes:
+    reglas_duras:
+    - "Toda perdida estructural respecto al IR canonico DEBE registrarse en _transmutation.yml; nunca silenciar."
+    - "URN del artefacto fuente DEBE preservarse en config/openclaw.json5.agent.urn; la transmutacion no reescribe identidad."
+    - "Si forma_material es agente-plataforma, always_on: true es obligatorio en la config emitida."
+    - "Paths absolutos NO deben aparecer en el workspace generado; toda variable debe resolverse al compilar."
 ---
 
 # Transmute OpenClaw
@@ -276,7 +299,7 @@ fidelity:
 
 ## Recursos
 
-Spec gobernante: `urn:kora:kb:openclaw-runtime-extension`. No requiere recursos auxiliares adicionales.
+Spec gobernante: `urn:agengai:kb:openclaw-runtime-extension`. No requiere recursos auxiliares adicionales.
 
 ## Invariantes
 

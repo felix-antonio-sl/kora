@@ -6,7 +6,7 @@ _manifest:
     created_by: FS
     created_at: '2026-05-07'
     source: Skill clinica para visita intrahospitalaria del agente medico-hospitalista.
-  version: 1.0.0
+version: 1.0.0
 status: activo
 nombre: asistencial-hospital
 descripcion: Skill para visita clinica en servicio de medicina intrahospitalaria.

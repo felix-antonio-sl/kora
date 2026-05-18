@@ -1,23 +1,28 @@
 ---
 _manifest:
-  urn: "urn:dev:artefacto:hu-progress-auditor"
+  urn: urn:dev:artefacto:hu-progress-auditor
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-05-05"
-    source: "Requerimiento de Felix: habilidad inteligente, repo-local, para evaluar avance real del proyecto deep-opm-pro contra docs/historias-usuario-v2 y proyectarse a Claude Code, Codex y OpenCode."
-version: "0.1.0"
+    created_by: OpenAI Codex
+    created_at: '2026-05-05'
+    source: 'Requerimiento de Felix: habilidad inteligente, repo-local, para evaluar
+      avance real del proyecto deep-opm-pro contra docs/historias-usuario-v2 y proyectarse
+      a Claude Code, Codex y OpenCode.'
+version: 0.1.0
 status: activo
 nombre: hu-progress-auditor
-descripcion: "Skill repo-local para auditar el avance real de deep-opm-pro contra las HU vivas mediante arbitraje semantico LLM-primero. El auditor determinista es el piso conservador; el juicio del modelo, anclado a codigo/tests/UI/OPL/assets/commits, decide la cobertura y expone la divergencia con el script."
+descripcion: Skill repo-local para auditar el avance real de deep-opm-pro contra las
+  HU vivas mediante arbitraje semantico LLM-primero. El auditor determinista es el
+  piso conservador; el juicio del modelo, anclado a codigo/tests/UI/OPL/assets/commits,
+  decide la cobertura y expone la divergencia con el script.
 tags:
-  - auditoria
-  - historias-usuario
-  - avance-real
-  - deep-opm-pro
-  - evidencia
-  - dashboard
-  - semantic-review
+- auditoria
+- historias-usuario
+- avance-real
+- deep-opm-pro
+- evidencia
+- dashboard
+- semantic-review
 lang: es
 extensions:
   kora:
@@ -27,52 +32,78 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [2, 1, 3, 2, 1]
+      sigma:
+      - 2
+      - 1
+      - 3
+      - 2
+      - 1
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, opencode]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
     nivel_prescripcion: alto
     conocimiento_permitido: []
     componible_con: []
 artefacto:
   perfil:
     dominio:
-      - auditoria-de-avance-software
-      - trazabilidad-hu-a-codigo
-      - evaluacion-semantica-con-evidencia
-      - dashboards-de-progreso
+    - auditoria-de-avance-software
+    - trazabilidad-hu-a-codigo
+    - evaluacion-semantica-con-evidencia
+    - dashboards-de-progreso
     disparadores:
-      - "el operador pide evaluar avance real contra docs/historias-usuario-v2"
-      - "despues de implementar o refactorizar app/ se requiere actualizar hu-progress"
-      - "antes de cerrar sprint, handoff, commit o push se requiere evidencia de cobertura HU"
-      - "una HU parece cubierta pero el auditor determinista no la reconoce"
+    - el operador pide evaluar avance real contra docs/historias-usuario-v2
+    - despues de implementar o refactorizar app/ se requiere actualizar hu-progress
+    - antes de cerrar sprint, handoff, commit o push se requiere evidencia de cobertura
+      HU
+    - una HU parece cubierta pero el auditor determinista no la reconoce
     salidas:
-      - "arbitraje LLM por HU con estado autoritativo y evidencia citada (archivo:linea, test, commit, gesto UI, asset)"
-      - "tabla script-vs-LLM por HU evaluada, con motivo cuando difieren"
-      - "diagnostico de cobertura por HU con estado cubierto/parcial/pendiente/diferido/bloqueado"
-      - "patch opcional a autoAuditRules() solo cuando la divergencia es repetible y barata"
-      - "reportes hu-progress.{html,md,json} regenerados cuando corresponde"
-      - "handoff breve con pendientes, supuestos, riesgos y deuda de evidencia"
+    - arbitraje LLM por HU con estado autoritativo y evidencia citada (archivo:linea,
+      test, commit, gesto UI, asset)
+    - tabla script-vs-LLM por HU evaluada, con motivo cuando difieren
+    - diagnostico de cobertura por HU con estado cubierto/parcial/pendiente/diferido/bloqueado
+    - patch opcional a autoAuditRules() solo cuando la divergencia es repetible y
+      barata
+    - reportes hu-progress.{html,md,json} regenerados cuando corresponde
+    - handoff breve con pendientes, supuestos, riesgos y deuda de evidencia
   interfaz:
-    herramientas: [Read, Write, Edit, Glob, Grep, Bash]
-    permisos: "Solo workspace deep-opm-pro actual. Lectura de docs/historias-usuario-v2, docs/roadmap, AGENTS.md, docs/HANDOFF.md, app/src, app/e2e, app/scripts y assets/svg/links. Escritura permitida solo sobre el auditor hu-progress, ledger/reportes derivados y documentacion de handoff cuando el operador lo pide. No usar red. No commitear ni pushear salvo orden explicita."
+    herramientas:
+    - Read
+    - Write
+    - Edit
+    - Glob
+    - Grep
+    - Bash
+    permisos: Solo workspace deep-opm-pro actual. Lectura de docs/historias-usuario-v2,
+      docs/roadmap, AGENTS.md, docs/HANDOFF.md, app/src, app/e2e, app/scripts y assets/svg/links.
+      Escritura permitida solo sobre el auditor hu-progress, ledger/reportes derivados
+      y documentacion de handoff cuando el operador lo pide. No usar red. No commitear
+      ni pushear salvo orden explicita.
     protocolos:
-      entrada: "Solicitud de auditoria general, HU/epica/corte especifico, o peticion de actualizar dashboard."
-      salida: "Resumen ejecutivo, lista priorizada de cambios de cobertura, evidencia por HU, brechas, archivos actualizados y comandos ejecutados."
+      entrada: Solicitud de auditoria general, HU/epica/corte especifico, o peticion
+        de actualizar dashboard.
+      salida: Resumen ejecutivo, lista priorizada de cambios de cobertura, evidencia
+        por HU, brechas, archivos actualizados y comandos ejecutados.
   invariantes:
     reglas_duras:
-      - "El juicio LLM es la cobertura autoritativa; el auditor determinista es solo el piso conservador y el detector de regresion."
-      - "Toda HU evaluada debe citar evidencia local concreta multicapa o quedar como supuesto/deuda."
-      - "Toda divergencia script-vs-LLM debe quedar visible en el reporte con motivo."
-      - "Endurecer una regla del script es opcional y se hace solo cuando la divergencia es repetible y barata."
-      - "El auditor no puede tocar codigo de producto salvo pedido explicito."
-      - "El despliegue runtime de esta skill debe ser repo-local, nunca global."
+    - El juicio LLM es la cobertura autoritativa; el auditor determinista es solo
+      el piso conservador y el detector de regresion.
+    - Toda HU evaluada debe citar evidencia local concreta multicapa o quedar como
+      supuesto/deuda.
+    - Toda divergencia script-vs-LLM debe quedar visible en el reporte con motivo.
+    - Endurecer una regla del script es opcional y se hace solo cuando la divergencia
+      es repetible y barata.
+    - El auditor no puede tocar codigo de producto salvo pedido explicito.
+    - El despliegue runtime de esta skill debe ser repo-local, nunca global.
     compromisos_eticos:
-      transparency: "Alta; cada cambio de estado HU debe exponer evidencia y brecha."
-      accountability: "Alta; los reportes deben indicar comandos, diagnosticos y supuestos."
+      transparency: Alta; cada cambio de estado HU debe exponer evidencia y brecha.
+      accountability: Alta; los reportes deben indicar comandos, diagnosticos y supuestos.
   contexto:
     qa_budget:
       umbrales_minimos:
@@ -80,43 +111,50 @@ artefacto:
         validate_hu_violations: 0
         evidence_required_for_covered: true
       criterios_bloqueantes:
-        - "progress-dashboard.mjs no pasa node --check"
-        - "validate-hu reporta violaciones tras cambios de auditoria"
-        - "una HU marcada cubierta no tiene evidencia local"
-        - "deploy runtime apunta fuera del repo deep-opm-pro"
+      - progress-dashboard.mjs no pasa node --check
+      - validate-hu reporta violaciones tras cambios de auditoria
+      - una HU marcada cubierta no tiene evidencia local
+      - deploy runtime apunta fuera del repo deep-opm-pro
     risk_register:
-      - risk_id: hpa-falso-positivo-semantico
-        category: validez-de-medicion
-        source: juicio-llm
-        trigger: el agente reconoce cobertura por similitud narrativa sin evidencia ejecutable
-        likelihood: 0.4
-        impact: 0.7
-        mitigation: exigir evidencia multicapa citada y dejar visible la deuda cuando la cobertura depende de gesto humano no automatizado
-        status: monitored
-      - risk_id: hpa-regla-fragil
-        category: drift-de-refactor
-        source: patrones-textuales
-        trigger: un refactor cambia nombres sin cambiar comportamiento
-        likelihood: 0.5
-        impact: 0.4
-        mitigation: preferir patrones multicapa y revisar pendientes automaticos despues de refactors grandes
-        status: monitored
-      - risk_id: hpa-script-como-techo
-        category: validez-de-medicion
-        source: sesgo-determinista
-        trigger: el agente confunde el output del script con la cobertura real y omite el arbitraje LLM
-        likelihood: 0.6
-        impact: 0.8
-        mitigation: el procedimiento exige arbitraje LLM por HU evaluada y la salida debe contener la columna script-vs-LLM; sin esa columna el reporte se considera incompleto
-        status: monitored
-      - risk_id: hpa-deploy-global-accidental
-        category: alcance-runtime
-        source: transmutacion-y-deploy
-        trigger: deploy-builds sin --home del repo o copia manual fuera de deep-opm-pro
-        likelihood: 0.2
-        impact: 0.6
-        mitigation: desplegar solo en .claude/.codex/.opencode bajo el repo y verificar rutas con git status
-        status: mitigated
+    - risk_id: hpa-falso-positivo-semantico
+      category: validez-de-medicion
+      source: juicio-llm
+      trigger: el agente reconoce cobertura por similitud narrativa sin evidencia
+        ejecutable
+      likelihood: 0.4
+      impact: 0.7
+      mitigation: exigir evidencia multicapa citada y dejar visible la deuda cuando
+        la cobertura depende de gesto humano no automatizado
+      status: monitored
+    - risk_id: hpa-regla-fragil
+      category: drift-de-refactor
+      source: patrones-textuales
+      trigger: un refactor cambia nombres sin cambiar comportamiento
+      likelihood: 0.5
+      impact: 0.4
+      mitigation: preferir patrones multicapa y revisar pendientes automaticos despues
+        de refactors grandes
+      status: monitored
+    - risk_id: hpa-script-como-techo
+      category: validez-de-medicion
+      source: sesgo-determinista
+      trigger: el agente confunde el output del script con la cobertura real y omite
+        el arbitraje LLM
+      likelihood: 0.6
+      impact: 0.8
+      mitigation: el procedimiento exige arbitraje LLM por HU evaluada y la salida
+        debe contener la columna script-vs-LLM; sin esa columna el reporte se considera
+        incompleto
+      status: monitored
+    - risk_id: hpa-deploy-global-accidental
+      category: alcance-runtime
+      source: transmutacion-y-deploy
+      trigger: deploy-builds sin --home del repo o copia manual fuera de deep-opm-pro
+      likelihood: 0.2
+      impact: 0.6
+      mitigation: desplegar solo en .claude/.codex/.opencode bajo el repo y verificar
+        rutas con git status
+      status: mitigated
 ---
 
 # hu-progress-auditor

@@ -1,16 +1,29 @@
 ---
 _manifest:
-  urn: "urn:dev:artefacto:lineas-paralelas"
+  urn: urn:dev:artefacto:lineas-paralelas
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-05-05"
-    source: "Cristalizacion del patron observable en deep-opm-pro/docs/instrucciones-lineas-dev/ (rondas 1, 2 y 3) que estructura trabajo pendiente en N lineas paralelas con README maestro, briefs disjuntos por linea y prompt generico de asignacion."
-  version: "1.0.0"
-  status: activo
+    created_by: FS
+    created_at: '2026-05-05'
+    source: Cristalizacion del patron observable en deep-opm-pro/docs/instrucciones-lineas-dev/
+      (rondas 1, 2 y 3) que estructura trabajo pendiente en N lineas paralelas con
+      README maestro, briefs disjuntos por linea y prompt generico de asignacion.
+version: 1.0.0
+status: activo
 nombre: lineas-paralelas
-descripcion: "Skill local para deep-opm-pro: estructura el trabajo pendiente del repo en N lineas de desarrollo paralelas, generando README maestro, un brief por linea y prompt generico de asignacion en docs/instrucciones-lineas-dev/<ronda>/, con minimo overlap por archivo y revision profunda obligatoria de opm-extracted antes de crear soluciones nuevas."
-tags: [lineas-paralelas, ronda, briefs, paralelismo, deep-opm-pro, local, scaffolding-docs]
+descripcion: 'Skill local para deep-opm-pro: estructura el trabajo pendiente del repo
+  en N lineas de desarrollo paralelas, generando README maestro, un brief por linea
+  y prompt generico de asignacion en docs/instrucciones-lineas-dev/<ronda>/, con minimo
+  overlap por archivo y revision profunda obligatoria de opm-extracted antes de crear
+  soluciones nuevas.'
+tags:
+- lineas-paralelas
+- ronda
+- briefs
+- paralelismo
+- deep-opm-pro
+- local
+- scaffolding-docs
 lang: es
 extensions:
   kora:
@@ -20,61 +33,96 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 1, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, opencode]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
     nivel_prescripcion: alto
-    alcance_despliegue: "/home/felix/projects/deep-opm-pro"
+    alcance_despliegue: /home/felix/projects/deep-opm-pro
     conocimiento_permitido: []
     componible_con: []
 artefacto:
   perfil:
-    dominio: [planning, paralelismo, briefs-de-desarrollo, scaffolding-docs, deep-opm-pro]
+    dominio:
+    - planning
+    - paralelismo
+    - briefs-de-desarrollo
+    - scaffolding-docs
+    - deep-opm-pro
     disparadores:
-      - "estructura el trabajo pendiente en N lineas paralelas"
-      - "genera ronda nueva de lineas de desarrollo"
-      - "/lineas-paralelas"
-      - "asigna lineas paralelas a agentes independientes"
-      - "genera briefs paralelos a partir del HANDOFF"
+    - estructura el trabajo pendiente en N lineas paralelas
+    - genera ronda nueva de lineas de desarrollo
+    - /lineas-paralelas
+    - asigna lineas paralelas a agentes independientes
+    - genera briefs paralelos a partir del HANDOFF
     salidas:
-      - "<repo>/docs/instrucciones-lineas-dev/<ronda>/README.md"
-      - "<repo>/docs/instrucciones-lineas-dev/<ronda>/linea-<i>-<slug>.md (uno por linea)"
-      - "<repo>/docs/instrucciones-lineas-dev/<ronda>/prompt-asignacion.md"
+    - <repo>/docs/instrucciones-lineas-dev/<ronda>/README.md
+    - <repo>/docs/instrucciones-lineas-dev/<ronda>/linea-<i>-<slug>.md (uno por linea)
+    - <repo>/docs/instrucciones-lineas-dev/<ronda>/prompt-asignacion.md
   plan:
     estado_inicial: capturar-intent
     estado_terminal: ronda-emitida
     estados:
-      - capturar-intent
-      - leer-handoff-y-backlog
-      - mapear-corpus-reusable
-      - particionar-en-N-lineas
-      - generar-readme-maestro
-      - generar-briefs-por-linea
-      - generar-prompt-asignacion
-      - ronda-emitida
+    - capturar-intent
+    - leer-handoff-y-backlog
+    - mapear-corpus-reusable
+    - particionar-en-N-lineas
+    - generar-readme-maestro
+    - generar-briefs-por-linea
+    - generar-prompt-asignacion
+    - ronda-emitida
   interfaz:
-    herramientas: [Read, Glob, Grep, Write, Bash]
-    permisos: "Lectura libre del repo. Escritura limitada a docs/instrucciones-lineas-dev/<ronda>/. No tocar codigo fuente, HANDOFF.md ni backlog HU desde la skill."
+    herramientas:
+    - Read
+    - Glob
+    - Grep
+    - Write
+    - Bash
+    permisos: Lectura libre del repo. Escritura limitada a docs/instrucciones-lineas-dev/<ronda>/.
+      No tocar codigo fuente, HANDOFF.md ni backlog HU desde la skill.
     protocolos:
-      entrada: "intent del operador con (a) numero N de lineas, (b) nombre o numero de ronda destino, (c) opcionalmente HU/pendientes a cubrir; si falta dato, leer HANDOFF y proponer particion"
-      salida: "directorio docs/instrucciones-lineas-dev/<ronda>/ con README + N briefs + prompt; reporte breve al operador con tabla de lineas y orden de merge sugerido"
+      entrada: intent del operador con (a) numero N de lineas, (b) nombre o numero
+        de ronda destino, (c) opcionalmente HU/pendientes a cubrir; si falta dato,
+        leer HANDOFF y proponer particion
+      salida: directorio docs/instrucciones-lineas-dev/<ronda>/ con README + N briefs
+        + prompt; reporte breve al operador con tabla de lineas y orden de merge sugerido
   invariantes:
     reglas_duras:
-      - "Cada linea ancla HU especificas del backlog vivo del repo. No inventar HU."
-      - "Cambios solo aditivos como filosofia operativa de la ronda. Renombrar, eliminar APIs y romper round-trip de persistencia estan prohibidos en briefs."
-      - "Antes de crear soluciones nuevas, revisar en profundidad /home/felix/projects/deep-opm-pro/opm-extracted como fuente primaria de codigo, patrones y assets de una app estado del arte; reciclar todo lo posible y citar evidencia concreta. La revision superficial no basta."
-      - "Tabla de colisiones por archivo es obligatoria en el README. Cada celda declara aditivo, lectura o vacio."
-      - "Cada decision semantica en un brief cita SSOT explicita o documento canonico interno con id de seccion."
-      - "Modularidad por dominio: cada linea con dominio nuevo crea archivo disjunto en lugar de expandir archivos monoliticos compartidos."
-      - "El brief es contrato: secciones obligatorias en orden Mision, HU base, Anclaje a evidencia, Archivos permitidos, Restricciones de no-colision, Slice minimo, Tests obligatorios, Verificacion, Decisiones bloqueadas, Decisiones libres, Forma del entregable."
-      - "No tocar HANDOFF.md ni docs/historias-usuario-v2/ desde la skill. La consolidacion final reescribe HANDOFF, no las lineas individuales."
-      - "Idiomas: documentos en es-CL; identificadores y comandos en su forma original."
-      - "Loop verde obligatorio declarado en cada brief: comandos del repo que el agente debe ejecutar antes de cerrar."
-      - "Despliegue exclusivo en /home/felix/projects/deep-opm-pro. No instalar globalmente en ~/.claude/skills, ~/.codex/skills ni ~/.opencode/skills."
+    - Cada linea ancla HU especificas del backlog vivo del repo. No inventar HU.
+    - Cambios solo aditivos como filosofia operativa de la ronda. Renombrar, eliminar
+      APIs y romper round-trip de persistencia estan prohibidos en briefs.
+    - Antes de crear soluciones nuevas, revisar en profundidad /home/felix/projects/deep-opm-pro/opm-extracted
+      como fuente primaria de codigo, patrones y assets de una app estado del arte;
+      reciclar todo lo posible y citar evidencia concreta. La revision superficial
+      no basta.
+    - Tabla de colisiones por archivo es obligatoria en el README. Cada celda declara
+      aditivo, lectura o vacio.
+    - Cada decision semantica en un brief cita SSOT explicita o documento canonico
+      interno con id de seccion.
+    - 'Modularidad por dominio: cada linea con dominio nuevo crea archivo disjunto
+      en lugar de expandir archivos monoliticos compartidos.'
+    - 'El brief es contrato: secciones obligatorias en orden Mision, HU base, Anclaje
+      a evidencia, Archivos permitidos, Restricciones de no-colision, Slice minimo,
+      Tests obligatorios, Verificacion, Decisiones bloqueadas, Decisiones libres,
+      Forma del entregable.'
+    - No tocar HANDOFF.md ni docs/historias-usuario-v2/ desde la skill. La consolidacion
+      final reescribe HANDOFF, no las lineas individuales.
+    - 'Idiomas: documentos en es-CL; identificadores y comandos en su forma original.'
+    - 'Loop verde obligatorio declarado en cada brief: comandos del repo que el agente
+      debe ejecutar antes de cerrar.'
+    - Despliegue exclusivo en /home/felix/projects/deep-opm-pro. No instalar globalmente
+      en ~/.claude/skills, ~/.codex/skills ni ~/.opencode/skills.
 ---
 
 # Lineas-Paralelas

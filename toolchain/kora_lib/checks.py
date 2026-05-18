@@ -1113,6 +1113,9 @@ def _check_autoria_conformance(path_filter=None):
                     if candidate.exists():
                         yield candidate
 
+    from .lifecycle import canonicalize_status
+    productive_statuses = {"activo", "deprecado", "retirado"}
+
     for artifact_path in iter_productive_artifacts():
         frontmatter, err = load_yaml_safe(artifact_path)
         if err or not isinstance(frontmatter, dict):
@@ -1128,6 +1131,53 @@ def _check_autoria_conformance(path_filter=None):
                 message=f"{d.code} @ {d.path}: {d.message}",
                 fix_hint="Run `kora migrate --perfil a-autoria` para renames estructurales; campos de shape/invariantes son manuales.",
             ))
+
+        # Status-por-directorio: artefactos agenticos productivos solo en {activo, deprecado, retirado}
+        # (autoria-spec §11 lifecycle). `borrador` queda restringido a _FRAGUA/REVIEW o _TALLER/REVIEW.
+        status = canonicalize_status(frontmatter.get("status") or "")
+        if status and status not in productive_statuses:
+            diags.append(Diagnostic(
+                check_id="autoria-conformance",
+                severity="high",
+                scope=scope_kind,
+                path=rel,
+                message=(
+                    f"status: {status} no es valido en zona productiva "
+                    f"(autoria-spec §11: solo activo/deprecado/retirado; borrador queda en staging)."
+                ),
+                fix_hint=(
+                    "Mover a _FRAGUA/REVIEW o _TALLER/REVIEW, o promover con `kora promote`."
+                ),
+            ))
+
+        # Namespace-directorio: el ns del URN coincide con el primer subdir bajo agents/ o skills/.
+        # (autoria-spec §10.1 + paralelo a knowledge-spec §3.2).
+        urn = (frontmatter.get("_manifest") or {}).get("urn", "")
+        if isinstance(urn, str) and urn.startswith("urn:"):
+            urn_parts = urn.split(":")
+            urn_ns = urn_parts[1] if len(urn_parts) >= 3 else ""
+            # Path: artifacts/agents/{ns}/{name}/AGENT.md o artifacts/skills/{ns}/{name}/SKILL.md
+            try:
+                rel_parts = artifact_path.relative_to(KORA_ROOT).parts
+            except ValueError:
+                rel_parts = ()
+            # artifacts/{type}/{ns}/{name}/{FILE}
+            if len(rel_parts) >= 5 and rel_parts[0] == "artifacts" and rel_parts[1] in ("agents", "skills"):
+                subdir_ns = rel_parts[2]
+                if urn_ns and urn_ns != subdir_ns:
+                    diags.append(Diagnostic(
+                        check_id="autoria-conformance",
+                        severity="high",
+                        scope=scope_kind,
+                        path=rel,
+                        message=(
+                            f"namespace del URN ('{urn_ns}') no coincide con subdirectorio "
+                            f"('{subdir_ns}') (autoria-spec §10.1)"
+                        ),
+                        fix_hint=(
+                            f"Reubicar a artifacts/{rel_parts[1]}/{urn_ns}/ o corregir el URN."
+                        ),
+                    ))
 
     if path_filter:
         diags = [d for d in diags if d.path.startswith(path_filter)]

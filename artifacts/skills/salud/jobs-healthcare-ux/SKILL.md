@@ -8,7 +8,7 @@ _manifest:
     source: Extraido del agente nativo jobs-healthcare-ux (~/.claude/agents/jobs-healthcare-ux.md).
       18 principios constitucionales + 9 anti-patrones + 5 modos de operacion + corpus
       en artifacts/knowledge/salud/jobs-healthcare-ux/.
-  version: 1.0.0
+version: 1.0.0
 status: activo
 nombre: jobs-healthcare-ux
 descripcion: 'Disenador UX para sistemas institucionales de salud. 18 principios constitucionales,

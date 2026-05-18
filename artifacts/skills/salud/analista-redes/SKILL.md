@@ -6,7 +6,7 @@ _manifest:
     created_by: FS
     created_at: '2026-05-08'
     source: Portado de skill del agente salubrista-hah (OpenClaw).
-  version: 1.0.0
+version: 1.0.0
 status: activo
 nombre: analista-redes
 descripcion: Analiza o disena unidades, establecimientos, redes, modelos territoriales,

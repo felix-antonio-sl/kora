@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-05-07'
     source: Ley 21.663 (ciberseguridad), Ley 21.719 (datos personales). Zotero + web
       MINSAL.
-  version: 1.0.0
+version: 1.0.0
 status: activo
 nombre: seguridad-informacion-salud
 descripcion: 'Especialista en seguridad de la informacion y ciberseguridad en salud:

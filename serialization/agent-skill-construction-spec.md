@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "OpenAI Codex"
     created_at: "2026-04-28"
-    source: "Cristalizacion KORA-native del metodo de construccion de agentes y skills desde autoria-spec, harness-spec y cat-thinking."
-version: "1.0.0"
+    source: "Cristalizacion KORA-native del metodo de construccion de agentes y skills desde autoria-spec, harness-spec y cat-thinking; v1.1 declara que NO gobierna shape (eso vive en autoria-spec), reemplaza tablas duplicadas por punteros normativos, alinea spec_ref de checks con autoria-spec v1.2 y registra que el toolchain ya enforza status/version en root y status-por-directorio para artefactos productivos."
+version: "1.1.0"
 status: publicado
 tags: [spec, construccion-agentica, autoria, pre-transmutacion, categorial]
 lang: es
@@ -39,7 +39,7 @@ relations:
     - "urn:fxsl:kb:icas-infraestructura"
 ---
 
-# KORA/Agent-Skill-Construction-Spec v1.0.0
+# KORA/Agent-Skill-Construction-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -72,6 +72,27 @@ No gobierna:
 2. despliegue, hosting o operacion runtime,
 3. formatos externos o historicos como fuente productiva,
 4. docs generadas o `_BUILD/` como autoridad.
+
+### 1.2 Lo que NO gobierna esta spec
+
+Esta spec dice **como** llegar al artefacto, no **cual** es su shape final.
+Por tanto:
+
+- **Shape de frontmatter y body**: gobernado por `autoria-spec §3-§7`.
+  Esta spec no duplica el envelope, las matrices condicionales por forma
+  material, ni los identificadores YAML.
+- **Lifecycle agentico** (`borrador -> activo -> deprecado -> retirado`)
+  y su enforcement de status-por-directorio: gobernado por
+  `autoria-spec §11` y el check `autoria-conformance`.
+- **Regimen URN `urn:{ns}:artefacto:{id}`** y coherencia namespace-directorio:
+  gobernado por `autoria-spec §10` y el check `autoria-conformance`.
+- **Validacion estructural completa** (vector, atlas, dominio, shape
+  coalgebraico, fidelidad runtime): tabla completa en `autoria-spec §14`.
+  Esta spec aporta solo los checks especificos del **proceso de
+  construccion** (§5.2), no del shape resultante.
+
+Si una regla aparece tanto aqui como en `autoria-spec`, **prevalece
+`autoria-spec`** (§1.2 regla de precedencia).
 
 ### 1.2 Precedencia
 
@@ -197,6 +218,9 @@ Incorrecto: declarar `agente-plataforma` para una rutina sin materia ambiental.
 
 ### 3.3 Fase C: Decision de forma material
 
+Resumen operativo para el constructor (la matriz autoritativa de dominio
+por forma material vive en `autoria-spec §5`):
+
 | Forma | Usar cuando | Evitar cuando |
 | --- | --- | --- |
 | `habilidad` | capacidad portable, sin workspace, `mu<=1`, `lambda=0` | requiere memoria persistente, orquestacion o servicio always-on |
@@ -205,6 +229,15 @@ Incorrecto: declarar `agente-plataforma` para una rutina sin materia ambiental.
 | `agente-plataforma` | materia ambiental, servicio o fleet always-on | no hay runtime capaz de sostener `mu=3` |
 
 El constructor **DEBE** preferir la forma mas baja que satisface el objetivo.
+
+Reglas:
+
+1. La eleccion **DEBE** respetar el dominio de proyeccion valido declarado
+   por `autoria-spec §5` para cada forma material; si el vector cae fuera,
+   el constructor **DEBE** ajustar el vector o cambiar la forma elegida.
+2. La promocion entre formas (`habilidad -> subagente -> agente-propiamente-tal -> agente-plataforma`)
+   sigue las reglas de `autoria-spec §8`; **NO** se redefine aqui.
+
 Rationale: `cat-thinking` exige la lectura categorial mas debil que cumple el
 trabajo; esto reduce deuda y sobre-formalizacion.
 
@@ -291,18 +324,25 @@ el contrato operacional en KORA.
 
 ### 3.8 Fase H: Materializacion
 
-La materializacion **DEBE** seguir la topologia de `autoria-spec`:
+La materializacion **DEBE** seguir la topologia normada por
+`autoria-spec §5` para cada forma material. Resumen rapido:
 
-| Forma | Fuente primaria | Fibras permitidas |
+| Forma | Fuente primaria | Fibras canonicas |
 | --- | --- | --- |
-| `habilidad` | `artifacts/skills/{ns}/{id}/SKILL.md` | `scripts/`, `referencias/`, `recursos/` |
-| `subagente` | `artifacts/agents/{ns}/{id}/AGENT.md` | `memoria/` si aplica, `_BUILD/` derivado |
-| `agente-propiamente-tal` | `artifacts/agents/{ns}/{id}/AGENT.md` | memoria, skills, recursos, `_BUILD/` derivado |
-| `agente-plataforma` | runtime-extension aplicable | materia ambiental y extension de plataforma |
+| `habilidad` | `artifacts/skills/{ns}/{id}/SKILL.md` | `scripts/`, `referencias/`, `recursos/` (autoria-spec §5.1) |
+| `subagente` | `artifacts/agents/{ns}/{id}/AGENT.md` | `memoria/` si `mu>=2`, `_BUILD/{target}/` derivado (autoria-spec §5.2) |
+| `agente-propiamente-tal` | `artifacts/agents/{ns}/{id}/AGENT.md` | memoria, recursos, `_BUILD/`, `_transmutation.yml` (autoria-spec §5.3) |
+| `agente-plataforma` | runtime-extension aplicable | materia ambiental segun runtime (autoria-spec §5.4) |
 
-El body **DEBE** explicar solo lo que ayude a operar el artefacto. Detalle
-voluminoso debe moverse a `referencias/` o `recursos/` cuando la forma material
-lo permita.
+Reglas:
+
+1. Cualquier subdir fuera de los canonicos declarados por `autoria-spec §5`
+   o por su runtime-extension es invalido en `status: activo`.
+2. El namespace del URN **DEBE** coincidir con el primer subdirectorio bajo
+   `artifacts/agents/` o `artifacts/skills/`. Enforcement: lint
+   (`autoria-conformance`).
+3. El body **DEBE** explicar solo lo que ayude a operar el artefacto;
+   detalle voluminoso pasa a `referencias/` o `recursos/`.
 
 ## 4. Absorcion de insumos
 
@@ -349,17 +389,35 @@ despues de que el IR fuente pase los gates anteriores.
 
 ### 5.2 Tabla de checks
 
-| Check | Condicion | Enforcement |
-| --- | --- | --- |
-| `construction-source-primary` | existe `AGENT.md` o `SKILL.md` como fuente primaria | lint |
-| `construction-vector-fit` | vector cumple `harness-spec` y dominio de forma material | lint |
-| `construction-knowledge-explicit` | conocimiento por URN resoluble, no path duro | lint/manual |
-| `construction-fsm-valid` | estados, terminales y transiciones son coherentes | lint |
-| `construction-interface-typed` | entradas, salidas, tools y permisos observables | manual |
-| `construction-risk-declared` | riesgos no triviales tienen mitigacion o deuda | manual |
-| `construction-runtime-separation` | no hay `_BUILD/` ni runtime output como fuente | manual |
-| `construction-categorical-minimality` | usa la lectura categorial mas debil suficiente | manual |
-| `construction-authoring-shape` | el artefacto usa `artefacto` y no un envelope externo | lint |
+Esta tabla cubre los **checks especificos de construccion** que esta spec
+gobierna. Los checks de **shape final** (envelope, vector, atlas,
+condicionales por forma material, lifecycle, namespace-directorio) viven
+en `autoria-spec §14` y se ejecutan via `autoria-conformance`.
+
+| Check | Condicion | Enforcement | Spec ref |
+| --- | --- | --- | --- |
+| `construction-source-primary` | existe `AGENT.md` o `SKILL.md` como fuente primaria | lint | §2 |
+| `construction-vector-fit` | vector cumple `harness-spec §4.1` y dominio de forma material `autoria-spec §5` | lint | §3.2, §3.3 |
+| `construction-knowledge-explicit` | conocimiento por URN resoluble, no path duro | lint/manual | §3.4 |
+| `construction-fsm-valid` | estados, terminales y transiciones son coherentes | lint | §3.5 |
+| `construction-interface-typed` | entradas, salidas, tools y permisos observables | manual | §3.6 |
+| `construction-risk-declared` | riesgos no triviales tienen mitigacion o deuda | manual | §3.7 |
+| `construction-runtime-separation` | no hay `_BUILD/` ni runtime output como fuente | manual | §3.8 |
+| `construction-categorical-minimality` | usa la lectura categorial mas debil suficiente | manual | §2.3 |
+| `construction-authoring-shape` | el artefacto usa `artefacto` y no un envelope externo | lint | §3.8 |
+
+Checks complementarios (gobernados por `autoria-spec §14`, no por esta spec):
+
+- `autoria-conformance` — envelope universal + fibra por forma material;
+  incluye desde v1.1 el enforcement de `status`/`version` en root del
+  frontmatter, `status` valido en zona productiva (no `borrador`) y
+  coherencia namespace-directorio.
+- `vector-laws` — leyes inter-eje `harness-spec §4.1`.
+- `coalgebra-conformance` — termination del FSM cuando `plan.fsm` esta
+  declarado y sub-coalgebra de safety cerrada.
+- `fidelidad-agentskills`, `fidelidad-mastra` — proyeccion runtime sin
+  perdida no declarada.
+- `skill-structure` — subdirs canonicos para `habilidad`.
 
 ### 5.3 Criterio de cierre
 
@@ -390,7 +448,27 @@ Un artefacto queda listo para transmutacion si:
 
 Esta spec es aditiva.
 
-Reglas:
+### 7.1 Contrato vigente v1.1
+
+Cambios v1.0 -> v1.1 (todos compatibles):
+
+- **§1.2 (nueva)** — declara explicitamente que esta spec NO gobierna shape
+  ni lifecycle ni regimen URN (todo en `autoria-spec`). Punto de
+  precedencia explicito: si una regla aparece en ambas, prevalece
+  `autoria-spec`.
+- **§3.3** — la matriz de "usar cuando / evitar cuando" queda como resumen
+  operativo; el dominio de proyeccion autoritativo y la promocion entre
+  formas viven en `autoria-spec §5` y `§8`.
+- **§3.8** — topologia con punteros a las subsecciones especificas de
+  `autoria-spec §5.1-§5.4` por forma material; agrega regla de
+  namespace-directorio enforced por `autoria-conformance`.
+- **§5.2** — tabla de checks ahora declara `Spec ref` por check y separa
+  explicitamente los checks de **construccion** (esta spec) de los checks
+  de **shape final** (`autoria-spec §14`). Registra que `autoria-conformance`
+  v1.1 enforza status/version-en-root, status-por-directorio y
+  namespace-directorio para artefactos agenticos productivos.
+
+### 7.2 Reglas residuales
 
 1. Artefactos productivos existentes **NO REQUIEREN** migracion inmediata por
    la sola aparicion de esta spec.
