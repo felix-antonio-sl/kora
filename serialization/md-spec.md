@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-09"
-    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`; v9.0 delega pipeline, lifecycle conceptual e identidad URN conceptual a knowledge-spec §3-§4, §8, §13, documenta las cuatro familias auxiliares que el toolchain usa (`bok`, `source`, `source-alias`, `generic`), y limpia la tabla de validacion para reflejar solo invariantes de formato"
-version: "10.0.0"
+    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`; v9.0 delega pipeline, lifecycle conceptual e identidad URN conceptual a knowledge-spec §3-§4, §8, §13, documenta las cuatro familias auxiliares que el toolchain usa (`bok`, `source`, `source-alias`, `generic`), y limpia la tabla de validacion para reflejar solo invariantes de formato; v10.0 retira familia atomic; v11.0 (KORA v9, HITL 2026-05-20): deshace la absorcion de v8.0 — el perfil prescriptivo migra a spec-md v1.0.0 (urn:kora:kb:spec-md regresa al canon). md-spec queda como spec del regimen descriptivo puro; la familia `spec` delega sus invariantes prescriptivos a spec-md."
+version: "11.0.0"
 status: publicado
 tags: [markdown, conocimiento, rag, koraficacion, fidelidad, prescriptivo, cristalizacion, rfc2119, formato]
 lang: es
@@ -20,23 +20,24 @@ relations:
     - "urn:kora:kb:knowledge-spec"
 ---
 
-# KORA/MD v10.0.0
+# KORA/MD v11.0.0
 
 ## 1. Definicion
 
-KORA/MD es el **formato base** de artefactos textuales del ecosistema KORA.
-Gobierna dos regimenes pragmaticos sobre un mismo envelope:
+KORA/MD es el **formato base del regimen descriptivo** de artefactos
+textuales del ecosistema KORA. Cubre todos los artefactos KORA/MD
+descriptivos: knowledge, manuales, corpus, notas, glosarios, catalogos,
+ADRs, etc.
 
-- **Descriptivo** — artefactos que describen hechos, procedimientos o
-  referencias (conocimiento, manuales, corpus, notas).
-- **Prescriptivo** — artefactos que gobiernan comportamientos, contratos y
-  validaciones (specs, protocolos, workflows normativos).
+El **regimen prescriptivo** (specs normativas) se define en
+`urn:kora:kb:spec-md`, que extiende este envelope con los invariantes
+adicionales (RFC 2119, `Traces to:`, cristalizacion, patron
+regla+ejemplo+traza, invariantes prescriptivos, template, autoderecho
+de precedencia). Los documentos de familia `spec` cumplen ambos
+contratos.
 
-Ambos regimenes comparten frontmatter (§3.1), gramatica estructural
-(§5.1-§5.4), topologia de direccionamiento (§4), preservacion de verdad
-(§5.5), familias documentales (§5.6) y ciclo de koraficacion (§6). El
-regimen se declara via familia documental; el perfil `spec` agrega
-invariantes prescriptivos especificos (§5.6.2).
+Esta separacion (KORA v9, 2026-05-20) restaura la disciplina previa a
+md-spec v8.0, que habia absorbido `spec-md v5.2.0`.
 
 ### 1.1 Alcance
 
@@ -46,14 +47,16 @@ de las specs sin ambiguedad.
 
 Esta spec es responsable de:
 
-- envelope minimal (`_manifest` + body),
-- gramatica estructural,
-- familias documentales y sus invariantes,
-- koraficacion (`DocHumano -> KORA/MD`),
-- perfil prescriptivo `spec`.
+- envelope minimal (`_manifest` + body) para regimen descriptivo,
+- gramatica estructural comun a ambos regimenes,
+- familias documentales descriptivas y sus invariantes,
+- koraficacion (`DocHumano -> KORA/MD`).
 
 ### 1.2 Lo que NO gobierna esta spec
 
+- **Perfil prescriptivo `spec`**: gobernado por `urn:kora:kb:spec-md`
+  (RFC 2119, `Traces to:`, cristalizacion, invariantes prescriptivos,
+  template, auto-declaracion de precedencia).
 - **URN conceptual y namespace-directorio**: gobernado por
   `knowledge-spec §3` (regimen `urn:{ns}:kb:{id}`).
 - **Lifecycle descriptivo y status por directorio**: gobernado por
@@ -452,179 +455,33 @@ como subperfil (ej. `cq_catalog` subperfil de `catalog`). La herencia es
 estrictamente aditiva: el subperfil no puede relajar invariantes del
 perfil base.
 
-### 5.6.1 Perfil `spec`: invariantes prescriptivos
+### 5.6.1 Perfil `spec`: invariantes prescriptivos (delegado)
 
-La familia `spec` absorbe el contrato prescriptivo del ecosistema KORA.
-Todo documento `spec` **DEBE** cumplir, ademas del contrato base de
-KORA/MD, los invariantes de esta seccion.
+La familia `spec` define el regimen prescriptivo del ecosistema KORA.
+Todo documento `spec` **DEBE** cumplir los invariantes generales de
+KORA/MD (esta spec) **mas** los invariantes prescriptivos definidos en
+`urn:kora:kb:spec-md`.
 
-#### 5.6.1.1 Proceso de cristalizacion
+Invariantes prescriptivos delegados a `spec-md`:
 
-La cristalizacion transforma decisiones, practicas y restricciones
-implicitas en reglas explicitas con una sola lectura valida.
+| Invariante | Ref |
+|-----------|-----|
+| Proceso de cristalizacion | `spec-md §3` |
+| Lenguaje de obligacion RFC 2119 | `spec-md §4` |
+| Convencion de trazabilidad (`Traces to:` / `Rationale:`) | `spec-md §5` |
+| Elementos retoricos normativos | `spec-md §6` |
+| Prosa explicativa admisible (4 funciones validas) | `spec-md §7` |
+| Patron obligatorio regla + ejemplo + traza | `spec-md §8` |
+| Invariantes prescriptivos (consistencia, auto-suficiencia, no-circularidad, idioma, enforcement) | `spec-md §9` |
+| Template esqueleto minimo | `spec-md §10` |
+| Invariante de auto-declaracion de precedencia | `spec-md §11` |
+| Tabla de validacion prescriptiva (9 checks) | `spec-md §12` |
 
-Traces to: `urn:kora:kb:05-governance-lattice` §2.3 (Crystallization Functor C)
-
-Entrada:
-
-- decisiones de diseño
-- practicas existentes
-- restricciones tecnicas, organizacionales o legales
-
-Salida:
-
-- documento prescriptivo con reglas explicitas, rationale y validacion
-
-Propiedades del funtor de cristalizacion:
-
-1. **Cristalizador** — lo implicito se vuelve regla explicita.
-2. **Formalizador** — cada regla queda con una lectura operativa univoca.
-3. **Desambiguador** — el hedging y la vaguedad se eliminan.
-4. **Ejemplificador** — las reglas complejas se anclan con
-   `Correcto:` / `Incorrecto:`.
-
-#### 5.6.1.2 Lenguaje de obligacion (RFC 2119)
-
-Keywords normativas permitidas (enum cerrado):
-
-- **DEBE**
-- **NO DEBE**
-- **DEBERIA**
-- **NO DEBERIA**
-- **PUEDE**
-
-Reglas:
-
-1. Toda obligacion importante en un documento `spec` **DEBE** usar una
-   keyword RFC 2119.
-2. El hedging normativo ("probablemente", "seria bueno", "idealmente")
-   **NO DEBE** reemplazar una keyword.
-3. Las keywords en español **DEBEN** escribirse en mayusculas.
-4. La equivalencia inglesa (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY)
-   **PUEDE** aparecer en la primera mencion, no en todas.
-
-#### 5.6.1.3 Convencion de trazabilidad
-
-Una regla con justificacion formal oficial **DEBERIA** incluir una linea:
-
-```markdown
-Traces to: `urn:kora:kb:{slug}` §{seccion} ({teorema})
-```
-
-Reglas:
-
-1. `Traces to:` **DEBE** apuntar solo a la Formal Layer oficial
-   (`artifacts/knowledge/kora/categorical-foundations/`), usando el URN
-   canonico del artefacto formal (`urn:kora:kb:{slug}`) seguido del
-   numero de seccion y, opcionalmente, el nombre del teorema.
-2. No se admite path relativo (`formal/05`) ni alias no resolubles: la
-   identidad del artefacto formal se expresa por URN (`gobernanza §4.3`).
-3. Una regla pragmatica **NO DEBE** fingir respaldo formal: si la
-   justificacion es pragmatica, se usa `Rationale:`.
-4. `Rationale:` **PUEDE** explicar motivos conceptuales o pragmaticos,
-   pero **NO DEBE** introducir obligaciones nuevas.
-5. La ausencia de `Traces to:` no debilita la fuerza normativa de una
-   regla.
-
-Traces to: `urn:kora:kb:05-governance-lattice` §3.2 (Traceability Functor)
-
-Rationale: el URN canonico es identidad estable (Yoneda); los paths
-relativos mezclan identidad con ubicacion fisica y se rompen al
-reorganizar la Formal Layer.
-
-#### 5.6.1.4 Elementos retoricos normativos
-
-El perfil `spec` admite tres elementos retoricos normativos adicionales a
-los tipograficos de §5.2:
-
-| Elemento | Uso permitido | Funcion prohibida |
-| --- | --- | --- |
-| `Correcto:` / `Incorrecto:` | anclar la interpretacion de una regla | decoracion |
-| `Rationale:` | registrar motivacion no normativa | introducir deberes nuevos |
-| Tabla de validacion | checks y enforcement declarativo | listado estetico sin criterio |
-
-#### 5.6.1.5 Prosa explicativa admisible
-
-La prosa explicativa en un documento `spec` **PUEDE** existir solo cuando
-cumple una de estas cuatro funciones normativas (lista exhaustiva):
-
-1. justificar una regla
-2. prevenir ambiguedad
-3. contextualizar una restriccion
-4. advertir un limite del enforcement
-
-Prosa que no satisface ninguna de estas cuatro funciones es grasa y
-**DEBE** eliminarse conforme a §5.3.
-
-#### 5.6.1.6 Patron obligatorio: regla + ejemplo + traza
-
-Toda regla con mas de una condicion, alcance no obvio, o riesgo de
-interpretacion divergente **DEBE** seguir este patron:
-
-1. Regla normativa con keyword RFC 2119.
-2. `Correcto:` / `Incorrecto:` cuando la regla admita mala lectura.
-3. `Traces to:` si la regla tiene respaldo formal oficial; `Rationale:`
-   si la justificacion es pragmatica.
-
-Reglas:
-
-1. La ausencia de `Traces to:` no debilita la fuerza normativa.
-2. `Rationale:` **NO DEBE** introducir obligaciones nuevas.
-3. Un ejemplo **NO DEBE** reemplazar la regla; la ancla.
-
-Ejemplo:
-
-```markdown
-Toda regla pragmatica **DEBE** declararse con keyword explicita.
-
-Correcto: `La herramienta declara su nivel de enforcement en tabla de validacion.`
-Incorrecto: `Seria bueno indicar como se verifica.`
-Rationale: La auditabilidad requiere distinguir schema, lint, runtime y manual.
-```
-
-#### 5.6.1.7 Invariantes prescriptivos
-
-Ademas de los invariantes generales de §7, un documento `spec` **DEBE**
-cumplir:
-
-1. **Consistencia interna** — no contiene reglas incompatibles entre si
-   sin una clausula de precedencia o excepcion explicita.
-2. **Auto-suficiencia de la regla** — toda regla importante puede
-   entenderse con su propio contexto local, sin depender de una lectura
-   telepatica del repositorio.
-3. **No-circularidad** — una regla **NO DEBE** justificarse solo
-   remitiendo a otra regla igual de opaca. Si depende de otra, la
-   dependencia **DEBE** aclarar que agrega o restringe.
-4. **Preservacion de idioma y anglicismos** — el documento mantiene
-   idioma consistente. Los anglicismos **PUEDEN** usarse si nombran
-   terminos tecnicos inevitables, pero **NO DEBEN** reemplazar una regla
-   ya expresable en español.
-5. **Enforcement declarado** — toda tabla de validacion **DEBE** incluir
-   columna `Enforcement` con valor de `gobernanza §7` (`schema`, `lint`,
-   `runtime`, `eval`, `manual`).
-
-#### 5.6.1.8 Template esqueleto minimo
-
-Todo documento `spec` nuevo **DEBERIA** arrancar desde este esqueleto.
-Las sub-reglas marcadas con **DEBE** dentro del esqueleto son
-obligatorias independientemente del caracter recomendatorio del template:
-
-1. `## 1. Definicion` (incluye alcance y audiencia).
-2. `## 2. Definiciones` de terminos usados normativamente.
-3. `## 3-N. Secciones normativas` numeradas secuencialmente.
-4. `## N+1. Invariantes`.
-5. `## N+2. Validacion` (tabla con `Enforcement` obligatoria).
-6. `## N+3. Ejemplos` (opcional).
-7. `## N+4. Migracion` — **DEBE** incluirse en major bumps; opcional en
-   minor/patch. En major bumps documenta: (1) que cambio, (2) que migrar,
-   (3) que se depreca.
-
-#### 5.6.1.9 Invariante de auto-declaracion
-
-El propio documento `spec` **DEBE** declarar al inicio su **precedencia**
-en la jerarquia de specs, conforme a `gobernanza §3.4` (regla de
-especializacion). La declaracion **PUEDE** ser el frontmatter
-`relations.depends` o una seccion `## Precedencia` explicita.
+Esta separacion (KORA v9, 2026-05-20,
+`urn:kora:kb:adr-kora-v9-separacion-descriptivo-prescriptivo-y-arnes`)
+deshace la absorcion que `md-spec v8.0` habia hecho de
+`spec-md v5.2.0`. El URN `urn:kora:kb:spec-md` regresa al canon como
+nodo activo.
 
 ## 6. Koraficacion
 
@@ -816,13 +673,6 @@ hechos **DEBE** eliminarse.
 La compresion maxima **NO DEBE** producir headings truncados, chunks
 primarios pobres, labelese ni dumping estructural.
 
-### 7.6 Integridad del perfil prescriptivo `spec`
-
-En artefactos `spec`, los invariantes de §5.6.1.7 (consistencia interna,
-auto-suficiencia de regla, no-circularidad, preservacion de idioma,
-enforcement declarado) son constitutivos del perfil; violarlos invalida
-el caracter prescriptivo del documento.
-
 ## 8. Versionado
 
 - correccion editorial sin cambio semantico: patch
@@ -851,15 +701,6 @@ spec. Los invariantes de **tejido relacional** y **pipeline** viven en
 | Headings-campo prohibidos | KB publicada no serializa campos como headings | lint | §5.4.2 |
 | Estructuras preservadas | Tablas y listas no se degradan | manual | §7.4 |
 | Catalogo derivado | El artefacto es indexable y regenerable por CLI | lint | §6.12 |
-| Keyword explicita (spec) | Familia `spec`: toda obligacion importante usa keyword RFC 2119 | lint | §5.6.1.2 |
-| Trazabilidad oficial (spec) | `Traces to:` referencia solo Formal Layer oficial | lint | §5.6.1.3 |
-| Patron de regla (spec) | Reglas complejas que admitan mala lectura incluyen `Correcto:/Incorrecto:`; toda regla con justificacion disponible incluye `Traces to:` o `Rationale:` | manual | §5.6.1.6 |
-| Consistencia interna (spec) | No hay contradicciones no resueltas | manual | §5.6.1.7 r1 |
-| Auto-suficiencia de regla (spec) | Reglas se entienden sin contexto omitido critico | manual | §5.6.1.7 r2 |
-| No-circularidad (spec) | Referencias normativas no forman bucles opacos | manual | §5.6.1.7 r3 |
-| Enforcement declarado (spec) | Toda tabla de validacion incluye columna `Enforcement` | lint | §5.6.1.7 r5 |
-| Template prescriptivo (spec) | Documento sigue esqueleto §5.6.1.8 | manual | §5.6.1.8 |
-| Migracion en major (spec) | Major bumps incluyen seccion `## Migracion` | lint | §5.6.1.8 r7 |
 
 Checks de **tejido relacional** y **pipeline** (gobernados por
 `knowledge-spec §12`): `urn-integrity`, `knowledge-zone`,
@@ -872,7 +713,45 @@ Checks de **artefactos agenticos** (gobernados por `autoria-spec §14`):
 
 ## 10. Migracion
 
-### 10.0 Contrato vigente v10
+### 10.0 Contrato vigente v11
+
+Cambios v10 → v11 (KORA v9, HITL 2026-05-20,
+`urn:kora:kb:adr-kora-v9-separacion-descriptivo-prescriptivo-y-arnes`):
+
+- **Regimen prescriptivo extraido**: §5.6.1.1-§5.6.1.9 (perfil `spec`
+  con cristalizacion, RFC 2119, Traces to, elementos retoricos, prosa
+  admisible, patron regla+ejemplo+traza, invariantes prescriptivos,
+  template, auto-declaracion) migran a `urn:kora:kb:spec-md v1.0.0`.
+- **§7.6** (integridad del perfil prescriptivo) migra a `spec-md §9 r6`.
+- **§9 tabla de validacion**: 9 filas spec eliminadas (Keyword
+  explicita, Trazabilidad oficial, Patron de regla, Consistencia
+  interna, Auto-suficiencia, No-circularidad, Enforcement declarado,
+  Template prescriptivo, Migracion en major). Migran a `spec-md §12`.
+- **§1 Definicion** reformulada: md-spec gobierna solo el regimen
+  descriptivo. La familia `spec` cumple ambos contratos: md-spec
+  (envelope, gramatica, familias) + spec-md (invariantes prescriptivos).
+- **§5.6.1** queda como subseccion **delegada**: la familia `spec`
+  declara que sus invariantes prescriptivos viven en `spec-md`.
+- **`urn:kora:kb:spec-md`** regresa al canon como nodo activo (estaba
+  retirado/absorbido desde md-spec v8.0).
+
+Que migrar:
+
+- Refs cruzadas a `md-spec §5.6.1.X` (perfil spec) reapuntan a
+  `spec-md §X` correspondiente.
+- Refs a `md-spec §7.6` reapuntan a `spec-md §9 r6`.
+- Refs a checks de validacion `Keyword explicita (spec)`, etc. usan
+  ahora `spec-md §12`.
+
+Que se preserva:
+
+- Envelope, gramatica, telegrafizacion, fidelidad (§1-§5.5).
+- Familias documentales descriptivas (§5.6 sin atomic ni perfil spec
+  expandido).
+- Koraficacion (§6).
+- Invariantes generales (§7) y validacion descriptiva (§9).
+
+### 10.0.1 Contrato vigente v10
 
 Cambios v9 → v10 (retiro de familia `atomic` — directiva HITL del operador
 2026-05-20, decision en `urn:kora:kb:adr-retiro-atomize-y-lecciones-koda`):

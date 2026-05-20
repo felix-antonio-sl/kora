@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-17"
-    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material. v1.1 agrega shape coalgebraico opcional (§3.5). v1.2 agrega risk_register y soporte declarativo para target Mastra."
-version: "1.2.0"
+    source: "Fusiona agentfile-spec v2.0.0 + skill-overlay-spec v2.0.0 bajo la ontologia PMI × LFS de harness-spec v1.0.0. Unifica regimen URN, shape de authoring, y validacion condicional por forma material. v1.1 agrega shape coalgebraico opcional (§3.5). v1.2 agrega risk_register y soporte declarativo para target Mastra. v2.0 (KORA v9, HITL 2026-05-20): declara arnes como discriminante ontologico (§4.6); forma material como proyeccion operacional; skills y agents son el mismo objeto agentico variando por arnes + modo de invocacion. Topologia fisica preservada por conveniencia operacional."
+version: "2.0.0"
 status: publicado
 tags: [autoria, artefacto-agentico, serializacion, proyeccion, unificada]
 lang: es
@@ -26,7 +26,7 @@ relations:
     - "urn:kora:kb:skill-overlay-spec"
 ---
 
-# Especificacion de Autoria de Artefactos Agenticos v1.2.0
+# Especificacion de Autoria de Artefactos Agenticos v2.0.0
 
 ## 1. Definicion
 
@@ -460,6 +460,56 @@ Ejemplos validos:
 
 No todas las combinaciones son realizables en todos los runtimes; la
 matriz de realizabilidad la gobierna cada runtime-extension (ver §12).
+
+### 4.6 Arnes como discriminante ontologico
+
+Doctrina vigente desde v2.0 (KORA v9, HITL 2026-05-20,
+`urn:kora:kb:adr-kora-v9-separacion-descriptivo-prescriptivo-y-arnes`):
+
+> **Skills y agents NO son ontologicamente categorias distintas. Son
+> proyecciones operacionales del mismo objeto agentico, distinguidas
+> por el arnes categorial que ocupan en el espacio PMI × LFS.**
+
+Reglas:
+
+1. **Identidad ontologica** de un artefacto agentico se define por
+   `(arnes_categorico, vector_ontologico)`. Dos artefactos con el mismo
+   arnes y vector son **el mismo objeto** en categorias distintas de
+   realizacion.
+2. **Forma material es derivada operacional**: dado un arnes, la
+   `forma_material` se elige por modo de invocacion (humano directo /
+   por otro agente / always-on) y por dominio de proyeccion compatible
+   (`§5`). No es discriminante ontologico independiente.
+3. **Topologia fisica** (`SKILL.md` en `artifacts/skills/`, `AGENT.md`
+   en `artifacts/agents/`) se preserva por **conveniencia operacional**;
+   es naming convention, no taxonomia ontologica.
+4. **Promocion entre formas (§8)** preserva el arnes; cambia solo la
+   materializacion operacional. La identidad URN del artefacto **DEBE**
+   preservarse.
+
+Correspondencia arnes → forma material tipica:
+
+| Arnes | Forma material tipica | Materializacion alternativa |
+|-------|-----------------------|------------------------------|
+| `utilidad` | habilidad | subagente (cuando invocada por otro agente) |
+| `disciplina` | habilidad | subagente |
+| `delegado` | subagente | habilidad |
+| `persona` | agente-propiamente-tal | subagente |
+| `orquestador` | agente-propiamente-tal | agente-plataforma |
+| `servicio` | agente-plataforma | (solo) |
+| `arquetipo` | meta (no se materializa) | --- |
+
+Implicancia para la matriz §6: las reglas condicionales por forma
+material que ya estan implicitas en el arnes se simplifican; las
+reglas que son consecuencias operacionales reales (topologia,
+`_BUILD/`, memoria ambiental, materia persistente) permanecen
+condicionales por forma material.
+
+Rationale: distinguir "habilidad" de "subagente" como categorias
+paralelas creaba duplicacion ontologica. Un script puro puede ser
+invocado por humano (lo llamamos `habilidad`) o por agente (lo
+llamamos `subagente`) sin que cambie su **objeto** subyacente. El
+arnes captura ese objeto; la forma material captura la materializacion.
 
 ## 5. Las cuatro formas materiales
 

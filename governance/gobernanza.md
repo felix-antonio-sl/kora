@@ -75,7 +75,9 @@ Cuando dos reglas parezcan contradecirse, prevalece esta jerarquia:
 
 1. `gobernanza.md` — constitucion.
 2. specs ontologicas (`harness-spec.md`, `qa-spec.md`).
-3. `md-spec.md` — formato base KORA/MD y perfil prescriptivo de specs.
+3. `md-spec.md` — formato base KORA/MD regimen descriptivo.
+   `spec-md.md` — perfil prescriptivo (RFC 2119, Traces to, invariantes
+   prescriptivos) que extiende md-spec para documentos de familia `spec`.
 4. specs canonicas de serializacion (`autoria-spec`, `knowledge-spec`) y de runtime (`runtime-spec-md`, `transmutation-spec`, runtime-extensions).
 5. extensiones de namespace.
 6. README, plantillas, artefactos generados.
@@ -89,7 +91,7 @@ v4.2 formaliza que KORA opera en **cuatro capas** categoricamente distintas:
 | Capa | Qué gobierna | Specs |
 |------|--------------|-------|
 | **Ontologia** | Que *es* un artefacto agentico, como se interpreta su calidad y como componen sus procesos | `harness-spec`, `qa-spec`, `procesos-spec`, `risk-register-spec` |
-| **Serializacion** | Como se *escribe* el artefacto y como se construye su fuente primaria | `autoria-spec`, `agent-skill-construction-spec`, `md-spec`, `knowledge-spec` |
+| **Serializacion** | Como se *escribe* el artefacto y como se construye su fuente primaria | `autoria-spec`, `agent-skill-construction-spec`, `md-spec`, `spec-md`, `knowledge-spec` |
 | **Runtime** | Como se *ejecuta* en un target concreto y como compone multiagente | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec`, runtime-extensions |
 | **Distribucion** | Como se *empaqueta y comparte* | `plugin.json`, `marketplace.json` (externas) |
 
@@ -110,7 +112,9 @@ proyectadas*. La distribucion es *meta-encaje*.
 
 - `autoria-spec.md` — shape unificado de authoring para todo artefacto agentico productivo (cuatro formas materiales: habilidad, subagente, agente-propiamente-tal, agente-plataforma).
 - `agent-skill-construction-spec.md` — metodologia pre-transmutacion para convertir requerimientos, drafts o insumos de staging en `AGENT.md`/`SKILL.md` conformes a `autoria-spec`.
-- `md-spec.md` — formato KORA/MD base usado por el frontmatter + body.
+- `md-spec.md` — formato KORA/MD base (regimen descriptivo).
+- `spec-md.md` — perfil prescriptivo: RFC 2119, Traces to, cristalizacion,
+  invariantes prescriptivos. Extiende `md-spec` para familia `spec`.
 - `knowledge-spec.md` — tejido relacional y pipeline de conocimiento.
 
 **Capa de runtime**:
@@ -135,7 +139,8 @@ gobierna:
 
 - `harness-spec` para vector ontologico PMI × LFS.
 - `qa-spec` para quality attributes, floors derivados de `Σ` y `qa_budget`.
-- `md-spec` para envelope KORA/MD y perfil prescriptivo de specs.
+- `md-spec` para envelope KORA/MD descriptivo.
+- `spec-md` para perfil prescriptivo (extiende md-spec para familia `spec`).
 - `autoria-spec` para shape de todo artefacto agentico productivo.
 - `agent-skill-construction-spec` para proceso de construccion de agentes y skills antes de transmutar a runtimes.
 - `knowledge-spec` para tejido relacional y pipeline de conocimiento.

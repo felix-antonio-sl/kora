@@ -144,7 +144,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v10",
+            "KORA/MD v11",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -156,12 +156,36 @@ class ArtifactFixtureTests(unittest.TestCase):
             "Calidad de superficie",
             "### 6.10 Verificacion mecanica",
             "### 6.11 Verificacion de fidelidad",
-            "Contrato vigente v9",
             "Contrato vigente v10",
+            "Contrato vigente v11",
         )
         for term in required_terms:
             self.assertIn(term, content)
         self.assertNotIn("test de bolsillo", content)
+
+    def test_md_spec_v11_delegates_prescriptive_to_spec_md(self):
+        """KORA v9 (2026-05-20): md-spec v11 delega regimen prescriptivo a spec-md v1.0."""
+        md_content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
+        # md-spec ya no contiene el contenido prescriptivo extendido.
+        self.assertNotIn("#### 5.6.1.1 Proceso de cristalizacion", md_content)
+        self.assertNotIn("#### 5.6.1.2 Lenguaje de obligacion", md_content)
+        # md-spec apunta a spec-md.
+        self.assertIn("urn:kora:kb:spec-md", md_content)
+        # spec-md v1.0 existe con el perfil prescriptivo.
+        spec_md = ROOT / "serialization" / "spec-md.md"
+        self.assertTrue(spec_md.exists())
+        sm_content = spec_md.read_text(encoding="utf-8")
+        self.assertIn("KORA/Spec-MD v1.0.0", sm_content)
+        self.assertIn("RFC 2119", sm_content)
+        self.assertIn("Cristalizacion", sm_content)
+        self.assertIn("Traces to", sm_content)
+
+    def test_autoria_spec_v2_declares_arnes_as_ontological_discriminant(self):
+        """KORA v9 (2026-05-20): autoria-spec v2.0 declara arnes como discriminante ontologico."""
+        content = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")
+        self.assertIn("Especificacion de Autoria de Artefactos Agenticos v2.0.0", content)
+        self.assertIn("Arnes como discriminante ontologico", content)
+        self.assertIn("forma material es derivada operacional", content.lower())
 
     def test_md_spec_v10_retired_atomic_family(self):
         """KORA v8 (2026-05-20): familia atomic eliminada de md-spec v10."""
