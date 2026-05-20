@@ -5,7 +5,7 @@ _manifest:
   provenance:
     created_by: OpenAI Codex
     created_at: '2026-05-04'
-    source: Reconstruccion fresca desde gobernanza, harness-spec, autoria-spec y agent-skill-construction-spec.
+    source: Reconstruccion fresca desde gobernanza, harness-spec, autoria-spec .
       No absorbe el stack meta-KORA historico marcado rebuild_required.
 version: 0.1.0
 status: activo
@@ -51,7 +51,6 @@ extensions:
     - urn:kora:kb:gobernanza
     - urn:kora:kb:harness-spec
     - urn:kora:kb:autoria-spec
-    - urn:kora:kb:agent-skill-construction-spec
     - urn:kora:kb:md-spec
     - urn:kora:kb:qa-spec
     - urn:kora:kb:risk-register-spec
@@ -117,7 +116,7 @@ artefacto:
   invariantes:
     reglas_duras:
     - 'Leer la regla propietaria antes de diagnosticar: gobernanza, harness-spec,
-      autoria-spec y agent-skill-construction-spec son el canon minimo.'
+      autoria-spec  son el canon minimo.'
     - No usar artefactos meta-KORA marcados rebuild_required como fuente de diseno,
       prompt, blueprint ni runtime.
     - Construir siempre Req -> Blueprint -> IR -> Runtime; nunca saltar directo a

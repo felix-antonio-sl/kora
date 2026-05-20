@@ -455,36 +455,21 @@ class ArtifactFixtureTests(unittest.TestCase):
         for workspace_ref in ("kora/custodio", "kora/guardian", "kora/clawforge"):
             self.assertIsNone(find_agent_workspace(workspace_ref, include_staging=True), workspace_ref)
 
-    def test_rebuild_required_meta_skills_are_not_used_as_source(self):
-        retired_root = (
-            ROOT
-            / "artifacts"
-            / "skills"
-            / "_TALLER"
-            / "INBOX"
-            / "_rebuild_required"
-            / "2026-05-03"
-            / "kora"
+    def test_meta_kora_legacy_skills_purged(self):
+        """Poda radical 2026-05-21: _rebuild_required/2026-05-03/kora/ eliminado."""
+        rebuild_root = (
+            ROOT / "artifacts" / "skills" / "_TALLER" / "INBOX" / "_rebuild_required"
         )
+        self.assertFalse(rebuild_root.exists(), f"_rebuild_required eliminado en poda radical, no debe existir: {rebuild_root}")
         for name in ("artifact-curator", "curation-conductor"):
-            self.assertFalse((ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md").exists())
-            doc, err = load_yaml_safe(retired_root / name / "SKILL.md")
-            self.assertIsNone(err)
-            self.assertEqual(doc["status"], "retirado")
-            self.assertFalse(doc["extensions"]["kora"]["rebuild"]["current_is_source"])
-
+            self.assertFalse((ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md").exists(),
+                             f"{name} retirado: sin productivo, sin legacy")
         for name in ("kora-agents", "kora-skills"):
             productive = ROOT / "artifacts" / "skills" / "kora" / name / "SKILL.md"
-            self.assertTrue(productive.exists())
-            product_doc, err = load_yaml_safe(productive)
+            self.assertTrue(productive.exists(), f"{name} productivo preservado")
+            doc, err = load_yaml_safe(productive)
             self.assertIsNone(err)
-            self.assertEqual(product_doc["status"], "activo")
-            self.assertNotIn("rebuild", product_doc["extensions"]["kora"])
-
-            legacy_doc, err = load_yaml_safe(retired_root / name / "SKILL.md")
-            self.assertIsNone(err)
-            self.assertEqual(legacy_doc["status"], "retirado")
-            self.assertFalse(legacy_doc["extensions"]["kora"]["rebuild"]["current_is_source"])
+            self.assertEqual(doc["status"], "activo")
 
     def test_digitrans_uses_tde_as_primary_corpus(self):
         agent = (agent_workspace_path("gn/digitrans") / "AGENT.md").read_text(encoding="utf-8")

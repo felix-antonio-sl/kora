@@ -78,6 +78,17 @@ IGNORED_DIRS = {
 # Directorios al raíz del repo que se ignoran explícitamente (distintos de
 # los ignored-by-name porque aquí el match es por path absoluto al raíz).
 ROOT_IGNORED_DIRS = {"atomize", "_backups"}
+
+# Paths cuyo contenido se INDEXA (URNs siguen resolviendo) pero NO se ESCANEA
+# para validar refs URN salientes. Aplica a handoffs historicos, specs
+# absorbidas/retiradas/en-pausa: las refs internas a artefactos retirados son
+# legitimas en su contexto historico aunque no resuelvan hoy.
+ARCHIVED_SCAN_MARKERS = (
+    "/governance/decisiones-archivadas/handoffs-historicos/",
+    "/governance/decisiones-archivadas/specs-en-pausa/",
+    "/governance/decisiones-archivadas/specs-absorbidas/",
+    "/governance/decisiones-archivadas/skills-retiradas/",
+)
 IGNORED_FILES = {
     "README.md",
     "CLAUDE.md",

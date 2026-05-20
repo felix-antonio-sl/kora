@@ -352,30 +352,5 @@ class DeployBuildsTests(unittest.TestCase):
         finally:
             shutil.rmtree(review_dir, ignore_errors=True)
 
-    def test_rebuild_required_skill_path_is_not_transmutable_source(self):
-        legacy = (
-            ROOT
-            / "artifacts"
-            / "skills"
-            / "_TALLER"
-            / "INBOX"
-            / "_rebuild_required"
-            / "2026-05-03"
-            / "kora"
-            / "kora-skills"
-        )
-        result = run_cli(
-            "transmute",
-            "--target",
-            "agentskills",
-            "--agent",
-            str(legacy),
-            "--force-paused",
-            check=False,
-        )
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("not an active source", result.stderr)
-
-
 if __name__ == "__main__":
     unittest.main()

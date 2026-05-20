@@ -61,7 +61,7 @@ from .workspaces import (
 VALID_FAMILIES = frozenset({
     "spec", "guide", "normative", "glossary", "faq",
     "catalog", "cq_catalog", "inventory", "organigram",
-    "atomic", "note", "adr",
+    "note", "adr",
     "generic", "source", "source-alias", "bok",
 })
 
@@ -131,31 +131,10 @@ FIELD_SCAFFOLD_HEADING_TITLES = {
     "source id",
 }
 DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK = 120
-ATOMIC_ALLOWED_TYPES = {
-    "requirement",
-    "definition",
-    "rule",
-    "exclusion",
-    "constraint",
-    "obligation",
-    "permission",
-    "deadline",
-    "tension",
-    "fact",
-    "scope",
-}
-ATOMIC_SOFT_SEGMENT_TARGET_CHARS = 15000
-ATOMIC_HARD_MAX_PROPOSITIONS = 200
-ATOMIC_PRODUCER_URN = "urn:kora:artefacto:atomize"
-ATOMIC_PROP_LINE_PATTERN = re.compile(r"^\s*-\s+\*\*(P\d{3,})\*\*\s+·\s+`([a-z]+)`\s+·\s+(.+?)\s*$")
-ATOMIC_PROP_LINE_INLINE_SOURCE_PATTERN = re.compile(
-    r"^\s*-\s+\*\*(P\d{3,})\*\*\s+·\s+`([a-z]+)`\s+·\s+(.+?)\s+·\s+\[([^\]]+)\]\(([^)]+)\)\s*$"
-)
-ATOMIC_SOURCE_LINE_PATTERN = re.compile(r"^\s{2,}-\s+\[([^\]]+)\]\(([^)]+)\)\s*$")
-ATOMIC_SOURCE_INDEX_ENTRY_PATTERN = re.compile(r"^\s*-\s+`(S\d{2,})`\s+·\s+\[([^\]]+)\]\(([^)]+)\)")
-ATOMIC_SEGMENT_TABLE_HEADER_PATTERN = re.compile(
-    r"^\|\s*Segmento\s*\|\s*Rango Pxxx\s*\|\s*Dominios\s*\|\s*$"
-)
+# Constantes ATOMIC_* eliminadas 2026-05-21 (poda radical post-retiro
+# de familia atomic en KORA v8 2026-05-20). Ver
+# urn:kora:kb:adr-poda-radical-2026-05-21 y
+# urn:kora:kb:adr-retiro-atomize-y-lecciones-koda.
 FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "generic": 120,
     "normative": 100,
@@ -165,7 +144,6 @@ FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
     "inventory": 200,
     "omega": 120,
     "faq": 120,
-    "atomic": 400,
     "bok": 1000,
     "spec": 500,
 }
@@ -178,7 +156,6 @@ FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
     "inventory": 500,
     "omega": 320,
     "faq": 800,
-    "atomic": 1000000,
     "bok": 1000000,
     "spec": 1000000,
 }
@@ -191,7 +168,6 @@ FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
     "inventory": 16,
     "omega": 10,
     "faq": 50,
-    "atomic": 1000,
     "bok": 40,
     "spec": 24,
 }
@@ -687,8 +663,6 @@ def ensure_primary_summary_section(text):
 
 
 def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None):
-    if resolve_document_family(frontmatter) == "atomic":
-        return body
     max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
     current = body
     for _ in range(4):
@@ -714,18 +688,6 @@ def auto_fix_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=N
 
 
 def auto_fix_published_kora_markdown_parts_with_report(frontmatter, body, max_lines_per_h2=None):
-    if resolve_document_family(frontmatter) == "atomic":
-        return body, {
-            "applied": False,
-            "html_anchor_lines_removed": 0,
-            "html_breaks_replaced": 0,
-            "opaque_internal_refs_semanticized": 0,
-            "meta_intro_headings_removed": 0,
-            "empty_primary_wrappers_removed": 0,
-            "primary_heading_promotions": 0,
-            "largest_primary_chunk_lines_before": max((size for _heading, size in get_primary_chunk_sizes(body)), default=0),
-            "largest_primary_chunk_lines_after": max((size for _heading, size in get_primary_chunk_sizes(body)), default=0),
-        }
     before_anchor_lines = len(re.findall(r'(?m)^\s*<a id="[^"]+"></a>\s*$', body))
     before_breaks = body.count("<br>")
     before_opaque_refs = len(find_opaque_internal_refs(body))
@@ -793,15 +755,6 @@ def extract_markdown_title_and_sections(body):
 
 def split_kora_markdown_parts(frontmatter, body):
     family = resolve_document_family(frontmatter)
-    if family == "atomic":
-        return [body], {
-            "applied": False,
-            "family": family,
-            "shard_count": 1,
-            "max_total_lines_per_file": resolve_max_total_lines_per_file(frontmatter),
-            "max_primary_sections_per_file": resolve_max_primary_sections_per_file(frontmatter),
-            "largest_shard_lines": len(body.splitlines()),
-        }
     max_total_lines = resolve_max_total_lines_per_file(frontmatter)
     max_primary_sections = resolve_max_primary_sections_per_file(frontmatter)
     title, preamble, sections = extract_markdown_title_and_sections(body)
@@ -889,223 +842,6 @@ def _extract_markdown_section(body, heading):
     return section_lines
 
 
-def resolve_atomic_role(frontmatter):
-    if not isinstance(frontmatter, dict):
-        return "single"
-    atomic_ext = frontmatter.get("extensions", {}).get("kora", {}).get("atomic", {})
-    if isinstance(atomic_ext, dict) and atomic_ext.get("segment_role"):
-        return str(atomic_ext["segment_role"])
-    return "single"
-
-
-def parse_atomic_source_index(body):
-    section_lines = _extract_markdown_section(body, "Indice de fuentes")
-    entries = {}
-    for raw_line in section_lines:
-        match = ATOMIC_SOURCE_INDEX_ENTRY_PATTERN.match(raw_line)
-        if not match:
-            continue
-        source_id, _label, target = match.groups()
-        entries[source_id] = target
-    return entries
-
-
-def parse_atomic_propositions(body):
-    propositions = []
-    current = None
-    for line in body.splitlines():
-        inline_match = ATOMIC_PROP_LINE_INLINE_SOURCE_PATTERN.match(line)
-        if inline_match:
-            if current is not None:
-                propositions.append(current)
-            current = {
-                "id": inline_match.group(1),
-                "type": inline_match.group(2),
-                "text": inline_match.group(3).strip(),
-                "sources": [
-                    {
-                        "label": inline_match.group(4),
-                        "target": inline_match.group(5),
-                    }
-                ],
-            }
-            continue
-        match = ATOMIC_PROP_LINE_PATTERN.match(line)
-        if match:
-            if current is not None:
-                propositions.append(current)
-            current = {
-                "id": match.group(1),
-                "type": match.group(2),
-                "text": match.group(3).strip(),
-                "sources": [],
-            }
-            continue
-        if current is not None:
-            source_match = ATOMIC_SOURCE_LINE_PATTERN.match(line)
-            if source_match:
-                current["sources"].append(
-                    {
-                        "label": source_match.group(1),
-                        "target": source_match.group(2),
-                    }
-                )
-                continue
-            if line.startswith("## "):
-                propositions.append(current)
-                current = None
-    if current is not None:
-        propositions.append(current)
-    return propositions
-
-
-def _atomic_source_target_resolves(target, path=None):
-    base_target = target.split("#", 1)[0]
-    if not base_target:
-        return False
-    if base_target.startswith("urn:"):
-        return True
-    if re.match(r"^https?://", base_target):
-        return True
-    if path is None:
-        return True
-    candidate = (path.parent / base_target).resolve()
-    return candidate.exists()
-
-
-def _collect_atomic_bundle_paths(path):
-    if path is None:
-        return []
-    stem = path.stem
-    if stem.endswith("-index"):
-        root = stem[:-6]
-    else:
-        root = re.sub(r"-\d+$", "", stem)
-    bundle = []
-    index_path = path.parent / f"{root}-index{path.suffix}"
-    if index_path.exists():
-        bundle.append(index_path)
-    segment_pattern = re.compile(rf"^{re.escape(root)}-(\d+){re.escape(path.suffix)}$")
-    segment_matches = []
-    for candidate in path.parent.glob(f"{root}-*{path.suffix}"):
-        match = segment_pattern.match(candidate.name)
-        if match:
-            segment_matches.append((int(match.group(1)), candidate))
-    bundle.extend(
-        candidate for _, candidate in sorted(segment_matches, key=lambda item: item[0])
-    )
-    if path.name.startswith(f"{root}.") and path.exists():
-        bundle.append(path)
-    seen = []
-    for item in bundle:
-        if item not in seen:
-            seen.append(item)
-    return seen
-
-
-def lint_atomic_markdown_parts(frontmatter, body, path=None):
-    failures = []
-    source_index = parse_atomic_source_index(body)
-    if not source_index:
-        failures.append("atomic_source_index: falta '## Indice de fuentes' o esta vacio")
-
-    role = resolve_atomic_role(frontmatter)
-    propositions = parse_atomic_propositions(body)
-    if role != "index" and not propositions:
-        failures.append("atomic_propositions: el artefacto atomic no contiene proposiciones")
-
-    atomic_ext = frontmatter.get("extensions", {}).get("kora", {}).get("atomic", {}) if isinstance(frontmatter, dict) else {}
-    if not isinstance(atomic_ext, dict):
-        failures.append("atomic_frontmatter: falta extensions.kora.atomic")
-        atomic_ext = {}
-
-    if atomic_ext.get("producer") != ATOMIC_PRODUCER_URN:
-        failures.append(f"atomic_producer: producer debe ser '{ATOMIC_PRODUCER_URN}'")
-    if not atomic_ext.get("source_corpus"):
-        failures.append("atomic_source_corpus: falta extensions.kora.atomic.source_corpus")
-
-    expected_n_propositions = None
-    if role != "index":
-        expected_n_propositions = len(propositions)
-    elif path is not None and path.exists():
-        bundle_paths = _collect_atomic_bundle_paths(path)
-        if bundle_paths:
-            expected_n_propositions = 0
-            for bundle_path in bundle_paths:
-                bundle_frontmatter, bundle_body = load_markdown_parts(bundle_path)
-                if resolve_document_family(bundle_frontmatter) != "atomic":
-                    continue
-                if resolve_atomic_role(bundle_frontmatter) == "index":
-                    continue
-                expected_n_propositions += len(parse_atomic_propositions(bundle_body))
-    if expected_n_propositions is not None and atomic_ext.get("n_propositions") != expected_n_propositions:
-        failures.append(
-            f"atomic_n_propositions: n_propositions={atomic_ext.get('n_propositions')} no coincide con {expected_n_propositions}"
-        )
-
-    proposition_ids = []
-    for proposition in propositions:
-        proposition_ids.append(proposition["id"])
-        if proposition["type"] not in ATOMIC_ALLOWED_TYPES:
-            failures.append(f"atomic_type: tipo fuera del enum cerrado '{proposition['type']}' en {proposition['id']}")
-        if not proposition["text"]:
-            failures.append(f"atomic_text: proposicion sin texto en {proposition['id']}")
-        if not proposition["sources"]:
-            failures.append(f"atomic_source: proposicion sin fuente resoluble en {proposition['id']}")
-            continue
-        for source in proposition["sources"]:
-            source_id_match = re.search(r"(S\d{2,})", source["label"])
-            if source_id_match and source_id_match.group(1) not in source_index:
-                failures.append(
-                    f"atomic_source_index_ref: fuente {source_id_match.group(1)} no esta declarada en '## Indice de fuentes'"
-                )
-            if not _atomic_source_target_resolves(source["target"], path=path):
-                failures.append(f"atomic_source_resolve: fuente no resoluble '{source['target']}' en {proposition['id']}")
-
-    if len(proposition_ids) != len(set(proposition_ids)):
-        failures.append("atomic_ids: IDs Pxxx duplicados dentro del artefacto")
-
-    if role != "index" and len(propositions) > ATOMIC_HARD_MAX_PROPOSITIONS:
-        failures.append(
-            f"atomic_segmentation: {len(propositions)} proposiciones exceden el maximo duro de {ATOMIC_HARD_MAX_PROPOSITIONS}"
-        )
-
-    segmented = bool(atomic_ext.get("segmented")) if isinstance(atomic_ext, dict) else False
-
-    if segmented or role == "index":
-        segment_lines = _extract_markdown_section(body, "Segmentos")
-        if role == "index":
-            header_found = any(ATOMIC_SEGMENT_TABLE_HEADER_PATTERN.match(line.strip()) for line in segment_lines)
-            if not header_found:
-                failures.append(
-                    "atomic_index_segments: el indice segmentado debe contener tabla '| Segmento | Rango Pxxx | Dominios |'"
-                )
-
-        if path is None or not path.exists():
-            return failures
-
-        bundle_paths = _collect_atomic_bundle_paths(path)
-        if role != "single" and not bundle_paths:
-            failures.append("atomic_bundle: no se encontro el bundle segmentado asociado")
-        elif bundle_paths:
-            bundle_ids = []
-            has_index = any(item.stem.endswith("-index") for item in bundle_paths)
-            if not has_index:
-                failures.append("atomic_bundle_index: falta el artefacto -index del bundle atomic")
-            for bundle_path in bundle_paths:
-                bundle_frontmatter, bundle_body = load_markdown_parts(bundle_path)
-                if resolve_document_family(bundle_frontmatter) != "atomic":
-                    continue
-                if resolve_atomic_role(bundle_frontmatter) == "index":
-                    continue
-                for proposition in parse_atomic_propositions(bundle_body):
-                    bundle_ids.append(proposition["id"])
-            if len(bundle_ids) != len(set(bundle_ids)):
-                failures.append("atomic_bundle_ids: IDs Pxxx duplicados en el bundle segmentado")
-
-    return failures
-
-
 def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None, path=None):
     family = resolve_document_family(frontmatter)
     max_lines = resolve_max_lines_per_h2(frontmatter, explicit=max_lines_per_h2)
@@ -1138,17 +874,16 @@ def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None,
     for heading in find_empty_primary_wrapper_headings(body):
         failures.append(f"empty_primary_wrapper: '## {heading}' solo envuelve otros headings")
 
-    if family != "atomic":
-        split_suggestions = dict(suggest_primary_chunk_splits(body, max_lines=max_lines))
-        for heading, size in find_oversized_primary_chunks(body, max_lines=max_lines):
-            suggestion = ""
-            if heading in split_suggestions:
-                promoted = ", ".join(split_suggestions[heading][:4])
-                suffix = "..." if len(split_suggestions[heading]) > 4 else ""
-                suggestion = f"; split sugerido via promotion de ###: {promoted}{suffix}"
-            failures.append(
-                f"oversized_primary_chunk: '## {heading}' ocupa {size} lineas (max {max_lines}){suggestion}"
-            )
+    split_suggestions = dict(suggest_primary_chunk_splits(body, max_lines=max_lines))
+    for heading, size in find_oversized_primary_chunks(body, max_lines=max_lines):
+        suggestion = ""
+        if heading in split_suggestions:
+            promoted = ", ".join(split_suggestions[heading][:4])
+            suffix = "..." if len(split_suggestions[heading]) > 4 else ""
+            suggestion = f"; split sugerido via promotion de ###: {promoted}{suffix}"
+        failures.append(
+            f"oversized_primary_chunk: '## {heading}' ocupa {size} lineas (max {max_lines}){suggestion}"
+        )
 
     banned_field_headings = {"titulo", "path", "artefactos", "contenido", "asunto", "tipo", "status", "source_id"}
     for heading in find_field_like_markdown_headings(body, banned_field_headings):
@@ -1156,9 +891,6 @@ def lint_published_kora_markdown_parts(frontmatter, body, max_lines_per_h2=None,
 
     for heading in find_truncated_markdown_headings(body):
         failures.append(f"truncated_heading: heading truncado '{heading}'")
-
-    if family == "atomic":
-        failures.extend(lint_atomic_markdown_parts(frontmatter, body, path=path))
 
     return failures
 

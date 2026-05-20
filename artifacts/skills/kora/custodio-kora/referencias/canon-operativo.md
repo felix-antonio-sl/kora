@@ -9,7 +9,7 @@ que URNs hay que cargar antes de auditar o modificar KORA.
 |-------|------|------------------|-----|
 | 1 | Constitucion | `urn:kora:kb:gobernanza`, `urn:kora:kb:host-roles` | identidad, source of truth, lifecycle, host primary/secondary |
 | 2 | Ontologia | `urn:kora:kb:harness-spec`, `urn:kora:kb:qa-spec`, `urn:kora:kb:procesos-spec`, `urn:kora:kb:risk-register-spec`, `urn:kora:kb:canario-spec` | vector PMI x LFS, calidad, procesos y riesgo |
-| 3 | Serializacion | `urn:kora:kb:autoria-spec`, `urn:kora:kb:agent-skill-construction-spec`, `urn:kora:kb:md-spec`, `urn:kora:kb:knowledge-spec` | shape de artefactos, KORA/MD, knowledge y construccion |
+| 3 | Serializacion | `urn:kora:kb:autoria-spec`, `urn:kora:kb:md-spec`, `urn:kora:kb:spec-md`, `urn:kora:kb:knowledge-spec` | shape de artefactos, KORA/MD, knowledge y construccion |
 | 4 | Runtime | `urn:kora:kb:runtime-spec-md`, `urn:kora:kb:multiagente-spec`, `urn:kora:kb:transmutation-spec` | ejecucion, coordinacion y proyeccion |
 | 5 | Runtime extensions canonicas (KORA v7) | `urn:kora:kb:claude-code-runtime-extension`, `urn:kora:kb:codex-runtime-extension`, `urn:agengai:kb:openclaw-runtime-extension`, `urn:kora:kb:hermes-runtime-extension` | dominio y fidelidad por target |
 | 6 | Artefactos | `urn:{ns}:artefacto:{id}` | agentes, skills y workspaces |
@@ -32,7 +32,7 @@ version embebida.
 | Que es fuente primaria | `urn:kora:kb:gobernanza` |
 | Que valores puede tener el vector | `urn:kora:kb:harness-spec` |
 | Como se escribe `SKILL.md` o `AGENT.md` | `urn:kora:kb:autoria-spec` |
-| Como construir un artefacto antes de transmutar | `urn:kora:kb:agent-skill-construction-spec` |
+| Como construir un artefacto antes de transmutar | `urn:kora:kb:autoria-spec` (absorbe metodologia desde v2.0) |
 | Como validar KORA/MD o traces | `urn:kora:kb:md-spec` |
 | Como viven relations y knowledge graph | `urn:kora:kb:knowledge-spec` |
 | Que gate ejecutar | `urn:kora:kb:procesos-spec` y toolchain |
@@ -45,7 +45,7 @@ version embebida.
 python3 toolchain/kora resolve "urn:kora:kb:gobernanza"
 python3 toolchain/kora resolve "urn:kora:kb:harness-spec"
 python3 toolchain/kora resolve "urn:kora:kb:autoria-spec"
-python3 toolchain/kora resolve "urn:kora:kb:agent-skill-construction-spec"
+python3 toolchain/kora resolve "urn:kora:kb:autoria-spec"
 python3 toolchain/kora check --list
 ```
 

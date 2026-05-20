@@ -35,7 +35,8 @@ class OpenClawKoraLiveRepoTests(unittest.TestCase):
             ROOT / "artifacts" / "knowledge" / "ops" / "principios-transmutacion-kora-openclaw.md"
         ).read_text(encoding="utf-8")
         memory = (
-            ROOT / "docs" / "reports" / "operational-memory-2026-04-27-openclaw-kora-live-kb.md"
+            ROOT / "governance" / "decisiones-archivadas" / "handoffs-historicos"
+            / "operational-memory-2026-04-27-openclaw-kora-live-kb.md"
         ).read_text(encoding="utf-8")
 
         for content in (runtime, principles, memory):

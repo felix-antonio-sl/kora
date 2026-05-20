@@ -99,8 +99,10 @@ class KoraCliSmokeTests(unittest.TestCase):
                 {item["workspace"] for item in contracts_payload["cohorts"]["kora"]},
             )
         else:
+            # META_KORA_STATUS declara 2 agentes (kora/guardian, kora/custodio) con rebuild_required.
+            # Los skills legacy en _TALLER/_rebuild_required/ fueron purgados (poda radical 2026-05-21),
+            # pero la declaracion doctrinal en config sigue valida (sin filesystem source).
             self.assertEqual(contracts_payload["meta_kora"]["summary"].get("rebuild_required"), 2)
-            self.assertFalse(any(item["in_operating_core"] for item in contracts_payload["meta_kora"]["workspaces"]))
         for workspace in OPERATING_CORE_COHORTS.get("domain", ()):
             self.assertIn(
                 workspace,

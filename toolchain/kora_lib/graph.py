@@ -5,7 +5,7 @@ import os
 import re
 
 from .catalog import classify_catalog_category, load_catalog
-from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
+from .config import AGENTS_ROOT, AGENT_ROUTE_PATTERN, ARCHIVED_SCAN_MARKERS, IGNORED_DIRS, IGNORED_FILES, KNOWLEDGE_ROOT, KORA_ROOT, URN_REF_PATTERN
 from .artifacts import load_yaml_safe
 from .workspaces import (
     _is_workspace_deprecated,
@@ -183,6 +183,16 @@ def build_reference_graph():
     scanned_files = 0
     for file_path in iter_repository_files():
         if file_path.suffix not in (".yml", ".yaml", ".md", ".json"):
+            continue
+        # Material archivado en governance/decisiones-archivadas/ se INDEXA
+        # (URNs siguen resolviendo) pero NO se ESCANEA para validar refs URN
+        # salientes: sus citas a artefactos retirados son legitimas en
+        # contexto historico aunque no resuelvan hoy.
+        try:
+            rel_norm = "/" + str(file_path.relative_to(KORA_ROOT)) + "/"
+        except ValueError:
+            rel_norm = ""
+        if any(marker in rel_norm for marker in ARCHIVED_SCAN_MARKERS):
             continue
         try:
             content = file_path.read_text(encoding="utf-8")

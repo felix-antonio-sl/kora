@@ -6,7 +6,7 @@ _manifest:
     created_by: OpenAI Codex
     created_at: '2026-05-03'
     source: 'Diseno desde cero a partir de requerimiento del operador y specs vigentes:
-      gobernanza, harness-spec, autoria-spec y agent-skill-construction-spec. No absorbe
+      gobernanza, harness-spec, autoria-spec . No absorbe
       el stack meta-KORA historico.'
 version: 1.0.0
 status: activo
@@ -56,7 +56,6 @@ extensions:
     - urn:kora:kb:risk-register-spec
     - urn:kora:kb:canario-spec
     - urn:kora:kb:autoria-spec
-    - urn:kora:kb:agent-skill-construction-spec
     - urn:kora:kb:md-spec
     - urn:kora:kb:knowledge-spec
     - urn:kora:kb:runtime-spec-md
@@ -211,7 +210,7 @@ Canon minimo para cambios agenticos:
 1. `urn:kora:kb:gobernanza`
 2. `urn:kora:kb:harness-spec`
 3. `urn:kora:kb:autoria-spec`
-4. `urn:kora:kb:agent-skill-construction-spec`
+4. `urn:kora:kb:autoria-spec (absorbe metodologia desde v2.0)`
 
 Canon minimo para knowledge:
 
@@ -235,7 +234,6 @@ Antes de cambiar nada, decidir la capa propietaria:
 | identidad, precedencia, lifecycle, source of truth | `gobernanza` |
 | vector, atlas, leyes inter-eje | `harness-spec` |
 | `AGENT.md`/`SKILL.md`, forma material, fibras | `autoria-spec` |
-| construccion pre-transmutacion | `agent-skill-construction-spec` |
 | KORA/MD, relations, traces, knowledge | `md-spec` o `knowledge-spec` |
 | ejecucion o proyeccion a target | `runtime-spec-md`, `multiagente-spec`, `transmutation-spec` o extension |
 | comandos, gates, catalogo, checks | `procesos-spec` y toolchain |
