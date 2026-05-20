@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "OpenAI Codex"
     created_at: "2026-04-19"
-    source: "Cierra H2 del backlog post-olas: explicita los 9 procesos del toolchain KORA como funtores con dominio, codominio, preservacion y perdida declarada."
+    source: "Cierra H2 del backlog post-olas: explicita los 9 procesos del toolchain KORA como funtores con dominio, codominio, preservacion y perdida declarada. Deprecada 2026-05-20 (KORA v6 Fase 1): contenido referencia valida sobre funtorialidad del toolchain; no es canon vigente, sin clientes mecanicos. Decision: urn:kora:kb:adr-kora-v6-simplificacion"
 version: "1.0.0"
-status: publicado
-tags: [spec, procesos, toolchain, functor, invariantes, lifecycle]
+status: deprecado
+tags: [spec, procesos, toolchain, functor, invariantes, lifecycle, deprecado]
 lang: es
 extensions:
   kora:

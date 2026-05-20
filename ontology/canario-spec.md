@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-22"
-    source: "Cierre del piloto urgenciologo/claude-code el 2026-04-22; formaliza el patron de canario vivido para que pueda escalarse sin idiosincrasias por artefacto. v1.1 aclara que canario es evidencia runtime condicional, no cohort productivo ni gate de construccion."
+    source: "Cierre del piloto urgenciologo/claude-code el 2026-04-22; formaliza el patron de canario vivido para que pueda escalarse sin idiosincrasias por artefacto. v1.1 aclara que canario es evidencia runtime condicional, no cohort productivo ni gate de construccion. Deprecada 2026-05-20 (KORA v6 Fase 1): contenido sigue siendo referencia valida; no es canon vigente, sin clientes mecanicos en el toolchain. Decision: urn:kora:kb:adr-kora-v6-simplificacion"
 version: "1.1.0"
-status: publicado
-tags: [spec, canario, verificacion-runtime, gate, propagacion, trazabilidad]
+status: deprecado
+tags: [spec, canario, verificacion-runtime, gate, propagacion, trazabilidad, deprecado]
 lang: es
 extensions:
   kora:

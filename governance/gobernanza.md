@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional que distingue host primary y secondaries"
-version: "4.7.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido (host-roles queda deprecado), reconoce canario-spec y procesos-spec como deprecadas, declara la disciplina de Fase 2 para HITL futuro"
+version: "5.0.0"
 status: publicado
-tags: [gobernanza, constitucion, precedencia, identidad, enforcement]
+tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles]
 lang: es
 extensions:
   kora:
@@ -19,10 +19,11 @@ relations:
     - "urn:kora:kb:qa-spec"
     - "urn:kora:kb:autoria-spec"
     - "urn:kora:kb:agent-skill-construction-spec"
+  supersedes:
     - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v4.7.0
+# KORA/Gobernanza v5.0.0
 
 ## 1. Definicion
 
@@ -346,18 +347,162 @@ Contrato establecido en v4.6.0 y vigente bajo v4.7.x:
 
 ## 12. Identidad operacional por host
 
-Desde v4.7 el corpus distingue **host primary** (SSOT operacional, unica
-maquina autorizada para pushear a `origin/master`) y **hosts secondary**
-(replicas read-mostly que trabajan via Pull Requests). La doctrina detallada
-vive en `governance/host-roles.md` (`urn:kora:kb:host-roles`).
+Esta seccion absorbe `host-roles v1.1` (deprecada en v5.0). Fija la
+**identidad operacional por maquina** del corpus KORA. Distingue dos
+roles: `primary` y `secondary`. Solo existe **un** host `primary`
+activo por instalacion; cualquier otra maquina con un clon del
+repositorio es `secondary` por defecto.
 
-Reglas resumidas:
+Esta doctrina NO modifica el canon ontologico ni de serializacion:
+regula la operacion del filesystem como SSOT, la disciplina de push a
+`origin/master`, y la forma en que el toolchain identifica al host.
 
-1. Existe a lo mas **un** host `primary` por instalacion del corpus.
-2. El rol del host se declara en un marker local fuera del repositorio
-   (`~/.kora/host.yml`); ausencia se interpreta como `secondary`.
-3. La transferencia de rol entre maquinas **DEBE** registrarse como nueva
-   version de `host-roles.md`.
+### 12.1 Definiciones
 
-Esta capa es operacional, no ontologica: no altera el canon de `harness-spec`
-ni de `autoria-spec`, solo gobierna la disciplina del filesystem como SSOT.
+| Termino | Definicion |
+|---------|------------|
+| Host | Maquina concreta con un clon del repositorio KORA. |
+| Primary | Host autoritativo para `master`. Puede pushear directamente. Es la SSOT operacional. |
+| Secondary | Host replica. Trabaja en ramas feature, no pushea a `master` directo, propone cambios via PR. |
+| Marker de host | Archivo local fuera del repo (`~/.kora/host.yml`) que declara el rol del host actual. |
+| Default | Si el marker no existe, el host se interpreta como `secondary`. |
+
+### 12.2 Host primary canonico
+
+| Campo | Valor |
+|-------|-------|
+| Hostname | `hetzner2897261` |
+| Machine ID | `9976abf4e8f6428b9f28f26221dbcdce` |
+| Sistema | Ubuntu 24.04 (Hetzner) |
+| Operador | Felix (FS) |
+| Declarado | 2026-05-03 |
+
+Solo este host es `primary`. La transferencia de rol a otra maquina es
+decision HITL explicita que **DEBE** registrarse como nueva version de
+esta spec (§12.7).
+
+### 12.3 Reglas de push y derivados
+
+1. Solo el host `primary` **DEBE** pushear directamente a `origin/master`.
+2. Hosts `secondary` **NO DEBEN** ejecutar `git push origin master` ni
+   equivalentes; crean ramas feature y abren Pull Requests.
+3. `_BUILD/`, `docs/generated/`, sesiones, secretos y runtime en
+   `~/.openclaw/` son autoritativos solo en `primary`.
+4. Hosts `secondary` **PUEDEN** regenerar derivados localmente
+   (`kora index`, `kora sync-docs`, `kora transmute`) pero esos
+   derivados no son SSOT.
+
+### 12.4 Toolchain y verificacion
+
+1. `python3 toolchain/kora` **DEBE** leer el marker sin fallar si esta
+   ausente; ausencia = `secondary`.
+2. Comandos de mutacion (`migrate`, `promote`, `deprecate`) **PUEDEN**
+   verificar el rol y advertir si se ejecutan en `secondary`.
+3. El hook versionado `toolchain/git-hooks/pre-push` **DEBE** bloquear
+   push directo a `origin/master` si el host no es `primary` o si el
+   marker es inconsistente.
+4. La instalacion local del hook se realiza con
+   `python3 toolchain/kora install-hooks`, que configura
+   `core.hooksPath=toolchain/git-hooks`.
+
+### 12.5 Marker de host
+
+El rol del host se declara en un archivo local fuera del repositorio:
+
+- Path: `~/.kora/host.yml`
+- Formato: YAML
+- Versionado: NO (es estado de maquina, no de corpus)
+- Default si ausente: `secondary`
+
+Shape minimo:
+
+```yaml
+role: primary | secondary
+hostname: "{hostname real}"
+machine_id: "{contenido de /etc/machine-id}"
+declared_at: "YYYY-MM-DD"
+declared_by: "{operador}"
+notes: "{texto libre}"
+```
+
+Reglas:
+
+1. El campo `role` es obligatorio.
+2. `hostname` y `machine_id` deben corresponder a la maquina real al
+   momento de la lectura; divergencia indica que el marker fue copiado
+   entre maquinas y **DEBE** corregirse antes de operar.
+3. El marker no se sincroniza entre hosts.
+
+### 12.6 Enforcement
+
+| Regla | Nivel |
+|-------|-------|
+| Default secondary si marker ausente | manual |
+| Solo primary pushea a master | hook local + branch protection GitHub |
+| Marker consistente con maquina real | manual |
+| Derivados no autoritativos en secondary | manual |
+
+### 12.7 Cambio de host primary
+
+Transferir el rol `primary` a otra maquina **DEBE**:
+
+1. Emitir nueva version de esta spec con la nueva identidad
+   (`hostname`, `machine_id`, fecha, operador).
+2. Actualizar `~/.kora/host.yml` en ambas maquinas.
+3. Registrar la transicion como handoff bajo `docs/handoffs/`.
+4. Ejecutar `python3 toolchain/kora host -v` en ambas maquinas y
+   archivar la salida.
+5. Reinstalar hooks con `python3 toolchain/kora install-hooks` en el
+   nuevo `primary` y en los `secondary` que pushean ramas feature.
+
+No se admite cohabitacion de dos hosts `primary` simultaneos.
+
+### 12.8 Runbook de recuperacion si el primary no esta disponible
+
+Si `hetzner2897261` queda inaccesible:
+
+1. Pausar pushes directos a `master` hasta completar la promocion HITL
+   de un reemplazo.
+2. Elegir una maquina candidata con clon actualizado y ejecutar
+   `git fetch --all --prune` seguido de `git pull --rebase origin master`.
+3. Verificar estado local con `python3 toolchain/kora host -v`,
+   `python3 toolchain/kora check --strict` y
+   `python3 -m unittest discover -s tests`.
+4. Crear o actualizar `~/.kora/host.yml` en la candidata con
+   `role: primary`, `hostname` y `machine_id` reales.
+5. Bajar el host anterior a `secondary` cuando vuelva.
+6. Actualizar esta spec con version nueva, registrar el cambio en
+   `docs/handoffs/`, regenerar indice si corresponde y pushear desde el
+   nuevo primary.
+
+### 12.9 Invariantes de §12
+
+1. Existe **a lo mas un** host `primary` por instalacion.
+2. Los hosts `secondary` no son SSOT y sus derivados no obligan al
+   `primary`.
+3. La identidad operacional del host es **local**: no vive dentro del
+   repo versionado, vive en el filesystem de la maquina.
+4. Esta seccion opera como extension de gobernanza; no altera
+   precedencia constitucional.
+
+## 13. Migracion v4.7 → v5.0 (KORA v6 Fase 1)
+
+Cambios doctrinales en v5.0:
+
+1. **`host-roles.md` absorbida** en esta spec como §12 (subsecciones
+   12.1-12.9). El URN `urn:kora:kb:host-roles` queda como nodo
+   historico con `status: deprecado` y `supersedes` desde gobernanza.
+   Refs `cites` a `urn:kora:kb:host-roles` siguen resolviendo y son
+   validas; quien edite por mantenimiento **DEBERIA** reapuntar a
+   `urn:kora:kb:gobernanza`.
+2. **`canario-spec.md` y `procesos-spec.md`** reconocidas como
+   deprecadas: contenido valido pero no canon vigente; sin clientes
+   mecanicos en el toolchain. Quedan como referencia historica
+   accesible por URN.
+3. **Fase 2 declarada (NO esta version)**: compactacion de
+   `autoria-spec`, `md-spec` y consolidacion `runtime-spec-md` +
+   `transmutation-spec`. Requiere ADR dedicado con HITL que baje el
+   freeze formal de §8.3.
+
+Decision arquitectural completa en
+`urn:kora:kb:adr-kora-v6-simplificacion`.

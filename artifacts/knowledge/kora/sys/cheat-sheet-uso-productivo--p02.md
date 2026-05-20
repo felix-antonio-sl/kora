@@ -152,4 +152,5 @@ capa correcta.
 - Serializacion agentes/skills: [Autoria Spec](urn:kora:kb:autoria-spec) (freeze)
 - Construccion pre-transmutacion: [Agent-Skill Construction Spec](urn:kora:kb:agent-skill-construction-spec)
 - Runtime: [Transmutation Spec](urn:kora:kb:transmutation-spec) (freeze)
-- Host roles: [Host Roles](urn:kora:kb:host-roles)
+- Host roles: ver `gobernanza §12` (la spec `urn:kora:kb:host-roles` quedo deprecada en KORA v6 Fase 1; su contenido vive en gobernanza)
+- Decisiones de arquitectura: [ADR KORA v6](urn:kora:kb:adr-kora-v6-simplificacion)

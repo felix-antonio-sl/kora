@@ -164,9 +164,13 @@ def cmd_index():
                 urn = manifest["urn"]
                 status = read_declared_status(doc, default="publicado")
 
-                if is_deprecated_status(status) or is_retired_status(status):
+                is_lifecycle_deprecated = is_deprecated_status(status) or is_retired_status(status)
+                if is_lifecycle_deprecated:
                     deprecated_count += 1
-                    continue
+                    # KORA v6: deprecated/retired permanecen en el catalogo como
+                    # nodos historicos trazables. La identidad URN es estable a
+                    # traves del lifecycle (autoria-spec §10, knowledge-spec §3).
+                    # Quien quiera filtrar productivos puede excluir por status.
 
                 title = get_artifact_title(doc, file_path)
                 rel_path = str(file_path.relative_to(KORA_ROOT))

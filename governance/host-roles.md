@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-05-03"
-    source: "decision HITL: declarar el servidor Hetzner como SSOT operacional de KORA; clones en otras maquinas se comportan como replicas read-mostly; v1.1 agrega hook pre-push versionado y runbook de recuperacion"
+    source: "decision HITL: declarar el servidor Hetzner como SSOT operacional de KORA; clones en otras maquinas se comportan como replicas read-mostly; v1.1 agrega hook pre-push versionado y runbook de recuperacion; v1.1 + estado deprecado en 2026-05-20 con absorcion completa en gobernanza §12 (KORA v6 Fase 1)"
 version: "1.1.0"
-status: publicado
-tags: [gobernanza, identidad, hosts, ssot, operacional]
+status: deprecado
+tags: [gobernanza, identidad, hosts, ssot, operacional, deprecado]
 lang: es
 extensions:
   kora:
@@ -16,6 +16,17 @@ relations:
   cites:
     - "urn:kora:kb:gobernanza"
 ---
+
+# KORA/Host Roles v1.1.0 (deprecada — absorbida por gobernanza §12)
+
+> **Nota de deprecacion (2026-05-20)**: Esta spec quedo absorbida en
+> `gobernanza v5.0.0 §12` (`urn:kora:kb:gobernanza`). Su contenido sigue
+> vigente como **referencia historica trazable**, pero el canon
+> operativo vive en gobernanza. Refs `cites` a este URN siguen
+> resolviendo y son validas. Decision en
+> `urn:kora:kb:adr-kora-v6-simplificacion`.
+
+Contenido original preservado abajo para trazabilidad.
 
 # KORA/Host Roles v1.1.0
 
