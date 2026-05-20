@@ -4,10 +4,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido (host-roles queda deprecado), reconoce canario-spec y procesos-spec como deprecadas, declara la disciplina de Fase 2 para HITL futuro"
-version: "5.0.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}"
+version: "6.0.0"
 status: publicado
-tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles]
+tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles, hermes, runtimes]
 lang: es
 extensions:
   kora:
@@ -23,7 +23,7 @@ relations:
     - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v5.0.0
+# KORA/Gobernanza v6.0.0
 
 ## 1. Definicion
 
@@ -280,38 +280,71 @@ Reglas:
    material valida conforme a `autoria-spec`; no se eleva `_perfiles` como
    regimen propio.
 
-### 8.2 Hermes queda bloqueado
+### 8.2 Hermes es runtime canonico (desde 2026-05-20)
 
-`Hermes` **NO** es runtime target vigente de KORA.
+`Hermes` **ES** runtime target canonico de KORA desde la decision HITL
+del 2026-05-20 (`urn:kora:kb:adr-kora-v7-esencial`).
 
 Reglas:
 
-1. No se agrega `hermes` a `transmute`, matrices de preservacion ni
+1. `hermes` se admite en `transmute`, matrices de preservacion y
    `entornos_objetivo`.
-2. Toda mencion a Hermes fuera de docs historicas se interpreta como bloqueada
-   hasta que exista una decision HITL nueva mas una `runtime-extension`
-   dedicada.
-3. Mientras ese contrato no exista, el critical path de runtimes es:
-   `claude-code`, `codex`, `gemini`, `mastra`, `opencode`, `openclaw`, `agentskills`.
+2. El contenido normativo completo de
+   `urn:kora:kb:hermes-runtime-extension` se desarrolla en Fase 2b; el
+   stub vigente declara dominio de realizabilidad inicial y deuda
+   explicita.
+3. Critical path de runtimes canonicos: `claude-code`, `codex`,
+   `openclaw`, `hermes` (cuatro).
 
-### 8.3 Freeze formal hasta cierre de Fase 3
+### 8.3 Freeze formal parcial (post 2026-05-20)
 
-Hasta cerrar la Fase 3 del plan HITL de usina KORA, las specs:
+La decision HITL del 2026-05-20 (`urn:kora:kb:adr-kora-v7-esencial`)
+baja parcialmente el freeze formal que vivia desde v4.7:
 
-- `ontology/harness-spec.md`
-- `serialization/autoria-spec.md`
-- `runtime/transmutation-spec.md`
+| Spec | Estado |
+|------|--------|
+| `ontology/harness-spec.md` | **en freeze** (core ontologico PMI × LFS) |
+| `serialization/autoria-spec.md` | **editable** (autoriza compactacion Fase 2b) |
+| `runtime/transmutation-spec.md` | **editable** (autoriza compactacion Fase 2b) |
 
-quedan en **freeze formal**.
+Reglas para `harness-spec` (sigue en freeze):
+
+1. Solo se permiten correcciones de verdad necesarias para sostener
+   artefactos productivos, checks o transmutaciones en curso.
+2. No se permiten expansiones doctrinales, nuevos regimenes ni nuevos
+   ejes del vector durante el freeze.
+3. Todo cambio se justifica como fix puntual, no como rediseño
+   conceptual.
+
+Reglas para `autoria-spec` y `transmutation-spec` (editables):
+
+1. Compactacion autorizada en Fase 2b con criterio: reducir lineas sin
+   perder invariantes vivos (verificables por checks).
+2. Cambios doctrinales menores admitidos; los mayores requieren ADR
+   dedicado (familia `adr`) con `refines` o `supersedes` al ADR v7.
+3. Toda compactacion **DEBE** preservar URN integrity y los tests
+   existentes deben seguir verdes.
+
+### 8.4 Runtimes archivados (decisiones-archivadas/specs-en-pausa)
+
+Los siguientes runtimes quedan **archivados** y no son target canonico
+salvo nuevo HITL:
+
+| Runtime | Archivo | URN |
+|---------|---------|-----|
+| `gemini` | `governance/decisiones-archivadas/specs-en-pausa/gemini-runtime-extension.md` | `urn:kora:kb:gemini-runtime-extension` |
+| `mastra` | `governance/decisiones-archivadas/specs-en-pausa/mastra-runtime-extension.md` | `urn:kora:kb:mastra-runtime-extension` |
+| `opencode` | `governance/decisiones-archivadas/specs-en-pausa/opencode-runtime-extension.md` | `urn:kora:kb:opencode-runtime-extension` |
+| `agentskills` | `governance/decisiones-archivadas/specs-en-pausa/agentskills-runtime-extension.md` | `urn:kora:kb:agentskills-runtime-extension` |
 
 Reglas:
 
-1. Solo se permiten correcciones de verdad necesarias para sostener artefactos
-   productivos, checks o transmutaciones ya en curso.
-2. No se permiten expansiones doctrinales, nuevos regimenes ni nuevos runtimes
-   durante el freeze.
-3. Todo cambio a esas tres specs debe justificarse como fix puntual, no como
-   rediseño conceptual.
+1. Los URNs archivados **siguen resolviendo** en el catalogo (URN
+   integrity preservada through lifecycle).
+2. `entornos_objetivo` en artefactos productivos **NO DEBE** incluir
+   slugs archivados; el toolchain los rechaza desde KORA v7.
+3. La reactivacion de cualquier runtime archivado requiere HITL
+   explicito + ADR dedicado.
 
 ## 9. Invariantes
 
@@ -499,10 +532,33 @@ Cambios doctrinales en v5.0:
    deprecadas: contenido valido pero no canon vigente; sin clientes
    mecanicos en el toolchain. Quedan como referencia historica
    accesible por URN.
-3. **Fase 2 declarada (NO esta version)**: compactacion de
+3. **Fase 2 declarada (cerrada parcialmente en v6.0)**: compactacion de
    `autoria-spec`, `md-spec` y consolidacion `runtime-spec-md` +
-   `transmutation-spec`. Requiere ADR dedicado con HITL que baje el
-   freeze formal de §8.3.
+   `transmutation-spec`. La autorizacion HITL llego en v6.0 (Fase 2b);
+   la ejecucion vive en sesion dedicada.
 
 Decision arquitectural completa en
 `urn:kora:kb:adr-kora-v6-simplificacion`.
+
+## 14. Migracion v5.0 → v6.0 (KORA esencial v7)
+
+Cambios doctrinales en v6.0 (HITL 2026-05-20):
+
+1. **Hermes activado**: §8.2 reescrita. `hermes` es runtime canonico
+   desde 2026-05-20. Stub `runtime/hermes-runtime-extension.md` v0.1
+   declarado; contenido completo en Fase 2b.
+2. **Freeze parcial**: §8.3 reescrita. `autoria-spec` y
+   `transmutation-spec` quedan editables (autoriza compactacion);
+   `harness-spec` sigue en freeze como core ontologico.
+3. **Runtimes canonicos reducidos a 4**: `claude-code`, `codex`,
+   `openclaw`, `hermes`. §8.4 nueva registra los 4 archivados
+   (`gemini`, `mastra`, `opencode`, `agentskills`) con URNs que siguen
+   resolviendo.
+4. **Toolchain ajustado**: `transmute.py` reduce
+   `SUPPORTED_TARGETS`/`TARGET_ADAPTERS`/`PRESERVATION_MATRIX` a 4 +
+   hermes; rechaza slugs archivados en `--target`.
+5. **Drift `entornos_objetivo` limpiado**: 5 skills productivos
+   reciben actualizacion para listar solo runtimes canonicos.
+
+Decision arquitectural completa en
+`urn:kora:kb:adr-kora-v7-esencial`.

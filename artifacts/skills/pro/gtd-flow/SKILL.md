@@ -51,8 +51,6 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
-    - gemini
-    - mastra
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

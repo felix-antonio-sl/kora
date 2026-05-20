@@ -11,7 +11,7 @@ que URNs hay que cargar antes de auditar o modificar KORA.
 | 2 | Ontologia | `urn:kora:kb:harness-spec`, `urn:kora:kb:qa-spec`, `urn:kora:kb:procesos-spec`, `urn:kora:kb:risk-register-spec`, `urn:kora:kb:canario-spec` | vector PMI x LFS, calidad, procesos y riesgo |
 | 3 | Serializacion | `urn:kora:kb:autoria-spec`, `urn:kora:kb:agent-skill-construction-spec`, `urn:kora:kb:md-spec`, `urn:kora:kb:knowledge-spec` | shape de artefactos, KORA/MD, knowledge y construccion |
 | 4 | Runtime | `urn:kora:kb:runtime-spec-md`, `urn:kora:kb:multiagente-spec`, `urn:kora:kb:transmutation-spec` | ejecucion, coordinacion y proyeccion |
-| 5 | Runtime extensions | `urn:kora:kb:codex-runtime-extension`, `urn:kora:kb:claude-code-runtime-extension`, `urn:kora:kb:agentskills-runtime-extension`, `urn:kora:kb:gemini-runtime-extension`, `urn:kora:kb:mastra-runtime-extension`, `urn:kora:kb:opencode-runtime-extension`, `urn:agengai:kb:openclaw-runtime-extension` | dominio y fidelidad por target |
+| 5 | Runtime extensions canonicas (KORA v7) | `urn:kora:kb:claude-code-runtime-extension`, `urn:kora:kb:codex-runtime-extension`, `urn:agengai:kb:openclaw-runtime-extension`, `urn:kora:kb:hermes-runtime-extension` | dominio y fidelidad por target |
 | 6 | Artefactos | `urn:{ns}:artefacto:{id}` | agentes, skills y workspaces |
 | 7 | Derivados | `docs/generated/*`, `_BUILD/` | vistas materializadas y outputs regenerables |
 

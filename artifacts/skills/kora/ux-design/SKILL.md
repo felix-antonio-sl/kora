@@ -43,7 +43,6 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
-    - gemini
     nivel_prescripcion: medio
     conocimiento_permitido: []
     componible_con: []

@@ -62,13 +62,10 @@ extensions:
     - urn:kora:kb:runtime-spec-md
     - urn:kora:kb:multiagente-spec
     - urn:kora:kb:transmutation-spec
-    - urn:kora:kb:agentskills-runtime-extension
     - urn:kora:kb:claude-code-runtime-extension
     - urn:kora:kb:codex-runtime-extension
-    - urn:kora:kb:gemini-runtime-extension
-    - urn:kora:kb:mastra-runtime-extension
-    - urn:kora:kb:opencode-runtime-extension
     - urn:agengai:kb:openclaw-runtime-extension
+    - urn:kora:kb:hermes-runtime-extension
     - urn:kora:kb:meta-kora-rebuild-directive
     componible_con:
     - urn:kora:artefacto:cat-thinking

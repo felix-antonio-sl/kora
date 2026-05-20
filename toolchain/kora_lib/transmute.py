@@ -91,12 +91,24 @@ PRESERVATION_MATRIX = {
         "lambda":  {0: (0, "full"), 1: (1, "full"), 2: (1, "partial", "ecosystem colapsa a organizacional"), 3: (None, "none", "society-in-the-loop no soportado")},
         "phi":     {0: (0, "full"), 1: (1, "full"), 2: (2, "full", "permission system con `ask` materializa HOTL granular"), 3: (2, "partial", "hybrid cognition completa requiere wrapper aplicativo"), 4: (None, "none", "co-evolutivo no soportado")},
     },
+    "hermes": {
+        # Stub provisional KORA v7 (HITL 2026-05-20). Dominio inicial amplio
+        # con fidelity pendiente hasta verificacion empirica en Fase 2b.
+        # Ver runtime/hermes-runtime-extension.md v0.1.0.
+        "domain": {"pi": [0,1,2,3], "mu": [0,1,2,3], "xi": [0,1,2,3,4], "lambda": [0,1,2], "phi": [0,1,2,3], "sigma_max": [3,3,3,3,2]},
+        "pi":      {0: (0, "pending"), 1: (1, "pending"), 2: (2, "pending"), 3: (3, "pending", "verificacion pendiente Fase 2b")},
+        "mu":      {0: (0, "pending"), 1: (1, "pending"), 2: (2, "pending"), 3: (3, "pending", "verificacion pendiente Fase 2b")},
+        "xi":      {0: (0, "pending"), 1: (1, "pending"), 2: (2, "pending"), 3: (3, "pending"), 4: (4, "pending", "verificacion pendiente Fase 2b")},
+        "lambda":  {0: (0, "pending"), 1: (1, "pending"), 2: (2, "pending"), 3: (None, "none", "society-in-the-loop fuera de scope inicial")},
+        "phi":     {0: (0, "pending"), 1: (1, "pending"), 2: (2, "pending"), 3: (3, "pending"), 4: (None, "none", "co-evolutivo fuera de scope inicial")},
+    },
 }
 
 TARGET_ADAPTERS = {
     "claude-code": "transmute-claude-code",
     "openclaw": "transmute-openclaw",
     "codex": "transmute-codex",
+    "hermes": None,  # adapter pendiente Fase 2b (hermes-runtime-extension v0.1)
     "gemini": "transmute-gemini",
     "mastra": "transmute-mastra",
     "opencode": "transmute-opencode",
@@ -153,6 +165,11 @@ TRACE_FIDELITY_BY_TARGET = {
         "level": "heredada",
         "capture_mechanism": "meta-runtime; hereda del runtime que ejecuta el paquete",
         "notes": "agentskills no ejecuta por si mismo",
+    },
+    "hermes": {
+        "level": "pendiente",
+        "capture_mechanism": "por documentar en hermes-runtime-extension v1.0 (Fase 2b)",
+        "notes": "stub KORA v7; verificacion de trazabilidad pendiente",
     },
 }
 

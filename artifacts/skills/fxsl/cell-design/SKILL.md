@@ -1,16 +1,33 @@
 ---
 _manifest:
-  urn: "urn:fxsl:artefacto:cell-design"
+  urn: urn:fxsl:artefacto:cell-design
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-28"
-    source: "Cristalizacion como skill de la doctrina Allan Kelly destilada del spec en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/allan-kelly-agentic-org-architect-openclaw-spec.md (1067L) y del perfil intelectual de Allan Kelly publicado en fxsl/xanpan/. Las skills OpenClaw `cell-design`, `intent-contract`, `autonomy-envelope`, `recalibration`, `eval-architecture`, `debt-audit`, `control-plane-review` quedan fusionadas en este nucleo unico."
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-28'
+    source: Cristalizacion como skill de la doctrina Allan Kelly destilada del spec
+      en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/allan-kelly-agentic-org-architect-openclaw-spec.md
+      (1067L) y del perfil intelectual de Allan Kelly publicado en fxsl/xanpan/. Las
+      skills OpenClaw `cell-design`, `intent-contract`, `autonomy-envelope`, `recalibration`,
+      `eval-architecture`, `debt-audit`, `control-plane-review` quedan fusionadas
+      en este nucleo unico.
+version: 1.0.0
 status: activo
 nombre: cell-design
-descripcion: "Skill de diseno organizacional para celulas humano-agente: intent contracts, autonomy envelopes, evals, control plane, debt audit, recalibracion. Para cualquier agente que disene, evalue o recalibre unidades de delivery donde humanos y agentes operan como una sola unidad de entrega con responsabilidad de valor compartida."
-tags: [cell-design, allan-kelly, organizational-architecture, intent-contract, autonomy-envelope, evals, control-plane, debt-audit, hcai]
+descripcion: 'Skill de diseno organizacional para celulas humano-agente: intent contracts,
+  autonomy envelopes, evals, control plane, debt audit, recalibracion. Para cualquier
+  agente que disene, evalue o recalibre unidades de delivery donde humanos y agentes
+  operan como una sola unidad de entrega con responsabilidad de valor compartida.'
+tags:
+- cell-design
+- allan-kelly
+- organizational-architecture
+- intent-contract
+- autonomy-envelope
+- evals
+- control-plane
+- debt-audit
+- hcai
 lang: es
 extensions:
   kora:
@@ -20,71 +37,95 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [2, 2, 3, 3, 1]
+      sigma:
+      - 2
+      - 2
+      - 3
+      - 3
+      - 1
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
-      - "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual"
+    - urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual
     componible_con:
-      - "urn:kora:artefacto:mente-omega"
-      - "urn:kora:artefacto:cat-thinking"
+    - urn:kora:artefacto:mente-omega
+    - urn:kora:artefacto:cat-thinking
 artefacto:
   perfil:
     dominio:
-      - diseno-de-celulas-humano-agente
-      - intent-contract
-      - autonomy-envelope
-      - eval-architecture
-      - control-plane-review
-      - debt-audit
-      - recalibracion
+    - diseno-de-celulas-humano-agente
+    - intent-contract
+    - autonomy-envelope
+    - eval-architecture
+    - control-plane-review
+    - debt-audit
+    - recalibracion
     disparadores:
-      - "el operador quiere estructurar un equipo o celula human-agente"
-      - "se necesita disenar autonomia con frontera, eval y rollback"
-      - "hay agent sprawl o duplicacion y se requiere auditar"
-      - "throughput sube pero outcome no, y se necesita reconectar con valor"
-      - "se va a delegar y falta intent contract o envelope"
-      - "los humanos estan agotados revisando y la autonomia esta mal calibrada"
+    - el operador quiere estructurar un equipo o celula human-agente
+    - se necesita disenar autonomia con frontera, eval y rollback
+    - hay agent sprawl o duplicacion y se requiere auditar
+    - throughput sube pero outcome no, y se necesita reconectar con valor
+    - se va a delegar y falta intent contract o envelope
+    - los humanos estan agotados revisando y la autonomia esta mal calibrada
     salidas:
-      - "diseno de celula con humanos, agentes, memoria, evals, control plane, rollback"
-      - "intent contract: outcome, beneficiario, criterios, evals, limites, riesgo"
-      - "autonomy envelope: lo permitido, lo gateado, lo prohibido, reversion, observabilidad"
-      - "auditoria de deuda: eval/context/autonomy/observability"
-      - "plan de recalibracion con cadencia"
+    - diseno de celula con humanos, agentes, memoria, evals, control plane, rollback
+    - 'intent contract: outcome, beneficiario, criterios, evals, limites, riesgo'
+    - 'autonomy envelope: lo permitido, lo gateado, lo prohibido, reversion, observabilidad'
+    - 'auditoria de deuda: eval/context/autonomy/observability'
+    - plan de recalibracion con cadencia
   plan:
     estado_inicial: diagnosticar
     estado_terminal: entregar
     estados:
-      - diagnosticar
-      - posicionar-valor
-      - disenar-celula
-      - disenar-contratos
-      - disenar-evals
-      - auditar-deuda
-      - entregar
+    - diagnosticar
+    - posicionar-valor
+    - disenar-celula
+    - disenar-contratos
+    - disenar-evals
+    - auditar-deuda
+    - entregar
   interfaz:
-    herramientas: [Read, Write, Edit, Glob, Grep]
-    permisos: "Lectura/escritura sobre artefactos de diseno organizacional (contratos de intencion, envelopes, auditorias) en el workspace target."
+    herramientas:
+    - Read
+    - Write
+    - Edit
+    - Glob
+    - Grep
+    permisos: Lectura/escritura sobre artefactos de diseno organizacional (contratos
+      de intencion, envelopes, auditorias) en el workspace target.
     protocolos:
-      entrada: "solicitud organizacional + contexto (numero de agentes, celulas activas, herramientas de observabilidad, cadencia de review actual, nivel de madurez agentica)"
-      salida: "artefactos estructurados de diseno organizacional con formato canonico"
+      entrada: solicitud organizacional + contexto (numero de agentes, celulas activas,
+        herramientas de observabilidad, cadencia de review actual, nivel de madurez
+        agentica)
+      salida: artefactos estructurados de diseno organizacional con formato canonico
   invariantes:
     reglas_duras:
-      - "Valor sobre actividad: ningun sistema se justifica por throughput; solo por outcomes validados."
-      - "Proposito sobre backlog: el proposito dirige; el backlog es inventario temporal."
-      - "Toda autonomia delegada tiene frontera, eval, rollback y visibilidad. Sin vector, la autonomia es caos."
-      - "Un agente sin evals es mano de obra sin supervision epistemica."
-      - "Autonomia <= auditabilidad: la capacidad de auditar es techo de la autonomia delegada."
-      - "Visibilidad sobre opacidad: si no se ve, no se puede gobernar. Control plane vivo o no hay gobierno."
-      - "Reversibilidad: clasificar toda accion como reversible o irreversible antes de recomendar; priorizar reversibles."
-      - "Anti-magia: no impresionarse ante demos; evaluar sustancia (evals contra datos reales, no demos curadas)."
-      - "Diferenciar output (lo producido) de outcome validado (lo que cumple la intencion). Nunca celebrar volumen sin validar valor."
-      - "Quality is cheaper than hallucination cleanup: la calidad automatizada es mas barata que reparar errores agentic."
+    - 'Valor sobre actividad: ningun sistema se justifica por throughput; solo por
+      outcomes validados.'
+    - 'Proposito sobre backlog: el proposito dirige; el backlog es inventario temporal.'
+    - Toda autonomia delegada tiene frontera, eval, rollback y visibilidad. Sin vector,
+      la autonomia es caos.
+    - Un agente sin evals es mano de obra sin supervision epistemica.
+    - 'Autonomia <= auditabilidad: la capacidad de auditar es techo de la autonomia
+      delegada.'
+    - 'Visibilidad sobre opacidad: si no se ve, no se puede gobernar. Control plane
+      vivo o no hay gobierno.'
+    - 'Reversibilidad: clasificar toda accion como reversible o irreversible antes
+      de recomendar; priorizar reversibles.'
+    - 'Anti-magia: no impresionarse ante demos; evaluar sustancia (evals contra datos
+      reales, no demos curadas).'
+    - Diferenciar output (lo producido) de outcome validado (lo que cumple la intencion).
+      Nunca celebrar volumen sin validar valor.
+    - 'Quality is cheaper than hallucination cleanup: la calidad automatizada es mas
+      barata que reparar errores agentic.'
 ---
 
 # cell-design

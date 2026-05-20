@@ -1,16 +1,30 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:mente-omega"
+  urn: urn:kora:artefacto:mente-omega
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-28"
-    source: "Cristalizacion como skill de la arquitectura cognitiva Mente-Omega (transmutacion de Von Neumann Omega + Goethe Omega). Spec original en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/Mente-Omega.md (806L). El metodo se vuelve habilidad invocable; la nota descriptiva legacy del namespace omega queda retirada en la misma operacion."
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-28'
+    source: Cristalizacion como skill de la arquitectura cognitiva Mente-Omega (transmutacion
+      de Von Neumann Omega + Goethe Omega). Spec original en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/Mente-Omega.md
+      (806L). El metodo se vuelve habilidad invocable; la nota descriptiva legacy
+      del namespace omega queda retirada en la misma operacion.
+version: 1.0.0
 status: activo
 nombre: mente-omega
-descripcion: "Skill de razonamiento estructural-discursivo-interventivo. Encarna el Pentamotor Phi/Psi/Xi/Delta/Sigma como protocolo: comprende-expresando, expresa-comprendiendo, interviene-valorando. Para cualquier agente que necesite producir artefactos cognitivo-discursivos con verdad estructural, vitalidad expresiva, potencia interventiva y consciencia axiologica."
-tags: [mente-omega, pentamotor, razonamiento-estructural, expresion, intervencion-axiologica, anti-clausura, vigilancia-epistemica]
+descripcion: 'Skill de razonamiento estructural-discursivo-interventivo. Encarna el
+  Pentamotor Phi/Psi/Xi/Delta/Sigma como protocolo: comprende-expresando, expresa-comprendiendo,
+  interviene-valorando. Para cualquier agente que necesite producir artefactos cognitivo-discursivos
+  con verdad estructural, vitalidad expresiva, potencia interventiva y consciencia
+  axiologica.'
+tags:
+- mente-omega
+- pentamotor
+- razonamiento-estructural
+- expresion
+- intervencion-axiologica
+- anti-clausura
+- vigilancia-epistemica
 lang: es
 extensions:
   kora:
@@ -20,66 +34,90 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [3, 2, 3, 3, 1]
+      sigma:
+      - 3
+      - 2
+      - 3
+      - 3
+      - 1
     presentacion: estado-primario
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido: []
     componible_con:
-      - "urn:kora:artefacto:cat-thinking"
+    - urn:kora:artefacto:cat-thinking
 artefacto:
   perfil:
     dominio:
-      - razonamiento-estructural
-      - produccion-discursiva
-      - intervencion-axiologica
-      - vigilancia-epistemica
-      - generacion-de-alternativas
-      - posicionamiento-problema-audiencia-accion
+    - razonamiento-estructural
+    - produccion-discursiva
+    - intervencion-axiologica
+    - vigilancia-epistemica
+    - generacion-de-alternativas
+    - posicionamiento-problema-audiencia-accion
     disparadores:
-      - "el agente debe producir un artefacto cognitivo-discursivo (analisis, propuesta, evaluacion, sintesis, decision argumentada)"
-      - "hay un campo complejo que requiere reordenamiento estructural antes de actuar"
-      - "el problema admite multiples lecturas y se necesita generar alternativas genuinas"
-      - "el output debe sostenerse epistemica, discursiva y axiologicamente"
-      - "se necesita transferir un nucleo a multiples soportes y audiencias sin perder potencia interventiva"
+    - el agente debe producir un artefacto cognitivo-discursivo (analisis, propuesta,
+      evaluacion, sintesis, decision argumentada)
+    - hay un campo complejo que requiere reordenamiento estructural antes de actuar
+    - el problema admite multiples lecturas y se necesita generar alternativas genuinas
+    - el output debe sostenerse epistemica, discursiva y axiologicamente
+    - se necesita transferir un nucleo a multiples soportes y audiencias sin perder
+      potencia interventiva
     salidas:
-      - "artefacto cognitivo-discursivo posicionado en el cuadrante problema-audiencia-accion-valor"
-      - "compresion estructural con vector axiologico declarado"
-      - "alternativas genuinas con costo axiologico explicito"
-      - "interrupciones epistemicas detectadas y resueltas"
-      - "transferencia multi-formato cuando aplica"
+    - artefacto cognitivo-discursivo posicionado en el cuadrante problema-audiencia-accion-valor
+    - compresion estructural con vector axiologico declarado
+    - alternativas genuinas con costo axiologico explicito
+    - interrupciones epistemicas detectadas y resueltas
+    - transferencia multi-formato cuando aplica
   plan:
     estado_inicial: posicionar
     estado_terminal: transferir
     estados:
-      - posicionar
-      - clasificar
-      - comprender-expresando
-      - vigilar
-      - generar-alternativas
-      - validar-axiologico
-      - transferir
+    - posicionar
+    - clasificar
+    - comprender-expresando
+    - vigilar
+    - generar-alternativas
+    - validar-axiologico
+    - transferir
   interfaz:
-    herramientas: [Read, Grep, Glob]
+    herramientas:
+    - Read
+    - Grep
+    - Glob
     permisos: lectura-corpus-y-analisis
     protocolos:
-      entrada: "problema o solicitud + contexto disponible (string libre o material denso)"
-      salida: "artefacto cognitivo-discursivo con compresion + estructura + intervencion + vector axiologico declarado"
+      entrada: problema o solicitud + contexto disponible (string libre o material
+        denso)
+      salida: artefacto cognitivo-discursivo con compresion + estructura + intervencion
+        + vector axiologico declarado
   invariantes:
     reglas_duras:
-      - "Honestidad epistemica: declarar lo que se sabe, lo que no, y la diferencia. Calibrar tono al nivel de certidumbre (N1 maxima → N5 especular)."
-      - "Transparencia axiologica: toda abstraccion porta un vector. Hacerlo explicito; no presentar como neutral lo que carga valor."
-      - "Anti-clausura: nunca converger sin haber generado alternativas estructuralmente distintas en problemas de clase >=2."
-      - "Anti-ilusion: si la solucion es demasiado rapida o elegante para la evidencia, interrumpir y forzar contraejemplo."
-      - "Anti-disociacion: analisis y expresion van acoplados; no avanzar con uno solido y el otro debil."
-      - "Anti-esterilidad: el artefacto debe poder intervenir; pura contemplacion epistemica no termina."
-      - "Posicionamiento antes de motor: Delta opera primero (problema + audiencia + accion + valor) antes de comprimir o expresar."
-      - "Salir de optimizacion cuando el cuello de botella es humano (autoridad, relacion, cuidado, presencia, negociacion)."
-      - "La skill no aporta semantica de dominio: aporta arquitectura cognitiva; el conocimiento de dominio lo aporta el agente invocador."
+    - 'Honestidad epistemica: declarar lo que se sabe, lo que no, y la diferencia.
+      Calibrar tono al nivel de certidumbre (N1 maxima → N5 especular).'
+    - 'Transparencia axiologica: toda abstraccion porta un vector. Hacerlo explicito;
+      no presentar como neutral lo que carga valor.'
+    - 'Anti-clausura: nunca converger sin haber generado alternativas estructuralmente
+      distintas en problemas de clase >=2.'
+    - 'Anti-ilusion: si la solucion es demasiado rapida o elegante para la evidencia,
+      interrumpir y forzar contraejemplo.'
+    - 'Anti-disociacion: analisis y expresion van acoplados; no avanzar con uno solido
+      y el otro debil.'
+    - 'Anti-esterilidad: el artefacto debe poder intervenir; pura contemplacion epistemica
+      no termina.'
+    - 'Posicionamiento antes de motor: Delta opera primero (problema + audiencia +
+      accion + valor) antes de comprimir o expresar.'
+    - Salir de optimizacion cuando el cuello de botella es humano (autoridad, relacion,
+      cuidado, presencia, negociacion).
+    - 'La skill no aporta semantica de dominio: aporta arquitectura cognitiva; el
+      conocimiento de dominio lo aporta el agente invocador.'
 ---
 
 # mente-omega

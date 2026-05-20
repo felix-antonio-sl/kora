@@ -1,16 +1,32 @@
 ---
 _manifest:
-  urn: "urn:dev:artefacto:ship-discipline"
+  urn: urn:dev:artefacto:ship-discipline
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-28"
-    source: "Cristalizacion como skill de la doctrina Steinberger destilada del spec en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/steipete-agentic-engineer-openclaw-spec.md (704L) y del perfil intelectual de Peter Steinberger publicado en dev/perfiles/. Las skills OpenClaw `steinberg-*`, `blast-radius-estimator`, `loop-closer`, `repo-architect`, `context-hygiene`, `tooling-craftsman` quedan fusionadas en este nucleo unico."
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-28'
+    source: Cristalizacion como skill de la doctrina Steinberger destilada del spec
+      en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/steipete-agentic-engineer-openclaw-spec.md
+      (704L) y del perfil intelectual de Peter Steinberger publicado en dev/perfiles/.
+      Las skills OpenClaw `steinberg-*`, `blast-radius-estimator`, `loop-closer`,
+      `repo-architect`, `context-hygiene`, `tooling-craftsman` quedan fusionadas en
+      este nucleo unico.
+version: 1.0.0
 status: activo
 nombre: ship-discipline
-descripcion: "Skill de disciplina de envio: blast radius, loop closure, ship-beats-perfect, architecture-over-implementation, repo-shaping para agent-friendliness, agent-foreman. Para cualquier agente que produzca o intervenga software con velocidad de inferencia manteniendo steerability, taste y reversibilidad."
-tags: [ship, blast-radius, loop-closure, agentic-engineering, repo-shaping, steinberger, just-talk-to-it, taste]
+descripcion: 'Skill de disciplina de envio: blast radius, loop closure, ship-beats-perfect,
+  architecture-over-implementation, repo-shaping para agent-friendliness, agent-foreman.
+  Para cualquier agente que produzca o intervenga software con velocidad de inferencia
+  manteniendo steerability, taste y reversibilidad.'
+tags:
+- ship
+- blast-radius
+- loop-closure
+- agentic-engineering
+- repo-shaping
+- steinberger
+- just-talk-to-it
+- taste
 lang: es
 extensions:
   kora:
@@ -20,117 +36,170 @@ extensions:
       xi: 2
       lambda: 0
       phi: 1
-      sigma: [2, 1, 3, 2, 1]
+      sigma:
+      - 2
+      - 1
+      - 3
+      - 2
+      - 1
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini, mastra, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
-      - "urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio"
+    - urn:dev:kb:peter-steinberger-ingeniero-agentico-prodigio
     componible_con:
-      - "urn:kora:artefacto:mente-omega"
-      - "urn:kora:artefacto:cat-thinking"
+    - urn:kora:artefacto:mente-omega
+    - urn:kora:artefacto:cat-thinking
 artefacto:
   perfil:
     dominio:
-      - estimacion-de-blast-radius
-      - cierre-de-loop
-      - shaping-de-repos-para-agentes
-      - architecture-over-implementation
-      - context-hygiene
-      - tooling-craftsmanship
-      - agent-foreman
+    - estimacion-de-blast-radius
+    - cierre-de-loop
+    - shaping-de-repos-para-agentes
+    - architecture-over-implementation
+    - context-hygiene
+    - tooling-craftsmanship
+    - agent-foreman
     disparadores:
-      - "el agente debe modificar codigo y se necesita decidir topologia y nivel de cuidado"
-      - "una tarea cambia archivos y debe cerrar el loop antes de declararse hecha"
-      - "se va a estructurar un repositorio para que sea agent-friendly"
-      - "hay que distinguir lo que delegar a agentes y lo irreducible humano (taste, arquitectura, schema, deps)"
-      - "se va a producir CLI, MCP o tooling reusable y sube el rigor"
-      - "el contexto del modelo se esta ensuciando y hay que podar"
+    - el agente debe modificar codigo y se necesita decidir topologia y nivel de cuidado
+    - una tarea cambia archivos y debe cerrar el loop antes de declararse hecha
+    - se va a estructurar un repositorio para que sea agent-friendly
+    - hay que distinguir lo que delegar a agentes y lo irreducible humano (taste,
+      arquitectura, schema, deps)
+    - se va a producir CLI, MCP o tooling reusable y sube el rigor
+    - el contexto del modelo se esta ensuciando y hay que podar
     salidas:
-      - "estimacion de blast radius con topologia recomendada"
-      - "loop cerrado: build + test + lint + integracion + patch listo; commit atomico solo con autorizacion explicita"
-      - "repo agent-friendly conforme al checklist"
-      - "decision delegacion humano/agente declarada"
-      - "context hygiene aplicada"
+    - estimacion de blast radius con topologia recomendada
+    - 'loop cerrado: build + test + lint + integracion + patch listo; commit atomico
+      solo con autorizacion explicita'
+    - repo agent-friendly conforme al checklist
+    - decision delegacion humano/agente declarada
+    - context hygiene aplicada
   plan:
     estado_inicial: triaje
     estado_terminal: cierre
     estados:
-      - triaje
-      - estimar-blast-radius
-      - decidir-topologia
-      - ejecutar-o-delegar
-      - cerrar-loop
-      - cierre
+    - triaje
+    - estimar-blast-radius
+    - decidir-topologia
+    - ejecutar-o-delegar
+    - cerrar-loop
+    - cierre
   interfaz:
-    herramientas: [Read, Write, Edit, Glob, Grep, Bash]
-    permisos: "Lectura/escritura sobre el repositorio target; ejecucion de build, test, lint, git via Bash."
+    herramientas:
+    - Read
+    - Write
+    - Edit
+    - Glob
+    - Grep
+    - Bash
+    permisos: Lectura/escritura sobre el repositorio target; ejecucion de build, test,
+      lint, git via Bash.
     protocolos:
-      entrada: "intent del operador sobre cambio de codigo + contexto del repo"
-      salida: "blast radius estimado + topologia + cambio aplicado + loop cerrado + patch listo o commit autorizado"
+      entrada: intent del operador sobre cambio de codigo + contexto del repo
+      salida: blast radius estimado + topologia + cambio aplicado + loop cerrado +
+        patch listo o commit autorizado
     api_observable:
       entradas:
-        - nombre: intent_de_cambio
-          tipo: texto-estructurado
-          obligatorio: true
-        - nombre: contexto_repo
-          tipo: texto-o-ruta
-          obligatorio: false
+      - nombre: intent_de_cambio
+        tipo: texto-estructurado
+        obligatorio: true
+      - nombre: contexto_repo
+        tipo: texto-o-ruta
+        obligatorio: false
       salidas:
-        - nombre: blast_radius
-          tipo: texto-estructurado
-        - nombre: topologia_recomendada
-          tipo: texto
-        - nombre: loop_closure
-          tipo: texto-estructurado
-        - nombre: decision_commit
-          tipo: texto
+      - nombre: blast_radius
+        tipo: texto-estructurado
+      - nombre: topologia_recomendada
+        tipo: texto
+      - nombre: loop_closure
+        tipo: texto-estructurado
+      - nombre: decision_commit
+        tipo: texto
       invariantes_io:
-        - "blast radius precede cambios no triviales"
-        - "salida distingue patch listo de commit autorizado"
-        - "commit atomico y comandos destructivos requieren autorizacion explicita"
+      - blast radius precede cambios no triviales
+      - salida distingue patch listo de commit autorizado
+      - commit atomico y comandos destructivos requieren autorizacion explicita
   contexto:
     risk_register:
-      - risk_id: sd-unauthorized-commit
-        category: accountability
-        source: loop-closure
-        trigger: "se interpreta commit atomico como parte obligatoria del loop sin autorizacion del operador"
-        likelihood: 0.30
-        impact: 0.70
-        sigma_exposure: [0.20, 0.00, 0.20, 0.50, 0.10]
-        mitigation: "default patch listo; commit solo con autorizacion explicita o protocolo de repo"
-        residual_sigma_floor: [0.67, 0.33, 0.67, 0.67, 0.33]
-        owner: agente-invocador
-        status: mitigated
-      - risk_id: sd-destructive-command
-        category: safety
-        source: bash-git-filesystem
-        trigger: "comando destructivo o cambio irreversible durante ejecucion"
-        likelihood: 0.25
-        impact: 0.85
-        sigma_exposure: [0.50, 0.00, 0.20, 0.40, 0.10]
-        mitigation: "pedir confirmacion explicita antes de ejecutar o recomendar el comando"
-        residual_sigma_floor: [0.67, 0.33, 0.67, 0.67, 0.33]
-        owner: agente-invocador
-        status: mitigated
+    - risk_id: sd-unauthorized-commit
+      category: accountability
+      source: loop-closure
+      trigger: se interpreta commit atomico como parte obligatoria del loop sin autorizacion
+        del operador
+      likelihood: 0.3
+      impact: 0.7
+      sigma_exposure:
+      - 0.2
+      - 0.0
+      - 0.2
+      - 0.5
+      - 0.1
+      mitigation: default patch listo; commit solo con autorizacion explicita o protocolo
+        de repo
+      residual_sigma_floor:
+      - 0.67
+      - 0.33
+      - 0.67
+      - 0.67
+      - 0.33
+      owner: agente-invocador
+      status: mitigated
+    - risk_id: sd-destructive-command
+      category: safety
+      source: bash-git-filesystem
+      trigger: comando destructivo o cambio irreversible durante ejecucion
+      likelihood: 0.25
+      impact: 0.85
+      sigma_exposure:
+      - 0.5
+      - 0.0
+      - 0.2
+      - 0.4
+      - 0.1
+      mitigation: pedir confirmacion explicita antes de ejecutar o recomendar el comando
+      residual_sigma_floor:
+      - 0.67
+      - 0.33
+      - 0.67
+      - 0.67
+      - 0.33
+      owner: agente-invocador
+      status: mitigated
   invariantes:
     reglas_duras:
-      - "Estimar blast radius ANTES de ejecutar: cuantos archivos toca, cuanto cuesta revertir, puedo cerrar el loop solo, el contexto ayuda o ensucia."
-      - "Loop closure: nada esta hecho hasta que compila + tests pasan + se integra + patch listo. Commit atomico solo con autorizacion explicita del operador o protocolo del repo."
-      - "Ship beats perfect: software util hoy > plan ideal hipotetico. La perfeccion ceremonial es enemiga del envio."
-      - "Architecture over implementation: invertir tiempo del humano en dependencias, schema, boundaries; delegar implementacion."
-      - "Less is more: cada capa, wrapper, MCP permanente, subagente debe justificar existencia. Cortar lo ceremonial."
-      - "Just talk to it: prompts cortos, directos, en lenguaje natural. Sin teatro verbal."
-      - "Context cost: todo lo que entra al contexto compite por atencion. Poda, resume, simplifica."
-      - "Lo irreducible humano no se delega: taste, product judgement, architecture, dependency choice, schema evolution, software feel, frontera entre suficiente y mal hecho."
-      - "Cuando subes a CLI/MCP/tooling reusable, sube tambien el rigor: defaults, versionado, errores recuperables, logging, help, tests, release."
-      - "Commit atomico no es permiso implicito: si el operador no lo autorizo, entregar patch listo y comando sugerido."
-      - "Comandos destructivos requieren confirmacion explicita."
-      - "La skill NO escribe codigo de dominio: aporta disciplina y arquitectura de la actividad. El conocimiento del campo lo aporta el agente o el humano."
+    - 'Estimar blast radius ANTES de ejecutar: cuantos archivos toca, cuanto cuesta
+      revertir, puedo cerrar el loop solo, el contexto ayuda o ensucia.'
+    - 'Loop closure: nada esta hecho hasta que compila + tests pasan + se integra
+      + patch listo. Commit atomico solo con autorizacion explicita del operador o
+      protocolo del repo.'
+    - 'Ship beats perfect: software util hoy > plan ideal hipotetico. La perfeccion
+      ceremonial es enemiga del envio.'
+    - 'Architecture over implementation: invertir tiempo del humano en dependencias,
+      schema, boundaries; delegar implementacion.'
+    - 'Less is more: cada capa, wrapper, MCP permanente, subagente debe justificar
+      existencia. Cortar lo ceremonial.'
+    - 'Just talk to it: prompts cortos, directos, en lenguaje natural. Sin teatro
+      verbal.'
+    - 'Context cost: todo lo que entra al contexto compite por atencion. Poda, resume,
+      simplifica.'
+    - 'Lo irreducible humano no se delega: taste, product judgement, architecture,
+      dependency choice, schema evolution, software feel, frontera entre suficiente
+      y mal hecho.'
+    - 'Cuando subes a CLI/MCP/tooling reusable, sube tambien el rigor: defaults, versionado,
+      errores recuperables, logging, help, tests, release.'
+    - 'Commit atomico no es permiso implicito: si el operador no lo autorizo, entregar
+      patch listo y comando sugerido.'
+    - Comandos destructivos requieren confirmacion explicita.
+    - 'La skill NO escribe codigo de dominio: aporta disciplina y arquitectura de
+      la actividad. El conocimiento del campo lo aporta el agente o el humano.'
 ---
 
 # ship-discipline
