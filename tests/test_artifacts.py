@@ -144,7 +144,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v9",
+            "KORA/MD v10",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -156,43 +156,32 @@ class ArtifactFixtureTests(unittest.TestCase):
             "Calidad de superficie",
             "### 6.10 Verificacion mecanica",
             "### 6.11 Verificacion de fidelidad",
-            "`atomic`",
-            "### 5.6.1 Familia `atomic`",
-            "productor canonico",
-            "Contrato vigente v8",
             "Contrato vigente v9",
+            "Contrato vigente v10",
         )
         for term in required_terms:
             self.assertIn(term, content)
         self.assertNotIn("test de bolsillo", content)
 
-    def test_md_spec_declares_atomic_family_and_canonical_producer(self):
+    def test_md_spec_v10_retired_atomic_family(self):
+        """KORA v8 (2026-05-20): familia atomic eliminada de md-spec v10."""
         content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
-        required_terms = (
-            "familia `atomic`",
-            "productor canonico",
-            "enum cerrado",
-            "15.000 caracteres",
-            "200 proposiciones",
-            "dedup multi-source",
-            "particion semantica relevante",
-        )
-        for term in required_terms:
-            self.assertIn(term, content)
+        # Familia atomic NO debe aparecer como entrada de tabla canonica.
+        self.assertNotIn("| `atomic` |", content)
+        # Subseccion §5.6.1 Familia atomic ya no existe; §5.6.1 ahora es el
+        # perfil `spec`.
+        self.assertNotIn("### 5.6.1 Familia `atomic`", content)
+        # El termino sigue admitido en lexico (Meat = hechos atomicos, etc.)
+        # pero no como invariante de familia.
 
-    def test_knowledge_spec_registers_atomize_as_canonical_producer(self):
+    def test_knowledge_spec_v3_retired_canonical_producer(self):
+        """KORA v8 (2026-05-20): productor canonico atomic retirado."""
         content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
-        required_terms = (
-            "## 9. Productores canonicos de familia",
-            "artifacts/skills/kora/atomize/SKILL.md",
-            "urn:kora:artefacto:atomize",
-            "artifacts/knowledge/_SCRIPTORIUM/REVIEW/",
-            "hand_edited",
-            "unica ruta soportada",
-            "FS=100%",
-        )
-        for term in required_terms:
-            self.assertIn(term, content)
+        # §9 ya no registra atomize como productor activo.
+        self.assertIn("registro de productores canonicos esta vacio", content)
+        self.assertIn("adr-retiro-atomize-y-lecciones-koda", content)
+        # El URN del skill archivado se nombra para trazabilidad.
+        self.assertIn("urn:kora:artefacto:atomize", content)
 
     def test_knowledge_spec_declares_requirement_trace_relation(self):
         content = (ROOT / "serialization" / "knowledge-spec.md").read_text(encoding="utf-8")
@@ -213,64 +202,16 @@ class ArtifactFixtureTests(unittest.TestCase):
         for path in required_paths:
             self.assertTrue(path.exists(), str(path))
 
-    def test_atomize_skill_is_runtime_agnostic_and_llm_first(self):
-        atomize_dir = skill_artifact_dir("kora", "atomize")
-        content = (atomize_dir / "SKILL.md").read_text(encoding="utf-8")
-        required_terms = (
-            "Claude Code",
-            "Codex",
-            "LLM",
-            "Modo unico de operacion",
-            "unico productor soportado",
-            "Modo de recuperacion obligatoria",
-            "Criterios de rechazo",
-            "## Recursos",
-            "### Scripts",
-            "### Referencias",
-            "scripts/atomize.py",
-            "scripts/validate_atomic.py",
-            "scripts/check_atomic_bundle.py",
-            "scripts/review_atomic_quality.py",
-            "scripts/prepare_atomic_fidelity_review.py",
-            "scripts/review_atomic_acceptance.py",
-            "scripts/publish_atomic.py",
-            "referencias/llm-first-workflow.md",
-            "referencias/atomic-output-contract.md",
-            "referencias/plaintext-book-recovery.md",
-            "referencias/golden-case-opm-libro.md",
-            "referencias/golden-case-ocr-procedure.md",
-            "referencias/golden-case-multifile-dedup.md",
-            "referencias/golden-case-multifile-tension.md",
-            "referencias/quality-gates.md",
-            "referencias/semantic-fidelity-review.md",
-            "Criterio de cierre semantico",
-            "particion semantica relevante",
-            "colapsa hechos distinguibles",
-            "review aceptada y fresca",
-        )
-        for term in required_terms:
-            self.assertIn(term, content)
-
-        required_paths = (
-            atomize_dir / "scripts" / "atomize.py",
-            atomize_dir / "scripts" / "validate_atomic.py",
-            atomize_dir / "scripts" / "check_atomic_bundle.py",
-            atomize_dir / "scripts" / "review_atomic_quality.py",
-            atomize_dir / "scripts" / "prepare_atomic_fidelity_review.py",
-            atomize_dir / "scripts" / "review_atomic_acceptance.py",
-            atomize_dir / "scripts" / "publish_atomic.py",
-            atomize_dir / "referencias" / "llm-first-workflow.md",
-            atomize_dir / "referencias" / "atomic-output-contract.md",
-            atomize_dir / "referencias" / "plaintext-book-recovery.md",
-            atomize_dir / "referencias" / "golden-case-opm-libro.md",
-            atomize_dir / "referencias" / "golden-case-ocr-procedure.md",
-            atomize_dir / "referencias" / "golden-case-multifile-dedup.md",
-            atomize_dir / "referencias" / "golden-case-multifile-tension.md",
-            atomize_dir / "referencias" / "quality-gates.md",
-            atomize_dir / "referencias" / "semantic-fidelity-review.md",
-        )
-        for path in required_paths:
-            self.assertTrue(path.exists(), str(path))
+    def test_atomize_skill_archived_with_retired_status(self):
+        """KORA v8 (2026-05-20): skill atomize archivado, URN preservado."""
+        archived_skill = ROOT / "governance" / "decisiones-archivadas" / "skills-retiradas" / "atomize" / "SKILL.md"
+        self.assertTrue(archived_skill.exists(), str(archived_skill))
+        content = archived_skill.read_text(encoding="utf-8")
+        self.assertIn("status: retirado", content)
+        self.assertIn("urn:kora:artefacto:atomize", content)
+        # El skill NO debe estar en productivo.
+        productive_skill = ROOT / "artifacts" / "skills" / "kora" / "atomize"
+        self.assertFalse(productive_skill.exists(), f"Skill atomize debe estar archivado, no en {productive_skill}")
 
     def test_skill_spec_restores_extended_support_with_governed_contract(self):
         content = (ROOT / "serialization" / "autoria-spec.md").read_text(encoding="utf-8")

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-14"
-    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.3.0; v1.2 alinea con autoria-spec unificada; v1.3 agrega requirements trazables y productor canonico atomic; v2.0 absorbe reglas de pipeline (URN conceptual, lifecycle descriptivo, status por directorio, namespace-directory) desde md-spec §3.1 r7-10, formaliza la curacion como cadena de funtores adjuntos, y registra atomize en topologia productiva"
-version: "2.0.0"
+    source: "KORA categorical-foundations 00, 02, 04, 05; md-spec v7.1.0; gobernanza v4.3.0; v1.2 alinea con autoria-spec unificada; v1.3 agrega requirements trazables y productor canonico atomic; v2.0 absorbe reglas de pipeline (URN conceptual, lifecycle descriptivo, status por directorio, namespace-directory) desde md-spec §3.1 r7-10, formaliza la curacion como cadena de funtores adjuntos, y registra atomize en topologia productiva; v3.0 retira atomize del registro de productores canonicos (familia atomic eliminada de md-spec v10) por directiva HITL 2026-05-20; §9 reducida a mecanismo reservado vacio, §13 limpia subcommand atomize"
+version: "3.0.0"
 status: publicado
 tags: [knowledge, categoria, grafo, pipeline, namespace, artefacto, curacion, lifecycle, urn]
 lang: es
@@ -21,7 +21,7 @@ relations:
     - "urn:kora:kb:qa-spec"
 ---
 
-# KORA/Knowledge-Spec v2.0.0
+# KORA/Knowledge-Spec v3.0.0
 
 ## 1. Definicion
 
@@ -396,67 +396,45 @@ inconsistente.
 
 ## 9. Productores canonicos de familia
 
-Algunas familias documentales tienen **productor canonico**: herramienta
-autorizada para generar artefactos de esa familia cumpliendo sus
-invariantes.
+Mecanismo reservado: una familia documental **PUEDE** declararse con
+**productor canonico** (herramienta autorizada para generar artefactos
+de esa familia con garantia mecanica de sus invariantes).
 
-### 9.1 Principio
+### 9.1 Estado actual
 
-Una familia **PUEDE** declararse con productor canonico cuando la
-generacion del artefacto se beneficia de un workflow gobernado,
-regenerable y verificable. En ese caso:
+**El registro de productores canonicos esta vacio desde KORA v3.0 de
+esta spec** (directiva HITL 2026-05-20,
+`urn:kora:kb:adr-retiro-atomize-y-lecciones-koda`).
 
-1. El productor garantiza el cumplimiento de los invariantes de la familia
-   (`md-spec §5.6`) y constituye la **unica ruta soportada** de emision
-   para esa familia.
-2. La autoria editorial se ejerce sobre el corpus fuente, no sobre el
-   artefacto generado.
-3. La regeneracion **PUEDE** hacerse bajo demanda sin alterar la identidad
-   URN del artefacto (§8.3).
+El unico productor canonico historico fue `atomize` (familia `atomic`),
+retirado el 2026-05-20 junto con la familia `atomic`. El skill quedo
+archivado en `governance/decisiones-archivadas/skills-retiradas/atomize/`
+con `status: retirado`; el URN `urn:kora:artefacto:atomize` sigue
+resolviendo como nodo historico.
 
-### 9.2 Registro de productores
+### 9.2 Reactivacion futura
 
-| Familia | Productor canonico | URN del productor | Output |
-| --- | --- | --- | --- |
-| `atomic` | `artifacts/skills/kora/atomize/SKILL.md` | `urn:kora:artefacto:atomize` | `artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/atomic/atomic-{slug}.md` |
+Si en el futuro una familia requiere productor canonico:
 
-### 9.3 Reglas operativas
+1. **Decision HITL explicita** en ADR dedicado.
+2. **Declaracion en esta seccion** con tabla `| Familia | Productor | URN | Output |`.
+3. **Skill o script productivo** registrado en `artifacts/skills/{ns}/{name}/`
+   o `artifacts/agents/{ns}/{name}/`.
+4. **Reglas operativas** que garanticen: (i) productor unica ruta de
+   emision para esa familia, (ii) emision en `_SCRIPTORIUM/REVIEW/` con
+   `status: borrador`, (iii) declaracion `extensions.kora.{family}.producer`
+   en el output.
 
-1. Un artefacto de familia con productor canonico **DEBERIA** ser
-   regenerable desde el corpus fuente declarado en
-   `extensions.kora.{family}.source_corpus` (o campo equivalente),
-   siempre que la regeneracion siga cumpliendo `md-spec §6.11` y `FS=100%`.
-2. Si el artefacto se edita a mano despues de generarse, **DEBE**
-   declararse `extensions.kora.{family}.hand_edited: true` para que el
-   productor no lo sobreescriba en la siguiente corrida.
-3. El productor canonico **DEBE** emitir artefactos con `status: borrador`
-   en `artifacts/knowledge/_SCRIPTORIUM/REVIEW/`; la promocion pasa por
-   `kora promote` y verifica los checks de `md-spec §6.10` y `§6.11` mas
-   la coherencia de namespace (§3.2).
-4. El productor canonico **DEBE** declararse en su salida mediante
-   `extensions.kora.{family}.producer: urn:...`.
-5. Una familia con productor canonico **PUEDE** aceptar reparacion manual
-   posterior sobre artefactos ya emitidos. Esa reparacion es excepcional
-   y verificable; **NO** constituye una ruta alternativa de generacion.
-6. En la familia `atomic`, `atomize` es la unica ruta soportada para
-   emitir nuevos artefactos. Ningun scaffold mecanico, wrapper auxiliar o
-   segmentacion automatica fuera de `atomize` **PUEDE** tratarse como
-   opcion equivalente.
-7. En la familia `atomic`, una corrida de `atomize` que colapsa, omite o
-   mezcla hechos del cuerpo sustantivo del documento **NO** satisface la
-   spec aunque el archivo lintee.
+### 9.3 Aislamiento de responsabilidades
 
-### 9.4 Aislamiento de responsabilidades
-
-- `md-spec` define los invariantes de la familia.
-- `knowledge-spec` declara el productor canonico y sus reglas operativas.
-- El productor concreto (skill, script, pipeline) vive en
-  `artifacts/skills/` o `artifacts/agents/` como artefacto productivo y es
-  consumidor de las dos specs anteriores.
+- `md-spec` define los invariantes de cada familia documental.
+- `knowledge-spec` declara productores canonicos (si los hay) y sus
+  reglas operativas.
+- El productor concreto vive en `artifacts/skills/` o `artifacts/agents/`
+  y consume ambas specs.
 
 Esta separacion garantiza que un cambio en el productor **NO** requiera
-bump de las specs, y que un cambio en las specs **SI** requiera revisar
-al productor.
+bump de las specs.
 
 ## 10. Grafo derivado de conocimiento
 
@@ -525,7 +503,6 @@ Comandos CLI vigentes para curacion de conocimiento (`python3 toolchain/kora`):
 | Comando | Funtor | Uso |
 | --- | --- | --- |
 | `intake` | (status) | Reporta archivos fuente vs artefactos KORA/MD. |
-| `atomize` | `Normalize` para familia `atomic` | Productor canonico (§9). Lee `artifacts/skills/kora/atomize`. |
 | `lint-md` | check `Publish` | Lint estructural sobre artefactos publicados o REVIEW. |
 | `promote` | `Publish` | Mueve un borrador de `_SCRIPTORIUM/REVIEW/{ns}/` a `artifacts/knowledge/{ns}/`. |
 | `promote-cohort` | `Publish` batch | Promueve toda una cohorte (`{ns}`) con abort-on-first-failure. |
@@ -541,7 +518,27 @@ en `toolchain/kora_lib/promote.py`).
 
 ## 14. Migracion
 
-### 14.1 Que cambio v1.3 -> v2.0
+### 14.1 Que cambio v2.0 -> v3.0 (retiro atomize)
+
+Directiva HITL del operador 2026-05-20 (`urn:kora:kb:adr-retiro-atomize-y-lecciones-koda`):
+
+- **§9 reducida**: registro de productores canonicos vaciado. `atomize`
+  retirado junto con la familia `atomic` que producia.
+- **§13 limpiada**: subcommand `kora atomize` eliminado del catalogo
+  CLI.
+- **`atomize` archivado**: el skill productivo paso de
+  `artifacts/skills/kora/atomize/` a
+  `governance/decisiones-archivadas/skills-retiradas/atomize/` con
+  `status: retirado`. URN `urn:kora:artefacto:atomize` preservado para
+  trazabilidad.
+- **225 artefactos `atomic-*`** previamente en `_SCRIPTORIUM/REVIEW/`
+  movidos a `_SCRIPTORIUM/INBOX/_atomic-retirado-2026-05-20/`. Vuelven a
+  material crudo sin URN canonico.
+
+Reactivacion futura del concepto productor canonico requiere ADR HITL
+dedicado (§9.2).
+
+### 14.2 Que cambio v1.3 -> v2.0
 
 Esta version absorbe del `md-spec §3.1` las reglas que **no** son formato
 sino pipeline o identidad. Especificamente:

@@ -5,9 +5,9 @@ _manifest:
     created_by: "FS"
     created_at: "2026-03-09"
     source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`; v9.0 delega pipeline, lifecycle conceptual e identidad URN conceptual a knowledge-spec §3-§4, §8, §13, documenta las cuatro familias auxiliares que el toolchain usa (`bok`, `source`, `source-alias`, `generic`), y limpia la tabla de validacion para reflejar solo invariantes de formato"
-version: "9.0.0"
+version: "10.0.0"
 status: publicado
-tags: [markdown, conocimiento, rag, koraficacion, fidelidad, atomic, prescriptivo, cristalizacion, rfc2119, formato]
+tags: [markdown, conocimiento, rag, koraficacion, fidelidad, prescriptivo, cristalizacion, rfc2119, formato]
 lang: es
 extensions:
   kora:
@@ -20,7 +20,7 @@ relations:
     - "urn:kora:kb:knowledge-spec"
 ---
 
-# KORA/MD v9.0.0
+# KORA/MD v10.0.0
 
 ## 1. Definicion
 
@@ -423,7 +423,6 @@ KORA/MD; `knowledge-spec §5` la cita como autoridad.
 | `cq_catalog` | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento; subperfil de `catalog`. |
 | `inventory` | Puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada. |
 | `organigram` | Dependencias estructurales explicitas; no headings-campo para representar jerarquia. |
-| `atomic` | `## Indice de fuentes` obligatorio y no vacio; cada `##` agrupa proposiciones por dominio o source_file; cada proposicion con ID `Pxxx` unico, tipo del enum cerrado, texto comprimido y >=1 fuente resoluble; enum cerrado de tipos (§5.6.1); FS=100% sobre cifras/fechas/excepciones originales y sobre la particion semantica relevante; dedup multi-source solo si equivalencia semantica real; conflicto -> tipo `tension`; referencia operativa de ~15.000 caracteres por artefacto y maximo duro de 200 proposiciones. |
 | `note` | Nota tecnica compacta; al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante. |
 | `adr` | Architecture Decision Record. Subperfil de `note`. **Frontmatter extendido obligatorio**: `extensions.kora.adr.{contexto, alternativas, factorizacion_elegida, consecuencias, estado}`. Cuerpo con secciones fijas: `## Contexto`, `## Alternativas consideradas`, `## Decision`, `## Consecuencias`, `## Trazabilidad`. Decision se registra como factorizacion categorica: `decision = g ∘ f` donde `f` es la restriccion operativa y `g` el morfismo elegido entre alternativas. Estados: `propuesta -> aceptada -> (superseded \| deprecada \| retirada)`. Trazabilidad: `relations.cites` apunta a las alternativas consideradas aunque no se hayan adoptado. |
 
@@ -440,7 +439,7 @@ declaran a mano):
 Reglas de clasificacion (orden de precedencia):
 
 1. `extensions.{namespace}.family` explicito en el frontmatter.
-2. Convencion de directorio (e.g., `glossaries/`, `normative/`, `atomic/`,
+2. Convencion de directorio (e.g., `glossaries/`, `normative/`,
    `fuentes/`).
 3. Heuristicas sobre URN y `tags` (origen de `bok`).
 4. Clasificacion manual del curador durante koraficacion.
@@ -453,69 +452,13 @@ como subperfil (ej. `cq_catalog` subperfil de `catalog`). La herencia es
 estrictamente aditiva: el subperfil no puede relajar invariantes del
 perfil base.
 
-### 5.6.1 Familia `atomic`: tipos y forma de proposicion
-
-La familia `atomic` tiene enum cerrado de tipos de proposicion:
-
-| Tipo | Semantica |
-| --- | --- |
-| `requirement` | algo que se debe cumplir |
-| `definition` | que es algo |
-| `rule` | como funciona algo |
-| `exclusion` | que no aplica o esta prohibido |
-| `constraint` | limite numerico o temporal |
-| `obligation` | accion que alguien debe realizar |
-| `permission` | algo que esta permitido |
-| `deadline` | plazo especifico |
-| `tension` | contradiccion o ambiguedad entre fuentes |
-| `fact` | dato verificable sin carga normativa |
-| `scope` | alcance o ambito de aplicacion |
-
-Forma minima de proposicion (dentro de un `##` de la familia):
-
-- una fuente:
-  ```
-  - **P042** · `exclusion` · texto atomico verificable · [src](urn:...#loc)
-  ```
-- varias fuentes (dedup aplicado):
-  ```
-  - **P042** · `exclusion` · texto atomico verificable
-    - [src-a](urn:...#loc)
-    - [src-b](urn:...#loc)
-  ```
-
-Reglas:
-
-1. El ID `Pxxx` **DEBE** ser unico en el artefacto; en artefactos
-   segmentados, el `indice` **DEBE** mantener la unicidad global.
-2. El tipo **DEBE** pertenecer al enum cerrado.
-3. El texto **DEBE** ser autocontenido y preservar cifras, fechas, nombres
-   propios, leyes y decretos sin compresion destructiva.
-4. Cada proposicion **DEBE** tener al menos una fuente resoluble.
-5. La compresion **NO DEBE** fusionar afirmaciones semanticamente
-   distintas aunque pertenezcan al mismo parrafo. Si una fuente contiene
-   varios hechos distinguibles y reutilizables, **DEBEN** emitirse como
-   proposiciones separadas.
-6. Eliminar paratexto irrelevante (blurbs, copyright, TOC, boilerplate
-   editorial) **ES OBLIGATORIO**, pero esa eliminacion **NO CUENTA** como
-   licencia para comprimir el contenido sustantivo del cuerpo.
-7. Si dos fuentes afirman el mismo hecho, se dedup en una sola
-   proposicion con cita multiple.
-8. Si dos fuentes se contradicen sobre el mismo hecho, **NO** se dedup:
-   se emite una proposicion `tension` que nombra ambas posiciones.
-9. Extensiones del frontmatter **DEBEN** declarar
-   `extensions.kora.family: atomic` y, cuando aplique,
-   `extensions.kora.atomic.source_corpus`,
-   `extensions.kora.atomic.n_propositions` y
-   `extensions.kora.atomic.producer`.
-
-### 5.6.2 Perfil `spec`: invariantes prescriptivos
+### 5.6.1 Perfil `spec`: invariantes prescriptivos
 
 La familia `spec` absorbe el contrato prescriptivo del ecosistema KORA.
 Todo documento `spec` **DEBE** cumplir, ademas del contrato base de
 KORA/MD, los invariantes de esta seccion.
 
-#### 5.6.2.1 Proceso de cristalizacion
+#### 5.6.1.1 Proceso de cristalizacion
 
 La cristalizacion transforma decisiones, practicas y restricciones
 implicitas en reglas explicitas con una sola lectura valida.
@@ -540,7 +483,7 @@ Propiedades del funtor de cristalizacion:
 4. **Ejemplificador** — las reglas complejas se anclan con
    `Correcto:` / `Incorrecto:`.
 
-#### 5.6.2.2 Lenguaje de obligacion (RFC 2119)
+#### 5.6.1.2 Lenguaje de obligacion (RFC 2119)
 
 Keywords normativas permitidas (enum cerrado):
 
@@ -560,7 +503,7 @@ Reglas:
 4. La equivalencia inglesa (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY)
    **PUEDE** aparecer en la primera mencion, no en todas.
 
-#### 5.6.2.3 Convencion de trazabilidad
+#### 5.6.1.3 Convencion de trazabilidad
 
 Una regla con justificacion formal oficial **DEBERIA** incluir una linea:
 
@@ -589,7 +532,7 @@ Rationale: el URN canonico es identidad estable (Yoneda); los paths
 relativos mezclan identidad con ubicacion fisica y se rompen al
 reorganizar la Formal Layer.
 
-#### 5.6.2.4 Elementos retoricos normativos
+#### 5.6.1.4 Elementos retoricos normativos
 
 El perfil `spec` admite tres elementos retoricos normativos adicionales a
 los tipograficos de §5.2:
@@ -600,7 +543,7 @@ los tipograficos de §5.2:
 | `Rationale:` | registrar motivacion no normativa | introducir deberes nuevos |
 | Tabla de validacion | checks y enforcement declarativo | listado estetico sin criterio |
 
-#### 5.6.2.5 Prosa explicativa admisible
+#### 5.6.1.5 Prosa explicativa admisible
 
 La prosa explicativa en un documento `spec` **PUEDE** existir solo cuando
 cumple una de estas cuatro funciones normativas (lista exhaustiva):
@@ -613,7 +556,7 @@ cumple una de estas cuatro funciones normativas (lista exhaustiva):
 Prosa que no satisface ninguna de estas cuatro funciones es grasa y
 **DEBE** eliminarse conforme a §5.3.
 
-#### 5.6.2.6 Patron obligatorio: regla + ejemplo + traza
+#### 5.6.1.6 Patron obligatorio: regla + ejemplo + traza
 
 Toda regla con mas de una condicion, alcance no obvio, o riesgo de
 interpretacion divergente **DEBE** seguir este patron:
@@ -639,7 +582,7 @@ Incorrecto: `Seria bueno indicar como se verifica.`
 Rationale: La auditabilidad requiere distinguir schema, lint, runtime y manual.
 ```
 
-#### 5.6.2.7 Invariantes prescriptivos
+#### 5.6.1.7 Invariantes prescriptivos
 
 Ademas de los invariantes generales de §7, un documento `spec` **DEBE**
 cumplir:
@@ -660,7 +603,7 @@ cumplir:
    columna `Enforcement` con valor de `gobernanza §7` (`schema`, `lint`,
    `runtime`, `eval`, `manual`).
 
-#### 5.6.2.8 Template esqueleto minimo
+#### 5.6.1.8 Template esqueleto minimo
 
 Todo documento `spec` nuevo **DEBERIA** arrancar desde este esqueleto.
 Las sub-reglas marcadas con **DEBE** dentro del esqueleto son
@@ -676,7 +619,7 @@ obligatorias independientemente del caracter recomendatorio del template:
    minor/patch. En major bumps documenta: (1) que cambio, (2) que migrar,
    (3) que se depreca.
 
-#### 5.6.2.9 Invariante de auto-declaracion
+#### 5.6.1.9 Invariante de auto-declaracion
 
 El propio documento `spec` **DEBE** declarar al inicio su **precedencia**
 en la jerarquia de specs, conforme a `gobernanza §3.4` (regla de
@@ -741,19 +684,6 @@ Para documentos grandes:
 1. Los cortes **DEBEN** realizarse entre secciones naturales.
 2. Cada segmento **DEBE** ser tematicamente coherente.
 3. **NO DEBE** cortarse dentro de una tabla, lista o parrafo.
-
-Para familia `atomic`, segmentacion operativa:
-
-4. Si el artefacto atomic supera 200 proposiciones, **DEBE** emitirse un
-   artefacto `atomic-{slug}-index` y N artefactos `atomic-{slug}-{NN}`.
-5. La referencia de segmentacion para familia `atomic` es ~15.000
-   caracteres por artefacto, pero **NO** es un limite rigido: el corte
-   **DEBE** hacerse en la frontera estructural mas cercana que preserve
-   coherencia tematica.
-6. El indice **DEBE** contener tabla `Segmento | Rango Pxxx | Dominios` y
-   resolver URNs a cada segmento.
-7. Los IDs `Pxxx` **DEBEN** ser unicos a traves del indice + todos los
-   segmentos (numeracion global).
 
 ### 6.6 Transformacion
 
@@ -828,8 +758,6 @@ Checks deterministas minimos:
 - heading primario recuperable
 - resumen obligatorio por familia cuando aplique
 - ausencia de headings-campo prohibidos en KB publicada
-- para familia `atomic`: IDs Pxxx unicos, tipos dentro del enum cerrado,
-  cada proposicion con >=1 fuente resoluble
 
 ### 6.11 Verificacion de fidelidad y calidad
 
@@ -856,10 +784,6 @@ Proceso minimo:
    por alta densidad informacional.
 8. Si la calidad de superficie falla, la koraficacion falla aunque
    `FS=100%`.
-9. En familia `atomic`, una reduccion fuerte del numero de proposiciones
-   respecto del inventario inicial de hechos **DEBE** justificarse
-   mediante dedup real o descarte de paratexto; no es valida si proviene
-   de fusionar hechos distinguibles.
 
 ### 6.12 Registro en catalogo
 
@@ -892,14 +816,9 @@ hechos **DEBE** eliminarse.
 La compresion maxima **NO DEBE** producir headings truncados, chunks
 primarios pobres, labelese ni dumping estructural.
 
-### 7.6 Integridad de la familia `atomic`
+### 7.6 Integridad del perfil prescriptivo `spec`
 
-En artefactos `atomic`, la unicidad global de IDs y la resolubilidad de
-fuentes son invariantes; violarlos invalida la familia.
-
-### 7.7 Integridad del perfil prescriptivo `spec`
-
-En artefactos `spec`, los invariantes de §5.6.2.7 (consistencia interna,
+En artefactos `spec`, los invariantes de §5.6.1.7 (consistencia interna,
 auto-suficiencia de regla, no-circularidad, preservacion de idioma,
 enforcement declarado) son constitutivos del perfil; violarlos invalida
 el caracter prescriptivo del documento.
@@ -932,21 +851,15 @@ spec. Los invariantes de **tejido relacional** y **pipeline** viven en
 | Headings-campo prohibidos | KB publicada no serializa campos como headings | lint | §5.4.2 |
 | Estructuras preservadas | Tablas y listas no se degradan | manual | §7.4 |
 | Catalogo derivado | El artefacto es indexable y regenerable por CLI | lint | §6.12 |
-| Indice atomic | `atomic` tiene `## Indice de fuentes` no vacio | lint | §5.6, §5.6.1 |
-| Proposiciones atomic | Cada entry tiene ID Pxxx + tipo + texto + >=1 fuente | lint | §5.6.1 |
-| Tipos atomic | Cada tipo pertenece al enum cerrado (§5.6.1) | schema | §5.6.1 |
-| Unicidad Pxxx | IDs Pxxx unicos en artefacto y en conjunto segmentado | lint | §5.6.1 r1, §6.5 r7 |
-| Segmentacion atomic | Maximo duro de 200 props; referencia blanda ~15.000 caracteres con corte estructural coherente | lint+manual | §6.5 |
-| Dedup atomic | Multi-source solo si hechos equivalentes; conflicto -> `tension` | manual | §5.6.1 r7-8 |
-| Keyword explicita (spec) | Familia `spec`: toda obligacion importante usa keyword RFC 2119 | lint | §5.6.2.2 |
-| Trazabilidad oficial (spec) | `Traces to:` referencia solo Formal Layer oficial | lint | §5.6.2.3 |
-| Patron de regla (spec) | Reglas complejas que admitan mala lectura incluyen `Correcto:/Incorrecto:`; toda regla con justificacion disponible incluye `Traces to:` o `Rationale:` | manual | §5.6.2.6 |
-| Consistencia interna (spec) | No hay contradicciones no resueltas | manual | §5.6.2.7 r1 |
-| Auto-suficiencia de regla (spec) | Reglas se entienden sin contexto omitido critico | manual | §5.6.2.7 r2 |
-| No-circularidad (spec) | Referencias normativas no forman bucles opacos | manual | §5.6.2.7 r3 |
-| Enforcement declarado (spec) | Toda tabla de validacion incluye columna `Enforcement` | lint | §5.6.2.7 r5 |
-| Template prescriptivo (spec) | Documento sigue esqueleto §5.6.2.8 | manual | §5.6.2.8 |
-| Migracion en major (spec) | Major bumps incluyen seccion `## Migracion` | lint | §5.6.2.8 r7 |
+| Keyword explicita (spec) | Familia `spec`: toda obligacion importante usa keyword RFC 2119 | lint | §5.6.1.2 |
+| Trazabilidad oficial (spec) | `Traces to:` referencia solo Formal Layer oficial | lint | §5.6.1.3 |
+| Patron de regla (spec) | Reglas complejas que admitan mala lectura incluyen `Correcto:/Incorrecto:`; toda regla con justificacion disponible incluye `Traces to:` o `Rationale:` | manual | §5.6.1.6 |
+| Consistencia interna (spec) | No hay contradicciones no resueltas | manual | §5.6.1.7 r1 |
+| Auto-suficiencia de regla (spec) | Reglas se entienden sin contexto omitido critico | manual | §5.6.1.7 r2 |
+| No-circularidad (spec) | Referencias normativas no forman bucles opacos | manual | §5.6.1.7 r3 |
+| Enforcement declarado (spec) | Toda tabla de validacion incluye columna `Enforcement` | lint | §5.6.1.7 r5 |
+| Template prescriptivo (spec) | Documento sigue esqueleto §5.6.1.8 | manual | §5.6.1.8 |
+| Migracion en major (spec) | Major bumps incluyen seccion `## Migracion` | lint | §5.6.1.8 r7 |
 
 Checks de **tejido relacional** y **pipeline** (gobernados por
 `knowledge-spec §12`): `urn-integrity`, `knowledge-zone`,
@@ -959,7 +872,40 @@ Checks de **artefactos agenticos** (gobernados por `autoria-spec §14`):
 
 ## 10. Migracion
 
-### 10.0 Contrato vigente v9
+### 10.0 Contrato vigente v10
+
+Cambios v9 → v10 (retiro de familia `atomic` — directiva HITL del operador
+2026-05-20, decision en `urn:kora:kb:adr-retiro-atomize-y-lecciones-koda`):
+
+- **Familia `atomic` retirada** de §5.6: la fila desaparece de la tabla
+  de familias canonicas.
+- **§5.6.1 "Familia atomic: tipos y forma de proposicion"** eliminada
+  (enum cerrado de 11 tipos de proposicion, forma minima de proposicion,
+  9 reglas). El perfil prescriptivo `spec` que vivia en §5.6.2 ahora es
+  §5.6.1.
+- **§6.5 reglas 4-7** (segmentacion atomic blanda 15K chars / dura
+  200 props / IDs Pxxx unicos globalmente) eliminadas.
+- **§6.10 check ultimo** (atomic mechanical verification: Pxxx unicos,
+  tipos enum cerrado, fuentes resolubles) eliminado.
+- **§6.11 regla 9** (atomic dedup justification) eliminada.
+- **§7.6 "Integridad de la familia atomic"** eliminada; el contenido de
+  §7.7 ("Integridad del perfil prescriptivo spec") se renumera a §7.6.
+- **§9 tabla validacion**: 6 filas atomic eliminadas (Indice atomic,
+  Proposiciones atomic, Tipos atomic, Unicidad Pxxx, Segmentacion
+  atomic, Dedup atomic).
+- **Tag `atomic`** eliminado del frontmatter.
+
+Que se preserva:
+
+- El termino "Proposicion atomica" en §2 (definiciones) como termino del
+  lexico KORA, no como invariante de familia.
+- "Hechos atomicos" como adjetivo en §2 (Meat) y §6.11.
+- El productor canonico `atomize` queda archivado en
+  `governance/decisiones-archivadas/skills-retiradas/atomize/` con
+  `status: retirado`. Su URN `urn:kora:artefacto:atomize` sigue
+  resolviendo para trazabilidad.
+
+### 10.0.1 Contrato vigente v9
 
 - Todo el contrato semantico v8 se preserva sin quiebres.
 - Las **reglas de pipeline** que vivian en `md-spec §3.1 r7-10` se
@@ -1028,7 +974,7 @@ salto v7 -> v8 absorbido y v8 -> v9 actual.)
 - Reglas T1-T7 de compresion semantica.
 - Familia `atomic` con productor canonico (`atomize`).
 - Verificaciones §6.10 y §6.11 sin cambios.
-- Perfil `spec` con todos sus invariantes §5.6.2.
+- Perfil `spec` con todos sus invariantes §5.6.1.
 
 Toda futura transicion major **DEBE** documentar aqui: (1) que cambio,
 (2) que migrar, y (3) que se depreca.

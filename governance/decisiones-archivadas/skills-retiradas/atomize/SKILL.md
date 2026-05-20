@@ -5,11 +5,11 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-16"
-    source: "Productor canonico familia atomic (knowledge-spec §12); migrado a autoria-spec v1.0 desde regimen skill-overlay v1 pre-unificacion."
+    source: "Productor canonico familia atomic (knowledge-spec §12); migrado a autoria-spec v1.0 desde regimen skill-overlay v1 pre-unificacion. RETIRADO 2026-05-20 por directiva HITL del operador: retiro de atomize del dominio knowledge (familia atomic eliminada de md-spec, productor canonico eliminado de knowledge-spec). URN preservado para trazabilidad. ADR adr-retiro-atomize-y-lecciones-koda"
 version: "1.0.0"
-status: activo
+status: retirado
 nombre: atomize
-descripcion: "Productor canonico de la familia documental atomic (md-spec §5.6, knowledge-spec §12): transforma uno o varios documentos humanos en artefactos KORA/MD con proposiciones atomicas, runtime-agnostic para Claude Code y Codex."
+descripcion: "[RETIRADO 2026-05-20] Productor canonico historico de la familia documental atomic. Familia atomic eliminada del corpus normativo. URN preservado como trazabilidad. ADR adr-retiro-atomize-y-lecciones-koda"
 tags: [atomize, atomic, knowledge, productor, koraficacion]
 lang: es
 extensions:

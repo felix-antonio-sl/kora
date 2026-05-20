@@ -1,6 +1,7 @@
 import argparse
 
-from .atomize import cmd_atomize
+# atomize retirado 2026-05-20 (adr-retiro-atomize-y-lecciones-koda); modulo
+# atomize.py vive ahora bajo legacy_migration/ como referencia historica.
 from .audit import cmd_health
 from .catalog import cmd_index, cmd_resolve
 from .checks import run_checks, run_fixes, all_checks, CheckResult
@@ -87,10 +88,7 @@ def main():
     p_graph.add_argument("--json", action="store_true", help="Emit graph as JSON")
     subparsers.add_parser("intake", help="Show status of source files vs knowledge artifacts")
 
-    p_atomize = subparsers.add_parser("atomize", help="Productor canonico md-spec para artefactos KORA/MD de familia atomic")
-    p_atomize.add_argument("input_path", help="Archivo o carpeta con el corpus fuente")
-    p_atomize.add_argument("--slug", default=None, help="Slug del artefacto atomic")
-    p_atomize.add_argument("--output", default=None, help="Directorio de salida; por defecto usa artifacts/knowledge/_SCRIPTORIUM/REVIEW/kora/atomic/")
+    # atomize subcommand retirado 2026-05-20 (familia atomic retirada del corpus normativo).
 
     p_kb_graph = subparsers.add_parser("kb-graph", help="Materialize the knowledge graph from artifacts/knowledge/ artifacts")
     p_kb_graph.add_argument("--json", action="store_true", help="Write graph as JSON to docs/generated/")
@@ -221,8 +219,6 @@ def main():
         cmd_graph(json_output=args.json)
     elif args.command == "intake":
         cmd_intake()
-    elif args.command == "atomize":
-        cmd_atomize(input_path=args.input_path, slug=args.slug, output=args.output)
     elif args.command == "kb-graph":
         cmd_kb_graph(json_output=args.json, check_cycles=args.check_cycles, orphans=args.orphans)
     elif args.command == "promote":
