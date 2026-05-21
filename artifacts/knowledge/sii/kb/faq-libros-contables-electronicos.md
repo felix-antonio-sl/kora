@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Libros contables electrónicos
     source_subcategory: Libros contables electrónicos
     question_count: 16

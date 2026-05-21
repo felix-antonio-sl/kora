@@ -729,7 +729,7 @@ class SemanticValidationTests(unittest.TestCase):
                     lang: es
                     extensions:
                       kora:
-                        family: normative
+                        family: note
                     ---
 
                     # Demo
@@ -926,18 +926,20 @@ class SemanticValidationTests(unittest.TestCase):
         self.assertIn("## EJE TERRITORIO Y MEDIO AMBIENTE", fixed)
         self.assertNotIn("## Resumen", fixed)
 
-    def test_split_kora_markdown_parts_splits_large_normative_body(self):
+    def test_split_kora_markdown_parts_splits_large_note_body(self):
+        # md-spec v12: family note tiene max_total=320 y max_sections=50.
+        # Para forzar split, generamos 15 secciones x ~30 lineas = ~450 lineas.
         frontmatter = {
             "_manifest": {"urn": "urn:kora:kb:test-split"},
             "version": "1.0.0",
             "status": "draft",
             "tags": ["a", "b", "c"],
             "lang": "es",
-            "extensions": {"kora": {"family": "normative"}},
+            "extensions": {"kora": {"family": "note"}},
         }
         sections = []
-        for idx in range(10):
-            sections.append(f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(25)))
+        for idx in range(15):
+            sections.append(f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(28)))
         body = "# Demo\n\n" + "\n\n".join(sections) + "\n"
         shards, report = split_kora_markdown_parts(frontmatter, body)
         self.assertTrue(report["applied"])
@@ -1191,7 +1193,7 @@ class SemanticValidationTests(unittest.TestCase):
                 "status": "draft",
                 "tags": ["a", "b", "c"],
                 "lang": "es",
-                "extensions": {"kora": {"family": "normative"}},
+                "extensions": {"kora": {"family": "note"}},
             }
             body = "# Demo\n\n" + "\n\n".join(
                 f"## Seccion {idx+1}\n\n" + "\n".join(f"- item {n}" for n in range(30))

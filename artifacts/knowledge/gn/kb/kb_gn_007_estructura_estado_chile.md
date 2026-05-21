@@ -11,7 +11,7 @@ tags: [estado-chile, administracion-publica, estructura-institucional, gore, des
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
 ---
 
 # Estructura del Estado de Chile

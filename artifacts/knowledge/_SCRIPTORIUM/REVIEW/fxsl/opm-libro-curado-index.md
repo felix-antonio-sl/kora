@@ -11,7 +11,7 @@ tags: [opm, libro-curado, dori-2015, mbse, sysml, indice, fxsl]
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 ---
 
 # OPM Libro Curado — Indice

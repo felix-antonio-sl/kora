@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Otros impuestos
     source_subcategory: Otros impuestos
     question_count: 31

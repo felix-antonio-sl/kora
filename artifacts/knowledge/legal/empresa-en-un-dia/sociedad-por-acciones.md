@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Sociedad por Acciones (SpA)

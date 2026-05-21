@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Sociedad en Comandita Simple y Sociedad en Comandita por Acciones

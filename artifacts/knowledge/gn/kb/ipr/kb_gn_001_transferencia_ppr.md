@@ -11,7 +11,7 @@ tags: [transferencia, programas-publicos-regionales, ppr, fndr, gore-nuble, eval
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Transferencia de Programas Públicos Regionales (PPR) a Entidades Públicas

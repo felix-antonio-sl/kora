@@ -144,7 +144,7 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_md_spec_restores_koraficacion_contract(self):
         content = (ROOT / "serialization" / "md-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "KORA/MD v11",
+            "KORA/MD v12",
             "## 6. Koraficacion",
             "skeleton",
             "meat",
@@ -156,8 +156,8 @@ class ArtifactFixtureTests(unittest.TestCase):
             "Calidad de superficie",
             "### 6.10 Verificacion mecanica",
             "### 6.11 Verificacion de fidelidad",
-            "Contrato vigente v10",
             "Contrato vigente v11",
+            "Contrato vigente v12",
         )
         for term in required_terms:
             self.assertIn(term, content)

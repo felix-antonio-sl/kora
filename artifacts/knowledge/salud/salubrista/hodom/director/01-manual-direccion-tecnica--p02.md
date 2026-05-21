@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: normative
+    family: note
     shard_index: 2
     shard_count: 3
     shard_root_urn: urn:salud:kb:hodom-direccion-tecnica

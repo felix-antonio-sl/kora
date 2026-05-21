@@ -11,7 +11,7 @@ tags: [nuble-250, agenda-estrategica, desarrollo-regional, gobernanza, proyectos
 lang: es
 extensions:
   gn:
-    family: "normative"
+    family: "note"
 ---
 
 # Agenda Estratégica Ñuble 250

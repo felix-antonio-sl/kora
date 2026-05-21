@@ -11,7 +11,7 @@ tags: [fril, gore-nuble, infraestructura-comunal, municipalidades, fndr, subdere
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Instructivo FRIL 2025 – Región de Ñuble

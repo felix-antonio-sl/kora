@@ -4,11 +4,12 @@ _manifest:
   provenance:
     created_by: Claude Code (Opus 4.7, 1M context) con Felix Sanhueza Luna
     created_at: '2026-05-14'
+    updated_at: '2026-05-14'
     sources:
       - urn:salud:kb:hodom-reglamento-ds1-2022
       - urn:salud:kb:hodom-decreto-exento-31-2024
       - urn:salud:kb:hodom-norma-tecnica-2024
-version: 1.0.0
+version: 1.0.1
 status: published
 tags:
   - hodom
@@ -42,7 +43,10 @@ Vocabulario controlado del dominio HODOM derivado exhaustivamente de las tres fu
 
 Cada entrada incluye: definición canónica, anclaje normativo exacto, uso en el modelo OPM HODOM v1.1 (cuando aplica), sinónimos y términos relacionados. Las entradas con `[modelo OPM v1.1]` están materializadas como cosa/proceso/estado/instrumento/agente en `~/projects/hd-hsc-os/docs/models/opm-hodom-bundle-v1.1.json`.
 
-Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 2024 > Acto Exento 31/2024** (jerarquía declarada en el Acto Exento "Criterio de armonización normativa").
+Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 2024 > Acto Exento 31/2024**. Este criterio es editorial del corpus/glosario; no se atribuye como sección literal del acto administrativo.
+
+Nota de auditoría 2026-05-14: se corrigen anclajes normativos inequívocos del DS 1/2022 detectados en revisión semántica y lógica: roles clínicos en art. 12 numerales 1–6; personal administrativo/auxiliar y otros profesionales en art. 13; dependencias en art. 19; registros en art. 21; documento de indicaciones en art. 22; confidencialidad en art. 23; fiscalización/sanción en art. 24; vigencia/transitorio en art. 25. También se normaliza la denominación “Acto Exento N° 31/2024” y se evita atribuir al acto una sección literal inexistente de “criterio de armonización”.
+
 
 ---
 
@@ -71,7 +75,7 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### SEREMI
 - **Definición**: Secretaría Regional Ministerial de Salud correspondiente al domicilio de las dependencias administrativas del Establecimiento HODOM. Autoridad sanitaria que otorga, fiscaliza y sanciona la autorización sanitaria.
-- **Anclaje**: DS 1/2022 arts. 4-6 (autorización), art. 23 (fiscalización), Libro X del Código Sanitario (sanción).
+- **Anclaje**: DS 1/2022 arts. 4-6 (autorización), art. 24 (fiscalización), Libro X del Código Sanitario (sanción).
 - **Uso OPM v1.1**: no modelado en SD raíz; reservado para OPD paralelo de Cumplimiento Normativo (pendiente).
 - **Sinónimos**: Autoridad Sanitaria Regional, Seremi de Salud.
 - **Relacionados**: Autorización Sanitaria, Fiscalización, Libro X Código Sanitario.
@@ -116,20 +120,20 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Médico Cirujano de Atención Directa
 - **Definición**: médico cirujano del Equipo de Salud HD con experiencia mínima 2 años en patologías médico-quirúrgicas. Supervisa actividades asistenciales en domicilio, participa en evaluación de ingreso/egreso, evalúa e indica tratamiento, puede usar TICs para diagnóstico/tratamiento/prevención/rehabilitación.
-- **Anclaje**: DS 1/2022 art. 12 letra a; NT 2024 §Requisitos por cargo.
+- **Anclaje**: DS 1/2022 art. 12 Nº 1; NT 2024 §Requisitos por cargo.
 - **Uso OPM v1.1**: cosa física sistémica `e-medico-aten-directa` (agregada en Unfold #1 SD-Eq-Salud-HD).
 - **Sinónimos**: M.AD, Médico AD, Médico de HD.
 
 ### Médico Cirujano Regulador
-- **Definición**: médico cirujano del Equipo de Salud HD con experiencia mínima 2 años en regulación médica. Atención a distancia o atención directa durante HD. Puede ser la misma persona que cumple Atención Directa (DS 1/2022 art. 12 letra b).
-- **Anclaje**: DS 1/2022 art. 12 letra b; NT 2024 §Requisitos por cargo; Acto Exento 31/2024 §Criterio de armonización (los 2 años son en regulación médica, no se sustituyen por experiencia médico-quirúrgica general).
+- **Definición**: médico cirujano del Equipo de Salud HD con experiencia mínima 2 años en regulación médica. Atención a distancia o atención directa durante HD. Puede ser la misma persona que cumple Atención Directa (DS 1/2022 art. 12 Nº 2).
+- **Anclaje**: DS 1/2022 art. 12 Nº 2; NT 2024 §Requisitos por cargo; criterio de armonización normativa de este glosario (los 2 años son en regulación médica, no se sustituyen por experiencia médico-quirúrgica general).
 - **Uso OPM v1.1**: cosa física sistémica `e-medico-regulador`. Co-agente de subprocesos #2 Evaluación de Solicitud, #6 Coordinación Clínica HD, y 2.2/2.3 del SD-1.2.
 - **Sinónimos**: M.Reg, Médico Regulador.
 - **Relacionados**: Médico de Atención Directa.
 
 ### Enfermero(a) Clínico
 - **Definición**: enfermero/a del Equipo de Salud HD con experiencia mínima 2 años + curso vigente de soporte vital básico. Ejecuta plan de cuidados de enfermería y plan terapéutico según complejidad. Educa a paciente, familia y/o cuidadores. Evalúa pacientes durante visita.
-- **Anclaje**: DS 1/2022 art. 12 letra c; NT 2024 §Requisitos por cargo.
+- **Anclaje**: DS 1/2022 art. 12 Nº 3; NT 2024 §Requisitos por cargo.
 - **Uso OPM v1.1**: cosa física sistémica `e-enfermero-clinico` (agregada en Unfold #1).
 - **Sinónimos**: Enfermera Clínica, Enf.Clínica.
 - **Relacionados**: Plan de Cuidados de Enfermería.
@@ -143,19 +147,19 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Kinesiólogo(a)
 - **Definición**: kinesiólogo/a del Equipo de Salud HD con experiencia mínima 2 años + soporte vital básico. Otorga terapias motoras y respiratorias en domicilio.
-- **Anclaje**: DS 1/2022 art. 12 letra d.
+- **Anclaje**: DS 1/2022 art. 12 Nº 4.
 - **Uso OPM v1.1**: cosa física sistémica `e-kinesiologo` (agregada en Unfold #1).
 - **Sinónimos**: Kinesiólogo HD, Kine.
 
 ### Técnico de Enfermería
 - **Definición**: auxiliar paramédico, técnico de nivel medio o técnico de nivel superior de enfermería. Experiencia mínima 1 año + soporte vital básico. Cumple plan de cuidados y plan terapéutico bajo competencia definida por enfermería clínica. Auxiliares requieren certificación SEREMI según DS 90/2017.
-- **Anclaje**: DS 1/2022 art. 13 letra e; NT 2024 §Habilitación; DS 90/2017 (auxiliares).
+- **Anclaje**: DS 1/2022 art. 12 Nº 5; NT 2024 §Habilitación; DS 90/2017 (auxiliares).
 - **Uso OPM v1.1**: cosa física sistémica `e-tecnico-enfermeria` (agregada en Unfold #1).
 - **Sinónimos**: TENS, Auxiliar Paramédico, Técnico Paramédico.
 
 ### Trabajador(a) Social
 - **Definición**: profesional del Equipo de Salud HD que elabora informe de diagnóstico social del hogar (vivienda, servicios sanitarios básicos, telefonía, accesos viales), verifica disponibilidad de cuidador o tutor legal, evalúa situación económica del grupo familiar, confecciona informe social y participa en reuniones del equipo clínico.
-- **Anclaje**: DS 1/2022 art. 13 letra f.
+- **Anclaje**: DS 1/2022 art. 12 Nº 6.
 - **Uso OPM v1.1**: NO modelado por decisión declarada del operador (supuesto S-v1.2-1). En el modelo, sus funciones de evaluación social-domiciliaria son absorbidas por la Enfermera Coordinadora de HD. Reintroducible por especialización si la operación lo exige.
 - **Sinónimos**: T.Social, Asistente Social.
 
@@ -221,7 +225,7 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Cuidador / Tutor Legal
 - **Definición**: persona responsable del cuidado directo del paciente en domicilio. La Trabajadora Social verifica su disponibilidad.
-- **Anclaje**: DS 1/2022 art. 13 letra f (verificación por T.Social); art. 15 letra c.
+- **Anclaje**: DS 1/2022 art. 12 Nº 6 (verificación por T.Social); art. 15 letra c.
 - **Uso OPM v1.1**: implícito en `e-red-apoyo`.
 
 ### Domicilio del Paciente
@@ -272,7 +276,7 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Evaluación de Solicitud de Transferencia a HD
 - **Definición operativa**: subproceso #2 del SD-1. Cambia la Solicitud `creada → respondida`. Refinable en SD-1.2 con 3 sub-procesos (Recepción, Verificación de Criterios, Resolución).
-- **Anclaje**: derivado de la práctica HSC + DS 1/2022 art. 12 letra f (participación en evaluación de pacientes hospitalizados).
+- **Anclaje**: derivado de la práctica HSC + DS 1/2022 art. 12 Nº 6 (participación en evaluación de pacientes hospitalizados).
 - **Uso OPM v1.1**: proceso `p-evaluacion-solicitud` con refinamiento descomposición → opd-sd1-2.
 
 ### Realización de Transferencia a HD
@@ -329,41 +333,41 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Solicitud de Transferencia a HD
 - **Definición operativa**: documento generado en #1 Elaboración por el Médico Tratante de AC. Es la **instancia documental** concreta con estados (`creada`, `recibida`, `evaluada`, `respondida`). Distinta del Formulario de HD que es la plantilla. Contiene estructuralmente el Plan Terapéutico y de Cuidados (Δ-E).
-- **Anclaje**: derivado de DS 1/2022 art. 19 + práctica HSC.
+- **Anclaje**: derivado de DS 1/2022 art. 21 y práctica HSC.
 - **Uso OPM v1.1**: cosa informacional sistémica `e-solicitud` con 4 estados nivel 1 + state-expression nivel 2 de `respondida`.
 - **Relacionados**: Formulario de HD (plantilla), Plan Terapéutico (parte).
 
 ### Formulario de Hospitalización Domiciliaria
 - **Definición operativa**: plantilla/schema estable (sin estados) usado como instrumento de #1 Elaboración para generar la Solicitud. Δ-H separa esto del objeto generado.
-- **Anclaje**: derivado del modelo operativo + DS 1/2022 art. 19 letra f (Formulario de Ingreso, distinto).
+- **Anclaje**: derivado del modelo operativo + DS 1/2022 art. 21 Nº 6 (Formulario de Ingreso, distinto).
 - **Uso OPM v1.1**: cosa informacional sistémica `e-formulario` (sin estados).
 
 ### Plan Terapéutico y de Cuidados
 - **Definición operativa**: documento que viaja dentro de la Solicitud (RF1 atemporal, Δ-E). Cambia de `pre-HD` a `HD` por #4 Evaluación Domiciliaria Inicial. Afectado por #6 Coordinación Clínica HD.
-- **Anclaje**: derivado de DS 1/2022 art. 1 (plan terapéutico del equipo de salud) + art. 19 letra g (plan de cuidados acorde a necesidades).
+- **Anclaje**: derivado de DS 1/2022 art. 1 (plan terapéutico del equipo de salud) + art. 21 Nº 8 (plan de cuidados acorde a necesidades).
 - **Uso OPM v1.1**: cosa informacional sistémica `e-plan` con 2 estados.
 
 ### Plan de Cuidados de Enfermería
-- **Definición**: documento específico de la dimensión enfermería ejecutado por el Enfermero(a) Clínico. Listado como registro obligatorio formal del DS 1/2022 art. 19 letra g.
-- **Anclaje**: DS 1/2022 art. 19 letra g; art. 12 letra c (función del Enfermero Clínico).
+- **Definición**: documento específico de la dimensión enfermería ejecutado por el Enfermero(a) Clínico. Listado como registro obligatorio formal del DS 1/2022 art. 21 Nº 8.
+- **Anclaje**: DS 1/2022 art. 21 Nº 8; art. 12 Nº 3 (función del Enfermero Clínico).
 - **Uso OPM v1.1**: NO modelado todavía como cosa separada. Decisión pendiente: cosa nueva separada vs absorbido en Plan Terapéutico vs renombrar Plan existente (pregunta abierta del Unfold #3).
 
 ### Consentimiento Informado
 - **Definición**: documento firmado por el paciente, tutor o familiar que acredita aceptación voluntaria de la modalidad HD + entrega de la Carta de Derechos y Deberes. Requisito de ingreso.
-- **Anclaje**: DS 1/2022 art. 15 letra d + art. 19 letra d; NT 2024 §Registros (acredita entrega de la Carta).
+- **Anclaje**: DS 1/2022 art. 15 letra d + art. 21 Nº 4; NT 2024 §Registros (acredita entrega de la Carta).
 - **Uso OPM v1.1**: NO modelado todavía. Compromiso F1 v0 a rescatar en SD-Transferencia con estados `pendiente` / `otorgado`.
 - **Sinónimos**: CI.
 - **Relacionados**: Carta de Derechos y Deberes, Otorgamiento de CI, Ley 20.584.
 
 ### Carta de Derechos y Deberes
 - **Definición**: documento que el establecimiento entrega al paciente o representante. La firma del Consentimiento Informado acredita su entrega.
-- **Anclaje**: Ley 20.584 (Derechos y Deberes de las Personas); DS 1/2022 art. 19 letra e; NT 2024 §Registros.
+- **Anclaje**: Ley 20.584 (Derechos y Deberes de las Personas); DS 1/2022 art. 21 Nº 5; NT 2024 §Registros.
 - **Uso OPM v1.1**: NO modelado todavía. F1 v0.
 - **Sinónimos**: CDD, Carta D y D.
 
 ### Formulario de Ingreso
 - **Definición**: documento estructurado al ingreso del paciente a HD, distinto del Consentimiento. Recoge datos administrativos y clínicos iniciales.
-- **Anclaje**: DS 1/2022 art. 19 letra f.
+- **Anclaje**: DS 1/2022 art. 21 Nº 6.
 - **Uso OPM v1.1**: NO modelado todavía. Productor candidato: subproceso de admisión dentro de SD-Transferencia.
 
 ### Resumen Clínico en Domicilio
@@ -371,14 +375,16 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 - **Anclaje**: NT 2024 §Registros obligatorios.
 - **Uso OPM v1.1**: NO modelado todavía. Productor candidato: Evaluación Domiciliaria Inicial o Coordinación Clínica HD.
 
+## 5.1 Registros clínico-asistenciales
+
 ### Reporte de Información Clínico-Asistencial Relevante
 - **Definición operativa**: documento generado por #6 Coordinación Clínica HD (resultados, observaciones, llamadas, videollamadas, eventos, alertas) y por #7 Atención de Acciones Emergentes (eventos no planificados). Productor múltiple (B5).
 - **Anclaje**: derivado del modelo operativo + NT 2024 §Registros.
 - **Uso OPM v1.1**: cosa informacional sistémica `e-reporte-info`. Generado por #6 y #7 (T2 productor múltiple).
 
 ### Reporte de Atención Profesional
-- **Definición**: reporte producido por el profesional luego de cada atención individual (cubre el requisito DS 1/2022 art. 19 letra h: "descripción del proceso asistencial con todas las atenciones").
-- **Anclaje**: DS 1/2022 art. 19 letra h.
+- **Definición**: reporte producido por el profesional luego de cada atención individual (cubre el registro obligatorio del DS 1/2022 art. 21 Nº 7: "descripción del proceso asistencial con todas las atenciones").
+- **Anclaje**: DS 1/2022 art. 21 Nº 7.
 - **Uso OPM v1.1**: NO modelado individualmente; queda dentro del Reporte de Información o de la Ficha Clínica.
 
 ### Curso Clínico-Asistencial
@@ -388,34 +394,36 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Epicrisis al Alta
 - **Definición**: registro de cierre del episodio asistencial. Productor: Tramitación de Egreso de HD.
-- **Anclaje**: DS 1/2022 art. 19 letra i; F4 v0.
+- **Anclaje**: DS 1/2022 art. 21 Nº 9; F4 v0.
 - **Uso OPM v1.1**: NO modelado todavía. Compromiso F4 v0 a rescatar en SD-Egreso.
 
 ### Encuesta de Satisfacción Usuaria al Egreso
 - **Definición**: registro obligatorio aplicado al egreso del paciente.
-- **Anclaje**: DS 1/2022 art. 19 letra c; F4 v0.
+- **Anclaje**: DS 1/2022 art. 21 Nº 3; F4 v0.
 - **Uso OPM v1.1**: NO modelado. F4.
 
 ### Constancia de Acciones en caso de Fallecimiento
 - **Definición**: registro obligatorio cuando la causal de egreso es fallecimiento del paciente.
-- **Anclaje**: DS 1/2022 art. 19 letra b; F4 v0.
+- **Anclaje**: DS 1/2022 art. 21 Nº 2; F4 v0.
 - **Uso OPM v1.1**: NO modelado. F4.
 
 ### Ficha Clínica
 - **Definición**: registro clínico (físico o electrónico) que cumple el DS 41/2012 sobre Fichas Clínicas. Almacenamiento de información clínica del paciente.
-- **Anclaje**: DS 41/2012; DS 1/2022 art. 19; NT 2024 §Registros.
+- **Anclaje**: DS 41/2012; DS 1/2022 art. 21; NT 2024 §Registros.
 - **Uso OPM v1.1**: representada por la cosa más general `e-sistema-registro` (Sistema de Registro Clínico y Administrativo).
 
 ### Sistema de Registro Clínico y Administrativo
 - **Definición operativa**: soporte/instrumento institucional del registro clínico. Puede ser ficha papel, sistema electrónico, archivos y protocolos de trazabilidad.
-- **Anclaje**: DS 1/2022 art. 19.
+- **Anclaje**: DS 1/2022 art. 21.
 - **Uso OPM v1.1**: cosa informacional sistémica `e-sistema-registro`. Instrumento transversal de todos los procesos.
 - **Sinónimos**: SRCA, Sistema de Registro.
 
 ### Registro del Episodio de HD
 - **Definición**: agregación documental del episodio HD. Contiene todos los registros formales obligatorios.
-- **Anclaje**: DS 1/2022 art. 19.
+- **Anclaje**: DS 1/2022 art. 21.
 - **Uso OPM v1.1**: cosa pendiente (compromiso F4 v0). A modelarse en Unfold #3 SD-Registro-Episodio-HD.
+
+## 5.2 Manuales, protocolos y capacitación
 
 ### Manual de Organización Interna
 - **Definición**: documento aprobado por la Dirección Técnica con organigrama, roles, horarios y reglamento de higiene.
@@ -455,12 +463,12 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Infraestructura
 - **Definición**: dependencias administrativas y operativas del Establecimiento (área administrativa, bodegas con control de temperatura, recinto de aseo, zona transitoria de residuos, estacionamiento, sector seguro para fichas).
-- **Anclaje**: DS 1/2022 art. 19 letras a-l; NT 2024 §Infraestructura mínima.
+- **Anclaje**: DS 1/2022 art. 19 letras a-k; NT 2024 §Infraestructura mínima.
 - **Uso OPM v1.1**: cosa física sistémica `e-infraestructura` (Unfold #2). Incluye respaldo eléctrico SEC autorizado.
 
 ### Vehículos de Transporte
 - **Definición**: vehículos para traslado del equipo de salud y de pacientes. Servicio propio o tercero en convenio.
-- **Anclaje**: NT 2024 §Equipamiento; DS 1/2022 art. 19 letra l (estacionamiento).
+- **Anclaje**: NT 2024 §Equipamiento; DS 1/2022 art. 19 letra i (estacionamiento).
 - **Uso OPM v1.1**: cosa física sistémica `e-vehiculos-transporte` (Unfold #2).
 
 ### Equipamiento Médico
@@ -490,12 +498,12 @@ Criterio de armonización: si dos fuentes tensionan, prevalece **DS 1/2022 > NT 
 
 ### Respaldo Eléctrico
 - **Definición**: respaldo de energía eléctrica autorizado por la Superintendencia de Electricidad y Combustibles (SEC). Exigencia reglamentaria del DS 1/2022; **no se sustituye** por plan de contingencia (el plan es complementario).
-- **Anclaje**: DS 1/2022 art. 19; Acto Exento 31/2024 §Criterio de armonización.
+- **Anclaje**: DS 1/2022 art. 19 letra c; criterio de armonización normativa de este glosario.
 - **Uso OPM v1.1**: absorbido en `e-infraestructura` (Unfold #2).
 
 ### Cartera de Prestaciones de HD
-- **Definición**: listado de prestaciones brindadas por el Establecimiento. Si una prestación requerida por el paciente no está en la cartera, es exclusión categórica de ingreso (art. 17 letra c).
-- **Anclaje**: DS 1/2022 art. 5 letra n; art. 17 letra c; NT 2024 §Equipamiento ("cartera de prestaciones ofrecida").
+- **Definición**: listado de prestaciones brindadas por el Establecimiento. Si una prestación requerida por el paciente no está en la cartera, es exclusión categórica de ingreso (art. 17 Nº 3).
+- **Anclaje**: DS 1/2022 art. 5 letra p; art. 17 Nº 3; NT 2024 §Equipamiento ("cartera de prestaciones ofrecida").
 - **Uso OPM v1.1**: cosa informacional sistémica `e-cartera`. Instrumento de 2.2 Verificación de Criterios.
 - **Sinónimos**: Listado de prestaciones, Oferta de prestaciones.
 

@@ -32,7 +32,7 @@ relations:
     - "urn:salud:kb:hodom-situacion-chile-2026"
 extensions:
   kora:
-    family: inventory
+    family: note
     corpus_root_urn: "urn:salud:kb:salubrista"
     role: "integration_map"
     integration_scope: "salud/salubrista fisico: gestion-redes + HODOM + fuentes base"

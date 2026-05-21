@@ -25,7 +25,7 @@ relations:
     - "urn:salud:kb:hodom-situacion-chile-2026"
 extensions:
   kora:
-    family: guide
+    family: note
     corpus_root_urn: "urn:salud:kb:salubrista"
 ---
 

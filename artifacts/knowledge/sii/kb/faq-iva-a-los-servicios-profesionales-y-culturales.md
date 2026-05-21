@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: IVA a los Servicios Profesionales y Culturales
     source_subcategory: IVA a los Servicios Profesionales y Culturales
     question_count: 24

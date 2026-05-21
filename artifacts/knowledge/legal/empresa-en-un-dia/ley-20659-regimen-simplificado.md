@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: normative
+    family: note
 ---
 
 # Ley 20.659 — Regimen Simplificado Constitucion Sociedades

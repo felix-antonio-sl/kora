@@ -11,7 +11,7 @@ tags: [dgi, plan-potenciamiento, meyer, lean-six-sigma, gestion-del-cambio]
 lang: es
 extensions:
   gn:
-    family: "normative"
+    family: "note"
 ---
 
 # Plan de Potenciamiento DGI

@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 relations:
   cites:
   - urn:legal:kb:ley-20659-regimen-simplificado

@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: generic
+    family: note
     shard_index: 2
     shard_count: 4
     shard_root_urn: urn:salud:kb:hodom-manual-alta-complejidad

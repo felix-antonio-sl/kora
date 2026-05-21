@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
     adr:
       contexto: 'Directiva HITL del operador 2026-05-20: retirar atomize del dominio
         knowledge y volver a la filosofia antigua KODA como referencia (no replicacion).

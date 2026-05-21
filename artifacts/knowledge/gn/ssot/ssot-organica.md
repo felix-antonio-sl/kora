@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
     bundle: urn:gn:kb:ssot-master
   kora:
     shard_index: 1

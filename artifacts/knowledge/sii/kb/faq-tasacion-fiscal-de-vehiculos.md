@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Tasación Fiscal de Vehículos
     source_subcategory: Tasación Fiscal de Vehículos
     question_count: 22

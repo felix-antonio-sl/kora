@@ -11,7 +11,7 @@ tags: [induccion, gestion-personas, gore-nuble, funcionarios, normativa]
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Manual de Inducción del Gobierno Regional de Ñuble 2026

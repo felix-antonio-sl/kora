@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
   kora:
     shard_index: 3
     shard_count: 3

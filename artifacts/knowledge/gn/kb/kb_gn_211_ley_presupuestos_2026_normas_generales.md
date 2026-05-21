@@ -11,7 +11,7 @@ tags: [ley-presupuestos-2026, normas-generales, ley-21796, sector-publico, hacie
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
 ---
 
 # Ley N° 21.796 — Normas Generales Ley de Presupuestos 2026

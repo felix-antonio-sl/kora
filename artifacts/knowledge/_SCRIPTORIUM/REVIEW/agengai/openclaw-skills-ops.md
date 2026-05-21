@@ -11,7 +11,7 @@ tags: [openclaw, skills, lifecycle, clawhub, gating, configuracion, agentes]
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
     snapshot_date: "2026-03-26"
     disclaimer: "Snapshot versionado. Consultar documentacion oficial OpenClaw para info actualizada."
 ---

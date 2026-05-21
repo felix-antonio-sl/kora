@@ -35,7 +35,7 @@ relations:
     - "urn:salud:kb:me-traumatismos-frecuentes"
 extensions:
   kora:
-    family: catalog
+    family: note
     corpus_root: true
 ---
 

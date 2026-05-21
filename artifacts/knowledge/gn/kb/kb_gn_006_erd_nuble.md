@@ -11,7 +11,7 @@ tags: [estrategia-regional, desarrollo-territorial, ñuble, planificacion, gober
 lang: es
 extensions:
   gn:
-    family: "normative"
+    family: "note"
 ---
 
 # Estrategia Regional de Desarrollo Ñuble 2024–2030

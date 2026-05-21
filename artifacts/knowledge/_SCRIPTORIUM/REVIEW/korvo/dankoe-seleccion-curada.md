@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 ---
 
 # Seleccion Dan Koe

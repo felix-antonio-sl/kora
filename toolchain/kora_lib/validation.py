@@ -59,11 +59,13 @@ from .workspaces import (
 
 
 VALID_FAMILIES = frozenset({
-    "spec", "guide", "normative", "glossary", "faq",
-    "catalog", "cq_catalog", "inventory", "organigram",
-    "note", "adr",
-    "generic", "source", "source-alias", "bok",
+    "spec", "note", "source", "bok",
 })
+# Familias retiradas en md-spec v12 (urn:kora:kb:adr-colapso-familias-documentales-2026-05-21):
+# guide, faq, normative, catalog, cq_catalog, glossary, inventory, organigram -> note
+# adr -> note + extensions.kora.adr.* (sub-shape opt-in)
+# source-alias -> source
+# generic -> note (fallback es note)
 
 
 VALID_STATUS_VALUES = frozenset({
@@ -135,41 +137,27 @@ DEFAULT_MAX_LINES_PER_PRIMARY_CHUNK = 120
 # de familia atomic en KORA v8 2026-05-20). Ver
 # urn:kora:kb:adr-poda-radical-2026-05-21 y
 # urn:kora:kb:adr-retiro-atomize-y-lecciones-koda.
+#
+# md-spec v12 (2026-05-21, urn:kora:kb:adr-colapso-familias-documentales-2026-05-21):
+# tabla colapsada de 11 entradas a 4. La clave "note" reemplaza a "generic"
+# como entry del fallback (note ES la familia descriptiva canonica).
 FAMILY_MAX_LINES_PER_PRIMARY_CHUNK = {
-    "generic": 120,
-    "normative": 100,
-    "glossary": 180,
-    "organigram": 90,
-    "cq_catalog": 90,
-    "inventory": 200,
-    "omega": 120,
-    "faq": 120,
+    "note": 120,
     "bok": 1000,
     "spec": 500,
+    "source": 1000,
 }
 FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT = {
-    "generic": 320,
-    "normative": 280,
-    "glossary": 220,
-    "organigram": 260,
-    "cq_catalog": 260,
-    "inventory": 500,
-    "omega": 320,
-    "faq": 800,
+    "note": 320,
     "bok": 1000000,
     "spec": 1000000,
+    "source": 1000000,
 }
 FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE = {
-    "generic": 10,
-    "normative": 8,
-    "glossary": 12,
-    "organigram": 10,
-    "cq_catalog": 10,
-    "inventory": 16,
-    "omega": 10,
-    "faq": 50,
+    "note": 50,
     "bok": 40,
     "spec": 24,
+    "source": 100,
 }
 
 
@@ -379,7 +367,7 @@ def _extract_raw_status(frontmatter):
 
 def resolve_document_family(frontmatter):
     if not isinstance(frontmatter, dict):
-        return "generic"
+        return "note"
     extensions = frontmatter.get("extensions", {})
     if isinstance(extensions, dict):
         kora_ext = extensions.get("kora")
@@ -404,7 +392,7 @@ def resolve_document_family(frontmatter):
             )
     if ":kb:bok-" in manifest_urn or {"body-of-knowledge", "bok"} & tags:
         return "bok"
-    return "generic"
+    return "note"
 
 
 def resolve_max_lines_per_h2(frontmatter, explicit=None):
@@ -416,12 +404,12 @@ def resolve_max_lines_per_h2(frontmatter, explicit=None):
 
 def resolve_max_total_lines_per_file(frontmatter):
     family = resolve_document_family(frontmatter)
-    return FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT.get(family, FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT["generic"])
+    return FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT.get(family, FAMILY_MAX_TOTAL_LINES_BEFORE_SPLIT["note"])
 
 
 def resolve_max_primary_sections_per_file(frontmatter):
     family = resolve_document_family(frontmatter)
-    return FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE.get(family, FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE["generic"])
+    return FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE.get(family, FAMILY_MAX_PRIMARY_SECTIONS_PER_FILE["note"])
 
 
 def should_enforce_published_kora_markdown(frontmatter, path):

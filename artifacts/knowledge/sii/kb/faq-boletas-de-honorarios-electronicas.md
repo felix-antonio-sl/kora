@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Boletas de Honorarios Electrónicas
     source_subcategory: Boletas de Honorarios Electrónicas
     question_count: 50

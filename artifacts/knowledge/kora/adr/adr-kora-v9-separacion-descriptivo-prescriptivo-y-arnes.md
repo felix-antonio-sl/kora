@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
     adr:
       contexto: 'Directiva HITL operador 2026-05-20: dos cambios doctrinales relacionados
         — (1) separar md-spec en spec descriptiva pura + spec prescriptiva separada

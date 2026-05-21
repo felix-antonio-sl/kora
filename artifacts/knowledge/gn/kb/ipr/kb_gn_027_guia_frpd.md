@@ -11,7 +11,7 @@ tags: [frpd, royalty-minero, fomento-productivo, ctci, gore-nuble, concurso, eva
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Guía Operativa FRPD Ñuble 2025

@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Sociedad Colectiva Comercial

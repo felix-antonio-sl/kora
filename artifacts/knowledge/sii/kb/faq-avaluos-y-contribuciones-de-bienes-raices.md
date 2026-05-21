@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Avalúos y Contribuciones de Bienes Raíces
     source_subcategory: Avalúos y Contribuciones de Bienes Raíces
     question_count: 50

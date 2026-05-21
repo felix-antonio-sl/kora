@@ -16,7 +16,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto valor
     source_subcategory: Impuesto a Aviones, Helicópteros, Yates y Vehículos de alto
       valor

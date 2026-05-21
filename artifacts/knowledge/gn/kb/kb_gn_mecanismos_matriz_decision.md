@@ -22,7 +22,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 relations:
   cites:
   - urn:gn:kb:guia-circular-33-sts

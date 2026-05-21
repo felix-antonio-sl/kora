@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Término de giro
     source_subcategory: Término de giro
     question_count: 42

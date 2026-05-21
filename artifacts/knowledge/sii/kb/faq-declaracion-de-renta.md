@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Declaración de renta
     source_subcategory: Declaración de renta
     question_count: 50

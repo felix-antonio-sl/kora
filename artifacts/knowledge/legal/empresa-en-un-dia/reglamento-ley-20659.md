@@ -19,7 +19,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: normative
+    family: note
 ---
 
 # Reglamento de la Ley N° 20.659 — Decreto N° 83 (2021)

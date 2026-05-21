@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Factura Electrónica
     source_subcategory: Factura Electrónica
     question_count: 50

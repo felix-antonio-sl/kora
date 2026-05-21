@@ -11,7 +11,7 @@ tags: [gore-nuble, gobierno-regional, descentralizacion, marco-legal, region-nub
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
 ---
 
 # Introducción al Gobierno Regional de Ñuble

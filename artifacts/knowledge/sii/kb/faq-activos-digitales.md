@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Activos digitales
     source_subcategory: Activos digitales
     question_count: 12

@@ -19,7 +19,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: normative
+    family: note
 ---
 
 # Marco Legal Complementario — Sociedades en Chile

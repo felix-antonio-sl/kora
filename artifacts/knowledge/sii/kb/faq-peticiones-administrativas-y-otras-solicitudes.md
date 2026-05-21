@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Peticiones Administrativas y Otras Solicitudes
     source_subcategory: Peticiones Administrativas y Otras Solicitudes
     question_count: 52

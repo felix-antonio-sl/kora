@@ -11,7 +11,7 @@ tags: [ssot, rendiciones, sisrec, cgr, sla, estados]
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
     bundle: "urn:gn:kb:ssot-master"
 ---
 

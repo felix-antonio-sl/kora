@@ -11,7 +11,7 @@ tags: [dgi, manual-operacional, gestion-institucional, gore-nuble, transformacio
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Manual Operacional del Departamento de Gestión Institucional

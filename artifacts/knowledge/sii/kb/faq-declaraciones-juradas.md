@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Declaraciones juradas
     source_subcategory: Declaraciones juradas
     question_count: 50

@@ -11,7 +11,7 @@ tags: [icas-bok, tabla-contenidos, ingenieria-sistemas, categorias, agentes, per
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 relations:
   cites:
     - "urn:fxsl:kb:icas-sintesis"

@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Certificados y Tramites Post-Constitucion en el RES

@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
     bundle_version: 1.5.0
     satellites: 14
   kora:

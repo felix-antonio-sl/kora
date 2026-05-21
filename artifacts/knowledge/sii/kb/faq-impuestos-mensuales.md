@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Impuestos mensuales
     source_subcategory: Impuestos mensuales
     question_count: 50

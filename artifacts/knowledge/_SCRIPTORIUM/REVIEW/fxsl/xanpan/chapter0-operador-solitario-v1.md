@@ -11,7 +11,7 @@ tags: [operador-solitario, xanpan, chapter-0, fxsl]
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
 ---
 
 # CHAPTER 0: EL OPERADOR SOLITARIO

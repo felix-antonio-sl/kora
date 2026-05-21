@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
     adr:
       contexto: 'Goal del operador 2026-05-20: refactorizar KORA desde cero manteniendo
         funcionalidad/capacidades, con simpleza y sentido comun, sin bajar rigor formal.'

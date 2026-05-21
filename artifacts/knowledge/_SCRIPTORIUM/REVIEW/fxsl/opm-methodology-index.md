@@ -11,7 +11,7 @@ tags: [opm, metodologia, dori-2015, iso-19450, opcloud, indice, fxsl]
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 ---
 
 # OPM Methodology — Indice

@@ -25,7 +25,7 @@ relations:
   - urn:salud:kb:salubrista-fuente-salud-publica-global
 extensions:
   kora:
-    family: source-alias
+    family: source
     duplicate_of: urn:salud:kb:salubrista-fuente-salud-publica-global
     shard_index: 6
     shard_count: 6

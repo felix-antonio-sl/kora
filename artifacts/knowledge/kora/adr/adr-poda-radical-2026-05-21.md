@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
     adr:
       contexto: 'Directiva HITL del operador 2026-05-21: ''Sacar todo lo innecesario
         y que no aporte a la finalidad de la existencia de kora''. Criterio: el proposito

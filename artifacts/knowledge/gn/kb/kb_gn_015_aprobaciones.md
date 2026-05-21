@@ -11,7 +11,7 @@ tags: [aprobaciones, flujos-administrativos, gore-nuble, actos-administrativos, 
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
 ---
 
 # Flujos de Aprobación de Documentos — GORE Ñuble

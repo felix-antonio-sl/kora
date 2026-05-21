@@ -21,7 +21,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
     shard_index: 1
     shard_count: 2
     shard_root_urn: urn:kora:kb:cheat-sheet-uso-productivo

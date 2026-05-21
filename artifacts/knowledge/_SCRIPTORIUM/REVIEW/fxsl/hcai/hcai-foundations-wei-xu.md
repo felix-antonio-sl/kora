@@ -11,7 +11,7 @@ tags: [hcai, human-centered-ai, wei-xu, libro, fundamentos]
 lang: en
 extensions:
   kora:
-    family: guide
+    family: note
 ---
 
 **Human-Centered Artificial Intelligence (HCAI):**    

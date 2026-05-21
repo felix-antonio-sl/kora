@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: normative
+    family: note
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:legal:kb:ley-ia-chile-boletines-15869-19-16821-19

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-09"
-    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`; v9.0 delega pipeline, lifecycle conceptual e identidad URN conceptual a knowledge-spec §3-§4, §8, §13, documenta las cuatro familias auxiliares que el toolchain usa (`bok`, `source`, `source-alias`, `generic`), y limpia la tabla de validacion para reflejar solo invariantes de formato; v10.0 retira familia atomic; v11.0 (KORA v9, HITL 2026-05-20): deshace la absorcion de v8.0 — el perfil prescriptivo migra a spec-md v1.0.0 (urn:kora:kb:spec-md regresa al canon). md-spec queda como spec del regimen descriptivo puro; la familia `spec` delega sus invariantes prescriptivos a spec-md."
-version: "11.0.0"
+    source: "KORA categorical-foundations 05, KORA/Gobernanza v4.3.0, refactor del contrato de compresion y realizacion superficial; v7 agrega familia atomic con productor canonico atomize; v7.1 fusiona tipos de artefacto y familias documentales; v8.0 absorbe el contrato prescriptivo de la retirada spec-md v5.2.0 como perfil normativo de la familia `spec`; v9.0 delega pipeline, lifecycle conceptual e identidad URN conceptual a knowledge-spec §3-§4, §8, §13, documenta las cuatro familias auxiliares que el toolchain usa (`bok`, `source`, `source-alias`, `generic`), y limpia la tabla de validacion para reflejar solo invariantes de formato; v10.0 retira familia atomic; v11.0 (KORA v9, HITL 2026-05-20): deshace la absorcion de v8.0 — el perfil prescriptivo migra a spec-md v1.0.0 (urn:kora:kb:spec-md regresa al canon). md-spec queda como spec del regimen descriptivo puro; la familia `spec` delega sus invariantes prescriptivos a spec-md; v12.0.0 (HITL 2026-05-21, urn:kora:kb:adr-colapso-familias-documentales-2026-05-21): colapso radical de familias documentales de 15 a 4. Solo `spec` y `note` quedan como canonicas; `source` y `bok` siguen como auxiliares derivadas. Las 11 familias eliminadas (`guide`, `faq`, `normative`, `catalog`, `cq_catalog`, `glossary`, `inventory`, `organigram`, `adr`, `source-alias`, `generic`) se reclasifican a `note` (o a `source` para `source-alias`); `adr` conserva su shape via presencia de `extensions.kora.adr.*` opcional, ya no como family declarada."
+version: "12.0.0"
 status: publicado
 tags: [markdown, conocimiento, rag, koraficacion, fidelidad, prescriptivo, cristalizacion, rfc2119, formato]
 lang: es
@@ -20,7 +20,7 @@ relations:
     - "urn:kora:kb:knowledge-spec"
 ---
 
-# KORA/MD v11.0.0
+# KORA/MD v12.0.0
 
 ## 1. Definicion
 
@@ -417,43 +417,52 @@ KORA/MD; `knowledge-spec §5` la cita como autoridad.
 
 | Familia | Invariantes |
 | --- | --- |
-| `spec` | Familia prescriptiva. Invariantes completos en §5.6.2 (cristalizacion, RFC 2119, `Traces to:`, patron regla+ejemplo+traza, consistencia interna, auto-suficiencia, no-circularidad, enforcement declarado). URN `urn:{ns}:kb:{id}`; reside en las capas normativas (`governance/`, `ontology/`, `serialization/`, `runtime/`), no en `artifacts/knowledge/`. |
-| `guide` | Manual o guia operativa; prosa tecnica controlada; ejemplos concretos vinculados a headings; `## Resumen` recomendado. |
-| `normative` | `##` con asunto semantico; condiciones, excepciones y matrices promovidas a listas/tablas; no dumps de numerales sin asunto. |
-| `glossary` | Buckets recuperables; sin duplicados no resueltos; alias explicitos. |
-| `faq` | `##` por pregunta; respuesta autocontenida; orden por frecuencia o tema. |
-| `catalog` | Entradas tabuladas; columnas minimas `id \| urn \| titulo \| resumen`; indexable por CLI. |
-| `cq_catalog` | `## Resumen` obligatorio y no vacio; dominios como `##`; scaffold en idioma del documento; subperfil de `catalog`. |
-| `inventory` | Puede retener material operativo; si `publication_class=control`, queda fuera de KB publicada. |
-| `organigram` | Dependencias estructurales explicitas; no headings-campo para representar jerarquia. |
-| `note` | Nota tecnica compacta; al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante. |
-| `adr` | Architecture Decision Record. Subperfil de `note`. **Frontmatter extendido obligatorio**: `extensions.kora.adr.{contexto, alternativas, factorizacion_elegida, consecuencias, estado}`. Cuerpo con secciones fijas: `## Contexto`, `## Alternativas consideradas`, `## Decision`, `## Consecuencias`, `## Trazabilidad`. Decision se registra como factorizacion categorica: `decision = g ∘ f` donde `f` es la restriccion operativa y `g` el morfismo elegido entre alternativas. Estados: `propuesta -> aceptada -> (superseded \| deprecada \| retirada)`. Trazabilidad: `relations.cites` apunta a las alternativas consideradas aunque no se hayan adoptado. |
+| `spec` | Familia prescriptiva. Invariantes completos en §5.6.1 (cristalizacion, RFC 2119, `Traces to:`, patron regla+ejemplo+traza, consistencia interna, auto-suficiencia, no-circularidad, enforcement declarado). URN `urn:{ns}:kb:{id}`; reside en las capas normativas (`governance/`, `ontology/`, `serialization/`, `runtime/`), no en `artifacts/knowledge/`. |
+| `note` | Familia descriptiva (catch-all). Al menos un `##` tematico; `## Resumen` opcional cuando el tamaño lo vuelve redundante. Absorbe lo que antes era `guide`, `faq`, `normative`, `catalog`, `glossary`, `inventory`, `organigram`. Las distinciones nominales que antes vivian como familias separadas ahora viven como `tags` o estructura de directorios (que sigue siendo navegable). |
 
 **Familias auxiliares** (clasificacion derivada por el toolchain, no se
 declaran a mano):
 
 | Familia | Origen | Semantica |
 | --- | --- | --- |
+| `source` | Convencion de directorio `fuentes/` o sufijo `.source.txt`/`.source.md` | Material fuente preservado para trazabilidad; chunks sin limite estricto. Subsume al ex-`source-alias` (la condicion de alias se expresa en `relations.refines` o `extensions.kora.source.alias_of`, no como familia). |
 | `bok` | `_extract_raw_family` cuando el URN contiene `:kb:bok-` o `tags` incluye `body-of-knowledge`/`bok` | Body of knowledge: corpus extendido, limites de chunk y archivo mas permisivos (1000 lineas por chunk, 1M total). |
-| `source` | Convencion de directorio `fuentes/` o sufijo `.source.txt`/`.source.md` | Material fuente preservado para trazabilidad; chunks sin limite estricto. |
-| `source-alias` | Subtipo de `source` que apunta a un canonico | No publicable como conocimiento independiente; valido solo como nodo de trazabilidad. |
-| `generic` | Default cuando ningun mecanismo de clasificacion (§5.6 reglas de clasificacion) identifica una familia | Limites por defecto (120 lineas por chunk, 320 totales). |
+
+**Sub-shapes opcionales sobre `note`**:
+
+Un documento `family: note` **PUEDE** declarar shapes adicionales en
+`extensions.kora.{shape}.*` que el toolchain enforce cuando el campo
+esta presente. Esto reemplaza la antigua mecanica de subperfiles
+(ej. `cq_catalog` subperfil de `catalog`) y permite agregar contratos
+estructurales puntuales sin proliferacion de familias.
+
+Sub-shape canonico vigente:
+
+| Sub-shape | Activacion | Invariantes |
+| --- | --- | --- |
+| `adr` | Presencia de `extensions.kora.adr.{contexto, alternativas, factorizacion_elegida, consecuencias, estado}` en el frontmatter | **Frontmatter extendido obligatorio**: los 5 campos listados. **Cuerpo con secciones fijas**: `## Contexto`, `## Alternativas consideradas`, `## Decision`, `## Consecuencias`, `## Trazabilidad`. Decision se registra como factorizacion categorica: `decision = g ∘ f` donde `f` es la restriccion operativa y `g` el morfismo elegido entre alternativas. Estados: `propuesta -> aceptada -> (superseded \| deprecada \| retirada)`. Trazabilidad: `relations.cites` apunta a las alternativas consideradas aunque no se hayan adoptado. |
 
 Reglas de clasificacion (orden de precedencia):
 
-1. `extensions.{namespace}.family` explicito en el frontmatter.
-2. Convencion de directorio (e.g., `glossaries/`, `normative/`,
-   `fuentes/`).
+1. `extensions.{namespace}.family` explicito en el frontmatter (debe
+   ser una de las 4 familias declarables: `spec`, `note`, `source`, `bok`).
+2. Convencion de directorio (e.g., `fuentes/` -> `source`).
 3. Heuristicas sobre URN y `tags` (origen de `bok`).
 4. Clasificacion manual del curador durante koraficacion.
 5. Productor canonico declarado (`knowledge-spec §9`): si existe, el
    productor fija la familia al emitir el artefacto.
-6. Fallback: `generic`.
+6. Fallback: `note`.
 
-Una familia **PUEDE** heredar invariantes de otra declarando su relacion
-como subperfil (ej. `cq_catalog` subperfil de `catalog`). La herencia es
-estrictamente aditiva: el subperfil no puede relajar invariantes del
-perfil base.
+**Cambio doctrinal v12.0.0** (HITL 2026-05-21,
+`urn:kora:kb:adr-colapso-familias-documentales-2026-05-21`): la
+taxonomia se reduce de 15 familias a 4. Las distinciones nominales que
+antes vivian como familias separadas (`guide`, `faq`, `normative`,
+`catalog`, `cq_catalog`, `glossary`, `inventory`, `organigram`) tenian
+invariantes blandos o nominales y se absorben en `note`. La distincion
+ontologica real es **regimen** (descriptivo vs prescriptivo) +
+**material crudo**, y eso queda capturado por `spec` vs `note` + `source`.
+El shape ADR se promueve a sub-shape opt-in via presencia de
+`extensions.kora.adr.*`.
 
 ### 5.6.1 Perfil `spec`: invariantes prescriptivos (delegado)
 
@@ -697,7 +706,7 @@ spec. Los invariantes de **tejido relacional** y **pipeline** viven en
 | Compresion razonable | `CR>1.5` o justificacion explicita | manual | §5.5 |
 | Calidad de superficie | Sin headings truncados, labelese ni dumping | lint+manual | §5.4.2 |
 | Heading recuperable | Cada `##` expresa sujeto o alcance recuperable | lint | §5.1 |
-| Resumen obligatorio por familia | Familias que lo exigen incluyen `## Resumen` no vacio | lint | §5.6 |
+| Sub-shape ADR conforme | Si `extensions.kora.adr.*` presente, frontmatter y body cumplen §5.6 sub-shapes | lint | §5.6 |
 | Headings-campo prohibidos | KB publicada no serializa campos como headings | lint | §5.4.2 |
 | Estructuras preservadas | Tablas y listas no se degradan | manual | §7.4 |
 | Catalogo derivado | El artefacto es indexable y regenerable por CLI | lint | §6.12 |
@@ -713,7 +722,57 @@ Checks de **artefactos agenticos** (gobernados por `autoria-spec §14`):
 
 ## 10. Migracion
 
-### 10.0 Contrato vigente v11
+### 10.0 Contrato vigente v12
+
+Cambios v11 → v12 (HITL 2026-05-21,
+`urn:kora:kb:adr-colapso-familias-documentales-2026-05-21`):
+
+- **Colapso radical de familias documentales**: la tabla de familias
+  canonicas en §5.6 pasa de 11 entradas a 2 (`spec`, `note`). La tabla
+  auxiliar pasa de 4 entradas a 2 (`source`, `bok`).
+- **Familias retiradas** (absorbidas en `note`): `guide`, `faq`,
+  `normative`, `catalog`, `cq_catalog`, `glossary`, `inventory`,
+  `organigram`. Sus invariantes eran nominales o blandos sin contrato
+  verificable diferencial.
+- **`adr` deja de ser familia**: pasa a ser **sub-shape opt-in** sobre
+  `note`, activado por presencia de `extensions.kora.adr.*` en el
+  frontmatter. Sus invariantes (5 campos obligatorios + 5 secciones de
+  body) se preservan, solo cambia el mecanismo de activacion.
+- **`source-alias` absorbido por `source`**: la condicion de alias se
+  expresa en `relations.refines` o `extensions.kora.source.alias_of`,
+  no como familia separada.
+- **`generic` eliminada**: el fallback de clasificacion ahora apunta a
+  `note` directamente, sin nivel intermedio.
+- **§5.6 reescrita**: tabla canonica reducida, tabla auxiliar reducida,
+  nueva tabla "Sub-shapes opcionales sobre `note`" para alojar `adr`.
+
+Que migrar:
+
+- Artefactos productivos con `family: guide`, `family: faq`,
+  `family: normative`, `family: catalog`, `family: cq_catalog`,
+  `family: glossary`, `family: inventory`, `family: organigram` —
+  cambiar a `family: note`. ~243 archivos.
+- Artefactos con `family: adr` — cambiar a `family: note`; verificar
+  que `extensions.kora.adr.*` esta completo. 7 archivos.
+- Artefactos con `family: source-alias` — cambiar a `family: source`. 6
+  archivos.
+- Artefactos con `family: generic` — eliminar la declaracion (el
+  fallback es `note`). 9 archivos.
+- Tests y validacion que iteran sobre `VALID_FAMILIES` se ajustan al
+  conjunto reducido {`spec`, `note`, `source`, `bok`}.
+- Constantes `FAMILY_MAX_*` reducidas a las 4 familias vivas (con `note`
+  como key del default donde antes era `generic`).
+
+Que se preserva:
+
+- Contenido de todos los artefactos (nadie se mueve de directorio).
+- Frontmatter ADR estructurado (`extensions.kora.adr.*`).
+- URNs (la familia no es parte del URN).
+- Convenciones de directorio (`fuentes/`, jerarquia tematica) — el
+  catalogo sigue siendo navegable por estructura.
+- Tags y `publication_class` para distincion fina.
+
+### 10.0.1 Contrato vigente v11
 
 Cambios v10 → v11 (KORA v9, HITL 2026-05-20,
 `urn:kora:kb:adr-kora-v9-separacion-descriptivo-prescriptivo-y-arnes`):

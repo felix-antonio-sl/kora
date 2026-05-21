@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Boletas Electrónicas de Ventas y Servicios
     source_subcategory: Boletas Electrónicas de Ventas y Servicios
     question_count: 86

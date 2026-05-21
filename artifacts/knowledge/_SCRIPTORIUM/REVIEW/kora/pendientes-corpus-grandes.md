@@ -11,7 +11,7 @@ tags: [pendientes, corpus-grande, atomize, inbox, intake]
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 ---
 
 # Pendientes: Corpus Grandes en SCRIPTORIUM/INBOX

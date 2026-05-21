@@ -18,7 +18,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
     bundle: urn:gn:kb:ssot-master
 relations:
   cites:

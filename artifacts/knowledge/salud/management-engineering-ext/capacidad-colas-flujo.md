@@ -8,7 +8,7 @@ _manifest:
   version: 1.0.0
 version: 1.0.0
 status: publicado
-family: guide
+family: note
 tags:
 - salud
 - capacidad

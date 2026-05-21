@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 relations:
   cites:
   - urn:gn:kb:gestion-rendiciones

@@ -7,7 +7,7 @@ _manifest:
     source: "Derivada del plan de poda KORA version A. Responde a handoff inflation detectada en abril 2026 (20 handoffs en 17 dias vs 1 invocacion productiva)."
   version: "1.0.0"
   status: publicado
-  family: record
+  family: note
   tags: [governance, handoffs, disciplina, poda-version-a]
 ---
 

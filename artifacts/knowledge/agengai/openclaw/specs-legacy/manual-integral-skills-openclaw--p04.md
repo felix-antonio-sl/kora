@@ -30,7 +30,7 @@ tags:
 lang: es
 extensions:
   agengai:
-    family: guide
+    family: note
     scope: Creacion, operacion y evolucion de skills en OpenClaw
     dimensions: 15
     related:

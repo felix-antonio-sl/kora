@@ -7,7 +7,7 @@ _manifest:
     source: "Auditoria post-poda version A. Registra los 9 artefactos desplegados fuera del gobierno KORA (8 agents claude-code + 1 bot OpenClaw) y establece su situacion juridica bajo postura 2 (gobierno selectivo)."
   version: "1.0.0"
   status: publicado
-  family: inventory
+  family: note
   tags: [governance, deployed-only, inventario, postura-2, poda-version-a]
 relations:
   cites:

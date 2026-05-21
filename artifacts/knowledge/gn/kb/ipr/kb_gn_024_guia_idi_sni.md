@@ -11,7 +11,7 @@ tags: [idi, sni, formulacion, evaluacion-social, bip, ris, gore-nuble, preinvers
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Guía de Formulación de Iniciativas de Inversión (IDI) en el SNI para Gobiernos Regionales

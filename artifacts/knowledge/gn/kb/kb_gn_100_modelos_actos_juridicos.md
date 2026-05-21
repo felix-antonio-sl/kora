@@ -11,7 +11,7 @@ tags: [actos-juridicos, resoluciones, procedimiento-administrativo, gore-nuble, 
 lang: es
 extensions:
   gn:
-    family: "normative"
+    family: "note"
 ---
 
 # Modelos de Actos Jurídicos GORE Ñuble

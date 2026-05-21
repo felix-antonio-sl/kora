@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Clave tributaria, mandatario digital y representantes electrónicos
     source_subcategory: Clave tributaria, mandatario digital y representantes electrónicos
     question_count: 24

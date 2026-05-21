@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: RUT e Inicio de actividades
     source_subcategory: RUT e Inicio de actividades
     question_count: 50

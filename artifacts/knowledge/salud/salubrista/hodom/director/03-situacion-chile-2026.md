@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: generic
+    family: note
     shard_index: 1
     shard_count: 5
     shard_root_urn: urn:salud:kb:hodom-situacion-chile-2026

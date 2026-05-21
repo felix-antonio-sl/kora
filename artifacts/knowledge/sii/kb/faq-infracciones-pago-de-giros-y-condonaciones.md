@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Infracciones, Pago de giros y Condonaciones
     source_subcategory: Infracciones, Pago de giros y Condonaciones
     question_count: 13

@@ -15,7 +15,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: faq
+    family: note
 ---
 
 # SII FAQ Questions 006

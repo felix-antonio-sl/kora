@@ -22,7 +22,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: normative
+    family: note
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:salud:kb:hodom-glosario-terminologico

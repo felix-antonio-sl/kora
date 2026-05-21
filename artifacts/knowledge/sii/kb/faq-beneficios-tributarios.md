@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Beneficios Tributarios
     source_subcategory: Beneficios Tributarios
     question_count: 76

@@ -14,7 +14,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
 ---
 
 # Cheat Sheet Exhaustiva y Avanzada de OPM (Object Process Methodology)

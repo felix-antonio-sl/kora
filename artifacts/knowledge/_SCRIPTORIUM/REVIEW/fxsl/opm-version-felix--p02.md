@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:opm-version-felix

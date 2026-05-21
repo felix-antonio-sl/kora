@@ -22,7 +22,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
     adr:
       contexto: 'Directiva HITL del operador 2026-05-20: convergir KORA a su lectura
         minima — sistema que gestiona ciclo de vida (generacion, mantenimiento, catalogo)

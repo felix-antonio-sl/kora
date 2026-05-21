@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Clave Tributaria y Representantes electrónicos
     source_subcategory: Clave Tributaria y Representantes electrónicos
     question_count: 1

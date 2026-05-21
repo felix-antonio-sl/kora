@@ -36,7 +36,7 @@ relations:
     - "urn:salud:kb:me-traumatismos-frecuentes"
 extensions:
   kora:
-    family: inventory
+    family: note
     corpus_root_urn: "urn:salud:kb:med-emergencia"
     role: "integration_map"
     integration_scope: "salud/med-emergencia"

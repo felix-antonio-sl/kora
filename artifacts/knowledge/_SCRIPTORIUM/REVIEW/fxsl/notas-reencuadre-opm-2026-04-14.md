@@ -11,7 +11,7 @@ tags: [opm, editorial, reencuadre, corpus-es, fxsl]
 lang: es
 extensions:
   kora:
-    family: adr
+    family: note
 ---
 
 ---

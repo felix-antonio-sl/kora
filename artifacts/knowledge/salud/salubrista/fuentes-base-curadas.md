@@ -27,7 +27,7 @@ relations:
     - "urn:salud:kb:hodom-situacion-chile-2026"
 extensions:
   kora:
-    family: guide
+    family: note
     corpus_root_urn: "urn:salud:kb:salubrista"
     role: "curated_source_layer"
     anti_duplication_policy: "No copiar crudos ni replicas de KB publicada; absorber solo deltas semanticos y preservar procedencia."

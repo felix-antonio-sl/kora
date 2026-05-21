@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Actualización de información
     source_subcategory: Actualización de información
     question_count: 50

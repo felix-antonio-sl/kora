@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Patente Comercial — Modulo Tu Empresa en un Dia

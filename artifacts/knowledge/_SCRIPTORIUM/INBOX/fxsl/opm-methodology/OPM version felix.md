@@ -14,7 +14,7 @@ tags:
 lang: en
 extensions:
   kora:
-    family: glossary
+    family: note
 ---
 
 # Object Process Methodology (OPM)

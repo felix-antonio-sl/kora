@@ -17,7 +17,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Firma Electronica Avanzada en el Registro de Empresas y Sociedades

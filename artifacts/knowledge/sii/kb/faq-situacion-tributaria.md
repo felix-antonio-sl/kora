@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Situación Tributaria
     source_subcategory: Situación Tributaria
     question_count: 32

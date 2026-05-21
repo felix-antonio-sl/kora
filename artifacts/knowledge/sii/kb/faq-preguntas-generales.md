@@ -14,7 +14,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Preguntas Generales
     source_subcategory: Preguntas Generales
     question_count: 50

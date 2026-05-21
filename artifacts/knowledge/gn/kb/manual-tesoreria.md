@@ -11,7 +11,7 @@ tags: [tesoreria, gestion-financiera, gore-nuble, pagos, garantias]
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Tesorería y Gestión de Ingresos — GORE Ñuble

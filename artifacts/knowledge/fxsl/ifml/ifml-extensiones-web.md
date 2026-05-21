@@ -19,7 +19,7 @@ tags:
 lang: es
 extensions:
   kora:
-    family: guide
+    family: note
     shard_index: 1
     shard_count: 1
     shard_root_urn: urn:fxsl:kb:ifml-extensiones-web

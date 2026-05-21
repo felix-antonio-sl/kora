@@ -22,7 +22,7 @@ tags:
 lang: es-CL
 extensions:
   gn:
-    family: normative
+    family: note
   kora:
     shard_index: 1
     shard_count: 4

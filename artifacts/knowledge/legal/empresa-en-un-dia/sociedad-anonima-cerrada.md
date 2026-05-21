@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   legal:
-    family: guide
+    family: note
 ---
 
 # Sociedad Anonima Cerrada (S.A.) y Sociedad Anonima de Garantia Reciproca (S.A.G.R.)

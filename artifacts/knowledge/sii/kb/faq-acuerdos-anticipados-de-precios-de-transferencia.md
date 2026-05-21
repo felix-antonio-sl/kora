@@ -15,7 +15,7 @@ tags:
 lang: es-CL
 extensions:
   sii:
-    family: faq
+    family: note
     source_category: Acuerdos Anticipados de Precios de Transferencia
     source_subcategory: Acuerdos Anticipados de Precios de Transferencia
     question_count: 12

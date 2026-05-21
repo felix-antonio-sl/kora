@@ -11,7 +11,7 @@ tags: [circular-33, fndr, anf, conservacion-infraestructura, gore-nuble, evaluac
 lang: es
 extensions:
   gn:
-    family: guide
+    family: note
 ---
 
 # Guía Operativa Circular 33 – GORE Ñuble

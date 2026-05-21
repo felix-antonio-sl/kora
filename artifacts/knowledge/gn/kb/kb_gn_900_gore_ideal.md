@@ -11,7 +11,7 @@ tags: [gore-nuble, gore-ideal, descentralizacion, competencias, gore-4-0]
 lang: es
 extensions:
   gn:
-    family: normative
+    family: note
 ---
 
 # GORE Ideal y GORE 4.0: Anatomía, Límites y Potencial del Gobierno Regional

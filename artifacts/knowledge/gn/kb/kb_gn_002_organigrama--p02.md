@@ -16,7 +16,7 @@ tags:
 lang: es
 extensions:
   gn:
-    family: organigram
+    family: note
   kora:
     shard_index: 2
     shard_count: 2

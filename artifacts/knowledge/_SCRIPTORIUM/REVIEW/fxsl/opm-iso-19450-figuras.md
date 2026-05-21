@@ -11,7 +11,7 @@ tags: [opm, iso-19450, figuras, catalogo, fxsl]
 lang: es
 extensions:
   kora:
-    family: catalog
+    family: note
 ---
 
 # Descripciones textuales de figuras y tablas — ISO/PAS 19450
