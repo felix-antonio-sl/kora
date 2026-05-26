@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:manual-uso-boton-claveunica
-  provenance: https://wikiguias.digital.gob.cl/Manuales/Bot%C3%B3nCU
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/Bot%C3%B3nCU
 version: 1.0.0
 status: published
 tags:

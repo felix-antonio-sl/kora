@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:recomendaciones-diseno-servicios-estado
-  provenance: https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/Dise%C3%B1o_de_Servicios
 version: 1.0.0
 status: published
 tags:

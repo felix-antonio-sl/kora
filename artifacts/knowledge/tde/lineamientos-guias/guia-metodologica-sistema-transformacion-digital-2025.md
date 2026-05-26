@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:guia-metodologica-sistema-transformacion-digital-2025
-  provenance: https://wikiguias.digital.gob.cl/guias/guia-metodologica-std
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/guia-metodologica-std
 version: 1.0.0
 status: published
 tags:

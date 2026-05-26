@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:recomendaciones-tecnicas-cloud-publica
-  provenance: https://wikiguias.digital.gob.cl/guias/guias/recomendaciones_cloud
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/guias/recomendaciones_cloud
 version: 1.0.0
 status: published
 tags:

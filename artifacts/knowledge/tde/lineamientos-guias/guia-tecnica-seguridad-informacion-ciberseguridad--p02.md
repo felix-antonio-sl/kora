@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:guia-tecnica-seguridad-informacion-ciberseguridad-p02
-  provenance: https://wikiguias.digital.gob.cl/guias/GU-CIBER-001
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/GU-CIBER-001
 version: 1.0.0
 status: published
 tags:

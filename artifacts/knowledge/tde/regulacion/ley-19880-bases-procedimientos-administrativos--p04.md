@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:ley-19880-bases-procedimientos-administrativos-p04
-  provenance: https://wikiguias.digital.gob.cl/Leyes/Ley19880
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Leyes/Ley19880
 version: 1.0.0
 status: published
 tags:

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:guia-calidad-web"
-  provenance: "https://wikiguias.digital.gob.cl/guias/Guia_Web"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/guias/Guia_Web"
 version: 1.0.0
 status: published
 tags: [tde, lineamientos-guias, calidad, experiencia-usuaria, servicios-digitales]

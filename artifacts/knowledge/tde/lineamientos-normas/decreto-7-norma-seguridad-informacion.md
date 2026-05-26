@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:decreto-7-norma-seguridad-informacion
-  provenance: https://wikiguias.digital.gob.cl/Normas/Decreto7
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Normas/Decreto7
 version: 1.0.0
 status: published
 tags:

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:decreto-10-documentos-expedientes-electronicos
-  provenance: https://wikiguias.digital.gob.cl/Normas/Decreto10
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Normas/Decreto10
 version: 1.0.0
 status: published
 tags:

@@ -151,6 +151,16 @@ class CheckPipelineSmokeTests(unittest.TestCase):
         self.assertEqual(len(diags), 1)
         self.assertIn("no-URN", diags[0].message)
 
+    def test_construction_iter_skips_archived_staging_when_path_filtered(self):
+        from kora_lib.checks import _iter_construction_artifacts
+
+        rels = [rel for _path, rel, _frontmatter in _iter_construction_artifacts("artifacts/agents")]
+
+        self.assertFalse(
+            any("/_archivo/" in rel for rel in rels),
+            "archived staging artifacts must not be treated as current construction sources",
+        )
+
 
 class CheckAlgebraTests(unittest.TestCase):
     """Tests for categorical properties of the check algebra."""

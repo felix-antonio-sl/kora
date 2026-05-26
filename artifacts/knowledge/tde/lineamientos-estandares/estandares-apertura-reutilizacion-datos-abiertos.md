@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:estandares-apertura-reutilizacion-datos-abiertos"
-  provenance: "https://wikiguias.digital.gob.cl/Est%C3%A1ndares/Datos-Abiertos"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/Est%C3%A1ndares/Datos-Abiertos"
 version: 1.0.0
 status: published
 tags: [tde, lineamientos-estandares, datos-abiertos, open-data, datos, gobernanza]

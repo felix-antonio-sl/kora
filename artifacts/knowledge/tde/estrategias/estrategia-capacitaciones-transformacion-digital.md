@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:estrategia-capacitaciones-transformacion-digital
-  provenance: https://wikiguias.digital.gob.cl/Estrategias/estrategia-de-capacitaciones
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Estrategias/estrategia-de-capacitaciones
 version: 1.0.0
 status: published
 tags:

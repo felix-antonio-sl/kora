@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:manual-coordinadora-transformacion-digital
-  provenance: https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/manual-del-coordinador
 version: 1.0.0
 status: published
 tags:

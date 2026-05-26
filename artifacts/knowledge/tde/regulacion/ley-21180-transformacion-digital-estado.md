@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:ley-21180-transformacion-digital-estado
-  provenance: https://wikiguias.digital.gob.cl/Leyes/Ley21180
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Leyes/Ley21180
 version: 1.0.0
 status: published
 tags:

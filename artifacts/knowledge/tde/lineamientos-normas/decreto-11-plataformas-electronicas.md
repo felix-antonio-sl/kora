@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:decreto-11-plataformas-electronicas"
-  provenance: "https://wikiguias.digital.gob.cl/Normas/Decreto11"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/Normas/Decreto11"
 version: 1.0.0
 status: published
 tags: [tde, lineamientos-normas, decreto, norma-tecnica, procedimientos-administrativos, coordinadores-de-transformacion-digital, plan-de-mejora, evaltic]

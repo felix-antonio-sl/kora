@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:orientaciones-basicas-gestion-tic
-  provenance: https://wikiguias.digital.gob.cl/guias/orientaciones-TIC
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/orientaciones-TIC
 version: 1.0.0
 status: published
 tags:

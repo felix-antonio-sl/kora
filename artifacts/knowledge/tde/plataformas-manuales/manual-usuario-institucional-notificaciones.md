@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:manual-usuario-institucional-notificaciones
-  provenance: https://wikiguias.digital.gob.cl/Manuales/instituciones-plataforma-de-notificaciones
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/instituciones-plataforma-de-notificaciones
 version: 1.0.0
 status: published
 tags:

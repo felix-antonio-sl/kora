@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:guia-voz-y-tono
-  provenance: https://wikiguias.digital.gob.cl/Manuales/Voz_Tono
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/Voz_Tono
 version: 1.0.0
 status: published
 tags:

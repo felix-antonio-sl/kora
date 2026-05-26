@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:glosario-plataforma-simple
-  provenance: https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/Glosario_Simple
 version: 1.0.0
 status: published
 tags:

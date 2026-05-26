@@ -8,6 +8,8 @@ _manifest:
   domain: "salud/med-emergencia"
   authors:
     - "Compilación agéntica — 8 agentes Opus en paralelo"
+  provenance:
+    source: "Síntesis multi-fuente desde MUE Andes, App Med UC y Oxford Handbook of Emergency Medicine, 5th ed (2020), con precedencia MUE Andes > App Med > Oxford Handbook."
   sources:
     - "MUE Andes — Medicina de Urgencia y Emergencia, Universidad de los Andes (Chile), eclass"
     - "App Med — Cheat Sheet Medicina, aplicación clínica UC"

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:manual-atencion-ciudadana-notificaciones"
-  provenance: "https://wikiguias.digital.gob.cl/Manuales/atencion-ciudadana-notificador"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/Manuales/atencion-ciudadana-notificador"
 version: 1.0.0
 status: published
 tags: [tde, plataformas-manuales, notificaciones, casilla-unica]

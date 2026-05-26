@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:estrategia-gobierno-digital-2030
-  provenance: https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Estrategias/Estrategia-2030
 version: 1.0.0
 status: published
 tags:

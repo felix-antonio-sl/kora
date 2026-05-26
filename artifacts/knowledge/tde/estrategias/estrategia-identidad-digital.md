@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:estrategia-identidad-digital
-  provenance: https://wikiguias.digital.gob.cl/Estrategias/identidad-digital
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Estrategias/identidad-digital
 version: 1.0.0
 status: published
 tags:

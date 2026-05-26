@@ -219,6 +219,15 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
         self.assertIn("usage:", result.stdout.lower())
 
+    def test_recovery_inventory_json_reports_canonical_and_external_sections(self):
+        result = run_cli("recovery-inventory", "--json")
+        payload = json.loads(result.stdout)
+        self.assertIn("canonical", payload)
+        self.assertIn("external", payload)
+        self.assertIn("agents", payload["canonical"]["counts"])
+        self.assertIn("codex_skills", payload["external"])
+        self.assertIn("openclaw_workspaces", payload["external"])
+
 
 if __name__ == "__main__":
     unittest.main()

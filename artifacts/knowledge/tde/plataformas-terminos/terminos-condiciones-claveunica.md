@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:terminos-condiciones-claveunica
-  provenance: https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica
+  provenance:
+    source: https://wikiguias.digital.gob.cl/terminos-y-condiciones/terminos-condiciones-claveunica
 version: 1.0.0
 status: published
 tags:

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:registro-actividades-tratamiento"
-  provenance: "https://wikiguias.digital.gob.cl/datos-personales/registro-de-actividades-de-tratamiento"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/datos-personales/registro-de-actividades-de-tratamiento"
 version: 1.0.0
 status: published
 tags: [tde, proteccion-datos, protección-de-datos-personales, rat]

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:guia-tecnica-marco-gestion-datos"
-  provenance: "https://wikiguias.digital.gob.cl/guias/Guía_MGDE"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/guias/Guía_MGDE"
 version: 1.0.0
 status: published
 tags: [tde, lineamientos-guias, datos, guia-tecnica, dama, mgde, organos-administracion-estado]

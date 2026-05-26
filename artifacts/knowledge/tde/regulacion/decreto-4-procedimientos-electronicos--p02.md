@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:decreto-4-procedimientos-electronicos-p02
-  provenance: https://wikiguias.digital.gob.cl/Leyes/Decreto_4
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Leyes/Decreto_4
 version: 1.0.0
 status: published
 tags:

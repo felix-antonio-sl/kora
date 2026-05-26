@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:metodologia-gestion-proyectos
-  provenance: https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/Gestion_de_proyectos
 version: 1.0.0
 status: published
 tags:

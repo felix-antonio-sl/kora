@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:guia-tecnica-evaltic-inversiones-gobierno-digital
-  provenance: https://wikiguias.digital.gob.cl/guias/guias/guia_evaltic
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/guias/guia_evaltic
 version: 1.0.0
 status: published
 tags:

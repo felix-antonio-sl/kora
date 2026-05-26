@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:guia-rapida-cpat"
-  provenance: "https://wikiguias.digital.gob.cl/guias/CPAT"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/guias/CPAT"
 version: 1.0.0
 status: published
 tags: [tde, lineamientos-guias, procedimiento-administrativo, cpat, plataforma]

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:manual-integracion-notificaciones-p02
-  provenance: https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/integracion-casillaunica
 version: 1.0.0
 status: published
 tags:

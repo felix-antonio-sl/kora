@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: "urn:tde:kb:estrategia-datos-administracion-estado"
-  provenance: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia_Datos"
+  provenance:
+    source: "https://wikiguias.digital.gob.cl/Estrategias/Estrategia_Datos"
 version: 1.0.0
 status: published
 tags: [tde, estrategia, datos, gobierno digital, interoperabilidad, datos abiertos, inteligencia artificial]

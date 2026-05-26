@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:manual-integracion-claveunica
-  provenance: https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica
+  provenance:
+    source: https://wikiguias.digital.gob.cl/Manuales/Integraci%C3%B3n_Clave%C3%9Anica
 version: 1.0.0
 status: published
 tags:

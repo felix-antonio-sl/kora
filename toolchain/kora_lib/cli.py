@@ -12,6 +12,7 @@ from .host import cmd_host, cmd_install_hooks, warn_if_secondary
 from .intake import cmd_intake
 from .kb_graph import cmd_kb_graph
 from .promote import cmd_promote, cmd_deprecate, cmd_promote_cohort
+from .recovery import cmd_recovery_inventory
 from .transmute import cmd_transmute, cmd_ingest, cmd_roundtrip_check, cmd_deploy_status, cmd_record_invocation, SUPPORTED_TARGETS
 from .validation import cmd_lint_md, cmd_validate
 
@@ -195,6 +196,9 @@ def main():
     p_host.add_argument("--verbose", "-v", action="store_true", help="Show actual hostname/machine_id even if matching marker")
     subparsers.add_parser("install-hooks", help="Install KORA versioned git hooks for this clone")
     subparsers.add_parser("doctor", help="Salud operativa agregada (host + checks + staging + handoffs)")
+    p_recovery = subparsers.add_parser("recovery-inventory", help="Inventaria KORA canonico vs runtimes locales")
+    p_recovery.add_argument("--json", action="store_true", help="Emit inventory as JSON")
+    p_recovery.add_argument("--output", default=None, help="Write inventory to a file instead of stdout")
 
     args = parser.parse_args()
 
@@ -299,5 +303,7 @@ def main():
     elif args.command == "doctor":
         from .doctor import cmd_doctor
         cmd_doctor()
+    elif args.command == "recovery-inventory":
+        cmd_recovery_inventory(json_output=args.json, output=args.output)
     else:
         parser.print_help()

@@ -1,7 +1,8 @@
 ---
 _manifest:
   urn: urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes
-  provenance: https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electrónico
+  provenance:
+    source: https://wikiguias.digital.gob.cl/guias/Metadatos_Expediente_Electrónico
 version: 1.0.0
 status: published
 tags:
