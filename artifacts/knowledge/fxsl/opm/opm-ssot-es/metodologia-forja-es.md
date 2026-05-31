@@ -117,7 +117,7 @@ fuente para modelar) + el catálogo de lecciones forja + la realización del bun
 | Social | sí (5 componentes) | sí | sí; condiciones ambientales por enlace habilitador con estado |
 | Socio-técnico | sí (5 componentes) | sí | sí; relaciones no fundamentales por enlace estructural etiquetado |
 
-Patrones de referencia: Artificial `Airplane Flying`; Natural `Fetus Developing` (resultado, no propósito); Social `Conference Occurring`; Socio-técnico `Online Professional Identity Managing`; físico-con-partes-informacionales `Baggage Transporting` (la transformación dominante física fija la esencia → §A5.11).
+Patrones de referencia: Artificial `Airplane Flying`; Natural `Fetus Developing` (resultado, no propósito); Social `Conference Occurring`; Socio-técnico `Online Professional Identity Managing`; físico-con-partes-informacionales `Baggage Transporting` (la transformación dominante física fija la esencia → §9.11 en A5).
 
 **A1.3 Modo reverse / MBRSE para sistemas existentes.** Cuando el sistema ya existe y no hay diseño ni requisitos completos, el método **NO** exige reconstruir top-down antes de modelar. Opera en ciclo:
 
@@ -166,7 +166,7 @@ Cada etapa **DEBE** cerrar con un hecho explícito listo para OPD/OPL. El asiste
 **A2.2 Doble rol.** Un objeto PUEDE ser agente de un proceso y transformado de **otro** proceso. En el **mismo** proceso, si beneficiario es transformado, el enlace transformador prevalece sobre el habilitador (no dos enlaces simultáneos). En sistemas de tarea, el mismo grupo humano PUEDE ser agente y beneficiario de valor; no duplicar artificialmente "operador" y "usuario" si el dominio no los distingue. Un agente puede ser ambiental: agencia expresa responsabilidad/acción humana, no afiliación sistémica.
 
 **A2.3 Nombrado y esencia por defecto.**
-- **Escala de nombrado de procesos** (4 niveles de info creciente; modo nominalizado/gerundivo, **no** imperativo): (i) verbo (`Carga`); (ii) objeto+nominalización (`Carga de batería`, recomendado por defecto); (iii) cualificador+nominalización (`Carga automática`); (iv) cualificador+objeto+nominalización (`Carga automática de batería`). El imperativo (`Cargar batería`) se **desaconseja** (OPL torpe, incoherente al mezclar). En es-CL la forma canónica es la nominalización (`opl-es §1.1`).
+- **Escala de nombrado de procesos** (4 niveles de info creciente, en forma nominalizada/gerundiva): (i) verbo (`Carga`); (ii) objeto+nominalización (`Carga de batería`, recomendado por defecto); (iii) cualificador+nominalización (`Carga automática`); (iv) cualificador+objeto+nominalización (`Carga automática de batería`). La norma admite **ambos** comienzos canónicos de nombre de proceso: infinitivo `-ar`/`-er`/`-ir` (`Cargar batería`) y nominalización `-ción`/`-miento` (`opl-es §1.1`; `reglas` R-NOM-PROC-1). Por método Forja se **DEBERÍA** preferir la nominalización (OPL más fluida) y **NO mezclar** ambas formas dentro de un mismo modelo; el infinitivo **NO se prohíbe**, porque el método no deroga lo que la norma admite (lifting, §0.2).
 - **Nombrar agregados/atributos sin término natural**: cuando un compuesto o atributo central no tiene palabra en lenguaje natural (p.ej. el complejo `Conductor-Vehículo`, o el atributo de `Longitud/Anchura/...` sin nombre común), el modelador **DEBE** *inventar* un nombre expresivo; nombrar bien la abstracción es parte del análisis, no un accesorio.
 - **Esencia primaria por defecto.** Fijar la esencia mayoritaria del sistema como *default* y NO anotar física/informacional cosa por cosa reduce el ruido; declarar la esencia solo cuando difiere del default (o mientras el thing está aislado sin enlaces). *(realización: ver Apéndice F.)*
 
@@ -247,11 +247,14 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 | §9.6 | Homogeneidad de enlaces | estructurales homogéneos (obj↔obj, proc↔proc); procedimentales no homogéneos (obj↔proc). **Excepción**: exhibición-caracterización admite las 4 combinaciones |
 | §9.8 | Caracterización con estado especificado | especializaciones que difieren por valor de atributo → atributo discriminante con caracterización con estado especificado (OPD más compacto) |
 | §9.9 | Herencia | cada especialización hereda partes, rasgos, enlaces estructurales y procedimentales, y estados; PUEDE sobreescribir estados |
+| §9.11 | Esencia de cosas mixtas | físico+informacional → clasificar como **físico** (esencia dominante tangible) |
 | §9.12 | Estados directos vs atributo+valores | un solo atributo relevante → estados directos del objeto (✓`Fetus can be embryo or baby`). Múltiples atributos o nombre informativo → atributo+valores explícito |
 | §9.13 | Generalización como abstracción del SD | varios específicos del SD1 con la misma relación al proceso principal → objeto general en SD + específicos en SD1 por generalización-especialización (evita sobrecarga del raíz). **Refactor crear-general (4 pasos)**: (1) combinar features/partes comunes en un general, (2) enlazar por gen-spec, (3) quitar de los específicos lo ahora heredado, (4) migrar al general los enlaces comunes (un solo enlace desde el general). **Under/over-specification**: al especializar, dejar el enlace genérico del padre = subespecificación (cualquier herramienta sirve para cualquier cocción); dejar genérico **y** específicos = sobreespecificación; reemplazar el genérico por los específicos entre las especializaciones correspondientes |
-| §9.11 | Esencia de cosas mixtas | físico+informacional → clasificar como **físico** (esencia dominante tangible) |
 | §9.14 | Objetos implícitos + test del proceso | al modelar texto, forzar "¿qué objeto transforma este proceso?" revela entidades omitidas. **Test del proceso** (checklist, no redefine la primitiva opm-es): por defecto un sustantivo es **objeto**; para ser **proceso** debe cumplir los **tres** criterios — (1) transforma un objeto, (2) está asociado a tiempo, (3) está asociado a un verbo. Si tras los tres sigue ambiguo, sentido común |
 | §9.15 | Sinónimos/homónimos | 1:1 cosa↔nombre canónico; sinónimos → un término; homónimos → cosas separadas. Las variantes de superficie infinitivo↔nominalización (`Verificar Identidad`/`Verificación de Identidad`) PUEDEN coexistir si mapean al **mismo nombre canónico interno**. **Reuso por nombre**: una cosa repetida es **nueva aparición de la misma entidad**, no un nombre nuevo ni una cosa nueva (ver Apéndice F) |
+| §9.18 | Co-agentes | ≥2 agentes humanos simultáneos → múltiples enlaces de agente (AND implícito). ✗ agruparlos en "Agent Group" (pierde identidad). Si participan en momentos distintos → descomponer |
+| §9.19 | Estado cíclico | un estado PUEDE ser inicial **y** final (ciclo cerrado, ✓ Dishwasher `empty`). ✗ duplicar `empty_start/end` |
+| §9.20 | Atributos cuantitativos | declarar unidad + tipo (`Pressure [kPa] {p}`); tipos: boolean/string/integer/float/double/short/long/enumerated; rangos `[0..100]`,`(0..*)`, sub-rango no amplía silenciosamente |
 | §9.21 | Cambio de estado vs. cambio de identidad | ¿modelar como **efecto** (mismo objeto, cambia estado) o **consumo+resultado** (nueva identidad)? Criterio: si se puede crear un atributo cuyos valores sean los estados candidatos y tenga sentido → cambio de estado; si no → cambio de identidad. Decisión subjetiva/contextual (dos modeladores pueden diferir legítimamente). *(semántica de enlaces: opm-es; aquí solo el criterio de decisión.)* |
 | §9.22 | Objeto específico de estado como alias de referencia | cuando necesitas referenciar "el objeto en estado s" como si fuera entidad aparte, **no dupliques**: deriva un objeto-específico-de-estado (especialización que *refiere al estado de* el original). *(realización textual: opl-es.)* |
 | §9.23 | Relaciones n-arias → enlaces binarios | toda relación ternaria o superior (n≥3) se modela como conjunto de enlaces **binarios** (estructurales/procedimentales) o vía un proceso *state-preserving*; OPM enfoca todo en binario. *(Reciprocidad/transitividad de enlaces y propiedades del fork son canon de opm-es/opd-es — referenciar, no copiar.)* |
@@ -270,9 +273,6 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 | §9.36 | Aspecto transversal cuantificable | seguridad, costo, riesgo, tiempo, energía o usabilidad pueden ser overlays de atributos sobre objetos/procesos. Para compararlos, declarar tipo, unidad, rango, polaridad, función de agregación y umbral; sin eso no hay tradeoff auditable |
 | §9.37 | Alternativa de diseño no es estado por defecto | variantes como password de 4 o 6 dígitos, ML o RL, layout A o B suelen ser especializaciones/instancias/configuraciones, no estados del mismo objeto. Usar estado solo si el mismo objeto cambia de valor en el tiempo |
 | §9.38 | Stakeholder portador de valor | cuando el valor es organizacional o humano, identificar quién exhibe el atributo de valor. El sistema técnico puede habilitarlo, pero no necesariamente lo posee |
-| §9.18 | Co-agentes | ≥2 agentes humanos simultáneos → múltiples enlaces de agente (AND implícito). ✗ agruparlos en "Agent Group" (pierde identidad). Si participan en momentos distintos → descomponer |
-| §9.19 | Estado cíclico | un estado PUEDE ser inicial **y** final (ciclo cerrado, ✓ Dishwasher `empty`). ✗ duplicar `empty_start/end` |
-| §9.20 | Atributos cuantitativos | declarar unidad + tipo (`Pressure [kPa] {p}`); tipos: boolean/string/integer/float/double/short/long/enumerated; rangos `[0..100]`,`(0..*)`, sub-rango no amplía silenciosamente |
 
 ## A6. Control de flujo (compilación; canon en `opl-es` §7)
 
@@ -337,10 +337,10 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 | Refinamiento no trivial: descomposición ≥2 subprocesos; despliegue ≥2 refinadores | manual |
 | Proceso sin valor funcional directo DEBERÍA ser ambiental | manual |
 | Interfaz de sub-modelo congelada tras creación | manual |
-| Cada OPD con identificador persistente ≠ etiqueta `SDx.y` | opm-es |
+| Cada OPD con identificador persistente ≠ etiqueta `SDx.y` | opd-es |
 | Referencia inter-modelo explicita propietario y consumidor | opm-es |
 | Estado cíclico (inicial+final) válido | manual |
-| Salida no-determinista por defecto 1/n | opm-es |
+| Salida no-determinista por defecto 1/n | manual |
 | Ningún OPD > 20-25 entidades | manual |
 | Nombres singulares; 1:1 cosa↔nombre canónico | opl-es / manual |
 
@@ -348,7 +348,7 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 
 # Frontera rectora (antes del catálogo)
 
-Tres operaciones de la familia "estados/altitud" se confunden si no se separan por su **tipo de decisión**:
+Cuatro operaciones de la familia "estados/altitud" se confunden si no se separan por su **tipo de decisión**:
 
 | Operación | Tipo | Alcance | Propietario |
 |---|---|---|---|
@@ -616,7 +616,7 @@ El intercambio con la herramienta usa el documento JSON `{ "formato": "deep-opm-
 
 **Reglas de realización.** Nombres idénticos entre OPD/OPL/bundle. Toda referencia entre OPDs internamente consistente o la app rechaza el import. Omitir campos opcionales antes que inventarlos (la app normaliza). No emitir `formato` distinto. Exportación = instantánea, no fuente de verdad.
 
-**Comportamientos divergentes conocidos del generador OPL v0** (documentados, no se corrigen desde el bundle): emite `se describe como` por cada `descripcion`; `se descompone en <nombre OPD literal>` en vez de la cláusula canónica; designaciones D7/D8 en orden alfabético; transiciones de estado omitidas en OPL textual aunque el JSON las tiene; pluralización `0..N` malformada; minuscula designaciones de estado al emitir.
+**Comportamientos divergentes conocidos del generador OPL v0** (documentados, no se corrigen desde el bundle; la autoridad viva sobre realización OPL y el catálogo de estas divergencias es `urn:fxsl:kb:spec-forja-opl-es` §20 — esta lista es resumen orientativo, no la fuente): emite `se describe como` por cada `descripcion`; `se descompone en <nombre OPD literal>` en vez de la cláusula canónica; designaciones D7/D8 en orden alfabético; transiciones de estado omitidas en OPL textual aunque el JSON las tiene; pluralización `0..N` malformada; minuscula designaciones de estado al emitir.
 
 **Auto-normalización verificada.** La app normaliza al hidratar (omitir campos opcionales antes que inventarlos). Esencia: conectar un objeto como atributo (exhibición-caracterización) tiende a coaccionarlo a **informacional**; el enlace de **agente** solo se ofrece desde cosas físicas (humanas) — dejar que la UI normalice en vez de pelear con ella. *(Verificar el alcance exacto de la coerción en la versión vigente de opforja.)*
 

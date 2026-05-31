@@ -57,7 +57,7 @@ Esta spec es la SSOT OPL **bidireccional** y **operativa** de OPFORJA. Gobierna,
 
 La audiencia primaria son los agentes de desarrollo de OPFORJA y los agentes de generación/parseo OPL.
 
-Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-es.md` ni `reglas-opm-estrictas.md §4` para implementar una entrada. Las plantillas, vocabulario y restricciones necesarias DEBEN aparecer en esta spec. La procedencia a esas fuentes se expresa con `Rationale:`.
+Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-es` (`urn:fxsl:kb:opl-es`) ni `reglas-opm-estrictas-es §4` para implementar una entrada. Las plantillas, vocabulario y restricciones necesarias DEBEN aparecer en esta spec. La procedencia a esas fuentes se expresa con `Rationale:`.
 
 ## Definiciones
 
@@ -70,7 +70,7 @@ Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-
 | `ref` | Referencia tipada de un sub-span a la entidad de modelo (cosa, estado, enlace) que representa. |
 | `hint` | Anotación no normativa adjunta a un span que orienta presentación, interacción o edición sin alterar el hecho. |
 | Token | Unidad léxica de una oración OPL (palabra de objeto, verbo de proceso, valor de estado, conector o puntuación) reconocible por generación y parseo. |
-| Esencia | Propiedad genérica de una cosa: física o informática. |
+| Esencia | Propiedad genérica de una cosa: física o informacional. |
 | Afiliación | Propiedad genérica de una cosa: sistémica o ambiental. |
 | Placeholder | Marcador de span pendiente de completar (objeto/proceso/estado sin nombre) emitido para edición guiada. |
 | Plegado | Supresión deliberada de hechos refinados en un OPD ascendente, con su realización OPL equivalente. |
@@ -80,7 +80,7 @@ Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-
 
 Esta spec DEBE mandar sobre la implementación OPL de OPFORJA (generadores, parser, presentación e interacción).
 
-Esta spec DEBE quedar **bajo** `docs/canon-opm/reglas-opm-estrictas.md` para el canon OPM nuclear: ante conflicto sobre qué es una cosa, un enlace, un estado o una relación, prevalece ese documento.
+Esta spec DEBE quedar **bajo** el canon prescriptivo `reglas-opm-estrictas-es` (`urn:fxsl:kb:reglas-opm-estrictas-es`; espejo de implementación en `deep-opm-pro:docs/canon-opm/reglas-opm-estrictas.md`) para el canon OPM nuclear: ante conflicto sobre qué es una cosa, un enlace, un estado o una relación, prevalece ese documento.
 
 Esta spec DEBE quedar **bajo** la SSOT OPM externa (`urn:fxsl:kb:opl-es` y `urn:fxsl:kb:opm-es`): ante conflicto de gramática o semántica OPL, prevalece la SSOT externa.
 
@@ -221,7 +221,7 @@ Rationale: `reglas §4.3` (R-OPL-KW-1, R-OPL-KW-2) y `opm-opl-es §2` (Palabras 
 Ambas fuentes son canon; donde difieren, esta spec lo declara explícitamente y resuelve por precedencia (`reglas §4.3` y `opm-opl-es §2` mandan al mismo nivel; donde una amplía a la otra sin contradecirla, se conserva la unión).
 
 - **DIV-1 — Plegado y recomposición**: `reglas §4.3` incluye `se pliega en` (Plegado) y `se recompone desde` (Recomposición); `opm-opl-es §2` NO los lista (cierra en `se refina`). Resolución: ambos verbos PERTENECEN al enum (los aporta `reglas §4.3`, que opera al mismo nivel canónico); quedan marcados GAP-PLIEGA y GAP-RECOMPONE por ausencia de generador.
-- **DIV-2 — Designaciones de estado como cópulas**: `opm-opl-es §2` lista `es inicial`, `es final`, `es por defecto`, `es inicial y final` entre las palabras clave; `reglas §4.3` las trata como plantillas D7–D10, no como verbos. Resolución: NO son verbos del enum §1.1; se canonizan como plantillas de designación (D7–D13) en la sección de cosas, no como vocabulario verbal.
+- **DIV-2 — Designaciones de estado como cópulas**: `opm-opl-es §2` lista `es inicial`, `es final`, `es por defecto`, `es inicial y final` entre las palabras clave; `reglas §4.3` las trata como plantillas D7–D10 (más D13 para `Current` declarado), no como verbos. Resolución: NO son verbos del enum §1.1; se canonizan como plantillas de designación (D7–D13) en la sección de cosas, no como vocabulario verbal.
 
 Rationale: la unión de ambas tablas canónicas maximiza cobertura sin relajar contratos; las divergencias se declaran, no se silencian.
 
@@ -398,7 +398,7 @@ Rationale: `reglas §4.13` (R-ATR-1, R-ATR-2) y `opm-opl-es §14`.
 
 Rationale: `reglas §2.7` (R-INS-1..6) y `opm-opl-es §3`.
 
-### §2.7 Esencia (física / informática)
+### §2.7 Esencia (física / informacional)
 
 **ID**: ENT-ESENCIA (D1, D2).
 
@@ -1262,7 +1262,7 @@ Rationale: `reglas §4.11` (CX1, CX2), `§8.1`–`§8.2`, `§8.9` y `opm-opl-es 
 
 **Plantilla(s)**:
 - CX3 (despliegue genérico): `**Cosa** se despliega en SD1 en **T1**, **T2** y **T3**.`
-- Despliegue por relación fundamental (la superficie reusa el verbo de la relación, no `se despliega`):
+- Despliegue por relación fundamental (exhibición, generalización y clasificación reusan el verbo de su relación; la agregación es la **excepción** y usa `se despliega [por partes] en`, no `consta de`):
   - agregación: `**Todo** se despliega en **Parte1** y **Parte2**.`
   - exhibición: `**Exhibidor** exhibe **Atributo1**, así como *Operación1*.`
   - generalización: `**Especial1** y **Especial2** son **General**.`
@@ -2129,7 +2129,7 @@ Rationale: `opciones.ts` documenta explícitamente que las opciones "NO afectan 
 
   | Modo | Conducta de display |
   | --- | --- |
-  | `siempre` (default) | la esencia (físico/informático) se anota en toda frase donde aplique |
+  | `siempre` (default) | la esencia (físico/informacional) se anota en toda frase donde aplique |
   | `solo-difiere` | la esencia se anota solo cuando difiere del default del tipo |
   | `oculta` | la esencia nunca se anota en el display |
 
@@ -2700,7 +2700,7 @@ Leyenda de **Estado**:
 | §2.4 | Designación de estado | `designaciones.ts·oracionDesignacionEstado` / `textoDesignacionEstado` | — | — | alineado |
 | §2.5 | Valor de atributo `es valor` | `estructural.ts·oracionValorAtributo` | — | — | alineado |
 | §2.6 | Formato nominal `Instancia : Clase` | — (sin generador dedicado) | — | — | GAP-NOMBRE-INSTANCIA |
-| §2.7 | Esencia (física/informática) | `estructural.ts·oracionEntidad` (vía `refsHints.ts·textoEsencia`) | — | — | alineado |
+| §2.7 | Esencia (física/informacional) | `estructural.ts·oracionEntidad` (vía `refsHints.ts·textoEsencia`) | — | — | alineado |
 | §2.8 | Afiliación (sistémica/ambiental) | `estructural.ts·oracionEntidad` (vía `refsHints.ts·textoAfiliacion`) | — | — | alineado |
 | §3.1 | Consumo `consume` | `procedural.ts·oracionEnlaceSinEtiqueta` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`consume`) | `enlace-…` | alineado |
 | §3.2 | Resultado `genera` | `procedural.ts·oracionEnlaceSinEtiqueta` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`genera`) | — | alineado |
@@ -2908,11 +2908,11 @@ Rationale: regla de oro §1 del proyecto (`reglas-opm-estrictas.md` SSOT suprema
 
 ## Apéndice A — Ejemplo end-to-end
 
-Modelo completo y pequeño: **sistema de despacho de pedidos**. Reúne todas las familias canonizadas en §2–§10: entidad (objeto físico/informático, estado), transformador (consumo/resultado/efecto/cambio), habilitador (agente/instrumento), modificador de control (evento/condición), estructural (agregación/exhibición/especialización/instanciación), abanico (XOR), multiplicidad y refinamiento (descomposición síncrona). Las oraciones respetan el vocabulario y plantillas de §1–§9.
+Modelo completo y pequeño: **sistema de despacho de pedidos**. Reúne todas las familias canonizadas en §2–§10: entidad (objeto físico/informacional, estado), transformador (consumo/resultado/efecto/cambio), habilitador (agente/instrumento), modificador de control (evento/condición), estructural (agregación/exhibición/especialización/instanciación), abanico (XOR), multiplicidad y refinamiento (descomposición síncrona). Las oraciones respetan el vocabulario y plantillas de §1–§9.
 
 ### A.1 Vocabulario del modelo
 
-- **Objetos**: **Pedido** (informático, estados `pendiente`/`despachado`), **Inventario** (físico, estado `disponible`/`agotado`), **Bulto** (físico, resultado), **Guía** (informático, resultado), **Furgón** (físico), **Repartidor** (físico, agente humano), **Cliente** (físico, beneficiario), **Sistema De Despacho** (informático, sistema), **Zona** (informático) con especializaciones **Zona Urbana** / **Zona Rural**.
+- **Objetos**: **Pedido** (informacional, estados `pendiente`/`despachado`), **Inventario** (físico, estado `disponible`/`agotado`), **Bulto** (físico, resultado), **Guía** (informacional, resultado), **Furgón** (físico), **Repartidor** (físico, agente humano), **Cliente** (físico, beneficiario), **Sistema De Despacho** (informacional, sistema), **Zona** (informacional) con especializaciones **Zona Urbana** / **Zona Rural**.
 - **Proceso raíz**: *Despachar* (descompone en *Preparar*, *Embalar*, *Entregar*).
 - **Atributo**: **Prioridad** de **Pedido**.
 
@@ -2920,7 +2920,7 @@ Modelo completo y pequeño: **sistema de despacho de pedidos**. Reúne todas las
 
 Entidad y estado (§2):
 
-- **Pedido** es informático.
+- **Pedido** es informacional.
 - **Pedido** puede estar `pendiente` o `despachado`.
 - **Inventario** es físico.
 - **Inventario** puede estar `disponible` o `agotado`.
@@ -2928,8 +2928,8 @@ Entidad y estado (§2):
 
 Estructural (§6):
 
-- **Sistema De Despacho** consta de **Furgón**, **Repartidor** y **Inventario**.
-- **Zona Urbana** y **Zona Rural** pueden ser **Zona**.
+- **Sistema De Despacho** consta de **Furgón**, **Repartidor** e **Inventario**.
+- **Zona Urbana** y **Zona Rural** son **Zona**.
 - **Bulto** es una instancia de **Inventario**.
 
 Transformador (§3):
@@ -2958,7 +2958,7 @@ Abanico XOR (§8.1) y multiplicidad (§10):
 
 La forma compuesta coordina hechos con eje compartido en una sola línea, **preservando un sub-span y una `ref` por hecho** (R-COMP-MAESTRA-1/2):
 
-- Eje (a) — predicado coordinado, sujeto-proceso compartido:
+- Eje (a) — predicado coordinado, sujeto-proceso compartido (**forma objetivo**; hoy sin generador, `GAP-COMPOSICION` §9.6):
   `*Despachar* consume **Pedido**, genera **Guía**, afecta **Inventario** y requiere **Furgón**.`
 - Eje (b) — destino enumerado estructural:
   `**Sistema De Despacho** consta de **Furgón**, **Repartidor** e **Inventario**.`
@@ -3007,14 +3007,14 @@ Composición: objeto + estado + habilitador + condición con estado. El equipo (
 
 ### B.2 Agente–autonomía — estatus `canon`
 
-El agente (`AgenteSim`) es un **objeto informático** (R-OBJ-1) vinculado a su actor por estructural (§6); el nivel de autonomía (`NivelAutonomiaSim`) son **estados**; la política (`PoliticaAutonomiaSim` con `porDefecto`/`acciones`/`herramientas`) se realiza como **atributo** (exhibición §6.2) y se refina (§7) en política por acción y por herramienta.
+El agente (`AgenteSim`) es un **objeto informacional** (R-OBJ-1) vinculado a su actor por estructural (§6); el nivel de autonomía (`NivelAutonomiaSim`) son **estados**; la política (`PoliticaAutonomiaSim` con `porDefecto`/`acciones`/`herramientas`) se realiza como **atributo** (exhibición §6.2) y se refina (§7) en política por acción y por herramienta.
 
-- **Agente** es informático. **Agente** puede estar `bloqueado`, `requiere-aprobación` o `autónomo`.
+- **Agente** es informacional. **Agente** puede estar `bloqueado`, `requiere-aprobación` o `autónomo`.
 - **Actor** consta de **Agente**. (vínculo `AgenteSim.actorId` → agregación)
 - **Agente** exhibe **Política**.
 - **Política** se descompone en **Política Por Defecto**, **Política Por Acción** y **Política Por Herramienta**. (refinamiento del atributo)
 
-Composición: objeto informático + estados + estructural + exhibición + refinamiento. Sin primitiva nueva.
+Composición: objeto informacional + estados + estructural + exhibición + refinamiento. Sin primitiva nueva.
 
 ### B.3 Decisión — estatus `canon`
 

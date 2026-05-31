@@ -69,6 +69,8 @@ La fuente única de verdad para canonicidad OPM en este proyecto es el corpus `~
 3. **`opm-visual-es.md`** — capa gráfica canónica. Define geometría, contornos, decoraciones, distribución de enlaces, refinamiento visual y reglas `V-*`.
 4. **`metodologia-opm-es.md`** — capa procedimental. Define el asistente de construcción, heurísticas, anti-patrones y criterios de validación.
 
+**Equivalencia archivo↔URN** (la capa gráfica y la procedimental llevan nombre de archivo distinto de su URN canónico): `opm-iso-19450-es.md` = `urn:fxsl:kb:opm-es`; `opm-opl-es.md` = `urn:fxsl:kb:opl-es`; `opm-visual-es.md` = `urn:fxsl:kb:opd-es`; `metodologia-opm-es.md` = `urn:fxsl:kb:manual-metodologico-opm-es`. La notación `SSOT-iso` / `SSOT-opl` / `SSOT-visual` / `SSOT-metod` (§1.2) refiere a esos cuatro archivos, en ese orden.
+
 **Regla de resolución de conflictos** (heredada de manual §1, *Orden de precedencia*):
 - contradicción metodológica vs semántica → prevalece capa base (`opm-es`);
 - contradicción de superficie textual vs OPL-ES → prevalece `opl-es`;
@@ -216,7 +218,7 @@ Una **cosa** es una de exactamente dos clases (`SSOT-iso §Cosas`):
 ### 2.6 Estados (3.68)
 
 - **R-EST-1**: un estado existe solo dentro de su objeto propietario (`V-4`). No hay estados flotantes.
-- **R-EST-2**: cuatro **designaciones** persistentes coexisten en esta adaptación (`SSOT-iso §Estados iniciales, Current, por defecto y finales`, `V-6`):
+- **R-EST-2**: cuatro **designaciones** persistentes (más el estado normal, sin designación) coexisten en esta adaptación (`SSOT-iso §Estados iniciales, Current, por defecto y finales`, `V-6`):
 
 | Designación | Marca canónica | Restricción de cardinalidad |
 |---|---|---|
@@ -227,7 +229,7 @@ Una **cosa** es una de exactamente dos clases (`SSOT-iso §Cosas`):
 | Normal (sin designación) | borde estándar | — |
 
 - **R-EST-3**: un estado PUEDE ser simultáneamente inicial y final (`SSOT-metod §9.19`). Los ciclos cerrados DEBEN usar una única cosa-estado con doble designación; duplicar estados para separar inicio y fin es anti-patrón.
-- **R-EST-4**: el **estado actual de runtime** (durante simulación, glifo `V-54`) y la designación `Current` declarada son distinguibles en serialización aunque coincidan visualmente (`V-134`, `V-238`).
+- **R-EST-4**: el **estado actual de runtime** (durante simulación, glifo `V-54`) y la designación `Current` declarada son distinguibles en serialización y DEBEN distinguirse visualmente (color, halo o glifo auxiliar) aunque compartan la familia de glifo pin (`V-134`, `V-238`; ver `R-VIS-RUN-2`).
 
 ### 2.7 Instancias
 
