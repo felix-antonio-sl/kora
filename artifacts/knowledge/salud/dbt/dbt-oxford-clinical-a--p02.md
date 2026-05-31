@@ -23,6 +23,9 @@ extensions:
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:salud:kb:dbt-oxford-clinical-a
+relations:
+  refines:
+  - urn:salud:kb:dbt-oxford-clinical-a
 ---
 
 # The Oxford Handbook of DBT — Clinical Applications (Part A) - Parte 02

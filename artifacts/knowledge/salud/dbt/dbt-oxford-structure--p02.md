@@ -22,6 +22,9 @@ extensions:
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:salud:kb:dbt-oxford-structure
+relations:
+  refines:
+  - urn:salud:kb:dbt-oxford-structure
 ---
 
 # The Oxford Handbook of DBT — Structure of Treatment - Parte 02

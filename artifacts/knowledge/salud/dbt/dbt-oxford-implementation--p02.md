@@ -23,6 +23,9 @@ extensions:
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:salud:kb:dbt-oxford-implementation
+relations:
+  refines:
+  - urn:salud:kb:dbt-oxford-implementation
 ---
 
 # The Oxford Handbook of DBT — Implementation - Parte 02

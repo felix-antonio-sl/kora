@@ -21,6 +21,9 @@ extensions:
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:salud:kb:dbt-oxford-adaptations-a
+relations:
+  refines:
+  - urn:salud:kb:dbt-oxford-adaptations-a
 ---
 
 # The Oxford Handbook of DBT — Adaptations (Part A) - Parte 02

@@ -24,6 +24,9 @@ extensions:
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:salud:kb:dbt-oxford-theoretical
+relations:
+  refines:
+  - urn:salud:kb:dbt-oxford-theoretical
 ---
 
 # The Oxford Handbook of DBT — Theoretical Underpinnings - Parte 02
