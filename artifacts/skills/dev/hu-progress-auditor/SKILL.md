@@ -48,7 +48,10 @@ extensions:
     - codex
     - opencode
     nivel_prescripcion: alto
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:kora:kb:requirement-traceability-model
+    - urn:kora:kb:test-strategy
+    - urn:kora:kb:procesos-spec
     componible_con: []
 artefacto:
   perfil:

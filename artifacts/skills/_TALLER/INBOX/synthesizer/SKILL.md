@@ -1,16 +1,22 @@
 ---
 _manifest:
-  urn: "urn:gn:artefacto:synthesizer"
+  urn: urn:gn:artefacto:synthesizer
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-04-18"
-    source: "Promocion desde CM-SYNTHESIZER de gn/digitrans y gn/goreologo durante H2-artifacts."
-version: "1.0.0"
+    created_by: OpenAI Codex
+    created_at: '2026-04-18'
+    source: Promocion desde CM-SYNTHESIZER de gn/digitrans y gn/goreologo durante
+      H2-artifacts.
+version: 1.0.0
 status: activo
 nombre: Synthesizer
-descripcion: "Integrador reusable para agentes gn: calibra profundidad, mantiene etiquetas de certeza y cierra respuestas trazables con estructura visible."
-tags: [gn, synthesizer, cierre, trazabilidad]
+descripcion: 'Integrador reusable para agentes gn: calibra profundidad, mantiene etiquetas
+  de certeza y cierra respuestas trazables con estructura visible.'
+tags:
+- gn
+- synthesizer
+- cierre
+- trazabilidad
 lang: es
 extensions:
   kora:
@@ -20,47 +26,61 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 2, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 2
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: medio
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:gn:kb:intro-gores-nuble
+    - urn:gn:kb:modernizacion-estado-waissbluth
+    - urn:kora:kb:requirement-traceability-model
     componible_con:
-      - "urn:gn:artefacto:digitrans"
-      - "urn:gn:artefacto:goreologo"
+    - urn:gn:artefacto:digitrans
+    - urn:gn:artefacto:goreologo
 artefacto:
   perfil:
-    dominio: [gn, sintesis, trazabilidad]
+    dominio:
+    - gn
+    - sintesis
+    - trazabilidad
     disparadores:
-      - "analisis ya producido que requiere integracion final y calibracion de profundidad"
-      - "respuesta institucional que debe distinguir hecho, norma, dato e interpretacion"
+    - analisis ya producido que requiere integracion final y calibracion de profundidad
+    - respuesta institucional que debe distinguir hecho, norma, dato e interpretacion
     salidas:
-      - "respuesta final con estructura visible"
-      - "cierre con fuente oficial y limites explicitados"
+    - respuesta final con estructura visible
+    - cierre con fuente oficial y limites explicitados
   plan:
     estado_inicial: recibir-analisis
     estado_terminal: respuesta-calibrada
     estados:
-      - recibir-analisis
-      - integrar-dimensiones
-      - etiquetar-certeza
-      - calibrar-profundidad
-      - respuesta-calibrada
+    - recibir-analisis
+    - integrar-dimensiones
+    - etiquetar-certeza
+    - calibrar-profundidad
+    - respuesta-calibrada
   interfaz:
     herramientas: []
-    permisos: "Sin permisos adicionales; consume el analisis ya generado por el agente anfitrion."
+    permisos: Sin permisos adicionales; consume el analisis ya generado por el agente
+      anfitrion.
     protocolos:
-      entrada: "analisis estructurado con fuentes y nivel de certeza disponible"
-      salida: "respuesta trazable, calibrada y explicitamente etiquetada"
+      entrada: analisis estructurado con fuentes y nivel de certeza disponible
+      salida: respuesta trazable, calibrada y explicitamente etiquetada
   invariantes:
     reglas_duras:
-      - "Mantiene separado el piso normativo de las recomendaciones o interpretaciones."
-      - "No elimina incertidumbre relevante ni comprime dominios distinguibles."
-      - "Toda salida cierra con fuente oficial o limite declarado."
+    - Mantiene separado el piso normativo de las recomendaciones o interpretaciones.
+    - No elimina incertidumbre relevante ni comprime dominios distinguibles.
+    - Toda salida cierra con fuente oficial o limite declarado.
 ---
 
 # Synthesizer

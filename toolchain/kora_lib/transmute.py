@@ -1629,10 +1629,12 @@ def _emit_claude_code_skill_bundle(
                 else:
                     knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `(unresolved)`")
 
+    projected_body = _strip_inline_knowledge_contract(body)
+
     content = "---\n"
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
-    content += body.rstrip()
+    content += projected_body.rstrip()
     if knowledge_lines:
         content += "\n" + "\n".join(knowledge_lines)
     content += "\n"
@@ -1642,20 +1644,56 @@ def _emit_claude_code_skill_bundle(
     return out_skill_md
 
 
+def _strip_inline_knowledge_contract(body: str) -> str:
+    marker = "\n## Knowledge Contract"
+    index = body.find(marker)
+    if index == -1:
+        return body
+    return body[:index].rstrip() + "\n"
+
+
 def _emit_codex_skill_bundle(
     target_dir: Path,
     skill_name: str,
     frontmatter: dict,
     body: str,
+    transmutation_path: Path,
 ) -> Path:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
     bundle_dir = target_dir / skill_name
     bundle_dir.mkdir(parents=True, exist_ok=True)
     bundle_frontmatter = _project_skill_frontmatter_to_codex(frontmatter, skill_name)
 
+    knowledge_contract = transmutation.get("knowledge_contract", {})
+    knowledge_lines = []
+    allowed_urns = knowledge_contract.get("allowed_urns") or []
+    if allowed_urns:
+        knowledge_lines.extend(["", "## Knowledge Contract", ""])
+        for urn in allowed_urns:
+            path = (knowledge_contract.get("resolved_paths") or {}).get(urn)
+            if path:
+                knowledge_lines.append(f"- `{urn}` -> `{path}`")
+            else:
+                knowledge_lines.append(f"- `{urn}` -> `(unresolved)`")
+        routes = knowledge_contract.get("routes") or {}
+        if routes:
+            knowledge_lines.extend(["", "### KB Routes", ""])
+            for route_name, item in sorted(routes.items()):
+                route_path = item.get("path")
+                if route_path:
+                    knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `{route_path}`")
+                else:
+                    knowledge_lines.append(f"- `{route_name}` -> `{item['urn']}` -> `(unresolved)`")
+
+    projected_body = _strip_inline_knowledge_contract(body)
+
     content = "---\n"
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
-    content += body.rstrip()
+    content += projected_body.rstrip()
+    if knowledge_lines:
+        content += "\n" + "\n".join(knowledge_lines)
     content += "\n"
 
     out_skill_md = bundle_dir / "SKILL.md"
@@ -1833,7 +1871,7 @@ def _transmute_skill_to_codex(skill_md_path: Path, dry_run: bool = False) -> tup
         projected,
         detail,
     )
-    bundle_path = _emit_codex_skill_bundle(target_dir, skill_name, frontmatter, body)
+    bundle_path = _emit_codex_skill_bundle(target_dir, skill_name, frontmatter, body, yml_path)
 
     for entry in skill_md_path.parent.iterdir():
         if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):

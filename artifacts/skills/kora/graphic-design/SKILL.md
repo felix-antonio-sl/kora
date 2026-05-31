@@ -44,7 +44,10 @@ extensions:
     - claude-code
     - codex
     nivel_prescripcion: medio
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:tde:kb:guia-voz-y-tono
+    - urn:tde:kb:recomendaciones-diseno-servicios-estado
+    - urn:kora:kb:catalogo-patrones-skills
     componible_con:
     - urn:kora:artefacto:ux-design
 artefacto:

@@ -50,7 +50,10 @@ extensions:
     - opencode
     nivel_prescripcion: alto
     alcance_despliegue: /home/felix/projects/deep-opm-pro
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:fxsl:kb:swarm-ops-metodologia
+    - urn:fxsl:kb:xanpan-agents-metodologia
+    - urn:kora:kb:procesos-spec
     componible_con: []
 artefacto:
   perfil:

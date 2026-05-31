@@ -50,7 +50,11 @@ extensions:
     - codex
     - openclaw
     nivel_prescripcion: alto
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:kora:kb:cat-foundations
+    - urn:kora:kb:cat-agent-coalgebra
+    - urn:fxsl:kb:icas-sintesis
+    - urn:fxsl:kb:icas-agencia
     componible_con:
     - urn:kora:artefacto:cat-thinking
 artefacto:

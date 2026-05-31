@@ -1,16 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:intent-classifier"
+  urn: urn:kora:artefacto:intent-classifier
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-04-18"
-    source: "Promocion del patron comun de CM-INTENT-CLASSIFIER en agentes productivos kora durante H2-artifacts."
-version: "1.0.0"
+    created_by: OpenAI Codex
+    created_at: '2026-04-18'
+    source: Promocion del patron comun de CM-INTENT-CLASSIFIER en agentes productivos
+      kora durante H2-artifacts.
+version: 1.0.0
 status: retirado
 nombre: Intent Classifier
-descripcion: "Clasificador reusable de intencion para agentes KORA: ubica la solicitud en la capacidad correcta del dominio y distingue modo guiado/libre cuando aplica."
-tags: [kora, intent, clasificacion, dispatch]
+descripcion: 'Clasificador reusable de intencion para agentes KORA: ubica la solicitud
+  en la capacidad correcta del dominio y distingue modo guiado/libre cuando aplica.'
+tags:
+- kora
+- intent
+- clasificacion
+- dispatch
 lang: es
 extensions:
   kora:
@@ -20,53 +26,67 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 2, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 2
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: medio
     rebuild:
       required: true
       current_is_source: false
-      directive: "urn:kora:kb:meta-kora-rebuild-directive"
-    conocimiento_permitido: []
+      directive: urn:kora:kb:meta-kora-rebuild-directive
+    conocimiento_permitido:
+    - urn:kora:kb:meta-kora-rebuild-directive
+    - urn:kora:kb:autoria-spec
+    - urn:kora:kb:catalogo-patrones-skills
     componible_con:
-      - "urn:kora:artefacto:clawforge"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:custodio"
-      - "urn:kora:artefacto:kora-agents"
-      - "urn:kora:artefacto:kora-skills"
+    - urn:kora:artefacto:clawforge
+    - urn:kora:artefacto:artifact-curator
+    - urn:kora:artefacto:custodio
+    - urn:kora:artefacto:kora-agents
+    - urn:kora:artefacto:kora-skills
 artefacto:
   perfil:
-    dominio: [kora, dispatch, intent]
+    dominio:
+    - kora
+    - dispatch
+    - intent
     disparadores:
-      - "el agente necesita ubicar una solicitud en una capacidad del dominio"
-      - "el modo guiado o libre condiciona la fase inicial"
+    - el agente necesita ubicar una solicitud en una capacidad del dominio
+    - el modo guiado o libre condiciona la fase inicial
     salidas:
-      - "clasificacion de capacidad"
-      - "senal de modo y confianza"
+    - clasificacion de capacidad
+    - senal de modo y confianza
   plan:
     estado_inicial: leer-solicitud
     estado_terminal: intent-clasificado
     estados:
-      - leer-solicitud
-      - identificar-capacidad
-      - medir-confianza
-      - intent-clasificado
+    - leer-solicitud
+    - identificar-capacidad
+    - medir-confianza
+    - intent-clasificado
   interfaz:
     herramientas: []
-    permisos: "Sin permisos adicionales; consume solicitud, foco previo y taxonomia local del agente anfitrion."
+    permisos: Sin permisos adicionales; consume solicitud, foco previo y taxonomia
+      local del agente anfitrion.
     protocolos:
-      entrada: "solicitud del usuario + taxonomia de capacidades del agente anfitrion"
-      salida: "clasificacion de capacidad, modo y cierre solicitado"
+      entrada: solicitud del usuario + taxonomia de capacidades del agente anfitrion
+      salida: clasificacion de capacidad, modo y cierre solicitado
   invariantes:
     reglas_duras:
-      - "Clasifica dentro del dominio del agente anfitrion; no ejecuta acciones."
-      - "Explicita confianza y ambiguedad antes de forzar routing."
-      - "Distingue cierre solicitado cuando el usuario no busca mas trabajo."
+    - Clasifica dentro del dominio del agente anfitrion; no ejecuta acciones.
+    - Explicita confianza y ambiguedad antes de forzar routing.
+    - Distingue cierre solicitado cuando el usuario no busca mas trabajo.
 ---
 
 # Intent Classifier

@@ -80,11 +80,10 @@ IGNORED_DIRS = {
 ROOT_IGNORED_DIRS = {"atomize", "_backups"}
 
 # Paths cuyo contenido se INDEXA (URNs siguen resolviendo) pero NO se ESCANEA
-# para validar refs URN salientes. Aplica a handoffs historicos, specs
-# absorbidas/retiradas/en-pausa: las refs internas a artefactos retirados son
+# para validar refs URN salientes. Aplica a specs absorbidas/retiradas/en-pausa:
+# las refs internas a artefactos retirados son
 # legitimas en su contexto historico aunque no resuelvan hoy.
 ARCHIVED_SCAN_MARKERS = (
-    "/governance/decisiones-archivadas/handoffs-historicos/",
     "/governance/decisiones-archivadas/specs-en-pausa/",
     "/governance/decisiones-archivadas/specs-absorbidas/",
     "/governance/decisiones-archivadas/skills-retiradas/",

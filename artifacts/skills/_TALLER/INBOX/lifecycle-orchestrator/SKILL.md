@@ -1,16 +1,22 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:lifecycle-orchestrator"
+  urn: urn:kora:artefacto:lifecycle-orchestrator
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-04-18"
-    source: "Promocion del patron comun de CM-LIFECYCLE-ORCHESTRATOR en agentes productivos kora durante H2-artifacts."
-version: "1.0.0"
+    created_by: OpenAI Codex
+    created_at: '2026-04-18'
+    source: Promocion del patron comun de CM-LIFECYCLE-ORCHESTRATOR en agentes productivos
+      kora durante H2-artifacts.
+version: 1.0.0
 status: retirado
 nombre: Lifecycle Orchestrator
-descripcion: "Consolidador reusable de checkpoints guiados para agentes KORA: resume fases, entregables y pendientes sin secuenciar la FSM."
-tags: [kora, guided, lifecycle, checkpoints]
+descripcion: 'Consolidador reusable de checkpoints guiados para agentes KORA: resume
+  fases, entregables y pendientes sin secuenciar la FSM.'
+tags:
+- kora
+- guided
+- lifecycle
+- checkpoints
 lang: es
 extensions:
   kora:
@@ -20,52 +26,65 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 2, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 2
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: medio
     rebuild:
       required: true
       current_is_source: false
-      directive: "urn:kora:kb:meta-kora-rebuild-directive"
-    conocimiento_permitido: []
+      directive: urn:kora:kb:meta-kora-rebuild-directive
+    conocimiento_permitido:
+    - urn:kora:kb:meta-kora-rebuild-directive
+    - urn:kora:kb:procesos-spec
+    - urn:kora:kb:autoria-spec
     componible_con:
-      - "urn:kora:artefacto:clawforge"
-      - "urn:kora:artefacto:artifact-curator"
-      - "urn:kora:artefacto:kora-agents"
-      - "urn:kora:artefacto:kora-skills"
+    - urn:kora:artefacto:clawforge
+    - urn:kora:artefacto:artifact-curator
+    - urn:kora:artefacto:kora-agents
+    - urn:kora:artefacto:kora-skills
 artefacto:
   perfil:
-    dominio: [kora, guided, checkpoints]
+    dominio:
+    - kora
+    - guided
+    - checkpoints
     disparadores:
-      - "el agente opera en modo guiado y necesita consolidar checkpoints"
-      - "hay varias fases parciales con entregables y pendientes"
+    - el agente opera en modo guiado y necesita consolidar checkpoints
+    - hay varias fases parciales con entregables y pendientes
     salidas:
-      - "resumen acumulado de ciclo guiado"
-      - "pendientes visibles para la siguiente fase"
+    - resumen acumulado de ciclo guiado
+    - pendientes visibles para la siguiente fase
   plan:
     estado_inicial: recibir-checkpoint
     estado_terminal: resumen-guiado
     estados:
-      - recibir-checkpoint
-      - normalizar-fase
-      - consolidar-pendientes
-      - resumen-guiado
+    - recibir-checkpoint
+    - normalizar-fase
+    - consolidar-pendientes
+    - resumen-guiado
   interfaz:
     herramientas: []
-    permisos: "Sin permisos adicionales; opera sobre checkpoints y entregables ya producidos."
+    permisos: Sin permisos adicionales; opera sobre checkpoints y entregables ya producidos.
     protocolos:
-      entrada: "fase actual + entregables + observaciones + pendientes"
-      salida: "resumen consolidado del ciclo guiado"
+      entrada: fase actual + entregables + observaciones + pendientes
+      salida: resumen consolidado del ciclo guiado
   invariantes:
     reglas_duras:
-      - "No gobierna transiciones ni secuencia la FSM."
-      - "Resume checkpoints existentes; no inventa entregables."
-      - "Mantiene visibles pendientes y riesgos acumulados."
+    - No gobierna transiciones ni secuencia la FSM.
+    - Resume checkpoints existentes; no inventa entregables.
+    - Mantiene visibles pendientes y riesgos acumulados.
 ---
 
 # Lifecycle Orchestrator

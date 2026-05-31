@@ -5,10 +5,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-27"
-    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es)."
-    updated_at: "2026-05-08"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. Anti-complacencia explicita."
-version: "1.2.0"
+    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es). Desde v1.3.0 usa urn:fxsl:kb:metodologia-forja-opm-es como metodo primario para modelamiento OPM-en-opforja."
+    updated_at: "2026-05-31"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. v1.3.0 integra Metodologia Forja (urn:fxsl:kb:metodologia-forja-opm-es) como SSOT primaria de metodo cuando el destino es opforja/deep-opm-pro."
+version: "1.3.0"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada a la SSOT canonica de cuatro capas y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
@@ -35,6 +35,7 @@ extensions:
       - "urn:fxsl:kb:opd-es"
       - "urn:fxsl:kb:opl-es"
       - "urn:fxsl:kb:manual-metodologico-opm-es"
+      - "urn:fxsl:kb:metodologia-forja-opm-es"
     componible_con:
       - "urn:kora:artefacto:jointjs-open-source"
     sistemas_externos:
@@ -112,7 +113,12 @@ Skill horizontal para **modelar sistemas con OPM (Object-Process Methodology, IS
 
 La skill es **estructural**: trabaja la sintaxis y la semantica del lenguaje OPM, no el conocimiento de dominio. El conocimiento de dominio lo aporta el agente que invoca la skill.
 
-Anclaje canonico: las cuatro capas de la SSOT OPM v3.0.0:
+Anclaje canonico:
+
+- **Validez OPM**: las cuatro capas de la SSOT OPM v3.0.0.
+- **Metodo opforja**: `urn:fxsl:kb:metodologia-forja-opm-es` cuando el destino
+  de trabajo sea opforja/deep-opm-pro. Esta capa orienta el camino de
+  modelamiento; no redefine primitivas ni relaja validez.
 
 | Capa | URN | Rol en la skill |
 |------|-----|-----------------|
@@ -120,6 +126,7 @@ Anclaje canonico: las cuatro capas de la SSOT OPM v3.0.0:
 | Visual | `urn:fxsl:kb:opd-es` | gramatica grafica: como se dibuja un hecho |
 | Textual | `urn:fxsl:kb:opl-es` | gramatica textual: como se enuncia un hecho |
 | Procedimental | `urn:fxsl:kb:manual-metodologico-opm-es` | protocolo: como se construye y refina un modelo |
+| Metodo opforja | `urn:fxsl:kb:metodologia-forja-opm-es` | SSOT primaria de metodologia OPM-en-opforja: secuencia de modelamiento, lecciones forja, realizacion del bundle y disciplina de herramienta |
 
 ## Cuando Usar
 
@@ -218,6 +225,13 @@ Clasificar la solicitud para decidir el siguiente estado:
 Antes de avanzar, verificar que el sistema tiene funcion transformadora. Si no, abortar con sugerencia de alternativa.
 
 Convencion de entrega por defecto: si no se especifica formato, asumir que el destino preferente es **deep-opm-pro** y emitir `bundle` + `OPL-ES` + `reporte`. El render estatico via jointjs-open-source es la excepcion (e.g. documento sin UI, presentacion impresa, snippet en informe).
+
+**Gate opforja.** Si el destino es opforja/deep-opm-pro, cargar primero
+`urn:fxsl:kb:metodologia-forja-opm-es` y aplicar sus lecciones LF-* como
+metodologia primaria (A0-A8 + catalogo). La precedencia sigue siendo: las capas
+de validez (`opm-es`, `opd-es`, `opl-es`) deciden si un hecho es legal; la
+Metodologia Forja decide el camino, altitud, realizacion en bundle y disciplina
+de herramienta.
 
 **Gate de claridad al salir de triaje**: si el input del operador contiene barro (ver §Catalogo de barro), no avanzar al estado siguiente. Derivar a `aclarar` con la primera pregunta dirigida.
 

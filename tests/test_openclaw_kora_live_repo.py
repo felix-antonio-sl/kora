@@ -34,12 +34,7 @@ class OpenClawKoraLiveRepoTests(unittest.TestCase):
         principles = (
             ROOT / "artifacts" / "knowledge" / "ops" / "principios-transmutacion-kora-openclaw.md"
         ).read_text(encoding="utf-8")
-        memory = (
-            ROOT / "governance" / "decisiones-archivadas" / "handoffs-historicos"
-            / "operational-memory-2026-04-27-openclaw-kora-live-kb.md"
-        ).read_text(encoding="utf-8")
-
-        for content in (runtime, principles, memory):
+        for content in (runtime, principles):
             self.assertIn("bind_mount_live_kora_clone", content)
             self.assertIn("KORA_REPO", content)
             self.assertIn(CONTAINER_KORA_MOUNT, content)

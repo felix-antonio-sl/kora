@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-28"
-    source: "Prompt de inicio generico para agentes (humanos o LLM) que abren una sesion sobre el repo KORA. Citado por handoffs y memoria persistente como punto de entrada."
-version: "1.0.0"
+    source: "Prompt de inicio generico para agentes (humanos o LLM) que abren una sesion sobre el repo KORA. Citado por handoffs y memoria persistente como punto de entrada. v1.1 (2026-05-31) añade seccion 'Que es KORA' con proposito (repositorio/catalogo/produccion/mantenimiento) y los tres tipos de artefacto, alineada con gobernanza v6.1."
+version: "1.1.0"
 status: publicado
 tags: [start-prompt, bootstrap, kora, sesion, agentes, onboarding]
 lang: es
@@ -29,6 +29,21 @@ Prompt copiable para arrancar trabajo sobre este repo. Aplica a sesiones
 nuevas de Claude Code, Codex, OpenCode u otro agente que opere sobre
 KORA.
 
+## Que es KORA
+
+KORA es el repositorio, catalogo y sistema de produccion y mantenimiento de
+**tres tipos de artefacto**:
+
+- **conocimiento** — `.md` en estandar KORA/MD para *consumo* de sistemas LLM
+  (se leen como contexto, no se ejecutan);
+- **agentes** (`AGENT.md`) y **skills** (`SKILL.md`) — actores y capacidades que
+  se *proyectan a runtimes* (claude-code, codex, openclaw, hermes) via
+  transmutacion.
+
+Las specs son la ley, no artefactos. "Conocimiento" es un tipo especifico, no
+paraguas de los otros dos. La ecuacion `PMI × LFS + autoria + transmutacion
+funtorial` es la garantia formal, no la definicion.
+
 ## Prompt minimo
 
 ```
@@ -36,12 +51,12 @@ Sesion KORA — bootstrap.
 
 Lee primero, en este orden:
 
-1. AGENTS.md / CLAUDE.md (top-level): doctrina operativa del repo,
-   topologia post-reorg v5, comandos vivos.
+1. CLAUDE.md (top-level): fuente operativa unica para gestion del repo,
+   topologia post-reorg v5 y comandos vivos.
 2. governance/gobernanza.md: precedencia, regimenes URN, lifecycle,
    capas (ontologia / serializacion / runtime / distribucion).
-3. El ultimo handoff en docs/reports/handoff-YYYY-MM-DD-*.md por fecha
-   descendente. Es el snapshot vivo del repo.
+3. El ultimo handoff en docs/handoffs/YYYY-MM-DD-*.md por fecha descendente.
+   Es el snapshot vivo del repo.
 4. ~/.claude/projects/-home-felix-kora/memory/MEMORY.md: index de
    memorias persistentes; leer las mas recientes que apliquen.
 
@@ -83,7 +98,7 @@ Reglas duras del repo (sin excepciones):
 | Constitucion | `governance/` | `gobernanza.md` |
 | Ontologia | `ontology/` | `harness-spec.md`, `qa-spec.md`, `procesos-spec.md`, `risk-register-spec.md` |
 | Serializacion | `serialization/` | `autoria-spec.md`, `agent-skill-construction-spec.md`, `md-spec.md`, `knowledge-spec.md` |
-| Runtime | `runtime/` | `runtime-spec-md.md`, `transmutation-spec.md`, `multiagente-spec.md`, runtime-extensions (claude-code, codex, gemini, mastra, opencode, openclaw, agentskills) |
+| Runtime | `runtime/` | `runtime-spec-md.md`, `transmutation-spec.md`, `multiagente-spec.md`, runtime-extensions canonicas (claude-code, codex, openclaw, hermes) |
 | Productivo | `artifacts/{agents,knowledge,skills}/` | shape unificado autoria-spec |
 | Toolchain | `toolchain/kora`, `toolchain/kora_lib/` | CLI viva |
 
@@ -106,7 +121,7 @@ Reglas duras del repo (sin excepciones):
 ## Targets de transmutacion
 
 ```bash
-python3 toolchain/kora transmute --target {agentskills|claude-code|codex|gemini|mastra|opencode|openclaw} --agent {ns}/{name} --dry-run
+python3 toolchain/kora transmute --target {claude-code|codex|openclaw|hermes} --agent {ns}/{name} --dry-run
 ```
 
 ## Antipatrones que cortan rapido
@@ -121,8 +136,8 @@ python3 toolchain/kora transmute --target {agentskills|claude-code|codex|gemini|
 
 ## Donde leer mas
 
-- Topologia detallada y comandos: `AGENTS.md` y `CLAUDE.md`.
-- Estado vivo: `docs/reports/handoff-*.md` (por fecha descendente).
+- Topologia detallada y comandos: `CLAUDE.md`.
+- Estado vivo: `docs/handoffs/YYYY-MM-DD-*.md` (por fecha descendente).
 - Roadmaps: `docs/plans/*.md`.
 - Memoria persistente: `~/.claude/projects/-home-felix-kora/memory/MEMORY.md`.
 - Specs canonicas: `governance/`, `ontology/`, `serialization/`, `runtime/`.

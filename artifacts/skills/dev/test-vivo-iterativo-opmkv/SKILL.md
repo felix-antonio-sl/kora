@@ -55,7 +55,12 @@ extensions:
     - claude-code
     - codex
     nivel_prescripcion: alto
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:kora:kb:test-strategy
+    - urn:kora:kb:canario-spec
+    - urn:fxsl:kb:opm-es
+    - urn:fxsl:kb:opd-es
+    - urn:tde:kb:guia-calidad-web
     componible_con:
     - urn:dev:artefacto:ship-discipline
     - urn:kora:artefacto:cat-thinking

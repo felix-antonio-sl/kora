@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}"
-version: "6.0.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}; v6.1 (HITL 2026-05-31) explicita en §1 el proposito de KORA (repositorio, catalogo, produccion y mantenimiento de artefactos) y los tres tipos de artefacto (conocimiento, agentes, skills), subordinando la ecuacion categorial a garantia formal: conocimiento es tipo especifico de artefacto (no paraguas) y las specs no son artefactos"
+version: "6.1.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles, hermes, runtimes]
 lang: es
@@ -22,7 +22,7 @@ relations:
     - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v6.0.0
+# KORA/Gobernanza v6.1.0
 
 ## 1. Definicion
 
@@ -31,7 +31,31 @@ pequeño, moderno y composable. La gobernanza no intenta describir todos los
 artefactos: fija el canon, define precedencia, decide identidad y disciplina el
 uso de extensiones.
 
-Principio rector:
+**Que es KORA y para que sirve.** KORA es el repositorio, catalogo y sistema de
+produccion y mantenimiento de los artefactos que consumen o ejecutan sistemas
+LLM. No es una aplicacion tradicional: produce esos artefactos por un pipeline
+gobernado, los cataloga y resuelve por URN, los mantiene coherentes en el
+tiempo (checks, lifecycle, deprecacion) y proyecta los ejecutables a runtimes.
+La fuente de verdad es el filesystem con manifests validos; `docs/generated/`
+es derivado.
+
+KORA gestiona **tres tipos de artefacto, y solo tres**:
+
+1. **conocimiento** — archivos `.md` en estandar KORA/MD (`md-spec` +
+   `knowledge-spec`), hechos para **consumo** de sistemas LLM como contexto: se
+   leen, no se ejecutan.
+2. **agentes** — `AGENT.md` conforme a `autoria-spec`: definen actores.
+3. **skills** — `SKILL.md` conforme a `autoria-spec`: definen capacidades.
+
+Agentes y skills se **proyectan a runtimes** (`claude-code`, `codex`,
+`openclaw`, `hermes`) via transmutacion; el conocimiento no se proyecta, se
+consume. Las **specs** (`governance/`, `ontology/`, `serialization/`,
+`runtime/`) **no son artefactos**: son la ley que define que cuenta como
+artefacto valido. La **toolchain** los produce, valida, resuelve y mantiene. El
+termino "conocimiento" designa solo el tipo 1; nunca es paraguas de los otros
+dos.
+
+Principio rector (garantia formal de lo anterior):
 
 > KORA es **vector ontologico PMI × LFS** (`harness-spec`) + **shape unificado de autoria** (`autoria-spec`) + **transmutacion funtorial** (`transmutation-spec`).
 

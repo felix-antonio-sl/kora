@@ -1,16 +1,26 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:jointjs-open-source"
+  urn: urn:kora:artefacto:jointjs-open-source
   type: artefacto
   provenance:
-    created_by: "OpenAI Codex"
-    created_at: "2026-04-20"
-    source: "Skill especializada en JointJS open-source para runtimes de coding agent, con consulta obligatoria a la documentación oficial viva."
-version: "1.0.0"
+    created_by: OpenAI Codex
+    created_at: '2026-04-20'
+    source: Skill especializada en JointJS open-source para runtimes de coding agent,
+      con consulta obligatoria a la documentación oficial viva.
+version: 1.0.0
 status: activo
 nombre: JointJS Open-Source
-descripcion: "Especialista en JointJS open-source para Claude Code y Codex: implementa, integra, depura y explica JointJS consultando siempre la documentación oficial viva en docs.jointjs.com antes de responder."
-tags: [jointjs, diagramming, javascript, typescript, claude-code, codex, docs-live]
+descripcion: 'Especialista en JointJS open-source para Claude Code y Codex: implementa,
+  integra, depura y explica JointJS consultando siempre la documentación oficial viva
+  en docs.jointjs.com antes de responder.'
+tags:
+- jointjs
+- diagramming
+- javascript
+- typescript
+- claude-code
+- codex
+- docs-live
 lang: es
 extensions:
   kora:
@@ -20,52 +30,72 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 3, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 3
+      - 1
+      - 0
     presentacion: accion-primaria
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
     nivel_prescripcion: alto
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:kora:kb:catalogo-patrones-skills
+    - urn:kora:kb:cat-behavioral-preservation
     componible_con: []
 artefacto:
   perfil:
-    dominio: [jointjs, diagramming, javascript, typescript, documentacion-oficial]
+    dominio:
+    - jointjs
+    - diagramming
+    - javascript
+    - typescript
+    - documentacion-oficial
     disparadores:
-      - "pregunta sobre API de JointJS open-source"
-      - "implementacion de graph, paper, links, ports o shapes"
-      - "integracion de JointJS con frameworks o bundlers"
-      - "debugging de comportamiento o rendering en JointJS"
-      - "necesidad de distinguir JointJS OSS de JointJS+"
+    - pregunta sobre API de JointJS open-source
+    - implementacion de graph, paper, links, ports o shapes
+    - integracion de JointJS con frameworks o bundlers
+    - debugging de comportamiento o rendering en JointJS
+    - necesidad de distinguir JointJS OSS de JointJS+
     salidas:
-      - "respuesta breve y accionable con grounding en docs oficial"
-      - "codigo minimo util para JointJS OSS"
-      - "hipotesis de debugging priorizadas y verificables"
+    - respuesta breve y accionable con grounding en docs oficial
+    - codigo minimo util para JointJS OSS
+    - hipotesis de debugging priorizadas y verificables
   plan:
     estado_inicial: clasificar-consulta
     estado_terminal: respuesta-grounded
     estados:
-      - clasificar-consulta
-      - ubicar-seccion-oficial
-      - leer-docs-vivas
-      - responder-o-implementar
-      - respuesta-grounded
+    - clasificar-consulta
+    - ubicar-seccion-oficial
+    - leer-docs-vivas
+    - responder-o-implementar
+    - respuesta-grounded
   interfaz:
-    herramientas: [WebSearch, Read]
-    permisos: "Consulta live-docs en https://docs.jointjs.com/ antes de responder sobre JointJS OSS."
+    herramientas:
+    - WebSearch
+    - Read
+    permisos: Consulta live-docs en https://docs.jointjs.com/ antes de responder sobre
+      JointJS OSS.
     protocolos:
-      entrada: "consulta técnica, bug o implementación relacionada con JointJS open-source"
-      salida: "respuesta o código con mención explícita de la sección oficial consultada"
+      entrada: consulta técnica, bug o implementación relacionada con JointJS open-source
+      salida: respuesta o código con mención explícita de la sección oficial consultada
   invariantes:
     reglas_duras:
-      - "No responder de memoria sobre la API de JointJS si la documentación oficial puede verificarse."
-      - "Tratar https://docs.jointjs.com/ como fuente de verdad técnica."
-      - "Consultar la documentación oficial también para preguntas simples, no solo para temas complejos."
-      - "Si una feature parece ser de JointJS+, declararlo explícitamente y no presentarla como OSS."
-      - "No copiar bloques extensos de documentación oficial al output."
-      - "Marcar explícitamente cualquier inferencia no confirmada por la docs oficial."
+    - No responder de memoria sobre la API de JointJS si la documentación oficial
+      puede verificarse.
+    - Tratar https://docs.jointjs.com/ como fuente de verdad técnica.
+    - Consultar la documentación oficial también para preguntas simples, no solo para
+      temas complejos.
+    - Si una feature parece ser de JointJS+, declararlo explícitamente y no presentarla
+      como OSS.
+    - No copiar bloques extensos de documentación oficial al output.
+    - Marcar explícitamente cualquier inferencia no confirmada por la docs oficial.
 ---
 
 # JointJS Open-Source

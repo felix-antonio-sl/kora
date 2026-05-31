@@ -1,16 +1,26 @@
 ---
 _manifest:
-  urn: "urn:kora:artefacto:data-modeling"
+  urn: urn:kora:artefacto:data-modeling
   type: artefacto
   provenance:
-    created_by: "FS"
-    created_at: "2026-04-23"
-    source: "Migracion desde artifacts/skills/_TALLER/INBOX/data-modeling/SKILL.md (legacy overlay v1, 537 lineas en ingles) a shape unified v1.2 en espanol con compresion estructural y detalle canonico movido a referencias/"
-version: "1.0.0"
+    created_by: FS
+    created_at: '2026-04-23'
+    source: Migracion desde artifacts/skills/_TALLER/INBOX/data-modeling/SKILL.md
+      (legacy overlay v1, 537 lineas en ingles) a shape unified v1.2 en espanol con
+      compresion estructural y detalle canonico movido a referencias/
+version: 1.0.0
 status: activo
 nombre: data-modeling
-descripcion: "Modela datos con Entity-Relationship Diagrams (ERDs), data dictionaries y modelos conceptual/logico/fisico. Produce schemas documentados, ERDs en Mermaid y DDL para PostgreSQL o SQL Server. Usar al disenar bases de datos, auditar modelos o generar data dictionaries."
-tags: [data-modeling, erd, schema, disciplina, bases-de-datos]
+descripcion: Modela datos con Entity-Relationship Diagrams (ERDs), data dictionaries
+  y modelos conceptual/logico/fisico. Produce schemas documentados, ERDs en Mermaid
+  y DDL para PostgreSQL o SQL Server. Usar al disenar bases de datos, auditar modelos
+  o generar data dictionaries.
+tags:
+- data-modeling
+- erd
+- schema
+- disciplina
+- bases-de-datos
 lang: es
 extensions:
   kora:
@@ -20,28 +30,40 @@ extensions:
       xi: 1
       lambda: 0
       phi: 1
-      sigma: [1, 1, 2, 1, 0]
+      sigma:
+      - 1
+      - 1
+      - 2
+      - 1
+      - 0
     presentacion: estado-primario
     atlas:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, gemini]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - gemini
     nivel_prescripcion: medio
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:tde:kb:guia-tecnica-marco-gestion-datos
+    - urn:tde:kb:guia-tecnica-metadatos-documentos-expedientes
+    - urn:kora:kb:cat-skill-algebra
     componible_con:
-      - "urn:kora:artefacto:cat-thinking"
+    - urn:kora:artefacto:cat-thinking
 artefacto:
   perfil:
-    descripcion: "Habilidad de modelado de datos para convertir requerimientos en ERDs, data dictionaries, modelos logicos/fisicos y DDL documentado."
+    descripcion: Habilidad de modelado de datos para convertir requerimientos en ERDs,
+      data dictionaries, modelos logicos/fisicos y DDL documentado.
     dominio:
-      - modelado conceptual de datos
-      - normalizacion relacional
-      - diseno fisico de bases de datos
+    - modelado conceptual de datos
+    - normalizacion relacional
+    - diseno fisico de bases de datos
     salidas:
-      - ERDs
-      - data dictionaries
-      - DDL para PostgreSQL o SQL Server
+    - ERDs
+    - data dictionaries
+    - DDL para PostgreSQL o SQL Server
   interfaz:
     herramientas: []
     permisos:

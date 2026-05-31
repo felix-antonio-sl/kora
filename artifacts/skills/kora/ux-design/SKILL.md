@@ -44,7 +44,10 @@ extensions:
     - claude-code
     - codex
     nivel_prescripcion: medio
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:tde:kb:guia-calidad-web
+    - urn:tde:kb:recomendaciones-diseno-servicios-estado
+    - urn:tde:kb:guia-voz-y-tono
     componible_con: []
 artefacto:
   perfil:

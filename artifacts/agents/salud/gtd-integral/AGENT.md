@@ -40,7 +40,10 @@ extensions:
       metafora_relacional: centro-de-control
     entornos_objetivo:
     - openclaw
-    conocimiento_permitido: []
+    conocimiento_permitido:
+    - urn:pro:kb:david-allen-integral-definitivo-septiembre-2026
+    - urn:fxsl:kb:procrastination-sirois
+    - urn:pro:kb:mba-personal-kaufman
     componible_con:
     - urn:pro:artefacto:gtd-flow
   openclaw:

@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 
 from common import ROOT, run_cli
+from toolchain.kora_lib.transmute import _strip_inline_knowledge_contract
 
 
 class CodexSkillTransmuteTests(unittest.TestCase):
@@ -26,6 +27,16 @@ class CodexSkillTransmuteTests(unittest.TestCase):
         self.assertIn("name: jointjs-open-source", bundle)
         self.assertIn("description:", bundle)
         self.assertIn("https://docs.jointjs.com/", bundle)
+        self.assertIn("## Knowledge Contract", bundle)
+        self.assertIn("urn:kora:kb:catalogo-patrones-skills", bundle)
+
+    def test_strip_inline_knowledge_contract(self):
+        body = "## Operacion\n\nContenido.\n\n## Knowledge Contract\n\nContrato legado.\n"
+
+        projected = _strip_inline_knowledge_contract(body)
+
+        self.assertIn("## Operacion", projected)
+        self.assertNotIn("## Knowledge Contract", projected)
 
 
 if __name__ == "__main__":

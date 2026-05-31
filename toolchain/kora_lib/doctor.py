@@ -53,7 +53,7 @@ def _staging_counts() -> dict:
 def _last_handoff() -> tuple[Path | None, int | None]:
     """Devuelve (path-del-handoff-mas-reciente, dias-desde-hoy)."""
     candidates: list[Path] = []
-    for d in (KORA_ROOT / "docs" / "handoffs", KORA_ROOT / "docs" / "reports"):
+    for d in (KORA_ROOT / "docs" / "handoffs",):
         if not d.exists():
             continue
         for p in d.glob("*.md"):
@@ -90,7 +90,7 @@ def _handoffs_last_n_days(days: int) -> int:
     """Cuenta handoffs en los ultimos N dias (por nombre de archivo)."""
     cutoff = datetime.now(timezone.utc).date() - timedelta(days=days)
     count = 0
-    for d in (KORA_ROOT / "docs" / "handoffs", KORA_ROOT / "docs" / "reports"):
+    for d in (KORA_ROOT / "docs" / "handoffs",):
         if not d.exists():
             continue
         for p in d.glob("*.md"):
