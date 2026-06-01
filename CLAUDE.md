@@ -104,6 +104,12 @@ artifacts/skills/_TALLER/INBOX/         -> REVIEW/ -> artifacts/skills/{ns}/{nam
 Los directorios de staging son pre-categoriales. No representan namespace
 canonico hasta promocion.
 
+`_SCRIPTORIUM/INBOX/` no es bodega versionada. El material crudo de ingesta
+(PDF, DOCX, JSON dumps, TXT fuente, OCR, corpus externos) debe vivir fuera del
+repo y quedar representado por inventarios con hash/procedencia. En git solo
+deben entrar README, inventarios y material ya normalizado hacia REVIEW o
+productivo.
+
 ## Historia Relevante
 
 Antes del `2026-04-18`, el repo usaba la topologia legacy `specs/`, `AGENTS/`,

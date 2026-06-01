@@ -17,6 +17,12 @@ __pycache__/
 # Docs materializadas por toolchain; regenerables con `python3 toolchain/kora index`,
 # `python3 toolchain/kora kb-graph --json --orphans` y comandos relacionados.
 docs/generated/*
+
+# Material crudo de ingesta: preservar fuera del repo y dejar solo inventarios.
+artifacts/knowledge/_SCRIPTORIUM/INBOX/**
+!artifacts/knowledge/_SCRIPTORIUM/INBOX/
+!artifacts/knowledge/_SCRIPTORIUM/INBOX/README.md
+!artifacts/knowledge/_SCRIPTORIUM/INBOX/source-inventory-*.tsv
 # Vestigios v7 (ya eliminados; salvaguardia si reaparecen)
 /BUILD/
 /OPERATIONS/

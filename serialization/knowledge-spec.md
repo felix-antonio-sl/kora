@@ -78,7 +78,7 @@ pipeline e identidad.
 | Lifecycle conceptual | Maquina de estados `borrador -> publicado -> deprecado`; sin transiciones inversas. |
 | Artefacto publicado | Nodo con `status: publicado`, residente en `artifacts/knowledge/{ns}/...`, recuperable por el ecosistema. |
 | Artefacto en revision | Nodo con `status: borrador`, residente en `artifacts/knowledge/_SCRIPTORIUM/REVIEW/{ns}/...`, con URN provisional. |
-| Material crudo | Archivo pre-categorial sin URN asignado, residente en `artifacts/knowledge/_SCRIPTORIUM/INBOX/...`, no consumible como ley. |
+| Material crudo | Fuente pre-categorial sin URN asignado, no consumible como ley. Puede estar representada en `artifacts/knowledge/_SCRIPTORIUM/INBOX/...` mediante inventario, pero el corpus bruto no debe versionarse. |
 | Requirement | Predicado, constraint u obligacion publicada como nodo direccionable por URN. |
 | Productor canonico | Herramienta autorizada (skill, script, pipeline) para generar artefactos de una familia con garantia mecanica de sus invariantes (§9). |
 | Grafo derivado | Vista materializada de `KnowCat` para consulta, auditoria y routing. |
@@ -329,7 +329,7 @@ dedicado `_SCRIPTORIUM/`. No existe pipeline centralizado fuera de
 `artifacts/knowledge/`.
 
 ```
-artifacts/knowledge/_SCRIPTORIUM/INBOX/   <- material crudo, pre-categorial, sin URN asignado
+artifacts/knowledge/_SCRIPTORIUM/INBOX/   <- inventarios de material crudo, pre-categorial, sin URN asignado
 artifacts/knowledge/_SCRIPTORIUM/REVIEW/  <- borradores con URN provisional, status: borrador
 artifacts/knowledge/{ns}/...              <- productivo, status: publicado o deprecado
 ```
@@ -350,10 +350,13 @@ Graph      : artifacts/knowledge/ -> docs/generated/catalog.yml + kb-graph (kora
 
 Reglas:
 
-1. **Intake**: material crudo (texto, OCR, exports humanos) entra a
-   `_SCRIPTORIUM/INBOX/`. Los subdirectorios de `INBOX/` son **opacos al
-   toolchain**: no representan namespace KORA. El namespace solo se asigna
-   en `Normalize`.
+1. **Intake**: material crudo (texto, OCR, exports humanos) entra
+   conceptualmente a `_SCRIPTORIUM/INBOX/`, pero **no debe versionarse como
+   corpus bruto**. PDFs, DOCX, JSON dumps, TXT fuente, OCR y exports extensos
+   viven fuera del repo; `INBOX/` conserva inventarios con `sha256`, tamano,
+   procedencia y ubicacion externa. Los subdirectorios de `INBOX/` son
+   **opacos al toolchain**: no representan namespace KORA. El namespace solo se
+   asigna en `Normalize`.
 2. **Normalize**: el curador (humano o productor canonico) convierte el
    crudo a artefacto KORA/MD conforme a `md-spec §6`; el resultado pasa a
    `_SCRIPTORIUM/REVIEW/{ns}/...` con `status: borrador` y URN provisional
