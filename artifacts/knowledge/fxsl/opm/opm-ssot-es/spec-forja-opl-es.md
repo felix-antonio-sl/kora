@@ -7,7 +7,7 @@ _manifest:
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/spec-forja-opl.md;
       urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; libro OPM curado;
       transcripciones OPCloud; curso Dov Dori.
-version: 1.1.0
+version: 1.1.1
 status: publicado
 source_base: urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; urn:fxsl:kb:opm-es;
   app/src/opl; corpus OPCloud observado; curso Dov Dori.
@@ -795,7 +795,7 @@ Los modificadores `e` y `c` son **anotaciones INPUT-only**: solo aplican al lado
 
 **Emisión**: un enlace transformador (consumo/efecto) o habilitador (agente/instrumento) con modificador `e` emite la oración de evento correspondiente a su tipo. El **objeto**/estado disparador se nombra una vez como sujeto de `inicia` y reaparece en la cláusula relativa que realiza el enlace base. El agente colapsa disparo y habilitación en `inicia y maneja`.
 
-**Supresión**: si origen o destino tienen nombre placeholder, NO se emite (R-ENT-2). Un evento bajo abanico XOR/OR se realiza insertando `inicia` antes del verbo principal en la oración de abanico (`**B** inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**`), no como E\* individual.
+**Supresión**: si origen o destino tienen nombre placeholder, NO se emite (R-ENT-2). Un evento de efecto bajo abanico XOR/OR con **objeto** común y procesos alternativos se realiza como `**B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.`, no como E\* individual.
 
 **Tokenización**: span del **objeto**/estado disparador con `ref` al extremo Pre(P); `inicia` (e `inicia y maneja` para agente) token-clave de evento; la cláusula relativa reusa los tokens del enlace base (`consume`/`afecta`/`requiere`/`cambia … de … a`); `estado` entre backticks con `ref` (ETS\*, EHS\*). El sufijo de probabilidad (`Pr=p`) es un span con `hint`, no un hecho ontológico nuevo.
 
@@ -1510,6 +1510,8 @@ Rationale: `reglas §6.4`–`§6.8`, `§7`, `§11.2` y `opm-opl-es §11`–`§13
 
   Correcto (consumo convergente XOR): `*Procesar* consume exactamente uno de **A**, **B** o **C**.`
   Correcto (resultado divergente OR): `*Procesar* genera al menos uno de **A**, **B** o **C**.`
+  Correcto (efecto con objeto común y procesos alternativos): `**B** es afectado por exactamente uno de *P*, *Q* o *R*.`
+  Incorrecto: `**B** afecta a exactamente uno de los procesos *P*, *Q* o *R*.`
   Rationale: `reglas §7.2`–`§7.3`, `abanico.ts·oracionAbanico` (líneas 76, 96–121) y `opm-opl-es §11.2`–`§11.3`.
 
 - **R-FAN-3** (combinación abanico × modificador — condición): un abanico cuyos enlaces TODOS portan `c` **del mismo rol** se realiza con el patrón condicional sobre la oración de fan (no como C\* individuales por rama). Un abanico mixto (algunos `c`, otros sin control) NO DEBE realizarse con el patrón condicional; recae en la oración de fan directa.
@@ -1517,9 +1519,9 @@ Rationale: `reglas §6.4`–`§6.8`, `§7`, `§11.2` y `opm-opl-es §11`–`§13
   Correcto: `*Procesar* ocurre si exactamente uno de **A**, **B** o **C** existe, en cuyo caso *Procesar* consume exactamente uno de **A**, **B** o **C**, de lo contrario *Procesar* se omite.`
   Rationale: `abanico.ts·oracionAbanico` (líneas 89–94: `todosCondicionales && mismoTipo`) y `oracionAbanicoCondicional` (líneas 145–190); `reglas §7.4` y `opm-opl-es §11.4`.
 
-- **R-FAN-4** (combinación abanico × modificador — evento): un abanico bajo evento se realiza insertando `inicia` antes del verbo de la oración de fan (`**B** inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**`). El evento sobre fan, como todo evento, es INPUT-only (R-COMB-2): NO DEBE aplicarse a un fan de resultado.
+- **R-FAN-4** (combinación abanico × modificador — evento): un abanico de **efecto** bajo evento con **objeto** común y procesos alternativos se realiza con el objeto como disparador y como afectado: `**B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.`. NO DEBE emitirse `**B** ... afecta ... procesos` ni `que afecta el proceso que ocurre`, porque eso invierte la semántica de T3. El evento sobre fan, como todo evento, es INPUT-only (R-COMB-2): NO DEBE aplicarse a un fan de resultado.
 
-  Rationale: `reglas §7.4` (Evento + XOR/OR) y §5.1. GAP-FAN-EVENTO: ningún generador de `app/src/opl/generadores/abanico.ts` emite la forma de fan con `inicia`; solo existe la forma condicional (`oracionAbanicoCondicional`). La forma de evento sobre fan está canonizada pero sin generador.
+  Rationale: `reglas §7.4` (Evento + XOR/OR) y §5.1. `app/src/opl/generadores/abanico.ts` implementa el caso efecto objeto↔procesos; otros roles bajo evento permanecen en GAP-FAN-EVENTO.
 
 - **R-FAN-5** (estado especificado por rama): cada enlace de un fan PUEDE portar estado especificado independientemente. Cuando todas las ramas de un fan de consumo/resultado/efecto difieren solo por el `estado` de un mismo objeto, el fan se realiza como cambio de estado agrupado: `*P* cambia **Obj** a exactamente uno de \`s1\`, \`s2\` o \`s3\`.` (resultado/efecto saliente) o `*P* cambia **Obj** de exactamente uno de \`s1\`, \`s2\`.` (consumo/efecto entrante).
 
@@ -1579,7 +1581,8 @@ Para cada combinación con relevancia semántica/lógica, su **estatus**, la pla
 | C-16 | instrumento × — × XOR (divergente) | válida | `Exactamente uno de *P*, *Q* o *R* requiere **B**.` | R-FAN-2 |
 | C-17 | invocación × — × XOR/OR | válida | `*P* invoca exactamente uno de *Q* o *R*.` | R-FAN-2; invocación es proceso→proceso |
 | C-18 | consumo/efecto/instr × condición × XOR/OR (todas las ramas `c`, mismo tipo) | válida | `*P* ocurre si exactamente uno de **A**, **B** o **C** existe, en cuyo caso *P* consume exactamente uno de **A**, **B** o **C**, de lo contrario *P* se omite.` | R-FAN-3; abanico mixto recae en fan directo |
-| C-19 | cualquier transformador/habilitador × evento × XOR/OR (INPUT-only) | válida (canon) / GAP código | `**B** inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**.` | R-FAN-4; GAP-FAN-EVENTO |
+| C-19 | efecto × evento × XOR/OR (objeto común, procesos alternativos, INPUT-only) | válida / implementada | `**B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.` | R-FAN-4; `abanico.ts` + `parser.test` |
+| C-19b | otros transformadores/habilitadores × evento × XOR/OR (INPUT-only) | válida (canon) / GAP código | plantilla específica por rol | R-FAN-4; GAP-FAN-EVENTO |
 | C-20 | resultado × condición × XOR/OR | **inválida** | — | R-COMB-2; GAP-FAN-RESULTADO-COND cerrado: `abanico.ts` degrada a fan base sin `puede generarse` |
 | C-21 | consumo/resultado/efecto × — × XOR (ramas = estados de un objeto) | válida | `*P* cambia **Obj** a exactamente uno de \`s1\`, \`s2\` o \`s3\`.` | R-FAN-5; R-FAN-7 |
 | C-22 | resultado × — × XOR × probabilidad (fan probabilístico) | válida | `*P* genera exactamente uno de **A** \`Pr=0.6\`, **B** \`Pr=0.4\`.` | R-FAN-6; suma=1; GAP-PROB-SUPERFICIE cerrado |
@@ -1646,7 +1649,7 @@ Las siguientes combinaciones son **silencios de la SSOT** (`reglas §11.2`, R-ZN
 
 ### §8.5 GAPs de cobertura — combinatoria
 
-- GAP-FAN-EVENTO: `app/src/opl/generadores/abanico.ts` NO emite la forma de fan bajo evento (`inicia` + cuantificador, R-FAN-4 / C-19); solo `oracionAbanicoCondicional` cubre la combinación condicional. La forma de evento sobre fan es canónica pero sin generador.
+- GAP-FAN-EVENTO: parcial. `app/src/opl/generadores/abanico.ts` ya emite y `parsear.ts` ya reconoce el caso de efecto con objeto común y procesos alternativos (`**B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.`). Permanecen sin generador los otros roles bajo evento con fan.
 - GAP-FAN-RESULTADO-COND: cerrado. `abanico.ts·oracionAbanicoCondicional` degrada resultado+condición+fan a fan base; `puede generarse` ya no se exporta.
 - GAP-PROB-SUPERFICIE: cerrado. `procedural.ts·sufijoProbabilidad` y `abanico.ts` emiten `Pr=p`; `parsear.ts` lo trata como anotación de superficie y preserva el hecho base.
 - GAP-FAN-M: no hay generador para `exactamente m de f` / `al menos m de f` (R-FAN-8 / C-30 sentido m-de-f); `abanico.ts` solo emite el caso `m=1`.
@@ -2738,7 +2741,7 @@ Leyenda de **Estado**:
 | §8 | Distribución/migración de enlaces por OPD | `bloquesJerarquicos.ts·agruparOracionesPorOpd` (operación de modelo, `reglas §8.11`) | — | — | alineado |
 | §8.3 | Resolución de colisión de rol / precedencia recomposición | kernel `modelo/**` (fuera de capa OPL) | — | — | alineado |
 | §7.7 / §9 | Guard anti-coordinación de enlaces en refinamiento | no-aplicable hasta GAP-COMPOSICION; protección por construcción | — | — | cerrado-no-aplica |
-| §7.6 | Fan bajo evento `inicia` + cuantificador (C-19) | — (`abanico.ts` solo condicional) | — | — | GAP-FAN-EVENTO |
+| §7.6 | Fan bajo evento `inicia` + cuantificador (C-19) | `abanico.ts` parcial: efecto con objeto común y procesos alternativos | `parsear.ts·parsearAbanicoEvento` parcial | `generar.test` / `parser.test` | parcial; GAP-FAN-EVENTO restante |
 | §7.6 | Fan resultado+condición (C-20, `puede generarse`) | `abanico.ts·oracionAbanicoCondicional` degrada a fan base | — | `abanico.test.ts` | cerrado |
 | §7.6 | Fan probabilístico `Pr=p` por rama (C-22) | `abanico.ts` / `procedural.ts·sufijoProbabilidad` (`Pr=p`) | `parsear.ts` descarta `Pr=p` como anotación | `abanico.test.ts` / `procedural.test.ts` | alineado |
 | §7.6 | Fan `m de f` (R-FAN-8) | — (`abanico.ts` solo `m=1`) | — | — | GAP-FAN-M |
@@ -2796,7 +2799,7 @@ Lista consolidada de todos los marcadores `GAP-*` (sección de origen · descrip
 | GAP-CX-PARSER | §7.1 | `se descompone en` se genera pero no hay regex que la reconstruya como refinamiento. |
 | GAP-FIXTURE-DESCOMPOSICION | §7.1 | Sin fixture roundtrip dedicado de descomposición/despliegue. |
 | GAP-COMP-GUARDA | §7.7 / §9 | Cerrado-no-aplica: guard pendiente solo cuando exista GAP-COMPOSICION; hoy la protección es por construcción atómica. |
-| GAP-FAN-EVENTO | §7.6 | `abanico.ts` no emite fan bajo evento (`inicia` + cuantificador, C-19). |
+| GAP-FAN-EVENTO | §7.6 | Parcial: efecto con objeto común y procesos alternativos cerrado; otros roles bajo evento siguen sin generador. |
 | GAP-FAN-RESULTADO-COND | §7.6 | Cerrado: fan resultado+condición degrada a fan base; `puede generarse` retirado. |
 | GAP-PROB-SUPERFICIE | §7.6 | Cerrado: export OPL emite `Pr=p` y retira el sufijo porcentual legacy. |
 | GAP-FAN-M | §7.6 | Sin generador para `exactamente m de f` / `al menos m de f` (solo `m=1`). |

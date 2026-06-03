@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-27'
     source: "Consolidacion SSOT OPM v3.0.0: capa textual canonica del corpus OPM-ES (gramatica OPL en espanol)."
-version: 3.0.0
+version: 3.0.1
 status: published
 source_base: "ssot/opm-opl-es.md (v2.0.0); opm-opl-es.md (v2.1.0-ampliada.4)"
 derived_from:
@@ -510,7 +510,7 @@ Gráficamente: arco discontinuo simple. EN: "exactly one of". ES: "exactamente u
 | Resultado conv. | Exactly one of P, Q, or R yields B. | Exactamente uno de *P*, *Q* o *R* genera **B**. |
 | Resultado div. | P yields exactly one of A, B, or C. | *P* genera exactamente uno de **A**, **B** o **C**. |
 | Efecto (objetos) | P affects exactly one of A, B, or C. | *P* afecta exactamente uno de **A**, **B** o **C**. |
-| Efecto (procesos) | Exactly one of P, Q, or R affects B. | Exactamente uno de *P*, *Q* o *R* afecta **B**. |
+| Efecto (procesos) | B is affected by exactly one of P, Q, or R. | **B** es afectado por exactamente uno de *P*, *Q* o *R*. |
 | Agente | B handles exactly one of P, Q, or R. | **B** maneja exactamente uno de *P*, *Q* o *R*. |
 | Instrumento | Exactly one of P, Q, or R requires B. | Exactamente uno de *P*, *Q* o *R* requiere **B**. |
 | Invocación div. | P invokes exactly one of Q or R. | *P* invoca exactamente uno de *Q* o *R*. |
@@ -531,13 +531,13 @@ Los abanicos XOR y OR se combinan con modificadores evento ("e") y condición ("
 
 **Evento + XOR** — insertar "inicia" antes del verbo principal:
 
-- EN: `B initiates exactly one of P, Q, or R, which affects B.`
-- ES: **B** inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**.
+- EN: `B initiates exactly one of P, Q, or R, and is affected by the occurring process.`
+- ES: **B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.
 
 **Condición + XOR** — insertar "si … existe/está en estado … de lo contrario … se omite":
 
-- EN: `Exactly one of P, Q, R occurs if B exists, otherwise skipped.`
-- ES: Exactamente uno de *P*, *Q* o *R* ocurre si **B** existe, de lo contrario se omite.
+- EN: `Exactly one of P, Q, R occurs if B exists, in which case it affects B, otherwise skipped.`
+- ES: Exactamente uno de *P*, *Q* o *R* ocurre si **B** existe, en cuyo caso afecta **B**, de lo contrario se omite.
 
 Reemplazar "exactamente" por "al menos" para obtener la variante OR.
 

@@ -5,7 +5,7 @@ _manifest:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-05-31'
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/reglas-opm-estrictas.md
-version: 1.1.0
+version: 1.1.1
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; opm-opl-es.md v3.0.0; opm-visual-es.md v3.0.0;
   metodologia-opm-es.md v3.0.0; auditoría deep-opm-pro de canon OPM 2026-05-26.
@@ -1024,7 +1024,7 @@ Restricciones: superficie EBNF normativa `=`, `<`, `>`, `<=`, `>=` y `en {conjun
 | Resultado convergente | Exactamente uno de *P*, *Q* o *R* genera **B**. | Al menos uno de *P*, *Q* o *R* genera **B**. |
 | Resultado divergente | *P* genera exactamente uno de **A**, **B** o **C**. | *P* genera al menos uno de **A**, **B** o **C**. |
 | Efecto (objetos) | *P* afecta exactamente uno de **A**, **B** o **C**. | *P* afecta al menos uno de **A**, **B** o **C**. |
-| Efecto (procesos) | Exactamente uno de *P*, *Q* o *R* afecta **B**. | Al menos uno de *P*, *Q* o *R* afecta **B**. |
+| Efecto (procesos) | **B** es afectado por exactamente uno de *P*, *Q* o *R*. | **B** es afectado por al menos uno de *P*, *Q* o *R*. |
 | Agente | **B** maneja exactamente uno de *P*, *Q* o *R*. | **B** maneja al menos uno de *P*, *Q* o *R*. |
 | Instrumento | Exactamente uno de *P*, *Q* o *R* requiere **B**. | Al menos uno de *P*, *Q* o *R* requiere **B**. |
 | Invocación divergente | *P* invoca exactamente uno de *Q* o *R*. | *P* invoca al menos uno de *Q* o *R*. |
@@ -1034,11 +1034,11 @@ Restricciones: superficie EBNF normativa `=`, `<`, `>`, `<=`, `>=` y `en {conjun
 
 **Evento + XOR/OR** — insertar "inicia" antes del verbo principal:
 
-- *B* inicia exactamente uno de *P*, *Q* o *R*, que afecta **B**.
+- **B** inicia exactamente uno de *P*, *Q* o *R*, y es afectado por el proceso que ocurre.
 
 **Condición + XOR/OR** — insertar "ocurre si … existe / está en estado … de lo contrario … se omite":
 
-- Exactamente uno de *P*, *Q* o *R* ocurre si **B** existe, de lo contrario se omite.
+- Exactamente uno de *P*, *Q* o *R* ocurre si **B** existe, en cuyo caso afecta **B**, de lo contrario se omite.
 
 - **R-FAN-EST-1** (`V-15`, `V-237` aplicado a fans): cada enlace individual del fan PUEDE tener o no estado especificado independientemente.
 - **R-FAN-PROB-1** (`§11.5`): un abanico probabilístico DEBE declarar `Pr=p` por enlace y suma total `1`.
