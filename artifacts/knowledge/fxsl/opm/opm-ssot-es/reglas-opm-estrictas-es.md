@@ -5,7 +5,7 @@ _manifest:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-05-31'
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/reglas-opm-estrictas.md
-version: 1.1.1
+version: 1.1.2
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; opm-opl-es.md v3.0.0; opm-visual-es.md v3.0.0;
   metodologia-opm-es.md v3.0.0; auditoría deep-opm-pro de canon OPM 2026-05-26.
@@ -244,6 +244,10 @@ Una **cosa** es una de exactamente dos clases (`SSOT-iso §Cosas`):
 - **R-EJEC-1** (`SSOT-iso §Modelos conceptuales y de ejecución`): el modelo conceptual DEBE describir patrones de estructura y comportamiento; NO DEBE confundirse con una ocurrencia operacional.
 - **R-EJEC-3**: el estado de runtime NO DEBE persistirse como canon conceptual salvo snapshot declarado.
 - **R-EJEC-6**: todo runtime DEBE seguir los enlaces, condiciones, eventos, duración y reglas de transformación declaradas por el modelo conceptual; NO DEBE introducir semántica externa silenciosa.
+- **R-EJEC-7** (`SSOT-metod §10.1-10.3`, `R-ECA-1..4`): durante simulación, un enlace con modificador `c` sobre consumo, efecto, agente o instrumento DEBE evaluarse antes de aplicar transiciones, duración, cambios de valor o salidas del proceso. Si la condición falla, el proceso DEBE omitirse por bypass, NO esperar.
+- **R-EJEC-8** (`SSOT-metod §10.2-10.3`): ante múltiples condiciones de entrada al mismo proceso, la ejecución exige semántica AND (todas satisfechas); la omisión exige semántica OR (la falla de cualquiera omite el proceso). La omisión por condición DEBE preceder a cualquier espera o diagnóstico por enlaces no condicionales.
+- **R-EJEC-9** (`R-INV-1`, `SSOT-metod §10.8`): al terminar exitosamente un proceso con invocación explícita `Proceso → Proceso`, el runtime DEBE tomar el proceso invocado como siguiente paso lógico. La auto-invocación es un bucle por invocación al mismo proceso. Un proceso omitido por condición NO DEBE disparar sus invocaciones de salida.
+- **R-EJEC-10**: una herramienta PUEDE acotar bucles no terminales durante simulación con un límite de seguridad y diagnóstico visible; ese límite es política de runtime, NO hecho OPM nuclear ni OPL.
 
 ### 2.9 Metamodelo OPM
 

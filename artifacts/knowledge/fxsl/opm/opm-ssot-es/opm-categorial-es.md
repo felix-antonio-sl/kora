@@ -7,8 +7,8 @@ _manifest:
     source: /home/felix/projects/deep-opm-pro/docs/capa-categorial.md
 version: 1.2.0
 status: publicado
-source_base: opm-iso-19450-es.md v3.0.0; reglas-opm-estrictas-es.md v1.1.0; metodologia-forja-es.md
-  v1.4.0; spec-forja-opl-es.md v1.1.0; corpus ICAS-BoK v1.0.0; capa categorial verificada
+source_base: opm-iso-19450-es.md v3.0.0; reglas-opm-estrictas-es.md v1.1.2; metodologia-forja-es.md
+  v1.4.1; spec-forja-opl-es.md v1.1.0; corpus ICAS-BoK v1.0.0; capa categorial verificada
   por leyes en deep-opm-pro (app/src/leyes/), incluido el eje vertical (F-V1 adjunción,
   F-V2 fibración) en refinamiento-adjuncion.test.ts y el enriquecimiento cuantitativo
   como Cost-category (F-D3) en costoCategoria.ts + enriquecimiento-cost.test.ts.
@@ -111,7 +111,7 @@ Este puente es conocimiento; las **reglas normativas** correspondientes viven en
 - `urn:fxsl:kb:reglas-opm-estrictas-es §Anexo C` — reglas `R-CAT-LIN` (linealidad), `R-CAT-EQ` (equivalencia por frontera), `R-CAT-COMP` (composición).
 - `urn:fxsl:kb:metodologia-forja-opm-es §A0.4` — equivalencia funcional de realizaciones como cierre del método A0; criterio in-zoom <-> out-zoom.
 - `urn:fxsl:kb:spec-forja-opl-es §24` — composición por interfaz en OPL (unión deduplicada de párrafos).
-- Implementación verificada en `deep-opm-pro`: `app/src/modelo/{hechos,composicion,equivalencia,razonamiento,simulacion}/` y leyes falsificables en `app/src/leyes/` (`law-composicion-*`, `law-derivacion-no-contradice`, integración S⊑F0 / dualidad S->F3 / F1<->S / F2<->S). El **eje vertical** se verifica en `app/src/modelo/equivalencia/verticalidad.ts` (`firmaFronteraEntidad`, `verificarLiftCartesianoFrontera`) y `app/src/leyes/refinamiento-adjuncion.test.ts` (F-V1 adjunción incl. despliegue e identidades triangulares, F-V2 fibración, puente F-V1<->F-D2). El **enriquecimiento en Cost** (F-D3) en `app/src/modelo/simulacion/costoCategoria.ts` (`costoDeCamino`, `categoriaDeCosto`) y `app/src/leyes/enriquecimiento-cost.test.ts`. Cada ley con control de no-tautología. Síntesis viva: `docs/capa-categorial.md` del repo.
+- Implementación verificada en `deep-opm-pro`: `app/src/modelo/{hechos,composicion,equivalencia,razonamiento,simulacion}/` y leyes falsificables en `app/src/leyes/` (`law-composicion-*`, `law-derivacion-no-contradice`, integración S⊑F0 / dualidad S->F3 / F1<->S / F2<->S, condiciones/loops por invocación). El **eje vertical** se verifica en `app/src/modelo/equivalencia/verticalidad.ts` (`firmaFronteraEntidad`, `verificarLiftCartesianoFrontera`) y `app/src/leyes/refinamiento-adjuncion.test.ts` (F-V1 adjunción incl. despliegue e identidades triangulares, F-V2 fibración, puente F-V1<->F-D2). El **enriquecimiento en Cost** (F-D3) en `app/src/modelo/simulacion/costoCategoria.ts` (`costoDeCamino`, `categoriaDeCosto`) y `app/src/leyes/enriquecimiento-cost.test.ts`. Cada ley con control de no-tautología. Síntesis viva: `docs/capa-categorial.md` del repo.
 
 ## 5. Regla de uso
 

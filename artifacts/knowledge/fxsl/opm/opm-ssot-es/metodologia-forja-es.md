@@ -7,7 +7,7 @@ _manifest:
     source: Destilacion korificada autonoma del manual metodologico OPM (urn:fxsl:kb:manual-metodologico-opm-es)
       + lecciones forjadas modelando HODOM en opforja (deep-opm-pro). SSOT primaria
       de metodo OPM-en-opforja.
-version: 1.4.0
+version: 1.4.1
 status: publicado
 source_base: metodologia-opm-es.md (v3.0.0); opm-iso-19450-es.md, opm-opl-es.md, opm-visual-es.md;
   libro OPM curado de Dov Dori (24 cap); curso Dov Dori (_ATOMIC_GRAPH); transcripciones
@@ -71,7 +71,7 @@ relations:
   - urn:fxsl:kb:manual-metodologico-opm-es
 ---
 
-# Metodología Forja — método de modelamiento OPM en opforja (v1.3.0)
+# Metodología Forja — método de modelamiento OPM en opforja (v1.4.1)
 
 SSOT **primaria y autónoma** del *método* de modelar OPM con la herramienta
 opforja (deep-opm-pro). Contiene todo el procedimiento (no requiere abrir otra
@@ -305,7 +305,7 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 - **Requisitos inferidos en reverse engineering**: en sistemas existentes, los requisitos pueden inferirse desde observaciones, desde otros requisitos (`flow-up`/`flow-down`) o desde comportamiento del modelo. Son hipótesis: deben conectarse con estructura/función downstream o quedar como brecha/predicción; mientras no se validen, no deben presentarse como cumplimiento ni como verdad del dominio.
 - **Layering de requisitos**: si un requisito tiene excepciones, bajarlo al contexto específico donde aplica; si no explica toda la arquitectura observada, buscar requisito upstream faltante. No crear requisitos nuevos si la arquitectura ya queda cubierta por los existentes.
 - **Brechas y predicciones**: un requisito sin realización observable, una estructura sin requisito que la explique, un intermedio con doble uso o una interfaz crítica no modelada generan una brecha. Cada brecha **DEBERÍA** terminar en predicción testeable, acotación de alcance o dato pendiente.
-- **Simulación**: recorrido en profundidad del árbol local; cruce a sub-modelo = transición explícita entre fronteras (no continuación de árbol global). Distinguir simulación conceptual (tokens) de ejecución computacional (fórmulas).
+- **Simulación**: recorrido en profundidad del árbol local; cruce a sub-modelo = transición explícita entre fronteras (no continuación de árbol global). Distinguir simulación conceptual (tokens) de ejecución computacional (fórmulas). Condiciones `c` se simulan como bypass/omisión, no como espera; iteraciones se modelan con invocación/autoinvocación, no con un primitivo `while`.
 - **Simulación de configuraciones**: cuando hay variantes vivas, modelar el genérico + especializaciones/instancias seleccionables y comparar configuraciones por matriz de resultados. La simulación apoya decisión; no reemplaza requisitos mínimos, juicio stakeholder ni restricciones normativas.
 - **Emergencia**: la arquitectura **DEBE** producir ≥1 capacidad emergente; sin ella, no es un sistema MBSE.
 
@@ -319,6 +319,7 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 **Prácticas de validación continua** (no solo al cierre):
 - **Bimodalidad activa**: tras *cada* edición gráfica, **leer la oración OPL generada** para cazar el enlace mal elegido en el sitio (confundir resultado por efecto, o consumo por instrumento, produce OPL sin sentido — `*Manufactura* consume **Plano**` cuando debía `requiere`). Detectar al crear evita la propagación de costo exponencial y engancha al experto de dominio no técnico. La bimodalidad no es solo invariante (A8.2): es **procedimiento**.
 - **Simulación conceptual como compuerta de flujo**: correr la animación de tokens para verificar orden, precondiciones, ramas de condición y bucles **antes** de cualquier cómputo. Repetirla tras cada edición gráfica significativa; si se acumulan cambios antes de simular, el error lógico se vuelve difícil de localizar. Es el modo barato de cazar errores de orden/precedencia; si el orden observado ≠ esperado, revisar alturas de subprocesos y enlaces de control (cf. A3.1). *(Si opforja v0 no anima, la disciplina equivalente es ejecutar el gate tripartito paso a paso, no al final.)*
+- **Condiciones y bucles ejecutables en opforja**: una condición incumplida debe verse como paso omitido en la traza; una invocación debe alterar el siguiente proceso observado; una autoinvocación debe repetir hasta que una condición de salida omita o derive la ejecución. Si el bucle no tiene salida, el runtime debe cortar por límite de seguridad con diagnóstico, no colgar la sesión.
 - **Validación por niveles**: probar primero fragmentos/OPDs críticos, luego escenarios de sistema. Para configuraciones, ejecutar una matriz de casos representativos antes de convertir una variante en decisión de diseño.
 - **Validación stakeholder separada**: un OPD puede ser OPM-válido y no ser útil para decidir. Cerrar modelos prospectivos, task-analysis o digital twin con dos marcas: validez metodológica y adecuación/feedback stakeholder.
 - **Ledger de investigación**: en modo reverse/MBRSE, cerrar cada OPD con cuatro preguntas: (1) ¿qué requisito explica esta estructura?, (2) ¿qué estructura satisface este requisito?, (3) ¿qué hecho observado quedó sin explicación?, (4) ¿qué predicción o prueba sale de la brecha? Si las cuatro respuestas son vacías, el OPD probablemente solo documenta, no investiga.
@@ -639,6 +640,17 @@ Técnicas observadas en **OPCloud** (la herramienta de referencia OPM, análoga 
 - **Análisis de modelo**: informativity grading (clasifica OPL, detecta precedencias/in-out faltantes), missing-knowledge identification (ML, umbral de confianza), generación de requisitos por IA. → mecaniza A8.
 - **Sub-modelo** (realización de LF-04): gesto "connect submodel" sobre el thing mínimo (1 objeto + 1 proceso por exhibición e instrumento; **un solo proceso**; sin refinar); nombre `<main> <sub>` controlado desde el padre; lazy-load; tres estados de sync (descargado / cargado-sincronizado / cargado-no-sincronizado); compartidas se ven transparentes; desconectar es irreversible y en ambos lados.
 
+## F.2 Runtime opforja — condiciones y bucles (estado verificado 2026-06-03)
+
+Realización canónica implementada en `deep-opm-pro` sin copiar gestos OPCloud ni añadir primitiva OPM:
+
+- **Condición `c`** sobre consumo, efecto, agente o instrumento: si el objeto/estado condicionante no existe o no está vigente, la traza marca el proceso como `omitido`, no aplica transiciones/cambios/duración/salidas y avanza al siguiente paso secuencial.
+- **Múltiples condiciones**: AND para ejecutar; OR para omitir. La omisión por condición precede a cualquier espera o diagnóstico por precondición no condicional.
+- **Invocación explícita** `Proceso → Proceso`: al terminar el proceso origen, la simulación salta al proceso destino como siguiente paso lógico.
+- **Autoinvocación**: se ejecuta como bucle por invocación al mismo proceso. El bucle terminal canónico usa una condición/decisión que, al fallar, omite el proceso y permite salir. Un límite de seguridad bloquea bucles sin salida y deja diagnóstico runtime.
+- **Limitación conocida**: la ausencia de objetos sin estados no se infiere todavía como token consumible; para expresar ausencia/presencia ejecutable usar estados explícitos `existente`/`no-existente` o estado específico del objeto condicionante.
+- **Artefactos ejecutables**: `app/src/modelo/simulacion/runner.ts`, `app/src/modelo/simulacion/integracionHechos.ts`, `app/src/modelo/simulacion/runner.test.ts`, `app/src/leyes/integracion-ss-fs.test.ts`.
+
 ---
 
 ## Bitácora del artefacto
@@ -651,3 +663,4 @@ Técnicas observadas en **OPCloud** (la herramienta de referencia OPM, análoga 
 | 2026-05-31 | v1.2.1 — ajuste de mesa Asto·Besto·Resto: A7 distingue requisito normativo/declarado/inferido y bloquea tratar inferencias como norma o hecho demostrado; LF-08/LF-09/LF-10 declaran `usa: LF-07`; campo de realización reformulado como principio metodológico general, adaptado a opforja pero no dependiente de capacidades específicas de la herramienta. |
 | 2026-05-31 | v1.3.0 — revisión profunda y paralelizada de cinco casos OPM reales: OPM-TA humano-máquina (`48384`), blockchain/AI CPS (`block`), digital twin FPP (`fpp`), torneado optimizado/DT (`SE_8233`) y seguridad IoT configurable (`securing`). **Nuevo/refinado**: A0.3 intención→función→forma; A1.4 modos de aplicación real; A2.1 degradación como atributo medido; A2.4-A2.6 lentes SD, anti-función y beneficio stakeholder; A3.1 límite práctico de ~5 subprocesos procedimentales; A3.3 guard vista vs mecanismo; A4.6 viewpack arquitectónico; §9.28-§9.38; A7 métricas con polaridad, fórmula como instrumento, procedencia de datos y simulación de configuraciones; A8 simulación tras edición significativa, validación por niveles y validación stakeholder; **LF-11..LF-18** como propuestas. Mesa: no elevar extensiones de herramienta ni decisiones de caso a norma OPM; todos los principios quedan como método lifteable y general, con opforja solo como adaptación. |
 | 2026-06-03 | v1.4.0 — A0.4 equivalencia funcional de realizaciones alternativas (cierre de A0.1): dos realizaciones son intercambiables si comparten **firma de frontera** (roles netos sobre entidades de frontera, abstrayendo el interior); A0.4a criterio operativo in-zoom↔out-zoom (la descomposición DEBE preservar la frontera del proceso abstracto; checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA`). Lectura categorial (2-célula/equivalencia, `urn:fxsl:kb:icas-higher-categories`) bajo la superficie, nunca expuesta al modelador; verificada en deep-opm-pro (capa categorial F2). Coherente con `reglas-opm-estrictas-es §Anexo C / R-CAT-EQ`. |
+| 2026-06-03 | v1.4.1 — condiciones y loops ejecutables en opforja: `c` como bypass/omisión, múltiples condiciones AND/OR, invocación como salto de proceso, autoinvocación como bucle con salida condicional y límite runtime. Anclado a `reglas-opm-estrictas-es R-EJEC-7..10` y leyes de simulación/integración Ss↔Fs. |
