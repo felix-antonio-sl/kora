@@ -5,11 +5,12 @@ _manifest:
     created_by: deep-opm-pro/Claude + custodio KORA
     created_at: '2026-06-03'
     source: /home/felix/projects/deep-opm-pro/docs/capa-categorial.md
-version: 1.0.0
+version: 1.1.0
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; reglas-opm-estrictas-es.md v1.1.0; metodologia-forja-es.md
   v1.4.0; spec-forja-opl-es.md v1.1.0; corpus ICAS-BoK v1.0.0; capa categorial verificada
-  por leyes en deep-opm-pro (app/src/leyes/).
+  por leyes en deep-opm-pro (app/src/leyes/), incluido el eje vertical (F-V1 adjunción,
+  F-V2 fibración) en app/src/leyes/refinamiento-adjuncion.test.ts.
 derived_from:
 - urn:fxsl:kb:opm-es
 - urn:fxsl:kb:opd-es
@@ -20,6 +21,8 @@ derived_from:
 - urn:fxsl:kb:icas-efectos
 - urn:fxsl:kb:icas-universales
 - urn:fxsl:kb:icas-higher-categories
+- urn:fxsl:kb:icas-adjunciones
+- urn:fxsl:kb:icas-extension
 scope: 'Puente OPM <-> teoría de categorías (ICAS-BoK): mapa de las primitivas y
   mecanismos de OPM a las construcciones categoriales canónicas que los modelan. Es
   la "nota al margen formal" (metodologia-forja §0.2-0.3) canonizada en un artefacto
@@ -35,6 +38,7 @@ tags:
 - puente
 - opforja
 - eje-horizontal
+- eje-vertical
 lang: es
 ---
 
@@ -53,7 +57,7 @@ Este documento es un **puente** entre dos corpus de la SSOT: la familia OPM (`ur
 | Objetos, procesos, enlaces | objetos y morfismos de una categoría | `urn:fxsl:kb:icas-composicion` |
 | Hecho OPM (denotación atómica del modelo) | elemento del haz de hechos (presheaf) | `urn:fxsl:kb:icas-topoi` |
 | Pegado de OPDs (consistencia entre vistas del mismo modelo) | sheaf / gluing sobre el cubrimiento de OPDs | `urn:fxsl:kb:icas-topoi` |
-| Refinamiento (in-zoom / unfold) <-> abstracción (out-zoom / fold) | fibración / extensión entre niveles | `urn:fxsl:kb:icas-extension` |
+| Refinamiento (in-zoom) <-> abstracción (out-zoom) | adjunción in-zoom ⊣ out-zoom (unit/counit) + fibración de Grothendieck (lift cartesiano de frontera) | `urn:fxsl:kb:icas-adjunciones`, `urn:fxsl:kb:icas-extension` |
 | Composición de modelos por interfaz compartida | pushout / structured cospan | `urn:fxsl:kb:icas-universales` |
 | Equivalencia de realizaciones (mismo efecto, interior distinto) | 2-célula / equivalencia por firma de frontera | `urn:fxsl:kb:icas-higher-categories`, `urn:fxsl:kb:icas-comparacion` |
 | Simulación (desplegar el comportamiento) | anamorfismo (unfold de una coalgebra) | `urn:fxsl:kb:icas-efectos` |
@@ -69,6 +73,12 @@ OPM tiene el **eje vertical** (refinamiento <-> abstracción) muy desarrollado e
 - **Equivalencia** = igualdad de firma de frontera (`icas-higher-categories`): dos realizaciones son funcionalmente intercambiables si presentan el mismo efecto observable sobre su contorno, aunque su interior difiera.
 - **Linealidad** = monoidalidad no-cartesiana (`icas-composicion-estructura`): un recurso que se consume no se duplica; dos consumidores del mismo recurso lineal son un conflicto.
 
+El **eje vertical**, siempre maduro como *mecanismo*, carecía de un invariante que lo protegiera; ahora también tiene lectura categorial verificada:
+
+- **Adjunción in-zoom ⊣ out-zoom** (`icas-adjunciones`): refinar y luego abstraer preserva exactamente la **frontera** del proceso (la *unit* η es iso sobre la frontera, "módulo detalle añadido"); in-zoom es idempotente. Es la garantía de coherencia del eje más usado de OPM.
+- **Fibración de Grothendieck** (`icas-extension`): el árbol de OPDs fibra sobre la jerarquía de refinamiento; cada enlace derivado del hijo es el **lift cartesiano** de un enlace de frontera del padre (existencia + unicidad + cambio de base coherente). "Traer" un enlace entre niveles = cambio de base funtorial.
+- **Puente con la bisimulación:** la frontera que la bisimulación de un in-zoom ejerce es la que la adjunción preserva — lo que convierte la coherencia de frontera de hipótesis en teorema verificable.
+
 ## 3. La dualidad central: simulación y razonamiento
 
 La pieza unificadora (`urn:fxsl:kb:icas-efectos`): **simulación (anamorfismo / unfold) y razonamiento (catamorfismo / fold) son duales sobre el mismo sustrato** — el haz de hechos del modelo. La simulación despliega el comportamiento paso a paso; el razonamiento colapsa la estructura a inferencias. Recorren **el mismo grafo de transición de estados**, en sentidos opuestos: lo que la simulación abre, el razonamiento puede cerrar. La consulta de alcanzabilidad de estados es el dual estático del recorrido dinámico.
@@ -80,7 +90,7 @@ Este puente es conocimiento; las **reglas normativas** correspondientes viven en
 - `urn:fxsl:kb:reglas-opm-estrictas-es §Anexo C` — reglas `R-CAT-LIN` (linealidad), `R-CAT-EQ` (equivalencia por frontera), `R-CAT-COMP` (composición).
 - `urn:fxsl:kb:metodologia-forja-opm-es §A0.4` — equivalencia funcional de realizaciones como cierre del método A0; criterio in-zoom <-> out-zoom.
 - `urn:fxsl:kb:spec-forja-opl-es §24` — composición por interfaz en OPL (unión deduplicada de párrafos).
-- Implementación verificada en `deep-opm-pro`: `app/src/modelo/{hechos,composicion,equivalencia,razonamiento,simulacion}/` y leyes falsificables en `app/src/leyes/` (`law-composicion-*`, `law-derivacion-no-contradice`, integración S⊑F0 / dualidad S->F3 / F1<->S / F2<->S). Síntesis viva: `docs/capa-categorial.md` del repo.
+- Implementación verificada en `deep-opm-pro`: `app/src/modelo/{hechos,composicion,equivalencia,razonamiento,simulacion}/` y leyes falsificables en `app/src/leyes/` (`law-composicion-*`, `law-derivacion-no-contradice`, integración S⊑F0 / dualidad S->F3 / F1<->S / F2<->S). El **eje vertical** se verifica en `app/src/modelo/equivalencia/verticalidad.ts` (`firmaFronteraEntidad`, `verificarLiftCartesianoFrontera`) y `app/src/leyes/refinamiento-adjuncion.test.ts` (F-V1 adjunción, F-V2 fibración, puente F-V1<->F-D2), cada ley con control de no-tautología. Síntesis viva: `docs/capa-categorial.md` del repo.
 
 ## 5. Regla de uso
 
