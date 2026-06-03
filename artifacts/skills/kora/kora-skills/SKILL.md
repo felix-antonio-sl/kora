@@ -7,17 +7,20 @@ _manifest:
     created_at: '2026-05-04'
     source: Reconstruccion fresca desde gobernanza, harness-spec, autoria-spec .
       No absorbe el stack meta-KORA historico marcado rebuild_required.
-version: 0.1.0
+version: 0.2.0
 status: activo
 nombre: kora-skills
-descripcion: Construye, revisa y mejora skills KORA canonicas con shape de autoria
-  vigente, proyeccion agentskills fiel y gates previas a transmutacion o deploy.
+descripcion: Construye, revisa, edita y mantiene skills KORA canonicas con shape
+  de autoria vigente, compatibilidad agentskills verificable y gates previas a
+  transmutacion o deploy.
 tags:
 - kora
 - skills
 - autoria
 - agentskills
 - construccion-agentica
+- mantenimiento
+- ciclo-vida
 - auditoria
 lang: es
 extensions:
@@ -40,10 +43,8 @@ extensions:
       forma_material: habilidad
       metafora_relacional: supertool
     entornos_objetivo:
-    - agentskills
     - claude-code
     - codex
-    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
@@ -58,10 +59,10 @@ extensions:
     - urn:kora:kb:agentskills-runtime-extension
     - urn:kora:kb:claude-code-runtime-extension
     - urn:kora:kb:codex-runtime-extension
-    - urn:kora:kb:opencode-runtime-extension
     - urn:agengai:kb:openclaw-runtime-extension
     - urn:kora:kb:meta-kora-rebuild-directive
     componible_con:
+      - urn:kora:artefacto:kora-agentic-lifecycle
       - urn:kora:artefacto:kora-agents
       - urn:kora:artefacto:cat-thinking
 artefacto:
@@ -75,16 +76,17 @@ artefacto:
     - agentskills
     disparadores:
     - crear una skill KORA nueva desde requerimientos
+    - mantener, editar o versionar un SKILL.md productivo o en staging
     - revisar o mejorar un SKILL.md contra autoria-spec y construction-spec
-    - normalizar una skill para proyeccion agentskills, codex, claude-code, opencode
-      u openclaw
+    - normalizar una skill para proyeccion codex, claude-code u openclaw
     - decidir si una capacidad portable sigue siendo habilidad o debe promoverse a
       agente
     - preparar transmutacion y deploy de una skill con gates verificadas
+    - deprecar, retirar o reactivar una skill con evidencia de lifecycle
     salidas:
     - SKILL.md canonico en artifacts/skills/_TALLER/REVIEW/ o diagnostico de bloqueo
     - blueprint minimo con vector, nivel_prescripcion, interfaz y conocimiento permitido
-    - reporte de fidelidad agentskills y riesgos de proyeccion runtime
+    - reporte de compatibilidad agentskills y riesgos de proyeccion runtime
     - lista de gates requeridas antes de promover, transmutar o deployar
   plan:
     estado_inicial: triaje
@@ -106,8 +108,8 @@ artefacto:
     - Bash
     - Write
     permisos: Lectura de specs KORA y escritura acotada a artifacts/skills/_TALLER/REVIEW/,
-      tests o docs de soporte cuando el operador pide construir o reparar skills.
-      No pushea ni despliega por si misma.
+      tests o docs de soporte cuando el operador pide construir, editar,
+      mantener o reparar skills. No pushea ni despliega por si misma.
     protocolos:
       entrada: intent, requisitos, path de skill o propuesta de capacidad portable
       salida: SKILL.md canonico, diagnostico accionable o handoff a kora-agents si
@@ -138,15 +140,17 @@ artefacto:
 
 ## Proposito
 
-Construir y revisar skills KORA desde el canon vigente. Esta skill guia al
-agente invocador para pasar de requerimientos a `SKILL.md` canonico, con forma
-material `habilidad` y proyeccion runtime posterior.
+Construir, revisar, editar y mantener skills KORA desde el canon vigente. Esta
+skill guia al agente invocador para pasar de requerimientos o deuda operacional
+a `SKILL.md` canonico, con forma material `habilidad` y proyeccion runtime
+posterior.
 
 ## Cuando Usar
 
 - Crear una skill KORA nueva.
 - Reconstruir una skill retirada o marcada `rebuild_required`.
 - Auditar un `SKILL.md` antes de promoverlo, transmutarlo o deployarlo.
+- Editar, versionar, deprecar o retirar una skill KORA existente.
 - Ajustar nivel de prescripcion, vector PMI x LFS, interfaz, conocimiento
   permitido o instrucciones.
 - Verificar fidelidad hacia agentskills y runtimes locales.
@@ -155,6 +159,8 @@ material `habilidad` y proyeccion runtime posterior.
 
 - Crear o mejorar agentes, subagentes o plataformas: usar
   `urn:kora:artefacto:kora-agents`.
+- Gestionar un ciclo end-to-end que cruce agentes y skills: usar
+  `urn:kora:artefacto:kora-agentic-lifecycle`.
 - Corregir specs KORA globales: usar la skill vigente de custodia normativa
   cuando este productiva.
 - Empaquetar runtime sin IR canonico verificado.
@@ -164,7 +170,7 @@ material `habilidad` y proyeccion runtime posterior.
 ## Workflow
 
 1. Clasificar el intent: `crear`, `reconstruir`, `mejorar`, `auditar`,
-   `promover`, `deprecar` o `bloqueado`.
+   `editar`, `mantener`, `promover`, `deprecar`, `retirar` o `bloqueado`.
 2. Cargar canon minimo con `python3 toolchain/kora resolve` para las URNs
    declaradas en `conocimiento_permitido`.
 3. Capturar requerimientos: objetivo observable, usuarios, disparadores,
@@ -174,8 +180,7 @@ material `habilidad` y proyeccion runtime posterior.
    a `kora-agents`.
 5. Materializar solo en `artifacts/skills/_TALLER/REVIEW/{name}/SKILL.md`
    salvo que el operador pida una edicion productiva explicita.
-6. Auditar contra `autoria-spec`, `harness-spec`,
-   `agent-skill-construction-spec` y `agentskills-runtime-extension`.
+6. Auditar contra `autoria-spec`, `harness-spec` y runtime-extension aplicable.
 7. Ejecutar gates proporcionales: `python3 toolchain/kora check --strict`,
    `python3 toolchain/kora lint-md` y transmutacion dry-run o real segun el
    objetivo.
@@ -190,6 +195,9 @@ material `habilidad` y proyeccion runtime posterior.
   estado propio, no es habilidad.
 - No introducir URNs no resolubles, paths duros como conocimiento gobernado ni
   placeholders decorativos.
+- `entornos_objetivo` no incluye runtimes pausados (`agentskills`, `opencode`,
+  `gemini`, `mastra`); agentskills queda como compatibilidad verificada, no como
+  target canonico.
 - El body debe ser conciso; recursos grandes van fuera y se cargan solo cuando
   hagan falta.
 - Toda perdida entre requerimiento, blueprint e IR debe quedar como descarte,
