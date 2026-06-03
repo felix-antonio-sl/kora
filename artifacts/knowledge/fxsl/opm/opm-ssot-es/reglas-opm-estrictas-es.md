@@ -5,7 +5,7 @@ _manifest:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-05-31'
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/reglas-opm-estrictas.md
-version: 1.0.0
+version: 1.1.0
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; opm-opl-es.md v3.0.0; opm-visual-es.md v3.0.0;
   metodologia-opm-es.md v3.0.0; auditoría deep-opm-pro de canon OPM 2026-05-26.
@@ -1461,6 +1461,26 @@ Al editar OPD:
 | `V-261` | **R-VIS-BRING-1E**: supresores `...` PUEDEN quedar solo si el perfil los declara como gramática auxiliar. |
 | `V-262` | **R-VIS-BRING-1F**: OPDs derivados por Bring DEBEN clasificarse como vista anclada o ad hoc. |
 | `V-263` | **R-VIS-BRING-1G**: toda operación Bring DEBE ser reversible o acotada por alcance declarado. |
+
+### Anexo C — Extensión categorial de opforja (linealidad, equivalencia funcional, composición)
+
+- **R-ANEXO-CAT-0**: este anexo declara reglas de la CAPA OPFORJA — extensiones formales sobre la base ISO 19450 que operacionalizan el **eje horizontal** de OPM (composición, equivalencia, linealidad). NO modifican ni reemplazan `opm-es`/`opd-es`/`opl-es`. La lectura categorial (teoría de categorías como semántica denotacional verificable *bajo* la superficie) NUNCA se expone al modelador (`metodologia-forja-es.md §0.2-0.3`); vive en `docs/capa-categorial.md` de deep-opm-pro y en el corpus ICAS-BoK (`urn:fxsl:kb:icas-sintesis` y familia). Cada regla de este anexo DEBE ser ejecutable por una ley verificable en `app/src/leyes/` del modelador.
+
+**C.1 — Linealidad (recurso consumible no clonable)**
+
+- **R-CAT-LIN-1**: un objeto PUEDE designarse `lineal` cuando representa un recurso que se consume y no se duplica (lectura: categoría monoidal no-cartesiana, `urn:fxsl:kb:icas-composicion-estructura`). Es una dimensión designable adicional a esencia y afiliación; NO es designación ISO 19450 y NO DEBE alterar la gramática visual ni OPL base.
+- **R-CAT-LIN-2**: un objeto `lineal` consumido por dos o más procesos sin ruta exclusiva (XOR) que los separe DEBE señalarse como conflicto de linealidad. Severidad: mejora metodológica (NO bloqueo estructural ISO). Ley ejecutable: `law-composicion-respeta-lineal`.
+
+**C.2 — Equivalencia funcional por firma de frontera**
+
+- **R-CAT-EQ-1**: dos realizaciones alternativas de un mismo proceso son funcionalmente equivalentes si presentan la misma FIRMA DE FRONTERA — el conjunto de roles netos `entidad|tipoEnlace|rol` sobre las entidades de frontera — aunque su interior difiera (lectura: 2-célula / equivalencia, `urn:fxsl:kb:icas-higher-categories`, `urn:fxsl:kb:icas-comparacion`). Comparar la sección local completa sería demasiado estricto: dos interiores distintos jamás equivaldrían.
+- **R-CAT-EQ-2**: como opforja no autorea realizaciones hermanas de un proceso, R-CAT-EQ-1 se aplica como **ley in-zoom ↔ out-zoom**: toda descomposición (in-zoom) DEBE preservar la firma de frontera de su proceso abstracto (out-zoom). Violación: checker navegable `DESCOMPOSICION_NO_PRESERVA_FRONTERA` (pasivo, surge solo si se rompe la frontera). Severidad: mejora metodológica. Cierra formalmente el método A0 (realizaciones alternativas) de `metodologia-forja-es.md`.
+
+**C.3 — Composición por interfaz compartida**
+
+- **R-CAT-COMP-1**: dos modelos PUEDEN componerse identificando entidades de interfaz compartida (lectura: pushout / structured cospan, `urn:fxsl:kb:icas-universales`). La identificación por defecto se sugiere por nombre normalizado + mismo tipo; la identidad por id solo vale si el nombre también coincide (los ids son secuenciales por modelo y colisionan entre modelos independientes).
+- **R-CAT-COMP-2**: la composición NO DEBE duplicar la entidad compartida —ni en el conjunto de entidades ni en las apariencias de ningún OPD— ni dejar referencias colgantes (`enlacesPadreIds`, refinamientos, abanicos). DEBE ser asociativa módulo namespacing de ids y NO DEBE introducir avisos de error que no estuvieran en los modelos fuente. Leyes: `law-composicion-{no-duplica,sin-refs-colgantes,asociativa,bien-tipada}`.
+- **R-CAT-COMP-3**: la composición es no-bloqueante y reversible (undoable); un conflicto de linealidad resultante (R-CAT-LIN-2) DEBE advertirse al operador en el resultado, NO impedir la operación.
 
 ---
 
