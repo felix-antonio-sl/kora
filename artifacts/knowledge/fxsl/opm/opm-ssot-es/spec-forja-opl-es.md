@@ -7,7 +7,7 @@ _manifest:
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/spec-forja-opl.md;
       urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; libro OPM curado;
       transcripciones OPCloud; curso Dov Dori.
-version: 1.0.0
+version: 1.1.0
 status: publicado
 source_base: urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; urn:fxsl:kb:opm-es;
   app/src/opl; corpus OPCloud observado; curso Dov Dori.
@@ -2905,6 +2905,19 @@ Esta spec es un **major bump 1.0.0**: consolida en un solo documento autoritativ
 - **R-§23-DEP-2**: NO SE ADMITE redactar reglas OPL nuevas fuera de esta spec; toda regla nueva ENTRA aquí con su `Rationale:` y su `Enforcement`.
 
 Rationale: regla de oro §1 del proyecto (`reglas-opm-estrictas.md` SSOT suprema; `opm-opl-es` SSOT externa) + tabla de trazabilidad §20 (alineación implementación↔spec) + §22 (cierre de GAPs por evaluación). Bump major 1.0.0 por cambio de fuente operativa.
+
+## §24 Composición por interfaz (modelo ∘ modelo)
+
+La composición une dos modelos identificando entidades de **interfaz compartida**; es el dual **horizontal** del refinamiento (que es vertical). NO introduce verbo OPL nuevo: el OPL del modelo compuesto es la **unión de los párrafos OPL** de los modelos fuente, con la entidad compartida apareciendo **una sola vez**.
+
+- **R-§24-COMP-1**: dos modelos PUEDEN componerse identificando un conjunto de entidades compartidas (mapeo `entidad_B → entidad_A`). La sugerencia por defecto empareja por **nombre normalizado + mismo tipo OPM**; la identidad por id solo vale si el nombre también coincide (los ids son secuenciales por modelo y colisionan entre modelos independientes). *(Rationale: pushout / structured cospan, `urn:fxsl:kb:icas-universales`; `reglas-opm-estrictas-es §Anexo C / R-CAT-COMP-1`.)*
+- **R-§24-COMP-2**: en el OPL del compuesto, una entidad compartida DEBE emitir sus oraciones de designación **una sola vez**; sus enlaces provenientes de ambos modelos fuente DEBEN consolidarse bajo esa identidad sin duplicar la entidad ni su apariencia. Las entidades no compartidas del modelo B se namespacean para evitar colisión de ids, conservando su nombre OPL. *(Enforcement: `law-composicion-no-duplica`, `law-composicion-sin-refs-colgantes`.)*
+- **R-§24-COMP-3**: la composición DEBE ser asociativa módulo namespacing (`(A∘B)∘C` y `A∘(B∘C)` producen el mismo OPL salvo ids) y NO DEBE introducir oraciones OPL inválidas que no estuvieran ya en A o B. *(Enforcement: `law-composicion-asociativa`, `law-composicion-bien-tipada`.)*
+- **R-§24-COMP-4**: la composición es **no-bloqueante y reversible**; si la fusión crea un conflicto de recurso lineal (un objeto `lineal` consumido por procesos de ambos modelos), DEBE advertirse —no impedirse— en el resultado. *(Enforcement: `law-composicion-respeta-lineal`; ver `reglas-opm-estrictas-es §Anexo C / R-CAT-LIN-2`.)*
+
+**Traza a código**: operación `app/src/modelo/composicion/componer.ts` (`componerModelos`: namespacing + dedup de entidad/apariencia compartida + remapeo de referencias anidadas); sugerencia y preview de interfaz `app/src/modelo/composicion/interfaz.ts` (`sugerirCompartidasPorInterfaz`, `resumenComposicion`); leyes `app/src/leyes/composicion.test.ts` y `app/src/modelo/composicion/componer.test.ts`. La lectura categorial (pushout) vive bajo la superficie; nunca se expone al modelador.
+
+Rationale: el eje horizontal de OPM (composición de modelos) carecía de tratamiento OPL operativo; esta sección lo fija como **unión deduplicada de párrafos sobre interfaz compartida**, trazable a la capacidad implementada y verificada en deep-opm-pro y a la regla normativa `reglas-opm-estrictas-es §Anexo C / R-CAT-COMP`. Adición compatible (minor bump 1.1.0): no altera familias OPL existentes.
 
 ## Apéndice A — Ejemplo end-to-end
 
