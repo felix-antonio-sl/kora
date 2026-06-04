@@ -5,10 +5,11 @@ _manifest:
     created_by: deep-opm-pro/Claude + custodio KORA
     created_at: '2026-06-03'
     source: /home/felix/projects/deep-opm-pro/docs/capa-categorial.md
-version: 1.2.0
+version: 1.2.4
 status: publicado
-source_base: opm-iso-19450-es.md v3.0.0; reglas-opm-estrictas-es.md v1.1.2; metodologia-forja-es.md
-  v1.4.1; spec-forja-opl-es.md v1.1.0; corpus ICAS-BoK v1.0.0; capa categorial verificada
+source_base: opm-iso-19450-es.md v3.0.0; reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md
+  v1.4.4; spec-forja-opd-es.md v1.0.3; spec-forja-opl-es.md v1.1.3; corpus
+  ICAS-BoK v1.0.0; capa categorial verificada
   por leyes en deep-opm-pro (app/src/leyes/), incluido el eje vertical (F-V1 adjunción,
   F-V2 fibración) en refinamiento-adjuncion.test.ts y el enriquecimiento cuantitativo
   como Cost-category (F-D3) en costoCategoria.ts + enriquecimiento-cost.test.ts.
@@ -16,12 +17,19 @@ derived_from:
 - urn:fxsl:kb:opm-es
 - urn:fxsl:kb:opd-es
 - urn:fxsl:kb:opl-es
+- urn:fxsl:kb:spec-forja-opd-es
+- urn:fxsl:kb:spec-forja-opl-es
 - urn:fxsl:kb:metodologia-forja-opm-es
 - urn:fxsl:kb:reglas-opm-estrictas-es
 - urn:fxsl:kb:icas-sintesis
+- urn:fxsl:kb:icas-composicion
+- urn:fxsl:kb:icas-preservacion
+- urn:fxsl:kb:icas-comparacion
 - urn:fxsl:kb:icas-efectos
 - urn:fxsl:kb:icas-universales
+- urn:fxsl:kb:icas-composicion-estructura
 - urn:fxsl:kb:icas-higher-categories
+- urn:fxsl:kb:icas-topoi
 - urn:fxsl:kb:icas-adjunciones
 - urn:fxsl:kb:icas-extension
 - urn:fxsl:kb:icas-enriquecimiento
@@ -30,16 +38,29 @@ relations:
   - urn:fxsl:kb:opm-es
   - urn:fxsl:kb:opd-es
   - urn:fxsl:kb:opl-es
+  - urn:fxsl:kb:spec-forja-opd-es
+  - urn:fxsl:kb:spec-forja-opl-es
   - urn:fxsl:kb:metodologia-forja-opm-es
   - urn:fxsl:kb:reglas-opm-estrictas-es
   cites:
   - urn:fxsl:kb:icas-sintesis
+  - urn:fxsl:kb:icas-composicion
+  - urn:fxsl:kb:icas-preservacion
+  - urn:fxsl:kb:icas-comparacion
   - urn:fxsl:kb:icas-efectos
   - urn:fxsl:kb:icas-universales
+  - urn:fxsl:kb:icas-composicion-estructura
   - urn:fxsl:kb:icas-higher-categories
+  - urn:fxsl:kb:icas-topoi
   - urn:fxsl:kb:icas-adjunciones
   - urn:fxsl:kb:icas-extension
   - urn:fxsl:kb:icas-enriquecimiento
+extensions:
+  kora:
+    family: spec
+    shard_index: 1
+    shard_count: 1
+    shard_root_urn: urn:fxsl:kb:opm-categorial-es
 scope: 'Puente OPM <-> teoría de categorías (ICAS-BoK): mapa de las primitivas y
   mecanismos de OPM a las construcciones categoriales canónicas que los modelan. Es
   la "nota al margen formal" (metodologia-forja §0.2-0.3) canonizada en un artefacto
@@ -65,7 +86,7 @@ lang: es
 
 Este documento es un **puente** entre dos corpus de la SSOT: la familia OPM (`urn:fxsl:kb:opm-es` y derivadas) y el corpus categorial ICAS-BoK (`urn:fxsl:kb:icas-sintesis` y familia). Lee OPM con **teoría de categorías como piedra de Rosetta** y mapea cada primitiva/mecanismo OPM a la construcción categorial canónica que lo modela.
 
-**Línea roja (rectora).** La lente categorial es **nota al margen formal, nunca principio para el modelador** (`metodologia-forja-es.md §0.2-0.3`). Este artefacto es justamente *esa* nota al margen, aislada en su propio lugar para que el canon-para-humanos (`opm-es`/`opd-es`/`opl-es`) permanezca **limpio de jerga categorial**. Nada aquí redefine OPM ni añade primitiva: OPM ya es categorialmente bien fundado; este puente solo **nombra con precisión** lo que OPM implica estructuralmente. La superficie del modelador (UI, OPD, OPL) **jamás** muestra este vocabulario.
+**Línea roja (rectora).** La lente categorial es **nota al margen formal, nunca principio para el modelador** (`metodologia-forja-es.md §0.2-0.3`). Este artefacto es justamente *esa* nota al margen, aislada en su propio lugar para que el canon-para-humanos (`opm-es`/`opd-es`/`opl-es`) y la familia Forja (`reglas-opm-estrictas-es`, `metodologia-forja-es`, `spec-forja-opd-es`, `spec-forja-opl-es`) permanezcan **limpios de jerga categorial**. Nada aquí redefine OPM ni añade primitiva: OPM ya es categorialmente bien fundado; este puente solo **nombra con precisión** lo que OPM implica estructuralmente. La superficie del modelador (UI, OPD, OPL) **jamás** muestra este vocabulario.
 
 ## 1. Mapa OPM <-> teoría de categorías
 
@@ -109,7 +130,8 @@ El grafo de transición que la simulación recorre se **enriquece en Cost** (`ur
 Este puente es conocimiento; las **reglas normativas** correspondientes viven en las capas prescriptivas de opforja, y la **verdad ejecutable** en las leyes del modelador:
 
 - `urn:fxsl:kb:reglas-opm-estrictas-es §Anexo C` — reglas `R-CAT-LIN` (linealidad), `R-CAT-EQ` (equivalencia por frontera), `R-CAT-COMP` (composición).
-- `urn:fxsl:kb:metodologia-forja-opm-es §A0.4` — equivalencia funcional de realizaciones como cierre del método A0; criterio in-zoom <-> out-zoom.
+- `urn:fxsl:kb:metodologia-forja-opm-es §A0.4` — equivalencia funcional de realizaciones como cierre del método A0; comparación de realizaciones hermanas por firma de frontera y criterio vertical in-zoom <-> out-zoom como caso complementario.
+- `urn:fxsl:kb:spec-forja-opd-es` — realización visual/OPD de las reglas cuando una ley categorial se proyecta a canvas, validación visual o export.
 - `urn:fxsl:kb:spec-forja-opl-es §24` — composición por interfaz en OPL (unión deduplicada de párrafos).
 - Implementación verificada en `deep-opm-pro`: `app/src/modelo/{hechos,composicion,equivalencia,razonamiento,simulacion}/` y leyes falsificables en `app/src/leyes/` (`law-composicion-*`, `law-derivacion-no-contradice`, integración S⊑F0 / dualidad S->F3 / F1<->S / F2<->S, condiciones/loops por invocación). El **eje vertical** se verifica en `app/src/modelo/equivalencia/verticalidad.ts` (`firmaFronteraEntidad`, `verificarLiftCartesianoFrontera`) y `app/src/leyes/refinamiento-adjuncion.test.ts` (F-V1 adjunción incl. despliegue e identidades triangulares, F-V2 fibración, puente F-V1<->F-D2). El **enriquecimiento en Cost** (F-D3) en `app/src/modelo/simulacion/costoCategoria.ts` (`costoDeCamino`, `categoriaDeCosto`) y `app/src/leyes/enriquecimiento-cost.test.ts`. Cada ley con control de no-tautología. Síntesis viva: `docs/capa-categorial.md` del repo.
 

@@ -7,10 +7,11 @@ _manifest:
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/spec-forja-opl.md;
       urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; libro OPM curado;
       transcripciones OPCloud; curso Dov Dori.
-version: 1.1.1
+version: 1.1.3
 status: publicado
-source_base: urn:fxsl:kb:reglas-opm-estrictas-es; urn:fxsl:kb:opl-es; urn:fxsl:kb:opm-es;
-  app/src/opl; corpus OPCloud observado; curso Dov Dori.
+source_base: urn:fxsl:kb:reglas-opm-estrictas-es v1.2.1; urn:fxsl:kb:opl-es;
+  urn:fxsl:kb:opm-es; spec-forja-opd-es.md v1.0.3; metodologia-forja-es.md
+  v1.4.4; app/src/opl; corpus OPCloud observado; curso Dov Dori.
 derived_from:
 - urn:fxsl:kb:reglas-opm-estrictas-es
 - urn:fxsl:kb:opl-es
@@ -47,6 +48,11 @@ relations:
     - urn:fxsl:kb:opm-es
   refines:
     - urn:fxsl:kb:opl-es
+  cites:
+    - urn:fxsl:kb:spec-forja-opd-es
+    - urn:fxsl:kb:metodologia-forja-opm-es
+    - urn:fxsl:kb:opm-categorial-es
+    - urn:fxsl:kb:icas-universales
 ---
 
 # Spec-forja OPL — SSOT del lenguaje OPL de OPFORJA
@@ -58,6 +64,8 @@ Esta spec es la SSOT OPL **bidireccional** y **operativa** de OPFORJA. Gobierna,
 La audiencia primaria son los agentes de desarrollo de OPFORJA y los agentes de generación/parseo OPL.
 
 Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-es` (`urn:fxsl:kb:opl-es`) ni `reglas-opm-estrictas-es §4` para implementar una entrada. Las plantillas, vocabulario y restricciones necesarias DEBEN aparecer en esta spec. La procedencia a esas fuentes se expresa con `Rationale:`.
+
+Frontera documental: esta spec legisla la modalidad textual y el roundtrip desde OPL. La validez nuclear y severidad pertenecen a `reglas-opm-estrictas-es`; la geometría y canvas pertenecen a `spec-forja-opd-es`; el método pertenece a `metodologia-forja-es`; la lectura formal pertenece a `opm-categorial-es`. Esta spec PUEDE citar esos artefactos, pero NO DEBE copiar sus reglas completas salvo lo necesario para que una entrada OPL sea aplicable sin abrir otra fuente.
 
 ## Definiciones
 
@@ -78,15 +86,15 @@ Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-opl-
 
 ## Precedencia
 
-Esta spec DEBE mandar sobre la implementación OPL de OPFORJA (generadores, parser, presentación e interacción).
+Esta spec DEBE mandar sobre la implementación OPL de OPFORJA (generadores, parser, presentación e interacción) y sobre todo texto OPL emitido, parseado o editado por opforja.
 
-Esta spec DEBE quedar **bajo** el canon prescriptivo `reglas-opm-estrictas-es` (`urn:fxsl:kb:reglas-opm-estrictas-es`; espejo de implementación en `deep-opm-pro:docs/canon-opm/reglas-opm-estrictas.md`) para el canon OPM nuclear: ante conflicto sobre qué es una cosa, un enlace, un estado o una relación, prevalece ese documento.
+Esta spec DEBE quedar **bajo** el canon prescriptivo `reglas-opm-estrictas-es` (`urn:fxsl:kb:reglas-opm-estrictas-es`) para el canon OPM nuclear: ante conflicto sobre qué es una cosa, un enlace, un estado, una relación, una severidad o una extensión declarada, prevalece ese documento.
 
-Esta spec DEBE quedar **bajo** la SSOT OPM externa (`urn:fxsl:kb:opl-es` y `urn:fxsl:kb:opm-es`): ante conflicto de gramática o semántica OPL, prevalece la SSOT externa.
+Esta spec es SSOT primaria de la modalidad OPL operativa. Debe quedar compatible con la SSOT OPM externa (`urn:fxsl:kb:opl-es` y `urn:fxsl:kb:opm-es`): ante conflicto de gramática o semántica base no declarado como restricción local, debe abrirse corrección documental.
 
 Esta spec NO DEBE relajar ningún contrato de las fuentes superiores; solo PUEDE operacionalizarlo, restringirlo o declarar extensiones marcadas.
 
-Rationale: la autoridad semántica del proyecto es la SSOT OPM, no la herramienta; OPFORJA operacionaliza OPL pero no lo redefine.
+Rationale: la autoridad semántica del proyecto es la SSOT OPM y el canon prescriptivo Forja, no la herramienta; OPFORJA operacionaliza OPL pero no redefine OPM.
 
 ## Convenciones
 
@@ -96,7 +104,7 @@ Un **objeto** DEBE escribirse en negrita; un *proceso* en cursiva; un `estado` o
 
 ### Esquema de IDs
 
-Las entradas DEBEN reusar los IDs ya canonizados en `reglas-opm-estrictas.md`: `D1`–`D13` (designaciones), `T1`–`TS5` (cosas/tipos), `H*` (humanos/agencia), `E*` (eventos), `C*` (condiciones), `SE*` (state-specified enabling), `RF*` (refinamiento), `SSE*` (split state-specified), `CX*` (contexto), `CM*` (gestión de complejidad). Para hechos no cubiertos por esos rangos, esta spec PUEDE acuñar IDs nuevos, que NO DEBEN colisionar con los existentes.
+Las entradas DEBEN reusar los IDs ya canonizados en `urn:fxsl:kb:reglas-opm-estrictas-es`: `D1`–`D13` (designaciones), `T1`–`TS5` (cosas/tipos), `H*` (humanos/agencia), `E*` (eventos), `C*` (condiciones), `SE*` (state-specified enabling), `RF*` (refinamiento), `SSE*` (split state-specified), `CX*` (contexto), `CM*` (gestión de complejidad). Para hechos no cubiertos por esos rangos, esta spec PUEDE acuñar IDs nuevos, que NO DEBEN colisionar con los existentes.
 
 ### Lenguaje de obligación
 
@@ -122,10 +130,11 @@ Cada entrada del cuerpo normativo DEBE estructurarse con los campos del esquema,
 
 Cuando dos fuentes informan una entrada, el orden DEBE ser:
 
-1. `reglas-opm-estrictas.md §4`–`§7` y `opm-opl-es` mandan (canon).
-2. El libro de Dori llena vacíos no cubiertos por el canon.
-3. Los videos OPCloud aportan evidencia observacional.
-4. El curso pedagógico aporta intuición.
+1. `urn:fxsl:kb:reglas-opm-estrictas-es` decide validez, severidad y extensión declarada.
+2. `urn:fxsl:kb:opl-es` y esta spec deciden gramática textual, vocabulario, plantillas, parseo y roundtrip OPL.
+3. `urn:fxsl:kb:spec-forja-opd-es` decide solo la contraparte visual cuando una entrada OPL cruza el puente OPD<->OPL.
+4. `urn:fxsl:kb:metodologia-forja-opm-es` decide solo el método de modelamiento; `urn:fxsl:kb:opm-categorial-es` decide solo la explicación formal bajo superficie.
+5. El libro de Dori, videos OPCloud y curso pedagógico son evidencia o intuición; no canonizan por sí solos.
 
 Cuando el canon calla, la entrada DEBE marcarse como no-canonizado o extensión declarada; NO DEBE inventar canon.
 
@@ -572,7 +581,7 @@ Rationale: `reglas §4.5` (T3), `§5.2` (R-EFE-1, R-EFE-2, R-EFE-2A, R-EFE-2B) y
 
 **Reverse**: el parseo de cambio de estado completo (`/^(.+?)\s+cambia\s+(.+?)\s+de\s+\`?([^\`]+?)\`?\s+a\s+\`?([^\`]+?)\`?$/`, contexto condición/CS2 en `parsear.ts`) construye un enlace `efecto` con ambos estados especificados. El abanico de cambio se parsea por `ABANICO_CAMBIA_RE`.
 
-**Roundtrip**: el *proceso*, el **objeto** y ambos estados DEBEN preservarse, igual que su orden. `fixtures-roundtrip.ts` incluye `cambio-estado-ts3` como fixture de emisión canónica no estricta, porque el aplicador aún no reconstruye estados desde modelo vacío en esa ruta.
+**Roundtrip**: el *proceso*, el **objeto** y ambos estados DEBEN preservarse, igual que su orden. `fixtures-roundtrip.ts` incluye `cambio-estado-ts3` y `cambio-estado-ts3-compacto` como fixtures estrictas: el patch preserva arcos y `stateHints`, y el aplicador reconstruye los estados necesarios desde modelo vacío.
 
 **Edge cases**: si el modelo se descompone, TS3 se escinde en TS4+TS5 (§3.5, §3.6) y deja de emitirse como una sola oración.
 
@@ -600,9 +609,9 @@ Rationale: `reglas §4.5` (TS3), `§5.2` (R-EFE-2..2B), `§6.3` (R-TR-ASIM-3) y 
 
 **Composabilidad**: el fragmento escindido (a) DEBE acoplarse con su TS5; no se coordina como predicado independiente.
 
-**Reverse**: el parser produce el régimen **(b)** efecto parcial standalone; el régimen (a) NUNCA proviene de parseo (R-ESCIND-0). GAP-PARSE-TS4: no se verificó una regex dedicada de `cambia … de \`estado\`` sin `a` en `parsear.ts` (la rama de cambio detectada exige `… a …`); el parseo de TS4 standalone podría depender de la ruta de abanico o no estar conectado — marcar como GAP de cobertura de parseo.
+**Reverse**: el parser produce el régimen **(b)** efecto parcial standalone; el régimen (a) NUNCA proviene de parseo (R-ESCIND-0). La ruta standalone `cambia … de \`estado\`` está verificada por fixture estricta.
 
-**Roundtrip**: `fixtures-roundtrip.ts` incluye `cambio-estado-ts4-solo-entrada` como fixture de emisión canónica no estricta. GAP-PARSE-TS4 y GAP-PROCEDENCIA-ESCIND siguen vigentes para reverse/procedencia.
+**Roundtrip**: `fixtures-roundtrip.ts` incluye `cambio-estado-ts4-solo-entrada` como fixture estricta. La única salvedad viva es de procedencia: cuando un par escindido se origina desde modelo, la spec aún no exige un metadato normativo que marque la escisión original.
 
 **Traza a código**: generación `app/src/opl/generadores/procedural.ts·oracionEfecto` (rama `estadoOrigen && destino.tipo === "proceso"`, línea ~374: `cambia … de \`…\``). Escisión: `app/src/modelo/` (operación de descomposición; el metadato de procedencia escindido no se rastreó en este pase) — GAP-PROCEDENCIA-ESCIND.
 
@@ -626,9 +635,9 @@ Rationale: `reglas §4.5` (TS4), `§8.4` (R-ESCIND-0..3, R-ESC-1), `§5.2` (R-EF
 
 **Composabilidad**: como fragmento escindido DEBE acoplarse con su TS4 temprano.
 
-**Reverse**: GAP-PARSE-TS5: análogo a TS4, no se verificó regex dedicada de `cambia … a \`estado\`` sin `de` fuera de la ruta de abanico (`ABANICO_CAMBIA_RE` cubre `… a exactamente uno de …`, no el caso de un único estado de salida). Marcar como GAP de cobertura de parseo.
+**Reverse**: el parser acepta la forma standalone output-only `cambia … a \`estado\`` sin `de`; la cobertura está verificada por fixture estricta.
 
-**Roundtrip**: `fixtures-roundtrip.ts` incluye `cambio-estado-ts5-solo-salida` como fixture de emisión canónica no estricta. GAP-PARSE-TS5 sigue vigente para reverse completo.
+**Roundtrip**: `fixtures-roundtrip.ts` incluye `cambio-estado-ts5-solo-salida` como fixture estricta.
 
 **Traza a código**: generación `app/src/opl/generadores/procedural.ts·oracionEfecto` (rama `estadoDestino && origen.tipo === "proceso"`, línea ~377: `cambia … a \`…\``). Escisión: ver GAP-PROCEDENCIA-ESCIND (§3.5).
 
@@ -915,9 +924,9 @@ Rationale: `reglas §4.9` (EX1, EX2), `§5.7` (R-EXC-1..5) y `opm-opl-es §8.1`.
 
 **Plantilla(s)**:
 - IV1 (invocación): `*Invocador* invoca *Invocado*.`
-- IV1 con demora (extensión local): `*Invocador* invoca *Invocado* despues de <demora>.`
+- IV1 con demora (extensión local): `*Invocador* invoca *Invocado* después de <demora>.`
 - IV2 (autoinvocación): `*Invocador* se invoca a sí mismo.`
-- IV2 con demora (extensión local): `*Invocador* se invoca a sí mismo despues de <demora>.`
+- IV2 con demora (extensión local): `*Invocador* se invoca a sí mismo después de <demora>.`
 - Abanico XOR divergente: `*P* invoca exactamente uno de *Q* o *R*.`
 - Abanico XOR convergente: `Exactamente uno de *P* o *Q* invoca *R*.`
 
@@ -939,15 +948,15 @@ Rationale: `reglas §4.9` (EX1, EX2), `§5.7` (R-EXC-1..5) y `opm-opl-es §8.1`.
 
 **Supresión**: placeholder NO emite (R-ENT-2). La invocación implícita de descomposición NO emite (R-IV-2). Un fan de invocación bajo XOR/OR se realiza con la oración de abanico (`invoca exactamente uno de …` / `exactamente uno de … invoca …`), no como IV1 individual.
 
-**Tokenización**: span del *invocador* con `ref`; `invoca`/`invocan` (IV1) o `se invoca a sí mismo` (IV2) clave de invocación; span del *invocado* con `ref` (IV1); `despues de <demora>` span de magnitud con `hint`.
+**Tokenización**: span del *invocador* con `ref`; `invoca`/`invocan` (IV1) o `se invoca a sí mismo` (IV2) clave de invocación; span del *invocado* con `ref` (IV1); `después de <demora>` span de magnitud con `hint`. El parser acepta además `despues de` como compatibilidad legacy.
 
-**Orden**: *invocador* → `invoca` → *invocado* [→ `despues de` → demora]. En autoinvocación el invocado es el propio invocador y no se nombra dos veces.
+**Orden**: *invocador* → `invoca` → *invocado* [→ `después de` → demora]. En autoinvocación el invocado es el propio invocador y no se nombra dos veces.
 
 **Composabilidad**: varias invocaciones desde el mismo *invocador* son oraciones IV1 separadas; bajo operador lógico se realizan vía abanico. La invocación NO se coordina con transformadores/habilitadores.
 
 **Reverse**: la oración `*X* invoca *Y*` se parsea como enlace de invocación proceso→proceso; `*X* se invoca a sí mismo` como autoinvocación. El abanico de invocación se parsea por la ruta de abanico.
 
-**Roundtrip**: el *invocador*, el *invocado* y la demora DEBEN preservarse. GAP-FIXTURE-INVOCACION: cerrado para emisión por `fixtures-roundtrip.ts` (`invocacion-con-demora-tilde`, `autoinvocacion-con-demora-tilde`) y para degradación de evento sobre invocación (`evento-invocacion-degrada-base`). La demora sigue no estricta en reverse porque el parser la acepta como superficie pero no la rehidrata en el patch.
+**Roundtrip**: el *invocador*, el *invocado* y la demora DEBEN preservarse. GAP-FIXTURE-INVOCACION está cerrado: `fixtures-roundtrip.ts` cubre `invocacion-con-demora-tilde` y `autoinvocacion-con-demora-tilde` como fixtures estrictas, y la degradación de evento sobre invocación (`evento-invocacion-degrada-base`).
 
 **Edge cases**:
 - La grafía canónica es `después de`. GAP-INVOCACION-TILDE: cerrado en `procedural.ts`; el parser acepta además `despues de` como compatibilidad legacy.
@@ -961,7 +970,7 @@ Rationale: `reglas §4.9` (IV1, IV2), `§5.4` (R-INV-1..2B) y `opm-opl-es §8.2`
 
 - GAP-EVENTO-RESULTADO / GAP-CONDICION-RESULTADO: cerrados; el generador degrada evento/condición de **resultado** a la oración base, preservando R-MOD-INPUT-2 (Post(P) no admite `e`/`c`).
 - GAP-EVENTO-INVOCACION / GAP-CONDICION-INVOCACION: cerrados; el generador degrada evento/condición de invocación a la invocación base, preservando R-MOD-CAT-1 / R-IV-3.
-- GAP-FIXTURE-EVENTO / GAP-FIXTURE-INVOCACION: cerrados para emisión y rutas básicas por `fixtures-roundtrip.ts`; las variantes con estado/demora quedan no estrictas cuando el reverse aún no rehidrata metadatos desde modelo vacío.
+- GAP-FIXTURE-EVENTO / GAP-FIXTURE-INVOCACION: cerrados por `fixtures-roundtrip.ts`; las variantes de invocación/autoinvocación con demora roundtripean de forma estricta.
 - GAP-EXC-UNIDADES-LITERAL: cerrado por nota de realización; `unidades-tiempo` es metavariable y `formatoTiempo` realiza valor+unidad concretos (ver §5.3).
 - GAP-INVOCACION-TILDE: cerrado; emisión canónica `después de` y parser compatible con legacy (ver §5.4).
 
@@ -1833,9 +1842,9 @@ La combinación de multiplicidad con rol y abanico remite a §8.2. Esta sección
 | Reverse | el parser DEBE reconstruir el rango desde la frase de cardinalidad y normalizar Unicode a ASCII |
 | Roundtrip | `parsear(emitir(rango)) = rango` sobre el rango normalizado |
 | Traza a código | `app/src/opl/generadores/refsHints.ts·nombreOplExtremo` |
-| Procedencia | `reglas-opm-estrictas.md §6.7` |
+| Procedencia | `urn:fxsl:kb:reglas-opm-estrictas-es §6.7` |
 
-Rationale: `reglas-opm-estrictas.md §6.7` canoniza la tabla símbolo→rango→OPL y los rangos/intervalos; `refsHints.ts·nombreOplExtremo` realiza el nombre de extremo cuantificado.
+Rationale: `urn:fxsl:kb:reglas-opm-estrictas-es §6.7` canoniza la tabla símbolo→rango→OPL y los rangos/intervalos; `refsHints.ts·nombreOplExtremo` realiza el nombre de extremo cuantificado.
 
 ## §11 Etiquetas de ruta
 
@@ -1870,9 +1879,9 @@ Esta sección canoniza la realización OPL de las **etiquetas de ruta** (path la
 | Reverse | el parser DEBE detectar el prefijo `Por ruta <etiqueta>,` y asociar la etiqueta de ruta al enlace resultante |
 | Roundtrip | la etiqueta DEBE preservarse: `parsear(emitir(ruta)) = ruta` |
 | Traza a código | `app/src/opl/generadores/procedural.ts` (etiqueta de ruta); si la función no existe aún, `GAP-VERIFY` |
-| Procedencia | `reglas-opm-estrictas.md §4.12` |
+| Procedencia | `urn:fxsl:kb:reglas-opm-estrictas-es §4.12` |
 
-Rationale: `reglas-opm-estrictas.md §4.12` canoniza la etiqueta de ruta y la regla `A.5`; `procedural.ts` es el punto de emisión procedimental donde el prefijo de ruta se ancla.
+Rationale: `urn:fxsl:kb:reglas-opm-estrictas-es §4.12` canoniza la etiqueta de ruta y la regla `A.5`; `procedural.ts` es el punto de emisión procedimental donde el prefijo de ruta se ancla.
 
 ## §12 Plegado y despliegue de OPL (display)
 
@@ -2708,12 +2717,12 @@ Leyenda de **Estado**:
 | §3.1 | Consumo `consume` | `procedural.ts·oracionEnlaceSinEtiqueta` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`consume`) | `enlace-…` | alineado |
 | §3.2 | Resultado `genera` | `procedural.ts·oracionEnlaceSinEtiqueta` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`genera`) | — | alineado |
 | §3.3 | Efecto `afecta` | `procedural.ts·oracionEfecto` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`afecta`) | `enlace-efecto-simple` | alineado |
-| §3.4 | Cambio de estado TS3 (`de … a …`) | `procedural.ts·oracionTransicionEstados` | `parsear.ts·ABANICO_CAMBIA_RE` / regex CS2 | `cambio-estado-ts3` (no estricta) | alineado-emision |
-| §3.5 | Efecto parcial TS4 (`de \`estado\``) | `procedural.ts·oracionEfecto` (rama origen) | regex dedicada no verificada | `cambio-estado-ts4-solo-entrada` (no estricta) | GAP-PARSE-TS4 · GAP-PROCEDENCIA-ESCIND |
-| §3.6 | Efecto parcial TS5 (`a \`estado\``) | `procedural.ts·oracionEfecto` (rama destino) | regex dedicada no verificada | `cambio-estado-ts5-solo-salida` (no estricta) | GAP-PARSE-TS5 |
+| §3.4 | Cambio de estado TS3 (`de … a …`) | `procedural.ts·oracionTransicionEstados` | `parsear.ts·ABANICO_CAMBIA_RE` / regex CS2 | `cambio-estado-ts3` / `cambio-estado-ts3-compacto` (estrictas) | alineado |
+| §3.5 | Efecto parcial TS4 (`de \`estado\``) | `procedural.ts·oracionEfecto` (rama origen) | regex standalone verificada | `cambio-estado-ts4-solo-entrada` (estricta) | alineado · GAP-PROCEDENCIA-ESCIND |
+| §3.6 | Efecto parcial TS5 (`a \`estado\``) | `procedural.ts·oracionEfecto` (rama destino) | regex standalone verificada | `cambio-estado-ts5-solo-salida` (estricta) | alineado |
 | §4.1 | Agente `maneja` (+ estado/evento/cond/negada) | `procedural.ts·oracionEnlaceSinEtiqueta` / `refsHints.ts·nombreOplExtremo` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`maneja`) / `CONDICION_AGENTE_RE` | `enlace-agente-simple` | alineado |
 | §4.2 | Instrumento `requiere` (+ estado/evento/cond/negada) | `procedural.ts·oracionEnlaceSinEtiqueta` / `refsHints.ts·nombreOplExtremo` | `parsear.ts·ABANICO_VERBO_RE_LIST` (`requiere`) | `enlace-instrumento-simple` | alineado |
-| §4.x | Habilitador con estado especificado (HS1/HS2) | `refsHints.ts·nombreOplExtremo` (sufijo `en \`estado\``) | `ABANICO_VERBO_RE_LIST` | `habilitador-con-estado-hs` (no estricta) | alineado-emision |
+| §4.x | Habilitador con estado especificado (HS1/HS2) | `refsHints.ts·nombreOplExtremo` (sufijo `en \`estado\``) | `ABANICO_VERBO_RE_LIST` | `habilitador-con-estado-hs` (estricta) | alineado |
 | §4.x | Abanico de instrumento/agente inverso | `abanico.ts` | `parsear.ts` (cobertura no completada) | — | GAP-ABANICO-AGENTE-PARSE |
 | §5.1 | Evento `inicia` | `procedural.ts·oracionEvento` | `parsear.ts` (ruta evento) | `evento-consumo-canonico` | alineado |
 | §5.1 | Evento sobre **resultado** (no canónico) | `procedural.ts·oracionEvento` degrada a base | — | `procedural.test.ts` | cerrado |
@@ -2722,7 +2731,7 @@ Leyenda de **Estado**:
 | §5.2 | Condición sobre **resultado** (no canónico) | `procedural.ts·oracionCondicion` degrada a base | — | `procedural.test.ts` | cerrado |
 | §5.2 | Condición sobre **invocación** (no canónico) | `procedural.ts·oracionCondicion` degrada a base | — | `procedural.test.ts` | cerrado |
 | §5.3 | Excepción sobre/sub/sub-sobretiempo | `procedural.ts·oracionEnlaceSinModificador` / `formatoTiempo*` / `duracionMetadata.ts` | `parser.condicionesExcepciones.test.ts` | (test) | alineado |
-| §5.4 | Invocación / autoinvocación | `procedural.ts·oracionEnlaceSinModificador` / `modelo/autoinvocacion.ts·esAutoInvocacion` | `parsear.ts` (`despu[eé]s`, sin rehidratar demora) | `invocacion-con-demora-tilde` / `autoinvocacion-con-demora-tilde` (no estrictas) / `evento-invocacion-degrada-base` | alineado-emision |
+| §5.4 | Invocación / autoinvocación | `procedural.ts·oracionEnlaceSinModificador` / `modelo/autoinvocacion.ts·esAutoInvocacion` | `parsear.ts` (`despu[eé]s`, rehidrata demora) | `invocacion-con-demora-tilde` / `autoinvocacion-con-demora-tilde` (estrictas) / `evento-invocacion-degrada-base` | alineado |
 | §6.1 | Agregación `consta de` | `estructural.ts·oracionEnlaceEstructural` (agregación) | `parsear.ts·astEstructural` (`consta de`) | (sin fixture) | GAP-FIXTURE-AGREGACION |
 | §6.2 | Exhibición `exhibe` / `así como` | `estructural.ts·oracionEnlaceEstructural` (exhibición) | `parsear.ts·astEstructural` (`exhibe`) | `enlace-estructural-exhibicion` | alineado |
 | §6.3 | Generalización `son` / `es un` | `estructural.ts·oracionEnlaceEstructural` (generalización) | `parsear.ts·astEstructural` (`es un` / `son`) | (sin fixture) | GAP-FIXTURE-GENERALIZACION |
@@ -2771,13 +2780,13 @@ Lista consolidada de todos los marcadores `GAP-*` (sección de origen · descrip
 | GAP-PLACEHOLDER-ENTIDAD | §2.1 | Cerrado: `entidadOplEsEmitible` suprime procesos placeholder antes de emitir OPL. |
 | GAP-NOMBRE-INSTANCIA | §2.6 / §6.4 | Formato nominal `Instancia : Clase` sin generador dedicado. |
 | GAP-FIXTURE-EFECTO | §3.3 | Cerrado: `enlace-efecto-simple`. |
-| GAP-FIXTURE-TS3 | §3.4 | Cerrado para emisión: `cambio-estado-ts3` no estricta. |
-| GAP-PARSE-TS4 | §3.5 | Regex de `cambia … de \`estado\`` sin `a` no verificada. |
-| GAP-FIXTURE-TS4 | §3.5 | Cerrado para emisión: `cambio-estado-ts4-solo-entrada` no estricta. |
+| GAP-FIXTURE-TS3 | §3.4 | Cerrado: `cambio-estado-ts3` y `cambio-estado-ts3-compacto` son fixtures estrictas. |
+| GAP-PARSE-TS4 | §3.5 | Cerrado: regex de `cambia … de \`estado\`` sin `a` verificada por fixture estricta. |
+| GAP-FIXTURE-TS4 | §3.5 | Cerrado: `cambio-estado-ts4-solo-entrada` es fixture estricta. |
 | GAP-PROCEDENCIA-ESCIND | §3.5 | Metadato de procedencia escindido no rastreado en este pase. |
-| GAP-PARSE-TS5 | §3.6 | Regex de `cambia … a \`estado\`` sin `de` no verificada fuera del abanico. |
-| GAP-FIXTURE-TS5 | §3.6 | Cerrado para emisión: `cambio-estado-ts5-solo-salida` no estricta. |
-| GAP-FIXTURE-HS | §4.x | Cerrado para emisión HS1/HS2: `habilitador-con-estado-hs` no estricta. |
+| GAP-PARSE-TS5 | §3.6 | Cerrado: regex de `cambia … a \`estado\`` sin `de` verificada por fixture estricta. |
+| GAP-FIXTURE-TS5 | §3.6 | Cerrado: `cambio-estado-ts5-solo-salida` es fixture estricta. |
+| GAP-FIXTURE-HS | §4.x | Cerrado: `habilitador-con-estado-hs` es fixture estricta. |
 | GAP-ABANICO-AGENTE-PARSE | §4.x | Abanico de instrumento y fan inverso sin verificación de cobertura de parseo. |
 | GAP-FIXTURE-EVENTO | §5.1 | Cerrado: `evento-consumo-canonico`. |
 | GAP-EVENTO-RESULTADO | §5.1 | Cerrado: evento sobre resultado degrada a resultado base. |
@@ -2785,7 +2794,7 @@ Lista consolidada de todos los marcadores `GAP-*` (sección de origen · descrip
 | GAP-CONDICION-RESULTADO | §5.2 | Cerrado: condición sobre resultado degrada a resultado base; `puede generarse` retirado. |
 | GAP-CONDICION-INVOCACION | §5.2 | Cerrado: condición sobre invocación degrada a invocación base. |
 | GAP-EXC-UNIDADES-LITERAL | §5.3 | Cerrado por ajuste-spec: `unidades-tiempo` es metavariable realizada como valor+unidad. |
-| GAP-FIXTURE-INVOCACION | §5.4 | Cerrado para emisión: `invocacion-con-demora-tilde`, `autoinvocacion-con-demora-tilde` y `evento-invocacion-degrada-base`. |
+| GAP-FIXTURE-INVOCACION | §5.4 | Cerrado: `invocacion-con-demora-tilde`, `autoinvocacion-con-demora-tilde` y `evento-invocacion-degrada-base`. |
 | GAP-INVOCACION-TILDE | §5.4 | Cerrado: emisión canónica `después de`; parser acepta grafía legacy sin tilde. |
 | GAP-FIXTURE-AGREGACION | §6.1 | Sin fixture roundtrip dedicado de agregación. |
 | GAP-FIXTURE-EXHIBICION | §6.2 | Cerrado: `enlace-estructural-exhibicion`. |
@@ -2893,13 +2902,13 @@ Esta spec es un **major bump 1.0.0**: consolida en un solo documento autoritativ
 
 | Antes | Ahora |
 |-------|-------|
-| OPL repartido entre `opm-opl-es` (gramática OPL-ES) y `reglas-opm-estrictas §4` (reglas de canon) | `spec-forja-opl.md` es la SSOT OPL bidireccional/operativa única de OPFORJA |
+| OPL repartido entre `opm-opl-es` (gramática OPL-ES) y `reglas-opm-estrictas-es §4` (reglas de canon) | `spec-forja-opl-es` es la SSOT OPL bidireccional/operativa única de OPFORJA |
 | Para resolver una duda OPL había que cruzar dos fuentes y reconciliarlas a mano | una sola fuente con trazabilidad `Rationale:` hacia ambas |
 | La implementación (generadores/parser/leyes) se alineaba contra canon implícito | la implementación se alinea contra esta spec, vía la tabla de trazabilidad §20 |
 
 ### §23.2 Qué migrar
 
-- **R-§23-MIG-1**: la implementación (`app/src/opl/`) DEBE alinearse contra esta spec usando la tabla de trazabilidad §20 (regla→artefacto). Toda divergencia entre código y spec es deuda a cerrar; ante conflicto, la SSOT de canon (`reglas-opm-estrictas.md`) sigue por encima de esta spec (regla de oro §1 del proyecto).
+- **R-§23-MIG-1**: la implementación (`app/src/opl/`) DEBE alinearse contra esta spec usando la tabla de trazabilidad §20 (regla→artefacto). Toda divergencia entre código y spec es deuda a cerrar; ante conflicto, la SSOT de canon (`urn:fxsl:kb:reglas-opm-estrictas-es`) sigue por encima de esta spec.
 - **R-§23-MIG-2**: los GAPs abiertos heredados del canon disperso DEBEN re-rastrearse contra esta spec y cerrarse vía fixtures/leyes (§22), no vía notas sueltas.
 
 ### §23.3 Qué se deprecia
@@ -2907,7 +2916,7 @@ Esta spec es un **major bump 1.0.0**: consolida en un solo documento autoritativ
 - **R-§23-DEP-1**: SE DEPRECIA consultar dos fuentes dispersas (`opm-opl-es` + `reglas §4`) como ruta primaria para resolver OPL en OPFORJA. Esas fuentes SE CONSERVAN como SSOT de canon OPM general y como `Rationale:` de esta spec, pero la ruta operativa primaria para OPL es ahora este documento.
 - **R-§23-DEP-2**: NO SE ADMITE redactar reglas OPL nuevas fuera de esta spec; toda regla nueva ENTRA aquí con su `Rationale:` y su `Enforcement`.
 
-Rationale: regla de oro §1 del proyecto (`reglas-opm-estrictas.md` SSOT suprema; `opm-opl-es` SSOT externa) + tabla de trazabilidad §20 (alineación implementación↔spec) + §22 (cierre de GAPs por evaluación). Bump major 1.0.0 por cambio de fuente operativa.
+Rationale: `urn:fxsl:kb:reglas-opm-estrictas-es` como SSOT prescriptiva y `opm-opl-es` como SSOT textual base + tabla de trazabilidad §20 (alineación implementación↔spec) + §22 (cierre de GAPs por evaluación). Bump major 1.0.0 por cambio de fuente operativa.
 
 ## §24 Composición por interfaz (modelo ∘ modelo)
 

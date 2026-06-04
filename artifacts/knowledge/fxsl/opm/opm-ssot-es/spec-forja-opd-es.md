@@ -9,10 +9,12 @@ _manifest:
       Dori (24 cap); tutoriales/videos/transcripciones OPCloud; OPM version felix;
       evidencia opforja (assets/svg, docs/JOYAS.md, opm-extracted, ui-forja, app/src/render/jointjs,
       app/src/canvas).
-version: 1.0.0
+version: 1.0.3
 status: publicado
-source_base: opm-visual-es.md (v3.0.0); reglas-opm-estrictas-es.md (v1.1.2); opm-iso-19450-es.md;
-  spec-forja-opl-es.md (frontera modal); metodologia-forja-es.md; libro Dov Dori curado;
+source_base: opm-visual-es.md (v3.0.0); reglas-opm-estrictas-es.md (v1.2.1); opm-iso-19450-es.md;
+  spec-forja-opl-es.md (v1.1.3, frontera modal); metodologia-forja-es.md v1.4.4;
+  opm-categorial-es.md v1.2.4; libro Dov
+  Dori curado;
   corpus OPCloud observado; app/src/render/jointjs + app/src/canvas + ui-forja de
   deep-opm-pro.
 derived_from:
@@ -59,6 +61,7 @@ relations:
   cites:
   - urn:fxsl:kb:spec-forja-opl-es
   - urn:fxsl:kb:metodologia-forja-opm-es
+  - urn:fxsl:kb:opm-categorial-es
   - urn:fxsl:kb:opl-es
 ---
 
@@ -73,6 +76,8 @@ La audiencia primaria son los agentes de desarrollo de OPFORJA y los agentes que
 Esta spec es autocontenida: un agente conforme NO DEBE necesitar abrir `opm-visual-es` (`urn:fxsl:kb:opd-es`) ni `reglas-opm-estrictas-es` para implementar una entrada. Las geometrías, marcas, restricciones y catálogos necesarios DEBEN aparecer en esta spec. La procedencia a esas fuentes se expresa con `Rationale:` citando el ID propietario (`V-n`, `R-*`, `AP-n`).
 
 Es la hermana visual de `spec-forja-opl-es` (`urn:fxsl:kb:spec-forja-opl-es`): juntas cubren las dos modalidades del mismo hecho OPM. Lo que aquella legisla del puente OPD↔OPL (display, panel, interacción texto) esta spec lo cita, no lo re-legisla.
+
+Frontera documental: esta spec legisla geometría, canvas, interacción visual y export OPD. La validez nuclear y severidad pertenecen a `reglas-opm-estrictas-es`; la superficie textual pertenece a `spec-forja-opl-es`; el método pertenece a `metodologia-forja-es`; la lectura formal pertenece a `opm-categorial-es`. Esta spec PUEDE citar esos artefactos, pero NO DEBE copiar sus reglas completas salvo lo necesario para que una entrada visual sea aplicable sin abrir otra fuente.
 
 ## Definiciones
 
@@ -105,9 +110,9 @@ Esta spec DEBE mandar sobre la implementación visual de OPFORJA (`app/src/rende
 
 `ui-forja/GOVERNANCE.md` CONSERVA la autoridad sobre estética, chrome, tokens, tipografía y componentes de interfaz **no portadores de semántica OPM**, y queda subordinado a esta spec donde ambas materias se crucen. Ante conflicto entre `ui-forja/0X` y esta spec, manda esta spec y el documento ui-forja DEBE corregirse (ver §22, GAP-OPD-UIFORJA-*).
 
-Esta spec DEBE quedar **bajo** el canon prescriptivo `reglas-opm-estrictas-es` (`urn:fxsl:kb:reglas-opm-estrictas-es`; espejo local `deep-opm-pro:docs/canon-opm/reglas-opm-estrictas.md`): ante conflicto sobre qué es una cosa, un enlace, un estado o una relación, prevalece ese documento.
+Esta spec DEBE quedar **bajo** el canon prescriptivo `reglas-opm-estrictas-es` (`urn:fxsl:kb:reglas-opm-estrictas-es`): ante conflicto sobre qué es una cosa, un enlace, un estado, una relación, una severidad o una extensión declarada, prevalece ese documento.
 
-Esta spec DEBE quedar **bajo** la SSOT visual externa (`urn:fxsl:kb:opd-es`) y la semántica (`urn:fxsl:kb:opm-es`): ante conflicto de gramática visual general, prevalece la SSOT externa. Esta spec la operacionaliza, la restringe o declara extensiones marcadas; NO DEBE relajarla.
+Esta spec es SSOT primaria de la modalidad OPD operativa. Debe quedar compatible con la SSOT visual externa (`urn:fxsl:kb:opd-es`) y la semántica (`urn:fxsl:kb:opm-es`): ante conflicto de gramática visual base no declarado como restricción local, debe abrirse corrección documental. Esta spec la operacionaliza, la restringe o declara extensiones marcadas; NO DEBE relajarla.
 
 Frontera modal: lo que `spec-forja-opl-es` legisla del lado textual y del puente (plegado display §12, panel §13, interacción §14, bisimetría §19) NO se re-legisla aquí; esta spec gobierna el lado OPD del puente y cita el ID del otro lado.
 
@@ -145,15 +150,15 @@ Cada entrada del cuerpo normativo DEBE estructurarse con los campos del esquema,
 
 ### Niveles de canonicidad
 
-Todo hecho de esta spec hereda exactamente un nivel: `canon-iso` (ISO 19450 / opm-es / figuras), `canon-visual` (opd-es), `prescriptivo` (reglas-opm-estrictas-es), `metodo` (metodologías), `libro` (Dov Dori curado), `observacional` (OPCloud en pantalla), `implementacion` (código/assets de deep-opm-pro). Los niveles `libro`/`observacional`/`implementacion` informan pero no canonizan: cuando el canon calla, la entrada DEBE marcarse `no-canonizado` o `extensión declarada`; NO DEBE inventar canon.
+Todo hecho de esta spec hereda exactamente un nivel: `canon-iso` (ISO 19450 / opm-es / figuras), `canon-visual` (opd-es), `prescriptivo` (reglas-opm-estrictas-es), `metodo` (metodologías), `libro` (Dov Dori curado), `observacional` (OPCloud en pantalla), `implementacion` (código/assets de deep-opm-pro). Los niveles `libro`/`observacional`/`implementacion` informan pero no canonizan: cuando el canon calla, la entrada DEBE marcarse `no-canonizado` o `extensión declarada`; NO DEBE inventar canon. La decisión de canonicidad y severidad se delega a `reglas-opm-estrictas-es`.
 
 ### Precedencia de fuentes
 
-1. `reglas-opm-estrictas-es` y `opd-es` mandan (canon, mismo nivel; donde una amplía sin contradecir, se conserva la unión).
-2. `opm-es` y las figuras ISO constriñen la semántica que lo visual realiza.
-3. El libro de Dori llena vacíos no cubiertos por el canon.
-4. Los videos/tutoriales OPCloud aportan evidencia observacional de operacionalización.
-5. La implementación opforja es la superficie auditada: ante divergencia con el canon se registra `GAP-OPD-*`, nunca se eleva a canon por el solo hecho de estar implementada.
+1. `reglas-opm-estrictas-es` decide validez, severidad y extensión declarada.
+2. `opd-es`, `opm-es` y esta spec deciden gramática visual, geometría, canvas, export y restricciones de modalidad OPD.
+3. `spec-forja-opl-es` decide solo la contraparte textual cuando una entrada OPD cruza el puente OPD<->OPL.
+4. `metodologia-forja-es` decide solo el método de modelamiento; `opm-categorial-es` decide solo la explicación formal bajo superficie.
+5. El libro de Dori, videos/tutoriales OPCloud y la implementación opforja informan auditoría; ante divergencia con el canon se registra `GAP-OPD-*`, nunca se elevan a canon por sí solos.
 
 ## §1 Regla rectora: canonicidad por persistencia en export
 
@@ -400,7 +405,7 @@ Bimodal: el plegado parcial emite `al menos otro/a` (`spec-forja-opl-es §7.2/§
 - **R-OPD-INV-2**: invocación **implícita** dentro de una descomposición — la terminación de un subproceso invoca al inmediatamente inferior por posición vertical; NO se dibuja enlace. Subprocesos cuyos puntos superiores de elipse están a la misma altura (con tolerancia) inician en **paralelo**; el último en terminar inicia el siguiente nivel. Solo aplica a descomposición de proceso. *(Rationale: V-31, V-32, V-77, R-INV-2/2A; figuras ISO 1087-1112.)*
 - **R-OPD-INV-3**: subprocesos activados individualmente por eventos desde estados distintos se ejecutan asincrónica e independientemente (sistemas reactivos): un enlace de evento por subproceso, sin verticalidad temporal forzada. *(Rationale: V-59, R-VIS-ASYNC-1; metodologia LF-06.)*
 - **R-OPD-INV-4**: la invocación PUEDE sustituir un objeto transitorio (creado y consumido de inmediato sin observación); el patrón bucle usa invocación del último subproceso al padre, con proceso *Esperar* intermedio si hay intervalo. *(Rationale: libro 10/22; metodologia §9.2.)*
-- **R-OPD-INV-5**: la **demora** se realiza como etiqueta temporal sobre el enlace de invocación (`después de <demora>`); extensión local conforme. Bimodalidad PARCIAL declarada: el parser OPL acepta la superficie pero no rehidrata la demora en el patch (ver `spec-forja-opl-es §5.4`); no asumir roundtrip estricto. *(Rationale: spec-forja-opl-es §5.4; R-OPD-BIM-4.)*
+- **R-OPD-INV-5**: la **demora** se realiza como etiqueta temporal sobre el enlace de invocación (`después de <demora>`); extensión local conforme. `spec-forja-opl-es §5.4` emite y parsea la demora; el parser acepta legacy sin tilde, pero la forma canónica es `después de`. El roundtrip estricto cubre invocación y autoinvocación con demora. *(Rationale: spec-forja-opl-es §5.4; R-OPD-BIM-4.)*
 
 Realización opforja: rayo de 4 vértices calculados (offset perpendicular `min(22, max(12, len·0.08))`) + swallowtail en destino; autoinvocación = lazo de 2 tramos colgando del borde inferior, pico a `max(56, h·0.55)`, ramas a ±35°, marker solo en el retorno; demora serif 11 inkMid en `distance:0.5`. Alineado. *(Traza: `enlace.ts`, `autoinvocacionLoop.ts`, `linkAssets.ts`.)*
 

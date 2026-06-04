@@ -7,12 +7,14 @@ _manifest:
     source: Destilacion korificada autonoma del manual metodologico OPM (urn:fxsl:kb:manual-metodologico-opm-es)
       + lecciones forjadas modelando HODOM en opforja (deep-opm-pro). SSOT primaria
       de metodo OPM-en-opforja.
-version: 1.4.1
+version: 1.4.4
 status: publicado
 source_base: metodologia-opm-es.md (v3.0.0); opm-iso-19450-es.md, opm-opl-es.md, opm-visual-es.md;
   libro OPM curado de Dov Dori (24 cap); curso Dov Dori (_ATOMIC_GRAPH); transcripciones
   OPCloud; hd-opm glosario-opm-hodom.md (§3.1, §9.9, §9.10/M18, M17); deep-opm-pro
-  app/src/modelo/tipos; Fudge y Reeves 2024, "A Model-Based Reverse System
+  app/src/modelo/tipos; reglas-opm-estrictas-es.md (v1.2.1); spec-forja-opd-es.md
+  (v1.0.3); spec-forja-opl-es.md (v1.1.3); opm-categorial-es.md (v1.2.4);
+  Fudge y Reeves 2024, "A Model-Based Reverse System
   Engineering Methodology for Analyzing Complex Biological Systems With a Case
   Study in Glycolysis" + capturas OPD Fig. 5-7 en /home/felix/_TEMP_BORRAR/usos-opm/glico;
   revisión de prácticas OPM reales en /home/felix/_TEMP_BORRAR/usos-opm/48384,
@@ -68,10 +70,18 @@ relations:
   - urn:fxsl:kb:opm-es
   - urn:fxsl:kb:opl-es
   - urn:fxsl:kb:opd-es
+  - urn:fxsl:kb:reglas-opm-estrictas-es
+  - urn:fxsl:kb:spec-forja-opd-es
+  - urn:fxsl:kb:spec-forja-opl-es
+  - urn:fxsl:kb:opm-categorial-es
   - urn:fxsl:kb:manual-metodologico-opm-es
+  - urn:fxsl:kb:icas-higher-categories
+  - urn:fxsl:kb:icas-procesos
+  - urn:fxsl:kb:icas-calidad-riesgo
+  - urn:fxsl:kb:icas-escala
 ---
 
-# Metodología Forja — método de modelamiento OPM en opforja (v1.4.1)
+# Metodología Forja — método de modelamiento OPM en opforja (v1.4.4)
 
 SSOT **primaria y autónoma** del *método* de modelar OPM con la herramienta
 opforja (deep-opm-pro). Contiene todo el procedimiento (no requiere abrir otra
@@ -81,14 +91,16 @@ fuente para modelar) + el catálogo de lecciones forja + la realización del bun
 
 **0.1 Naturaleza.** Capa de **método**: orienta *cómo* construir un hecho OPM válido y *en qué orden*. No es norma bloqueante ni redefine primitivas.
 
-**0.2 Precedencia (dos planos, no una cadena).** Hay dos planos ortogonales:
-- **Plano de validez** (predica sobre el *hecho*): `opm-es` (semántica) > `opl-es` = `opd-es` (realizaciones). Ante conflicto manda este plano.
+**0.2 Precedencia (familia Forja, no cadena simple).** Hay cuatro planos ortogonales:
+- **Plano de validez** (predica sobre el *hecho*): `reglas-opm-estrictas-es` decide validez operativa, severidad y extensiones declaradas, bajo las capas base `opm-es`/`opd-es`/`opl-es`.
+- **Plano modal** (predica sobre la *realización*): `spec-forja-opd-es` gobierna OPD/visual y `spec-forja-opl-es` gobierna OPL/textual y roundtrip. Ninguna spec modal redefine validez nuclear.
 - **Plano de método** (predica sobre el *camino*): este documento. Atado al plano de validez por **lifting**: *ninguna lección o procedimiento autoriza un hecho que la norma prohíbe, ni redefine una primitiva*. La norma no deroga el método (un modelo puede ser **conforme-pero-malo**; eso es lo que el método cubre).
+- **Plano formal** (predica sobre la *lectura estructural*): `opm-categorial-es` explica y traza leyes bajo la superficie; no introduce vocabulario de modelador ni reglas nuevas sin capa propietaria.
 - *(lente formal, opcional: el método es una fibración sobre el plano de validez; el lifting es cartesiano.)*
 
 **0.3 Invariante de pureza.** Todo principio se enuncia en **primitivas OPM** (objeto, proceso, estado, enlace, exhibición-caracterización, descomposición, despliegue). El dominio (HODOM u otro) aparece **solo** como ejemplo etiquetado y desmontable. Lentes formales (teoría de categorías) solo como nota al margen, nunca como el principio.
 
-**0.4 Autonomía.** Este artefacto **contiene** el método; no apunta a `manual-metodologico-opm-es` para definirlo. El manual queda como SSOT tool-agnóstica de la que este deriva (`derived_from`), no como dependencia de lectura.
+**0.4 Autonomía y no duplicación.** Este artefacto **contiene** el método; no apunta a `manual-metodologico-opm-es` para definirlo. El manual queda como SSOT tool-agnóstica de la que este deriva (`derived_from`), no como dependencia de lectura. Este documento NO DEBE duplicar la matriz de validez de `reglas-opm-estrictas-es`, la geometría completa de `spec-forja-opd-es`, las plantillas completas de `spec-forja-opl-es` ni la explicación categorial de `opm-categorial-es`; debe citar esos artefactos cuando una decisión metodológica los requiera.
 
 **0.5 Cómo leer.** Reglas con verbo de obligación es-CL: **DEBE / DEBERÍA / PUEDE**. Tipografía canónica en ejemplos: objeto **negrita**, proceso *cursiva*, `estado` en backticks. Ejemplos en bimodalidad OPD↔OPL.
 
@@ -106,7 +118,7 @@ fuente para modelar) + el catálogo de lecciones forja + la realización del bun
 
 **A0.4 Equivalencia funcional de realizaciones alternativas (cierre de A0.1).** Generar ≥3 conceptos (A0.1) no basta: el modelador necesita un criterio para decidir cuándo dos realizaciones son **intercambiables**. Dos realizaciones de una misma función son **funcionalmente equivalentes** si presentan la misma **firma de frontera** — el conjunto de roles netos (qué consume / produce / habilita) sobre las **entidades de frontera**, abstrayendo el interior. Si dos conceptos tienen la misma firma de frontera, son sustituibles sin que el resto del modelo lo note; eligir entre ellos pasa a ser una decisión de atributos no-funcionales (costo, duración, riesgo), no de función. *(anclaje: `reglas-opm-estrictas-es §Anexo C / R-CAT-EQ`; lectura formal: equivalencia/2-célula, `urn:fxsl:kb:icas-higher-categories`; jamás expuesta al modelador.)*
 
-- **A0.4a Criterio operativo en opforja (in-zoom ↔ out-zoom).** Como opforja no autorea realizaciones hermanas de un proceso, A0.4 se aplica sobre el eje vertical: toda **descomposición** (in-zoom) DEBE preservar la firma de frontera de su **proceso abstracto** (out-zoom). Una descomposición que añade o quita un rol de frontera ya no realiza la misma función. Violación detectable: checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA` (pasivo). Esto cierra el lazo A0: la divergencia genera alternativas, la firma de frontera decide cuáles son la misma función.
+- **A0.4a Criterio operativo en opforja (realizaciones hermanas + in-zoom ↔ out-zoom).** Opforja PUEDE verificar realizaciones hermanas de un proceso cuando existen dos OPDs/variantes comparables: dos realizaciones son equivalentes si `verificarEquivalencia` confirma la misma firma de frontera, aunque su interior difiera. Además, toda **descomposición** (in-zoom) DEBE preservar la firma de frontera de su **proceso abstracto** (out-zoom): este es el caso vertical de la misma ley, no su reemplazo. Una realización o descomposición que añade o quita un rol de frontera ya no realiza la misma función. Violación vertical detectable: checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA` (pasivo). Esto cierra el lazo A0: la divergencia genera alternativas, la firma de frontera decide cuáles son la misma función.
 
 ## A1. Principio rector y clasificación
 
@@ -621,7 +633,7 @@ El intercambio con la herramienta usa el documento JSON `{ "formato": "deep-opm-
 
 **Reglas de realización.** Nombres idénticos entre OPD/OPL/bundle. Toda referencia entre OPDs internamente consistente o la app rechaza el import. Omitir campos opcionales antes que inventarlos (la app normaliza). No emitir `formato` distinto. Exportación = instantánea, no fuente de verdad.
 
-**Comportamientos divergentes conocidos del generador OPL v0** (documentados, no se corrigen desde el bundle; la autoridad viva sobre realización OPL y el catálogo de estas divergencias es `urn:fxsl:kb:spec-forja-opl-es` §20 — esta lista es resumen orientativo, no la fuente): emite `se describe como` por cada `descripcion`; `se descompone en <nombre OPD literal>` en vez de la cláusula canónica; designaciones D7/D8 en orden alfabético; transiciones de estado omitidas en OPL textual aunque el JSON las tiene; pluralización `0..N` malformada; minuscula designaciones de estado al emitir.
+**Divergencias OPL operativas.** La autoridad viva sobre realización OPL y su trazabilidad es `urn:fxsl:kb:spec-forja-opl-es` §20. Este método no mantiene un inventario paralelo: al emitir bundles, delegar toda duda de generación, parseo o roundtrip a esa spec. Estado sincronizado 2026-06-04: el catálogo cubierto por fixtures OPL queda en bisimetría estricta; las exclusiones vivas son modificadores complejos, rutas, refinamientos y abanicos avanzados según el catálogo de fixtures.
 
 **Auto-normalización verificada.** La app normaliza al hidratar (omitir campos opcionales antes que inventarlos). Esencia: conectar un objeto como atributo (exhibición-caracterización) tiende a coaccionarlo a **informacional**; el enlace de **agente** solo se ofrece desde cosas físicas (humanas) — dejar que la UI normalice en vez de pelear con ella. *(Verificar el alcance exacto de la coerción en la versión vigente de opforja.)*
 
@@ -664,3 +676,6 @@ Realización canónica implementada en `deep-opm-pro` sin copiar gestos OPCloud 
 | 2026-05-31 | v1.3.0 — revisión profunda y paralelizada de cinco casos OPM reales: OPM-TA humano-máquina (`48384`), blockchain/AI CPS (`block`), digital twin FPP (`fpp`), torneado optimizado/DT (`SE_8233`) y seguridad IoT configurable (`securing`). **Nuevo/refinado**: A0.3 intención→función→forma; A1.4 modos de aplicación real; A2.1 degradación como atributo medido; A2.4-A2.6 lentes SD, anti-función y beneficio stakeholder; A3.1 límite práctico de ~5 subprocesos procedimentales; A3.3 guard vista vs mecanismo; A4.6 viewpack arquitectónico; §9.28-§9.38; A7 métricas con polaridad, fórmula como instrumento, procedencia de datos y simulación de configuraciones; A8 simulación tras edición significativa, validación por niveles y validación stakeholder; **LF-11..LF-18** como propuestas. Mesa: no elevar extensiones de herramienta ni decisiones de caso a norma OPM; todos los principios quedan como método lifteable y general, con opforja solo como adaptación. |
 | 2026-06-03 | v1.4.0 — A0.4 equivalencia funcional de realizaciones alternativas (cierre de A0.1): dos realizaciones son intercambiables si comparten **firma de frontera** (roles netos sobre entidades de frontera, abstrayendo el interior); A0.4a criterio operativo in-zoom↔out-zoom (la descomposición DEBE preservar la frontera del proceso abstracto; checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA`). Lectura categorial (2-célula/equivalencia, `urn:fxsl:kb:icas-higher-categories`) bajo la superficie, nunca expuesta al modelador; verificada en deep-opm-pro (capa categorial F2). Coherente con `reglas-opm-estrictas-es §Anexo C / R-CAT-EQ`. |
 | 2026-06-03 | v1.4.1 — condiciones y loops ejecutables en opforja: `c` como bypass/omisión, múltiples condiciones AND/OR, invocación como salto de proceso, autoinvocación como bucle con salida condicional y límite runtime. Anclado a `reglas-opm-estrictas-es R-EJEC-7..10` y leyes de simulación/integración Ss↔Fs. |
+| 2026-06-04 | v1.4.2 — remediación de trazabilidad KORA: `relations.cites` declara `spec-forja-opl` e ICAS usadas como lentes; Apéndice F deja de duplicar inventario OPL v0 y delega el estado vivo a `spec-forja-opl` §20 / catálogo de fixtures. |
+| 2026-06-04 | v1.4.3 — corrección A0.4a: opforja sí puede verificar realizaciones hermanas mediante `verificarEquivalencia`; la ley in-zoom↔out-zoom queda como caso vertical complementario, no como sustituto por ausencia de autoría de variantes. |
+| 2026-06-04 | v1.4.4 — integración de familia Forja: precedencia por planos (validez, modalidad, método, formal) y regla explícita de no duplicación frente a `reglas-opm-estrictas`, `spec-forja-opd`, `spec-forja-opl` y `opm-categorial`. |

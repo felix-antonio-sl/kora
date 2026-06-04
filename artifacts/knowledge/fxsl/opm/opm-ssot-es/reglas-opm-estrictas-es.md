@@ -5,19 +5,24 @@ _manifest:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-05-31'
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/reglas-opm-estrictas.md
-version: 1.1.2
+version: 1.2.1
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; opm-opl-es.md v3.0.0; opm-visual-es.md v3.0.0;
-  metodologia-opm-es.md v3.0.0; auditoría deep-opm-pro de canon OPM 2026-05-26.
+  metodologia-opm-es.md v3.0.0; familia Forja OPM operativa (metodologia-forja-es.md
+  v1.4.4, spec-forja-opd-es.md v1.0.3, spec-forja-opl-es.md v1.1.3,
+  opm-categorial-es.md v1.2.4); auditoría
+  deep-opm-pro de canon OPM 2026-05-26.
 derived_from:
 - urn:fxsl:kb:opm-es
 - urn:fxsl:kb:opl-es
 - urn:fxsl:kb:opd-es
 - urn:fxsl:kb:manual-metodologico-opm-es
-scope: 'Canon prescriptivo operativo OPD/OPL para opforja/deep-opm-pro: reglas estrictas,
-  severidades, defaults, políticas de herramienta y gates ejecutables derivados de
-  la SSOT OPM-ES KORA. Esta capa operacionaliza la validez; no reemplaza las capas
-  semántica, visual, textual ni metodológica que declara como fuente.
+scope: 'SSOT primaria, prescriptiva y referencialmente autónoma del canon operativo
+  OPM para opforja/deep-opm-pro: reglas estrictas, severidades, defaults, políticas
+  de herramienta y gates ejecutables para validez OPD/OPL y bimodalidad. Es hermana
+  normativa de metodologia-forja-es, spec-forja-opd-es y spec-forja-opl-es; manda
+  sobre el canon operativo Forja de reglas estrictas. No redefine la ontología OPM
+  general: operacionaliza, restringe o declara extensiones sobre las capas base opm-es/opd-es/opl-es.
 
   '
 tags:
@@ -47,39 +52,75 @@ relations:
   - urn:fxsl:kb:opl-es
   - urn:fxsl:kb:opd-es
   - urn:fxsl:kb:manual-metodologico-opm-es
+  cites:
+  - urn:fxsl:kb:metodologia-forja-opm-es
+  - urn:fxsl:kb:spec-forja-opd-es
+  - urn:fxsl:kb:spec-forja-opl-es
+  - urn:fxsl:kb:opm-categorial-es
+  - urn:fxsl:kb:icas-sintesis
+  - urn:fxsl:kb:icas-composicion-estructura
+  - urn:fxsl:kb:icas-higher-categories
+  - urn:fxsl:kb:icas-comparacion
+  - urn:fxsl:kb:icas-universales
 ---
 
-# Reglas OPM estrictas — Canon prescriptivo OPD/OPL
+# Reglas OPM estrictas — SSOT prescriptiva OPD/OPL de OPFORJA
 
-> Documento canónico destilado de la SSOT autoritativa del corpus OPM-ES KORA v3.0.0.
-> Audiencia: arquitectos OPM, mantenedores del modelador `deep-opm-pro` e instancias futuras del mismo.
-> Última actualización del corpus referenciado: KORA v3.0.0 (manifiestos `urn:fxsl:kb:opm-es`, `urn:fxsl:kb:opl-es`, `urn:fxsl:kb:opd-es`, `urn:fxsl:kb:manual-metodologico-opm-es`).
-> Estado de este documento: canon prescriptivo. Cada entrada debe expresar una obligación, prohibición, condición, default, severidad o política ejecutable de herramienta.
+## Definición
 
----
+Este artefacto es la SSOT **primaria**, **prescriptiva** y **referencialmente autónoma** del canon operativo OPM de OPFORJA. Gobierna, para opforja/deep-opm-pro, las reglas estrictas de validez OPD/OPL: clases de cosas, estados, enlaces, refinamiento, modificadores, abanicos, contexto, políticas de herramienta, severidades, defaults, extensiones declaradas, gates ejecutables y condiciones de bimodalidad OPD<->OPL.
 
-## 1. Preámbulo
+La audiencia primaria son arquitectos OPM, mantenedores del modelador `deep-opm-pro` y agentes que validan, generan, importan, editan o auditan hechos OPM en la familia Forja.
 
-### 1.1 Autoridad
+Este artefacto es autocontenido: un agente conforme NO DEBE necesitar abrir `opm-iso-19450-es.md`, `opm-opl-es.md`, `opm-visual-es.md`, `metodologia-opm-es.md` ni puentes locales para decidir una regla operativa ordinaria. Las obligaciones, prohibiciones, condiciones, defaults y severidades necesarias DEBEN aparecer aquí. La procedencia a las capas base se expresa con citas `SSOT-*`, IDs `V-*`, `R-*` o `Rationale:` cuando haga falta, pero esas citas no sustituyen la regla local.
 
-La fuente única de verdad para canonicidad OPM en este proyecto es el corpus `~/kora/artifacts/knowledge/fxsl/opm/opm-ssot-es/`, compuesto por cuatro capas en orden de precedencia:
+Es la hermana prescriptiva de `metodologia-forja-es` (`urn:fxsl:kb:metodologia-forja-opm-es`), `spec-forja-opd-es` (`urn:fxsl:kb:spec-forja-opd-es`) y `spec-forja-opl-es` (`urn:fxsl:kb:spec-forja-opl-es`). Juntas forman la familia Forja OPM: este documento decide validez y severidad; `metodologia-forja` decide método de modelamiento; `spec-forja-opd` decide realización visual; `spec-forja-opl` decide realización textual y roundtrip.
 
-1. **`opm-iso-19450-es.md`** — capa semántica/ontológica. Define qué es una cosa, un enlace, un estado, qué relaciones existen y bajo qué restricciones.
-2. **`opm-opl-es.md`** — capa textual canónica. Define la gramática OPL-ES (plantillas, EBNF, vocabulario de verbos).
-3. **`opm-visual-es.md`** — capa gráfica canónica. Define geometría, contornos, decoraciones, distribución de enlaces, refinamiento visual y reglas `V-*`.
-4. **`metodologia-opm-es.md`** — capa procedimental. Define el asistente de construcción, heurísticas, anti-patrones y criterios de validación.
+## Mapa de familia Forja
 
-**Equivalencia archivo↔URN** (la capa gráfica y la procedimental llevan nombre de archivo distinto de su URN canónico): `opm-iso-19450-es.md` = `urn:fxsl:kb:opm-es`; `opm-opl-es.md` = `urn:fxsl:kb:opl-es`; `opm-visual-es.md` = `urn:fxsl:kb:opd-es`; `metodologia-opm-es.md` = `urn:fxsl:kb:manual-metodologico-opm-es`. La notación `SSOT-iso` / `SSOT-opl` / `SSOT-visual` / `SSOT-metod` (§1.2) refiere a esos cuatro archivos, en ese orden.
+Esta tabla es la norma anti-duplicación del corpus operativo. Cada artefacto DEBE ser autocontenido dentro de su alcance, pero NO DEBE re-legislar el alcance propietario de un hermano; debe citarlo por URN y delegar la decisión.
 
-**Regla de resolución de conflictos** (heredada de manual §1, *Orden de precedencia*):
-- contradicción metodológica vs semántica → prevalece capa base (`opm-es`);
-- contradicción de superficie textual vs OPL-ES → prevalece `opl-es`;
-- contradicción de heurística procedimental vs gramática visual/topológica → prevalece `opd-es`;
-- capacidades de herramienta NO redefinen semántica OPM por sí solas.
+| Artefacto | Propiedad primaria | Debe contener | No debe duplicar |
+| --- | --- | --- | --- |
+| `reglas-opm-estrictas-es` | Validez, severidad, defaults, extensiones declaradas y gates de canon operativo. | Reglas prescriptivas aplicables a hechos OPD/OPL, niveles de canonicidad, políticas de herramienta y anexos ejecutables. | Geometría completa, plantillas OPL completas, método paso a paso o explicación categorial extendida. |
+| `metodologia-forja-es` | Método de modelamiento y calidad de construcción. | Procedimiento, heurísticas, lecciones forja, criterios de decisión y uso humano/agente del método. | Validez nuclear, severidades, glifos detallados, gramática OPL completa o leyes categoriales como vocabulario de modelador. |
+| `spec-forja-opd-es` | Realización visual/OPD. | Geometría, marcadores, layout, interacción visual, canvas, export visual y trazabilidad renderer. | Taxonomía normativa general de cosas/enlaces si ya está en reglas, plantillas OPL textuales o método de construcción. |
+| `spec-forja-opl-es` | Realización textual/OPL y roundtrip textual. | Vocabulario, plantillas, tokenización, parseo, edición OPL, panel textual, errores y fixtures de bisimetría. | Gramática visual OPD, severidad normativa general o método de modelamiento. |
+| `opm-categorial-es` | Puente formal ICAS-BoK bajo la superficie. | Lectura categorial, trazabilidad a ICAS y correspondencia con leyes verificables. | Reglas nuevas para modeladores, UI, glifos, plantillas OPL o método operativo. |
 
-**OPCloud (la implementación comercial de referencia) NO es autoritativo.** El análisis del corpus OPCloud sirvió como insumo de v3.0.0, pero los hechos divergentes de OPCloud quedaron explícitamente arbitrados por las reglas `V-*` y se desplazaron a "afordance UI" o "extensión declarada" cuando no eran canónicas. La SSOT manda.
+Una regla que cambie canonicidad DEBE vivir en este documento. Una regla que cambie solo superficie visual DEBE vivir en `spec-forja-opd-es`; si altera validez, debe citar y respetar este documento. Una regla que cambie solo superficie textual DEBE vivir en `spec-forja-opl-es`; si altera validez, debe citar y respetar este documento. Una regla metodológica que recomiende cómo modelar DEBE vivir en `metodologia-forja-es`; si bloquea o permite un hecho, debe elevarse a este documento. Una afirmación categorial que se vuelva operativa DEBE tener regla propietaria en este documento o en la spec modal correspondiente, más ley verificable.
 
-### 1.2 Convención de citas
+## Definiciones
+
+| Término | Definición |
+| --- | --- |
+| Regla estricta | Obligación, prohibición, condición, default, severidad o política ejecutable que decide si un hecho, vista o operación es aceptable en opforja. |
+| SSOT primaria | Artefacto que manda dentro de su alcance operativo y no requiere consultar otra fuente para aplicar una decisión ordinaria. |
+| Referencialmente autónomo | Las fuentes se citan para procedencia, trazabilidad o arbitraje, pero la regla aplicable vive localmente en este documento. |
+| Capa base | Corpus OPM general (`opm-es`, `opd-es`, `opl-es`, `manual-metodologico-opm-es`) que define semántica, gramática visual/textual y método tool-agnostic. |
+| Familia Forja OPM | Conjunto operativo formado por este canon prescriptivo, `metodologia-forja-es`, `spec-forja-opd-es` y `spec-forja-opl-es`. |
+| Extensión declarada | Capacidad de opforja que no pertenece al núcleo ISO/OPM base, pero se admite si queda tipificada, trazada, verificable y no contradice la semántica OPM. |
+| Gate ejecutable | Checker, test, ley, validador o política de import/export que aplica una regla sin depender de interpretación humana. |
+| Severidad | Clasificación operativa de incumplimiento: bloqueo, advertencia, mejora metodológica, vista/UI o extensión pendiente, según la tabla local correspondiente. |
+| Bimodalidad | Invariante por el cual un hecho OPM editado en OPD puede realizarse en OPL y una oración OPL canónica puede volver al mismo hecho. |
+
+## Precedencia
+
+Este documento DEBE mandar sobre el canon prescriptivo operativo de OPFORJA: validación de hechos, severidades, defaults, políticas de herramienta, reglas de import/export, reglas de roundtrip y decisión de si una capacidad se trata como canónica, condicionada, UI/vista, extensión declarada, no canonizada o prohibida.
+
+`spec-forja-opd-es` y `spec-forja-opl-es` DEBEN quedar bajo este documento para el canon OPM nuclear: ante conflicto sobre qué es una cosa, un enlace, un estado, una relación, una prohibición, una severidad o una extensión declarada, prevalece este documento. Esas specs son SSOT primarias dentro de su modalidad: OPD/visual para `spec-forja-opd-es`, OPL/textual para `spec-forja-opl-es`.
+
+`metodologia-forja-es` es SSOT primaria del método de modelamiento. Ante conflicto entre una recomendación metodológica y una regla de validez, prevalece este documento; ante una decisión sobre orden de trabajo, heurística o calidad de construcción que no cambia validez, prevalece `metodologia-forja-es`.
+
+Las capas base `urn:fxsl:kb:opm-es`, `urn:fxsl:kb:opd-es`, `urn:fxsl:kb:opl-es` y `urn:fxsl:kb:manual-metodologico-opm-es` siguen siendo autoridad semántica general de OPM. Este documento las operacionaliza para opforja: si una regla local contradice una capa base sin declararse como restricción, perfil o extensión local, DEBE abrirse corrección documental. Las capacidades de herramienta NO redefinen semántica OPM por sí solas.
+
+**Equivalencia archivo<->URN**: `opm-iso-19450-es.md` = `urn:fxsl:kb:opm-es`; `opm-opl-es.md` = `urn:fxsl:kb:opl-es`; `opm-visual-es.md` = `urn:fxsl:kb:opd-es`; `metodologia-opm-es.md` = `urn:fxsl:kb:manual-metodologico-opm-es`. La notación `SSOT-iso` / `SSOT-opl` / `SSOT-visual` / `SSOT-metod` refiere a esas cuatro capas.
+
+**OPCloud (la implementación comercial de referencia) NO es autoritativo.** El análisis del corpus OPCloud sirve como insumo de comparación, no como fuente de validez. Los hechos divergentes de OPCloud DEBEN arbitrarse como canon, afordance UI, extensión declarada o no canonizados según esta SSOT.
+
+## Convenciones
+
+### Convención de citas
 
 Cada regla en este documento cita su fuente. Notación:
 - `SSOT-iso §X` → sección de `opm-iso-19450-es.md`.
@@ -90,7 +131,7 @@ Cada regla en este documento cita su fuente. Notación:
 
 Cuando una regla aparece en varias capas se cita primero la propietaria, luego las realizaciones.
 
-### 1.3 Contrato prescriptivo de exhaustividad
+### Contrato prescriptivo de exhaustividad
 
 - **R-DOC-1**: este documento DEBE formular reglas, no explicación histórica ni tutorial.
 - **R-DOC-2**: todo contenido conservado en este documento DEBE poder clasificarse como obligación, prohibición, condición, default, severidad, política de herramienta, matriz normativa o gate ejecutable.
@@ -99,7 +140,7 @@ Cuando una regla aparece en varias capas se cita primero la propietaria, luego l
 - **R-DOC-4A**: una remisión a la SSOT propietaria PUEDE conservar autoridad de redacción literal, EBNF completa o detalle de origen, pero NO DEBE sustituir la regla local aplicable.
 - **R-DOC-4B**: índices exhaustivos, glosarios abreviados, tablas de navegación y resúmenes de cobertura NO DEBEN conservarse en este canon si duplican reglas ya definidas; DEBEN moverse fuera del canon salvo que operen como gate ejecutable.
 - **R-DOC-4C**: reglas metodológicas sobre simulación, MBSE/PDR, integración virtual o ejecución computacional DEBEN vivir fuera de este canon salvo que alteren canonicidad OPD/OPL, validación de hechos o roundtrip OPD<->OPL.
-- **R-DOC-5**: si una regla local diverge de la SSOT, la regla local queda inválida y DEBE abrirse corrección documental.
+- **R-DOC-5**: si una regla local diverge de la capa base sin declararse como restricción operativa, perfil o extensión local, DEBE abrirse corrección documental.
 - **R-DOC-6**: si la SSOT contiene prosa informativa sin efecto operativo, este documento NO DEBE copiarla; DEBE extraer solo la obligación, prohibición o condición implementable.
 - **R-DOC-7**: si una capacidad de herramienta no está canonizada por la SSOT, DEBE clasificarse como `UI / vista`, `No canonizado` o `extensión declarada`, nunca como OPM nuclear.
 - **R-DOC-8**: la redacción normativa DEBE usar español editorialmente consistente; términos acentuables de uso ordinario se escriben con acento salvo dentro de código, identificadores, rutas, tokens OPL literales o citas técnicas.
@@ -114,7 +155,7 @@ La exhaustividad prescriptiva se evalúa así:
 | Metodología | propósito, SD, refinamiento, heurísticas, validación y reglas que cambian canonicidad OPD/OPL | `metodologia-opm-es.md` |
 | Bisimetría | reglas para que un hecho editado en OPD sea texto y un texto OPL vuelva al mismo hecho | las cuatro capas |
 
-Este documento NO sustituye la SSOT fuente cuando una implementación necesita la EBNF completa o la redacción literal de una regla. Si aparece una divergencia entre este documento y la SSOT, se abre bug documental y se aplica la precedencia de §1.1.
+Este documento SÍ sustituye la necesidad de abrir la fuente base para decidir canonicidad operativa ordinaria. Cuando una implementación necesite la EBNF completa, la redacción literal histórica o el detalle de origen, PUEDE abrir la capa base propietaria; si aparece una divergencia no declarada entre este documento y la capa base, se abre bug documental y se aplica la precedencia de §Precedencia.
 
 Niveles de decisión usados en tablas:
 
@@ -128,7 +169,7 @@ Niveles de decisión usados en tablas:
 
 Las **tablas son normativas**. La prosa fuera de tablas solo es válida si formula una regla aplicable.
 
-### 1.4 Conformidad OPM
+### Conformidad OPM
 
 | Nivel de conformidad | Reglas obligatorias |
 |---|---|
@@ -140,7 +181,7 @@ Las **tablas son normativas**. La prosa fuera de tablas solo es válida si formu
 - **R-CONF-5**: una implementación que permite construir modelos completos pero no valida refinamiento, contexto o consistencia OPD↔OPL solo puede declararse parcial, no herramienta conforme.
 - **R-CONF-6**: una implementación que acepta OPL fuera de EBNF DEBE clasificarlo como legacy, extensión o error; NO DEBE presentarlo como OPL-ES canónico.
 
-### 1.5 Principios de modelado como reglas
+### Principios de modelado como reglas
 
 - **R-PRIN-1** (`SSOT-iso §Principios de modelado`): todo modelo DEBE declarar propósito de modelado antes de fijar alcance o detalle.
 - **R-PRIN-2**: toda decisión de alcance DEBE derivarse de la función del sistema, el propósito de modelado y los interesados relevantes.
@@ -1478,7 +1519,8 @@ Al editar OPD:
 **C.2 — Equivalencia funcional por firma de frontera**
 
 - **R-CAT-EQ-1**: dos realizaciones alternativas de un mismo proceso son funcionalmente equivalentes si presentan la misma FIRMA DE FRONTERA — el conjunto de roles netos `entidad|tipoEnlace|rol` sobre las entidades de frontera — aunque su interior difiera (lectura: 2-célula / equivalencia, `urn:fxsl:kb:icas-higher-categories`, `urn:fxsl:kb:icas-comparacion`). Comparar la sección local completa sería demasiado estricto: dos interiores distintos jamás equivaldrían.
-- **R-CAT-EQ-2**: como opforja no autorea realizaciones hermanas de un proceso, R-CAT-EQ-1 se aplica como **ley in-zoom ↔ out-zoom**: toda descomposición (in-zoom) DEBE preservar la firma de frontera de su proceso abstracto (out-zoom). Violación: checker navegable `DESCOMPOSICION_NO_PRESERVA_FRONTERA` (pasivo, surge solo si se rompe la frontera). Severidad: mejora metodológica. Cierra formalmente el método A0 (realizaciones alternativas) de `metodologia-forja-es.md`.
+- **R-CAT-EQ-2**: opforja PUEDE verificar realizaciones hermanas de un proceso mediante `verificarEquivalencia`: dadas dos realizaciones/OPDs comparables del mismo padre, DEBEN compartir la misma firma de frontera para declararse funcionalmente equivalentes. Si difieren roles netos, la equivalencia funcional NO aplica aunque ambas sean modelos OPM válidos. Severidad: mejora metodológica.
+- **R-CAT-EQ-3**: la misma regla se aplica verticalmente como **ley in-zoom ↔ out-zoom**: toda descomposición (in-zoom) DEBE preservar la firma de frontera de su proceso abstracto (out-zoom). Violación: checker navegable `DESCOMPOSICION_NO_PRESERVA_FRONTERA` (pasivo, surge solo si se rompe la frontera). Severidad: mejora metodológica. Cierra formalmente el método A0 (realizaciones alternativas) de `metodologia-forja-es.md` sin negar la comparación de realizaciones hermanas.
 
 **C.3 — Composición por interfaz compartida**
 
