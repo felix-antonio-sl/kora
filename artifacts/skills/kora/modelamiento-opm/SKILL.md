@@ -5,14 +5,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-27"
-    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es). Desde v1.3.0 usa urn:fxsl:kb:metodologia-forja-opm-es como metodo primario para modelamiento OPM-en-opforja."
-    updated_at: "2026-05-31"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. v1.3.0 integra Metodologia Forja (urn:fxsl:kb:metodologia-forja-opm-es) como SSOT primaria de metodo cuando el destino es opforja/deep-opm-pro."
-version: "1.3.0"
+    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es). Desde v1.3.0 usa urn:fxsl:kb:metodologia-forja-opm-es como metodo primario para modelamiento OPM-en-opforja. Desde v1.4.0 integra urn:fxsl:kb:reglas-opm-estrictas-es como canon prescriptivo operativo y urn:fxsl:kb:spec-forja-opl-es como SSOT bidireccional del OPL de OPFORJA. v1.4.1 corrige la interpretacion operativa de severidades AP-* y del enum OPL §1.1."
+    updated_at: "2026-06-04"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. v1.3.0 integra Metodologia Forja (urn:fxsl:kb:metodologia-forja-opm-es) como SSOT primaria de metodo cuando el destino es opforja/deep-opm-pro. v1.4.0 integra las dos SSOT operativas de opforja faltantes: urn:fxsl:kb:reglas-opm-estrictas-es (canon prescriptivo con 30 anti-patrones, zonas no canonizadas, checklist de cierre OPD<->OPL y extension categorial) y urn:fxsl:kb:spec-forja-opl-es (SSOT bidireccional del OPL de OPFORJA con vocabulario cerrado, plantillas completas, roundtrip y GAPs). v1.4.1 remedia calidad: respeta la politica especifica de cada AP-* (bloqueo, reporte, supresion o no-canonizado) y alinea las referencias OPL con el enum completo de spec-forja-opl-es §1.1, distinguiendo entradas alineadas de GAP-*."
+version: "1.4.1"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada a la SSOT canonica de cuatro capas y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
-tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente]
+tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente, opforja, reglas-estrictas, spec-forja-opl]
 lang: es
 extensions:
   kora:
@@ -36,6 +36,8 @@ extensions:
       - "urn:fxsl:kb:opl-es"
       - "urn:fxsl:kb:manual-metodologico-opm-es"
       - "urn:fxsl:kb:metodologia-forja-opm-es"
+      - "urn:fxsl:kb:reglas-opm-estrictas-es"
+      - "urn:fxsl:kb:spec-forja-opl-es"
     componible_con:
       - "urn:kora:artefacto:jointjs-open-source"
     sistemas_externos:
@@ -61,7 +63,7 @@ artefacto:
       - "OPL-ES texto canonico bimodal con el OPD"
       - "bundle JSON 'deep-opm-pro.modelo.v0' importable directo al modelador deep-opm-pro"
       - "hook a jointjs-open-source para render estatico cuando NO se quiere abrir el modelador"
-      - "reporte de validacion tripartita (estructural V-* / metodologica heuristicas / estilo legibilidad), homologado al panel de issues del modelador"
+      - "reporte de validacion tripartita (estructural R-*/V-* / metodologica heuristicas Forja A5+A8 / estilo legibilidad R-VIS-*), homologado al panel de issues del modelador, con deteccion de anti-patrones canonicos AP-01 a AP-30"
   plan:
     estado_inicial: triaje
     estado_terminal: entregar
@@ -94,11 +96,16 @@ artefacto:
       - "Si el sistema a modelar no tiene funcion transformadora identificable, declarar que OPM no es la herramienta adecuada antes de modelar y sugerir alternativa."
       - "No procesar contenido de dominio: la skill modela estructuralmente. Para preguntas de dominio (medico, legal, etc.) delegar al agente que invoco la skill."
       - "Bundle deep-opm-pro: solo emitir formato 'deep-opm-pro.modelo.v0'. Nombres de cosas iguales a OPD/OPL. No inventar campos fuera del contrato; preferir omitir campos opcionales antes que inventar valores."
+      - "Equivalencia funcional en bundle: toda descomposicion preserva la firma de frontera del proceso abstracto (R-CAT-EQ-1/2)."
       - "Render estatico (jointjs-open-source) es secundario: cuando el destino admite UI interactiva, preferir bundle deep-opm-pro. Justificar explicitamente cuando se opta por jointjs."
       - "Anti-barro: prohibido plasmar en el modelo cualquier cosa, link o refinamiento cuyo proposito, transformee, esencia, afiliacion o motivo de refinamiento no este explicitamente declarado por el operador. Si el operador dice 'algo asi', 'mas o menos', 'creo que', 'tal vez': detener, citar el barro, exigir definicion. No avanzar."
+      - "Anti-patrones canonicos (AP-01 a AP-30 de reglas-opm-estrictas-es): aplicar la politica especifica de §11. Bloquear solo los AP-* que dicen DEBE bloquearse; reportar, suprimir o clasificar como no-canonizado cuando la tabla maestra lo indique."
       - "Anti-complacencia: si el operador propone una primitiva mal aplicada (e.g. llama 'agente' a una herramienta, mete proceso donde corresponde objeto, refina sin transformee), corregirlo de frente citando la capa propietaria. No suavizar. No 'interpretar caritativamente' la intencion."
       - "Aclaracion serial: una pregunta a la vez, dirigida y citada. Nunca lanzar batches de 5 preguntas. Cada pregunta debe enunciar que regla o que barro la motivo, y que opciones son legales segun la SSOT."
       - "Distincion decisional: separar 'decision deliberada del operador' (valida, queda registrada como supuesto explicito) de 'incertidumbre no resuelta' (bloqueante). El operador puede elegir un camino subóptimo si lo declara como decision; no puede dejar el campo en blanco."
+      - "Vocabulario OPL cerrado (spec-forja-opl-es §1.1): solo verbos y copulas del enum cerrado. Verbo fuera del enum = rechazo del parser."
+      - "GAPs OPL: una entrada canonica marcada GAP-* en spec-forja-opl-es §20 no se promete como roundtrip operacional hasta cerrar generador/parser/fixture. Si se usa, declararla como deuda o canon textual no importable."
+      - "Roundtrip OPL: toda oracion emitida como salida operacional importable debe ser parseable de vuelta al mismo hecho."
     compromisos_eticos:
       transparency: "Maxima; cada decision de modelado cita la regla de la capa correspondiente (V-NN, §X.Y de opm-es, plantilla de opl-es). Cada bloqueo cita el barro detectado y la regla que se viola."
       accountability: "Maxima; la skill no asume por el operador. Cada supuesto se declara como tal y queda registrado en el reporte. Construir sobre supuestos no declarados es una falta tan grave como violar V-*."
@@ -119,6 +126,11 @@ Anclaje canonico:
 - **Metodo opforja**: `urn:fxsl:kb:metodologia-forja-opm-es` cuando el destino
   de trabajo sea opforja/deep-opm-pro. Esta capa orienta el camino de
   modelamiento; no redefine primitivas ni relaja validez.
+- **Prescripcion opforja**: `urn:fxsl:kb:reglas-opm-estrictas-es` como canon
+  prescriptivo operativo (reglas ejecutables, 30 anti-patrones, checklist de
+  cierre, extension categorial).
+- **OPL opforja**: `urn:fxsl:kb:spec-forja-opl-es` como SSOT bidireccional del
+  lenguaje OPL de OPFORJA (vocabulario cerrado, generacion/parseo, divergencias).
 
 | Capa | URN | Rol en la skill |
 |------|-----|-----------------|
@@ -126,7 +138,9 @@ Anclaje canonico:
 | Visual | `urn:fxsl:kb:opd-es` | gramatica grafica: como se dibuja un hecho |
 | Textual | `urn:fxsl:kb:opl-es` | gramatica textual: como se enuncia un hecho |
 | Procedimental | `urn:fxsl:kb:manual-metodologico-opm-es` | protocolo: como se construye y refina un modelo |
-| Metodo opforja | `urn:fxsl:kb:metodologia-forja-opm-es` | SSOT primaria de metodologia OPM-en-opforja: secuencia de modelamiento, lecciones forja, realizacion del bundle y disciplina de herramienta |
+| Metodo opforja | `urn:fxsl:kb:metodologia-forja-opm-es` | SSOT primaria de metodologia OPM-en-opforja: secuencia de modelamiento (A0-A8), lecciones forja (LF-01 a LF-18), realizacion del bundle y disciplina de herramienta |
+| Reglas estrictas | `urn:fxsl:kb:reglas-opm-estrictas-es` | canon prescriptivo operativo para opforja: reglas ontologicas (R-COSA-*, R-OBJ-*, R-PROC-*, etc.), 30 anti-patrones canonicos (AP-01 a AP-30), zonas no canonizadas (R-ZNC-*), checklist de cierre OPD<->OPL (Anexo A, 12 gates), reglas visuales prescriptivas (R-VIS-*) y extension categorial de opforja (Anexo C: linealidad, equivalencia funcional, composicion) |
+| OPL opforja | `urn:fxsl:kb:spec-forja-opl-es` | SSOT bidireccional del lenguaje OPL de OPFORJA: vocabulario cerrado de verbos/copulas (§1.1), plantillas completas de generacion y parseo, reglas de presentacion/interaccion/edicion, invariantes de equivalencia (§19) y GAPs trazados contra codigo (§20) |
 
 ## Cuando Usar
 
@@ -228,10 +242,15 @@ Convencion de entrega por defecto: si no se especifica formato, asumir que el de
 
 **Gate opforja.** Si el destino es opforja/deep-opm-pro, cargar primero
 `urn:fxsl:kb:metodologia-forja-opm-es` y aplicar sus lecciones LF-* como
-metodologia primaria (A0-A8 + catalogo). La precedencia sigue siendo: las capas
-de validez (`opm-es`, `opd-es`, `opl-es`) deciden si un hecho es legal; la
-Metodologia Forja decide el camino, altitud, realizacion en bundle y disciplina
-de herramienta.
+metodologia primaria (A0-A8 + catalogo). Para validar hechos contra el canon
+prescriptivo, usar `urn:fxsl:kb:reglas-opm-estrictas-es` (reglas R-*, 30
+anti-patrones AP-*, checklist de cierre Anexo A). Para emitir y parsear OPL-ES,
+usar `urn:fxsl:kb:spec-forja-opl-es` (vocabulario cerrado de verbos, plantillas
+completas, divergencias documentadas en §20). La precedencia sigue siendo: las
+capas de validez (`opm-es`, `opd-es`, `opl-es`) deciden si un hecho es legal;
+`reglas-opm-estrictas-es` prescribe las reglas ejecutables y anti-patrones;
+`metodologia-forja-opm-es` decide el camino, altitud, realizacion en bundle y
+disciplina de herramienta; `spec-forja-opl-es` fija la superficie OPL exacta.
 
 **Gate de claridad al salir de triaje**: si el input del operador contiene barro (ver §Catalogo de barro), no avanzar al estado siguiente. Derivar a `aclarar` con la primera pregunta dirigida.
 
@@ -293,13 +312,13 @@ Tras cada paso de refinamiento, mantener bimodalidad y volver a `validar-modelo`
 
 ### `validar-modelo`: verificar invariantes
 
-Tres niveles (ver `referencias/checklist-validacion.md`), homologados a la **clasificacion tripartita** del modelador deep-opm-pro (`PanelMetodologia`: bloqueos estructurales / mejoras metodologicas / estilo-legibilidad):
+Tres niveles (ver `referencias/checklist-validacion.md`), homologados a la **clasificacion tripartita** del modelador deep-opm-pro (`PanelMetodologia`: bloqueos estructurales / mejoras metodologicas / estilo-legibilidad), con cobertura del canon prescriptivo `urn:fxsl:kb:reglas-opm-estrictas-es`:
 
-1. **Bloqueos estructurales** — Reglas V-* de la capa visual (`opd-es`) y reglas semanticas de la capa nuclear (`opm-es`): firma de enlaces, clases validas de cosas y links, aciclicidad del refinement tree, integridad de referencias OPD↔OPL.
-2. **Mejoras metodologicas** — Heuristicas del manual (`manual-metodologico-opm-es`): claridad (≤ 7±2 cosas visibles por OPD), completitud (estructura + comportamiento + funcion explicitas), bimodalidad efectiva, jerarquia de refinamiento bien motivada.
-3. **Estilo / legibilidad** — Convenciones tipograficas, posicionamiento, etiquetas, codigos OPD; equivalentes a las advertencias visuales del modelador.
+1. **Bloqueos estructurales** — Reglas V-* de la capa visual (`opd-es`), reglas semanticas de la capa nuclear (`opm-es`), y reglas prescriptivas operativas (`reglas-opm-estrictas-es` R-COSA-*, R-OBJ-*, R-PROC-*, R-EST-*, R-INS-*, R-NOM-*, R-EJEC-*): firma de enlaces, clases validas de cosas y links, aciclicidad del refinement tree, integridad de referencias OPD↔OPL. Validar contra los **30 anti-patrones canonicos** (AP-01 a AP-30) aplicando su politica especifica (bloqueo, reporte, supresion o no-canonizado) y las zonas no canonizadas (R-ZNC-*). Usar el checklist de cierre OPD↔OPL del Anexo A (12 gates: identidad, firma, estado, OPL, parseo, modificadores, refinamiento, distribucion, vistas, UI, export, deuda).
+2. **Mejoras metodologicas** — Heuristicas del manual (`manual-metodologico-opm-es`) y de la Metodologia Forja (A5: 38 heuristicas §9.1-§9.38, A8.1): claridad (≤ 20-25 entidades por OPD), completitud (estructura + comportamiento + funcion explicitas), bimodalidad efectiva, jerarquia de refinamiento bien motivada, equivalencia funcional por firma de frontera (R-CAT-EQ-1/2), conflictos de linealidad (R-CAT-LIN-2).
+3. **Estilo / legibilidad** — Convenciones tipograficas, posicionamiento, etiquetas, codigos OPD, reglas visuales prescriptivas (R-VIS-* del Anexo B); equivalentes a las advertencias visuales del modelador.
 
-Salida: reporte pass/fail por categoria con cita de la regla violada (V-NN o §X.Y) y sugerencia de fix. La forma del reporte es directamente reciclable al panel de issues del modelador (codigo, severidad, regla, contexto, fix sugerido).
+Salida: reporte pass/fail por categoria con cita de la regla violada (V-NN, §X.Y, R-*, AP-NN) y sugerencia de fix. La forma del reporte es directamente reciclable al panel de issues del modelador (codigo, severidad, regla, contexto, fix sugerido).
 
 Si falla en bloqueo estructural → volver a `refinar-modelo` con el fix sugerido (no avanzar).
 Si falla solo en metodologia o estilo → avanzar igual, pero declarar los issues en el reporte.
@@ -307,13 +326,16 @@ Si pasa → avanzar a `serializar-opl`.
 
 ### `serializar-opl`: emitir OPL-ES
 
-Para cada hecho del modelo, generar la sentencia OPL-ES correspondiente usando las plantillas (ver `referencias/plantillas-opl-es.md`).
+Para cada hecho del modelo, generar la sentencia OPL-ES correspondiente usando las plantillas (ver `referencias/plantillas-opl-es.md`). Cuando el destino es opforja/deep-opm-pro, usar el **vocabulario cerrado de verbos y copulas** de `urn:fxsl:kb:spec-forja-opl-es` §1.1. Toda emision de verbo fuera de ese enum es ilegal en opforja y el parser la rechazara.
 
 Reglas:
 - una sentencia por hecho.
 - agrupar sentencias por OPD.
 - si el modelo es compuesto, emitir paragraph headings indicando OPD activo.
 - mantener nombres de cosas exactamente igual que en el OPD.
+- aplicar las reglas de generacion bidireccional de `spec-forja-opl-es`: toda oracion emitida debe ser parseable de vuelta al mismo hecho (roundtrip).
+- distinguir entradas **alineadas** de entradas **GAP-*** en `spec-forja-opl-es` §20. Las entradas GAP-* son canonicas, pero no se prometen como roundtrip operacional de deep-opm-pro hasta cerrar generador, parser y fixture.
+- conocer las divergencias entre fuentes canonicas declaradas en `spec-forja-opl-es` §1.4; no resolverlas por memoria ni por sinonimos libres.
 
 ### `serializar-bundle`: emitir bundle deep-opm-pro
 
@@ -336,6 +358,8 @@ Reglas:
 - Toda referencia entre OPDs (parent/child por in-zoom, unfold) debe ser internamente consistente — el modelador rechaza el import si rompe `validarReferenciasOpd`.
 - Si la skill no tiene certeza de un campo opcional (estilo, vertices, ordenPartes, duracion), omitirlo: el modelador lo normaliza al hidratar.
 - No emitir `formato` distinto a `"deep-opm-pro.modelo.v0"` (el detector de version de la app falla al hidratar variantes no anunciadas).
+- **Gate de equivalencia funcional** (R-CAT-EQ-1/2 de `reglas-opm-estrictas-es` Anexo C): toda descomposicion (in-zoom) debe preservar la firma de frontera de su proceso abstracto (out-zoom). Si el bundle contiene refinamiento, verificar que no se anaden ni quitan roles de frontera; el checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA` de la app detecta esta violacion.
+- **Gate de composicion** (R-CAT-COMP-1/2/3 de `reglas-opm-estrictas-es` Anexo C): si el bundle compone multiples modelos, la interfaz compartida no debe duplicar entidades, no debe dejar referencias colgantes, y debe ser asociativa modulo namespacing de ids.
 
 Salida: string JSON listo para pegar en el dialogo de import del modelador (o para consumir via `hidratarModelo` programaticamente).
 
@@ -372,12 +396,16 @@ Cuando el modelador este abierto, indicar al agente invocador que el bundle se i
 8. **Aborta si OPM no aplica** (sistema sin funcion transformadora identificable).
 9. **No invadas dominio**: la skill modela estructura, el agente aporta semantica de dominio.
 10. **Bundle deep-opm-pro fiel**: solo emitir formato `deep-opm-pro.modelo.v0`. Nombres de cosas iguales a OPD/OPL. Preferir omitir campos opcionales antes que inventarlos.
+10a. **Equivalencia funcional**: toda descomposicion debe preservar la firma de frontera del proceso abstracto (R-CAT-EQ-1/2). Verificar antes de cerrar el bundle.
 11. **Render estatico es excepcion**: cuando hay entorno interactivo, preferir bundle deep-opm-pro sobre jointjs-open-source. Justificar la opcion contraria.
 12. **Anti-barro**: prohibido plasmar en el modelo cualquier elemento cuyo proposito, transformee, esencia, afiliacion o motivo de refinamiento no este declarado por el operador. Detectar barro = entrar a `aclarar` = bloquear avance.
+12a. **Anti-patrones canonicos**: si el modelo incurre en algun AP-* de `reglas-opm-estrictas-es`, aplicar la politica exacta de la tabla maestra §11. Los AP-* que dicen DEBE bloquearse bloquean; AP-28 se clasifica como no-canonizado/extension declarada; AP-* de reporte o supresion no se elevan artificialmente a bloqueo.
 13. **Anti-complacencia**: si el operador propone una primitiva mal aplicada, decirlo de frente con cita a la capa propietaria. No interpretar caritativamente la intencion. La skill no es un asistente que adivina; es un par que exige.
 14. **Aclaracion serial**: una pregunta a la vez, con la plantilla `[BARRO][REGLA][PREGUNTA][OPCIONES]`. Nunca batch.
 15. **Decision vs. incertidumbre**: el operador puede tomar decisiones suboptimas si las declara. No puede dejar el campo en blanco. La skill no rellena por el.
 16. **Equivalencia OPD↔OPL validada por el operador**: cada hecho del SD se le muestra al operador en oracion OPL-ES; si la oracion no expresa lo que el operador queria decir, el modelo esta mal — volver a aclarar.
+17. **Vocabulario OPL cerrado**: cuando el destino es opforja, usar exclusivamente los verbos y copulas del enum cerrado de `spec-forja-opl-es` §1.1. Cualquier verbo fuera del enum es rechazado por el parser de opforja.
+18. **Roundtrip OPL operacional**: toda oracion emitida como salida importable debe poder parsearse de vuelta al mismo hecho (invariante de equivalencia de `spec-forja-opl-es` §19). Si la oracion usa una entrada GAP-* de §20, declararla como canon textual/deuda y no prometer import roundtrip.
 
 ## Composicion con deep-opm-pro (mesa de trabajo primaria)
 
@@ -449,13 +477,13 @@ Si el modelador esta disponible y el destino admite UI, **prefiere bundle deep-o
 
 - `referencias/wizard-sd.md` — protocolo SD: del proposito a las cosas iniciales (condensado del manual metodologico).
 - `referencias/refinamiento-mecanismos.md` — los 4 pares canonicos + criterios de decision.
-- `referencias/checklist-validacion.md` — V-* criticos + heuristicas de claridad y completitud.
-- `referencias/plantillas-opl-es.md` — plantillas de oracion OPL-ES por tipo de hecho (cosas, estados, links procedurales, links estructurales).
+- `referencias/checklist-validacion.md` — V-* criticos + reglas prescriptivas (R-COSA-*, R-OBJ-*, R-PROC-*, R-EST-*, R-EJEC-*) + 30 anti-patrones canonicos (AP-01 a AP-30) + checklist de cierre OPD↔OPL (12 gates del Anexo A) + heuristicas de claridad y completitud.
+- `referencias/plantillas-opl-es.md` — plantillas de oracion OPL-ES por tipo de hecho (cosas, estados, links procedurales, links estructurales) con el vocabulario cerrado de verbos de `spec-forja-opl-es` §1.1 y la distincion alineado/GAP-* de §20.
 - `referencias/precedencia-capas.md` — protocolo de resolucion de tensiones entre capas.
-- `referencias/bundle-deep-opm-pro.md` — contrato del bundle JSON `deep-opm-pro.modelo.v0`: campos requeridos / opcionales, normalizaciones aplicadas al hidratar, errores comunes de import.
+- `referencias/bundle-deep-opm-pro.md` — contrato del bundle JSON `deep-opm-pro.modelo.v0`: campos requeridos / opcionales, normalizaciones aplicadas al hidratar, errores comunes de import, gates de equivalencia funcional y composicion.
 - `referencias/catalogo-de-barro.md` — anti-patrones de modelado que detienen la skill, ejemplos vivos y plantillas de pregunta clarificadora por tipo de barro.
 
-Las referencias son **resumenes operativos curados**, no SSOT. La SSOT semantica son las cuatro URNs `urn:fxsl:kb:{opm-es,opd-es,opl-es,manual-metodologico-opm-es}`. La SSOT del contrato de bundle es el codigo del modelador (`~/projects/deep-opm-pro/app/src/serializacion/json.ts` + `app/src/modelo/tipos/`). Si una referencia tensiona con la SSOT correspondiente, manda la SSOT.
+Las referencias son **resumenes operativos curados**, no SSOT. La SSOT semantica son las siete URNs `urn:fxsl:kb:{opm-es,opd-es,opl-es,manual-metodologico-opm-es,metodologia-forja-opm-es,reglas-opm-estrictas-es,spec-forja-opl-es}`. La SSOT del contrato de bundle es el codigo del modelador (`~/projects/deep-opm-pro/app/src/serializacion/json.ts` + `app/src/modelo/tipos/`). Si una referencia tensiona con la SSOT correspondiente, manda la SSOT.
 
 ### Recursos
 
