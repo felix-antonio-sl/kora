@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import shutil
 
+from .artifacts import load_markdown_parts
 from .config import KORA_ROOT
 from .transmute import (
     _build_claude_code_skill_target_path,
@@ -11,6 +12,7 @@ from .transmute import (
     _build_opencode_skill_target_path,
     _build_openclaw_skill_target_path,
     _build_target_path,
+    _openclaw_agent_workspace_name,
     _resolve_agent_path,
     _resolve_skill_path,
 )
@@ -95,8 +97,12 @@ def _agent_build_operation(target: str, agent_md: Path, home: Path) -> DeployOpe
         destination = home / ".config" / "opencode" / "agents" / f"{name}.md"
         operation = "file"
     elif target == "openclaw":
+        frontmatter, _ = load_markdown_parts(agent_md)
+        if not isinstance(frontmatter, dict):
+            frontmatter = {}
+        workspace_name = _openclaw_agent_workspace_name(frontmatter, name)
         source = build_dir / "workspace"
-        destination = home / "openclaw-fleet" / "workspaces" / name
+        destination = home / "openclaw-fleet" / "workspaces" / workspace_name
         operation = "directory"
     else:
         raise ValueError(f"Unsupported agent deploy target: {target}")

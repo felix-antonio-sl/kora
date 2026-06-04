@@ -6,7 +6,7 @@ _manifest:
     created_by: FS
     created_at: '2026-05-08'
     source: Portado de skill del agente salubrista-hah (OpenClaw).
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: constructor-tableros
 descripcion: 'Construye artefactos estructurados de apoyo a decision: mapas de brechas,
@@ -38,6 +38,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     conocimiento_permitido:
     - urn:salud:kb:salubrista

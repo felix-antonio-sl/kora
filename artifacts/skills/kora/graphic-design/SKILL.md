@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-23'
     source: Migracion desde artifacts/skills/_TALLER/INBOX/graphic-design/SKILL.md
       (legacy overlay v1, 353 lineas) a shape unified v1.2
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: graphic-design
 descripcion: Disena identidades visuales como sistemas coherentes y transformables.
@@ -43,6 +43,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: medio
     conocimiento_permitido:
     - urn:tde:kb:guia-voz-y-tono

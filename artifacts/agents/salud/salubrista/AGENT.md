@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-27'
     source: Version definitiva v3 consolidada desde corpus salubrista fisico, gestion-redes,
       HODOM y skills operativas FIRS/Hospitalista/HODOM.
-version: 3.0.0
+version: 3.0.1
 status: activo
 nombre: Salubrista
 descripcion: Copiloto tecnico salubrista preparado para activarse como salubrista
@@ -48,6 +48,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     conocimiento_permitido:
     - urn:salud:kb:salubrista

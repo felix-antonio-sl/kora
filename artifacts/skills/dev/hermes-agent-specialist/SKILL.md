@@ -11,7 +11,7 @@ _manifest:
       canon obsoleto silencioso al proximo upgrade. La skill ya estaba desplegada
       como proyeccion agentskills en ~/.claude/skills/hermes-agent-specialist/SKILL.md
       el 2026-05-12; esta version canonica formaliza la forma material upstream.'
-version: 0.1.0
+version: 0.1.1
 status: activo
 nombre: hermes-agent-specialist
 descripcion: Especialista en agentes Hermes (Nous Research) para crear, configurar,
@@ -57,6 +57,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:hermes-runtime-extension

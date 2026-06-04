@@ -6,7 +6,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
     source: "Skill salubrista HODOM consolidada desde corpus salud/salubrista/hodom, gestion-redes, fuentes fisicas salubrista y skill hospitalista."
-version: "1.1.0"
+version: 1.1.1
 status: activo
 nombre: Hospitalizacion Domiciliaria
 descripcion: "Skill para activar modo hospitalista a domicilio: HODOM/HaH, direccion tecnica HD, criterios de ingreso-egreso, continuidad hospital-domicilio, capacidad virtual, seguridad, normativa y escalamiento."
@@ -26,7 +26,11 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:salud:kb:salubrista"

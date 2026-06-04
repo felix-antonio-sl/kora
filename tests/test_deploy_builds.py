@@ -5,6 +5,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from common import ROOT, run_cli
+from kora_lib import deploy as deploy_module
 
 
 def write_staged_skill_fixture(name):
@@ -176,6 +177,39 @@ class DeployBuildsTests(unittest.TestCase):
             workspace = Path(tmp_home) / "openclaw-fleet" / "workspaces" / "steipete"
             self.assertTrue((workspace / "AGENTS.md").exists())
             self.assertEqual(runtime_memory.read_text(encoding="utf-8"), "runtime state\n")
+
+    def test_deploy_openclaw_agent_uses_declared_workspace_path_alias(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            agent_dir = tmp / "repo" / "artifacts" / "agents" / "salud" / "medico-hospitalista"
+            build_workspace = agent_dir / "_BUILD" / "openclaw" / "workspace"
+            build_workspace.mkdir(parents=True)
+            (build_workspace / "AGENTS.md").write_text("fixture\n", encoding="utf-8")
+            agent_md = agent_dir / "AGENT.md"
+            agent_md.write_text(
+                """---
+_manifest:
+  urn: urn:salud:artefacto:medico-hospitalista
+extensions:
+  openclaw:
+    agent_id: hospitalista
+    workspace_path: workspaces/hospitalista/
+---
+# medico-hospitalista
+""",
+                encoding="utf-8",
+            )
+
+            operation = deploy_module._agent_build_operation(
+                "openclaw",
+                agent_md,
+                tmp / "home",
+            )
+
+            self.assertEqual(
+                operation.destination,
+                tmp / "home" / "openclaw-fleet" / "workspaces" / "hospitalista",
+            )
 
     def test_deploy_openclaw_skill_uses_workspace_destination(self):
         transmute = run_cli(

@@ -6,7 +6,7 @@ _manifest:
     created_by: FS
     created_at: '2026-05-07'
     source: Portado del agente salubrista-hah operando en HODOM Hospital San Carlos.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: auditor-calidad-hospitalizacion
 descripcion: Evalua desempeno, calidad y mejora continua de sistemas de hospitalizacion
@@ -42,6 +42,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     conocimiento_permitido:
     - urn:salud:kb:hodom-operacional-indice
     - urn:salud:kb:hodom-operacional-indicadores

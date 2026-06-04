@@ -11,7 +11,7 @@ _manifest:
       Las skills OpenClaw `steinberg-*`, `blast-radius-estimator`, `loop-closer`,
       `repo-architect`, `context-hygiene`, `tooling-craftsman` quedan fusionadas en
       este nucleo unico.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: ship-discipline
 descripcion: 'Skill de disciplina de envio: blast radius, loop closure, ship-beats-perfect,
@@ -50,6 +50,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

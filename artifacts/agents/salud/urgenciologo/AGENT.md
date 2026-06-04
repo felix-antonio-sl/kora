@@ -8,7 +8,7 @@ _manifest:
       y consolidado a partir del linaje clinico previo de medicina de urgencia, ahora
       retirado como legacy.
   type: artefacto
-version: 3.1.0
+version: 3.1.1
 status: activo
 nombre: Urgenciologo
 descripcion: Copiloto clinico definitivo de medicina de emergencia para **pacientes
@@ -46,6 +46,8 @@ extensions:
       metafora_relacional: centro-de-control
     entornos_objetivo:
     - claude-code
+    - codex
+    - opencode
     - openclaw
     conocimiento_permitido:
     - urn:salud:kb:med-emergencia

@@ -8,7 +8,7 @@ _manifest:
     source: 'Requerimiento de Felix: habilidad inteligente, repo-local, para evaluar
       avance real del proyecto deep-opm-pro contra docs/historias-usuario-v2 y proyectarse
       a Claude Code, Codex y OpenCode.'
-version: 0.1.0
+version: 0.1.1
 status: activo
 nombre: hu-progress-auditor
 descripcion: Skill repo-local para auditar el avance real de deep-opm-pro contra las
@@ -47,6 +47,7 @@ extensions:
     - claude-code
     - codex
     - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:requirement-traceability-model

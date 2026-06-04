@@ -10,7 +10,7 @@ _manifest:
       contra CANON del repo, screenshots fullpage, reporte ejecutivo que reemplaza
       al previo, idempotencia por localStorage clear y refinamiento iterativo cuando
       aparecen falsos positivos.'
-version: 0.1.0
+version: 0.1.1
 status: activo
 nombre: test-vivo-iterativo-opmkv
 descripcion: 'Skill para auditoria in-vivo iterativa del modelador OPM (deep-opm-pro):
@@ -54,6 +54,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:test-strategy

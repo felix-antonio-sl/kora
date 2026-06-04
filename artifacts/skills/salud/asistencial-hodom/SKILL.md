@@ -6,7 +6,7 @@ _manifest:
     created_by: FS
     created_at: '2026-05-07'
     source: Skill clinica para visita domiciliaria HODOM del agente medico-hospitalista.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: asistencial-hodom
 descripcion: Skill para visita medica domiciliaria en HODOM/HaH. Evaluacion clinica
@@ -44,6 +44,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     conocimiento_permitido:
     - urn:salud:kb:hodom-reglamento-ds1-2022
     - urn:salud:kb:hodom-norma-tecnica-2024

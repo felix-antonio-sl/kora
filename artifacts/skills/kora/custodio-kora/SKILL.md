@@ -8,7 +8,7 @@ _manifest:
     source: 'Diseno desde cero a partir de requerimiento del operador y specs vigentes:
       gobernanza, harness-spec, autoria-spec . No absorbe
       el stack meta-KORA historico.'
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: custodio-kora
 descripcion: 'Custodia normativa de KORA: carga el canon vigente, audita coherencia
@@ -46,6 +46,7 @@ extensions:
     - claude-code
     - codex
     - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:gobernanza

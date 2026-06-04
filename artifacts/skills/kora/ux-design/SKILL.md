@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-23'
     source: Migracion desde artifacts/skills/_TALLER/INBOX/ux-design/SKILL.md (legacy
       skill-overlay v1) a shape unified autoria-spec v1.2
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: ux-design
 descripcion: Evalua y mejora la experiencia de usuario aplicando heuristicas de Nielsen,
@@ -43,6 +43,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: medio
     conocimiento_permitido:
     - urn:tde:kb:guia-calidad-web

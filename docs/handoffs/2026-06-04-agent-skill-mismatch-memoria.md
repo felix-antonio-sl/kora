@@ -16,6 +16,12 @@ extensions:
 
 # Memoria 2026-06-04 - agent-skill mismatch
 
+Nota posterior: la memoria sobre `hospitalista` se corrige por
+`docs/handoffs/2026-06-04-hospitalista-runtime-canon-memoria.md`. La skill
+`urn:salud:artefacto:hospitalista` sigue siendo skill de red; el workspace
+OpenClaw `hospitalista` queda canonizado como runtime del agente clinico
+`urn:salud:artefacto:medico-hospitalista`.
+
 - `hospitalista` y `mente-omega` siguen siendo skills KORA, no agentes.
 - Sus workspaces OpenClaw activos fueron retirados a
   `/home/felix/openclaw-fleet/_retired-agent-workspaces/2026-06-04-skill-only/`.

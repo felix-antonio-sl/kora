@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-05-04'
     source: Reconstruccion fresca desde gobernanza, harness-spec, autoria-spec .
       No absorbe el stack meta-KORA historico marcado rebuild_required.
-version: 0.2.0
+version: 0.2.1
 status: activo
 nombre: kora-agents
 descripcion: Construye, revisa, edita y mantiene agentes KORA canonicos antes
@@ -45,6 +45,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

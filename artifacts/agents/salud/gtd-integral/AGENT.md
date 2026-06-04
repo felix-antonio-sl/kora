@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-05-08'
     source: Ingesta del workspace OpenClaw gtd-integral. Agente operacional GTD Integral
       sobre gateway Clawforge.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: gtd-integral
 descripcion: 'Agente operacional GTD Integral. Loop de 7 movimientos: recuperar estado,
@@ -39,6 +39,9 @@ extensions:
       forma_material: agente-propiamente-tal
       metafora_relacional: centro-de-control
     entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
     - openclaw
     conocimiento_permitido:
     - urn:pro:kb:david-allen-integral-definitivo-septiembre-2026

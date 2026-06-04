@@ -8,8 +8,10 @@ _manifest:
     source: Construccion fresca solicitada por el operador para cubrir el ciclo
       de vida conjunto de skills KORA y agents KORA. Parte de gobernanza,
       harness-spec, autoria-spec y runtime specs vigentes; no deriva del stack
-      meta-KORA historico ni de lifecycle-orchestrator archivado.
-version: 1.0.0
+      meta-KORA historico ni de lifecycle-orchestrator archivado. v1.0.1 alinea
+      entornos_objetivo y conocimiento permitido con la reactivacion canonica
+      de OpenCode en gobernanza v6.2.
+version: 1.0.1
 status: activo
 nombre: kora-agentic-lifecycle
 descripcion: "Gestiona el ciclo de vida completo de agentes y skills KORA:
@@ -49,6 +51,7 @@ extensions:
     - claude-code
     - codex
     - openclaw
+    - opencode
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:gobernanza
@@ -65,6 +68,7 @@ extensions:
     - urn:kora:kb:claude-code-runtime-extension
     - urn:kora:kb:codex-runtime-extension
     - urn:agengai:kb:openclaw-runtime-extension
+    - urn:kora:kb:opencode-runtime-extension
     - urn:kora:kb:hermes-runtime-extension
     - urn:kora:kb:meta-kora-rebuild-directive
     componible_con:

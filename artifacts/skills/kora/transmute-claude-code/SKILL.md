@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-23'
     source: 'Migracion desde artifacts/skills/_TALLER/INBOX/transmute-claude-code/SKILL.md
       (legacy skill-overlay v1) a shape unified autoria-spec v1.2; URN regimen artefacto:'
-version: 2.0.0
+version: 2.0.1
 status: activo
 nombre: transmute-claude-code
 descripcion: Transmuta un AGENT.md KORA a un archivo .md de Claude Code (persona o
@@ -41,6 +41,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:autoria-spec

@@ -12,7 +12,7 @@ _manifest:
       organize-buckets, engage-decide, review-rhythm, regeneration, state-recovery,
       vision-alignment, natural-planning, delegation-governor) quedan fusionadas en
       este nucleo unico.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: gtd-flow
 descripcion: 'Skill de claridad operable integrada: GTD + regulacion emocional + co-agencia.
@@ -51,6 +51,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

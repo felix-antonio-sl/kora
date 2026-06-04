@@ -6,7 +6,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
     source: "Transmutacion del antiguo KB FIRS (framework integrado de razonamiento en salud) a skill operativa."
-version: "1.0.0"
+version: 1.0.1
 status: activo
 nombre: FIRS Razonamiento Sanitario
 descripcion: "Skill para aplicar el Framework Integrado de Razonamiento en Salud como metodo operativo: separar escala micro/meso/macro, evitar falacia ecologica, distinguir evidencia clinica, poblacional y de gestion, y estructurar decisiones sanitarias."
@@ -26,7 +26,11 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:salud:kb:salubrista"

@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-04-20'
     source: Skill especializada en JointJS open-source para runtimes de coding agent,
       con consulta obligatoria a la documentación oficial viva.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: JointJS Open-Source
 descripcion: 'Especialista en JointJS open-source para Claude Code y Codex: implementa,
@@ -44,6 +44,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:catalogo-patrones-skills

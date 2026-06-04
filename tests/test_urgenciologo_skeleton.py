@@ -2,14 +2,144 @@ import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from textwrap import dedent
 from unittest.mock import patch
 
 from common import ROOT, run_cli
 from kora_lib.artifacts import load_markdown_parts
 from kora_lib import transmute as transmute_module
+from kora_lib import workspaces as workspaces_module
 
 
 class UrgenciologoSkeletonTests(unittest.TestCase):
+    def _write_agent_fixture(self, agent_path: Path, targets: list[str]) -> None:
+        targets_yaml = ", ".join(targets)
+        agent_path.write_text(
+            dedent(
+                f"""\
+                ---
+                _manifest:
+                  urn: urn:salud:artefacto:urgenciologo
+                  type: artefacto
+                  provenance:
+                    created_by: test
+                    created_at: '2026-04-20'
+                    source: fixture
+                version: 1.0.0
+                status: activo
+                nombre: Urgenciologo
+                descripcion: fixture
+                lang: es
+                extensions:
+                  kora:
+                    vector_ontologico:
+                      pi: 2
+                      mu: 1
+                      xi: 2
+                      lambda: 0
+                      phi: 1
+                      sigma: [2,1,2,1,1]
+                    presentacion: estado-primario
+                    atlas:
+                      arnes_categorico: persona
+                      forma_material: agente-propiamente-tal
+                    entornos_objetivo: [{targets_yaml}]
+                artefacto:
+                  plan:
+                    estado_inicial: S-DISPATCHER
+                    estado_terminal: S-END
+                    estados:
+                      - id: S-DISPATCHER
+                        accion: x
+                      - id: S-END
+                        accion: y
+                  perfil:
+                    descripcion: fixture
+                    dominio: [x]
+                    disparadores: [x]
+                    salidas: [x]
+                  interfaz:
+                    tools: []
+                    permissions:
+                      allow: []
+                      deny: []
+                  contexto:
+                    memory:
+                      mode: session
+                  invariantes:
+                    reglas_duras: [x]
+                    compromisos_eticos:
+                      safety_norm: Alta
+                      fairness: Media
+                      transparency: Alta
+                      accountability: Alta
+                      sustainability: Media
+                ---
+                # Urgenciologo
+                """
+            ),
+            encoding="utf-8",
+        )
+
+    def _write_skill_fixture(self, skill_path: Path, targets: list[str]) -> None:
+        targets_yaml = ", ".join(targets)
+        skill_path.write_text(
+            dedent(
+                f"""\
+                ---
+                _manifest:
+                  urn: urn:kora:artefacto:test-skill
+                  type: artefacto
+                  provenance:
+                    created_by: test
+                    created_at: '2026-04-20'
+                    source: fixture
+                version: 1.0.0
+                status: activo
+                nombre: test-skill
+                descripcion: fixture
+                lang: es
+                extensions:
+                  kora:
+                    vector_ontologico:
+                      pi: 2
+                      mu: 0
+                      xi: 2
+                      lambda: 0
+                      phi: 1
+                      sigma: [2,1,2,1,1]
+                    presentacion: accion-primaria
+                    atlas:
+                      arnes_categorico: disciplina
+                      forma_material: habilidad
+                    entornos_objetivo: [{targets_yaml}]
+                artefacto:
+                  perfil:
+                    dominio: [test]
+                    disparadores: [test]
+                    salidas: [test]
+                  plan:
+                    estado_inicial: S-START
+                    estado_terminal: S-END
+                    estados:
+                      - id: S-START
+                        accion: test
+                      - id: S-END
+                        accion: done
+                  interfaz:
+                    herramientas: []
+                    permisos: test
+                  invariantes:
+                    reglas_duras: [test]
+                    compromisos_eticos:
+                      transparencia: test
+                ---
+                # test-skill
+                """
+            ),
+            encoding="utf-8",
+        )
+
     def test_urgenciologo_productive_agent_exists(self):
         agent_path = ROOT / "artifacts" / "agents" / "salud" / "urgenciologo" / "AGENT.md"
         self.assertTrue(agent_path.exists(), agent_path)
@@ -98,10 +228,7 @@ class UrgenciologoSkeletonTests(unittest.TestCase):
             agents_root = repo_root / "artifacts" / "agents" / "salud" / "urgenciologo"
             agents_root.mkdir(parents=True)
             agent_path = agents_root / "AGENT.md"
-            agent_path.write_text(
-                "---\n_manifest:\n  urn: urn:salud:artefacto:urgenciologo\n  type: artefacto\n  provenance:\n    created_by: test\n    created_at: '2026-04-20'\n    source: fixture\nversion: 1.0.0\nstatus: activo\nnombre: Urgenciologo\ndescripcion: fixture\nlang: es\nextensions:\n  kora:\n    vector_ontologico:\n      pi: 2\n      mu: 1\n      xi: 2\n      lambda: 0\n      phi: 1\n      sigma: [2,1,2,1,1]\n    presentacion: estado-primario\n    atlas:\n      arnes_categorico: persona\n      forma_material: agente-propiamente-tal\n    entornos_objetivo: [claude-code]\nartefacto:\n  plan:\n    estado_inicial: S-DISPATCHER\n    estado_terminal: S-END\n    estados:\n      - id: S-DISPATCHER\n        accion: x\n      - id: S-END\n        accion: y\n  perfil:\n    descripcion: fixture\n    dominio: [x]\n    disparadores: [x]\n    salidas: [x]\n  interfaz:\n    tools: []\n    permissions:\n      allow: []\n      deny: []\n  contexto:\n    memory:\n      mode: session\n  invariantes:\n    reglas_duras: [x]\n    compromisos_eticos:\n      safety_norm: Alta\n      fairness: Media\n      transparency: Alta\n      accountability: Alta\n      sustainability: Media\n---\n# Urgenciologo\n",
-                encoding="utf-8",
-            )
+            self._write_agent_fixture(agent_path, ["claude-code"])
             claude_dir = tmp / "claude"
             claude_dir.mkdir()
             deployed = claude_dir / "urgenciologo.md"
@@ -111,10 +238,137 @@ class UrgenciologoSkeletonTests(unittest.TestCase):
             )
             with patch.object(transmute_module, "KORA_ROOT", repo_root), patch.object(
                 transmute_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ), patch.object(
+                transmute_module, "SKILLS_ROOT", repo_root / "artifacts" / "skills"
+            ), patch.object(
+                workspaces_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
             ):
                 report = transmute_module.build_deploy_status_report(claude_agents_dir=claude_dir)
             statuses = {item["agent"]: item for item in report["agents"]}
             self.assertEqual(statuses["salud/urgenciologo"]["claude-code"]["status"], "stale")
+
+    def test_build_deploy_status_report_audits_openclaw_workspace_agents_md(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            repo_root = tmp / "repo"
+            agents_root = repo_root / "artifacts" / "agents" / "salud" / "urgenciologo"
+            agents_root.mkdir(parents=True)
+            agent_path = agents_root / "AGENT.md"
+            self._write_agent_fixture(agent_path, ["openclaw"])
+
+            openclaw_dir = tmp / "openclaw"
+            workspace = openclaw_dir / "urgenciologo"
+            workspace.mkdir(parents=True)
+            deployed = workspace / "AGENTS.md"
+            current_hash = transmute_module._sha256(agent_path)
+            deployed.write_text(
+                "## Provenance\n\n"
+                "- Source URN: `urn:salud:artefacto:urgenciologo`\n"
+                f"- Source Hash: `{current_hash}`\n"
+                "- Transmuted At: `2026-04-20T00:00:00+00:00`\n",
+                encoding="utf-8",
+            )
+
+            with patch.object(transmute_module, "KORA_ROOT", repo_root), patch.object(
+                transmute_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ), patch.object(
+                transmute_module, "SKILLS_ROOT", repo_root / "artifacts" / "skills"
+            ), patch.object(
+                workspaces_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ):
+                report = transmute_module.build_deploy_status_report(
+                    openclaw_workspaces_dir=openclaw_dir,
+                )
+
+            statuses = {item["agent"]: item for item in report["agents"]}
+            status = statuses["salud/urgenciologo"]["openclaw"]
+            self.assertEqual(status["status"], "ok")
+            self.assertEqual(status["path"], str(deployed))
+            self.assertEqual(status["workspace_path"], str(workspace))
+
+    def test_build_deploy_status_report_uses_openclaw_workspace_path_alias(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            repo_root = tmp / "repo"
+            agents_root = repo_root / "artifacts" / "agents" / "salud" / "urgenciologo"
+            agents_root.mkdir(parents=True)
+            agent_path = agents_root / "AGENT.md"
+            self._write_agent_fixture(agent_path, ["openclaw"])
+
+            frontmatter, body = load_markdown_parts(agent_path)
+            frontmatter.setdefault("extensions", {})["openclaw"] = {
+                "agent_id": "hospitalista",
+                "workspace_path": "workspaces/hospitalista/",
+            }
+            agent_path.write_text(
+                "---\n"
+                + transmute_module.yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True)
+                + "---\n"
+                + body,
+                encoding="utf-8",
+            )
+
+            openclaw_dir = tmp / "openclaw"
+            alias_workspace = openclaw_dir / "hospitalista"
+            alias_workspace.mkdir(parents=True)
+            deployed = alias_workspace / "AGENTS.md"
+            current_hash = transmute_module._sha256(agent_path)
+            deployed.write_text(
+                "## Provenance\n\n"
+                "- Source URN: `urn:salud:artefacto:urgenciologo`\n"
+                f"- Source Hash: `{current_hash}`\n"
+                "- Transmuted At: `2026-04-20T00:00:00+00:00`\n",
+                encoding="utf-8",
+            )
+
+            with patch.object(transmute_module, "KORA_ROOT", repo_root), patch.object(
+                transmute_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ), patch.object(
+                transmute_module, "SKILLS_ROOT", repo_root / "artifacts" / "skills"
+            ), patch.object(
+                workspaces_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ):
+                report = transmute_module.build_deploy_status_report(
+                    openclaw_workspaces_dir=openclaw_dir,
+                )
+
+            statuses = {item["agent"]: item for item in report["agents"]}
+            status = statuses["salud/urgenciologo"]["openclaw"]
+            self.assertEqual(status["status"], "ok")
+            self.assertEqual(status["workspace_path"], str(alias_workspace))
+
+    def test_build_deploy_status_report_audits_skill_deployments(self):
+        with TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            repo_root = tmp / "repo"
+            skill_root = repo_root / "artifacts" / "skills" / "kora" / "test-skill"
+            skill_root.mkdir(parents=True)
+            skill_path = skill_root / "SKILL.md"
+            self._write_skill_fixture(skill_path, ["codex"])
+
+            codex_dir = tmp / "codex"
+            deployed = codex_dir / "test-skill" / "SKILL.md"
+            deployed.parent.mkdir(parents=True)
+            current_hash = transmute_module._sha256(skill_path)
+            deployed.write_text(
+                "## Provenance\n\n"
+                "- Source URN: `urn:kora:artefacto:test-skill`\n"
+                f"- Source Hash: `{current_hash}`\n"
+                "- Transmuted At: `2026-04-20T00:00:00+00:00`\n",
+                encoding="utf-8",
+            )
+
+            with patch.object(transmute_module, "KORA_ROOT", repo_root), patch.object(
+                transmute_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ), patch.object(
+                transmute_module, "SKILLS_ROOT", repo_root / "artifacts" / "skills"
+            ), patch.object(
+                workspaces_module, "AGENTS_ROOT", repo_root / "artifacts" / "agents"
+            ):
+                report = transmute_module.build_deploy_status_report(codex_skills_dir=codex_dir)
+
+            statuses = {item["skill"]: item for item in report["skills"]}
+            self.assertEqual(statuses["kora/test-skill"]["codex"]["status"], "ok")
 
     def test_record_invocation_updates_verified_at_and_lead_time(self):
         with TemporaryDirectory() as tmpdir:

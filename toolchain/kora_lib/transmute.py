@@ -606,20 +606,44 @@ def _extract_provenance_value(text: str, label: str) -> str:
     return ""
 
 
+def _openclaw_agent_workspace_name(frontmatter: dict, default_name: str) -> str:
+    """Resolve the OpenClaw workspace name declared by an agent source."""
+    openclaw_ext = (frontmatter.get("extensions") or {}).get("openclaw") or {}
+    workspace_path = openclaw_ext.get("workspace_path")
+
+    if isinstance(workspace_path, str) and workspace_path.strip():
+        normalized = workspace_path.strip().strip("/")
+        parts = Path(normalized).parts
+        if len(parts) >= 2 and parts[0] == "workspaces":
+            return parts[1]
+
+    agent_id = openclaw_ext.get("agent_id")
+    if isinstance(agent_id, str) and agent_id.strip():
+        return agent_id.strip()
+
+    return default_name
+
+
 def build_deploy_status_report(
     claude_agents_dir: Path | None = None,
     openclaw_workspaces_dir: Path | None = None,
     codex_skills_dir: Path | None = None,
     opencode_agents_dir: Path | None = None,
+    claude_skills_dir: Path | None = None,
+    opencode_skills_dir: Path | None = None,
+    openclaw_skill_workspace: str = "main",
 ) -> dict:
     from .workspaces import iter_agent_workspaces
 
     claude_dir = Path(claude_agents_dir or Path.home() / ".claude" / "agents").expanduser()
+    claude_skill_dir = Path(claude_skills_dir or Path.home() / ".claude" / "skills").expanduser()
     openclaw_dir = Path(openclaw_workspaces_dir or Path.home() / "openclaw-fleet" / "workspaces").expanduser()
     codex_dir = Path(codex_skills_dir or Path.home() / ".codex" / "skills").expanduser()
     opencode_dir = Path(opencode_agents_dir or Path.home() / ".config" / "opencode" / "agents").expanduser()
+    opencode_skill_dir = Path(opencode_skills_dir or Path.home() / ".config" / "opencode" / "skills").expanduser()
 
     agents = []
+    skills = []
     summary = {"ok": 0, "stale": 0, "missing": 0, "unsupported": 0}
 
     def _hash_status(deployed_path: Path) -> dict:
@@ -633,6 +657,39 @@ def build_deploy_status_report(
             "source_hash": deployed_hash,
             "current_hash": current_hash,
         }
+
+    def _openclaw_workspace_status(workspace_path: Path) -> dict:
+        if not workspace_path.exists():
+            return {"status": "missing", "path": str(workspace_path)}
+        if not workspace_path.is_dir():
+            return {"status": "unsupported", "path": str(workspace_path)}
+
+        agents_md = workspace_path / "AGENTS.md"
+        if not agents_md.is_file():
+            return {"status": "unsupported", "path": str(workspace_path)}
+
+        status = _hash_status(agents_md)
+        status["workspace_path"] = str(workspace_path)
+        return status
+
+    def _iter_productive_skill_paths() -> list[Path]:
+        if not SKILLS_ROOT.exists():
+            return []
+        skill_paths: list[Path] = []
+        for entry in sorted(SKILLS_ROOT.iterdir()):
+            if not entry.is_dir() or entry.name.startswith((".", "_")):
+                continue
+            direct = entry / "SKILL.md"
+            if direct.is_file():
+                skill_paths.append(direct)
+                continue
+            for sub in sorted(entry.iterdir()):
+                if not sub.is_dir() or sub.name.startswith((".", "_")):
+                    continue
+                candidate = sub / "SKILL.md"
+                if candidate.is_file():
+                    skill_paths.append(candidate)
+        return skill_paths
 
     for workspace_dir in iter_agent_workspaces():
         agent_md = workspace_dir / "AGENT.md"
@@ -651,24 +708,63 @@ def build_deploy_status_report(
             elif target == "opencode":
                 status = _hash_status(opencode_dir / f"{workspace_dir.name}.md")
             elif target == "openclaw":
-                deployed_path = openclaw_dir / workspace_dir.name
-                status = {"status": "missing" if not deployed_path.exists() else "unsupported", "path": str(deployed_path)}
+                openclaw_workspace_name = _openclaw_agent_workspace_name(
+                    frontmatter,
+                    workspace_dir.name,
+                )
+                status = _openclaw_workspace_status(openclaw_dir / openclaw_workspace_name)
             else:
                 continue
             item[target] = status
             summary[status["status"]] += 1
         agents.append(item)
 
-    return {"summary": summary, "agents": agents}
+    for skill_md in _iter_productive_skill_paths():
+        frontmatter, _ = load_markdown_parts(skill_md)
+        if not isinstance(frontmatter, dict):
+            continue
+        declared_status = read_declared_status(frontmatter)
+        if is_deprecated_status(declared_status) or is_retired_status(declared_status):
+            continue
+
+        current_hash = _sha256(skill_md)
+        targets = ((frontmatter.get("extensions") or {}).get("kora") or {}).get("entornos_objetivo") or []
+        item = {"skill": skill_md.parent.relative_to(SKILLS_ROOT).as_posix()}
+        skill_name = skill_md.parent.name
+
+        for target in targets:
+            if target == "claude-code":
+                status = _hash_status(claude_skill_dir / skill_name / "SKILL.md")
+            elif target == "codex":
+                status = _hash_status(codex_dir / skill_name / "SKILL.md")
+            elif target == "opencode":
+                status = _hash_status(opencode_skill_dir / skill_name / "SKILL.md")
+            elif target == "openclaw":
+                status = _hash_status(
+                    openclaw_dir / openclaw_skill_workspace / "skills" / skill_name / "SKILL.md"
+                )
+            else:
+                continue
+            item[target] = status
+            summary[status["status"]] += 1
+        skills.append(item)
+
+    return {"summary": summary, "agents": agents, "skills": skills}
 
 
 def cmd_deploy_status():
     report = build_deploy_status_report()
     print("=== KORA Deploy Status ===\n")
     for item in report["agents"]:
-        print(f"[{item['agent']}]")
+        print(f"[agent {item['agent']}]")
         for target, status in item.items():
             if target == "agent":
+                continue
+            print(f"  - {target}: {status['status']} ({status['path']})")
+    for item in report.get("skills", []):
+        print(f"[skill {item['skill']}]")
+        for target, status in item.items():
+            if target == "skill":
                 continue
             print(f"  - {target}: {status['status']} ({status['path']})")
     print("\nSummary:")
@@ -1183,6 +1279,9 @@ def _emit_openclaw_agent_workspace(
     composicion = artefacto.get("composicion") or {}
     invariantes = artefacto.get("invariantes") or {}
     openclaw_ext = (frontmatter.get("extensions") or {}).get("openclaw") or {}
+    runtime_name = _openclaw_agent_workspace_name(frontmatter, name)
+    runtime_agent_id = openclaw_ext.get("agent_id") or runtime_name
+    runtime_workspace_path = openclaw_ext.get("workspace_path") or f"workspaces/{runtime_name}/"
     tool_names = _tool_names_from_items(interfaz.get("herramientas"))
 
     workspace_dir = target_dir / "workspace"
@@ -1196,9 +1295,10 @@ def _emit_openclaw_agent_workspace(
     agents_md.write_text(
         "\n".join(
             [
-                f"# {name}",
+                f"# {runtime_name}",
                 "",
                 *_agent_provenance_lines(transmutation),
+                f"- Runtime Agent ID: `{runtime_agent_id}`",
                 "",
                 *_agent_projection_lines(transmutation),
                 "",
@@ -1233,7 +1333,7 @@ def _emit_openclaw_agent_workspace(
     soul_md.write_text(
         "\n".join(
             [
-                f"# {name} Soul",
+                f"# {runtime_name} Soul",
                 "",
                 _stringify_markdown_value(perfil.get("descripcion") or frontmatter.get("descripcion", "")),
                 "",
@@ -1261,7 +1361,7 @@ def _emit_openclaw_agent_workspace(
     identity_md.write_text(
         "\n".join(
             [
-                f"# {name} Identity",
+                f"# {runtime_name} Identity",
                 "",
                 f"- URN: `{transmutation.get('source_urn', '')}`",
                 f"- Version: `{frontmatter.get('version', '')}`",
@@ -1281,7 +1381,7 @@ def _emit_openclaw_agent_workspace(
     user_md.write_text(
         "\n".join(
             [
-                f"# {name} User Context",
+                f"# {runtime_name} User Context",
                 "",
                 f"- Role: {_stringify_markdown_value(operator.get('role'))}",
                 f"- Context: {_stringify_markdown_value(operator.get('context'))}",
@@ -1297,7 +1397,7 @@ def _emit_openclaw_agent_workspace(
     tools_md.write_text(
         "\n".join(
             [
-                f"# {name} Tools",
+                f"# {runtime_name} Tools",
                 "",
                 "## Allowed Tools",
                 "",
@@ -1322,7 +1422,7 @@ def _emit_openclaw_agent_workspace(
     boot_md.write_text(
         "\n".join(
             [
-                f"# {name} Boot",
+                f"# {runtime_name} Boot",
                 "",
                 f"Start in `{plan.get('estado_inicial', '')}`.",
                 "",
@@ -1344,7 +1444,7 @@ def _emit_openclaw_agent_workspace(
     memory_md.write_text(
         "\n".join(
             [
-                f"# {name} Memory",
+                f"# {runtime_name} Memory",
                 "",
                 "This file is a declarative memory contract emitted from KORA IR.",
                 "",
@@ -1369,9 +1469,9 @@ def _emit_openclaw_agent_workspace(
     config_path = config_dir / "openclaw.json5"
     config = {
         "agent": {
-            "id": openclaw_ext.get("agent_id", name),
+            "id": runtime_agent_id,
             "urn": transmutation.get("source_urn", ""),
-            "workspace_path": f"workspaces/{name}/",
+            "workspace_path": runtime_workspace_path,
         },
         "runtime": {
             "bot_handler": openclaw_ext.get("bot_handler"),
@@ -1386,7 +1486,7 @@ def _emit_openclaw_agent_workspace(
     deploy_md.write_text(
         "\n".join(
             [
-                f"# Deploy {name} to OpenClaw",
+                f"# Deploy {runtime_name} to OpenClaw",
                 "",
                 "Generated KORA build artifact. Runtime state, credentials, sessions, pairing stores and caches are not included.",
                 "",
@@ -1398,7 +1498,7 @@ def _emit_openclaw_agent_workspace(
                 "",
                 "## Manual Sync",
                 "",
-                f"Copy `workspace/` contents into the target OpenClaw workspace for `{name}` and apply `config/openclaw.json5` through the gateway policy you use in production.",
+                f"Copy `workspace/` contents into the target OpenClaw workspace for `{runtime_name}` and apply `config/openclaw.json5` through the gateway policy you use in production.",
                 "",
             ]
         ),
@@ -1598,6 +1698,23 @@ def _project_skill_frontmatter_to_codex(frontmatter: dict, skill_name: str) -> d
     }
 
 
+def _skill_provenance_lines(transmutation_path: Path) -> list[str]:
+    transmutation_payload = yaml.safe_load(transmutation_path.read_text(encoding="utf-8")) or {}
+    transmutation = transmutation_payload.get("transmutation", {})
+    source_urn = transmutation.get("source_urn")
+    source_hash = transmutation.get("source_hash")
+    timestamp = transmutation.get("timestamp")
+
+    lines = ["", "## Provenance", ""]
+    if source_urn:
+        lines.append(f"- Source URN: `{source_urn}`")
+    if source_hash:
+        lines.append(f"- Source Hash: `{source_hash}`")
+    if timestamp:
+        lines.append(f"- Transmuted At: `{timestamp}`")
+    return lines if len(lines) > 3 else []
+
+
 def _emit_claude_code_skill_bundle(
     target_dir: Path,
     skill_name: str,
@@ -1638,6 +1755,9 @@ def _emit_claude_code_skill_bundle(
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += projected_body.rstrip()
+    provenance_lines = _skill_provenance_lines(transmutation_path)
+    if provenance_lines:
+        content += "\n" + "\n".join(provenance_lines)
     if knowledge_lines:
         content += "\n" + "\n".join(knowledge_lines)
     content += "\n"
@@ -1695,6 +1815,9 @@ def _emit_codex_skill_bundle(
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += projected_body.rstrip()
+    provenance_lines = _skill_provenance_lines(transmutation_path)
+    if provenance_lines:
+        content += "\n" + "\n".join(provenance_lines)
     if knowledge_lines:
         content += "\n" + "\n".join(knowledge_lines)
     content += "\n"
@@ -1709,6 +1832,7 @@ def _emit_opencode_skill_bundle(
     skill_name: str,
     frontmatter: dict,
     body: str,
+    transmutation_path: Path,
 ) -> Path:
     bundle_dir = target_dir / skill_name
     bundle_dir.mkdir(parents=True, exist_ok=True)
@@ -1720,6 +1844,9 @@ def _emit_opencode_skill_bundle(
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += projected_body.rstrip()
+    provenance_lines = _skill_provenance_lines(transmutation_path)
+    if provenance_lines:
+        content += "\n" + "\n".join(provenance_lines)
     content += "\n"
 
     out_skill_md = bundle_dir / "SKILL.md"
@@ -1732,6 +1859,7 @@ def _emit_openclaw_skill_bundle(
     skill_name: str,
     frontmatter: dict,
     body: str,
+    transmutation_path: Path,
 ) -> Path:
     bundle_dir = target_dir / "skills" / skill_name
     bundle_dir.mkdir(parents=True, exist_ok=True)
@@ -1743,6 +1871,9 @@ def _emit_openclaw_skill_bundle(
     content += yaml.safe_dump(bundle_frontmatter, sort_keys=False, allow_unicode=True).strip()
     content += "\n---\n\n"
     content += projected_body.rstrip()
+    provenance_lines = _skill_provenance_lines(transmutation_path)
+    if provenance_lines:
+        content += "\n" + "\n".join(provenance_lines)
     content += "\n"
 
     out_skill_md = bundle_dir / "SKILL.md"
@@ -1951,7 +2082,7 @@ def _transmute_skill_to_opencode(skill_md_path: Path, dry_run: bool = False) -> 
         projected,
         detail,
     )
-    bundle_path = _emit_opencode_skill_bundle(target_dir, skill_name, frontmatter, body)
+    bundle_path = _emit_opencode_skill_bundle(target_dir, skill_name, frontmatter, body, yml_path)
 
     for entry in skill_md_path.parent.iterdir():
         if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):
@@ -2030,7 +2161,7 @@ def _transmute_skill_to_openclaw(skill_md_path: Path, dry_run: bool = False) -> 
         projected,
         detail,
     )
-    bundle_path = _emit_openclaw_skill_bundle(target_dir, skill_name, frontmatter, body)
+    bundle_path = _emit_openclaw_skill_bundle(target_dir, skill_name, frontmatter, body, yml_path)
 
     for entry in skill_md_path.parent.iterdir():
         if entry.name in {"SKILL.md", "_BUILD"} or entry.name.startswith("."):

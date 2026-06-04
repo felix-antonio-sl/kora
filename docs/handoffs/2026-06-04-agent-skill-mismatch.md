@@ -16,6 +16,18 @@ extensions:
 
 # Handoff 2026-06-04 - mismatch agente/skill
 
+## Nota posterior 2026-06-04
+
+La decision sobre `hospitalista` queda parcialmente supersedida por
+`docs/handoffs/2026-06-04-hospitalista-runtime-canon.md`.
+
+Se mantiene que la skill de red `urn:salud:artefacto:hospitalista` no se
+promueve a agente. Se corrige, en cambio, que el workspace OpenClaw
+`hospitalista` no era una proyeccion de esa skill, sino el runtime historico y
+rico del agente clinico `urn:salud:artefacto:medico-hospitalista`. Por eso
+`workspaces/hospitalista/` queda como runtime canónico de ese agente, mientras
+`workspaces/medico-hospitalista/` se retira como duplicado de baja fidelidad.
+
 ## Estado actual
 
 Se resolvio el grupo de artefactos desplegados como agentes pero con fuente KORA

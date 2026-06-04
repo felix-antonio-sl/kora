@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-05-07'
     source: Zotero + web MINSAL + HL7 Chile. Normativa chilena de interoperabilidad,
       FHIR, SNOMED CT.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: interoperabilidad-salud
 descripcion: 'Especialista en interoperabilidad de sistemas de salud: HL7 FHIR R4,
@@ -46,6 +46,8 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
+    - openclaw
     conocimiento_permitido:
     - urn:salud:kb:informatica-medica-indice
     - urn:salud:kb:informatica-medica-normativa-chilena

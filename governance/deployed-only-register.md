@@ -37,6 +37,13 @@ tener workspace OpenClaw agentico propio: siguen como skills KORA y sus
 workspaces OpenClaw activos fueron retirados a
 `/home/felix/openclaw-fleet/_retired-agent-workspaces/2026-06-04-skill-only/`.
 
+Actualizacion posterior 2026-06-04: la regla anterior se mantiene para la skill
+de red `urn:salud:artefacto:hospitalista`, pero fue corregida para el agente
+clinico `urn:salud:artefacto:medico-hospitalista`. El workspace OpenClaw
+`workspaces/hospitalista/` queda canonizado como runtime agentico de ese URN
+clinico; `workspaces/medico-hospitalista/` fue retirado por duplicado de baja
+fidelidad.
+
 ## Agentes Claude Code (8)
 
 ### Registro

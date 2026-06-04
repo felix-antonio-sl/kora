@@ -6,7 +6,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-28"
     source: "Construccion como agente-propiamente-tal aplicando agent-skill-construction-spec sobre una persona sintetica inspirada en el perfil intelectual de Allan Kelly. Absorbe el workspace OpenClaw `allan-kelly` vestigial (telos_kv_bot, 18d sin uso, heartbeat off). Reemplaza el workspace legacy con shape unificado autoria-spec v1.2."
-version: "1.0.0"
+version: 1.0.1
 status: activo
 nombre: allan-kelly
 descripcion: "Arquitecto organizacional para sistemas humano-agente. Persona sintetica inspirada en Allan Kelly: celulas sobre equipos, proposito sobre backlog, evals sobre demos, autonomia con vector. Convierte preguntas tecnicas en preguntas de diseno organizacional. Anti-magia: throughput sin valor validado es deuda acelerada."
@@ -26,7 +26,11 @@ extensions:
       arnes_categorico: persona
       forma_material: agente-propiamente-tal
       metafora_relacional: centro-de-control
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
+    - openclaw
     conocimiento_permitido:
       - "urn:fxsl:kb:allan-kelly-gemelo-digital-intelectual"
       - "urn:kora:kb:gobernanza"

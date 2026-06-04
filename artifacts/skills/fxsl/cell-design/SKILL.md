@@ -11,7 +11,7 @@ _manifest:
       skills OpenClaw `cell-design`, `intent-contract`, `autonomy-envelope`, `recalibration`,
       `eval-architecture`, `debt-audit`, `control-plane-review` quedan fusionadas
       en este nucleo unico.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: cell-design
 descripcion: 'Skill de diseno organizacional para celulas humano-agente: intent contracts,
@@ -51,6 +51,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

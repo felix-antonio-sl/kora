@@ -6,7 +6,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-27"
     source: "Diseno desde 0 sobre el corpus ICAS-BoK (24 piezas en ~/kora/artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/, todas published v1.0.0)."
-version: "1.0.0"
+version: 1.0.1
 status: activo
 nombre: cat-thinking
 descripcion: "Skill de pensamiento categorial. Dota al agente de la capacidad de pensar sobre arquitectura, integracion, refactor, modelado de efectos y diseno de sistemas agenticos usando teoria de categorias aplicada, anclada al corpus ICAS-BoK (Arquitecto de Sistemas Categorial)."
@@ -26,7 +26,11 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:fxsl:kb:icas-sintesis"

@@ -8,7 +8,7 @@ _manifest:
     source: Cristalizacion del patron observable en deep-opm-pro/docs/instrucciones-lineas-dev/
       (rondas 1, 2 y 3) que estructura trabajo pendiente en N lineas paralelas con
       README maestro, briefs disjuntos por linea y prompt generico de asignacion.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: lineas-paralelas
 descripcion: 'Skill local para deep-opm-pro: estructura el trabajo pendiente del repo
@@ -48,6 +48,7 @@ extensions:
     - claude-code
     - codex
     - opencode
+    - openclaw
     nivel_prescripcion: alto
     alcance_despliegue: /home/felix/projects/deep-opm-pro
     conocimiento_permitido:

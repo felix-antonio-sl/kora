@@ -7,7 +7,7 @@ _manifest:
     created_at: '2026-05-07'
     source: Diseno desde 0 sobre corpus IFML koraficado en artifacts/knowledge/fxsl/ifml/
       (9 URNs publicadas en v1.0.0).
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: ifml
 descripcion: Skill horizontal para diagnosticar, diseñar y aplicar soluciones IFML
@@ -45,6 +45,7 @@ extensions:
     entornos_objetivo:
     - claude-code
     - codex
+    - opencode
     - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:

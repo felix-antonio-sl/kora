@@ -6,7 +6,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-06-03"
     source: "Generalizacion de un procedimiento aplicado por el operador: consenso deliberativo entre tres expertos (Asto/Besto/Resto), cada uno definido como identidad encarnable + capacidades. La skill abstrae el protocolo (propuestas independientes -> critica cruzada -> sintesis -> refutacion adversarial -> ciclo hasta convergencia o disenso estructurado) y lo declara realizable en dos modos: encarnacion (un contexto interpreta las N voces) y orquestacion (subagentes reales, alineado a multiagente-spec como sheaf de secciones locales que deben pegar)."
-version: "1.0.0"
+version: 1.0.1
 status: activo
 nombre: consenso-deliberativo
 descripcion: "Skill horizontal para resolver un problema mediante consenso critico entre N expertos (recomendado 3), donde cada experto es una identidad encarnable (agente, persona, skill de razonamiento) mas sus capacidades. Protocolo: propuestas iniciales independientes, criticas cruzadas sustantivas, sintesis comun, refutacion adversarial, ciclos de correccion hasta convergencia o disenso estructurado. Anti-degeneracion: prohibido el consenso de cortesia, el disenso irreductible es salida valida, la confianza se declara por experto sin promediar."
@@ -26,7 +26,11 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo:
+    - claude-code
+    - codex
+    - opencode
+    - openclaw
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:kora:kb:multiagente-spec"
