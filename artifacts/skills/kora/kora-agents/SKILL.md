@@ -195,8 +195,9 @@ bundles runtime como autoridad.
   de sostenerla.
 - No introducir URNs no resolubles, paths duros como conocimiento gobernado ni
   placeholders decorativos.
-- `entornos_objetivo` no incluye runtimes pausados (`agentskills`, `opencode`,
-  `gemini`, `mastra`); esos targets solo se usan con `--force-paused` e HITL.
+- `entornos_objetivo` no incluye runtimes pausados (`agentskills`, `gemini`,
+  `mastra`); esos targets solo se usan con `--force-paused` e HITL. `opencode`
+  esta activo desde el HITL del 2026-06-04.
 - Toda perdida entre requerimiento, blueprint e IR debe quedar como descarte,
   riesgo o deuda residual.
 - Si el resultado requiere runtime, transmutar solo despues de gates verdes.

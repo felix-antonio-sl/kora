@@ -161,20 +161,20 @@ class KoraCliSmokeTests(unittest.TestCase):
         self.assertTrue("Changed paths: 0" in result.stdout or "Changed paths:" in result.stdout)
 
     def test_transmute_accepts_active_targets(self):
-        """Los 3 runtime targets activos (claude-code, codex, openclaw) aceptan --target."""
+        """Los runtime targets activos aceptan --target."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        for target in ("claude-code", "codex", "openclaw"):
+        for target in ("claude-code", "codex", "openclaw", "opencode"):
             result = run_cli("transmute", "--target", target, "--agent", "dev/steipete", "--dry-run")
             self.assertIn("KORA Transmutation", result.stdout)
             self.assertIn(f"→ {target}", result.stdout)
             self.assertIn("Vector IR:", result.stdout)
 
     def test_transmute_paused_targets_abort_without_force(self):
-        """Los targets en pausa (gemini, mastra, opencode, agentskills) abortan sin --force-paused."""
+        """Los targets en pausa (gemini, mastra, agentskills) abortan sin --force-paused."""
         if not has_productive_workspaces():
             self.skipTest("requires productive workspaces")
-        for target in ("gemini", "mastra", "opencode", "agentskills"):
+        for target in ("gemini", "mastra", "agentskills"):
             result = run_cli("transmute", "--target", target, "--agent", "dev/steipete", "--dry-run", check=False)
             self.assertNotEqual(result.returncode, 0, f"Target {target} should abort without --force-paused")
             self.assertIn("esta en pausa", result.stderr)

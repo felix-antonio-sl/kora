@@ -123,7 +123,7 @@ def main():
     p_transmute.add_argument("--dry-run", action="store_true",
                              help="Show what would be done without writing files")
     p_transmute.add_argument("--force-paused", action="store_true",
-                             help="Forzar transmutacion hacia target en pausa (gemini, mastra, opencode, agentskills)")
+                             help="Forzar transmutacion hacia target en pausa (gemini, mastra, agentskills)")
 
     p_roundtrip = subparsers.add_parser("roundtrip-check", help="Verifica la dualidad T_target ∘ Lift_target ≈ id para una habilidad")
     p_roundtrip.add_argument("--target", default="agentskills", choices=["agentskills"],

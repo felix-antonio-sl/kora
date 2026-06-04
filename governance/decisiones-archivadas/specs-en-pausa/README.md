@@ -7,7 +7,7 @@ _manifest:
     source: "Decision operativa derivada del plan de poda KORA version A: archivar runtime-extensions sin uso productivo declarado en los 3 targets activos."
 version: "1.0.0"
 status: publicado
-tags: [governance, decisiones-archivadas, runtime-extensions, poda-version-a, gemini, mastra, opencode, agentskills]
+tags: [governance, decisiones-archivadas, runtime-extensions, poda-version-a, gemini, mastra, agentskills]
 lang: es
 extensions:
   kora:
@@ -30,14 +30,13 @@ Cuatro runtime-extensions archivadas el 2026-05-07 por la poda KORA version A. L
 |---|---|---|
 | `gemini-runtime-extension.md` | `urn:kora:kb:gemini-runtime-extension` | Sin uso productivo registrado; sin cliente nombrado |
 | `mastra-runtime-extension.md` | `urn:kora:kb:mastra-runtime-extension` | Sin uso productivo registrado; sin cliente nombrado |
-| `opencode-runtime-extension.md` | `urn:kora:kb:opencode-runtime-extension` | Workspace `~/openclaw-fleet/workspaces/opencode/` historico inactivo; sin cliente nombrado |
 | `agentskills-runtime-extension.md` | `urn:kora:kb:agentskills-runtime-extension` | Plataforma agentskills.io disponible pero sin uso productivo en la celula activa |
 
 ## Contrato del archivo
 
 Las specs estan **archivadas, no eliminadas**. El catalogo y el grafo siguen resolviendo sus URN. La diferencia operativa:
 
-- **NO** son destino activo de transmutacion. La toolchain emite warning si se invoca `kora transmute --target {gemini|mastra|opencode|agentskills}`.
+- **NO** son destino activo de transmutacion. La toolchain emite warning si se invoca `kora transmute --target {gemini|mastra|agentskills}`.
 - **NO** se mantienen sincronizadas con cambios en `harness-spec`, `autoria-spec` o `transmutation-spec` salvo decision explicita de desarchivo.
 - **SI** quedan disponibles para lectura como referencia de diseño.
 

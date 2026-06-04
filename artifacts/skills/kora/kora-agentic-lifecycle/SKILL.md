@@ -196,10 +196,11 @@ catalogo, `_BUILD/` e instalaciones runtime no diverjan sin declararlo.
 
 ## Politica De Targets
 
-Targets canonicos activos: `claude-code`, `codex`, `openclaw`, `hermes`.
+Targets canonicos activos: `claude-code`, `codex`, `openclaw`, `hermes`,
+`opencode`.
 Mientras `hermes-runtime-extension` siga en stub, declararlo solo cuando la
 runtime-extension sostenga el caso concreto. Targets pausados (`agentskills`,
-`opencode`, `gemini`, `mastra`) no van en `entornos_objetivo`; agentskills
+`gemini`, `mastra`) no van en `entornos_objetivo`; agentskills
 queda como compatibilidad estructural de habilidades y puede verificarse por
 gate, no como runtime canonico.
 

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}; v6.1 (HITL 2026-05-31) explicita en §1 el proposito de KORA (repositorio, catalogo, produccion y mantenimiento de artefactos) y los tres tipos de artefacto (conocimiento, agentes, skills), subordinando la ecuacion categorial a garantia formal: conocimiento es tipo especifico de artefacto (no paraguas) y las specs no son artefactos"
-version: "6.1.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}; v6.1 (HITL 2026-05-31) explicita en §1 el proposito de KORA y los tres tipos de artefacto; v6.2 (HITL 2026-06-04) reactiva opencode como runtime canonico y mueve su runtime-extension a runtime/opencode-runtime-extension.md."
+version: "6.2.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles, hermes, runtimes]
 lang: es
@@ -22,7 +22,7 @@ relations:
     - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v6.1.0
+# KORA/Gobernanza v6.2.0
 
 ## 1. Definicion
 
@@ -319,8 +319,27 @@ Reglas:
    `urn:kora:kb:hermes-runtime-extension` se desarrolla en Fase 2b; el
    stub vigente declara dominio de realizabilidad inicial y deuda
    explicita.
-3. Critical path de runtimes canonicos: `claude-code`, `codex`,
-   `openclaw`, `hermes` (cuatro).
+3. Critical path de runtimes canonicos desde 2026-06-04: `claude-code`,
+   `codex`, `openclaw`, `hermes`, `opencode` (cinco).
+
+### 8.2.1 OpenCode reactivado como runtime canonico (desde 2026-06-04)
+
+`OpenCode` **ES** runtime target canonico de KORA desde la decision HITL
+del 2026-06-04: reactivacion explicita de OpenCode por instruccion del
+operador.
+
+Reglas:
+
+1. `opencode` se admite en `transmute`, matrices de preservacion,
+   despliegue local y `entornos_objetivo`.
+2. La runtime-extension canonica vive en
+   `runtime/opencode-runtime-extension.md` y conserva el URN
+   `urn:kora:kb:opencode-runtime-extension`.
+3. Ya no requiere `--force-paused`. Usar `--force-paused` para opencode
+   no aporta autoridad adicional y queda como flag redundante.
+4. Los artefactos productivos pueden declarar `opencode` en
+   `entornos_objetivo` si su vector esta dentro del dominio de soporte de
+   `opencode-runtime-extension`.
 
 ### 8.3 Freeze formal parcial (post 2026-05-20)
 
@@ -360,7 +379,6 @@ salvo nuevo HITL:
 |---------|---------|-----|
 | `gemini` | `governance/decisiones-archivadas/specs-en-pausa/gemini-runtime-extension.md` | `urn:kora:kb:gemini-runtime-extension` |
 | `mastra` | `governance/decisiones-archivadas/specs-en-pausa/mastra-runtime-extension.md` | `urn:kora:kb:mastra-runtime-extension` |
-| `opencode` | `governance/decisiones-archivadas/specs-en-pausa/opencode-runtime-extension.md` | `urn:kora:kb:opencode-runtime-extension` |
 | `agentskills` | `governance/decisiones-archivadas/specs-en-pausa/agentskills-runtime-extension.md` | `urn:kora:kb:agentskills-runtime-extension` |
 
 Reglas:

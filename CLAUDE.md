@@ -187,6 +187,7 @@ Runtimes canonicos activos segun `gobernanza` v6.0:
 - `codex`
 - `openclaw`
 - `hermes`
+- `opencode`
 
 `hermes` es canonico desde el `2026-05-20`, pero
 `runtime/hermes-runtime-extension.md` esta en v0.1.0 stub: sus transmutaciones
@@ -197,7 +198,6 @@ Runtimes archivados en pausa:
 - `agentskills`
 - `gemini`
 - `mastra`
-- `opencode`
 
 Sus URNs siguen resolviendo en
 `governance/decisiones-archivadas/specs-en-pausa/`, pero no son target canonico

@@ -121,7 +121,10 @@ SUPPORTED_TARGETS = tuple(PRESERVATION_MATRIX.keys())
 # Sus runtime-extensions viven en governance/decisiones-archivadas/specs-en-pausa/.
 # La transmutacion sigue siendo posible con --force-paused, pero emite warning
 # para evitar deploys accidentales hacia runtimes sin compromiso de mantenimiento.
-PAUSED_TARGETS = frozenset({"gemini", "mastra", "opencode", "agentskills"})
+#
+# OpenCode fue reactivado por HITL del operador el 2026-06-04 y su spec vive
+# nuevamente en runtime/opencode-runtime-extension.md.
+PAUSED_TARGETS = frozenset({"gemini", "mastra", "agentskills"})
 
 PRESENTACION_MAP = {
     "estado-primario": "estado-primario",

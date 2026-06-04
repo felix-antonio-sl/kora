@@ -195,9 +195,9 @@ posterior.
   estado propio, no es habilidad.
 - No introducir URNs no resolubles, paths duros como conocimiento gobernado ni
   placeholders decorativos.
-- `entornos_objetivo` no incluye runtimes pausados (`agentskills`, `opencode`,
-  `gemini`, `mastra`); agentskills queda como compatibilidad verificada, no como
-  target canonico.
+- `entornos_objetivo` no incluye runtimes pausados (`agentskills`, `gemini`,
+  `mastra`); agentskills queda como compatibilidad verificada, no como target
+  canonico. `opencode` esta activo desde el HITL del 2026-06-04.
 - El body debe ser conciso; recursos grandes van fuera y se cargan solo cuando
   hagan falta.
 - Toda perdida entre requerimiento, blueprint e IR debe quedar como descarte,
