@@ -1,3 +1,6 @@
+import json
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -556,6 +559,75 @@ class ArtifactFixtureTests(unittest.TestCase):
         )
         for term in required_terms:
             self.assertIn(term, wizard)
+
+    def test_koraficacion_knowledge_recovers_legacy_koda_contract_in_kora_md(self):
+        skill_path = ROOT / "artifacts" / "skills" / "kora" / "koraficacion-knowledge" / "SKILL.md"
+        doc, err = load_yaml_safe(skill_path)
+        self.assertIsNone(err)
+        self.assertEqual(doc["_manifest"]["urn"], "urn:kora:artefacto:koraficacion-knowledge")
+        self.assertEqual(doc["extensions"]["kora"]["atlas"]["forma_material"], "habilidad")
+        self.assertEqual(
+            set(doc["extensions"]["kora"]["entornos_objetivo"]),
+            {"claude-code", "codex", "opencode", "openclaw"},
+        )
+        allowed = set(doc["extensions"]["kora"]["conocimiento_permitido"])
+        expected = {
+            "urn:kora:kb:md-spec",
+            "urn:kora:kb:knowledge-spec",
+            "urn:fxsl:kb:icas-preservacion",
+            "urn:fxsl:kb:icas-adjunciones",
+        }
+        self.assertTrue(expected.issubset(allowed))
+        body = doc["_md_body"]
+        for term in ("skeleton", "meat", "fat", "FS=100%", "IDC", "YAML KODA"):
+            self.assertIn(term, body)
+
+    def test_koraficacion_knowledge_audit_script_reports_mechanical_fidelity(self):
+        script = ROOT / "artifacts" / "skills" / "kora" / "koraficacion-knowledge" / "scripts" / "audit_korafication.py"
+        with TemporaryDirectory() as tmpdir:
+            source = Path(tmpdir) / "source.txt"
+            artifact = Path(tmpdir) / "artifact.md"
+            source.write_text(
+                "El documento establece un plazo de 30 dias desde 2026-06-04. "
+                "Debe conservar la referencia https://example.com/ref. "
+                "Es importante indicar, a continuacion, que el plazo de 30 dias se repite por enfasis editorial.",
+                encoding="utf-8",
+            )
+            artifact.write_text(
+                "---\n"
+                "_manifest:\n"
+                "  urn: \"urn:test:kb:plazo\"\n"
+                "  provenance:\n"
+                "    created_by: \"test\"\n"
+                "    created_at: \"2026-06-04\"\n"
+                "    source: \"fixture\"\n"
+                "version: \"0.1.0\"\n"
+                "status: borrador\n"
+                "tags: [test, koraficacion, fidelidad]\n"
+                "lang: es\n"
+                "extensions:\n"
+                "  kora:\n"
+                "    family: note\n"
+                "---\n"
+                "# Plazo\n\n"
+                "## Vigencia\n\n"
+                "Plazo: 30 dias desde 2026-06-04. Referencia: https://example.com/ref.\n",
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [sys.executable, str(script), str(source), str(artifact), "--json", "--profile", "fuente-ya-densa"],
+                check=True,
+                text=True,
+                capture_output=True,
+            )
+        report = json.loads(result.stdout)
+        self.assertIn(report["status"], {"pass", "warn"})
+        self.assertEqual(report["contextual_dehydration"]["profile"], "fuente-ya-densa")
+        self.assertEqual(report["contextual_dehydration"]["expected_cr"], 1.0)
+        self.assertIn("index", report["contextual_dehydration"])
+        self.assertEqual(report["mechanical_checks"]["missing_numeric_tokens"], [])
+        self.assertEqual(report["mechanical_checks"]["missing_dates"], [])
+        self.assertEqual(report["mechanical_checks"]["missing_urls"], [])
 
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "runtime" / "runtime-spec-md.md").read_text(encoding="utf-8")
