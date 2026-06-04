@@ -5,14 +5,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-27"
-    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es). Desde v1.3.0 usa urn:fxsl:kb:metodologia-forja-opm-es como metodo primario para modelamiento OPM-en-opforja. Desde v1.4.0 integra urn:fxsl:kb:reglas-opm-estrictas-es como canon prescriptivo operativo y urn:fxsl:kb:spec-forja-opl-es como SSOT bidireccional del OPL de OPFORJA. v1.4.1 corrige la interpretacion operativa de severidades AP-* y del enum OPL §1.1."
+    source: "Diseno desde 0 sobre SSOT OPM v3.0.0 (cuatro capas: opm-es, opd-es, opl-es, manual-metodologico-opm-es). Desde v1.3.0 usa urn:fxsl:kb:metodologia-forja-opm-es como metodo primario para modelamiento OPM-en-opforja. Desde v1.4.0 integra urn:fxsl:kb:reglas-opm-estrictas-es como canon prescriptivo operativo y urn:fxsl:kb:spec-forja-opl-es como SSOT bidireccional del OPL de OPFORJA. v1.4.1 corrige la interpretacion operativa de severidades AP-* y del enum OPL §1.1. v1.4.2 absorbe el unico aporte util del despliegue externo opm-modeler: wizard SD explicito de 12 decisiones; opm-modeler queda redundante y retirado."
     updated_at: "2026-06-04"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. v1.3.0 integra Metodologia Forja (urn:fxsl:kb:metodologia-forja-opm-es) como SSOT primaria de metodo cuando el destino es opforja/deep-opm-pro. v1.4.0 integra las dos SSOT operativas de opforja faltantes: urn:fxsl:kb:reglas-opm-estrictas-es (canon prescriptivo con 30 anti-patrones, zonas no canonizadas, checklist de cierre OPD<->OPL y extension categorial) y urn:fxsl:kb:spec-forja-opl-es (SSOT bidireccional del OPL de OPFORJA con vocabulario cerrado, plantillas completas, roundtrip y GAPs). v1.4.1 remedia calidad: respeta la politica especifica de cada AP-* (bloqueo, reporte, supresion o no-canonizado) y alinea las referencias OPL con el enum completo de spec-forja-opl-es §1.1, distinguiendo entradas alineadas de GAP-*."
-version: "1.4.1"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro (ambiguedad, conjetura, primitiva mal aplicada, refinamiento no justificado), fuerza aclaracion antes de plasmar y nunca construye sobre supuestos no declarados. v1.3.0 integra Metodologia Forja (urn:fxsl:kb:metodologia-forja-opm-es) como SSOT primaria de metodo cuando el destino es opforja/deep-opm-pro. v1.4.0 integra las dos SSOT operativas de opforja faltantes: urn:fxsl:kb:reglas-opm-estrictas-es (canon prescriptivo con 30 anti-patrones, zonas no canonizadas, checklist de cierre OPD<->OPL y extension categorial) y urn:fxsl:kb:spec-forja-opl-es (SSOT bidireccional del OPL de OPFORJA con vocabulario cerrado, plantillas completas, roundtrip y GAPs). v1.4.1 remedia calidad: respeta la politica especifica de cada AP-* (bloqueo, reporte, supresion o no-canonizado) y alinea las referencias OPL con el enum completo de spec-forja-opl-es §1.1, distinguiendo entradas alineadas de GAP-*. v1.4.2 fortalece bootstrap-sd con clasificacion de sistema, beneficiario/affectee, atributo de valor, benefit-providing object, problem occurrence y gate de cierre; se retira opm-modeler como skill runtime externa redundante."
+version: "1.4.2"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada a la SSOT canonica de cuatro capas y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
-tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente, opforja, reglas-estrictas, spec-forja-opl]
+tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente, opforja, reglas-estrictas, spec-forja-opl, wizard-sd]
 lang: es
 extensions:
   kora:
@@ -28,7 +28,7 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo: [claude-code, codex, openclaw, opencode]
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:fxsl:kb:opm-es"
@@ -278,16 +278,25 @@ Anti-patron de la skill: encadenar 5 preguntas en un mismo turno. Esto colapsa e
 
 Aplicar el wizard del manual metodologico (ver `referencias/wizard-sd.md`) **interrogando al operador en cada paso**. La skill no asume:
 
-1. **Proposito** — preguntar al operador el proposito del sistema en una sola oracion verbo-objeto. Si la respuesta tiene mas de un verbo principal, derivar a `aclarar`: "estas describiendo dos sistemas, no uno; cual modelamos primero?".
+0. **Clasificacion del sistema** — artificial, natural, social o socio-tecnico. La clasificacion decide si se modela purpose u outcome, si hay agentes humanos y si aplica problem occurrence.
+1. **Proposito / outcome** — preguntar al operador el proposito del sistema en una sola oracion verbo-objeto. Si la respuesta tiene mas de un verbo principal, derivar a `aclarar`: "estas describiendo dos sistemas, no uno; cual modelamos primero?".
 2. **Proceso central** — derivado del proposito. Si el proposito no es un verbo de transformacion, derivar a `aclarar`.
-3. **Transformees** — preguntar al operador que cosa cambia por la accion del proceso. **Nunca proponer transformees por el operador.** Si el operador no identifica ninguno, derivar a `aclarar` con opciones (cambio de estado / creacion / consumo / destruccion).
-4. **Enablers** — preguntar agent e instrument por separado, cada uno con su pregunta dirigida. Si el operador confunde ambos roles (caso comun), corregir citando la capa.
-5. **Esencias y afiliaciones** — para cada cosa, preguntar al operador si es fisica/informacional y si es sistemica/ambiental. **Sin defaults silenciosos.** Si el operador dice "no se", la skill explica la distincion y vuelve a preguntar.
-6. **Links procedurales** — la skill propone el tipo de link mas probable (consume/resultado/efecto/agente/instrumento) **citando la firma legal**, y el operador confirma o corrige.
-7. **Bimodalidad** — emitir el SD en OPD estructurado + OPL-ES, y mostrar al operador la oracion OPL-ES de cada hecho para que la valide. Si el operador dice "esa oracion no dice lo que quiero decir", el modelo esta mal — volver a `aclarar`.
-8. **Decision de refinar** — preguntar al operador si el SD basta o si hay zonas que requieren detalle. No refinar de oficio.
+3. **Beneficiario o affectee primario** — identificar quien o que recibe valor/cambio. En sistemas naturales, registrar outcome/affectee en vez de forzar beneficiario humano.
+4. **Atributo de valor y estados input/output** — explicitar que atributo cambia y desde que estado hacia que estado. Sin atributo de valor, el SD queda sin funcion auditable.
+5. **Transformees y benefit-providing object** — preguntar que cosa cambia, se consume, se crea o se destruye por la accion del proceso. **Nunca proponer transformees por el operador.** Si hay multiples transformees, distinguir el objeto que provee la funcion principal.
+6. **Agencia humana** — agent es humano u organizacion. Si no existen agentes humanos, registrar `sin agentes humanos` y no forzar placeholder.
+7. **Sistema y frontera** — nombrar el sistema y distinguir cosas sistemicas/ambientales; no usar alcance implicito.
+8. **Instrumentos** — identificar herramientas, dispositivos, software o sistemas externos requeridos sin transformarse.
+9. **Contexto externo** — delimitar environment objects/processes que interactuan con el sistema.
+10. **Problem occurrence** — si el sistema es artificial, social o socio-tecnico y el modelo necesita justificar la intervencion, declarar el problema inicial; si no aplica, registrar `NO APLICA`, no omitir.
+11. **Links procedurales** — la skill propone el tipo de link mas probable (consume/resultado/efecto/agente/instrumento/condicion/evento) **citando la firma legal**, y el operador confirma o corrige.
+12. **Bimodalidad y cierre** — emitir el SD en OPD estructurado + OPL-ES, y mostrar al operador la oracion OPL-ES de cada hecho para que la valide. Si el operador dice "esa oracion no dice lo que quiero decir", el modelo esta mal — volver a `aclarar`.
+13. **Decision de refinar** — preguntar al operador si el SD basta o si hay zonas que requieren detalle. No refinar de oficio.
 
-Regla de cierre del estado: el SD no se da por terminado hasta que cada cosa tenga proposito declarado, cada link tenga firma legal confirmada, y la equivalencia OPD↔OPL-ES haya sido validada explicitamente por el operador.
+Regla de cierre del estado: el SD no se da por terminado hasta que clasificacion,
+beneficiario/affectee, atributo de valor, transformees, frontera, enablers,
+problem occurrence/no-aplicacion, esencias, afiliaciones, links y equivalencia
+OPD↔OPL-ES hayan sido validados explicitamente por el operador.
 
 ### `refinar-modelo`: aplicar mecanismos de refinamiento
 

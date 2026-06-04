@@ -10,7 +10,21 @@ Antes de modelar, confirmar que el sistema tiene **funcion transformadora identi
 
 Si la respuesta es nula o solo describe estructura estatica, OPM no es la herramienta adecuada. Sugerir alternativa (`data-modeling`, `ontologista-gist`, BPMN, etc.) y abortar.
 
-## Paso 1 — Identificar el proposito
+## Paso 1 — Clasificar el sistema
+
+Determinar el tipo del sistema antes de hablar de proposito:
+
+| Tipo | Implicancia para el SD |
+|------|------------------------|
+| Artificial | modelar purpose, problem occurrence, agentes humanos si existen e instrumentos. |
+| Natural | modelar outcome/affectee; no forzar purpose, problem occurrence ni agentes humanos. |
+| Social | modelar purpose, beneficiario y condiciones sociales/ambientales relevantes. |
+| Socio-tecnico | modelar purpose, beneficiario, agentes humanos, instrumentos tecnicos y contexto externo. |
+
+La clasificacion no es decorativa: decide que preguntas son legales. Si no se
+puede clasificar, entrar a `aclarar` antes de plasmar.
+
+## Paso 2 — Identificar el proposito u outcome
 
 Una sola frase: **"Este sistema sirve para ___"**. Ejemplos:
 
@@ -20,7 +34,10 @@ Una sola frase: **"Este sistema sirve para ___"**. Ejemplos:
 
 El proposito es la **funcion principal**, no una descripcion de estructura.
 
-## Paso 2 — Nominalizar la funcion como proceso central
+Para sistemas naturales, sustituir proposito por **outcome**: que cambia u
+ocurre, sin atribuir intencion.
+
+## Paso 3 — Nominalizar la funcion como proceso central
 
 La funcion → un proceso del SD. Convencion de nombre: gerundio o sustantivo derivado de verbo activo.
 
@@ -32,7 +49,34 @@ La funcion → un proceso del SD. Convencion de nombre: gerundio o sustantivo de
 
 Una sola idea por proceso. Si necesitas varios verbos, probablemente son sub-procesos para una iteracion posterior de in-zooming.
 
-## Paso 3 — Identificar transformees
+## Paso 4 — Identificar beneficiario o affectee primario
+
+El SD debe declarar quien o que recibe el valor/cambio principal:
+
+- **Beneficiario**: stakeholder humano u organizacional que extrae valor.
+- **Affectee primario**: objeto que cambia cuando no corresponde hablar de beneficiario, especialmente en sistemas naturales.
+
+Reglas:
+
+- Si hay beneficiario humano/colectivo, nombrarlo como objeto singular o como
+  `Grupo` cuando represente coleccion humana.
+- Si el beneficiario es inanimado o conjunto de cosas, usar `Conjunto`.
+- Si no aplica beneficiario, registrar explicitamente `sin beneficiario humano`
+  y usar affectee/outcome.
+
+## Paso 5 — Fijar atributo de valor y estados input/output
+
+Definir que atributo cambia y sus estados:
+
+```text
+<Proceso Central> cambia <Atributo de Valor> de <Beneficiario/Affectee>
+de <estado input> a <estado output>.
+```
+
+Si el operador no puede nombrar el atributo de valor, el SD no tiene funcion
+auditable. Entrar a `aclarar`.
+
+## Paso 6 — Identificar transformees y benefit-providing object
 
 Las cosas que **cambian** por la accion del proceso. Tres patrones:
 
@@ -54,23 +98,52 @@ El proceso crea o destruye una cosa que antes no existia / dejara de existir.
 
 - *Resolver Solicitud* crea *Resolucion Administrativa*.
 
-## Paso 4 — Identificar enablers
+Si hay multiples transformees, distinguir el **benefit-providing object**: la
+cosa cuya transformacion materializa la funcion principal para el beneficiario.
+Los otros transformees pueden ser inputs, consumibles, residuos o resultados
+secundarios, pero no definen la funcion.
+
+## Paso 7 — Resolver agencia humana
+
+Preguntar por agentes humanos u organizacionales. Si no existen, registrar
+`sin agentes humanos`; no inventar un agent placeholder.
+
+OPM reserva `agent` para humanos/organizaciones. Robots, software, IA,
+maquinas y sistemas externos son instrumentos, aunque en lenguaje comun se les
+llame agentes.
+
+## Paso 8 — Nombrar sistema y frontera
+
+Nombrar el sistema y decidir que cosas son sistemicas vs. ambientales.
+
+- Sistema: suele nombrarse desde el proceso central (`<Proceso> Sistema`), salvo
+  termino de dominio mejor.
+- Frontera: cada cosa queda sistemica o ambiental. No dejar alcance implicito.
+
+## Paso 9 — Identificar instrumentos
 
 Cosas necesarias para que el proceso ocurra **pero que no son consumidas ni transformadas**:
-
-- **Agent** (humano u organizacional): quien dispara el proceso.
-  - *Persona* manipula *Hacer Cafe*.
-  - *Medico* manipula *Diagnosticar*.
-  - *Funcionario* manipula *Resolver Solicitud*.
 
 - **Instrument** (herramienta, dispositivo, sistema externo):
   - *Hacer Cafe* usa *Cafetera*.
   - *Diagnosticar* usa *Historia Clinica*.
   - *Resolver Solicitud* usa *Sistema Documental*.
 
-OPM exige que `agent` sea humano u organizacion. Si lo que activa el proceso es una maquina, va como `instrument`, no `agent`.
+## Paso 10 — Delimitar contexto externo
 
-## Paso 5 — Conectar con links procedurales
+Identificar objetos/procesos ambientales que interactuan con el sistema pero no
+pertenecen a el. Si una cosa cruza frontera, explicitar el rol de cada extremo
+en vez de dejarla doblemente afiliada.
+
+## Paso 11 — Problem occurrence o no-aplicacion
+
+Para sistemas artificiales, sociales y socio-tecnicos, declarar el problema
+inicial que justifica el sistema cuando el modelo lo requiere. Para sistemas
+naturales, cerrar como `NO APLICA`.
+
+No omitir silenciosamente este punto: `NO APLICA` es una decision de modelo.
+
+## Paso 12 — Conectar con links procedurales
 
 Tipos canonicos (de `opl-es` y `opd-es`):
 
@@ -85,7 +158,7 @@ Tipos canonicos (de `opl-es` y `opd-es`):
 
 Validar contra `opd-es` que cada link respete su gramatica visual (V-* aplicables).
 
-## Paso 6 — Bimodalidad
+## Paso 13 — Bimodalidad y gate de cierre
 
 Para cada hecho del SD, emitir la sentencia OPL-ES correspondiente. Si una sentencia OPL no se puede formular sin ambiguedad, el OPD esta mal construido.
 
@@ -107,7 +180,22 @@ Persona manipula Hacer Cafe.
 Hacer Cafe usa Cafetera.
 ```
 
-## Paso 7 — Decidir si el SD basta
+Gate de cierre minimo:
+
+- [ ] sistema clasificado.
+- [ ] proposito/outcome declarado.
+- [ ] proceso central nombrado.
+- [ ] beneficiario o affectee primario identificado.
+- [ ] atributo de valor + estados input/output declarados.
+- [ ] transformees y benefit-providing object distinguidos.
+- [ ] agentes humanos resueltos o `sin agentes humanos` declarado.
+- [ ] instrumentos identificados.
+- [ ] frontera sistemico/ambiental cerrada.
+- [ ] problem occurrence declarado o `NO APLICA`.
+- [ ] cada link tiene firma legal confirmada.
+- [ ] cada hecho tiene OPL-ES validado por el operador.
+
+## Paso 14 — Decidir si el SD basta
 
 Tres criterios:
 

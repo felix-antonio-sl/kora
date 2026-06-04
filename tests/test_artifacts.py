@@ -544,6 +544,19 @@ class ArtifactFixtureTests(unittest.TestCase):
         self.assertTrue(expected.issubset(allowed))
         self.assertIn("Bimodalidad", doc["_md_body"])
 
+    def test_modelamiento_opm_sd_wizard_absorbs_opm_modeler_value(self):
+        wizard = (ROOT / "artifacts" / "skills" / "kora" / "modelamiento-opm" / "referencias" / "wizard-sd.md").read_text(encoding="utf-8")
+        required_terms = (
+            "Clasificar el sistema",
+            "beneficiario o affectee primario",
+            "atributo de valor",
+            "benefit-providing object",
+            "Problem occurrence",
+            "NO APLICA",
+        )
+        for term in required_terms:
+            self.assertIn(term, wizard)
+
     def test_runtime_spec_restores_adapter_and_equivalence_contract(self):
         content = (ROOT / "runtime" / "runtime-spec-md.md").read_text(encoding="utf-8")
         required_terms = (
