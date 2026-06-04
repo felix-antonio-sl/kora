@@ -6,7 +6,7 @@ _manifest:
     created_by: "Codex GPT-5"
     created_at: "2026-04-27"
     source: "Skill hospitalista materializada desde el modo hospitalista del agente salubrista y anclada al corpus fisico salud/salubrista."
-version: "1.0.0"
+version: "1.0.1"
 status: activo
 nombre: Hospitalista
 descripcion: "Skill para activar modo hospitalista de red: hospitalizacion intrahospitalaria, camas, flujo, altas, boarding, continuidad, capacidad, seguridad, indicadores y gobernanza operacional."
@@ -26,7 +26,7 @@ extensions:
       arnes_categorico: disciplina
       forma_material: habilidad
       metafora_relacional: supertool
-    entornos_objetivo: [claude-code, codex, openclaw]
+    entornos_objetivo: [claude-code, codex, openclaw, opencode]
     nivel_prescripcion: alto
     conocimiento_permitido:
       - "urn:salud:kb:salubrista"

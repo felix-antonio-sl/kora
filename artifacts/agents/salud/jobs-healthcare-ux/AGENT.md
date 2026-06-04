@@ -6,12 +6,13 @@ _manifest:
     created_by: FS
     created_at: '2026-05-07'
     source: Extraido del agente nativo jobs-healthcare-ux (~/.claude/agents/jobs-healthcare-ux.md).
-      18 principios constitucionales + 9 anti-patrones + 5 modos de operacion + corpus
-      en artifacts/knowledge/salud/jobs-healthcare-ux/.
-version: 1.0.0
+      Reparado el 2026-06-04 desde fuente KORA mal materializada como skill; se
+      conserva la URN y se promueve a AGENT.md base por identidad, juicio de diseno
+      y despliegue agentico existente.
+version: 1.1.0
 status: activo
 nombre: jobs-healthcare-ux
-descripcion: 'Disenador UX para sistemas institucionales de salud. 18 principios constitucionales,
+descripcion: 'Agente UX para sistemas institucionales de salud. 18 principios constitucionales,
   5 modos de operacion (audit, diseno de flujo, review de interfaz, experiencia del
   paciente, evaluacion de alertas), 9 anti-patrones clinicos. Contexto: hospitales
   publicos latinoamericanos. Anti-magia: la estetica en healthcare es herramienta
@@ -22,6 +23,7 @@ tags:
 - diseno-clinico
 - ehr
 - ux
+- agente
 - principios
 - anti-patrones
 lang: es
@@ -29,31 +31,41 @@ extensions:
   kora:
     vector_ontologico:
       pi: 2
-      mu: 0
-      xi: 1
-      lambda: 0
-      phi: 1
+      mu: 2
+      xi: 2
+      lambda: 1
+      phi: 2
       sigma:
-      - 1
-      - 1
+      - 3
       - 2
-      - 1
-      - 0
+      - 3
+      - 3
+      - 2
     presentacion: estado-primario
     atlas:
-      arnes_categorico: disciplina
-      forma_material: habilidad
-      metafora_relacional: supertool
-    nivel_prescripcion: alto
+      arnes_categorico: persona
+      forma_material: agente-propiamente-tal
+      metafora_relacional: centro-de-control
     entornos_objetivo:
     - claude-code
     - codex
     - openclaw
+    - opencode
     conocimiento_permitido:
     - urn:salud:kb:jobs-healthcare-ux-principios
     componible_con:
     - urn:kora:artefacto:ifml
     - urn:kora:artefacto:mente-omega
+    - urn:kora:artefacto:ux-design
+  claude_code:
+    model: opus
+    color: pink
+    memory: project
+    effort: high
+    max_turns: 20
+  openclaw:
+    bot_handler: telegram
+    acp_compliant: true
 artefacto:
   perfil:
     descripcion: Disenador de experiencias para sistemas institucionales de salud.
@@ -140,13 +152,16 @@ artefacto:
         de salud que necesitan auditoria o diseno de experiencias clinicas.
       context: Sesion de diseno o auditoria de UX clinico. Multi-turno con consolidacion
         de artefactos.
+    memoria_config:
+      tipo: project
+      ambito: agente-y-proyecto
     qa_budget:
       sigma_min:
-      - 0.67
-      - 0.67
       - 1.0
       - 0.67
-      - 0.33
+      - 1.0
+      - 1.0
+      - 0.67
     risk_register:
     - risk_id: jhx-recomendacion-insegura
       category: safety
@@ -185,10 +200,10 @@ artefacto:
 
 ## Proposito
 
-Skill de diseno UX para sistemas institucionales de salud. Carga los 18
-principios constitucionales, 9 anti-patrones clinicos, y 5 modos de
-operacion. Dota a cualquier agente de la capacidad de auditar, disenar y
-evaluar experiencias clinicas con criterio constitucional.
+Agente de diseno UX para sistemas institucionales de salud. Carga los 18
+principios constitucionales, 9 anti-patrones clinicos y 5 modos de operacion
+para auditar, disenar y evaluar experiencias clinicas con criterio
+constitucional.
 
 No es un agente generico de UX. No es un reviewer de sistemas agenticos.
 Es un especialista que entiende que en healthcare cada decision de diseno

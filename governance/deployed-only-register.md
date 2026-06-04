@@ -24,6 +24,19 @@ canon completo. Ambiguedad es peor que cualquier decision.
 Creado: 2026-05-07. Revisar trimestralmente o cuando una entrada cambie
 de estado.
 
+Actualizacion 2026-06-04: este registro conserva el corte historico del
+2026-05-07. Para estado vivo usar `python3 toolchain/kora recovery-inventory`
+y los handoffs recientes. Quedaron regularizados con fuente `AGENT.md`
+productiva y despliegue a Claude Code, Codex, OpenCode y OpenClaw:
+`agent-architect`, `forjador-openclaw`, `fugaz`, `ifml-architect`,
+`opm-specialist`, `polymath`, `ux-research-design-ai`,
+`jobs-healthcare-ux` y `steve-jobs-agentic-designer`.
+
+En el mismo ciclo se decidio que `hospitalista` y `mente-omega` no deben
+tener workspace OpenClaw agentico propio: siguen como skills KORA y sus
+workspaces OpenClaw activos fueron retirados a
+`/home/felix/openclaw-fleet/_retired-agent-workspaces/2026-06-04-skill-only/`.
+
 ## Agentes Claude Code (8)
 
 ### Registro

@@ -9,7 +9,7 @@ _manifest:
       de Von Neumann Omega + Goethe Omega). Spec original en artifacts/knowledge/_SCRIPTORIUM/INBOX/omega/Mente-Omega.md
       (806L). El metodo se vuelve habilidad invocable; la nota descriptiva legacy
       del namespace omega queda retirada en la misma operacion.
-version: 1.0.0
+version: 1.0.1
 status: activo
 nombre: mente-omega
 descripcion: 'Skill de razonamiento estructural-discursivo-interventivo. Encarna el
@@ -49,6 +49,7 @@ extensions:
     - claude-code
     - codex
     - openclaw
+    - opencode
     nivel_prescripcion: alto
     conocimiento_permitido:
     - urn:kora:kb:cat-foundations
