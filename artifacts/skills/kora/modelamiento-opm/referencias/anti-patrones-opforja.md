@@ -60,7 +60,7 @@ Construcciones que no aparecen explicitamente prohibidas ni canonizadas por la S
 ## Uso en la skill
 
 Cuando el modelo activo, un OPD, o un bundle presenta alguna de estas construcciones:
-1. Citar el AP-NN y la regla propietaria (V-*, R-*, o SSOT-iso/opl).
+1. Citar el AP-NN y la regla propietaria en `reglas-opm-estrictas-es`; las citas V-* o SSOT-* son procedencia/base delegada, no autoridad primaria de la skill.
 2. Aplicar la politica de la tabla maestra: bloquear solo cuando dice **DEBE bloquearse**; reportar o suprimir cuando dice **DEBE reportarse** o **DEBE suprimirse**.
 3. Sugerir la accion canonica de la tabla.
 4. Si la construccion cae en zona no canonizada (AP-28, o silencio SSOT): clasificar como no canonizada, permitir como extension declarada, no emitir como OPM nuclear.

@@ -5,12 +5,14 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-05-08"
-    source: "Derivado de ~/projects/deep-opm-pro/app/src/serializacion/json.ts y app/src/modelo/tipos/* al 2026-05-08."
-version: "1.0.0"
+    source: "Derivado de ~/projects/deep-opm-pro/app/src/serializacion/json.ts y app/src/modelo/tipos/* al 2026-05-08. v1.1.0 incorpora el diseno AnclaNormativa y LogDecisiones v0 documentado en ~/projects/deep-opm-pro/docs/proto-modelo/diseno-ancla-normativa.md al 2026-06-04."
+    updated_at: "2026-06-04"
+    update_reason: "Alinear la referencia operativa de modelamiento-opm con el contrato de re-elicitacion definido por deep-opm-pro: AnclaNormativa como extension meta opcional y LogDecisiones v0 como entrada consumida por el estado re-elicitar."
+version: "1.1.0"
 status: activo
 nombre: bundle-deep-opm-pro
-descripcion: "Contrato del bundle JSON 'deep-opm-pro.modelo.v0' que la skill modelamiento-opm emite para que el modelador deep-opm-pro lo importe."
-tags: [opm, deep-opm-pro, contrato, json, importable]
+descripcion: "Contrato del bundle JSON 'deep-opm-pro.modelo.v0' que la skill modelamiento-opm emite para que el modelador deep-opm-pro lo importe. Incluye extensiones meta opcionales AnclaNormativa y LogDecisiones v0 para el ciclo re-elicitar."
+tags: [opm, deep-opm-pro, contrato, json, importable, ancla-normativa, log-decisiones, re-elicitar]
 lang: es
 ---
 
@@ -18,7 +20,11 @@ lang: es
 
 Documento JSON canonico que la skill `modelamiento-opm` emite cuando el destino es **edicion / refinamiento / revision** en el modelador `~/projects/deep-opm-pro/app/`.
 
-> **SSOT del contrato**: el codigo del modelador. Si esta referencia tensiona con `app/src/serializacion/json.ts` o `app/src/modelo/tipos/*`, manda el codigo. Esta referencia es un resumen operativo curado.
+> **SSOT del shape JSON**: el codigo del modelador. **SSOT semantica de la skill**:
+> corpus OPM/Forja SSOT ES. Si esta referencia tensiona con
+> `app/src/serializacion/json.ts` o `app/src/modelo/tipos/*` sobre campos, manda
+> el codigo; si el codigo tensiona con validez OPM, manda el corpus Forja y se
+> corrige la herramienta.
 
 ## 1. Forma raiz
 
@@ -31,7 +37,7 @@ Documento JSON canonico que la skill `modelamiento-opm` emite cuando el destino 
 ```
 
 - `formato`: literal exacto `"deep-opm-pro.modelo.v0"`. El detector de la app rechaza cualquier otro valor.
-- `modelo`: objeto `Modelo` (ver §3).
+- `modelo`: objeto `Modelo` (ver §4).
 - `carpetaId`: opcional, `string | null`. Solo lo usa el workspace local de la app; la skill puede omitirlo.
 
 ## 2. Reglas globales de emision
@@ -43,7 +49,104 @@ Documento JSON canonico que la skill `modelamiento-opm` emite cuando el destino 
 5. No referenciar OPDs huerfanos: el OPD raiz es `opdRaizId` y todo OPD declarado debe ser alcanzable desde el (via `padreId`).
 6. `validarReferenciasOpd` se aplica al hidratar: si una entidad referencia un OPD inexistente o un estado pertenece a una entidad ausente, el import falla con error legible.
 
-## 3. Tipo `Modelo`
+## 3. Extensiones meta opcionales
+
+Estas extensiones **no son OPM nuclear**. Viven como metadata declarada del
+autor o de la mesa, bajo `R-DOC-7`/`V-204`/`R-BR-4`: no crean objeto, proceso,
+estado ni enlace, y no emiten OPL nuclear.
+
+### 3.1 `AnclaNormativa`
+
+`AnclaNormativa` es la extension aditiva que porta procedencia normativa o
+pendientes de ratificacion. Su molde sigue el patron de
+`SatisfaccionRequisito.target`, extendido a entidad, enlace, OPD o modelo:
+
+```ts
+type TargetAncla =
+  | { tipo: "entidad"; id: Id }
+  | { tipo: "enlace"; id: Id }
+  | { tipo: "opd"; id: Id }
+  | { tipo: "modelo" };
+
+interface AnclaNormativa {
+  id: Id;
+  claveProto?: string;
+  target: TargetAncla;
+  estado: "vigente" | "pendiente-ratificacion";
+  referencias?: { norma: string; articulos?: string[]; seccion?: string }[];
+  nota?: string;
+  ratificacion?: {
+    nivelAutoridad: "operador-modelado" | "mesa" | "dt-seremi-legal";
+    estadoRatificacion: "pendiente" | "anotado-en-mesa" | "ratificado-con-fuente";
+    fuente?: string;
+    responsable?: string;
+    anotadoEn?: string;
+    ratificadoEn?: string;
+  };
+}
+```
+
+Reglas:
+
+- `claveProto` es la clave estable nacida en el proto; no depende de ids
+  posicionales del bundle.
+- `estado: "pendiente-ratificacion"` representa `[RATIFICAR]`; no existe un
+  tipo hermano `DecisionPendiente`.
+- `target.tipo == "enlace"` es valido y necesario para anclas de frontera.
+- un bundle sin `anclasNormativas` debe conservar compatibilidad con bundles
+  previos.
+- las anclas se exhiben como capa meta rotulada, nunca como frase OPL nuclear.
+
+### 3.2 `LogDecisiones v0`
+
+La mesa puede exportar un log para que `modelamiento-opm` lo consuma en estado
+`re-elicitar`.
+
+```ts
+interface EntradaLogDecision {
+  claveAncla: string;
+  transicion: {
+    de: "pendiente" | "anotado-en-mesa" | "ratificado-con-fuente";
+    a: "pendiente" | "anotado-en-mesa" | "ratificado-con-fuente";
+  };
+  nivelAutoridad: "operador-modelado" | "mesa" | "dt-seremi-legal";
+  fuente?: string;
+  responsable?: string;
+  fecha: string;
+  modeloHash: string;
+}
+
+interface LogDecisiones {
+  schema: "deep-opm-pro.log-decisiones.v0";
+  emitidoEn: string;
+  modeloHash: string;
+  entradas: EntradaLogDecision[];
+}
+```
+
+Contrato de consumo:
+
+- `anotado-en-mesa` registra una marca de la app; **no muta** el proto/bundle.
+- `ratificado-con-fuente` exige `fuente`; si falta, la skill bloquea esa
+  entrada.
+- solo `ratificado-con-fuente` con `fuente` presente puede mover un ancla a
+  `vigente`.
+- el match se hace por `claveAncla`/`claveProto`, nunca por ids posicionales.
+- `modeloHash` divergente se reporta como staleness y bloquea mutacion hasta
+  aclaracion.
+
+Errores especificos de re-elicitacion:
+
+| Error | Causa | Fix en la skill |
+|-------|-------|-----------------|
+| `schema` invalido | el log no es `deep-opm-pro.log-decisiones.v0` | rechazar log y pedir version correcta |
+| `modeloHash` stale | el log proviene de otra version del modelo | no mutar; pedir proto/bundle correspondiente o ratificar staleness |
+| `fuente` ausente | transicion a `ratificado-con-fuente` sin fuente | bloquear entrada; pedir fuente |
+| `claveAncla` desconocida | no existe ancla matching en la fuente | bloquear y preguntar si se acuna, corrige o descarta |
+| matches duplicados | dos anclas comparten clave estable | bloquear hasta desambiguar |
+| transicion invalida | cambio no contemplado por el ciclo | registrar deuda; no mutar |
+
+## 4. Tipo `Modelo`
 
 ```ts
 interface Modelo {
@@ -64,9 +167,9 @@ interface Modelo {
 }
 ```
 
-## 4. Subtipos relevantes
+## 5. Subtipos relevantes
 
-### 4.1 Entidad
+### 5.1 Entidad
 
 - `tipo: "objeto" | "proceso"`
 - `esencia?: "informacional" | "fisica"` (default `"informacional"`)
@@ -74,14 +177,14 @@ interface Modelo {
 - `refinamientos?: { descomposicion?: { opdId, ... }, despliegue?: { opdId, modo? } }` — slots por tipo de refinamiento.
 - Metadata extendida (`alias`, `unidad`, `descripcion`, `urls[]`, `valor`) opcional.
 
-### 4.2 Estado
+### 5.2 Estado
 
 - `entidadId` obligatorio; debe apuntar a una `Entidad` tipo `"objeto"`.
 - `nombre` humano, equivalente al usado en OPL-ES.
-- `designaciones?: ("inicial" | "final" | "default" | "current")[]` — la app aplica exclusiones SSOT (no puede ser inicial+final, default es unico por entidad, etc.).
+- `designaciones?: ("inicial" | "final" | "default" | "current")[]` — la app aplica exclusiones de `reglas-opm-estrictas-es` y su politica runtime/canon.
 - `duracion?: { unidad, min, nominal, max }` — solo si la SSOT lo justifica.
 
-### 4.3 Enlace
+### 5.3 Enlace
 
 - `tipo` ∈ {`agregacion`, `exhibicion`, `generalizacion`, `clasificacion`, `agente`, `instrumento`, `consumo`, `resultado`, `efecto`, `invocacion`}
 - `extremoOrigen`, `extremoDestino`: `{ kind: "entidad" | "estado", id }`. Los estructurales solo permiten `entidad-entidad`; los procedurales pueden involucrar estados segun la SSOT.
@@ -90,25 +193,25 @@ interface Modelo {
 - `derivacion?`: marcado de enlaces externos derivados de refinamiento; emitir solo si el caso lo amerita.
 - `estilo?: { color?, strokeWidth?, dashArray? }` — usar `tokens` del modelador, no inventar; preferible omitir.
 
-### 4.4 OPD
+### 5.4 OPD
 
 - `padreId: Id | null` — `null` solo para el OPD raiz.
 - `apariencias: Record<Id, Apariencia>` — un slot por entidad visible en este OPD (posicion + tamaño + estilo opcional).
 - `enlaces: Record<Id, AparienciaEnlace>` — un slot por enlace visible (vertices, etiqueta, ruta).
 - `ordenLocal?: number` — orden entre OPDs hermanos del mismo padre.
 
-### 4.5 Apariencia y AparienciaEnlace
+### 5.5 Apariencia y AparienciaEnlace
 
 - `posicion: { x, y }` cuando se conoce; si no, **omitir** y dejar que el auto-layout de la app la asigne en `fit-to-view`.
 - `tamaño: { ancho, alto }` opcional; el modelador usa 135x60 canonico cuando falta.
 - `vertices`, `rutaEtiqueta`, `ordenPartes`, `modoPlegado`: especialistas — emitir solo cuando ya se exporto desde la propia app o se conoce con certeza.
 
-### 4.6 Abanico
+### 5.6 Abanico
 
 - Emitir solo si hay un `O`/`XOR` real entre enlaces que comparten puerto en una entidad de un OPD.
 - `enlaceIds` debe listar enlaces ya declarados en `enlaces` y presentes en el OPD.
 
-## 5. Errores comunes al importar
+## 6. Errores comunes al importar
 
 | Error | Causa | Fix en emision |
 |--------|--------|-----------------|
@@ -118,23 +221,26 @@ interface Modelo {
 | "entidad referencia OPD inexistente" | refinamiento apunta a OPD no declarado | declarar el OPD destino antes de cerrar el bundle |
 | "estado de entidad inexistente" | `entidadId` del estado roto | revisar consistencia |
 | "extremo de enlace invalido" | `kind` o `id` incorrecto | re-validar con `validarFirmaEnlace` mental antes de emitir |
-| "referencias OPD ciclicas" | refinement tree con ciclo | aplicar V-220/V-221 de `opd-es` |
+| "referencias OPD ciclicas" | refinement tree con ciclo | aplicar `reglas-opm-estrictas-es` y `spec-forja-opd-es` (con V-* base delegadas) |
 
-## 6. Protocolo de uso desde la skill
+## 7. Protocolo de uso desde la skill
 
 1. Construir el `Modelo` en memoria respetando los tipos.
 2. Aplicar `validar-modelo` antes de serializar; corregir bloqueos estructurales.
 3. Serializar con `JSON.stringify(doc, null, 2)` (la app espera 2-space indentation por convencion, pero acepta cualquier whitespace valido).
 4. Adjuntar el bundle al entregable y dar al usuario el camino de import: `cd ~/projects/deep-opm-pro/app && bun run dev` → UI → `Modelo / Importar JSON` → pegar.
 5. Si la sesion ya tiene la app abierta y el bundle es chico, basta con copiar al portapapeles.
+6. Si la mesa entrega `LogDecisiones v0`, ejecutar `re-elicitar` antes de emitir
+   un nuevo bundle. Un log sin consumidor operativo queda prohibido por la regla
+   anti-esterilidad de `deep-opm-pro`.
 
-## 7. Cuando NO emitir bundle
+## 8. Cuando NO emitir bundle
 
 - El destino es un documento estatico (markdown, PDF, lamina): preferir `serializar-opd` via jointjs-open-source.
 - El usuario solo pide OPL-ES: emitir solo la serializacion textual.
 - El modelo es solo conceptual y no se va a editar: documentar OPL + descripcion textual del OPD.
 
-## 8. Ejemplo minimo
+## 9. Ejemplo minimo
 
 ```json
 {

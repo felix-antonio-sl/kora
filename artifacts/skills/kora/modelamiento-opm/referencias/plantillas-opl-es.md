@@ -1,6 +1,6 @@
 # Plantillas OPL-ES por tipo de hecho
 
-Plantillas operativas ancladas a `urn:fxsl:kb:opl-es` (gramatica textual) y `urn:fxsl:kb:spec-forja-opl-es` (SSOT bidireccional del OPL de OPFORJA con vocabulario cerrado). Para gramatica completa y EBNF, consultar el apendice A de `opl-es` y la spec completa de `spec-forja-opl-es`.
+Plantillas operativas ancladas primero a `urn:fxsl:kb:spec-forja-opl-es`, SSOT bidireccional del OPL de OPFORJA con vocabulario cerrado. `urn:fxsl:kb:opl-es` queda como capa base delegada cuando la spec Forja lo cita; no se usa para saltarse el enum, los GAPs ni el contrato de roundtrip de opforja.
 
 ## Vocabulario cerrado de verbos y copulas (spec-forja-opl-es §1)
 
@@ -229,7 +229,7 @@ Tomados de `spec-forja-opl-es`:
 
 Conocer estas brechas evita prometer roundtrip donde `spec-forja-opl-es` lo declara parcial:
 
-1. `spec-forja-opl-es` §1.4 declara divergencias entre fuentes canonicas: `se pliega` y `se recompone` pertenecen al enum por `reglas §4.3`, aunque no esten en `opm-opl-es §2`; las designaciones de estado no son verbos del enum.
+1. `spec-forja-opl-es` §1.4 declara divergencias entre la familia Forja y capas base: `se pliega` y `se recompone` pertenecen al enum por `reglas §4.3`, aunque no esten en `opm-opl-es §2`; las designaciones de estado no son verbos del enum.
 2. `spec-forja-opl-es` §20 consolida GAPs: `varia de ... a`, `es de tipo`, `puede ser` XOR, `se refina`, `se pliega`, `se recompone`, `se relaciona con`/tags, `se descompone`, fan `m de f` y composicion de predicados tienen cobertura parcial o ausente.
 3. Una entrada GAP-* puede ser canon textual, pero no debe presentarse como salida importable roundtrip de deep-opm-pro hasta cerrar generador, parser y fixture.
 
@@ -238,8 +238,9 @@ Estas brechas son deuda trazada, no permiso para inventar sinonimos ni para usar
 ## Cuando consultar la SSOT directa
 
 Cualquier sentencia que no encaja en las plantillas anteriores requiere consulta directa a:
-- `urn:fxsl:kb:spec-forja-opl-es` (SSOT bidireccional del OPL de OPFORJA, vocabulario cerrado, generacion y parseo)
-- `urn:fxsl:kb:opl-es` (apendice A EBNF, gramatica textual completa)
-- `urn:fxsl:kb:opd-es` (gramatica visual)
+- `urn:fxsl:kb:reglas-opm-estrictas-es` si esta en juego validez, severidad o extension.
+- `urn:fxsl:kb:spec-forja-opl-es` si esta en juego vocabulario, plantilla, parseo o roundtrip.
+- `urn:fxsl:kb:spec-forja-opd-es` si la sentencia debe corresponder a una realizacion visual concreta.
+- `urn:fxsl:kb:opl-es` solo como capa base delegada por la spec Forja.
 
 Las plantillas son el subset operativo, no el lenguaje completo.

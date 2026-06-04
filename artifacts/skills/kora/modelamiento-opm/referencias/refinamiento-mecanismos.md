@@ -2,6 +2,8 @@
 
 OPM controla la complejidad por **detalle**, no por aspectos. Cuatro pares de operadores cubren la totalidad del refinamiento. Cada par es un eje refinamiento ↔ abstraccion.
 
+Referencia primaria para esta skill: corpus OPM/Forja SSOT ES. `metodologia-forja-opm-es` decide el metodo, `reglas-opm-estrictas-es` decide validez/equivalencia, `spec-forja-opd-es` decide realizacion visual y `spec-forja-opl-es` decide la superficie textual.
+
 | # | Refinamiento | Abstraccion | Categoria | Direccion |
 |---|--------------|-------------|-----------|-----------|
 | 1 | In-zooming | Out-zooming | proceso | descomposicion en OPD hijo |
@@ -24,12 +26,13 @@ OPM controla la complejidad por **detalle**, no por aspectos. Cuatro pares de op
 
 **OPL-ES**:
 ```
-Hacer Cafe esta hecho de Calentar Agua, Filtrar Cafe.
+*Hacer Cafe* se descompone en *Calentar Agua*, *Filtrar Cafe* y *Servir Cafe*.
 ```
 
-**Restricciones (V-*)**:
+**Restricciones (Forja + base delegada)**:
 - aciclico: el proceso descompuesto no puede aparecer dentro de su propio in-zoom.
-- conservacion: los transformees/enablers del padre estan presentes (visibles o referenciados) en el hijo.
+- frontera: la descomposicion preserva la firma de frontera del proceso abstracto (R-CAT-EQ-3).
+- conservacion: los transformees/enablers del padre estan presentes o redistribuidos segun la regla visual aplicable.
 - coherencia: los links del padre se preservan o redistribuyen sin perder semantica.
 
 ## 2. Unfolding / Folding
@@ -44,9 +47,9 @@ Hacer Cafe esta hecho de Calentar Agua, Filtrar Cafe.
 
 **OPL-ES**:
 ```
-Cafe Hecho consta de Liquido y Aroma.
-Paciente exhibe Edad, Sexo y Diagnostico.
-Vehiculo es de tipo Auto, Camion y Bus.
+**Cafe Hecho** consta de **Liquido** y **Aroma**.
+**Paciente** exhibe **Edad**, **Sexo** y **Diagnostico**.
+**Vehiculo** puede ser **Auto**, **Camion** o **Bus**.
 ```
 
 **Restricciones**:
@@ -65,8 +68,8 @@ Vehiculo es de tipo Auto, Camion y Bus.
 
 **OPL-ES**:
 ```
-Paciente puede estar en no-diagnosticado o en diagnosticado.
-Diagnosticar afecta Paciente, cambiandolo de no-diagnosticado a diagnosticado.
+**Paciente** puede estar `no-diagnosticado` o `diagnosticado`.
+*Diagnosticar* cambia **Paciente** de `no-diagnosticado` a `diagnosticado`.
 ```
 
 **Restricciones**:
@@ -86,8 +89,8 @@ Diagnosticar afecta Paciente, cambiandolo de no-diagnosticado a diagnosticado.
 
 **OPL-ES**:
 ```
-Sistema de Pago es un sub-modelo cargado y sincronizado.
-Resolver Solicitud usa Sistema de Pago.
+**Sistema de Pago** es un objeto informacional.
+*Resolver Solicitud* requiere **Sistema de Pago**.
 ```
 
 **Restricciones (V-242, V-251, V-252)**:
@@ -108,8 +111,8 @@ Tabla rapida para elegir el par correcto:
 
 ## Aciclicidad global
 
-El arbol completo de refinamiento (procesos in-zoomed + objetos unfolded + sub-modelos compuestos) debe ser **aciclico**. Si detectas un ciclo, el modelo esta mal estructurado: alguna abstraccion esta faltante o algun nivel esta confundido. Volver al manual metodologico §refinamiento para diagnostico.
+El arbol completo de refinamiento (procesos in-zoomed + objetos unfolded + sub-modelos compuestos) debe ser **aciclico**. Si detectas un ciclo, el modelo esta mal estructurado: alguna abstraccion esta faltante o algun nivel esta confundido. Volver a `metodologia-forja-opm-es` y `reglas-opm-estrictas-es` para diagnostico.
 
 ## Heuristica middle-out
 
-OPM no obliga top-down ni bottom-up. La practica recomendada (manual §middle-out) es comenzar por el SD y **luego refinar en la direccion donde haya mayor incertidumbre o demanda**, no completar un nivel antes del siguiente.
+OPM no obliga top-down ni bottom-up. La practica recomendada por `metodologia-forja-opm-es` es comenzar por el SD y **luego refinar en la direccion donde haya mayor incertidumbre o demanda**, no completar un nivel antes del siguiente.

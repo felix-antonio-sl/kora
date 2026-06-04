@@ -26,7 +26,7 @@ Toda pregunta de la skill al operador tiene la forma:
 
 ```
 [BARRO]    <una linea citando lo ambiguo, con la frase exacta del operador entre comillas si aplica>
-[REGLA]    <V-NN, §X.Y de opm-es, plantilla de opl-es, o "metodologia: <regla>">
+[REGLA]    <R-*, AP-*, R-CAT-*, spec OPD/OPL, o "metodologia-forja: <regla>">
 [PREGUNTA] <una sola pregunta concreta>
 [OPCIONES] <2-4 opciones legales segun la SSOT, o "abierta dentro de <constraint>">
 ```
@@ -38,7 +38,7 @@ Una pregunta a la vez. Nunca batch.
 ### B1. Nombre pobre
 
 - **Sintoma**: el operador llama a una cosa o proceso `Sistema`, `Modulo`, `Cosa`, `Procesar`, `Gestionar`, `Manejar`, `Atender`, `Operar`, `Hacer`.
-- **Regla**: `metodologia-opm-es §nombrado`: nombres de procesos son verbos especificos de transformacion; nombres de objetos son sustantivos concretos del dominio.
+- **Regla**: `reglas-opm-estrictas-es R-NOM-*` + `metodologia-forja-opm-es`: nombres de procesos son verbos especificos de transformacion; nombres de objetos son sustantivos concretos del dominio.
 - **Pregunta tipica**:
   ```
   [BARRO]    Llamaste al proceso "Procesar"; el verbo no dice que transforma ni como.
@@ -51,7 +51,7 @@ Una pregunta a la vez. Nunca batch.
 ### B2. Proceso sin transformee
 
 - **Sintoma**: "Quiero modelar el proceso de X" sin que el operador identifique que cosa cambia por X.
-- **Regla**: `metodologia-opm-es §SD`: todo proceso central del SD debe transformar al menos un objeto. Sin transformee, no hay proceso OPM.
+- **Regla**: `reglas-opm-estrictas-es R-PROC-1/R-PROC-2` + `metodologia-forja-opm-es §A1`: todo proceso central del SD debe transformar al menos un objeto. Sin transformee, no hay proceso OPM.
 - **Pregunta tipica**:
   ```
   [BARRO]    El proceso "X" no tiene transformee identificado.
@@ -64,11 +64,11 @@ Una pregunta a la vez. Nunca batch.
 ### B3. Confusion agente / instrumento
 
 - **Sintoma**: el operador llama "agente" a una herramienta (e.g. "el bisturi es agente") o "instrumento" a un humano/organizacion (e.g. "el cirujano es instrumento").
-- **Regla**: `opm-es §agente §instrumento`: agente = ente con voluntad/responsabilidad sobre la ejecucion del proceso; instrumento = ente usado por un agente para ejecutar el proceso.
+- **Regla**: `reglas-opm-estrictas-es AP-05` y reglas de agencia/instrumento: agente = humano/organizacion con voluntad/responsabilidad sobre la ejecucion del proceso; instrumento = ente usado para ejecutar el proceso.
 - **Pregunta tipica**:
   ```
   [BARRO]    Llamaste "agente" a "Bisturi"; un bisturi es usado, no decide ejecutar.
-  [REGLA]    opm-es: agente decide / instrumento es usado.
+  [REGLA]    reglas-opm-estrictas-es AP-05: agente humano/organizacion; maquina/software/IA = instrumento.
   [PREGUNTA] Quien decide ejecutar el proceso (agente) y que se usa para hacerlo (instrumento)?
   [OPCIONES] (a) agente = "Cirujano", instrumento = "Bisturi"; (b) otra distribucion que indiques; (c) declarar que no hay agente identificable y revisar si el proceso pertenece al SD.
   ```
@@ -77,7 +77,7 @@ Una pregunta a la vez. Nunca batch.
 ### B4. Refinamiento sin motivo
 
 - **Sintoma**: "Hagamos in-zoom de Y" sin que el operador diga que detalle se gana.
-- **Regla**: `metodologia-opm-es §refinamiento`: cada OPD hijo debe responder una pregunta concreta del modelo padre. Sin pregunta, no hay refinamiento — solo decoracion.
+- **Regla**: `metodologia-forja-opm-es §A3/A8`: cada OPD hijo debe responder una pregunta concreta del modelo padre. Sin pregunta, no hay refinamiento — solo decoracion.
 - **Pregunta tipica**:
   ```
   [BARRO]    Pediste in-zoom de "Y" sin declarar que se gana al hacerlo.
@@ -90,11 +90,11 @@ Una pregunta a la vez. Nunca batch.
 ### B5. Esencia ambigua
 
 - **Sintoma**: cosa cuya naturaleza fisica vs. informacional no esta declarada y la skill no puede inferirla con certeza.
-- **Regla**: `opm-es §esencia`: toda cosa tiene esencia fisica o informacional; afecta semantica de procesos que la consumen/producen.
+- **Regla**: `reglas-opm-estrictas-es R-OBJ-*`: toda cosa tiene esencia fisica o informacional; afecta semantica de procesos que la consumen/generan.
 - **Pregunta tipica**:
   ```
   [BARRO]    "Receta" no tiene esencia declarada; podria ser objeto fisico (papel firmado) o informacional (entidad de datos).
-  [REGLA]    opm-es: esencia fisica vs. informacional.
+  [REGLA]    reglas-opm-estrictas-es R-OBJ-3: esencia fisica vs. informacional.
   [PREGUNTA] La "Receta" en este sistema es objeto fisico (papel/material) o informacional (dato/concepto)?
   [OPCIONES] (a) fisica; (b) informacional; (c) ambas a la vez (declarar dos cosas distintas).
   ```
@@ -103,11 +103,11 @@ Una pregunta a la vez. Nunca batch.
 ### B6. Mezcla estructura / comportamiento sin razon
 
 - **Sintoma**: el operador propone modelar "todo junto" lo que en realidad son hechos estructurales y procedurales mezclados sin separacion clara.
-- **Regla**: `opm-es §bimodalidad`: estructura (relaciones aggregation/exhibition/generalization/classification) y comportamiento (procesos + links procedurales) son ortogonales; mezclarlos sin razon hace ilegible el OPD.
+- **Regla**: `reglas-opm-estrictas-es` + specs OPD/OPL: estructura (relaciones aggregation/exhibition/generalization/classification) y comportamiento (procesos + links procedurales) son ortogonales; mezclarlos sin razon hace ilegible el OPD.
 - **Pregunta tipica**:
   ```
   [BARRO]    Estas mezclando relacion estructural ("X es parte de Y") con relacion procedural ("X afecta a Y") en el mismo OPD sin separar.
-  [REGLA]    opm-es §bimodalidad.
+  [REGLA]    reglas-opm-estrictas-es + bimodalidad OPD/OPL.
   [PREGUNTA] Cual es el OPD que estamos modelando ahora: el estructural (que cosas existen y como se componen) o el procedural (que procesos transforman a esas cosas)?
   [OPCIONES] (a) estructural primero; (b) procedural primero; (c) ambos coexisten en el SD si la cardinalidad es chica; (d) separarlos en SD + OPD hijo.
   ```
@@ -116,7 +116,7 @@ Una pregunta a la vez. Nunca batch.
 ### B7. Alcance sin frontera
 
 - **Sintoma**: "Modela el sistema de X" sin frontera explicita.
-- **Regla**: `metodologia-opm-es §SD`: el SD declara la funcion del sistema y su frontera; lo que queda fuera es contexto.
+- **Regla**: `metodologia-forja-opm-es §A1/A4`: el SD declara la funcion del sistema y su frontera; lo que queda fuera es contexto.
 - **Pregunta tipica**:
   ```
   [BARRO]    "Sistema de salud" es demasiado amplio sin frontera declarada.
@@ -155,7 +155,7 @@ Una pregunta a la vez. Nunca batch.
 ### B10. Multifuncion en un solo proceso
 
 - **Sintoma**: proceso que el operador describe haciendo 3 transformaciones distintas a 3 objetos distintos sin orden interno.
-- **Regla**: `metodologia-opm-es §granularidad`: un proceso = una transformacion principal. Multifuncion = candidato a in-zoom o a separar en procesos hermanos.
+- **Regla**: `metodologia-forja-opm-es §A0/A3` + `reglas-opm-estrictas-es R-PROC-*`: un proceso = una transformacion principal. Multifuncion = candidato a in-zoom o a separar en procesos hermanos/realizaciones comparables.
 - **Pregunta tipica**:
   ```
   [BARRO]    "Atender" parece hacer al menos 3 cosas: registrar al paciente, evaluar al paciente, prescribir tratamiento.
@@ -168,11 +168,11 @@ Una pregunta a la vez. Nunca batch.
 ### B11. Estado mal aplicado
 
 - **Sintoma**: el operador propone un estado para una cosa que es proceso, o pone como cosa lo que en realidad es un estado.
-- **Regla**: `opm-es §estado`: estados solo aplican a objetos, no a procesos. "Proceso completado" no es un estado, es el final de un proceso.
+- **Regla**: `reglas-opm-estrictas-es R-PROC-4/R-EST-*`: estados solo aplican a objetos, no a procesos. "Proceso completado" no es un estado, es el final de un proceso.
 - **Pregunta tipica**:
   ```
   [BARRO]    Propusiste estados para el proceso "Tramitar"; los procesos no tienen estados en OPM.
-  [REGLA]    opm-es §estado: solo objetos tienen estados.
+  [REGLA]    reglas-opm-estrictas-es R-PROC-4/R-EST-*: solo objetos tienen estados.
   [PREGUNTA] Lo que quieres modelar es (a) estados de un objeto que "Tramitar" transforma, o (b) sub-procesos de "Tramitar" via in-zoom?
   [OPCIONES] (a) identificar el objeto y sus estados; (b) in-zoom motivado.
   ```
@@ -181,11 +181,11 @@ Una pregunta a la vez. Nunca batch.
 ### B12. Link mal aplicado
 
 - **Sintoma**: el operador propone un link cuya firma no es legal segun OPM (e.g. "consume" entre dos objetos sin proceso de por medio, "agente" desde un proceso).
-- **Regla**: `opm-es §links` + `opd-es V-* sobre firmas`: cada tipo de link tiene origenes y destinos legales especificos.
+- **Regla**: `reglas-opm-estrictas-es` + `spec-forja-opd-es` sobre firmas: cada tipo de link tiene origenes y destinos legales especificos.
 - **Pregunta tipica**:
   ```
   [BARRO]    Propusiste un link "consume" entre dos objetos; "consume" exige proceso como destino.
-  [REGLA]    opm-es: consume = proceso consume objeto.
+  [REGLA]    reglas-opm-estrictas-es: consume = proceso consume objeto.
   [PREGUNTA] Falta declarar el proceso que consume, o el link que querias era estructural (e.g. agregacion)?
   [OPCIONES] (a) introducir proceso intermedio; (b) cambiar a link estructural; (c) revisar si el hecho que querias expresar es modelable en OPM.
   ```

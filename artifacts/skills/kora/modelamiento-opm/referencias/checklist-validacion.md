@@ -1,6 +1,6 @@
 # Checklist de validacion — reglas prescriptivas + anti-patrones + heuristicas
 
-Validacion en tres niveles mas anti-patrones canonicos. Cada nivel cita su capa propietaria y su severity. Anclado a `urn:fxsl:kb:reglas-opm-estrictas-es` para las reglas prescriptivas operativas.
+Validacion en niveles operativos segun el corpus OPM/Forja SSOT ES. Cada nivel cita su capa propietaria y severidad. La autoridad primaria es `urn:fxsl:kb:reglas-opm-estrictas-es`; `spec-forja-opd-es`, `spec-forja-opl-es`, `metodologia-forja-opm-es` y `opm-categorial-es` completan modalidad, metodo y lectura formal. Las capas base se usan solo por delegacion.
 
 ## Nivel 0 — Anti-patrones canonicos (politica AP-* especifica)
 
@@ -109,7 +109,7 @@ Reglas ejecutables de `reglas-opm-estrictas-es`. Cada regla cita su fuente.
 | Export | Todo perfil de export declara canon-diagrama/canon-documento | captura raster como prueba de canonicidad | Media |
 | Deuda | Toda zona no canonizada registrada como extension, bloqueo o deuda explicita | se acepta silenciosamente construccion sin soporte SSOT | Alta |
 
-## Nivel 3 — Reglas de la capa visual (`urn:fxsl:kb:opd-es`)
+## Nivel 3 — Realizacion visual (`spec-forja-opd-es` + base delegada `opd-es`)
 
 Subset critico sobre las 263 reglas V-*. Para cada validacion, cita la regla.
 
@@ -141,7 +141,7 @@ Subset critico sobre las 263 reglas V-*. Para cada validacion, cita la regla.
 - [ ] **V-251**: clausura OPD↔OPL local; el modelo compuesto es DAG.
 - [ ] **V-252**: cada cosa cross-model tiene URI persistente.
 
-## Nivel 4 — Reglas de la capa semantica (`urn:fxsl:kb:opm-es`)
+## Nivel 4 — Semantica base delegada (`opm-es`, bajo reglas Forja)
 
 ### Clases de cosas
 
@@ -162,7 +162,7 @@ Subset critico sobre las 263 reglas V-*. Para cada validacion, cita la regla.
 - [ ] **principio de minimalidad**: dos cosas indistinguibles = misma cosa.
 - [ ] **principio de teorema objeto-proceso**: toda cosa es objeto o proceso, no ambos.
 
-## Nivel 5 — Heuristicas operativas (Metodologia Forja A5 + A8)
+## Nivel 5 — Heuristicas operativas (`metodologia-forja-opm-es` A5 + A8)
 
 ### Claridad (cognitive load)
 
@@ -185,9 +185,10 @@ Subset critico sobre las 263 reglas V-*. Para cada validacion, cita la regla.
 - [ ] no hay hechos solo-OPD (graficos sin OPL).
 - [ ] no hay hechos solo-OPL (sentencias sin grafico).
 
-### Equivalencia funcional y composicion (Anexo C)
+### Equivalencia funcional y composicion (reglas Anexo C)
 
-- [ ] **R-CAT-EQ-2**: toda descomposicion preserva la firma de frontera del proceso abstracto.
+- [ ] **R-CAT-EQ-2**: realizaciones hermanas comparables comparten firma de frontera para declararse funcionalmente equivalentes.
+- [ ] **R-CAT-EQ-3**: toda descomposicion in-zoom preserva la firma de frontera del proceso abstracto out-zoom.
 - [ ] **R-CAT-LIN-2**: objetos lineales no son consumidos por mas de un proceso sin XOR.
 - [ ] **R-CAT-COMP-1**: composicion de modelos no duplica entidades compartidas ni deja referencias colgantes.
 
@@ -214,16 +215,16 @@ Reglas prescriptivas (reglas-opm-estrictas-es): X/Y pasan
 Checklist cierre OPD↔OPL (Anexo A): X/Y gates pasan
   ✗ Gate Identidad: OPD "SD1.2" usado como identificador externo
 
-Capa visual (opd-es): X/Y pasan
+Capa visual (spec-forja-opd-es + opd-es delegado): X/Y pasan
   ✗ V-105: ciclo detectado entre in-zoom
 
-Capa semantica (opm-es): X/Y pasan
+Capa semantica (reglas Forja + opm-es delegado): X/Y pasan
   ✗ Cafetera declarada como agent
 
 Heuristicas (Forja A5+A8): X/Y pasan
   ⚠ SD1.2 tiene 27 entidades (>25, recomienda simplificar)
   ✓ bimodalidad efectiva sostenida
-  ✓ equivalencia funcional verificada
+  ✓ equivalencia funcional horizontal/vertical verificada
 ```
 
 Si un AP-* con politica **DEBE bloquearse**, una regla prescriptiva CRITICAL, o un gate Alta falla -> `validar-modelo` retorna fail, vuelve a `refinar-modelo`.

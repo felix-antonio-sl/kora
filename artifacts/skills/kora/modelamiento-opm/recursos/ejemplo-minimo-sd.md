@@ -36,24 +36,25 @@ Modelo minimo: sin estados explicitos en este SD. Si quisieramos modelar `Cafe H
 ```
 SD del sistema Hacer Cafe.
 
-Agua es un objeto fisico.
-Cafe Molido es un objeto fisico.
-Cafe Hecho es un objeto fisico.
-Persona es un objeto fisico.
-Cafetera es un objeto fisico.
-Hacer Cafe es un proceso fisico.
+**Agua** es un objeto fisico.
+**Cafe Molido** es un objeto fisico.
+**Cafe Hecho** es un objeto fisico.
+**Persona** es un objeto fisico.
+**Cafetera** es un objeto fisico.
+*Hacer Cafe* es un proceso fisico.
 
-Hacer Cafe consume Agua y Cafe Molido.
-Hacer Cafe produce Cafe Hecho.
-Persona manipula Hacer Cafe.
-Hacer Cafe usa Cafetera.
+*Hacer Cafe* consume **Agua** y **Cafe Molido**.
+*Hacer Cafe* genera **Cafe Hecho**.
+**Persona** maneja *Hacer Cafe*.
+*Hacer Cafe* requiere **Cafetera**.
 ```
 
 ## Validacion (resumen)
 
-- V-1 a V-7 (gramatica base): pasan.
-- V-13 (procedurales conectan proceso↔objeto): pasan.
-- §3.2 de `opm-es` (agent es humano): pasa — Persona es agent valido.
+- `reglas-opm-estrictas-es` R-COSA/R-PROC/R-OBJ: pasan.
+- `spec-forja-opd-es` + V-* base delegadas: las firmas visuales pasan.
+- `spec-forja-opl-es` §1.1: verbos `consume`, `genera`, `maneja`, `requiere` pertenecen al enum cerrado.
+- Agente humano: pasa — Persona es agent valido.
 - Heuristica claridad (≤ 7±2 cosas): 6 cosas, OK.
 - Heuristica completitud: estructura (cosas + enlaces estructurales implicitos por agregacion implicita) + comportamiento (Hacer Cafe transforma) + funcion (proposito declarado). OK.
 - Bimodalidad: cada hecho del OPD tiene su sentencia OPL-ES. OK.

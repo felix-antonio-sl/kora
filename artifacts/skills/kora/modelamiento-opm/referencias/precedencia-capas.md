@@ -1,64 +1,85 @@
-# Precedencia de capas — protocolo de resolucion de tensiones
+# Precedencia del corpus OPM/Forja SSOT ES
 
-Cuando dos capas de la SSOT OPM aparentan dar instrucciones distintas para un mismo hecho, esta es la regla de desempate.
+Cuando dos fuentes aparentan dar instrucciones distintas para un mismo hecho, la
+skill resuelve la tension primero dentro del corpus OPM/Forja SSOT ES. Las capas
+base OPM se consultan como procedencia o soporte solo cuando el corpus Forja las
+delega.
 
-## Orden canonico
+## Matriz operativa
 
-1. **`urn:fxsl:kb:opm-es`** — capa semantica/ontologica.
-2. **`urn:fxsl:kb:opd-es`** ≡ **`urn:fxsl:kb:opl-es`** — realizaciones (visual ≡ textual; nivel par).
-3. **`urn:fxsl:kb:manual-metodologico-opm-es`** — capa procedimental.
+| Plano | URN propietaria | Manda sobre |
+|-------|-----------------|-------------|
+| Validez | `urn:fxsl:kb:reglas-opm-estrictas-es` | que hechos son validos, severidad, defaults, extensiones declaradas, AP-*, gates OPD<->OPL y Anexo C |
+| Visual | `urn:fxsl:kb:spec-forja-opd-es` | geometria, canvas, render, interaccion visual, export OPD y bisimetria visual |
+| Textual | `urn:fxsl:kb:spec-forja-opl-es` | vocabulario OPL, plantillas, parseo, edicion textual, roundtrip y GAPs |
+| Metodo | `urn:fxsl:kb:metodologia-forja-opm-es` | camino de modelamiento, heuristicas, calidad, lecciones Forja y uso humano-agente |
+| Formal | `urn:fxsl:kb:opm-categorial-es` | explicacion categorial bajo la superficie; no introduce reglas para el modelador |
+| Base delegada | `opm-es`, `opd-es`, `opl-es`, `manual-metodologico-opm-es` | semantica y procedencia general cuando la familia Forja las invoca |
 
-> Capa mas baja (mas fundamental) gana sobre capa mas alta. La metodologia describe procedimiento, no semantica; nunca contradice a las capas inferiores.
+Regla corta: **reglas decide si se puede; OPD/OPL deciden como se realiza;
+metodologia decide como se llega; categorial explica por que; herramienta no
+decide norma.**
 
-## Tabla de tensiones tipicas
+## Tensiones tipicas
 
 | Tension | Quien manda | Razonamiento |
 |---------|-------------|--------------|
-| Visual sugiere geometria que la semantica prohibe | `opm-es` | la semantica define las clases; la geometria es realizacion |
-| Textual permite formulacion que la semantica niega | `opm-es` | una sentencia OPL valida sintacticamente puede expresar un hecho semanticamente prohibido |
-| Visual y textual se contradicen | empate; revisar el hecho del modelo y reformular ambas | la bimodalidad exige equivalencia; si no hay equivalencia, el hecho esta mal capturado |
-| Metodologia recomienda algo que rompe semantica | `opm-es` | la metodologia es protocolo, no norma |
-| Metodologia recomienda algo que rompe gramatica visual | `opd-es` | igual: protocolo cede a realizacion |
-| Metodologia recomienda algo que rompe gramatica textual | `opl-es` | igual |
-| OPCloud o herramienta sugiere notacion fuera del corpus | la capa correspondiente | herramientas implementan, no definen |
+| Una heuristica recomienda un hecho que reglas prohibe | `reglas-opm-estrictas-es` | el metodo no autoriza hechos invalidos |
+| Un ejemplo OPL usa verbo fuera del enum cerrado | `spec-forja-opl-es` | la superficie textual de opforja es cerrada |
+| Una figura OPD usa glifo o canal visual no canonico | `spec-forja-opd-es` si es visual; `reglas-opm-estrictas-es` si altera validez | separar modalidad de semantica |
+| OPD y OPL expresan hechos distintos | volver al hecho; luego aplicar `spec-forja-opd-es` + `spec-forja-opl-es` | la bimodalidad exige equivalencia, no eleccion |
+| Dos realizaciones hermanas difieren internamente | `reglas-opm-estrictas-es` R-CAT-EQ-2 | equivalen solo si comparten firma de frontera |
+| Un in-zoom cambia roles de frontera | `reglas-opm-estrictas-es` R-CAT-EQ-3 | la descomposicion debe preservar la firma del out-zoom |
+| El codigo de deep-opm-pro acepta algo que el corpus rechaza | corpus Forja | la herramienta implementa; no legisla |
+| La capa base parece permitir algo que Forja restringe | corpus Forja, salvo correccion documental explicita | Forja operacionaliza/restringe para opforja |
 
-## Empate entre realizaciones (visual ≡ textual)
+## Empate entre realizaciones OPD y OPL
 
-Cuando `opd-es` y `opl-es` parecen dar respuestas diferentes para un mismo hecho:
+OPD y OPL no compiten por autoridad semantica. Si parecen contradecirse:
 
-1. **No hay tension real**: la bimodalidad garantiza que toda formulacion valida en una modalidad tiene contraparte valida en la otra.
-2. **Si parece haberla**, el hecho subyacente esta mal capturado. Volver al modelo y aclarar: ¿que esta diciendo realmente?
-3. Reformular **ambas modalidades juntas** desde el hecho clarificado.
+1. Identificar el hecho subyacente.
+2. Validar el hecho contra `reglas-opm-estrictas-es`.
+3. Realizarlo visualmente segun `spec-forja-opd-es`.
+4. Realizarlo textualmente segun `spec-forja-opl-es`.
+5. Si no puede expresarse en ambas modalidades sin perdida, el hecho esta mal
+   capturado o pertenece a una zona GAP/deuda que debe declararse.
 
-No "elegir una sobre la otra". El sintoma es estructural.
+## Cuando consultar al usuario
 
-## Cuando consultar al usuario en lugar de decidir
+Consultar antes de modelar cuando:
 
-Aun aplicando precedencia, la skill puede tropezar con casos donde:
-- la capa apropiada esta ambigua sobre el hecho (laguna de la SSOT).
-- el hecho del usuario admite mas de una interpretacion semantica.
-- el dominio del usuario impone restricciones externas a OPM.
+- el hecho del usuario admite mas de una interpretacion semantica;
+- el dominio impone restricciones externas que OPM no decide;
+- el corpus Forja declara una zona no canonizada o GAP y el usuario debe elegir
+  entre aplazar, acotar o aceptar deuda declarada.
 
-En esos casos, **declarar el supuesto y consultar antes de modelar**:
-
-> "Estoy interpretando que <Cosa-X> es un proceso (no un objeto) porque la pregunta menciona transformacion. ¿Es correcto?"
-
-> "La SSOT no especifica como modelar <patron-Y>. Voy a usar <interpretacion-Z>; si tienes preferencia distinta, aclaramela."
+La consulta cita la regla Forja propietaria. Las citas a capas base van despues,
+como procedencia.
 
 ## Anti-patrones de precedencia
 
-- **"En este caso particular conviene la metodologia sobre la semantica"**: NO. La precedencia es absoluta, no contextual.
-- **"OPCloud lo permite, asi que es valido"**: NO. La SSOT manda sobre la herramienta; OPCloud puede ser permisivo en casos que el corpus rechaza.
-- **"Como ambas capas tienen la misma severidad, elijo la que prefiera el usuario"**: NO. Visual ≡ textual implica equivalencia, no eleccion.
-- **"Si no encuentro una regla, asumo que esta permitido"**: NO. Si la SSOT no especifica, declarar el vacio y consultar; no inventar.
+- **"El corpus base lo permite, entonces Forja lo permite"**:
+  NO. La familia Forja es el perfil operativo primario.
+- **"El manual recomienda algo, por tanto no bloquea"**: NO. La validez vive en
+  `reglas-opm-estrictas-es`.
+- **"OPD y OPL difieren; elijo la modalidad mas comoda"**: NO. Se corrige el
+  hecho hasta restaurar equivalencia.
+- **"La app lo importa, entonces es canonico"**: NO. Importar no equivale a
+  cumplir canon.
+- **"Si no encuentro una regla, asumo que esta permitido"**: NO. Declarar vacio,
+  GAP o extension; no inventar.
 
-## Como citar capa propietaria en una decision
+## Como citar la capa propietaria
 
-Cuando la skill aplica una regla, debe citar de donde viene:
+Preferir este orden de cita:
 
-- "Por V-13 (`opd-es`), los enlaces procedurales conectan proceso ↔ (objeto | estado), no proceso ↔ proceso. Por eso `Diagnosticar invoca Pedir Examen` se modela con enlace de invocacion, no como agregacion."
-- "Por §3.2 de `opm-es`, `agent` es humano u organizacion. La cafetera va como `instrument`."
-- "Por plantilla canonica de `opl-es`, la sentencia es `Hacer Cafe consume Agua y Cafe Molido`, no `Hacer Cafe consume Agua, y Cafe Molido tambien`."
-- "El manual metodologico §wizard recomienda partir por la funcion. Si tu pregunta empieza por la estructura, voy a derivar la funcion antes."
-
-Citar siempre. Es transparencia y trazabilidad.
+- "Por `reglas-opm-estrictas-es` R-PROC-2, el proceso explicito debe declarar
+  transformee; no puedo cerrar el SD sin objeto afectado."
+- "Por `spec-forja-opl-es` §1.1, la frase usa `genera`, no `produce`, porque el
+  enum OPL de opforja es cerrado."
+- "Por `spec-forja-opd-es`, este glifo es visual; si cambia validez, vuelvo a
+  reglas."
+- "Por `urn:fxsl:kb:metodologia-forja-opm-es` A0.4, dos alternativas de solucion solo son la
+  misma funcion si comparten firma de frontera."
+- "Por `opm-categorial-es`, esto se lee como equivalencia por frontera, pero ese
+  vocabulario no se expone al modelador."

@@ -1,6 +1,6 @@
 # Wizard SD — del proposito a las cosas iniciales
 
-Condensado operativo del wizard de System Diagram del manual metodologico (`urn:fxsl:kb:manual-metodologico-opm-es`). Es la receta canonica para construir el OPD de nivel cero.
+Condensado operativo del wizard de System Diagram segun `urn:fxsl:kb:metodologia-forja-opm-es`, con validez gobernada por `urn:fxsl:kb:reglas-opm-estrictas-es` y superficie OPD/OPL gobernada por `spec-forja-opd-es` / `spec-forja-opl-es`. El manual base queda como procedencia delegada, no como autoridad primaria de esta skill.
 
 ## Paso 0 — Verificar aplicabilidad de OPM
 
@@ -84,19 +84,19 @@ Las cosas que **cambian** por la accion del proceso. Tres patrones:
 
 El proceso consume una cosa y produce otra distinta.
 
-- *Hacer Cafe* consume *Agua* y *Cafe Molido*; produce *Cafe Hecho*.
+- *Hacer Cafe* consume **Agua** y **Cafe Molido**; genera **Cafe Hecho**.
 
 ### 3b. Cambio de estado
 
 Una misma cosa pasa de estado A a estado B por la accion del proceso.
 
-- *Diagnosticar* afecta *Paciente*: pasa de *no-diagnosticado* a *diagnosticado*.
+- *Diagnosticar* cambia **Paciente** de `no-diagnosticado` a `diagnosticado`.
 
 ### 3c. Creacion / Destruccion
 
 El proceso crea o destruye una cosa que antes no existia / dejara de existir.
 
-- *Resolver Solicitud* crea *Resolucion Administrativa*.
+- *Resolver Solicitud* genera **Resolucion Administrativa**.
 
 Si hay multiples transformees, distinguir el **benefit-providing object**: la
 cosa cuya transformacion materializa la funcion principal para el beneficiario.
@@ -125,9 +125,9 @@ Nombrar el sistema y decidir que cosas son sistemicas vs. ambientales.
 Cosas necesarias para que el proceso ocurra **pero que no son consumidas ni transformadas**:
 
 - **Instrument** (herramienta, dispositivo, sistema externo):
-  - *Hacer Cafe* usa *Cafetera*.
-  - *Diagnosticar* usa *Historia Clinica*.
-  - *Resolver Solicitud* usa *Sistema Documental*.
+  - *Hacer Cafe* requiere **Cafetera**.
+  - *Diagnosticar* requiere **Historia Clinica**.
+  - *Resolver Solicitud* requiere **Sistema Documental**.
 
 ## Paso 10 — Delimitar contexto externo
 
@@ -145,18 +145,18 @@ No omitir silenciosamente este punto: `NO APLICA` es una decision de modelo.
 
 ## Paso 12 — Conectar con links procedurales
 
-Tipos canonicos (de `opl-es` y `opd-es`):
+Tipos canonicos segun `reglas-opm-estrictas-es`, realizados en OPD/OPL por las specs Forja:
 
 | Link | Cuando | OPL-ES |
 |------|--------|--------|
-| consumption | proceso consume objeto entero | `<Proceso> consume <Objeto>.` |
-| result | proceso produce objeto nuevo | `<Proceso> produce <Objeto>.` |
-| effect | proceso cambia estado de objeto | `<Proceso> afecta <Objeto>.` |
-| agent | humano/organizacion activa el proceso | `<Agente> manipula <Proceso>.` |
-| instrument | herramienta requerida sin consumirse | `<Proceso> usa <Instrumento>.` |
-| condition | precondicion habilitante | `<Proceso> ocurre cuando <Objeto> esta en <estado>.` |
+| consumption | proceso consume objeto entero | `*<Proceso>* consume **<Objeto>**.` |
+| result | proceso genera objeto nuevo | `*<Proceso>* genera **<Objeto>**.` |
+| effect | proceso cambia estado de objeto | `*<Proceso>* cambia **<Objeto>** de \`<estado-A>\` a \`<estado-B>\`.` |
+| agent | humano/organizacion activa el proceso | `**<Agente>** maneja *<Proceso>*.` |
+| instrument | herramienta requerida sin consumirse | `*<Proceso>* requiere **<Instrumento>**.` |
+| condition | precondicion habilitante | `*<Proceso>* ocurre si **<Objeto>** esta en \`<estado>\`.` |
 
-Validar contra `opd-es` que cada link respete su gramatica visual (V-* aplicables).
+Validar primero contra `reglas-opm-estrictas-es`; luego realizar la firma visual con `spec-forja-opd-es` y la sentencia con `spec-forja-opl-es`.
 
 ## Paso 13 — Bimodalidad y gate de cierre
 
@@ -167,17 +167,17 @@ Ejemplo minimo (cafetera):
 ```
 SD del sistema Hacer Cafe.
 
-Cafe Hecho es un objeto.
-Agua es un objeto.
-Cafe Molido es un objeto.
-Persona es un objeto.
-Cafetera es un objeto.
-Hacer Cafe es un proceso.
+**Cafe Hecho** es un objeto fisico.
+**Agua** es un objeto fisico.
+**Cafe Molido** es un objeto fisico.
+**Persona** es un objeto fisico.
+**Cafetera** es un objeto fisico.
+*Hacer Cafe* es un proceso fisico.
 
-Hacer Cafe consume Agua y Cafe Molido.
-Hacer Cafe produce Cafe Hecho.
-Persona manipula Hacer Cafe.
-Hacer Cafe usa Cafetera.
+*Hacer Cafe* consume **Agua** y **Cafe Molido**.
+*Hacer Cafe* genera **Cafe Hecho**.
+**Persona** maneja *Hacer Cafe*.
+*Hacer Cafe* requiere **Cafetera**.
 ```
 
 Gate de cierre minimo:
