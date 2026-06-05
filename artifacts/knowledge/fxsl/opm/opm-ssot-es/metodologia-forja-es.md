@@ -7,7 +7,7 @@ _manifest:
     source: Destilacion korificada autonoma del manual metodologico OPM (urn:fxsl:kb:manual-metodologico-opm-es)
       + lecciones forjadas modelando HODOM en opforja (deep-opm-pro). SSOT primaria
       de metodo OPM-en-opforja.
-version: 1.4.4
+version: 1.5.0
 status: publicado
 source_base: metodologia-opm-es.md (v3.0.0); opm-iso-19450-es.md, opm-opl-es.md, opm-visual-es.md;
   libro OPM curado de Dov Dori (24 cap); curso Dov Dori (_ATOMIC_GRAPH); transcripciones
@@ -81,7 +81,7 @@ relations:
   - urn:fxsl:kb:icas-escala
 ---
 
-# Metodología Forja — método de modelamiento OPM en opforja (v1.4.4)
+# Metodología Forja — método de modelamiento OPM en opforja (v1.5.0)
 
 SSOT **primaria y autónoma** del *método* de modelar OPM con la herramienta
 opforja (deep-opm-pro). Contiene todo el procedimiento (no requiere abrir otra
@@ -361,6 +361,10 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 | Ningún OPD > 20-25 entidades | manual |
 | Nombres singulares; 1:1 cosa↔nombre canónico | opl-es / manual |
 
+**Advertencias operativas de auditoría:**
+- **Barridos sobre serialización**: ejecutar barridos de integridad sobre el JSON canónico, nunca sobre el OPL. El emisor textual omite entidades sin apariciones; una entidad desconectada puede existir en JSON y ser invisible en la capa textual (verificado en opforja v0).
+- **Métrica antes que conclusión**: validar la métrica del barrido contra la SSOT semántica antes de fundar conclusiones. Una regla que exige rama explícita para todo estado sobre-acusa: puede reportar 99 estados rotos donde hay 8, porque el efecto sin rama es escritor legal por resolución dinámica.
+
 ---
 
 # Frontera rectora (antes del catálogo)
@@ -618,6 +622,18 @@ Dependencias: **LF-02 presupone LF-01** (primero decides los ejes, luego los rea
 9. **Ancla SSOT** — A7, A8, §9.30, §9.31; `urn:fxsl:kb:icas-procesos` (trazabilidad vertical) como lente formal.
 10. **Bitácora** — 2026-05-31 · revisión `/home/felix/_TEMP_BORRAR/usos-opm/SE_8233` y contraste con `/fpp`. **`propuesta`**.
 
+### LF-19 — Integridad de estados: flujo, caracterización, ambiental-observado · Estado: consolidada · usa: LF-01, LF-03
+1. **Olor/gatillo** — auditoría acusa estados sin escritor, estados caracterizadores o estados ambientales usando una sola regla indiferenciada.
+2. **Principio** — toda entidad con estados pertenece a una de tres categorías: **flujo**, **caracterización** o **ambiental-observado**; cada una debe una prueba distinta al modelo.
+3. **Flujo** — la entidad transiciona como transformee; exige escritor. La rama explícita entrada→salida o resultado-con-estado solo es obligatoria cuando el veredicto importa; efecto o resultado sin rama es escritor legal con resolución dinámica.
+4. **Caracterización** — valores asignados al clasificar, no transiciones. Exige declaración estandarizada en la glosa de la entidad (`Coproducto XOR-n ...`) y legible por barrido; sin declaración, acusar por defecto.
+5. **Ambiental-observado** — estados de entidades o atributos que cambia la realidad. Sin escritor sistémico es legítimo: el sistema lee; si constata la transición, declarar escritor-constatador excepcional y nominar fuente del dato en la glosa.
+6. **Mecanismo OPM** — flujo usa enlaces transformadores; caracterización usa atributo+valores; ambiental-observado aplica herencia de afiliación y frontera sistémica/ambiental.
+7. **Cuándo NO aplica** — no convertir un value-set en proceso; no exigir escritor sistémico a lo ambiental leído; no exigir rama explícita cuando la semántica de salida por defecto/probabilidad resuelve el destino.
+8. **Liftea a** — A8 barridos de integridad; LF-01 decide cuándo dimensionalizar; LF-19 decide qué debe cada estado una vez que existe.
+9. **Ancla SSOT** — `opm-iso-19450-es.md` §Enlaces transformadores con estado especificado / §Resolución de salida en efecto con solo estado de entrada, §Glosario (`Valor de atributo`) + §Valores de atributos, §Propiedades genéricas (`Herencia de afiliación`). El canon no prohíbe estados sin escritor: esta es disciplina de forja con autoridad de mesa, no ley ISO.
+10. **Bitácora** — 2026-06-05 · origen: Mesa 7 hd-opm, consenso 3-0; plasmada localmente y verificada por barrido antes de ascender a metodología agnóstica.
+
 ---
 
 # Apéndice F — Realización opforja (bundle `deep-opm-pro.modelo.v0`)
@@ -679,3 +695,4 @@ Realización canónica implementada en `deep-opm-pro` sin copiar gestos OPCloud 
 | 2026-06-04 | v1.4.2 — remediación de trazabilidad KORA: `relations.cites` declara `spec-forja-opl` e ICAS usadas como lentes; Apéndice F deja de duplicar inventario OPL v0 y delega el estado vivo a `spec-forja-opl` §20 / catálogo de fixtures. |
 | 2026-06-04 | v1.4.3 — corrección A0.4a: opforja sí puede verificar realizaciones hermanas mediante `verificarEquivalencia`; la ley in-zoom↔out-zoom queda como caso vertical complementario, no como sustituto por ausencia de autoría de variantes. |
 | 2026-06-04 | v1.4.4 — integración de familia Forja: precedencia por planos (validez, modalidad, método, formal) y regla explícita de no duplicación frente a `reglas-opm-estrictas`, `spec-forja-opd`, `spec-forja-opl` y `opm-categorial`. |
+| 2026-06-05 | v1.5.0 — ascenso metodológico desde Mesa 7 hd-opm (consenso 3-0): LF-19 integridad de estados por flujo, caracterización y ambiental-observado; A8 añade advertencias de auditoría sobre barridos en JSON y validación previa de métricas contra SSOT semántica. |
