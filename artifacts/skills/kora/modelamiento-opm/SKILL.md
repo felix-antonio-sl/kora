@@ -5,10 +5,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-04-27"
-    source: "Diseno historico desde el corpus base OPM v3.0.0. Desde v1.5.0 queda reanclada al corpus OPM/Forja SSOT ES como referencia primaria: urn:fxsl:kb:reglas-opm-estrictas-es, urn:fxsl:kb:spec-forja-opd-es, urn:fxsl:kb:spec-forja-opl-es, urn:fxsl:kb:metodologia-forja-opm-es y urn:fxsl:kb:opm-categorial-es como puente formal. Las capas base opm-es/opd-es/opl-es/manual-metodologico-opm-es quedan como procedencia y soporte cuando el corpus Forja las delega. v1.5.1 absorbe desde deep-opm-pro el contrato re-elicitar para logs de decisiones y anclas normativas."
-    updated_at: "2026-06-04"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2."
-version: "1.5.1"
+    source: "Diseno historico desde el corpus base OPM v3.0.0. Desde v1.5.0 queda reanclada al corpus OPM/Forja SSOT ES como referencia primaria: urn:fxsl:kb:reglas-opm-estrictas-es, urn:fxsl:kb:spec-forja-opd-es, urn:fxsl:kb:spec-forja-opl-es, urn:fxsl:kb:metodologia-forja-opm-es y urn:fxsl:kb:opm-categorial-es como puente formal. Las capas base opm-es/opd-es/opl-es/manual-metodologico-opm-es quedan como procedencia y soporte cuando el corpus Forja las delega. v1.5.1 absorbe desde deep-opm-pro el contrato re-elicitar para logs de decisiones y anclas normativas. v1.5.2 absorbe la ratificacion P3: normalizacion lexica y normativa en E2, compilador como verificador determinista."
+    updated_at: "2026-06-05"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana."
+version: "1.5.2"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada primero al corpus OPM/Forja SSOT ES y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
@@ -60,11 +60,14 @@ artefacto:
       - "peticion de mapa conceptual con relaciones procedurales y estructurales unificadas"
       - "peticion de bundle importable al modelador deep-opm-pro para edicion interactiva"
       - "auditoria UX/metodologica de un modelo ya cargado en deep-opm-pro"
+      - "normalizacion de proto-modelo laxo hacia OPL-ES estricto antes de compilar"
+      - "identificacion y estandarizacion de citas normativas en el proto-modelo"
       - "consumo de LogDecisiones v0 emitido por deep-opm-pro para ratificar anclas normativas"
     salidas:
       - "OPM model tipado por capas (cosas, links, OPDs por nivel) consistente con el corpus OPM/Forja SSOT ES"
       - "OPL-ES texto canonico bimodal con el OPD"
       - "bundle JSON 'deep-opm-pro.modelo.v0' importable directo al modelador deep-opm-pro"
+      - "proto-modelo estandarizado en OPL-ES estricto con ledger de normalizacion lexica y normativa"
       - "bundle o proto-modelo re-elicitado con anclas normativas ratificadas como vigentes"
       - "hook a jointjs-open-source para render estatico cuando NO se quiere abrir el modelador"
       - "reporte de validacion tripartita (estructural R-*/V-* / metodologica heuristicas Forja A5+A8 / estilo legibilidad R-VIS-*), homologado al panel de issues del modelador, con deteccion de anti-patrones canonicos AP-01 a AP-30"
@@ -74,6 +77,7 @@ artefacto:
     estados:
       - triaje
       - aclarar
+      - normalizar-proto
       - bootstrap-sd
       - refinar-modelo
       - validar-modelo
@@ -82,13 +86,13 @@ artefacto:
       - re-elicitar
       - serializar-opd
       - entregar
-    gate_de_claridad: "Antes de transitar a cualquier estado productivo (bootstrap-sd, refinar-modelo, serializar-*), evaluar si hay barro pendiente. Si lo hay, derivar a 'aclarar' y bloquear avance hasta que el barro este resuelto o convertido en supuesto declarado por el operador."
+    gate_de_claridad: "Antes de transitar a cualquier estado productivo (normalizar-proto, bootstrap-sd, refinar-modelo, serializar-*), evaluar si hay barro pendiente. Si lo hay, derivar a 'aclarar' y bloquear avance hasta que el barro este resuelto o convertido en supuesto declarado por el operador."
   interfaz:
     herramientas: [Read, Write, Glob, Bash]
     permisos: lectura-corpus-y-escritura-modelo-usuario
     protocolos:
-      entrada: "proposito del sistema (string), OPD existente, bundle 'deep-opm-pro.modelo.v0' a auditar/refinar, LogDecisiones v0 a re-elicitar, o peticion dirigida (refinar X, validar Y)"
-      salida: "OPM model + OPL-ES + reporte de validacion + (preferente) bundle 'deep-opm-pro.modelo.v0' importable / proto re-elicitado / (alternativo) hook a jointjs-open-source"
+      entrada: "proposito del sistema (string), proto-modelo laxo, OPD existente, bundle 'deep-opm-pro.modelo.v0' a auditar/refinar, LogDecisiones v0 a re-elicitar, o peticion dirigida (normalizar proto, refinar X, validar Y)"
+      salida: "OPM model + OPL-ES + reporte de validacion + (preferente) bundle 'deep-opm-pro.modelo.v0' importable / proto normalizado o re-elicitado / (alternativo) hook a jointjs-open-source"
   invariantes:
     reglas_duras:
       - "Bimodalidad: todo hecho del modelo debe poder expresarse en OPD y en OPL-ES; no se publica un hecho que rompa la equivalencia."
@@ -112,6 +116,8 @@ artefacto:
       - "GAPs OPL: una entrada canonica marcada GAP-* en spec-forja-opl-es §20 no se promete como roundtrip operacional hasta cerrar generador/parser/fixture. Si se usa, declararla como deuda o canon textual no importable."
       - "Roundtrip OPL: toda oracion emitida como salida operacional importable debe ser parseable de vuelta al mismo hecho."
       - "Re-elicitar anclas es acto de modelado, no marca de UI: solo LogDecisiones v0 con transicion.a == 'ratificado-con-fuente' y fuente presente muta el proto/bundle; 'anotado-en-mesa' no muta."
+      - "Frontera P3 ratificada: la skill normaliza lexico abierto de dominio en E2 (verbos, morfologia, citas normativas) proponiendo mapeos y pidiendo confirmacion humana; el compilador determinista solo verifica OPL-ES estricto y emite bundle reproducible."
+      - "Anclas normativas: la skill identifica citas por forma/localizador y las estandariza en el proto como candidatos o anclas declaradas; no valida verdad legal ni inventa fuente. Una AnclaNormativa vigente exige confirmacion humana o fuente ratificada."
     compromisos_eticos:
       transparency: "Maxima; cada decision de modelado cita primero la regla propietaria del corpus Forja (R-*, AP-*, R-CAT-*, spec OPD/OPL o metodologia Forja) y solo despues la capa base delegada si corresponde. Cada bloqueo cita el barro detectado y la regla que se viola."
       accountability: "Maxima; la skill no asume por el operador. Cada supuesto se declara como tal y queda registrado en el reporte. Construir sobre supuestos no declarados es una falta tan grave como violar V-*."
@@ -232,6 +238,7 @@ Clasificar la solicitud para decidir el siguiente estado:
 | "modelar un sistema X" / "diagramar Y con OPM" | `bootstrap-sd` |
 | "refinar el proceso A" / "in-zoom de B" | `refinar-modelo` |
 | "validar este OPD" / "este modelo cumple OPM?" | `validar-modelo` |
+| "normaliza/estandariza este proto-modelo" / "identifica lo normativo" | `normalizar-proto` |
 | "dame el OPL-ES de este OPD" | `serializar-opl` |
 | "dame un bundle para abrir en deep-opm-pro" / "modelar interactivamente" | `serializar-bundle` |
 | "re-elicita este LogDecisiones v0" / "ratifica estas anclas" | `re-elicitar` |
@@ -274,6 +281,66 @@ Protocolo:
 Salida: el estado de origen, con el barro o resuelto o convertido en supuesto declarado.
 
 Anti-patron de la skill: encadenar 5 preguntas en un mismo turno. Esto colapsa el dialogo y el operador termina respondiendo en bloque, sin rigor. **Una pregunta a la vez.**
+
+### `normalizar-proto`: estandarizar proto-modelo antes del compilador
+
+Estado E0-E2 externo a la app. Se usa cuando el operador trae un proto-modelo
+laxo, prosa de dominio, glosario o material normativo y pide dejarlo listo para
+`autoria/compilar`.
+
+**Frontera ratificada P3 (2026-06-05).** El lexico abierto de dominio vive en la
+skill, no en el compilador. La skill puede proponer mapeos y estandarizaciones;
+el operador confirma. El compilador determinista solo debe verificar OPL-ES
+estricto y emitir `deep-opm-pro.modelo.v0` reproducible. Lectura formal
+heuristica, no norma OPM: el compilador se trata como funtor de preservacion
+(`urn:fxsl:kb:icas-preservacion`) que debe conservar identidad/composicion; el
+LLM queda aguas arriba como proponente de superficie, no como emisor del bundle.
+
+Protocolo:
+
+1. **Separar cerrado vs. abierto.** Reescrituras mecanicas cerradas (listas,
+   distribucion, prefijos, AESS ya cubiertas por el compilador) no requieren
+   juicio. Verbos de dominio, morfologia dudosa, nombres plurales y citas
+   normativas si requieren juicio E2.
+2. **Normalizar verbos de dominio hacia OPL-ES cerrado.** Si aparece un verbo no
+   perteneciente al enum de `spec-forja-opl-es` §1.1, proponer una traduccion a
+   primitivas existentes (`requiere`, `genera`, `afecta`, `invoca`, `exhibe`,
+   estructural etiquetado, etc.) y pedir confirmacion cuando la semantica no sea
+   obvia. No inflar el enum OPL.
+3. **Identificar citas normativas por forma, no por lista de cuerpos.** La senal
+   fuerte es el localizador: `art.`, `arts.`, `articulo`, `§`, `inc.`, `letra`,
+   `N°`, `numeral`, `titulo`. La senal debil es cuerpo-con-numeracion
+   (`Ley 20.584`, `DFL 458`, `ISO 19450`). El cuerpo normativo es texto libre
+   capturado; no se enumera `LGUC|OGUC|DS|NT|...`.
+4. **Llevar lo normativo al estandar del proto es responsabilidad de la skill.**
+   La salida E2 debe dejar cada referencia en forma estandarizada:
+   `cuerpo normativo`, `localizador`, `articulos/seccion`, `target`,
+   `claveProto`, `estado` y `nivelAutoridad` cuando aplique. El compilador no
+   corrige ni interpreta juicio normativo; solo verifica que el proto ya porta el
+   estandar.
+5. **Estandarizar lo normativo como `AnclaNormativa`, no como cosa OPM.** Una
+   cita no crea objeto ni proceso. Se adjunta al target correcto
+   (modelo/OPD/entidad/enlace) como extension declarada. Si la cita esta clara
+   pero su autoridad/fuente no esta ratificada, emitir candidata o
+   `pendiente-ratificacion`, no `vigente`.
+6. **Acuñar clave estable nacida en el proto.** Para cada ancla o pendiente,
+   proponer un slug `#...` legible (`#frontera-art17`,
+   `#permiso-lguc-116`). La clave no se deriva de ids posicionales del bundle.
+7. **Devolver un ledger de normalizacion.** Para cada cambio, reportar:
+   superficie original, forma estandarizada, regla/capa propietaria, estado
+   (`confirmado`, `pendiente`, `rechazado`) y deuda. El operador debe poder ver
+   que nada se absorbio en silencio.
+8. **Bloquear barro normativo.** Si una referencia parece normativa pero no hay
+   localizador, fuente o target claro, no convertirla en hecho. Usar `aclarar`
+   con una pregunta unica o dejarla como candidata no-confirmada.
+
+Salida:
+
+- proto-modelo reescrito en OPL-ES estricto cuando el operador haya confirmado
+  los mapeos abiertos;
+- ledger de mapeos lexico-semanticos y anclas normativas;
+- lista de candidatos/pendientes con claves estables;
+- una unica pregunta de aclaracion si queda barro bloqueante.
 
 ### `bootstrap-sd`: construir el System Diagram
 
@@ -459,6 +526,8 @@ Cuando el modelador este abierto, indicar al agente invocador que el bundle se i
 17. **Vocabulario OPL cerrado**: cuando el destino es opforja, usar exclusivamente los verbos y copulas del enum cerrado de `spec-forja-opl-es` §1.1. Cualquier verbo fuera del enum es rechazado por el parser de opforja.
 18. **Roundtrip OPL operacional**: toda oracion emitida como salida importable debe poder parsearse de vuelta al mismo hecho (invariante de equivalencia de `spec-forja-opl-es` §19). Si la oracion usa una entrada GAP-* de §20, declararla como canon textual/deuda y no prometer import roundtrip.
 19. **Re-elicitar anclas**: un `LogDecisiones v0` solo muta la fuente cuando `transicion.a == "ratificado-con-fuente"` y existe `fuente`. `anotado-en-mesa` es marca de la app y no muta. El match es por `claveAncla`; no usar ids posicionales.
+20. **P3 ratificada: normalizacion antes de compilacion**: los verbos de dominio, morfologia abierta y citas normativas se estandarizan en E2 por la skill con confirmacion humana. El compilador no aprende lexico abierto: verifica OPL-ES estricto, rechaza con diagnostico y emite bundle determinista.
+21. **Normativo a estandar por la skill**: identificar referencias normativas por localizadores (`art.`, `§`, `inc.`, `letra`, `N°`, etc.) o cuerpo-con-numeracion, nunca por una lista cerrada de siglas. La skill lleva cada referencia al estandar del proto (`cuerpo`, `localizador`, `articulos/seccion`, `target`, `claveProto`, `estado`, `nivelAutoridad`); el compilador solo verifica ese estandar.
 
 ## Composicion con deep-opm-pro (mesa de trabajo primaria)
 
