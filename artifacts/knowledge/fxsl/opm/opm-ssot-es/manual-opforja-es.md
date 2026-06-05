@@ -4,13 +4,15 @@ _manifest:
   provenance:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-06-04'
-    source: Manual operativo derivado del corpus OPM/Forja SSOT ES vigente. Parte
+    source: >-
+      Manual operativo derivado del corpus OPM/Forja SSOT ES vigente. Parte
       desde reglas-opm-estrictas-es v1.2.1, metodologia-forja-es v1.4.4, spec-forja-opd-es
       v1.0.3, spec-forja-opl-es v1.1.3, opm-categorial-es v1.2.4 y modelamiento-opm
-      v1.5.0. Iniciado en REVIEW y promovido a productivo como manual v0.1.0 con
-      secciones de estabilidad editorial explícita porque la implementación de opforja/deep-opm-pro
-      sigue evolucionando.
-version: 0.1.0
+      v1.5.0. Iniciado en REVIEW y promovido a productivo como manual v0.1.0;
+      v0.2.0 expande de forma autónoma el núcleo estable que no depende de cambios
+      de UI: modelo mental, flujo, construcción, refinamiento, OPD/OPL, validación
+      y apéndices operativos.
+version: 0.2.0
 status: publicado
 source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.4.4; spec-forja-opd-es.md
   v1.0.3; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
@@ -24,7 +26,7 @@ derived_from:
 scope: Manual operativo de uso de opforja para modeladores, agentes y mantenedores.
   Enseña flujo, criterio, lectura de OPD/OPL, validación y uso práctico sin duplicar
   el canon prescriptivo ni las specs modales. Las secciones dependientes de interfaz
-  se tratan como borrador vivo hasta estabilizar la app.
+  se marcan como vivas o pendientes de evidencia hasta estabilizar la app.
 tags:
 - opm
 - opforja
@@ -39,7 +41,7 @@ lang: es
 extensions:
   kora:
     family: note
-    lifecycle_note: publicado v0.1.0; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
+    lifecycle_note: publicado v0.2.0; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
     shard_index: 1
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:manual-opforja-es
@@ -64,7 +66,7 @@ Manual operativo para modelar con OPM en opforja/deep-opm-pro.
 
 ## Estado editorial
 
-Este manual está publicado como **v0.1.0 operativo** porque el criterio de uso
+Este manual está publicado como **v0.2.0 operativo** porque el criterio de uso
 ya está estabilizado por el corpus Forja. Las partes dependientes de interfaz se
 mantienen marcadas como `vivo` o `pendiente de evidencia` mientras opforja siga
 cambiando.
@@ -149,6 +151,47 @@ leer el artefacto propietario:
 Las capas base (`opm-es`, `opd-es`, `opl-es`, `manual-metodologico-opm-es`) son
 procedencia OPM general. En opforja se consultan bajo la precedencia Forja.
 
+### 0.3 Cómo usar este manual
+
+Usar este manual de tres formas:
+
+1. **Como guía de sesión:** seguir los capítulos 1-5 para conducir un modelo
+   desde intención hasta primer refinamiento.
+2. **Como referencia rápida:** usar capítulos 6-8 para decidir si un hecho se
+   lee bien en OPD, OPL y validación.
+3. **Como contrato de handoff:** cuando un agente entrega trabajo a
+   `modelamiento-opm`, usar las listas de cierre para declarar función,
+   frontera, transformees, enablers, supuestos y brechas.
+
+No usar este manual para resolver una disputa normativa. Si el problema es de
+validez, geometría, gramática OPL o método, ir al artefacto propietario y volver
+al manual solo para explicar la decisión en lenguaje operativo.
+
+### 0.4 Qué no promete este manual
+
+Este manual no promete que una capacidad esté implementada en la versión vigente
+de la app. Cuando una operación dependa de UI concreta, debe tratarse como
+`vivo` o `pendiente de evidencia`.
+
+Tampoco convierte ejemplos en reglas. Un ejemplo muestra una manera de aplicar
+el canon; la regla vive en el corpus. Si un ejemplo contradice el corpus, el
+ejemplo se corrige.
+
+### 0.5 Resultado esperado de una sesión opforja
+
+Una sesión productiva no termina con "un diagrama bonito". Termina con un
+paquete auditable:
+
+- propósito y alcance declarados,
+- System Diagram legible,
+- OPL que el operador puede leer y confirmar,
+- supuestos y brechas explícitos,
+- validación tripartita,
+- siguiente refinamiento o criterio de suficiencia.
+
+Si falta cualquiera de esos elementos, el trabajo puede ser útil como borrador,
+pero no debe presentarse como modelo cerrado.
+
 ## 1. Modelo mental mínimo
 
 **Estado:** estable.
@@ -228,6 +271,23 @@ Barro es cualquier ambigüedad que vuelve caro o falso el siguiente paso:
 La conducta correcta no es adivinar. La conducta correcta es detenerse, nombrar
 el barro, citar la regla o criterio en juego y hacer una pregunta concreta.
 
+### 1.7 Preguntas mínimas antes de dibujar
+
+Antes de plasmar una cosa o enlace, el modelador debe poder responder:
+
+| Pregunta | Si no hay respuesta |
+| --- | --- |
+| ¿Qué función se está sirviendo? | Volver al propósito. |
+| ¿Qué cosa cambia? | El proceso no tiene transformee claro. |
+| ¿La cosa existe o sucede? | Resolver objeto vs proceso. |
+| ¿La cosa se transforma o habilita? | Resolver transformee vs agente/instrumento. |
+| ¿La cosa es física o informacional? | Declarar esencia o posponer la cosa. |
+| ¿Está dentro o fuera del sistema? | Declarar afiliación/frontera. |
+| ¿Qué oración OPL dice este hecho? | No publicarlo como hecho terminado. |
+
+Esta tabla es deliberadamente más pequeña que las specs. Su objetivo es cortar
+el 80% de errores tempranos antes de tocar canvas o parser.
+
 ## 2. Flujo de modelamiento Forja
 
 **Estado:** estable.
@@ -244,11 +304,26 @@ debe declarar su intención, función, forma y supuestos.
 La equivalencia funcional se evalúa por firma de frontera: mismos roles netos
 sobre entidades de frontera, interior posiblemente distinto.
 
+Salida mínima de A0:
+
+- lista corta de alternativas,
+- función neutral respecto de tecnología,
+- supuestos por alternativa,
+- criterio de comparación,
+- decisión explícita de seguir con una alternativa o conservar varias vivas.
+
 ### 2.2 A1: clasificación del sistema
 
 Clasificar el sistema como artificial, natural, social o sociotécnico. La
 clasificación cambia cómo se pregunta por propósito, beneficiario, outcome,
 agencia humana y problem occurrence.
+
+Errores típicos:
+
+- forzar beneficiario humano en un sistema natural,
+- tratar software o IA como agente humano,
+- llamar "sistema" a una organización sin declarar actores humanos,
+- omitir problem occurrence en sistema artificial porque "se entiende".
 
 ### 2.3 A2: construcción del SD
 
@@ -267,6 +342,10 @@ El System Diagram debe fijar, en orden:
 11. lectura OPL inicial.
 
 El SD no busca completitud total; busca una semilla honesta y trazable.
+
+Cierre de A2: si el SD no puede leerse como una oración funcional simple, no
+está listo para refinar. La pregunta de cierre es: "¿qué cambia, por qué, para
+quién y con qué frontera?".
 
 ### 2.4 A3: primer refinamiento
 
@@ -297,6 +376,11 @@ Eventos, condiciones, excepciones, invocación y autoinvocación existen para
 explicar cuándo un proceso ocurre, se omite, se desvía o llama a otro proceso.
 No son adornos. Un control mal puesto cambia la semántica del modelo.
 
+Usar control solo cuando responde una pregunta de ejecución. Si el objetivo es
+solo documentar una posibilidad, puede bastar con estado, requisito o supuesto.
+El control introduce obligaciones de validación: debe ser legible en OPL y no
+debe mezclar familias incompatibles.
+
 ### 2.8 A7: requisitos, errores, simulación y cuantitativo
 
 Un requisito inferido no es una norma ni un hecho demostrado. Debe marcarse como
@@ -312,6 +396,10 @@ Validar no es solo pasar checks:
 - **Sirve:** responde al propósito declarado con suficiente profundidad.
 
 Un modelo puede ser conforme pero malo. Ese es el territorio del método.
+
+Regla de cierre: no decir "validado" sin decir cuál de los tres niveles se
+validó. "Pasa reglas" significa bien formado; no significa que representa el
+dominio ni que sirve al propósito.
 
 ## 3. Trabajar en la interfaz opforja
 
@@ -351,16 +439,177 @@ pero no sustituye el bundle canónico.
 
 **Estado:** estable.
 
-1. Declarar propósito en una oración verbo-objeto.
-2. Verificar que la función sea transformadora.
-3. Nombrar el proceso central sin elegir arquitectura prematura.
-4. Identificar beneficiario o affectee.
-5. Declarar qué atributo de valor cambia.
-6. Identificar transformees y sus estados relevantes.
-7. Añadir agentes e instrumentos solo si cumplen su rol.
-8. Declarar esencia y afiliación de cada cosa.
-9. Leer el OPL inicial y corregir nombres o roles ambiguos.
-10. Cerrar el SD con supuestos explícitos y brechas visibles.
+Este capítulo describe un walkthrough sin depender de botones concretos de UI.
+Puede ejecutarse en papel, en conversación con un agente o en la app.
+
+## 4.1 Declarar el propósito
+
+Escribir una oración verbo-objeto que diga el cambio buscado sin fijar la forma.
+
+Correcto:
+
+- "mejorar disponibilidad de camas",
+- "reducir tiempo de despacho",
+- "mantener temperatura de muestra".
+
+Sospechoso:
+
+- "crear plataforma",
+- "implementar módulo",
+- "gestionar proceso",
+- "hacer dashboard".
+
+Si la oración nombra la solución antes que el cambio, volver a intención y
+función. La pregunta útil es: "si esa solución no existiera, ¿qué valor seguiría
+siendo necesario?".
+
+## 4.2 Verificar función transformadora
+
+OPM aplica cuando hay transformación. Identificar qué objeto entra distinto,
+sale distinto, se crea, se destruye o cambia de estado.
+
+| Frase inicial | Pregunta Forja | Posible transformee |
+| --- | --- | --- |
+| "atender pacientes" | ¿qué cambia por la atención? | **Paciente**, **Episodio**, **Plan de cuidado** |
+| "despachar pedidos" | ¿qué entra y sale distinto? | **Pedido**, **Paquete**, **Estado de despacho** |
+| "monitorear temperatura" | ¿se transforma algo o solo se observa? | **Lectura de temperatura** o quizá no aplica OPM como sistema central |
+
+Si no aparece transformee, no dibujar todavía. Puede ser que el sistema sea
+puramente clasificatorio, documental o analítico; en ese caso conviene otro
+formalismo o un alcance OPM distinto.
+
+## 4.3 Nombrar el proceso central
+
+Nombrar el proceso como transformación, no como área. La forma recomendada en
+Forja es nominalización consistente dentro del modelo.
+
+| Pobre | Mejor |
+| --- | --- |
+| *Gestión* | *Disponibilidad de cama mejorando* |
+| *Procesamiento* | *Pedido despachando* |
+| *Sistema de monitoreo* | *Temperatura de muestra manteniendo* |
+
+El nombre puede mejorar más tarde, pero debe ser suficientemente honesto para
+no ocultar la transformación.
+
+## 4.4 Identificar beneficiario o affectee
+
+En sistemas artificiales/sociales, preguntar quién recibe valor. En sistemas
+naturales, no forzar beneficiario; declarar outcome o affectee.
+
+El beneficiario no siempre es el transformee. En despacho, el **Cliente** puede
+beneficiarse mientras el **Pedido** o **Paquete** se transforma. En salud, el
+**Paciente** puede ser beneficiario y transformee, pero no asumirlo sin dominio.
+
+## 4.5 Declarar atributo de valor y estados
+
+El cambio debe tener una dimensión. "Mejorar paciente" es débil; "cambiar
+estado de dolor de `intenso` a `controlado`" es auditable.
+
+Formato práctico:
+
+```text
+Objeto portador de valor: <objeto>
+Atributo de valor: <atributo>
+Estado inicial: <estado>
+Estado buscado: <estado>
+```
+
+Si el atributo no tiene nombre natural, inventar uno claro. Nombrar la
+abstracción es parte del modelado.
+
+## 4.6 Identificar transformees
+
+Separar tres casos:
+
+- **Consumo:** el objeto deja de existir o deja de estar disponible para el
+  proceso.
+- **Resultado:** el proceso crea o produce un objeto.
+- **Efecto:** el proceso cambia estado o atributo de un objeto persistente.
+
+El proceso central debería tener al menos un transformee relevante. Si aparecen
+muchos, identificar cuál provee la función principal y cuáles son secundarios,
+intermedios o productos de soporte.
+
+## 4.7 Añadir agentes e instrumentos
+
+Añadir habilitadores solo después de saber qué cambia.
+
+Un agente es humano u organización responsable. Un instrumento es una herramienta
+o sistema usado por el proceso. Software, robot, modelo predictivo o sensor son
+instrumentos salvo que el corpus o el dominio declare explícitamente agencia
+humana/organizacional mediada.
+
+Preguntas:
+
+- ¿quién responde por la acción?
+- ¿qué herramienta se requiere?
+- ¿ese recurso se transforma o solo habilita?
+- si se desgasta o cambia, ¿debe reclasificarse como afectado?
+
+## 4.8 Declarar sistema y frontera
+
+Nombrar el sistema y decidir qué queda dentro. La frontera no es una caja
+decorativa: decide qué cosas son sistémicas y cuáles ambientales.
+
+Una cosa ambiental puede interactuar con el sistema, habilitarlo o afectarlo,
+pero no está bajo control del sistema. Si una cosa cambia de lado entre niveles,
+eso debe ser una decisión explícita, no un efecto accidental del layout.
+
+## 4.9 Declarar esencia y afiliación
+
+Cada cosa debe tener esencia física o informacional, y afiliación sistémica o
+ambiental. No hace falta ensuciar el diagrama con marcas si el default del modelo
+lo vuelve evidente, pero la decisión debe existir.
+
+Errores frecuentes:
+
+- tratar un documento como físico cuando se modela su contenido informacional,
+- tratar un equipo externo como sistémico porque aparece cerca del proceso,
+- llamar agente a un software,
+- ocultar un atributo como si fuera estado directo del objeto equivocado.
+
+## 4.10 Leer el primer OPL
+
+Antes de refinar, leer el OPL inicial. Cada oración debe sonar como una frase
+natural controlada que el operador pueda aceptar o corregir.
+
+Si el OPL dice algo raro, no ajustar solo la frase: revisar el hecho. El OPL
+suele revelar que el enlace, rol o nombre estaba mal.
+
+## 4.11 Cerrar el SD
+
+Un SD inicial queda listo para refinamiento cuando cumple:
+
+- tiene un proceso central transformador,
+- tiene frontera explícita,
+- tiene al menos un transformee funcional,
+- distingue agentes de instrumentos,
+- declara esencia y afiliación donde importa,
+- no contiene barro bloqueante,
+- puede leerse en OPL,
+- registra supuestos y brechas.
 
 Si cualquiera de esos pasos no puede contestarse, el resultado correcto es una
 pregunta de aclaración, no un diagrama plausible.
+
+## 4.12 Plantilla de cierre de SD
+
+```text
+Sistema:
+Tipo de sistema:
+Propósito / outcome:
+Proceso central:
+Beneficiario / affectee:
+Atributo de valor:
+Estado inicial:
+Estado buscado:
+Transformees:
+Agentes:
+Instrumentos:
+Frontera:
+Ambientales relevantes:
+Supuestos:
+Brechas:
+Primer OPL confirmado:
+```
