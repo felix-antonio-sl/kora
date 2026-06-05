@@ -6,15 +6,15 @@ _manifest:
     created_at: '2026-06-04'
     source: >-
       Manual operativo derivado del corpus OPM/Forja SSOT ES vigente. Parte
-      desde reglas-opm-estrictas-es v1.2.1, metodologia-forja-es v1.4.4, spec-forja-opd-es
+      desde reglas-opm-estrictas-es v1.2.1, metodologia-forja-es v1.5.0, spec-forja-opd-es
       v1.0.3, spec-forja-opl-es v1.1.3, opm-categorial-es v1.2.4 y modelamiento-opm
       v1.5.0. Iniciado en REVIEW y promovido a productivo como manual v0.1.0;
       v0.2.0 expande de forma autónoma el núcleo estable que no depende de cambios
       de UI: modelo mental, flujo, construcción, refinamiento, OPD/OPL, validación
       y apéndices operativos.
-version: 0.2.0
+version: 0.2.1
 status: publicado
-source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.4.4; spec-forja-opd-es.md
+source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.5.0; spec-forja-opd-es.md
   v1.0.3; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
   v1.5.0.
 derived_from:
@@ -41,7 +41,7 @@ lang: es
 extensions:
   kora:
     family: note
-    lifecycle_note: publicado v0.2.0; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
+    lifecycle_note: publicado v0.2.1; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
     shard_index: 1
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:manual-opforja-es
@@ -400,6 +400,12 @@ Un modelo puede ser conforme pero malo. Ese es el territorio del método.
 Regla de cierre: no decir "validado" sin decir cuál de los tres niveles se
 validó. "Pasa reglas" significa bien formado; no significa que representa el
 dominio ni que sirve al propósito.
+
+En auditoría de estados, clasificar antes de acusar: **flujo** exige escritor,
+**caracterización** exige declaración legible de value-set y
+**ambiental-observado** puede carecer legítimamente de escritor sistémico si el
+sistema solo lee la realidad. Los barridos de integridad se hacen sobre el JSON,
+no sobre el OPL emitido.
 
 ## 3. Trabajar en la interfaz opforja
 

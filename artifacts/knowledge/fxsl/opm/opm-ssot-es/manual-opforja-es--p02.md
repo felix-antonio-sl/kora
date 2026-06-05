@@ -6,15 +6,15 @@ _manifest:
     created_at: '2026-06-04'
     source: >-
       Manual operativo derivado del corpus OPM/Forja SSOT ES vigente. Parte
-      desde reglas-opm-estrictas-es v1.2.1, metodologia-forja-es v1.4.4, spec-forja-opd-es
+      desde reglas-opm-estrictas-es v1.2.1, metodologia-forja-es v1.5.0, spec-forja-opd-es
       v1.0.3, spec-forja-opl-es v1.1.3, opm-categorial-es v1.2.4 y modelamiento-opm
       v1.5.0. Iniciado en REVIEW y promovido a productivo como manual v0.1.0;
       v0.2.0 expande de forma autónoma el núcleo estable que no depende de cambios
       de UI: modelo mental, flujo, construcción, refinamiento, OPD/OPL, validación
       y apéndices operativos.
-version: 0.2.0
+version: 0.2.1
 status: publicado
-source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.4.4; spec-forja-opd-es.md
+source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.5.0; spec-forja-opd-es.md
   v1.0.3; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
   v1.5.0.
 derived_from:
@@ -41,7 +41,7 @@ lang: es
 extensions:
   kora:
     family: note
-    lifecycle_note: publicado v0.2.0; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
+    lifecycle_note: publicado v0.2.1; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:manual-opforja-es
@@ -351,6 +351,8 @@ Antes de cerrar una entrega, revisar:
 - cada hecho visible tiene OPL,
 - cada OPL canónico apunta a hecho,
 - no hay estados flotantes,
+- cada entidad con estados está clasificada como flujo, caracterización o
+ ambiental-observado,
 - no hay nombres duplicados ambiguos,
 - no hay agentes no humanos salvo decisión explícita,
 - los refinamientos preservan frontera,
@@ -606,5 +608,6 @@ Ranura viva. Detectores mencionables cuando estén expuestos de forma estable:
 
 | Fecha | Versión | Cambio |
 | --- | --- | --- |
+| 2026-06-05 | 0.2.1 | Alineación con metodologia-forja-es v1.5.0: incorpora LF-19 como disciplina operativa para validar estados y fija barridos de integridad sobre JSON canónico. |
 | 2026-06-05 | 0.2.0 | Expansión autónoma de contenido estable: walkthrough SD, refinamiento, OPD/OPL práctico, diagnóstico, patrones iniciales, ejemplo textual end-to-end y apéndices operativos. |
 | 2026-06-04 | 0.1.0 | Creación, promoción a productivo y particionado en dos shards. Fija contrato editorial, TOC, capítulos estables iniciales, secciones vivas y ranuras para evidencia UI/casos. |
