@@ -1343,6 +1343,67 @@ def _check_autoria_conformance(path_filter=None):
     return diags
 
 
+def _vector_law_violations(v):
+    """Evalua las 5 leyes inter-eje de harness-spec §4.1 sobre un vector dict.
+
+    Funcion pura (sin I/O): aisla la *ley* de la *cosecha* de artefactos, de
+    modo que cada implicacion quede pineable por tests. Antes esta logica vivia
+    embebida en el recorrido de filesystem de `_check_vector_laws` y no tenia
+    test de regresion; extraerla la vuelve verificable directamente.
+
+    Devuelve lista de `(code, message, fix_hint)` por cada ley violada; lista
+    vacia si el vector las cumple todas o no es un dict.
+
+    Leyes (poset producto Π·Μ·Ξ × Λ·Φ·Σ, harness-spec §4.1):
+      L1. Π>=3 ⟹ Μ>=1   (fixed-points requieren estado)
+      L2. Ξ=4  ⟹ Λ>=1   (operad dinamica requiere composicion organizacional)
+      L3. Φ>=2 ⟹ Μ>=1   (colaborativo requiere memoria observable)
+      L4. Σ.accountability>=2 ⟹ Σ.transparency>=2
+      L5. Λ=3  ⟹ Σᵢ>=2 para todo i
+    """
+    if not isinstance(v, dict):
+        return []
+
+    pi = v.get("pi")
+    mu = v.get("mu")
+    xi = v.get("xi")
+    lam = v.get("lambda")
+    phi = v.get("phi")
+    sigma = v.get("sigma") or []
+
+    out = []
+    if isinstance(pi, int) and isinstance(mu, int):
+        if pi >= 3 and mu < 1:
+            out.append(("L1-pi-requiere-mu",
+                        f"Π={pi} requiere Μ>=1 (fixed-points necesitan estado); encontrado Μ={mu}",
+                        "Sube mu a >=1 o baja pi a <=2"))
+    if isinstance(xi, int) and isinstance(lam, int):
+        if xi == 4 and lam < 1:
+            out.append(("L2-xi-requiere-lambda",
+                        f"Ξ=4 (operad dinamica) requiere Λ>=1; encontrado Λ={lam}",
+                        "Declara composicion organizacional (Λ>=1) o baja xi a <=3"))
+    if isinstance(phi, int) and isinstance(mu, int):
+        if phi >= 2 and mu < 1:
+            out.append(("L3-phi-requiere-mu",
+                        f"Φ={phi} (colaborativo) requiere Μ>=1; encontrado Μ={mu}",
+                        "Sube mu a >=1 o baja phi a <=1"))
+    if isinstance(sigma, list) and len(sigma) == 5:
+        acc = sigma[3]
+        trans = sigma[2]
+        if isinstance(acc, int) and isinstance(trans, int):
+            if acc >= 2 and trans < 2:
+                out.append(("L4-accountability-requiere-transparency",
+                            f"Σ.accountability={acc} requiere Σ.transparency>=2; encontrado transparency={trans}",
+                            "Sube transparency a >=2 o baja accountability a <=1"))
+    if isinstance(lam, int) and lam == 3 and isinstance(sigma, list) and len(sigma) == 5:
+        low = [i for i, val in enumerate(sigma) if not isinstance(val, int) or val < 2]
+        if low:
+            out.append(("L5-sociedad-requiere-sigma-completo",
+                        f"Λ=3 requiere todos los componentes de Σ>=2; insuficientes: indices {low} (valores {[sigma[i] for i in low]})",
+                        "Sube los componentes de sigma a >=2 o baja lambda a <=2"))
+    return out
+
+
 def _check_vector_laws(path_filter=None):
     """Verifica las 5 leyes inter-eje declaradas en harness-spec §4.1.
 
@@ -1395,17 +1456,10 @@ def _check_vector_laws(path_filter=None):
         if not isinstance(v, dict):
             continue
 
-        pi = v.get("pi")
-        mu = v.get("mu")
-        xi = v.get("xi")
-        lam = v.get("lambda")
-        phi = v.get("phi")
-        sigma = v.get("sigma") or []
-
         rel = str(artifact_path.relative_to(KORA_ROOT))
         scope_kind = "workspace" if artifact_path.name == "AGENT.md" else "artifact"
 
-        def emit(code, msg, fix):
+        for code, msg, fix in _vector_law_violations(v):
             diags.append(Diagnostic(
                 check_id="vector-laws",
                 severity="high",
@@ -1414,33 +1468,6 @@ def _check_vector_laws(path_filter=None):
                 message=f"{code}: {msg}",
                 fix_hint=fix,
             ))
-
-        if isinstance(pi, int) and isinstance(mu, int):
-            if pi >= 3 and mu < 1:
-                emit("L1-pi-requiere-mu", f"Π={pi} requiere Μ>=1 (fixed-points necesitan estado); encontrado Μ={mu}",
-                     "Sube mu a >=1 o baja pi a <=2")
-        if isinstance(xi, int) and isinstance(lam, int):
-            if xi == 4 and lam < 1:
-                emit("L2-xi-requiere-lambda", f"Ξ=4 (operad dinamica) requiere Λ>=1; encontrado Λ={lam}",
-                     "Declara composicion organizacional (Λ>=1) o baja xi a <=3")
-        if isinstance(phi, int) and isinstance(mu, int):
-            if phi >= 2 and mu < 1:
-                emit("L3-phi-requiere-mu", f"Φ={phi} (colaborativo) requiere Μ>=1; encontrado Μ={mu}",
-                     "Sube mu a >=1 o baja phi a <=1")
-        if isinstance(sigma, list) and len(sigma) == 5:
-            acc = sigma[3]
-            trans = sigma[2]
-            if isinstance(acc, int) and isinstance(trans, int):
-                if acc >= 2 and trans < 2:
-                    emit("L4-accountability-requiere-transparency",
-                         f"Σ.accountability={acc} requiere Σ.transparency>=2; encontrado transparency={trans}",
-                         "Sube transparency a >=2 o baja accountability a <=1")
-        if isinstance(lam, int) and lam == 3 and isinstance(sigma, list) and len(sigma) == 5:
-            low = [i for i, v in enumerate(sigma) if not isinstance(v, int) or v < 2]
-            if low:
-                emit("L5-sociedad-requiere-sigma-completo",
-                     f"Λ=3 requiere todos los componentes de Σ>=2; insuficientes: indices {low} (valores {[sigma[i] for i in low]})",
-                     "Sube los componentes de sigma a >=2 o baja lambda a <=2")
 
     if path_filter:
         diags = [d for d in diags if d.path.startswith(path_filter)]
@@ -2176,6 +2203,56 @@ def _check_fidelidad_mastra(path_filter=None):
     return diags
 
 
+def _fsm_trapped_states(inicial, terminales, transiciones):
+    """Estados alcanzables desde `inicial` que NO pueden alcanzar un terminal.
+
+    Funcion pura: nucleo de la propiedad de terminacion coalgebraica — toda
+    orbita desde el estado inicial debe alcanzar el conjunto terminal. Lista
+    vacia ⟺ el FSM termina. Aislada del recorrido de filesystem para que la ley
+    quede pineable por tests.
+    """
+    terminal_set = set(terminales)
+    reachable = {inicial}
+    frontier = [inicial]
+    while frontier:
+        s = frontier.pop()
+        for t in transiciones.get(s, []) or []:
+            if t not in reachable:
+                reachable.add(t)
+                frontier.append(t)
+
+    def can_reach_terminal(start):
+        seen = {start}
+        stack = [start]
+        while stack:
+            s = stack.pop()
+            if s in terminal_set:
+                return True
+            for t in transiciones.get(s, []) or []:
+                if t not in seen:
+                    seen.add(t)
+                    stack.append(t)
+        return False
+
+    return [s for s in reachable if not can_reach_terminal(s)]
+
+
+def _subcoalgebra_escapes(sub_safe, transiciones):
+    """Transiciones que escapan de la sub-coalgebra `sub_safe`.
+
+    Funcion pura: nucleo del cierre de la sub-coalgebra de safety — si `S` cierra
+    bajo la transicion `α`, ninguna transicion desde un estado de `S` sale de
+    `S`. Devuelve las fugas `"s -> t"` halladas; lista vacia ⟺ cerrada.
+    """
+    sub_set = set(sub_safe)
+    escapes = []
+    for s in sub_safe:
+        for t in transiciones.get(s, []) or []:
+            if t not in sub_set:
+                escapes.append(f"{s} -> {t}")
+    return escapes
+
+
 def _check_coalgebra_conformance(path_filter=None):
     """Verifica termination del FSM declarado en artefacto.plan.fsm (autoria-spec v1.1 §3.5).
 
@@ -2301,32 +2378,8 @@ def _check_coalgebra_conformance(path_filter=None):
             ))
             continue
 
-        # Termination: BFS desde inicial, cada estado visitado debe poder
-        # alcanzar un terminal. Detectamos estados "atrapados" en ciclos sin
-        # salida.
-        terminal_set = set(terminales)
-        reachable = {inicial}
-        frontier = [inicial]
-        while frontier:
-            s = frontier.pop()
-            for t in transiciones.get(s, []) or []:
-                if t not in reachable:
-                    reachable.add(t)
-                    frontier.append(t)
-        # Para cada estado alcanzable, verificar que puede alcanzar un terminal
-        def can_reach_terminal(start):
-            seen = {start}
-            stack = [start]
-            while stack:
-                s = stack.pop()
-                if s in terminal_set:
-                    return True
-                for t in transiciones.get(s, []) or []:
-                    if t not in seen:
-                        seen.add(t)
-                        stack.append(t)
-            return False
-        trapped = [s for s in reachable if not can_reach_terminal(s)]
+        # Termination: nucleo coalgebraico extraido a funcion pura testeable.
+        trapped = _fsm_trapped_states(inicial, terminales, transiciones)
         if trapped:
             diags.append(Diagnostic(
                 check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,
@@ -2338,7 +2391,6 @@ def _check_coalgebra_conformance(path_filter=None):
         # Sub-coalgebra safety: closed under transitions
         sub_safe = artefacto.get("invariantes", {}).get("sub_coalgebra_segura")
         if isinstance(sub_safe, list) and sub_safe:
-            sub_set = set(sub_safe)
             missing = [s for s in sub_safe if s not in estados_ids]
             if missing:
                 diags.append(Diagnostic(
@@ -2346,11 +2398,7 @@ def _check_coalgebra_conformance(path_filter=None):
                     message=f"sub_coalgebra_segura lista estados no declarados: {missing}",
                 ))
                 continue
-            escapes = []
-            for s in sub_safe:
-                for t in transiciones.get(s, []) or []:
-                    if t not in sub_set:
-                        escapes.append(f"{s} -> {t}")
+            escapes = _subcoalgebra_escapes(sub_safe, transiciones)
             if escapes:
                 diags.append(Diagnostic(
                     check_id="coalgebra-conformance", severity="high", scope=scope_kind, path=rel,

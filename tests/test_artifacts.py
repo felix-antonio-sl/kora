@@ -356,8 +356,12 @@ class ArtifactFixtureTests(unittest.TestCase):
     def test_transmutation_spec_defines_functor_laws(self):
         content = (ROOT / "runtime" / "transmutation-spec.md").read_text(encoding="utf-8")
         required_terms = (
-            "v1.2.0",
+            # Verifica las leyes functoriales por su contenido, no por el numero
+            # de version (frágil ante bumps; la coherencia version<->H1 ya la
+            # cubre el check `spec-procedure-coherence`).
             "functor",
+            "composicion",
+            "identidad",
             "preservacion",
             "bisimulacion",
             "_transmutation.yml",

@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-17"
     source: "harness-spec v1.1 + runtime-spec-md v3.8 + ICAS corpus 02-preservacion, 06-adjunciones, 09-efectos"
-version: "1.2.0"
+version: "1.2.1"
 status: publicado
 tags: [spec, transmutacion, functor, proyeccion, preservacion, bisimulacion, runtime]
 lang: es
@@ -23,7 +23,7 @@ relations:
     - "urn:fxsl:kb:icas-efectos"
 ---
 
-# KORA/Transmutation-Spec v1.2.0
+# KORA/Transmutation-Spec v1.2.1
 
 ## 1. Definicion
 
@@ -117,20 +117,47 @@ declarada".
 
 ### 3.2 Preservacion estructural
 
-| Estructura | Obligacion | Check |
-|------------|-----------|--------|
-| Naturalidad de Ξ | `T_R(Ξ_IR) = Ξ_R` (el diagrama plan-ejecutor conmuta en el target) | `xi-naturality-preserved` |
-| Inclusion de sub-coalgebra safety | Si `S ⊆ U` cierra bajo `α` en IR, `T_R(S) ⊆ T_R(U)` cierra en R | `safety-closure-preserved` |
-| Composicion Kleisli | Si el IR declara composicion via `composable_with`, la composicion se refleja en R | `kleisli-composition-preserved` |
-| Monotonia en Π | Si `v1.pi ≤ v2.pi` en IR, tras proyeccion `T_R(v1).pi ≤ T_R(v2).pi` | `pi-monotonicity` |
-| Monotonia en Μ | Analogo para Μ | `mu-monotonicity` |
-| Monotonia en Ξ | Analogo para Ξ | `xi-monotonicity` |
+Dos regimenes conviven aqui; la columna **Garantia** los separa honestamente
+para no prometer enforcement que el functor no realiza:
+
+- **por construccion** — la proyeccion (`_project_axis`) realiza la propiedad
+  mecanicamente; se registra como `status: preserved` en
+  `structural_preservation`.
+- **declarada** — la propiedad **no esta mecanizada** en `transmute`; se
+  registra como `status: declared` y queda sujeta a revision runtime. No hace
+  fallar la transmutacion por si sola (ver §3.3).
+
+| Estructura | Obligacion | Garantia |
+|------------|-----------|----------|
+| Naturalidad de Ξ | `T_R(Ξ_IR) = Ξ_R` (el diagrama plan-ejecutor conmuta en el target) | declarada (`structural_preservation.xi_naturality`; revision runtime) |
+| Inclusion de sub-coalgebra safety | Si `S ⊆ U` cierra bajo `α` en IR, `T_R(S) ⊆ T_R(U)` cierra en R | declarada (`structural_preservation.safety_closure`; el IR fuente debe pasar `coalgebra-conformance` antes) |
+| Composicion Kleisli | Si el IR declara composicion via `composable_with`, la composicion se refleja en R | declarada (`structural_preservation.kleisli_composition`; no mecanizada) |
+| Monotonia en Π | Si `v1.pi ≤ v2.pi` en IR, tras proyeccion `T_R(v1).pi ≤ T_R(v2).pi` | por construccion (proyeccion `min` en `_project_axis`) |
+| Monotonia en Μ | Analogo para Μ | por construccion |
+| Monotonia en Ξ | Analogo para Ξ | por construccion |
+
+> **Nota de enforcement (honestidad spec↔codigo).** Las tres filas *declaradas*
+> corresponden a `status: declared` en `_structural_preservation_record`. Hoy
+> **no existe** un check de enforcement por-ley en `kora check`
+> (`xi-naturality-preserved`, `safety-closure-preserved` y
+> `kleisli-composition-preserved` no estan registrados). Lo que se verifica es
+> que la *declaracion* este presente y bien formada (§6.3 r6), no que la ley se
+> cumpla en el runtime destino. Mecanizar estas tres como checks ejecutables es
+> trabajo abierto; hasta entonces son obligacion declarada, no garantia
+> verificada.
 
 ### 3.3 Violacion estructural → transmutacion invalida
 
-Si cualquiera de estas leyes se viola, el functor no es correcto. Es error
-categorial, no perdida. La transmutacion **debe fallar**, no emitirse con
-warning.
+Las leyes **functoriales basicas** (§3.1: composicion, identidad) y las
+monotonias **por construccion** (§3.2) son condicion de correccion del functor:
+si se violan, el functor no es correcto. Es error categorial, no perdida. La
+transmutacion **debe fallar**, no emitirse con warning.
+
+Las leyes **declaradas** (naturalidad de Ξ, cierre de safety, composicion
+Kleisli) no estan mecanizadas en `transmute`: se registran como `status:
+declared` y se delegan a revision runtime. No hacen fallar la transmutacion por
+si solas; su garantia se apoya en que el IR fuente pase `coalgebra-conformance`
+y `vector-laws` antes de proyectar, y en la auditoria del runtime destino.
 
 ## 4. Proyeccion con perdida declarada
 
@@ -545,10 +572,14 @@ Checks obligatorios:
 
 ## 14. Migracion
 
-### 14.1 Contrato vigente v1.2.0
+### 14.1 Contrato vigente v1.2.1
 
 - Transmutacion es functor, `_transmutation.yml` es evidencia obligatoria.
 - Leyes estructurales (§3) obligatorias para todos los runtimes.
+- §3.2 distingue dos regimenes: preservacion **por construccion** (monotonias,
+  `status: preserved`) y obligacion **declarada** (naturalidad de Ξ, cierre de
+  safety, composicion Kleisli; `status: declared`, sin check de enforcement
+  por-ley, sujeta a revision runtime). La spec no nombra checks inexistentes.
 - Perdida declarada por eje con matriz de preservacion explicita.
 - Ingesta inversa disponible cuando runtime soporta `Lift_R`.
 - El manifiesto distingue preservacion mecanicamente verificada de preservacion

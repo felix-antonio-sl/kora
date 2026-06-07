@@ -448,5 +448,102 @@ class TestRelationsLaws(unittest.TestCase):
         self.assertGreaterEqual(len(refines_diags), 1)
 
 
+class VectorLawsTests(unittest.TestCase):
+    """Regresion de la logica pura de las 5 leyes inter-eje (harness-spec §4.1).
+
+    Antes vivia embebida en el recorrido de filesystem de `_check_vector_laws`
+    sin test; `_vector_law_violations` la aisla para pinearla ley por ley.
+    """
+
+    def _codes(self, vector):
+        from kora_lib.checks import _vector_law_violations
+        return {code for code, _msg, _fix in _vector_law_violations(vector)}
+
+    def test_clean_vector_has_no_violations(self):
+        # pi=2 (<3), mu=1, xi=3 (!=4), lambda=1, phi=1 (<2), sigma todos>=2
+        v = {"pi": 2, "mu": 1, "xi": 3, "lambda": 1, "phi": 1,
+             "sigma": [2, 2, 2, 2, 2]}
+        self.assertEqual(self._codes(v), set())
+
+    def test_non_dict_vector_is_inert(self):
+        from kora_lib.checks import _vector_law_violations
+        self.assertEqual(_vector_law_violations(None), [])
+        self.assertEqual(_vector_law_violations("(2,0,1)"), [])
+
+    def test_L1_pi_requires_mu(self):
+        self.assertIn("L1-pi-requiere-mu", self._codes({"pi": 3, "mu": 0}))
+        self.assertNotIn("L1-pi-requiere-mu", self._codes({"pi": 3, "mu": 1}))
+
+    def test_L2_xi_requires_lambda(self):
+        self.assertIn("L2-xi-requiere-lambda", self._codes({"xi": 4, "lambda": 0}))
+        self.assertNotIn("L2-xi-requiere-lambda", self._codes({"xi": 4, "lambda": 1}))
+        # xi != 4 no dispara
+        self.assertNotIn("L2-xi-requiere-lambda", self._codes({"xi": 3, "lambda": 0}))
+
+    def test_L3_phi_requires_mu(self):
+        self.assertIn("L3-phi-requiere-mu", self._codes({"phi": 2, "mu": 0}))
+        self.assertNotIn("L3-phi-requiere-mu", self._codes({"phi": 2, "mu": 1}))
+
+    def test_L4_accountability_requires_transparency(self):
+        # sigma = [safety, fairness, transparency, accountability, sustainability]
+        viola = {"sigma": [2, 2, 1, 2, 2]}   # accountability=2, transparency=1
+        cumple = {"sigma": [2, 2, 2, 2, 2]}
+        self.assertIn("L4-accountability-requiere-transparency", self._codes(viola))
+        self.assertNotIn("L4-accountability-requiere-transparency", self._codes(cumple))
+
+    def test_L5_society_requires_full_sigma(self):
+        viola = {"lambda": 3, "sigma": [2, 2, 2, 2, 1]}  # un componente <2
+        cumple = {"lambda": 3, "sigma": [2, 2, 2, 2, 2]}
+        self.assertIn("L5-sociedad-requiere-sigma-completo", self._codes(viola))
+        self.assertNotIn("L5-sociedad-requiere-sigma-completo", self._codes(cumple))
+
+    def test_violations_carry_code_message_and_fix(self):
+        from kora_lib.checks import _vector_law_violations
+        out = _vector_law_violations({"pi": 3, "mu": 0})
+        self.assertEqual(len(out), 1)
+        code, msg, fix = out[0]
+        self.assertTrue(code and msg and fix)
+
+
+class CoalgebraConformanceTests(unittest.TestCase):
+    """Regresion de los nucleos coalgebraicos puros: termination y cierre.
+
+    `coalgebra-conformance` verificaba un FSM pero su logica no tenia test;
+    `_fsm_trapped_states` y `_subcoalgebra_escapes` la aislan.
+    """
+
+    def test_terminating_fsm_has_no_trapped_states(self):
+        from kora_lib.checks import _fsm_trapped_states
+        # a -> b -> c (terminal)
+        trapped = _fsm_trapped_states("a", ["c"], {"a": ["b"], "b": ["c"]})
+        self.assertEqual(trapped, [])
+
+    def test_self_loop_with_exit_terminates(self):
+        from kora_lib.checks import _fsm_trapped_states
+        # a -> {a, c}: el self-loop no atrapa porque existe salida a terminal
+        trapped = _fsm_trapped_states("a", ["c"], {"a": ["a", "c"]})
+        self.assertEqual(trapped, [])
+
+    def test_sink_cycle_without_terminal_is_trapped(self):
+        from kora_lib.checks import _fsm_trapped_states
+        # a -> b -> b: ninguna orbita alcanza c; ambos quedan atrapados
+        trapped = set(_fsm_trapped_states("a", ["c"], {"a": ["b"], "b": ["b"]}))
+        self.assertEqual(trapped, {"a", "b"})
+
+    def test_closed_subcoalgebra_has_no_escapes(self):
+        from kora_lib.checks import _subcoalgebra_escapes
+        # {a, b} cierra bajo transiciones internas
+        self.assertEqual(
+            _subcoalgebra_escapes(["a", "b"], {"a": ["b"], "b": ["a"]}),
+            [],
+        )
+
+    def test_escaping_transition_is_detected(self):
+        from kora_lib.checks import _subcoalgebra_escapes
+        # a sale de la sub-coalgebra hacia b (no incluido)
+        escapes = _subcoalgebra_escapes(["a"], {"a": ["b"]})
+        self.assertEqual(escapes, ["a -> b"])
+
+
 if __name__ == "__main__":
     unittest.main()
