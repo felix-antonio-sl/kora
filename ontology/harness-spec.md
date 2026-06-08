@@ -5,7 +5,7 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-17"
     source: "ICAS-BoK corpus-categorico-arquitecto-sistemas-categorial-agentico; HCAI Foundations (Xu 2025); Shneiderman 2D framework; Libkind-Spivak Poly; revisión de docs oficiales Claude Code, Codex, Gemini, OpenClaw y Mastra"
-version: "1.1.0"
+version: "1.1.1"
 status: publicado
 tags: [spec, ontologia, arnés, pmi-lfs, agentico, hcai, constitucion]
 lang: es
@@ -27,7 +27,7 @@ relations:
     - "urn:fxsl:kb:icas-escala"
 ---
 
-# KORA/Harness-Spec v1.1.0
+# KORA/Harness-Spec v1.1.1
 
 ## 1. Definicion y propósito
 
@@ -176,6 +176,8 @@ completa del artefacto en el IR canonico.
 
 Cada eje es un **retículo** (poset con join y meet). El espacio total es
 producto reticular con estructura de producto semidirecto.
+
+Traces to: `urn:kora:kb:cat-harness-lattice` §2-§3 (PMI×LFS formalizado como lattice producto acotado; las 5 leyes inter-eje §4.1 recortan el sublattice acotado de vectores bien-formados). La relación con la F-coálgebra de agente queda como problema abierto, no morfismo demostrado (ibíd. §5).
 
 ### 4.1 Leyes de consistencia inter-eje
 
