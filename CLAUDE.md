@@ -1,27 +1,28 @@
 # CLAUDE.md
 
-Fuente operativa unica para agentes que trabajen en este repositorio. Si otra
-guia, handoff, README externo, memoria vieja o wrapper legacy contradice este
-archivo, la CLI viva y las specs vigentes mandan; este archivo solo resume como
-operar sin volver a inferir el repo desde cero.
+Fuente operativa unica para agentes que trabajen en este repositorio: resume
+como operar sin reinferir el repo desde cero.
+
+Invariante de precedencia: si otra fuente (guia, handoff, README externo,
+memoria vieja o wrapper legacy) contradice este archivo, mandan la CLI viva y
+las specs vigentes.
 
 ## Que Es KORA
 
 KORA es el **repositorio, catalogo y sistema de produccion y mantenimiento de
-artefactos** que consumen o ejecutan sistemas LLM. Produce esos artefactos por
-un pipeline gobernado, los cataloga y resuelve por URN, los mantiene coherentes
-en el tiempo (checks, lifecycle, deprecacion) y proyecta los ejecutables a
-runtimes. No es una aplicacion tradicional: el activo principal es la
-consistencia entre ley, ontologia, serializacion, runtimes, artefactos y
-toolchain.
+artefactos** que consumen o ejecutan sistemas LLM. Los produce por un pipeline
+gobernado, los cataloga y resuelve por URN, los mantiene coherentes en el tiempo
+(checks, lifecycle, deprecacion) y proyecta los ejecutables a runtimes. No es
+una aplicacion tradicional: el activo principal es la consistencia entre ley,
+ontologia, serializacion, runtimes, artefactos y toolchain.
 
 Gestiona **tres tipos de artefacto, y solo tres**:
 
 - **conocimiento** — archivos `.md` en estandar KORA/MD para *consumo* de
   sistemas LLM (se leen como contexto, no se ejecutan).
 - **agentes** (`AGENT.md`) y **skills** (`SKILL.md`) — definen actores y
-  capacidades que se *proyectan a runtimes* (`claude-code`, `codex`,
-  `openclaw`, `hermes`) via transmutacion.
+  capacidades que se *proyectan a los runtimes canonicos* (ver seccion
+  Runtimes) via transmutacion.
 
 Las **specs** no son artefactos: son la ley que define que cuenta como
 artefacto valido. "Conocimiento" es un tipo especifico, nunca paraguas de los
@@ -109,28 +110,6 @@ canonico hasta promocion.
 repo y quedar representado por inventarios con hash/procedencia. En git solo
 deben entrar README, inventarios y material ya normalizado hacia REVIEW o
 productivo.
-
-## Historia Relevante
-
-Antes del `2026-04-18`, el repo usaba la topologia legacy `specs/`, `AGENTS/`,
-`SKILLS/`, `KNOWLEDGE/`, `schemas/` y `scripts/`. La reorg v5 movio esa
-estructura a capas explicitas y a `artifacts/` + `toolchain/`.
-
-Mapa de traduccion:
-
-| Legacy | Actual |
-|--------|--------|
-| `specs/` | `governance/`, `ontology/`, `serialization/`, `runtime/` |
-| `KNOWLEDGE/` | `artifacts/knowledge/` |
-| `AGENTS/` | `artifacts/agents/` |
-| `SKILLS/` | `artifacts/skills/` |
-| `schemas/` | `serialization/schemas/` |
-| `scripts/` | `toolchain/` |
-| `catalog/catalog_master_kora.yml` | `docs/generated/catalog.yml` |
-
-Si encuentras referencias legacy en planes archivados, fuentes importadas o
-helpers de compatibilidad, tratalas como contexto historico, no como topologia
-vigente.
 
 ## Modelo Actual De Artefactos
 
@@ -309,6 +288,39 @@ salidas materializadas y expone helpers de portabilidad como `canonical_path()`.
 - `docs/start-prompt.md` es bootstrap copiable para sesiones nuevas.
 - `docs/generated/*` es derivado; no escribas conteos a mano.
 
+## Portabilidad
+
+Alcance operativo actual: Linux y macOS con Python >= 3.11.
+
+Evidencia util:
+
+- `toolchain/kora` corta con exit `2` si Python < 3.11.
+- `check --list` incluye `portabilidad-tests`.
+- `tests/common.py` normaliza paths canonicos para evitar falsos rojos entre
+  macOS y Linux.
+
+## Historia Relevante
+
+Antes del `2026-04-18`, el repo usaba la topologia legacy `specs/`, `AGENTS/`,
+`SKILLS/`, `KNOWLEDGE/`, `schemas/` y `scripts/`. La reorg v5 movio esa
+estructura a capas explicitas y a `artifacts/` + `toolchain/`.
+
+Mapa de traduccion:
+
+| Legacy | Actual |
+|--------|--------|
+| `specs/` | `governance/`, `ontology/`, `serialization/`, `runtime/` |
+| `KNOWLEDGE/` | `artifacts/knowledge/` |
+| `AGENTS/` | `artifacts/agents/` |
+| `SKILLS/` | `artifacts/skills/` |
+| `schemas/` | `serialization/schemas/` |
+| `scripts/` | `toolchain/` |
+| `catalog/catalog_master_kora.yml` | `docs/generated/catalog.yml` |
+
+Si encuentras referencias legacy en planes archivados, fuentes importadas o
+helpers de compatibilidad, tratalas como contexto historico, no como topologia
+vigente.
+
 ## Notas Practicas
 
 - No asumas que `scripts/` raiz describe la toolchain viva; la toolchain viva
@@ -322,14 +334,3 @@ salidas materializadas y expone helpers de portabilidad como `canonical_path()`.
   preparar absorcion formal, no para darle autoridad normativa directa.
 - Si corres `kb-graph`, `index` o `sync-docs`, revisa si se modifico
   `docs/generated/*` antes de mezclar esos cambios con otro objetivo.
-
-## Portabilidad
-
-Alcance operativo actual: Linux y macOS con Python >= 3.11.
-
-Evidencia util:
-
-- `toolchain/kora` corta con exit `2` si Python < 3.11.
-- `check --list` incluye `portabilidad-tests`.
-- `tests/common.py` normaliza paths canonicos para evitar falsos rojos entre
-  macOS y Linux.

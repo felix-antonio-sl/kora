@@ -42,12 +42,12 @@ Dimensiones: `fid` fidelidad functorial · `ley` corrección de leyes · `f/h` f
 | # | Auditoría | fid | ley | f/h | anc | cob | dia | acc | par | coh | **TOT** | Veredicto |
 |---|-----------|----|----|----|----|----|----|----|----|----|--------|-----------|
 | 1 | **deep** | 5 | 5 | 5 | 5 | 4 | 5 | 5 | 5 | 5 | **44** | ejemplar |
-| 2 | report-b1e84abd | 5 | 4 | 5 | 5 | 4 | 4 | 5 | 4 | 3 | **39** | sólido |
-| 3 | report-a3f7c2e1 | 4 | 3 | 4 | 4 | 4 | 4 | 5 | 4 | 3 | **35** | sólido |
-| 4 | borrador-claude | 4 | 2 | 4 | 5 | 5 | 4 | 4 | 3 | 3 | **34** | sólido |
-| 5 | v6 | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 3 | 3 | **33** | sólido |
-| 6 | v7-0608 | 4 | 3 | 4 | 4 | 4 | 3 | 4 | 3 | 3 | **32** | sólido |
-| 7 | v7-0607 | 3 | 4 | 3 | 4 | 4 | 2 | 4 | 4 | 4 | **32** | sólido |
+| 2 | report-b1e84abd (Qwen 4.7 plus)| 5 | 4 | 5 | 5 | 4 | 4 | 5 | 4 | 3 | **39** | sólido |
+| 3 | report-a3f7c2e1 (Mimo 2.5 pro)| 4 | 3 | 4 | 4 | 4 | 4 | 5 | 4 | 3 | **35** | sólido |
+| 4 | Minimax M3 | 4 | 2 | 4 | 5 | 5 | 4 | 4 | 3 | 3 | **34** | sólido |
+| 5 | v6 (GLM-5.1) | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 3 | 3 | **33** | sólido |
+| 6 | v7-0608 (Nemotron 3 ultra)| 4 | 3 | 4 | 4 | 4 | 3 | 4 | 3 | 3 | **32** | sólido |
+| 7 | v7-0607 (Kimi 2.6) | 3 | 4 | 3 | 4 | 4 | 2 | 4 | 4 | 4 | **32** | sólido |
 | 8 | **gemini** | 2 | 3 | 1 | 2 | 1 | 0 | 0 | 2 | 3 | **14** | deficiente |
 
 El salto `deep (44) → resto (≤39)` es de 5 puntos: `deep` no es "el mejor del montón", es de otra liga. El salto `pelotón (≥32) → gemini (14)` es de 18 puntos: `gemini` no es comparable en la misma escala (es ortogonal de dominio, §4).
