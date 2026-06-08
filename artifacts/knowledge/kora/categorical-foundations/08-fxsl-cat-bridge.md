@@ -74,4 +74,16 @@ When bridging a legacy concept:
 
 ## 6. Result
 
-The practical consequence of this bridge is simple: the retired FXSL/Cat root notes no longer participate in the productive catalog, and the official mathematical backbone for KORA now extends through documents 00-08, with 06 and 07 carrying the promoted audit and behavioral machinery.
+The practical consequence of this bridge is simple: the retired FXSL/Cat root notes no longer participate in the productive catalog, and the official mathematical backbone for KORA now extends through documents 00-09, with 06 and 07 carrying the promoted audit and behavioral machinery, and 09 carrying the order-theoretic foundation of the PMI×LFS harness space (see §7).
+
+## 7. Partial Absorption of the Living ICAS Corpus
+
+The retired root notes (§§2-6) are distinct from the **living auxiliary** ICAS corpus `artifacts/knowledge/fxsl/cat/corpus-categorico-arquitecto-sistemas-categorial-agentico/` (`urn:fxsl:kb:icas-agencia`, `urn:fxsl:kb:icas-efectos`, `urn:fxsl:kb:icas-interaccion`, `urn:fxsl:kb:icas-escala`). That corpus was **not** retired; it remains present as auxiliary, non-canonical material. It is the conceptual source on which `harness-spec` founds the PMI×LFS ontological space.
+
+Until 2026-06-08 that foundation had **no** preimage in the official formal layer: `harness-spec` cited the ICAS corpus directly (via `relations.cites`), so the constitution-level ontology rested formally on non-normative auxiliary material (audit 2026-06-07, eje 7). Document 09 closes the order-theoretic part of that gap:
+
+| ICAS source | Canonical KORA target | Promoted content | Not promoted |
+|---|---|---|---|
+| icas-agencia, icas-efectos, icas-interaccion, icas-escala (living auxiliary, founds PMI×LFS) | [09-harness-lattice](urn:kora:kb:cat-harness-lattice) | PMI×LFS as a bounded product lattice; the 5 inter-axis laws as a bounded sublattice `W` (the `vector-laws` contract) | the bridge from the harness lattice to the agent F-coalgebra — recorded in 09 §5 as an **open problem**, not a demonstrated morphism |
+
+The absorption is therefore **partial and honest**: the lattice structure is now a formal-layer theorem; the coalgebraic bridge is explicitly deferred. Per the citation strategy of §3, KORA documents needing the order-theoretic foundation of PMI×LFS should cite 09; the ICAS notes remain valid only as background `Rationale`, never as formal `Traces to`.
