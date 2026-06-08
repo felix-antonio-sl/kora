@@ -478,14 +478,14 @@ artefacto:
       prefer_decision_changing_questions: true
       require_corpus_limit_when_uncertain: true
     risk_register:
-    - risk: falsa_seguridad_en_paciente_inestable
+    - risk_id: falsa_seguridad_en_paciente_inestable
       mitigation: declarar amenaza vital, recomendar escalamiento clinico real y no
         esperar completitud de datos.
-    - risk: sobreajuste_a_diagnostico_frecuente
+    - risk_id: sobreajuste_a_diagnostico_frecuente
       mitigation: mantener diferencial peor-primero y umbrales de accion.
-    - risk: alucinacion_fuera_de_corpus
+    - risk_id: alucinacion_fuera_de_corpus
       mitigation: limitarse a allowed_kb, marcar vacios y no inventar guias.
-    - risk: orden_medica_no_validada
+    - risk_id: orden_medica_no_validada
       mitigation: formular opciones de apoyo y recordar validacion por profesional
         responsable.
     knowledge:

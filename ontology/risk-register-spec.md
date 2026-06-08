@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "OpenAI Codex"
     created_at: "2026-04-19"
-    source: "Cierra H13 del backlog post-olas: formaliza el risk register como composicion Kleisli sobre el enrichment de calidad fijado por qa-spec."
-version: "1.0.0"
+    source: "Cierra H13 del backlog post-olas: formaliza el risk register como composicion Kleisli sobre el enrichment de calidad fijado por qa-spec. v1.1.0 (2026-06-08): mecaniza risk-entry-shape y risk-id-unique en kora check (cierre del enforcement-gap detectado por la meta-evaluacion 360)."
+version: "1.1.0"
 status: publicado
 tags: [spec, riesgo, kleisli, qa, governance, writer]
 lang: es
@@ -25,7 +25,7 @@ relations:
     - "urn:fxsl:kb:icas-calidad-riesgo"
 ---
 
-# KORA/Risk-Register-Spec v1.0.0
+# KORA/Risk-Register-Spec v1.1.0
 
 ## 1. Definicion
 
@@ -163,19 +163,28 @@ artefacto:
 
 | Check | Condicion | Enforcement |
 |-------|-----------|-------------|
-| `risk-entry-shape` | Cada entrada tiene campos minimos y dominios coherentes | manual |
-| `risk-id-unique` | No hay `risk_id` repetidos | manual |
-| `risk-floor-coherent` | `residual_sigma_floor` no usa forma distinta a `[0,1]^5` | manual |
+| `risk-entry-shape` | Cada entrada tiene campos minimos y dominios coherentes | check (`kora check`, HIGH) |
+| `risk-id-unique` | No hay `risk_id` repetidos | check (`kora check`, HIGH) |
+| `risk-floor-coherent` | `residual_sigma_floor` no usa forma distinta a `[0,1]^5` | manual (cubierto parcialmente por `risk-entry-shape`) |
 | `accepted-risk-owned` | Riesgo aceptado tiene `owner` explicito | manual |
 | `risk-vs-qa-floor` | Riesgo aceptado bajo `sigma_min` explicita excepcion | manual |
 
+Desde `v1.1.0`, `risk-entry-shape` y `risk-id-unique` estan mecanizados en
+`kora check` (severidad HIGH, scope artifact). El shape valida dominios solo si
+el campo numerico esta presente: `likelihood`/`impact`/`sigma_exposure`/
+`residual_sigma_floor` son opcionales en el corpus productivo; el unico campo
+minimo obligatorio es `risk_id`. Los tres checks restantes siguen siendo
+manuales.
+
 ## 9. Migracion
 
-`risk-register-spec v1.0.0` es aditiva.
+`risk-register-spec` es aditiva desde `v1.0.0`.
 
 Reglas de migracion:
 
 1. narrativas previas de riesgo **DEBERIAN** compactarse a la forma canonica;
 2. la ausencia de `risk_register` sigue siendo valida;
-3. desde esta version, las referencias prospectivas de H13 quedan cerradas:
-   `qa-spec` ya no apunta a una deuda futura sino a esta spec vigente.
+3. desde `v1.0.0`, las referencias prospectivas de H13 quedan cerradas:
+   `qa-spec` ya no apunta a una deuda futura sino a esta spec vigente;
+4. desde `v1.1.0`, cada entrada **DEBE** usar el campo canonico `risk_id` (no
+   alias como `risk`); `risk-entry-shape` lo verifica en `kora check`.

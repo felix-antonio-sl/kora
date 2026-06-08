@@ -1991,6 +1991,128 @@ def _check_construction_risk_declared(path_filter=None):
     return diags
 
 
+# ---------------------------------------------------------------------------
+# risk-register-spec §6, §8 — validacion del ledger de riesgo (Kleisli writer)
+# ---------------------------------------------------------------------------
+
+def _risk_entries(frontmatter):
+    """Extrae artefacto.contexto.risk_register (risk-register-spec §5). [] si ausente/malformado."""
+    artefacto = frontmatter.get("artefacto") or {}
+    contexto = artefacto.get("contexto") or {}
+    entries = contexto.get("risk_register")
+    return entries if isinstance(entries, list) else []
+
+
+def _in_unit_interval(x):
+    """True si x es un numero real en [0,1]. Booleano NO cuenta (True/False son int en Python)."""
+    return isinstance(x, (int, float)) and not isinstance(x, bool) and 0.0 <= x <= 1.0
+
+
+def _risk_id_uniqueness_violations(entries):
+    """risk-register-spec §6.2: cada `risk_id` DEBE ser unico dentro del artefacto.
+
+    Funcion pura (sin I/O), pineable por test. Devuelve [(code, message, fix_hint)]
+    por cada `risk_id` repetido; [] si no hay duplicados o `entries` no es lista.
+    Entradas sin `risk_id` se ignoran aqui (las cubre `_risk_entry_shape_violations`).
+    """
+    if not isinstance(entries, list):
+        return []
+    counts = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        rid = entry.get("risk_id")
+        if isinstance(rid, str) and rid.strip():
+            counts[rid] = counts.get(rid, 0) + 1
+    return [
+        ("risk-id-duplicado",
+         f"risk_id '{rid}' aparece {n} veces; debe ser unico dentro del artefacto (risk-register-spec §6.2)",
+         f"Renombra una de las entradas con risk_id '{rid}'")
+        for rid, n in counts.items() if n > 1
+    ]
+
+
+def _risk_entry_shape_violations(entries):
+    """risk-register-spec §3, §6.2-§6.4: shape minimo + dominios coherentes por entrada.
+
+    Funcion pura (sin I/O), pineable por test. Por entrada valida:
+      - es un mapping;
+      - declara `risk_id` no vacio (unico campo minimo obligatorio, §6.2);
+      - `likelihood`/`impact`, si presentes, viven en [0,1] (§6.3);
+      - `sigma_exposure`/`residual_sigma_floor`, si presentes, son 5 componentes en [0,1] (§6.4).
+
+    Los campos numericos son OPCIONALES: el corpus productivo real declara muchas
+    entradas solo cualitativas (risk_id/category/trigger/mitigation/owner/status).
+    Devuelve [(code, message, fix_hint)]; [] si todo conforma o `entries` no es lista.
+    """
+    if not isinstance(entries, list):
+        return []
+    out = []
+    for idx, entry in enumerate(entries):
+        label = f"#{idx}"
+        if not isinstance(entry, dict):
+            out.append(("risk-entry-no-mapping",
+                        f"entrada {label} no es un mapping de riesgo",
+                        "Cada entrada de risk_register es un mapping con risk_id"))
+            continue
+        rid = entry.get("risk_id")
+        if isinstance(rid, str) and rid.strip():
+            label = f"'{rid}'"
+        else:
+            out.append(("risk-entry-sin-id",
+                        f"entrada {label} no declara risk_id no vacio (campo minimo, risk-register-spec §6.2)",
+                        "Agrega un risk_id estable y no vacio"))
+        for field_name in ("likelihood", "impact"):
+            if field_name in entry and not _in_unit_interval(entry.get(field_name)):
+                out.append((f"risk-entry-{field_name}-fuera-de-rango",
+                            f"entrada {label}: {field_name}={entry.get(field_name)!r} debe vivir en [0,1] (risk-register-spec §6.3)",
+                            f"Ajusta {field_name} a un numero en [0,1]"))
+        for field_name in ("sigma_exposure", "residual_sigma_floor"):
+            if field_name in entry:
+                vec = entry.get(field_name)
+                if not isinstance(vec, list) or len(vec) != 5 or not all(_in_unit_interval(c) for c in vec):
+                    out.append((f"risk-entry-{field_name}-malformado",
+                                f"entrada {label}: {field_name} debe ser 5 componentes en [0,1] (risk-register-spec §6.4); encontrado {vec!r}",
+                                f"Declara {field_name} como lista de 5 numeros en [0,1]"))
+    return out
+
+
+def _check_risk_id_unique(path_filter=None):
+    """risk-register-spec §6.2/§8: no hay `risk_id` repetidos dentro de un artefacto."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        for code, msg, fix in _risk_id_uniqueness_violations(_risk_entries(fm)):
+            diags.append(Diagnostic(
+                check_id="risk-id-unique",
+                severity="high",
+                scope=_construction_scope(rel),
+                path=rel,
+                message=f"{code}: {msg}",
+                fix_hint=fix,
+            ))
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
+def _check_risk_entry_shape(path_filter=None):
+    """risk-register-spec §3/§6/§8: shape minimo y dominios coherentes por entrada de riesgo."""
+    diags = []
+    for _path, rel, fm in _iter_construction_artifacts(path_filter):
+        for code, msg, fix in _risk_entry_shape_violations(_risk_entries(fm)):
+            diags.append(Diagnostic(
+                check_id="risk-entry-shape",
+                severity="high",
+                scope=_construction_scope(rel),
+                path=rel,
+                message=f"{code}: {msg}",
+                fix_hint=fix,
+            ))
+    if path_filter:
+        diags = [d for d in diags if d.path.startswith(path_filter)]
+    return diags
+
+
 def _check_construction_runtime_separation(path_filter=None):
     """construction-runtime-separation: runtime outputs never become source."""
     diags = []
@@ -2970,6 +3092,20 @@ def _register_builtins():
               scope="artifact", severity="high", enforcement="lint",
               spec_ref="autoria-spec §3.7; transmutation-spec §6", phase="verify"),
         _check_compromisos_eticos_no_todo,
+    )
+    register_check(
+        Check("risk-entry-shape",
+              "Entradas de risk_register tienen campos minimos y dominios coherentes ([0,1]; sigma 5-componentes)",
+              scope="artifact", severity="high", enforcement="schema",
+              spec_ref="risk-register-spec §3, §6.2-§6.4, §8", depends=("catalog-exists",), phase="verify"),
+        _check_risk_entry_shape,
+    )
+    register_check(
+        Check("risk-id-unique",
+              "Cada risk_id es unico dentro del artefacto",
+              scope="artifact", severity="high", enforcement="lint",
+              spec_ref="risk-register-spec §6.2, §8", depends=("catalog-exists",), phase="verify"),
+        _check_risk_id_unique,
     )
 
 

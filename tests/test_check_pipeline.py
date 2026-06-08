@@ -505,6 +505,104 @@ class VectorLawsTests(unittest.TestCase):
         self.assertTrue(code and msg and fix)
 
 
+class RiskRegisterValidationTests(unittest.TestCase):
+    """Mecaniza `risk-id-unique` y `risk-entry-shape` (risk-register-spec §6, §8).
+
+    La spec §8 declaraba ambos "Enforcement: manual". El corpus productivo tiene
+    `risk_register` en >10 agentes/skills, asi que un risk_id duplicado o un
+    likelihood fuera de [0,1] pasaba los checks limpio.
+
+    Diseno fiel-a-data: los campos numericos (likelihood/impact/sigma_exposure/
+    residual_sigma_floor) son OPCIONALES en el corpus real (fugaz/polymath solo
+    declaran risk_id/category/trigger/mitigation/owner/status). El shape valida
+    dominios SOLO si el campo esta presente; el unico campo minimo es risk_id.
+    """
+
+    # --- risk-id-unique (§6.2) ---
+    def _id_codes(self, entries):
+        from kora_lib.checks import _risk_id_uniqueness_violations
+        return {code for code, _m, _f in _risk_id_uniqueness_violations(entries)}
+
+    def test_unique_ids_have_no_violation(self):
+        self.assertEqual(self._id_codes([{"risk_id": "a"}, {"risk_id": "b"}]), set())
+
+    def test_duplicate_id_is_flagged(self):
+        self.assertIn("risk-id-duplicado", self._id_codes([{"risk_id": "d"}, {"risk_id": "d"}]))
+
+    def test_empty_or_absent_register_is_inert(self):
+        from kora_lib.checks import _risk_id_uniqueness_violations
+        self.assertEqual(_risk_id_uniqueness_violations([]), [])
+        self.assertEqual(_risk_id_uniqueness_violations(None), [])
+
+    # --- risk-entry-shape (§3, §6.3-§6.4) ---
+    def _shape_codes(self, entries):
+        from kora_lib.checks import _risk_entry_shape_violations
+        return {code for code, _m, _f in _risk_entry_shape_violations(entries)}
+
+    def test_minimal_real_entry_passes(self):
+        # Forma real del corpus (fugaz/polymath): solo campos cualitativos.
+        entry = {"risk_id": "fg-scope-creep", "category": "quality",
+                 "trigger": "x", "mitigation": "y", "owner": "agente",
+                 "status": "mitigated"}
+        self.assertEqual(self._shape_codes([entry]), set())
+
+    def test_full_canonical_entry_passes(self):
+        # Ejemplo canonico de risk-register-spec §5.
+        entry = {"risk_id": "qa-fallback-01", "category": "quality",
+                 "likelihood": 0.35, "impact": 0.40,
+                 "sigma_exposure": [0.0, 0.0, 0.1, 0.2, 0.0],
+                 "residual_sigma_floor": [0.67, 0.33, 0.67, 0.67, 0.33],
+                 "owner": "runtime", "status": "mitigated"}
+        self.assertEqual(self._shape_codes([entry]), set())
+
+    def test_missing_risk_id_is_flagged(self):
+        self.assertIn("risk-entry-sin-id", self._shape_codes([{"category": "quality"}]))
+
+    def test_likelihood_out_of_range_is_flagged(self):
+        self.assertIn("risk-entry-likelihood-fuera-de-rango",
+                      self._shape_codes([{"risk_id": "a", "likelihood": 1.5}]))
+
+    def test_impact_negative_is_flagged(self):
+        self.assertIn("risk-entry-impact-fuera-de-rango",
+                      self._shape_codes([{"risk_id": "a", "impact": -0.1}]))
+
+    def test_boolean_likelihood_is_flagged(self):
+        # True es int en Python; un booleano no es una probabilidad valida.
+        self.assertIn("risk-entry-likelihood-fuera-de-rango",
+                      self._shape_codes([{"risk_id": "a", "likelihood": True}]))
+
+    def test_sigma_wrong_length_is_flagged(self):
+        self.assertIn("risk-entry-sigma_exposure-malformado",
+                      self._shape_codes([{"risk_id": "a", "sigma_exposure": [0.1, 0.2, 0.3, 0.4]}]))
+
+    def test_sigma_out_of_domain_is_flagged(self):
+        self.assertIn("risk-entry-residual_sigma_floor-malformado",
+                      self._shape_codes([{"risk_id": "a",
+                                          "residual_sigma_floor": [0.1, 0.2, 0.3, 0.4, 1.7]}]))
+
+    def test_non_mapping_entry_is_flagged(self):
+        self.assertIn("risk-entry-no-mapping", self._shape_codes(["soy un string"]))
+
+    def test_violations_carry_code_message_and_fix(self):
+        from kora_lib.checks import _risk_entry_shape_violations
+        out = _risk_entry_shape_violations([{"risk_id": "a", "likelihood": 2}])
+        self.assertTrue(out and all(len(t) == 3 and all(t) for t in out))
+
+    # --- registro + corrida limpia sobre el repo vigente ---
+    def test_checks_registered_as_high(self):
+        from kora_lib.checks import get_check
+        for cid in ("risk-id-unique", "risk-entry-shape"):
+            c = get_check(cid)
+            self.assertIsNotNone(c, f"{cid} no registrado")
+            self.assertEqual(c.severity, "high")
+
+    def test_real_corpus_passes_both_checks(self):
+        # Anti-falso-positivo: el corpus productivo vigente debe pasar limpio.
+        from kora_lib.checks import _check_risk_id_unique, _check_risk_entry_shape
+        self.assertEqual(_check_risk_id_unique(), [])
+        self.assertEqual(_check_risk_entry_shape(), [])
+
+
 class CoalgebraConformanceTests(unittest.TestCase):
     """Regresion de los nucleos coalgebraicos puros: termination y cierre.
 
