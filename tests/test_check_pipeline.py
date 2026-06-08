@@ -603,6 +603,64 @@ class RiskRegisterValidationTests(unittest.TestCase):
         self.assertEqual(_check_risk_entry_shape(), [])
 
 
+class TransmutationMonotonicityTests(unittest.TestCase):
+    """Mecaniza `transmutation-monotonicity` (transmutation-spec §3; deep R3).
+
+    Verifica la ley functorial pi/mu/xi_monotonicity: T_R preserva el orden del
+    reticulo (v1<=v2 => T_R(v1)<=T_R(v2)). Como `_project_vector` proyecta cada eje
+    de forma independiente, la monotonia del producto se REDUCE a la de cada tabla
+    por eje, decidible sobre dominio finito. `sigma = min(v, sigma_max)` es monotona
+    por construccion (no es table-driven) y queda fuera. Entradas con proyeccion
+    `None` son fuera-de-dominio (el vector se rechaza), no inversiones.
+    """
+
+    def _codes(self, matrix):
+        from kora_lib.checks import _projection_monotonicity_violations
+        return {code for code, _m, _f in _projection_monotonicity_violations(matrix)}
+
+    def test_monotone_table_has_no_violation(self):
+        matrix = {"xi": {0: (0, "full"), 1: (1, "full"), 2: (2, "full"),
+                         3: (2, "partial"), 4: (2, "partial")}}
+        self.assertEqual(self._codes(matrix), set())
+
+    def test_capping_is_monotone(self):
+        matrix = {"pi": {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (2, "partial")}}
+        self.assertEqual(self._codes(matrix), set())
+
+    def test_inverted_table_is_flagged(self):
+        # 3->3 pero 4->2: 3<4 y T(3)=3 > T(4)=2 viola monotonia
+        matrix = {"xi": {0: (0, "full"), 1: (1, "full"), 2: (2, "full"),
+                         3: (3, "full"), 4: (2, "partial")}}
+        self.assertIn("xi-no-monotono", self._codes(matrix))
+
+    def test_none_projection_is_not_a_violation(self):
+        # mu 3->None: fuera de dominio, el vector se rechaza; no es inversion.
+        matrix = {"mu": {0: (0, "full"), 1: (1, "full"), 2: (2, "full"), 3: (None, "none")}}
+        self.assertEqual(self._codes(matrix), set())
+
+    def test_non_dict_matrix_is_inert(self):
+        from kora_lib.checks import _projection_monotonicity_violations
+        self.assertEqual(_projection_monotonicity_violations(None), [])
+        self.assertEqual(_projection_monotonicity_violations("x"), [])
+
+    def test_violations_carry_code_message_and_fix(self):
+        from kora_lib.checks import _projection_monotonicity_violations
+        bad = _projection_monotonicity_violations({"pi": {0: (2, "full"), 1: (0, "full")}})
+        self.assertTrue(bad and all(len(t) == 3 and all(t) for t in bad))
+
+    def test_checks_registered_as_high_repo(self):
+        from kora_lib.checks import get_check
+        c = get_check("transmutation-monotonicity")
+        self.assertIsNotNone(c, "transmutation-monotonicity no registrado")
+        self.assertEqual(c.severity, "high")
+        self.assertEqual(c.scope, "repo")
+
+    def test_real_matrices_are_monotone(self):
+        # Regresion: todas las tablas de proyeccion canonicas vivas preservan el orden.
+        from kora_lib.checks import _check_transmutation_monotonicity
+        self.assertEqual(_check_transmutation_monotonicity(), [])
+
+
 class CoalgebraConformanceTests(unittest.TestCase):
     """Regresion de los nucleos coalgebraicos puros: termination y cierre.
 

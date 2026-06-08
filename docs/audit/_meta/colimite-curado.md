@@ -83,7 +83,7 @@ Backlog, cada ítem con dueño y palanca:
 | Pri | Acción | Tipo | Palanca | Ancla |
 |-----|--------|------|---------|-------|
 | ~~P0~~ **HECHO** | `risk-id-unique` + `risk-entry-shape` mecanizados (HIGH, TDD) | check-fix | cerrado 2026-06-08 → ver Actualización | `cierre-huecos.md` B.2 |
-| **P0** | Implementar `transmutation-monotonicity` (decidible sobre retículo finito, ≤1600 combos/runtime) | check-fix | **mecanizable ya** (deep R3) | base §1 fila 7 |
+| ~~P0~~ **HECHO** | `transmutation-monotonicity` mecanizado (HIGH repo, TDD) | check-fix | cerrado 2026-06-08 → ver Actualización | base §1 fila 7 |
 | **P1** | Reclasificar `harness-spec §10.2` (procesos deprecada + gemini/mastra archivadas como functores vivos) | spec-fix | **HITL** (harness en freeze) | B.1 |
 | **P1** | Re-anclar `transmutation`/`harness`/`autoria` a la Formal Layer oficial (no `fxsl/cat`) | spec-fix | **HITL**, coordinar **Frente 2** | FL-4 |
 | **P2** | Implementar el check `P2-bisimulación` (07 §8 da el procedimiento) — cierra el hallazgo central | check-fix (research) | requiere modelo de interfaz runtime | A.3 |
@@ -106,8 +106,19 @@ sesión, vía TDD (15 tests; helpers puros `_risk_id_uniqueness_violations` /
   no-canónico `risk:` en vez de `risk_id:` (4 entradas) — corregido (artifact-fix,
   no relajación del check). Ningún otro productivo infringía.
 
-Pendiente del backlog: `transmutation-monotonicity` (P0), re-anclaje a Formal
-Layer + harness-zombie (P1, HITL/Frente 2), `P2-bisimulación` (P2).
+**Segundo P0 cerrado (misma sesión, TDD):** `transmutation-monotonicity`
+mecanizado (HIGH, scope repo; 8 tests; helper puro
+`_projection_monotonicity_violations`). Mecaniza las leyes functoriales
+`pi/mu/xi_monotonicity` (transmutation-spec §3, deep R3): verifica que cada tabla
+de `PRESERVATION_MATRIX` preserve el orden del retículo (`v1≤v2 ⟹ T_R(v1)≤T_R(v2)`).
+Insight: como `_project_vector` proyecta cada eje de forma independiente, la
+monotonía del producto se **reduce a la de cada tabla por eje** — decidible y
+barato. Las 5 matrices canónicas (claude-code/codex/openclaw/opencode/hermes)
+pasan limpias; el check queda como **guardia de regresión** ante futuras ediciones
+de las tablas. Registro de checks: 36 → **37**; `kora check --strict` = **37/37**.
+
+Pendiente del backlog: re-anclaje a Formal Layer + harness-zombie (P1, HITL/Frente
+2), `P2-bisimulación` (P2). Ambos **P0 mecanizables están cerrados.**
 
 ## 6 · Cierre
 

@@ -2113,6 +2113,78 @@ def _check_risk_entry_shape(path_filter=None):
     return diags
 
 
+# ---------------------------------------------------------------------------
+# transmutation-spec §3 — monotonicidad functorial de T_R (preservacion de orden)
+# ---------------------------------------------------------------------------
+
+def _projection_monotonicity_violations(matrix):
+    """Verifica que la proyeccion por eje de un runtime preserve el orden del reticulo.
+
+    Funcion pura (sin I/O), pineable por test. transmutation-spec §3 declara
+    pi/mu/xi_monotonicity como leyes functoriales (`status: preserved`, evidencia
+    "axis projection is <= source or equal") pero ningun check las verificaba; deep
+    R3 las nombra decidibles sobre dominio finito.
+
+    Como `transmute._project_vector` proyecta cada eje de forma INDEPENDIENTE, la
+    monotonia del producto T_R se reduce a la de cada tabla por eje: si v1<v2 (ambos
+    in-domain, proyeccion no-None) debe valer T(v1)<=T(v2). `sigma` se proyecta como
+    `min(v, sigma_max)` (monotona por construccion, no table-driven) y queda fuera.
+    Entradas con proyeccion `None` son fuera-de-dominio (el vector se rechaza), no
+    inversiones.
+
+    Devuelve [(code, message, fix_hint)] por cada par que viola monotonia; [] si la
+    tabla preserva el orden o `matrix` no es dict.
+    """
+    if not isinstance(matrix, dict):
+        return []
+    out = []
+    for axis in ("pi", "mu", "xi", "lambda", "phi"):
+        rules = matrix.get(axis)
+        if not isinstance(rules, dict):
+            continue
+        projed = []
+        for src, entry in rules.items():
+            if not isinstance(src, int) or isinstance(src, bool):
+                continue
+            proj = entry[0] if isinstance(entry, (tuple, list)) and entry else None
+            if not isinstance(proj, int) or isinstance(proj, bool):
+                continue  # None / fuera-de-dominio: el vector se rechaza, no es inversion
+            projed.append((src, proj))
+        projed.sort()
+        for i in range(len(projed)):
+            for j in range(i + 1, len(projed)):
+                (v1, p1), (v2, p2) = projed[i], projed[j]
+                if v1 < v2 and p1 > p2:
+                    out.append((f"{axis}-no-monotono",
+                                f"eje {axis}: T({v1})={p1} y T({v2})={p2} violan monotonia (v1<v2 pero T(v1)>T(v2))",
+                                f"Corrige la tabla de proyeccion de {axis} para preservar el orden del reticulo"))
+    return out
+
+
+def _check_transmutation_monotonicity(path_filter=None):
+    """transmutation-spec §3: T_R preserva el orden del reticulo (monotonicidad por eje).
+
+    Mecaniza pi/mu/xi_monotonicity (y lambda/phi) sobre cada runtime canonico vivo.
+    Repo-scope: verifica las tablas de `transmute.PRESERVATION_MATRIX`, no artefactos.
+    Los targets en pausa (gemini/mastra/agentskills) quedan fuera del enforcement vivo.
+    """
+    from .transmute import PRESERVATION_MATRIX, PAUSED_TARGETS
+    diags = []
+    for target, matrix in PRESERVATION_MATRIX.items():
+        if target in PAUSED_TARGETS:
+            continue
+        for code, msg, fix in _projection_monotonicity_violations(matrix):
+            diags.append(Diagnostic(
+                check_id="transmutation-monotonicity",
+                severity="high",
+                scope="repo",
+                path=f"toolchain (PRESERVATION_MATRIX['{target}'])",
+                message=f"{code}: {msg}",
+                fix_hint=fix,
+            ))
+    return diags
+
+
 def _check_construction_runtime_separation(path_filter=None):
     """construction-runtime-separation: runtime outputs never become source."""
     diags = []
@@ -3106,6 +3178,13 @@ def _register_builtins():
               scope="artifact", severity="high", enforcement="lint",
               spec_ref="risk-register-spec §6.2, §8", depends=("catalog-exists",), phase="verify"),
         _check_risk_id_unique,
+    )
+    register_check(
+        Check("transmutation-monotonicity",
+              "Las tablas de proyeccion T_R preservan el orden del reticulo (pi/mu/xi/lambda/phi monotonas)",
+              scope="repo", severity="high", enforcement="schema",
+              spec_ref="transmutation-spec §3; harness-spec §4.1", phase="verify"),
+        _check_transmutation_monotonicity,
     )
 
 
