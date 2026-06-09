@@ -6,13 +6,13 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-27"
     source: "Diseno historico desde el corpus base OPM v3.0.0. Desde v1.5.0 queda reanclada al corpus OPM/Forja SSOT ES como referencia primaria: urn:fxsl:kb:reglas-opm-estrictas-es, urn:fxsl:kb:spec-forja-opd-es, urn:fxsl:kb:spec-forja-opl-es, urn:fxsl:kb:metodologia-forja-opm-es y urn:fxsl:kb:opm-categorial-es como puente formal. Las capas base opm-es/opd-es/opl-es/manual-metodologico-opm-es quedan como procedencia y soporte cuando el corpus Forja las delega. v1.5.1 absorbe desde deep-opm-pro el contrato re-elicitar para logs de decisiones y anclas normativas. v1.5.2 absorbe la ratificacion P3: normalizacion lexica y normativa en E2, compilador como verificador determinista."
-    updated_at: "2026-06-09"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana. v1.6.0 integra el render headless fiel de opforja (H1, 'bun run render:headless' en deep-opm-pro) como pasada visual del agente: nuevo estado 'revisar-visual' que cierra el loop dominio->opforja read-through (el agente lee PNG+SVG+avisos por OPD sin abrir la UI y vuelve a refinar el proto, fuente unica), y 'serializar-opd' prefiere ese render fiel sobre jointjs cuando deep-opm-pro esta disponible."
-version: "1.6.0"
+    updated_at: "2026-06-10"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana. v1.6.0 integra el render headless fiel de opforja (H1) como pasada visual del agente: nuevo estado 'revisar-visual' read-through y 'serializar-opd' con H1 primario sobre jointjs. v1.7.0 sincroniza la skill con los cortes G*/E-1/W6-alpha de opforja: reconoce el puente de contexto W6.0 como entrada de triaje (markdown 'Contexto de modelado' + contador de cruces g3), absorbe la tabla de formas laxas retiradas de la familia-V (cuando/segun/V3-V5-V7 rechazan ruidoso; la forma E2 + [RATIFICAR] es responsabilidad de la skill), generaliza re-elicitar con la taxonomia de anclas del compilador (norma/ratificacion/candidata: la ratificacion meta se resuelve por acto de modelado, no por fuente legal), incorpora la variante de OPD generic-view (vista ad-hoc sin semantica de refinamiento, OPL delta-cero, exenta de frontera), integra el golden-harness H2 (verify:reproducible) y actualiza el drift documental (sello de procedencia 3 componentes post-G2, glosario retirado del pipeline, capacidades vigentes de la app, checkers B-2/B-4/B-6)."
+version: "1.7.0"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada primero al corpus OPM/Forja SSOT ES y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
-tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente, opforja, ssot-forja, reglas-estrictas, spec-forja-opd, spec-forja-opl, opm-categorial, wizard-sd, re-elicitar, ancla-normativa]
+tags: [opm, iso-19450, modelado-sistemas, mbse, opd, opl-es, bimodal, modelo-conceptual, deep-opm-pro, dialectico, anti-complaciente, opforja, ssot-forja, reglas-estrictas, spec-forja-opd, spec-forja-opl, opm-categorial, wizard-sd, re-elicitar, ancla-normativa, puente-w6, generic-view, familia-v, sello-procedencia]
 lang: es
 extensions:
   kora:
@@ -46,7 +46,7 @@ extensions:
       - id: deep-opm-pro
         path: "~/projects/deep-opm-pro/app"
         rol: "modelador OPM interactivo (mesa de trabajo primaria)"
-        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts); y CLI de render headless 'bun run render:headless --proto <md>|--modelo <json> --out <dir>' que emite PNG+SVG por OPD fiel a opforja + 00-indice.json/opl/avisos/ledger/procedencia (app/scripts/render-headless.ts). Read-through: la herramienta no muta el proto/dominio."
+        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts), con sello de procedencia opcional de 3 componentes {protoHash, autoriaVersion, layoutVersion} dentro de modelo.procedencia — solo el compilador de autoria (compilarProto+emitirBundle) emite sellos. CLI de render headless 'bun run render:headless --proto <md>|--modelo <json> --out <dir>' (H1) que emite PNG+SVG por OPD fiel a opforja + 00-indice.json/opl/avisos/ledger/procedencia. CLI golden-harness 'bun run verify:reproducible --proto <md>|--modelo <json> --golden <bundle.json>' (H2, exit 0/1/2). Entrada inversa: markdown 'Contexto de modelado' del puente W6.0 (procedencia + pendientes [RATIFICAR] + diagnostico JSON + OPL). Read-through: las herramientas no mutan el proto/dominio."
         autoridad_semantica: "se subordina al corpus OPM/Forja SSOT ES; no lo redefine"
 artefacto:
   perfil:
@@ -64,6 +64,8 @@ artefacto:
       - "identificacion y estandarizacion de citas normativas en el proto-modelo"
       - "consumo de LogDecisiones v0 emitido por deep-opm-pro para ratificar anclas normativas"
       - "pasada visual del modelo sin abrir la UI: ver el render fiel por OPD para cazar regresiones de layout/estructura antes de entregar"
+      - "recepcion de un 'Contexto de modelado' copiado desde opforja (puente W6.0): procedencia + pendientes [RATIFICAR] + diagnostico + OPL en un solo markdown"
+      - "migracion de formas OPL laxas retiradas (colas cuando/segun, familia-V) hacia la forma E2 estricta + [RATIFICAR] que el compilador acepta"
     salidas:
       - "OPM model tipado por capas (cosas, links, OPDs por nivel) consistente con el corpus OPM/Forja SSOT ES"
       - "OPL-ES texto canonico bimodal con el OPD"
@@ -73,6 +75,8 @@ artefacto:
       - "hook a jointjs-open-source para render estatico cuando NO se quiere abrir el modelador"
       - "reporte de validacion tripartita (estructural R-*/V-* / metodologica heuristicas Forja A5+A8 / estilo legibilidad R-VIS-*), homologado al panel de issues del modelador, con deteccion de anti-patrones canonicos AP-01 a AP-30"
       - "render headless fiel a opforja (PNG+SVG por OPD) para la pasada visual del agente sin abrir la UI, via 'bun run render:headless' de deep-opm-pro"
+      - "veredicto de reproducibilidad byte-identica contra un golden via 'bun run verify:reproducible' (H2) cuando el flujo exige golden-harness"
+      - "respuesta al puente W6.0: pendientes [RATIFICAR] resueltos por acto de modelado o ratificacion, sobre el proto como fuente unica"
   plan:
     estado_inicial: triaje
     estado_terminal: entregar
@@ -121,6 +125,10 @@ artefacto:
       - "Re-elicitar anclas es acto de modelado, no marca de UI: solo LogDecisiones v0 con transicion.a == 'ratificado-con-fuente' y fuente presente muta el proto/bundle; 'anotado-en-mesa' no muta."
       - "Frontera P3 ratificada: la skill normaliza lexico abierto de dominio en E2 (verbos, morfologia, citas normativas) proponiendo mapeos y pidiendo confirmacion humana; el compilador determinista solo verifica OPL-ES estricto y emite bundle reproducible."
       - "Anclas normativas: la skill identifica citas por forma/localizador y las estandariza en el proto como candidatos o anclas declaradas; no valida verdad legal ni inventa fuente. Una AnclaNormativa vigente exige confirmacion humana o fuente ratificada."
+      - "Taxonomia de anclas del compilador (W5.2): clase 'norma' (cita explicita) compila a ancla vigente; clase 'ratificacion' ([RATIFICAR[ #clave][: texto]]) compila a pendiente-ratificacion; clase 'candidata' ([C1]/[Q14]-style) JAMAS compila, se conserva como anotacion. La skill emite y consume estas tres clases, no inventa una cuarta."
+      - "Formas laxas retiradas rechazan ruidoso: las colas 'cuando' y 'segun' y las formas V3/V4/V5/V7 de la familia-V ya NO compilan en deep-opm-pro. La skill es la responsable de emitir la forma E2 estricta (+ [RATIFICAR] explicito para lo meta); nunca emitir un proto con formas retiradas."
+      - "generic-view no es refinamiento: un OPD con vista {kind: 'generic-view'} navega/explica, no crea hechos. No emite OPL (delta-cero), no participa de los checkers de frontera/descomposicion (R-CAT-EQ-3 no aplica) y no exige motivo de refinamiento; exige en cambio proposito de vista declarado."
+      - "Sello de procedencia: solo el compilador de autoria emite sellos ({protoHash, autoriaVersion, layoutVersion} dentro de modelo.procedencia). Un bundle emitido a mano por la skill NO porta sello y el panel de procedencia de opforja lo declarara como tal; no falsificar ni simular sellos."
     compromisos_eticos:
       transparency: "Maxima; cada decision de modelado cita primero la regla propietaria del corpus Forja (R-*, AP-*, R-CAT-*, spec OPD/OPL o metodologia Forja) y solo despues la capa base delegada si corresponde. Cada bloqueo cita el barro detectado y la regla que se viola."
       accountability: "Maxima; la skill no asume por el operador. Cada supuesto se declara como tal y queda registrado en el reporte. Construir sobre supuestos no declarados es una falta tan grave como violar V-*."
@@ -247,6 +255,8 @@ Clasificar la solicitud para decidir el siguiente estado:
 | "re-elicita este LogDecisiones v0" / "ratifica estas anclas" | `re-elicitar` |
 | "muestrame como se ve el modelo" / "render fiel sin abrir la UI" / "pasada visual antes de entregar" | `revisar-visual` |
 | "dame el SVG/PNG de este OPD" | `serializar-opd` |
+| pega un markdown "Contexto de modelado" (puente W6.0 de opforja) | rutear por seccion (ver §Puente W6.0): pendientes [RATIFICAR] → `re-elicitar`; diagnostico → `validar-modelo`/`refinar-modelo`; OPL → fuente de trabajo read-through |
+| "migra estas formas laxas" / proto con `cuando`/`segun`/familia-V retirada | `normalizar-proto` (tabla de retiros E2) |
 | "audita este JSON 'deep-opm-pro.modelo.v0'" | hidratar primero el bundle (ver §Composicion con deep-opm-pro), luego `validar-modelo` |
 
 Antes de avanzar, verificar que el sistema tiene funcion transformadora. Si no, abortar con sugerencia de alternativa.
@@ -338,6 +348,49 @@ Protocolo:
    localizador, fuente o target claro, no convertirla en hecho. Usar `aclarar`
    con una pregunta unica o dejarla como candidata no-confirmada.
 
+**Formas laxas retiradas (migracion familia-V).** El compilador de deep-opm-pro
+retiro estas formas del puente legacy `mapearFamiliaV` — hoy **rechazan ruidoso**
+(P3: «compilador = verificador, no puenteador silencioso»). La forma E2 estricta
+es responsabilidad de esta skill:
+
+| Forma laxa (rechazada) | Forma E2 estricta que emite la skill |
+|------------------------|--------------------------------------|
+| `X [en 's'] puede iniciar P` (V3) | `X en estado 's' inicia P` (evento de estado; la disyuncion multi-destino NO es V3 y se modela aparte) |
+| `O alimenta P` (V4) | `P requiere O` (instrumento persistente objeto→proceso) |
+| `P detecta O` (V5) | `P genera O` (resultado: el objeto detectado es evento **producido**; la skill exige que O no sea receptor preexistente) |
+| `A precede a B` (V7) | `A invoca B` (proceso→proceso = invocacion) |
+| `<oracion> cuando <condicion>` (cola `cuando`) | `<oracion estricta>. [RATIFICAR: <condicion>]` — la condicion es ancla meta, no hecho OPM |
+| `<oracion> a 'a','b' o 'c' segun <objeto>` (cola `segun`) | abanico multi-destino modelado estricto + correspondencia estado→rama explicita (condicion estructural o `[RATIFICAR]`); el path `segun` producia perdida silenciosa de enlaces |
+
+Sobrevive en el puente solo R4 (`<proceso> requiere <objeto> dentro del
+<ambito>`), que compila el hecho + la cola como ancla pendiente. Las 11 reglas
+requiere-decision restantes (V1, V2, V6, V8-V11, V13-V17) siguen como legacy
+estable del compilador: la skill no las da por retiradas ni fuerza su migracion
+sin decision del operador.
+
+**Criterio del spike para migrar cualquier forma laxa**: ¿la forma es **OPM
+nuclear** (estructura con glifo + oracion bimodal)? → modelar estricto. ¿Es
+**meta/pendiente** (ancla sin superficie bimodal, p.ej. una condicion de dominio
+no modelada)? → sufijo `[RATIFICAR[ #clave][: texto]]` sobre la oracion estricta.
+Un `[RATIFICAR]` tras una oracion estricta **no la degrada**: el hecho compila y
+el pendiente queda como ancla `pendiente-ratificacion`.
+
+**Taxonomia de anclas extraidas inline (W5.2 del compilador).** Tres clases, y
+solo tres:
+
+- `norma` — cita normativa explicita (`Ley 20.584`, `DS art. 17`): compila a
+  `AnclaNormativa` con `estado: "vigente"`.
+- `ratificacion` — marca `[RATIFICAR[ #clave][: texto]]`: compila a
+  `AnclaNormativa` con `estado: "pendiente-ratificacion"`. Sin `#clave`
+  explicita, la clave derivada es `ratificar:<target>` (nunca usa la nota).
+- `candidata` — etiqueta `[C1]`/`[Q14]`/`[B3]`-style: **jamas compila**; se
+  conserva como anotacion del proto.
+
+**Exencion declarativa de apariciones.** Si una entidad queda deliberadamente
+sin apariciones en ningun OPD durante una etapa del modelado, marcarla con la
+glosa `[sin-aparicion-deliberada]` para eximirla del checker
+`ENTIDAD_SIN_APARICIONES`; es un escape-hatch transitorio, no un estado final.
+
 Salida:
 
 - proto-modelo reescrito en OPL-ES estricto cuando el operador haya confirmado
@@ -383,6 +436,23 @@ Cuatro pares canonicos (ver `referencias/refinamiento-mecanismos.md`):
 
 Decision guiada: elegir el par segun la naturaleza del detalle pendiente. No ciclar el arbol de refinamiento (V-220 / V-221 en opd-es).
 
+**Vista generica (`generic-view`, E-1) — NO es refinamiento.** deep-opm-pro
+soporta una variante de OPD `vista: { kind: "generic-view", readOnly? }` (DSL:
+`vistaGenerica(opdKey, {readOnly?})` sobre un OPD ya declarado): una vista
+ad-hoc que **reune apariciones existentes para navegar o explicar**, sin
+semantica de refinamiento. Reglas:
+
+- No exige transformee ni motivo de refinamiento; exige en cambio **proposito de
+  vista declarado** (que pregunta de lectura responde).
+- No crea hechos: su OPL es **delta-cero** (§243/V-114 — la vista navega, no
+  afirma) y queda **exenta** de los checkers de frontera/descomposicion
+  (R-CAT-EQ-3 no aplica).
+- Para multi-edges legitimos por transicion de estado dentro de una vista, usar
+  `aparecerEnlacePorId(opdKey, enlaceId)` (F1) o
+  `aparecerEnlacePorTransicion(...)` (H5) — la aparicion por nombre es ambigua.
+- No clasificar una `generic-view` como «refinamiento sin motivo»: es otra
+  categoria. El arbol OPD de opforja la marca con chip «Vista».
+
 **Gate de claridad antes de refinar**: cada paso de refinamiento exige al operador responder, antes de aplicar:
 
 1. **Que pregunta del modelo se contesta con este OPD hijo?** — si no hay pregunta, no hay refinamiento. Derivar a `aclarar`.
@@ -398,6 +468,15 @@ Tres niveles (ver `referencias/checklist-validacion.md`), homologados a la **cla
 1. **Bloqueos estructurales** — Reglas V-* de la capa visual (`opd-es`), reglas semanticas de la capa nuclear (`opm-es`), y reglas prescriptivas operativas (`reglas-opm-estrictas-es` R-COSA-*, R-OBJ-*, R-PROC-*, R-EST-*, R-INS-*, R-NOM-*, R-EJEC-*): firma de enlaces, clases validas de cosas y links, aciclicidad del refinement tree, integridad de referencias OPD↔OPL. Validar contra los **30 anti-patrones canonicos** (AP-01 a AP-30) aplicando su politica especifica (bloqueo, reporte, supresion o no-canonizado) y las zonas no canonizadas (R-ZNC-*). Usar el checklist de cierre OPD↔OPL del Anexo A (12 gates: identidad, firma, estado, OPL, parseo, modificadores, refinamiento, distribucion, vistas, UI, export, deuda).
 2. **Mejoras metodologicas** — Heuristicas de la Metodologia Forja (A5: 38 heuristicas §9.1-§9.38, A8.1) y del manual base solo por delegacion: claridad (≤ 20-25 entidades por OPD), completitud (estructura + comportamiento + funcion explicitas), bimodalidad efectiva, jerarquia de refinamiento bien motivada, equivalencia horizontal de realizaciones hermanas por firma de frontera (R-CAT-EQ-2), preservacion vertical in-zoom/out-zoom (R-CAT-EQ-3), conflictos de linealidad (R-CAT-LIN-2).
 3. **Estilo / legibilidad** — Convenciones tipograficas, posicionamiento, etiquetas, codigos OPD, reglas visuales prescriptivas (R-VIS-* del Anexo B); equivalentes a las advertencias visuales del modelador.
+
+Checkers vigentes del modelador homologados a este reporte (ademas de los
+estructurales): `EFECTO_OBJETO_SIN_ESTADOS` (§3.15, severidad mejora),
+`ENTIDAD_SIN_APARICIONES` (severidad mejora; exencion declarativa por glosa
+`[sin-aparicion-deliberada]`), y los calibrados es-CL
+`PROCESO_NOMBRE_FORMA_VERBAL` (lexico de deverbales irregulares: Ingreso,
+Cierre, Retiro, Traslado, sufijos -ura/-ncia) y `OBJETO_NOMBRE_SINGULAR` (la
+singularidad se juzga sobre la **cabeza** nominal, no sobre el complemento).
+Los OPDs `generic-view` quedan fuera de los checkers de frontera/descomposicion.
 
 Salida: reporte pass/fail por categoria con cita de la regla violada (V-NN, §X.Y, R-*, AP-NN) y sugerencia de fix. La forma del reporte es directamente reciclable al panel de issues del modelador (codigo, severidad, regla, contexto, fix sugerido).
 
@@ -442,14 +521,57 @@ Reglas:
 - **Gate de equivalencia funcional** (`reglas-opm-estrictas-es` Anexo C): si el bundle contiene realizaciones hermanas comparables, verificar R-CAT-EQ-2 mediante firma de frontera; si contiene descomposicion (in-zoom), verificar R-CAT-EQ-3 preservando la firma del proceso abstracto (out-zoom). El checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA` detecta la violacion vertical.
 - **Gate de composicion** (R-CAT-COMP-1/2/3 de `reglas-opm-estrictas-es` Anexo C): si el bundle compone multiples modelos, la interfaz compartida no debe duplicar entidades, no debe dejar referencias colgantes, y debe ser asociativa modulo namespacing de ids.
 
+**Procedencia y limites del bundle artesanal.** Un bundle emitido a mano por
+esta skill **no porta sello de procedencia**: solo el compilador de autoria de
+deep-opm-pro (`compilarProto` + `emitirBundle`) emite el sello de 3 componentes
+`{protoHash, autoriaVersion, layoutVersion}` dentro de `modelo.procedencia`. En
+consecuencia: (a) el panel de procedencia de opforja (W6.6) declarara «sin sello
+— no emitido por el compilador de autoria»; (b) el import NO cuenta como cruce
+skill→app del contador g3 (solo los bundles con sello cuentan); (c) el bundle no
+participa del golden-harness H2. Si el flujo del operador exige sello,
+reproducibilidad o trazabilidad proto→bundle, la ruta es **proto OPL-ES estricto
+→ compilador** (el proto es la fuente unica); la skill lo declara y no simula la
+procedencia. La adopcion del camino compilador como ruta primaria de
+`serializar-bundle` es decision HITL pendiente del operador.
+
+**Verificacion de reproducibilidad (H2).** Cuando el entregable deba ser
+byte-identico con un golden versionado (dogfood de dominio, CI), usar el
+golden-harness de deep-opm-pro en vez de comparaciones manuales:
+
+```bash
+cd ~/projects/deep-opm-pro/app && bun run verify:reproducible --proto <md> --golden <bundle.json>
+# o con un JSON ya emitido:  --modelo <json> --golden <bundle.json>
+```
+
+Exit `0` = byte-identico, `1` = difiere (el FAIL nombra el componente del sello
+divergente si ambos bundles lo portan, y las primeras lineas distintas), `2` =
+uso invalido. `--proto` emite sin sello por defecto para comparar contra goldens
+estandar.
+
 Salida: string JSON listo para pegar en el dialogo de import del modelador (o para consumir via `hidratarModelo` programaticamente).
 
-### `re-elicitar`: consumir `LogDecisiones v0`
+### `re-elicitar`: consumir `LogDecisiones v0` y resolver pendientes `[RATIFICAR]`
 
-Cuando el operador o `deep-opm-pro` entrega un `LogDecisiones` v0, esta skill
-reabre el proto-modelo o bundle de origen para incorporar ratificaciones
-normativas. Esto es **acto de modelado E0-E2**: la app registra transiciones,
-pero no decide ni muta la fuente canonica.
+Cuando el operador o `deep-opm-pro` entrega un `LogDecisiones` v0 — o un
+«Contexto de modelado» W6.0 con pendientes `[RATIFICAR]` — esta skill reabre el
+proto-modelo o bundle de origen para incorporar resoluciones. Esto es **acto de
+modelado E0-E2**: la app registra transiciones, pero no decide ni muta la fuente
+canonica.
+
+**Dos especies de ancla pendiente, dos vias de resolucion:**
+
+1. **Ancla normativa** (clase `norma` o `[RATIFICAR]` sobre una cita): su
+   ratificacion exige **fuente** (`ratificado-con-fuente` + `fuente` presente).
+   La skill no valida verdad legal; registra procedencia declarada.
+2. **Ancla meta** (`[RATIFICAR: <condicion/duda de modelado>]`, p.ej.
+   `[RATIFICAR: detecta una IAAS]` o `[RATIFICAR: ¿es objeto-frontera?]`): no
+   hay fuente legal que esperar — su canal reverse es esta skill, no el parser.
+   Se resuelve por **acto de modelado** con el operador, en una de tres salidas:
+   (a) **modelar estricto** la condicion como hecho OPM (evento, condicion,
+   estado, abanico) y retirar el ancla; (b) **declararla supuesto o fuera de
+   alcance** (decision declarada, queda en el reporte y el ancla puede pasar a
+   `vigente` como decision ratificada por el operador); o (c) **mantener el
+   pendiente** como deuda explicita. Nunca borrar un `[RATIFICAR]` en silencio.
 
 Entrada requerida:
 
@@ -587,6 +709,11 @@ Cuando el modelador este abierto, indicar al agente invocador que el bundle se i
 19. **Re-elicitar anclas**: un `LogDecisiones v0` solo muta la fuente cuando `transicion.a == "ratificado-con-fuente"` y existe `fuente`. `anotado-en-mesa` es marca de la app y no muta. El match es por `claveAncla`; no usar ids posicionales.
 20. **P3 ratificada: normalizacion antes de compilacion**: los verbos de dominio, morfologia abierta y citas normativas se estandarizan en E2 por la skill con confirmacion humana. El compilador no aprende lexico abierto: verifica OPL-ES estricto, rechaza con diagnostico y emite bundle determinista.
 21. **Normativo a estandar por la skill**: identificar referencias normativas por localizadores (`art.`, `§`, `inc.`, `letra`, `N°`, etc.) o cuerpo-con-numeracion, nunca por una lista cerrada de siglas. La skill lleva cada referencia al estandar del proto (`cuerpo`, `localizador`, `articulos/seccion`, `target`, `claveProto`, `estado`, `nivelAutoridad`); el compilador solo verifica ese estandar.
+22. **Formas laxas retiradas**: las colas `cuando`/`segun` y las formas V3/V4/V5/V7 de la familia-V rechazan ruidoso en el compilador. La skill emite siempre la forma E2 estricta (tabla en `normalizar-proto`); lo meta va como sufijo `[RATIFICAR[ #clave][: texto]]`, que no degrada la oracion estricta. Las requiere-decision V1-V2/V6/V8-V11/V13-V17 son legacy estable: no forzar su migracion sin decision del operador.
+23. **Taxonomia de anclas cerrada**: `norma` (compila vigente), `ratificacion` (compila pendiente-ratificacion), `candidata` (jamas compila). Un ancla **meta** (`[RATIFICAR]` sobre condicion/duda de modelado) se resuelve por acto de modelado en `re-elicitar` — modelar estricto, declarar supuesto, o mantener deuda — nunca por fuente legal inventada ni por borrado silencioso.
+24. **generic-view no es refinamiento**: OPL delta-cero, exenta de frontera/descomposicion, sin exigencia de transformee; exige proposito de vista declarado. No acusarla con las reglas de refinamiento ni exigirle R-CAT-EQ-3.
+25. **Procedencia honesta**: solo el compilador de autoria emite sellos. Un bundle artesanal de la skill se entrega declarando que no porta sello (sin cruce g3, sin golden-harness); si el flujo exige procedencia, la ruta es proto→compilador. Prohibido simular o copiar un sello.
+26. **El contexto W6.0 es derivado**: el «Contexto de modelado» del puente se consume, no se edita. Toda correccion va al proto (fuente unica) y se recompila.
 
 ## Composicion con deep-opm-pro (mesa de trabajo primaria)
 
@@ -594,7 +721,9 @@ Cuando el modelador este abierto, indicar al agente invocador que el bundle se i
 
 ### Capacidades de la app sobre las que se apoya esta skill
 
-Al asumir que el modelador esta disponible y al dia con sus lineas de desarrollo activas (rondas 19–21), la skill puede ofrecer al agente invocador estas garantias operativas:
+Al asumir que el modelador esta disponible y al dia con `main` (los rotulos de
+ronda/corte indican procedencia del feature, no lineas activas), la skill puede
+ofrecer al agente invocador estas garantias operativas:
 
 | Capacidad de la app | Aporte al flujo de la skill |
 |----------------------|------------------------------|
@@ -605,13 +734,21 @@ Al asumir que el modelador esta disponible y al dia con sus lineas de desarrollo
 | **OPL bimodal honesto** con eco en cada cambio (ronda 20 / L2) | La skill puede entregar OPL-ES como prueba inicial; la app la mantendra sincronizada al editar. |
 | **Validacion tripartita** estructural / metodologica / estilo (ronda 19 / L3, ronda 20 / L4 estados con nombres reales) | El reporte de `validar-modelo` de la skill se mapea 1:1 al `PanelMetodologia` de la app. |
 | **Biblioteca de cosas dockable** (ronda 20 / L3) | La skill puede asumir cosas reusables; el bundle solo declara las usadas en el modelo. |
-| **Persistencia con chip y versiones** (ronda 19 / L5) | Al importar el bundle, la app marca la pestana como `Importado` y permite `Guardar como` + versionado. |
+| **Persistencia backend-only** (cortes C1-C5, 2026-06-06) | Modelos, versiones, workspace/carpetas, autosave y revision viven en Postgres/API con optimistic locking; no hay storage de navegador. Al importar el bundle, la app marca la pestana como `Importado` y permite `Guardar como` + versionado. |
 | **Modo enlace canvas con feedback visual** (ronda 19 / L2) | La skill puede dejar enlaces declarados sin temer ambiguedad de gesto: la app refuerza la firma de enlace al editarlos. |
 | **Auto-layout + fit-to-view** (Fase 0 / P0-5) | La skill no necesita resolver layout: emite cosas y enlaces, la app distribuye. |
-| **Modo revision mobile** (ronda 21 / L2) | Bundles grandes son auditables desde el celular para revision/issues, no solo desktop. |
+| **Mobile solo-lectura v1** (2026-06-06, flag de build `VITE_MOBILE_READONLY`) | Bundles grandes son auditables desde el celular en modo lectura (carga directa del modelo activo de la sesion; sin routing por URL). |
 | **Evals UX permanentes con harness Playwright** (ronda 21 / L3) | Cuando un bundle se prueba en serie, los evals de la app cubren tiempos / regresion / responsive. |
 | **LogDecisiones v0 + AnclaNormativa** (W1.5/F5) | La app puede registrar transiciones de anclas pendientes; la skill consume ese log en `re-elicitar` y muta la fuente solo con ratificacion y fuente. |
 | **Render headless fiel** (H1, `bun run render:headless`) | La skill obtiene PNG+SVG por OPD **fieles a opforja** sin abrir la UI ni intervencion humana; alimenta la pasada visual del agente en `revisar-visual` y el camino primario de `serializar-opd`. |
+| **Golden-harness de reproducibilidad** (H2, `bun run verify:reproducible`) | Veredicto pass/fail de byte-identidad contra un golden, con diagnostico por componente del sello; reemplaza el `md5sum` manual. |
+| **Sello de procedencia 3 componentes** (W5.3/G2) | `modelo.procedencia = {protoHash, autoriaVersion, layoutVersion}` viaja dentro del modelo emitido por el compilador; el glosario fue retirado del pipeline (G2) — el proto es la fuente unica autoral. |
+| **Puente de contexto 1-click** (W6.0) | Comando de paleta «Copiar contexto para la skill»: markdown con procedencia + pendientes `[RATIFICAR]` + diagnostico + OPL, dirigido a esta skill (ver §Puente W6.0). |
+| **Chip «Vista» y panel de procedencia** (W6.3/W6.6) | El arbol OPD distingue `generic-view`; el Inspector muestra sello 3-comp, doctrina read-through y advertencia si el modelo fue editado en la app tras la emision. |
+| **Modelo textual derivado opt-in** (G1, `emitirModeloTextual`) | `emitirBundle` puede emitir el markdown derivado del modelo (`<!-- DERIVADO — no editar a mano -->`); ningun consumidor debe mantener ese producto a mano. |
+| **Canvas infinito + paneles OPL/Inspector hideables y resizables** (2026-06-03/08) | La mesa escala a modelos grandes sin que la skill pre-resuelva encuadre. |
+| **Simulacion conceptual por microfases** (2026-06-06) | Runtime observable `preparacion → consumo → proceso → resultado → cierre` para validar comportamiento con el operador. |
+| **Instancia productiva** (`https://opforja.sanixai.com`) | La mesa tambien existe desplegada (backend Postgres, sin auth perimetral); el loop del agente (render headless, compilador) corre en dev/local por diseño — el compilador esta DCE-eliminado de prod. |
 
 ### Que NO hace la app por la skill
 
@@ -619,12 +756,43 @@ Al asumir que el modelador esta disponible y al dia con sus lineas de desarrollo
 - Emitir el SD raiz desde un proposito en lenguaje natural sin asistencia. La app tiene estado vacio compacto, no `bootstrap-sd` automatico.
 - Garantizar que un refinamiento es metodologicamente justificado. La app marca issues; la skill decide.
 
+### Puente W6.0: consumir el «Contexto de modelado» de opforja
+
+opforja tiene un comando de paleta **«Copiar contexto para la skill»** que
+compone en un solo markdown copiable el contexto del modelo activo, dirigido a
+esta skill (`opl/contextoSkill.ts::exportarContextoSkill`). Cuando el operador
+pega ese markdown, la skill lo reconoce por su encabezado
+(`# Contexto de modelado — <nombre>` + «Puente W6.0 deep-opm-pro → skill
+modelamiento-opm») y rutea por seccion:
+
+| Seccion del contexto | Contenido | Como la consume la skill |
+|----------------------|-----------|--------------------------|
+| **Procedencia** | sello 3-comp, o «_Sin sello — el modelo no fue emitido por el compilador de autoria_» | Establece la fuente: con sello, el **proto** correspondiente es la fuente unica y toda correccion va alli (read-through); sin sello, declarar que no hay trazabilidad proto→modelo. |
+| **Pendientes [RATIFICAR]** | lista por `claveProto` con autoridad/estado/responsable + resumen | Entrada directa a `re-elicitar`: cada pendiente se resuelve por su especie (normativa → fuente; meta → acto de modelado). |
+| **Diagnostico** | JSON del panel de issues | Entrada a `validar-modelo`/`refinar-modelo`: triagear por severidad citando la regla propietaria. |
+| **OPL** | markdown OPL completo del modelo | Fuente de trabajo de lectura. **No editar el OPL del contexto**: la correccion se aplica al proto y se recompila. |
+
+Reglas del puente:
+
+- El contexto es **producto derivado**: nunca es fuente de verdad ni destino de
+  ediciones. «El proto es la fuente unica: las correcciones se re-elicitan, no
+  se editan aqui» (header del propio contexto).
+- **Contador de cruces g3**: copiar el contexto cuenta como cruce app→skill;
+  importar en la app un bundle **con sello** cuenta como cruce skill→app (solo
+  el compilador emite sellos, por eso el cruce es inequivoco). La skill no
+  manipula el contador; sabe que existe como observable de equilibrio y que el
+  umbral lo fija el operador.
+- Si el contexto llega sin que exista acceso al proto/repo de dominio, la skill
+  puede igualmente auditar (diagnostico + OPL) pero debe declarar que no puede
+  cerrar el loop read-through hasta tener el proto.
+
 ### Protocolo de handoff a deep-opm-pro
 
 1. Construir el modelo segun los estados anteriores hasta `validar-modelo`.
 2. Pasar a `serializar-bundle` y producir el JSON `deep-opm-pro.modelo.v0`.
 3. Adjuntar el bundle al entregable, junto con OPL-ES y reporte de validacion tripartita.
-4. Indicar el comando de apertura al usuario: `cd ~/projects/deep-opm-pro/app && bun run dev`, luego importar el JSON desde la UI.
+4. Indicar el comando de apertura al usuario: `cd ~/projects/deep-opm-pro/app && bun run dev`, luego importar el JSON desde la UI. (La instancia productiva `https://opforja.sanixai.com` tambien importa bundles; el loop del agente corre en dev/local.)
+4a. Si el bundle proviene del **compilador de autoria** (`emitirBundle`), lo que se pega en el dialogo de import es el campo `.json` del `ResultadoBundle` (el documento `{formato, modelo}` serializado), no el objeto resultado completo (que ademas porta reporte/avisos).
 5. Si el agente invocador opera dentro del propio repo `deep-opm-pro`, puede escribir el bundle a `app/_local/` o pegarlo en runtime sin tocar `fixtures/` (que es evidencia versionada del sandbox demo, no destino de nuevos modelos).
 
 ### Protocolo de re-elicitacion desde `deep-opm-pro`

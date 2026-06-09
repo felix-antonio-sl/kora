@@ -5,10 +5,10 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-05-08"
-    source: "Derivado de ~/projects/deep-opm-pro/app/src/serializacion/json.ts y app/src/modelo/tipos/* al 2026-05-08. v1.1.0 incorpora el diseno AnclaNormativa y LogDecisiones v0 documentado en ~/projects/deep-opm-pro/docs/proto-modelo/diseno-ancla-normativa.md al 2026-06-04."
-    updated_at: "2026-06-04"
-    update_reason: "Alinear la referencia operativa de modelamiento-opm con el contrato de re-elicitacion definido por deep-opm-pro: AnclaNormativa como extension meta opcional y LogDecisiones v0 como entrada consumida por el estado re-elicitar."
-version: "1.1.0"
+    source: "Derivado de ~/projects/deep-opm-pro/app/src/serializacion/json.ts y app/src/modelo/tipos/* al 2026-05-08. v1.1.0 incorpora el diseno AnclaNormativa y LogDecisiones v0 documentado en el diseno adjudicado de deep-opm-pro al 2026-06-04. v1.2.0 deriva ademas de app/src/autoria/{procedencia,bundle,compilar/tipos,dsl}.ts al 2026-06-10."
+    updated_at: "2026-06-10"
+    update_reason: "v1.2.0 sincroniza con los cortes W5.2/W5.3/G2/E-1 de deep-opm-pro: sello de procedencia de 3 componentes dentro de modelo.procedencia (glosario retirado en G2), taxonomia de anclas extraidas inline (norma/ratificacion/candidata), variante de OPD generic-view, e import del campo .json del ResultadoBundle cuando el bundle proviene del compilador."
+version: "1.2.0"
 status: activo
 nombre: bundle-deep-opm-pro
 descripcion: "Contrato del bundle JSON 'deep-opm-pro.modelo.v0' que la skill modelamiento-opm emite para que el modelador deep-opm-pro lo importe. Incluye extensiones meta opcionales AnclaNormativa y LogDecisiones v0 para el ciclo re-elicitar."
@@ -55,6 +55,32 @@ Estas extensiones **no son OPM nuclear**. Viven como metadata declarada del
 autor o de la mesa, bajo `R-DOC-7`/`V-204`/`R-BR-4`: no crean objeto, proceso,
 estado ni enlace, y no emiten OPL nuclear.
 
+### 3.0 Sello de procedencia (`modelo.procedencia`)
+
+Desde W5.3 (y reducido a 3 componentes en G2, que retiro el glosario del
+pipeline), el bundle emitido por el **compilador de autoria** porta un sello
+que viaja **dentro** del modelo serializado:
+
+```ts
+interface SelloProcedencia {
+  protoHash: string;       // hash del proto fuente
+  autoriaVersion: string;  // version de la libreria de autoria
+  layoutVersion: string;   // version del layout determinista
+}
+// Modelo.procedencia?: SelloProcedencia
+```
+
+Reglas:
+
+- **Solo el compilador emite sellos** (`emitirBundle` con `opciones.procedencia`).
+  La skill jamas fabrica, copia ni simula un sello: un bundle artesanal se
+  emite sin `procedencia` y opforja lo declara «sin sello».
+- El deserializador es tolerante a bundles viejos con `glosarioHash` (campo
+  huerfano descartado); la skill no emite ese campo.
+- El sello habilita el panel de procedencia (W6.6), el golden-harness H2
+  (`verify:reproducible` nombra el componente divergente) y el cruce skill→app
+  del contador g3.
+
 ### 3.1 `AnclaNormativa`
 
 `AnclaNormativa` es la extension aditiva que porta procedencia normativa o
@@ -92,6 +118,13 @@ Reglas:
   posicionales del bundle.
 - `estado: "pendiente-ratificacion"` representa `[RATIFICAR]`; no existe un
   tipo hermano `DecisionPendiente`.
+- **Extraccion inline del proto (W5.2)**: el compilador extrae anclas de las
+  lineas de hecho en tres clases, y solo tres — `norma` (cita explicita →
+  compila `vigente`), `ratificacion` (`[RATIFICAR[ #clave][: texto]]` →
+  compila `pendiente-ratificacion`; clave derivada `ratificar:<target>` si no
+  hay `#clave`) y `candidata` (`[C1]`/`[Q14]`-style → **jamas compila**, se
+  conserva como anotacion). Un `[RATIFICAR]` tras una oracion estricta no la
+  degrada: el hecho compila y el pendiente queda como ancla.
 - `target.tipo == "enlace"` es valido y necesario para anclas de frontera.
 - un bundle sin `anclasNormativas` debe conservar compatibilidad con bundles
   previos.
@@ -163,9 +196,13 @@ interface Modelo {
   archivadoEn?: string;
   versiones?: VersionResumen[];
   crearVersionAlGuardar?: boolean;
+  procedencia?: SelloProcedencia;
   nextSeq: number;
 }
 ```
+
+`procedencia` solo aparece en bundles emitidos por el compilador de autoria
+(ver §3.0); la skill no lo emite en bundles artesanales.
 
 ## 5. Subtipos relevantes
 
@@ -196,6 +233,14 @@ interface Modelo {
 ### 5.4 OPD
 
 - `padreId: Id | null` — `null` solo para el OPD raiz.
+- `vista?: { kind: "generic-view"; readOnly?: boolean }` (E-1) — marca el OPD
+  como **vista ad-hoc sin semantica de refinamiento**: reune apariciones
+  existentes para navegar/explicar, no emite OPL (delta-cero) y queda exenta de
+  los checkers de frontera/descomposicion. `readOnly: true` la vuelve solo
+  lectura en la app. DSL del compilador: `vistaGenerica(opdKey, {readOnly?})`;
+  para multi-edges por transicion dentro de la vista usar
+  `aparecerEnlacePorId(opdKey, enlaceId)` (F1) o
+  `aparecerEnlacePorTransicion(...)` (H5).
 - `apariencias: Record<Id, Apariencia>` — un slot por entidad visible en este OPD (posicion + tamaño + estilo opcional).
 - `enlaces: Record<Id, AparienciaEnlace>` — un slot por enlace visible (vertices, etiqueta, ruta).
 - `ordenLocal?: number` — orden entre OPDs hermanos del mismo padre.
@@ -233,6 +278,12 @@ interface Modelo {
 6. Si la mesa entrega `LogDecisiones v0`, ejecutar `re-elicitar` antes de emitir
    un nuevo bundle. Un log sin consumidor operativo queda prohibido por la regla
    anti-esterilidad de `deep-opm-pro`.
+7. Si el bundle proviene del **compilador de autoria** (`emitirBundle`), lo que
+   se pega en el import es el campo `.json` del `ResultadoBundle` (el documento
+   `{formato, modelo}` ya serializado), no el objeto resultado completo.
+8. Si el flujo exige byte-identidad con un golden versionado, verificar con
+   `bun run verify:reproducible --proto <md>|--modelo <json> --golden <bundle.json>`
+   (H2; exit 0 = identico, 1 = difiere con diagnostico, 2 = uso invalido).
 
 ## 8. Cuando NO emitir bundle
 
