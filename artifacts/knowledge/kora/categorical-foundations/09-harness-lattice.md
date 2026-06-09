@@ -6,7 +6,12 @@ _manifest:
     created_at: '2026-06-08'
     source: harness-spec v1.1.0 (PMI×LFS); Davey & Priestley (Introduction to Lattices
       and Order); Libkind-Spivak (Poly) via icas-agencia; KORA categorial audit 2026-06-07
-  version: 1.0.0
+    updated_at: '2026-06-09'
+    update_note: '§5 open problem resolved (negatively): naive fibration refuted with
+      cause; one restricted interface fibration proved + one carrier reindexing isolated;
+      successor open problem restated as a double category. Via adversarial double-attack
+      (construct vs refute) under cat-thinking. harness-spec untouched (freeze §8.3).'
+  version: 1.1.0
   status: published
   tags:
   - category-theory
@@ -30,14 +35,16 @@ relations:
     - "urn:fxsl:kb:icas-agencia"
 ---
 
-# The Harness Space as Product Lattice (and its open relation to the Agent Coalgebra)
+# The Harness Space as Product Lattice (and its relation to the Agent Coalgebra)
 
 ## Purpose
 
 This document brings the foundation of the PMI×LFS ontological space — defined
 operationally in `harness-spec` — into the official KORA formal layer, and does
-so **honestly**: it formalizes the part that is a theorem and records, as an
-explicit open problem, the part that is not.
+so **honestly**: it formalizes the part that is a theorem (the lattice) and
+settles the part that is not (the bridge to the coalgebra) by refuting the naive
+fibration with cause, isolating what genuinely survives, and leaving a sharpened
+successor open problem.
 
 Concretely it:
 
@@ -47,13 +54,19 @@ Concretely it:
    that `_check_vector_laws` enforces mechanically.
 3. States precisely the relationship between this lattice and the agent
    **F-coalgebra** of [01-agent-coalgebra](urn:kora:kb:cat-agent-coalgebra): a
-   **shared origin**, but **not a demonstrated morphism**. The bridge between the
-   two structures is left as an open problem, not asserted.
+   **shared origin**, but **not a single fibration**. The naive bridge is
+   **refuted** with cause (§5.3–§5.4, §6.1), one restricted fibration is proved
+   and one carrier reindexing isolated (§6.2), and the correct global object is
+   restated as a **double category** (§6.3, the successor open problem).
 
 This resolves the audit finding (2026-06-07, eje 7 / rec. 1) that the
 constitution-level claim "PMI×LFS" rested formally only on auxiliary,
-non-normative corpus. The order-theoretic content is absorbed here; the
-coalgebraic bridge is not absorbed because it does not (yet) exist as a proof.
+non-normative corpus. The order-theoretic content is absorbed here. The
+coalgebraic bridge is **also** settled, but negatively: the §6 conjecture of a
+single fibration `E → W` is shown impossible (mixed variance over a uniform
+order), so nothing is manufactured to disguise a gap; what is absorbed is the
+*impossibility theorem* plus the two genuine fibration/opfibration fragments it
+leaves behind.
 
 ## Prerequisites
 
@@ -184,10 +197,11 @@ decorative — it is the specification of a live check.
 in runtimes (`T_R`), not in the category of agent coalgebras. This is the pivot
 for §5.
 
-## 5. Relationship to the Agent F-Coalgebra — an Open Problem
+## 5. Relationship to the Agent F-Coalgebra — the diagnosis
 
 This is the honest core of the document, and the resolution of the audit's
-critical finding.
+critical finding. §5 diagnoses precisely what each axis moves and where the naive
+bridge breaks; §6 settles the conjecture on that basis.
 
 ### 5.1 Shared origin
 
@@ -210,54 +224,179 @@ The shared origin is read in two different directions:
 | Characteristic morphism | order ≤ (elevation/projection) | coalgebra map (preserves behavior) |
 | Equivalence | equality of vectors | **bisimulation** |
 
-### 5.3 Why the plausible bridges fail (today)
+### 5.3 What each axis actually moves (the localization theorem)
 
-There is **no demonstrated morphism** `V → Kl(M)-Coalg`. The natural candidates
-do not hold as written:
+The previous version listed three informal reasons "the bridges fail". They are
+now made precise. The key is to ask, for each axis, **which part of the agent
+coalgebra `(U, c : U → M(F U))` it controls** — the endofunctor `F`, which
+*defines* a fiber, or the object `(U, c)` *inside* a fixed fiber.
 
-- **Not a functor `Pos → Kl(M)-Coalg`.** Lattice monotonicity (more capability)
-  and coalgebra morphisms (preserve observable behavior up to bisimulation) pull
-  in opposite directions. Raising Μ (adding persistent memory) enlarges the
-  carrier `U` and **breaks** bisimulation with the lower vector's agent — the
-  opposite of what a behavior-preserving morphism requires. So `v ≤ v'` does not
-  induce a coalgebra morphism.
-- **Not a (demonstrated) Grothendieck fibration.** The tempting reading "the
-  vector indexes a family of coalgebras" would need, for each `v`, a designated
-  category of `F_v`-coalgebras *and* functorial reindexing along `≤`. Nothing of
-  the sort is constructed. `harness-spec` mentions "fibración de Grothendieck"
-  only once, for the Λ axis in isolation (§ atlas table), as a word, not a
-  construction.
-- **The only genuine point of contact is local and already isolated.**
-  Structural safety `S_struct` (a sub-coalgebra `S ⊆ U` closed under the cofree
-  dynamics, `α(S) ⊆ F(S)`) is declared by `harness-spec` §4.2 as a **property
-  derived from Μ and Ξ, not an independent axis**. It is realized by the FSM
-  check `coalgebra-conformance` over a finite state machine — a derived property
-  *inside* an axis, not a morphism *between* the two global structures.
+Recall `F(U) = (Out × U)^In` (doc 01 §1.1), so `F` is pinned down by the
+**interface types `(In, Out)`** alone; by doc 01 §4.1–§4.2 `F` is the *closed,
+design-time algebra of declared actions* — the observation boundary, nothing
+more.
 
-### 5.4 Status of the claim (the honest statement)
+**Theorem (axis localization).** Under the operational reading of `harness-spec`
+§3, the six axes distribute over the coalgebraic data as follows:
 
-- The **order-theoretic** content of PMI×LFS — the product lattice and the five
-  laws (sublattice `W`) — is a **theorem**, formalized here and mechanized by
-  `vector-laws`. This part is now founded in the official formal layer.
-- The **bridge** from the harness lattice to the agent coalgebra is **not** a
-  theorem and is **not** absorbed. PMI×LFS remains, for its conceptual origin,
-  founded on the auxiliary corpus `icas-*` (in `artifacts/knowledge/fxsl/cat/`,
-  non-normative per the KORA Formal Layer rule). This document does **not**
-  manufacture a morphism to disguise that gap.
+| Axis | What it controls (doc 01 / harness §3) | Layer it touches |
+|---|---|---|
+| **Ξ** interaction | the interface polynomial `p`: positions = `Out`, directions = `In` (`icas-interaccion`) | **the endofunctor `F`** (the would-be base) |
+| **Π** plan | the structure map `c = eval ∘ classify`, the FSM (doc 01 §3.1) | object *inside* a fiber |
+| **Μ** matter | the carrier `U` (doc 01 §2.1, fibre `U_epi`); Μ↑ enlarges `U` | object *inside* a fiber |
+| **Σ** ethics | the effect monad `M` (logging/sandbox), doc 01 §1.3 | the ambient category `Kl(M)` |
+| **Λ** sociotechnical | external index level (harness §6) | a *separate* base |
+| **Φ** human-AI coupling | re-types `(In, Out)` to add the human channel; coupled to Μ by L3 | partly `F`, partly fiber |
 
-### 5.5 Open problem
+*Proof.* Direct from `F(U) = (Out × U)^In`: only `In, Out` enter `F`, and by
+`icas-interaccion` positions/directions are exactly `Out/In`, which Ξ defines.
+Π enters only `c` (doc 01 §3.1). Μ enters only the carrier (doc 01 §2.1; harness
+§3.1, "Μ-1: coalgebra con `U` acotada"). Σ parametrizes `M`, which by doc 01 §1.3
+(M-Immutability) is *immutable from within* — it changes the ambient `Kl(M)`, not
+an object of it. Λ is the socio-technical level, external to the single-agent
+model. ∎
+
+**Corollary (the conjecture over-indexes).** Two vectors differing only in Μ
+(e.g. a delegate with Μ=1 and a persona with Μ=2, harness §5.1) name the **same**
+`F` and ought to be two *objects of one fiber*, `(U,c)` and `(U',c')`, not two
+*fibers* `F_v ≠ F_{v'}`. Writing `F_v` with the index running over the whole
+vector mistakes fiber-content (Π, Μ) for the base. The honest fiber is
+"coalgebras over a **fixed** `F`" — which is also the only place where
+bisimulation is even well-typed (doc 07 §2.1; doc 01 §5.1).
+
+### 5.4 The variance obstruction (why no fibration over W)
+
+Even after removing the over-indexing, the single axis that *does* move `F`,
+namely Ξ, collides with the order of `W`.
+
+**Theorem (mixed variance of the interface functor).** As a functor of its
+interface parameters, `F(U) = (Out × U)^In` is **covariant in `Out`** and
+**contravariant in `In`** (the exponent `(−)^In`). Hence if `v ≤ v'` enlarges
+capability so that both `In_v ↪ In_{v'}` and `Out_v ↪ Out_{v'}`, the induced
+components point in **opposite directions**:
+
+```
+Out-component:  F_v  ⇒ F_{v'}     (covariant, toward v')
+In-component:   F_{v'} ⇒ F_v      (contravariant, toward v)
+```
+
+*Proof.* `Out ↪ Out'` gives `(Out × U)^In → (Out' × U)^In`, a natural
+transformation `F ⇒ F'`. `In ↪ In'` gives, by restriction along the inclusion,
+`(Out × U)^{In'} → (Out × U)^{In}`, a natural transformation `F' ⇒ F`. ∎
+
+**Corollary (no fibration `p : E → W`).** There is no uniform natural
+transformation `F_v ⇒ F_{v'}` (nor `F_{v'} ⇒ F_v`) along `≤`, hence no functor of
+reindexing between fibers indexed by the *product order* of `W`. A Grothendieck
+fibration needs a (pseudo)functor `W^op → Cat` of a **single** variance; an
+interface functor of mixed variance can at most be classified over
+`W_In^op × W_Out` (two copies of the order, one dualized), **not over `W`**. The
+conjecture's fibration `p : E → W` is therefore variance-ill-typed. The category
+that *does* absorb this mixed variance by construction is **Poly** (positions
+forward, directions backward, `icas-interaccion`); the lattice order of `W` — all
+coordinates rising covariantly together — is the wrong variance to flatten Poly
+onto. This is the precise form of the old, informal "pull in opposite
+directions".
+
+**Remark (`M` is orphan).** Independently, `M` (the effect monad, doc 01 §1.3) is
+**no axis of the vector** — beware `Μ`-matter ≠ `M`-effects. If the fibration
+fixes one global `M`, the fiber is too coarse (a Powerset agent and an Identity
+agent with the same vector are forced together though they are not bisimilar); if
+`M` is meant to co-vary, that is false by M-Immutability. Either way `W`
+underspecifies the fiber.
+
+## 6. Resolution of the conjecture
+
+The question that the previous version of §5 left open was:
 
 > **Conjecture (harness–coalgebra fibration).** There is a fibration
 > `p : E → W` whose fiber over a well-formed vector `v` is a category of
 > `F_v`-coalgebras realizing capability `v`, with reindexing along `≤`
-> compatible with `T_R`. Proving or refuting this would turn the shared origin
-> of §5.1 into an actual morphism.
+> compatible with `T_R`.
 
-This is a legitimate research question, not a settled result. If it is proved,
-it constitutes **new ontological doctrine** and its adoption into `harness-spec`
-requires an explicit ADR (the spec is under partial freeze, `gobernanza` §8.3).
+It is now settled.
 
-## 6. What This Document Does and Does Not Establish
+### 6.1 Negative part — the conjecture is refuted
+
+By the Corollary of §5.3 and the Corollary of §5.4, no such fibration over `W`
+exists. The failure is structural and threefold — base/fiber type error (Π, Μ
+index fiber-content, not the base), mixed variance over a uniform order, and
+orphan `M` — not a missing coherence lemma. Independent double-attack (one
+construction pass, one refutation pass, under `cat-thinking`) converges on the
+same obstruction.
+
+### 6.2 Positive part — two genuine sub-structures
+
+The mixed variance splits into two coherent halves: one a full theorem, one a
+reindexing functor whose opfibration status is left open.
+
+> **Theorem (interface fibration).** Fix Π, Μ, Λ, Φ, Σ and `M`; let `W_Ξ ⊆ W`
+> vary only Ξ. Then `Φ_Ξ : W_Ξ^op → Cat`, `v ↦ F_v`-`Coalg` in `Kl(M)`, is a
+> pseudofunctor whose reindexing along `v ≤ v'` is the dependent lens
+> `λ : p_v → p_{v'}` (`icas-interaccion`): `λ^*(U, c) = (U, F_λ ∘ c)`, with
+> `F_λ : F_{v'} ⇒ F_v` induced by `(λ_1` forward on `Out`, `λ^♯` backward on
+> `In)`. Its Grothendieck construction `∫Φ_Ξ → W_Ξ` (`icas-extension`) is a
+> fibration.
+>
+> *Proof.* Lenses compose (positions forward, directions backward); precomposition
+> with the induced natural transformation is functorial; pseudo-functoriality
+> follows from associativity of lens composition; the Grothendieck construction of
+> any pseudofunctor is a fibration. ∎
+
+> **Proposition (carrier reindexing).** Fix the interface `(In, Out)` (hence `F`)
+> and `M`; let `B ⊆ W` vary only Μ and Π. Then `v ≤ v'` induces a **co**variant
+> reindexing `F-Coalg_v → F-Coalg_{v'}` given by the sub-coalgebra inclusion
+> `S ⊆ U'` of structural safety `S_struct` (harness §4.2, `α(S) ⊆ F(S)`): a genuine
+> coalgebra morphism (doc 00 §6), not a comparison *between* the two global
+> structures but an inclusion *within* one fiber — the "only genuine point of
+> contact" the previous version had isolated, decided by the
+> `coalgebra-conformance` / `safety-closure` checks over a finite state machine.
+>
+> *Open step (honest boundary).* Whether this reindexing assembles into a full
+> **opfibration** `E_B → B` (with opcartesian liftings and their universal
+> property) is **not** proved here; it is the vertical half of the successor
+> problem (§6.3). The reindexing functor is established; its opcartesian
+> universality is conjectural. The interface fibration above is the only half
+> proved outright.
+
+### 6.3 The correct global object is a double category, not a fibration
+
+The two results of §6.2 are the **horizontal** (interface; Ξ; contravariant;
+lenses; proved a fibration) and **vertical** (carrier; Μ, Π; covariant;
+sub-coalgebra inclusions; reindexing established, opfibration pending) edges of a
+**double category** whose cells are agents. This is the ambient
+(`Org`, `icas-agencia`) that tolerates mixed variance without forcing one
+direction. It is *not* a fibration over `W`, and naming it correctly is part of
+the result.
+
+> **Successor open problem (harness double category).** Construct explicitly the
+> double category `𝔻` with objects = interfaces `(In,Out)`, horizontal morphisms =
+> interface lenses (Ξ), vertical morphisms = carrier inclusions (Μ, Π), and cells =
+> `F`-coalgebras; prove its interchange law and identify which sub-double-category
+> `T_R` preserves. This *replaces* the refuted §6 conjecture.
+
+### 6.4 Compatibility with `T_R`
+
+Where reindexing exists, `T_R` is compatible only **laxly**: `transmutation-spec`
+§3.2 makes `T_R` monotone in Π by construction and *declares* (does not yet
+mechanize) preservation of the `S_struct` inclusion; transmutation admits declared
+loss, so the square commutes only up to the 2-cell of declared loss recorded in
+`_transmutation.yml`. The clause does not rescue the general conjecture; it is
+vacuous exactly where the reindexing is undefined.
+
+### 6.5 Status and governance after resolution
+
+- The negative result **confirms** — and sharpens to a theorem — the conservative
+  statement that `harness-spec` already carries (§4 trace: "no morfismo
+  demostrado"). It is now "no fibration *can* exist over `W`, by mixed variance".
+  No edit to `harness-spec` is required and **no ADR is triggered**: refuting the
+  conjecture adds no doctrine to the frozen spec (`gobernanza` §8.3).
+- The two positive theorems (§6.2) are **new formal-layer content**, recorded
+  here. Pointing `harness-spec` at them as a foundation *would* edit the frozen
+  spec and is therefore deferred to an explicit ADR — not performed here.
+- The double-category reconstruction (§6.3) is the **successor open problem**,
+  replacing the conjecture this document refutes.
+
+## 7. What This Document Does and Does Not Establish
 
 **Establishes (theorems):**
 
@@ -265,12 +404,22 @@ requires an explicit ADR (the spec is under partial freeze, `gobernanza` §8.3).
 - The five inter-axis laws carve out a **bounded sublattice** `W` of well-formed
   vectors, closed under join and meet (§3) — the exact contract of the
   `vector-laws` check.
+- **Axis localization (§5.3):** only Ξ moves the endofunctor `F`; Π and Μ move the
+  object *inside* a fiber; Σ moves the ambient `M`; Λ is an external index.
+- **Variance obstruction (§5.4):** `F = (Out × U)^In` has mixed variance, so **no
+  fibration exists over the uniform order of `W`** — the conjecture is refuted
+  with cause (§6.1).
+- **The interface fibration over Ξ (§6.2):** lens reindexing, proved a fibration
+  via the Grothendieck construction. (Its vertical companion, the carrier
+  reindexing over (Μ, Π), is established as a functor but its opfibration status
+  is left open — §6.2 open step.)
 
 **Does NOT establish (recorded as open / modest):**
 
 - That "×" is a categorical product — it is a lattice product (§2 remark).
-- That there is a functor or fibration from the harness lattice to the agent
-  F-coalgebra — open problem (§5.5).
+- The single fibration over the full lattice is **refuted** (§6.1), not left
+  open. The correct global object is a **double category**, whose explicit
+  construction and interchange law are the **successor open problem** (§6.3).
 
 **Governance note.** `harness-spec` may, in the future, point to this document
 as the formal foundation of its order structure through the formal-layer
