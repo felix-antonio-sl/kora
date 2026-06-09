@@ -144,7 +144,8 @@ proyectadas*. La distribucion es *meta-encaje*.
 - `runtime-spec-md.md` — contrato generico.
 - `multiagente-spec.md` — ley de coreografia multiagente y handoffs.
 - `transmutation-spec.md` — leyes functoriales de proyeccion IR → runtime.
-- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `gemini-runtime-extension.md`, `openclaw-runtime-extension.md`, `mastra-runtime-extension.md`, `opencode-runtime-extension.md` — proyecciones a runtimes concretos.
+- `claude-code-runtime-extension.md`, `codex-runtime-extension.md`, `hermes-runtime-extension.md`, `openclaw-runtime-extension.md`, `opencode-runtime-extension.md` — proyecciones a runtimes canonicos activos.
+- `gemini-runtime-extension.md`, `mastra-runtime-extension.md`, `agentskills-runtime-extension.md` — archivadas en `decisiones-archivadas/specs-en-pausa/`.
 
 ### 3.3 Ruptura con formatos anteriores
 

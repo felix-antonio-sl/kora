@@ -24,7 +24,7 @@ relations:
 
 ## Resumen
 
-Cuatro runtime-extensions archivadas el 2026-05-07 por la poda KORA version A. La decision operativa de Felix designa tres targets activos (`claude-code`, `codex`, `openclaw`); las cuatro extensions de este directorio quedan fuera del compromiso de uso productivo hasta que aparezca cliente nombrado con valor validado.
+Tres runtime-extensions archivadas: gemini y mastra el 2026-05-07 (poda KORA version A), agentskills el mismo dia. Opencode fue reactivado como runtime canonico el 2026-06-04 (§8.2.1 gobernanza v6.2) y ya no pertenece a este archivo. Los targets activos vigentes son cinco: `claude-code`, `codex`, `openclaw`, `hermes`, `opencode`. Las tres extensions restantes quedan fuera del compromiso de uso productivo hasta que aparezca cliente nombrado con valor validado.
 
 | Spec archivada | URN | Razon de pausa |
 |---|---|---|
@@ -66,4 +66,4 @@ git mv governance/decisiones-archivadas/specs-en-pausa/{nombre}-runtime-extensio
 - decision raiz: poda KORA version A (allan-kelly, 2026-05-07)
 - handoff de referencia: pendiente al cierre de la poda
 - commit que ejecuta el archivado: ver `git log` para el commit chore(governance) del 2026-05-07
-- targets activos vigentes: `claude-code`, `codex`, `openclaw`
+- targets activos vigentes: `claude-code`, `codex`, `openclaw`, `hermes`, `opencode`

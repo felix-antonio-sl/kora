@@ -382,11 +382,11 @@ preservation_matrix:
     safety_norm: { max_supported: 3, enforcement: "policy-based" }
     fairness: { max_supported: 2, enforcement: "declarative" }
     transparency: { max_supported: 3, enforcement: "explainable-output" }
-    accountability: { max_supported: 1, enforcement: "none-beyond-logs" }
+    accountability: { max_supported: 2, enforcement: "conversation-history + git-log" }
     sustainability: { max_supported: 1, enforcement: "declarative" }
 ```
 
-### 7.3 Trace fidelity por runtime
+### 7.2 Trace fidelity por runtime
 
 Dimension auxiliar de la matriz que declara **cuanta evidencia auditable
 deja el runtime** de las decisiones internas del artefacto (tool calls,
@@ -415,17 +415,19 @@ trace_fidelity:
   notes: "particularidades operativas"
 ```
 
-Inventario vigente al `2026-04-22` (declarado en cada runtime-extension;
+Inventario vigente al `2026-06-09` (declarado en cada runtime-extension;
 aqui solo resumen):
 
 | Runtime | Nivel | Mecanismo de captura |
 |---------|-------|----------------------|
 | claude-code | `media` | hook `SubagentStop` + JSONL `~/.claude/projects/*/` |
 | codex | pendiente | por documentar en `codex-runtime-extension.md` |
-| gemini | pendiente | por documentar en `gemini-runtime-extension.md` |
+| hermes | pendiente | stub v0.1.0; por documentar en Fase 2b |
 | openclaw | pendiente | log `journalctl --user` + session jsonl del agente |
-| mastra | pendiente | logs server-side |
-| agentskills | N/A | meta-runtime, hereda del target |
+| opencode | pendiente | por documentar en `opencode-runtime-extension.md` |
+| gemini (archivado) | pendiente | por documentar; spec en `specs-en-pausa/` |
+| mastra (archivado) | pendiente | logs server-side; spec en `specs-en-pausa/` |
+| agentskills (archivado) | N/A | meta-runtime, hereda del target; spec en `specs-en-pausa/` |
 
 Los runtimes marcados `pendiente` tienen deuda de documentacion abierta:
 su valor debe completarse antes de cerrar una verificacion estricta de
@@ -559,8 +561,11 @@ Checks obligatorios:
 - `harness-spec`: ontologia fuente, define espacio IR.
 - `autoria-spec`: serializacion de entrada unificada (lo que se transmuta, para las cuatro formas materiales).
 - `runtime-spec-md`: contrato generico de runtime.
-- Runtime-extensions (`agentskills-`, `claude-code-`, `codex-`, `gemini-`, `mastra-`, `opencode-`, `openclaw-`):
-  cada una declara matriz de preservacion + encaje.
+- Runtime-extensions activos (`claude-code-`, `codex-`, `hermes-`, `opencode-`, `openclaw-`):
+  cada uno declara matriz de preservacion + encaje.
+- Runtime-extensions archivados (`agentskills-`, `gemini-`, `mastra-`):
+  en `governance/decisiones-archivadas/specs-en-pausa/`; no son target canonico
+  sin nuevo HITL + ADR.
 - `gobernanza`: precedencia; la transmutacion produce outputs derivados
   (§3 gobernanza).
 

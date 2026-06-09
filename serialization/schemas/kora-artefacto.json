@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://kora.dev/schemas/kora-artefacto.json",
   "title": "KORA Artefacto Frontmatter — seccion universal",
-  "description": "Captura la *componente universal* del shape definido en autoria-spec v1.2: reglas que se factorizan por I -> 1, es decir, aplican a toda forma material. La fibra condicional (reglas que dependen de atlas.forma_material) vive en toolchain/kora_lib/autoria_validate.py como functor Python. Este schema es el pullback terminal: contrato base sin ramificacion.",
+  "description": "Captura la *componente universal* del shape definido en autoria-spec v2.0.0: reglas que se factorizan por I -> 1, es decir, aplican a toda forma material. La fibra condicional (reglas que dependen de atlas.forma_material) vive en toolchain/kora_lib/autoria_validate.py como functor Python. Este schema es el pullback terminal: contrato base sin ramificacion.",
   "type": "object",
   "required": [
     "_manifest",

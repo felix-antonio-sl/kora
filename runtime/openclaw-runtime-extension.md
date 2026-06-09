@@ -332,7 +332,7 @@ Default `vector_ontologico` para workspaces OpenClaw ingestados:
 | Estado excluido | No se serializan credenciales ni caches | lint/manual |
 | ACP metadata | Si artefacto es ACP-compliant, `acp_backend` declarado | lint |
 | Matriz coherente | Valor de matriz coincide con version OpenClaw runtime | manual |
-| Vector dentro del dominio | Vector IR ∈ `D_{openclaw}` (maximo dominio de los 4) | lint |
+| Vector dentro del dominio | Vector IR ∈ `D_{openclaw}` (maximo dominio de los 5) | lint |
 | Repo KORA vivo | `KORA_REPO` clonado y actualizado, montado RO en `/home/node/repos/kora` | preflight |
 
 ## 13. Trace fidelity

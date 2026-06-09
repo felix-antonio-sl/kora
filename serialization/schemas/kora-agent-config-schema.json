@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "KORA Agent Config Schema",
-  "description": "Minimal structural validation of the executable config.json envelope for KORA agent workspaces; stronger semantic invariants are enforced by toolchain/kora_lib/validation.py.",
+  "description": "DEPRECATED (legacy compat only). Minimal structural validation of the executable config.json envelope for KORA agent workspaces. This schema uses a legacy URN pattern with embedded version that contradicts current specs (autoria-spec §10.1, knowledge-spec §3.1). Kept solely for backward-compatible migration tooling. Current authoring schema is kora-artefacto.json per autoria-spec v2.0.0.",
   "type": "object",
   "required": ["allowed_kb", "sandbox"],
   "properties": {

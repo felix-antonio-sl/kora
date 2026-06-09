@@ -75,9 +75,9 @@ Reglas:
 Cuando dos fuentes parezcan contradecirse, aplica esta precedencia:
 
 1. `governance/gobernanza.md`
-2. `ontology/harness-spec.md`
+2. `ontology/harness-spec.md`, `ontology/qa-spec.md`
 3. `serialization/autoria-spec.md`, `serialization/md-spec.md`,
-   `serialization/knowledge-spec.md`
+   `serialization/spec-md.md`, `serialization/knowledge-spec.md`
 4. `runtime/runtime-spec-md.md`, `runtime/transmutation-spec.md`,
    `runtime/multiagente-spec.md`, `runtime/*-runtime-extension.md`
 5. extensiones y artefactos de namespace
@@ -89,9 +89,10 @@ Specs clave:
 |------|---------|
 | `governance/gobernanza.md` | Constitucion, identidad, precedencia, lifecycle, host roles, runtimes canonicos, decisiones HITL |
 | `ontology/harness-spec.md` | Ontologia PMI x LFS (freeze formal) |
+| `ontology/qa-spec.md` | Semantica de quality attributes y qa_budget |
 | `serialization/autoria-spec.md` | Shape unificado para agentes y skills |
-| `serialization/agent-skill-construction-spec.md` | Metodologia de construccion pre-transmutacion |
-| `serialization/md-spec.md` | KORA/MD y tejido relacional |
+| `serialization/md-spec.md` | KORA/MD base (regimen descriptivo) |
+| `serialization/spec-md.md` | Perfil prescriptivo (RFC 2119, Traces to) para specs |
 | `serialization/knowledge-spec.md` | Knowledge |
 | `runtime/transmutation-spec.md` | Proyeccion IR -> target |
 | `runtime/*-runtime-extension.md` | Runtime extensions canonicas |
@@ -177,7 +178,7 @@ crear IR fresco en staging y transmutar solo despues de canonizar la fuente.
 
 ## Runtimes
 
-Runtimes canonicos activos segun `gobernanza` v6.0:
+Runtimes canonicos activos segun `gobernanza` v6.2:
 
 - `claude-code`
 - `codex`
@@ -212,7 +213,6 @@ python3 toolchain/kora transmute --help
 |-----|--------|
 | `urn:kora:artefacto:mente-omega` | Razonamiento estructural-discursivo (pentamotor Phi/Psi/Xi/Delta/Sigma) |
 | `urn:kora:artefacto:cat-thinking` | Enmarque categorial (24 piezas ICAS-BoK) |
-| `urn:kora:artefacto:atomize` | Familia atomic productor canonico |
 
 ## Personas Disponibles
 
@@ -220,7 +220,6 @@ python3 toolchain/kora transmute --help
 |-----|------|
 | `urn:dev:artefacto:steipete` | Direccion de ejecucion cognitiva |
 | `urn:fxsl:artefacto:allan-kelly` | Arquitectura organizacional human-agent |
-| `urn:pro:artefacto:david-allen` | Claridad operable integral (GTD + regulacion) |
 
 ## Toolchain CLI
 
@@ -260,8 +259,7 @@ Usa `health`, `validate`, `lint-md`, `migrate`, `promote` o `deprecate` cuando
 necesites una fase puntual; no los trates como reemplazo de la gate unificada.
 
 `toolchain/kora_lib/` contiene la implementacion viva. `toolchain/kora.bat` y
-`toolchain/kora.ps1` son wrappers de conveniencia. `toolchain/legacy_migration/`
-concentra one-shots y migradores historicos.
+`toolchain/kora.ps1` son wrappers de conveniencia.
 
 ## Secuencia De Trabajo
 

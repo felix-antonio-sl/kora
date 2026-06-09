@@ -22,7 +22,7 @@ extensions:
 # Manual de Agentes, Multi-Agentes y Automatización en OpenClaw
 
 > Manual técnico orientado a fundamentos y toma de decisiones arquitectónicas.
-> Alineado con la documentación oficial disponible en `/Users/felixsanhueza/Developer/_workspaces/openclaw/docs`
+> Alineado con la documentación oficial de OpenClaw
 > al estado local `b5b589d` del 2026-03-14.
 
 - ---
