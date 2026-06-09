@@ -1,34 +1,27 @@
 # CLAUDE.md
 
-Fuente operativa unica para agentes que trabajen en este repositorio: resume
-como operar sin reinferir el repo desde cero.
-
-Invariante de precedencia: si otra fuente (guia, handoff, README externo,
-memoria vieja o wrapper legacy) contradice este archivo, mandan la CLI viva y
-las specs vigentes.
+Fuente operativa unica para agentes que trabajen en este repositorio. Si otra
+fuente (guia, handoff, README externo, memoria vieja o wrapper legacy)
+contradice este archivo, mandan la CLI viva y las specs vigentes.
 
 ## Que Es KORA
 
 KORA es el **repositorio, catalogo y sistema de produccion y mantenimiento de
 artefactos** que consumen o ejecutan sistemas LLM. Los produce por un pipeline
 gobernado, los cataloga y resuelve por URN, los mantiene coherentes en el tiempo
-(checks, lifecycle, deprecacion) y proyecta los ejecutables a runtimes. No es
-una aplicacion tradicional: el activo principal es la consistencia entre ley,
-ontologia, serializacion, runtimes, artefactos y toolchain.
+(checks, lifecycle, deprecacion) y proyecta los ejecutables a runtimes.
 
 Gestiona **tres tipos de artefacto, y solo tres**:
 
-- **conocimiento** — archivos `.md` en estandar KORA/MD para *consumo* de
-  sistemas LLM (se leen como contexto, no se ejecutan).
-- **agentes** (`AGENT.md`) y **skills** (`SKILL.md`) — definen actores y
-  capacidades que se *proyectan a los runtimes canonicos* (ver seccion
-  Runtimes) via transmutacion.
+- **conocimiento** — `.md` en estandar KORA/MD para *consumo* de sistemas LLM
+  (se leen como contexto, no se ejecutan).
+- **agentes** (`AGENT.md`) y **skills** (`SKILL.md`) — actores y capacidades
+  que se *proyectan a runtimes* via transmutacion.
 
-Las **specs** no son artefactos: son la ley que define que cuenta como
-artefacto valido. "Conocimiento" es un tipo especifico, nunca paraguas de los
-otros dos.
+Las **specs** no son artefactos: son la ley que define que cuenta como artefacto
+valido. "Conocimiento" es un tipo especifico, nunca paraguas de los otros dos.
 
-Principio rector vigente (garantia formal, no definicion):
+Principio rector (garantia formal, no definicion):
 
 ```text
 KORA = vector ontologico PMI x LFS + shape unificado de autoria + transmutacion funtorial
@@ -36,6 +29,29 @@ KORA = vector ontologico PMI x LFS + shape unificado de autoria + transmutacion 
 
 El filesystem con manifests validos es la fuente de verdad. Las vistas en
 `docs/generated/` son derivadas y regenerables.
+
+## Bootstrap De Sesion
+
+Al abrir una sesion nueva sobre este repo:
+
+1. Lee este archivo (`CLAUDE.md`).
+2. Lee `governance/gobernanza.md` cuando importe precedencia o politica.
+3. Lee el ultimo handoff en `docs/handoffs/YYYY-MM-DD-*.md` por fecha
+   descendente.
+4. Verifica el rol del host local:
+
+   ```bash
+   python3 toolchain/kora host
+   ```
+
+5. Verifica estado antes de proponer o tocar nada:
+
+   ```bash
+   python3 toolchain/kora index
+   python3 toolchain/kora check --strict
+   ```
+
+   Si `--strict` no pasa, diagnostica antes de avanzar; no normalices la deuda.
 
 ## Identidad Operacional Por Host
 
@@ -69,15 +85,16 @@ Cuando dos fuentes parezcan contradecirse, aplica esta precedencia:
 
 Specs clave:
 
-- `governance/gobernanza.md`: constitucion, identidad, precedencia, lifecycle,
-  host roles, runtimes canonicos y decisiones HITL.
-- `ontology/harness-spec.md`: ontologia PMI x LFS. Sigue en freeze formal.
-- `serialization/autoria-spec.md`: shape unificado para agentes y skills.
-- `serialization/agent-skill-construction-spec.md`: metodologia de construccion
-  pre-transmutacion.
-- `serialization/md-spec.md` y `serialization/knowledge-spec.md`: KORA/MD,
-  knowledge y tejido relacional.
-- `runtime/transmutation-spec.md` y runtime extensions: proyeccion IR -> target.
+| Spec | Alcance |
+|------|---------|
+| `governance/gobernanza.md` | Constitucion, identidad, precedencia, lifecycle, host roles, runtimes canonicos, decisiones HITL |
+| `ontology/harness-spec.md` | Ontologia PMI x LFS (freeze formal) |
+| `serialization/autoria-spec.md` | Shape unificado para agentes y skills |
+| `serialization/agent-skill-construction-spec.md` | Metodologia de construccion pre-transmutacion |
+| `serialization/md-spec.md` | KORA/MD y tejido relacional |
+| `serialization/knowledge-spec.md` | Knowledge |
+| `runtime/transmutation-spec.md` | Proyeccion IR -> target |
+| `runtime/*-runtime-extension.md` | Runtime extensions canonicas |
 
 ## Topologia Actual
 
@@ -113,9 +130,6 @@ productivo.
 
 ## Modelo Actual De Artefactos
 
-No asumas el workspace legacy de cinco archivos (`AGENTS.md`, `TOOLS.md`,
-`SOUL.md`, `USER.md`, `config.json`) como forma canonica productiva.
-
 La unidad productiva principal es:
 
 - `AGENT.md` para agentes en `artifacts/agents/{ns}/{name}/`
@@ -132,6 +146,9 @@ Ambos siguen `serialization/autoria-spec.md`:
 Fibras adjuntas posibles: `skills/`, `memoria/`, `MEMORY.md`, `_BUILD/`,
 `scripts/`, `referencias/`, `recursos/`. Antes de editar, inspecciona el
 directorio concreto.
+
+No asumas el workspace legacy de cinco archivos (`AGENTS.md`, `TOOLS.md`,
+`SOUL.md`, `USER.md`, `config.json`) como forma canonica productiva.
 
 ## Formal Layer
 
@@ -189,6 +206,22 @@ Verifica targets vivos con:
 python3 toolchain/kora transmute --help
 ```
 
+## Skills Core
+
+| URN | Cuando |
+|-----|--------|
+| `urn:kora:artefacto:mente-omega` | Razonamiento estructural-discursivo (pentamotor Phi/Psi/Xi/Delta/Sigma) |
+| `urn:kora:artefacto:cat-thinking` | Enmarque categorial (24 piezas ICAS-BoK) |
+| `urn:kora:artefacto:atomize` | Familia atomic productor canonico |
+
+## Personas Disponibles
+
+| URN | Para |
+|-----|------|
+| `urn:dev:artefacto:steipete` | Direccion de ejecucion cognitiva |
+| `urn:fxsl:artefacto:allan-kelly` | Arquitectura organizacional human-agent |
+| `urn:pro:artefacto:david-allen` | Claridad operable integral (GTD + regulacion) |
+
 ## Toolchain CLI
 
 Entrypoint soportado:
@@ -225,6 +258,10 @@ python3 toolchain/kora check --strict
 
 Usa `health`, `validate`, `lint-md`, `migrate`, `promote` o `deprecate` cuando
 necesites una fase puntual; no los trates como reemplazo de la gate unificada.
+
+`toolchain/kora_lib/` contiene la implementacion viva. `toolchain/kora.bat` y
+`toolchain/kora.ps1` son wrappers de conveniencia. `toolchain/legacy_migration/`
+concentra one-shots y migradores historicos.
 
 ## Secuencia De Trabajo
 
@@ -288,11 +325,26 @@ salidas materializadas y expone helpers de portabilidad como `canonical_path()`.
 - `docs/start-prompt.md` es bootstrap copiable para sesiones nuevas.
 - `docs/generated/*` es derivado; no escribas conteos a mano.
 
+## Antipatrones
+
+- Asumir topologia legacy (`KNOWLEDGE/`, `AGENTS/`, `SKILLS/`, `specs/`,
+  `scripts/`): hoy es `artifacts/`, capas top-level y `toolchain/`.
+- Editar `docs/generated/*` a mano: es derivado, regenerable con `kora index` /
+  `kora sync-docs`.
+- Promover knowledge sin pasar por REVIEW.
+- Inventar URNs: resolver con `kora resolve <urn>` antes de citar.
+- Saltar a runtime sin `AGENT.md` / `SKILL.md` conforme a autoria-spec.
+- Asumir que `scripts/` raiz describe la toolchain viva; la toolchain viva esta
+  en `toolchain/`.
+- Hardcodear conteos de nodos, tests o checks en docs generales; medir con la
+  CLI.
+- Relajar specs para encubrir un artefacto mal formado.
+- Correr `kb-graph`, `index` o `sync-docs` y mezclar cambios en `docs/generated/`
+  con otro objetivo sin revisar.
+
 ## Portabilidad
 
 Alcance operativo actual: Linux y macOS con Python >= 3.11.
-
-Evidencia util:
 
 - `toolchain/kora` corta con exit `2` si Python < 3.11.
 - `check --list` incluye `portabilidad-tests`.
@@ -301,11 +353,7 @@ Evidencia util:
 
 ## Historia Relevante
 
-Antes del `2026-04-18`, el repo usaba la topologia legacy `specs/`, `AGENTS/`,
-`SKILLS/`, `KNOWLEDGE/`, `schemas/` y `scripts/`. La reorg v5 movio esa
-estructura a capas explicitas y a `artifacts/` + `toolchain/`.
-
-Mapa de traduccion:
+Antes del `2026-04-18`, el repo usaba la topologia legacy. Mapa de traduccion:
 
 | Legacy | Actual |
 |--------|--------|
@@ -317,20 +365,5 @@ Mapa de traduccion:
 | `scripts/` | `toolchain/` |
 | `catalog/catalog_master_kora.yml` | `docs/generated/catalog.yml` |
 
-Si encuentras referencias legacy en planes archivados, fuentes importadas o
-helpers de compatibilidad, tratalas como contexto historico, no como topologia
-vigente.
-
-## Notas Practicas
-
-- No asumas que `scripts/` raiz describe la toolchain viva; la toolchain viva
-  esta en `toolchain/`.
-- No hardcodees conteos de nodos, tests o checks en docs generales. Midelos con
-  la CLI.
-- No relajes specs para encubrir un artefacto mal formado.
-- Un fallo de check puede ser artefacto invalido, check desalineado o spec
-  incompleta; diagnostica antes de editar.
-- Si corriges `artifacts/knowledge/fxsl/cat/`, hazlo para reducir ruido o
-  preparar absorcion formal, no para darle autoridad normativa directa.
-- Si corres `kb-graph`, `index` o `sync-docs`, revisa si se modifico
-  `docs/generated/*` antes de mezclar esos cambios con otro objetivo.
+Referencias legacy en planes archivados, fuentes importadas o helpers de
+compatibilidad son contexto historico, no topologia vigente.
