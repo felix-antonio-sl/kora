@@ -701,5 +701,41 @@ class CoalgebraConformanceTests(unittest.TestCase):
         self.assertEqual(escapes, ["a -> b"])
 
 
+class CheckFixAdjunctionTests(unittest.TestCase):
+    """Rec. 4 auditoria categorial: el fix es un reparador canonico PARCIAL
+    (idempotente, reductor), no una adjuncion probada. El header de checks.py
+    ya no afirma 'left adjoint' pleno; aqui se verifica la propiedad que SI se
+    sostiene: idempotencia.
+    """
+
+    def test_partial_fixes_registered(self):
+        from kora_lib.checks import _FIXES
+        for cid in ("catalog-exists", "lint-md", "autoria-conformance"):
+            self.assertIn(cid, _FIXES, f"{cid} deberia tener fix canonico parcial registrado")
+
+    def test_autoria_fix_idempotent_on_conformant_repo(self):
+        # El corpus productivo ya es punto fijo del fix (autoria-conformance pasa).
+        # Aplicar el fix a un punto fijo no propone cambios: fix . fix = fix.
+        from kora_lib.migration import migrate_to_autoria
+        self.assertEqual(
+            migrate_to_autoria(dry_run=True), [],
+            "migrate sobre repo conforme debe ser no-op (idempotencia del fix parcial)",
+        )
+
+
+class CoalgebraCheckHonestyTests(unittest.TestCase):
+    """Rec. 5 auditoria categorial: `coalgebra-conformance` valida un FSM finito
+    (buena formacion + termination + cierre de sub-coalgebra de safety), no la
+    F-coalgebra con carrier U/bisimulacion del doc formal 01. La descripcion del
+    registry lo declara explicitamente para no prometer mas de lo que entrega.
+    """
+
+    def test_description_scopes_to_finite_fsm(self):
+        from kora_lib.checks import get_check
+        desc = get_check("coalgebra-conformance").description.lower()
+        self.assertIn("fsm", desc, "la descripcion debe aclarar que verifica sobre el FSM finito")
+        self.assertIn("safety", desc, "la descripcion debe nombrar el cierre de safety")
+
+
 if __name__ == "__main__":
     unittest.main()

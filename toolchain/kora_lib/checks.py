@@ -3,7 +3,9 @@
 Categorical model:
 - A Check is a morphism in CheckCat: RepoState → DiagSet
 - Checks compose via dependency ordering (topological sort)
-- A Fix is the left adjoint of a Check: DiagSet → RepoState
+- A Fix is a partial canonical repair (left-adjoint-LIKE), DiagSet → RepoState:
+  idempotent and reducing by construction, NOT a proven adjunction
+  (no unit/counit/triangle identities are verified — see _FIXES)
 - The Kleisli category of the Diag monad is the check-then-fix pipeline
 
 Every check has:
@@ -13,7 +15,7 @@ Every check has:
 - enforcement: how it's verified (schema | lint | runtime | eval | manual)
 - depends: checks that must pass first (DAG of dependencies)
 - check_fn: produces diagnostics
-- fix_fn: optional — canonical fix (left adjoint)
+- fix_fn: optional — canonical partial fix (left-adjoint-like, not a proven adjunction)
 """
 
 from dataclasses import dataclass, field
@@ -1209,7 +1211,7 @@ def _check_skill_structure(path_filter=None):
 
 
 def _fix_autoria_conformance(diagnostics):
-    """Adjoint izquierdo PARCIAL de `autoria-conformance`.
+    """Fix canonico PARCIAL de `autoria-conformance` (adjoint-LIKE, no adjuncion probada).
 
     Factoriza el check en dos sub-functores:
       Check = CheckRenames  (+)  CheckFibra
@@ -1222,9 +1224,11 @@ def _fix_autoria_conformance(diagnostics):
     eticos, nivel_prescripcion faltante) requieren autor humano — son
     residual tras aplicar el fix.
 
-    Propiedades esperadas (tests las verifican):
-      - Idempotencia:   fix . fix = fix
-      - Reduccion:      diagnose . fix  no contiene codes rename-like
+    Propiedades:
+      - Idempotencia: fix . fix = fix. Verificada por punto-fijo en
+        test_check_pipeline.py (migrate sobre repo conforme = no-op).
+      - Reduccion: migrate solo emite codes rename-like; los de fibra
+        (forma-* bounds, compromisos eticos) son residual para autor humano.
     """
     from .migration import migrate_to_autoria
     migrate_to_autoria(dry_run=False)
@@ -3041,7 +3045,7 @@ def _register_builtins():
     )
     register_check(
         Check("coalgebra-conformance",
-              "Artefactos con plan.fsm declarado verifican termination y sub-coalgebra de safety cerrada",
+              "Artefactos con plan.fsm: buena formacion + termination + cierre de sub-coalgebra de safety sobre el FSM finito (no la F-coalgebra con carrier U/bisimulacion del doc formal 01)",
               scope="artifact", severity="high", enforcement="eval",
               spec_ref="autoria-spec §3.5; harness-spec §4; ICAS Part IV", depends=("catalog-exists",), phase="verify"),
         _check_coalgebra_conformance,
