@@ -6,9 +6,9 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-27"
     source: "Diseno historico desde el corpus base OPM v3.0.0. Desde v1.5.0 queda reanclada al corpus OPM/Forja SSOT ES como referencia primaria: urn:fxsl:kb:reglas-opm-estrictas-es, urn:fxsl:kb:spec-forja-opd-es, urn:fxsl:kb:spec-forja-opl-es, urn:fxsl:kb:metodologia-forja-opm-es y urn:fxsl:kb:opm-categorial-es como puente formal. Las capas base opm-es/opd-es/opl-es/manual-metodologico-opm-es quedan como procedencia y soporte cuando el corpus Forja las delega. v1.5.1 absorbe desde deep-opm-pro el contrato re-elicitar para logs de decisiones y anclas normativas. v1.5.2 absorbe la ratificacion P3: normalizacion lexica y normativa en E2, compilador como verificador determinista."
-    updated_at: "2026-06-05"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana."
-version: "1.5.2"
+    updated_at: "2026-06-09"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana. v1.6.0 integra el render headless fiel de opforja (H1, 'bun run render:headless' en deep-opm-pro) como pasada visual del agente: nuevo estado 'revisar-visual' que cierra el loop dominio->opforja read-through (el agente lee PNG+SVG+avisos por OPD sin abrir la UI y vuelve a refinar el proto, fuente unica), y 'serializar-opd' prefiere ese render fiel sobre jointjs cuando deep-opm-pro esta disponible."
+version: "1.6.0"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada primero al corpus OPM/Forja SSOT ES y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
@@ -46,7 +46,7 @@ extensions:
       - id: deep-opm-pro
         path: "~/projects/deep-opm-pro/app"
         rol: "modelador OPM interactivo (mesa de trabajo primaria)"
-        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts)"
+        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts); y CLI de render headless 'bun run render:headless --proto <md>|--modelo <json> --out <dir>' que emite PNG+SVG por OPD fiel a opforja + 00-indice.json/opl/avisos/ledger/procedencia (app/scripts/render-headless.ts). Read-through: la herramienta no muta el proto/dominio."
         autoridad_semantica: "se subordina al corpus OPM/Forja SSOT ES; no lo redefine"
 artefacto:
   perfil:
@@ -63,6 +63,7 @@ artefacto:
       - "normalizacion de proto-modelo laxo hacia OPL-ES estricto antes de compilar"
       - "identificacion y estandarizacion de citas normativas en el proto-modelo"
       - "consumo de LogDecisiones v0 emitido por deep-opm-pro para ratificar anclas normativas"
+      - "pasada visual del modelo sin abrir la UI: ver el render fiel por OPD para cazar regresiones de layout/estructura antes de entregar"
     salidas:
       - "OPM model tipado por capas (cosas, links, OPDs por nivel) consistente con el corpus OPM/Forja SSOT ES"
       - "OPL-ES texto canonico bimodal con el OPD"
@@ -71,6 +72,7 @@ artefacto:
       - "bundle o proto-modelo re-elicitado con anclas normativas ratificadas como vigentes"
       - "hook a jointjs-open-source para render estatico cuando NO se quiere abrir el modelador"
       - "reporte de validacion tripartita (estructural R-*/V-* / metodologica heuristicas Forja A5+A8 / estilo legibilidad R-VIS-*), homologado al panel de issues del modelador, con deteccion de anti-patrones canonicos AP-01 a AP-30"
+      - "render headless fiel a opforja (PNG+SVG por OPD) para la pasada visual del agente sin abrir la UI, via 'bun run render:headless' de deep-opm-pro"
   plan:
     estado_inicial: triaje
     estado_terminal: entregar
@@ -84,6 +86,7 @@ artefacto:
       - serializar-opl
       - serializar-bundle
       - re-elicitar
+      - revisar-visual
       - serializar-opd
       - entregar
     gate_de_claridad: "Antes de transitar a cualquier estado productivo (normalizar-proto, bootstrap-sd, refinar-modelo, serializar-*), evaluar si hay barro pendiente. Si lo hay, derivar a 'aclarar' y bloquear avance hasta que el barro este resuelto o convertido en supuesto declarado por el operador."
@@ -242,6 +245,7 @@ Clasificar la solicitud para decidir el siguiente estado:
 | "dame el OPL-ES de este OPD" | `serializar-opl` |
 | "dame un bundle para abrir en deep-opm-pro" / "modelar interactivamente" | `serializar-bundle` |
 | "re-elicita este LogDecisiones v0" / "ratifica estas anclas" | `re-elicitar` |
+| "muestrame como se ve el modelo" / "render fiel sin abrir la UI" / "pasada visual antes de entregar" | `revisar-visual` |
 | "dame el SVG/PNG de este OPD" | `serializar-opd` |
 | "audita este JSON 'deep-opm-pro.modelo.v0'" | hidratar primero el bundle (ver §Composicion con deep-opm-pro), luego `validar-modelo` |
 
@@ -482,14 +486,69 @@ Salida:
 - si queda deuda bloqueante, una unica pregunta dirigida bajo la plantilla de
   aclaracion serial.
 
+### `revisar-visual`: pasada visual del agente (loop dominio->opforja)
+
+Estado de **observabilidad**. Le da ojos al agente: produce un render **fiel a
+opforja** del modelo, sin abrir la UI ni intervencion humana, para que el agente
+cace regresiones de layout/estructura **antes** de entregar. La pasada del humano
+baja de auditoria a confirmacion.
+
+Precondicion: existe un proto-modelo en OPL-ES estricto (salida de
+`normalizar-proto`) o un bundle, **y** `deep-opm-pro` esta disponible en la misma
+maquina (`~/projects/deep-opm-pro/app`). Si NO esta disponible, no forzar este
+estado: degradar a `serializar-opd` (render estatico via jointjs).
+
+Protocolo:
+
+1. **Renderizar headless.** Ejecutar (herramienta `Bash`):
+
+   ```bash
+   cd ~/projects/deep-opm-pro/app && bun run render:headless --proto <ruta-del-proto.md> --out <dir>
+   # o, si solo hay bundle ya emitido:  --modelo <ruta-bundle.json> --out <dir>
+   ```
+
+   Con `--proto`, las advertencias de canon **no abortan** el render: el agente ve
+   el proto aunque tenga observaciones (quedan en `avisos.json`). Solo un fallo
+   estructural duro escribe `error.txt` y termina con exit 1.
+2. **Leer la salida.** Abrir `<dir>/00-indice.json` (lista de OPDs con sus
+   archivos), cada `NN-slug.png` con la herramienta `Read` (la renderiza como
+   imagen — el agente **ve** el layout fiel a opforja), y los textuales de senal:
+   `avisos.json` (diagnostico), `ledger.json` (trazabilidad linea-de-proto ->
+   destino), `opl.md`, `conteos.json`.
+3. **Juzgar visualmente.** La pasada visual es distinta de `validar-modelo`
+   (estructural/metodologica/estilo): aqui se evalua lo que solo se ve en el
+   render — encuadre, solapamientos, proximidad semantica, bandas, claridad del
+   OPD. Citar la regla propietaria cuando aplique (spec-forja-opd-es).
+4. **Cerrar el loop (read-through).** Si se observa un problema, volver a
+   `aclarar` / `refinar-modelo` / `normalizar-proto` citando lo que se ve, y
+   **corregir el proto** (fuente unica) — nunca el render ni un bundle suelto: la
+   herramienta es read-through y no muta el proto/dominio. Re-renderizar tras
+   corregir. Si el render es correcto, avanzar a `entregar`.
+
+Regla de cierre del estado: no entregar un modelo cuyo render fiel no se haya
+inspeccionado al menos una vez cuando `deep-opm-pro` estaba disponible. La
+correccion vive en el proto; opforja es el ojo, esta skill es la mano, el proto
+es la fuente.
+
 ### `serializar-opd`: emitir render estatico
 
 Cuando el destino NO es la mesa de trabajo (e.g. snippet en un informe markdown, lamina presentacion, documentacion sin UI):
 
-- delegar a `urn:kora:artefacto:jointjs-open-source` con la lista de things + links + decoraciones requeridas por opd-es.
+- **Camino primario (fiel a opforja): render headless de deep-opm-pro.** Si
+  `deep-opm-pro` esta disponible en la maquina, preferir
+  `bun run render:headless --proto <md>|--modelo <json> --out <dir>` (ver
+  `revisar-visual`). Produce PNG+SVG por OPD con **el mismo layout que opforja**
+  (`aplicarLayoutCompleto`, no un re-layout independiente), que es lo que el
+  modelo realmente muestra al humano. Usar este camino tambien para entregar
+  imagenes en un informe.
+- **Fallback (render independiente): jointjs-open-source.** Solo cuando
+  `deep-opm-pro` NO esta disponible (otra maquina, sin repo) delegar a
+  `urn:kora:artefacto:jointjs-open-source` con la lista de things + links +
+  decoraciones requeridas por opd-es. Es un render **distinto** al de opforja;
+  declarar explicitamente que no es fiel al modelador.
 - si solo se requiere descripcion textual del OPD, basta con la representacion estructural emitida en `serializar-opl`.
 
-Por defecto este estado se omite si ya se emitio bundle: el modelador deep-opm-pro produce SVG/PNG nativos al exportar.
+Por defecto este estado se omite si ya se emitio bundle y un humano abrira el modelador: deep-opm-pro produce SVG/PNG nativos al exportar. Para la pasada del **agente**, usar `revisar-visual` (mismo render, sin UI).
 
 ### `entregar`: paquete final
 
@@ -552,6 +611,7 @@ Al asumir que el modelador esta disponible y al dia con sus lineas de desarrollo
 | **Modo revision mobile** (ronda 21 / L2) | Bundles grandes son auditables desde el celular para revision/issues, no solo desktop. |
 | **Evals UX permanentes con harness Playwright** (ronda 21 / L3) | Cuando un bundle se prueba en serie, los evals de la app cubren tiempos / regresion / responsive. |
 | **LogDecisiones v0 + AnclaNormativa** (W1.5/F5) | La app puede registrar transiciones de anclas pendientes; la skill consume ese log en `re-elicitar` y muta la fuente solo con ratificacion y fuente. |
+| **Render headless fiel** (H1, `bun run render:headless`) | La skill obtiene PNG+SVG por OPD **fieles a opforja** sin abrir la UI ni intervencion humana; alimenta la pasada visual del agente en `revisar-visual` y el camino primario de `serializar-opd`. |
 
 ### Que NO hace la app por la skill
 
