@@ -5,7 +5,9 @@ _manifest:
     created_by: "FS"
     created_at: "2026-04-17"
     source: "harness-spec v1.0; transmutation-spec v1.0; revisión docs oficiales Claude Code (claude.ai/code) y marketplace de plugins"
-version: "1.1.0"
+    updated_at: "2026-06-10"
+    update_reason: "v1.2.0 precisa la realizacion material del modo persona (§2.1, §7.1): no existe instalador nativo dedicado; la conversacion persona se realiza por encarnacion del artefacto emitido en ~/.claude/agents/ como instrucciones del hilo principal. T_claude-code emite un unico artefacto dual-mode (subagente Task + fuente de encarnacion); se declara que perdidas aplican por modo de invocacion, no por forma emitida. Cierra la deuda 'forma persona no materializada' detectada el 2026-06-10."
+version: "1.2.0"
 status: publicado
 tags: [spec, runtime, claude-code, extension, transmutacion, proyeccion]
 lang: es
@@ -24,7 +26,7 @@ relations:
     - "urn:kora:kb:gobernanza"
 ---
 
-# KORA/Claude-Code-Runtime-Extension v1.1.0
+# KORA/Claude-Code-Runtime-Extension v1.2.0
 
 ## 1. Definicion
 
@@ -50,8 +52,39 @@ Gobierna:
 |----------------------------|----------------------|--------------|
 | Skill estandar | `~/.claude/skills/{name}/` o `./.claude/skills/` | `name, description, allowed-tools` |
 | Subagente Task | `~/.claude/agents/{name}.md` | `name, description, tools, model, color, max_turns` |
-| Agente persona principal | workspace con instrucciones | `name, description, tools, model, memory, effort, color, max_turns` |
+| Agente persona principal | workspace con instrucciones (ver §2.1) | `name, description, tools, model, memory, effort, color, max_turns` |
 | Plugin (bundle) | `.claude-plugin/plugin.json` + skills/commands/agents | segun plugin.json schema |
+
+### 2.1 Realizacion del modo persona (dual-mode)
+
+Claude Code no tiene instalador nativo dedicado para la forma "Agente persona
+principal": el runtime solo registra `~/.claude/agents/*.md` (subagentes Task)
+y `~/.claude/skills/` (skills). La forma persona se **realiza por
+encarnacion**: el operador abre una conversacion cargando como instrucciones
+del hilo principal el artefacto ya emitido por `T_{claude-code}` (p. ej.
+"encarna a `{name}` (`~/.claude/agents/{name}.md`) como persona principal"),
+o trabaja en un workspace cuyo `CLAUDE.md` referencia esas instrucciones.
+
+En consecuencia, `T_{claude-code}` emite **un unico artefacto dual-mode** por
+agente con arnes persona (Μ=2):
+
+1. **Modo subagente Task** — el runtime lo registra y lo invoca via `Task()`.
+   Capacidades acotadas a su lista `tools`; sin Skill tool, sin dialogo HITL
+   directo con el operador. Region efectiva: trabajos batch con input/output
+   cerrado.
+2. **Modo persona (encarnacion)** — el mismo artefacto cargado como
+   instrucciones del hilo principal. La persona dispone del dialogo HITL
+   nativo, del Skill tool y de las herramientas del hilo segun permisos de la
+   sesion. Es el modo que realiza Μ=2 y Ξ≥2 con la fidelidad declarada en §3.
+
+Las perdidas de proyeccion se declaran **por modo de invocacion**, no por
+forma emitida: la matriz §3 describe el modo persona; el modo subagente opera
+de facto como Μ=1/Ξ≤2 mientras dura la invocacion (la memoria `memory: user`
+persiste entre invocaciones, pero no hay dialogo intra-tarea). Un agente con
+arnes persona cuya diferencia de capacidades entre modos sea operacionalmente
+relevante DEBERIA declarar en su body la doctrina de modos (cuando opera como
+subagente, cuando exige encarnacion), de modo que el artefacto transmutado sea
+auto-consciente de su modo efectivo.
 
 ## 3. Matriz de preservacion por eje
 
@@ -258,7 +291,7 @@ Claude Code distingue tres modos de invocacion para los artefactos:
 
 | Modo | Trigger | Forma material | Vector tipico |
 |------|---------|----------------|----------------|
-| Conversacion persona | Usuario abre conversacion | Agente persona | Π=2, Μ=2, Ξ=2, Φ=2 |
+| Conversacion persona | Usuario abre conversacion encarnando las instrucciones del artefacto (§2.1) | Agente persona (dual-mode) | Π=2, Μ=2, Ξ=2, Φ=2 |
 | Subagente Task | Tool `Task()` con `subagent_type` | Subagente | Π=2, Μ=1, Ξ=2, Φ=1 |
 | Skill auto-activado | Description match | Skill estandar | Π≤2, Μ=0, Ξ=1 |
 | Command slash | Usuario escribe `/cmd` | Skill con trigger explicito | Π≤2, Μ=0, Ξ=1 |
