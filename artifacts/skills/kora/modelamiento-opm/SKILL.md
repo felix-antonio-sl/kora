@@ -7,8 +7,8 @@ _manifest:
     created_at: "2026-04-27"
     source: "Diseno historico desde el corpus base OPM v3.0.0. Desde v1.5.0 queda reanclada al corpus OPM/Forja SSOT ES como referencia primaria: urn:fxsl:kb:reglas-opm-estrictas-es, urn:fxsl:kb:spec-forja-opd-es, urn:fxsl:kb:spec-forja-opl-es, urn:fxsl:kb:metodologia-forja-opm-es y urn:fxsl:kb:opm-categorial-es como puente formal. Las capas base opm-es/opd-es/opl-es/manual-metodologico-opm-es quedan como procedencia y soporte cuando el corpus Forja las delega. v1.5.1 absorbe desde deep-opm-pro el contrato re-elicitar para logs de decisiones y anclas normativas. v1.5.2 absorbe la ratificacion P3: normalizacion lexica y normativa en E2, compilador como verificador determinista."
     updated_at: "2026-06-10"
-    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana. v1.6.0 integra el render headless fiel de opforja (H1) como pasada visual del agente: nuevo estado 'revisar-visual' read-through y 'serializar-opd' con H1 primario sobre jointjs. v1.7.0 sincroniza la skill con los cortes G*/E-1/W6-alpha de opforja: reconoce el puente de contexto W6.0 como entrada de triaje (markdown 'Contexto de modelado' + contador de cruces g3), absorbe la tabla de formas laxas retiradas de la familia-V (cuando/segun/V3-V5-V7 rechazan ruidoso; la forma E2 + [RATIFICAR] es responsabilidad de la skill), generaliza re-elicitar con la taxonomia de anclas del compilador (norma/ratificacion/candidata: la ratificacion meta se resuelve por acto de modelado, no por fuente legal), incorpora la variante de OPD generic-view (vista ad-hoc sin semantica de refinamiento, OPL delta-cero, exenta de frontera), integra el golden-harness H2 (verify:reproducible) y actualiza el drift documental (sello de procedencia 3 componentes post-G2, glosario retirado del pipeline, capacidades vigentes de la app, checkers B-2/B-4/B-6)."
-version: "1.7.0"
+    update_reason: "v1.1.0 integro el modelador deep-opm-pro como mesa de trabajo primaria. v1.2.0 incorpora postura dialectica intensa: la skill deja de ser un emisor cooperativo y pasa a operar como par modelador exigente que bloquea avance ante barro. v1.3.0 integra Metodologia Forja. v1.4.x integra reglas estrictas y spec OPL, corrige AP-* y absorbe el wizard SD de opm-modeler. v1.5.0 reordena la autoridad: la skill DEBE alinearse primero con el corpus OPM/Forja SSOT ES y no con la jerarquia base previa. v1.5.1 compromete el estado re-elicitar exigido por deep-opm-pro para consumir LogDecisiones v0 y mutar anclas normativas ratificadas como acto de modelado E0-E2. v1.5.2 incorpora la frontera ratificada por el operador: la skill identifica citas/normas y propone estandarizacion del proto en OPL-ES estricto; el compilador no aprende lexico de dominio ni emite anclas sin confirmacion humana. v1.6.0 integra el render headless fiel de opforja (H1) como pasada visual del agente: nuevo estado 'revisar-visual' read-through y 'serializar-opd' con H1 primario sobre jointjs. v1.7.0 sincroniza la skill con los cortes G*/E-1/W6-alpha de opforja: reconoce el puente de contexto W6.0 como entrada de triaje (markdown 'Contexto de modelado' + contador de cruces g3), absorbe la tabla de formas laxas retiradas de la familia-V (cuando/segun/V3-V5-V7 rechazan ruidoso; la forma E2 + [RATIFICAR] es responsabilidad de la skill), generaliza re-elicitar con la taxonomia de anclas del compilador (norma/ratificacion/candidata: la ratificacion meta se resuelve por acto de modelado, no por fuente legal), incorpora la variante de OPD generic-view (vista ad-hoc sin semantica de refinamiento, OPL delta-cero, exenta de frontera), integra el golden-harness H2 (verify:reproducible) y actualiza el drift documental (sello de procedencia 3 componentes post-G2, glosario retirado del pipeline, capacidades vigentes de la app, checkers B-2/B-4/B-6). v1.8.0 ejecuta M2 (HITL del operador 2026-06-10): el camino primario de serializar-bundle pasa a ser proto OPL-ES estricto -> compilador de autoria (compilarProto + construirSello + emitirBundle), que emite bundle CON sello, valida round-trip/contencion/canon y habilita golden-harness y cruce g3; el bundle artesanal queda como fallback declarado sin sello. Ademas absorbe los cortes W6.4/W6.5/auth-v1 de opforja: NotaMesa (W6.5-a, quinta seccion 'Notas de la mesa' del contexto W6.0, insumo de re-elicitacion desechable que se resuelve corrigiendo el proto), registro [RATIFICAR] tipificado (W6.5-b: la app registra transiciones que no retroceden, el LogDecisiones v0 exporta con modeloHash=protoHash del sello y se bloquea sin sello, el ancla solo pasa a vigente via re-elicitacion de esta skill, L9 limpia el registro tras re-emision), anclas proyectadas read-only en el Inspector + chip Anclas N (W6.4), y login obligatorio single-operator en la instancia productiva (auth v1)."
+version: "1.8.0"
 status: activo
 nombre: modelamiento-opm
 descripcion: "Skill horizontal y dialectica para co-construir, refinar, validar y serializar modelos OPM (Object-Process Methodology, ISO 19450) con un operador humano. Anclada primero al corpus OPM/Forja SSOT ES y al modelador deep-opm-pro como mesa de trabajo interactiva. Anti-complacencia: bloquea avance ante ambiguedad, fuerza aclaracion antes de plasmar, no construye sobre barro."
@@ -46,7 +46,7 @@ extensions:
       - id: deep-opm-pro
         path: "~/projects/deep-opm-pro/app"
         rol: "modelador OPM interactivo (mesa de trabajo primaria)"
-        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts), con sello de procedencia opcional de 3 componentes {protoHash, autoriaVersion, layoutVersion} dentro de modelo.procedencia — solo el compilador de autoria (compilarProto+emitirBundle) emite sellos. CLI de render headless 'bun run render:headless --proto <md>|--modelo <json> --out <dir>' (H1) que emite PNG+SVG por OPD fiel a opforja + 00-indice.json/opl/avisos/ledger/procedencia. CLI golden-harness 'bun run verify:reproducible --proto <md>|--modelo <json> --golden <bundle.json>' (H2, exit 0/1/2). Entrada inversa: markdown 'Contexto de modelado' del puente W6.0 (procedencia + pendientes [RATIFICAR] + diagnostico JSON + OPL). Read-through: las herramientas no mutan el proto/dominio."
+        contrato_io: "JSON formato 'deep-opm-pro.modelo.v0' (app/src/serializacion/json.ts), con sello de procedencia opcional de 3 componentes {protoHash, autoriaVersion, layoutVersion} dentro de modelo.procedencia — solo el compilador de autoria (compilarProto+emitirBundle) emite sellos, y desde v1.8.0 ese camino es el PRIMARIO de serializar-bundle (API: src/autoria/{compilar/compilador,bundle,procedencia}.ts via script bun en app/). CLI de render headless 'bun run render:headless --proto <md>|--modelo <json> --out <dir>' (H1). CLI golden-harness 'bun run verify:reproducible' (H2, exit 0/1/2). Entradas inversas: markdown 'Contexto de modelado' del puente W6.0 (procedencia + pendientes [RATIFICAR] + notas de la mesa + diagnostico JSON + OPL) y 'LogDecisiones v0' (comando paleta; modeloHash=protoHash del sello; export bloqueado sin sello). Read-through: las herramientas no mutan el proto/dominio."
         autoridad_semantica: "se subordina al corpus OPM/Forja SSOT ES; no lo redefine"
 artefacto:
   perfil:
@@ -128,7 +128,9 @@ artefacto:
       - "Taxonomia de anclas del compilador (W5.2): clase 'norma' (cita explicita) compila a ancla vigente; clase 'ratificacion' ([RATIFICAR[ #clave][: texto]]) compila a pendiente-ratificacion; clase 'candidata' ([C1]/[Q14]-style) JAMAS compila, se conserva como anotacion. La skill emite y consume estas tres clases, no inventa una cuarta."
       - "Formas laxas retiradas rechazan ruidoso: las colas 'cuando' y 'segun' y las formas V3/V4/V5/V7 de la familia-V ya NO compilan en deep-opm-pro. La skill es la responsable de emitir la forma E2 estricta (+ [RATIFICAR] explicito para lo meta); nunca emitir un proto con formas retiradas."
       - "generic-view no es refinamiento: un OPD con vista {kind: 'generic-view'} navega/explica, no crea hechos. No emite OPL (delta-cero), no participa de los checkers de frontera/descomposicion (R-CAT-EQ-3 no aplica) y no exige motivo de refinamiento; exige en cambio proposito de vista declarado."
-      - "Sello de procedencia: solo el compilador de autoria emite sellos ({protoHash, autoriaVersion, layoutVersion} dentro de modelo.procedencia). Un bundle emitido a mano por la skill NO porta sello y el panel de procedencia de opforja lo declarara como tal; no falsificar ni simular sellos."
+      - "Camino primario de emision (M2): con deep-opm-pro disponible, serializar-bundle emite via compilador de autoria (proto OPL-ES estricto -> compilarProto -> emitirBundle con construirSello), que produce bundle CON sello y valida round-trip/contencion/canon. El bundle artesanal es fallback declarado SOLO cuando deep-opm-pro no esta disponible; no porta sello y no falsifica ninguno."
+      - "Notas de mesa (W6.5-a): NotaMesa es meta de la mesa (V-204) — registra que se PREGUNTA la mesa, no que ES la cosa. No emite OPL, no cuenta como cosa, no altera validacion. Es insumo de re-elicitacion desechable: se resuelve corrigiendo el proto y no se fosiliza en el modelo."
+      - "Registro [RATIFICAR] tipificado (W6.5-b): la app solo REGISTRA transiciones (pendiente -> anotado-en-mesa -> ratificado-con-fuente, sin retroceso); el ancla OPM pasa a vigente UNICAMENTE via re-elicitacion de esta skill sobre el proto. Un LogDecisiones v0 siempre proviene de un modelo sellado (modeloHash = protoHash del sello; sin sello la app bloquea el export)."
     compromisos_eticos:
       transparency: "Maxima; cada decision de modelado cita primero la regla propietaria del corpus Forja (R-*, AP-*, R-CAT-*, spec OPD/OPL o metodologia Forja) y solo despues la capa base delegada si corresponde. Cada bloqueo cita el barro detectado y la regla que se viola."
       accountability: "Maxima; la skill no asume por el operador. Cada supuesto se declara como tal y queda registrado en el reporte. Construir sobre supuestos no declarados es una falta tan grave como violar V-*."
@@ -499,9 +501,45 @@ Reglas:
 
 ### `serializar-bundle`: emitir bundle deep-opm-pro
 
-Cuando el destino del modelo es **edicion / refinamiento / revision interactiva**, esta es la salida canonica.
+Cuando el destino del modelo es **edicion / refinamiento / revision interactiva**, esta es la salida canonica. Tiene **dos caminos**, con precedencia clara (M2, HITL del operador 2026-06-10):
 
-Producir un documento JSON con la forma:
+**Camino primario — proto → compilador de autoria (con deep-opm-pro disponible).**
+El proto OPL-ES estricto es la fuente unica; el compilador es el verificador y
+emisor. La skill (herramientas `Write` + `Bash`):
+
+1. Escribe/actualiza el **proto** en OPL-ES estricto (salida de
+   `normalizar-proto`; formas retiradas prohibidas; lo meta como
+   `[RATIFICAR[ #clave][: texto]]`).
+2. Compila y emite **con sello** via script bun ejecutado desde
+   `~/projects/deep-opm-pro/app/` (la API es TypeScript del repo):
+
+   ```ts
+   // emitir-bundle.ts (efimero, p.ej. en app/_local/)
+   import { readFileSync, writeFileSync } from "node:fs";
+   import { compilarProto } from "../src/autoria/compilar/compilador";
+   import { emitirBundle } from "../src/autoria/bundle";
+   import { construirSello } from "../src/autoria/procedencia";
+   const md = readFileSync(PROTO_PATH, "utf8");
+   const comp = compilarProto(md);
+   const bundle = emitirBundle(comp.autor, { procedencia: construirSello({ protoTexto: md }) });
+   writeFileSync(OUT_PATH, bundle.json);          // <- documento importable {formato, modelo}
+   // bundle.opl / bundle.reporte / bundle.avisos / bundle.conteos: adjuntar al entregable
+   ```
+
+   `emitirBundle` aplica el layout canonico y valida **round-trip + contencion +
+   canon** (con `lanzarEnError: true` por defecto lanza ante avisos estructurales;
+   los metodologicos/estilo no bloquean — misma particion que `validar-modelo`).
+   `OpcionesBundle.emitirModeloTextual: true` agrega el markdown derivado (G1) si
+   el dominio lo versiona.
+3. Verifica: `revisar-visual` (render headless H1) y, si hay golden versionado,
+   `verify:reproducible` (H2).
+4. Entrega `bundle.json` (ya es el documento `{formato, modelo}` serializado,
+   con `modelo.procedencia` sellada): importarlo en opforja cuenta como **cruce
+   skill→app** (g3) y habilita panel de procedencia, registro [RATIFICAR] y
+   export de LogDecisiones.
+
+**Camino fallback — bundle artesanal (SOLO sin deep-opm-pro).** Producir a mano
+el documento JSON:
 
 ```json
 {
@@ -512,7 +550,7 @@ Producir un documento JSON con la forma:
 
 Ver `referencias/bundle-deep-opm-pro.md` para el contrato detallado (cosas con id/nombre/esencia, estados con designaciones, enlaces con extremos + estilo + multiplicidad, OPDs por nivel con apariencias, versiones, designaciones, modificadores, abanicos).
 
-Reglas:
+Reglas (ambos caminos; en el primario el compilador ya verifica la mayoria):
 
 - Los nombres de cosas en el bundle deben ser identicos a los del OPD/OPL emitidos.
 - Toda referencia entre OPDs (parent/child por in-zoom, unfold) debe ser internamente consistente — el modelador rechaza el import si rompe `validarReferenciasOpd`.
@@ -521,18 +559,15 @@ Reglas:
 - **Gate de equivalencia funcional** (`reglas-opm-estrictas-es` Anexo C): si el bundle contiene realizaciones hermanas comparables, verificar R-CAT-EQ-2 mediante firma de frontera; si contiene descomposicion (in-zoom), verificar R-CAT-EQ-3 preservando la firma del proceso abstracto (out-zoom). El checker `DESCOMPOSICION_NO_PRESERVA_FRONTERA` detecta la violacion vertical.
 - **Gate de composicion** (R-CAT-COMP-1/2/3 de `reglas-opm-estrictas-es` Anexo C): si el bundle compone multiples modelos, la interfaz compartida no debe duplicar entidades, no debe dejar referencias colgantes, y debe ser asociativa modulo namespacing de ids.
 
-**Procedencia y limites del bundle artesanal.** Un bundle emitido a mano por
-esta skill **no porta sello de procedencia**: solo el compilador de autoria de
-deep-opm-pro (`compilarProto` + `emitirBundle`) emite el sello de 3 componentes
-`{protoHash, autoriaVersion, layoutVersion}` dentro de `modelo.procedencia`. En
-consecuencia: (a) el panel de procedencia de opforja (W6.6) declarara «sin sello
-— no emitido por el compilador de autoria»; (b) el import NO cuenta como cruce
-skill→app del contador g3 (solo los bundles con sello cuentan); (c) el bundle no
-participa del golden-harness H2. Si el flujo del operador exige sello,
-reproducibilidad o trazabilidad proto→bundle, la ruta es **proto OPL-ES estricto
-→ compilador** (el proto es la fuente unica); la skill lo declara y no simula la
-procedencia. La adopcion del camino compilador como ruta primaria de
-`serializar-bundle` es decision HITL pendiente del operador.
+**Limites del fallback artesanal.** Un bundle emitido a mano **no porta sello de
+procedencia** y la skill no falsifica ninguno. En consecuencia: (a) el panel de
+procedencia de opforja (W6.6) declarara «sin sello — no emitido por el
+compilador de autoria»; (b) el import NO cuenta como cruce skill→app del
+contador g3; (c) el bundle no participa del golden-harness H2; (d) la app
+**bloquea el export de LogDecisiones v0** sobre modelos sin sello, asi que el
+ciclo de re-elicitacion no puede cerrarse sobre un bundle artesanal. La skill
+declara estos limites en el entregable y justifica por que no uso el camino
+primario.
 
 **Verificacion de reproducibilidad (H2).** Cuando el entregable deba ser
 byte-identico con un golden versionado (dogfood de dominio, CI), usar el
@@ -584,8 +619,19 @@ Entrada requerida:
 Reglas:
 
 1. Validar primero el schema del log y declarar el `modeloHash` que se esta
-   consumiendo. Si el hash no coincide con el proto/bundle disponible, no mutar:
-   reportar staleness y pedir una unica aclaracion.
+   consumiendo. `modeloHash` es el `protoHash` del sello del modelo (la app
+   bloquea el export sin sello): verificarlo recalculando
+   `construirSello({protoTexto})` sobre el proto disponible. Si no coincide, no
+   mutar: reportar staleness y pedir una unica aclaracion.
+1a. La app solo **registra** transiciones (`pendiente → anotado-en-mesa →
+   ratificado-con-fuente`, sin retroceso, W6.5-b); ninguna transicion de la app
+   muta el ancla OPM. El paso a `vigente` ocurre **unicamente aqui**, sobre el
+   proto, en la siguiente emision.
+1b. Si el contexto W6.0 trae **notas de la mesa**, consumirlas como insumo:
+   cada nota es una pregunta de la mesa sobre un componente. Resolverla
+   corrigiendo el proto o devolviendo una aclaracion dirigida; reportar las
+   notas atendidas. Las notas no se copian al proto ni al bundle: son
+   desechables por diseño.
 2. Para cada entrada con `transicion.a == "anotado-en-mesa"`, registrar/reportar
    la marca y **no mutar** el proto ni el bundle.
 3. Para cada entrada con `transicion.a == "ratificado-con-fuente"`, exigir
@@ -712,8 +758,9 @@ Cuando el modelador este abierto, indicar al agente invocador que el bundle se i
 22. **Formas laxas retiradas**: las colas `cuando`/`segun` y las formas V3/V4/V5/V7 de la familia-V rechazan ruidoso en el compilador. La skill emite siempre la forma E2 estricta (tabla en `normalizar-proto`); lo meta va como sufijo `[RATIFICAR[ #clave][: texto]]`, que no degrada la oracion estricta. Las requiere-decision V1-V2/V6/V8-V11/V13-V17 son legacy estable: no forzar su migracion sin decision del operador.
 23. **Taxonomia de anclas cerrada**: `norma` (compila vigente), `ratificacion` (compila pendiente-ratificacion), `candidata` (jamas compila). Un ancla **meta** (`[RATIFICAR]` sobre condicion/duda de modelado) se resuelve por acto de modelado en `re-elicitar` — modelar estricto, declarar supuesto, o mantener deuda — nunca por fuente legal inventada ni por borrado silencioso.
 24. **generic-view no es refinamiento**: OPL delta-cero, exenta de frontera/descomposicion, sin exigencia de transformee; exige proposito de vista declarado. No acusarla con las reglas de refinamiento ni exigirle R-CAT-EQ-3.
-25. **Procedencia honesta**: solo el compilador de autoria emite sellos. Un bundle artesanal de la skill se entrega declarando que no porta sello (sin cruce g3, sin golden-harness); si el flujo exige procedencia, la ruta es proto→compilador. Prohibido simular o copiar un sello.
+25. **Camino primario de emision (M2)**: con deep-opm-pro disponible, `serializar-bundle` emite via compilador de autoria (proto estricto → `compilarProto` → `emitirBundle` con `construirSello`): bundle con sello, round-trip/contencion/canon verificados, cruce g3 y golden-harness habilitados. El bundle artesanal es fallback **solo** sin deep-opm-pro, se entrega declarando sus limites (sin sello, sin cruce, sin LogDecisiones), y jamas se simula o copia un sello.
 26. **El contexto W6.0 es derivado**: el «Contexto de modelado» del puente se consume, no se edita. Toda correccion va al proto (fuente unica) y se recompila.
+27. **Notas de mesa desechables**: una `NotaMesa` registra que se pregunta la mesa, no que es la cosa. Se consume en `re-elicitar` corrigiendo el proto o respondiendo con aclaracion dirigida; nunca se fosiliza como definicion, hecho OPM ni ancla. El paso de un ancla a `vigente` ocurre solo en esta skill sobre el proto — las transiciones registradas por la app (W6.5-b) son registro, no mutacion.
 
 ## Composicion con deep-opm-pro (mesa de trabajo primaria)
 
@@ -737,7 +784,7 @@ ofrecer al agente invocador estas garantias operativas:
 | **Persistencia backend-only** (cortes C1-C5, 2026-06-06) | Modelos, versiones, workspace/carpetas, autosave y revision viven en Postgres/API con optimistic locking; no hay storage de navegador. Al importar el bundle, la app marca la pestana como `Importado` y permite `Guardar como` + versionado. |
 | **Modo enlace canvas con feedback visual** (ronda 19 / L2) | La skill puede dejar enlaces declarados sin temer ambiguedad de gesto: la app refuerza la firma de enlace al editarlos. |
 | **Auto-layout + fit-to-view** (Fase 0 / P0-5) | La skill no necesita resolver layout: emite cosas y enlaces, la app distribuye. |
-| **Mobile solo-lectura v1** (2026-06-06, flag de build `VITE_MOBILE_READONLY`) | Bundles grandes son auditables desde el celular en modo lectura (carga directa del modelo activo de la sesion; sin routing por URL). |
+| **Mobile solo-lectura v1 + selector de modelos** (2026-06-06/10, flag de build `VITE_MOBILE_READONLY`) | Bundles grandes son auditables desde el celular en modo lectura; tab «Modelos» lista los modelos guardados del tenant y carga read-only (sin routing por URL). |
 | **Evals UX permanentes con harness Playwright** (ronda 21 / L3) | Cuando un bundle se prueba en serie, los evals de la app cubren tiempos / regresion / responsive. |
 | **LogDecisiones v0 + AnclaNormativa** (W1.5/F5) | La app puede registrar transiciones de anclas pendientes; la skill consume ese log en `re-elicitar` y muta la fuente solo con ratificacion y fuente. |
 | **Render headless fiel** (H1, `bun run render:headless`) | La skill obtiene PNG+SVG por OPD **fieles a opforja** sin abrir la UI ni intervencion humana; alimenta la pasada visual del agente en `revisar-visual` y el camino primario de `serializar-opd`. |
@@ -745,10 +792,13 @@ ofrecer al agente invocador estas garantias operativas:
 | **Sello de procedencia 3 componentes** (W5.3/G2) | `modelo.procedencia = {protoHash, autoriaVersion, layoutVersion}` viaja dentro del modelo emitido por el compilador; el glosario fue retirado del pipeline (G2) — el proto es la fuente unica autoral. |
 | **Puente de contexto 1-click** (W6.0) | Comando de paleta «Copiar contexto para la skill»: markdown con procedencia + pendientes `[RATIFICAR]` + diagnostico + OPL, dirigido a esta skill (ver §Puente W6.0). |
 | **Chip «Vista» y panel de procedencia** (W6.3/W6.6) | El arbol OPD distingue `generic-view`; el Inspector muestra sello 3-comp, doctrina read-through y advertencia si el modelo fue editado en la app tras la emision. |
+| **Anclas en el Inspector + chip «Anclas N»** (W6.4) | `SeccionAnclas` READ-ONLY por componente (entidad/enlace/OPD/modelo: claveProto, estado, referencias, nota) — las anclas nacen en el proto y solo transicionan via re-elicitacion; el arbol OPD marca los OPDs con anclas. |
+| **Notas de mesa** (W6.5-a) | La mesa anota preguntas por componente desde el Inspector; viajan en el contexto W6.0 como «Notas de la mesa» y esta skill las consume en `re-elicitar`. |
+| **Registro [RATIFICAR] tipificado + export LogDecisiones** (W6.5-b) | La app registra transiciones (sin retroceso) y exporta `deep-opm-pro.log-decisiones.v0` por comando de paleta (bloqueado sin sello); el ancla pasa a `vigente` solo via re-elicitacion de esta skill; L9 limpia el registro tras la re-emision. |
 | **Modelo textual derivado opt-in** (G1, `emitirModeloTextual`) | `emitirBundle` puede emitir el markdown derivado del modelo (`<!-- DERIVADO — no editar a mano -->`); ningun consumidor debe mantener ese producto a mano. |
 | **Canvas infinito + paneles OPL/Inspector hideables y resizables** (2026-06-03/08) | La mesa escala a modelos grandes sin que la skill pre-resuelva encuadre. |
 | **Simulacion conceptual por microfases** (2026-06-06) | Runtime observable `preparacion → consumo → proceso → resultado → cierre` para validar comportamiento con el operador. |
-| **Instancia productiva** (`https://opforja.sanixai.com`) | La mesa tambien existe desplegada (backend Postgres, sin auth perimetral); el loop del agente (render headless, compilador) corre en dev/local por diseño — el compilador esta DCE-eliminado de prod. |
+| **Instancia productiva con login obligatorio** (`https://opforja.sanixai.com`, auth v1 2026-06-10) | La mesa tambien existe desplegada (backend Postgres; identidad single-operator, registro cerrado por CLI `auth:cuenta`); el loop del agente (render headless, compilador) corre en dev/local por diseño — el compilador esta DCE-eliminado de prod. |
 
 ### Que NO hace la app por la skill
 
@@ -769,8 +819,18 @@ modelamiento-opm») y rutea por seccion:
 |----------------------|-----------|--------------------------|
 | **Procedencia** | sello 3-comp, o «_Sin sello — el modelo no fue emitido por el compilador de autoria_» | Establece la fuente: con sello, el **proto** correspondiente es la fuente unica y toda correccion va alli (read-through); sin sello, declarar que no hay trazabilidad proto→modelo. |
 | **Pendientes [RATIFICAR]** | lista por `claveProto` con autoridad/estado/responsable + resumen | Entrada directa a `re-elicitar`: cada pendiente se resuelve por su especie (normativa → fuente; meta → acto de modelado). |
+| **Notas de la mesa** (W6.5-a) | comentarios de revision anclados por componente (entidad/enlace/OPD/modelo), target resuelto por nombre | Insumo de re-elicitacion: cada nota registra que se **pregunta** la mesa. Se resuelve corrigiendo el proto (o respondiendo con una aclaracion dirigida); es **desechable** — no se fosiliza como definicion ni como hecho. |
 | **Diagnostico** | JSON del panel de issues | Entrada a `validar-modelo`/`refinar-modelo`: triagear por severidad citando la regla propietaria. |
 | **OPL** | markdown OPL completo del modelo | Fuente de trabajo de lectura. **No editar el OPL del contexto**: la correccion se aplica al proto y se recompila. |
+
+Junto al contexto, la mesa puede entregar el **`LogDecisiones v0`** (comando de
+paleta «Copiar LogDecisiones v0», W6.5-b): transiciones del registro
+[RATIFICAR] con `modeloHash` = `protoHash` del sello. La app **bloquea ese
+export sobre modelos sin sello**, asi que un log valido siempre es trazable al
+proto. El ciclo completo: la mesa anota (notas) y ratifica (registro) → exporta
+contexto W6.0 + LogDecisiones v0 → esta skill re-elicita sobre el proto →
+re-emite el bundle (anclas `vigente`) → el registro de la app se limpia solo
+(L9: un ancla vigente no reaparece ni en pendientes ni en el log).
 
 Reglas del puente:
 

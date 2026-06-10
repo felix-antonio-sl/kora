@@ -7,8 +7,8 @@ _manifest:
     created_at: "2026-05-08"
     source: "Derivado de ~/projects/deep-opm-pro/app/src/serializacion/json.ts y app/src/modelo/tipos/* al 2026-05-08. v1.1.0 incorpora el diseno AnclaNormativa y LogDecisiones v0 documentado en el diseno adjudicado de deep-opm-pro al 2026-06-04. v1.2.0 deriva ademas de app/src/autoria/{procedencia,bundle,compilar/tipos,dsl}.ts al 2026-06-10."
     updated_at: "2026-06-10"
-    update_reason: "v1.2.0 sincroniza con los cortes W5.2/W5.3/G2/E-1 de deep-opm-pro: sello de procedencia de 3 componentes dentro de modelo.procedencia (glosario retirado en G2), taxonomia de anclas extraidas inline (norma/ratificacion/candidata), variante de OPD generic-view, e import del campo .json del ResultadoBundle cuando el bundle proviene del compilador."
-version: "1.2.0"
+    update_reason: "v1.2.0 sincroniza con los cortes W5.2/W5.3/G2/E-1 de deep-opm-pro: sello de procedencia de 3 componentes dentro de modelo.procedencia (glosario retirado en G2), taxonomia de anclas extraidas inline (norma/ratificacion/candidata), variante de OPD generic-view, e import del campo .json del ResultadoBundle cuando el bundle proviene del compilador. v1.3.0 absorbe W6.5 y M2: extension aditiva NotaMesa (meta de la mesa, V-204), LogDecisiones v0 con modeloHash=protoHash del sello y export bloqueado sin sello (transiciones registradas por la app sin retroceso; L9), y el camino compilador como protocolo primario de emision (compilarProto + construirSello + emitirBundle)."
+version: "1.3.0"
 status: activo
 nombre: bundle-deep-opm-pro
 descripcion: "Contrato del bundle JSON 'deep-opm-pro.modelo.v0' que la skill modelamiento-opm emite para que el modelador deep-opm-pro lo importe. Incluye extensiones meta opcionales AnclaNormativa y LogDecisiones v0 para el ciclo re-elicitar."
@@ -167,6 +167,15 @@ Contrato de consumo:
 - el match se hace por `claveAncla`/`claveProto`, nunca por ids posicionales.
 - `modeloHash` divergente se reporta como staleness y bloquea mutacion hasta
   aclaracion.
+- **`modeloHash` = `protoHash` del sello** (W6.5-b): la app bloquea ruidoso el
+  export del log sobre modelos sin sello, asi que todo log valido es trazable
+  al proto. Verificar recalculando `construirSello({protoTexto})`.
+- la app registra transiciones **sin retroceso**
+  (`pendiente → anotado-en-mesa → ratificado-con-fuente`) en
+  `ancla.ratificacion`; son registro, no mutacion del ancla OPM. El paso a
+  `vigente` ocurre solo en la re-emision de la skill.
+- **L9**: tras la re-emision con anclas `vigente`, el registro de la app se
+  limpia solo — un ancla vigente no reaparece ni en pendientes ni en el log.
 
 Errores especificos de re-elicitacion:
 
@@ -178,6 +187,31 @@ Errores especificos de re-elicitacion:
 | `claveAncla` desconocida | no existe ancla matching en la fuente | bloquear y preguntar si se acuna, corrige o descarta |
 | matches duplicados | dos anclas comparten clave estable | bloquear hasta desambiguar |
 | transicion invalida | cambio no contemplado por el ciclo | registrar deuda; no mutar |
+
+### 3.3 `NotaMesa` (W6.5-a)
+
+Comentario de revision de la mesa anclado a un componente. Extension **aditiva**
+del `modelo.v0` con el mismo estatuto meta que las anclas (V-204): no emite OPL,
+no cuenta como cosa, no altera `validarModelo`.
+
+```ts
+interface NotaMesa {
+  id: Id;
+  target: TargetAncla;  // entidad | enlace | opd | modelo
+  texto: string;        // que se PREGUNTA la mesa (no que ES la cosa)
+  fecha: string;
+}
+```
+
+Reglas:
+
+- La `descripcion` de una entidad dice que **es**; la nota registra que se
+  **pregunta** la mesa. Son categorias distintas — no fusionar.
+- Las notas viajan en el contexto W6.0 (seccion «Notas de la mesa», target
+  resuelto por nombre) como **insumo de re-elicitacion**: se resuelven
+  corrigiendo el proto y son desechables (no se fosilizan).
+- La skill no emite notas en sus bundles: las notas nacen en la mesa (UI
+  Inspector de opforja).
 
 ## 4. Tipo `Modelo`
 
@@ -269,6 +303,16 @@ interface Modelo {
 | "referencias OPD ciclicas" | refinement tree con ciclo | aplicar `reglas-opm-estrictas-es` y `spec-forja-opd-es` (con V-* base delegadas) |
 
 ## 7. Protocolo de uso desde la skill
+
+**Camino primario (M2): proto → compilador.** Con deep-opm-pro disponible, no
+construir el JSON a mano: escribir el proto OPL-ES estricto y emitir via
+`compilarProto` + `construirSello` + `emitirBundle` (script bun desde
+`~/projects/deep-opm-pro/app/`; snippet en SKILL.md §serializar-bundle). El
+campo `bundle.json` del `ResultadoBundle` ES el documento importable
+`{formato, modelo}` con `modelo.procedencia` sellada; `bundle.opl`,
+`bundle.reporte`, `bundle.avisos` y `bundle.conteos` acompañan el entregable.
+
+**Camino fallback (sin deep-opm-pro):**
 
 1. Construir el `Modelo` en memoria respetando los tipos.
 2. Aplicar `validar-modelo` antes de serializar; corregir bloqueos estructurales.
