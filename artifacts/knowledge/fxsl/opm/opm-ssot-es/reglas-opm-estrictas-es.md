@@ -5,7 +5,7 @@ _manifest:
     created_by: deep-opm-pro/codex + custodio KORA
     created_at: '2026-05-31'
     source: /home/felix/projects/deep-opm-pro/docs/canon-opm/reglas-opm-estrictas.md
-version: 1.3.0
+version: 1.3.1
 status: publicado
 source_base: opm-iso-19450-es.md v3.0.0; opm-opl-es.md v3.0.0; opm-visual-es.md v3.0.0;
   metodologia-opm-es.md v3.0.0; familia Forja OPM operativa (metodologia-forja-es.md
@@ -180,7 +180,7 @@ Las **tablas son normativas**. La prosa fuera de tablas solo es válida si formu
 - **R-CONF-4** (`SSOT-iso §Alcance y conformidad`): una implementación que persiste símbolos sin semántica OPM asignada NO es conforme como herramienta OPM.
 - **R-CONF-5**: una implementación que permite construir modelos completos pero no valida refinamiento, contexto o consistencia OPD↔OPL solo puede declararse parcial, no herramienta conforme.
 - **R-CONF-6**: una implementación que acepta OPL fuera de EBNF DEBE clasificarlo como legacy, extensión o error; NO DEBE presentarlo como OPL-ES canónico.
-- **R-CONF-7** (decisión HITL FS 2026-06-11 — régimen constitucional-enmendable): toda regla DEBE de esta SSOT cuya superficie participa del ciclo operativo activo de la herramienta (export canónico, OPL consumido aguas abajo, render consumido por skills) DEBE tratarse como deuda exigible de implementación. Una regla DEBE sin tráfico operativo PUEDE programarse para un corte futuro o enmendarse, pero la decisión DEBE quedar declarada en la spec propietaria como programación o enmienda con nota explícita. La brecha silenciosa — regla DEBE incumplida sin declaración — está PROHIBIDA y constituye no-conformidad documental (se trata según R-DOC-5).
+- **R-CONF-7** (decisión HITL FS 2026-06-11 — régimen constitucional-enmendable): toda regla DEBE de esta SSOT cuya superficie participa del ciclo operativo activo de la herramienta (export canónico, OPL consumido aguas abajo, render consumido por skills) DEBE tratarse como deuda exigible de implementación. Una regla DEBE sin tráfico operativo PUEDE programarse para un corte futuro o enmendarse. La **programación** DEBE declararse en el registro de conformidad de la herramienta (fuera de este canon, conforme a R-APP-0: el canon no contiene inventarios fechados de implementación); la **enmienda** DEBE materializarse en la spec propietaria con nota explícita. La brecha silenciosa — regla DEBE incumplida sin declaración en ninguno de los dos registros — está PROHIBIDA y constituye no-conformidad documental (se trata según R-DOC-5).
 
 ### Principios de modelado como reglas
 
