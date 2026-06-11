@@ -9,7 +9,7 @@ _manifest:
       Dori (24 cap); tutoriales/videos/transcripciones OPCloud; OPM version felix;
       evidencia opforja (assets/svg, docs/JOYAS.md, opm-extracted, ui-forja, app/src/render/jointjs,
       app/src/canvas).
-version: 1.0.3
+version: 1.0.4
 status: publicado
 source_base: opm-visual-es.md (v3.0.0); reglas-opm-estrictas-es.md (v1.2.1); opm-iso-19450-es.md;
   spec-forja-opl-es.md (v1.1.3, frontera modal); metodologia-forja-es.md v1.4.4;
@@ -612,7 +612,7 @@ Geometrías y valores vigentes de OPFORJA. Norma de lectura: la **estructura** d
 | arco de abanico | 1.5, dash `4 1` | XOR=1 arco r30; OR=2 arcos r30/35 |
 | afiliación ambiental | dash `8 4` | contorno discontinuo |
 | proxy de extracción | dash `5 4` | enlace de vista inter-OPD |
-| simulación: proceso activo / involucrada / foco estado | dash `6 3` sw3 / `3 3` sw2 / `3 2` | canal runtime crimson |
+| simulación: proceso activo / involucrada / estado current / estado resultado / enlace activo | dash `6 3` sw3 / `4 3` sw2 / `4 2` sw2 / `7 3` sw2 / `7 4` linecap round | canal runtime (crimson; resultado en color de objeto). *Enmienda 2026-06-11 (V-7): valores reconciliados con la realización vigente (`composers/halos.ts`, `composers/enlace.ts`).* |
 | radio estado / badge control / chip `⋯N` | 8 / 9 (círculo 18×18) / alto÷2 | rountangle / letra `c·e·¬` / supresión |
 | sombra física | dropShadow dx6 dy6 blur2 `rgba(23,21,17,0.68)` | esencia física |
 | hit-area de enlace | wrapper transparente 15 px | interacción |
@@ -627,7 +627,7 @@ Geometrías y valores vigentes de OPFORJA. Norma de lectura: la **estructura** d
 | Tagged unidireccional / bidireccional | polyline `0,0 20,-10 0,0 20,10` / arpón `0.5,0 20,±10` | abierto |
 | Sobretiempo / subtiempo | polyline `4,10 13,-10` / `4,10 13,-10 8.5,0 17,0 13,10 22,-10` | trazo ink |
 | Rayo de invocación | 4 vértices, offset perpendicular `min(22, max(12, len·0.08))`; autoinvocación: lazo a ±35°, pico `max(56, h·0.55)` | — |
-| Glifos de estado | inicial: stroke 3 · final: doble contorno · default: flecha abierta entrante (vigente `↗`, GAP) · current: pin/`●` | — |
+| Glifos de estado | inicial: stroke 3 · final: doble contorno · default: flecha abierta entrante (vigente `↗`, GAP) · current **declarado**: `●` en la cápsula (la marca de runtime NO es glifo: es anillo del canal de simulación, §18.2 y R-OPD-SIM-2) | — |
 
 ### §18.4 Z-order y tipografía
 
@@ -652,7 +652,7 @@ Geometrías y valores vigentes de OPFORJA. Norma de lectura: la **estructura** d
 ## §20 Simulación visual
 
 - **R-OPD-SIM-1**: el proceso en ejecución DEBE exhibir marca reservada de actividad distinta de toda marca persistente — en especial del contorno grueso de refinamiento; si ambos refuerzan contorno, DEBEN diferir en color/halo/distintivo. Realización opforja: halo elipse crimson sw3 dash `6 3` (z=35). *(Rationale: V-53, V-132, R-VIS-RUN-1.)*
-- **R-OPD-SIM-2**: el estado actual de runtime se marca con glifo externo reservado al borde del rountangle (pin/gota), distinto de inicial/final/default/`Current` declarado; la serialización DEBE distinguir designación declarada vs marca inducida por ejecución. Realización: pin gota crimson (current) y pin oliva-sim `#6B7B2A` (inicial), desplazados para no solaparse (z=34-36). *(Rationale: V-54, V-133, V-134, R-VIS-RUN-2.)*
+- **R-OPD-SIM-2**: el estado actual de runtime se marca con canal visual reservado del runtime, distinto de inicial/final/default/`Current` declarado; la serialización DEBE distinguir designación declarada vs marca inducida por ejecución. Realización vigente *(enmienda 2026-06-11, V-7)*: current de runtime = anillo crimson dash `4 2` sw2 sobre la cápsula del estado (el pin ámbar/crimson fue retirado de canon); estado inicial = pin gota oliva-sim `#6B7B2A` desplazado para no solapar con el anillo current; canal runtime en z 33-37. *(Rationale: V-54, V-133, V-134, R-VIS-RUN-2.)*
 - **R-OPD-SIM-3**: tokens transitorios de flujo sobre enlaces activos son runtime: NO pertenecen al canon-diagrama salvo export declarado como **snapshot de simulación**; no se confunden con piruletas/handles/anclas. Realización: token circular r5-6 animado por el path; enlace activo stroke crimson +1.5. *(Rationale: V-135, V-136, V-141, R-VIS-RUN-3A.)*
 - **R-OPD-SIM-4**: estados operacionales adicionales (suspendido esperando input, completado reciente) usan marcas reservadas propias; un proceso suspendido NO es indistinguible de uno inactivo en snapshot. Modo síncrono: máximo una marca activa por hilo visible; asíncrono: múltiples. El modo headless no altera la gramática estática. *(Rationale: V-137..V-140, R-VIS-RUN-3B/3C/3E.)*
 - **R-OPD-SIM-5**: semántica visible de la animación — el consumido desaparece al **inicio** del proceso; el afectado sale del estado de entrada al inicio y entra al de salida al completarse (en transición = indeterminado); el resultante existe al completarse; la condición incumplida se ve como paso **omitido** en la traza; el bucle sin salida se corta por límite de seguridad con diagnóstico visible (política de runtime, no hecho OPM). *(Rationale: V-49, R-VIS-CONS-1, R-EJEC-10; opm-es §746-751; metodologia §simulación-conceptual.)*
