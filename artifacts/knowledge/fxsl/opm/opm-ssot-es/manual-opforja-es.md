@@ -12,10 +12,10 @@ _manifest:
       v0.2.0 expande de forma autónoma el núcleo estable que no depende de cambios
       de UI: modelo mental, flujo, construcción, refinamiento, OPD/OPL, validación
       y apéndices operativos.
-version: 0.2.1
+version: 0.2.2
 status: publicado
-source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.5.0; spec-forja-opd-es.md
-  v1.0.3; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
+source_base: reglas-opm-estrictas-es.md v1.3.1; metodologia-forja-es.md v1.5.1; spec-forja-opd-es.md
+  v1.0.4; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
   v1.5.0.
 derived_from:
 - urn:fxsl:kb:reglas-opm-estrictas-es
@@ -41,7 +41,7 @@ lang: es
 extensions:
   kora:
     family: note
-    lifecycle_note: publicado v0.2.1; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
+    lifecycle_note: publicado v0.2.2; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
     shard_index: 1
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:manual-opforja-es
@@ -223,8 +223,8 @@ No toda cosa conectada a un proceso cumple el mismo rol:
 
 - **Transformee:** la cosa que el proceso consume, produce, crea, destruye o
  cambia.
-- **Agente:** una entidad humana u organizacional que maneja o ejecuta con
- responsabilidad.
+- **Agente:** una persona o grupo de humanos (p. ej. una organización) que
+ maneja o ejecuta con responsabilidad (R-AG-1).
 - **Instrumento:** una herramienta, sistema, recurso o dispositivo requerido por
  el proceso pero no transformado por él.
 
@@ -299,10 +299,9 @@ desde dibujo.
 
 Antes del SD, generar alternativas. El modelador debería explorar al menos tres
 conceptos de solución cuando la arquitectura no está decidida. Cada concepto
-debe declarar su intención, función, forma y supuestos.
-
-La equivalencia funcional se evalúa por firma de frontera: mismos roles netos
-sobre entidades de frontera, interior posiblemente distinto.
+debe declarar su intención, función, forma y supuestos. La equivalencia
+funcional se evalúa por firma de frontera: mismos roles netos sobre entidades de
+frontera, interior posiblemente distinto.
 
 Salida mínima de A0:
 
@@ -327,25 +326,27 @@ Errores típicos:
 
 ### 2.3 A2: construcción del SD
 
-El System Diagram debe fijar, en orden:
+El orden de elicitación del SD es propiedad de `metodologia-forja-es` §A2 (11
+etapas; cada una DEBE cerrar con un hecho explícito). El SD fija, en ese orden:
 
-1. propósito u outcome,
-2. proceso central,
-3. beneficiario o affectee,
-4. atributo de valor y estados relevantes,
-5. transformees,
-6. agentes humanos si existen,
-7. sistema y frontera,
-8. instrumentos,
-9. contexto externo,
-10. problem occurrence cuando aplique,
-11. lectura OPL inicial.
+0. clasificación del sistema (§A1.2),
+1. proceso principal,
+2. interesado primario,
+3. valor a transformar (atributo + estados entrada→salida),
+4. función principal,
+5. agencia humana (o `sin agentes humanos` explícito),
+6. sistema y frontera (el sistema exhibe el proceso principal),
+7. instrumentos,
+8. transformados/resultados,
+9. entorno (objetos ambientales),
+10. ocurrencia del problema (o `NO APLICA` explícito),
+11. verificación: compuerta PASA/FALLA (§A8).
 
-El SD no busca completitud total; busca una semilla honesta y trazable.
-
-Cierre de A2: si el SD no puede leerse como una oración funcional simple, no
-está listo para refinar. La pregunta de cierre es: "¿qué cambia, por qué, para
-quién y con qué frontera?".
+El SD no busca completitud total, sino una semilla honesta y trazable; su
+lectura OPL inicial no reemplaza la compuerta de verificación (etapa 11). Si no
+puede leerse como una oración funcional simple ("¿qué cambia, por qué, para
+quién y con qué frontera?"), no está listo para refinar; si una etapa no cierra,
+retroceder a la que bloquea.
 
 ### 2.4 A3: primer refinamiento
 
@@ -414,7 +415,11 @@ no sobre el OPL emitido.
 La interfaz de opforja debe tratarse como mesa de trabajo, no como autoridad
 semántica. Si la UI permite una operación que contradice el corpus, manda el
 corpus. Si la UI todavía no implementa una capacidad canonizada, el manual debe
-registrarlo como brecha de herramienta y no enseñar un atajo falso.
+registrarlo como brecha de herramienta y no enseñar un atajo falso. Toda brecha
+de una regla de nivel `DEBE` se trata conforme a R-CONF-7 de `reglas-opm-estrictas-es`: deuda
+exigible de implementación si hay tráfico operativo, o programación declarada
+en el registro de conformidad de la herramienta / enmienda en la spec
+propietaria; la brecha silenciosa está prohibida.
 
 ### 3.1 Canvas OPD
 
@@ -446,7 +451,10 @@ pero no sustituye el bundle canónico.
 **Estado:** estable.
 
 Este capítulo describe un walkthrough sin depender de botones concretos de UI.
-Puede ejecutarse en papel, en conversación con un agente o en la app.
+Puede ejecutarse en papel, en conversación con un agente o en la app. Es un
+recorrido didáctico subordinado al orden normativo de elicitación de
+`metodologia-forja-es` §A2 (ver §2.3): al conducir una sesión A2, manda la
+secuencia de las 11 etapas.
 
 ## 4.1 Declarar el propósito
 
@@ -486,14 +494,17 @@ formalismo o un alcance OPM distinto.
 
 ## 4.3 Nombrar el proceso central
 
-Nombrar el proceso como transformación, no como área. La forma recomendada en
-Forja es nominalización consistente dentro del modelo.
+Nombrar el proceso como transformación, no como área. El nombre debe cumplir
+R-NOM-PROC-1 (`reglas-opm-estrictas-es`): comenzar con infinitivo
+`-ar`/`-er`/`-ir` o nominalización `-ción`/`-miento`. La escala de nombrado de
+`metodologia-forja-es` §A2.3 recomienda por defecto objeto+nominalización y no
+mezclar ambas formas dentro de un mismo modelo.
 
 | Pobre | Mejor |
 | --- | --- |
-| *Gestión* | *Disponibilidad de cama mejorando* |
-| *Procesamiento* | *Pedido despachando* |
-| *Sistema de monitoreo* | *Temperatura de muestra manteniendo* |
+| *Gestión* | *Mejora de disponibilidad de cama* |
+| *Procesamiento* | *Despacho de pedido* |
+| *Sistema de monitoreo* | *Mantenimiento de temperatura de muestra* |
 
 El nombre puede mejorar más tarde, pero debe ser suficientemente honesto para
 no ocultar la transformación.
@@ -541,10 +552,12 @@ intermedios o productos de soporte.
 
 Añadir habilitadores solo después de saber qué cambia.
 
-Un agente es humano u organización responsable. Un instrumento es una herramienta
-o sistema usado por el proceso. Software, robot, modelo predictivo o sensor son
-instrumentos salvo que el corpus o el dominio declare explícitamente agencia
-humana/organizacional mediada.
+Un agente es un humano o grupo de humanos responsable (R-AG-1). Un instrumento
+es una herramienta o sistema usado por el proceso. Software, robot, modelo
+predictivo o sensor son siempre instrumentos en el modelo canónico (R-AG-1A).
+Si el dominio atribuye "agencia" a la herramienta, se modela como agente al
+humano u organización de humanos responsable detrás de ella, y la herramienta
+como instrumento (R-AG-1B).
 
 Preguntas:
 

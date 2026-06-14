@@ -12,10 +12,10 @@ _manifest:
       v0.2.0 expande de forma autónoma el núcleo estable que no depende de cambios
       de UI: modelo mental, flujo, construcción, refinamiento, OPD/OPL, validación
       y apéndices operativos.
-version: 0.2.1
+version: 0.2.2
 status: publicado
-source_base: reglas-opm-estrictas-es.md v1.2.1; metodologia-forja-es.md v1.5.0; spec-forja-opd-es.md
-  v1.0.3; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
+source_base: reglas-opm-estrictas-es.md v1.3.1; metodologia-forja-es.md v1.5.1; spec-forja-opd-es.md
+  v1.0.4; spec-forja-opl-es.md v1.1.3; opm-categorial-es.md v1.2.4; modelamiento-opm
   v1.5.0.
 derived_from:
 - urn:fxsl:kb:reglas-opm-estrictas-es
@@ -41,7 +41,7 @@ lang: es
 extensions:
   kora:
     family: note
-    lifecycle_note: publicado v0.2.1; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
+    lifecycle_note: publicado v0.2.2; mantener secciones dependientes de interfaz como vivo o pendiente de evidencia hasta sincronización con la app.
     shard_index: 2
     shard_count: 2
     shard_root_urn: urn:fxsl:kb:manual-opforja-es
@@ -101,9 +101,9 @@ Checklist de in-zoom:
 Ejemplo:
 
 ```text
-Padre: *Pedido despachando*
+Padre: *Despacho de pedido*
 Frontera: consume **Pedido confirmado**, requiere **Operador**, requiere **Sistema de bodega**, genera **Pedido despachado**.
-Hijo: *Pedido preparando* -> *Paquete entregando* -> *Despacho registrando*.
+Hijo: *Preparación de pedido* -> *Entrega de paquete* -> *Registro de despacho*.
 ```
 
 Si el hijo agrega **Pago autorizado** como nuevo input neto, no es un detalle
@@ -354,7 +354,7 @@ Antes de cerrar una entrega, revisar:
 - cada entidad con estados está clasificada como flujo, caracterización o
  ambiental-observado,
 - no hay nombres duplicados ambiguos,
-- no hay agentes no humanos salvo decisión explícita,
+- no hay agentes no humanos,
 - los refinamientos preservan frontera,
 - los supuestos están separados de hechos,
 - las brechas de app no se presentan como canon,
@@ -418,8 +418,8 @@ hecho OPM.
 
 Usar cuando un proceso selecciona ruta, aprueba, rechaza o deriva y existe una
 persona/organización responsable. No reemplaza el agente por IA o software: la
-herramienta puede ser instrumento, la responsabilidad humana sigue siendo agente
-si el dominio la declara.
+herramienta se clasifica como instrumento (R-AG-1A); la persona u organización
+responsable, cuando el dominio la identifica, se modela como agente (R-AG-1).
 
 OPD mínimo: proceso de decisión, agente humano/organizacional, información de
 entrada, resultado/estado de decisión y rutas condicionadas.
@@ -462,7 +462,7 @@ Respuesta aceptada para el ejemplo: un **Pedido confirmado** se transforma en
 Sistema: Sistema de despacho
 Tipo: sociotécnico
 Propósito: despachar pedidos confirmados
-Proceso central: Pedido despachando
+Proceso central: Despacho de pedido
 Beneficiario: Cliente
 Atributo de valor: estado de cumplimiento del pedido
 Estado inicial: confirmado
@@ -478,11 +478,11 @@ Brechas: reglas de excepción por quiebre de stock no refinadas en SD
 ### 10.3 Primer OPL esperado
 
 ```text
-**Sistema de despacho** exhibe *Pedido despachando*.
-*Pedido despachando* afecta **Pedido** de `confirmado` a `despachado`.
-*Pedido despachando* requiere **Sistema de bodega**.
-**Operador de bodega** maneja *Pedido despachando*.
-**Cliente** es ambiental.
+**Sistema de despacho** exhibe *Despacho de pedido*.
+*Despacho de pedido* cambia **Pedido** de `confirmado` a `despachado`.
+*Despacho de pedido* requiere **Sistema de bodega**.
+**Operador de bodega** maneja *Despacho de pedido*.
+**Cliente** es un objeto ambiental.
 ```
 
 Este OPL es didáctico: la forma exacta debe ajustarse a las plantillas vigentes
@@ -491,13 +491,13 @@ un hecho rastreable.
 
 ### 10.4 Primer refinamiento
 
-Pregunta de refinamiento: ¿cómo se realiza *Pedido despachando* sin cambiar su
+Pregunta de refinamiento: ¿cómo se realiza *Despacho de pedido* sin cambiar su
 frontera?
 
 ```text
-*Pedido preparando*
-*Paquete entregando*
-*Despacho registrando*
+*Preparación de pedido*
+*Entrega de paquete*
+*Registro de despacho*
 ```
 
 La frontera se conserva si el conjunto de subprocesos sigue consumiendo/cambiando
@@ -518,7 +518,7 @@ declara que estaba fuera del alcance o se corrige la frontera del padre.
 | Error | Por qué falla | Corrección |
 | --- | --- | --- |
 | Modelar **Sistema de bodega** como agente. | El software no es agente humano. | Usarlo como instrumento. |
-| Crear *Gestionar despacho* sin transformee. | Proceso sin objeto que cambia. | Nombrar *Pedido despachando* y conectar **Pedido**. |
+| Crear *Gestionar despacho* sin transformee. | Proceso sin objeto que cambia. | Nombrar *Despacho de pedido* y conectar **Pedido**. |
 | Agregar **Pago autorizado** en el hijo sin padre. | Rompe firma de frontera. | Declararlo fuera de alcance o corregir SD. |
 | Dibujar **Cliente** dentro del sistema por cercanía visual. | Afiliación no depende de layout. | Marcarlo ambiental si no está bajo control del sistema. |
 
@@ -566,13 +566,13 @@ Patrones de lectura frecuente:
 
 ```text
 **Objeto** puede estar `estado1` o `estado2`.
-*Proceso* afecta **Objeto** de `estado1` a `estado2`.
+*Proceso* cambia **Objeto** de `estado1` a `estado2`.
 *Proceso* requiere **Instrumento**.
 **Agente** maneja *Proceso*.
 **Todo** consta de **Parte**.
 **Exhibidor** exhibe **Atributo**.
-**Especialización** es **General**.
-**Instancia** es instancia de **Clase**.
+**Especialización** es un **General**.
+**Instancia** es una instancia de **Clase**.
 ```
 
 Fuente completa y obligatoria para generación/parser: `spec-forja-opl-es`.
@@ -588,9 +588,14 @@ Fuente completa y obligatoria para generación/parser: `spec-forja-opl-es`.
 | ¿Cómo se dice/parsea en OPL? | `spec-forja-opl-es` |
 | ¿Qué ley explica equivalencia/composición? | `opm-categorial-es` |
 | ¿Cómo se enseña al operador? | `manual-opforja-es` |
-| ¿La app no lo soporta? | Registrar GAP o deuda de herramienta. |
+| ¿La app no lo soporta? | Tratar conforme a R-CONF-7 de `reglas-opm-estrictas-es`: deuda exigible si hay tráfico operativo, o programación declarada en el registro de conformidad de la herramienta / enmienda en la spec propietaria; la brecha silenciosa está prohibida. |
 
 ### Apéndice E — Índice de detectores/checkers
+
+Expuestos de forma estable:
+
+- densidad/export canónico (gate de densidad de diagrama y perfiles de export
+  canónico; estado y traza en el registro de conformidad de la herramienta).
 
 Ranura viva. Detectores mencionables cuando estén expuestos de forma estable:
 
@@ -601,13 +606,13 @@ Ranura viva. Detectores mencionables cuando estén expuestos de forma estable:
 - agente no humano,
 - modificador de control en familia prohibida,
 - ruptura OPD<->OPL,
-- referencias colgantes,
-- densidad/export canónico.
+- referencias colgantes.
 
 ## Bitácora del manual
 
 | Fecha | Versión | Cambio |
 | --- | --- | --- |
+| 2026-06-12 | 0.2.2 | Auditoría de coherencia del corpus 2026-06-12: nombres de proceso realineados a R-NOM-PROC-1 y a la escala A2.3 (nominalización; se retira el gerundio posnominal del ejemplo end-to-end y de §4.3); OPL del ejemplo y cheatsheet corregidos a plantillas canónicas (`cambia … de … a`, `es un objeto ambiental`, `es un **General**`, `es una instancia de`); §2.3 realineado a las 11 etapas de metodologia §A2 (verificación = compuerta PASA/FALLA) y capítulo 4 marcado como recorrido didáctico subordinado; exclusividad humana del agente sin excepciones de dominio (R-AG-1/R-AG-1A/R-AG-1B en §1.3, §4.7, §8.3, §9.3); brechas de herramienta conforme a R-CONF-7 (§3, Apéndice D); Apéndice E actualiza densidad/export canónico a expuesto estable; source_base subido a reglas v1.3.1, metodologia v1.5.1 y spec-opd v1.0.4. |
 | 2026-06-05 | 0.2.1 | Alineación con metodologia-forja-es v1.5.0: incorpora LF-19 como disciplina operativa para validar estados y fija barridos de integridad sobre JSON canónico. |
 | 2026-06-05 | 0.2.0 | Expansión autónoma de contenido estable: walkthrough SD, refinamiento, OPD/OPL práctico, diagnóstico, patrones iniciales, ejemplo textual end-to-end y apéndices operativos. |
 | 2026-06-04 | 0.1.0 | Creación, promoción a productivo y particionado en dos shards. Fija contrato editorial, TOC, capítulos estables iniciales, secciones vivas y ranuras para evidencia UI/casos. |

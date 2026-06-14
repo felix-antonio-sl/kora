@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-27'
     source: "Consolidacion SSOT OPM v3.0.0: capa procedimental canonica del corpus OPM-ES (manual metodologico de modelado)."
-version: 3.0.0
+version: 3.0.1
 status: published
 source_base: "ssot/metodologia-opm-es.md (v4.0.0); metodologia-opm-es.md (v4.1.0-ampliada.4)"
 derived_from:
@@ -1025,7 +1025,7 @@ Los invariantes se verifican operativamente en §16, donde se organizan por nive
 | La especificación textual de un modelo compuesto preserva OPL local autocontenido por modelo individual | esquema | `opl-es` |
 | Las cosas referenciadas externamente no se renombran ni reciben estados nuevos en el modelo consumidor | manual | `manual` |
 | Estado cíclico (initial+final simultáneo) es válido para objetos con ciclos cerrados | manual | `manual` |
-| Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | `opm-es` |
+| Salida no-determinista por defecto: sin estado especificado → probabilidad 1/n por estado | manual | `manual` |
 
 ## 16 Lista de verificación de Validación
 

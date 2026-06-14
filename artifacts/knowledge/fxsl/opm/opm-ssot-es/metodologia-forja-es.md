@@ -7,7 +7,7 @@ _manifest:
     source: Destilacion korificada autonoma del manual metodologico OPM (urn:fxsl:kb:manual-metodologico-opm-es)
       + lecciones forjadas modelando HODOM en opforja (deep-opm-pro). SSOT primaria
       de metodo OPM-en-opforja.
-version: 1.5.0
+version: 1.5.1
 status: publicado
 source_base: metodologia-opm-es.md (v3.0.0); opm-iso-19450-es.md, opm-opl-es.md, opm-visual-es.md;
   libro OPM curado de Dov Dori (24 cap); curso Dov Dori (_ATOMIC_GRAPH); transcripciones
@@ -81,7 +81,7 @@ relations:
   - urn:fxsl:kb:icas-escala
 ---
 
-# Metodología Forja — método de modelamiento OPM en opforja (v1.5.0)
+# Metodología Forja — método de modelamiento OPM en opforja (v1.5.1)
 
 SSOT **primaria y autónoma** del *método* de modelar OPM con la herramienta
 opforja (deep-opm-pro). Contiene todo el procedimiento (no requiere abrir otra
@@ -177,7 +177,7 @@ Cada etapa **DEBE** cerrar con un hecho explícito listo para OPD/OPL. El asiste
 | 10 | Ocurrencia del problema | proceso ambiental que causa el estado problemático (artificial/social); `NO APLICA` explícito si natural |
 | 11 | Verificación | compuerta `PASA/FALLA` (§A8) |
 
-**A2.1 Reclasificación por desgaste (etapa 7).** Si el desgaste/amortización de un instrumento es relevante al alcance, **DEBE** hacerse visible: (a) reclasificar el instrumento como **afectado** cuando cambia su disponibilidad/capacidad física, o (b) conservarlo como instrumento y explicitar un **atributo afectado/medido** cuando la degradación opera como variable informacional de desempeño. ✓ **Machine** es afectado de *Metal Cutting* cuando su capacidad cambia; ✓ **Cutting Tool** requiere *Machining* y exhibe **Tool Wear** cuando el foco es medir/predecir desgaste; *Machine Maintaining* aparte si hay recuperación. ✗ **Machine** como instrumento silencioso cuando su desgaste explica arquitectura o mantenimiento.
+**A2.1 Reclasificación por desgaste (etapa 7).** Si el desgaste/degradación/amortización de un instrumento es relevante al alcance, el instrumento **DEBE** reclasificarse como **afectado** (`reglas-opm-estrictas-es` R-AG-3; el método no autoriza conservarlo como instrumento en ese caso — lifting, §0.2). El patrón alternativo «conservar como instrumento + atributo afectado/medido» (degradación como variable informacional de desempeño, observado en digital twins: **Cutting Tool** requiere *Machining* y exhibe **Tool Wear**) **solo** es legal si antes se ratifica en `reglas-opm-estrictas-es` como extensión declarada (p.ej. R-AG-3A: degradación como variable informacional con cambio neto cero del host, análoga al cambio de rol entre niveles §9.4); mientras esa ratificación no exista, aplicar la reclasificación. **Mantenimiento** (R-AG-4): si pertenece al alcance declarado, **DEBE** agregarse el atributo de degradación/amortización y un proceso de mantenimiento separado (*Machine Maintaining*); si queda fuera del alcance, **DEBE** declararse esa exclusión. ✓ **Machine** es afectado de *Metal Cutting* cuando su capacidad cambia. ✗ **Machine** como instrumento silencioso cuando su desgaste explica arquitectura o mantenimiento.
 
 **A2.2 Doble rol.** Un objeto PUEDE ser agente de un proceso y transformado de **otro** proceso. En el **mismo** proceso, si beneficiario es transformado, el enlace transformador prevalece sobre el habilitador (no dos enlaces simultáneos). En sistemas de tarea, el mismo grupo humano PUEDE ser agente y beneficiario de valor; no duplicar artificialmente "operador" y "usuario" si el dominio no los distingue. Un agente puede ser ambiental: agencia expresa responsabilidad/acción humana, no afiliación sistémica.
 
@@ -363,7 +363,7 @@ Las **vistas** (mapa del sistema, árbol de procesos/objetos, vistas ad hoc) NO 
 
 **Advertencias operativas de auditoría:**
 - **Barridos sobre serialización**: ejecutar barridos de integridad sobre el JSON canónico, nunca sobre el OPL. El emisor textual omite entidades sin apariciones; una entidad desconectada puede existir en JSON y ser invisible en la capa textual (verificado en opforja v0).
-- **Métrica antes que conclusión**: validar la métrica del barrido contra la SSOT semántica antes de fundar conclusiones. Una regla que exige rama explícita para todo estado sobre-acusa: puede reportar 99 estados rotos donde hay 8, porque el efecto sin rama es escritor legal por resolución dinámica.
+- **Métrica antes que conclusión**: validar la métrica del barrido contra la SSOT semántica antes de fundar conclusiones. Una regla indiferenciada sobre-acusa (caso paradigmático: LF-19.3 — efecto sin rama es escritor legal).
 
 ---
 
@@ -463,7 +463,7 @@ Dependencias: **LF-02 presupone LF-01** (primero decides los ejes, luego los rea
 6. **Realización opforja** — `modoPlegado` por aparición (verificar soporte en opforja v0; en OPCloud es *semi-fold* con contador de partes ocultas y doble-clic para extraer una). OPL refleja "consta de X y N partes más".
 7. **Ejemplo** — ✓ mostrar 2 de 8 categorías del **Plan** en un OPD denso, con indicador "…+6"; ✗ plegar el **Plan** entero perdiendo las 2 categorías relevantes a ese OPD. *(HODOM, ilustrativo)*
 8. **Consecuencia si lo ignoras** — o un OPD ilegible (>20-25), o pérdida total de contexto al plegar el todo.
-9. **Ancla SSOT** — `opd-es` plegado parcial; `manual` §8.1 (semi-plegado), §10.12.
+9. **Ancla SSOT** — `opd-es` §10.12 (semi-plegado, V-116..V-120) y plegado parcial; `manual` §8.1, §7.2 (despliegue parcial/colección incompleta).
 10. **Bitácora** — 2026-05-31 · libro Dori cap.21 + transcripciones OPCloud; reúso layout M14/M15/M16.
 
 ### LF-06 — Descomposición reactiva por eventos · Estado: propuesta
@@ -475,7 +475,7 @@ Dependencias: **LF-02 presupone LF-01** (primero decides los ejes, luego los rea
 6. **Realización opforja** — un enlace de evento por subproceso; verificar render en opforja.
 7. **Ejemplo** — ✓ vigilancia 24/7: `deterioro detectado`→*Respuesta clínica*, `falla de equipo`→*Sustitución*, cada uno por su evento, sin orden vertical. *(HODOM, ilustrativo)*
 8. **Consecuencia si lo ignoras** — se impone una secuencia vertical falsa a procesos reactivos; el modelo miente sobre el orden de ejecución.
-9. **Ancla SSOT** — `opd-es` V-59; `manual` §9.3 (patrón reactivo).
+9. **Ancla SSOT** — `opd-es` V-59, §9.3 (activación asincrónica por eventos — patrón reactivo).
 10. **Bitácora** — 2026-05-31 · opm-visual-es §9.3. **`propuesta`**: reúso≥2 no demostrado (solo caso HODOM); consolidar al segundo avistamiento.
 
 ### LF-07 — Requisito inferido como sonda de completitud · Estado: propuesta
@@ -626,13 +626,14 @@ Dependencias: **LF-02 presupone LF-01** (primero decides los ejes, luego los rea
 1. **Olor/gatillo** — auditoría acusa estados sin escritor, estados caracterizadores o estados ambientales usando una sola regla indiferenciada.
 2. **Principio** — toda entidad con estados pertenece a una de tres categorías: **flujo**, **caracterización** o **ambiental-observado**; cada una debe una prueba distinta al modelo.
 3. **Flujo** — la entidad transiciona como transformee; exige escritor. La rama explícita entrada→salida o resultado-con-estado solo es obligatoria cuando el veredicto importa; efecto o resultado sin rama es escritor legal con resolución dinámica.
-4. **Caracterización** — valores asignados al clasificar, no transiciones. Exige declaración estandarizada en la glosa de la entidad (`Coproducto XOR-n ...`) y legible por barrido; sin declaración, acusar por defecto.
+4. **Caracterización** — valores asignados al clasificar, no transiciones. Exige declaración explícita y auditable en la glosa de la entidad de que el state-set es caracterización (valores asignados al clasificar, no flujo); sin declaración auditable, acusar por defecto.
 5. **Ambiental-observado** — estados de entidades o atributos que cambia la realidad. Sin escritor sistémico es legítimo: el sistema lee; si constata la transición, declarar escritor-constatador excepcional y nominar fuente del dato en la glosa.
 6. **Mecanismo OPM** — flujo usa enlaces transformadores; caracterización usa atributo+valores; ambiental-observado aplica herencia de afiliación y frontera sistémica/ambiental.
 7. **Cuándo NO aplica** — no convertir un value-set en proceso; no exigir escritor sistémico a lo ambiental leído; no exigir rama explícita cuando la semántica de salida por defecto/probabilidad resuelve el destino.
 8. **Liftea a** — A8 barridos de integridad; LF-01 decide cuándo dimensionalizar; LF-19 decide qué debe cada estado una vez que existe.
-9. **Ancla SSOT** — `opm-iso-19450-es.md` §Enlaces transformadores con estado especificado / §Resolución de salida en efecto con solo estado de entrada, §Glosario (`Valor de atributo`) + §Valores de atributos, §Propiedades genéricas (`Herencia de afiliación`). El canon no prohíbe estados sin escritor: esta es disciplina de forja con autoridad de mesa, no ley ISO.
-10. **Bitácora** — 2026-06-05 · origen: Mesa 7 hd-opm, consenso 3-0; plasmada localmente y verificada por barrido antes de ascender a metodología agnóstica.
+9. **Realización opforja** — convención de glosa del bundle para la declaración de caracterización (punto 4): literal estandarizado `Coproducto XOR-n ...` al inicio de la glosa de la entidad, parseable por el barrido de integridad (convención local hd-opm/Mesa 7; cualquier realización equivalente vale si el barrido la reconoce).
+10. **Ancla SSOT** — `opm-iso-19450-es.md` §Enlaces transformadores con estado especificado / §Resolución de salida en efecto con solo estado de entrada, §Glosario (`Valor de atributo`) + §Valores de atributos, §Propiedades genéricas (`Herencia de afiliación`). El canon no prohíbe estados sin escritor: esta es disciplina de forja con autoridad de mesa, no ley ISO.
+11. **Bitácora** — 2026-06-05 · origen: Mesa 7 hd-opm, consenso 3-0; plasmada localmente y verificada por barrido antes de ascender a metodología agnóstica.
 
 ---
 
@@ -696,3 +697,4 @@ Realización canónica implementada en `deep-opm-pro` sin copiar gestos OPCloud 
 | 2026-06-04 | v1.4.3 — corrección A0.4a: opforja sí puede verificar realizaciones hermanas mediante `verificarEquivalencia`; la ley in-zoom↔out-zoom queda como caso vertical complementario, no como sustituto por ausencia de autoría de variantes. |
 | 2026-06-04 | v1.4.4 — integración de familia Forja: precedencia por planos (validez, modalidad, método, formal) y regla explícita de no duplicación frente a `reglas-opm-estrictas`, `spec-forja-opd`, `spec-forja-opl` y `opm-categorial`. |
 | 2026-06-05 | v1.5.0 — ascenso metodológico desde Mesa 7 hd-opm (consenso 3-0): LF-19 integridad de estados por flujo, caracterización y ambiental-observado; A8 añade advertencias de auditoría sobre barridos en JSON y validación previa de métricas contra SSOT semántica. |
+| 2026-06-12 | v1.5.1 — auditoría de coherencia del corpus 2026-06-12: A2.1 lifteado a `reglas-opm-estrictas-es` R-AG-3/R-AG-4 (la vía «instrumento + atributo medido» queda condicionada a ratificación previa en reglas como extensión declarada, p.ej. R-AG-3A; condición de mantenimiento alineada a alcance declarado/exclusión declarada); A8 «métrica antes que conclusión» comprimida a referencia a LF-19.3 (se retira la narrativa del incidente 99-vs-8); LF-19.4 abstraído a declaración explícita y auditable de caracterización (el literal `Coproducto XOR-n` y su parseo por barrido bajan al nuevo campo 9 «Realización opforja» de LF-19, conforme al molde B; la acusación por defecto permanece en el método); anclas SSOT corregidas por misatribución de capa: LF-05.9 (`opd-es` §10.12 semi-plegado V-116..V-120; se añade `manual` §7.2) y LF-06.9 (`opd-es` §9.3, no `manual`). |

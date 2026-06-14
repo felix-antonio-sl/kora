@@ -18,7 +18,7 @@ Las capas base siguen siendo procedencia OPM general. La familia Forja es la fue
 | 3 | `opm-opl-es.md` | `urn:fxsl:kb:opl-es` | Capa **textual**: gramática OPL-ES, plantillas de oración, EBNF, reglas EN→ES y notas de roundtrip. |
 | 4 | `metodologia-opm-es.md` | `urn:fxsl:kb:manual-metodologico-opm-es` | Capa **procedimental base**: protocolo de modelado, wizard SD, refinamiento, complejidad, simulación, requirements e invariantes. |
 
-Estado editorial base: `published`, `version: 3.0.0`.
+El estado editorial y la versión vigente de cada capa viven en su frontmatter, que es la fuente única (las cuatro capas base están `published`).
 
 ## Familia Forja
 
@@ -49,6 +49,7 @@ Las capas base se consultan como procedencia y soporte cuando la familia Forja l
 - Cada regla vive una sola vez en su capa propietaria.
 - Las demás capas pueden referenciarla o resumirla, pero nunca redefinirla.
 - Las compilaciones operativas deben identificar la capa propietaria de cada regla.
+- El frontmatter de cada artefacto es la única fuente de su versión y estado editorial; este README no replica versiones.
 - Los patrones de herramienta (OPCloud, etc.) pueden ampliar la operación práctica, pero no alterar la semántica base.
 - La prosa del corpus integra el conocimiento como parte del sistema documental y evita citar procedencias externas dentro del cuerpo normativo.
 
@@ -78,6 +79,8 @@ Las capas base se consultan como procedencia y soporte cuando la familia Forja l
 
 ## Historia
 
+- Auditoría de coherencia del corpus (2026-06-12) — El README deja de replicar versiones de los artefactos: el frontmatter de cada uno es la fuente de versión y estado editorial.
+- **Incorporación Forja (2026-06-04)** — El corpus pasa a dos niveles coordinados: capas base OPM + familia Forja (reglas estrictas, metodología, specs OPD/OPL, puente categorial y manual operativo). Las enmiendas de cada artefacto se registran en su propio frontmatter y notas de enmienda, no en esta historia.
 - **v3.0.0 (2026-04-27)** — Consolidación canónica. Las cuatro capas pasan de `draft-publishable` a `published`. La línea `ssot/` legacy queda removida del repositorio. Las URNs canónicas son las cuatro listadas arriba.
 - v2.x-ampliada (2026-04-14) — Versión de trabajo con capa visual ya separada.
 - v1 (anterior) — Tres capas (semántica, textual, metodológica) sin separación visual explícita. Reemplazada.

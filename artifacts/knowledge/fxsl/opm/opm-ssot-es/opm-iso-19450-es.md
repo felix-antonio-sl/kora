@@ -5,7 +5,7 @@ _manifest:
     created_by: kora/curator
     created_at: '2026-04-27'
     source: "Consolidacion SSOT OPM v3.0.0: nucleo conceptual canonico del corpus OPM-ES en cuatro capas (semantica/visual/textual/metodologica)."
-version: 3.0.0
+version: 3.0.2
 status: published
 source_base: "ssot/opm-iso-19450-es.md (v2.0.0); opm-iso-19450-es.md (v2.1.0-ampliada.4)"
 derived_from:
@@ -376,7 +376,7 @@ Existen tres clases canónicas:
 - **enlaces habilitadores**: conectan habilitador con proceso (agente o instrumento);
 - **enlaces de invocación**: conectan proceso con proceso (firma `Proceso → Proceso`).
 
-**Control como modificador:** los enlaces de control no constituyen una familia procedimental adicional. Son enlaces transformadores o habilitadores modificados por un modificador de control `e` (evento) o `c` (condición). La semántica de evento/condición/excepción aplica sobre el enlace base; la realización gráfica de estas marcas vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
+**Control como modificador y como enlace autónomo:** los modificadores de control `e` (evento) y `c` (condición) no constituyen una familia procedimental adicional: son anotaciones sobre un enlace transformador o habilitador base, y su semántica aplica sobre ese enlace. El enlace de **excepción** (sobretiempo/subtiempo) es distinto: no anota un enlace base, sino que conecta un proceso fuente con un proceso de manejo (firma proceso→proceso) y es un enlace de control autónomo. La realización gráfica de estas marcas vive en [OPD — Gramática visual de OPM](urn:fxsl:kb:opd-es).
 
 **Principio de unicidad del enlace procedimental:** un objeto o estado tiene exactamente un rol respecto de un proceso enlazado: transformado o habilitador.
 
@@ -688,7 +688,7 @@ Hay cuatro pares de despliegue-plegado intra-modelo, uno por relación fundament
 
 **Operaciones derivadas:** operaciones como `bring connected things`, `bring links between selected entities`, importes asistidos y otras materializaciones automáticas de contexto no constituyen mecanismos de refinamiento ontológico. Son operadores derivados sobre el árbol y el canvas.
 
-**Diagramas de vista (model views):** OPDs que reúnen hechos provenientes de múltiples OPDs para explicar un fenómeno o enfatizar un aspecto concreto. Las herramientas OPM deben soportar la creación de vistas que filtren por criterios específicos, como:
+**Diagramas de vista (model views):** OPDs que reúnen hechos provenientes de múltiples OPDs para explicar un fenómeno o enfatizar un aspecto concreto. Las herramientas OPM pueden soportar la creación de vistas que filtren por criterios específicos — si esa capacidad es exigencia de conformidad lo decide el canon prescriptivo operativo (`reglas-opm-estrictas-es`) y su familia, no esta capa —, como:
 
 - el camino crítico para la duración mínima de ejecución del sistema;
 - los agentes e instrumentos del sistema;
@@ -1230,5 +1230,5 @@ Las siguientes notas informativas del estándar están dirigidas a quienes desar
 - Una herramienta puede notificar a quien modela cuando se intenta incluir un objeto como refinador en más de un contexto, para que determine la pertinencia de la inclusión.
 - Una herramienta puede establecer una sintaxis por defecto para resolver nombres de refinadores ambiguos.
 - El OPL correspondiente a un OPD debe expresar solo los estados de los objetos tal como aparecen en ese OPD; la unión de estados de un objeto a través de todos los OPDs constituye el conjunto completo de estados de ese objeto.
-- Cuando un enlace de evento desde un objeto o estado sistémico cruza el límite de un proceso descompuesto para iniciar un subproceso, la herramienta debería advertir que esto puede interferir con el orden temporal prescrito de la descomposición síncrona. Si el evento proviene de un objeto ambiental, la herramienta debería guiar a quien modela para definir cómo manejar la contingencia.
+- Un enlace de evento desde un objeto o estado sistémico no debe cruzar el límite de un proceso descompuesto para iniciar un subproceso, porque interfiere con el orden temporal prescrito de la descomposición síncrona (véase «Distribución de enlaces a través del contexto»); la severidad con que la herramienta trata ese cruce no conforme la fija el canon prescriptivo operativo (`reglas-opm-estrictas-es`) y su familia. Si el evento proviene de un objeto ambiental, el cruce está permitido y la herramienta debería guiar a quien modela para definir cómo manejar la contingencia.
 - Las herramientas de modelado OPM necesitan rastrear el número e identidades de las instancias operacionales de cada objeto y de cada proceso para poder realizar simulaciones.
