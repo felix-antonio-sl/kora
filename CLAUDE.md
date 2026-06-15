@@ -4,6 +4,14 @@ Fuente operativa unica para agentes que trabajen en este repositorio. Si otra
 fuente (guia, handoff, README externo, memoria vieja o wrapper legacy)
 contradice este archivo, mandan la CLI viva y las specs vigentes.
 
+> **LEY CONGELADA (HITL 2026-06-14).** Esta encarnacion (la bestia) tiene su
+> ley congelada: `governance/`, `ontology/`, `serialization/`, `runtime/` solo
+> admiten correcciones de verdad, NO evolucion doctrinal. La **doctrina futura
+> de KORA se autora en la encarnacion pneuma** (`~/kora-pneuma`, `ley/0..4`);
+> todo artefacto agentico nuevo nace alli. La bestia sigue autoritativa para su
+> corpus y unico realizador de `openclaw`/`hermes`. Regimen: `gobernanza` §0 +
+> nota pneuma `regimen-de-ley`.
+
 ## Que Es KORA
 
 KORA es el **repositorio, catalogo y sistema de produccion y mantenimiento de
@@ -178,7 +186,7 @@ crear IR fresco en staging y transmutar solo despues de canonizar la fuente.
 
 ## Runtimes
 
-Runtimes canonicos activos segun `gobernanza` v6.2:
+Runtimes canonicos activos segun `gobernanza` v7.0:
 
 - `claude-code`
 - `codex`

@@ -4,8 +4,8 @@ _manifest:
   provenance:
     created_by: "FS"
     created_at: "2026-03-08"
-    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}; v6.1 (HITL 2026-05-31) explicita en §1 el proposito de KORA y los tres tipos de artefacto; v6.2 (HITL 2026-06-04) reactiva opencode como runtime canonico y mueve su runtime-extension a runtime/opencode-runtime-extension.md."
-version: "6.2.0"
+    source: "refactor modern-first: AGENT.md canonico y capacidades portables; v4.1 formaliza regimenes URN en §4.3; v4.2 canoniza ontologia PMI × LFS en harness-spec; v4.3 unifica autoria en autoria-spec y retira specs anteriores; v4.4 incorpora procesos-spec, risk-register-spec, multiagente-spec y mastra-runtime-extension en la topologia v5; v4.6 registra agent-skill-construction-spec como metodologia KORA-native de construccion pre-transmutacion; v4.7 incorpora host-roles como extension operacional; v5.0 simplificacion KORA v6 Fase 1: absorbe host-roles v1.1 como §12 expandido, reconoce canario-spec y procesos-spec como deprecadas; v6.0 KORA esencial v7 (HITL 2026-05-20): activa hermes como runtime canonico, baja freeze parcial (autoria-spec y transmutation-spec quedan editables; harness-spec sigue en freeze), runtimes canonicos reducidos a {claude-code, codex, openclaw, hermes}; v6.1 (HITL 2026-05-31) explicita en §1 el proposito de KORA y los tres tipos de artefacto; v6.2 (HITL 2026-06-04) reactiva opencode como runtime canonico y mueve su runtime-extension a runtime/opencode-runtime-extension.md; v7.0 (HITL 2026-06-14) CONGELA esta constitucion y toda la ley de la bestia: la encarnacion pneuma (~/kora-pneuma, ley/0..4) es la fuente unica de doctrina futura de KORA; aqui solo se admiten correcciones de verdad; openclaw y hermes quedan como competencia delegada legacy de la bestia con revision 2026-09-14."
+version: "7.0.0"
 status: publicado
 tags: [gobernanza, constitucion, precedencia, identidad, enforcement, host-roles, hermes, runtimes]
 lang: es
@@ -22,7 +22,32 @@ relations:
     - "urn:kora:kb:host-roles"
 ---
 
-# KORA/Gobernanza v6.2.0
+# KORA/Gobernanza v7.0.0
+
+## 0. Estado constitucional: CONGELADA (HITL 2026-06-14)
+
+Esta constitucion y toda la ley de la bestia (`governance/`, `ontology/`,
+`serialization/`, `runtime/`) quedan **congeladas** al 2026-06-14 por decision
+del operador. A partir de aqui:
+
+1. **La doctrina futura de KORA se autora en la encarnacion pneuma**
+   (`~/kora-pneuma`, `ley/0..4`). La bestia no recibe specs nuevas ni enmiendas
+   de doctrina.
+2. En esta encarnacion solo se admiten **correcciones de verdad necesarias**
+   (errores factuales, typos que cambian sentido, rupturas de coherencia con la
+   realidad). NO se admite evolucion doctrinal ni expansion conceptual.
+3. La bestia conserva su corpus y su realizacion de runtimes; sigue siendo
+   autoritativa para todo lo no migrado. Congelar la ley fija el cuerpo como
+   referencia estable, no lo jubila.
+4. **openclaw y hermes** son competencia delegada legacy de la bestia: sigue
+   siendo el unico realizador de esos targets mientras pneuma no los encarne.
+   Revision del destino: 2026-09-14.
+
+El regimen completo se declara en la encarnacion pneuma como nota de
+conocimiento `regimen-de-ley`
+(`~/kora-pneuma/artefactos/conocimiento/kora/regimen-de-ley.md`). Ante
+contradiccion entre esta constitucion congelada y la ley de pneuma, manda
+pneuma.
 
 ## 1. Definicion
 
