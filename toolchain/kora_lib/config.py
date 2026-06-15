@@ -68,6 +68,11 @@ IGNORED_DIRS = {
     ".venv",
     "__pycache__",
     "_backups",
+    # Buffer de handoff del sistema /remember: scratch operacional de sesion,
+    # no es corpus. Sus notas citan URNs cross-repo (p.ej. de pneuma) que no
+    # resuelven aqui por diseno; escanearlas rompia urn-integrity (frontera
+    # mecanica entre encarnaciones, regimen-de-ley pneuma).
+    ".remember",
     # Subdirs canonicos auxiliares de skills/agentes (autoria-spec §15.3,
     # skill-overlay v1.2): markdown auxiliar sin URN propio, no catalogable.
     "referencias",
