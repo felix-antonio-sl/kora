@@ -9,7 +9,7 @@ _manifest:
       Dori (24 cap); tutoriales/videos/transcripciones OPCloud; OPM version felix;
       evidencia opforja (assets/svg, docs/JOYAS.md, opm-extracted, ui-forja, app/src/render/jointjs,
       app/src/canvas).
-version: 1.1.1
+version: 1.1.2
 status: publicado
 source_base: opm-visual-es.md (v3.0.0); reglas-opm-estrictas-es.md (v1.2.1); opm-iso-19450-es.md;
   spec-forja-opl-es.md (v1.1.3, frontera modal); metodologia-forja-es.md v1.4.4;
@@ -406,6 +406,7 @@ Bimodal: el plegado parcial emite `al menos otro/a` (`spec-forja-opl-es §7.2/§
 - **R-OPD-INV-3**: subprocesos activados individualmente por eventos desde estados distintos se ejecutan asincrónica e independientemente (sistemas reactivos): un enlace de evento por subproceso, sin verticalidad temporal forzada. *(Rationale: V-59, R-VIS-ASYNC-1; metodologia LF-06.)*
 - **R-OPD-INV-4**: la invocación PUEDE sustituir un objeto transitorio (creado y consumido de inmediato sin observación); el patrón bucle usa invocación del último subproceso al padre, con proceso *Esperar* intermedio si hay intervalo. *(Rationale: libro 10/22; metodologia §9.2.)*
 - **R-OPD-INV-5**: la **demora** se realiza como etiqueta temporal sobre el enlace de invocación (`después de <demora>`); extensión local conforme. `spec-forja-opl-es §5.4` emite y parsea la demora; el parser acepta legacy sin tilde, pero la forma canónica es `después de`. El roundtrip estricto cubre invocación y autoinvocación con demora. *(Rationale: spec-forja-opl-es §5.4; R-OPD-BIM-4.)*
+- **R-OPD-INV-9** (espejo de `reglas R-INV-2D`, frontera implícito/explícito): la realización visual del orden de subprocesos sigue, bajo la suprema, una frontera de cinco clases (que cubren los ocho casos numerados) — **implícito** (bandas con cardinalidad, sin rayo: secuencial, paralelo R-OPD-INV-2, AND-join síncrono total); **explícito por evento** (reactivo, R-OPD-INV-3, no rayo); **explícito por rayo** (autoinvocación/bucle, salto fuera de orden, invocación cross-OPD, R-OPD-INV-1/4); **demora disuelta** en subproceso *Esperar* (R-OPD-INV-4; `después de` solo sobre rayo ya-explícito, R-OPD-INV-5); join parcial/OR **fuera del orden simple** (abanico explícito). El orden es atributo **declarado** de la descomposición y la banda Y lo realiza (R-IDP-0A); un rayo entre hermanos que repite una transición de banda adyacente ya declarada es doble vara (R-INV-2B). *(Rationale: reglas R-INV-2D, R-INV-2B, R-IDP-0A.)*
 
 Realización opforja: rayo de 4 vértices calculados (offset perpendicular `min(22, max(12, len·0.08))`) + swallowtail en destino; autoinvocación = lazo de 2 tramos colgando del borde inferior, pico a `max(56, h·0.55)`, ramas a ±35°, marker solo en el retorno; demora serif 11 inkMid en `distance:0.5`. Alineado. *(Traza: `enlace.ts`, `autoinvocacionLoop.ts`, `linkAssets.ts`.)*
 
@@ -865,7 +866,7 @@ Modelo «Lavado de Platos», SD: **Usuario Doméstico** (rect verde, físico sis
 | R-OPD-HAB-1..4 | habilitadores | §5 |
 | R-OPD-CTL-1..12 | control y lógica | §6 |
 | R-OPD-STR-1..13 | estructurales | §7 |
-| R-OPD-INV-1..8 | invocación y tiempo | §8 |
+| R-OPD-INV-1..9 | invocación y tiempo | §8 |
 | R-OPD-MUL-1..5 | multiplicidad | §9 |
 | R-OPD-REF-1..19 | refinamiento y contexto | §10 |
 | R-OPD-LAY-1..10 | layout y routing | §11 |
