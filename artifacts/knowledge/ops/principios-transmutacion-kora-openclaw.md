@@ -117,7 +117,7 @@ Cada agente OpenClaw corre en su propio container Docker. Esto impone:
 └── projects/ ← Proyectos de desarrollo
  ├── openclaw/
  ├── pca/
- └── opmodel/
+ └── deep-opm-pro/
 ```
 
 KORA es infraestructura de gobernanza que define a los agentes. No es un proyecto que los agentes desarrollan. Mezclarlo en `projects/` genera confusion sobre quien tiene autoridad sobre que.
@@ -126,7 +126,7 @@ Dentro de los containers, esta separacion se refleja en paths distintos:
 
 ```
 /home/node/repos/kora ← referencia (RO) — el agente puede consultar specs
-/home/node/projects/opmodel ← desarrollo (RW) — el agente puede escribir codigo
+/home/node/projects/deep-opm-pro ← desarrollo (RW) — el agente puede escribir codigo
 ```
 
 ---

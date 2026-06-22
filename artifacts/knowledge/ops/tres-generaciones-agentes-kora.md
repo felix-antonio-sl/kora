@@ -90,7 +90,7 @@ Taxonomía de las tres generaciones que componen el ecosistema de agentes IA de 
 **Arquitectura de red**:
 ```
 Red web (Traefik, *.sanixai.com)
- traefik · crowdsec · netdata · kora-panel · opmodel-dev
+ traefik · crowdsec · netdata · kora-panel · opforja
 
 Red kora-federation (bridge Docker)
  kora-personal :18789 · kora-steipete :18810 · kora-salubrista :18830

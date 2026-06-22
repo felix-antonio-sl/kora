@@ -52,7 +52,7 @@ Internet (138.201.53.205, *.sanixai.com Cloudflare DNS-only)
 │ traefik-bouncer bouncer middleware │
 │ netdata monitor.sanixai.com │
 │ kora-panel kora.sanixai.com │◄── dual-homed
-│ opmodel-dev opmodel.sanixai.com │
+│ opforja opforja.sanixai.com │
 └──────────────────────────────────────────────┘
  (redes aisladas, sin puente)
 ┌──────────────────────────────────────────────┐
@@ -86,7 +86,7 @@ Internet (138.201.53.205, *.sanixai.com Cloudflare DNS-only)
 | kora-steipete | openclaw-local:latest | federation | :18810 | Gateway steipete (OpenClaw v2026.3.22) | ~400MB / 2GB |
 | kora-salubrista | openclaw-local:latest | federation | :18830 | Gateway salubrista-hah (OpenClaw v2026.3.22) | ~410MB / 2GB |
 | kora-panel | kora-panel:latest | web + federation | :3000 | Panel web (kora.sanixai.com) | ~50MB / 256MB |
-| opmodel-dev | opmodel-opmodel-dev | web | :5173 | Dev container opmodel | ~145MB |
+| opforja | deep-opm-pro-opforja:latest | web | :80 | opforja.sanixai.com — modelador OPM (stack: +postgres/bug-capture/model-api). Sucesor de opmodel/opm-model-app (decom. 2026-06-22) | ~78MB |
 
 Total: 11 containers. RAM estimada en uso: ~1.9GB de 62GB disponibles.
 
@@ -160,7 +160,7 @@ Named volumes para state OpenClaw (config vive aquí, no en bind mount — atomi
 ├── openclaw/ ← source OpenClaw (checkout v2026.3.22)
 ├── docker-stacks/ ← infra (traefik, security, monitoring)
 ├── pca/ ← PCA source
-└── opmodel/ ← proyecto activo
+└── deep-opm-pro/ ← proyecto activo (opforja; sucesor de opmodel/opm-model-app, decom. 2026-06-22)
 ```
 
 ---
