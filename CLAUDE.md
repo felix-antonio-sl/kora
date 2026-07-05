@@ -12,6 +12,21 @@ contradice este archivo, mandan la CLI viva y las specs vigentes.
 > corpus y unico realizador de `openclaw`/`hermes`. Regimen: `gobernanza` §0 +
 > nota pneuma `regimen-de-ley`.
 
+> **POSTA OPM CERRADA (2026-07-05).** Estrecha la excepcion "autoritativa para
+> su corpus" de arriba: la **autoria OPM/Forja tambien queda CERRADA** en la
+> bestia. La SSOT viva de doctrina OPM es `~/kora-pneuma`
+> (`urn:fxsl:kb:reglas-opm-estrictas-es`, `urn:fxsl:kb:opm-es` y hermanos;
+> skill `urn:kora:artefacto:modelamiento-opm`). El corpus
+> `artifacts/knowledge/fxsl/opm/` y `artifacts/skills/kora/modelamiento-opm/`
+> quedan congelados como referencia historica: solo correcciones de verdad,
+> ninguna doctrina nueva. Todos los deltas previos al cierre fueron
+> reconciliados a pneuma (9 KB al sync del 2026-06-16; delta final aa2e2f14
+> `emitidoEn->generadoEl` absorbido el 2026-07-05; ver commits «posta OPM» en
+> kora-pneuma). No migrados por decision HITL 2026-07-05, con razon:
+> `manual-opforja-es(.md/--p02)` es manual de la app opforja/deep-opm-pro (su
+> SSOT vive en `~/projects/deep-opm-pro/docs/manual-opforja.md`, no es ley OPM)
+> y `opm-ssot-es/README.md` es orientacion local de este directorio.
+
 ## Que Es KORA
 
 KORA es el **repositorio, catalogo y sistema de produccion y mantenimiento de
