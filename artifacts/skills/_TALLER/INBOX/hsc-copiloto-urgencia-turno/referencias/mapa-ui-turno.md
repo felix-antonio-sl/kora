@@ -151,7 +151,21 @@ es fuente primaria para esa clase de verdad.
 
 ## Fuentes de origen
 
-Destilado desde:
+> **DECOMMISSION 2026-06-22**: los repos `~/projects/hsc` y `~/projects/hsc-cli`
+> fueron dados de baja y los binarios `hv2` + `hsc-agent` archivados (fuera del
+> PATH). Las rutas de abajo apuntan a un repo MUERTO y se conservan solo como
+> procedencia histórica. NO son referencia viva.
+>
+> **Sucesor**: `hsc-agent-cli` (binario `hsc-agent-cli`), la vitrina clínica
+> autónoma (DAU/SGH/LIS/HCC, JSON puro, comandos cerrados). Para el mapa de
+> superficies y la navegación vigentes, ver:
+> - Referencia upstream absorbida (mapas UI→endpoint, manuales DAU/SGH):
+>   `~/projects/hsc-agent-cli/docs/reference/`
+> - Manual canónico del agente (KORA, fuente única por URN):
+>   `urn:salud:kb:manual-agente-hsc-agent-cli`
+>   (`~/kora-pneuma/artefactos/conocimiento/salud/manual-agente-hsc-agent-cli.md`)
+
+Destilado desde (rutas históricas, repo decommissioned 2026-06-22):
 
 - `/home/felix/projects/hsc/cli/docs/hv2/urgent-care-direct-platform-manual-2026-04-15.md`
 - `/home/felix/projects/hsc/cli/docs/architecture/dau-active-care-coverage-matrix-2026-04-15.md`

@@ -77,7 +77,21 @@ Cuando haya duda clinicamente relevante, abrir la superficie primaria correcta.
 
 ## Fuentes de origen
 
-Destilado desde:
+> **DECOMMISSION 2026-06-22**: los repos `~/projects/hsc` y `~/projects/hsc-cli`
+> fueron dados de baja y los binarios `hv2` + `hsc-agent` archivados (fuera del
+> PATH). Las rutas de abajo apuntan a un repo MUERTO y se conservan solo como
+> procedencia histórica. NO son referencia viva.
+>
+> **Sucesor**: `hsc-agent-cli` (binario `hsc-agent-cli`). El comando `hsc-agent
+> brief` documentado arriba ya no existe; la vitrina expone comandos cerrados
+> (`catalog`, `get`, `bundle`, `find`, `health`). Para el contrato y la
+> operación vigentes, ver:
+> - Referencia upstream absorbida: `~/projects/hsc-agent-cli/docs/reference/`
+> - Manual canónico del agente (KORA, fuente única por URN):
+>   `urn:salud:kb:manual-agente-hsc-agent-cli`
+>   (`~/kora-pneuma/artefactos/conocimiento/salud/manual-agente-hsc-agent-cli.md`)
+
+Destilado desde (rutas históricas, repo decommissioned 2026-06-22):
 
 - `/home/felix/projects/hsc/agent/docs/contracts/brief-agent-instructions-2026-04-17.md`
 - `/home/felix/projects/hsc/agent/docs/deploy/openclaw-integration-2026-04-18.md`
